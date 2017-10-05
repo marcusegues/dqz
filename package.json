@@ -6,7 +6,11 @@
   "license": "private",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "test": "node ./node_modules/jest/bin/jest.js --watch"
+    "test": "jest --env=jsdom",
+    "test:watch": "jest --watchAll --env=jsdom",
+    "test:coverage": "jest --coverage --env=jsdom",
+    "test:coverage:watch": "jest --watchAll --coverage --env=jsdom",
+    "flow": "flow"
   },
   "jest": {
     "preset": "jest-expo"
@@ -24,7 +28,10 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "flow-bin": "^0.56.0",
+    "jest": "^21.2.1",
     "jest-expo": "^21.0.0",
+    "react-test-renderer": "^16.0.0",
     "redux-devtools": "^3.4.0"
   }
 }

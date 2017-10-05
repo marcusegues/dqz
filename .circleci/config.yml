@@ -1,0 +1,49 @@
+# Starter pack for React-Native -> next up:
+# https://hiddentao.com/archives/2017/02/17/continuous-integration-for-react-native-with-testfairy-testflight-deploy/
+
+version: 2
+jobs:
+   build:
+     docker:
+       - image: circleci/node:latest
+     working_directory: ~/project
+     steps:
+       - checkout
+       - run: echo "CircleCI started --- dazit"
+         # If we need private stuff:
+         # - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+
+       - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+       - run:
+          name: Install!
+          command: npm install
+
+       - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+          #- run:
+          #   name: Lint!
+          #   command: npm run lint
+
+       - run:
+          name: Flow!
+          command: npm run flow
+
+       - run:
+          name: Jest
+          command: npm run test:coverage
+
+       - store_artifacts:
+          path: ~/project/coverage/lcov-report
+          destination: coverage
+
+          #- run:
+          #   name: Build!
+          #   command: npm run build

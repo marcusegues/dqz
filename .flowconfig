@@ -1,0 +1,10 @@
+
+[ignore]
+; TODO fix that
+.*/node_modules.*
+
+[include]
+
+[libs]
+
+[options]
