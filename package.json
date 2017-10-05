@@ -13,7 +13,10 @@
     "flow": "flow"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!react|@expo|expo|native-base-shoutem-theme)"
+    ]
   },
   "dependencies": {
     "@expo/samples": "^2.0.2",
