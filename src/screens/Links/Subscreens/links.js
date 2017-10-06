@@ -8,9 +8,7 @@ export default class Links extends React.Component {
   render() {
     return (
       <View>
-        <Text style={styles.optionsTitleText}>
-          Resources
-        </Text>
+        <Text style={styles.optionsTitleText}>Resources</Text>
 
         <Touchable
           style={styles.option}
@@ -27,9 +25,7 @@ export default class Links extends React.Component {
               />
             </View>
             <View style={styles.optionTextContainer}>
-              <Text style={styles.optionText}>
-                DaziT
-              </Text>
+              <Text style={styles.optionText}>DaziT</Text>
             </View>
           </View>
         </Touchable>
@@ -49,9 +45,7 @@ export default class Links extends React.Component {
               />
             </View>
             <View style={styles.optionTextContainer}>
-              <Text style={styles.optionText}>
-                General Information
-              </Text>
+              <Text style={styles.optionText}>General Information</Text>
             </View>
           </View>
         </Touchable>
@@ -70,9 +64,7 @@ export default class Links extends React.Component {
               />
             </View>
             <View style={styles.optionTextContainer}>
-              <Text style={styles.optionText}>
-                ambrite
-              </Text>
+              <Text style={styles.optionText}>ambrite</Text>
             </View>
           </View>
         </Touchable>
