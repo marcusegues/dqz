@@ -63,7 +63,9 @@ const SelectedGoods = ({
           >
             <Entypo name="shopping-cart" size={70} color="#000" />
             <Badge danger style={redBadge}>
-              <Text>1</Text>
+              <Text>
+                {quantity}
+              </Text>
             </Badge>
           </View>
           <Text style={{ marginTop: 10 }}>Fleisch</Text>
