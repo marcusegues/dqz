@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
-import corereducer from './corereducer';
+import calculatorBasket from './calculatorBasket';
+import declaredBasket from './declaredBasket';
 
-const root = combineReducers({ corereducer });
+const root = combineReducers({ calculatorBasket, declaredBasket });
 
 export default root;
