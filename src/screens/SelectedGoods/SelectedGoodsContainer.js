@@ -9,17 +9,26 @@ class SelectedGoodsContainer extends React.Component {
   }
 
   render() {
-    const { navigation } = this.props;
-    return <SelectedGoods />;
+    return (
+      <SelectedGoods
+        navigation={this.props.navigation}
+        declaredBasket={this.props.declaredBasket}
+        onChangeQuantityDeclaredBasketItem={
+          this.props.handleChangeQuantityDeclaredBasketItem
+        }
+      />
+    );
   }
 }
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  declaredBasket: state.declaredBasket,
+});
 
 const mapDispatchToProps = dispatch => ({
-  handleChangeQuantityDeclaredBasketItem: (itemName, quantityChange) =>
+  handleChangeQuantityDeclaredBasketItem: (categoryName, quantityChange) =>
     dispatch({
-      type: 'INCREMENT_DECLARED_BASKET_ITEM',
-      itemName,
+      type: 'CHANGE_QUANTITY_DECLARED_BASKET_ITEM',
+      categoryName,
       quantityChange,
     }),
 });

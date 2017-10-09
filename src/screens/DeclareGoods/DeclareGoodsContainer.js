@@ -11,7 +11,7 @@ class DeclareGoodsContainer extends React.Component {
   render() {
     // const { navigate } = this.props.navigation;
     // return <UserProfile user={navigation.state.params.user} />;
-    return <DeclareGoods navigate={this.props.navigation.navigate} />;
+    return <DeclareGoods navigation={this.props.navigation} />;
   }
 }
 
