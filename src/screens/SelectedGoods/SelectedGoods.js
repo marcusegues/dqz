@@ -3,7 +3,11 @@ import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { Badge, Text } from 'native-base';
 import { Entypo } from '@expo/vector-icons';
 
-const SelectedGoods = ({ navigation }) => {
+const SelectedGoods = ({
+  navigation,
+  declaredBasket,
+  onChangeQuantityDeclaredBasketItem,
+}) => {
   const {
     container,
     incrementButtonContainer,
@@ -14,6 +18,7 @@ const SelectedGoods = ({ navigation }) => {
   } = styles;
   const { navigate } = navigation;
   const { categoryName } = navigation.state.params;
+  const { quantity, unit } = declaredBasket[categoryName];
   return (
     <View style={container}>
       <View
@@ -26,12 +31,11 @@ const SelectedGoods = ({ navigation }) => {
       >
         <View style={{ flexDirection: 'column', paddingVertical: 20 }}>
           <Text>
-            {categoryName} in Cart:{' '}
+            {categoryName}
           </Text>
-          <Text>2 Kg 0 CHF (Quota 0 kg)</Text>
-        </View>
-        <View style={{ alignSelf: 'center' }}>
-          <Text>Right</Text>
+          <Text>
+            {`In Cart: ${quantity}${unit}.`}
+          </Text>
         </View>
       </View>
 
@@ -65,19 +69,22 @@ const SelectedGoods = ({ navigation }) => {
           <Text style={{ marginTop: 10 }}>Fleisch</Text>
           <View style={incrementButtonContainer}>
             <TouchableOpacity
-              onPress={() => console.log('bang')}
+              onPress={() =>
+                onChangeQuantityDeclaredBasketItem(categoryName, -1)}
               style={[roundButton, transparentButton]}
             >
               <Text>-1</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => console.log('bang')}
+              onPress={() =>
+                onChangeQuantityDeclaredBasketItem(categoryName, 1)}
               style={[roundButton, blueButton]}
             >
               <Text style={{ color: 'white' }}>+1</Text>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => console.log('bang')}
+              onPress={() =>
+                onChangeQuantityDeclaredBasketItem(categoryName, 3)}
               style={[styles.roundButton, styles.blueButton]}
             >
               <Text style={{ color: 'white' }}>+3</Text>
