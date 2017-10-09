@@ -3,7 +3,7 @@ import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import { Badge, Text } from 'native-base';
 import { Entypo } from '@expo/vector-icons';
 
-const SelectedGoods = () => {
+const SelectedGoods = ({ navigation }) => {
   const {
     container,
     incrementButtonContainer,
@@ -12,7 +12,8 @@ const SelectedGoods = () => {
     blueButton,
     redBadge,
   } = styles;
-
+  const { navigate } = navigation;
+  const { categoryName } = navigation.state.params;
   return (
     <View style={container}>
       <View
@@ -24,7 +25,9 @@ const SelectedGoods = () => {
         }}
       >
         <View style={{ flexDirection: 'column', paddingVertical: 20 }}>
-          <Text>Fleisch & Fleischzubereiten in Cart: </Text>
+          <Text>
+            {categoryName} in Cart:{' '}
+          </Text>
           <Text>2 Kg 0 CHF (Quota 0 kg)</Text>
         </View>
         <View style={{ alignSelf: 'center' }}>

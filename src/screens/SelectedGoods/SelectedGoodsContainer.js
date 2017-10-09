@@ -9,9 +9,8 @@ class SelectedGoodsContainer extends React.Component {
   }
 
   render() {
-    const { navigation } = this.props;
     // return <UserProfile user={navigation.state.params.user} />;
-    return <SelectedGoods />;
+    return <SelectedGoods navigation={this.props.navigation} />;
   }
 }
 const mapStateToProps = state => ({});
