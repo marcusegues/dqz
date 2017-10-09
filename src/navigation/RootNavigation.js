@@ -3,12 +3,27 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
+import DeclareGoodsContainer from '../screens/DeclareGoods/DeclareGoodsContainer';
+import SelectedGoodsContainer from '../screens/SelectedGoods/SelectedGoodsContainer';
+
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 
 const RootStackNavigator = StackNavigator(
   {
     Main: {
       screen: MainTabNavigator,
+    },
+    DeclareGoods: {
+      screen: DeclareGoodsContainer,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Declare goods',
+      }),
+    },
+    SelectedGoods: {
+      screen: SelectedGoodsContainer,
+      navigationOptions: ({ navigation }) => ({
+        title: 'SelectedGoods',
+      }),
     },
   },
   {

@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Image,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Touchable,
-  View,
-} from 'react-native';
+import { Image, Platform, ScrollView, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import {
@@ -24,6 +17,7 @@ import {
   Title,
 } from 'native-base';
 import Colors from '../../constants/Colors';
+import Touchable from 'react-native-platform-touchable';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -32,6 +26,7 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <Container style={styles.container}>
         <Header>
@@ -50,83 +45,77 @@ export default class HomeScreen extends React.Component {
           <Right />
         </Header>
 
-        <Content
-          style={{ flex: 1, padding: 10 }}
-          contentContainerStyle={{ flex: 1 }}
+        <Touchable
+          onPress={() => navigate('DeclareGoods')}
+          // onPress={() => console.log('hello!')}
+          style={{
+            flex: 2,
+            flexDirection: 'column',
+            backgroundColor: '#f44336',
+            marginVertical: 5,
+          }}
+          background={Touchable.Ripple('blue')}
         >
-          <Card style={{ flex: 2 }}>
-            <CardItem button style={{ backgroundColor: '#ee3d24', flex: 2 }}>
-              <Body
-                style={{
-                  flexDirection: 'column',
-                  justifyContent: 'space-around',
-                  alignItems: 'center',
-                }}
-              >
-                <Text
-                  style={{
-                    fontSize: 40,
-                    color: `${Colors.noticeText}`,
-                    alignSelf: 'center',
-                  }}
-                >
-                  Declare goods
-                </Text>
-                <Entypo
-                  name="shopping-cart"
-                  size={70}
-                  style={{}}
-                  color="#fff"
-                />
-              </Body>
-            </CardItem>
-          </Card>
+          <View
+            style={{
+              flex: 2,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Text
+              style={{
+                fontSize: 40,
+                color: `${Colors.noticeText}`,
+              }}
+            >
+              Declare goods
+            </Text>
+            <Entypo name="shopping-cart" size={70} color="#fff" />
+          </View>
+        </Touchable>
 
-          <Card style={{ flex: 2 }}>
-            <CardItem button style={{ backgroundColor: 'grey', flex: 2 }}>
-              <Body
-                style={{
-                  flexDirection: 'column',
-                  justifyContent: 'space-around',
-                  alignItems: 'center',
-                }}
-              >
-                <Text
-                  style={{
-                    fontSize: 40,
-                    color: `${Colors.noticeText}`,
-                    alignSelf: 'center',
-                  }}
-                >
-                  Quota
-                </Text>
-              </Body>
-            </CardItem>
-          </Card>
-
-          <Card style={{ flex: 1 }}>
-            <CardItem button style={{ backgroundColor: 'grey', flex: 1 }}>
-              <Body
-                style={{
-                  flex: 2,
-                  flexDirection: 'column',
-                  justifyContent: 'space-around',
-                  alignItems: 'center',
-                }}
-              >
-                <Text
-                  style={{
-                    fontSize: 40,
-                    color: `${Colors.noticeText}`,
-                    alignSelf: 'center',
-                  }}
-                >
-                  Quittung
-                </Text>
-              </Body>
-            </CardItem>
-          </Card>
-        </Content>
+        <Touchable
+          onPress={() => console.log('hello!')}
+          style={{
+            flex: 2,
+            backgroundColor: '#b2b2b2',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginBottom: 5,
+          }}
+          background={Touchable.Ripple('blue')}
+        >
+          <Text
+            style={{
+              fontSize: 40,
+              color: `${Colors.noticeText}`,
+            }}
+          >
+            Quota
+          </Text>
+        </Touchable>
+        <Touchable
+          onPress={() => console.log('hello!')}
+          style={{
+            flex: 1,
+            backgroundColor: '#b2b2b2',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginBottom: 5,
+          }}
+          background={Touchable.Ripple('blue')}
+        >
+          <Text
+            style={{
+              fontSize: 40,
+              color: `${Colors.noticeText}`,
+            }}
+          >
+            Quittung
+          </Text>
+        </Touchable>
+        {/*</Content>*/}
         {/*<ScrollView*/}
         {/*style={styles.container}*/}
         {/*contentContainerStyle={styles.contentContainer}*/}
