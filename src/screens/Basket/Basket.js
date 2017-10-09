@@ -2,9 +2,10 @@ import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { Dimensions } from 'react-native';
 import { WebBrowser } from 'expo';
-import { Badge } from 'native-base';
 import { Entypo } from '@expo/vector-icons';
 import Touchable from 'react-native-platform-touchable';
+
+const width = Dimensions.get('window').width - 30;
 
 export default class Basket extends React.Component {
   _handlePay = () => {
@@ -12,8 +13,7 @@ export default class Basket extends React.Component {
   };
 
   render() {
-    const { container } = styles;
-    const width = Dimensions.get('window').width - 30;
+    const { container, payButton, totalPrice } = styles;
 
     return (
       <View style={container}>
@@ -28,8 +28,7 @@ export default class Basket extends React.Component {
             width: width,
             flexDirection: 'row',
             justifyContent: 'space-around',
-            marginBottom: 30,
-            marginTop: 30,
+            marginVertical: 30,
           }}
         >
           <Text style={{ fontSize: 26 }}>410</Text>
@@ -41,10 +40,12 @@ export default class Basket extends React.Component {
             <Entypo name="circle-with-cross" size={40} color="#000" />
           </TouchableOpacity>
         </View>
-        <TouchableOpacity>
-          <Entypo name="circle-with-plus" size={60} color="#000" />
-        </TouchableOpacity>
-        <Text style={{ fontSize: 25 }}>Gesamt</Text>
+        <View style={{ paddingHorizontal: 20 }}>
+          <TouchableOpacity>
+            <Entypo name="circle-with-plus" size={60} color="#000" />
+          </TouchableOpacity>
+          <Text style={{ fontSize: 25 }}>Gesamt</Text>
+        </View>
         <View
           style={{
             width: width,
@@ -59,28 +60,14 @@ export default class Basket extends React.Component {
           <Text>1.19</Text>
           <Text>CHF 487.90</Text>
         </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'flex-end',
-            width: width,
-            paddingRight: 30,
-            marginBottom: 15,
-          }}
-        >
+        <View style={totalPrice}>
           <Text>Total</Text>
           <Text>CHF 487.90</Text>
         </View>
         <View style={{ flex: 1, width: width }}>
           <Touchable
             onPress={this._handlePay}
-            style={{
-              flex: 1,
-              backgroundColor: '#f84c2d',
-              justifyContent: 'center',
-              alignItems: 'center',
-              marginBottom: 5,
-            }}
+            style={payButton}
             background={Touchable.Ripple('blue')}
           >
             <Text
@@ -106,5 +93,19 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     backgroundColor: '#fff',
     padding: 15,
+  },
+  payButton: {
+    flex: 1,
+    backgroundColor: '#f84c2d',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  totalPrice: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    width: width,
+    paddingRight: 30,
+    marginBottom: 15,
   },
 });
