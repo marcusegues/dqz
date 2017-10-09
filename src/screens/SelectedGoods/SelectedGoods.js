@@ -25,7 +25,9 @@ const SelectedGoods = ({ navigation }) => {
         }}
       >
         <View style={{ flexDirection: 'column', paddingVertical: 20 }}>
-          <Text>Fleisch & Fleischzubereiten in Cart: </Text>
+          <Text>
+            {categoryName} in Cart:{' '}
+          </Text>
           <Text>2 Kg 0 CHF (Quota 0 kg)</Text>
         </View>
         <View style={{ alignSelf: 'center' }}>
