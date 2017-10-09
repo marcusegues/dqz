@@ -9,7 +9,7 @@ const width = Dimensions.get('window').width - 30;
 
 export default class Basket extends React.Component {
   _handlePay = () => {
-    WebBrowser.openBrowserAsync('http://ambrite.ch');
+    WebBrowser.openBrowserAsync('https://dazit.ambrite.ch/payment');
   };
 
   render() {
