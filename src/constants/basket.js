@@ -11,11 +11,32 @@ export const categories = {
 };
 
 export const emptyBasket = {
-  [categories.MEAT_AND_MEAT_PRODUCTS]: 0,
-  [categories.BUTTER_OR_CREAM]: 0,
-  [categories.OILS_FATS_MARGARINE]: 0,
-  [categories.ALCOHOL_BELOW_18]: 0,
-  [categories.ALCOHOL_ABOVE_18]: 0,
-  [categories.CIGARETTES_AND_CIGARS]: 0,
-  [categories.OTHER_TOBACCO]: 0,
+  [categories.MEAT_AND_MEAT_PRODUCTS]: {
+    quantity: 0,
+    unit: 'kg',
+  },
+  [categories.BUTTER_OR_CREAM]: {
+    quantity: 0,
+    unit: 'kg/Liter',
+  },
+  [categories.OILS_FATS_MARGARINE]: {
+    quantity: 0,
+    unit: 'kg/Liter',
+  },
+  [categories.ALCOHOL_BELOW_18]: {
+    quantity: 0,
+    unit: 'Liter',
+  },
+  [categories.ALCOHOL_ABOVE_18]: {
+    quantity: 0,
+    unit: 'Liter',
+  },
+  [categories.CIGARETTES_AND_CIGARS]: {
+    quantity: 0,
+    unit: 'stück',
+  },
+  [categories.OTHER_TOBACCO]: {
+    quantity: 0,
+    unit: 'kg',
+  },
 };

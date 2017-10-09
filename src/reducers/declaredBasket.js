@@ -2,10 +2,16 @@ import { emptyBasket } from '../constants/basket';
 
 const declaredBasket = (state = emptyBasket, action) => {
   switch (action.type) {
-    case 'INCREMENT_DECLARED_BASKET_ITEM': {
+    case 'CHANGE_QUANTITY_DECLARED_BASKET_ITEM': {
       return {
         ...state,
-        [action.itemName]: state[action.itemName] + action.increment,
+        [action.categoryName]: {
+          ...state[action.categoryName],
+          quantity: Math.max(
+            0,
+            state[action.categoryName].quantity + action.quantityChange
+          ),
+        },
       };
     }
     default: {
