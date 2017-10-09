@@ -1,17 +1,21 @@
-export const MEAT_AND_MEAT_PRODUCTS = 'MEAT_AND_MEAT_PRODUCTS';
-export const BUTTER_OR_CREAM = 'BUTTER_OR_CREAM';
-export const OILS_FATS_MARGARINE = 'OILS_FATS_MARGARINE';
-export const ALCOHOL_BELOW_18 = 'ALCOHOL_BELOW_18';
-export const ALCOHOL_ABOVE_18 = 'ALCOHOL_ABOVE_18';
-export const CIGARETTES_AND_CIGARS = 'CIGARETTES_AND_CIGARS';
-export const OTHER_TOBACCO = 'OTHER_TOBACCO';
+export const categories = {
+  MEAT_AND_MEAT_PRODUCTS: 'Fleisch und Fleischzubereitung',
+  BUTTER_OR_CREAM: 'Butter und Rahm',
+  OILS_FATS_MARGARINE: 'Öle, Fette, Margarine zu Speisezwecken',
+  ALCOHOL_BELOW_18:
+    'Alkoholische Getränke mit einem Alkoholgehalt bis 18% Vol.',
+  ALCOHOL_ABOVE_18:
+    'Alkoholische Getränke mit einem Alkoholgehalt über 18% Vol.',
+  CIGARETTES_AND_CIGARS: 'Zigaretten/Zigarren',
+  OTHER_TOBACCO: 'Andere Tabakfabrikate',
+};
 
 export const emptyBasket = {
-  [MEAT_AND_MEAT_PRODUCTS]: 0,
-  [BUTTER_OR_CREAM]: 0,
-  [OILS_FATS_MARGARINE]: 0,
-  [ALCOHOL_BELOW_18]: 0,
-  [ALCOHOL_ABOVE_18]: 0,
-  [CIGARETTES_AND_CIGARS]: 0,
-  [OTHER_TOBACCO]: 0,
+  [categories.MEAT_AND_MEAT_PRODUCTS]: 0,
+  [categories.BUTTER_OR_CREAM]: 0,
+  [categories.OILS_FATS_MARGARINE]: 0,
+  [categories.ALCOHOL_BELOW_18]: 0,
+  [categories.ALCOHOL_ABOVE_18]: 0,
+  [categories.CIGARETTES_AND_CIGARS]: 0,
+  [categories.OTHER_TOBACCO]: 0,
 };

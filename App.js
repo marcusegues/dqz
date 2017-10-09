@@ -7,6 +7,7 @@ import RootNavigation from './src/navigation/RootNavigation';
 import configureStore from './src/configureStore';
 
 const store = configureStore();
+window.myStore = store;
 
 export default class App extends React.Component {
   state = {
