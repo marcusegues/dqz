@@ -5,8 +5,11 @@ import { StackNavigator } from 'react-navigation';
 import MainTabNavigator from './MainTabNavigator';
 import DeclareGoodsContainer from '../screens/DeclareGoods/DeclareGoodsContainer';
 import SelectedGoodsContainer from '../screens/SelectedGoods/SelectedGoodsContainer';
+import BasketContainer from '../screens/Basket/BasketContainer';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
+import { TouchableOpacity } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -17,12 +20,28 @@ const RootStackNavigator = StackNavigator(
       screen: DeclareGoodsContainer,
       navigationOptions: ({ navigation }) => ({
         title: 'Declare goods',
+        headerRight: (
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Basket');
+            }}
+          >
+            <Entypo name="shopping-cart" size={40} color="black" />
+          </TouchableOpacity>
+        ),
+        headerStyle: { paddingRight: 20 },
       }),
     },
     SelectedGoods: {
       screen: SelectedGoodsContainer,
       navigationOptions: ({ navigation }) => ({
         title: 'SelectedGoods',
+      }),
+    },
+    Basket: {
+      screen: BasketContainer,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Basket',
       }),
     },
   },

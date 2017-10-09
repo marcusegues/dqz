@@ -9,7 +9,6 @@ class SelectedGoodsContainer extends React.Component {
   }
 
   render() {
-    // return <UserProfile user={navigation.state.params.user} />;
     return (
       <SelectedGoods
         navigation={this.props.navigation}
