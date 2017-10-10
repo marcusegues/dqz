@@ -14,29 +14,36 @@ export const emptyBasket = {
   [categories.MEAT_AND_MEAT_PRODUCTS]: {
     quantity: 0,
     unit: 'kg',
+    duty: 0,
   },
   [categories.BUTTER_OR_CREAM]: {
     quantity: 0,
     unit: 'kg/Liter',
+    duty: 0,
   },
   [categories.OILS_FATS_MARGARINE]: {
     quantity: 0,
     unit: 'kg/Liter',
+    duty: 0,
   },
   [categories.ALCOHOL_BELOW_18]: {
     quantity: 0,
     unit: 'Liter',
+    duty: 0,
   },
   [categories.ALCOHOL_ABOVE_18]: {
     quantity: 0,
     unit: 'Liter',
+    duty: 0,
   },
   [categories.CIGARETTES_AND_CIGARS]: {
     quantity: 0,
     unit: 'stück',
+    duty: 0,
   },
   [categories.OTHER_TOBACCO]: {
     quantity: 0,
     unit: 'kg',
+    duty: 0,
   },
 };

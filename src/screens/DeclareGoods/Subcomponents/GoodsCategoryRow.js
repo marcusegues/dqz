@@ -3,10 +3,9 @@ import { Text, StyleSheet, View, Image } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import { Entypo } from '@expo/vector-icons';
 
-const GoodsCategoryRow = ({ navigation, categoryName }) => {
+const GoodsCategoryRow = ({ navigation, categoryName, duty }) => {
   const { container } = styles;
   const { navigate } = navigation;
-
   return (
     <Touchable
       style={{}}
@@ -16,10 +15,12 @@ const GoodsCategoryRow = ({ navigation, categoryName }) => {
       <View
         style={{
           flexDirection: 'row',
-          paddingBottom: 10,
+          alignItems: 'center',
+          paddingBottom: 5,
+          paddingTop: 5,
           borderBottomWidth: 1,
-          borderBottomColor: '#979797',
-          width: '85%',
+          borderBottomColor: 'rgba(0,0,0, 0.1)',
+          width: '90%',
         }}
       >
         <View style={{ width: '20%', height: 60 }}>
@@ -30,13 +31,22 @@ const GoodsCategoryRow = ({ navigation, categoryName }) => {
             style={{ width: 40, height: 60 }}
           />
         </View>
-        <View style={{ width: '70%' }}>
+        <View style={{ width: '75%' }}>
           <Text style={{}}>
             {categoryName}
           </Text>
+          <Text style={{}}>
+            {duty ? `Duty: CHF ${duty}` : null}
+          </Text>
         </View>
-        <View style={{ width: '10%', alignSelf: 'center' }}>
-          <Entypo name="chevron-thin-right" size={40} color="#000" />
+        <View
+          style={{
+            width: '10%',
+            flexDirection: 'row',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <Entypo name="chevron-thin-right" size={20} color="#000" />
         </View>
       </View>
     </Touchable>
