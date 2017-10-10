@@ -11,10 +11,6 @@ import {
 class GoodsInput extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      value: '',
-    };
   }
 
   render() {
@@ -29,12 +25,15 @@ class GoodsInput extends React.Component {
     const {
       onChangeQuantityDeclaredBasketItem,
       categoryName,
-      onAddValueToDeclaredBasket,
       categoryObject,
-      categoryObjectValues,
     } = this.props;
     return (
-      <View>
+      <View
+        style={{
+          paddingLeft: 20,
+          paddingRight: 20,
+        }}
+      >
         <View style={inputContainer}>
           <View style={{ width: '30%' }}>
             <Text>
@@ -70,32 +69,6 @@ class GoodsInput extends React.Component {
               <Text style={{ color: 'white' }}>+3</Text>
             </TouchableOpacity>
           </View>
-        </View>
-        <View style={inputContainer}>
-          <View style={{ width: '30%' }}>
-            <Text>
-              {`Values`}
-            </Text>
-          </View>
-          <TextInput
-            style={{ width: '20%', borderWidth: 1 }}
-            value={this.state.value}
-            onChangeText={value => this.setState({ value })}
-          />
-          <Button
-            title={`+ Add`}
-            onPress={() => {
-              onAddValueToDeclaredBasket(categoryName, this.state.value);
-              this.setState({ value: '' });
-            }}
-          />
-        </View>
-        <View>
-          {categoryObjectValues.map((v, i) =>
-            <Text key={i}>
-              {v}
-            </Text>
-          )}
         </View>
       </View>
     );

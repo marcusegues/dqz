@@ -18,7 +18,6 @@ class DeclareGoodsContainer extends React.Component {
         onChangeQuantityDeclaredBasketItem={
           this.props.handleChangeQuantityDeclaredBasketItem
         }
-        onAddValueToDeclaredBasket={this.props.handleAddValueToDeclaredBasket}
       />
     );
   }

@@ -1,9 +1,10 @@
 import React from 'react';
-import { Text, StyleSheet, View, Image, Animated, Badge } from 'react-native';
+import { Text, StyleSheet, View, Image, Animated } from 'react-native';
+import { Badge } from 'native-base';
 import Touchable from 'react-native-platform-touchable';
 import { Entypo } from '@expo/vector-icons';
 
-const MIN_HEIGHT = 75;
+const MIN_HEIGHT = 120;
 
 class GoodsCategoryRow extends React.Component {
   constructor(props) {
@@ -126,11 +127,11 @@ class GoodsCategoryRow extends React.Component {
           borderBottomWidth: 1,
           borderBottomColor: 'rgba(0,0,0, 0.1)',
           overflow: 'hidden',
-          width: '90%',
+          width: '100%',
         }}
       >
         <Touchable
-          style={{ height: MIN_HEIGHT }}
+          style={{ height: MIN_HEIGHT, justifyContent: 'center' }}
           background={Touchable.Ripple('#ccc', false)}
           onPress={this.handleToggleExpanded}
           onLayout={this._setMinHeight.bind(this)}
@@ -141,6 +142,8 @@ class GoodsCategoryRow extends React.Component {
               alignItems: 'center',
               paddingBottom: 5,
               paddingTop: 5,
+              paddingLeft: 20,
+              paddingRight: 20,
             }}
           >
             <View style={{ width: '20%', height: 60 }}>
@@ -151,16 +154,20 @@ class GoodsCategoryRow extends React.Component {
                 style={{ width: 50, height: 50 }}
               />
             </View>
-            <View style={{ width: '75%' }}>
-              <Text style={{}}>
+            <View style={{ width: '75%', height: 97 }}>
+              <Text />
+              <Text />
+              <Text style={{ fontFamily: 'open_sans_bold' }}>
                 {categoryName}
               </Text>
-              <Text style={{}}>
-                {quantity ? `Quantity: ${quantity}${unit}` : null}
-              </Text>
-              <Text style={{}}>
-                {duty ? `Duty: CHF ${duty}` : null}
-              </Text>
+              <View style={{ flexDirection: 'row' }}>
+                <Text style={{ fontFamily: 'open_sans_light', width: '60%' }}>
+                  {quantity ? `Quantity: ${quantity}${unit}` : null}
+                </Text>
+                <Text style={{ fontFamily: 'open_sans_light', width: '40%' }}>
+                  {duty ? `Duty: CHF ${duty}` : null}
+                </Text>
+              </View>
             </View>
             <View
               style={{
