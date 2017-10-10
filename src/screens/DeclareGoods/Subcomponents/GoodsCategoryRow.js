@@ -24,6 +24,18 @@ const GoodsCategoryRow = ({ navigation, categoryName, duty, icon }) => {
       imgUrl = require(`../../../../assets/icons/oil.png`);
       break;
     }
+    case 'vodka': {
+      imgUrl = require(`../../../../assets/icons/vodka.png`);
+      break;
+    }
+    case 'cigarette': {
+      imgUrl = require(`./assets/icons/cigarette.png`);
+      break;
+    }
+    case 'marijuanna': {
+      imgUrl = require(`../../../../assets/icons/marijuanna.png`);
+      break;
+    }
     default: {
       imgUrl = require(`../../../../assets/images/kreuz.png`);
     }

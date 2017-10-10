@@ -39,18 +39,18 @@ export const emptyBasket = {
     quantity: 0,
     unit: 'Liter',
     duty: 0,
-    icon: 'chicken',
+    icon: 'vodka',
   },
   [categories.CIGARETTES_AND_CIGARS]: {
     quantity: 0,
     unit: 'stück',
     duty: 0,
-    icon: 'chicken',
+    icon: 'cigarette',
   },
   [categories.OTHER_TOBACCO]: {
     quantity: 0,
     unit: 'kg',
     duty: 0,
-    icon: 'chicken',
+    icon: 'marijuanna',
   },
 };
