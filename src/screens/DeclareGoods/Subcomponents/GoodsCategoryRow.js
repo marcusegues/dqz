@@ -175,9 +175,7 @@ class GoodsCategoryRow extends React.Component {
                 flexDirection: 'row',
                 justifyContent: 'flex-end',
               }}
-            >
-              <Entypo name="chevron-thin-right" size={20} color="#000" />
-            </View>
+            />
           </View>
         </Touchable>
         <View

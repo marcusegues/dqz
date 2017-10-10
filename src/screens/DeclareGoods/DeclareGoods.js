@@ -47,39 +47,29 @@ class DeclareGoods extends React.Component {
       onChangeQuantityDeclaredBasketItem,
     } = this.props;
     return (
-      <Container
-        style={{
-          flex: 1,
-          backgroundColor: 'white',
-          flexDirection: 'column',
-        }}
-      >
-        <Body>
-          <ScrollView style={container}>
-            <View style={{ flex: 1, alignItems: 'center' }}>
-              {Object.keys(emptyBasket).map(category =>
-                <GoodsCategoryRow
-                  key={category}
-                  categoryName={category}
-                  navigation={navigation}
-                  categoryObject={declaredBasket[category]}
-                  expanded={this.state[category]}
-                  handleToggleExpanded={this.handleToggleExpanded}
-                >
-                  <GoodsInput
-                    categoryName={category}
-                    onChangeQuantityDeclaredBasketItem={
-                      onChangeQuantityDeclaredBasketItem
-                    }
-                    categoryObject={declaredBasket[category]}
-                    categoryObjectValues={[...declaredBasket[category].values]}
-                  />
-                </GoodsCategoryRow>
-              )}
-            </View>
-          </ScrollView>
-        </Body>
-      </Container>
+      <ScrollView style={container}>
+        <View style={{ flex: 1, alignItems: 'center' }}>
+          {Object.keys(emptyBasket).map(category =>
+            <GoodsCategoryRow
+              key={category}
+              categoryName={category}
+              navigation={navigation}
+              categoryObject={declaredBasket[category]}
+              expanded={this.state[category]}
+              handleToggleExpanded={this.handleToggleExpanded}
+            >
+              <GoodsInput
+                categoryName={category}
+                onChangeQuantityDeclaredBasketItem={
+                  onChangeQuantityDeclaredBasketItem
+                }
+                categoryObject={declaredBasket[category]}
+                categoryObjectValues={[...declaredBasket[category].values]}
+              />
+            </GoodsCategoryRow>
+          )}
+        </View>
+      </ScrollView>
     );
   }
 }
