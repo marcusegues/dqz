@@ -118,7 +118,7 @@ export default class HomeScreen extends React.Component {
                     fontFamily: 'open_sans_light',
                   }}
                 >
-                  Declare goods
+                  {`Waren verzollen`}
                 </Text>
               </View>
             </Touchable>
@@ -132,7 +132,7 @@ export default class HomeScreen extends React.Component {
                   alignItems: 'center',
                   marginBottom: 5,
                   height: 40,
-                  width: 125,
+                  width: 160,
                   borderRadius: 4,
                   marginRight: 10,
                   marginLeft: 10,
@@ -141,12 +141,12 @@ export default class HomeScreen extends React.Component {
               >
                 <Text
                   style={{
-                    fontSize: 20,
+                    fontSize: 14,
                     color: `${Colors.noticeText}`,
                     fontFamily: 'open_sans_light',
                   }}
                 >
-                  Quota
+                  {`Kontingenrechner`}
                 </Text>
               </Touchable>
               <Touchable
@@ -157,7 +157,7 @@ export default class HomeScreen extends React.Component {
                   alignItems: 'center',
                   marginBottom: 5,
                   height: 40,
-                  width: 125,
+                  width: 160,
                   borderRadius: 4,
                   marginRight: 10,
                   marginLeft: 10,
@@ -167,12 +167,12 @@ export default class HomeScreen extends React.Component {
                 <Text
                   style={{
                     fontFamily: 'open_sans_regular',
-                    fontSize: 20,
+                    fontSize: 14,
                     color: `${Colors.noticeText}`,
                     fontFamily: 'open_sans_light',
                   }}
                 >
-                  Quittung
+                  {`Meine Quittungen`}
                 </Text>
               </Touchable>
             </View>
