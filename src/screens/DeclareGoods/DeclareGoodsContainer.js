@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import DeclareGoods from './DeclareGoods';
-import { getDutyForCategory } from '../../reducers';
+import { getDutyForCategory, getIconForCategory } from '../../reducers';
 
 class DeclareGoodsContainer extends React.Component {
   constructor(props) {
@@ -16,6 +16,7 @@ class DeclareGoodsContainer extends React.Component {
       <DeclareGoods
         navigation={this.props.navigation}
         getDutyForCategory={this.props.getDutyForCategory}
+        getIconForCategory={this.props.getIconForCategory}
       />
     );
   }
@@ -23,6 +24,7 @@ class DeclareGoodsContainer extends React.Component {
 
 const mapStateToProps = state => ({
   getDutyForCategory: categoryName => getDutyForCategory(state, categoryName),
+  getIconForCategory: categoryName => getIconForCategory(state, categoryName),
 });
 
 const mapDispatchToProps = dispatch => ({});

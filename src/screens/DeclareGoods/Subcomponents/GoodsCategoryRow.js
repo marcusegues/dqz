@@ -3,32 +3,57 @@ import { Text, StyleSheet, View, Image } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import { Entypo } from '@expo/vector-icons';
 
-const GoodsCategoryRow = ({ navigation, categoryName, duty }) => {
+const GoodsCategoryRow = ({ navigation, categoryName, duty, icon }) => {
   const { container } = styles;
   const { navigate } = navigation;
+  let imgUrl = '';
+  switch (icon) {
+    case 'chicken': {
+      imgUrl = require(`../../../../assets/icons/chicken.png`);
+      break;
+    }
+    case 'beer': {
+      imgUrl = require(`../../../../assets/icons/beer.png`);
+      break;
+    }
+    case 'butter': {
+      imgUrl = require(`../../../../assets/icons/butter.png`);
+      break;
+    }
+    case 'oil': {
+      imgUrl = require(`../../../../assets/icons/oil.png`);
+      break;
+    }
+    case 'vodka': {
+      imgUrl = require(`../../../../assets/icons/vodka.png`);
+      break;
+    }
+    case 'cigarette': {
+      imgUrl = require(`../../../../assets/icons/cigarette.png`);
+      break;
+    }
+    case 'marijuanna': {
+      imgUrl = require(`../../../../assets/icons/marijuanna.png`);
+      break;
+    }
+    default: {
+      imgUrl = require(`../../../../assets/images/kreuz.png`);
+    }
+  }
+
   return (
     <Touchable
       style={{}}
       background={Touchable.Ripple('#ccc', false)}
       onPress={() => navigate('SelectedGoods', { categoryName })}
     >
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          paddingBottom: 5,
-          paddingTop: 5,
-          borderBottomWidth: 1,
-          borderBottomColor: 'rgba(0,0,0, 0.1)',
-          width: '90%',
-        }}
-      >
+      <View style={container}>
         <View style={{ width: '20%', height: 60 }}>
           <Image
-            source={require('../../../../assets/images/kreuz.png')}
+            source={imgUrl}
             resizeMode="contain"
             fadeDuration={0}
-            style={{ width: 40, height: 60 }}
+            style={{ width: 50, height: 50 }}
           />
         </View>
         <View style={{ width: '75%' }}>
@@ -57,8 +82,12 @@ export default GoodsCategoryRow;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingTop: 15,
-    backgroundColor: '#fff',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingBottom: 5,
+    paddingTop: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(0,0,0, 0.1)',
+    width: '90%',
   },
 });
