@@ -9,8 +9,11 @@ const width = Dimensions.get('window').width - 30;
 
 export default class Basket extends React.Component {
   _handlePay = () => {
+    const currency = 'CHF';
+    const amount = '5555';
+
     WebBrowser.openBrowserAsync(
-      'https://dazit.ambrite.ch/payment?currency=CHF&amount=5555'
+      `https://dazit.ambrite.ch/payment?currency=${currency}&amount=${amount}`
     );
   };
 
