@@ -2,10 +2,8 @@ export const categories = {
   MEAT_AND_MEAT_PRODUCTS: 'Fleisch und Fleischzubereitung',
   BUTTER_OR_CREAM: 'Butter und Rahm',
   OILS_FATS_MARGARINE: 'Öle, Fette, Margarine zu Speisezwecken',
-  ALCOHOL_BELOW_18:
-    'Alkoholische Getränke mit einem Alkoholgehalt bis 18% Vol.',
-  ALCOHOL_ABOVE_18:
-    'Alkoholische Getränke mit einem Alkoholgehalt über 18% Vol.',
+  ALCOHOL_BELOW_18: 'Alkoholische Getränke, Alkoholgehalt bis 18% Vol.',
+  ALCOHOL_ABOVE_18: 'Alkoholische Getränke, Alkoholgehalt über 18% Vol.',
   CIGARETTES_AND_CIGARS: 'Zigaretten/Zigarren',
   OTHER_TOBACCO: 'Andere Tabakfabrikate',
 };
