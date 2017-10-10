@@ -108,6 +108,7 @@ export default class HomeScreen extends React.Component {
         >
           <Text
             style={{
+              fontFamily: 'open-sans-bold',
               fontSize: 40,
               color: `${Colors.noticeText}`,
             }}

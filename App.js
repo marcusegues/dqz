@@ -45,6 +45,8 @@ export default class App extends React.Component {
       ]),
       Font.loadAsync([
         { Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf') },
+        { open_sans_bold: require('./assets/fonts/OpenSans-Bold.ttf') },
+        { open_sans_regular: require('./assets/fonts/OpenSans-Regular.ttf') },
         // This is the font that we are using for our tab bar
         Ionicons.font,
         // We include SpaceMono because we use it in HomeScreen.js. Feel free
