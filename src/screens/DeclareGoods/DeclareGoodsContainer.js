@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import DeclareGoods from './DeclareGoods';
-import { getDutyForCategory, getIconForCategory } from '../../reducers';
 
 class DeclareGoodsContainer extends React.Component {
   constructor(props) {
@@ -15,19 +14,30 @@ class DeclareGoodsContainer extends React.Component {
     return (
       <DeclareGoods
         navigation={this.props.navigation}
-        getDutyForCategory={this.props.getDutyForCategory}
-        getIconForCategory={this.props.getIconForCategory}
+        declaredBasket={this.props.declaredBasket}
+        onChangeQuantityDeclaredBasketItem={
+          this.props.handleChangeQuantityDeclaredBasketItem
+        }
+        onAddValueToDeclaredBasket={this.props.handleAddValueToDeclaredBasket}
       />
     );
   }
 }
 
 const mapStateToProps = state => ({
-  getDutyForCategory: categoryName => getDutyForCategory(state, categoryName),
-  getIconForCategory: categoryName => getIconForCategory(state, categoryName),
+  declaredBasket: state.declaredBasket,
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+  handleChangeQuantityDeclaredBasketItem: (categoryName, quantityChange) =>
+    dispatch({
+      type: 'CHANGE_QUANTITY_DECLARED_BASKET_ITEM',
+      categoryName,
+      quantityChange,
+    }),
+  handleAddValueToDeclaredBasket: (categoryName, value) =>
+    dispatch({ type: 'ADD_VALUE_TO_DECLARED_BASKET', categoryName, value }),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   DeclareGoodsContainer

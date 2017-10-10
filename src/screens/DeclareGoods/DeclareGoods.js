@@ -4,30 +4,66 @@ import Touchable from 'react-native-platform-touchable';
 import { Entypo } from '@expo/vector-icons';
 import GoodsCategoryRow from './Subcomponents/GoodsCategoryRow';
 import { emptyBasket } from '../../constants/basket';
+import GoodsInput from './Subcomponents/GoodsInput';
 
-const DeclareGoods = ({
-  navigation,
-  getDutyForCategory,
-  getIconForCategory,
-}) => {
-  const { container } = styles;
+class DeclareGoods extends React.Component {
+  constructor(props) {
+    super(props);
+    const stateObject = {};
+    Object.keys(emptyBasket).forEach(category => {
+      stateObject[category] = false;
+    });
+    this.state = stateObject;
+    this.handleToggleExpanded = this.handleToggleExpanded.bind(this);
+  }
 
-  return (
-    <ScrollView style={container}>
-      <View style={{ flex: 1, alignItems: 'center' }}>
-        {Object.keys(emptyBasket).map(category =>
-          <GoodsCategoryRow
-            key={category}
-            categoryName={category}
-            navigation={navigation}
-            duty={getDutyForCategory(category)}
-            icon={getIconForCategory(category)}
-          />
-        )}
-      </View>
-    </ScrollView>
-  );
-};
+  handleToggleExpanded(categoryName, expanded) {
+    console.log('second handle toggleexpanded');
+    const stateObject = { ...this.state };
+    Object.keys(emptyBasket).forEach(category => {
+      stateObject[category] = false;
+    });
+    stateObject[categoryName] = expanded;
+    this.setState(stateObject);
+  }
+
+  render() {
+    const { container } = styles;
+    const {
+      navigation,
+      getDutyForCategory,
+      declaredBasket,
+      onChangeQuantityDeclaredBasketItem,
+      onAddValueToDeclaredBasket,
+    } = this.props;
+    return (
+      <ScrollView style={container}>
+        <View style={{ flex: 1, alignItems: 'center' }}>
+          {Object.keys(emptyBasket).map(category =>
+            <GoodsCategoryRow
+              key={category}
+              categoryName={category}
+              navigation={navigation}
+              categoryObject={declaredBasket[category]}
+              expanded={this.state[category]}
+              handleToggleExpanded={this.handleToggleExpanded}
+            >
+              <GoodsInput
+                categoryName={category}
+                onChangeQuantityDeclaredBasketItem={
+                  onChangeQuantityDeclaredBasketItem
+                }
+                onAddValueToDeclaredBasket={onAddValueToDeclaredBasket}
+                categoryObject={declaredBasket[category]}
+                categoryObjectValues={[...declaredBasket[category].values]}
+              />
+            </GoodsCategoryRow>
+          )}
+        </View>
+      </ScrollView>
+    );
+  }
+}
 
 export default DeclareGoods;
 
