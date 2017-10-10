@@ -6,7 +6,17 @@ import { Entypo } from '@expo/vector-icons';
 const GoodsCategoryRow = ({ navigation, categoryName, duty, icon }) => {
   const { container } = styles;
   const { navigate } = navigation;
-  const imgUrl = require(`../../../../assets/icons/${icon}.png`);
+  let imgUrl = '';
+  switch (icon) {
+    case 'chicken': {
+      imgUrl = require(`../../../../assets/icons/chicken.png`);
+      break;
+    }
+    default: {
+      imgUrl = require(`../../../../assets/images/kreuz.png`);
+    }
+  }
+
   return (
     <Touchable
       style={{}}
@@ -26,10 +36,7 @@ const GoodsCategoryRow = ({ navigation, categoryName, duty, icon }) => {
       >
         <View style={{ width: '20%', height: 60 }}>
           <Image
-            // source={{
-            //   uri: `https://api.adorable.io/avatars/300/${icon}.png`,
-            // }}
-            source={require(`../../../../assets/icons/${icon}.png`)}
+            source={imgUrl}
             resizeMode="contain"
             fadeDuration={0}
             style={{ width: 50, height: 50 }}
