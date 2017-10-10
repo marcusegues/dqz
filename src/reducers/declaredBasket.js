@@ -61,6 +61,17 @@ const duty = (action, quantity) => {
 
 const basketItem = (state = {}, action) => {
   switch (action.type) {
+    case 'ADD_VALUE_TO_DECLARED_BASKET': {
+      if (action.value === '') {
+        return state;
+      }
+      const values = [...state.values];
+      values.push(parseInt(action.value, 10));
+      return {
+        ...state,
+        values,
+      };
+    }
     case 'CHANGE_QUANTITY_DECLARED_BASKET_ITEM': {
       const quantity = state.quantity + action.quantityChange;
       return {
@@ -77,6 +88,7 @@ const basketItem = (state = {}, action) => {
 
 const declaredBasket = (state = emptyBasket, action) => {
   switch (action.type) {
+    case 'ADD_VALUE_TO_DECLARED_BASKET':
     case 'CHANGE_QUANTITY_DECLARED_BASKET_ITEM': {
       return {
         ...state,
@@ -93,4 +105,8 @@ export default declaredBasket;
 
 export const getDutyForCategory = (state, categoryName) => {
   return state[categoryName].duty;
+};
+
+export const getIconForCategory = (state, categoryName) => {
+  return state[categoryName].icon;
 };

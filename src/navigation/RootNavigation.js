@@ -19,7 +19,7 @@ const RootStackNavigator = StackNavigator(
     DeclareGoods: {
       screen: DeclareGoodsContainer,
       navigationOptions: ({ navigation }) => ({
-        title: 'Declare goods',
+        title: 'Waren deklarieren',
         headerRight: (
           <TouchableOpacity
             onPress={() => {

@@ -18,7 +18,7 @@ const SelectedGoods = ({
   } = styles;
   const { navigate } = navigation;
   const { categoryName } = navigation.state.params;
-  const { quantity, unit } = declaredBasket[categoryName];
+  const { quantity, unit, icon } = declaredBasket[categoryName];
   return (
     <View style={container}>
       <View
