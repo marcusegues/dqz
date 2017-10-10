@@ -86,8 +86,8 @@ class GoodsCategoryRow extends React.Component {
 
     let imgUrl = '';
     switch (icon) {
-      case 'chicken': {
-        imgUrl = require(`../../../../assets/icons/chicken.png`);
+      case 'meat': {
+        imgUrl = require(`../../../../assets/icons/meat.png`);
         break;
       }
       case 'beer': {
@@ -110,8 +110,8 @@ class GoodsCategoryRow extends React.Component {
         imgUrl = require(`../../../../assets/icons/cigarette.png`);
         break;
       }
-      case 'marijuanna': {
-        imgUrl = require(`../../../../assets/icons/marijuanna.png`);
+      case 'pipe': {
+        imgUrl = require(`../../../../assets/icons/pipe.png`);
         break;
       }
       default: {
