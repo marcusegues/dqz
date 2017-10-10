@@ -28,7 +28,11 @@ export default class HomeScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <Container
-        style={{ flex: 1, backgroundColor: 'white', flexDirection: 'column' }}
+        style={{
+          flex: 1,
+          backgroundColor: 'white',
+          flexDirection: 'column',
+        }}
       >
         <Header
           style={{
@@ -52,101 +56,128 @@ export default class HomeScreen extends React.Component {
             <Icon name="menu" />
           </Button>
         </Header>
-
-        <View
-          style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}
-        >
-          <Text style={{ fontSize: 25, fontWeight: 'bold' }}>
-            {`Willkommen in Ihrer Zollwerwaltungs-App`}
-          </Text>
-
-          <Text style={{ fontSize: 18, color: 'grey' }}>
-            {`Dieser Zollrechner für die Schweiz gibt ihnen schnell und einfach Auskunft über die Höhe von Zoll und MwSt. Berechnet werden die Gebühren auf den persönlichen Auslandeinkauf.`}
-          </Text>
-
-          <Touchable
-            onPress={() => navigate('DeclareGoods')}
-            // onPress={() => console.log('hello!')}
+        <Body>
+          <View
             style={{
-              height: 230,
-              width: 230,
+              flex: 1,
               flexDirection: 'column',
-              backgroundColor: 'rgb(62,106,151)',
-              marginVertical: 5,
-              borderRadius: 115,
+              alignItems: 'center',
+              width: '90%',
             }}
-            background={Touchable.Ripple('blue')}
           >
-            <View
+            <Text
               style={{
-                flex: 2,
-                justifyContent: 'center',
-                alignItems: 'center',
+                fontSize: 25,
+                fontWeight: 'bold',
+                fontFamily: 'open_sans_extra_bold',
+                marginTop: 12,
+                marginBottom: 12,
               }}
             >
-              <Entypo name="shopping-cart" size={70} color="#fff" />
-              <Text
-                style={{
-                  fontSize: 20,
-                  color: `${Colors.noticeText}`,
-                }}
-              >
-                Declare goods
-              </Text>
-            </View>
-          </Touchable>
+              {`Willkommen in Ihrer Zollwerwaltungs-App`}
+            </Text>
 
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Touchable
-              onPress={() => console.log('hello!')}
+            <Text
               style={{
-                backgroundColor: '#b2b2b2',
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginBottom: 5,
-                height: 40,
-                width: 125,
-                borderRadius: 4,
-                marginRight: 10,
-                marginLeft: 10,
+                fontSize: 14,
+                color: 'grey',
+                fontFamily: 'open_sans_regular',
+                lineHeight: 20,
+              }}
+            >
+              {`Dieser Zollrechner für die Schweiz gibt ihnen schnell und einfach Auskunft über die Höhe von Zoll und MwSt. Berechnet werden die Gebühren auf den persönlichen Auslandeinkauf.`}
+            </Text>
+
+            <Touchable
+              onPress={() => navigate('DeclareGoods')}
+              // onPress={() => console.log('hello!')}
+              style={{
+                marginTop: 60,
+                marginBottom: 60,
+                height: 230,
+                width: 230,
+                flexDirection: 'column',
+                backgroundColor: 'rgb(62,106,151)',
+                marginVertical: 5,
+                borderRadius: 115,
               }}
               background={Touchable.Ripple('blue')}
             >
-              <Text
+              <View
                 style={{
-                  fontSize: 20,
-                  color: `${Colors.noticeText}`,
+                  flex: 2,
+                  justifyContent: 'center',
+                  alignItems: 'center',
                 }}
               >
-                Quota
-              </Text>
+                <Entypo name="shopping-cart" size={70} color="#fff" />
+                <Text
+                  style={{
+                    fontSize: 20,
+                    color: `${Colors.noticeText}`,
+                    fontFamily: 'open_sans_light',
+                  }}
+                >
+                  {`Waren verzollen`}
+                </Text>
+              </View>
             </Touchable>
-            <Touchable
-              onPress={() => console.log('hello!')}
-              style={{
-                backgroundColor: '#b2b2b2',
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginBottom: 5,
-                height: 40,
-                width: 125,
-                borderRadius: 4,
-                marginRight: 10,
-                marginLeft: 10,
-              }}
-              background={Touchable.Ripple('blue')}
-            >
-              <Text
+
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Touchable
+                onPress={() => console.log('hello!')}
                 style={{
-                  fontSize: 20,
-                  color: `${Colors.noticeText}`,
+                  backgroundColor: '#b2b2b2',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  marginBottom: 5,
+                  height: 40,
+                  width: 160,
+                  borderRadius: 4,
+                  marginRight: 10,
+                  marginLeft: 10,
                 }}
+                background={Touchable.Ripple('blue')}
               >
-                Quittung
-              </Text>
-            </Touchable>
+                <Text
+                  style={{
+                    fontSize: 14,
+                    color: `${Colors.noticeText}`,
+                    fontFamily: 'open_sans_light',
+                  }}
+                >
+                  {`Kontingenrechner`}
+                </Text>
+              </Touchable>
+              <Touchable
+                onPress={() => console.log('hello!')}
+                style={{
+                  backgroundColor: '#b2b2b2',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  marginBottom: 5,
+                  height: 40,
+                  width: 160,
+                  borderRadius: 4,
+                  marginRight: 10,
+                  marginLeft: 10,
+                }}
+                background={Touchable.Ripple('blue')}
+              >
+                <Text
+                  style={{
+                    fontFamily: 'open_sans_regular',
+                    fontSize: 14,
+                    color: `${Colors.noticeText}`,
+                    fontFamily: 'open_sans_light',
+                  }}
+                >
+                  {`Meine Quittungen`}
+                </Text>
+              </Touchable>
+            </View>
           </View>
-        </View>
+        </Body>
         {/*</Content>*/}
         {/*<ScrollView*/}
         {/*style={styles.container}*/}
