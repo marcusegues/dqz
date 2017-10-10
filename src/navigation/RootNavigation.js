@@ -3,6 +3,7 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
+import HomeScreen from '../screens/Home/HomeScreen';
 import DeclareGoodsContainer from '../screens/DeclareGoods/DeclareGoodsContainer';
 import SelectedGoodsContainer from '../screens/SelectedGoods/SelectedGoodsContainer';
 import BasketContainer from '../screens/Basket/BasketContainer';
@@ -14,7 +15,10 @@ import { Entypo } from '@expo/vector-icons';
 const RootStackNavigator = StackNavigator(
   {
     Main: {
-      screen: MainTabNavigator,
+      screen: HomeScreen,
+      navigationOptions: {
+        header: null,
+      },
     },
     DeclareGoods: {
       screen: DeclareGoodsContainer,
