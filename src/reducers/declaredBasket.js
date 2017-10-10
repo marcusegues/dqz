@@ -62,8 +62,7 @@ const duty = (action, quantity) => {
 const basketItem = (state = {}, action) => {
   switch (action.type) {
     case 'CHANGE_QUANTITY_DECLARED_BASKET_ITEM': {
-      const quantity =
-        state[action.categoryName].quantity + action.quantityChange;
+      const quantity = state.quantity + action.quantityChange;
       return {
         ...state,
         duty: duty(action, quantity),
@@ -91,3 +90,7 @@ const declaredBasket = (state = emptyBasket, action) => {
 };
 
 export default declaredBasket;
+
+export const getDutyForCategory = (state, categoryName) => {
+  return state[categoryName].duty;
+};

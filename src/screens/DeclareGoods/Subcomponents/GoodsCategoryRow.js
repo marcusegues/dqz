@@ -3,10 +3,9 @@ import { Text, StyleSheet, View, Image } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import { Entypo } from '@expo/vector-icons';
 
-const GoodsCategoryRow = ({ navigation, categoryName }) => {
+const GoodsCategoryRow = ({ navigation, categoryName, duty }) => {
   const { container } = styles;
   const { navigate } = navigation;
-
   return (
     <Touchable
       style={{}}
@@ -33,6 +32,9 @@ const GoodsCategoryRow = ({ navigation, categoryName }) => {
         <View style={{ width: '70%' }}>
           <Text style={{}}>
             {categoryName}
+          </Text>
+          <Text style={{}}>
+            {duty ? `Duty: CHF ${duty}` : null}
           </Text>
         </View>
         <View style={{ width: '10%', alignSelf: 'center' }}>

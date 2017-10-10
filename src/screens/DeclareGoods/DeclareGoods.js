@@ -5,7 +5,7 @@ import { Entypo } from '@expo/vector-icons';
 import GoodsCategoryRow from './Subcomponents/GoodsCategoryRow';
 import { emptyBasket } from '../../constants/basket';
 
-const DeclareGoods = ({ navigation }) => {
+const DeclareGoods = ({ navigation, getDutyForCategory }) => {
   const { container } = styles;
 
   return (
@@ -16,6 +16,7 @@ const DeclareGoods = ({ navigation }) => {
             key={category}
             categoryName={category}
             navigation={navigation}
+            duty={getDutyForCategory(category)}
           />
         )}
       </View>
