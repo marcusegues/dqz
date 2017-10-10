@@ -12,6 +12,18 @@ const GoodsCategoryRow = ({ navigation, categoryName, duty, icon }) => {
       imgUrl = require(`../../../../assets/icons/chicken.png`);
       break;
     }
+    case 'beer': {
+      imgUrl = require(`../../../../assets/icons/beer.png`);
+      break;
+    }
+    case 'butter': {
+      imgUrl = require(`../../../../assets/icons/butter.png`);
+      break;
+    }
+    case 'oil': {
+      imgUrl = require(`../../../../assets/icons/oil.png`);
+      break;
+    }
     default: {
       imgUrl = require(`../../../../assets/images/kreuz.png`);
     }
@@ -23,17 +35,7 @@ const GoodsCategoryRow = ({ navigation, categoryName, duty, icon }) => {
       background={Touchable.Ripple('#ccc', false)}
       onPress={() => navigate('SelectedGoods', { categoryName })}
     >
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          paddingBottom: 5,
-          paddingTop: 5,
-          borderBottomWidth: 1,
-          borderBottomColor: 'rgba(0,0,0, 0.1)',
-          width: '90%',
-        }}
-      >
+      <View style={container}>
         <View style={{ width: '20%', height: 60 }}>
           <Image
             source={imgUrl}
@@ -68,8 +70,12 @@ export default GoodsCategoryRow;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingTop: 15,
-    backgroundColor: '#fff',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingBottom: 5,
+    paddingTop: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(0,0,0, 0.1)',
+    width: '90%',
   },
 });

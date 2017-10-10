@@ -21,19 +21,19 @@ export const emptyBasket = {
     quantity: 0,
     unit: 'kg/Liter',
     duty: 0,
-    icon: 'app-icon',
+    icon: 'butter',
   },
   [categories.OILS_FATS_MARGARINE]: {
     quantity: 0,
     unit: 'kg/Liter',
     duty: 0,
-    icon: 'chicken',
+    icon: 'oil',
   },
   [categories.ALCOHOL_BELOW_18]: {
     quantity: 0,
     unit: 'Liter',
     duty: 0,
-    icon: 'chicken',
+    icon: 'beer',
   },
   [categories.ALCOHOL_ABOVE_18]: {
     quantity: 0,
