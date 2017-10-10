@@ -425,30 +425,50 @@ exports[`renders the root without loading screen 1`] = `
                     testID={undefined}
                     tvParallaxProperties={undefined}
                   >
-                    <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      disabled={false}
-                      ellipsizeMode="tail"
+                    <View
                       style={
-                        Array [
-                          Object {
-                            "color": "#000",
-                            "fontFamily": "System",
-                            "fontSize": 16,
-                          },
-                          Object {
-                            "color": "#fff",
-                            "fontFamily": "open_sans_light",
-                            "fontSize": 14,
-                          },
-                        ]
+                        Object {
+                          "alignItems": "center",
+                          "flexDirection": "row",
+                        }
                       }
-                      uppercase={false}
-                      virtual={undefined}
                     >
-                      Kontingenrechner
-                    </Text>
+                      <Image
+                        fadeDuration={0}
+                        resizeMode="contain"
+                        source={1}
+                        style={
+                          Object {
+                            "height": 25,
+                            "width": 25,
+                          }
+                        }
+                      />
+                      <Text
+                        accessible={true}
+                        allowFontScaling={true}
+                        disabled={false}
+                        ellipsizeMode="tail"
+                        style={
+                          Array [
+                            Object {
+                              "color": "#000",
+                              "fontFamily": "System",
+                              "fontSize": 16,
+                            },
+                            Object {
+                              "color": "#fff",
+                              "fontFamily": "open_sans_light",
+                              "fontSize": 14,
+                            },
+                          ]
+                        }
+                        uppercase={false}
+                        virtual={undefined}
+                      >
+                        Kontingenrechner
+                      </Text>
+                    </View>
                   </View>
                   <View
                     accessibilityComponentType={undefined}
@@ -483,30 +503,50 @@ exports[`renders the root without loading screen 1`] = `
                     testID={undefined}
                     tvParallaxProperties={undefined}
                   >
-                    <Text
-                      accessible={true}
-                      allowFontScaling={true}
-                      disabled={false}
-                      ellipsizeMode="tail"
+                    <View
                       style={
-                        Array [
-                          Object {
-                            "color": "#000",
-                            "fontFamily": "System",
-                            "fontSize": 16,
-                          },
-                          Object {
-                            "color": "#fff",
-                            "fontFamily": "open_sans_light",
-                            "fontSize": 14,
-                          },
-                        ]
+                        Object {
+                          "alignItems": "center",
+                          "flexDirection": "row",
+                        }
                       }
-                      uppercase={false}
-                      virtual={undefined}
                     >
-                      Meine Quittungen
-                    </Text>
+                      <Image
+                        fadeDuration={0}
+                        resizeMode="contain"
+                        source={1}
+                        style={
+                          Object {
+                            "height": 25,
+                            "width": 25,
+                          }
+                        }
+                      />
+                      <Text
+                        accessible={true}
+                        allowFontScaling={true}
+                        disabled={false}
+                        ellipsizeMode="tail"
+                        style={
+                          Array [
+                            Object {
+                              "color": "#000",
+                              "fontFamily": "System",
+                              "fontSize": 16,
+                            },
+                            Object {
+                              "color": "#fff",
+                              "fontFamily": "open_sans_light",
+                              "fontSize": 14,
+                            },
+                          ]
+                        }
+                        uppercase={false}
+                        virtual={undefined}
+                      >
+                        Meine Quittungen
+                      </Text>
+                    </View>
                   </View>
                 </View>
               </View>
