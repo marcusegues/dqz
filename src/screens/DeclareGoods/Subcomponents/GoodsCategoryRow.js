@@ -29,7 +29,7 @@ const GoodsCategoryRow = ({ navigation, categoryName, duty, icon }) => {
       break;
     }
     case 'cigarette': {
-      imgUrl = require(`./assets/icons/cigarette.png`);
+      imgUrl = require(`../../../../assets/icons/cigarette.png`);
       break;
     }
     case 'marijuanna': {
