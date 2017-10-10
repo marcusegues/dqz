@@ -106,3 +106,7 @@ export default declaredBasket;
 export const getDutyForCategory = (state, categoryName) => {
   return state[categoryName].duty;
 };
+
+export const getIconForCategory = (state, categoryName) => {
+  return state[categoryName].icon;
+};

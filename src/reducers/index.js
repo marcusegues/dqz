@@ -13,3 +13,10 @@ export const getDutyForCategory = (state, categoryName) => {
     categoryName
   );
 };
+
+export const getIconForCategory = (state, categoryName) => {
+  return fromDeclaredBasket.getIconForCategory(
+    state.declaredBasket,
+    categoryName
+  );
+};

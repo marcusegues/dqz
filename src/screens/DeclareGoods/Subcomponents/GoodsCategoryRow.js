@@ -81,8 +81,44 @@ class GoodsCategoryRow extends React.Component {
   render() {
     const { container } = styles;
     const { navigate } = this.props.navigation;
-    const { quantity, duty, unit } = this.props.categoryObject;
+    const { quantity, duty, unit, icon } = this.props.categoryObject;
     const { categoryName } = this.props;
+
+    let imgUrl = '';
+    switch (icon) {
+      case 'chicken': {
+        imgUrl = require(`../../../../assets/icons/chicken.png`);
+        break;
+      }
+      case 'beer': {
+        imgUrl = require(`../../../../assets/icons/beer.png`);
+        break;
+      }
+      case 'butter': {
+        imgUrl = require(`../../../../assets/icons/butter.png`);
+        break;
+      }
+      case 'oil': {
+        imgUrl = require(`../../../../assets/icons/oil.png`);
+        break;
+      }
+      case 'vodka': {
+        imgUrl = require(`../../../../assets/icons/vodka.png`);
+        break;
+      }
+      case 'cigarette': {
+        imgUrl = require(`../../../../assets/icons/cigarette.png`);
+        break;
+      }
+      case 'marijuanna': {
+        imgUrl = require(`../../../../assets/icons/marijuanna.png`);
+        break;
+      }
+      default: {
+        imgUrl = require(`../../../../assets/images/kreuz.png`);
+      }
+    }
+
     return (
       <Animated.View
         style={{
@@ -109,10 +145,10 @@ class GoodsCategoryRow extends React.Component {
           >
             <View style={{ width: '20%', height: 60 }}>
               <Image
-                source={require('../../../../assets/images/kreuz.png')}
+                source={imgUrl}
                 resizeMode="contain"
                 fadeDuration={0}
-                style={{ width: 40, height: 60 }}
+                style={{ width: 50, height: 50 }}
               />
             </View>
             <View style={{ width: '75%' }}>
@@ -152,8 +188,12 @@ export default GoodsCategoryRow;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    paddingTop: 15,
-    backgroundColor: '#fff',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingBottom: 5,
+    paddingTop: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(0,0,0, 0.1)',
+    width: '90%',
   },
 });
