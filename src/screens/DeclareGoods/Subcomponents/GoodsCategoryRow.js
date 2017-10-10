@@ -3,9 +3,10 @@ import { Text, StyleSheet, View, Image } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import { Entypo } from '@expo/vector-icons';
 
-const GoodsCategoryRow = ({ navigation, categoryName, duty }) => {
+const GoodsCategoryRow = ({ navigation, categoryName, duty, icon }) => {
   const { container } = styles;
   const { navigate } = navigation;
+  const imgUrl = require(`../../../../assets/icons/${icon}.png`);
   return (
     <Touchable
       style={{}}
@@ -25,10 +26,13 @@ const GoodsCategoryRow = ({ navigation, categoryName, duty }) => {
       >
         <View style={{ width: '20%', height: 60 }}>
           <Image
-            source={require('../../../../assets/images/kreuz.png')}
+            // source={{
+            //   uri: `https://api.adorable.io/avatars/300/${icon}.png`,
+            // }}
+            source={require(`../../../../assets/icons/${icon}.png`)}
             resizeMode="contain"
             fadeDuration={0}
-            style={{ width: 40, height: 60 }}
+            style={{ width: 50, height: 50 }}
           />
         </View>
         <View style={{ width: '75%' }}>
