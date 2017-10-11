@@ -37,7 +37,7 @@ class GoodsInput extends React.Component {
         <View style={inputContainer}>
           <View style={{ width: '30%' }}>
             <Text style={{ fontFamily: 'open_sans_bold' }}>
-              {`Add quantity`}
+              {`Hinzufügen`}
             </Text>
           </View>
           <View

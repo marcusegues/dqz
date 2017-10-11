@@ -74,7 +74,7 @@ export default class HomeScreen extends React.Component {
                 marginBottom: 12,
               }}
             >
-              {`Willkommen in Ihrer Zollwerwaltungs-App`}
+              {`Willkommen in Ihrer Verzollungs-App`}
             </Text>
 
             <Text
