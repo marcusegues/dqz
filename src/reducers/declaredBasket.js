@@ -110,3 +110,11 @@ export const getDutyForCategory = (state, categoryName) => {
 export const getIconForCategory = (state, categoryName) => {
   return state[categoryName].icon;
 };
+
+export const getTotalDuty = state => {
+  let totalDuty = 0;
+  Object.keys(state).forEach(category => {
+    totalDuty += state[category].duty;
+  });
+  return totalDuty;
+};
