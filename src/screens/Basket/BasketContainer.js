@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import Basket from './Basket';
@@ -9,9 +10,15 @@ class BasketContainer extends React.Component {
   }
 
   render() {
-    const { navigation } = this.props;
-    return <Basket />;
+    const { navigation, declaredBasket } = this.props;
+    return <Basket declaredBasket={declaredBasket} />;
   }
 }
 
-export default BasketContainer;
+const mapStateToProps = state => ({
+  declaredBasket: state.declaredBasket,
+});
+
+const mapDispatchToProps = dispatch => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BasketContainer);
