@@ -284,7 +284,7 @@ exports[`renders the root without loading screen 1`] = `
                   uppercase={false}
                   virtual={undefined}
                 >
-                  Willkommen in Ihrer Zollwerwaltungs-App
+                  Willkommen in Ihrer Verzollungs-App
                 </Text>
                 <Text
                   accessible={true}

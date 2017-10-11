@@ -35,7 +35,7 @@ export default class Basket extends React.Component {
           paddingRight: 15,
         }}
       >
-        <BasketItemRow headerCategoryName={`Item`} headerDuty={'Duty'} />
+        <BasketItemRow headerCategoryName={`Item`} headerDuty={'Zoll'} />
         {Object.keys(declaredBasket).map(category =>
           <BasketItemRow
             key={category}
