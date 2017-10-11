@@ -5,9 +5,9 @@ import { TabNavigator, TabBarBottom } from 'react-navigation';
 
 import Colors from '../constants/Colors';
 
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import HomeScreen from '../screens/Home/HomeScreen';
+import LinksScreen from '../screens/Links/LinksScreen';
+import SettingsScreen from '../screens/Settings/SettingsScreen';
 
 export default TabNavigator(
   {
@@ -28,19 +28,22 @@ export default TabNavigator(
         let iconName;
         switch (routeName) {
           case 'Home':
-            iconName = Platform.OS === 'ios'
-              ? `ios-information-circle${focused ? '' : '-outline'}`
-              : 'md-information-circle';
+            iconName =
+              Platform.OS === 'ios'
+                ? `ios-information-circle${focused ? '' : '-outline'}`
+                : 'md-information-circle';
             break;
           case 'Links':
-            iconName = Platform.OS === 'ios'
-              ? `ios-link${focused ? '' : '-outline'}`
-              : 'md-link';
+            iconName =
+              Platform.OS === 'ios'
+                ? `ios-link${focused ? '' : '-outline'}`
+                : 'md-link';
             break;
           case 'Settings':
-            iconName = Platform.OS === 'ios'
-              ? `ios-options${focused ? '' : '-outline'}`
-              : 'md-options';
+            iconName =
+              Platform.OS === 'ios'
+                ? `ios-options${focused ? '' : '-outline'}`
+                : 'md-options';
         }
         return (
           <Ionicons

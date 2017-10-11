@@ -3,12 +3,50 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
+import HomeScreen from '../screens/Home/HomeScreen';
+import DeclareGoodsContainer from '../screens/DeclareGoods/DeclareGoodsContainer';
+import SelectedGoodsContainer from '../screens/SelectedGoods/SelectedGoodsContainer';
+import BasketContainer from '../screens/Basket/BasketContainer';
+
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
+import { TouchableOpacity } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
 
 const RootStackNavigator = StackNavigator(
   {
     Main: {
-      screen: MainTabNavigator,
+      screen: HomeScreen,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    DeclareGoods: {
+      screen: DeclareGoodsContainer,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Waren deklarieren',
+        headerRight: (
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Basket');
+            }}
+          >
+            <Entypo name="shopping-cart" size={40} color="black" />
+          </TouchableOpacity>
+        ),
+        headerStyle: { paddingRight: 20 },
+      }),
+    },
+    SelectedGoods: {
+      screen: SelectedGoodsContainer,
+      navigationOptions: ({ navigation }) => ({
+        title: 'SelectedGoods',
+      }),
+    },
+    Basket: {
+      screen: BasketContainer,
+      navigationOptions: ({ navigation }) => ({
+        title: 'Basket',
+      }),
     },
   },
   {
