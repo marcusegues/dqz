@@ -4,6 +4,8 @@ import { Dimensions } from 'react-native';
 import { WebBrowser } from 'expo';
 import { Entypo } from '@expo/vector-icons';
 import Touchable from 'react-native-platform-touchable';
+import BasketItemRow from './Subcomponents/BasketItemRow';
+import Colors from '../../constants/Colors';
 
 const width = Dimensions.get('window').width - 30;
 
@@ -19,72 +21,60 @@ export default class Basket extends React.Component {
 
   render() {
     const { container, payButton, totalPrice } = styles;
+    const { declaredBasket } = this.props;
 
     return (
-      <View style={container}>
-        <Text style={{ fontSize: 30 }}>Warenwert Eintragen</Text>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quam
-          ipsum, iaculis dapibus lorem sed, eleifend pretium elit. Nulla nisl
-          diam, vulputate ac massa dignissim.
-        </Text>
-        <View
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'center',
+          backgroundColor: '#fff',
+          paddingLeft: 15,
+          paddingRight: 15,
+        }}
+      >
+        <BasketItemRow headerCategoryName={`Item`} headerDuty={'Duty'} />
+        {Object.keys(declaredBasket).map(category =>
+          <BasketItemRow
+            key={category}
+            categoryName={category}
+            duty={declaredBasket[category].duty}
+          />
+        )}
+
+        <Touchable
+          onPress={this._handlePay}
           style={{
-            width: width,
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-            marginVertical: 30,
+            marginTop: 30,
+            height: 150,
+            width: 150,
+            flexDirection: 'column',
+            backgroundColor: 'rgb(62,106,151)',
+            marginVertical: 5,
+            borderRadius: 75,
           }}
+          background={Touchable.Ripple('blue')}
         >
-          <Text style={{ fontSize: 26 }}>410</Text>
-          <View style={{ flexDirection: 'column' }}>
-            <Text>Euro</Text>
-            <Text>Kurs: 1.19</Text>
-          </View>
-          <TouchableOpacity>
-            <Entypo name="circle-with-cross" size={40} color="#000" />
-          </TouchableOpacity>
-        </View>
-        <View style={{ paddingHorizontal: 20 }}>
-          <TouchableOpacity>
-            <Entypo name="circle-with-plus" size={60} color="#000" />
-          </TouchableOpacity>
-          <Text style={{ fontSize: 25 }}>Gesamt</Text>
-        </View>
-        <View
-          style={{
-            width: width,
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-            padding: 15,
-            marginBottom: 30,
-          }}
-        >
-          <Text>Ticket 1</Text>
-          <Text>410 Euro</Text>
-          <Text>1.19</Text>
-          <Text>CHF 487.90</Text>
-        </View>
-        <View style={totalPrice}>
-          <Text>Total</Text>
-          <Text>CHF 487.90</Text>
-        </View>
-        <View style={{ flex: 1, width: width }}>
-          <Touchable
-            onPress={this._handlePay}
-            style={payButton}
-            background={Touchable.Ripple('blue')}
+          <View
+            style={{
+              flex: 2,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
           >
             <Text
               style={{
-                fontSize: 40,
-                color: 'white',
+                fontSize: 20,
+                color: `${Colors.noticeText}`,
+                fontFamily: 'open_sans_light',
               }}
             >
-              Weiter
+              {`Weiter`}
             </Text>
-          </Touchable>
-        </View>
+          </View>
+        </Touchable>
       </View>
     );
   }
