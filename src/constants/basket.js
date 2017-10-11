@@ -14,7 +14,7 @@ export const emptyBasket = {
     unit: 'kg',
     duty: 0,
     values: [],
-    icon: 'chicken',
+    icon: 'meat',
   },
   [categories.BUTTER_OR_CREAM]: {
     quantity: 0,
@@ -56,6 +56,6 @@ export const emptyBasket = {
     unit: 'kg',
     duty: 0,
     values: [],
-    icon: 'marijuanna',
+    icon: 'pipe',
   },
 };

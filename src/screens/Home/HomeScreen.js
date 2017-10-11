@@ -139,15 +139,23 @@ export default class HomeScreen extends React.Component {
                 }}
                 background={Touchable.Ripple('blue')}
               >
-                <Text
-                  style={{
-                    fontSize: 14,
-                    color: `${Colors.noticeText}`,
-                    fontFamily: 'open_sans_light',
-                  }}
-                >
-                  {`Kontingenrechner`}
-                </Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                  <Image
+                    source={require('../../../assets/icons/calculator.png')}
+                    resizeMode="contain"
+                    fadeDuration={0}
+                    style={{ width: 25, height: 25 }}
+                  />
+                  <Text
+                    style={{
+                      fontSize: 14,
+                      color: `${Colors.noticeText}`,
+                      fontFamily: 'open_sans_light',
+                    }}
+                  >
+                    {`Kontingenrechner`}
+                  </Text>
+                </View>
               </Touchable>
               <Touchable
                 onPress={() => console.log('hello!')}
@@ -164,16 +172,23 @@ export default class HomeScreen extends React.Component {
                 }}
                 background={Touchable.Ripple('blue')}
               >
-                <Text
-                  style={{
-                    fontFamily: 'open_sans_regular',
-                    fontSize: 14,
-                    color: `${Colors.noticeText}`,
-                    fontFamily: 'open_sans_light',
-                  }}
-                >
-                  {`Meine Quittungen`}
-                </Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                  <Image
+                    source={require('../../../assets/icons/receipt.png')}
+                    resizeMode="contain"
+                    fadeDuration={0}
+                    style={{ width: 25, height: 25 }}
+                  />
+                  <Text
+                    style={{
+                      fontSize: 14,
+                      color: `${Colors.noticeText}`,
+                      fontFamily: 'open_sans_light',
+                    }}
+                  >
+                    {`Meine Quittungen`}
+                  </Text>
+                </View>
               </Touchable>
             </View>
           </View>
