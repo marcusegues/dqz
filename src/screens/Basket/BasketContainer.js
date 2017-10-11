@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
 import Basket from './Basket';
+import { getTotalDuty } from '../../reducers';
 
 class BasketContainer extends React.Component {
   constructor(props) {
@@ -10,13 +10,14 @@ class BasketContainer extends React.Component {
   }
 
   render() {
-    const { navigation, declaredBasket } = this.props;
-    return <Basket declaredBasket={declaredBasket} />;
+    const { navigation, declaredBasket, totalDuty } = this.props;
+    return <Basket declaredBasket={declaredBasket} totalDuty={totalDuty} />;
   }
 }
 
 const mapStateToProps = state => ({
   declaredBasket: state.declaredBasket,
+  totalDuty: getTotalDuty(state),
 });
 
 const mapDispatchToProps = dispatch => ({});

@@ -20,3 +20,7 @@ export const getIconForCategory = (state, categoryName) => {
     categoryName
   );
 };
+
+export const getTotalDuty = state => {
+  return fromDeclaredBasket.getTotalDuty(state.declaredBasket);
+};
