@@ -1,7 +1,4 @@
-import {
-  dutyFreeAllowances,
-  MEAT_AND_MEAT_PRODUCTS_FIRST_DUTY_THRESHOLD,
-} from './duty';
+import { dutyFreeAllowances, dutyRates } from './duty';
 export const dutyBySubCategory = (
   subCategoryName,
   quantity,
@@ -14,19 +11,20 @@ export const dutyBySubCategory = (
       const dutyFreeAllowance =
         totalPersons * dutyFreeAllowances.MEAT_AND_MEAT_PRODUCTS;
       const threshold =
-        numberPersons * MEAT_AND_MEAT_PRODUCTS_FIRST_DUTY_THRESHOLD;
+        numberPersons * dutyRates.MEAT_AND_MEAT_PRODUCTS_FIRST_DUTY_THRESHOLD;
       if (quantity <= dutyFreeAllowance) {
         return 0;
       } else if (quantity <= threshold) {
         return (
-          MEAT_AND_MEAT_PRODUCTS_DUTY_UNDER_THRESHOLD *
+          dutyRates.MEAT_AND_MEAT_PRODUCTS_DUTY_UNDER_THRESHOLD *
           (quantity - dutyFreeAllowance)
         );
       } else {
         return (
-          MEAT_AND_MEAT_PRODUCTS_DUTY_UNDER_THRESHOLD *
+          dutyRates.MEAT_AND_MEAT_PRODUCTS_DUTY_UNDER_THRESHOLD *
             (threshold - dutyFreeAllowance) +
-          MEAT_AND_MEAT_PRODUCTS_DUTY_OVER_THRESHOLD * (quantity - threshold)
+          dutyRates.MEAT_AND_MEAT_PRODUCTS_DUTY_OVER_THRESHOLD *
+            (quantity - threshold)
         );
       }
     }
@@ -36,7 +34,7 @@ export const dutyBySubCategory = (
       if (quantity <= dutyFreeAllowance) {
         return 0;
       } else {
-        return BUTTER_OR_CREAM_DUTY * (quantity - dutyFreeAllowance);
+        return dutyRates.BUTTER_OR_CREAM_DUTY * (quantity - dutyFreeAllowance);
       }
     }
     case subCategories.OILS_FATS_MARGARINE: {
@@ -45,7 +43,9 @@ export const dutyBySubCategory = (
       if (quantity <= dutyFreeAllowance) {
         return 0;
       } else {
-        return OILS_FATS_MARGARINE_DUTY * (quantity - dutyFreeAllowance);
+        return (
+          dutyRates.OILS_FATS_MARGARINE_DUTY * (quantity - dutyFreeAllowance)
+        );
       }
     }
     case subCategories.ALCOHOL_BELOW_18: {
@@ -54,7 +54,7 @@ export const dutyBySubCategory = (
       if (quantity <= dutyFreeAllowance) {
         return 0;
       } else {
-        return ALCOHOL_BELOW_18_DUTY * (quantity - dutyFreeAllowance);
+        return dutyRates.ALCOHOL_BELOW_18_DUTY * (quantity - dutyFreeAllowance);
       }
     }
     case subCategories.ALCOHOL_ABOVE_18: {
@@ -63,7 +63,7 @@ export const dutyBySubCategory = (
       if (quantity <= dutyFreeAllowance) {
         return 0;
       } else {
-        return ALCOHOL_ABOVE_18_DUTY * (quantity - dutyFreeAllowance);
+        return dutyRates.ALCOHOL_ABOVE_18_DUTY * (quantity - dutyFreeAllowance);
       }
     }
     case subCategories.CIGARETTES_AND_CIGARS: {
@@ -72,7 +72,9 @@ export const dutyBySubCategory = (
       if (quantity <= dutyFreeAllowance) {
         return 0;
       } else {
-        return CIGARETTES_AND_CIGARS_DUTY * (quantity - dutyFreeAllowance);
+        return (
+          dutyRates.CIGARETTES_AND_CIGARS_DUTY * (quantity - dutyFreeAllowance)
+        );
       }
     }
     case subCategories.OTHER_TOBACCO: {
@@ -80,7 +82,7 @@ export const dutyBySubCategory = (
       if (quantity <= dutyFreeAllowance) {
         return 0;
       } else {
-        return OTHER_TOBACCO_DUTY * (quantity - dutyFreeAllowance);
+        return dutyRates.OTHER_TOBACCO_DUTY * (quantity - dutyFreeAllowance);
       }
     }
     default: {
