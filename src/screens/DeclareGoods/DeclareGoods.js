@@ -11,7 +11,7 @@ import { Container, Body, Header, Icon } from 'native-base';
 import Touchable from 'react-native-platform-touchable';
 import { Entypo } from '@expo/vector-icons';
 import GoodsCategoryRow from './Subcomponents/GoodsCategoryRow';
-import { CATEGORIES } from '../../constants/basket';
+import { CATEGORIES_INFO } from '../../constants/basket';
 import GoodsInput from './Subcomponents/GoodsInput';
 
 class DeclareGoods extends React.Component {
@@ -21,7 +21,7 @@ class DeclareGoods extends React.Component {
   constructor(props) {
     super(props);
     const stateObject = {};
-    Object.keys(CATEGORIES).forEach(category => {
+    Object.keys(CATEGORIES_INFO).forEach(category => {
       stateObject[category] = false;
     });
     this.state = stateObject;
@@ -30,7 +30,7 @@ class DeclareGoods extends React.Component {
 
   handleToggleExpanded(categoryName, expanded) {
     const stateObject = { ...this.state };
-    Object.keys(CATEGORIES).forEach(category => {
+    Object.keys(CATEGORIES_INFO).forEach(category => {
       stateObject[category] = false;
     });
     stateObject[categoryName] = expanded;
@@ -48,12 +48,12 @@ class DeclareGoods extends React.Component {
     return (
       <ScrollView style={container}>
         <View style={{ flex: 1, alignItems: 'center' }}>
-          {Object.keys(CATEGORIES).map(category => (
+          {Object.keys(CATEGORIES_INFO).map(category => (
             <GoodsCategoryRow
               key={category}
               categoryName={category}
               navigation={navigation}
-              categoryInfo={CATEGORIES[category]}
+              categoryInfo={CATEGORIES_INFO[category]}
               categoryState={declaredBasket[category]}
               expanded={this.state[category]}
               handleToggleExpanded={this.handleToggleExpanded}
@@ -63,8 +63,6 @@ class DeclareGoods extends React.Component {
                 onChangeQuantityDeclaredBasketItem={
                   onChangeQuantityDeclaredBasketItem
                 }
-                categoryObject={declaredBasket[category]}
-                categoryObjectValues={[...declaredBasket[category].values]}
               />
             </GoodsCategoryRow>
           ))}

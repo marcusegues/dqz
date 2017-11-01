@@ -1,4 +1,4 @@
-import { dutyFreeAllowances, dutyRates } from './duty';
+import { dutyFreeAllowances, dutyRates } from '../constants/duty';
 import { CATEGORIES } from '../constants/basket';
 
 export const dutyBySubCategory = (
@@ -13,7 +13,7 @@ export const dutyBySubCategory = (
       const dutyFreeAllowance =
         totalPersons * dutyFreeAllowances.MEAT_AND_MEAT_PRODUCTS;
       const threshold =
-        numberPersons * dutyRates.MEAT_AND_MEAT_PRODUCTS_FIRST_DUTY_THRESHOLD;
+        totalPersons * dutyRates.MEAT_AND_MEAT_PRODUCTS_FIRST_DUTY_THRESHOLD;
       if (quantity <= dutyFreeAllowance) {
         return 0;
       } else if (quantity <= threshold) {
