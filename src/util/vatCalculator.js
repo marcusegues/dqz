@@ -41,6 +41,12 @@ const categoryTaxRates = sortedCategories.map(cat => vatRates[cat]);
 const INDIVIDUAL_ALLOWANCE = 300;
 
 const vatCalculator = (basket, numberPersons) => {
+  // All high item values are taxed, so just multiply values by tax rates.
+  const highItemVatObject = {};
+  sortedCategories.forEach(cat => {
+    highItemVatObject[cat] = basket[cat].totalHighItemValue * vatRates[cat];
+  });
+
   // array of total values (excluding high value items) for each category
   const categoryValues = sortedCategories.map(cat => basket[cat].totalValue);
 
@@ -83,8 +89,10 @@ const vatCalculator = (basket, numberPersons) => {
     // and return this object
     const vatObject = {};
     sortedCategories.forEach((cat, i) => {
-      vatObject[cat] = vatArray[i];
+      vatObject[cat] = vatArray[i] + highItemVatObject[cat];
     });
+
+    debugger;
     return vatObject;
   } else {
     return;
@@ -93,17 +101,25 @@ const vatCalculator = (basket, numberPersons) => {
 
 vatCalculator(
   {
-    'Fleisch und Fleischzubereitung': { totalValue: 240 * 1.19 },
-    'Butter und Rahm': { totalValue: 20 * 1.19 },
-    'Öle, Fette, Margarine zu Speisezwecken': { totalValue: 0 },
+    'Fleisch und Fleischzubereitung': {
+      totalValue: 240 * 1.19,
+      totalHighItemValue: 0,
+    },
+    'Butter und Rahm': { totalValue: 20 * 1.19, totalHighItemValue: 0 },
+    'Öle, Fette, Margarine zu Speisezwecken': {
+      totalValue: 0,
+      totalHighItemValue: 0,
+    },
     'Alkoholische Getränke, Alkoholgehalt bis 18% Vol.': {
       totalValue: 30 * 1.19,
+      totalHighItemValue: 0,
     },
     'Alkoholische Getränke, Alkoholgehalt über 18% Vol.': {
       totalValue: 450 * 1.19,
+      totalHighItemValue: 0,
     },
-    'Zigaretten/Zigarren': { totalValue: 0 },
-    'Andere Tabakfabrikate': { totalValue: 0 },
+    'Zigaretten/Zigarren': { totalValue: 0, totalHighItemValue: 0 },
+    'Andere Tabakfabrikate': { totalValue: 0, totalHighItemValue: 0 },
   },
   1
 );
