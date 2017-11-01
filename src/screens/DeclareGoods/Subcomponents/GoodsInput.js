@@ -22,11 +22,7 @@ class GoodsInput extends React.Component {
       blueButton,
       redBadge,
     } = styles;
-    const {
-      onChangeQuantityDeclaredBasketItem,
-      categoryName,
-      categoryObject,
-    } = this.props;
+    const { onChangeQuantityDeclaredBasketItem, categoryName } = this.props;
     return (
       <View
         style={{
@@ -36,9 +32,7 @@ class GoodsInput extends React.Component {
       >
         <View style={inputContainer}>
           <View style={{ width: '30%' }}>
-            <Text style={{ fontFamily: 'open_sans_bold' }}>
-              {`Hinzufügen`}
-            </Text>
+            <Text style={{ fontFamily: 'open_sans_bold' }}>{`Hinzufügen`}</Text>
           </View>
           <View
             style={{

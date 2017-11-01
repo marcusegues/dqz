@@ -1,61 +1,91 @@
-export const categories = {
-  MEAT_AND_MEAT_PRODUCTS: 'Fleisch und Fleischzubereitung',
-  BUTTER_OR_CREAM: 'Butter und Rahm',
-  OILS_FATS_MARGARINE: 'Öle, Fette, Margarine zu Speisezwecken',
-  ALCOHOL_BELOW_18: 'Alkoholische Getränke, Alkoholgehalt bis 18% Vol.',
-  ALCOHOL_ABOVE_18: 'Alkoholische Getränke, Alkoholgehalt über 18% Vol.',
-  CIGARETTES_AND_CIGARS: 'Zigaretten/Zigarren',
-  OTHER_TOBACCO: 'Andere Tabakfabrikate',
+export const mainCategories = {
+  FOODS: 'Lebensmittel',
+  ALCOHOL: 'Alkohol',
+  TOBACCO: 'Tabak',
+  OTHER: 'Anderes',
 };
 
-export const emptyBasket = {
-  [categories.MEAT_AND_MEAT_PRODUCTS]: {
-    quantity: 0,
+// null unit means it's zollfrei
+export const CATEGORIES = {
+  MEAT_AND_MEAT_PRODUCTS: {
+    name: 'Fleisch und Fleischzubereitung',
     unit: 'kg',
-    duty: 0,
-    values: [],
     icon: 'meat',
   },
-  [categories.BUTTER_OR_CREAM]: {
-    quantity: 0,
+  BUTTER_OR_CREAM: {
+    name: 'Butter und Rahm',
     unit: 'kg/Liter',
-    duty: 0,
-    values: [],
     icon: 'butter',
   },
-  [categories.OILS_FATS_MARGARINE]: {
-    quantity: 0,
+  OILS_FATS_MARGARINE: {
+    name: 'Öle, Fette, Margarine zu Speisezwecken',
     unit: 'kg/Liter',
-    duty: 0,
-    values: [],
     icon: 'oil',
   },
-  [categories.ALCOHOL_BELOW_18]: {
-    quantity: 0,
+  OTHER_FOODS: {
+    name: 'Sonstige Lebensmittel & Alkoholfreie Getranke',
+    unit: 'kg/Liter',
+    icon: 'oil',
+  },
+  ALCOHOL_BELOW_18: {
+    name: 'Alkoholische Getränke, Alkoholgehalt bis 18% Vol.',
     unit: 'Liter',
-    duty: 0,
-    values: [],
     icon: 'beer',
   },
-  [categories.ALCOHOL_ABOVE_18]: {
-    quantity: 0,
+  ALCOHOL_ABOVE_18: {
+    name: 'Alkoholische Getränke, Alkoholgehalt über 18% Vol.',
     unit: 'Liter',
-    duty: 0,
-    values: [],
     icon: 'vodka',
   },
-  [categories.CIGARETTES_AND_CIGARS]: {
-    quantity: 0,
-    unit: 'stück',
-    duty: 0,
-    values: [],
+  CIGARETTES_AND_CIGARS: {
+    name: 'Zigaretten/Zigarren',
+    unit: 'Stück',
     icon: 'cigarette',
   },
-  [categories.OTHER_TOBACCO]: {
-    quantity: 0,
-    unit: 'kg',
-    duty: 0,
-    values: [],
-    icon: 'pipe',
+  OTHER_TOBACCO: {
+    name: 'Andere Tabakfabrikate',
+    unit: 'Gramm',
+    icon: 'cigarette',
+  },
+  MEDICINE: {
+    name: 'Medikamente',
+    unit: null,
+    icon: 'cigarette',
+  },
+  BOOKS: {
+    name: 'Bucher',
+    unit: null,
+    icon: 'cigarette',
+  },
+  MAGAZINES: {
+    name: 'Zeitschriften',
+    unit: null,
+    icon: 'cigarette',
+  },
+  FLOWERS_AND_PLANTS: {
+    name: 'Schnittblumen & Pflanzen',
+    unit: null,
+    icon: 'cigarette',
+  },
+  ANIMAL_FEED: {
+    name: 'Tierfutter',
+    unit: null,
+    icon: 'cigarette',
+  },
+  FERTILIZER: {
+    name: 'Dunger',
+    unit: null,
+    icon: 'cigarette',
   },
 };
+
+const emptyBasket = {};
+Object.keys(CATEGORIES).forEach(subCategory => {
+  emptyBasket[subCategory.name] = {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  };
+});
+
+// export const emptyBasket;

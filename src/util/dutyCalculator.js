@@ -1,4 +1,6 @@
 import { dutyFreeAllowances, dutyRates } from './duty';
+import { CATEGORIES } from '../constants/basket';
+
 export const dutyBySubCategory = (
   subCategoryName,
   quantity,
@@ -7,7 +9,7 @@ export const dutyBySubCategory = (
 ) => {
   const totalPersons = numberPersonsUnder17 + numberPersonsOver17;
   switch (subCategoryName) {
-    case subCategories.MEAT_AND_MEAT_PRODUCTS: {
+    case CATEGORIES.MEAT_AND_MEAT_PRODUCTS: {
       const dutyFreeAllowance =
         totalPersons * dutyFreeAllowances.MEAT_AND_MEAT_PRODUCTS;
       const threshold =
@@ -28,7 +30,7 @@ export const dutyBySubCategory = (
         );
       }
     }
-    case subCategories.BUTTER_OR_CREAM: {
+    case CATEGORIES.BUTTER_OR_CREAM: {
       const dutyFreeAllowance =
         totalPersons * dutyFreeAllowances.BUTTER_OR_CREAM;
       if (quantity <= dutyFreeAllowance) {
@@ -37,7 +39,7 @@ export const dutyBySubCategory = (
         return dutyRates.BUTTER_OR_CREAM_DUTY * (quantity - dutyFreeAllowance);
       }
     }
-    case subCategories.OILS_FATS_MARGARINE: {
+    case CATEGORIES.OILS_FATS_MARGARINE: {
       const dutyFreeAllowance =
         totalPersons * dutyFreeAllowances.OILS_FATS_MARGARINE;
       if (quantity <= dutyFreeAllowance) {
@@ -48,7 +50,7 @@ export const dutyBySubCategory = (
         );
       }
     }
-    case subCategories.ALCOHOL_BELOW_18: {
+    case CATEGORIES.ALCOHOL_BELOW_18: {
       const dutyFreeAllowance =
         totalPersonsUnder17 * dutyFreeAllowances.ALCOHOL_BELOW_18;
       if (quantity <= dutyFreeAllowance) {
@@ -57,7 +59,7 @@ export const dutyBySubCategory = (
         return dutyRates.ALCOHOL_BELOW_18_DUTY * (quantity - dutyFreeAllowance);
       }
     }
-    case subCategories.ALCOHOL_ABOVE_18: {
+    case CATEGORIES.ALCOHOL_ABOVE_18: {
       const dutyFreeAllowance =
         totalPersonsUnder17 * dutyFreeAllowances.ALCOHOL_ABOVE_18;
       if (quantity <= dutyFreeAllowance) {
@@ -66,7 +68,7 @@ export const dutyBySubCategory = (
         return dutyRates.ALCOHOL_ABOVE_18_DUTY * (quantity - dutyFreeAllowance);
       }
     }
-    case subCategories.CIGARETTES_AND_CIGARS: {
+    case CATEGORIES.CIGARETTES_AND_CIGARS: {
       const dutyFreeAllowance =
         totalPersons * dutyFreeAllowances.CIGARETTES_AND_CIGARS;
       if (quantity <= dutyFreeAllowance) {
@@ -77,7 +79,7 @@ export const dutyBySubCategory = (
         );
       }
     }
-    case subCategories.OTHER_TOBACCO: {
+    case CATEGORIES.OTHER_TOBACCO: {
       const dutyFreeAllowance = totalPersons * dutyFreeAllowances.OTHER_TOBACCO;
       if (quantity <= dutyFreeAllowance) {
         return 0;

@@ -11,7 +11,7 @@ import { Container, Body, Header, Icon } from 'native-base';
 import Touchable from 'react-native-platform-touchable';
 import { Entypo } from '@expo/vector-icons';
 import GoodsCategoryRow from './Subcomponents/GoodsCategoryRow';
-import { emptyBasket } from '../../constants/basket';
+import { CATEGORIES } from '../../constants/basket';
 import GoodsInput from './Subcomponents/GoodsInput';
 
 class DeclareGoods extends React.Component {
@@ -21,7 +21,7 @@ class DeclareGoods extends React.Component {
   constructor(props) {
     super(props);
     const stateObject = {};
-    Object.keys(emptyBasket).forEach(category => {
+    Object.keys(CATEGORIES).forEach(category => {
       stateObject[category] = false;
     });
     this.state = stateObject;
@@ -29,9 +29,8 @@ class DeclareGoods extends React.Component {
   }
 
   handleToggleExpanded(categoryName, expanded) {
-    console.log('second handle toggleexpanded');
     const stateObject = { ...this.state };
-    Object.keys(emptyBasket).forEach(category => {
+    Object.keys(CATEGORIES).forEach(category => {
       stateObject[category] = false;
     });
     stateObject[categoryName] = expanded;
@@ -49,12 +48,13 @@ class DeclareGoods extends React.Component {
     return (
       <ScrollView style={container}>
         <View style={{ flex: 1, alignItems: 'center' }}>
-          {Object.keys(emptyBasket).map(category =>
+          {Object.keys(CATEGORIES).map(category => (
             <GoodsCategoryRow
               key={category}
               categoryName={category}
               navigation={navigation}
-              categoryObject={declaredBasket[category]}
+              categoryInfo={CATEGORIES[category]}
+              categoryState={declaredBasket[category]}
               expanded={this.state[category]}
               handleToggleExpanded={this.handleToggleExpanded}
             >
@@ -67,7 +67,7 @@ class DeclareGoods extends React.Component {
                 categoryObjectValues={[...declaredBasket[category].values]}
               />
             </GoodsCategoryRow>
-          )}
+          ))}
         </View>
       </ScrollView>
     );
