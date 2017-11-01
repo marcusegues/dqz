@@ -30,6 +30,7 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-preset-react-native": "^4.0.0",
     "flow-bin": "^0.56.0",
     "jest": "^21.2.1",
