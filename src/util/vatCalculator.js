@@ -18,7 +18,6 @@ const categoryTaxRates = sortedCategories.map(cat => VAT_RATES[cat]);
 const INDIVIDUAL_ALLOWANCE = 300;
 
 export const vatCalculator = (basket, numberPersons) => {
-  console.log(basket, sortedCategories, categoryTaxRates);
   // All high item values are taxed, so just multiply values by tax rates.
   const highItemVatObject = {};
   sortedCategories.forEach(cat => {
