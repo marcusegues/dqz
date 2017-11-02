@@ -1,8 +1,6 @@
 import { mockActions } from '../__mockActions__';
-import byId from '../users/byId';
+import vatCalculator from '../vatCalculator';
 import { INPUT_1 } from '../__mocks__/vatCalculator';
-
-import { initialState as byIdInitialState } from '../users/byId';
 
 // byId
 describe('vatCalculator', () => {
