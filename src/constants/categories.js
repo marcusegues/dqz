@@ -1,4 +1,7 @@
-export const CATEGORIES: { +[CategoryName]: CategoryName } = {
+// @flow
+import type { Categories } from '../types/basket';
+
+export const CATEGORIES: Categories = {
   MEAT_AND_MEAT_PRODUCTS: 'MEAT_AND_MEAT_PRODUCTS',
   BUTTER_OR_CREAM: 'BUTTER_OR_CREAM',
   OILS_FATS_MARGARINE: 'OILS_FATS_MARGARINE',

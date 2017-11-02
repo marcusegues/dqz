@@ -100,7 +100,7 @@ export const VAT_RATES: VatRates = {
   [CATEGORIES.FERTILIZER]: 0.025,
 };
 
-let emptyBasket = {};
+let emptyBasket: Basket = {};
 Object.keys(CATEGORIES).forEach(category => {
   emptyBasket[category] = {
     quantity: 0,
