@@ -163,7 +163,7 @@ class GoodsCategoryRow extends React.Component {
               </Text>
               <View style={{ flexDirection: 'row' }}>
                 <Text style={{ fontFamily: 'open_sans_light', width: '60%' }}>
-                  {quantity ? `Anzahl: ${quantity}${unit}` : null}
+                  {quantity ? `Anzahl: ${quantity}${unit ? unit : ''}` : null}
                 </Text>
                 <Text style={{ fontFamily: 'open_sans_light', width: '40%' }}>
                   {duty ? `Zoll: CHF ${duty}` : null}

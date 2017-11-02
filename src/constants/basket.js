@@ -15,7 +15,7 @@ export const CATEGORIES = {
   FERTILIZER: 'FERTILIZER',
 };
 
-export const mainCategories = {
+export const MAIN_CATEGORIES = {
   FOODS: 'Lebensmittel',
   ALCOHOL: 'Alkohol',
   TOBACCO: 'Tabak',
@@ -94,6 +94,24 @@ export const CATEGORIES_INFO = {
     unit: null,
     icon: 'cigarette',
   },
+};
+
+// any changes to the vat rates go here
+const VAT_RATES = {
+  [CATEGORIES.MEAT_AND_MEAT_PRODUCTS]: 0.025,
+  [CATEGORIES.BUTTER_OR_CREAM]: 0.025,
+  [CATEGORIES.OILS_FATS_MARGARINE]: 0.025,
+  [CATEGORIES.OTHER_FOODS]: 0.025,
+  [CATEGORIES.ALCOHOL_BELOW_18]: 0.08,
+  [CATEGORIES.ALCOHOL_ABOVE_18]: 0.08,
+  [CATEGORIES.CIGARETTES_AND_CIGARS]: 0.08,
+  [CATEGORIES.OTHER_TOBACCO]: 0.08,
+  [CATEGORIES.MEDICINE]: 0.025,
+  [CATEGORIES.BOOKS]: 0.025,
+  [CATEGORIES.MAGAZINES]: 0.025,
+  [CATEGORIES.FLOWERS_AND_PLANTS]: 0.025,
+  [CATEGORIES.ANIMAL_FEED]: 0.025,
+  [CATEGORIES.FERTILIZER]: 0.025,
 };
 
 const emptyBasket = {};
