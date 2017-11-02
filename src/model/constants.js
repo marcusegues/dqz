@@ -229,3 +229,5 @@ export const CategoriesInfo: CategoryInfoType = new Map([
     },
   ],
 ]);
+
+export const IndividualAllowance: number = 300;
