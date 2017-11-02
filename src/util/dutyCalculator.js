@@ -1,5 +1,5 @@
 import { dutyFreeAllowances, dutyRates } from '../constants/duty';
-import { CATEGORIES } from '../constants/basket';
+import { CATEGORIES } from '../constants/categories';
 
 export const dutyBySubCategory = (
   subCategoryName,

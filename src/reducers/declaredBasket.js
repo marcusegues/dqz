@@ -1,4 +1,4 @@
-import { emptyBasket, categories } from '../constants/basket';
+import { emptyBasket } from '../constants/basket';
 import { dutyBySubCategory } from '../util/dutyCalculator';
 
 const basketItem = (state = {}, action) => {

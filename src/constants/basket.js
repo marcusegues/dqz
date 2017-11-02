@@ -1,29 +1,15 @@
-export const CATEGORIES = {
-  MEAT_AND_MEAT_PRODUCTS: 'MEAT_AND_MEAT_PRODUCTS',
-  BUTTER_OR_CREAM: 'BUTTER_OR_CREAM',
-  OILS_FATS_MARGARINE: 'OILS_FATS_MARGARINE',
-  OTHER_FOODS: 'OTHER_FOODS',
-  ALCOHOL_BELOW_18: 'ALCOHOL_BELOW_18',
-  ALCOHOL_ABOVE_18: 'ALCOHOL_ABOVE_18',
-  CIGARETTES_AND_CIGARS: 'CIGARETTES_AND_CIGARS',
-  OTHER_TOBACCO: 'OTHER_TOBACCO',
-  MEDICINE: 'MEDICINE',
-  BOOKS: 'BOOKS',
-  MAGAZINES: 'MAGAZINES',
-  FLOWERS_AND_PLANTS: 'FLOWERS_AND_PLANTS',
-  ANIMAL_FEED: 'ANIMAL_FEED',
-  FERTILIZER: 'FERTILIZER',
-};
-
-export const MAIN_CATEGORIES = {
-  FOODS: 'Lebensmittel',
-  ALCOHOL: 'Alkohol',
-  TOBACCO: 'Tabak',
-  OTHER: 'Anderes',
-};
+// @flow
+import { CATEGORIES } from './categories';
+import type {
+  CategoryName,
+  CategoryInfo,
+  CategoriesInfo,
+  VatRates,
+  Basket,
+} from '../types/basket';
 
 // null unit means it's zollfrei
-export const CATEGORIES_INFO = {
+export const CATEGORIES_INFO: CategoriesInfo = {
   [CATEGORIES.MEAT_AND_MEAT_PRODUCTS]: {
     name: 'Fleisch und Fleischzubereitung',
     unit: 'kg',
@@ -97,7 +83,7 @@ export const CATEGORIES_INFO = {
 };
 
 // any changes to the vat rates go here
-export const VAT_RATES = {
+export const VAT_RATES: VatRates = {
   [CATEGORIES.MEAT_AND_MEAT_PRODUCTS]: 0.025,
   [CATEGORIES.BUTTER_OR_CREAM]: 0.025,
   [CATEGORIES.OILS_FATS_MARGARINE]: 0.025,
@@ -114,7 +100,7 @@ export const VAT_RATES = {
   [CATEGORIES.FERTILIZER]: 0.025,
 };
 
-const emptyBasket = {};
+let emptyBasket = {};
 Object.keys(CATEGORIES).forEach(category => {
   emptyBasket[category] = {
     quantity: 0,

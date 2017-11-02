@@ -1,4 +1,5 @@
-import { CATEGORIES, VAT_RATES } from './../constants/basket';
+import { VAT_RATES } from '../constants/basket';
+import { CATEGORIES } from '../constants/categories';
 
 // sort from highest tax rates to lowest tax rates
 const sortedCategories = Object.keys(VAT_RATES).sort((cat1, cat2) => {
