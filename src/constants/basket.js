@@ -97,7 +97,7 @@ export const CATEGORIES_INFO = {
 };
 
 // any changes to the vat rates go here
-const VAT_RATES = {
+export const VAT_RATES = {
   [CATEGORIES.MEAT_AND_MEAT_PRODUCTS]: 0.025,
   [CATEGORIES.BUTTER_OR_CREAM]: 0.025,
   [CATEGORIES.OILS_FATS_MARGARINE]: 0.025,

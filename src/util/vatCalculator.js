@@ -17,7 +17,8 @@ const categoryTaxRates = sortedCategories.map(cat => VAT_RATES[cat]);
 // tax-free allowance for a single person
 const INDIVIDUAL_ALLOWANCE = 300;
 
-const vatCalculator = (basket, numberPersons) => {
+export const vatCalculator = (basket, numberPersons) => {
+  console.log(basket, sortedCategories, categoryTaxRates);
   // All high item values are taxed, so just multiply values by tax rates.
   const highItemVatObject = {};
   sortedCategories.forEach(cat => {
@@ -74,30 +75,3 @@ const vatCalculator = (basket, numberPersons) => {
     return;
   }
 };
-
-vatCalculator(
-  {
-    'Fleisch und Fleischzubereitung': {
-      totalValue: 240 * 1.19,
-      totalHighItemValue: 0,
-    },
-    'Butter und Rahm': { totalValue: 20 * 1.19, totalHighItemValue: 0 },
-    'Öle, Fette, Margarine zu Speisezwecken': {
-      totalValue: 0,
-      totalHighItemValue: 0,
-    },
-    'Alkoholische Getränke, Alkoholgehalt bis 18% Vol.': {
-      totalValue: 30 * 1.19,
-      totalHighItemValue: 0,
-    },
-    'Alkoholische Getränke, Alkoholgehalt über 18% Vol.': {
-      totalValue: 450 * 1.19,
-      totalHighItemValue: 0,
-    },
-    'Zigaretten/Zigarren': { totalValue: 0, totalHighItemValue: 0 },
-    'Andere Tabakfabrikate': { totalValue: 0, totalHighItemValue: 0 },
-  },
-  1
-);
-
-module.exports = vatCalculator;
