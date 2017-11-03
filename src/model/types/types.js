@@ -1,0 +1,146 @@
+// @flow
+import type {
+  Map as ImmutableMapType,
+  RecordOf,
+  RecordFactory,
+  Set as ImmutableSetType,
+} from 'immutable';
+import Immutable from 'immutable';
+
+/**
+ * todo, jsdoc
+ */
+export type CategoriesTypes =
+  | 'Meat'
+  | 'Butter'
+  | 'Oils'
+  | 'AlcSoft'
+  | 'AlcHard'
+  | 'Cigarettes'
+  | 'Tobacco'
+  | 'Meds'
+  | 'Books'
+  | 'Magazines'
+  | 'Flowers'
+  | 'AnimalFeed'
+  | 'Fertilizer'
+  | 'Other';
+
+/**
+ * todo, jsdoc
+ */
+export type ExchangeRate = number;
+
+// CATEGORY INFO
+type CategoryInfoContent = {
+  name: string,
+  unit: string,
+  icon: string,
+};
+const makeCategoryInfoRecord: RecordFactory<
+  CategoryInfoContent
+> = Immutable.Record({
+  name: 'category',
+  unit: 'kg',
+  icon: 'icon',
+});
+type CategoryInfo = RecordOf<CategoryInfoContent>;
+
+/**
+ * todo jsdoc
+ */
+export type CategoryInfoType = ImmutableMapType<CategoriesTypes, CategoryInfo>;
+
+// CATEGORY VOLUME
+type CategoryVolumeContent = {
+  quantity: number,
+  amounts: ImmutableSetType<number>,
+  amountsLargeItems: ImmutableSetType<number>,
+};
+const makeCategoryVolumeRecord: RecordFactory<
+  CategoryVolumeContent
+> = Immutable.Record({
+  quantity: 0,
+  amounts: Immutable.Set(),
+  amountsLargeItems: Immutable.Set(),
+});
+type CategoryVolume = RecordOf<CategoryVolumeContent>;
+
+// CATEGORY DUES
+type CategoryDuesContent = {
+  duty: number,
+  vat: number,
+};
+const makeCategoryDuesRecord: RecordFactory<
+  CategoryDuesContent
+> = Immutable.Record({
+  duty: 0,
+  vat: 0,
+});
+type CategoryDues = RecordOf<CategoryDuesContent>;
+
+// CATEGORY BASKET ITEM
+type CategoryBasketItemContent = {
+  volume: CategoryVolume,
+  dues: CategoryDues,
+};
+export const makeCategoryBasketItemRecord: RecordFactory<
+  CategoryBasketItemContent
+> = Immutable.Record({
+  volume: makeCategoryVolumeRecord(),
+  dues: makeCategoryDuesRecord(),
+});
+
+/**
+ * todo, jsdoc
+ */
+export type CategoryBasketItem = RecordOf<CategoryBasketItemContent>;
+
+/**
+ * todo, jsdoc
+ */
+export type BasketType = ImmutableMapType<CategoriesTypes, CategoryBasketItem>;
+
+// DUTY BRACKET
+type DutyBracketContent = {
+  threshold: number,
+  fee: number,
+};
+const makeDutyBracketRecord: RecordFactory<
+  DutyBracketContent
+> = Immutable.Record({
+  threshold: Infinity,
+  fee: 0,
+});
+type DutyBracket = RecordOf<DutyBracketContent>;
+
+// RATES
+type RatesContent = {
+  vat: number,
+  duty: ImmutableSetType<DutyBracket>,
+  dutyAllowance: number,
+  adultsOnly: boolean,
+};
+const makeRatesRecord: RecordFactory<RatesContent> = Immutable.Record({
+  vat: 0,
+  duty: Immutable.Set.of(makeDutyBracketRecord()),
+  dutyAllowance: Infinity,
+  adultsOnly: false,
+});
+type Rates = RecordOf<RatesContent>;
+
+/**
+ * todo, jsdoc
+ */
+export type RatesType = ImmutableMapType<CategoriesTypes, Rates>;
+
+// PEOPLE
+type PeopleContent = {
+  adults: number,
+  minors: number,
+};
+export const makePeopleRecord: RecordFactory<PeopleContent> = Immutable.Record({
+  adults: 1,
+  minors: 0,
+});
+export type People = RecordOf<PeopleContent>;

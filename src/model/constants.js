@@ -1,6 +1,10 @@
 // @flow
 
-import type { CategoriesTypes, CategoryInfoType, RatesType } from './types';
+import type {
+  CategoriesTypes,
+  CategoryInfoType,
+  RatesType,
+} from './types/types';
 
 export const CATEGORIES: Set<CategoriesTypes> = new Set([
   'Meat',
