@@ -3,7 +3,7 @@ import type {
   Map as ImmutableMapType,
   RecordOf,
   RecordFactory,
-  Set as ImmutableSetType,
+  List as ImmutableListType,
 } from 'immutable';
 import Immutable from 'immutable';
 
@@ -54,15 +54,15 @@ export type CategoryInfoType = ImmutableMapType<CategoriesTypes, CategoryInfo>;
 // CATEGORY VOLUME
 type CategoryVolumeContent = {
   quantity: number,
-  amounts: ImmutableSetType<number>,
-  amountsLargeItems: ImmutableSetType<number>,
+  amounts: ImmutableListType<number>,
+  amountsLarge: ImmutableListType<number>,
 };
 const makeCategoryVolumeRecord: RecordFactory<
   CategoryVolumeContent
 > = Immutable.Record({
   quantity: 0,
-  amounts: Immutable.Set(),
-  amountsLargeItems: Immutable.Set(),
+  amounts: Immutable.List(),
+  amountsLarge: Immutable.List(),
 });
 type CategoryVolume = RecordOf<CategoryVolumeContent>;
 
@@ -117,13 +117,13 @@ type DutyBracket = RecordOf<DutyBracketContent>;
 // RATES
 type RatesContent = {
   vat: number,
-  duty: ImmutableSetType<DutyBracket>,
+  duty: ImmutableListType<DutyBracket>,
   dutyAllowance: number,
   adultsOnly: boolean,
 };
 export const makeRatesRecord: RecordFactory<RatesContent> = Immutable.Record({
   vat: 0,
-  duty: Immutable.Set.of(makeDutyBracketRecord()),
+  duty: Immutable.List.of(makeDutyBracketRecord()),
   dutyAllowance: Infinity,
   adultsOnly: false,
 });

@@ -36,10 +36,10 @@ export const CategoriesRates: RatesType = Immutable.Map([
     'Meat',
     makeRatesRecord({
       vat: 0.025,
-      duty: Immutable.Set.of(
+      duty: Immutable.List([
         makeDutyBracketRecord({ threshold: 10, fee: 17 }),
-        makeDutyBracketRecord({ threshold: Infinity, fee: 23 })
-      ),
+        makeDutyBracketRecord({ threshold: Infinity, fee: 23 }),
+      ]),
       dutyAllowance: 1,
       adultsOnly: false,
     }),
@@ -48,9 +48,9 @@ export const CategoriesRates: RatesType = Immutable.Map([
     'Butter',
     makeRatesRecord({
       vat: 0.025,
-      duty: Immutable.Set.of(
-        makeDutyBracketRecord({ threshold: Infinity, fee: 16 })
-      ),
+      duty: Immutable.List([
+        makeDutyBracketRecord({ threshold: Infinity, fee: 16 }),
+      ]),
       dutyAllowance: 1,
       adultsOnly: false,
     }),
@@ -59,9 +59,9 @@ export const CategoriesRates: RatesType = Immutable.Map([
     'Oils',
     makeRatesRecord({
       vat: 0.025,
-      duty: Immutable.Set.of(
-        makeDutyBracketRecord({ threshold: Infinity, fee: 2 })
-      ),
+      duty: Immutable.List([
+        makeDutyBracketRecord({ threshold: Infinity, fee: 2 }),
+      ]),
       dutyAllowance: 5,
       adultsOnly: false,
     }),
@@ -70,9 +70,9 @@ export const CategoriesRates: RatesType = Immutable.Map([
     'AlcSoft',
     makeRatesRecord({
       vat: 0.08,
-      duty: Immutable.Set.of(
-        makeDutyBracketRecord({ threshold: Infinity, fee: 2 })
-      ),
+      duty: Immutable.List([
+        makeDutyBracketRecord({ threshold: Infinity, fee: 2 }),
+      ]),
       dutyAllowance: 5,
       adultsOnly: true,
     }),
@@ -81,9 +81,9 @@ export const CategoriesRates: RatesType = Immutable.Map([
     'AlcHard',
     makeRatesRecord({
       vat: 0.08,
-      duty: Immutable.Set.of(
-        makeDutyBracketRecord({ threshold: Infinity, fee: 15 })
-      ),
+      duty: Immutable.List([
+        makeDutyBracketRecord({ threshold: Infinity, fee: 15 }),
+      ]),
       dutyAllowance: 1,
       adultsOnly: true,
     }),
@@ -92,9 +92,9 @@ export const CategoriesRates: RatesType = Immutable.Map([
     'Cigarettes',
     makeRatesRecord({
       vat: 0.08,
-      duty: Immutable.Set.of(
-        makeDutyBracketRecord({ threshold: Infinity, fee: 0.25 })
-      ),
+      duty: Immutable.List([
+        makeDutyBracketRecord({ threshold: Infinity, fee: 0.25 }),
+      ]),
       dutyAllowance: 250,
       adultsOnly: false,
     }),
@@ -103,9 +103,9 @@ export const CategoriesRates: RatesType = Immutable.Map([
     'Tobacco',
     makeRatesRecord({
       vat: 0.08,
-      duty: Immutable.Set.of(
-        makeDutyBracketRecord({ threshold: Infinity, fee: 0.1 })
-      ),
+      duty: Immutable.List([
+        makeDutyBracketRecord({ threshold: Infinity, fee: 0.1 }),
+      ]),
       dutyAllowance: 250,
       adultsOnly: true,
     }),
@@ -114,7 +114,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
     'Meds',
     makeRatesRecord({
       vat: 0.025,
-      duty: Immutable.Set(),
+      duty: Immutable.List(),
       dutyAllowance: Infinity,
       adultsOnly: false,
     }),
@@ -123,7 +123,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
     'Books',
     makeRatesRecord({
       vat: 0.025,
-      duty: Immutable.Set(),
+      duty: Immutable.List(),
       dutyAllowance: Infinity,
       adultsOnly: false,
     }),
@@ -132,7 +132,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
     'Magazines',
     makeRatesRecord({
       vat: 0.025,
-      duty: Immutable.Set(),
+      duty: Immutable.List(),
       dutyAllowance: Infinity,
       adultsOnly: false,
     }),
@@ -141,7 +141,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
     'Flowers',
     makeRatesRecord({
       vat: 0.025,
-      duty: Immutable.Set(),
+      duty: Immutable.List(),
       dutyAllowance: Infinity,
       adultsOnly: false,
     }),
@@ -150,7 +150,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
     'AnimalFeed',
     makeRatesRecord({
       vat: 0.025,
-      duty: Immutable.Set(),
+      duty: Immutable.List(),
       dutyAllowance: Infinity,
       adultsOnly: false,
     }),
@@ -159,7 +159,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
     'Fertilizer',
     makeRatesRecord({
       vat: 0.025,
-      duty: Immutable.Set(),
+      duty: Immutable.List(),
       dutyAllowance: Infinity,
       adultsOnly: false,
     }),
@@ -168,7 +168,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
     'Other',
     makeRatesRecord({
       vat: 0.025,
-      duty: Immutable.Set(),
+      duty: Immutable.List(),
       dutyAllowance: Infinity,
       adultsOnly: false,
     }),

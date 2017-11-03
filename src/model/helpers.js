@@ -1,7 +1,7 @@
 // @flow
 
 import Immutable from 'immutable';
-import type { Set as ImmutableSetType } from 'immutable';
+import type { List as ImmutableListType } from 'immutable';
 import type {
   BasketType,
   CategoriesTypes,
@@ -38,25 +38,55 @@ export const getQuantity = (
   category: CategoriesTypes
 ): number => Immutable.getIn(basket, [category, 'volume', 'quantity'], 0);
 
+// AMOUNTS
 export const addAmount = (
   basket: BasketType,
   category: CategoriesTypes,
   amount: number
 ): BasketType =>
-  basket.updateIn([category, 'volume', 'amounts'], Immutable.Set(), amounts =>
-    amounts.add(amount)
+  basket.updateIn([category, 'volume', 'amounts'], Immutable.List(), amounts =>
+    amounts.push(amount)
   );
 
 export const resetAmounts = (
   basket: BasketType,
   category: CategoriesTypes
-): BasketType => basket.setIn([category, 'volume', 'amounts'], Immutable.Set());
+): BasketType =>
+  basket.setIn([category, 'volume', 'amounts'], Immutable.List());
 
 export const getAmounts = (
   basket: BasketType,
   category: CategoriesTypes
-): ImmutableSetType<number> =>
-  Immutable.getIn(basket, [category, 'volume', 'amounts'], Immutable.Set());
+): ImmutableListType<number> =>
+  Immutable.getIn(basket, [category, 'volume', 'amounts'], Immutable.List());
+
+// AMOUNTS LARGE
+export const addLargeAmount = (
+  basket: BasketType,
+  category: CategoriesTypes,
+  amountLarge: number
+): BasketType =>
+  basket.updateIn(
+    [category, 'volume', 'amountsLarge'],
+    Immutable.List(),
+    amountsLarge => amountsLarge.push(amountLarge)
+  );
+
+export const resetLargeAmounts = (
+  basket: BasketType,
+  category: CategoriesTypes
+): BasketType =>
+  basket.setIn([category, 'volume', 'amountsLarge'], Immutable.List());
+
+export const getLargeAmounts = (
+  basket: BasketType,
+  category: CategoriesTypes
+): ImmutableListType<number> =>
+  Immutable.getIn(
+    basket,
+    [category, 'volume', 'amountsLarge'],
+    Immutable.List()
+  );
 
 export const initPeople: People = makePeopleRecord({
   adults: 1,
