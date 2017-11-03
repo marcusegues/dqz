@@ -33,6 +33,11 @@ export const setQuantities = (
   });
 };
 
+export const getQuantity = (
+  basket: BasketType,
+  category: CategoriesTypes
+): number => Immutable.getIn(basket, [category, 'volume', 'quantity'], 0);
+
 export const initPeople: People = makePeopleRecord({
   adults: 1,
   minors: 0,

@@ -1,6 +1,6 @@
 import { CATEGORIES, CategoriesRates, CategoriesInfo } from '../constants';
 
-describe.only('The model: ', () => {
+describe('The model: ', () => {
   test('All Categories have rates', () => {
     CATEGORIES.forEach(c => {
       expect(CategoriesRates.has(c)).toBeTruthy();

@@ -5,6 +5,12 @@ import type {
   CategoryInfoType,
   RatesType,
 } from './types/types';
+import Immutable from 'immutable';
+import {
+  makeCategoryInfoRecord,
+  makeDutyBracketRecord,
+  makeRatesRecord,
+} from './types/types';
 
 export const CATEGORIES: Set<CategoriesTypes> = new Set([
   'Meat',
@@ -25,212 +31,262 @@ export const CATEGORIES: Set<CategoriesTypes> = new Set([
 
 export const CategoriesArray = Array.from(CATEGORIES.values());
 
-export const CategoriesRates: RatesType = new Map([
+export const CategoriesRates: RatesType = Immutable.Map([
   [
     'Meat',
-    {
+    makeRatesRecord({
       vat: 0.025,
-      duty: [{ threshold: 10, fee: 17 }, { threshold: Infinity, fee: 23 }],
+      duty: Immutable.Set.of(
+        makeDutyBracketRecord({ threshold: 10, fee: 17 }),
+        makeDutyBracketRecord({ threshold: Infinity, fee: 23 })
+      ),
       dutyAllowance: 1,
       adultsOnly: false,
-    },
+    }),
   ],
   [
     'Butter',
-    {
+    makeRatesRecord({
       vat: 0.025,
-      duty: [{ threshold: Infinity, fee: 16 }],
+      duty: Immutable.Set.of(
+        makeDutyBracketRecord({ threshold: Infinity, fee: 16 })
+      ),
       dutyAllowance: 1,
       adultsOnly: false,
-    },
+    }),
   ],
   [
     'Oils',
-    {
+    makeRatesRecord({
       vat: 0.025,
-      duty: [{ threshold: Infinity, fee: 2 }],
+      duty: Immutable.Set.of(
+        makeDutyBracketRecord({ threshold: Infinity, fee: 2 })
+      ),
       dutyAllowance: 5,
       adultsOnly: false,
-    },
+    }),
   ],
   [
     'AlcSoft',
-    {
+    makeRatesRecord({
       vat: 0.08,
-      duty: [{ threshold: Infinity, fee: 2 }],
+      duty: Immutable.Set.of(
+        makeDutyBracketRecord({ threshold: Infinity, fee: 2 })
+      ),
       dutyAllowance: 5,
       adultsOnly: true,
-    },
+    }),
   ],
   [
     'AlcHard',
-    {
+    makeRatesRecord({
       vat: 0.08,
-      duty: [{ threshold: Infinity, fee: 15 }],
+      duty: Immutable.Set.of(
+        makeDutyBracketRecord({ threshold: Infinity, fee: 15 })
+      ),
       dutyAllowance: 1,
       adultsOnly: true,
-    },
+    }),
   ],
   [
     'Cigarettes',
-    {
+    makeRatesRecord({
       vat: 0.08,
-      duty: [{ threshold: Infinity, fee: 0.25 }],
+      duty: Immutable.Set.of(
+        makeDutyBracketRecord({ threshold: Infinity, fee: 0.25 })
+      ),
       dutyAllowance: 250,
       adultsOnly: false,
-    },
+    }),
   ],
   [
     'Tobacco',
-    {
+    makeRatesRecord({
       vat: 0.08,
-      duty: [{ threshold: Infinity, fee: 0.1 }],
+      duty: Immutable.Set.of(
+        makeDutyBracketRecord({ threshold: Infinity, fee: 0.1 })
+      ),
       dutyAllowance: 250,
       adultsOnly: true,
-    },
+    }),
   ],
   [
     'Meds',
-    { vat: 0.025, duty: [], dutyAllowance: Infinity, adultsOnly: false },
+    makeRatesRecord({
+      vat: 0.025,
+      duty: Immutable.Set(),
+      dutyAllowance: Infinity,
+      adultsOnly: false,
+    }),
   ],
   [
     'Books',
-    { vat: 0.025, duty: [], dutyAllowance: Infinity, adultsOnly: false },
+    makeRatesRecord({
+      vat: 0.025,
+      duty: Immutable.Set(),
+      dutyAllowance: Infinity,
+      adultsOnly: false,
+    }),
   ],
   [
     'Magazines',
-    { vat: 0.025, duty: [], dutyAllowance: Infinity, adultsOnly: false },
+    makeRatesRecord({
+      vat: 0.025,
+      duty: Immutable.Set(),
+      dutyAllowance: Infinity,
+      adultsOnly: false,
+    }),
   ],
   [
     'Flowers',
-    { vat: 0.025, duty: [], dutyAllowance: Infinity, adultsOnly: false },
+    makeRatesRecord({
+      vat: 0.025,
+      duty: Immutable.Set(),
+      dutyAllowance: Infinity,
+      adultsOnly: false,
+    }),
   ],
   [
     'AnimalFeed',
-    { vat: 0.025, duty: [], dutyAllowance: Infinity, adultsOnly: false },
+    makeRatesRecord({
+      vat: 0.025,
+      duty: Immutable.Set(),
+      dutyAllowance: Infinity,
+      adultsOnly: false,
+    }),
   ],
   [
     'Fertilizer',
-    { vat: 0.025, duty: [], dutyAllowance: Infinity, adultsOnly: false },
+    makeRatesRecord({
+      vat: 0.025,
+      duty: Immutable.Set(),
+      dutyAllowance: Infinity,
+      adultsOnly: false,
+    }),
   ],
   [
     'Other',
-    { vat: 0.025, duty: [], dutyAllowance: Infinity, adultsOnly: false },
+    makeRatesRecord({
+      vat: 0.025,
+      duty: Immutable.Set(),
+      dutyAllowance: Infinity,
+      adultsOnly: false,
+    }),
   ],
 ]);
 
-export const CategoriesInfo: CategoryInfoType = new Map([
+export const CategoriesInfo: CategoryInfoType = Immutable.Map([
   [
     'Meat',
-    {
+    makeCategoryInfoRecord({
       name: 'Fleisch und Fleischzubereitung',
       unit: 'kg',
       icon: 'meat',
-    },
+    }),
   ],
   [
     'Butter',
-    {
+    makeCategoryInfoRecord({
       name: 'Butter und Rahm',
       unit: 'kg/Liter',
       icon: 'butter',
-    },
+    }),
   ],
   [
     'Oils',
-    {
+    makeCategoryInfoRecord({
       name: 'Öle, Fette, Margarine zu Speisezwecken',
       unit: 'kg/Liter',
       icon: 'oil',
-    },
+    }),
   ],
   [
     'Other',
-    {
+    makeCategoryInfoRecord({
       name: 'Sonstige Lebensmittel & Alkoholfreie Getranke',
       unit: 'kg/Liter',
       icon: 'oil',
-    },
+    }),
   ],
   [
     'AlcSoft',
-    {
+    makeCategoryInfoRecord({
       name: 'Alkoholische Getränke, Alkoholgehalt bis 18% Vol.',
       unit: 'Liter',
       icon: 'beer',
-    },
+    }),
   ],
   [
     'AlcHard',
-    {
+    makeCategoryInfoRecord({
       name: 'Alkoholische Getränke, Alkoholgehalt über 18% Vol.',
       unit: 'Liter',
       icon: 'vodka',
-    },
+    }),
   ],
   [
     'Cigarettes',
-    {
+    makeCategoryInfoRecord({
       name: 'Zigaretten/Zigarren',
       unit: 'Stück',
       icon: 'cigarette',
-    },
+    }),
   ],
   [
     'Tobacco',
-    {
+    makeCategoryInfoRecord({
       name: 'Andere Tabakfabrikate',
       unit: 'Gramm',
       icon: 'cigarette',
-    },
+    }),
   ],
   [
     'Meds',
-    {
+    makeCategoryInfoRecord({
       name: 'Medikamente',
       unit: '',
       icon: 'cigarette',
-    },
+    }),
   ],
   [
     'Books',
-    {
+    makeCategoryInfoRecord({
       name: 'Bücher',
       unit: '',
       icon: 'cigarette',
-    },
+    }),
   ],
   [
     'Magazines',
-    {
+    makeCategoryInfoRecord({
       name: 'Zeitschriften',
       unit: '',
       icon: 'cigarette',
-    },
+    }),
   ],
   [
     'Flowers',
-    {
+    makeCategoryInfoRecord({
       name: 'Schnittblumen & Pflanzen',
       unit: '',
       icon: 'cigarette',
-    },
+    }),
   ],
   [
     'AnimalFeed',
-    {
+    makeCategoryInfoRecord({
       name: 'Tierfutter',
       unit: '',
       icon: 'cigarette',
-    },
+    }),
   ],
   [
     'Fertilizer',
-    {
+    makeCategoryInfoRecord({
       name: 'Dünger',
       unit: '',
       icon: 'cigarette',
-    },
+    }),
   ],
 ]);
 

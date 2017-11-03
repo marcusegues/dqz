@@ -37,7 +37,7 @@ type CategoryInfoContent = {
   unit: string,
   icon: string,
 };
-const makeCategoryInfoRecord: RecordFactory<
+export const makeCategoryInfoRecord: RecordFactory<
   CategoryInfoContent
 > = Immutable.Record({
   name: 'category',
@@ -106,7 +106,7 @@ type DutyBracketContent = {
   threshold: number,
   fee: number,
 };
-const makeDutyBracketRecord: RecordFactory<
+export const makeDutyBracketRecord: RecordFactory<
   DutyBracketContent
 > = Immutable.Record({
   threshold: Infinity,
@@ -121,7 +121,7 @@ type RatesContent = {
   dutyAllowance: number,
   adultsOnly: boolean,
 };
-const makeRatesRecord: RecordFactory<RatesContent> = Immutable.Record({
+export const makeRatesRecord: RecordFactory<RatesContent> = Immutable.Record({
   vat: 0,
   duty: Immutable.Set.of(makeDutyBracketRecord()),
   dutyAllowance: Infinity,
