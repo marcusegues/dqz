@@ -1,7 +1,7 @@
 // @flow
 
 import Immutable from 'immutable';
-import type { RecordFactory } from 'immutable';
+import type { Set as ImmutableSetType } from 'immutable';
 import type {
   BasketType,
   CategoriesTypes,
@@ -13,11 +13,11 @@ import { makeCategoryBasketItemRecord, makePeopleRecord } from './types/types';
 
 const emptyItem: CategoryBasketItem = makeCategoryBasketItemRecord();
 
-// TODO make sure the objects are deep copied (I want immutable...) (added Object.assign for good measure)
 export const emptyBasket: BasketType = Immutable.Map(
   CategoriesArray.map(c => [c, emptyItem])
 );
 
+// QUANTITIES
 export const setQuantity = (
   basket: BasketType,
   category: CategoriesTypes,
@@ -37,6 +37,26 @@ export const getQuantity = (
   basket: BasketType,
   category: CategoriesTypes
 ): number => Immutable.getIn(basket, [category, 'volume', 'quantity'], 0);
+
+export const addAmount = (
+  basket: BasketType,
+  category: CategoriesTypes,
+  amount: number
+): BasketType =>
+  basket.updateIn([category, 'volume', 'amounts'], Immutable.Set(), amounts =>
+    amounts.add(amount)
+  );
+
+export const resetAmounts = (
+  basket: BasketType,
+  category: CategoriesTypes
+): BasketType => basket.setIn([category, 'volume', 'amounts'], Immutable.Set());
+
+export const getAmounts = (
+  basket: BasketType,
+  category: CategoriesTypes
+): ImmutableSetType<number> =>
+  Immutable.getIn(basket, [category, 'volume', 'amounts'], Immutable.Set());
 
 export const initPeople: People = makePeopleRecord({
   adults: 1,
