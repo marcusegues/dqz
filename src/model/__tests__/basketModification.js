@@ -18,7 +18,7 @@ import {
   setQuantity,
   subtractAdult,
   subtractMinor,
-} from '../helpers';
+} from '../configurationApi';
 import { CategoriesArray } from '../constants';
 import Immutable from 'immutable';
 
