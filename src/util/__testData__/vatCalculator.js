@@ -1,4 +1,7 @@
-export const INPUT_1 = [
+// @flow
+import type { vatCalculatorBasket } from '../../types/vatCalculator';
+
+export const INPUT_1: [vatCalculatorBasket, number] = [
   {
     MEAT_AND_MEAT_PRODUCTS: {
       totalValue: 240 * 1.19,
@@ -64,7 +67,7 @@ export const INPUT_1 = [
   1,
 ];
 
-export const INPUT_2 = [
+export const INPUT_2: [vatCalculatorBasket, number] = [
   {
     MEAT_AND_MEAT_PRODUCTS: {
       totalValue: 40 * 1.19,
