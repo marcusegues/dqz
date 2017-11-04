@@ -92,3 +92,18 @@ export const initPeople: People = makePeopleRecord({
   adults: 1,
   minors: 0,
 });
+
+export const getAdultPeople = (party: People): number => party.get('adults');
+export const getMinorPeople = (party: People): number => party.get('minors');
+
+export const addAdult = (party: People): People =>
+  party.update('adults', a => a + 1);
+
+export const subtractAdult = (party: People): People =>
+  party.update('adults', a => Math.max(a - 1, 0));
+
+export const addMinor = (party: People): People =>
+  party.update('minors', m => m + 1);
+
+export const subtractMinor = (party: People): People =>
+  party.update('minors', m => Math.max(m - 1, 0));

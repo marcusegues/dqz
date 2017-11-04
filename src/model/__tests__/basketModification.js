@@ -1,16 +1,23 @@
 // @flow
 import type { BasketType } from '../types/types';
 import {
+  addAdult,
   addAmount,
   addLargeAmount,
+  addMinor,
   emptyBasket,
+  getAdultPeople,
   getAmounts,
   getLargeAmounts,
+  getMinorPeople,
   getQuantity,
+  initPeople,
   resetAmounts,
   resetLargeAmounts,
   setQuantities,
   setQuantity,
+  subtractAdult,
+  subtractMinor,
 } from '../helpers';
 import { CategoriesArray } from '../constants';
 import Immutable from 'immutable';
@@ -33,6 +40,10 @@ const largeAmountBasket2: BasketType = addLargeAmount(
   'Tobacco',
   1234
 );
+
+const twoAdultsNoMinor = addAdult(initPeople);
+const noAdultsNoMinor = subtractAdult(initPeople);
+const oneAdultOneMinor = addMinor(initPeople);
 
 describe('The basket / quantites: ', () => {
   test('defaults to 0 quantity', () => {
@@ -102,5 +113,31 @@ describe('The basket / large amounts: ', () => {
   test('resets large amounts: ', () => {
     const resetted: BasketType = resetLargeAmounts(amountBasket1, 'Tobacco');
     expect(getLargeAmounts(resetted, 'Tobacco')).toBe(Immutable.List());
+  });
+});
+
+describe('Party configuration', () => {
+  test('inits with 1 adult and no minors', () => {
+    expect(getAdultPeople(initPeople)).toBe(1);
+    expect(getMinorPeople(initPeople)).toBe(0);
+  });
+  test('adds adults', () => {
+    expect(getAdultPeople(twoAdultsNoMinor)).toBe(2);
+  });
+  test('subtracts adults', () => {
+    expect(getAdultPeople(noAdultsNoMinor)).toBe(0);
+  });
+  test('subtracts adults (non-negative', () => {
+    expect(getAdultPeople(subtractAdult(noAdultsNoMinor))).toBe(0);
+  });
+
+  test('adds minor', () => {
+    expect(getMinorPeople(oneAdultOneMinor)).toBe(1);
+  });
+  test('subtracts minor', () => {
+    expect(getMinorPeople(subtractMinor(oneAdultOneMinor))).toBe(0);
+  });
+  test('subtracts minor (non-negative', () => {
+    expect(getMinorPeople(subtractMinor(noAdultsNoMinor))).toBe(0);
   });
 });
