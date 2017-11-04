@@ -7,9 +7,12 @@ import type {
   CategoriesTypes,
   CategoryBasketItem,
   People,
-} from './types/types';
+} from './types/basketPeopleTypes';
 import { CategoriesArray } from './constants';
-import { makeCategoryBasketItemRecord, makePeopleRecord } from './types/types';
+import {
+  makeCategoryBasketItemRecord,
+  makePeopleRecord,
+} from './types/basketPeopleTypes';
 
 const emptyItem: CategoryBasketItem = makeCategoryBasketItemRecord();
 

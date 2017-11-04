@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VAT Calculations it sums all the categories as expected 1`] = `
+Immutable.Record {
+  "large": Immutable.OrderedMap {
+    0.08: Immutable.List [
+      5555,
+    ],
+    0.025: Immutable.List [
+      525,
+    ],
+  },
+  "normal": Immutable.OrderedMap {
+    0.08: Immutable.List [
+      11,
+      33,
+    ],
+    0.025: Immutable.List [
+      12,
+      31,
+      12.34,
+      125,
+    ],
+  },
+}
+`;

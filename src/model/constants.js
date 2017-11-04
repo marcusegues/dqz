@@ -4,13 +4,13 @@ import type {
   CategoriesTypes,
   CategoryInfoType,
   RatesType,
-} from './types/types';
+} from './types/basketPeopleTypes';
 import Immutable from 'immutable';
 import {
   makeCategoryInfoRecord,
   makeDutyBracketRecord,
   makeRatesRecord,
-} from './types/types';
+} from './types/basketPeopleTypes';
 
 export const CATEGORIES: Set<CategoriesTypes> = new Set([
   'Meat',

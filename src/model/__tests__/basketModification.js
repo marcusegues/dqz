@@ -1,5 +1,5 @@
 // @flow
-import type { BasketType } from '../types/types';
+import type { BasketType } from '../types/basketPeopleTypes';
 import {
   addAdult,
   addAmount,

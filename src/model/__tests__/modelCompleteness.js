@@ -13,7 +13,7 @@ describe('The model: ', () => {
     });
   });
 
-  test('All Categories have at least one category up to infinity', () => {
+  test('All Categories have at least one duty-category up to infinity', () => {
     const hasInfy = c => {
       const rates = CategoriesRates.get(c);
       return (
