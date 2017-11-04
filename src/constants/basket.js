@@ -80,6 +80,11 @@ export const CATEGORIES_INFO: CategoriesInfo = {
     unit: null,
     icon: 'cigarette',
   },
+  [CATEGORIES.OTHER_GOODS]: {
+    name: 'Sonstige Waren',
+    unit: null,
+    icon: 'cigarette',
+  },
 };
 
 // any changes to the vat rates go here
@@ -98,15 +103,92 @@ export const VAT_RATES: VatRates = {
   [CATEGORIES.FLOWERS_AND_PLANTS]: 0.025,
   [CATEGORIES.ANIMAL_FEED]: 0.025,
   [CATEGORIES.FERTILIZER]: 0.025,
+  [CATEGORIES.OTHER_GOODS]: 0.08,
 };
 
-let emptyBasket: Basket = {};
-Object.keys(CATEGORIES).forEach(category => {
-  emptyBasket[category] = {
+// let emptyBasket: Basket = {};
+// Object.keys(CATEGORIES);.forEach(category => {
+//   emptyBasket[category] = {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   };
+// });
+
+export const emptyBasket: Basket = {
+  [CATEGORIES.MEAT_AND_MEAT_PRODUCTS]: {
     quantity: 0,
     duty: 0,
     values: [],
-  };
-});
-
-export { emptyBasket };
+  },
+  [CATEGORIES.BUTTER_OR_CREAM]: {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  },
+  [CATEGORIES.OILS_FATS_MARGARINE]: {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  },
+  [CATEGORIES.OTHER_FOODS]: {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  },
+  [CATEGORIES.ALCOHOL_BELOW_18]: {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  },
+  [CATEGORIES.ALCOHOL_ABOVE_18]: {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  },
+  [CATEGORIES.CIGARETTES_AND_CIGARS]: {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  },
+  [CATEGORIES.OTHER_TOBACCO]: {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  },
+  [CATEGORIES.MEDICINE]: {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  },
+  [CATEGORIES.BOOKS]: {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  },
+  [CATEGORIES.MAGAZINES]: {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  },
+  [CATEGORIES.FLOWERS_AND_PLANTS]: {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  },
+  [CATEGORIES.ANIMAL_FEED]: {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  },
+  [CATEGORIES.FERTILIZER]: {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  },
+  [CATEGORIES.OTHER_GOODS]: {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  },
+};

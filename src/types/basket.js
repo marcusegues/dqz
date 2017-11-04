@@ -13,7 +13,8 @@ export type CategoryName =
   | 'MAGAZINES'
   | 'FLOWERS_AND_PLANTS'
   | 'ANIMAL_FEED'
-  | 'FERTILIZER';
+  | 'FERTILIZER'
+  | 'OTHER_GOODS';
 
 export type CategoryInfo = {
   +name: string,

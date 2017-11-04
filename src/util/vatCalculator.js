@@ -27,7 +27,6 @@ export const vatCalculator = (basket, numberPersons) => {
 
   // array of total values (excluding high value items) for each category
   const categoryValues = sortedCategories.map(cat => basket[cat].totalValue);
-
   const allowance = numberPersons * INDIVIDUAL_ALLOWANCE;
   const vatStart = allowance - INDIVIDUAL_ALLOWANCE;
 
@@ -57,7 +56,6 @@ export const vatCalculator = (basket, numberPersons) => {
     // indexed at crossVatStart) the taxable part of the value of the category
     // is only the part that starts at the vatStart value
     taxableValues[crossVatStart] = categoryAccValues[crossVatStart] - vatStart;
-
     // array of actual vat calculates values by category
     const vatArray = taxableValues.map(
       (value, i) => value * categoryTaxRates[i]
