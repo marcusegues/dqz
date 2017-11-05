@@ -18,7 +18,7 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
   const report: ImmutableMapType<Category, number> = Immutable.Map();
   return report.withMutations(r => {
     CategoriesArray.forEach(c => {
-      const quantity: number = basket.getIn([c, 'volume', 'quantity'], 0);
+      const quantityRaw: number = basket.getIn([c, 'volume', 'quantity'], 0);
       const allowanceRaw: number = CategoriesRates.getIn(
         [c, 'dutyAllowance'],
         0
@@ -29,24 +29,25 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
       );
       const peopleCount: number =
         people.get('adults', 0) + +!adultsOnly * people.get('minors', 0);
-      let allowance: number = peopleCount * allowanceRaw;
+      const quantity: number = quantityRaw - peopleCount * allowanceRaw;
+      let allowanceRunningTotal: number = 0;
       const duty: ImmutableListType<DutyBracket> = CategoriesRates.getIn(
         [c, 'duty'],
         Immutable.List()
       );
 
-      if (quantity <= allowance) {
+      if (quantity <= allowanceRunningTotal) {
         r.set(c, 0);
       } else {
         const fee = duty.reduce((acc, v) => {
-          const tempQuantity = quantity - allowance;
+          const tempQuantity = quantity - allowanceRunningTotal;
           const thresholdThisBracket = v.get('threshold');
-          if (thresholdThisBracket <= allowance) {
+          if (thresholdThisBracket <= allowanceRunningTotal) {
             return acc;
           }
-          const bracketWidth = thresholdThisBracket - allowance;
+          const bracketWidth = thresholdThisBracket - allowanceRunningTotal;
           const inThisBracket = Math.min(bracketWidth, tempQuantity);
-          allowance += bracketWidth;
+          allowanceRunningTotal += bracketWidth;
           return acc + inThisBracket * v.get('fee');
         }, 0);
         r.set(c, fee);
