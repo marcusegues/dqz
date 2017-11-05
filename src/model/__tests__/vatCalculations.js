@@ -7,7 +7,12 @@ import {
   subtractAllowances,
   summarizeByVatBracket,
 } from '../vatCalculations';
-import { sampleBasket1, sampleBasket2 } from './fullBaskets';
+import {
+  sampleBasket1,
+  sampleBasket2,
+  sampleBasket3,
+  sampleBasket4,
+} from './fullBaskets';
 import { addAdult, addMinor, initPeople } from '../configurationApi';
 import {
   IndividualAllowanceAdult,
@@ -53,5 +58,11 @@ describe('VAT Calculations', () => {
   test('it creates a correct vat summary', () => {
     expect(calculateVat(sampleBasket1, initPeople)).toMatchSnapshot();
     expect(calculateVat(sampleBasket2, initPeople)).toMatchSnapshot();
+    expect(
+      calculateVat(sampleBasket3, initPeople).get('totalVatNormalItems')
+    ).toBeCloseTo(29.431);
+    expect(
+      calculateVat(sampleBasket4, initPeople).get('totalVatNormalItems')
+    ).toBeCloseTo(12.135);
   });
 });

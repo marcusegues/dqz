@@ -52,3 +52,22 @@ export const sampleBasket2: BasketType = emptyBasket.withMutations(basket => {
 
   return basket;
 });
+
+const exchangeRate3 = 1.19;
+export const sampleBasket3: BasketType = emptyBasket.withMutations(basket => {
+  basket = addAmount(basket, 'Meat', 240 * exchangeRate3);
+  basket = addAmount(basket, 'Butter', 20 * exchangeRate3);
+  basket = addAmount(basket, 'AlcSoft', 30 * exchangeRate3);
+  basket = addAmount(basket, 'AlcHard', 450 * exchangeRate3);
+  return basket;
+});
+
+const exchangeRate4 = 1.19;
+export const sampleBasket4: BasketType = emptyBasket.withMutations(basket => {
+  basket = addAmount(basket, 'Meat', 40 * exchangeRate4);
+  basket = addAmount(basket, 'Butter', 20 * exchangeRate4);
+  basket = addAmount(basket, 'OtherFood', 350 * exchangeRate4);
+  basket = addAmount(basket, 'AlcHard', 50 * exchangeRate4);
+  basket = addAmount(basket, 'Other', 200 * exchangeRate4);
+  return basket;
+});

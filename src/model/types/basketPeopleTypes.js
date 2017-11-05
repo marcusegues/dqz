@@ -14,6 +14,7 @@ export type CategoriesTypes =
   | 'Meat'
   | 'Butter'
   | 'Oils'
+  | 'OtherFood'
   | 'AlcSoft'
   | 'AlcHard'
   | 'Cigarettes'

@@ -19,6 +19,7 @@ export const CATEGORIES: Set<CategoriesTypes> = new Set([
   'Meat',
   'Butter',
   'Oils',
+  'OtherFood',
   'AlcSoft',
   'AlcHard',
   'Cigarettes',
@@ -66,6 +67,15 @@ export const CategoriesRates: RatesType = Immutable.Map([
         makeDutyBracketRecord({ threshold: Infinity, fee: 2 }),
       ]),
       dutyAllowance: 5,
+      adultsOnly: false,
+    }),
+  ],
+  [
+    'OtherFood',
+    makeRatesRecord({
+      vat: 0.025,
+      duty: Immutable.List(),
+      dutyAllowance: Infinity,
       adultsOnly: false,
     }),
   ],
@@ -199,6 +209,14 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'Oils',
     makeCategoryInfoRecord({
       name: 'Öle, Fette, Margarine zu Speisezwecken',
+      unit: 'kg/Liter',
+      icon: 'oil',
+    }),
+  ],
+  [
+    'OtherFood',
+    makeCategoryInfoRecord({
+      name: 'Sonstige Lebensmittel & Alkoholfreie Getranke',
       unit: 'kg/Liter',
       icon: 'oil',
     }),
