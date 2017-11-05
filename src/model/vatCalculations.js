@@ -1,3 +1,4 @@
+// @flow
 // Idea:
 // - summarize all large items with vat-rate
 // - take all small items in the basket (per category), and accumulate per category
@@ -33,15 +34,17 @@ export const summarizeByVatBracket = (
 ): allAmountsPerVatBracket => {
   const allAmountsPerVatBracket: allAmountsPerVatBracket = makeAllAmountsPerVatBracketRecord();
 
-  return (result = allAmountsPerVatBracket.withMutations(basketMutable => {
+  return allAmountsPerVatBracket.withMutations(basketMutable => {
     CategoriesArray.forEach(c => {
       const vatRate = CategoriesRates.getIn([c, 'vat']);
-      const amounts: ImmutableListType = basket.getIn([c, 'volume', 'amounts']);
-      const largeAmounts: ImmutableListType = basket.getIn([
-        c,
-        'volume',
-        'amountsLarge',
-      ]);
+      const amounts: ImmutableListType<number> = basket.getIn(
+        [c, 'volume', 'amounts'],
+        Immutable.List()
+      );
+      const largeAmounts: ImmutableListType<number> = basket.getIn(
+        [c, 'volume', 'amountsLarge'],
+        Immutable.List()
+      );
       basketMutable = basketMutable.updateIn(
         ['normal', vatRate],
         Immutable.List(),
@@ -60,7 +63,7 @@ export const summarizeByVatBracket = (
       large.sortBy((_, k) => k, (a, b) => b - a)
     );
     return basketMutable;
-  }));
+  });
 };
 
 /**
@@ -99,7 +102,10 @@ export const subtractAllowances = (
 export const calculateVatLargeItems = (
   allItems: allAmountsPerVatBracket
 ): number => {
-  const largeItems: ImmutableOrderedMapType = allItems.get('large');
+  const largeItems: ImmutableOrderedMapType<
+    number,
+    ImmutableListType<number>
+  > = allItems.get('large');
   return largeItems.reduce(
     (acc, v, k) => acc + k * v.reduce((a, v) => a + v, 0),
     0
@@ -112,7 +118,10 @@ export const calculateVatLargeItems = (
 export const calculateVatNormalItems = (
   allItems: allAmountsPerVatBracket
 ): number => {
-  const largeItems: ImmutableOrderedMapType = allItems.get('normal');
+  const largeItems: ImmutableOrderedMapType<
+    number,
+    ImmutableListType<number>
+  > = allItems.get('normal');
   return largeItems.reduce(
     (acc, v, k) => acc + k * v.reduce((a, v) => a + v, 0),
     0
