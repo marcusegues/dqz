@@ -27,8 +27,10 @@ export type CategoriesInfo = {
 };
 
 export type Categories = {
-  +[category: CategoryName]: string,
+  +[category: CategoryName]: CategoryName,
 };
+
+export type CategoriesList = Array<CategoryName>;
 
 export type VatRates = {
   +[category: CategoryName]: number,
@@ -41,5 +43,5 @@ export type BasketCategoryInfo = {
 };
 
 export type Basket = {
-  +[category: CategoryName]: BasketCategoryInfo,
+  [category: CategoryName]: BasketCategoryInfo,
 };

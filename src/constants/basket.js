@@ -1,5 +1,5 @@
 // @flow
-import { CATEGORIES } from './categories';
+import { CATEGORIES, CATEGORIES_LIST } from './categories';
 import type {
   CategoryName,
   CategoryInfo,
@@ -106,89 +106,89 @@ export const VAT_RATES: VatRates = {
   [CATEGORIES.OTHER_GOODS]: 0.08,
 };
 
-// let emptyBasket: Basket = {};
-// Object.keys(CATEGORIES);.forEach(category => {
-//   emptyBasket[category] = {
+let emptyBasket: Basket = {};
+CATEGORIES_LIST.forEach(category => {
+  emptyBasket[category] = {
+    quantity: 0,
+    duty: 0,
+    values: [],
+  };
+});
+
+// export const emptyBasket: Basket = {
+//   [CATEGORIES.MEAT_AND_MEAT_PRODUCTS]: {
 //     quantity: 0,
 //     duty: 0,
 //     values: [],
-//   };
-// });
-
-export const emptyBasket: Basket = {
-  [CATEGORIES.MEAT_AND_MEAT_PRODUCTS]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-  [CATEGORIES.BUTTER_OR_CREAM]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-  [CATEGORIES.OILS_FATS_MARGARINE]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-  [CATEGORIES.OTHER_FOODS]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-  [CATEGORIES.ALCOHOL_BELOW_18]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-  [CATEGORIES.ALCOHOL_ABOVE_18]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-  [CATEGORIES.CIGARETTES_AND_CIGARS]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-  [CATEGORIES.OTHER_TOBACCO]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-  [CATEGORIES.MEDICINE]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-  [CATEGORIES.BOOKS]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-  [CATEGORIES.MAGAZINES]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-  [CATEGORIES.FLOWERS_AND_PLANTS]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-  [CATEGORIES.ANIMAL_FEED]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-  [CATEGORIES.FERTILIZER]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-  [CATEGORIES.OTHER_GOODS]: {
-    quantity: 0,
-    duty: 0,
-    values: [],
-  },
-};
+//   },
+//   [CATEGORIES.BUTTER_OR_CREAM]: {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   },
+//   [CATEGORIES.OILS_FATS_MARGARINE]: {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   },
+//   [CATEGORIES.OTHER_FOODS]: {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   },
+//   [CATEGORIES.ALCOHOL_BELOW_18]: {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   },
+//   [CATEGORIES.ALCOHOL_ABOVE_18]: {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   },
+//   [CATEGORIES.CIGARETTES_AND_CIGARS]: {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   },
+//   [CATEGORIES.OTHER_TOBACCO]: {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   },
+//   [CATEGORIES.MEDICINE]: {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   },
+//   [CATEGORIES.BOOKS]: {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   },
+//   [CATEGORIES.MAGAZINES]: {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   },
+//   [CATEGORIES.FLOWERS_AND_PLANTS]: {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   },
+//   [CATEGORIES.ANIMAL_FEED]: {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   },
+//   [CATEGORIES.FERTILIZER]: {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   },
+//   [CATEGORIES.OTHER_GOODS]: {
+//     quantity: 0,
+//     duty: 0,
+//     values: [],
+//   },
+// };

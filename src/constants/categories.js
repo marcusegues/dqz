@@ -1,5 +1,9 @@
 // @flow
-import type { Categories } from '../types/basket';
+import type { Categories, CategoriesList } from '../types/basket';
+
+// CATEGORIES and CATEGORIES_LIST are the two base objects containing
+// all the categories. If a new category needs to be added, it is added to
+// both of these objects
 
 export const CATEGORIES: Categories = {
   MEAT_AND_MEAT_PRODUCTS: 'MEAT_AND_MEAT_PRODUCTS',
@@ -18,3 +22,21 @@ export const CATEGORIES: Categories = {
   FERTILIZER: 'FERTILIZER',
   OTHER_GOODS: 'OTHER_GOODS',
 };
+
+export const CATEGORIES_LIST: CategoriesList = [
+  CATEGORIES.MEAT_AND_MEAT_PRODUCTS,
+  CATEGORIES.BUTTER_OR_CREAM,
+  CATEGORIES.OILS_FATS_MARGARINE,
+  CATEGORIES.OTHER_FOODS,
+  CATEGORIES.ALCOHOL_BELOW_18,
+  CATEGORIES.ALCOHOL_ABOVE_18,
+  CATEGORIES.CIGARETTES_AND_CIGARS,
+  CATEGORIES.OTHER_TOBACCO,
+  CATEGORIES.MEDICINE,
+  CATEGORIES.BOOKS,
+  CATEGORIES.MAGAZINES,
+  CATEGORIES.FLOWERS_AND_PLANTS,
+  CATEGORIES.ANIMAL_FEED,
+  CATEGORIES.FERTILIZER,
+  CATEGORIES.OTHER_GOODS,
+];
