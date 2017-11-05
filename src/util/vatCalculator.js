@@ -1,5 +1,5 @@
 // @flow
-import { VAT_RATES } from '../constants/basket';
+import { VAT_RATES } from '../constants/vat';
 import { CATEGORIES, CATEGORIES_LIST } from '../constants/categories';
 import type { CategoryName, CategoriesList } from '../types/basket';
 import type {

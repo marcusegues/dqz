@@ -1,5 +1,5 @@
 import { emptyBasket } from '../constants/basket';
-import { dutyBySubCategory } from '../util/dutyCalculator';
+import { dutyForCategory } from '../util/dutyCalculator';
 
 const basketItem = (state = {}, action) => {
   switch (action.type) {
@@ -18,7 +18,7 @@ const basketItem = (state = {}, action) => {
       const quantity = Math.max(0, state.quantity + action.quantityChange);
       return {
         ...state,
-        duty: dutyBySubCategory(action.categoryName, quantity, 1, 0),
+        duty: dutyForCategory(action.categoryName, quantity, 1, 0),
         quantity: Math.max(0, quantity),
       };
     }

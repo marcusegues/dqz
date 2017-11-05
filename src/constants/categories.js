@@ -1,5 +1,9 @@
 // @flow
-import type { Categories, CategoriesList } from '../types/basket';
+import type {
+  Categories,
+  CategoriesList,
+  CategoriesInfo,
+} from '../types/basket';
 
 // CATEGORIES and CATEGORIES_LIST are the two base objects containing
 // all the categories. If a new category needs to be added, it is added to
@@ -40,3 +44,82 @@ export const CATEGORIES_LIST: CategoriesList = [
   CATEGORIES.FERTILIZER,
   CATEGORIES.OTHER_GOODS,
 ];
+
+// null unit means it's zollfrei
+export const CATEGORIES_INFO: CategoriesInfo = {
+  [CATEGORIES.MEAT_AND_MEAT_PRODUCTS]: {
+    name: 'Fleisch und Fleischzubereitung',
+    unit: 'kg',
+    icon: 'meat',
+  },
+  [CATEGORIES.BUTTER_OR_CREAM]: {
+    name: 'Butter und Rahm',
+    unit: 'kg/Liter',
+    icon: 'butter',
+  },
+  [CATEGORIES.OILS_FATS_MARGARINE]: {
+    name: 'Öle, Fette, Margarine zu Speisezwecken',
+    unit: 'kg/Liter',
+    icon: 'oil',
+  },
+  [CATEGORIES.OTHER_FOODS]: {
+    name: 'Sonstige Lebensmittel & Alkoholfreie Getranke',
+    unit: 'kg/Liter',
+    icon: 'oil',
+  },
+  [CATEGORIES.ALCOHOL_BELOW_18]: {
+    name: 'Alkoholische Getränke, Alkoholgehalt bis 18% Vol.',
+    unit: 'Liter',
+    icon: 'beer',
+  },
+  [CATEGORIES.ALCOHOL_ABOVE_18]: {
+    name: 'Alkoholische Getränke, Alkoholgehalt über 18% Vol.',
+    unit: 'Liter',
+    icon: 'vodka',
+  },
+  [CATEGORIES.CIGARETTES_AND_CIGARS]: {
+    name: 'Zigaretten/Zigarren',
+    unit: 'Stück',
+    icon: 'cigarette',
+  },
+  [CATEGORIES.OTHER_TOBACCO]: {
+    name: 'Andere Tabakfabrikate',
+    unit: 'Gramm',
+    icon: 'cigarette',
+  },
+  [CATEGORIES.MEDICINE]: {
+    name: 'Medikamente',
+    unit: null,
+    icon: 'cigarette',
+  },
+  [CATEGORIES.BOOKS]: {
+    name: 'Bucher',
+    unit: null,
+    icon: 'cigarette',
+  },
+  [CATEGORIES.MAGAZINES]: {
+    name: 'Zeitschriften',
+    unit: null,
+    icon: 'cigarette',
+  },
+  [CATEGORIES.FLOWERS_AND_PLANTS]: {
+    name: 'Schnittblumen & Pflanzen',
+    unit: null,
+    icon: 'cigarette',
+  },
+  [CATEGORIES.ANIMAL_FEED]: {
+    name: 'Tierfutter',
+    unit: null,
+    icon: 'cigarette',
+  },
+  [CATEGORIES.FERTILIZER]: {
+    name: 'Dunger',
+    unit: null,
+    icon: 'cigarette',
+  },
+  [CATEGORIES.OTHER_GOODS]: {
+    name: 'Sonstige Waren',
+    unit: null,
+    icon: 'cigarette',
+  },
+};
