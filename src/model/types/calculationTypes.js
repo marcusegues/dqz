@@ -33,19 +33,17 @@ export type AllAmountsPerVatBracket = RecordOf<AllAmountsPerVatContent>;
 
 // note: we are not returning vat per cat
 type vatReportContent = {
-  totalAllowance: number,
   totalVatLargeItems: number,
   totalVatNormalItems: number,
-  vatByCategory: ImmutableMapType<Categories, number>,
+  vatByCategoryRaw: ImmutableMapType<Categories, number>,
 };
 
 export const makeVatReportRecord: RecordFactory<
   vatReportContent
 > = Immutable.Record({
-  totalAllowance: 0,
   totalVatLargeItems: 0,
   totalVatNormalItems: 0,
-  vatByCategory: Immutable.Map(),
+  vatByCategoryRaw: Immutable.Map(),
 });
 
 export type VatReport = RecordOf<vatReportContent>;

@@ -12,8 +12,7 @@ import {
   makeRatesRecord,
 } from './types/basketPeopleTypes';
 
-export const IndividualAllowanceAdult: number = 300;
-export const IndividualAllowanceMinor: number = 300;
+export const IndividualAllowance: number = 300;
 
 export const CATEGORIES: Set<Category> = new Set([
   'Meat',

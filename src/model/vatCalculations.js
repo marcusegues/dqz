@@ -19,8 +19,7 @@ import type {
 import {
   CategoriesArray,
   CategoriesRates,
-  IndividualAllowanceAdult,
-  IndividualAllowanceMinor,
+  IndividualAllowance,
 } from './constants';
 import {
   makeAllAmountsPerVatBracketRecord,
@@ -92,19 +91,48 @@ export const summarizeByVatBracket = (
 /**
  * For TESTING only. Note: the LAST person in the group is the one paying... 
  */
-export const calculateAllowances = (people: People): number =>
-  people.get('minors') * IndividualAllowanceMinor +
-  people.get('adults') * IndividualAllowanceAdult;
+export const calculateAllowancesExceptLast = (people: People): number =>
+  (people.get('minors') + people.get('adults') - 1) * IndividualAllowance;
 
 /**
  * For TESTING only
  */
-export const applyAllowances = (
+export const applyAllowancesNotLastPerson = (
   allItems: AllAmountsPerVatBracket,
   people: People
 ): AllAmountsPerVatBracket => {
-  let allowance: number = calculateAllowances(people);
+  let allowance: number = calculateAllowancesExceptLast(people);
+  const isPartyOfOne: boolean =
+    people.get('adults') + people.get('minors') === 1;
+  if (isPartyOfOne) {
+    return allItems;
+  }
+  return allItems.withMutations(all => {
+    all.update('normal', allBrackets =>
+      allBrackets.map(list =>
+        list.map(amount => {
+          const allowanceAlloc = Math.min(amount, allowance);
+          amount -= allowanceAlloc;
+          allowance -= allowanceAlloc;
+          return amount;
+        })
+      )
+    );
+    return all;
+  });
+};
 
+/**
+ * Foo
+ */
+export const applyAllowancesLastPerson = (
+  allItems: AllAmountsPerVatBracket,
+  total: number
+): AllAmountsPerVatBracket => {
+  if (total > IndividualAllowance) {
+    return allItems;
+  }
+  let allowance = IndividualAllowance;
   return allItems.withMutations(all => {
     all.update('normal', allBrackets =>
       allBrackets.map(list =>
@@ -153,6 +181,24 @@ export const calculateVatNormalItems = (
 };
 
 /**
+ * For TESTING only
+ */
+export const totalAmounts = (basket: Basket): number => {
+  let total = 0;
+  CategoriesArray.forEach(c => {
+    const rate = CategoriesRates.getIn([c, 'vat'], 0);
+    const normalAmounts: number = basket
+      .getIn([c, 'volume', 'amounts'], Immutable.List())
+      .reduce((a, v) => a + v, 0);
+    const largeAmounts: number = basket
+      .getIn([c, 'volume', 'amountsLarge'], Immutable.List())
+      .reduce((a, v) => a + v, 0);
+    total += largeAmounts + normalAmounts;
+  });
+  return total;
+};
+
+/**
  * Calculates the vat and returns a nice record with all the info
  * @param basket
  * @param people
@@ -160,13 +206,23 @@ export const calculateVatNormalItems = (
  */
 export const calculateVat = (basket: Basket, people: People): VatReport => {
   const summarized: AllAmountsPerVatBracket = summarizeByVatBracket(basket);
-  const afterAllowance = applyAllowances(summarized, people);
+  const total = Math.max(
+    0,
+    totalAmounts(basket) - calculateAllowancesExceptLast(people)
+  );
+  const afterAllowancePreLast = applyAllowancesNotLastPerson(
+    summarized,
+    people
+  );
+  const afterAllowance = applyAllowancesLastPerson(
+    afterAllowancePreLast,
+    total
+  );
   const vatLarge = calculateVatLargeItems(afterAllowance);
   const vatNormal = calculateVatNormalItems(afterAllowance);
   return makeVatReportRecord({
-    totalAllowance: calculateAllowances(people),
     totalVatLargeItems: vatLarge,
     totalVatNormalItems: vatNormal,
-    vatByCategory: vatByCategory(basket),
+    vatByCategoryRaw: vatByCategory(basket),
   });
 };

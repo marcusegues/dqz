@@ -1,27 +1,41 @@
 // @flow
 import {
-  calculateAllowances,
+  calculateAllowancesExceptLast,
   calculateVat,
   calculateVatLargeItems,
   calculateVatNormalItems,
-  applyAllowances,
+  applyAllowancesNotLastPerson,
   summarizeByVatBracket,
   vatByCategory,
+  totalAmounts,
+  applyAllowancesLastPerson,
 } from '../vatCalculations';
 import {
+  ezvBasket1,
+  ezvBasket10,
+  ezvBasket11,
+  ezvBasket12,
+  ezvBasket13,
+  ezvBasket2,
+  ezvBasket3,
+  ezvBasket4,
+  ezvBasket5,
+  ezvBasket6,
+  ezvBasket7,
+  ezvBasket8,
+  ezvBasket9,
   sampleBasket1,
   sampleBasket2,
   sampleBasket3,
   sampleBasket4,
 } from './fullBaskets';
 import { addAdult, addMinor, initPeople } from '../configurationApi';
-import {
-  IndividualAllowanceAdult,
-  IndividualAllowanceMinor,
-} from '../constants';
+import { IndividualAllowance } from '../constants';
 
 const b1 = summarizeByVatBracket(sampleBasket1);
 const b2 = summarizeByVatBracket(sampleBasket2);
+const twoAdults = addAdult(initPeople);
+const threeAdults = addAdult(twoAdults);
 
 describe('VAT Calculations', () => {
   test('it sums vat for all vat-categories', () => {});
@@ -43,21 +57,33 @@ describe('VAT Calculations', () => {
     expect(calculateVatNormalItems(b1)).toBeCloseTo(8.0285);
   });
 
-  test('it sums all the categories and subtracts allowances as expected', () => {
-    expect(applyAllowances(b1, initPeople)).toMatchSnapshot();
+  test('it sums all the categories and subtracts allowances (pre-last) as expected', () => {
+    expect(applyAllowancesNotLastPerson(b1, twoAdults)).toMatchSnapshot();
   });
 
-  test('it sums all the categories and subtracts allowances as expected', () => {
-    expect(applyAllowances(b2, initPeople)).toMatchSnapshot();
+  test('it sums all the categories and subtracts allowances (pre-last) as expected', () => {
+    expect(applyAllowancesNotLastPerson(b2, twoAdults)).toMatchSnapshot();
+  });
+
+  test('it sums all the categories and subtracts allowances (last) as expected', () => {
+    expect(
+      applyAllowancesLastPerson(b1, totalAmounts(sampleBasket1))
+    ).toMatchSnapshot();
+  });
+
+  test('it sums all the categories and subtracts allowances (last) as expected', () => {
+    expect(
+      applyAllowancesLastPerson(b2, totalAmounts(sampleBasket2))
+    ).toMatchSnapshot();
   });
 
   test('calculate allowance correctly', () => {
-    expect(calculateAllowances(initPeople)).toBe(IndividualAllowanceAdult);
-    expect(calculateAllowances(addAdult(initPeople))).toBe(
-      2 * IndividualAllowanceAdult
+    expect(calculateAllowancesExceptLast(initPeople)).toBe(0);
+    expect(calculateAllowancesExceptLast(addAdult(initPeople))).toBe(
+      IndividualAllowance
     );
-    expect(calculateAllowances(addMinor(initPeople))).toBe(
-      IndividualAllowanceAdult + IndividualAllowanceMinor
+    expect(calculateAllowancesExceptLast(addMinor(initPeople))).toBe(
+      IndividualAllowance
     );
   });
 
@@ -66,9 +92,25 @@ describe('VAT Calculations', () => {
     expect(calculateVat(sampleBasket2, initPeople)).toMatchSnapshot();
     expect(
       calculateVat(sampleBasket3, initPeople).get('totalVatNormalItems')
-    ).toBeCloseTo(29.431);
+    ).toBeCloseTo(53.431);
     expect(
       calculateVat(sampleBasket4, initPeople).get('totalVatNormalItems')
-    ).toBeCloseTo(12.135);
+    ).toBeCloseTo(22.9075);
+  });
+
+  test('it works with EZV examples', () => {
+    expect(calculateVat(ezvBasket1, initPeople)).toMatchSnapshot();
+    expect(calculateVat(ezvBasket2, initPeople)).toMatchSnapshot();
+    expect(calculateVat(ezvBasket3, twoAdults)).toMatchSnapshot();
+    expect(calculateVat(ezvBasket4, twoAdults)).toMatchSnapshot();
+    expect(calculateVat(ezvBasket5, twoAdults)).toMatchSnapshot();
+    expect(calculateVat(ezvBasket6, twoAdults)).toMatchSnapshot();
+    expect(calculateVat(ezvBasket7, twoAdults)).toMatchSnapshot();
+    expect(calculateVat(ezvBasket8, twoAdults)).toMatchSnapshot();
+    expect(calculateVat(ezvBasket9, twoAdults)).toMatchSnapshot();
+    expect(calculateVat(ezvBasket10, threeAdults)).toMatchSnapshot();
+    expect(calculateVat(ezvBasket11, threeAdults)).toMatchSnapshot();
+    expect(calculateVat(ezvBasket12, threeAdults)).toMatchSnapshot();
+    expect(calculateVat(ezvBasket13, threeAdults)).toMatchSnapshot();
   });
 });

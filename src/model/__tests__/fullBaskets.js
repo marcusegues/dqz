@@ -78,6 +78,99 @@ export const ezvBasket1: Basket = emptyBasket.withMutations(basket => {
   basket = addAmount(basket, 'Meat', 100);
   basket = addAmount(basket, 'Meat', 100);
   basket = addAmount(basket, 'Meat', 100);
+  return basket;
+});
+
+export const ezvBasket2: Basket = emptyBasket.withMutations(basket => {
   basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  return basket;
+});
+
+export const ezvBasket3: Basket = emptyBasket.withMutations(basket => {
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  return basket;
+});
+
+export const ezvBasket4: Basket = emptyBasket.withMutations(basket => {
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  return basket;
+});
+
+export const ezvBasket5: Basket = emptyBasket.withMutations(basket => {
+  basket = addLargeAmount(basket, 'Meat', 400);
+  return basket;
+});
+
+// https://www.ezv.admin.ch/ezv/de/home/information-private/reisen-und-einkaufen--freimengen-und-wertfreigrenze/einfuhr-in-die-schweiz/warenwert-bis-chf-300--mehrwertsteuerfrei/anwendungsbeispiele-der-wertfreigrenze-bei-mehreren-personen.html
+export const ezvBasket6: Basket = emptyBasket.withMutations(basket => {
+  basket = addLargeAmount(basket, 'Meat', 320);
+  return basket;
+});
+
+export const ezvBasket7: Basket = emptyBasket.withMutations(basket => {
+  basket = addAmount(basket, 'Meat', 220);
+  basket = addAmount(basket, 'Meat', 220);
+  return basket;
+});
+
+export const ezvBasket8: Basket = emptyBasket.withMutations(basket => {
+  basket = addAmount(basket, 'Meat', 220);
+  basket = addAmount(basket, 'Meat', 220);
+  basket = addAmount(basket, 'Meat', 220);
+  return basket;
+});
+
+export const ezvBasket9: Basket = emptyBasket.withMutations(basket => {
+  basket = addAmount(basket, 'Meat', 250);
+  basket = addAmount(basket, 'Meat', 250);
+  basket = addAmount(basket, 'Meat', 250);
+  basket = addAmount(basket, 'Meat', 250);
+  return basket;
+});
+
+export const ezvBasket10: Basket = emptyBasket.withMutations(basket => {
+  basket = addLargeAmount(basket, 'Meat', 800);
+  return basket;
+});
+
+export const ezvBasket11: Basket = emptyBasket.withMutations(basket => {
+  basket = addAmount(basket, 'Meat', 200);
+  basket = addAmount(basket, 'Meat', 200);
+  basket = addAmount(basket, 'Meat', 200);
+  basket = addAmount(basket, 'Meat', 200);
+  basket = addAmount(basket, 'Meat', 200);
+  return basket;
+});
+
+export const ezvBasket12: Basket = emptyBasket.withMutations(basket => {
+  basket = addAmount(basket, 'Meat', 200);
+  basket = addAmount(basket, 'Meat', 200);
+  basket = addLargeAmount(basket, 'Meat', 500);
+  return basket;
+});
+
+export const ezvBasket13: Basket = emptyBasket.withMutations(basket => {
+  basket = addAmount(basket, 'Meat', 200);
+  basket = addAmount(basket, 'Meat', 200);
+  basket = addAmount(basket, 'Meat', 200);
+  basket = addAmount(basket, 'Meat', 200);
+  basket = addAmount(basket, 'Meat', 200);
+  basket = addLargeAmount(basket, 'Meat', 500);
   return basket;
 });
