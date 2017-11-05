@@ -1,31 +1,36 @@
 // @flow
-import { CATEGORIES } from '../constants/categories';
-
 export type CategoryName =
-  | CATEGORIES.MEAT_AND_MEAT_PRODUCTS
-  | CATEGORIES.BUTTER_OR_CREAM
-  | CATEGORIES.OILS_FATS_MARGARINE
-  | CATEGORIES.OTHER_FOODS
-  | CATEGORIES.ALCOHOL_BELOW_18
-  | CATEGORIES.ALCOHOL_ABOVE_18
-  | CATEGORIES.CIGARETTES_AND_CIGARS
-  | CATEGORIES.OTHER_TOBACCO
-  | CATEGORIES.MEDICINE
-  | CATEGORIES.BOOKS
-  | CATEGORIES.MAGAZINES
-  | CATEGORIES.FLOWERS_AND_PLANTS
-  | CATEGORIES.ANIMAL_FEED
-  | CATEGORIES.FERTILIZER;
+  | 'MEAT_AND_MEAT_PRODUCTS'
+  | 'BUTTER_OR_CREAM'
+  | 'OILS_FATS_MARGARINE'
+  | 'OTHER_FOODS'
+  | 'ALCOHOL_BELOW_18'
+  | 'ALCOHOL_ABOVE_18'
+  | 'CIGARETTES_AND_CIGARS'
+  | 'OTHER_TOBACCO'
+  | 'MEDICINE'
+  | 'BOOKS'
+  | 'MAGAZINES'
+  | 'FLOWERS_AND_PLANTS'
+  | 'ANIMAL_FEED'
+  | 'FERTILIZER'
+  | 'OTHER_GOODS';
 
 export type CategoryInfo = {
-  +name: ?string,
-  +unit: ?string,
-  +icon: ?string,
+  +name: string,
+  +unit: string,
+  +icon: string,
 };
 
 export type CategoriesInfo = {
   +[category: CategoryName]: CategoryInfo,
 };
+
+export type Categories = {
+  +[category: CategoryName]: CategoryName,
+};
+
+export type CategoriesList = Array<CategoryName>;
 
 export type VatRates = {
   +[category: CategoryName]: number,
@@ -38,5 +43,5 @@ export type BasketCategoryInfo = {
 };
 
 export type Basket = {
-  +[category: CategoryName]: BasketCategoryInfo,
+  [category: CategoryName]: BasketCategoryInfo,
 };

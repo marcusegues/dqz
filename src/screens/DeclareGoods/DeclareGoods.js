@@ -11,7 +11,7 @@ import { Container, Body, Header, Icon } from 'native-base';
 import Touchable from 'react-native-platform-touchable';
 import { Entypo } from '@expo/vector-icons';
 import GoodsCategoryRow from './Subcomponents/GoodsCategoryRow';
-import { CATEGORIES_INFO } from '../../constants/basket';
+import { CATEGORIES_INFO } from '../../constants/categories';
 import GoodsInput from './Subcomponents/GoodsInput';
 
 class DeclareGoods extends React.Component {
@@ -48,7 +48,7 @@ class DeclareGoods extends React.Component {
     return (
       <ScrollView style={container}>
         <View style={{ flex: 1, alignItems: 'center' }}>
-          {Object.keys(CATEGORIES_INFO).map(category => (
+          {Object.keys(CATEGORIES_INFO).map(category =>
             <GoodsCategoryRow
               key={category}
               categoryName={category}
@@ -65,7 +65,7 @@ class DeclareGoods extends React.Component {
                 }
               />
             </GoodsCategoryRow>
-          ))}
+          )}
         </View>
       </ScrollView>
     );
