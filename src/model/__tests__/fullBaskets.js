@@ -71,3 +71,13 @@ export const sampleBasket4: Basket = emptyBasket.withMutations(basket => {
   basket = addAmount(basket, 'Other', 200 * exchangeRate4);
   return basket;
 });
+
+// EZV baskets
+// https://www.ezv.admin.ch/ezv/de/home/information-private/reisen-und-einkaufen--freimengen-und-wertfreigrenze/einfuhr-in-die-schweiz/warenwert-bis-chf-300--mehrwertsteuerfrei.html
+export const ezvBasket1: Basket = emptyBasket.withMutations(basket => {
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  basket = addAmount(basket, 'Meat', 100);
+  return basket;
+});

@@ -1,22 +1,92 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`VAT Calculations it calculates vat by category 1`] = `
+Immutable.Map {
+  "Butter": 16.558500000000002,
+  "Oils": 0,
+  "Cigarettes": 0,
+  "AlcSoft": 0,
+  "Fertilizer": 0,
+  "AlcHard": 0,
+  "Meds": 0,
+  "Books": 0,
+  "Meat": 1.075,
+  "OtherFood": 0,
+  "Other": 0,
+  "Tobacco": 447.92,
+  "Flowers": 0,
+  "AnimalFeed": 0,
+  "Magazines": 0,
+}
+`;
+
+exports[`VAT Calculations it calculates vat by category 2`] = `
+Immutable.Map {
+  "Butter": 38.43350000000001,
+  "Oils": 0,
+  "Cigarettes": 0,
+  "AlcSoft": 0,
+  "Fertilizer": 0,
+  "AlcHard": 0,
+  "Meds": 0,
+  "Books": 0,
+  "Meat": 1.075,
+  "OtherFood": 0,
+  "Other": 0,
+  "Tobacco": 447.92,
+  "Flowers": 0,
+  "AnimalFeed": 0,
+  "Magazines": 0,
+}
+`;
+
 exports[`VAT Calculations it creates a correct vat summary 1`] = `
 Immutable.Record {
-  "totalLargeItemsAmount": 0,
-  "totalNormalItemsAmount": 0,
   "totalAllowance": 300,
   "totalVatLargeItems": 457.52500000000003,
   "totalVatNormalItems": 0,
+  "vatByCategory": Immutable.Map {
+    "Butter": 16.558500000000002,
+    "Oils": 0,
+    "Cigarettes": 0,
+    "AlcSoft": 0,
+    "Fertilizer": 0,
+    "AlcHard": 0,
+    "Meds": 0,
+    "Books": 0,
+    "Meat": 1.075,
+    "OtherFood": 0,
+    "Other": 0,
+    "Tobacco": 447.92,
+    "Flowers": 0,
+    "AnimalFeed": 0,
+    "Magazines": 0,
+  },
 }
 `;
 
 exports[`VAT Calculations it creates a correct vat summary 2`] = `
 Immutable.Record {
-  "totalLargeItemsAmount": 0,
-  "totalNormalItemsAmount": 0,
   "totalAllowance": 300,
   "totalVatLargeItems": 457.52500000000003,
   "totalVatNormalItems": 19.983500000000003,
+  "vatByCategory": Immutable.Map {
+    "Butter": 38.43350000000001,
+    "Oils": 0,
+    "Cigarettes": 0,
+    "AlcSoft": 0,
+    "Fertilizer": 0,
+    "AlcHard": 0,
+    "Meds": 0,
+    "Books": 0,
+    "Meat": 1.075,
+    "OtherFood": 0,
+    "Other": 0,
+    "Tobacco": 447.92,
+    "Flowers": 0,
+    "AnimalFeed": 0,
+    "Magazines": 0,
+  },
 }
 `;
 

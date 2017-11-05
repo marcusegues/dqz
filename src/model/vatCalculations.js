@@ -7,6 +7,7 @@
 import type {
   List as ImmutableListType,
   OrderedMap as ImmutableOrderedMapType,
+  Map as ImmutableMapType,
 } from 'immutable';
 import Immutable from 'immutable';
 
@@ -25,6 +26,28 @@ import {
   makeAllAmountsPerVatBracketRecord,
   makeVatReportRecord,
 } from './types/calculationTypes';
+import type { Categories } from '../types/basket';
+
+/**
+ * For TESTING only
+ */
+export const vatByCategory = (
+  basket: Basket
+): ImmutableMapType<Categories, number> => {
+  const vatByCat: ImmutableMapType<Categories, number> = Immutable.Map();
+  return vatByCat.withMutations(m => {
+    CategoriesArray.forEach(c => {
+      const rate = CategoriesRates.getIn([c, 'vat'], 0);
+      const normalAmounts: number = basket
+        .getIn([c, 'volume', 'amounts'], Immutable.List())
+        .reduce((a, v) => a + v, 0);
+      const largeAmounts: number = basket
+        .getIn([c, 'volume', 'amountsLarge'], Immutable.List())
+        .reduce((a, v) => a + v, 0);
+      m.set(c, rate * (largeAmounts + normalAmounts));
+    });
+  });
+};
 
 /**
  * For TESTING only
@@ -67,7 +90,7 @@ export const summarizeByVatBracket = (
 };
 
 /**
- * For TESTING only
+ * For TESTING only. Note: the LAST person in the group is the one paying... 
  */
 export const calculateAllowances = (people: People): number =>
   people.get('minors') * IndividualAllowanceMinor +
@@ -76,11 +99,12 @@ export const calculateAllowances = (people: People): number =>
 /**
  * For TESTING only
  */
-export const subtractAllowances = (
+export const applyAllowances = (
   allItems: AllAmountsPerVatBracket,
   people: People
 ): AllAmountsPerVatBracket => {
   let allowance: number = calculateAllowances(people);
+
   return allItems.withMutations(all => {
     all.update('normal', allBrackets =>
       allBrackets.map(list =>
@@ -128,17 +152,21 @@ export const calculateVatNormalItems = (
   );
 };
 
-// Here's the model, finally:
+/**
+ * Calculates the vat and returns a nice record with all the info
+ * @param basket
+ * @param people
+ * @returns VatReport Type
+ */
 export const calculateVat = (basket: Basket, people: People): VatReport => {
   const summarized: AllAmountsPerVatBracket = summarizeByVatBracket(basket);
-  const afterAllowance = subtractAllowances(summarized, people);
+  const afterAllowance = applyAllowances(summarized, people);
   const vatLarge = calculateVatLargeItems(afterAllowance);
   const vatNormal = calculateVatNormalItems(afterAllowance);
   return makeVatReportRecord({
-    totalLargeItemsAmount: 0,
-    totalNormalItemsAmount: 0,
     totalAllowance: calculateAllowances(people),
     totalVatLargeItems: vatLarge,
     totalVatNormalItems: vatNormal,
+    vatByCategory: vatByCategory(basket),
   });
 };

@@ -7,6 +7,7 @@ import type {
 } from 'immutable';
 import Immutable from 'immutable';
 import type { Category } from './basketPeopleTypes';
+import type { Categories } from '../../types/basket';
 
 // VAT
 
@@ -32,21 +33,19 @@ export type AllAmountsPerVatBracket = RecordOf<AllAmountsPerVatContent>;
 
 // note: we are not returning vat per cat
 type vatReportContent = {
-  totalLargeItemsAmount: number,
-  totalNormalItemsAmount: number,
   totalAllowance: number,
   totalVatLargeItems: number,
   totalVatNormalItems: number,
+  vatByCategory: ImmutableMapType<Categories, number>,
 };
 
 export const makeVatReportRecord: RecordFactory<
   vatReportContent
 > = Immutable.Record({
-  totalLargeItemsAmount: 0,
-  totalNormalItemsAmount: 0,
   totalAllowance: 0,
   totalVatLargeItems: 0,
   totalVatNormalItems: 0,
+  vatByCategory: Immutable.Map(),
 });
 
 export type VatReport = RecordOf<vatReportContent>;

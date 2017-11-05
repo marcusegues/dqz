@@ -4,8 +4,9 @@ import {
   calculateVat,
   calculateVatLargeItems,
   calculateVatNormalItems,
-  subtractAllowances,
+  applyAllowances,
   summarizeByVatBracket,
+  vatByCategory,
 } from '../vatCalculations';
 import {
   sampleBasket1,
@@ -29,6 +30,11 @@ describe('VAT Calculations', () => {
     expect(b1).toMatchSnapshot();
   });
 
+  test('it calculates vat by category', () => {
+    expect(vatByCategory(sampleBasket1)).toMatchSnapshot();
+    expect(vatByCategory(sampleBasket2)).toMatchSnapshot();
+  });
+
   test('it calculates the vat of large items (no deduction)', () => {
     expect(calculateVatLargeItems(b1)).toBeCloseTo(457.525);
   });
@@ -38,11 +44,11 @@ describe('VAT Calculations', () => {
   });
 
   test('it sums all the categories and subtracts allowances as expected', () => {
-    expect(subtractAllowances(b1, initPeople)).toMatchSnapshot();
+    expect(applyAllowances(b1, initPeople)).toMatchSnapshot();
   });
 
   test('it sums all the categories and subtracts allowances as expected', () => {
-    expect(subtractAllowances(b2, initPeople)).toMatchSnapshot();
+    expect(applyAllowances(b2, initPeople)).toMatchSnapshot();
   });
 
   test('calculate allowance correctly', () => {
