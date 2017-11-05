@@ -12,6 +12,9 @@ import {
   makeRatesRecord,
 } from './types/basketPeopleTypes';
 
+export const IndividualAllowanceAdult: number = 300;
+export const IndividualAllowanceMinor: number = 300;
+
 export const CATEGORIES: Set<CategoriesTypes> = new Set([
   'Meat',
   'Butter',
@@ -289,5 +292,3 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     }),
   ],
 ]);
-
-export const IndividualAllowance: number = 300;

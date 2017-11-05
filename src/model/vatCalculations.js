@@ -9,11 +9,25 @@ import type {
 } from 'immutable';
 import Immutable from 'immutable';
 
-import type { BasketType } from './types/basketPeopleTypes';
-import type { allAmountsPerVatBracket } from './types/calculationTypes';
-import { CategoriesArray, CategoriesRates } from './constants';
-import { makeAllAmountsPerVatBracketRecord } from './types/calculationTypes';
+import type { BasketType, People } from './types/basketPeopleTypes';
+import type {
+  allAmountsPerVatBracket,
+  vatReport,
+} from './types/calculationTypes';
+import {
+  CategoriesArray,
+  CategoriesRates,
+  IndividualAllowanceAdult,
+  IndividualAllowanceMinor,
+} from './constants';
+import {
+  makeAllAmountsPerVatBracketRecord,
+  makeVatReportRecord,
+} from './types/calculationTypes';
 
+/**
+ * For TESTING only
+ */
 export const summarizeByVatBracket = (
   basket: BasketType
 ): allAmountsPerVatBracket => {
@@ -49,6 +63,39 @@ export const summarizeByVatBracket = (
   }));
 };
 
+/**
+ * For TESTING only
+ */
+export const calculateAllowances = (people: People): number =>
+  people.get('minors') * IndividualAllowanceMinor +
+  people.get('adults') * IndividualAllowanceAdult;
+
+/**
+ * For TESTING only
+ */
+export const subtractAllowances = (
+  allItems: allAmountsPerVatBracket,
+  people: People
+): allAmountsPerVatBracket => {
+  let allowance: number = calculateAllowances(people);
+  return allItems.withMutations(all => {
+    all.update('normal', allBrackets =>
+      allBrackets.map(list =>
+        list.map(amount => {
+          const allowanceAlloc = Math.min(amount, allowance);
+          amount -= allowanceAlloc;
+          allowance -= allowanceAlloc;
+          return amount;
+        })
+      )
+    );
+    return all;
+  });
+};
+
+/**
+ * For TESTING only
+ */
 export const calculateVatLargeItems = (
   allItems: allAmountsPerVatBracket
 ): number => {
@@ -59,6 +106,9 @@ export const calculateVatLargeItems = (
   );
 };
 
+/**
+ * For TESTING only
+ */
 export const calculateVatNormalItems = (
   allItems: allAmountsPerVatBracket
 ): number => {
@@ -67,4 +117,19 @@ export const calculateVatNormalItems = (
     (acc, v, k) => acc + k * v.reduce((a, v) => a + v, 0),
     0
   );
+};
+
+// Here's the model, finally:
+export const calculateVat = (basket: BasketType, people: People): vatReport => {
+  const summarized: allAmountsPerVatBracket = summarizeByVatBracket(basket);
+  const afterAllowance = subtractAllowances(summarized, people);
+  const vatLarge = calculateVatLargeItems(afterAllowance);
+  const vatNormal = calculateVatNormalItems(afterAllowance);
+  return makeVatReportRecord({
+    totalLargeItemsAmount: 0,
+    totalNormalItemsAmount: 0,
+    totalAllowance: calculateAllowances(people),
+    totalVatLargeItems: vatLarge,
+    totalVatNormalItems: vatNormal,
+  });
 };

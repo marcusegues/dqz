@@ -16,7 +16,10 @@
   },
   "jest": {
     "preset": "jest-expo",
-    "collectCoverageFrom" : ["src/**/*.{js,jsx}", "!**/node_modules/**"]
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**"
+    ]
   },
   "dependencies": {
     "@expo/samples": "^2.1.1",

@@ -1,5 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`VAT Calculations it creates a correct vat summary 1`] = `
+Immutable.Record {
+  "totalLargeItemsAmount": 0,
+  "totalNormalItemsAmount": 0,
+  "totalAllowance": 300,
+  "totalVatLargeItems": 457.52500000000003,
+  "totalVatNormalItems": 0,
+}
+`;
+
+exports[`VAT Calculations it creates a correct vat summary 2`] = `
+Immutable.Record {
+  "totalLargeItemsAmount": 0,
+  "totalNormalItemsAmount": 0,
+  "totalAllowance": 300,
+  "totalVatLargeItems": 457.52500000000003,
+  "totalVatNormalItems": 19.983500000000003,
+}
+`;
+
+exports[`VAT Calculations it sums all the categories and subtracts allowances as expected 1`] = `
+Immutable.Record {
+  "large": Immutable.OrderedMap {
+    0.08: Immutable.List [
+      5555,
+    ],
+    0.025: Immutable.List [
+      525,
+    ],
+  },
+  "normal": Immutable.OrderedMap {
+    0.08: Immutable.List [
+      0,
+      0,
+    ],
+    0.025: Immutable.List [
+      0,
+      0,
+      0,
+      0,
+    ],
+  },
+}
+`;
+
+exports[`VAT Calculations it sums all the categories and subtracts allowances as expected 2`] = `
+Immutable.Record {
+  "large": Immutable.OrderedMap {
+    0.08: Immutable.List [
+      5555,
+    ],
+    0.025: Immutable.List [
+      525,
+    ],
+  },
+  "normal": Immutable.OrderedMap {
+    0.08: Immutable.List [
+      0,
+      0,
+    ],
+    0.025: Immutable.List [
+      0,
+      0,
+      0,
+      0,
+      49.34,
+      125,
+      125,
+      125,
+      125,
+      125,
+      125,
+    ],
+  },
+}
+`;
+
 exports[`VAT Calculations it sums all the categories as expected 1`] = `
 Immutable.Record {
   "large": Immutable.OrderedMap {
