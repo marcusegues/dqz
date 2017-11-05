@@ -1,7 +1,7 @@
 // @flow
-import type { dutyCalculatorBasket } from '../../types/dutyCalculator';
+import type { DutyCalculatorBasket } from '../../types/dutyCalculator';
 
-export const INPUT_1: [dutyCalculatorBasket, number, number] = [
+export const INPUT_1: [DutyCalculatorBasket, number, number] = [
   {
     MEAT_AND_MEAT_PRODUCTS: {
       quantity: 12,
@@ -53,7 +53,7 @@ export const INPUT_1: [dutyCalculatorBasket, number, number] = [
   0,
 ];
 
-export const INPUT_2: [dutyCalculatorBasket, number, number] = [
+export const INPUT_2: [DutyCalculatorBasket, number, number] = [
   {
     MEAT_AND_MEAT_PRODUCTS: {
       quantity: 2,

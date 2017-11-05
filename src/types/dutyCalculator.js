@@ -1,10 +1,14 @@
 // @flow
 import type { CategoryName } from './basket';
 
-export type dutyCalculatorBasketCategoryInfo = {
+export type DutyCalculatorBasketCategoryInfo = {
   +quantity: number,
 };
 
-export type dutyCalculatorBasket = {
-  [category: CategoryName]: dutyCalculatorBasketCategoryInfo,
+export type DutyCalculatorBasket = {
+  [category: CategoryName]: DutyCalculatorBasketCategoryInfo,
+};
+
+export type DutyByCategory = {
+  [category: CategoryName]: number,
 };
