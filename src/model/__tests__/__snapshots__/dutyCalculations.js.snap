@@ -1,6 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Duty Calculations it calculates duty under various scenarios 1`] = `
+exports[`Duty Calculations it calculates duty under various scenarios - 1 Adult + 1 Minor 1`] = `
+Immutable.Map {
+  "Butter": 336,
+  "Oils": 0,
+  "Cigarettes": 0,
+  "AlcSoft": 0,
+  "Fertilizer": 0,
+  "AlcHard": 0,
+  "Meds": 0,
+  "Books": 0,
+  "Meat": 2459,
+  "OtherFood": 0,
+  "Other": 0,
+  "Tobacco": 296.90000000000003,
+  "Flowers": 0,
+  "AnimalFeed": 0,
+  "Magazines": 0,
+}
+`;
+
+exports[`Duty Calculations it calculates duty under various scenarios - 1 Adult 1`] = `
 Immutable.Map {
   "Butter": 352,
   "Oils": 0,
@@ -14,6 +34,26 @@ Immutable.Map {
   "OtherFood": 0,
   "Other": 0,
   "Tobacco": 296.90000000000003,
+  "Flowers": 0,
+  "AnimalFeed": 0,
+  "Magazines": 0,
+}
+`;
+
+exports[`Duty Calculations it calculates duty under various scenarios - 20 Adults 1`] = `
+Immutable.Map {
+  "Butter": 48,
+  "Oils": 0,
+  "Cigarettes": 0,
+  "AlcSoft": 0,
+  "Fertilizer": 0,
+  "AlcHard": 0,
+  "Meds": 0,
+  "Books": 0,
+  "Meat": 2093,
+  "OtherFood": 0,
+  "Other": 0,
+  "Tobacco": 0,
   "Flowers": 0,
   "AnimalFeed": 0,
   "Magazines": 0,

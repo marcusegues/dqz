@@ -179,6 +179,15 @@ export const addAdult = (party: People): People =>
   party.update('adults', a => a + 1);
 
 /**
+ * Sets the number of adults in a party (non-neg)
+ * @param party
+ * @param n
+ * @returns People Type
+ */
+export const setAdultPeople = (party: People, n: number): People =>
+  party.set('adults', Math.max(0, n));
+
+/**
  * Subtracts an adult from the party (non-negative result)
  * @param party
  * @returns People Type
@@ -193,6 +202,15 @@ export const subtractAdult = (party: People): People =>
  */
 export const addMinor = (party: People): People =>
   party.update('minors', m => m + 1);
+
+/**
+ * Sets the number of adults in a party (non-neg)
+ * @param party
+ * @param n
+ * @returns People Type
+ */
+export const setMinorPeople = (party: People, n: number): People =>
+  party.set('minors', Math.max(0, n));
 
 /**
  * Subtracts a minor from the party (non-negative result)

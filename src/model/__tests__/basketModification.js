@@ -14,6 +14,8 @@ import {
   initPeople,
   resetAmounts,
   resetLargeAmounts,
+  setAdultPeople,
+  setMinorPeople,
   setQuantities,
   setQuantity,
   subtractAdult,
@@ -137,7 +139,25 @@ describe('Party configuration', () => {
   test('subtracts minor', () => {
     expect(getMinorPeople(subtractMinor(oneAdultOneMinor))).toBe(0);
   });
-  test('subtracts minor (non-negative', () => {
+  test('subtracts minor (non-negative)', () => {
     expect(getMinorPeople(subtractMinor(noAdultsNoMinor))).toBe(0);
+  });
+  test('set 11 adults', () => {
+    expect(getAdultPeople(setAdultPeople(initPeople, 11))).toBe(11);
+  });
+  test('set 11 adults on init -> still no minors', () => {
+    expect(getMinorPeople(setAdultPeople(initPeople, 11))).toBe(0);
+  });
+  test('set 11 minor', () => {
+    expect(getMinorPeople(setMinorPeople(initPeople, 11))).toBe(11);
+  });
+  test('set 11 adults on init -> still no minors', () => {
+    expect(getAdultPeople(setMinorPeople(initPeople, 11))).toBe(1);
+  });
+  test('set -11 adults', () => {
+    expect(getAdultPeople(setAdultPeople(initPeople, -11))).toBe(0);
+  });
+  test('set -11 minor', () => {
+    expect(getMinorPeople(setMinorPeople(initPeople, -11))).toBe(0);
   });
 });
