@@ -26,4 +26,13 @@ describe('The model: ', () => {
       expect(hasInfy(c)).toBeTruthy();
     });
   });
+
+  test('duty brackets are increasing in threshold', () => {
+    CATEGORIES.forEach(c => {
+      const dutyThresholds = CategoriesRates.getIn([c, 'duty']).map(
+        b => b.threshold
+      );
+      expect(dutyThresholds.toString()).toBe(dutyThresholds.sort().toString());
+    });
+  });
 });

@@ -42,9 +42,6 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
         const fee = duty.reduce((acc, v) => {
           const tempQuantity = quantity - allowanceRunningTotal;
           const thresholdThisBracket = v.get('threshold');
-          if (thresholdThisBracket <= allowanceRunningTotal) {
-            return acc;
-          }
           const bracketWidth = thresholdThisBracket - allowanceRunningTotal;
           const inThisBracket = Math.min(bracketWidth, tempQuantity);
           allowanceRunningTotal += bracketWidth;
