@@ -1,5 +1,5 @@
 // @flow
-import type { BasketType } from '../types/basketPeopleTypes';
+import type { Basket } from '../types/basketPeopleTypes';
 import {
   addAdult,
   addAmount,
@@ -22,20 +22,20 @@ import {
 import { CategoriesArray } from '../constants';
 import Immutable from 'immutable';
 
-const basket1: BasketType = emptyBasket;
+const basket1: Basket = emptyBasket;
 
-const quantityBasket1: BasketType = setQuantity(basket1, 'Butter', 1234);
-const quantityBasket2: BasketType = setQuantities(basket1, [
+const quantityBasket1: Basket = setQuantity(basket1, 'Butter', 1234);
+const quantityBasket2: Basket = setQuantities(basket1, [
   { category: 'Meat', quantity: 123 },
   { category: 'Butter', quantity: 321 },
 ]);
-const quantityBasket3: BasketType = basket1;
+const quantityBasket3: Basket = basket1;
 
-const amountBasket1: BasketType = addAmount(basket1, 'Butter', 12.34);
-const amountBasket2: BasketType = addAmount(amountBasket1, 'Butter', 34.56);
+const amountBasket1: Basket = addAmount(basket1, 'Butter', 12.34);
+const amountBasket2: Basket = addAmount(amountBasket1, 'Butter', 34.56);
 
-const largeAmountBasket1: BasketType = addLargeAmount(basket1, 'Tobacco', 1234);
-const largeAmountBasket2: BasketType = addLargeAmount(
+const largeAmountBasket1: Basket = addLargeAmount(basket1, 'Tobacco', 1234);
+const largeAmountBasket2: Basket = addLargeAmount(
   largeAmountBasket1,
   'Tobacco',
   1234
@@ -86,7 +86,7 @@ describe('The basket / amounts: ', () => {
     expect(getAmounts(amountBasket1, 'Meat')).toBe(Immutable.List());
   });
   test('resets amounts: ', () => {
-    const resetted: BasketType = resetAmounts(amountBasket1, 'Butter');
+    const resetted: Basket = resetAmounts(amountBasket1, 'Butter');
     expect(getAmounts(resetted, 'Butter')).toBe(Immutable.List());
   });
 });
@@ -111,7 +111,7 @@ describe('The basket / large amounts: ', () => {
     expect(getLargeAmounts(amountBasket1, 'Meat')).toBe(Immutable.List());
   });
   test('resets large amounts: ', () => {
-    const resetted: BasketType = resetLargeAmounts(amountBasket1, 'Tobacco');
+    const resetted: Basket = resetLargeAmounts(amountBasket1, 'Tobacco');
     expect(getLargeAmounts(resetted, 'Tobacco')).toBe(Immutable.List());
   });
 });

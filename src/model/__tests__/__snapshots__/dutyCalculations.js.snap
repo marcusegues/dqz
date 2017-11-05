@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Duty Calculations it calculates duty under various scenarios 1`] = `
+Immutable.Map {
+  "Butter": 352,
+  "Oils": 0,
+  "Cigarettes": 0,
+  "AlcSoft": 0,
+  "Fertilizer": 0,
+  "AlcHard": 0,
+  "Meds": 0,
+  "Books": 0,
+  "Meat": 2476,
+  "OtherFood": 0,
+  "Other": 0,
+  "Tobacco": 296.90000000000003,
+  "Flowers": 0,
+  "AnimalFeed": 0,
+  "Magazines": 0,
+}
+`;

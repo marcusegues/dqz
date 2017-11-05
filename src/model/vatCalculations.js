@@ -10,10 +10,10 @@ import type {
 } from 'immutable';
 import Immutable from 'immutable';
 
-import type { BasketType, People } from './types/basketPeopleTypes';
+import type { Basket, People } from './types/basketPeopleTypes';
 import type {
-  allAmountsPerVatBracket,
-  vatReport,
+  AllAmountsPerVatBracket,
+  VatReport,
 } from './types/calculationTypes';
 import {
   CategoriesArray,
@@ -30,9 +30,9 @@ import {
  * For TESTING only
  */
 export const summarizeByVatBracket = (
-  basket: BasketType
-): allAmountsPerVatBracket => {
-  const allAmountsPerVatBracket: allAmountsPerVatBracket = makeAllAmountsPerVatBracketRecord();
+  basket: Basket
+): AllAmountsPerVatBracket => {
+  const allAmountsPerVatBracket: AllAmountsPerVatBracket = makeAllAmountsPerVatBracketRecord();
 
   return allAmountsPerVatBracket.withMutations(basketMutable => {
     CategoriesArray.forEach(c => {
@@ -77,9 +77,9 @@ export const calculateAllowances = (people: People): number =>
  * For TESTING only
  */
 export const subtractAllowances = (
-  allItems: allAmountsPerVatBracket,
+  allItems: AllAmountsPerVatBracket,
   people: People
-): allAmountsPerVatBracket => {
+): AllAmountsPerVatBracket => {
   let allowance: number = calculateAllowances(people);
   return allItems.withMutations(all => {
     all.update('normal', allBrackets =>
@@ -100,7 +100,7 @@ export const subtractAllowances = (
  * For TESTING only
  */
 export const calculateVatLargeItems = (
-  allItems: allAmountsPerVatBracket
+  allItems: AllAmountsPerVatBracket
 ): number => {
   const largeItems: ImmutableOrderedMapType<
     number,
@@ -116,7 +116,7 @@ export const calculateVatLargeItems = (
  * For TESTING only
  */
 export const calculateVatNormalItems = (
-  allItems: allAmountsPerVatBracket
+  allItems: AllAmountsPerVatBracket
 ): number => {
   const largeItems: ImmutableOrderedMapType<
     number,
@@ -129,8 +129,8 @@ export const calculateVatNormalItems = (
 };
 
 // Here's the model, finally:
-export const calculateVat = (basket: BasketType, people: People): vatReport => {
-  const summarized: allAmountsPerVatBracket = summarizeByVatBracket(basket);
+export const calculateVat = (basket: Basket, people: People): VatReport => {
+  const summarized: AllAmountsPerVatBracket = summarizeByVatBracket(basket);
   const afterAllowance = subtractAllowances(summarized, people);
   const vatLarge = calculateVatLargeItems(afterAllowance);
   const vatNormal = calculateVatNormalItems(afterAllowance);

@@ -3,8 +3,8 @@
 import Immutable from 'immutable';
 import type { List as ImmutableListType } from 'immutable';
 import type {
-  BasketType,
-  CategoriesTypes,
+  Basket,
+  Category,
   CategoryBasketItem,
   People,
 } from './types/basketPeopleTypes';
@@ -18,9 +18,9 @@ const emptyItem: CategoryBasketItem = makeCategoryBasketItemRecord();
 
 /**
  * Empty Basket
- * @type BasketType
+ * @type Basket
  */
-export const emptyBasket: BasketType = Immutable.Map(
+export const emptyBasket: Basket = Immutable.Map(
   CategoriesArray.map(c => [c, emptyItem])
 );
 
@@ -30,24 +30,24 @@ export const emptyBasket: BasketType = Immutable.Map(
  * @param basket
  * @param category
  * @param quantity
- * @returns BasketType
+ * @returns Basket
  */
 export const setQuantity = (
-  basket: BasketType,
-  category: CategoriesTypes,
+  basket: Basket,
+  category: Category,
   quantity: number
-): BasketType => basket.setIn([category, 'volume', 'quantity'], quantity);
+): Basket => basket.setIn([category, 'volume', 'quantity'], quantity);
 
 /**
  * Sets several quantites for the given basket
  * @param basket
  * @param pairs
- * @returns BasketType
+ * @returns Basket
  */
 export const setQuantities = (
-  basket: BasketType,
-  pairs: Array<{ category: CategoriesTypes, quantity: number }>
-): BasketType => {
+  basket: Basket,
+  pairs: Array<{ category: Category, quantity: number }>
+): Basket => {
   return basket.withMutations(bskt => {
     pairs.forEach(p => setQuantity(bskt, p.category, p.quantity));
   });
@@ -59,10 +59,8 @@ export const setQuantities = (
  * @param category
  * @returns number
  */
-export const getQuantity = (
-  basket: BasketType,
-  category: CategoriesTypes
-): number => Immutable.getIn(basket, [category, 'volume', 'quantity'], 0);
+export const getQuantity = (basket: Basket, category: Category): number =>
+  Immutable.getIn(basket, [category, 'volume', 'quantity'], 0);
 
 // AMOUNTS
 /**
@@ -70,13 +68,13 @@ export const getQuantity = (
  * @param basket
  * @param category
  * @param amount
- * @returns BasketType
+ * @returns Basket
  */
 export const addAmount = (
-  basket: BasketType,
-  category: CategoriesTypes,
+  basket: Basket,
+  category: Category,
   amount: number
-): BasketType =>
+): Basket =>
   basket.updateIn([category, 'volume', 'amounts'], Immutable.List(), amounts =>
     amounts.push(amount)
   );
@@ -85,12 +83,9 @@ export const addAmount = (
  * Resets the amounts in a basket's category
  * @param basket
  * @param category
- * @returns BasketType
+ * @returns Basket
  */
-export const resetAmounts = (
-  basket: BasketType,
-  category: CategoriesTypes
-): BasketType =>
+export const resetAmounts = (basket: Basket, category: Category): Basket =>
   basket.setIn([category, 'volume', 'amounts'], Immutable.List());
 
 /**
@@ -100,8 +95,8 @@ export const resetAmounts = (
  * @returns ImmutableListType<number>
  */
 export const getAmounts = (
-  basket: BasketType,
-  category: CategoriesTypes
+  basket: Basket,
+  category: Category
 ): ImmutableListType<number> =>
   Immutable.getIn(basket, [category, 'volume', 'amounts'], Immutable.List());
 
@@ -113,13 +108,13 @@ export const getAmounts = (
  * @param basket
  * @param category
  * @param amountLarge
- * @returns BasketType
+ * @returns Basket
  */
 export const addLargeAmount = (
-  basket: BasketType,
-  category: CategoriesTypes,
+  basket: Basket,
+  category: Category,
   amountLarge: number
-): BasketType =>
+): Basket =>
   basket.updateIn(
     [category, 'volume', 'amountsLarge'],
     Immutable.List(),
@@ -130,12 +125,9 @@ export const addLargeAmount = (
  * Resets the large amounts in a basket's category
  * @param basket
  * @param category
- * @returns BasketType
+ * @returns Basket
  */
-export const resetLargeAmounts = (
-  basket: BasketType,
-  category: CategoriesTypes
-): BasketType =>
+export const resetLargeAmounts = (basket: Basket, category: Category): Basket =>
   basket.setIn([category, 'volume', 'amountsLarge'], Immutable.List());
 
 /**
@@ -145,8 +137,8 @@ export const resetLargeAmounts = (
  * @returns ImmutableListType<number>
  */
 export const getLargeAmounts = (
-  basket: BasketType,
-  category: CategoriesTypes
+  basket: Basket,
+  category: Category
 ): ImmutableListType<number> =>
   Immutable.getIn(
     basket,

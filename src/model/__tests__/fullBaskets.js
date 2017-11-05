@@ -5,12 +5,12 @@ import {
   emptyBasket,
   setQuantity,
 } from '../configurationApi';
-import type { BasketType } from '../types/basketPeopleTypes';
+import type { Basket } from '../types/basketPeopleTypes';
 
 // this is solely to trick jest.
 test('', () => expect(true).toBeTruthy());
 
-export const sampleBasket1: BasketType = emptyBasket.withMutations(basket => {
+export const sampleBasket1: Basket = emptyBasket.withMutations(basket => {
   basket = addAmount(basket, 'Butter', 12.34);
   basket = addAmount(basket, 'Butter', 125);
   basket = addLargeAmount(basket, 'Butter', 525);
@@ -28,7 +28,7 @@ export const sampleBasket1: BasketType = emptyBasket.withMutations(basket => {
   return basket;
 });
 
-export const sampleBasket2: BasketType = emptyBasket.withMutations(basket => {
+export const sampleBasket2: Basket = emptyBasket.withMutations(basket => {
   basket = addAmount(basket, 'Butter', 12.34);
   basket = addAmount(basket, 'Butter', 125);
   basket = addAmount(basket, 'Butter', 125);
@@ -54,7 +54,7 @@ export const sampleBasket2: BasketType = emptyBasket.withMutations(basket => {
 });
 
 const exchangeRate3 = 1.19;
-export const sampleBasket3: BasketType = emptyBasket.withMutations(basket => {
+export const sampleBasket3: Basket = emptyBasket.withMutations(basket => {
   basket = addAmount(basket, 'Meat', 240 * exchangeRate3);
   basket = addAmount(basket, 'Butter', 20 * exchangeRate3);
   basket = addAmount(basket, 'AlcSoft', 30 * exchangeRate3);
@@ -63,7 +63,7 @@ export const sampleBasket3: BasketType = emptyBasket.withMutations(basket => {
 });
 
 const exchangeRate4 = 1.19;
-export const sampleBasket4: BasketType = emptyBasket.withMutations(basket => {
+export const sampleBasket4: Basket = emptyBasket.withMutations(basket => {
   basket = addAmount(basket, 'Meat', 40 * exchangeRate4);
   basket = addAmount(basket, 'Butter', 20 * exchangeRate4);
   basket = addAmount(basket, 'OtherFood', 350 * exchangeRate4);

@@ -10,7 +10,7 @@ import Immutable from 'immutable';
 /**
  * todo, jsdoc
  */
-export type CategoriesTypes =
+export type Category =
   | 'Meat'
   | 'Butter'
   | 'Oils'
@@ -50,7 +50,7 @@ type CategoryInfo = RecordOf<CategoryInfoContent>;
 /**
  * todo jsdoc
  */
-export type CategoryInfoType = ImmutableMapType<CategoriesTypes, CategoryInfo>;
+export type CategoryInfoType = ImmutableMapType<Category, CategoryInfo>;
 
 // CATEGORY VOLUME
 type CategoryVolumeContent = {
@@ -100,7 +100,7 @@ export type CategoryBasketItem = RecordOf<CategoryBasketItemContent>;
 /**
  * todo, jsdoc
  */
-export type BasketType = ImmutableMapType<CategoriesTypes, CategoryBasketItem>;
+export type Basket = ImmutableMapType<Category, CategoryBasketItem>;
 
 // DUTY BRACKET
 type DutyBracketContent = {
@@ -113,7 +113,7 @@ export const makeDutyBracketRecord: RecordFactory<
   threshold: Infinity,
   fee: 0,
 });
-type DutyBracket = RecordOf<DutyBracketContent>;
+export type DutyBracket = RecordOf<DutyBracketContent>;
 
 // RATES
 type RatesContent = {
@@ -133,7 +133,7 @@ type Rates = RecordOf<RatesContent>;
 /**
  * todo, jsdoc
  */
-export type RatesType = ImmutableMapType<CategoriesTypes, Rates>;
+export type RatesType = ImmutableMapType<Category, Rates>;
 
 // PEOPLE
 type PeopleContent = {

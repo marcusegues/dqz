@@ -1,7 +1,7 @@
 // @flow
 
 import type {
-  CategoriesTypes,
+  Category,
   CategoryInfoType,
   RatesType,
 } from './types/basketPeopleTypes';
@@ -15,7 +15,7 @@ import {
 export const IndividualAllowanceAdult: number = 300;
 export const IndividualAllowanceMinor: number = 300;
 
-export const CATEGORIES: Set<CategoriesTypes> = new Set([
+export const CATEGORIES: Set<Category> = new Set([
   'Meat',
   'Butter',
   'Oils',
