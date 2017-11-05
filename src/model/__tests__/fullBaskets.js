@@ -174,3 +174,30 @@ export const ezvBasket13: Basket = emptyBasket.withMutations(basket => {
   basket = addLargeAmount(basket, 'Meat', 500);
   return basket;
 });
+
+// examples in Presentation "Verzollungs App im RV"
+const exR = 1.19;
+export const presentationBasket1: Basket = emptyBasket.withMutations(basket => {
+  basket = addAmount(basket, 'Meat', 240 * exR);
+  basket = setQuantity(basket, 'Meat', 12);
+  basket = addAmount(basket, 'AlcSoft', 30 * exR);
+  basket = setQuantity(basket, 'AlcSoft', 1.5);
+  basket = addAmount(basket, 'AlcSoft', 50 * exR);
+  basket = setQuantity(basket, 'AlcSoft', 1);
+  basket = addAmount(basket, 'Butter', 20 * exR);
+  basket = setQuantity(basket, 'Butter', 2);
+  basket = addLargeAmount(basket, 'Other', 400 * exR);
+  return basket;
+});
+
+export const presentationBasket2: Basket = emptyBasket.withMutations(basket => {
+  basket = addAmount(basket, 'Meat', 40 * exR);
+  basket = setQuantity(basket, 'Meat', 2);
+  basket = addAmount(basket, 'AlcHard', 50 * exR);
+  basket = setQuantity(basket, 'AlcHard', 2);
+  basket = addAmount(basket, 'Butter', 20 * exR);
+  basket = setQuantity(basket, 'Butter', 2);
+  basket = addAmount(basket, 'Other', 200 * exR);
+  basket = addAmount(basket, 'OtherFood', 350 * exR);
+  return basket;
+});

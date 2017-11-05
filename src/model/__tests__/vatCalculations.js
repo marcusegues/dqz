@@ -24,6 +24,8 @@ import {
   ezvBasket7,
   ezvBasket8,
   ezvBasket9,
+  presentationBasket1,
+  presentationBasket2,
   sampleBasket1,
   sampleBasket2,
   sampleBasket3,
@@ -95,7 +97,7 @@ describe('VAT Calculations', () => {
     ).toBeCloseTo(53.431);
     expect(
       calculateVat(sampleBasket4, initPeople).get('totalVatNormalItems')
-    ).toBeCloseTo(22.9075);
+    ).toBeCloseTo(35.9975);
   });
 
   test('it works with EZV examples', () => {
@@ -112,5 +114,9 @@ describe('VAT Calculations', () => {
     expect(calculateVat(ezvBasket11, threeAdults)).toMatchSnapshot();
     expect(calculateVat(ezvBasket12, threeAdults)).toMatchSnapshot();
     expect(calculateVat(ezvBasket13, threeAdults)).toMatchSnapshot();
+    expect(calculateVat(presentationBasket1, initPeople)).toMatchSnapshot();
+    expect(
+      calculateVat(presentationBasket2, addMinor(initPeople))
+    ).toMatchSnapshot();
   });
 });

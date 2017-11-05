@@ -1,9 +1,5 @@
 // @flow
-// Idea:
-// - summarize all large items with vat-rate
-// - take all small items in the basket (per category), and accumulate per category
-// -> do it in one go
-
+// TODO: this model was written based on many misunderstandings, so it just "grew" -> needs refactor
 import type {
   List as ImmutableListType,
   OrderedMap as ImmutableOrderedMapType,
@@ -186,7 +182,6 @@ export const calculateVatNormalItems = (
 export const totalAmounts = (basket: Basket): number => {
   let total = 0;
   CategoriesArray.forEach(c => {
-    const rate = CategoriesRates.getIn([c, 'vat'], 0);
     const normalAmounts: number = basket
       .getIn([c, 'volume', 'amounts'], Immutable.List())
       .reduce((a, v) => a + v, 0);

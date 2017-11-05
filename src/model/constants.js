@@ -179,7 +179,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
   [
     'Other',
     makeRatesRecord({
-      vat: 0.025,
+      vat: 0.08,
       duty: Immutable.List(),
       dutyAllowance: Infinity,
       adultsOnly: false,
@@ -223,8 +223,8 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
   [
     'Other',
     makeCategoryInfoRecord({
-      name: 'Sonstige Lebensmittel & Alkoholfreie Getranke',
-      unit: 'kg/Liter',
+      name: 'Sonstige Waren',
+      unit: '',
       icon: 'oil',
     }),
   ],
