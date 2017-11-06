@@ -42,8 +42,7 @@ Immutable.Map {
 
 exports[`VAT Calculations it creates a correct vat summary 1`] = `
 Immutable.Record {
-  "totalVatLargeItems": 457.52500000000003,
-  "totalVatNormalItems": 8.028500000000001,
+  "totalVatAfterAllowances": 465.55350000000004,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 16.558500000000002,
     "Oils": 0,
@@ -66,8 +65,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it creates a correct vat summary 2`] = `
 Immutable.Record {
-  "totalVatLargeItems": 457.52500000000003,
-  "totalVatNormalItems": 29.903500000000005,
+  "totalVatAfterAllowances": 487.42850000000004,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 38.43350000000001,
     "Oils": 0,
@@ -229,8 +227,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 1`] = `
 Immutable.Record {
-  "totalVatLargeItems": 0,
-  "totalVatNormalItems": 0,
+  "totalVatAfterAllowances": 0,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0,
     "Oils": 0,
@@ -253,8 +250,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 2`] = `
 Immutable.Record {
-  "totalVatLargeItems": 0,
-  "totalVatNormalItems": 10,
+  "totalVatAfterAllowances": 10,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0,
     "Oils": 0,
@@ -277,8 +273,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 3`] = `
 Immutable.Record {
-  "totalVatLargeItems": 0,
-  "totalVatNormalItems": 0,
+  "totalVatAfterAllowances": 0,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0,
     "Oils": 0,
@@ -301,8 +296,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 4`] = `
 Immutable.Record {
-  "totalVatLargeItems": 0,
-  "totalVatNormalItems": 15,
+  "totalVatAfterAllowances": 15,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0,
     "Oils": 0,
@@ -325,8 +319,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 5`] = `
 Immutable.Record {
-  "totalVatLargeItems": 10,
-  "totalVatNormalItems": 0,
+  "totalVatAfterAllowances": 10,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0,
     "Oils": 0,
@@ -349,8 +342,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 6`] = `
 Immutable.Record {
-  "totalVatLargeItems": 8,
-  "totalVatNormalItems": 0,
+  "totalVatAfterAllowances": 8,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0,
     "Oils": 0,
@@ -373,8 +365,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 7`] = `
 Immutable.Record {
-  "totalVatLargeItems": 0,
-  "totalVatNormalItems": 0,
+  "totalVatAfterAllowances": 0,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0,
     "Oils": 0,
@@ -397,8 +388,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 8`] = `
 Immutable.Record {
-  "totalVatLargeItems": 0,
-  "totalVatNormalItems": 9,
+  "totalVatAfterAllowances": 9,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0,
     "Oils": 0,
@@ -421,8 +411,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 9`] = `
 Immutable.Record {
-  "totalVatLargeItems": 0,
-  "totalVatNormalItems": 17.5,
+  "totalVatAfterAllowances": 17.5,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0,
     "Oils": 0,
@@ -445,8 +434,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 10`] = `
 Immutable.Record {
-  "totalVatLargeItems": 20,
-  "totalVatNormalItems": 0,
+  "totalVatAfterAllowances": 20,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0,
     "Oils": 0,
@@ -469,8 +457,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 11`] = `
 Immutable.Record {
-  "totalVatLargeItems": 0,
-  "totalVatNormalItems": 10,
+  "totalVatAfterAllowances": 10,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0,
     "Oils": 0,
@@ -493,8 +480,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 12`] = `
 Immutable.Record {
-  "totalVatLargeItems": 12.5,
-  "totalVatNormalItems": 0,
+  "totalVatAfterAllowances": 12.5,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0,
     "Oils": 0,
@@ -517,8 +503,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 13`] = `
 Immutable.Record {
-  "totalVatLargeItems": 12.5,
-  "totalVatNormalItems": 10,
+  "totalVatAfterAllowances": 22.5,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0,
     "Oils": 0,
@@ -541,8 +526,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 14`] = `
 Immutable.Record {
-  "totalVatLargeItems": 38.08,
-  "totalVatNormalItems": 15.350999999999999,
+  "totalVatAfterAllowances": 53.431,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0.595,
     "Oils": 0,
@@ -565,8 +549,7 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 15`] = `
 Immutable.Record {
-  "totalVatLargeItems": 0,
-  "totalVatNormalItems": 12.135,
+  "totalVatAfterAllowances": 12.135,
   "vatByCategoryRaw": Immutable.Map {
     "Butter": 0.595,
     "Oils": 0,
