@@ -92,12 +92,12 @@ describe('VAT Calculations', () => {
   test('it creates a correct vat summary', () => {
     expect(calculateVat(sampleBasket1, initPeople)).toMatchSnapshot();
     expect(calculateVat(sampleBasket2, initPeople)).toMatchSnapshot();
-    expect(
-      calculateVat(sampleBasket3, initPeople).get('totalVatNormalItems')
-    ).toBeCloseTo(53.431);
-    expect(
-      calculateVat(sampleBasket4, initPeople).get('totalVatNormalItems')
-    ).toBeCloseTo(35.9975);
+    expect(calculateVat(sampleBasket3, initPeople).get('totalVat')).toBeCloseTo(
+      53.431
+    );
+    expect(calculateVat(sampleBasket4, initPeople).get('totalVat')).toBeCloseTo(
+      35.9975
+    );
   });
 
   test('it works with EZV examples', () => {

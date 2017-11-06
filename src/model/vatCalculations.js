@@ -216,7 +216,7 @@ export const calculateVat = (basket: Basket, people: People): VatReport => {
   const vatLarge = calculateVatLargeItems(afterAllowance);
   const vatNormal = calculateVatNormalItems(afterAllowance);
   return makeVatReportRecord({
-    totalVatAfterAllowances: vatLarge + vatNormal,
+    totalVat: vatLarge + vatNormal,
     vatByCategoryRaw: vatByCategory(basket),
   });
 };

@@ -13,10 +13,14 @@ import type {
 } from './types/basketPeopleTypes';
 import type { DutyReport } from './types/calculationTypes';
 import { CategoriesArray, CategoriesRates } from './constants';
+import { makeDutyReportRecord } from './types/calculationTypes';
 
 export const calculateDuty = (basket: Basket, people: People): DutyReport => {
-  const report: ImmutableMapType<Category, number> = Immutable.Map();
-  return report.withMutations(r => {
+  let total = 0;
+  const reportByCategory: ImmutableMapType<
+    Category,
+    number
+  > = Immutable.Map().withMutations(r => {
     CategoriesArray.forEach(c => {
       const quantityRaw: number = basket.getIn([c, 'volume', 'quantity'], 0);
       const allowanceRaw: number = CategoriesRates.getIn(
@@ -48,7 +52,12 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
           return acc + inThisBracket * v.get('fee');
         }, 0);
         r.set(c, fee);
+        total += fee;
       }
     });
+  });
+  return makeDutyReportRecord({
+    totalDuty: total,
+    dutyByCategoryRaw: reportByCategory,
   });
 };
