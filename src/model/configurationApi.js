@@ -60,7 +60,7 @@ export const setQuantities = (
  * @returns number
  */
 export const getQuantity = (basket: Basket, category: Category): number =>
-  basket.getIn(basket, [category, 'volume', 'quantity'], 0);
+  basket.getIn([category, 'volume', 'quantity'], 0);
 
 // AMOUNTS
 /**
@@ -98,7 +98,7 @@ export const getAmounts = (
   basket: Basket,
   category: Category
 ): ImmutableListType<number> =>
-  basket.getIn(basket, [category, 'volume', 'amounts'], Immutable.List());
+  basket.getIn([category, 'volume', 'amounts'], Immutable.List());
 
 // TODO: remove single amounts (depends on the UI implementation)
 
@@ -140,7 +140,7 @@ export const getLargeAmounts = (
   basket: Basket,
   category: Category
 ): ImmutableListType<number> =>
-  basket.getIn(basket, [category, 'volume', 'amountsLarge'], Immutable.List());
+  basket.getIn([category, 'volume', 'amountsLarge'], Immutable.List());
 
 // TODO: remove single large amounts (depends on the UI implementation)
 
