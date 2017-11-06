@@ -1,6 +1,6 @@
 // @flow
 
-import { addAdult, addMinor, initPeople } from '../configurationApi';
+import { addMinor, initPeople } from '../configurationApi';
 import { presentationBasket1, presentationBasket2 } from './fullBaskets';
 import { calculateDuty } from '../dutyCalculations';
 import { calculateVat } from '../vatCalculations';
