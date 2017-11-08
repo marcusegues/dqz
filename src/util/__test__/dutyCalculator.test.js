@@ -1,5 +1,5 @@
 import { dutyCalculator } from '../dutyCalculator';
-import * as data from '../__testData__/dutyCalculator';
+import * as data from './__testData__/dutyCalculator';
 
 // byId
 describe('dutyCalculator', () => {

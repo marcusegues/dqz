@@ -1,8 +1,8 @@
 // @flow
-import { dutyFreeAllowances, dutyRates } from '../constants/duty';
-import { CATEGORIES, CATEGORIES_LIST } from '../constants/categories';
-import type { CategoryName } from '../types/basket';
-import type { DutyCalculatorBasket } from '../types/dutyCalculator';
+import { dutyFreeAllowances, dutyRates } from './constants/duty';
+import { CATEGORIES, CATEGORIES_LIST } from './constants/categories';
+import type { CategoryName } from './types/basket';
+import type { DutyCalculatorBasket } from './types/dutyCalculator';
 
 export const dutyForCategory = (
   categoryName: CategoryName,

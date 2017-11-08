@@ -26,19 +26,21 @@ export type CategoryName =
   | 'OTHER_GOODS';
 
 type CategoryInfoContent = {
-  +name: string,
-  +unit: string,
-  +icon: string,
+  name: string,
+  unit: string | null,
+  icon: string,
 };
 
-export const makeCategoryInfoRecord: RecordFactory<CategoryInfoContent> = Immutable.Record({ name: 'category', unit: 'kg', icon: 'icon' });
+export const makeCategoryInfoRecord: RecordFactory<CategoryInfoContent> = Immutable.Record({ name: 'category', unit: null, icon: 'icon' });
 
 type CategoryInfoRecord = RecordOf<CategoryInfoContent>;
 
 export type CategoriesInfoType = ImmutableMapType<CategoryName,
   CategoryInfoRecord>;
 
-export type Categories = ImmutableOrderedMapType<CategoryName, CategoryName>;
+export type Categories = {
+  [category: CategoryName]: CategoryName,
+};
 
 export type CategoriesList = ImmutableListType<CategoryName>;
 
@@ -60,4 +62,6 @@ export const makeBasketCategoryInfo: RecordFactory<BasketCategoryInfo> = Immutab
   valuesLarge: Immutable.List(),
 });
 
-export type Basket = RecordOf<BasketCategoryInfo>;
+export type BasketCategoryInfoType = RecordOf<BasketCategoryInfo>;
+
+export type Basket = ImmutableMapType<CategoryName, BasketCategoryInfoType>;
