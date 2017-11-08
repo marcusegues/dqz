@@ -1,4 +1,13 @@
 // @flow
+import type {
+  Map as ImmutableMapType,
+  RecordOf,
+  RecordFactory,
+  List as ImmutableListType,
+  OrderedMap as ImmutableOrderedMapType,
+} from 'immutable';
+import Immutable from 'immutable';
+
 export type CategoryName =
   | 'MEAT_AND_MEAT_PRODUCTS'
   | 'BUTTER_OR_CREAM'
@@ -16,32 +25,39 @@ export type CategoryName =
   | 'FERTILIZER'
   | 'OTHER_GOODS';
 
-export type CategoryInfo = {
+type CategoryInfoContent = {
   +name: string,
   +unit: string,
   +icon: string,
 };
 
-export type CategoriesInfo = {
-  +[category: CategoryName]: CategoryInfo,
-};
+export const makeCategoryInfoRecord: RecordFactory<CategoryInfoContent> = Immutable.Record({ name: 'category', unit: 'kg', icon: 'icon' });
 
-export type Categories = {
-  +[category: CategoryName]: CategoryName,
-};
+type CategoryInfoRecord = RecordOf<CategoryInfoContent>;
 
-export type CategoriesList = Array<CategoryName>;
+export type CategoriesInfoType = ImmutableMapType<CategoryName,
+  CategoryInfoRecord>;
 
-export type VatRates = {
-  +[category: CategoryName]: number,
-};
+export type Categories = ImmutableOrderedMapType<CategoryName, CategoryName>;
 
-export type BasketCategoryInfo = {
+export type CategoriesList = ImmutableListType<CategoryName>;
+
+export type VatRates = ImmutableMapType<CategoryName, number>;
+
+type BasketCategoryInfo = {
   quantity: number,
   duty: number,
-  values: Array<number>,
+  vat: number,
+  valuesNormal: ImmutableListType<number>,
+  valuesLarge: ImmutableListType<number>,
 };
 
-export type Basket = {
-  [category: CategoryName]: BasketCategoryInfo,
-};
+export const makeBasketCategoryInfo: RecordFactory<BasketCategoryInfo> = Immutable.Record({
+  quantity: 0,
+  duty: 0,
+  vat: 0,
+  valuesNormal: Immutable.List(),
+  valuesLarge: Immutable.List(),
+});
+
+export type Basket = RecordOf<BasketCategoryInfo>;

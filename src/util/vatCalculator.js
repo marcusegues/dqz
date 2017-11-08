@@ -1,5 +1,11 @@
 // @flow
-import { VAT_RATES } from '../constants/vat';
+import { VAT_RATES } from './constants/vat';
+import type {
+  List as ImmutableListType,
+  Map as ImmutableMapType,
+  OrderedMap as ImmutableOrderedMapType,
+} from 'immutable';
+import Immutable from 'immutable';
 import { CATEGORIES, CATEGORIES_LIST } from '../constants/categories';
 import type { CategoryName, CategoriesList } from '../types/basket';
 import type {
