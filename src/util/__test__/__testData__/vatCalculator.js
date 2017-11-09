@@ -9,16 +9,67 @@ import Immutable from 'immutable';
 export const sampleBasket1: VatCalculatorInputType = [
   Immutable.Map({
     MEAT_AND_MEAT_PRODUCTS: makeVatBasketCategoryInfo({
-      valuesNormal: Immutable.List([12, 31, 111]),
-      valuesLarge: Immutable.List([0]),
+      valuesNormal: Immutable.List([12, 31]),
+      valuesLarge: Immutable.List(),
     }),
     BUTTER_OR_CREAM: makeVatBasketCategoryInfo({
-      valuesNormal: Immutable.List([12.34, 125, 23]),
+      valuesNormal: Immutable.List([12.34, 125]),
       valuesLarge: Immutable.List([525]),
     }),
     OTHER_TOBACCO: makeVatBasketCategoryInfo({
       valuesNormal: Immutable.List([11, 33]),
       valuesLarge: Immutable.List([5555]),
+    }),
+  }),
+  1,
+];
+
+export const sampleBasket2: VatCalculatorInputType = [
+  Immutable.Map({
+    MEAT_AND_MEAT_PRODUCTS: makeVatBasketCategoryInfo({
+      valuesNormal: Immutable.List([12, 31]),
+      valuesLarge: Immutable.List(),
+    }),
+    BUTTER_OR_CREAM: makeVatBasketCategoryInfo({
+      valuesNormal: Immutable.List([
+        12.34,
+        125,
+        125,
+        125,
+        125,
+        125,
+        125,
+        125,
+        125,
+      ]),
+      valuesLarge: Immutable.List([525]),
+    }),
+    OTHER_TOBACCO: makeVatBasketCategoryInfo({
+      valuesNormal: Immutable.List([11, 33]),
+      valuesLarge: Immutable.List([5555]),
+    }),
+  }),
+  1,
+];
+
+const exchangeRate3 = 1.19;
+export const sampleBasket3: VatCalculatorInputType = [
+  Immutable.Map({
+    MEAT_AND_MEAT_PRODUCTS: makeVatBasketCategoryInfo({
+      valuesNormal: Immutable.List([240 * exchangeRate3]),
+      valuesLarge: Immutable.List(),
+    }),
+    BUTTER_OR_CREAM: makeVatBasketCategoryInfo({
+      valuesNormal: Immutable.List([20 * exchangeRate3]),
+      valuesLarge: Immutable.List(),
+    }),
+    ALCOHOL_BELOW_18: makeVatBasketCategoryInfo({
+      valuesNormal: Immutable.List([30 * exchangeRate3]),
+      valuesLarge: Immutable.List([5555]),
+    }),
+    ALCOHOL_ABOVE_18: makeVatBasketCategoryInfo({
+      valuesNormal: Immutable.List([450 * exchangeRate3]),
+      valuesLarge: Immutable.List(),
     }),
   }),
   1,

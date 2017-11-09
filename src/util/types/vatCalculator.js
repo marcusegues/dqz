@@ -7,16 +7,17 @@ import type {
   List as ImmutableListType,
 } from 'immutable';
 import Immutable from 'immutable';
+
 export type VatByCategory = ImmutableMapType<CategoryName, number>;
 
 type vatReportContent = {
   totalVat: number,
-  vatByCategoryRaw: ImmutableMapType<CategoryName, number>,
+  vatByCategory: ImmutableMapType<CategoryName, number>,
 };
 
 export const makeVatReportRecord: RecordFactory<vatReportContent> = Immutable.Record({
   totalVat: 0,
-  vatByCategoryRaw: Immutable.Map(),
+  vatByCategory: Immutable.Map(),
 });
 
 export type VatReport = RecordOf<vatReportContent>;
