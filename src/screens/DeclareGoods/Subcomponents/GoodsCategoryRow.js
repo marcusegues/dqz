@@ -20,14 +20,12 @@ class GoodsCategoryRow extends React.Component {
   }
 
   _setMinHeight(event) {
-    console.log('minheight', event.nativeEvent.layout.height);
     this.setState({
       minHeight: event.nativeEvent.layout.height,
     });
   }
 
   _setMaxHeight(event) {
-    console.log('maxheight', event.nativeEvent.layout.height);
     const currentHeight = this.state.maxHeight;
     const newHeight = event.nativeEvent.layout.height;
     this.setState(
@@ -53,7 +51,6 @@ class GoodsCategoryRow extends React.Component {
   }
 
   handleToggleExpanded() {
-    console.log('first handle toggleexpanded');
     this.props.handleToggleExpanded(
       this.props.categoryName,
       !this.state.expanded
@@ -62,8 +59,8 @@ class GoodsCategoryRow extends React.Component {
 
   animateExpanded() {
     let initialValue = this.state.expanded
-        ? this.state.maxHeight + this.state.minHeight
-        : this.state.minHeight,
+      ? this.state.maxHeight + this.state.minHeight
+      : this.state.minHeight,
       finalValue = this.state.expanded
         ? this.state.minHeight
         : this.state.maxHeight + this.state.minHeight;
@@ -82,9 +79,11 @@ class GoodsCategoryRow extends React.Component {
   render() {
     const { container } = styles;
     const { navigate } = this.props.navigation;
-    const { quantity, duty, unit, icon } = this.props.categoryObject;
+    const quantity = this.props.categoryState.get('quantity');
+    const duty = this.props.categoryState.get('duty');
+    const unit = this.props.categoryInfo.get('unit');
+    const icon = this.props.categoryInfo.get('icon');
     const { categoryName } = this.props;
-
     let imgUrl = '';
     switch (icon) {
       case 'meat': {
@@ -162,7 +161,7 @@ class GoodsCategoryRow extends React.Component {
               </Text>
               <View style={{ flexDirection: 'row' }}>
                 <Text style={{ fontFamily: 'open_sans_light', width: '60%' }}>
-                  {quantity ? `Anzahl: ${quantity}${unit}` : null}
+                  {quantity ? `Anzahl: ${quantity}${unit ? unit : ''}` : null}
                 </Text>
                 <Text style={{ fontFamily: 'open_sans_light', width: '40%' }}>
                   {duty ? `Zoll: CHF ${duty}` : null}

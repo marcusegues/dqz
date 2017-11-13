@@ -30,12 +30,8 @@ const SelectedGoods = ({
         }}
       >
         <View style={{ flexDirection: 'column', paddingVertical: 20 }}>
-          <Text>
-            {categoryName}
-          </Text>
-          <Text>
-            {`In Cart: ${quantity}${unit}.`}
-          </Text>
+          <Text>{categoryName}</Text>
+          <Text>{`In Cart: ${quantity}${unit}.`}</Text>
         </View>
       </View>
 
@@ -63,9 +59,7 @@ const SelectedGoods = ({
           >
             <Entypo name="shopping-cart" size={70} color="#000" />
             <Badge danger style={redBadge}>
-              <Text>
-                {quantity}
-              </Text>
+              <Text>{quantity}</Text>
             </Badge>
           </View>
           <Text style={{ marginTop: 10 }}>Fleisch</Text>

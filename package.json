@@ -6,20 +6,27 @@
   "license": "private",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "test": "jest --env=jsdom",
-    "test:watch": "jest --watchAll --env=jsdom",
-    "test:coverage": "jest --coverage --env=jsdom",
-    "test:coverage:watch": "jest --watchAll --coverage --env=jsdom",
-    "flow": "flow"
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage",
+    "test:coverage:watch": "jest --watchAll --coverage",
+    "flow": "flow",
+    "doc:md": "documentation build src/** -f md -o doc/apiDoc.md",
+    "doc:html": "documentation build src/** -f html -o docs"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!**/node_modules/**"
+    ]
   },
   "dependencies": {
     "@expo/samples": "^2.1.1",
     "@expo/vector-icons": "^5.2.0",
     "babel-preset-expo": "^4.0.0",
     "expo": "^21.0.3",
+    "lodash": "^4.17.4",
     "native-base": "^2.3.3",
     "react": "16.0.0-alpha.12",
     "react-native": "https://github.com/expo/react-native/archive/sdk-21.0.2.tar.gz",
@@ -30,11 +37,20 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.1",
     "babel-preset-react-native": "^4.0.0",
+    "eslint": "^4.10.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-plugin-flowtype": "^2.39.1",
+    "eslint-plugin-prettier": "^2.3.1",
     "flow-bin": "^0.56.0",
+    "immutable": "^4.0.0-rc.9",
+    "immutable-devtools": "0.0.7",
     "jest": "^21.2.1",
     "jest-expo": "^22.0.1",
     "react-test-renderer": "^16.0.0",
-    "redux-devtools": "^3.4.0"
+    "redux-devtools": "^3.4.0",
+    "uuid": "^3.1.0"
   }
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { pickBy } from 'lodash';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { Dimensions } from 'react-native';
 import { WebBrowser } from 'expo';
@@ -22,7 +23,7 @@ export default class Basket extends React.Component {
   render() {
     const { container, payButton, totalPrice } = styles;
     const { declaredBasket } = this.props;
-
+    const displayedBasket = declaredBasket.filter(val => val.get('duty') !== 0);
     return (
       <View
         style={{
@@ -36,13 +37,15 @@ export default class Basket extends React.Component {
         }}
       >
         <BasketItemRow headerCategoryName={`Item`} headerDuty={'Zoll'} />
-        {Object.keys(declaredBasket).map(category =>
-          <BasketItemRow
-            key={category}
-            categoryName={category}
-            duty={declaredBasket[category].duty}
-          />
-        )}
+        {displayedBasket
+          .entrySeq()
+          .map(entry =>
+            <BasketItemRow
+              key={entry[0]}
+              categoryName={entry[0]}
+              duty={entry[1].get('duty')}
+            />
+          )}
 
         <Touchable
           onPress={this._handlePay}

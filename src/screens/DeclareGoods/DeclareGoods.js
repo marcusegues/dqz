@@ -11,7 +11,7 @@ import { Container, Body, Header, Icon } from 'native-base';
 import Touchable from 'react-native-platform-touchable';
 import { Entypo } from '@expo/vector-icons';
 import GoodsCategoryRow from './Subcomponents/GoodsCategoryRow';
-import { emptyBasket } from '../../constants/basket';
+import { CATEGORIES_INFO } from '../../model2/constants/categories';
 import GoodsInput from './Subcomponents/GoodsInput';
 
 class DeclareGoods extends React.Component {
@@ -21,7 +21,7 @@ class DeclareGoods extends React.Component {
   constructor(props) {
     super(props);
     const stateObject = {};
-    Object.keys(emptyBasket).forEach(category => {
+    CATEGORIES_INFO.forEach((categoryInfo, category) => {
       stateObject[category] = false;
     });
     this.state = stateObject;
@@ -29,9 +29,8 @@ class DeclareGoods extends React.Component {
   }
 
   handleToggleExpanded(categoryName, expanded) {
-    console.log('second handle toggleexpanded');
     const stateObject = { ...this.state };
-    Object.keys(emptyBasket).forEach(category => {
+    CATEGORIES_INFO.forEach((categoryInfo, category) => {
       stateObject[category] = false;
     });
     stateObject[categoryName] = expanded;
@@ -46,29 +45,29 @@ class DeclareGoods extends React.Component {
       declaredBasket,
       onChangeQuantityDeclaredBasketItem,
     } = this.props;
+
+    const list = CATEGORIES_INFO.entrySeq().map(entry =>
+      <GoodsCategoryRow
+        key={entry[0]}
+        categoryName={entry[0]}
+        navigation={navigation}
+        categoryInfo={entry[1]}
+        categoryState={declaredBasket.get(entry[0])}
+        expanded={this.state[entry[0]]}
+        handleToggleExpanded={this.handleToggleExpanded}
+      >
+        <GoodsInput
+          categoryName={entry[0]}
+          onChangeQuantityDeclaredBasketItem={
+            onChangeQuantityDeclaredBasketItem
+          }
+        />
+      </GoodsCategoryRow>
+    );
+
     return (
       <ScrollView style={container}>
-        <View style={{ flex: 1, alignItems: 'center' }}>
-          {Object.keys(emptyBasket).map(category =>
-            <GoodsCategoryRow
-              key={category}
-              categoryName={category}
-              navigation={navigation}
-              categoryObject={declaredBasket[category]}
-              expanded={this.state[category]}
-              handleToggleExpanded={this.handleToggleExpanded}
-            >
-              <GoodsInput
-                categoryName={category}
-                onChangeQuantityDeclaredBasketItem={
-                  onChangeQuantityDeclaredBasketItem
-                }
-                categoryObject={declaredBasket[category]}
-                categoryObjectValues={[...declaredBasket[category].values]}
-              />
-            </GoodsCategoryRow>
-          )}
-        </View>
+        <View style={{ flex: 1, alignItems: 'center' }}>{list}</View>
       </ScrollView>
     );
   }

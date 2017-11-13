@@ -1,63 +1,5 @@
-import { emptyBasket, categories } from '../constants/basket';
-
-const duty = (action, quantity) => {
-  switch (action.categoryName) {
-    case categories.MEAT_AND_MEAT_PRODUCTS: {
-      if (quantity <= 1) {
-        return 0;
-      } else if (quantity <= 10) {
-        return 17 * (quantity - 1);
-      } else {
-        return 23 * quantity;
-      }
-    }
-    case categories.BUTTER_OR_CREAM: {
-      if (quantity <= 1) {
-        return 0;
-      } else {
-        return 16 * (quantity - 1);
-      }
-    }
-    case categories.OILS_FATS_MARGARINE: {
-      if (quantity <= 5) {
-        return 0;
-      } else {
-        return 2 * (quantity - 5);
-      }
-    }
-    case categories.ALCOHOL_BELOW_18: {
-      if (quantity <= 5) {
-        return 0;
-      } else {
-        return 2 * (quantity - 5);
-      }
-    }
-    case categories.ALCOHOL_ABOVE_18: {
-      if (quantity <= 1) {
-        return 0;
-      } else {
-        return 15 * (quantity - 1);
-      }
-    }
-    case categories.CIGARETTES_AND_CIGARS: {
-      if (quantity <= 250) {
-        return 0;
-      } else {
-        return 0.25 * (quantity - 250);
-      }
-    }
-    case categories.OTHER_TOBACCO: {
-      if (quantity <= 250) {
-        return 0;
-      } else {
-        return 0.1 * (quantity - 250);
-      }
-    }
-    default: {
-      return 0;
-    }
-  }
-};
+import { emptyBasket } from '../model2/constants/basket';
+import { dutyForCategory } from '../model2/dutyCalculator';
 
 const basketItem = (state = {}, action) => {
   switch (action.type) {
@@ -73,12 +15,16 @@ const basketItem = (state = {}, action) => {
       };
     }
     case 'CHANGE_QUANTITY_DECLARED_BASKET_ITEM': {
-      const quantity = state.quantity + action.quantityChange;
-      return {
-        ...state,
-        duty: duty(action, quantity),
-        quantity: Math.max(0, quantity),
-      };
+      const quantity = Math.max(
+        0,
+        state.get('quantity') + action.quantityChange
+      );
+      ret = state.withMutations(s => {
+        s
+          .set('duty', dutyForCategory(action.categoryName, quantity, 1, 0))
+          .set('quantity', quantity);
+      });
+      return ret;
     }
     default: {
       return state;
@@ -90,10 +36,10 @@ const declaredBasket = (state = emptyBasket, action) => {
   switch (action.type) {
     case 'ADD_VALUE_TO_DECLARED_BASKET':
     case 'CHANGE_QUANTITY_DECLARED_BASKET_ITEM': {
-      return {
-        ...state,
-        [action.categoryName]: basketItem(state[action.categoryName], action),
-      };
+      return state.set(
+        action.categoryName,
+        basketItem(state.get(action.categoryName), action)
+      );
     }
     default: {
       return state;
@@ -104,17 +50,13 @@ const declaredBasket = (state = emptyBasket, action) => {
 export default declaredBasket;
 
 export const getDutyForCategory = (state, categoryName) => {
-  return state[categoryName].duty;
+  return state[categoryName].get('duty');
 };
 
 export const getIconForCategory = (state, categoryName) => {
-  return state[categoryName].icon;
+  return state.getIn([categoryName, 'icon']);
 };
 
 export const getTotalDuty = state => {
-  let totalDuty = 0;
-  Object.keys(state).forEach(category => {
-    totalDuty += state[category].duty;
-  });
-  return totalDuty;
+  return state.valueSeq().reduce((acc, val) => acc + val.get('duty'), 0);
 };
