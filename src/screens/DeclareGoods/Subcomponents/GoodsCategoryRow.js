@@ -59,8 +59,8 @@ class GoodsCategoryRow extends React.Component {
 
   animateExpanded() {
     let initialValue = this.state.expanded
-        ? this.state.maxHeight + this.state.minHeight
-        : this.state.minHeight,
+      ? this.state.maxHeight + this.state.minHeight
+      : this.state.minHeight,
       finalValue = this.state.expanded
         ? this.state.minHeight
         : this.state.maxHeight + this.state.minHeight;

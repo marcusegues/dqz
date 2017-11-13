@@ -31,12 +31,16 @@ type CategoryInfoContent = {
   icon: string,
 };
 
-export const makeCategoryInfoRecord: RecordFactory<CategoryInfoContent> = Immutable.Record({ name: 'category', unit: null, icon: 'icon' });
+export const makeCategoryInfoRecord: RecordFactory<
+  CategoryInfoContent
+> = Immutable.Record({ name: 'category', unit: null, icon: 'icon' });
 
 type CategoryInfoRecord = RecordOf<CategoryInfoContent>;
 
-export type CategoriesInfoType = ImmutableMapType<CategoryName,
-  CategoryInfoRecord>;
+export type CategoriesInfoType = ImmutableMapType<
+  CategoryName,
+  CategoryInfoRecord
+>;
 
 export type Categories = {
   [category: CategoryName]: CategoryName,
@@ -54,7 +58,9 @@ type BasketCategoryInfo = {
   valuesLarge: ImmutableListType<number>,
 };
 
-export const makeBasketCategoryInfo: RecordFactory<BasketCategoryInfo> = Immutable.Record({
+export const makeBasketCategoryInfo: RecordFactory<
+  BasketCategoryInfo
+> = Immutable.Record({
   quantity: 0,
   duty: 0,
   vat: 0,

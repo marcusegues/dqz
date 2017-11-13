@@ -46,7 +46,7 @@ class DeclareGoods extends React.Component {
       onChangeQuantityDeclaredBasketItem,
     } = this.props;
 
-    const list = CATEGORIES_INFO.entrySeq().map(entry => (
+    const list = CATEGORIES_INFO.entrySeq().map(entry =>
       <GoodsCategoryRow
         key={entry[0]}
         categoryName={entry[0]}
@@ -63,7 +63,7 @@ class DeclareGoods extends React.Component {
           }
         />
       </GoodsCategoryRow>
-    ));
+    );
 
     return (
       <ScrollView style={container}>

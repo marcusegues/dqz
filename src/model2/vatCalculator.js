@@ -30,12 +30,16 @@ export const vatCalculator = (
   );
 
   // array of sorted total values (excluding high value items) for each category
-  const totalSortedNormal: ImmutableListType<number> = basketSortedCategories.map((cat: CategoryName): number =>
+  const totalSortedNormal: ImmutableListType<
+    number
+  > = basketSortedCategories.map((cat: CategoryName): number =>
     basket.getIn([cat, 'valuesNormal'], []).reduce((acc, val) => acc + val, 0)
   );
 
   // array of sorted total values of high value items for each category
-  const totalSortedLarge: ImmutableListType<number> = basketSortedCategories.map((cat: CategoryName): number =>
+  const totalSortedLarge: ImmutableListType<
+    number
+  > = basketSortedCategories.map((cat: CategoryName): number =>
     basket.getIn([cat, 'valuesLarge'], []).reduce((acc, val) => acc + val, 0)
   );
 
@@ -50,7 +54,9 @@ export const vatCalculator = (
 
   // apply all allowances except last
   // obtain a list of allowances subtracted from initial total normal amounts
-  const taxableSortedNormalBeforeLast: ImmutableListType<number> = totalSortedNormal.map((val: number): number => {
+  const taxableSortedNormalBeforeLast: ImmutableListType<
+    number
+  > = totalSortedNormal.map((val: number): number => {
     const allowanceAlloc: number = Math.min(val, allowancesToApply);
     val -= allowanceAlloc;
     allowancesToApply -= allowanceAlloc;

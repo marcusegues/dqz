@@ -15,7 +15,9 @@ type vatReportContent = {
   vatByCategory: ImmutableMapType<CategoryName, number>,
 };
 
-export const makeVatReportRecord: RecordFactory<vatReportContent> = Immutable.Record({
+export const makeVatReportRecord: RecordFactory<
+  vatReportContent
+> = Immutable.Record({
   totalVat: 0,
   vatByCategory: Immutable.Map(),
 });
@@ -27,14 +29,18 @@ type VatBasketCategoryInfo = {
   valuesLarge: ImmutableListType<number>,
 };
 
-export const makeVatBasketCategoryInfo: RecordFactory<VatBasketCategoryInfo> = Immutable.Record({
+export const makeVatBasketCategoryInfo: RecordFactory<
+  VatBasketCategoryInfo
+> = Immutable.Record({
   valuesNormal: Immutable.List(),
   valuesLarge: Immutable.List(),
 });
 
 export type VatBasketCategoryInfoType = RecordOf<VatBasketCategoryInfo>;
 
-export type VatBasket = ImmutableMapType<CategoryName,
-  VatBasketCategoryInfoType>;
+export type VatBasket = ImmutableMapType<
+  CategoryName,
+  VatBasketCategoryInfoType
+>;
 
 export type VatCalculatorInputType = [VatBasket, number];
