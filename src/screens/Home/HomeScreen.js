@@ -90,7 +90,6 @@ export default class HomeScreen extends React.Component {
 
             <Touchable
               onPress={() => navigate('DeclareGoods')}
-              // onPress={() => console.log('hello!')}
               style={{
                 marginTop: 60,
                 marginBottom: 60,
@@ -125,7 +124,6 @@ export default class HomeScreen extends React.Component {
 
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <Touchable
-                onPress={() => console.log('hello!')}
                 style={{
                   backgroundColor: '#b2b2b2',
                   justifyContent: 'center',
@@ -158,7 +156,6 @@ export default class HomeScreen extends React.Component {
                 </View>
               </Touchable>
               <Touchable
-                onPress={() => console.log('hello!')}
                 style={{
                   backgroundColor: '#b2b2b2',
                   justifyContent: 'center',

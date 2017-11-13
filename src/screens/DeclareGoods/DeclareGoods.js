@@ -21,7 +21,7 @@ class DeclareGoods extends React.Component {
   constructor(props) {
     super(props);
     const stateObject = {};
-    Object.keys(CATEGORIES_INFO).forEach(category => {
+    CATEGORIES_INFO.forEach((categoryInfo, category) => {
       stateObject[category] = false;
     });
     this.state = stateObject;
@@ -30,7 +30,7 @@ class DeclareGoods extends React.Component {
 
   handleToggleExpanded(categoryName, expanded) {
     const stateObject = { ...this.state };
-    Object.keys(CATEGORIES_INFO).forEach(category => {
+    CATEGORIES_INFO.forEach((categoryInfo, category) => {
       stateObject[category] = false;
     });
     stateObject[categoryName] = expanded;
@@ -45,11 +45,7 @@ class DeclareGoods extends React.Component {
       declaredBasket,
       onChangeQuantityDeclaredBasketItem,
     } = this.props;
-    console.log(
-      'DECLARED BASKET',
-      declaredBasket.get('MEAT_AND_MEAT_PRODUCTS')
-    );
-    console.log('CATEGORIES_INFO', CATEGORIES_INFO);
+
     const list = CATEGORIES_INFO.entrySeq().map(entry => (
       <GoodsCategoryRow
         key={entry[0]}
@@ -68,7 +64,7 @@ class DeclareGoods extends React.Component {
         />
       </GoodsCategoryRow>
     ));
-    console.log('list is', list);
+
     return (
       <ScrollView style={container}>
         <View style={{ flex: 1, alignItems: 'center' }}>{list}</View>

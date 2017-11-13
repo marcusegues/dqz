@@ -20,14 +20,12 @@ class GoodsCategoryRow extends React.Component {
   }
 
   _setMinHeight(event) {
-    console.log('minheight', event.nativeEvent.layout.height);
     this.setState({
       minHeight: event.nativeEvent.layout.height,
     });
   }
 
   _setMaxHeight(event) {
-    console.log('maxheight', event.nativeEvent.layout.height);
     const currentHeight = this.state.maxHeight;
     const newHeight = event.nativeEvent.layout.height;
     this.setState(
@@ -53,7 +51,6 @@ class GoodsCategoryRow extends React.Component {
   }
 
   handleToggleExpanded() {
-    console.log('first handle toggleexpanded');
     this.props.handleToggleExpanded(
       this.props.categoryName,
       !this.state.expanded
@@ -84,9 +81,9 @@ class GoodsCategoryRow extends React.Component {
     const { navigate } = this.props.navigation;
     const quantity = this.props.categoryState.get('quantity');
     const duty = this.props.categoryState.get('duty');
-    const { unit, icon } = this.props.categoryInfo;
+    const unit = this.props.categoryInfo.get('unit');
+    const icon = this.props.categoryInfo.get('icon');
     const { categoryName } = this.props;
-    console.log('QUANTITY AND DUTY', quantity, duty);
     let imgUrl = '';
     switch (icon) {
       case 'meat': {

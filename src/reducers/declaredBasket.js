@@ -19,14 +19,12 @@ const basketItem = (state = {}, action) => {
         0,
         state.get('quantity') + action.quantityChange
       );
-      return state.withMutations(s => {
-        s.set('duty', dutyForCategory(action.categoryName, quantity, 1, 0));
+      ret = state.withMutations(s => {
+        s
+          .set('duty', dutyForCategory(action.categoryName, quantity, 1, 0))
+          .set('quantity', quantity);
       });
-      return {
-        ...state,
-        duty: dutyForCategory(action.categoryName, quantity, 1, 0),
-        quantity: Math.max(0, quantity),
-      };
+      return ret;
     }
     default: {
       return state;
@@ -52,17 +50,13 @@ const declaredBasket = (state = emptyBasket, action) => {
 export default declaredBasket;
 
 export const getDutyForCategory = (state, categoryName) => {
-  return state[categoryName].duty;
+  return state[categoryName].get('duty');
 };
 
 export const getIconForCategory = (state, categoryName) => {
-  return state[categoryName].icon;
+  return state.getIn([categoryName, 'icon']);
 };
 
 export const getTotalDuty = state => {
-  let totalDuty = 0;
-  Object.keys(state).forEach(category => {
-    totalDuty += state[category].duty;
-  });
-  return totalDuty;
+  return state.valueSeq().reduce((acc, val) => acc + val.get('duty'), 0);
 };
