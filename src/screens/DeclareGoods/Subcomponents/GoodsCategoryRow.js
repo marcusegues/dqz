@@ -82,10 +82,11 @@ class GoodsCategoryRow extends React.Component {
   render() {
     const { container } = styles;
     const { navigate } = this.props.navigation;
-    const { quantity, duty } = this.props.categoryState;
+    const quantity = this.props.categoryState.get('quantity');
+    const duty = this.props.categoryState.get('duty');
     const { unit, icon } = this.props.categoryInfo;
     const { categoryName } = this.props;
-    console.log(this.props.categoryState);
+    console.log('QUANTITY AND DUTY', quantity, duty);
     let imgUrl = '';
     switch (icon) {
       case 'meat': {

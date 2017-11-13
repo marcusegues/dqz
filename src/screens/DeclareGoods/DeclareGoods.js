@@ -11,7 +11,7 @@ import { Container, Body, Header, Icon } from 'native-base';
 import Touchable from 'react-native-platform-touchable';
 import { Entypo } from '@expo/vector-icons';
 import GoodsCategoryRow from './Subcomponents/GoodsCategoryRow';
-import { CATEGORIES_INFO } from '../../constants/categories';
+import { CATEGORIES_INFO } from '../../model2/constants/categories';
 import GoodsInput from './Subcomponents/GoodsInput';
 
 class DeclareGoods extends React.Component {
@@ -45,28 +45,33 @@ class DeclareGoods extends React.Component {
       declaredBasket,
       onChangeQuantityDeclaredBasketItem,
     } = this.props;
+    console.log(
+      'DECLARED BASKET',
+      declaredBasket.get('MEAT_AND_MEAT_PRODUCTS')
+    );
+    console.log('CATEGORIES_INFO', CATEGORIES_INFO);
+    const list = CATEGORIES_INFO.entrySeq().map(entry => (
+      <GoodsCategoryRow
+        key={entry[0]}
+        categoryName={entry[0]}
+        navigation={navigation}
+        categoryInfo={entry[1]}
+        categoryState={declaredBasket.get(entry[0])}
+        expanded={this.state[entry[0]]}
+        handleToggleExpanded={this.handleToggleExpanded}
+      >
+        <GoodsInput
+          categoryName={entry[0]}
+          onChangeQuantityDeclaredBasketItem={
+            onChangeQuantityDeclaredBasketItem
+          }
+        />
+      </GoodsCategoryRow>
+    ));
+    console.log('list is', list);
     return (
       <ScrollView style={container}>
-        <View style={{ flex: 1, alignItems: 'center' }}>
-          {Object.keys(CATEGORIES_INFO).map(category =>
-            <GoodsCategoryRow
-              key={category}
-              categoryName={category}
-              navigation={navigation}
-              categoryInfo={CATEGORIES_INFO[category]}
-              categoryState={declaredBasket[category]}
-              expanded={this.state[category]}
-              handleToggleExpanded={this.handleToggleExpanded}
-            >
-              <GoodsInput
-                categoryName={category}
-                onChangeQuantityDeclaredBasketItem={
-                  onChangeQuantityDeclaredBasketItem
-                }
-              />
-            </GoodsCategoryRow>
-          )}
-        </View>
+        <View style={{ flex: 1, alignItems: 'center' }}>{list}</View>
       </ScrollView>
     );
   }

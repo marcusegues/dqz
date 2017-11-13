@@ -11,6 +11,7 @@ class DeclareGoodsContainer extends React.Component {
   render() {
     // const { navigate } = this.props.navigation;
     // return <UserProfile user={navigation.state.params.user} />;
+    console.log('full state is ', this.props.state);
     return (
       <DeclareGoods
         navigation={this.props.navigation}
@@ -25,6 +26,7 @@ class DeclareGoodsContainer extends React.Component {
 
 const mapStateToProps = state => ({
   declaredBasket: state.declaredBasket,
+  state,
 });
 
 const mapDispatchToProps = dispatch => ({

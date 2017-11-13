@@ -1,5 +1,5 @@
 // @flow
-import type { DutyCalculatorBasket } from '../types/dutyCalculator';
+import type { DutyCalculatorBasket } from '../../types/dutyCalculator';
 
 export const INPUT_1: [DutyCalculatorBasket, number, number] = [
   {

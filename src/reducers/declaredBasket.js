@@ -1,5 +1,5 @@
-import { emptyBasket } from '../constants/basket';
-import { dutyForCategory } from '../util/dutyCalculator';
+import { emptyBasket } from '../model2/constants/basket';
+import { dutyForCategory } from '../model2/dutyCalculator';
 
 const basketItem = (state = {}, action) => {
   switch (action.type) {
@@ -15,7 +15,13 @@ const basketItem = (state = {}, action) => {
       };
     }
     case 'CHANGE_QUANTITY_DECLARED_BASKET_ITEM': {
-      const quantity = Math.max(0, state.quantity + action.quantityChange);
+      const quantity = Math.max(
+        0,
+        state.get('quantity') + action.quantityChange
+      );
+      return state.withMutations(s => {
+        s.set('duty', dutyForCategory(action.categoryName, quantity, 1, 0));
+      });
       return {
         ...state,
         duty: dutyForCategory(action.categoryName, quantity, 1, 0),
@@ -32,10 +38,10 @@ const declaredBasket = (state = emptyBasket, action) => {
   switch (action.type) {
     case 'ADD_VALUE_TO_DECLARED_BASKET':
     case 'CHANGE_QUANTITY_DECLARED_BASKET_ITEM': {
-      return {
-        ...state,
-        [action.categoryName]: basketItem(state[action.categoryName], action),
-      };
+      return state.set(
+        action.categoryName,
+        basketItem(state.get(action.categoryName), action)
+      );
     }
     default: {
       return state;

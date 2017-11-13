@@ -21,7 +21,7 @@ import {
   makeAllAmountsPerVatBracketRecord,
   makeVatReportRecord,
 } from './types/calculationTypes';
-import type { Categories } from '../types/basket';
+import type { Categories } from '../model2/types/basket';
 
 /**
  * For TESTING only
@@ -85,7 +85,7 @@ export const summarizeByVatBracket = (
 };
 
 /**
- * For TESTING only. Note: the LAST person in the group is the one paying... 
+ * For TESTING only. Note: the LAST person in the group is the one paying...
  */
 export const calculateAllowancesExceptLast = (people: People): number =>
   (people.get('minors') + people.get('adults') - 1) * IndividualAllowance;
@@ -150,10 +150,8 @@ export const applyAllowancesLastPerson = (
 export const calculateVatLargeItems = (
   allItems: AllAmountsPerVatBracket
 ): number => {
-  const largeItems: ImmutableOrderedMapType<
-    number,
-    ImmutableListType<number>
-  > = allItems.get('large');
+  const largeItems: ImmutableOrderedMapType<number,
+    ImmutableListType<number>> = allItems.get('large');
   return largeItems.reduce(
     (acc, v, k) => acc + k * v.reduce((a, v) => a + v, 0),
     0
@@ -166,10 +164,8 @@ export const calculateVatLargeItems = (
 export const calculateVatNormalItems = (
   allItems: AllAmountsPerVatBracket
 ): number => {
-  const largeItems: ImmutableOrderedMapType<
-    number,
-    ImmutableListType<number>
-  > = allItems.get('normal');
+  const largeItems: ImmutableOrderedMapType<number,
+    ImmutableListType<number>> = allItems.get('normal');
   return largeItems.reduce(
     (acc, v, k) => acc + k * v.reduce((a, v) => a + v, 0),
     0

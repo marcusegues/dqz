@@ -1,4 +1,4 @@
-import { emptyBasket } from '../constants/basket';
+import { emptyBasket } from '../model2/constants/basket';
 
 const calculatorBasket = (state = emptyBasket, action) => {
   switch (action.type) {

@@ -97,6 +97,6 @@ export const vatCalculator = (
     totalVat,
     vatByCategory: vatByCat,
   });
-  console.log('VAT_OBJECT', vatObject);
+
   return vatObject;
 };
