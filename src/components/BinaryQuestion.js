@@ -2,17 +2,17 @@ import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 
-import styles from './styles/Question1Styles';
+import styles from './styles/BinaryQuestion';
 
-const Question1 = props => (
+const BinaryQuestion = ({ text, onYesAnswer, onNoAnswer }) => (
   <View style={styles.contentContainer}>
     <View style={styles.mainTextContainer}>
-      <Text style={styles.mainText}>Reisen Sie allein?</Text>
+      <Text style={styles.mainText}>{text}</Text>
     </View>
 
     <View style={styles.bottomButtonContainer}>
       <Touchable
-        onPress={() => console.log('JA!')}
+        onPress={() => onYesAnswer}
         style={styles.leftTouchable}
         background={Touchable.Ripple('blue')}
       >
@@ -20,7 +20,7 @@ const Question1 = props => (
       </Touchable>
 
       <Touchable
-        onPress={() => console.log('NEIN!')}
+        onPress={() => onNoAnswer}
         style={styles.rightTouchable}
         background={Touchable.Ripple('blue')}
       >
@@ -29,4 +29,4 @@ const Question1 = props => (
     </View>
   </View>
 );
-export default Question1;
+export default BinaryQuestion;
