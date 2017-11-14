@@ -39,13 +39,13 @@ export default class Basket extends React.Component {
         <BasketItemRow headerCategoryName={`Item`} headerDuty={'Zoll'} />
         {displayedBasket
           .entrySeq()
-          .map(entry =>
+          .map(entry => (
             <BasketItemRow
               key={entry[0]}
               categoryName={entry[0]}
               duty={entry[1].get('duty')}
             />
-          )}
+          ))}
 
         <Touchable
           onPress={this._handlePay}
