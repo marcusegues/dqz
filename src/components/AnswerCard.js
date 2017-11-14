@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, View, Text, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
-const CardComponent = props => (
+const AnswerCard = props => (
     <View style={styles.container}>
         <MaterialIcons name={props.mainIcon} size={34} style={{}} color="#9B9B9B" />
         <View style={{ flex: 0.7 }}>{props.children}</View>
@@ -17,7 +17,7 @@ const CardComponent = props => (
     </View>
 );
 
-export default CardComponent;
+export default AnswerCard;
 
 const styles = StyleSheet.create({
     container: {
