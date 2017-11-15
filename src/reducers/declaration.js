@@ -1,9 +1,13 @@
-import { emptyBasket } from '../model2/constants/basket';
+// @flow
+import { emptyBasket } from '../model/configurationApi';
+import type { State } from '../types/reducers/declaration';
+import { makePeopleRecord } from '../model/types/people';
 import { dutyForCategory } from '../model2/dutyCalculator';
+import type { Action } from '../types/actions';
 
 const basketItem = (state = {}, action) => {
   switch (action.type) {
-    case 'ADD_VALUE_TO_DECLARED_BASKET': {
+    case 'DECLARED_BASKET_ADD_VALUE': {
       if (action.value === '') {
         return state;
       }
@@ -14,7 +18,7 @@ const basketItem = (state = {}, action) => {
         values,
       };
     }
-    case 'CHANGE_QUANTITY_DECLARED_BASKET_ITEM': {
+    case 'DECLARED_BASKET_CHANGE_QUANTITY': {
       const quantity = Math.max(
         0,
         state.get('quantity') + action.quantityChange
@@ -32,10 +36,23 @@ const basketItem = (state = {}, action) => {
   }
 };
 
-const declaredBasket = (state = emptyBasket, action) => {
+const declaration = (
+  state: State = {
+    people: makePeopleRecord(),
+    basket: emptyBasket,
+  },
+  action: Action
+) => {
   switch (action.type) {
-    case 'ADD_VALUE_TO_DECLARED_BASKET':
-    case 'CHANGE_QUANTITY_DECLARED_BASKET_ITEM': {
+    case 'DECLARED_BASKET_ADD_VALUE':
+    case 'DECLARED_BASKET_CHANGE_QUANTITY': {
+      return state.withMutations(s => {
+        s.setIn(
+          [action.category, 'duty'],
+          dutyForCategory(action.categoryName, quantity, 1, 0)
+        );
+      });
+
       return state.set(
         action.categoryName,
         basketItem(state.get(action.categoryName), action)
@@ -47,7 +64,7 @@ const declaredBasket = (state = emptyBasket, action) => {
   }
 };
 
-export default declaredBasket;
+export default declaration;
 
 export const getDutyForCategory = (state, categoryName) => {
   return state[categoryName].get('duty');

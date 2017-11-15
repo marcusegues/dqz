@@ -1,8 +1,6 @@
 import { Notifications } from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-
-import MainTabNavigator from './MainTabNavigator';
 import HomeScreen from '../screens/Home/HomeScreen';
 import DeclareGoodsContainer from '../screens/DeclareGoods/DeclareGoodsContainer';
 import SelectedGoodsContainer from '../screens/SelectedGoods/SelectedGoodsContainer';

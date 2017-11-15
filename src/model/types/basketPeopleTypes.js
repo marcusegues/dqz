@@ -38,9 +38,7 @@ type CategoryInfoContent = {
   unit: string,
   icon: string,
 };
-export const makeCategoryInfoRecord: RecordFactory<
-  CategoryInfoContent
-> = Immutable.Record({
+export const makeCategoryInfoRecord: RecordFactory<CategoryInfoContent> = Immutable.Record({
   name: 'category',
   unit: 'kg',
   icon: 'icon',
@@ -58,9 +56,7 @@ type CategoryVolumeContent = {
   amounts: ImmutableListType<number>,
   amountsLarge: ImmutableListType<number>,
 };
-const makeCategoryVolumeRecord: RecordFactory<
-  CategoryVolumeContent
-> = Immutable.Record({
+const makeCategoryVolumeRecord: RecordFactory<CategoryVolumeContent> = Immutable.Record({
   quantity: 0,
   amounts: Immutable.List(),
   amountsLarge: Immutable.List(),
@@ -72,9 +68,7 @@ type CategoryDuesContent = {
   duty: number,
   vat: number,
 };
-const makeCategoryDuesRecord: RecordFactory<
-  CategoryDuesContent
-> = Immutable.Record({
+const makeCategoryDuesRecord: RecordFactory<CategoryDuesContent> = Immutable.Record({
   duty: 0,
   vat: 0,
 });
@@ -85,9 +79,7 @@ type CategoryBasketItemContent = {
   volume: CategoryVolume,
   dues: CategoryDues,
 };
-export const makeCategoryBasketItemRecord: RecordFactory<
-  CategoryBasketItemContent
-> = Immutable.Record({
+export const makeCategoryBasketItemRecord: RecordFactory<CategoryBasketItemContent> = Immutable.Record({
   volume: makeCategoryVolumeRecord(),
   dues: makeCategoryDuesRecord(),
 });
@@ -107,9 +99,7 @@ type DutyBracketContent = {
   threshold: number,
   fee: number,
 };
-export const makeDutyBracketRecord: RecordFactory<
-  DutyBracketContent
-> = Immutable.Record({
+export const makeDutyBracketRecord: RecordFactory<DutyBracketContent> = Immutable.Record({
   threshold: Infinity,
   fee: 0,
 });

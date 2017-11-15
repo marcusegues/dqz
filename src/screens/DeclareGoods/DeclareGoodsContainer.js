@@ -29,12 +29,12 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   handleChangeQuantityDeclaredBasketItem: (categoryName, quantityChange) =>
     dispatch({
-      type: 'CHANGE_QUANTITY_DECLARED_BASKET_ITEM',
+      type: 'DECLARED_BASKET_CHANGE_QUANTITY',
       categoryName,
       quantityChange,
     }),
   handleAddValueToDeclaredBasket: (categoryName, value) =>
-    dispatch({ type: 'ADD_VALUE_TO_DECLARED_BASKET', categoryName, value }),
+    dispatch({ type: 'DECLARED_BASKET_ADD_VALUE', categoryName, value }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
