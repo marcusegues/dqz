@@ -1,62 +1,28 @@
 // @flow
 import { emptyBasket } from '../model/configurationApi';
+import { getInitialState } from '../types/reducers/declaration';
 import type { State } from '../types/reducers/declaration';
 import { makePeopleRecord } from '../model/types/people';
 import { dutyForCategory } from '../model2/dutyCalculator';
 import type { Action } from '../types/actions';
+import type { Category } from '../model/types/category';
 
-const basketItem = (state = {}, action) => {
+const declaration = (state: State = getInitialState(), action: any) => {
   switch (action.type) {
-    case 'DECLARED_BASKET_ADD_VALUE': {
-      if (action.value === '') {
-        return state;
-      }
-      const values = [...state.values];
-      values.push(parseInt(action.value, 10));
-      return {
-        ...state,
-        values,
-      };
-    }
     case 'DECLARED_BASKET_CHANGE_QUANTITY': {
+      const category: Category = action.category;
       const quantity = Math.max(
         0,
-        state.get('quantity') + action.quantityChange
+        state.getIn(['basket', category, 'quantity'], 0) + action.quantityChange
       );
-      ret = state.withMutations(s => {
-        s
-          .set('duty', dutyForCategory(action.categoryName, quantity, 1, 0))
-          .set('quantity', quantity);
-      });
-      return ret;
-    }
-    default: {
-      return state;
-    }
-  }
-};
-
-const declaration = (
-  state: State = {
-    people: makePeopleRecord(),
-    basket: emptyBasket,
-  },
-  action: Action
-) => {
-  switch (action.type) {
-    case 'DECLARED_BASKET_ADD_VALUE':
-    case 'DECLARED_BASKET_CHANGE_QUANTITY': {
       return state.withMutations(s => {
-        s.setIn(
-          [action.category, 'duty'],
-          dutyForCategory(action.categoryName, quantity, 1, 0)
-        );
+        s
+          .setIn(['basket', category, 'quantity'], quantity)
+          .setIn(
+            ['basket', category, 'duty'],
+            calculateDutyForCategory(category, state.get(category), state.get)
+          );
       });
-
-      return state.set(
-        action.categoryName,
-        basketItem(state.get(action.categoryName), action)
-      );
     }
     default: {
       return state;
@@ -66,14 +32,16 @@ const declaration = (
 
 export default declaration;
 
-export const getDutyForCategory = (state, categoryName) => {
-  return state[categoryName].get('duty');
+export const getDutyForCategory = (
+  state: State,
+  category: Category
+): number => {
+  return state.getIn(['basket', category, 'duty']);
 };
 
-export const getIconForCategory = (state, categoryName) => {
-  return state.getIn([categoryName, 'icon']);
-};
-
-export const getTotalDuty = state => {
-  return state.valueSeq().reduce((acc, val) => acc + val.get('duty'), 0);
+export const getTotalDuty = (state: State): number => {
+  return state
+    .get('basket')
+    .valueSeq()
+    .reduce((acc, val) => acc + val.get('duty'), 0);
 };
