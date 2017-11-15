@@ -11,8 +11,10 @@ import type { Category } from './basketPeopleTypes';
 
 // VAT
 
-export type AmountsInBracket = ImmutableOrderedMapType<number,
-  ImmutableListType<number>>;
+export type AmountsInBracket = ImmutableOrderedMapType<
+  number,
+  ImmutableListType<number>
+>;
 
 type AllAmountsPerVatContent = {
   large: AmountsInBracket,
@@ -20,7 +22,9 @@ type AllAmountsPerVatContent = {
 };
 
 // TODO can extend here if we want to keep totals per category (for receipt)
-export const makeAllAmountsPerVatBracketRecord: RecordFactory<AllAmountsPerVatContent> = Immutable.Record({
+export const makeAllAmountsPerVatBracketRecord: RecordFactory<
+  AllAmountsPerVatContent
+> = Immutable.Record({
   large: Immutable.OrderedMap(),
   normal: Immutable.OrderedMap(),
 });
@@ -33,7 +37,9 @@ type vatReportContent = {
   vatByCategoryRaw: ImmutableMapType<Category, number>,
 };
 
-export const makeVatReportRecord: RecordFactory<vatReportContent> = Immutable.Record({
+export const makeVatReportRecord: RecordFactory<
+  vatReportContent
+> = Immutable.Record({
   totalVat: 0,
   vatByCategoryRaw: Immutable.Map(),
 });
@@ -46,7 +52,9 @@ type DutyReportContent = {
   dutyByCategoryRaw: ImmutableMapType<Category, number>,
 };
 
-export const makeDutyReportRecord: RecordFactory<DutyReportContent> = Immutable.Record({
+export const makeDutyReportRecord: RecordFactory<
+  DutyReportContent
+> = Immutable.Record({
   totalDuty: 0,
   dutyByCategoryRaw: Immutable.Map(),
 });

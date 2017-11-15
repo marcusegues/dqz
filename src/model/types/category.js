@@ -33,7 +33,9 @@ type CategoryInfoContent = {
   unit: string,
   icon: string,
 };
-export const makeCategoryInfoRecord: RecordFactory<CategoryInfoContent> = Immutable.Record({
+export const makeCategoryInfoRecord: RecordFactory<
+  CategoryInfoContent
+> = Immutable.Record({
   name: 'category',
   unit: 'kg',
   icon: 'icon',

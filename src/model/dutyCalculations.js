@@ -56,8 +56,10 @@ export const calculateDutyForCategory = (
 
 export const calculateDuty = (basket: Basket, people: People): DutyReport => {
   let total = 0;
-  const reportByCategory: ImmutableMapType<Category,
-    number> = Immutable.Map().withMutations(r => {
+  const reportByCategory: ImmutableMapType<
+    Category,
+    number
+  > = Immutable.Map().withMutations(r => {
     CategoriesArray.forEach(c => {
       // const fee = calculateDutyForCategory(c, basket.getIn([c]), people);
       // r.set(c, fee);
