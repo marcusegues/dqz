@@ -1,10 +1,9 @@
 // @flow
 import type { RecordOf, RecordFactory } from 'immutable';
 import Immutable from 'immutable';
-import type { People } from '../../model/types/people';
-import type { Basket } from '../../model/types/basket';
-import { makePeopleRecord } from '../../model/types/people';
 import { emptyBasket } from '../../model/configurationApi';
+import type { Basket, People } from '../../model/types/basketPeopleTypes';
+import { makePeopleRecord } from '../../model/types/basketPeopleTypes';
 
 type StateObj = {
   people: People,

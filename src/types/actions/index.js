@@ -1,5 +1,6 @@
 // @flow
-import type { Category } from '../../model/types/category';
+
+import type { Category } from '../../model/types/basketPeopleTypes';
 
 export type Action =
   // declaration
