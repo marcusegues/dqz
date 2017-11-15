@@ -1,3 +1,4 @@
+// @flow
 import type {
   List as ImmutableListType,
   OrderedMap as ImmutableOrderedMapType,
@@ -7,12 +8,11 @@ import type {
 } from 'immutable';
 import Immutable from 'immutable';
 import type { Category } from './basketPeopleTypes';
-import type { Categories } from '../../types/basket';
 
 // VAT
 
 export type AmountsInBracket = ImmutableOrderedMapType<number,
-  ImmutableListType>;
+  ImmutableListType<number>>;
 
 type AllAmountsPerVatContent = {
   large: AmountsInBracket,
@@ -30,7 +30,7 @@ export type AllAmountsPerVatBracket = RecordOf<AllAmountsPerVatContent>;
 // note: we are not returning vat per cat
 type vatReportContent = {
   totalVat: number,
-  vatByCategoryRaw: ImmutableMapType<Categories, number>,
+  vatByCategoryRaw: ImmutableMapType<Category, number>,
 };
 
 export const makeVatReportRecord: RecordFactory<vatReportContent> = Immutable.Record({
@@ -43,7 +43,7 @@ export type VatReport = RecordOf<vatReportContent>;
 // DUTY
 type DutyReportContent = {
   totalDuty: number,
-  dutyByCategoryRaw: ImmutableMapType<Categories, number>,
+  dutyByCategoryRaw: ImmutableMapType<Category, number>,
 };
 
 export const makeDutyReportRecord: RecordFactory<DutyReportContent> = Immutable.Record({
