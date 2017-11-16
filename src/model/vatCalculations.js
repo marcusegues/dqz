@@ -54,7 +54,7 @@ export const summarizeByVatBracket = (
 
   return allAmountsPerVatBracket.withMutations(basketMutable => {
     CategoriesArray.forEach(c => {
-      const vatRate = CategoriesRates.getIn([c, 'vat']);
+      const vatRate: number = CategoriesRates.getIn([c, 'vat'], 0);
       const amounts: ImmutableListType<number> = basket.getIn(
         [c, 'volume', 'amounts'],
         Immutable.List()
