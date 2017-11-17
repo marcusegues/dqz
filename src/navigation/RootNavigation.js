@@ -10,51 +10,7 @@ import registerForPushNotificationsAsync from '../../api/registerForPushNotifica
 import { TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
-const RootStackNavigator = StackNavigator(
-  {
-    Main: {
-      screen: HomeScreen,
-      navigationOptions: {
-        header: null,
-      },
-    },
-    DeclareGoods: {
-      screen: DeclareGoodsContainer,
-      navigationOptions: ({ navigation }) => ({
-        title: 'Waren deklarieren',
-        headerRight: (
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('Basket');
-            }}
-          >
-            <Entypo name="shopping-cart" size={40} color="black" />
-          </TouchableOpacity>
-        ),
-        headerStyle: { paddingRight: 20 },
-      }),
-    },
-    SelectedGoods: {
-      screen: SelectedGoodsContainer,
-      navigationOptions: ({ navigation }) => ({
-        title: 'SelectedGoods',
-      }),
-    },
-    Basket: {
-      screen: BasketContainer,
-      navigationOptions: ({ navigation }) => ({
-        title: 'Basket',
-      }),
-    },
-  },
-  {
-    navigationOptions: () => ({
-      headerTitleStyle: {
-        fontWeight: 'normal',
-      },
-    }),
-  }
-);
+const RootStackNavigator = StackNavigator({});
 
 export default class RootNavigator extends React.Component {
   componentDidMount() {
