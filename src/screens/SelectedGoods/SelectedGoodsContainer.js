@@ -27,7 +27,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   handleChangeQuantityDeclaredBasketItem: (categoryName, quantityChange) =>
     dispatch({
-      type: 'DECLARED_BASKET_CHANGE_QUANTITY',
+      type: 'DECLARATION_BASKET_CHANGE_QUANTITY',
       categoryName,
       quantityChange,
     }),

@@ -1,40 +1,49 @@
 // @flow
 import { getInitialState } from '../types/reducers/declaration';
 import type { State } from '../types/reducers/declaration';
-import type { Basket, Category } from '../model/types/basketPeopleTypes';
-import { getQuantity, setQuantity } from '../model/configurationApi';
+import type { Action } from '../types/actions';
+import type {
+  Basket,
+  Category,
+  People,
+} from '../model/types/basketPeopleTypes';
+import * as fromModelApi from '../model/configurationApi';
 
-const declaration = (state: State = getInitialState(), action: any): State => {
+const declaration = (
+  state: State = getInitialState(),
+  action: Action
+): State => {
   switch (action.type) {
-    case 'DECLARED_BASKET_CHANGE_QUANTITY': {
-      // NOTE: I only have ONE basket
+    case 'DECLARATION_BASKET_CHANGE_QUANTITY': {
       const category: Category = action.category;
       const basket: Basket = state.get('basket');
 
-      // NOTE: it would be cool to have a `updateQuantity` function :-)
       return state.setIn(
         ['basket'],
-        setQuantity(
+        fromModelApi.setQuantity(
           basket,
           category,
-          getQuantity(basket, category) + action.quantityChange
+          fromModelApi.getQuantity(basket, category) + action.quantityChange
         )
       );
-      /*
-      const category: Category = action.category;
-      const quantity = Math.max(
-        0,
-        state.getIn(['basket', category, 'quantity'], 0) + action.quantityChange
+    }
+    case 'DECLARATION_ADULTS_CHANGE_QUANTITY': {
+      const people: People = state.get('people');
+      const adults: number = people.get('adults');
+      const quantity: number = adults + action.quantityChange;
+      return state.setIn(
+        ['people'],
+        fromModelApi.setAdultPeople(people, quantity)
       );
-      return state.withMutations(s => {
-        s
-          .setIn(['basket', category, 'quantity'], quantity)
-          .setIn(
-            ['basket', category, 'duty'],
-            calculateDutyForCategory(category, state.get(category), state.get)
-          );
-      });
-      */
+    }
+    case 'DECLARATION_MINORS_CHANGE_QUANTITY': {
+      const people: People = state.get('people');
+      const minors: number = people.get('minors');
+      const quantity: number = minors + action.quantityChange;
+      return state.setIn(
+        ['people'],
+        fromModelApi.setMinorPeople(people, quantity)
+      );
     }
     default: {
       return state;
@@ -43,21 +52,3 @@ const declaration = (state: State = getInitialState(), action: any): State => {
 };
 
 export default declaration;
-
-/* THAT does not work this way, I do NOT have duties in the basket
-export const getDutyForCategory = (
-  state: State,
-  category: Category
-): number => {
-  return state.getIn(['basket', category, 'duty']);
-};
-*/
-
-/* dito
-export const getTotalDuty = (state: State): number => {
-  return state
-    .get('basket')
-    .valueSeq()
-    .reduce((acc, val) => acc + val.get('duty'), 0);
-};
-*/
