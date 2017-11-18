@@ -1,26 +1,19 @@
 import { combineReducers } from 'redux';
-import calculatorBasket from './calculatorBasket';
-import declaredBasket from './declaredBasket';
-import * as fromDeclaredBasket from './declaredBasket';
+import declaration from './declaration';
+import * as fromDeclaration from './declaration';
 
-const root = combineReducers({ calculatorBasket, declaredBasket });
+const root = combineReducers({ declaration });
 
 export default root;
 
 export const getDutyForCategory = (state, categoryName) => {
-  return fromDeclaredBasket.getDutyForCategory(
-    state.declaredBasket,
-    categoryName
-  );
+  return fromDeclaration.getDutyForCategory(state.declaration, categoryName);
 };
 
 export const getIconForCategory = (state, categoryName) => {
-  return fromDeclaredBasket.getIconForCategory(
-    state.declaredBasket,
-    categoryName
-  );
+  return fromDeclaration.getIconForCategory(state.declaration, categoryName);
 };
 
 export const getTotalDuty = state => {
-  return fromDeclaredBasket.getTotalDuty(state.declaredBasket);
+  return fromDeclaration.getTotalDuty(state.declaration);
 };
