@@ -19,6 +19,7 @@ export default class QuestionAnswerFlow extends React.Component {
     this.getCurrentElement = this.getCurrentElement.bind(this);
     this.getCurrentQuestionElement = this.getCurrentQuestionElement.bind(this);
     this.getCurrentAnswerElement = this.getCurrentAnswerElement.bind(this);
+    this.onAnswer = this.onAnswer.bind(this);
     this.onAnswerYes = this.onAnswerYes.bind(this);
     this.onAnswerNo = this.onAnswerNo.bind(this);
     this.onAnswerConfirm = this.onAnswerConfirm.bind(this);
@@ -69,14 +70,13 @@ export default class QuestionAnswerFlow extends React.Component {
     return element;
   }
 
-  onAnswerYes() {
-    console.log('yes');
-    this.current.answer = 'answerYes';
+  onAnswer(answer) {
+    this.current.answer = answer;
     const elements = this.state.elements.withMutations(e => {
       e.pop();
       const answerElement = this.getCurrentElement();
       e.push(answerElement);
-      this.current = this.current.nextYes;
+      this.current = this.current[answer];
       if (!this.current) {
         return;
       }
@@ -84,40 +84,18 @@ export default class QuestionAnswerFlow extends React.Component {
       e.push(questionElement);
     });
     this.setState({ elements });
+  }
+
+  onAnswerYes() {
+    this.onAnswer('answerYes');
   }
 
   onAnswerNo() {
-    console.log('no');
-    this.current.answer = 'answerNo';
-    const elements = this.state.elements.withMutations(e => {
-      e.pop();
-      const answerElement = this.getCurrentElement();
-      e.push(answerElement);
-      this.current = this.current.nextNo;
-      if (!this.current) {
-        return;
-      }
-      const questionElement = this.getCurrentElement();
-      e.push(questionElement);
-    });
-    this.setState({ elements });
+    this.onAnswer('answerNo');
   }
 
   onAnswerConfirm() {
-    console.log('no');
-    this.current.answer = 'answerConfirm';
-    const elements = this.state.elements.withMutations(e => {
-      e.pop();
-      const answerElement = this.getCurrentElement();
-      e.push(answerElement);
-      this.current = this.current.next;
-      if (!this.current) {
-        return;
-      }
-      const questionElement = this.getCurrentElement();
-      e.push(questionElement);
-    });
-    this.setState({ elements });
+    this.onAnswer('answerConfirm');
   }
 
   render() {
