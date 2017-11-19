@@ -3,15 +3,31 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import QuestionAnswerFlow from '../components/QuestionAnswerFlow/QuestionAnswerFlow';
 
+import OnBoarding from '../screens/OnBoarding/OnBoarding';
+
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
-const RootStackNavigator = StackNavigator({
-  MyScreen: {
-    screen: QuestionAnswerFlow,
+const RootStackNavigator = StackNavigator(
+  {
+    QuestionAnswer: {
+      screen: QuestionAnswerFlow,
+    },
+    OnBoarding: {
+      screen: OnBoarding,
+    },
   },
-});
+  {
+    navigationOptions: navigation => ({
+      header: null,
+    }),
+  },
+  {
+    initialRouteName: 'OnBoarding',
+    // headerMode: 'none', //Comment this if you want to use native header
+  }
+);
 
 export default class RootNavigator extends React.Component {
   componentDidMount() {
