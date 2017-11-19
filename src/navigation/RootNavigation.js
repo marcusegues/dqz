@@ -1,16 +1,17 @@
 import { Notifications } from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import HomeScreen from '../screens/Home/HomeScreen';
-import DeclareGoodsContainer from '../screens/DeclareGoods/DeclareGoodsContainer';
-import SelectedGoodsContainer from '../screens/SelectedGoods/SelectedGoodsContainer';
-import BasketContainer from '../screens/Basket/BasketContainer';
+import QuestionAnswerFlow from '../components/QuestionAnswerFlow/QuestionAnswerFlow';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
-const RootStackNavigator = StackNavigator({});
+const RootStackNavigator = StackNavigator({
+  MyScreen: {
+    screen: QuestionAnswerFlow,
+  },
+});
 
 export default class RootNavigator extends React.Component {
   componentDidMount() {
