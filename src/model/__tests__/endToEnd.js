@@ -1,13 +1,18 @@
 // @flow
 
-import { addMinor, initPeople } from '../configurationApi';
-import { presentationBasket1, presentationBasket2 } from './fullBaskets';
+import { addAdult, addMinor, initPeople } from '../configurationApi';
+import {
+  florian1,
+  presentationBasket1,
+  presentationBasket2,
+} from './fullBaskets';
 import { calculateDuty } from '../dutyCalculations';
 import { calculateVat } from '../vatCalculations';
 
 // parties
 const oneAdult = initPeople;
 const oneAdultOneMinor = addMinor(oneAdult);
+const twoAdultOneMinor = addAdult(oneAdultOneMinor);
 
 // baskets are in a separate file, see ./fullBaskets.js
 
@@ -39,7 +44,17 @@ const exampleInPresentation2 = {
   expectedVat: 12.1,
 };
 
-const objectsUnderTest = [exampleInPresentation1, exampleInPresentation2];
+const exampleFlorian1 = {
+  basket: florian1,
+  party: twoAdultOneMinor,
+  expectedDuty: 786,
+  expectedVat: 72.52, // TODO Florian: he expectes 72.20 -> investigate rounding
+};
+const objectsUnderTest = [
+  exampleInPresentation1,
+  exampleInPresentation2,
+  exampleFlorian1,
+];
 
 // and here we do what needs to be done...
 describe('Parametrized End to End test for predefined scenarios', () => {
