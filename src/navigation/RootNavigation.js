@@ -2,7 +2,7 @@ import { Notifications } from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import QuestionAnswerFlow from '../components/QuestionAnswerFlow/QuestionAnswerFlow';
-
+import PeopleInputContainer from '../components/PeopleInput/PeopleInputContainer';
 import OnBoarding from '../screens/OnBoarding/OnBoarding';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
@@ -11,6 +11,9 @@ import { Entypo } from '@expo/vector-icons';
 
 const RootStackNavigator = StackNavigator(
   {
+    PeopleInput: {
+      screen: PeopleInputContainer,
+    },
     QuestionAnswer: {
       screen: QuestionAnswerFlow,
     },

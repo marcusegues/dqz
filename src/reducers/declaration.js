@@ -45,6 +45,22 @@ const declaration = (
         fromModelApi.setMinorPeople(people, quantity)
       );
     }
+    case 'DECLARATION_ADULTS_SET_QUANTITY': {
+      const people: People = state.get('people');
+      const quantity: number = action.quantity;
+      return state.setIn(
+        ['people'],
+        fromModelApi.setAdultPeople(people, quantity)
+      );
+    }
+    case 'DECLARATION_MINORS_SET_QUANTITY': {
+      const people: People = state.get('people');
+      const quantity: number = action.quantity;
+      return state.setIn(
+        ['people'],
+        fromModelApi.setMinorPeople(people, quantity)
+      );
+    }
     default: {
       return state;
     }
