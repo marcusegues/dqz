@@ -35,10 +35,10 @@ export default class QuestionAnswerFlow extends React.Component {
     if (!this.current) {
       return null;
     }
-    if (!this.current.answer) {
-      return this.getCurrentQuestionElement();
+    if (this.current.answer) {
+      return this.getCurrentAnswerElement();
     }
-    return this.getCurrentAnswerElement();
+    return this.getCurrentQuestionElement();
   }
 
   getCurrentQuestionElement() {
@@ -50,6 +50,7 @@ export default class QuestionAnswerFlow extends React.Component {
       ...props,
       onAnswerYes: this.onAnswerYes,
       onAnswerNo: this.onAnswerNo,
+      onAnswerConfirm: this.onAnswerConfirm,
       key: v4(),
     });
     return element;
@@ -62,8 +63,8 @@ export default class QuestionAnswerFlow extends React.Component {
     } = questionAnswer[questionAnswerIdx];
     const element = React.createElement(type, {
       ...props,
-      key: v4(),
       children,
+      key: v4(),
     });
     return element;
   }
@@ -103,11 +104,20 @@ export default class QuestionAnswerFlow extends React.Component {
   }
 
   onAnswerConfirm() {
+    console.log('no');
     this.current.answer = 'answerConfirm';
-    this.elements.pop();
-    this.getCurrentElement();
-    this.current = this.current.next;
-    this.getCurrentElement();
+    const elements = this.state.elements.withMutations(e => {
+      e.pop();
+      const answerElement = this.getCurrentElement();
+      e.push(answerElement);
+      this.current = this.current.next;
+      if (!this.current) {
+        return;
+      }
+      const questionElement = this.getCurrentElement();
+      e.push(questionElement);
+    });
+    this.setState({ elements });
   }
 
   render() {

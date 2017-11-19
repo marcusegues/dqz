@@ -14,7 +14,7 @@ export default (questionAnswer = [
     answerNo: {
       type: AnswerCard,
       props: {
-        mainIcon: 'air',
+        mainIcon: 'flight-takeoff',
         status: require('../../../assets/images/complete.png'),
       },
       children: (
@@ -26,7 +26,7 @@ export default (questionAnswer = [
     answerYes: {
       type: AnswerCard,
       props: {
-        mainIcon: 'air',
+        mainIcon: 'flight-takeoff',
         status: require('../../../assets/images/complete.png'),
       },
       children: (
@@ -46,7 +46,7 @@ export default (questionAnswer = [
     answerNo: {
       type: AnswerCard,
       props: {
-        mainIcon: 'air',
+        mainIcon: 'flight-takeoff',
         status: require('../../../assets/images/complete.png'),
       },
       children: (
@@ -58,7 +58,7 @@ export default (questionAnswer = [
     answerYes: {
       type: AnswerCard,
       props: {
-        mainIcon: 'air',
+        mainIcon: 'flight-takeoff',
         status: require('../../../assets/images/complete.png'),
       },
       children: (
@@ -77,7 +77,7 @@ export default (questionAnswer = [
     answerConfirm: {
       type: AnswerCard,
       props: {
-        mainIcon: 'air',
+        mainIcon: 'flight-takeoff',
         status: require('../../../assets/images/complete.png'),
       },
       children: (

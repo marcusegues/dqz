@@ -4,13 +4,13 @@ import Touchable from 'react-native-platform-touchable';
 
 import styles from './styles/BinaryQuestion';
 
-const ConfirmationQuestion = ({ children, onConfirm }) => (
+const ConfirmationQuestion = ({ children, onAnswerConfirm }) => (
   <View style={styles.contentContainer}>
     <View style={styles.mainTextContainer}>{children}</View>
 
     <View style={styles.bottomButtonContainer}>
       <Touchable
-        onPress={() => onConfirm}
+        onPress={onAnswerConfirm}
         style={styles.leftTouchable}
         background={Touchable.Ripple('blue')}
       >
