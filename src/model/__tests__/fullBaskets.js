@@ -201,3 +201,31 @@ export const presentationBasket2: Basket = emptyBasket.withMutations(basket => {
   basket = addAmount(basket, 'OtherFood', 350 * exR);
   return basket;
 });
+
+export const florian1: Basket = emptyBasket.withMutations(basket => {
+  basket = addAmount(basket, 'Meat', 521.45);
+  basket = addLargeAmount(basket, 'Meat', 312.35);
+  basket = addAmount(basket, 'Butter', 12.46);
+  basket = addAmount(basket, 'Oils', 16.78);
+  basket = addAmount(basket, 'AlcSoft', 150.46);
+  basket = addAmount(basket, 'AlcHard', 89.67);
+  basket = addAmount(basket, 'Cigarettes', 5.45);
+  basket = addAmount(basket, 'Tobacco', 12.45);
+  basket = addAmount(basket, 'Meds', 45.59);
+  basket = addAmount(basket, 'Books', 78.43);
+  basket = addAmount(basket, 'Magazines', 15.78);
+  basket = addAmount(basket, 'AnimalFeed', 55.78);
+  basket = addAmount(basket, 'Fertilizer', 310);
+  basket = addAmount(basket, 'Other', 56.78);
+  basket = addLargeAmount(basket, 'Other', 567.89);
+
+  basket = setQuantity(basket, 'Meat', 33);
+  basket = setQuantity(basket, 'Butter', 9);
+  basket = setQuantity(basket, 'Oils', 6);
+  basket = setQuantity(basket, 'AlcSoft', 7);
+  basket = setQuantity(basket, 'AlcHard', 6);
+  basket = setQuantity(basket, 'Cigarettes', 26);
+  basket = setQuantity(basket, 'Tobacco', 10);
+
+  return basket;
+});
