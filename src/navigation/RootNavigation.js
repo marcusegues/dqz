@@ -6,11 +6,28 @@ import DeclareGoodsContainer from '../screens/DeclareGoods/DeclareGoodsContainer
 import SelectedGoodsContainer from '../screens/SelectedGoods/SelectedGoodsContainer';
 import BasketContainer from '../screens/Basket/BasketContainer';
 
+import OnBoarding from '../screens/OnBoarding/OnBoarding';
+
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
-const RootStackNavigator = StackNavigator({});
+const RootStackNavigator = StackNavigator(
+  {
+    OnBoarding: {
+      screen: OnBoarding,
+    },
+  },
+  {
+    navigationOptions: navigation => ({
+      header: null,
+    }),
+  },
+  {
+    initialRouteName: 'OnBoarding',
+    // headerMode: 'none', //Comment this if you want to use native header
+  }
+);
 
 export default class RootNavigator extends React.Component {
   componentDidMount() {
