@@ -11,14 +11,17 @@ import { Entypo } from '@expo/vector-icons';
 
 const RootStackNavigator = StackNavigator(
   {
-    PeopleInput: {
-      screen: PeopleInputContainer,
-    },
     QuestionAnswer: {
       screen: QuestionAnswerFlow,
+      navigationOptions: () => ({
+        title: `Waren deklarieren`,
+      }),
     },
     OnBoarding: {
       screen: OnBoarding,
+    },
+    PeopleInput: {
+      screen: PeopleInputContainer,
     },
   },
   {

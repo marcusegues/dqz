@@ -2,9 +2,9 @@ import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 
-import styles from './styles/BinaryQuestion';
+import styles from './styles/YesNoQuestionCard';
 
-const ConfirmationQuestion = ({ children, onAnswerConfirm }) => (
+const ConfirmationQuestionCard = ({ children, onAnswerConfirm }) => (
   <View style={styles.contentContainer}>
     <View style={styles.mainTextContainer}>{children}</View>
 
@@ -19,4 +19,4 @@ const ConfirmationQuestion = ({ children, onAnswerConfirm }) => (
     </View>
   </View>
 );
-export default ConfirmationQuestion;
+export default ConfirmationQuestionCard;
