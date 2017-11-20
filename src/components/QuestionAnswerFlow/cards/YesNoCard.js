@@ -2,9 +2,9 @@ import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 
-import styles from './styles/YesNoQuestionCard';
+import styles from './styles/YesNoCard';
 
-const YesNoQuestionCard = ({ text, onAnswerYes, onAnswerNo }) => (
+const YesNoCard = ({ text, onAnswerYes, onAnswerNo }) => (
   <View style={styles.contentContainer}>
     <View style={styles.mainTextContainer}>
       <Text style={styles.mainText}>{text}</Text>
@@ -29,4 +29,4 @@ const YesNoQuestionCard = ({ text, onAnswerYes, onAnswerNo }) => (
     </View>
   </View>
 );
-export default YesNoQuestionCard;
+export default YesNoCard;

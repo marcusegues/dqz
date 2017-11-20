@@ -1,6 +1,6 @@
 import React from 'react';
 import Immutable from 'immutable';
-import YesNoQuestionCard from '../YesNoQuestionCard';
+import YesNoCard from './cards/YesNoCard';
 import { v4 } from 'uuid';
 import { root } from './questionAnswerTree';
 import questionAnswer from './questionAnswer';
@@ -51,6 +51,7 @@ export default class QuestionAnswerFlow extends React.Component {
       onAnswerYes: this.onAnswerYes,
       onAnswerNo: this.onAnswerNo,
       onAnswerConfirm: this.onAnswerConfirm,
+      onAnswer: this.onAnswer,
       key: v4(),
     });
     return element;
@@ -59,7 +60,9 @@ export default class QuestionAnswerFlow extends React.Component {
   getCurrentAnswerElement() {
     const { questionAnswerIdx } = this.current;
     const {
-      [this.current.answer]: { type, props: { ...props }, children },
+      answers: {
+        [this.current.answer]: { type, props: { ...props }, children },
+      },
     } = questionAnswer[questionAnswerIdx];
     const element = React.createElement(type, {
       ...props,
@@ -75,7 +78,7 @@ export default class QuestionAnswerFlow extends React.Component {
       e.pop();
       const answerElement = this.getCurrentElement();
       e.push(answerElement);
-      this.current = this.current[answer];
+      this.current = this.current.next[answer];
       if (!this.current) {
         return;
       }
@@ -86,15 +89,15 @@ export default class QuestionAnswerFlow extends React.Component {
   }
 
   onAnswerYes() {
-    this.onAnswer('answerYes');
+    this.onAnswer('yes');
   }
 
   onAnswerNo() {
-    this.onAnswer('answerNo');
+    this.onAnswer('no');
   }
 
   onAnswerConfirm() {
-    this.onAnswer('answerConfirm');
+    this.onAnswer('confirm');
   }
 
   render() {

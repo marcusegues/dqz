@@ -1,90 +1,105 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import YesNoQuestionCard from '../YesNoQuestionCard';
-import AnswerCard from '../AnswerCard';
-import ConfirmationQuestionCard from '../ConfirmationQuestionCard';
+import YesNoCard from './cards/YesNoCard';
+import AnswerCard from './cards/AnswerCard/AnswerCard';
+import ConfirmationCard from './cards/ConfirmationCard/ConfirmationCard';
+import PeopleInfoContainer from './cards/AnswerCard/children/PeopleInfoContainer';
+import PeopleInputContainer from './cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 export default (questionAnswer = [
   {
     question: {
-      type: YesNoQuestionCard,
+      type: PeopleInputContainer,
       props: {
-        text: 'Reisen Sie Allein?',
+        text:
+          'Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?',
       },
     },
-    answerNo: {
-      type: AnswerCard,
-      props: {
-        mainIcon: 'flight-takeoff',
-        status: require('../../../assets/images/complete.png'),
+    answers: {
+      confirmMultiplePersons: {
+        type: AnswerCard,
+        props: {
+          mainIcon: 'flight-takeoff',
+          status: require('../../../assets/images/complete.png'),
+        },
+        children: <PeopleInfoContainer />,
       },
-      children: (
-        <View>
-          <Text>{`Ich reise in Begleitung.`}</Text>
-        </View>
-      ),
-    },
-    answerYes: {
-      type: AnswerCard,
-      props: {
-        mainIcon: 'flight-takeoff',
-        status: require('../../../assets/images/complete.png'),
+      confirmSinglePerson: {
+        type: AnswerCard,
+        props: {
+          mainIcon: 'flight-takeoff',
+          status: require('../../../assets/images/complete.png'),
+        },
+        children: <PeopleInfoContainer />,
       },
-      children: (
-        <View>
-          <Text>{`Ich reise allein.`}</Text>
-        </View>
-      ),
     },
   },
   {
     question: {
-      type: YesNoQuestionCard,
+      type: YesNoCard,
       props: {
         text: 'Übersteigt der Gesamtwert aller Waren CHF 300?',
       },
     },
-    answerNo: {
-      type: AnswerCard,
-      props: {
-        mainIcon: 'flight-takeoff',
-        status: require('../../../assets/images/complete.png'),
+    answers: {
+      no: {
+        type: AnswerCard,
+        props: {
+          mainIcon: 'flight-takeoff',
+          status: require('../../../assets/images/complete.png'),
+        },
+        children: (
+          <View>
+            <Text>{`No, not above 300.`}</Text>
+          </View>
+        ),
       },
-      children: (
-        <View>
-          <Text>{`No, not above 300.`}</Text>
-        </View>
-      ),
-    },
-    answerYes: {
-      type: AnswerCard,
-      props: {
-        mainIcon: 'flight-takeoff',
-        status: require('../../../assets/images/complete.png'),
+      yes: {
+        type: AnswerCard,
+        props: {
+          mainIcon: 'flight-takeoff',
+          status: require('../../../assets/images/complete.png'),
+        },
+        children: (
+          <View>
+            <Text>{`Yes, above 300.`}</Text>
+          </View>
+        ),
       },
-      children: (
-        <View>
-          <Text>{`Yes, above 300.`}</Text>
-        </View>
-      ),
     },
   },
   {
     question: {
-      type: ConfirmationQuestionCard,
-      props: {},
-      children: <Text>{`Fill in Question`}</Text>,
-    },
-    answerConfirm: {
-      type: AnswerCard,
+      type: YesNoCard,
       props: {
-        mainIcon: 'flight-takeoff',
-        status: require('../../../assets/images/complete.png'),
+        text:
+          'Ist bei Ihren Waren ein Gegenstand dabei, welcher mehr als CHF 300,- Wert ist?',
       },
-      children: (
-        <View>
-          <Text>{`Confirmed`}</Text>
-        </View>
-      ),
+    },
+    answers: {
+      no: {
+        type: AnswerCard,
+        props: {
+          mainIcon: 'flight-takeoff',
+          status: require('../../../assets/images/complete.png'),
+        },
+        children: (
+          <View>
+            <Text>{`No High Value Items`}</Text>
+          </View>
+        ),
+      },
+      yes: {
+        type: AnswerCard,
+        props: {
+          mainIcon: 'flight-takeoff',
+          status: require('../../../assets/images/complete.png'),
+        },
+        children: (
+          <View>
+            <Text>{`Yes High Value Items`}</Text>
+          </View>
+        ),
+      },
     },
   },
 ]);
