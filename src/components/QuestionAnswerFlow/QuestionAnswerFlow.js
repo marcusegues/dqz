@@ -1,6 +1,6 @@
 import React from 'react';
 import Immutable from 'immutable';
-import YesNoQuestionCard from '../YesNoQuestionCard';
+import YesNoQuestionCard from './cards/YesNoQuestionCard';
 import { v4 } from 'uuid';
 import { root } from './questionAnswerTree';
 import questionAnswer from './questionAnswer';
@@ -51,6 +51,7 @@ export default class QuestionAnswerFlow extends React.Component {
       onAnswerYes: this.onAnswerYes,
       onAnswerNo: this.onAnswerNo,
       onAnswerConfirm: this.onAnswerConfirm,
+      onAnswer: this.onAnswer,
       key: v4(),
     });
     return element;

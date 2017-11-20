@@ -1,5 +1,9 @@
 import { StyleSheet, Platform, Dimensions } from 'react-native';
-import { scale, verticalScale, moderateScale } from '../../styles/Scaling';
+import {
+  scale,
+  verticalScale,
+  moderateScale,
+} from '../../../../styles/Scaling';
 const { width, height } = Dimensions.get('window');
 
 export default StyleSheet.create({

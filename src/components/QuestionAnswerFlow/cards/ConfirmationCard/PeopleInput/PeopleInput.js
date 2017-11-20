@@ -1,5 +1,5 @@
 import React from 'react';
-import ConfirmationQuestionCard from '../ConfirmationQuestionCard';
+import ConfirmationCard from '../ConfirmationCard';
 import { Text } from 'react-native';
 
 const PeopleInput = ({
@@ -9,9 +9,9 @@ const PeopleInput = ({
   onAnswerConfirm,
 }) => {
   return (
-    <ConfirmationQuestionCard onAnswerConfirm={onAnswerConfirm}>
+    <ConfirmationCard onAnswerConfirm={onAnswerConfirm}>
       <Text>{`ADD CHILDREN HERE`}</Text>
-    </ConfirmationQuestionCard>
+    </ConfirmationCard>
   );
 };
 

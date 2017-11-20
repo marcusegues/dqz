@@ -1,39 +1,33 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import YesNoQuestionCard from '../YesNoQuestionCard';
-import AnswerCard from '../AnswerCard';
-import ConfirmationQuestionCard from '../ConfirmationQuestionCard';
+import YesNoQuestionCard from './cards/YesNoQuestionCard';
+import AnswerCard from './cards/AnswerCard/AnswerCard';
+import ConfirmationCard from './cards/ConfirmationCard/ConfirmationCard';
+import PeopleInfoContainer from './cards/AnswerCard/children/PeopleInfoContainer';
 export default (questionAnswer = [
   {
     question: {
-      type: YesNoQuestionCard,
+      type: ConfirmationCard,
       props: {
-        text: 'Reisen Sie Allein?',
+        text:
+          'Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?',
       },
     },
-    answerNo: {
+    answerConfirmMultiplePeople: {
       type: AnswerCard,
       props: {
         mainIcon: 'flight-takeoff',
         status: require('../../../assets/images/complete.png'),
       },
-      children: (
-        <View>
-          <Text>{`Ich reise in Begleitung.`}</Text>
-        </View>
-      ),
+      children: <PeopleInfoContainer />,
     },
-    answerYes: {
+    answerConfirmSinglePerson: {
       type: AnswerCard,
       props: {
         mainIcon: 'flight-takeoff',
         status: require('../../../assets/images/complete.png'),
       },
-      children: (
-        <View>
-          <Text>{`Ich reise allein.`}</Text>
-        </View>
-      ),
+      children: <PeopleInfoContainer />,
     },
   },
   {
@@ -70,7 +64,7 @@ export default (questionAnswer = [
   },
   {
     question: {
-      type: ConfirmationQuestionCard,
+      type: ConfirmationCard,
       props: {},
       children: <Text>{`Fill in Question`}</Text>,
     },

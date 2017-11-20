@@ -2,7 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
 import PeopleInput from './PeopleInput';
-import * as fromModelApi from '../../model/configurationApi';
+import {
+  getAdultPeople,
+  getMinorPeople,
+} from '../../../../../model/configurationApi';
 
 class PeopleInputContainer extends React.Component {
   constructor(props) {
@@ -32,10 +35,15 @@ class PeopleInputContainer extends React.Component {
       onAdultsSetQuantity,
       onMinorsSetQuantity,
       onAnswerConfirm,
+      people,
     } = this.props;
     onAdultsSetQuantity(this.state.people.getAdultPeople());
     onMinorsSetQuantity(this.state.people.getMinorPeople());
-    onAnswerConfirm();
+    if (getAdultPeople(people) + getMinorPeople(people) > 1) {
+      onAnswer('answerConfirmMultiplePeople');
+    } else {
+      onAnswer('answerConfirmSinglePerson');
+    }
   }
 
   render() {
