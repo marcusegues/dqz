@@ -2,10 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
 import PeopleInput from './PeopleInput';
-import {
-  getAdultPeople,
-  getMinorPeople,
-} from '../../../../../model/configurationApi';
+import * as fromModelApi from '../../../../../model/configurationApi';
 
 class PeopleInputContainer extends React.Component {
   constructor(props) {
@@ -13,20 +10,34 @@ class PeopleInputContainer extends React.Component {
     this.state = {
       people: this.props.people,
     };
-    this.onAdultsChangeQuantity = this.onAdultsChangeQuantity.bind(this);
-    this.onMinorsChangeQuantity = this.onMinorsChangeQuantity.bind(this);
+    this.handleAddAdult = this.handleAddAdult.bind(this);
+    this.handleSubtractAdult = this.handleSubtractAdult.bind(this);
+    this.handleAddMinor = this.handleAddMinor.bind(this);
+    this.handleSubtractMinor = this.handleSubtractMinor.bind(this);
     this.handleAnswerConfirm = this.handleAnswerConfirm.bind(this);
   }
 
-  onAdultsChangeQuantity(quantityChange) {
+  handleAddAdult() {
     this.setState({
-      people: fromModelApi.setAdultPeople(this.state.people, quantityChange),
+      people: fromModelApi.addAdult(this.state.people),
     });
   }
 
-  onMinorsChangeQuantity() {
+  handleSubtractAdult() {
     this.setState({
-      people: fromModelApi.setMinorPeople(this.state.people, quantityChange),
+      people: fromModelApi.subtractAdult(this.state.people),
+    });
+  }
+
+  handleAddMinor() {
+    this.setState({
+      people: fromModelApi.addMinor(this.state.people),
+    });
+  }
+
+  handleSubtractMinor() {
+    this.setState({
+      people: fromModelApi.subtractMinor(this.state.people),
     });
   }
 
@@ -38,10 +49,14 @@ class PeopleInputContainer extends React.Component {
       onAnswer,
       people,
     } = this.props;
-    onAdultsSetQuantity(getAdultPeople(this.state.people));
-    onMinorsSetQuantity(getMinorPeople(this.state.people));
+    onAdultsSetQuantity(fromModelApi.getAdultPeople(this.state.people));
+    onMinorsSetQuantity(fromModelApi.getMinorPeople(this.state.people));
 
-    if (getAdultPeople(people) + getMinorPeople(people) > 1) {
+    if (
+      fromModelApi.getAdultPeople(people) +
+        fromModelApi.getMinorPeople(people) >
+      1
+    ) {
       onAnswer('confirmMultiplePersons');
     } else {
       onAnswer('confirmSinglePerson');
@@ -51,9 +66,12 @@ class PeopleInputContainer extends React.Component {
   render() {
     return (
       <PeopleInput
+        people={this.state.people}
         onAnswerConfirm={this.handleAnswerConfirm}
-        onAdultsChangeQuantity={this.onAdultsChangeQuantity}
-        onMinorsChangeQuantity={this.onMinorsChangeQuantity}
+        onAddAdult={this.handleAddAdult}
+        onSubtractAdult={this.handleSubtractAdult}
+        onAddMinor={this.handleAddMinor}
+        onSubtractMinor={this.handleSubtractMinor}
       />
     );
   }
