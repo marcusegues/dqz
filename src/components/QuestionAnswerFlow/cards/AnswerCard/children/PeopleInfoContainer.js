@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import * as fromModelApi from '../../../../../model/configurationApi';
 
 class PeopleInfoContainer extends React.Component {

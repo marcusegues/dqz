@@ -1,14 +1,16 @@
 import Node from './Node';
 
 export default class ConfirmationNode extends Node {
-  constructor(questionAnswerIdx, parent = null, answerConfirm = null) {
+  constructor(questionAnswerIdx, parent = null, confirm = null) {
     super(questionAnswerIdx, parent);
-    this.answerConfirm = answerConfirm;
+    this.next = {
+      confirm,
+    };
     this.answer = null;
   }
 
   insertConfirm(node) {
-    this.answerConfirm = node;
+    this.next.confirm = node;
     node.parent = this;
     return node;
   }

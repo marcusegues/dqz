@@ -35,19 +35,27 @@ class PeopleInputContainer extends React.Component {
       onAdultsSetQuantity,
       onMinorsSetQuantity,
       onAnswerConfirm,
+      onAnswer,
       people,
     } = this.props;
-    onAdultsSetQuantity(this.state.people.getAdultPeople());
-    onMinorsSetQuantity(this.state.people.getMinorPeople());
+    onAdultsSetQuantity(getAdultPeople(this.state.people));
+    onMinorsSetQuantity(getMinorPeople(this.state.people));
+
     if (getAdultPeople(people) + getMinorPeople(people) > 1) {
-      onAnswer('answerConfirmMultiplePeople');
+      onAnswer('confirmMultiplePersons');
     } else {
-      onAnswer('answerConfirmSinglePerson');
+      onAnswer('confirmSinglePerson');
     }
   }
 
   render() {
-    return <PeopleInput onAnswerConfirm={this.props.handleAnswerConfirm} />;
+    return (
+      <PeopleInput
+        onAnswerConfirm={this.handleAnswerConfirm}
+        onAdultsChangeQuantity={this.onAdultsChangeQuantity}
+        onMinorsChangeQuantity={this.onMinorsChangeQuantity}
+      />
+    );
   }
 }
 

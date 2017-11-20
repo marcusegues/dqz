@@ -1,6 +1,7 @@
 import React from 'react';
-import ConfirmationCard from '../ConfirmationCard';
 import { Text } from 'react-native';
+import ConfirmationCard from '../ConfirmationCard';
+import PeopleInputRow from '../children/PeopleInputRow';
 
 const PeopleInput = ({
   people,
@@ -10,7 +11,7 @@ const PeopleInput = ({
 }) => {
   return (
     <ConfirmationCard onAnswerConfirm={onAnswerConfirm}>
-      <Text>{`ADD CHILDREN HERE`}</Text>
+      <PeopleInputRow />
     </ConfirmationCard>
   );
 };
