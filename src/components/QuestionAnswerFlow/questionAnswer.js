@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import YesNoCard from './cards/YesNoCard';
+import YesNoCard from './cards/YesNoCard/YesNoCard';
 import AnswerCard from './cards/AnswerCard/AnswerCard';
 import ConfirmationCard from './cards/ConfirmationCard/ConfirmationCard';
 import PeopleInfoContainer from './cards/AnswerCard/children/PeopleInfoContainer';
 import PeopleInputContainer from './cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
+import OverAllowanceContainer from './cards/YesNoCard/OverAllowance/OverAllowanceContainer';
 export default (questionAnswer = [
   {
     question: {
@@ -97,6 +98,38 @@ export default (questionAnswer = [
         children: (
           <View>
             <Text>{`Yes High Value Items`}</Text>
+          </View>
+        ),
+      },
+    },
+  },
+  {
+    question: {
+      type: OverAllowanceContainer,
+      props: {},
+    },
+    answers: {
+      no: {
+        type: AnswerCard,
+        props: {
+          mainIcon: 'flight-takeoff',
+          status: require('../../../assets/images/complete.png'),
+        },
+        children: (
+          <View>
+            <Text>{`No not over allowance.`}</Text>
+          </View>
+        ),
+      },
+      yes: {
+        type: AnswerCard,
+        props: {
+          mainIcon: 'flight-takeoff',
+          status: require('../../../assets/images/complete.png'),
+        },
+        children: (
+          <View>
+            <Text>{`Yes over allowance.`}</Text>
           </View>
         ),
       },

@@ -3,7 +3,7 @@ import {
   scale,
   verticalScale,
   moderateScale,
-} from '../../../../styles/Scaling';
+} from '../../../../../styles/Scaling';
 const { width, height } = Dimensions.get('window');
 
 export default StyleSheet.create({

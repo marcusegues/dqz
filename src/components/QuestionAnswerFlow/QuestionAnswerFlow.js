@@ -1,7 +1,7 @@
 import React from 'react';
 import Immutable from 'immutable';
 import Touchable from 'react-native-platform-touchable';
-import YesNoCard from './cards/YesNoCard';
+import YesNoCard from './cards/YesNoCard/YesNoCard';
 import { v4 } from 'uuid';
 import { root } from './nodeTree';
 import questionAnswer from './questionAnswer';
