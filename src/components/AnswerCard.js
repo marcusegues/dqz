@@ -13,7 +13,6 @@ const AnswerCard = ({ mainIcon, status, children }) => (
         height: 32,
       }}
     />
-    <MaterialIcons name="more-horiz" size={34} style={{}} color="#90A4AE" />
   </View>
 );
 
@@ -22,6 +21,7 @@ export default AnswerCard;
 const styles = StyleSheet.create({
   container: {
     flex: 0.12,
+    height: 343,
     width: '95%',
     flexDirection: 'row',
     alignItems: 'center',

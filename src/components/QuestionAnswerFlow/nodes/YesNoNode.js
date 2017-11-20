@@ -1,6 +1,6 @@
 import Node from './Node';
 
-export default class BinaryNode extends Node {
+export default class YesNoNode extends Node {
   constructor(
     questionAnswerIdx,
     parent = null,

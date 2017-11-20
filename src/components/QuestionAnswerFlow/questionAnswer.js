@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import BinaryQuestion from '../BinaryQuestion';
+import YesNoQuestionCard from '../YesNoQuestionCard';
 import AnswerCard from '../AnswerCard';
-import ConfirmationQuestion from '../ConfirmationQuestion';
+import ConfirmationQuestionCard from '../ConfirmationQuestionCard';
 export default (questionAnswer = [
   {
     question: {
-      type: BinaryQuestion,
+      type: YesNoQuestionCard,
       props: {
         text: 'Reisen Sie Allein?',
       },
@@ -38,7 +38,7 @@ export default (questionAnswer = [
   },
   {
     question: {
-      type: BinaryQuestion,
+      type: YesNoQuestionCard,
       props: {
         text: 'Übersteigt der Gesamtwert aller Waren CHF 300?',
       },
@@ -70,7 +70,7 @@ export default (questionAnswer = [
   },
   {
     question: {
-      type: ConfirmationQuestion,
+      type: ConfirmationQuestionCard,
       props: {},
       children: <Text>{`Fill in Question`}</Text>,
     },

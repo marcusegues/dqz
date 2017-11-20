@@ -1,7 +1,6 @@
 import React from 'react';
 import Immutable from 'immutable';
-import BinaryNode from './nodes/BinaryNode';
-import BinaryQuestion from '../BinaryQuestion';
+import YesNoQuestionCard from '../YesNoQuestionCard';
 import { v4 } from 'uuid';
 import { root } from './questionAnswerTree';
 import questionAnswer from './questionAnswer';
