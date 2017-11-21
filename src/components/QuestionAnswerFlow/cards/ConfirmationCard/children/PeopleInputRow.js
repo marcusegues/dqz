@@ -66,7 +66,7 @@ class PeopleInputRow extends React.Component {
             <Entypo
               name="circle-with-minus"
               size={moderateScale(28)}
-              color="#DC0018"
+              color="#E0E0E1"
             />
           </Touchable>
           <Text

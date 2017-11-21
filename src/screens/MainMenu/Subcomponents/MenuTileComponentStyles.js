@@ -3,9 +3,11 @@ import { scale, verticalScale, moderateScale } from '../../../styles/Scaling';
 
 export default StyleSheet.create({
   container: {
-    width: verticalScale(166),
+    width: moderateScale(166),
+    // width: verticalScale(166),
     // width: '47%',
-    height: verticalScale(142),
+    height: moderateScale(142),
+    // height: verticalScale(142),
     // height: '47%',
     flexDirection: 'column',
     justifyContent: 'space-around',
