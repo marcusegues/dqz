@@ -66,21 +66,24 @@ const SelectedGoods = ({
           <View style={incrementButtonContainer}>
             <TouchableOpacity
               onPress={() =>
-                onChangeQuantityDeclaredBasketItem(categoryName, -1)}
+                onChangeQuantityDeclaredBasketItem(categoryName, -1)
+              }
               style={[roundButton, transparentButton]}
             >
               <Text>-1</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() =>
-                onChangeQuantityDeclaredBasketItem(categoryName, 1)}
+                onChangeQuantityDeclaredBasketItem(categoryName, 1)
+              }
               style={[roundButton, blueButton]}
             >
               <Text style={{ color: 'white' }}>+1</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() =>
-                onChangeQuantityDeclaredBasketItem(categoryName, 3)}
+                onChangeQuantityDeclaredBasketItem(categoryName, 3)
+              }
               style={[styles.roundButton, styles.blueButton]}
             >
               <Text style={{ color: 'white' }}>+3</Text>
