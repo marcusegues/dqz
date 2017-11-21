@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import QuestionAnswerFlow from '../components/QuestionAnswerFlow/QuestionAnswerFlow';
 import PeopleInputContainer from '../components/QuestionAnswerFlow/cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OnBoarding from '../screens/OnBoarding/OnBoarding';
+import * as colors from '../styles/colors';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { TouchableOpacity } from 'react-native';
@@ -28,6 +29,7 @@ const RootStackNavigator = StackNavigator(
     navigationOptions: navigation => ({
       header: null,
     }),
+    cardStyle: { backgroundColor: colors.MAIN_BACKGROUND_COLOR },
   },
   {
     initialRouteName: 'OnBoarding',

@@ -3,12 +3,12 @@ import {
   scale,
   verticalScale,
   moderateScale,
-} from '../../../../styles/Scaling';
+} from '../../../../../styles/Scaling';
 const { width, height } = Dimensions.get('window');
 
 export default StyleSheet.create({
   contentContainer: {
-    flex: 0.6,
+    flex: 1,
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#fff',

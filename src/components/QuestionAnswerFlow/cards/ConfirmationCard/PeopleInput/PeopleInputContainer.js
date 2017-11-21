@@ -15,6 +15,7 @@ class PeopleInputContainer extends React.Component {
     this.handleAddMinor = this.handleAddMinor.bind(this);
     this.handleSubtractMinor = this.handleSubtractMinor.bind(this);
     this.handleAnswerConfirm = this.handleAnswerConfirm.bind(this);
+    this.handleAnswer = this.handleAnswer.bind(this);
   }
 
   handleAddAdult() {
@@ -41,22 +42,40 @@ class PeopleInputContainer extends React.Component {
     });
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { people } = nextProps;
+    if (people !== this.props.people) {
+      const adultsSaved = fromModelApi.getAdultPeople(people);
+      const minorsSaved = fromModelApi.getMinorPeople(people);
+      this.handleAnswer(adultsSaved + minorsSaved);
+    }
+  }
+
   handleAnswerConfirm() {
+    // the logic here to manage handling the answer should be looked at again
+    // to make sure it is ideal. This is a piece of code with side effects.
     const {
       onAdultsSetQuantity,
       onMinorsSetQuantity,
       onAnswerConfirm,
-      onAnswer,
       people,
     } = this.props;
-    onAdultsSetQuantity(fromModelApi.getAdultPeople(this.state.people));
-    onMinorsSetQuantity(fromModelApi.getMinorPeople(this.state.people));
+    const adults = fromModelApi.getAdultPeople(this.state.people);
+    const minors = fromModelApi.getMinorPeople(this.state.people);
+    const adultsSaved = fromModelApi.getAdultPeople(people);
+    const minorsSaved = fromModelApi.getMinorPeople(people);
 
-    if (
-      fromModelApi.getAdultPeople(people) +
-        fromModelApi.getMinorPeople(people) >
-      1
-    ) {
+    if (adults === adultsSaved && minors === minorsSaved) {
+      this.handleAnswer(adults + minors);
+    } else {
+      onAdultsSetQuantity(adults);
+      onMinorsSetQuantity(minors);
+    }
+  }
+
+  handleAnswer(quantityPeople) {
+    const { onAnswer } = this.props;
+    if (quantityPeople > 1) {
       onAnswer('confirmMultiplePersons');
     } else {
       onAnswer('confirmSinglePerson');
@@ -72,6 +91,7 @@ class PeopleInputContainer extends React.Component {
         onSubtractAdult={this.handleSubtractAdult}
         onAddMinor={this.handleAddMinor}
         onSubtractMinor={this.handleSubtractMinor}
+        text={this.props.text}
       />
     );
   }

@@ -2,7 +2,8 @@ import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 
-import styles from '../styles/YesNoCard';
+// REPLACE WITH OWN STYLES OR MAKE THE STYLES ACTUALLY COMMON IN ANOTHER LOCATION
+import styles from '../YesNoCard/styles/YesNoCard';
 
 const ConfirmationCard = ({ text, children, onAnswerConfirm }) => (
   <View style={styles.contentContainer}>

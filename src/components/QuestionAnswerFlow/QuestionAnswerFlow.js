@@ -1,8 +1,9 @@
 import React from 'react';
 import Immutable from 'immutable';
-import YesNoCard from './cards/YesNoCard';
+import Touchable from 'react-native-platform-touchable';
+import YesNoCard from './cards/YesNoCard/YesNoCard';
 import { v4 } from 'uuid';
-import { root } from './questionAnswerTree';
+import { root } from './nodeTree';
 import questionAnswer from './questionAnswer';
 import { View, Text } from 'react-native';
 
@@ -13,6 +14,7 @@ export default class QuestionAnswerFlow extends React.Component {
     this.current = this.root;
     const elements = Immutable.List();
     this.state = {
+      questionsFinished: false,
       elements,
     };
     this.getCurrentElement = this.getCurrentElement.bind(this);
@@ -80,6 +82,8 @@ export default class QuestionAnswerFlow extends React.Component {
       e.push(answerElement);
       this.current = this.current.next[answer];
       if (!this.current) {
+        // reached end of questions
+        this.setState({ questionsFinished: true });
         return;
       }
       const questionElement = this.getCurrentElement();
@@ -104,6 +108,11 @@ export default class QuestionAnswerFlow extends React.Component {
     return (
       <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
         {this.state.elements}
+        {this.state.questionsFinished ? (
+          <Touchable onPress={() => {}} background={Touchable.Ripple('blue')}>
+            <Text>{`ZUR WARENEINGABE`}</Text>
+          </Touchable>
+        ) : null}
       </View>
     );
   }
