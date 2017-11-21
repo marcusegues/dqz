@@ -1,18 +1,25 @@
 import React from 'react';
-import { Text, FlatList } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 
 const ScreensView = ({ navigation }) => {
   return (
-    <FlatList
-      data={[
-        { key: `OnBoarding` },
-        { key: `MainMenu` },
-        { key: `QuestionAnswer` },
-      ]}
-      renderItem={({ item }) => (
-        <Text onPress={() => navigation.navigate(item.key)}>{item.key}</Text>
-      )}
-    />
+    <View style={{ marginLeft: 5, marginTop: 5 }}>
+      <FlatList
+        data={[
+          { key: `OnBoarding` },
+          { key: `MainMenu` },
+          { key: `QuestionAnswer` },
+        ]}
+        renderItem={({ item }) => (
+          <Text
+            style={{ marginTop: 5, marginBottom: 5, fontFamily: 'roboto_bold' }}
+            onPress={() => navigation.navigate(item.key)}
+          >
+            {item.key}
+          </Text>
+        )}
+      />
+    </View>
   );
 };
 
