@@ -12,7 +12,7 @@ export default StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#fff',
-    width: '92%',
+    width: '95%',
     borderRadius: 2,
     borderColor: '#ddd',
     ...Platform.select({
