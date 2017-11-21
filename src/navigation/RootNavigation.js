@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import QuestionAnswerFlow from '../components/QuestionAnswerFlow/QuestionAnswerFlow';
 import PeopleInputContainer from '../components/QuestionAnswerFlow/cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OnBoarding from '../screens/OnBoarding/OnBoarding';
+import ScreensView from '../screens/ScreensView/ScreensView';
 import * as colors from '../styles/colors';
 
 import {
@@ -18,6 +19,9 @@ import registerForPushNotificationsAsync from '../../api/registerForPushNotifica
 
 const RootStackNavigator = StackNavigator(
   {
+    Screens: {
+      screen: ScreensView,
+    },
     QuestionAnswer: {
       screen: QuestionAnswerFlow,
       navigationOptions: () => ({
@@ -25,6 +29,9 @@ const RootStackNavigator = StackNavigator(
       }),
     },
     OnBoarding: {
+      screen: OnBoarding,
+    },
+    MainMenu: {
       screen: MainMenu,
     },
     PeopleInput: {
