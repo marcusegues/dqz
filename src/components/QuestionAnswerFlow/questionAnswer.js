@@ -6,8 +6,8 @@ import ConfirmationCard from './cards/ConfirmationCard/ConfirmationCard';
 import PeopleInfoContainer from './cards/AnswerCard/children/PeopleInfoContainer';
 import PeopleInputContainer from './cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OverAllowanceContainer from './cards/YesNoCard/OverAllowance/OverAllowanceContainer';
-export default (questionAnswer = [
-  {
+export default (questionAnswer = {
+  0: {
     question: {
       type: PeopleInputContainer,
       props: {
@@ -34,7 +34,7 @@ export default (questionAnswer = [
       },
     },
   },
-  {
+  1: {
     question: {
       type: YesNoCard,
       props: {
@@ -68,7 +68,7 @@ export default (questionAnswer = [
       },
     },
   },
-  {
+  2: {
     question: {
       type: YesNoCard,
       props: {
@@ -103,7 +103,7 @@ export default (questionAnswer = [
       },
     },
   },
-  {
+  3: {
     question: {
       type: OverAllowanceContainer,
       props: {},
@@ -135,4 +135,36 @@ export default (questionAnswer = [
       },
     },
   },
-]);
+  4: {
+    question: {
+      type: OverAllowanceContainer,
+      props: {},
+    },
+    answers: {
+      no: {
+        type: AnswerCard,
+        props: {
+          mainIcon: 'flight-takeoff',
+          status: require('../../../assets/images/complete.png'),
+        },
+        children: (
+          <View>
+            <Text>{`No not over allowance.`}</Text>
+          </View>
+        ),
+      },
+      yes: {
+        type: AnswerCard,
+        props: {
+          mainIcon: 'flight-takeoff',
+          status: require('../../../assets/images/complete.png'),
+        },
+        children: (
+          <View>
+            <Text>{`Yes over allowance.`}</Text>
+          </View>
+        ),
+      },
+    },
+  },
+});
