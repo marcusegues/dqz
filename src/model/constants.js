@@ -119,6 +119,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
         makeDutyBracketRecord({ threshold: Infinity, fee: 0.1 }),
       ]),
       dutyAllowance: 250,
+      dutyAllowanceDependency: 'Cigarettes',
       adultsOnly: true,
     }),
   ],

@@ -78,6 +78,24 @@ export const sampleBasket5: Basket = setQuantity(
   100
 );
 
+export const sampleBasket6: Basket = emptyBasket.withMutations(basket => {
+  basket = setQuantity(basket, 'Tobacco', 50);
+  basket = setQuantity(basket, 'Cigarettes', 250);
+  return basket;
+});
+
+export const sampleBasket7: Basket = emptyBasket.withMutations(basket => {
+  basket = setQuantity(basket, 'Tobacco', 250);
+  basket = setQuantity(basket, 'Cigarettes', 50);
+  return basket;
+});
+
+export const sampleBasket8: Basket = emptyBasket.withMutations(basket => {
+  basket = setQuantity(basket, 'Tobacco', 250);
+  basket = setQuantity(basket, 'Cigarettes', 250);
+  return basket;
+});
+
 // EZV baskets
 // https://www.ezv.admin.ch/ezv/de/home/information-private/reisen-und-einkaufen--freimengen-und-wertfreigrenze/einfuhr-in-die-schweiz/warenwert-bis-chf-300--mehrwertsteuerfrei.html
 export const ezvBasket1: Basket = emptyBasket.withMutations(basket => {

@@ -6,6 +6,9 @@ import {
   presentationBasket2,
   sampleBasket1,
   sampleBasket5,
+  sampleBasket6,
+  sampleBasket7,
+  sampleBasket8,
 } from './fullBaskets';
 import {
   addMinor,
@@ -32,6 +35,12 @@ describe('Duty Calculations', () => {
         'totalDuty'
       )
     ).toBe(25);
+  });
+
+  test('Cigarettes and Tobacco are linked', () => {
+    expect(calculateDuty(sampleBasket6, initPeople).get('totalDuty')).toBe(5);
+    expect(calculateDuty(sampleBasket7, initPeople).get('totalDuty')).toBe(5);
+    expect(calculateDuty(sampleBasket8, initPeople).get('totalDuty')).toBe(25);
   });
 
   test('it calculates duty under various scenarios - 20 Adults', () => {
