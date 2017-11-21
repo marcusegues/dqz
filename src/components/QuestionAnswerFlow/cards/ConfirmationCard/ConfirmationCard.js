@@ -6,9 +6,24 @@ import Touchable from 'react-native-platform-touchable';
 import styles from '../YesNoCard/styles/YesNoCard';
 
 const ConfirmationCard = ({ text, children, onAnswerConfirm }) => (
-  <View style={styles.contentContainer}>
-    <View style={[styles.mainTextContainer, { flex: 0.55 }]}>
-      <Text style={[styles.mainText, { paddingTop: 10 }]}>{text}</Text>
+  <View
+    style={[
+      styles.contentContainer,
+      { flex: 0.88, justifyContent: 'flex-start' },
+    ]}
+  >
+    <View
+      style={[
+        styles.mainTextContainer,
+        {
+          flex: 0.65,
+          width: '95%',
+          borderBottomWidth: 1,
+          borderBottomColor: '#E0E0E1',
+        },
+      ]}
+    >
+      <Text style={[styles.mainText, { paddingTop: 15 }]}>{text}</Text>
     </View>
     <View
       style={[
@@ -18,6 +33,8 @@ const ConfirmationCard = ({ text, children, onAnswerConfirm }) => (
     >
       {children}
     </View>
+
+    <View style={{ flex: 0.037 }} />
 
     <View style={styles.bottomButtonContainer}>
       <Touchable

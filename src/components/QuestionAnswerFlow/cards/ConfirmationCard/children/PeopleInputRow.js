@@ -29,14 +29,14 @@ class PeopleInputRow extends React.Component {
           flexDirection: 'row',
           alignItems: 'center',
           // justifyContent: 'space-between',
-          borderTopWidth: 0.5,
-          borderBottomWidth: 0.5,
+          // borderTopWidth: 1,
+          borderBottomWidth: 1,
           borderColor: '#E0E0E1',
         }}
       >
         <View
           style={{
-            flex: 0.65,
+            flex: 0.6,
             // borderWidth: 1,
             // borderColor: 'red',
             flexDirection: 'row',
@@ -53,7 +53,7 @@ class PeopleInputRow extends React.Component {
         </View>
         <View
           style={{
-            flex: 0.35,
+            flex: 0.4,
             // borderWidth: 1,
             // borderColor: 'green',
             flexDirection: 'row',

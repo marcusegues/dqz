@@ -9,12 +9,10 @@ const { width, height } = Dimensions.get('window');
 export default StyleSheet.create({
   contentContainer: {
     flex: 0.8,
-    // flex: 1,
     justifyContent: 'space-around',
-    // justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#fff',
-    width: '95%',
+    width: '92%',
     borderRadius: 2,
     borderColor: '#ddd',
     ...Platform.select({
@@ -39,10 +37,11 @@ export default StyleSheet.create({
   },
   mainText: {
     fontFamily: 'roboto_regular',
-    fontSize: moderateScale(24),
+    fontSize: moderateScale(23),
     lineHeight: verticalScale(34),
     color: '#141414',
-    paddingHorizontal: 10,
+    // paddingHorizontal: 14,
+    textAlign: 'left',
   },
   bottomButtonContainer: {
     flexDirection: 'row',
@@ -65,7 +64,7 @@ export default StyleSheet.create({
     borderRadius: 3,
   },
   leftButtonText: {
-    fontSize: moderateScale(18),
+    fontSize: moderateScale(14),
     // fontSize: 18,
     // alignItems: 'center',
     // justifyContent: 'center',
@@ -73,7 +72,7 @@ export default StyleSheet.create({
     alignSelf: 'center',
     fontFamily: 'roboto_medium',
     fontWeight: '500',
-    paddingVertical: 13,
+    paddingVertical: verticalScale(16),
   },
   rightTouchable: {
     flex: 0.5,
