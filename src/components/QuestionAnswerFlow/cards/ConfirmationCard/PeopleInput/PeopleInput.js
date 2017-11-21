@@ -11,9 +11,10 @@ const PeopleInput = ({
   onAddMinor,
   onSubtractMinor,
   onAnswerConfirm,
+  text,
 }) => {
   return (
-    <ConfirmationCard onAnswerConfirm={onAnswerConfirm}>
+    <ConfirmationCard text={text} onAnswerConfirm={onAnswerConfirm}>
       <AdultInputRow
         people={people}
         onAddAdult={onAddAdult}
