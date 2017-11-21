@@ -24,7 +24,15 @@ const HeaderTitle = () => (
   </Text>
 );
 
-const HeaderLeft = () => (
+const HeaderLeftLogo = () => (
+  <Image
+    source={require('../../../assets/images/logo.png')}
+    resizeMode="contain"
+    style={{ width: 30, height: 30 }}
+  />
+);
+
+const HeaderLeftBack = () => (
   <Image
     source={require('../../../assets/images/logo.png')}
     resizeMode="contain"
@@ -42,4 +50,4 @@ const HeaderRight = () => (
   </TouchableOpacity>
 );
 
-export { HeaderTitle, HeaderLeft, HeaderRight };
+export { HeaderTitle, HeaderLeftLogo, HeaderRight };

@@ -9,9 +9,9 @@ import * as colors from '../styles/colors';
 
 import {
   HeaderTitle,
-  HeaderLeft,
+  HeaderLeftLogo,
   HeaderRight,
-} from '../components/headers/AppHeader';
+} from '../components/Headers/AppHeader';
 
 import MainMenu from '../screens/MainMenu/MainMenu';
 
@@ -40,7 +40,6 @@ const RootStackNavigator = StackNavigator(
   },
   {
     navigationOptions: navigation => ({
-      // header: null,
       headerLeft: <HeaderLeft />,
       headerRight: <HeaderRight />,
       headerTitle: <HeaderTitle />,
@@ -54,9 +53,7 @@ const RootStackNavigator = StackNavigator(
       headerTitleStyle: {},
     }),
     cardStyle: { backgroundColor: colors.MAIN_BACKGROUND_COLOR },
-  },
-  {
-    initialRouteName: 'OnBoarding',
+    initialRouteName: 'Screens',
   }
 );
 
