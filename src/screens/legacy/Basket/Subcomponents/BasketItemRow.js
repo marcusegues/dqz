@@ -19,13 +19,15 @@ class BasketItemRow extends React.Component {
           alignItems: 'center',
         }}
       >
-        {headerCategoryName
-          ? <Text style={{ width: '65%', fontFamily: 'open_sans_bold' }}>
-              {headerCategoryName}
-            </Text>
-          : <Text style={{ width: '65%', fontFamily: 'open_sans_regular' }}>
-              {categoryName}
-            </Text>}
+        {headerCategoryName ? (
+          <Text style={{ width: '65%', fontFamily: 'open_sans_bold' }}>
+            {headerCategoryName}
+          </Text>
+        ) : (
+          <Text style={{ width: '65%', fontFamily: 'open_sans_regular' }}>
+            {categoryName}
+          </Text>
+        )}
         <View
           style={{
             width: '35%',
@@ -33,15 +35,15 @@ class BasketItemRow extends React.Component {
             justifyContent: 'flex-end',
           }}
         >
-          {headerDuty
-            ? <Text style={{ paddingRight: 20, fontFamily: 'open_sans_bold' }}>
-                {headerDuty}
-              </Text>
-            : <Text
-                style={{ paddingRight: 15, fontFamily: 'open_sans_regular' }}
-              >
-                {`CHF ${duty}`}
-              </Text>}
+          {headerDuty ? (
+            <Text style={{ paddingRight: 20, fontFamily: 'open_sans_bold' }}>
+              {headerDuty}
+            </Text>
+          ) : (
+            <Text style={{ paddingRight: 15, fontFamily: 'open_sans_regular' }}>
+              {`CHF ${duty}`}
+            </Text>
+          )}
         </View>
       </View>
     );
