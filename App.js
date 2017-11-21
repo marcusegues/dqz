@@ -61,7 +61,7 @@ export default class App extends React.Component {
 				{ roboto_regular: require('./assets/fonts/Roboto-Regular.ttf') },
 				{ roboto_light: require('./assets/fonts/Roboto-Light.ttf') },
 				{ roboto_medium: require('./assets/fonts/Roboto-Medium.ttf') },
-				{ roboto_thin: require('./assets/fonts/Roboto_Thin.ttf') },
+				{ roboto_thin: require('./assets/fonts/Roboto-Thin.ttf') },
 
 				// This is the font that we are using for our tab bar
 				Ionicons.font,
