@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import QuestionAnswerFlow from '../components/QuestionAnswerFlow/QuestionAnswerFlow';
 import PeopleInputContainer from '../components/QuestionAnswerFlow/cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OnBoarding from '../screens/OnBoarding/OnBoarding';
+import * as colors from '../styles/colors';
 
 import {
 	HeaderTitle,
@@ -16,6 +17,7 @@ import MainMenu from '../screens/MainMenu/MainMenu';
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 
 const RootStackNavigator = StackNavigator(
+<<<<<<< HEAD
 	{
 		QuestionAnswer: {
 			screen: QuestionAnswerFlow,
@@ -49,6 +51,32 @@ const RootStackNavigator = StackNavigator(
 	{
 		initialRouteName: 'OnBoarding',
 	}
+=======
+  {
+    QuestionAnswer: {
+      screen: QuestionAnswerFlow,
+      navigationOptions: () => ({
+        title: `Waren deklarieren`,
+      }),
+    },
+    OnBoarding: {
+      screen: OnBoarding,
+    },
+    PeopleInput: {
+      screen: PeopleInputContainer,
+    },
+  },
+  {
+    navigationOptions: navigation => ({
+      header: null,
+    }),
+    cardStyle: { backgroundColor: colors.MAIN_BACKGROUND_COLOR },
+  },
+  {
+    initialRouteName: 'OnBoarding',
+    // headerMode: 'none', //Comment this if you want to use native header
+  }
+>>>>>>> develop
 );
 
 export default class RootNavigator extends React.Component {
