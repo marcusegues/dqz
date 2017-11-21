@@ -6,9 +6,15 @@ import PeopleInputContainer from '../components/QuestionAnswerFlow/cards/Confirm
 import OnBoarding from '../screens/OnBoarding/OnBoarding';
 import * as colors from '../styles/colors';
 
+import {
+  HeaderTitle,
+  HeaderLeft,
+  HeaderRight,
+} from '../components/headers/AppHeader';
+
+import MainMenu from '../screens/MainMenu/MainMenu';
+
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
-import { TouchableOpacity } from 'react-native';
-import { Entypo } from '@expo/vector-icons';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -19,7 +25,7 @@ const RootStackNavigator = StackNavigator(
       }),
     },
     OnBoarding: {
-      screen: OnBoarding,
+      screen: MainMenu,
     },
     PeopleInput: {
       screen: PeopleInputContainer,
@@ -27,13 +33,23 @@ const RootStackNavigator = StackNavigator(
   },
   {
     navigationOptions: navigation => ({
-      header: null,
+      // header: null,
+      headerLeft: <HeaderLeft />,
+      headerRight: <HeaderRight />,
+      headerTitle: <HeaderTitle />,
+
+      headerStyle: {
+        paddingRight: 15,
+        paddingLeft: 15,
+        borderBottomWidth: 5,
+        borderBottomColor: '#EA0000',
+      },
+      headerTitleStyle: {},
     }),
     cardStyle: { backgroundColor: colors.MAIN_BACKGROUND_COLOR },
   },
   {
     initialRouteName: 'OnBoarding',
-    // headerMode: 'none', //Comment this if you want to use native header
   }
 );
 
