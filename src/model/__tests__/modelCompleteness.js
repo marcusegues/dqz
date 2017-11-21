@@ -35,4 +35,23 @@ describe('The model: ', () => {
       expect(dutyThresholds.toString()).toBe(dutyThresholds.sort().toString());
     });
   });
+
+  test('If a category has a duty dependency, the other duty is higher', () => {
+    CATEGORIES.forEach(c => {
+      const dAD = CategoriesRates.getIn([c, 'dutyAllowanceDependency']);
+      if (dAD) {
+        const thisDuty = CategoriesRates.getIn([c, 'duty']);
+        const dependencyDuty = CategoriesRates.getIn([dAD, 'duty']);
+
+        // size must be 1 for this test to work. Otherwise, much more complicated model
+        expect(thisDuty.size).toBe(1);
+        expect(dependencyDuty.size).toBe(1);
+
+        // Actual test
+        expect(dependencyDuty.first().get('fee')).toBeGreaterThanOrEqual(
+          thisDuty.first().get('fee')
+        );
+      }
+    });
+  });
 });
