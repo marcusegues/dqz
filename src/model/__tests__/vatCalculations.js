@@ -52,11 +52,11 @@ describe('VAT Calculations', () => {
   });
 
   test('it calculates the vat of large items (no deduction)', () => {
-    expect(calculateVatLargeItems(b1)).toBeCloseTo(457.525);
+    expect(calculateVatLargeItems(b1)).toBeCloseTo(457.55);
   });
 
   test('it calculates the vat of normal items (no deduction)', () => {
-    expect(calculateVatNormalItems(b1)).toBeCloseTo(8.0285);
+    expect(calculateVatNormalItems(b1)).toBe(8);
   });
 
   test('it sums all the categories and subtracts allowances (pre-last) as expected', () => {
@@ -93,7 +93,7 @@ describe('VAT Calculations', () => {
     expect(calculateVat(sampleBasket1, initPeople)).toMatchSnapshot();
     expect(calculateVat(sampleBasket2, initPeople)).toMatchSnapshot();
     expect(calculateVat(sampleBasket3, initPeople).get('totalVat')).toBeCloseTo(
-      53.431
+      53.45
     );
     expect(calculateVat(sampleBasket4, initPeople).get('totalVat')).toBeCloseTo(
       35.9975
