@@ -14,6 +14,7 @@ import type {
 import type { DutyReport } from './types/calculationTypes';
 import { CategoriesArray, CategoriesRates } from './constants';
 import { makeDutyReportRecord } from './types/calculationTypes';
+import { rounding } from './utils';
 
 export const calculateDuty = (basket: Basket, people: People): DutyReport => {
   let total = 0;
@@ -49,7 +50,7 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
           const bracketWidth = thresholdThisBracket - allowanceRunningTotal;
           const inThisBracket = Math.min(bracketWidth, tempQuantity);
           allowanceRunningTotal += bracketWidth;
-          return acc + inThisBracket * v.get('fee');
+          return acc + rounding(inThisBracket * v.get('fee'));
         }, 0);
         r.set(c, fee);
         total += fee;

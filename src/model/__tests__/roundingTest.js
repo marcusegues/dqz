@@ -17,6 +17,9 @@ describe('The model rounds correctly', () => {
     expect(rounding(0.125)).toBe(0.15);
     expect(rounding(0.13)).toBe(0.15);
 
+    expect(rounding(13.3749)).toBe(13.35);
+    expect(rounding(13.375)).toBe(13.4);
+
     expect(rounding(691 * 0.077)).toBe(53.2);
     expect(rounding(301 * 0.025)).toBe(7.55);
   });
