@@ -8,8 +8,10 @@ const { width, height } = Dimensions.get('window');
 
 export default StyleSheet.create({
   contentContainer: {
-    flex: 1,
-    justifyContent: 'space-between',
+    flex: 0.8,
+    // flex: 1,
+    justifyContent: 'space-around',
+    // justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#fff',
     width: '95%',
@@ -30,14 +32,17 @@ export default StyleSheet.create({
   mainTextContainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    // justifyContent: 'center',
+    // borderWidth: 1,
+    // backgroundColor: 'red',
   },
   mainText: {
-    fontFamily: 'roboto_light',
-    fontSize: moderateScale(36),
-    fontWeight: '300',
-    color: '#1A1A1A',
-    // fontSize: 36,
+    fontFamily: 'roboto_regular',
+    fontSize: moderateScale(24),
+    lineHeight: verticalScale(34),
+    color: '#141414',
+    paddingHorizontal: 10,
   },
   bottomButtonContainer: {
     flexDirection: 'row',
@@ -56,16 +61,19 @@ export default StyleSheet.create({
   },
   leftTouchable: {
     flex: 0.5,
-    backgroundColor: '#006699',
+    backgroundColor: '#DC0018',
+    borderRadius: 3,
   },
   leftButtonText: {
     fontSize: moderateScale(18),
     // fontSize: 18,
+    // alignItems: 'center',
+    // justifyContent: 'center',
     color: '#fff',
     alignSelf: 'center',
     fontFamily: 'roboto_medium',
     fontWeight: '500',
-    paddingVertical: 20,
+    paddingVertical: 13,
   },
   rightTouchable: {
     flex: 0.5,
