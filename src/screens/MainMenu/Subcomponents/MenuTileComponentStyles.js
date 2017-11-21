@@ -3,9 +3,9 @@ import { scale, verticalScale, moderateScale } from '../../../styles/Scaling';
 
 export default StyleSheet.create({
   container: {
-    width: verticalScale(160),
+    width: verticalScale(166),
     // width: '47%',
-    height: verticalScale(160),
+    height: verticalScale(142),
     // height: '47%',
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -22,12 +22,16 @@ export default StyleSheet.create({
 
     ...Platform.select({
       ios: {
-        marginHorizontal: scale(9),
-        marginVertical: verticalScale(9),
+        marginHorizontal: scale(6),
+        // marginHorizontal: scale(9),
+        marginVertical: verticalScale(6),
+        // marginVertical: verticalScale(9),
       },
       android: {
-        marginHorizontal: scale(11),
-        marginVertical: verticalScale(11),
+        marginHorizontal: scale(9),
+        // marginHorizontal: scale(11),
+        marginVertical: verticalScale(9),
+        // marginVertical: verticalScale(11),
       },
     }),
   },
@@ -37,8 +41,10 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: moderateScale(14),
-    color: '#0A5287',
+    fontSize: moderateScale(12),
+    lineHeight: verticalScale(17),
+    color: '#141414',
     fontFamily: 'roboto_bold',
+    textAlign: 'center',
   },
 });

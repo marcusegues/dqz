@@ -6,11 +6,15 @@ import DeclareGoodsContainer from '../screens/DeclareGoods/DeclareGoodsContainer
 import SelectedGoodsContainer from '../screens/SelectedGoods/SelectedGoodsContainer';
 import BasketContainer from '../screens/Basket/BasketContainer';
 
+import {
+  HeaderTitle,
+  HeaderLeft,
+  HeaderRight,
+} from '../components/headers/AppHeader';
+
 import MainMenu from '../screens/MainMenu/MainMenu';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
-import { TouchableOpacity } from 'react-native';
-import { Entypo } from '@expo/vector-icons';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -21,6 +25,17 @@ const RootStackNavigator = StackNavigator(
   {
     navigationOptions: navigation => ({
       // header: null,
+      headerLeft: <HeaderLeft />,
+      headerRight: <HeaderRight />,
+      headerTitle: <HeaderTitle />,
+
+      headerStyle: {
+        paddingRight: 15,
+        paddingLeft: 15,
+        borderBottomWidth: 5,
+        borderBottomColor: '#EA0000',
+      },
+      headerTitleStyle: {},
     }),
   },
   {

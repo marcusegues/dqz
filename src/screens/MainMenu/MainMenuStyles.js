@@ -13,66 +13,50 @@ export default StyleSheet.create({
     flex: 0.3,
   },
   backgroundImage: {
-    height: verticalScale(160),
     flex: 1,
   },
-  mainMenuTitle: {
-    alignSelf: 'flex-start',
-    paddingTop: verticalScale(13),
-    // paddingVertical: verticalScale(12),
-    paddingLeft: scale(25),
-    // paddingLeft: scale(20),
-    fontSize: moderateScale(18),
-    fontFamily: 'roboto_bold',
-    // ...Platform.select({
-    //     ios: {
-    //         marginHorizontal: scale(9),
-    //         marginVertical: verticalScale(9),
-    //     },
-    //     android: {
-    //         marginHorizontal: scale(11),
-    //         marginVertical: verticalScale(11),
-    //     },
-    // }),
-  },
   contentContainer: {
-    ...Platform.select({
-      ios: {
-        flex: 0.7,
-      },
-      android: {
-        flex: 0.7,
-      },
-    }),
-    // flex: 0.65,
-    // borderWidth: 1,
-    // borderColor: 'red',
+    flex: 0.8,
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: '-20%',
   },
   tileContainer: {
     flex: 1,
-    // borderWidth: 1,
-    // borderColor: 'green',
     ...Platform.select({
       ios: {
         width: moderateScale(370),
       },
       android: {
         width: moderateScale(370, 0.6),
-        // width: moderateScale(350, 0.6),
       },
     }),
 
-    // width: moderateScale(350, 0.6),
-    // width: '100%',
-    // paddingHorizontal: scale(20),
     flexDirection: 'row',
     justifyContent: 'center',
-    // justifyContent: 'space-between',
     alignContent: 'center',
-    // alignContent: 'space-between',
     flexWrap: 'wrap',
+  },
+  iconAndBadgeWrapper: {
+    flexDirection: 'row',
+  },
+  redBadge: {
+    borderWidth: 1,
+    borderColor: '#DC0018',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 24,
+    height: 24,
+    backgroundColor: '#DC0018',
+    borderRadius: 100,
+    position: 'absolute',
+    top: -10,
+    right: -7,
+  },
+  badgeValue: {
+    color: '#fff',
+    fontSize: moderateScale(14),
+    fontFamily: 'roboto_regular',
   },
 });
