@@ -5,8 +5,14 @@ import {
   presentationBasket1,
   presentationBasket2,
   sampleBasket1,
+  sampleBasket5,
 } from './fullBaskets';
-import { addMinor, initPeople, setAdultPeople } from '../configurationApi';
+import {
+  addMinor,
+  initPeople,
+  setAdultPeople,
+  subtractAdult,
+} from '../configurationApi';
 
 describe('Duty Calculations', () => {
   test('it calculates duty under various scenarios - 1 Adult', () => {
@@ -17,6 +23,15 @@ describe('Duty Calculations', () => {
     expect(
       calculateDuty(sampleBasket1, addMinor(initPeople))
     ).toMatchSnapshot();
+  });
+
+  test('Cigarettes are for adults only', () => {
+    expect(calculateDuty(sampleBasket5, initPeople).get('totalDuty')).toBe(0);
+    expect(
+      calculateDuty(sampleBasket5, addMinor(subtractAdult(initPeople))).get(
+        'totalDuty'
+      )
+    ).toBe(25);
   });
 
   test('it calculates duty under various scenarios - 20 Adults', () => {
