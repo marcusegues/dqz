@@ -153,6 +153,14 @@ export const initPeople: People = makePeopleRecord({
 });
 
 /**
+ * Gets the people in the party (adult + minor)
+ * @param party
+ * @returns number
+ */
+export const getTotalPeople = (party: People): number =>
+  party.get('adults') + party.get('minors');
+
+/**
  * Gets the adult people in the party
  * @param party
  * @returns number

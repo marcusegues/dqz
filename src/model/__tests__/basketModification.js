@@ -11,6 +11,7 @@ import {
   getLargeAmounts,
   getMinorPeople,
   getQuantity,
+  getTotalPeople,
   initPeople,
   resetAmounts,
   resetLargeAmounts,
@@ -171,5 +172,12 @@ describe('Party configuration', () => {
     const myParty = setPeople(initPeople, -6, -3);
     expect(getAdultPeople(myParty)).toBe(0);
     expect(getMinorPeople(myParty)).toBe(0);
+  });
+
+  test('get number of people in party', () => {
+    const myParty1 = setPeople(initPeople, 6, 3);
+    const myParty2 = setPeople(initPeople, -6, -3);
+    expect(getTotalPeople(myParty1)).toBe(9);
+    expect(getTotalPeople(myParty2)).toBe(0);
   });
 });
