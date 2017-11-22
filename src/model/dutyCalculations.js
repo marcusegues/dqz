@@ -24,7 +24,7 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
     number
   > = Immutable.Map().withMutations(r => {
     CategoriesArray.forEach(c => {
-      const quantityRaw: number = basket.getIn([c, 'volume', 'quantity'], 0);
+      const quantityRaw: number = getQuantity(basket, c);
       let allowanceRaw: number = CategoriesRates.getIn([c, 'dutyAllowance'], 0);
       const dutyDependency: ?Category = CategoriesRates.getIn(
         [c, 'dutyAllowanceDependency'],
