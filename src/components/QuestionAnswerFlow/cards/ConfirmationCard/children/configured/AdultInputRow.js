@@ -2,7 +2,8 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import PeopleInputRow from '../PeopleInputRow';
 import * as fromModelApi from '../../../../../../model/configurationApi';
-import { moderateScale } from '../../../../../../styles/Scaling';
+
+import { ownStyles } from './MinorInputRow';
 
 const AdultInputRow = ({ onAddAdult, onSubtractAdult, people }) => (
   <PeopleInputRow
@@ -15,20 +16,8 @@ const AdultInputRow = ({ onAddAdult, onSubtractAdult, people }) => (
     {{
       textComponent: (
         <View>
-          <Text
-            style={{
-              fontFamily: 'roboto_medium',
-              fontSize: moderateScale(14),
-              color: '#24253D',
-            }}
-          >{`Erwachsene`}</Text>
-          <Text
-            style={{
-              fontFamily: 'roboto_regular',
-              fontSize: moderateScale(12),
-              color: '#898989',
-            }}
-          >{`17+ Jahre`}</Text>
+          <Text style={ownStyles.categoryTitleText}>{`Erwachsene`}</Text>
+          <Text style={ownStyles.categoryAgeText}>{`17+ Jahre`}</Text>
         </View>
       ),
     }}

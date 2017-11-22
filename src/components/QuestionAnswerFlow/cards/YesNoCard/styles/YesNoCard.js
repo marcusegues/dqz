@@ -31,17 +31,12 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
-    // justifyContent: 'center',
-    // borderWidth: 1,
-    // backgroundColor: 'red',
   },
   mainText: {
     fontFamily: 'roboto_regular',
     fontSize: moderateScale(24),
     lineHeight: verticalScale(39),
     color: '#141414',
-    // paddingHorizontal: 14,
-    // textAlign: 'left',
   },
   bottomButtonContainer: {
     flexDirection: 'row',
@@ -54,7 +49,7 @@ export default StyleSheet.create({
         shadowRadius: 3,
       },
       android: {
-        elevation: 20,
+        elevation: 5,
       },
     }),
   },
@@ -65,9 +60,6 @@ export default StyleSheet.create({
   },
   leftButtonText: {
     fontSize: moderateScale(14),
-    // fontSize: 18,
-    // alignItems: 'center',
-    // justifyContent: 'center',
     color: '#fff',
     alignSelf: 'center',
     fontFamily: 'roboto_medium',
@@ -81,7 +73,6 @@ export default StyleSheet.create({
   },
   rightButtonText: {
     fontSize: moderateScale(18),
-    // fontSize: 18,
     color: '#0A5287',
     alignSelf: 'center',
     fontFamily: 'roboto_medium',
