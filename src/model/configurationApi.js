@@ -215,3 +215,19 @@ export const setMinorPeople = (party: People, n: number): People =>
  */
 export const subtractMinor = (party: People): People =>
   party.update('minors', m => Math.max(m - 1, 0));
+
+/**
+ * Set all people directly (non-negative)
+ * @param party
+ * @param adults
+ * @param minors
+ * @returns People Type
+ */
+export const setPeople = (
+  party: People,
+  adults: number,
+  minors: number
+): People => {
+  const p1 = party.set('minors', Math.max(0, minors));
+  return p1.set('adults', Math.max(0, adults));
+};

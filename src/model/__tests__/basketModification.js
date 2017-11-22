@@ -16,6 +16,7 @@ import {
   resetLargeAmounts,
   setAdultPeople,
   setMinorPeople,
+  setPeople,
   setQuantities,
   setQuantity,
   subtractAdult,
@@ -159,5 +160,16 @@ describe('Party configuration', () => {
   });
   test('set -11 minor', () => {
     expect(getMinorPeople(setMinorPeople(initPeople, -11))).toBe(0);
+  });
+
+  test('set 6 adults and 3 minor in one go', () => {
+    const myParty = setPeople(initPeople, 6, 3);
+    expect(getAdultPeople(myParty)).toBe(6);
+    expect(getMinorPeople(myParty)).toBe(3);
+  });
+  test('set -6 adults and -3 minor in one go', () => {
+    const myParty = setPeople(initPeople, -6, -3);
+    expect(getAdultPeople(myParty)).toBe(0);
+    expect(getMinorPeople(myParty)).toBe(0);
   });
 });
