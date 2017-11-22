@@ -6,14 +6,28 @@ import { scale, verticalScale, moderateScale } from '../../styles/Scaling';
 const NavBar = ({ step }) => (
   <View style={ownStyles.locatorContainer}>
     <Text
-      style={step === 1 ? ownStyles.activeLocatorText : ownStyles.locatorText}
+      style={
+        step === 1 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
+      }
     >
       Ihre Daten
     </Text>
     <View style={ownStyles.locatorLine} />
-    <Text style={ownStyles.locatorText}>Ihre Waren</Text>
+    <Text
+      style={
+        step === 2 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
+      }
+    >
+      Ihre Waren
+    </Text>
     <View style={ownStyles.locatorLine} />
-    <Text style={ownStyles.locatorText}>Bezahlung</Text>
+    <Text
+      style={
+        step === 3 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
+      }
+    >
+      Bezahlung
+    </Text>
   </View>
 );
 
@@ -37,7 +51,7 @@ const ownStyles = {
     lineHeight: moderateScale(16),
     color: '#fff',
   },
-  locatorText: {
+  unhighlightedText: {
     fontFamily: 'roboto_light',
     fontSize: moderateScale(14),
     lineHeight: moderateScale(16),
