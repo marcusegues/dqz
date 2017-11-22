@@ -48,7 +48,7 @@ Immutable.Record {
 
 exports[`Duty Calculations it calculates duty under various scenarios - 1 Adult + 1 Minor 1`] = `
 Immutable.Record {
-  "totalDuty": 3079.9,
+  "totalDuty": 3019.9,
   "dutyByCategoryRaw": Immutable.Map {
     "Butter": 336,
     "Oils": 0,
@@ -58,7 +58,7 @@ Immutable.Record {
     "AlcHard": 0,
     "Meds": 0,
     "Books": 0,
-    "Meat": 2447,
+    "Meat": 2387,
     "OtherFood": 0,
     "Other": 0,
     "Tobacco": 296.9,
@@ -94,7 +94,7 @@ Immutable.Record {
 
 exports[`Duty Calculations it calculates duty under various scenarios - 20 Adults 1`] = `
 Immutable.Record {
-  "totalDuty": 2081,
+  "totalDuty": 1595,
   "dutyByCategoryRaw": Immutable.Map {
     "Butter": 48,
     "Oils": 0,
@@ -104,7 +104,7 @@ Immutable.Record {
     "AlcHard": 0,
     "Meds": 0,
     "Books": 0,
-    "Meat": 2033,
+    "Meat": 1547,
     "OtherFood": 0,
     "Other": 0,
     "Tobacco": 0,

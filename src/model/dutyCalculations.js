@@ -54,7 +54,10 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
       } else {
         const fee = duty.reduce((acc, v) => {
           const tempQuantity = Math.max(0, quantity - allowanceRunningTotal);
-          const thresholdThisBracket = v.get('threshold');
+          let thresholdThisBracket: number = v.get('threshold', 0);
+          if (thresholdThisBracket != Infinity) {
+            thresholdThisBracket = peopleCount * v.get('threshold', 0);
+          }
           const bracketWidth = thresholdThisBracket - allowanceRunningTotal;
           const inThisBracket = Math.min(bracketWidth, tempQuantity);
           allowanceRunningTotal += bracketWidth;
