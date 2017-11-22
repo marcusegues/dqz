@@ -56,7 +56,7 @@ const ownStyles = {
   mainText: {
     fontFamily: 'roboto_regular',
     fontSize: moderateScale(24),
-    lineHeight: verticalScale(39),
+    lineHeight: verticalScale(32),
     paddingTop: verticalScale(15),
     color: '#141414',
   },
