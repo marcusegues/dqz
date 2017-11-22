@@ -37,11 +37,11 @@ export default StyleSheet.create({
   },
   mainText: {
     fontFamily: 'roboto_regular',
-    fontSize: moderateScale(23),
-    lineHeight: verticalScale(34),
+    fontSize: moderateScale(24),
+    lineHeight: verticalScale(39),
     color: '#141414',
     // paddingHorizontal: 14,
-    textAlign: 'left',
+    // textAlign: 'left',
   },
   bottomButtonContainer: {
     flexDirection: 'row',

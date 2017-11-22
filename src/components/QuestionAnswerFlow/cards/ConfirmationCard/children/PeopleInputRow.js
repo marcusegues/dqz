@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import Touchable from 'react-native-platform-touchable';
+import { View, Text, TouchableOpacity } from 'react-native';
+// import Touchable from 'react-native-platform-touchable';
 import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
 import * as fromModelApi from '../../../../../model/configurationApi';
 import { moderateScale } from '../../../../../styles/Scaling';
@@ -62,13 +62,13 @@ class PeopleInputRow extends React.Component {
             paddingVertical: 16,
           }}
         >
-          <Touchable onPress={onSubtract}>
+          <TouchableOpacity onPress={onSubtract}>
             <Entypo
               name="circle-with-minus"
               size={moderateScale(28)}
               color="#E0E0E1"
             />
-          </Touchable>
+          </TouchableOpacity>
           <Text
             style={{
               fontSize: moderateScale(28),
@@ -78,13 +78,13 @@ class PeopleInputRow extends React.Component {
           >
             {displayedQuantity}
           </Text>
-          <Touchable onPress={onAdd}>
+          <TouchableOpacity onPress={onAdd}>
             <Entypo
               name="circle-with-plus"
               size={moderateScale(28)}
               color="#DC0018"
             />
-          </Touchable>
+          </TouchableOpacity>
         </View>
       </View>
     );
