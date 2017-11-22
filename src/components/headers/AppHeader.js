@@ -2,7 +2,20 @@ import React from 'react';
 import { Image, Text, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-const HeaderTitle = () => (
+export const HeaderTitle = ({ text }) => (
+  <Text
+    style={{
+      fontSize: 24,
+      color: '#1A1A1A',
+      fontFamily: 'roboto_regular',
+      fontWeight: '300',
+    }}
+  >
+    {text}
+  </Text>
+);
+
+export const MainScreenHeaderTitle = () => (
   <Text
     style={{
       fontSize: 24,
@@ -24,7 +37,7 @@ const HeaderTitle = () => (
   </Text>
 );
 
-const HeaderLeftLogo = () => (
+export const HeaderLeft = () => (
   <Image
     source={require('../../../assets/images/logo.png')}
     resizeMode="contain"
@@ -32,7 +45,7 @@ const HeaderLeftLogo = () => (
   />
 );
 
-const HeaderLeftBack = () => (
+export const HeaderLeftBack = () => (
   <Image
     source={require('../../../assets/images/logo.png')}
     resizeMode="contain"
@@ -40,7 +53,7 @@ const HeaderLeftBack = () => (
   />
 );
 
-const HeaderRight = () => (
+export const HeaderRight = () => (
   <TouchableOpacity
     onPress={() => {
       // navigation.navigate('DrawerToggle');
@@ -49,5 +62,3 @@ const HeaderRight = () => (
     <Ionicons name="ios-menu" size={30} style={{}} />
   </TouchableOpacity>
 );
-
-export { HeaderTitle, HeaderLeftLogo, HeaderRight };

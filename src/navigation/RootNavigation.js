@@ -8,8 +8,9 @@ import ScreensView from '../screens/ScreensView/ScreensView';
 import * as colors from '../styles/colors';
 
 import {
+  MainScreenHeaderTitle,
   HeaderTitle,
-  HeaderLeftLogo,
+  HeaderLeft,
   HeaderRight,
 } from '../components/Headers/AppHeader';
 
@@ -21,11 +22,31 @@ const RootStackNavigator = StackNavigator(
   {
     Screens: {
       screen: ScreensView,
+      navigationOptions: ({ _, navigationOptions }) => ({
+        ...navigationOptions,
+        headerRight: <HeaderRight />,
+
+        headerStyle: {
+          paddingRight: 15,
+          paddingLeft: 15,
+          borderBottomWidth: 5,
+          borderBottomColor: '#EA0000',
+        },
+        headerTitleStyle: {},
+        headerLeft: <HeaderLeft />,
+        headerTitle: <HeaderTitle text={`Screens`} />,
+        headerStyle: {
+          paddingRight: 15,
+          paddingLeft: 15,
+          borderBottomWidth: 5,
+          borderBottomColor: '#EA0000',
+        },
+      }),
     },
     QuestionAnswer: {
       screen: QuestionAnswerFlow,
       navigationOptions: () => ({
-        title: `Waren deklarieren`,
+        headerTitle: <HeaderTitle text={`Waren deklarieren`} />,
       }),
     },
     OnBoarding: {
@@ -39,19 +60,7 @@ const RootStackNavigator = StackNavigator(
     },
   },
   {
-    navigationOptions: navigation => ({
-      headerLeft: <HeaderLeft />,
-      headerRight: <HeaderRight />,
-      headerTitle: <HeaderTitle />,
-
-      headerStyle: {
-        paddingRight: 15,
-        paddingLeft: 15,
-        borderBottomWidth: 5,
-        borderBottomColor: '#EA0000',
-      },
-      headerTitleStyle: {},
-    }),
+    navigationOptions: navigation => ({}),
     cardStyle: { backgroundColor: colors.MAIN_BACKGROUND_COLOR },
     initialRouteName: 'Screens',
   }
