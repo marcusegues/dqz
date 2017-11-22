@@ -6,13 +6,11 @@ import PeopleInputContainer from '../components/QuestionAnswerFlow/cards/Confirm
 import OnBoarding from '../screens/OnBoarding/OnBoarding';
 import ScreensView from '../screens/ScreensView/ScreensView';
 import * as colors from '../styles/colors';
-
-import {
-  MainScreenHeaderTitle,
-  HeaderTitle,
-  HeaderLeft,
-  HeaderRight,
-} from '../components/Headers/AppHeader';
+import { defaultNavigationOptions } from './navigationOptions';
+import HeaderTitle from '../components/Headers/subcomponents/HeaderTitle';
+import MainScreenHeaderTitle from '../components/Headers/subcomponents/MainScreenHeaderTitle';
+import Logo from '../components/Headers/subcomponents/Logo';
+import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
 
 import MainMenu from '../screens/MainMenu/MainMenu';
 
@@ -22,24 +20,15 @@ const RootStackNavigator = StackNavigator(
   {
     Screens: {
       screen: ScreensView,
-      navigationOptions: ({ _, navigationOptions }) => ({
+      navigationOptions: ({ navigation, screenProps, navigationOptions }) => ({
         ...navigationOptions,
-        headerRight: <HeaderRight />,
-
-        headerStyle: {
-          paddingRight: 15,
-          paddingLeft: 15,
-          borderBottomWidth: 5,
-          borderBottomColor: '#EA0000',
-        },
-        headerTitleStyle: {},
-        headerLeft: <HeaderLeft />,
         headerTitle: <HeaderTitle text={`Screens`} />,
+        headerLeft: <Logo />,
+        headerRight: <OptionsButton />,
         headerStyle: {
-          paddingRight: 15,
-          paddingLeft: 15,
+          ...navigationOptions.headerStyle,
           borderBottomWidth: 5,
-          borderBottomColor: '#EA0000',
+          borderBottomColor: colors.MAIN_RED,
         },
       }),
     },
@@ -54,13 +43,23 @@ const RootStackNavigator = StackNavigator(
     },
     MainMenu: {
       screen: MainMenu,
+      navigationOptions: ({ navigationOptions }) => ({
+        ...navigationOptions,
+        headerTitle: <MainScreenHeaderTitle />,
+        headerRight: <OptionsButton />,
+        headerStyle: {
+          ...navigationOptions.headerStyle,
+          borderBottomWidth: 5,
+          borderBottomColor: colors.MAIN_RED,
+        },
+      }),
     },
     PeopleInput: {
       screen: PeopleInputContainer,
     },
   },
   {
-    navigationOptions: navigation => ({}),
+    navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: colors.MAIN_BACKGROUND_COLOR },
     initialRouteName: 'Screens',
   }
