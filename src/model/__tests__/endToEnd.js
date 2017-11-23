@@ -47,7 +47,7 @@ const exampleInPresentation2 = {
 const exampleFlorian1 = {
   basket: florian1,
   party: twoAdultOneMinor,
-  expectedDuty: 786,
+  expectedDuty: 666,
   expectedVat: 72.55, // TODO Florian: he expectes 72.20 -> investigate rounding
 };
 const objectsUnderTest = [
