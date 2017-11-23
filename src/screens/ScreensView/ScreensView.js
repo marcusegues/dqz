@@ -9,6 +9,8 @@ const ScreensView = ({ navigation }) => {
           { key: `OnBoarding` },
           { key: `MainMenu` },
           { key: `QuestionAnswer` },
+          { key: `GoodInputModal` },
+          { key: `AppModal` },
         ]}
         renderItem={({ item }) => (
           <Text

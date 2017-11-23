@@ -5,6 +5,8 @@ import QuestionAnswerFlow from '../components/QuestionAnswerFlow/QuestionAnswerF
 import PeopleInputContainer from '../components/QuestionAnswerFlow/cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OnBoarding from '../screens/OnBoarding/OnBoarding';
 import ScreensView from '../screens/ScreensView/ScreensView';
+import GoodInputModal from '../components/GoodInputModal/GoodInputModal';
+import AppModal from '../components/AppModal/AppModal';
 import * as colors from '../styles/colors';
 
 import {
@@ -36,6 +38,12 @@ const RootStackNavigator = StackNavigator(
     },
     PeopleInput: {
       screen: PeopleInputContainer,
+    },
+    GoodInputModal: {
+      screen: GoodInputModal,
+    },
+    AppModal: {
+      screen: AppModal,
     },
   },
   {
