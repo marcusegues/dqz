@@ -120,12 +120,14 @@ type RatesContent = {
   vat: number,
   duty: ImmutableListType<DutyBracket>,
   dutyAllowance: number,
+  dutyAllowanceDependency: ?Category,
   adultsOnly: boolean,
 };
 export const makeRatesRecord: RecordFactory<RatesContent> = Immutable.Record({
   vat: 0,
   duty: Immutable.List.of(makeDutyBracketRecord()),
   dutyAllowance: Infinity,
+  dutyAllowanceDependency: null,
   adultsOnly: false,
 });
 type Rates = RecordOf<RatesContent>;
