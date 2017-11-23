@@ -5,7 +5,7 @@ import QuestionAnswerFlow from '../components/QuestionAnswerFlow/QuestionAnswerF
 import PeopleInputContainer from '../components/QuestionAnswerFlow/cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OnBoarding from '../screens/OnBoarding/OnBoarding';
 import ScreensView from '../screens/ScreensView/ScreensView';
-import * as colors from '../styles/colors';
+import { MAIN_RED, MAIN_BACKGROUND_COLOR } from '../styles/colors';
 import { defaultNavigationOptions } from './navigationOptions';
 import HeaderTitle from '../components/Headers/subcomponents/HeaderTitle';
 import MainScreenHeaderTitle from '../components/Headers/subcomponents/MainScreenHeaderTitle';
@@ -28,7 +28,7 @@ const RootStackNavigator = StackNavigator(
         headerStyle: {
           ...navigationOptions.headerStyle,
           borderBottomWidth: 5,
-          borderBottomColor: colors.MAIN_RED,
+          borderBottomColor: MAIN_RED,
         },
       }),
     },
@@ -50,7 +50,7 @@ const RootStackNavigator = StackNavigator(
         headerStyle: {
           ...navigationOptions.headerStyle,
           borderBottomWidth: 5,
-          borderBottomColor: colors.MAIN_RED,
+          borderBottomColor: MAIN_RED,
         },
       }),
     },
@@ -60,7 +60,7 @@ const RootStackNavigator = StackNavigator(
   },
   {
     navigationOptions: defaultNavigationOptions,
-    cardStyle: { backgroundColor: colors.MAIN_BACKGROUND_COLOR },
+    cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
     initialRouteName: 'Screens',
   }
 );

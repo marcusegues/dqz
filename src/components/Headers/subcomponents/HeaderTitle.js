@@ -7,7 +7,6 @@ const HeaderTitle = ({ text }) => (
       fontSize: 18,
       color: '#1A1A1A',
       fontFamily: 'roboto_regular',
-      fontWeight: '300',
     }}
   >
     {text}
