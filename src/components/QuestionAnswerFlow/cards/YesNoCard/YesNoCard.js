@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View, Platform } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 
 import styles from './styles/YesNoCard';
