@@ -41,6 +41,10 @@ jobs:
           command: npm run test:coverage
 
        - run:
+          name: Install documentation.js
+          command: npm install -g documentation
+
+       - run:
           name: DocJS
           command: npm run doc:html
 
