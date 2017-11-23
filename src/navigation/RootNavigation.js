@@ -26,6 +26,12 @@ const RootStackNavigator = StackNavigator(
       screen: QuestionAnswerFlow,
       navigationOptions: () => ({
         title: `Waren deklarieren`,
+        headerStyle: {
+          paddingRight: 15,
+          paddingLeft: 15,
+          borderBottomWidth: 0,
+          backgroundColor: '#E6E6E6',
+        },
       }),
     },
     OnBoarding: {
@@ -50,6 +56,7 @@ const RootStackNavigator = StackNavigator(
         paddingLeft: 15,
         borderBottomWidth: 5,
         borderBottomColor: '#EA0000',
+        backgroundColor: '#E6E6E6',
       },
       headerTitleStyle: {},
     }),
