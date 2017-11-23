@@ -40,9 +40,17 @@ jobs:
           name: Jest
           command: npm run test:coverage
 
+       - run:
+          name: DocJS
+          command: npm run doc:html
+
        - store_artifacts:
           path: ~/project/coverage/lcov-report
           destination: coverage
+
+       - store_artifacts:
+          path: ~/project/docs
+          destination: docs
 
           #- run:
           #   name: Build!
