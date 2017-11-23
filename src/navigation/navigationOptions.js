@@ -1,5 +1,5 @@
 import React from 'react';
-import BackArrow from '../components/Headers/BackArrow';
+import BackArrow from '../components/Headers/subcomponents/BackArrow';
 import * as colors from '../styles/colors';
 
 export const defaultNavigationOptions = ({ navigation }) => ({

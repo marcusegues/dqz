@@ -59,25 +59,7 @@ const RootStackNavigator = StackNavigator(
     },
   },
   {
-<<<<<<< HEAD
     navigationOptions: defaultNavigationOptions,
-=======
-    navigationOptions: navigation => ({
-      // header: null,
-      headerLeft: <HeaderLeft />,
-      headerRight: <HeaderRight />,
-      headerTitle: <HeaderTitle />,
-
-      headerStyle: {
-        paddingRight: 15,
-        paddingLeft: 15,
-        borderBottomWidth: 5,
-        borderBottomColor: '#EA0000',
-        backgroundColor: '#E6E6E6',
-      },
-      headerTitleStyle: {},
-    }),
->>>>>>> develop
     cardStyle: { backgroundColor: colors.MAIN_BACKGROUND_COLOR },
     initialRouteName: 'Screens',
   }

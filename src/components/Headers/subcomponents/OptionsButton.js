@@ -8,7 +8,7 @@ const OptionsButton = () => (
       // navigation.navigate('DrawerToggle');
     }}
   >
-    <Ionicons name="ios-menu" size={30} style={{}} />
+    <Ionicons name="ios-menu" size={30} />
   </Touchable>
 );
 
