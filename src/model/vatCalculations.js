@@ -22,6 +22,7 @@ import {
   makeVatReportRecord,
 } from './types/calculationTypes';
 import type { Category } from './types/basketPeopleTypes';
+import { rounding } from './utils';
 
 /**
  * For TESTING only
@@ -39,7 +40,7 @@ export const vatByCategory = (
       const largeAmounts: number = basket
         .getIn([c, 'volume', 'amountsLarge'], Immutable.List())
         .reduce((a, v) => a + v, 0);
-      m.set(c, rate * (largeAmounts + normalAmounts));
+      m.set(c, rounding(rate * (largeAmounts + normalAmounts)));
     });
   });
 };
@@ -155,7 +156,7 @@ export const calculateVatLargeItems = (
     ImmutableListType<number>
   > = allItems.get('large');
   return largeItems.reduce(
-    (acc, v, k) => acc + k * v.reduce((a, v) => a + v, 0),
+    (acc, v, k) => acc + rounding(k * v.reduce((a, v) => a + v, 0)),
     0
   );
 };
@@ -171,7 +172,7 @@ export const calculateVatNormalItems = (
     ImmutableListType<number>
   > = allItems.get('normal');
   return largeItems.reduce(
-    (acc, v, k) => acc + k * v.reduce((a, v) => a + v, 0),
+    (acc, v, k) => acc + rounding(k * v.reduce((a, v) => a + v, 0)),
     0
   );
 };

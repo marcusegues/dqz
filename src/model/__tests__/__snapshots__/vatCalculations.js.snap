@@ -2,7 +2,7 @@
 
 exports[`VAT Calculations it calculates vat by category 1`] = `
 Immutable.Map {
-  "Butter": 16.558500000000002,
+  "Butter": 16.55,
   "Oils": 0,
   "Cigarettes": 0,
   "AlcSoft": 0,
@@ -10,10 +10,10 @@ Immutable.Map {
   "AlcHard": 0,
   "Meds": 0,
   "Books": 0,
-  "Meat": 1.075,
+  "Meat": 1.1,
   "OtherFood": 0,
   "Other": 0,
-  "Tobacco": 447.92,
+  "Tobacco": 447.9,
   "Flowers": 0,
   "AnimalFeed": 0,
   "Magazines": 0,
@@ -22,7 +22,7 @@ Immutable.Map {
 
 exports[`VAT Calculations it calculates vat by category 2`] = `
 Immutable.Map {
-  "Butter": 38.43350000000001,
+  "Butter": 38.45,
   "Oils": 0,
   "Cigarettes": 0,
   "AlcSoft": 0,
@@ -30,10 +30,10 @@ Immutable.Map {
   "AlcHard": 0,
   "Meds": 0,
   "Books": 0,
-  "Meat": 1.075,
+  "Meat": 1.1,
   "OtherFood": 0,
   "Other": 0,
-  "Tobacco": 447.92,
+  "Tobacco": 447.9,
   "Flowers": 0,
   "AnimalFeed": 0,
   "Magazines": 0,
@@ -42,9 +42,9 @@ Immutable.Map {
 
 exports[`VAT Calculations it creates a correct vat summary 1`] = `
 Immutable.Record {
-  "totalVat": 465.55350000000004,
+  "totalVat": 465.54999999999995,
   "vatByCategoryRaw": Immutable.Map {
-    "Butter": 16.558500000000002,
+    "Butter": 16.55,
     "Oils": 0,
     "Cigarettes": 0,
     "AlcSoft": 0,
@@ -52,10 +52,10 @@ Immutable.Record {
     "AlcHard": 0,
     "Meds": 0,
     "Books": 0,
-    "Meat": 1.075,
+    "Meat": 1.1,
     "OtherFood": 0,
     "Other": 0,
-    "Tobacco": 447.92,
+    "Tobacco": 447.9,
     "Flowers": 0,
     "AnimalFeed": 0,
     "Magazines": 0,
@@ -65,9 +65,9 @@ Immutable.Record {
 
 exports[`VAT Calculations it creates a correct vat summary 2`] = `
 Immutable.Record {
-  "totalVat": 487.42850000000004,
+  "totalVat": 487.44999999999993,
   "vatByCategoryRaw": Immutable.Map {
-    "Butter": 38.43350000000001,
+    "Butter": 38.45,
     "Oils": 0,
     "Cigarettes": 0,
     "AlcSoft": 0,
@@ -75,10 +75,10 @@ Immutable.Record {
     "AlcHard": 0,
     "Meds": 0,
     "Books": 0,
-    "Meat": 1.075,
+    "Meat": 1.1,
     "OtherFood": 0,
     "Other": 0,
-    "Tobacco": 447.92,
+    "Tobacco": 447.9,
     "Flowers": 0,
     "AnimalFeed": 0,
     "Magazines": 0,
@@ -526,19 +526,19 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 14`] = `
 Immutable.Record {
-  "totalVat": 53.431,
+  "totalVat": 53.45,
   "vatByCategoryRaw": Immutable.Map {
-    "Butter": 0.595,
+    "Butter": 0.6,
     "Oils": 0,
     "Cigarettes": 0,
-    "AlcSoft": 7.616,
+    "AlcSoft": 7.6,
     "Fertilizer": 0,
     "AlcHard": 0,
     "Meds": 0,
     "Books": 0,
-    "Meat": 7.14,
+    "Meat": 7.15,
     "OtherFood": 0,
-    "Other": 38.08,
+    "Other": 38.1,
     "Tobacco": 0,
     "Flowers": 0,
     "AnimalFeed": 0,
@@ -549,19 +549,19 @@ Immutable.Record {
 
 exports[`VAT Calculations it works with EZV examples 15`] = `
 Immutable.Record {
-  "totalVat": 12.135,
+  "totalVat": 12.15,
   "vatByCategoryRaw": Immutable.Map {
-    "Butter": 0.595,
+    "Butter": 0.6,
     "Oils": 0,
     "Cigarettes": 0,
     "AlcSoft": 0,
     "Fertilizer": 0,
-    "AlcHard": 4.76,
+    "AlcHard": 4.75,
     "Meds": 0,
     "Books": 0,
-    "Meat": 1.19,
-    "OtherFood": 10.412500000000001,
-    "Other": 19.04,
+    "Meat": 1.2,
+    "OtherFood": 10.4,
+    "Other": 19.05,
     "Tobacco": 0,
     "Flowers": 0,
     "AnimalFeed": 0,
