@@ -1,7 +1,7 @@
 // @flow
 
 import type { Category } from '../../model/types/basketPeopleTypes';
-
+import type { MainCategory } from '../reducers/declaration';
 export type Action =
   // declaration
   | {
@@ -18,4 +18,20 @@ export type Action =
     type: 'DECLARATION_MINORS_CHANGE_QUANTITY',
     category: Category,
     quantityChange: number,
+  }
+  | {
+    type: 'DECLARATION_SET_OVER_ALLOWANCE_TRUE',
+  }
+  | {
+    type: 'DECLARATION_SET_OVER_ALLOWANCE_FALSE',
+  }
+  | {
+    type: 'DECLARATION_SET_LARGE_AMOUNTS_TRUE',
+  }
+  | {
+    type: 'DECLARATION_SET_LARGE_AMOUNTS_FALSE',
+  }
+  | {
+    type: 'DECLARATION_ADD_MAIN_CATEGORY',
+    category: MainCategory,
   };

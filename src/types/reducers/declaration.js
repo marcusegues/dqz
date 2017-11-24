@@ -19,7 +19,7 @@ export type MainCategory =
 
 type MainCategoriesType = ImmutableSetType<MainCategory>;
 
-const MainCategories: MainCategoriesType = Immutable.Set.of(
+export const MainCategories: MainCategoriesType = Immutable.Set.of(
   'Foods',
   'Alcohol',
   'TobaccoProducts',

@@ -1,6 +1,6 @@
 // @flow
-import { getInitialState } from '../types/reducers/declaration';
-import type { State } from '../types/reducers/declaration';
+import { getInitialState, MainCategories } from '../types/reducers/declaration';
+import type { State, MainCategory } from '../types/reducers/declaration';
 import type { Action } from '../types/actions';
 import type {
   Basket,
@@ -9,6 +9,7 @@ import type {
 } from '../model/types/basketPeopleTypes';
 import { makePeopleRecord } from '../model/types/basketPeopleTypes';
 import * as fromModelApi from '../model/configurationApi';
+
 const declaration = (
   state: State = getInitialState(),
   action: Action
@@ -71,6 +72,30 @@ const declaration = (
       return state.setIn(
         ['settings', 'people'],
         fromModelApi.setMinorPeople(people, quantity)
+      );
+    }
+    case 'DECLARATION_SET_OVER_ALLOWANCE_TRUE': {
+      return state.setIn(['settings', 'overAllowance'], true);
+    }
+    case 'DECLARATION_SET_OVER_ALLOWANCE_FALSE': {
+      return state.setIn(['settings', 'overAllowance'], false);
+    }
+    case 'DECLARATION_SET_LARGE_AMOUNTS_TRUE': {
+      return state.setIn(['settings', 'largeAmounts'], true);
+    }
+    case 'DECLARATION_SET_LARGE_AMOUNTS_FALSE': {
+      return state.setIn(['settings', 'largeAmounts'], false);
+    }
+    case 'DECLARATION_ADD_MAIN_CATEGORY': {
+      const category: MainCategory = action.category;
+      return state.updateIn(['settings', 'mainCategories'], mainCategories =>
+        mainCategories.add(category)
+      );
+    }
+    case 'DECLARATION_REMOVE_MAIN_CATEGORY': {
+      const category: MainCategory = action.category;
+      return state.updateIn(['settings', 'mainCategories'], mainCategories =>
+        mainCategories.delete(category)
       );
     }
     default: {
