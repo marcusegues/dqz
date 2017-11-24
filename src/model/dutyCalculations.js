@@ -24,7 +24,7 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
     number
   > = Immutable.Map().withMutations(r => {
     CategoriesArray.forEach(c => {
-      const quantityRaw: number = basket.getIn([c, 'volume', 'quantity'], 0);
+      const quantityRaw: number = getQuantity(basket, c);
       let allowanceRaw: number = CategoriesRates.getIn([c, 'dutyAllowance'], 0);
       const dutyDependency: ?Category = CategoriesRates.getIn(
         [c, 'dutyAllowanceDependency'],
@@ -54,7 +54,10 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
       } else {
         const fee = duty.reduce((acc, v) => {
           const tempQuantity = Math.max(0, quantity - allowanceRunningTotal);
-          const thresholdThisBracket = v.get('threshold');
+          let thresholdThisBracket: number = v.get('threshold', 0);
+          if (thresholdThisBracket !== Infinity) {
+            thresholdThisBracket = peopleCount * v.get('threshold', 0);
+          }
           const bracketWidth = thresholdThisBracket - allowanceRunningTotal;
           const inThisBracket = Math.min(bracketWidth, tempQuantity);
           allowanceRunningTotal += bracketWidth;

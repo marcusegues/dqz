@@ -8,6 +8,9 @@ import questionAnswer from './questionAnswer';
 import { View, Text } from 'react-native';
 
 export default class QuestionAnswerFlow extends React.Component {
+  static navigationOptions = {
+    title: 'Great',
+  };
   constructor(props) {
     super(props);
     this.root = root;
