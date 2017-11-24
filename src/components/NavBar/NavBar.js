@@ -35,12 +35,15 @@ export default NavBar;
 
 const ownStyles = {
   locatorContainer: {
-    flex: 0.07,
+    // flex: 1,
+    // flex: 0.07,
     width: '95%',
     flexDirection: 'row',
     alignItems: 'center',
+    alignSelf: 'center',
     justifyContent: 'space-around',
     marginVertical: verticalScale(15),
+    paddingVertical: 10,
     paddingHorizontal: scale(15),
     borderRadius: 7,
     backgroundColor: '#4A4A4A',
