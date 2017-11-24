@@ -112,7 +112,7 @@ export default class AppModal extends Component {
           }}
           style={{
             alignSelf: 'center',
-            backgroundColor: '#DC0018',
+            backgroundColor: '#4A4A4A',
             padding: 16,
             marginTop: 20,
           }}
