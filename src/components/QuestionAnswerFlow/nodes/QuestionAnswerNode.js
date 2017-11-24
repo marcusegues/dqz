@@ -10,4 +10,8 @@ export default class Node {
     node.parent = this;
     return node;
   }
+
+  getNextNodes() {
+    return this.next;
+  }
 }

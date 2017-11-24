@@ -19,7 +19,7 @@ export default (questionAnswer = {
       confirmMultiplePersons: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'human-male-female',
           status: require('../../../assets/images/complete.png'),
         },
         children: <PeopleInfoContainer />,
@@ -48,11 +48,7 @@ export default (questionAnswer = {
           mainIcon: 'flight-takeoff',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>{`No, not above 300.`}</Text>
-          </View>
-        ),
+        children: <OverAllowanceInfoContainer />,
       },
       yes: {
         type: AnswerCard,
@@ -60,11 +56,7 @@ export default (questionAnswer = {
           mainIcon: 'flight-takeoff',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>{`Yes, above 300.`}</Text>
-          </View>
-        ),
+        children: <OverAllowanceInfoContainer />,
       },
     },
   },
@@ -83,11 +75,7 @@ export default (questionAnswer = {
           mainIcon: 'flight-takeoff',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>{`No High Value Items`}</Text>
-          </View>
-        ),
+        children: <LargeAmountInfo />,
       },
       yes: {
         type: AnswerCard,
@@ -95,11 +83,7 @@ export default (questionAnswer = {
           mainIcon: 'flight-takeoff',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>{`Yes High Value Items`}</Text>
-          </View>
-        ),
+        children: <LargeAmountInfo />,
       },
     },
   },
@@ -115,11 +99,7 @@ export default (questionAnswer = {
           mainIcon: 'flight-takeoff',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>{`No not over allowance.`}</Text>
-          </View>
-        ),
+        children: <OverAllowanceInfoContainer />,
       },
       yes: {
         type: AnswerCard,
@@ -127,11 +107,7 @@ export default (questionAnswer = {
           mainIcon: 'flight-takeoff',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>{`Yes over allowance.`}</Text>
-          </View>
-        ),
+        children: <OverAllowanceInfoContainer />,
       },
     },
   },
@@ -147,11 +123,7 @@ export default (questionAnswer = {
           mainIcon: 'flight-takeoff',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>{`No not over allowance.`}</Text>
-          </View>
-        ),
+        children: OverAllowanceInfoContainer,
       },
       yes: {
         type: AnswerCard,
@@ -159,11 +131,31 @@ export default (questionAnswer = {
           mainIcon: 'flight-takeoff',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>{`Yes over allowance.`}</Text>
-          </View>
-        ),
+        children: <OverAllowanceInfoContainer />,
+      },
+    },
+  },
+  5: {
+    question: {
+      type: MainCategoriesInputContainer,
+      props: {},
+    },
+    answers: {
+      no: {
+        type: AnswerCard,
+        props: {
+          mainIcon: 'flight-takeoff',
+          status: require('../../../assets/images/complete.png'),
+        },
+        children: <MainCategoriesInfoContainer />,
+      },
+      yes: {
+        type: AnswerCard,
+        props: {
+          mainIcon: 'flight-takeoff',
+          status: require('../../../assets/images/complete.png'),
+        },
+        children: <MainCategoriesInfoContainer />,
       },
     },
   },

@@ -1,8 +1,8 @@
 import YesNoNode from './nodes/YesNoNode';
-import Node from './nodes/Node';
+import QuestionAnswerNode from './nodes/QuestionAnswerNode';
 import ConfirmationNode from './nodes/ConfirmationNode';
 
-const root = new Node(0);
+const root = new QuestionAnswerNode(0);
 const largeItems = new YesNoNode(2);
 const overAllowanceSinglePerson = new YesNoNode(1);
 root.insertNext('confirmMultiplePersons', largeItems);

@@ -1,6 +1,6 @@
-import Node from './Node';
+import QuestionAnswerNode from './QuestionAnswerNode';
 
-export default class ConfirmationNode extends Node {
+export default class ConfirmationNode extends QuestionAnswerNode {
   constructor(questionAnswerIdx, parent = null, confirm = null) {
     super(questionAnswerIdx, parent);
     this.next = {

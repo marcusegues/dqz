@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
-import * as fromModelApi from '../../../../../model/configurationApi';
+import { getDeclarationPeople } from '../../../../../reducers';
+import {
+  getAdultPeople,
+  getMinorPeople,
+} from '../../../../../model/configurationApi';
 
 class PeopleInfoContainer extends React.Component {
   render() {
-    const adults = fromModelApi.getAdultPeople(this.props.people);
-    const minors = fromModelApi.getMinorPeople(this.props.people);
+    const adults = getAdultPeople(this.props.people);
+    const minors = getMinorPeople(this.props.people);
     return (
       <View>
         {adults ? <Text>{`${adults} Erwachsene`}</Text> : null}
@@ -17,7 +21,7 @@ class PeopleInfoContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  people: state.declaration.get('people'),
+  people: getDeclarationpeople(state),
 });
 
 const mapDispatchToProps = dispatch => ({});

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
 import YesNoCard from '../YesNoCard';
+import { getDeclarationPeople } from '../../../../../reducers';
 import * as fromModelApi from '../../../../../model/configurationApi';
 
 class OverAllowanceContainer extends React.Component {
@@ -25,7 +26,11 @@ class OverAllowanceContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  people: state.declaration.get('people'),
+  people: getDeclarationPeople(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+  setOverAllowance,
 });
 
 export default connect(mapStateToProps, null)(OverAllowanceContainer);

@@ -7,8 +7,8 @@ import type {
   Category,
   People,
 } from '../model/types/basketPeopleTypes';
+import { makePeopleRecord } from '../model/types/basketPeopleTypes';
 import * as fromModelApi from '../model/configurationApi';
-
 const declaration = (
   state: State = getInitialState(),
   action: Action
@@ -28,36 +28,48 @@ const declaration = (
       );
     }
     case 'DECLARATION_ADULTS_CHANGE_QUANTITY': {
-      const people: People = state.get('people');
+      const people: People = state.getIn(
+        ['settings', 'people'],
+        makePeopleRecord()
+      );
       const adults: number = people.get('adults');
       const quantity: number = adults + action.quantityChange;
       return state.setIn(
-        ['people'],
+        ['settings', 'people'],
         fromModelApi.setAdultPeople(people, quantity)
       );
     }
     case 'DECLARATION_MINORS_CHANGE_QUANTITY': {
-      const people: People = state.get('people');
+      const people: People = state.getIn(
+        ['settings', 'people'],
+        makePeopleRecord()
+      );
       const minors: number = people.get('minors');
       const quantity: number = minors + action.quantityChange;
       return state.setIn(
-        ['people'],
+        ['settings', 'people'],
         fromModelApi.setMinorPeople(people, quantity)
       );
     }
     case 'DECLARATION_ADULTS_SET_QUANTITY': {
-      const people: People = state.get('people');
+      const people: People = state.getIn(
+        ['settings', 'people'],
+        makePeopleRecord()
+      );
       const quantity: number = action.quantity;
       return state.setIn(
-        ['people'],
+        ['settings', 'people'],
         fromModelApi.setAdultPeople(people, quantity)
       );
     }
     case 'DECLARATION_MINORS_SET_QUANTITY': {
-      const people: People = state.get('people');
+      const people: People = state.getIn(
+        ['settings', 'people'],
+        makePeopleRecord()
+      );
       const quantity: number = action.quantity;
       return state.setIn(
-        ['people'],
+        ['settings', 'people'],
         fromModelApi.setMinorPeople(people, quantity)
       );
     }
@@ -68,3 +80,6 @@ const declaration = (
 };
 
 export default declaration;
+
+export const getDeclarationPeople = (state: State): People =>
+  state.getIn(['settings', 'people'], makePeopleRecord());

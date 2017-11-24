@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
 import PeopleInput from './PeopleInput';
+import { getDeclarationPeople } from '../../../../../reducers';
 import * as fromModelApi from '../../../../../model/configurationApi';
 
 class PeopleInputContainer extends React.Component {
@@ -98,7 +99,7 @@ class PeopleInputContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  people: state.declaration.get('people'),
+  people: getDeclarationPeople(state),
 });
 
 const mapDispatchToProps = dispatch => ({

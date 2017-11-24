@@ -3,7 +3,7 @@ import Immutable from 'immutable';
 import Touchable from 'react-native-platform-touchable';
 import YesNoCard from './cards/YesNoCard/YesNoCard';
 import { v4 } from 'uuid';
-import { root } from './nodeTree';
+import { root } from './questionAnswerTree';
 import questionAnswer from './questionAnswer';
 import { View, Text } from 'react-native';
 
