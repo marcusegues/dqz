@@ -31,7 +31,7 @@ const declaration = (
     case 'DECLARATION_ADULTS_CHANGE_QUANTITY': {
       const people: People = state.getIn(
         ['settings', 'people'],
-        makePeopleRecord()
+        makePeopleRecord() // why do I need to provide this argument?
       );
       const adults: number = people.get('adults');
       const quantity: number = adults + action.quantityChange;
@@ -80,14 +80,14 @@ const declaration = (
     case 'DECLARATION_SET_OVER_ALLOWANCE_FALSE': {
       return state.setIn(['settings', 'overAllowance'], false);
     }
-    case 'DECLARATION_SET_LARGE_AMOUNTS_TRUE': {
-      return state.setIn(['settings', 'largeAmounts'], true);
+    case 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE': {
+      return state.setIn(['settings', 'largeAmountPresent'], true);
     }
-    case 'DECLARATION_SET_LARGE_AMOUNTS_FALSE': {
-      return state.setIn(['settings', 'largeAmounts'], false);
+    case 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE': {
+      return state.setIn(['settings', 'largeAmountPresent'], false);
     }
     case 'DECLARATION_ADD_MAIN_CATEGORY': {
-      const category: MainCategory = action.category;
+      const category: MainCategory = action.category; // why can't I omit the declaration and pass directly into add?
       return state.updateIn(['settings', 'mainCategories'], mainCategories =>
         mainCategories.add(category)
       );
@@ -108,3 +108,9 @@ export default declaration;
 
 export const getDeclarationPeople = (state: State): People =>
   state.getIn(['settings', 'people'], makePeopleRecord());
+
+export const getOverAllowance = (state: State): boolean =>
+  state.getIn(['settings', 'overAllowance'], true); // why do I need a default value here
+
+export const getLargeAmountPresent = (state: State): boolean =>
+  state.getIn(['settings', 'largeAmountPresent'], true);

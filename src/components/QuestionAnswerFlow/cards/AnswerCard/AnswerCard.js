@@ -1,10 +1,15 @@
 import React from 'react';
 import { Image, View, Text, StyleSheet } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const AnswerCard = ({ mainIcon, status, children }) => (
   <View style={styles.container}>
-    <MaterialIcons name={mainIcon} size={34} style={{}} color="#9B9B9B" />
+    <MaterialCommunityIcons
+      name={mainIcon}
+      size={34}
+      style={{}}
+      color="#9B9B9B"
+    />
     <View style={{ flex: 0.7 }}>{children}</View>
     <Image
       source={status}

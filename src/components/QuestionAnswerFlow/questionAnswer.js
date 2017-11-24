@@ -6,6 +6,10 @@ import ConfirmationCard from './cards/ConfirmationCard/ConfirmationCard';
 import PeopleInfoContainer from './cards/AnswerCard/children/PeopleInfoContainer';
 import PeopleInputContainer from './cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OverAllowanceContainer from './cards/YesNoCard/OverAllowance/OverAllowanceContainer';
+import OverAllowanceInfoContainer from './cards/AnswerCard/children/OverAllowanceInfoContainer';
+import LargeAmountPresentContainer from './cards/YesNoCard/LargeAmountPresent/LargeAmountPresentContainer';
+import LargeAmountInfoContainer from './cards/AnswerCard/children/LargeAmountInfoContainer';
+
 export default (questionAnswer = {
   0: {
     question: {
@@ -19,7 +23,7 @@ export default (questionAnswer = {
       confirmMultiplePersons: {
         type: AnswerCard,
         props: {
-          mainIcon: 'human-male-female',
+          mainIcon: 'account-multiple',
           status: require('../../../assets/images/complete.png'),
         },
         children: <PeopleInfoContainer />,
@@ -27,7 +31,7 @@ export default (questionAnswer = {
       confirmSinglePerson: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'account',
           status: require('../../../assets/images/complete.png'),
         },
         children: <PeopleInfoContainer />,
@@ -36,16 +40,14 @@ export default (questionAnswer = {
   },
   1: {
     question: {
-      type: YesNoCard,
-      props: {
-        text: 'Übersteigt der Gesamtwert aller Waren CHF 300?',
-      },
+      type: OverAllowanceContainer,
+      props: {},
     },
     answers: {
       no: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'cellphone',
           status: require('../../../assets/images/complete.png'),
         },
         children: <OverAllowanceInfoContainer />,
@@ -53,7 +55,7 @@ export default (questionAnswer = {
       yes: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'cellphone',
           status: require('../../../assets/images/complete.png'),
         },
         children: <OverAllowanceInfoContainer />,
@@ -62,41 +64,37 @@ export default (questionAnswer = {
   },
   2: {
     question: {
-      type: YesNoCard,
-      props: {
-        text:
-          'Ist bei Ihren Waren ein Gegenstand dabei, welcher mehr als CHF 300,- Wert ist?',
-      },
+      type: LargeAmountPresentContainer,
     },
     answers: {
       no: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'cash-multiple',
           status: require('../../../assets/images/complete.png'),
         },
-        children: <LargeAmountInfo />,
+        children: <LargeAmountInfoContainer />,
       },
       yes: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'account',
           status: require('../../../assets/images/complete.png'),
         },
-        children: <LargeAmountInfo />,
+        children: <LargeAmountInfoContainer />,
       },
     },
   },
   3: {
     question: {
       type: OverAllowanceContainer,
-      props: {},
+      props: { exceptLast: true },
     },
     answers: {
       no: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'cctv',
           status: require('../../../assets/images/complete.png'),
         },
         children: <OverAllowanceInfoContainer />,
@@ -104,7 +102,7 @@ export default (questionAnswer = {
       yes: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'cctv',
           status: require('../../../assets/images/complete.png'),
         },
         children: <OverAllowanceInfoContainer />,
@@ -120,43 +118,43 @@ export default (questionAnswer = {
       no: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'cat',
           status: require('../../../assets/images/complete.png'),
         },
-        children: OverAllowanceInfoContainer,
+        children: <OverAllowanceInfoContainer />,
       },
       yes: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'cat',
           status: require('../../../assets/images/complete.png'),
         },
         children: <OverAllowanceInfoContainer />,
       },
     },
   },
-  5: {
-    question: {
-      type: MainCategoriesInputContainer,
-      props: {},
-    },
-    answers: {
-      no: {
-        type: AnswerCard,
-        props: {
-          mainIcon: 'flight-takeoff',
-          status: require('../../../assets/images/complete.png'),
-        },
-        children: <MainCategoriesInfoContainer />,
-      },
-      yes: {
-        type: AnswerCard,
-        props: {
-          mainIcon: 'flight-takeoff',
-          status: require('../../../assets/images/complete.png'),
-        },
-        children: <MainCategoriesInfoContainer />,
-      },
-    },
-  },
+  // 5: {
+  //   question: {
+  //     type: MainCategoriesInputContainer,
+  //     props: {},
+  //   },
+  //   answers: {
+  //     no: {
+  //       type: AnswerCard,
+  //       props: {
+  //         mainIcon: 'flight-takeoff',
+  //         status: require('../../../assets/images/complete.png'),
+  //       },
+  //       children: <MainCategoriesInfoContainer />,
+  //     },
+  //     yes: {
+  //       type: AnswerCard,
+  //       props: {
+  //         mainIcon: 'flight-takeoff',
+  //         status: require('../../../assets/images/complete.png'),
+  //       },
+  //       children: <MainCategoriesInfoContainer />,
+  //     },
+  //   },
+  // },
 });

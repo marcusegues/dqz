@@ -5,7 +5,7 @@ import YesNoCard from '../YesNoCard';
 import { getDeclarationPeople } from '../../../../../reducers';
 import * as fromModelApi from '../../../../../model/configurationApi';
 
-class OverAllowanceContainer extends React.Component {
+class LargeAmountPresentContainer extends React.Component {
   constructor(props) {
     super(props);
     this.handleAnswerYes = this.handleAnswerYes.bind(this);
@@ -13,24 +13,13 @@ class OverAllowanceContainer extends React.Component {
   }
 
   handleAnswerYes() {
-    this.props.declarationSetOverAllowanceTrue();
+    this.props.declarationSetLargeAmountPresentTrue();
     this.props.onAnswerYes();
   }
 
   handleAnswerNo() {
-    this.props.declarationSetOverAllowanceFalse();
+    this.props.declarationSetLargeAmountPresentFalse();
     this.props.onAnswerNo();
-  }
-
-  questionText() {
-    const { people, exceptLast } = this.props;
-    const totalPeople =
-      fromModelApi.getAdultPeople(people) + fromModelApi.getMinorPeople(people);
-
-    if (exceptLast) {
-      return `Is the rest above ${(totalPeople - 1) * 300}?`;
-    }
-    return `Übersteigt der Gesamtwert aller Waren CHF ${totalPeople * 300}?`;
   }
 
   render() {
@@ -38,7 +27,9 @@ class OverAllowanceContainer extends React.Component {
       <YesNoCard
         onAnswerYes={this.handleAnswerYes}
         onAnswerNo={this.handleAnswerNo}
-        text={this.questionText()}
+        text={
+          'Ist bei Ihren Waren ein Gegenstand dabei, welcher mehr als CHF 300,- Wert ist?'
+        }
       />
     );
   }
@@ -49,12 +40,12 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  declarationSetOverAllowanceTrue: () =>
-    dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_TRUE' }),
-  declarationSetOverAllowanceFalse: () =>
-    dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_FALSE' }),
+  declarationSetLargeAmountPresentTrue: () =>
+    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE' }),
+  declarationSetLargeAmountPresentFalse: () =>
+    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  OverAllowanceContainer
+  LargeAmountPresentContainer
 );

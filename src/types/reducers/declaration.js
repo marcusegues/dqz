@@ -29,14 +29,14 @@ export const MainCategories: MainCategoriesType = Immutable.Set.of(
 type Settings = {
   people: People,
   overAllowance: boolean,
-  largeAmounts: boolean,
+  largeAmountPresent: boolean,
   mainCategories: MainCategoriesType,
 };
 
 const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
   people: makePeopleRecord(),
   overAllowance: true,
-  largeAmounts: true,
+  largeAmountPresent: true,
   mainCategories: MainCategories,
 });
 

@@ -21,7 +21,7 @@ class PeopleInfoContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  people: getDeclarationpeople(state),
+  people: getDeclarationPeople(state),
 });
 
 const mapDispatchToProps = dispatch => ({});
