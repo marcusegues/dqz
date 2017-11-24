@@ -69,11 +69,14 @@ export default class QuestionAnswerFlow extends React.Component {
         [this.current.answer]: { type, props: { ...props }, children },
       },
     } = questionAnswer[questionAnswerIdx];
-    const element = React.createElement(type, {
-      ...props,
-      children,
-      key: v4(),
-    });
+    const element = React.createElement(
+      type,
+      {
+        ...props,
+        key: v4(),
+      },
+      children.map(child => React.createElement(child, { key: v4() }, null))
+    );
     return element;
   }
 

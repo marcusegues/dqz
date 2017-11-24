@@ -5,8 +5,6 @@ import { getOverAllowance } from '../../../../../reducers';
 
 class OverAllowanceInfoContainer extends React.Component {
   render() {
-    console.log('fuck');
-    debugger;
     return (
       <View>
         <Text>{`${
