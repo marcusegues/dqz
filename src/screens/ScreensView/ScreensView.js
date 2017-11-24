@@ -10,7 +10,6 @@ const ScreensView = ({ navigation }) => {
           { key: `MainMenu` },
           { key: `QuestionAnswer` },
           { key: `GoodInputModal` },
-          { key: `AppModal` },
         ]}
         renderItem={({ item }) => (
           <Text
