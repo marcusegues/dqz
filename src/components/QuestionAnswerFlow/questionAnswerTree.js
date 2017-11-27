@@ -14,5 +14,8 @@ largeItems.insertNo(overAllowanceMultiplePersonsAllGoods);
 const chooseMainCategories = new ConfirmationNode(4);
 overAllowanceSinglePerson.insertYes(chooseMainCategories);
 overAllowanceSinglePerson.insertNo(chooseMainCategories);
-
+overAllowanceMultiplePersonsAllGoods.insertYes(chooseMainCategories);
+overAllowanceMultiplePersonsAllGoods.insertNo(chooseMainCategories);
+overAllowanceMultiplePersonsRestGoods.insertYes(chooseMainCategories);
+overAllowanceMultiplePersonsRestGoods.insertNo(chooseMainCategories);
 export { root };

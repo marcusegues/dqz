@@ -84,7 +84,6 @@ export default class QuestionAnswerFlow extends React.Component {
 
   onAnswer(answer) {
     this.current.answer = answer;
-    debugger;
     const elements = this.state.elements.withMutations(e => {
       e.pop();
       const answerElement = this.getCurrentElement();
