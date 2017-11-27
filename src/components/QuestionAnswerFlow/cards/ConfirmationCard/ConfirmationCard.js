@@ -18,7 +18,11 @@ const ConfirmationCard = ({ text, children, onAnswerConfirm }) => (
     <View style={ownStyles.blankView} />
 
     <View style={ownStyles.bottomButtonContainer}>
-      <RedButton text={`ÜBERNEHMEN`} onPress={onAnswerConfirm} />
+      <RedButton
+        text="ÜBERNEHMEN"
+        onPress={onAnswerConfirm}
+        style={{ flex: 1 }}
+      />
     </View>
   </View>
 );
@@ -66,6 +70,8 @@ const ownStyles = {
     alignItems: 'center',
   },
   bottomButtonContainer: {
+    // flex: 1,
+    width: '90%',
     flexDirection: 'row',
     borderColor: '#ddd',
     ...Platform.select({

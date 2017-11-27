@@ -6,6 +6,7 @@ import ConfirmationCard from './cards/ConfirmationCard/ConfirmationCard';
 import PeopleInfoContainer from './cards/AnswerCard/children/PeopleInfoContainer';
 import PeopleInputContainer from './cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OverAllowanceContainer from './cards/YesNoCard/OverAllowance/OverAllowanceContainer';
+
 export default (questionAnswer = {
   0: {
     question: {
@@ -39,6 +40,7 @@ export default (questionAnswer = {
       type: YesNoCard,
       props: {
         text: 'Übersteigt der Gesamtwert aller Waren CHF 300?',
+        text2: 'ICH BIN MIR NICHT SICHER',
       },
     },
     answers: {
@@ -50,7 +52,7 @@ export default (questionAnswer = {
         },
         children: (
           <View>
-            <Text>{`No, not above 300.`}</Text>
+            <Text>No, not above 300.</Text>
           </View>
         ),
       },
@@ -62,7 +64,7 @@ export default (questionAnswer = {
         },
         children: (
           <View>
-            <Text>{`Yes, above 300.`}</Text>
+            <Text>Yes, above 300.</Text>
           </View>
         ),
       },
@@ -74,6 +76,7 @@ export default (questionAnswer = {
       props: {
         text:
           'Ist bei Ihren Waren ein Gegenstand dabei, welcher mehr als CHF 300,- Wert ist?',
+        text2: 'ICH BIN MIR NICHT SICHER',
       },
     },
     answers: {
@@ -85,7 +88,7 @@ export default (questionAnswer = {
         },
         children: (
           <View>
-            <Text>{`No High Value Items`}</Text>
+            <Text>No High Value Items</Text>
           </View>
         ),
       },
@@ -97,7 +100,7 @@ export default (questionAnswer = {
         },
         children: (
           <View>
-            <Text>{`Yes High Value Items`}</Text>
+            <Text>Yes High Value Items</Text>
           </View>
         ),
       },
@@ -117,7 +120,7 @@ export default (questionAnswer = {
         },
         children: (
           <View>
-            <Text>{`No not over allowance.`}</Text>
+            <Text>No not over allowance.</Text>
           </View>
         ),
       },
@@ -129,7 +132,7 @@ export default (questionAnswer = {
         },
         children: (
           <View>
-            <Text>{`Yes over allowance.`}</Text>
+            <Text>Yes over allowance.</Text>
           </View>
         ),
       },
@@ -149,7 +152,7 @@ export default (questionAnswer = {
         },
         children: (
           <View>
-            <Text>{`No not over allowance.`}</Text>
+            <Text>No not over allowance.</Text>
           </View>
         ),
       },
@@ -161,7 +164,7 @@ export default (questionAnswer = {
         },
         children: (
           <View>
-            <Text>{`Yes over allowance.`}</Text>
+            <Text>Yes over allowance.</Text>
           </View>
         ),
       },

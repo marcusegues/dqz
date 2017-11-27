@@ -1,27 +1,25 @@
 import React from 'react';
-import { ScrollView, Text, View, Platform } from 'react-native';
+import { Text, View, Platform } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import * as colors from './../../styles/colors';
-import { scale, verticalScale, moderateScale } from '../../styles/Scaling';
+import { verticalScale, moderateScale } from '../../styles/Scaling';
 
-const RedButton = ({ text, onPress }) => (
-  <View style={ownStyles.bottomButtonContainer}>
-    <Touchable
-      onPress={onPress}
-      style={ownStyles.touchable}
-      background={Touchable.Ripple(colors.MAIN_RED)}
-    >
-      <Text style={ownStyles.touchableText}>{text}</Text>
-    </Touchable>
-  </View>
+const RedButton = ({ text, onPress, style }) => (
+  <Touchable
+    onPress={onPress}
+    style={[ownStyles.touchable, { ...style }]}
+    background={Touchable.Ripple(colors.MAIN_RED)}
+  >
+    <Text style={ownStyles.touchableText}>{text}</Text>
+  </Touchable>
 );
-export default RedButton;
+
 const ownStyles = {
   bottomButtonContainer: {
-    flex: 0.9,
+    // flex: 0.9,
     flexDirection: 'row',
     justifyContent: 'center',
-    alignContent: 'center',
+    // alignContent: 'center',
     borderRadius: 3,
     backgroundColor: colors.MAIN_RED,
     borderColor: '#ddd',
@@ -38,8 +36,20 @@ const ownStyles = {
     }),
   },
   touchable: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: colors.MAIN_RED,
+    borderRadius: 3,
+    ...Platform.select({
+      ios: {
+        shadowColor: 'black',
+        shadowOffset: { height: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
+      },
+      android: {
+        elevation: 5,
+      },
+    }),
   },
   touchableText: {
     fontSize: moderateScale(14),
@@ -50,3 +60,4 @@ const ownStyles = {
     paddingVertical: verticalScale(16),
   },
 };
+export default RedButton;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 import NavBar from '../../components/NavBar/NavBar';
+
 const ScreensView = ({ navigation }) => {
   return (
     <View style={{ marginTop: 5, flex: 1 }}>
