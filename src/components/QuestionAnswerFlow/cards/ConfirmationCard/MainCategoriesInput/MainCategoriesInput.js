@@ -6,20 +6,20 @@ import MinorInputRow from '../children/PeopleInputRow/configured/MinorInputRow';
 import MainCategoriesCheckList from '../children/MainCategoriesCheckList/MainCategoriesCheckList';
 
 const MainCategoriesInput = ({
-	mainCategories,
-	onToggleMainCategory,
-	onAnswerConfirm,
-	text,
+  mainCategories,
+  onToggleMainCategory,
+  onAnswerConfirm,
+  text,
 }) => {
-	console.log(mainCategories.toJS());
-	return (
-		<ConfirmationCard text={text} onAnswerConfirm={onAnswerConfirm}>
-			<MainCategoriesCheckList
-				mainCategories={mainCategories}
-				onToggleMainCategory={onToggleMainCategory}
-			/>
-		</ConfirmationCard>
-	);
+  console.log(mainCategories.toJS());
+  return (
+    <ConfirmationCard text={text} onAnswerConfirm={onAnswerConfirm}>
+      <MainCategoriesCheckList
+        mainCategories={mainCategories}
+        onToggleMainCategory={onToggleMainCategory}
+      />
+    </ConfirmationCard>
+  );
 };
 
 export default MainCategoriesInput;
