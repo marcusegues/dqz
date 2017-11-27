@@ -2,9 +2,9 @@ import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 // import Touchable from 'react-native-platform-touchable';
 import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
-import * as fromModelApi from '../../../../../model/configurationApi';
-import { moderateScale } from '../../../../../styles/Scaling';
-import * as colors from '../../../../../styles/colors';
+import * as fromModelApi from '../../../../../../model/configurationApi';
+import { moderateScale } from '../../../../../../styles/Scaling';
+import * as colors from '../../../../../../styles/colors';
 
 class PeopleInputRow extends React.Component {
   constructor(props) {

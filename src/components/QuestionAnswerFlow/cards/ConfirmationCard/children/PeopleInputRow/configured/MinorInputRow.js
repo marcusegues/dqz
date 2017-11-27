@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PeopleInputRow from '../PeopleInputRow';
-import * as fromModelApi from '../../../../../../model/configurationApi';
-import { moderateScale } from '../../../../../../styles/Scaling';
+import * as fromModelApi from '../../../../../../../model/configurationApi';
+import { moderateScale } from '../../../../../../../styles/Scaling';
 
 const MinorInputRow = ({ onAddMinor, onSubtractMinor, people }) => (
   <PeopleInputRow

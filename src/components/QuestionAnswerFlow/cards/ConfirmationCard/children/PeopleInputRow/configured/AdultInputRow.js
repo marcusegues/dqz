@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import PeopleInputRow from '../PeopleInputRow';
-import * as fromModelApi from '../../../../../../model/configurationApi';
+import * as fromModelApi from '../../../../../../../model/configurationApi';
 
 import { ownStyles } from './MinorInputRow';
 
