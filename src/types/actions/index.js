@@ -33,5 +33,5 @@ export type Action =
   }
   | {
     type: 'DECLARATION_ADD_MAIN_CATEGORY',
-    category: MainCategory,
+    mainCategory: MainCategory,
   };

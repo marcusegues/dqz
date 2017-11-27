@@ -8,7 +8,7 @@ const overAllowanceSinglePerson = new YesNoNode(1);
 root.insertNext('confirmMultiplePersons', largeItems);
 root.insertNext('confirmSinglePerson', overAllowanceSinglePerson);
 const overAllowanceMultiplePersonsRestGoods = new YesNoNode(3);
-const overAllowanceMultiplePersonsAllGoods = new YesNoNode(4);
+const overAllowanceMultiplePersonsAllGoods = new YesNoNode(1);
 largeItems.insertYes(overAllowanceMultiplePersonsRestGoods);
 largeItems.insertNo(overAllowanceMultiplePersonsAllGoods);
 

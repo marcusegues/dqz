@@ -109,30 +109,6 @@ export default (questionAnswer = {
       },
     },
   },
-  4: {
-    question: {
-      type: OverAllowanceContainer,
-      props: {},
-    },
-    answers: {
-      no: {
-        type: AnswerCard,
-        props: {
-          mainIcon: 'cat',
-          status: require('../../../assets/images/complete.png'),
-        },
-        children: [OverAllowanceInfoContainer],
-      },
-      yes: {
-        type: AnswerCard,
-        props: {
-          mainIcon: 'cat',
-          status: require('../../../assets/images/complete.png'),
-        },
-        children: [OverAllowanceInfoContainer],
-      },
-    },
-  },
   // 5: {
   //   question: {
   //     type: MainCategoriesInputContainer,

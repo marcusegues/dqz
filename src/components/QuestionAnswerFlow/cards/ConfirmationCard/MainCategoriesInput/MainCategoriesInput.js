@@ -4,12 +4,10 @@ import ConfirmationCard from '../ConfirmationCard';
 import AdultInputRow from '../children/PeopleInputRow/configured/AdultInputRow';
 import MinorInputRow from '../children/PeopleInputRow/configured/MinorInputRow';
 
-const PeopleInput = ({
-  people,
-  onAddAdult,
-  onSubtractAdult,
-  onAddMinor,
-  onSubtractMinor,
+const MainCategoriesInput = ({
+  mainCategories,
+  onAddMainCategory,
+  onRemoveMainCategory,
   onAnswerConfirm,
   text,
 }) => {
@@ -29,4 +27,4 @@ const PeopleInput = ({
   );
 };
 
-export default PeopleInput;
+export default MainCategoriesInput;

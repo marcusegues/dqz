@@ -15,3 +15,6 @@ export const getOverAllowance = state =>
 
 export const getLargeAmountPresent = state =>
   fromDeclaration.getLargeAmountPresent(state.declaration);
+
+export const getDeclarationMainCategories = state =>
+  fromDeclaration.getDeclarationMainCategories(state.declaration);

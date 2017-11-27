@@ -1,6 +1,10 @@
 // @flow
 import { getInitialState, MainCategories } from '../types/reducers/declaration';
-import type { State, MainCategory } from '../types/reducers/declaration';
+import type {
+  State,
+  MainCategory,
+  MainCategoriesType,
+} from '../types/reducers/declaration';
 import type { Action } from '../types/actions';
 import type {
   Basket,
@@ -87,15 +91,15 @@ const declaration = (
       return state.setIn(['settings', 'largeAmountPresent'], false);
     }
     case 'DECLARATION_ADD_MAIN_CATEGORY': {
-      const category: MainCategory = action.category; // why can't I omit the declaration and pass directly into add?
+      const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?
       return state.updateIn(['settings', 'mainCategories'], mainCategories =>
-        mainCategories.add(category)
+        mainCategories.add(mainCategory)
       );
     }
     case 'DECLARATION_REMOVE_MAIN_CATEGORY': {
-      const category: MainCategory = action.category;
+      const mainCategory: MainCategory = action.mainCategory;
       return state.updateIn(['settings', 'mainCategories'], mainCategories =>
-        mainCategories.delete(category)
+        mainCategories.delete(mainCategory)
       );
     }
     default: {
@@ -114,3 +118,7 @@ export const getOverAllowance = (state: State): boolean =>
 
 export const getLargeAmountPresent = (state: State): boolean =>
   state.getIn(['settings', 'largeAmountPresent'], true);
+
+export const getDeclarationMainCategories = (
+  state: State
+): MainCategoriesType => state.getIn(['settings', 'mainCategories']);
