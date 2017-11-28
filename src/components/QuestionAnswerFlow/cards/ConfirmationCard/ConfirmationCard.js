@@ -15,10 +15,8 @@ const ConfirmationCard = ({ text, children, onAnswerConfirm }) => (
     </View>
     <View style={ownStyles.bottomTextContainer}>{children}</View>
 
-    <View style={ownStyles.blankView} />
-
     <View style={ownStyles.bottomButtonContainer}>
-      <RedButton text={`ÜBERNEHMEN`} onPress={onAnswerConfirm} />
+      <RedButton text="ÜBERNEHMEN" onPress={onAnswerConfirm} />
     </View>
   </View>
 );
@@ -27,7 +25,8 @@ export default ConfirmationCard;
 const ownStyles = {
   contentContainer: {
     flex: 0.88,
-    justifyContent: 'flex-start',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
     width: '95%',
@@ -46,7 +45,7 @@ const ownStyles = {
     }),
   },
   mainTextContainer: {
-    flex: 0.65,
+    flex: 0.58,
     width: '95%',
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -61,26 +60,13 @@ const ownStyles = {
     color: '#141414',
   },
   bottomTextContainer: {
-    flex: 0.28,
+    flex: 0.27,
     justifyContent: 'center',
     alignItems: 'center',
   },
   bottomButtonContainer: {
-    flexDirection: 'row',
-    borderColor: '#ddd',
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: { height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-      },
-      android: {
-        elevation: 5,
-      },
-    }),
-  },
-  blankView: {
-    flex: 0.037,
+    flex: 0.14,
+    justifyContent: 'center',
+    width: '95%',
   },
 };
