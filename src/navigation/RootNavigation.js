@@ -11,7 +11,6 @@ import HeaderTitle from '../components/Headers/subcomponents/HeaderTitle';
 import MainScreenHeaderTitle from '../components/Headers/subcomponents/MainScreenHeaderTitle';
 import Logo from '../components/Headers/subcomponents/Logo';
 import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
-import GoodInputModal from '../components/GoodInputModal/GoodInputModal';
 
 import MainMenu from '../screens/MainMenu/MainMenu';
 
@@ -57,9 +56,6 @@ const RootStackNavigator = StackNavigator(
     },
     PeopleInput: {
       screen: PeopleInputContainer,
-    },
-    GoodInputModal: {
-      screen: GoodInputModal,
     },
   },
   {
