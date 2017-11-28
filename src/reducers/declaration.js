@@ -11,7 +11,6 @@ import type {
   Category,
   People,
 } from '../model/types/basketPeopleTypes';
-import { makePeopleRecord } from '../model/types/basketPeopleTypes';
 import * as fromModelApi from '../model/configurationApi';
 
 const declaration = (
