@@ -1,19 +1,18 @@
 import { combineReducers } from 'redux';
-import declaration from './declaration';
-import * as fromDeclaration from './declaration';
+import declaration, * as fromDeclaration from './declaration';
 
 const root = combineReducers({ declaration });
 
 export default root;
 
-export const getDutyForCategory = (state, categoryName) => {
-  return fromDeclaration.getDutyForCategory(state.declaration, categoryName);
-};
+export const getDeclarationPeople = state =>
+  fromDeclaration.getDeclarationPeople(state.declaration);
 
-export const getIconForCategory = (state, categoryName) => {
-  return fromDeclaration.getIconForCategory(state.declaration, categoryName);
-};
+export const getOverAllowance = state =>
+  fromDeclaration.getOverAllowance(state.declaration);
 
-export const getTotalDuty = state => {
-  return fromDeclaration.getTotalDuty(state.declaration);
-};
+export const getLargeAmountPresent = state =>
+  fromDeclaration.getLargeAmountPresent(state.declaration);
+
+export const getDeclarationMainCategories = state =>
+  fromDeclaration.getDeclarationMainCategories(state.declaration);

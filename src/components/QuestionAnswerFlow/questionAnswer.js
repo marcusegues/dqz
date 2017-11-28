@@ -1,3 +1,4 @@
+// file will be rewritten
 import React from 'react';
 import { View, Text } from 'react-native';
 import YesNoCard from './cards/YesNoCard/YesNoCard';
@@ -6,6 +7,11 @@ import ConfirmationCard from './cards/ConfirmationCard/ConfirmationCard';
 import PeopleInfoContainer from './cards/AnswerCard/children/PeopleInfoContainer';
 import PeopleInputContainer from './cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OverAllowanceContainer from './cards/YesNoCard/OverAllowance/OverAllowanceContainer';
+import OverAllowanceInfoContainer from './cards/AnswerCard/children/OverAllowanceInfoContainer';
+import LargeAmountPresentContainer from './cards/YesNoCard/LargeAmountPresent/LargeAmountPresentContainer';
+import LargeAmountInfoContainer from './cards/AnswerCard/children/LargeAmountInfoContainer';
+import MainCategoriesInputContainer from './cards/ConfirmationCard/MainCategoriesInput/MainCategoriesInputContainer';
+import MainCategoriesInfoContainer from './cards/AnswerCard/children/MainCategoriesInfoContainer';
 
 export default (questionAnswer = {
   0: {
@@ -20,153 +26,105 @@ export default (questionAnswer = {
       confirmMultiplePersons: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'account-multiple',
           status: require('../../../assets/images/complete.png'),
         },
-        children: <PeopleInfoContainer />,
+        children: [PeopleInfoContainer],
       },
       confirmSinglePerson: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'account',
           status: require('../../../assets/images/complete.png'),
         },
-        children: <PeopleInfoContainer />,
+        children: [PeopleInfoContainer],
       },
     },
   },
   1: {
     question: {
-      type: YesNoCard,
-      props: {
-        text: 'Übersteigt der Gesamtwert aller Waren CHF 300?',
-        text2: 'ICH BIN MIR NICHT SICHER',
-      },
+      type: OverAllowanceContainer,
+      props: {},
     },
     answers: {
       no: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'cellphone',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>No, not above 300.</Text>
-          </View>
-        ),
+        children: [OverAllowanceInfoContainer],
       },
       yes: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'cellphone',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>Yes, above 300.</Text>
-          </View>
-        ),
+        children: [OverAllowanceInfoContainer],
       },
     },
   },
   2: {
     question: {
-      type: YesNoCard,
-      props: {
-        text:
-          'Ist bei Ihren Waren ein Gegenstand dabei, welcher mehr als CHF 300,- Wert ist?',
-        text2: 'ICH BIN MIR NICHT SICHER',
-      },
+      type: LargeAmountPresentContainer,
     },
     answers: {
       no: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'cash-multiple',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>No High Value Items</Text>
-          </View>
-        ),
+        children: [LargeAmountInfoContainer],
       },
       yes: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'cash-multiple',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>Yes High Value Items</Text>
-          </View>
-        ),
+        children: [LargeAmountInfoContainer],
       },
     },
   },
   3: {
     question: {
       type: OverAllowanceContainer,
-      props: {},
+      props: { exceptLast: true },
     },
     answers: {
       no: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'crown',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>No not over allowance.</Text>
-          </View>
-        ),
+        children: [OverAllowanceInfoContainer],
       },
       yes: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'crown',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>Yes over allowance.</Text>
-          </View>
-        ),
+        children: [OverAllowanceInfoContainer],
       },
     },
   },
   4: {
     question: {
-      type: OverAllowanceContainer,
+      type: MainCategoriesInputContainer,
       props: {},
     },
     answers: {
-      no: {
+      confirm: {
         type: AnswerCard,
         props: {
-          mainIcon: 'flight-takeoff',
+          mainIcon: 'owl',
           status: require('../../../assets/images/complete.png'),
         },
-        children: (
-          <View>
-            <Text>No not over allowance.</Text>
-          </View>
-        ),
-      },
-      yes: {
-        type: AnswerCard,
-        props: {
-          mainIcon: 'flight-takeoff',
-          status: require('../../../assets/images/complete.png'),
-        },
-        children: (
-          <View>
-            <Text>Yes over allowance.</Text>
-          </View>
-        ),
+        children: [MainCategoriesInfoContainer],
       },
     },
   },

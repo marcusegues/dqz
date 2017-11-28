@@ -1,31 +1,59 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
 import YesNoCard from '../YesNoCard';
+import { getDeclarationPeople } from '../../../../../reducers';
 import * as fromModelApi from '../../../../../model/configurationApi';
 
 class OverAllowanceContainer extends React.Component {
   constructor(props) {
     super(props);
+    this.handleAnswerYes = this.handleAnswerYes.bind(this);
+    this.handleAnswerNo = this.handleAnswerNo.bind(this);
+  }
+
+  handleAnswerYes() {
+    this.props.declarationSetOverAllowanceTrue();
+    this.props.onAnswerYes();
+  }
+
+  handleAnswerNo() {
+    this.props.declarationSetOverAllowanceFalse();
+    this.props.onAnswerNo();
+  }
+
+  questionText() {
+    const { people, exceptLast } = this.props;
+    const totalPeople =
+      fromModelApi.getAdultPeople(people) + fromModelApi.getMinorPeople(people);
+
+    if (exceptLast) {
+      return `Is the rest above ${(totalPeople - 1) * 300}?`;
+    }
+    return `Übersteigt der Gesamtwert aller Waren CHF ${totalPeople * 300}?`;
   }
 
   render() {
-    const { people, onAnswerYes, onAnswerNo } = this.props;
-    const totalPeople =
-      fromModelApi.getAdultPeople(people) + fromModelApi.getMinorPeople(people);
     return (
       <YesNoCard
-        onAnswerYes={onAnswerYes}
-        onAnswerNo={onAnswerNo}
-        text={`Übersteigt der Gesamtwert aller Waren CHF ${(totalPeople - 1) *
-          300}?`}
+        onAnswerYes={this.handleAnswerYes}
+        onAnswerNo={this.handleAnswerNo}
+        text={this.questionText()}
       />
     );
   }
 }
 
 const mapStateToProps = state => ({
-  people: state.declaration.get('people'),
+  people: getDeclarationPeople(state),
 });
 
-export default connect(mapStateToProps, null)(OverAllowanceContainer);
+const mapDispatchToProps = dispatch => ({
+  declarationSetOverAllowanceTrue: () =>
+    dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_TRUE' }),
+  declarationSetOverAllowanceFalse: () =>
+    dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_FALSE' }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(
+  OverAllowanceContainer
+);

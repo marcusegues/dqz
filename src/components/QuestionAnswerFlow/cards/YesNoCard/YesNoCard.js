@@ -8,7 +8,7 @@ import {
   moderateScale,
 } from '../../../../styles/Scaling';
 
-const YesNoCard = ({ text, text2, onAnswerYes, onAnswerNo }) => (
+const YesNoCard = ({ text, onAnswerYes, onAnswerNo }) => (
   <View style={styles.contentContainer}>
     <View style={styles.mainTextContainer}>
       <Text style={styles.mainText}>{text}</Text>
@@ -17,7 +17,7 @@ const YesNoCard = ({ text, text2, onAnswerYes, onAnswerNo }) => (
       onPress={() => console.log('click')}
       style={ownStyles.notSureTouchable}
     >
-      <Text style={ownStyles.notSureText}>{text2}</Text>
+      <Text style={ownStyles.notSureText}>"ICH BIN MIR NICHT SICHER"</Text>
     </TouchableOpacity>
     <View style={ownStyles.buttonContainer}>
       <View style={{ flex: 0.49 }}>
