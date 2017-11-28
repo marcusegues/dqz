@@ -42,7 +42,7 @@ class ScreensView extends React.Component {
                   this.setState({ modalVisible: true });
                   return;
                 }
-                navigation.navigate(item.key);
+                this.props.navigation.navigate(item.key);
               }}
             >
               {item.key}
