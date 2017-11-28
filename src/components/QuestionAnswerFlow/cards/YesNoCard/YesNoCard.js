@@ -19,9 +19,13 @@ const YesNoCard = ({ text, text2, onAnswerYes, onAnswerNo }) => (
     >
       <Text style={ownStyles.notSureText}>{text2}</Text>
     </TouchableOpacity>
-    <View style={[styles.bottomButtonContainer, ownStyles.buttonContainer]}>
-      <RedButton onPress={onAnswerYes} text="JA" style={{ flex: 0.47 }} />
-      <RedButton onPress={onAnswerNo} text="NEIN" style={{ flex: 0.47 }} />
+    <View style={ownStyles.buttonContainer}>
+      <View style={{ flex: 0.49 }}>
+        <RedButton onPress={onAnswerYes} text="JA" />
+      </View>
+      <View style={{ flex: 0.49 }}>
+        <RedButton onPress={onAnswerNo} text="NEIN" />
+      </View>
     </View>
   </View>
 );
@@ -29,8 +33,9 @@ export default YesNoCard;
 
 const ownStyles = {
   buttonContainer: {
-    width: '90%',
+    flexDirection: 'row',
     justifyContent: 'space-between',
+    width: '95%',
     paddingVertical: verticalScale(20),
   },
   notSureTouchable: {
