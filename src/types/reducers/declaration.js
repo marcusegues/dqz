@@ -22,15 +22,12 @@ export type MainCategory =
 
 export type MainCategoriesType = ImmutableSetType<MainCategory>;
 
-export const MainCategories: MainCategoriesType = Immutable.Set.of(
+export const MainCategories: MainCategoriesType = Immutable.Set([
   'Foods',
   'Alcohol',
   'TobaccoProducts',
-  'OtherGoods'
-);
-
-export const makeMainCategoriesSet = (): MainCategoriesType =>
-  Immutable.Set.of('Foods', 'Alcohol', 'TobaccoProducts', 'OtherGoods');
+  'OtherGoods',
+]);
 
 type Settings = {
   overAllowance: boolean,
@@ -41,7 +38,7 @@ type Settings = {
 const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
   overAllowance: true,
   largeAmountPresent: true,
-  mainCategories: makeMainCategoriesSet(),
+  mainCategories: MainCategories,
 });
 
 type SettingsType = RecordOf<Settings>;

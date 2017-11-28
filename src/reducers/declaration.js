@@ -1,8 +1,5 @@
 // @flow
-import {
-  getInitialState,
-  makeMainCategoriesSet,
-} from '../types/reducers/declaration';
+import { getInitialState, MainCategories } from '../types/reducers/declaration';
 import type {
   State,
   MainCategory,
@@ -37,43 +34,28 @@ const declaration = (
       );
     }
     case 'DECLARATION_ADULTS_CHANGE_QUANTITY': {
-      const people: People = state.getIn(
-        ['people']
-        // makePeopleRecord() // why do I need to provide this argument?
-      );
+      const people: People = state.get('people');
       const adults: number = people.get('adults');
       const quantity: number = adults + action.quantityChange;
-      return state.setIn(
-        ['people'],
-        fromModelApi.setAdultPeople(people, quantity)
-      );
+      return state.set('people', fromModelApi.setAdultPeople(people, quantity));
     }
     case 'DECLARATION_MINORS_CHANGE_QUANTITY': {
-      const people: People = state.getIn(['people'], makePeopleRecord());
+      const people: People = state.get('people');
       const minors: number = people.get('minors');
       const quantity: number = minors + action.quantityChange;
-      return state.setIn(
-        ['people'],
-        fromModelApi.setMinorPeople(people, quantity)
-      );
+      return state.set('people', fromModelApi.setMinorPeople(people, quantity));
     }
     case 'DECLARATION_ADULTS_SET_QUANTITY': {
-      const people: People = state.getIn(['people'], makePeopleRecord());
+      const people: People = state.get('people');
       // eslint-disable-next-line prefer-destructuring
       const quantity: number = action.quantity;
-      return state.setIn(
-        ['people'],
-        fromModelApi.setAdultPeople(people, quantity)
-      );
+      return state.set('people', fromModelApi.setAdultPeople(people, quantity));
     }
     case 'DECLARATION_MINORS_SET_QUANTITY': {
-      const people: People = state.getIn(['people'], makePeopleRecord());
+      const people: People = state.get('people');
       // eslint-disable-next-line prefer-destructuring
       const quantity: number = action.quantity;
-      return state.setIn(
-        ['people'],
-        fromModelApi.setMinorPeople(people, quantity)
-      );
+      return state.set('people', fromModelApi.setMinorPeople(people, quantity));
     }
     case 'DECLARATION_SET_OVER_ALLOWANCE_TRUE': {
       return state.setIn(['settings', 'overAllowance'], true);
@@ -115,7 +97,7 @@ const declaration = (
 export default declaration;
 
 export const getDeclarationPeople = (state: State): People =>
-  state.getIn(['people'], makePeopleRecord());
+  state.get('people');
 
 export const getOverAllowance = (state: State): boolean =>
   state.getIn(['settings', 'overAllowance'], true);
@@ -126,4 +108,4 @@ export const getLargeAmountPresent = (state: State): boolean =>
 export const getDeclarationMainCategories = (
   state: State
 ): MainCategoriesType =>
-  state.getIn(['settings', 'mainCategories'], makeMainCategoriesSet());
+  state.getIn(['settings', 'mainCategories'], MainCategories);
