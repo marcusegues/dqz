@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
-
+import NavBar from '../../components/NavBar/NavBar';
 const ScreensView = ({ navigation }) => {
   return (
-    <View style={{ marginLeft: 5, marginTop: 5 }}>
+    <View style={{ marginTop: 5, flex: 1 }}>
+      <NavBar step={1} />
       <FlatList
         data={[
           { key: `OnBoarding` },
@@ -13,7 +14,12 @@ const ScreensView = ({ navigation }) => {
         ]}
         renderItem={({ item }) => (
           <Text
-            style={{ marginTop: 5, marginBottom: 5, fontFamily: 'roboto_bold' }}
+            style={{
+              marginTop: 5,
+              marginBottom: 5,
+              paddingLeft: 5,
+              fontFamily: 'roboto_bold',
+            }}
             onPress={() => navigation.navigate(item.key)}
           >
             {item.key}
