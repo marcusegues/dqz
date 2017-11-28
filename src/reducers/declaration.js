@@ -34,47 +34,38 @@ const declaration = (
     }
     case 'DECLARATION_ADULTS_CHANGE_QUANTITY': {
       const people: People = state.getIn(
-        ['settings', 'people'],
-        makePeopleRecord() // why do I need to provide this argument?
+        ['people']
+        // makePeopleRecord() // why do I need to provide this argument?
       );
       const adults: number = people.get('adults');
       const quantity: number = adults + action.quantityChange;
       return state.setIn(
-        ['settings', 'people'],
+        ['people'],
         fromModelApi.setAdultPeople(people, quantity)
       );
     }
     case 'DECLARATION_MINORS_CHANGE_QUANTITY': {
-      const people: People = state.getIn(
-        ['settings', 'people'],
-        makePeopleRecord()
-      );
+      const people: People = state.getIn(['people'], makePeopleRecord());
       const minors: number = people.get('minors');
       const quantity: number = minors + action.quantityChange;
       return state.setIn(
-        ['settings', 'people'],
+        ['people'],
         fromModelApi.setMinorPeople(people, quantity)
       );
     }
     case 'DECLARATION_ADULTS_SET_QUANTITY': {
-      const people: People = state.getIn(
-        ['settings', 'people'],
-        makePeopleRecord()
-      );
+      const people: People = state.getIn(['people'], makePeopleRecord());
       const quantity: number = action.quantity;
       return state.setIn(
-        ['settings', 'people'],
+        ['people'],
         fromModelApi.setAdultPeople(people, quantity)
       );
     }
     case 'DECLARATION_MINORS_SET_QUANTITY': {
-      const people: People = state.getIn(
-        ['settings', 'people'],
-        makePeopleRecord()
-      );
+      const people: People = state.getIn(['people'], makePeopleRecord());
       const quantity: number = action.quantity;
       return state.setIn(
-        ['settings', 'people'],
+        ['people'],
         fromModelApi.setMinorPeople(people, quantity)
       );
     }
@@ -103,7 +94,7 @@ const declaration = (
       );
     }
     case 'DECLARATION_SET_MAIN_CATEGORIES': {
-      const mainCategories: MainCategories = action.mainCategories;
+      const mainCategories: MainCategoriesType = action.mainCategories;
       return state.setIn(['settings', 'mainCategories'], mainCategories);
     }
     default: {
@@ -115,7 +106,7 @@ const declaration = (
 export default declaration;
 
 export const getDeclarationPeople = (state: State): People =>
-  state.getIn(['settings', 'people'], makePeopleRecord());
+  state.getIn(['people'], makePeopleRecord());
 
 export const getOverAllowance = (state: State): boolean =>
   state.getIn(['settings', 'overAllowance'], true); // why do I need a default value here

@@ -17,7 +17,7 @@ export type MainCategory =
   | 'TobaccoProducts'
   | 'OtherGoods';
 
-type MainCategoriesType = ImmutableSetType<MainCategory>;
+export type MainCategoriesType = ImmutableSetType<MainCategory>;
 
 export const MainCategories: MainCategoriesType = Immutable.Set.of(
   'Foods',
@@ -26,23 +26,25 @@ export const MainCategories: MainCategoriesType = Immutable.Set.of(
   'OtherGoods'
 );
 
+export const makeMainCategoriesSet = (): MainCategoriesType =>
+  Immutable.Set.of('Foods', 'Alcohol', 'TobaccoProducts', 'OtherGoods');
+
 type Settings = {
-  people: People,
   overAllowance: boolean,
   largeAmountPresent: boolean,
   mainCategories: MainCategoriesType,
 };
 
 const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
-  people: makePeopleRecord(),
   overAllowance: true,
   largeAmountPresent: true,
-  mainCategories: MainCategories,
+  mainCategories: makeMainCategoriesSet(),
 });
 
 type SettingsType = RecordOf<Settings>;
 
 type StateObj = {
+  people: People,
   basket: Basket,
   vatReport: VatReport,
   dutyReport: DutyReport,
@@ -50,6 +52,7 @@ type StateObj = {
 };
 
 export const getInitialState: RecordFactory<StateObj> = Immutable.Record({
+  people: makePeopleRecord(),
   basket: emptyBasket,
   vatReport: makeVatReportRecord(),
   dutyReport: makeDutyReportRecord(),

@@ -1,7 +1,7 @@
 // @flow
 
 import type { Category } from '../../model/types/basketPeopleTypes';
-import type { MainCategory } from '../reducers/declaration';
+import type { MainCategory, MainCategoriesType } from '../reducers/declaration';
 export type Action =
   // declaration
   | {
@@ -34,4 +34,12 @@ export type Action =
   | {
     type: 'DECLARATION_ADD_MAIN_CATEGORY',
     mainCategory: MainCategory,
+  }
+  | {
+    type: 'DECLARATION_REMOVE_MAIN_CATEGORY',
+    mainCategory: MainCategory,
+  }
+  | {
+    type: 'DECLARATION_SET_MAIN_CATEGORIES',
+    mainCategories: MainCategoriesType,
   };
