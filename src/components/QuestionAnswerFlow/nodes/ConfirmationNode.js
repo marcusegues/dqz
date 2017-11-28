@@ -1,3 +1,4 @@
+// file will be rewritten
 import QuestionAnswerNode from './QuestionAnswerNode';
 
 export default class ConfirmationNode extends QuestionAnswerNode {

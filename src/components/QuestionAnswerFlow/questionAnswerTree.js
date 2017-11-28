@@ -1,3 +1,4 @@
+// file will be rewritten
 import YesNoNode from './nodes/YesNoNode';
 import QuestionAnswerNode from './nodes/QuestionAnswerNode';
 import ConfirmationNode from './nodes/ConfirmationNode';

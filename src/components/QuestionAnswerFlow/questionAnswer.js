@@ -1,3 +1,4 @@
+// file will be rewritten
 import React from 'react';
 import { View, Text } from 'react-native';
 import YesNoCard from './cards/YesNoCard/YesNoCard';

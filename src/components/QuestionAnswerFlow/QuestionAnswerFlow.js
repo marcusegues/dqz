@@ -1,3 +1,4 @@
+// file will be rewritten
 import React from 'react';
 import Immutable from 'immutable';
 import Touchable from 'react-native-platform-touchable';
