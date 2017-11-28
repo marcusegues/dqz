@@ -18,13 +18,19 @@ const RedButton = ({ text, onPress }) => (
 export default RedButton;
 const ownStyles = {
   bottomButtonContainer: {
-    flex: 0.9,
+    width: '95%',
+    alignSelf: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
     alignContent: 'center',
     borderRadius: 3,
     backgroundColor: colors.MAIN_RED,
     borderColor: '#ddd',
+  },
+  touchable: {
+    flex: 1,
+    backgroundColor: colors.MAIN_RED,
+    borderRadius: 3,
     ...Platform.select({
       ios: {
         shadowColor: 'black',
@@ -36,10 +42,6 @@ const ownStyles = {
         elevation: 5,
       },
     }),
-  },
-  touchable: {
-    flex: 1,
-    backgroundColor: colors.MAIN_RED,
   },
   touchableText: {
     fontSize: moderateScale(14),

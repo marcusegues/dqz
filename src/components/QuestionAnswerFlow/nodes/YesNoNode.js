@@ -1,6 +1,7 @@
-import Node from './Node';
+// file will be rewritten
+import QuestionAnswerNode from './QuestionAnswerNode';
 
-export default class YesNoNode extends Node {
+export default class YesNoNode extends QuestionAnswerNode {
   constructor(
     questionAnswerIdx,
     parent = null,
@@ -26,9 +27,5 @@ export default class YesNoNode extends Node {
     this.next.no = node;
     node.parent = this;
     return node;
-  }
-
-  getNextNodes() {
-    return this.next;
   }
 }
