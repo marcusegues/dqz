@@ -4,17 +4,6 @@ import Touchable from 'react-native-platform-touchable';
 import * as colors from './../../styles/colors';
 import { scale, verticalScale, moderateScale } from '../../styles/Scaling';
 
-<<<<<<< HEAD
-const RedButton = ({ text, onPress, style }) => (
-  <View>
-    {/*<View style={{ margin: 16 }}>*/}
-    <Touchable
-      onPress={onPress}
-      style={{ backgroundColor: colors.MAIN_RED, ...style }}
-      background={Touchable.Ripple(colors.MAIN_RED)}
-    >
-      <Text style={{ textAlign: 'center', color: '#fff' }}>{text}</Text>
-=======
 const RedButton = ({ text, onPress }) => (
   <View style={ownStyles.bottomButtonContainer}>
     <Touchable
@@ -23,7 +12,6 @@ const RedButton = ({ text, onPress }) => (
       background={Touchable.Ripple(colors.MAIN_RED)}
     >
       <Text style={ownStyles.touchableText}>{text}</Text>
->>>>>>> develop
     </Touchable>
   </View>
 );
