@@ -10,14 +10,14 @@ const AdultInputRow = ({ onAddAdult, onSubtractAdult, people }) => (
     onAdd={onAddAdult}
     onSubtract={onSubtractAdult}
     people={people}
-    icon={`human-male`}
+    icon="human-male"
     displayedQuantity={fromModelApi.getAdultPeople(people)}
   >
     {{
       textComponent: (
         <View>
-          <Text style={ownStyles.categoryTitleText}>{`Erwachsene`}</Text>
-          <Text style={ownStyles.categoryAgeText}>{`17+ Jahre`}</Text>
+          <Text style={ownStyles.categoryTitleText}>Erwachsene</Text>
+          <Text style={ownStyles.categoryAgeText}>17+ Jahre</Text>
         </View>
       ),
     }}

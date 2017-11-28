@@ -1,14 +1,12 @@
 import { combineReducers } from 'redux';
-import declaration from './declaration';
-import * as fromDeclaration from './declaration';
+import declaration, * as fromDeclaration from './declaration';
 
 const root = combineReducers({ declaration });
 
 export default root;
 
-export const getDeclarationPeople = state => {
-  return fromDeclaration.getDeclarationPeople(state.declaration);
-};
+export const getDeclarationPeople = state =>
+  fromDeclaration.getDeclarationPeople(state.declaration);
 
 export const getOverAllowance = state =>
   fromDeclaration.getOverAllowance(state.declaration);

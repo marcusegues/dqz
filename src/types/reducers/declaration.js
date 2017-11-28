@@ -1,9 +1,12 @@
 // @flow
-import type { RecordOf, RecordFactory } from 'immutable';
-import type { Set as ImmutableSetType } from 'immutable';
+import type {
+  RecordOf,
+  RecordFactory,
+  Set as ImmutableSetType,
+} from 'immutable';
+import Immutable from 'immutable';
 import type { Basket, People } from '../../model/types/basketPeopleTypes';
 import type { VatReport, DutyReport } from '../../model/types/calculationTypes';
-import Immutable from 'immutable';
 import { emptyBasket } from '../../model/configurationApi';
 import { makePeopleRecord } from '../../model/types/basketPeopleTypes';
 import {

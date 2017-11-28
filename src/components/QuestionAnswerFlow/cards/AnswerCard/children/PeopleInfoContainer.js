@@ -7,24 +7,22 @@ import {
   getMinorPeople,
 } from '../../../../../model/configurationApi';
 
-class PeopleInfoContainer extends React.Component {
-  render() {
-    const adults = getAdultPeople(this.props.people);
-    const minors = getMinorPeople(this.props.people);
-    return (
-      <View>
-        {adults ? <Text>{`${adults} Erwachsene`}</Text> : null}
-        {minors ? <Text>{`${minors} Kinder (unter 17 Jahre)`}</Text> : null}
-      </View>
-    );
-  }
-}
+const PeopleInfoContainer = ({ people }) => {
+  const adults = getAdultPeople(people);
+  const minors = getMinorPeople(people);
+  return (
+    <View>
+      {adults ? <Text>{`${adults} Erwachsene`}</Text> : null}
+      {minors ? <Text>{`${minors} Kinder (unter 17 Jahre)`}</Text> : null}
+    </View>
+  );
+};
 
 const mapStateToProps = state => ({
   people: getDeclarationPeople(state),
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = () => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   PeopleInfoContainer

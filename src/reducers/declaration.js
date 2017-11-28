@@ -1,7 +1,6 @@
 // @flow
 import {
   getInitialState,
-  MainCategories,
   makeMainCategoriesSet,
 } from '../types/reducers/declaration';
 import type {
@@ -24,6 +23,7 @@ const declaration = (
 ): State => {
   switch (action.type) {
     case 'DECLARATION_BASKET_CHANGE_QUANTITY': {
+      // eslint-disable-next-line prefer-destructuring
       const category: Category = action.category;
       const basket: Basket = state.get('basket');
 
@@ -59,6 +59,7 @@ const declaration = (
     }
     case 'DECLARATION_ADULTS_SET_QUANTITY': {
       const people: People = state.getIn(['people'], makePeopleRecord());
+      // eslint-disable-next-line prefer-destructuring
       const quantity: number = action.quantity;
       return state.setIn(
         ['people'],
@@ -67,6 +68,7 @@ const declaration = (
     }
     case 'DECLARATION_MINORS_SET_QUANTITY': {
       const people: People = state.getIn(['people'], makePeopleRecord());
+      // eslint-disable-next-line prefer-destructuring
       const quantity: number = action.quantity;
       return state.setIn(
         ['people'],
@@ -86,18 +88,21 @@ const declaration = (
       return state.setIn(['settings', 'largeAmountPresent'], false);
     }
     case 'DECLARATION_ADD_MAIN_CATEGORY': {
+      // eslint-disable-next-line prefer-destructuring
       const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?
       return state.updateIn(['settings', 'mainCategories'], mainCategories =>
         mainCategories.add(mainCategory)
       );
     }
     case 'DECLARATION_REMOVE_MAIN_CATEGORY': {
+      // eslint-disable-next-line prefer-destructuring
       const mainCategory: MainCategory = action.mainCategory;
       return state.updateIn(['settings', 'mainCategories'], mainCategories =>
         mainCategories.delete(mainCategory)
       );
     }
     case 'DECLARATION_SET_MAIN_CATEGORIES': {
+      // eslint-disable-next-line prefer-destructuring
       const mainCategories: MainCategoriesType = action.mainCategories;
       return state.setIn(['settings', 'mainCategories'], mainCategories);
     }

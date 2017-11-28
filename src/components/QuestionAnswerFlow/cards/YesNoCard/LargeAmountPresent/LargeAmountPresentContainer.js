@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
 import YesNoCard from '../YesNoCard';
 import { getDeclarationPeople } from '../../../../../reducers';
-import * as fromModelApi from '../../../../../model/configurationApi';
 
 class LargeAmountPresentContainer extends React.Component {
   constructor(props) {
@@ -27,9 +25,7 @@ class LargeAmountPresentContainer extends React.Component {
       <YesNoCard
         onAnswerYes={this.handleAnswerYes}
         onAnswerNo={this.handleAnswerNo}
-        text={
-          'Ist bei Ihren Waren ein Gegenstand dabei, welcher mehr als CHF 300,- Wert ist?'
-        }
+        text="Ist bei Ihren Waren ein Gegenstand dabei, welcher mehr als CHF 300,- Wert ist?"
       />
     );
   }

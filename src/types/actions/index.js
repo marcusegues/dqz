@@ -2,6 +2,7 @@
 
 import type { Category } from '../../model/types/basketPeopleTypes';
 import type { MainCategory, MainCategoriesType } from '../reducers/declaration';
+
 export type Action =
   // declaration
   | {

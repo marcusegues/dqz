@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 import CheckBox from '../../../../../CheckBox/CheckBox';
-import { MAIN_RED } from '../../../../../../styles/colors';
 import { MainCategories } from '../../../../../../types/reducers/declaration';
 
 const MainCategoriesCheckList = ({ mainCategories, onToggleMainCategory }) => {

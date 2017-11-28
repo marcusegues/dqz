@@ -1,27 +1,6 @@
 import React from 'react';
-import { Image, View, Text, StyleSheet } from 'react-native';
+import { Image, View, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
-const AnswerCard = ({ mainIcon, status, children }) => (
-  <View style={styles.container}>
-    <MaterialCommunityIcons
-      name={mainIcon}
-      size={34}
-      style={{}}
-      color="#9B9B9B"
-    />
-    <View style={{ flex: 0.7 }}>{children}</View>
-    <Image
-      source={status}
-      style={{
-        width: 32,
-        height: 32,
-      }}
-    />
-  </View>
-);
-
-export default AnswerCard;
 
 const styles = StyleSheet.create({
   container: {
@@ -46,3 +25,24 @@ const styles = StyleSheet.create({
     shadowRadius: 1.5,
   },
 });
+
+const AnswerCard = ({ mainIcon, status, children }) => (
+  <View style={styles.container}>
+    <MaterialCommunityIcons
+      name={mainIcon}
+      size={34}
+      style={{}}
+      color="#9B9B9B"
+    />
+    <View style={{ flex: 0.7 }}>{children}</View>
+    <Image
+      source={status}
+      style={{
+        width: 32,
+        height: 32,
+      }}
+    />
+  </View>
+);
+
+export default AnswerCard;

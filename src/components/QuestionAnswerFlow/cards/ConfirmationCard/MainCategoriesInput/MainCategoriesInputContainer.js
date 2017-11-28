@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
 import { getDeclarationMainCategories } from '../../../../../reducers';
 import MainCategoriesInput from './MainCategoriesInput';
 
@@ -42,7 +41,6 @@ class MainCategoriesInputContainer extends React.Component {
   }
 
   render() {
-    const { onToggleMainCategory } = this.props;
     return (
       <MainCategoriesInput
         mainCategories={this.state.mainCategories}
