@@ -1,4 +1,6 @@
 // @flow
+/* global expect, test, describe */
+import Immutable from 'immutable';
 import type { Basket } from '../types/basketPeopleTypes';
 import {
   addAdult,
@@ -24,7 +26,6 @@ import {
   subtractMinor,
 } from '../configurationApi';
 import { CategoriesArray } from '../constants';
-import Immutable from 'immutable';
 
 const basket1: Basket = emptyBasket;
 

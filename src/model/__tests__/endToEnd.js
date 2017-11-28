@@ -1,5 +1,5 @@
 // @flow
-
+/* global expect, test, describe */
 import { addAdult, addMinor, initPeople } from '../configurationApi';
 import {
   florian1,

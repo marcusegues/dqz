@@ -1,3 +1,4 @@
+/* eslint-disable */
 // file will be rewritten
 import React from 'react';
 import Immutable from 'immutable';

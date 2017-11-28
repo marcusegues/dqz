@@ -1,26 +1,7 @@
 import React from 'react';
 import { Text, View, Platform } from 'react-native';
-import {
-  scale,
-  verticalScale,
-  moderateScale,
-} from '../../../../styles/Scaling';
-
+import { verticalScale, moderateScale } from '../../../../styles/Scaling';
 import RedButton from '../../../Buttons/RedButton';
-
-const ConfirmationCard = ({ text, children, onAnswerConfirm }) => (
-  <View style={ownStyles.contentContainer}>
-    <View style={ownStyles.mainTextContainer}>
-      <Text style={ownStyles.mainText}>{text}</Text>
-    </View>
-    <View style={ownStyles.bottomTextContainer}>{children}</View>
-
-    <View style={ownStyles.bottomButtonContainer}>
-      <RedButton text="ÜBERNEHMEN" onPress={onAnswerConfirm} />
-    </View>
-  </View>
-);
-export default ConfirmationCard;
 
 const ownStyles = {
   contentContainer: {
@@ -70,3 +51,17 @@ const ownStyles = {
     width: '95%',
   },
 };
+
+const ConfirmationCard = ({ text, children, onAnswerConfirm }) => (
+  <View style={ownStyles.contentContainer}>
+    <View style={ownStyles.mainTextContainer}>
+      <Text style={ownStyles.mainText}>{text}</Text>
+    </View>
+    <View style={ownStyles.bottomTextContainer}>{children}</View>
+
+    <View style={ownStyles.bottomButtonContainer}>
+      <RedButton text="ÜBERNEHMEN" onPress={onAnswerConfirm} />
+    </View>
+  </View>
+);
+export default ConfirmationCard;

@@ -1,4 +1,5 @@
 // @flow
+/* global expect, test, describe */
 import {
   calculateAllowancesExceptLast,
   calculateVat,

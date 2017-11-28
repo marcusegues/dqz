@@ -8,29 +8,6 @@ import {
   moderateScale,
 } from '../../../../styles/Scaling';
 
-const YesNoCard = ({ text, onAnswerYes, onAnswerNo }) => (
-  <View style={styles.contentContainer}>
-    <View style={styles.mainTextContainer}>
-      <Text style={styles.mainText}>{text}</Text>
-    </View>
-    <TouchableOpacity
-      onPress={() => console.log('click')}
-      style={ownStyles.notSureTouchable}
-    >
-      <Text style={ownStyles.notSureText}>"ICH BIN MIR NICHT SICHER"</Text>
-    </TouchableOpacity>
-    <View style={ownStyles.buttonContainer}>
-      <View style={{ flex: 0.49 }}>
-        <RedButton onPress={onAnswerYes} text="JA" />
-      </View>
-      <View style={{ flex: 0.49 }}>
-        <RedButton onPress={onAnswerNo} text="NEIN" />
-      </View>
-    </View>
-  </View>
-);
-export default YesNoCard;
-
 const ownStyles = {
   buttonContainer: {
     flexDirection: 'row',
@@ -48,3 +25,23 @@ const ownStyles = {
     paddingHorizontal: scale(16),
   },
 };
+
+const YesNoCard = ({ text, onAnswerYes, onAnswerNo }) => (
+  <View style={styles.contentContainer}>
+    <View style={styles.mainTextContainer}>
+      <Text style={styles.mainText}>{text}</Text>
+    </View>
+    <TouchableOpacity style={ownStyles.notSureTouchable}>
+      <Text style={ownStyles.notSureText}>ICH BIN MIR NICHT SICHER</Text>
+    </TouchableOpacity>
+    <View style={ownStyles.buttonContainer}>
+      <View style={{ flex: 0.49 }}>
+        <RedButton onPress={onAnswerYes} text="JA" />
+      </View>
+      <View style={{ flex: 0.49 }}>
+        <RedButton onPress={onAnswerNo} text="NEIN" />
+      </View>
+    </View>
+  </View>
+);
+export default YesNoCard;
