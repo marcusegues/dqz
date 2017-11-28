@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 import { getLargeAmountPresent } from '../../../../../reducers';
 
-const LargeAmountInfoContainer = () => (
+const LargeAmountInfoContainer = ({ largeAmountPresent }) => (
   <View>
-    <Text>{`${
-      this.props.largeAmountPresent ? 'Yes' : 'Not'
-    } large amount present`}</Text>
+    <Text>{`${largeAmountPresent ? 'Yes' : 'Not'} large amount present`}</Text>
   </View>
 );
 

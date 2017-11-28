@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 import { getOverAllowance } from '../../../../../reducers';
 
-const OverAllowanceInfoContainer = () => (
+const OverAllowanceInfoContainer = ({ overAllowance }) => (
   <View>
-    <Text>{`${this.props.overAllowance ? 'Yes' : 'Not'} over allowance`}</Text>
+    <Text>{`${overAllowance ? 'Yes' : 'Not'} over allowance`}</Text>
   </View>
 );
 

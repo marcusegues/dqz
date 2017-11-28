@@ -2,10 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 
-const MainCategoriesInfoContainer = () => (
+const MainCategoriesInfoContainer = ({ mainCategories }) => (
   <View>
     <Text>Warenkategorien:</Text>
-    <Text>{this.props.mainCategories.join(', ')}</Text>
+    <Text>{mainCategories.join(', ')}</Text>
   </View>
 );
 
