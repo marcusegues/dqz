@@ -27,7 +27,7 @@ export default class AppModal extends Component {
       <View style={ownStyles.modalOverlay}>
         <Modal
           animationType="slide"
-          transparent={true}
+          transparent
           visible={this.state.modalVisible}
           onRequestClose={() => {
             alert('Modal has been closed.');
@@ -45,13 +45,11 @@ export default class AppModal extends Component {
             </View>
 
             <View style={{ paddingLeft: 10 }}>
-              <Text style={ownStyles.mainTitle}>{`Alkoholische Getränke`}</Text>
-              <Text
-                style={ownStyles.subTitle}
-              >{`Alkoholgehalt bis 18% Vol.`}</Text>
+              <Text style={ownStyles.mainTitle}>Alkoholische Getränke</Text>
+              <Text style={ownStyles.subTitle}>Alkoholgehalt bis 18% Vol.</Text>
             </View>
             <View style={ownStyles.inputRowContainer}>
-              <Text style={ownStyles.inputRowLeftText}>{`Menge`}</Text>
+              <Text style={ownStyles.inputRowLeftText}>Menge</Text>
               <TouchableOpacity onPress={() => console.log('minus')}>
                 <Entypo name="circle-with-minus" size={30} color="#E0E0E1" />
               </TouchableOpacity>
@@ -63,7 +61,7 @@ export default class AppModal extends Component {
               <TouchableOpacity onPress={() => console.log('plus')}>
                 <Entypo name="circle-with-plus" size={30} color="#DC0018" />
               </TouchableOpacity>
-              <Text style={ownStyles.inputRowRightText}>{`Liter`}</Text>
+              <Text style={ownStyles.inputRowRightText}>Liter</Text>
             </View>
 
             <View
@@ -91,16 +89,10 @@ export default class AppModal extends Component {
             <View style={ownStyles.priceInputContainer}>
               <Text style={ownStyles.subPrice}>CHF 55,58</Text>
             </View>
-            <View style={{ flex: 1, justifyContent: 'center' }}>
+            <View style={ownStyles.redButtonWrapper}>
               <RedButton
-                text={`ÜBERNEHMEN`}
+                text="ÜBERNEHMEN"
                 onPress={() => console.log('pressed')}
-                style={{
-                  //TEMPORARY STYLES
-                  paddingVertical: 16,
-                  width: '95%',
-                  alignSelf: 'center',
-                }}
               />
             </View>
           </View>
@@ -218,5 +210,9 @@ const ownStyles = StyleSheet.create({
     fontSize: 12,
     color: '#898989',
     paddingLeft: 10,
+  },
+  redButtonWrapper: {
+    flex: 1,
+    justifyContent: 'center',
   },
 });
