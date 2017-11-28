@@ -1,5 +1,9 @@
 // @flow
-import { getInitialState, MainCategories } from '../types/reducers/declaration';
+import {
+  getInitialState,
+  MainCategories,
+  makeMainCategoriesSet,
+} from '../types/reducers/declaration';
 import type {
   State,
   MainCategory,
@@ -109,11 +113,12 @@ export const getDeclarationPeople = (state: State): People =>
   state.getIn(['people'], makePeopleRecord());
 
 export const getOverAllowance = (state: State): boolean =>
-  state.getIn(['settings', 'overAllowance'], true); // why do I need a default value here
+  state.getIn(['settings', 'overAllowance'], true);
 
 export const getLargeAmountPresent = (state: State): boolean =>
   state.getIn(['settings', 'largeAmountPresent'], true);
 
 export const getDeclarationMainCategories = (
   state: State
-): MainCategoriesType => state.getIn(['settings', 'mainCategories']);
+): MainCategoriesType =>
+  state.getIn(['settings', 'mainCategories'], makeMainCategoriesSet());
