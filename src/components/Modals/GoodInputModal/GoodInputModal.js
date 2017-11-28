@@ -10,8 +10,8 @@ import {
 } from 'react-native';
 import AppModal from '../AppModal';
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
-import RedButton from '../Buttons/RedButton';
-import { scale, verticalScale, moderateScale } from '../../styles/Scaling';
+import RedButton from '../../Buttons/RedButton';
+import { scale, verticalScale, moderateScale } from '../../../styles/Scaling';
 
 class GoodInputModal extends React.Component {
   render() {
