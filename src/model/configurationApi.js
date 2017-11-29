@@ -47,11 +47,10 @@ export const setQuantity = (
 export const setQuantities = (
   basket: Basket,
   pairs: Array<{ category: Category, quantity: number }>
-): Basket => {
-  return basket.withMutations(bskt => {
+): Basket =>
+  basket.withMutations(bskt => {
     pairs.forEach(p => setQuantity(bskt, p.category, p.quantity));
   });
-};
 
 /**
  * Gets the quantity for the basket's category

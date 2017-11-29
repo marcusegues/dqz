@@ -7,7 +7,7 @@ import type {
 } from 'immutable';
 import Immutable from 'immutable';
 
-import type { Basket, People } from './types/basketPeopleTypes';
+import type { Basket, People, Category } from './types/basketPeopleTypes';
 import type {
   AllAmountsPerVatBracket,
   VatReport,
@@ -21,7 +21,6 @@ import {
   makeAllAmountsPerVatBracketRecord,
   makeVatReportRecord,
 } from './types/calculationTypes';
-import type { Category } from './types/basketPeopleTypes';
 import { rounding } from './utils';
 
 /**
@@ -156,7 +155,7 @@ export const calculateVatLargeItems = (
     ImmutableListType<number>
   > = allItems.get('large');
   return largeItems.reduce(
-    (acc, v, k) => acc + rounding(k * v.reduce((a, v) => a + v, 0)),
+    (acc, v, k) => acc + rounding(k * v.reduce((a, vv) => a + vv, 0)),
     0
   );
 };
@@ -172,7 +171,7 @@ export const calculateVatNormalItems = (
     ImmutableListType<number>
   > = allItems.get('normal');
   return largeItems.reduce(
-    (acc, v, k) => acc + rounding(k * v.reduce((a, v) => a + v, 0)),
+    (acc, v, k) => acc + rounding(k * v.reduce((a, vv) => a + vv, 0)),
     0
   );
 };

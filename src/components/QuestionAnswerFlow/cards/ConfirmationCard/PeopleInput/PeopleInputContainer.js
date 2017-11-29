@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
 import PeopleInput from './PeopleInput';
+import { getDeclarationPeople } from '../../../../../reducers';
 import * as fromModelApi from '../../../../../model/configurationApi';
 
 class PeopleInputContainer extends React.Component {
@@ -16,6 +16,15 @@ class PeopleInputContainer extends React.Component {
     this.handleSubtractMinor = this.handleSubtractMinor.bind(this);
     this.handleAnswerConfirm = this.handleAnswerConfirm.bind(this);
     this.handleAnswer = this.handleAnswer.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { people } = nextProps;
+    if (people !== this.props.people) {
+      const adultsSaved = fromModelApi.getAdultPeople(people);
+      const minorsSaved = fromModelApi.getMinorPeople(people);
+      this.handleAnswer(adultsSaved + minorsSaved);
+    }
   }
 
   handleAddAdult() {
@@ -42,24 +51,10 @@ class PeopleInputContainer extends React.Component {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { people } = nextProps;
-    if (people !== this.props.people) {
-      const adultsSaved = fromModelApi.getAdultPeople(people);
-      const minorsSaved = fromModelApi.getMinorPeople(people);
-      this.handleAnswer(adultsSaved + minorsSaved);
-    }
-  }
-
   handleAnswerConfirm() {
     // the logic here to manage handling the answer should be looked at again
     // to make sure it is ideal. This is a piece of code with side effects.
-    const {
-      onAdultsSetQuantity,
-      onMinorsSetQuantity,
-      onAnswerConfirm,
-      people,
-    } = this.props;
+    const { onAdultsSetQuantity, onMinorsSetQuantity, people } = this.props;
     const adults = fromModelApi.getAdultPeople(this.state.people);
     const minors = fromModelApi.getMinorPeople(this.state.people);
     const adultsSaved = fromModelApi.getAdultPeople(people);
@@ -98,7 +93,7 @@ class PeopleInputContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  people: state.declaration.get('people'),
+  people: getDeclarationPeople(state),
 });
 
 const mapDispatchToProps = dispatch => ({

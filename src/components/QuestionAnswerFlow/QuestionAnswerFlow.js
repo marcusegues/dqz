@@ -1,9 +1,11 @@
+/* eslint-disable */
+// file will be rewritten
 import React from 'react';
 import Immutable from 'immutable';
 import Touchable from 'react-native-platform-touchable';
 import YesNoCard from './cards/YesNoCard/YesNoCard';
 import { v4 } from 'uuid';
-import { root } from './nodeTree';
+import { root } from './questionAnswerTree';
 import questionAnswer from './questionAnswer';
 import { View, Text } from 'react-native';
 
@@ -16,6 +18,7 @@ export default class QuestionAnswerFlow extends React.Component {
     this.root = root;
     this.current = this.root;
     const elements = Immutable.List();
+    console.log('constructor');
     this.state = {
       questionsFinished: false,
       elements,
@@ -30,6 +33,7 @@ export default class QuestionAnswerFlow extends React.Component {
   }
 
   componentWillMount() {
+    console.log('will mount');
     const element = this.getCurrentElement();
     this.setState({
       elements: this.state.elements.push(element),
@@ -69,11 +73,14 @@ export default class QuestionAnswerFlow extends React.Component {
         [this.current.answer]: { type, props: { ...props }, children },
       },
     } = questionAnswer[questionAnswerIdx];
-    const element = React.createElement(type, {
-      ...props,
-      children,
-      key: v4(),
-    });
+    const element = React.createElement(
+      type,
+      {
+        ...props,
+        key: v4(),
+      },
+      children.map(child => React.createElement(child, { key: v4() }, null))
+    );
     return element;
   }
 

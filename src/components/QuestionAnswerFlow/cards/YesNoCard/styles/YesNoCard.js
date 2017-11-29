@@ -1,10 +1,5 @@
-import { StyleSheet, Platform, Dimensions } from 'react-native';
-import {
-  scale,
-  verticalScale,
-  moderateScale,
-} from '../../../../../styles/Scaling';
-const { width, height } = Dimensions.get('window');
+import { StyleSheet, Platform } from 'react-native';
+import { verticalScale, moderateScale } from '../../../../../styles/Scaling';
 
 export default StyleSheet.create({
   contentContainer: {
@@ -29,54 +24,19 @@ export default StyleSheet.create({
   },
   mainTextContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
+    width: '100%',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    paddingTop: 12,
+    paddingLeft: 15,
   },
   mainText: {
     fontFamily: 'roboto_regular',
     fontSize: moderateScale(24),
-    lineHeight: verticalScale(39),
+    lineHeight: verticalScale(32),
     color: '#141414',
   },
   bottomButtonContainer: {
     flexDirection: 'row',
-    borderColor: '#ddd',
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: { height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-      },
-      android: {
-        elevation: 5,
-      },
-    }),
-  },
-  leftTouchable: {
-    flex: 0.5,
-    backgroundColor: '#DC0018',
-    borderRadius: 3,
-  },
-  leftButtonText: {
-    fontSize: moderateScale(14),
-    color: '#fff',
-    alignSelf: 'center',
-    fontFamily: 'roboto_medium',
-    fontWeight: '500',
-    paddingVertical: verticalScale(16),
-  },
-  rightTouchable: {
-    flex: 0.5,
-    backgroundColor: '#fff',
-    borderWidth: 0,
-  },
-  rightButtonText: {
-    fontSize: moderateScale(18),
-    color: '#0A5287',
-    alignSelf: 'center',
-    fontFamily: 'roboto_medium',
-    fontWeight: '500',
-    paddingVertical: 20,
   },
 });

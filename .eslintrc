@@ -24,6 +24,10 @@
   "rules": {
     "import/prefer-default-export": "off",
     "react/forbid-prop-types": "off",
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "flowtype/generic-spacing": "off",
+    "react/prop-types": "off",
+    "no-underscore-dangle": "off",
+    "no-param-reassign": "off"
   }
 }

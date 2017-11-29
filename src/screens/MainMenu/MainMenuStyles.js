@@ -1,5 +1,5 @@
 import { StyleSheet, Platform } from 'react-native';
-import { scale, verticalScale, moderateScale } from '../../styles/Scaling';
+import { moderateScale } from '../../styles/Scaling';
 
 export default StyleSheet.create({
   container: {
