@@ -1,6 +1,5 @@
-import { StyleSheet, Platform, Dimensions } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import { scale, verticalScale, moderateScale } from './Scaling';
-const { width, height } = Dimensions.get('window');
 
 export default StyleSheet.create({
   container: {

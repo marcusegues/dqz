@@ -3,36 +3,6 @@ import { View, Text } from 'react-native';
 
 import { scale, verticalScale, moderateScale } from '../../styles/Scaling';
 
-const NavBar = ({ step }) => (
-  <View style={ownStyles.locatorContainer}>
-    <Text
-      style={
-        step === 1 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
-      }
-    >
-      Ihre Daten
-    </Text>
-    <View style={ownStyles.locatorLine} />
-    <Text
-      style={
-        step === 2 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
-      }
-    >
-      Ihre Waren
-    </Text>
-    <View style={ownStyles.locatorLine} />
-    <Text
-      style={
-        step === 3 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
-      }
-    >
-      Bezahlung
-    </Text>
-  </View>
-);
-
-export default NavBar;
-
 const ownStyles = {
   locatorContainer: {
     // flex: 1,
@@ -68,3 +38,33 @@ const ownStyles = {
     borderColor: '#fff',
   },
 };
+
+const NavBar = ({ step }) => (
+  <View style={ownStyles.locatorContainer}>
+    <Text
+      style={
+        step === 1 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
+      }
+    >
+      Ihre Daten
+    </Text>
+    <View style={ownStyles.locatorLine} />
+    <Text
+      style={
+        step === 2 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
+      }
+    >
+      Ihre Waren
+    </Text>
+    <View style={ownStyles.locatorLine} />
+    <Text
+      style={
+        step === 3 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
+      }
+    >
+      Bezahlung
+    </Text>
+  </View>
+);
+
+export default NavBar;

@@ -1,11 +1,11 @@
 // @flow
 
+import Immutable from 'immutable';
 import type {
   Category,
   CategoryInfoType,
   RatesType,
 } from './types/basketPeopleTypes';
-import Immutable from 'immutable';
 import {
   makeCategoryInfoRecord,
   makeDutyBracketRecord,

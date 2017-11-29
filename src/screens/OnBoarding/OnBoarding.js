@@ -1,20 +1,17 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import { Dimensions } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 
 import styles from '../../styles/OnBoardingStyles';
 
-const OnBoarding = props => (
+const img = require('../../../assets/icons/logo.png');
+
+const OnBoarding = () => (
   <View style={styles.container}>
     <View style={styles.contentContainer}>
       <Text style={styles.welcomeTitle}>Welcome to</Text>
       <View style={styles.appTitleWrapper}>
-        <Image
-          source={require('../../../assets/icons/logo.png')}
-          style={styles.logo}
-          resizeMode="contain"
-        />
+        <Image source={img} style={styles.logo} resizeMode="contain" />
         <Text style={styles.appTitleToll}>
           Toll
           <Text style={styles.appTitleCalc}>Calc</Text>
@@ -39,21 +36,18 @@ const OnBoarding = props => (
 
         <View style={styles.languageButtonsContainer}>
           <Touchable
-            onPress={() => console.log('Touchable!')}
             style={styles.languageButton}
             background={Touchable.Ripple('#006699')}
           >
             <Text style={styles.languageButtonText}>DE</Text>
           </Touchable>
           <Touchable
-            onPress={() => console.log('Touchable!')}
             style={styles.languageButton}
             background={Touchable.Ripple('#006699')}
           >
             <Text style={styles.languageButtonText}>FR</Text>
           </Touchable>
           <Touchable
-            onPress={() => console.log('Touchable!')}
             style={styles.languageButton}
             background={Touchable.Ripple('#006699')}
           >
@@ -63,7 +57,6 @@ const OnBoarding = props => (
       </View>
       <View style={styles.saveSettingsButtonContainer}>
         <Touchable
-          onPress={() => console.log('Touchable!')}
           style={styles.saveSettingsButton}
           background={Touchable.Ripple('#006699')}
         >

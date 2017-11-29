@@ -20,9 +20,9 @@ const RootStackNavigator = StackNavigator(
   {
     Screens: {
       screen: ScreensView,
-      navigationOptions: ({ navigation, screenProps, navigationOptions }) => ({
+      navigationOptions: ({ navigationOptions }) => ({
         ...navigationOptions,
-        headerTitle: <HeaderTitle text={`Screens`} />,
+        headerTitle: <HeaderTitle text="Screens" />,
         headerLeft: <Logo />,
         headerRight: <OptionsButton />,
         headerStyle: {
@@ -35,7 +35,7 @@ const RootStackNavigator = StackNavigator(
     QuestionAnswer: {
       screen: QuestionAnswerFlow,
       navigationOptions: () => ({
-        headerTitle: <HeaderTitle text={`Waren deklarieren`} />,
+        headerTitle: <HeaderTitle text="Waren deklarieren" />,
       }),
     },
     OnBoarding: {
@@ -71,11 +71,8 @@ export default class RootNavigator extends React.Component {
   }
 
   componentWillUnmount() {
+    // eslint-disable-next-line
     this._notificationSubscription && this._notificationSubscription.remove();
-  }
-
-  render() {
-    return <RootStackNavigator />;
   }
 
   _registerForPushNotifications() {
@@ -91,9 +88,9 @@ export default class RootNavigator extends React.Component {
     );
   }
 
-  _handleNotification = ({ origin, data }) => {
-    console.log(
-      `Push notification ${origin} with data: ${JSON.stringify(data)}`
-    );
-  };
+  _handleNotification = () => {};
+
+  render() {
+    return <RootStackNavigator />;
+  }
 }

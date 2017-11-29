@@ -1,3 +1,4 @@
+/* global expect, test, describe */
 import { CATEGORIES, CategoriesRates, CategoriesInfo } from '../constants';
 
 describe('The model: ', () => {
