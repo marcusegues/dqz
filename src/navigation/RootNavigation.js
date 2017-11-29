@@ -1,7 +1,7 @@
 import { Notifications } from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import QuestionAnswerFlow from '../components/QuestionAnswerFlow/QuestionAnswerFlow';
+import QuestionAnswer from '../components/QuestionAnswer/QuestionAnswerContainer';
 import PeopleInputContainer from '../components/QuestionAnswerFlow/cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OnBoarding from '../screens/OnBoarding/OnBoarding';
 import ScreensView from '../screens/ScreensView/ScreensView';
@@ -33,7 +33,7 @@ const RootStackNavigator = StackNavigator(
       }),
     },
     QuestionAnswer: {
-      screen: QuestionAnswerFlow,
+      screen: QuestionAnswerContainer,
       navigationOptions: () => ({
         headerTitle: <HeaderTitle text="Waren deklarieren" />,
       }),
@@ -62,7 +62,7 @@ const RootStackNavigator = StackNavigator(
     navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
     initialRouteName: 'Screens',
-  }
+  },
 );
 
 export default class RootNavigator extends React.Component {
@@ -84,7 +84,7 @@ export default class RootNavigator extends React.Component {
 
     // Watch for incoming notifications
     this._notificationSubscription = Notifications.addListener(
-      this._handleNotification
+      this._handleNotification,
     );
   }
 
