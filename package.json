@@ -8,6 +8,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint src",
+    "lint:tough": "eslint src --max-warnings=0",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
     "test:coverage:watch": "jest --watchAll --coverage",
