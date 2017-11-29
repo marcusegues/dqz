@@ -4,7 +4,7 @@ import root from './reducers';
 
 const configureStore = () => {
   const store = createStore(root, applyMiddleware(thunkMiddleware));
-
+  console.log('OH NO!');
   return store;
 };
 
