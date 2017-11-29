@@ -1,16 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PeopleInput from './PeopleInput';
+import { View } from 'react-native';
+import PeopleInputContainer from './cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import MoreThanOne from './MoreThanOne';
 import OnlyOne from './OnlyOne';
-import { getTotalPeople } from '../../reducers';
+import { getDeclarationPeople } from '../../reducers';
+import { getTotalPeople } from '../../model/configurationApi';
 
 class QuestionAnswerContainer extends React.Component {
   render() {
-    <View>
-      <PeopleInput />;
-      {getTotalPeople(this.props.people) > 1 ? <MoreThanOne /> : <OnlyOne />}
-    </View>;
+    return (
+      <View>
+        <PeopleInputContainer />;
+        {getTotalPeople(this.props.people) > 1 ? <MoreThanOne /> : <OnlyOne />}
+      </View>
+    );
   }
 }
 
