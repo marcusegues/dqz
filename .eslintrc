@@ -28,6 +28,7 @@
     "flowtype/generic-spacing": "off",
     "react/prop-types": "off",
     "no-underscore-dangle": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "no-debugger": "off"
   }
 }
