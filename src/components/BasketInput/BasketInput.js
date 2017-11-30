@@ -11,26 +11,25 @@ const BasketInput = ({
   categoriesByMainCategory,
   onDeclarationBasketChangeQuantity,
 }) => {
-  const components = [];
-  categoriesByMainCategory.entrySeq().forEach(([mainCategory, categories]) => {
-    const subcomponents = [];
-    categories.forEach(category => {
-      subcomponents.push(
+  const components = categoriesByMainCategory
+    .entrySeq()
+    .map(([mainCategory, categories]) => {
+      const subcomponents = categories.map(category => (
         <GoodInputRow
           key={category}
           category={category}
           quantity={getQuantity(basket, category)}
           onDeclarationBasketChangeQuantity={onDeclarationBasketChangeQuantity}
-        />,
+        />
+      ));
+
+      return (
+        <View key={mainCategory}>
+          <Text>{`${mainCategory}`}</Text>
+          {subcomponents}
+        </View>
       );
     });
-    components.push(
-      <View key={mainCategory}>
-        <Text>{`${mainCategory}`}</Text>
-        {subcomponents}
-      </View>,
-    );
-  });
 
   return <View>{components}</View>;
 };
