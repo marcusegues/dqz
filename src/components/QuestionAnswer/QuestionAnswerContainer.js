@@ -11,7 +11,7 @@ class QuestionAnswerContainer extends React.Component {
   render() {
     return (
       <View>
-        <PeopleInputContainer />;
+        <PeopleInputContainer />
         {getTotalPeople(this.props.people) > 1 ? <MoreThanOne /> : <OnlyOne />}
       </View>
     );
