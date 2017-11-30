@@ -11,7 +11,7 @@ import HeaderTitle from '../components/Headers/subcomponents/HeaderTitle';
 import MainScreenHeaderTitle from '../components/Headers/subcomponents/MainScreenHeaderTitle';
 import Logo from '../components/Headers/subcomponents/Logo';
 import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
-
+import BasketInputContainer from '../components/BasketInput/BasketInputContainer';
 import MainMenu from '../screens/MainMenu/MainMenu';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
@@ -57,12 +57,15 @@ const RootStackNavigator = StackNavigator(
     PeopleInput: {
       screen: PeopleInputContainer,
     },
+    BasketInput: {
+      screen: BasketInputContainer,
+    },
   },
   {
     navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
     initialRouteName: 'Screens',
-  }
+  },
 );
 
 export default class RootNavigator extends React.Component {
@@ -84,7 +87,7 @@ export default class RootNavigator extends React.Component {
 
     // Watch for incoming notifications
     this._notificationSubscription = Notifications.addListener(
-      this._handleNotification
+      this._handleNotification,
     );
   }
 
