@@ -25,15 +25,6 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
   > = Immutable.Map().withMutations(r => {
     CategoriesArray.forEach(c => {
       const quantityRaw: number = getQuantity(basket, c);
-      let allowanceRaw: number = CategoriesRates.getIn([c, 'dutyAllowance'], 0);
-      const dutyDependency: ?Category = CategoriesRates.getIn(
-        [c, 'dutyAllowanceDependency'],
-        null
-      );
-      if (dutyDependency) {
-        allowanceRaw -= getQuantity(basket, dutyDependency);
-        allowanceRaw = Math.max(0, allowanceRaw);
-      }
       const adultsOnly: boolean = CategoriesRates.getIn(
         [c, 'adultsOnly'],
         false
@@ -41,7 +32,18 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
       const peopleCount: number =
         people.get('adults', 0) + +!adultsOnly * people.get('minors', 0);
 
-      const quantity: number = quantityRaw - peopleCount * allowanceRaw;
+      let allowanceRaw: number = CategoriesRates.getIn([c, 'dutyAllowance'], 0);
+      const dutyDependency: ?Category = CategoriesRates.getIn(
+        [c, 'dutyAllowanceDependency'],
+        null
+      );
+      allowanceRaw *= peopleCount;
+      if (dutyDependency) {
+        allowanceRaw -= getQuantity(basket, dutyDependency);
+        allowanceRaw = Math.max(0, allowanceRaw);
+      }
+
+      const quantity: number = quantityRaw - allowanceRaw;
 
       let allowanceRunningTotal: number = 0;
       const duty: ImmutableListType<DutyBracket> = CategoriesRates.getIn(
