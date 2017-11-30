@@ -37,11 +37,11 @@ export const AlcoholCategories: AlcoholCategoriesType = Immutable.Set([
 
 export type TobaccoProductsCategory = 'Cigarettes' | 'Tobacco';
 export type TobaccoProductsCategoriesType = ImmutableSetType<
-  TobaccoProductsCategory,
+  TobaccoProductsCategory
 >;
 
 export const TobaccoProductsCategories: TobaccoProductsCategoriesType = Immutable.Set(
-  ['Cigarettes', 'Tobacco'],
+  ['Cigarettes', 'Tobacco']
 );
 
 export type OtherGoodsCategory =
@@ -80,7 +80,7 @@ export const MainCategories: MainCategoriesType = Immutable.Set([
 
 export type MainCategoriesToCategoriesType = ImmutableMapType<
   MainCategory,
-  ImmutableSetType<Category>,
+  ImmutableSetType<Category>
 >;
 
 export const MainCategoriesToCategories: MainCategoriesToCategoriesType = Immutable.Map(
@@ -89,7 +89,7 @@ export const MainCategoriesToCategories: MainCategoriesToCategoriesType = Immuta
     Alcohol: AlcoholCategories,
     TobaccoProducts: TobaccoProductsCategories,
     OtherGoods: OtherGoodsCategories,
-  },
+  }
 );
 
 type Settings = {
