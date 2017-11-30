@@ -1,9 +1,7 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
-import { getQuantity } from '../../../model/configurationApi';
 
 const GoodInputRow = ({
-  mainCategory,
   category,
   quantity,
   onDeclarationBasketChangeQuantity,

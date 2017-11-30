@@ -16,11 +16,7 @@ class BasketInputContainer extends React.Component {
   }
 
   getDisplayedCategoriesByMainCategory() {
-    return MainCategoriesToCategories.filter((cats, mainCat) => {
-      console.log(this.props.mainCategories.toJS(), mainCat);
-      // eslint-disable-next-line no-debugger
-      return this.props.mainCategories.has(mainCat);
-    });
+    return MainCategoriesToCategories.filter((cats, mainCat) => this.props.mainCategories.has(mainCat));
   }
 
   render() {

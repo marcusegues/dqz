@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text } from 'react-native';
 import { getQuantity } from '../../model/configurationApi';
 import GoodInputRow from './subcomponents/GoodInputRow';
 
@@ -18,7 +18,6 @@ const BasketInput = ({
       subcomponents.push(
         <GoodInputRow
           key={category}
-          mainCategory={mainCategory}
           category={category}
           quantity={getQuantity(basket, category)}
           onDeclarationBasketChangeQuantity={onDeclarationBasketChangeQuantity}
@@ -32,7 +31,7 @@ const BasketInput = ({
       </View>,
     );
   });
-  console.log(components);
+
   return <View>{components}</View>;
 };
 
