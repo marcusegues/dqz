@@ -12,27 +12,28 @@ const BasketInput = ({
   onDeclarationBasketChangeQuantity,
 }) => {
   const components = [];
-  const whatever = categoriesByMainCategory
-    .entrySeq()
-    .map(([mainCategory, categories]) => (
+  categoriesByMainCategory.entrySeq().forEach(([mainCategory, categories]) => {
+    const subcomponents = [];
+    categories.forEach(category => {
+      subcomponents.push(
+        <GoodInputRow
+          key={category}
+          mainCategory={mainCategory}
+          category={category}
+          quantity={getQuantity(basket, category)}
+          onDeclarationBasketChangeQuantity={onDeclarationBasketChangeQuantity}
+        />,
+      );
+    });
+    components.push(
       <View key={mainCategory}>
         <Text>{`${mainCategory}`}</Text>
-        <View>
-          {components}
-          <View>
-            <Text>Example of usage of methods:</Text>
-            <Text>{`Meat quantity: ${getQuantity(basket, 'Meat')}`}</Text>
-            <Button
-              title="Add meat"
-              onPress={() => onDeclarationBasketChangeQuantity('Meat', 5)}
-            />
-          </View>
-        </View>
-      </View>
-    ));
-  console.log(whatever);
-  // eslint-disable-next-line no-debugger
-  debugger;
+        {subcomponents}
+      </View>,
+    );
+  });
+  console.log(components);
+  return <View>{components}</View>;
 };
 
 export default BasketInput;

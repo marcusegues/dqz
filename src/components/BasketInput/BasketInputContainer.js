@@ -11,7 +11,7 @@ class BasketInputContainer extends React.Component {
   constructor(props) {
     super(props);
     this.getDisplayedCategoriesByMainCategory = this.getDisplayedCategoriesByMainCategory.bind(
-      this
+      this,
     );
   }
 
@@ -51,5 +51,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  BasketInputContainer
+  BasketInputContainer,
 );
