@@ -5,10 +5,11 @@ import RedButton from '../../../Buttons/RedButton';
 
 const ownStyles = {
   contentContainer: {
-    flex: 0.88,
+    flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
+    marginVertical: moderateScale(10),
     backgroundColor: '#fff',
     width: '95%',
     borderRadius: 2,
@@ -26,12 +27,9 @@ const ownStyles = {
     }),
   },
   mainTextContainer: {
-    flex: 0.58,
     width: '95%',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    borderBottomWidth: 1,
-    borderBottomColor: '#E0E0E1',
   },
   mainText: {
     fontFamily: 'roboto_regular',
@@ -40,15 +38,19 @@ const ownStyles = {
     paddingTop: verticalScale(15),
     color: '#141414',
   },
+  bottomSectionWrapper: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   bottomTextContainer: {
-    flex: 0.27,
+    width: '95%',
     justifyContent: 'center',
     alignItems: 'center',
   },
   bottomButtonContainer: {
-    flex: 0.14,
     justifyContent: 'center',
     width: '95%',
+    marginVertical: verticalScale(15),
   },
 };
 
@@ -57,10 +59,12 @@ const ConfirmationCard = ({ text, children, onAnswerConfirm }) => (
     <View style={ownStyles.mainTextContainer}>
       <Text style={ownStyles.mainText}>{text}</Text>
     </View>
-    <View style={ownStyles.bottomTextContainer}>{children}</View>
 
-    <View style={ownStyles.bottomButtonContainer}>
-      <RedButton text="ÜBERNEHMEN" onPress={onAnswerConfirm} />
+    <View style={ownStyles.bottomSectionWrapper}>
+      <View style={ownStyles.bottomTextContainer}>{children}</View>
+      <View style={ownStyles.bottomButtonContainer}>
+        <RedButton text="ÜBERNEHMEN" onPress={onAnswerConfirm} />
+      </View>
     </View>
   </View>
 );

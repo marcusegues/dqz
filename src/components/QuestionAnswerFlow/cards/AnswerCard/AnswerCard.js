@@ -1,23 +1,22 @@
 import React from 'react';
 import { Image, View, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as colors from '../../../../styles/colors';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0.1,
     width: '95%',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
+    paddingVertical: 10,
     backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 2,
     elevation: 3,
-    marginLeft: 2,
-    marginRight: 2,
-    marginTop: 15,
-    marginBottom: 15,
+    marginHorizontal: 2,
+    marginBottom: 3,
     shadowColor: '#000',
     shadowOffset: { height: 2, width: 0 },
     shadowOpacity: 0.1,
@@ -31,7 +30,7 @@ const AnswerCard = ({ mainIcon, status, children }) => (
       name={mainIcon}
       size={34}
       style={{}}
-      color="#9B9B9B"
+      color={colors.MAIN_RED}
     />
     <View style={{ flex: 0.7 }}>{children}</View>
     <Image
