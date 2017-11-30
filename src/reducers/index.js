@@ -5,6 +5,9 @@ const root = combineReducers({ declaration });
 
 export default root;
 
+export const getDeclarationBasket = state =>
+  fromDeclaration.getDeclarationBasket(state.declaration);
+
 export const getDeclarationPeople = state =>
   fromDeclaration.getDeclarationPeople(state.declaration);
 
