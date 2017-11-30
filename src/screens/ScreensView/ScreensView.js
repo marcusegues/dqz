@@ -28,6 +28,7 @@ class ScreensView extends React.Component {
             { key: `MainMenu` },
             { key: `QuestionAnswer` },
             { key: `GoodInputModal` },
+            { key: `BasketInput` },
           ]}
           renderItem={({ item }) => (
             <Text

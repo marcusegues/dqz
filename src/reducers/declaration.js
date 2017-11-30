@@ -95,6 +95,9 @@ const declaration = (
 
 export default declaration;
 
+export const getDeclarationBasket = (state: State): Basket =>
+  state.get('basket');
+
 export const getDeclarationPeople = (state: State): People =>
   state.get('people');
 
