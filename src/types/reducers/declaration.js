@@ -94,11 +94,15 @@ export const MainCategoriesToCategories: MainCategoriesToCategoriesType = Immuta
   },
 );
 
+export type OverAllowanceType = ?boolean;
+export type LargeAmountPresentType = ?boolean;
+export type CurrentQuestionType = number;
+
 type Settings = {
   overAllowance: ?boolean,
   largeAmountPresent: ?boolean,
   mainCategories: MainCategoriesType,
-  currentQuestion: number,
+  currentQuestion: CurrentQuestionType,
 };
 
 const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
@@ -108,7 +112,7 @@ const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
   currentQuestion: 1,
 });
 
-type SettingsType = RecordOf<Settings>;
+export type SettingsType = RecordOf<Settings>;
 
 type StateObj = {
   people: People,

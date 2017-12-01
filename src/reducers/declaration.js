@@ -4,6 +4,10 @@ import type {
   State,
   MainCategory,
   MainCategoriesType,
+  OverAllowanceType,
+  LargeAmountPresentType,
+  SettingsType,
+  CurrentQuestionType,
 } from '../types/reducers/declaration';
 import type { Action } from '../types/actions';
 import type {
@@ -118,18 +122,20 @@ export const getDeclarationBasket = (state: State): Basket =>
 export const getDeclarationPeople = (state: State): People =>
   state.get('people');
 
-export const getOverAllowance = (state: State): boolean =>
-  state.getIn(['settings', 'overAllowance'], true);
+export const getOverAllowance = (state: State): OverAllowanceType =>
+  state.getIn(['settings', 'overAllowance']);
 
-export const getLargeAmountPresent = (state: State): boolean =>
-  state.getIn(['settings', 'largeAmountPresent'], true);
+export const getLargeAmountPresent = (state: State): LargeAmountPresentType =>
+  state.getIn(['settings', 'largeAmountPresent']);
 
 export const getDeclarationMainCategories = (
   state: State,
 ): MainCategoriesType =>
   state.getIn(['settings', 'mainCategories'], MainCategories);
 
-export const getDeclarationCurrentQuestion = state =>
-  state.getIn(['settings', 'currentQuestion']);
+export const getDeclarationCurrentQuestion = (
+  state: State,
+): CurrentQuestionType => state.getIn(['settings', 'currentQuestion'], 0);
 
-export const getDeclarationSettings = state => state.get('settings');
+export const getDeclarationSettings = (state: State): SettingsType =>
+  state.get('settings');
