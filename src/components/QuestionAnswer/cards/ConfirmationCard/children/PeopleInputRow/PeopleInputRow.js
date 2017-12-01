@@ -10,6 +10,7 @@ const ownStyles = {
     flexDirection: 'row',
     alignItems: 'center',
     borderBottomWidth: 1,
+    borderTopWidth: 1,
     borderColor: '#E0E0E1',
   },
   rowContainer: {
