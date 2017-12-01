@@ -59,4 +59,6 @@ class ScreensView extends React.Component {
   }
 }
 
+console.disableYellowBox = true;
+
 export default ScreensView;
