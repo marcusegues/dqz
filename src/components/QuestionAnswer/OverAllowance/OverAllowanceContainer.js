@@ -11,21 +11,13 @@ import {
 } from '../../../reducers';
 import { getTotalPeople } from '../../../model/configurationApi';
 
+const complete = require('../../../../assets/images/complete.png');
+
 class OverAllowanceContainer extends React.Component {
   constructor(props) {
     super(props);
     this.handleAnswerYes = this.handleAnswerYes.bind(this);
     this.handleAnswerNo = this.handleAnswerNo.bind(this);
-  }
-
-  async handleAnswerYes() {
-    await this.props.declarationSetOverAllowanceTrue();
-    this.props.onAnswer();
-  }
-
-  async handleAnswerNo() {
-    await this.props.declarationSetOverAllowanceFalse();
-    this.props.onAnswer();
   }
 
   getQuestionText() {
@@ -48,10 +40,24 @@ class OverAllowanceContainer extends React.Component {
 
   getAnswerComponent() {
     return (
-      <AnswerCard onAnswerPress={this.props.onAnswerPress} mainIcon="crown">
+      <AnswerCard
+        onAnswerPress={this.props.onAnswerPress}
+        mainIcon="crown"
+        status={complete}
+      >
         <OverAllowanceInfo overAllowance={this.props.overAllowance} />
       </AnswerCard>
     );
+  }
+
+  async handleAnswerYes() {
+    await this.props.declarationSetOverAllowanceTrue();
+    this.props.onAnswer();
+  }
+
+  async handleAnswerNo() {
+    await this.props.declarationSetOverAllowanceFalse();
+    this.props.onAnswer();
   }
 
   render() {

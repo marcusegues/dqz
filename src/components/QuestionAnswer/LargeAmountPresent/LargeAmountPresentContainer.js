@@ -14,16 +14,6 @@ class LargeAmountPresentContainer extends React.Component {
     this.handleAnswerNo = this.handleAnswerNo.bind(this);
   }
 
-  async handleAnswerYes() {
-    await this.props.declarationSetLargeAmountPresentTrue();
-    this.props.onAnswer();
-  }
-
-  async handleAnswerNo() {
-    await this.props.declarationSetLargeAmountPresentFalse();
-    this.props.onAnswer();
-  }
-
   getQuestionComponent() {
     return (
       <YesNoCard
@@ -43,6 +33,16 @@ class LargeAmountPresentContainer extends React.Component {
         <LargeAmountInfo largeAmountPresent={this.props.largeAmountPresent} />
       </AnswerCard>
     );
+  }
+
+  async handleAnswerYes() {
+    await this.props.declarationSetLargeAmountPresentTrue();
+    this.props.onAnswer();
+  }
+
+  async handleAnswerNo() {
+    await this.props.declarationSetLargeAmountPresentFalse();
+    this.props.onAnswer();
   }
 
   render() {

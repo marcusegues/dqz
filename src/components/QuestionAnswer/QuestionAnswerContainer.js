@@ -4,7 +4,6 @@ import { View } from 'react-native';
 import PeopleInputContainer from './PeopleInput/PeopleInputContainer';
 import LargeAmountPresentContainer from './LargeAmountPresent/LargeAmountPresentContainer';
 import OverAllowanceContainer from './OverAllowance/OverAllowanceContainer';
-import MainCategoriesContainer from './MainCategories/MainCategoriesContainer';
 import {
   getDeclarationPeople,
   getDeclarationCurrentQuestion,
@@ -25,22 +24,18 @@ class QuestionAnswerContainer extends React.Component {
 
   selectNextOpenQuestion() {
     const { settings, people } = this.props;
-    let nextQuestion;
     if (
       getTotalPeople(people) > 1 &&
       settings.get('largeAmountPresent') === undefined
     ) {
-      console.log('setting to ', 2);
       this.setCurrentQuestion(2);
       return;
     }
     if (settings.get('overAllowance') === undefined) {
-      console.log('setting to ', 3);
       this.setCurrentQuestion(3);
       return;
     }
     if (settings.get('mainCategories').isEmpty()) {
-      console.log('setting to ', 4);
       this.setCurrentQuestion(4);
       return;
     }

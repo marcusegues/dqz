@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Touchable from 'react-native-platform-touchable';
 import { View } from 'react-native';
 import PeopleInput from './PeopleInput';
 import PeopleInputAnswer from './PeopleInputAnswer';
@@ -29,6 +28,29 @@ class PeopleInputContainer extends React.Component {
     this.getAnswerComponent = this.getAnswerComponent.bind(this);
   }
 
+  getQuestionComponent() {
+    return (
+      <PeopleInput
+        people={this.state.people}
+        onAnswer={this.handleAnswer}
+        onAddAdult={this.handleAddAdult}
+        onSubtractAdult={this.handleSubtractAdult}
+        onAddMinor={this.handleAddMinor}
+        onSubtractMinor={this.handleSubtractMinor}
+        text={this.props.text}
+      />
+    );
+  }
+
+  getAnswerComponent() {
+    return (
+      <PeopleInputAnswer
+        people={this.props.people}
+        onAnswerPress={this.props.onAnswerPress}
+      />
+    );
+  }
+
   handleAddAdult() {
     this.setState({
       people: addAdult(this.state.people),
@@ -54,36 +76,11 @@ class PeopleInputContainer extends React.Component {
   }
 
   async handleAnswer() {
-    const { onSetPeople, people } = this.props;
-    const previousAdults = getAdultPeople(this.props.people);
-    const previousMinors = getMinorPeople(this.props.people);
+    const { onSetPeople, onAnswer } = this.props;
     const adults = getAdultPeople(this.state.people);
     const minors = getMinorPeople(this.state.people);
     await onSetPeople(adults, minors);
-    this.props.onAnswer();
-  }
-
-  getQuestionComponent() {
-    return (
-      <PeopleInput
-        people={this.state.people}
-        onAnswer={this.handleAnswer}
-        onAddAdult={this.handleAddAdult}
-        onSubtractAdult={this.handleSubtractAdult}
-        onAddMinor={this.handleAddMinor}
-        onSubtractMinor={this.handleSubtractMinor}
-        text={this.props.text}
-      />
-    );
-  }
-
-  getAnswerComponent() {
-    return (
-      <PeopleInputAnswer
-        people={this.props.people}
-        onAnswerPress={this.props.onAnswerPress}
-      />
-    );
+    onAnswer();
   }
 
   render() {

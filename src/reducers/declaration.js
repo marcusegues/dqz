@@ -58,7 +58,9 @@ const declaration = (
     }
     case 'DECLARATION_SET_PEOPLE': {
       const people: People = state.get('people');
+      // eslint-disable-next-line prefer-destructuring
       const adults: number = action.adults;
+      // eslint-disable-next-line prefer-destructuring
       const minors: number = action.minors;
       return state.set(
         'people',
@@ -92,6 +94,7 @@ const declaration = (
       );
     }
     case 'DECLARATION_SET_MAIN_CATEGORIES': {
+      // eslint-disable-next-line prefer-destructuring
       const mainCategories: MainCategoriesType = action.mainCategories;
       return state.setIn(['settings', 'mainCategories'], mainCategories);
     }

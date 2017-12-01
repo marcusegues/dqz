@@ -1,7 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
-import { getOverAllowance } from '../../..//reducers';
 
 const OverAllowanceInfo = ({ overAllowance }) => (
   <View>
