@@ -26,7 +26,6 @@ class QuestionAnswerContainer extends React.Component {
   selectNextOpenQuestion() {
     const { settings } = this.props;
     let nextQuestion;
-    debugger;
     if (settings.get('largeAmountPresent') === undefined) {
       console.log('setting to ', 2);
       this.setCurrentQuestion(2);
@@ -40,7 +39,9 @@ class QuestionAnswerContainer extends React.Component {
     if (settings.get('mainCategories').isEmpty()) {
       console.log('setting to ', 4);
       this.setCurrentQuestion(4);
+      return;
     }
+    this.setCurrentQuestion(0);
   }
 
   render() {
@@ -48,7 +49,7 @@ class QuestionAnswerContainer extends React.Component {
       <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
         <PeopleInputContainer
           text="Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?"
-          current={this.props.currentQuestion}
+          currentQuestion={this.props.currentQuestion}
           onAnswerPress={() => this.setCurrentQuestion(1)}
           onAnswer={this.selectNextOpenQuestion}
         />
@@ -58,12 +59,16 @@ class QuestionAnswerContainer extends React.Component {
           onAnswerPress={() => this.setCurrentQuestion(2)}
           onAnswer={this.selectNextOpenQuestion}
         />
+        <OverAllowanceContainer
+          currentQuestion={this.props.currentQuestion}
+          onAnswerPress={() => this.setCurrentQuestion(3)}
+          onAnswer={this.selectNextOpenQuestion}
+        />
       </View>
     );
   }
 }
 
-// <OverAllowanceContainer onPress={() => this.setCurrentQuestion(3)} />
 // <MainCategoriesContainer onPress={() => this.setCurrentQuestion(4)} />
 const mapStateToProps = state => ({
   currentQuestion: getDeclarationCurrentQuestion(state),

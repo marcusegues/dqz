@@ -81,7 +81,7 @@ class PeopleInputContainer extends React.Component {
   render() {
     return (
       <View>
-        {this.props.current === 1
+        {this.props.currentQuestion === 1
           ? this.getQuestionComponent()
           : this.getAnswerComponent()}
       </View>
