@@ -93,15 +93,15 @@ export const MainCategoriesToCategories: MainCategoriesToCategoriesType = Immuta
 );
 
 type Settings = {
-  overAllowance: boolean,
-  largeAmountPresent: boolean,
+  overAllowance: ?boolean,
+  largeAmountPresent: ?boolean,
   mainCategories: MainCategoriesType,
   currentQuestion: number,
 };
 
 const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
-  overAllowance: true,
-  largeAmountPresent: true,
+  overAllowance: null,
+  largeAmountPresent: null,
   mainCategories: MainCategories,
   currentQuestion: 1,
 });

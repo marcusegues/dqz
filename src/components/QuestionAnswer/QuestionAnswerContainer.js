@@ -31,6 +31,7 @@ class QuestionAnswerContainer extends React.Component {
           onAnswer={() => this.setCurrentQuestion(2)}
         />
         <LargeAmountPresentContainer
+          people={this.props.people}
           current={this.props.currentQuestion}
           onAnswerPress={() => this.setCurrentQuestion(2)}
           onAnswer={() => this.setCurrentQuestion(3)}

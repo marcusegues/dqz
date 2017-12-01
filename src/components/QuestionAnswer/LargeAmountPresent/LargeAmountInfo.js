@@ -5,7 +5,13 @@ import { getLargeAmountPresent } from '../../../reducers';
 
 const LargeAmountInfo = ({ largeAmountPresent }) => (
   <View>
-    <Text>{`${largeAmountPresent ? 'Yes' : 'Not'} large amount present`}</Text>
+    {largeAmountPresent === null ? (
+      <Text>Please answer</Text>
+    ) : (
+      <Text>{`${
+        largeAmountPresent ? 'Yes' : 'Not'
+      } large amount present`}</Text>
+    )}
   </View>
 );
 
