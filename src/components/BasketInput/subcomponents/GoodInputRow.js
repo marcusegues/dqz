@@ -73,6 +73,8 @@ const ownStyles = {
   },
 };
 
+const img = require('../../../../assets/images/dots.png');
+
 const GoodInputRow = ({
   category,
   quantity,
@@ -109,10 +111,7 @@ const GoodInputRow = ({
     </TouchableOpacity>
 
     <TouchableOpacity onPress={() => {}} style={ownStyles.touchable}>
-      <Image
-        source={require('../../../../assets/images/dots.png')}
-        style={ownStyles.touchableImage}
-      />
+      <Image source={img} style={ownStyles.touchableImage} />
     </TouchableOpacity>
   </View>
 );
