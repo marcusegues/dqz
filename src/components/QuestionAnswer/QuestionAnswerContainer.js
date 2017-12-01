@@ -24,8 +24,9 @@ class QuestionAnswerContainer extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
         <PeopleInputContainer
+          text="Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?"
           current={this.state.current}
           onPress={() => this.setCurrent(1)}
           onAnswerConfirm={() => this.setCurrent(2)}
