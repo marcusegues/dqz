@@ -56,6 +56,15 @@ const declaration = (
       const quantity: number = action.quantity;
       return state.set('people', fromModelApi.setMinorPeople(people, quantity));
     }
+    case 'DECLARATION_SET_PEOPLE': {
+      const people: People = state.get('people');
+      const adults: number = action.adults;
+      const minors: number = action.minors;
+      return state.set(
+        'people',
+        fromModelApi.setPeople(people, adults, minors),
+      );
+    }
     case 'DECLARATION_SET_OVER_ALLOWANCE_TRUE': {
       return state.setIn(['settings', 'overAllowance'], true);
     }

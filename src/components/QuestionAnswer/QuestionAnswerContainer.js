@@ -24,9 +24,12 @@ class QuestionAnswerContainer extends React.Component {
   }
 
   selectNextOpenQuestion() {
-    const { settings } = this.props;
+    const { settings, people } = this.props;
     let nextQuestion;
-    if (settings.get('largeAmountPresent') === undefined) {
+    if (
+      getTotalPeople(people) > 1 &&
+      settings.get('largeAmountPresent') === undefined
+    ) {
       console.log('setting to ', 2);
       this.setCurrentQuestion(2);
       return;

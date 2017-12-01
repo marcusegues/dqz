@@ -5,7 +5,14 @@ import { View } from 'react-native';
 import PeopleInput from './PeopleInput';
 import PeopleInputAnswer from './PeopleInputAnswer';
 import { getDeclarationPeople } from '../../../reducers';
-import * as fromModelApi from '../../../model/configurationApi';
+import {
+  getAdultPeople,
+  getMinorPeople,
+  addAdult,
+  subtractAdult,
+  addMinor,
+  subtractMinor,
+} from '../../../model/configurationApi';
 
 class PeopleInputContainer extends React.Component {
   constructor(props) {
@@ -24,34 +31,35 @@ class PeopleInputContainer extends React.Component {
 
   handleAddAdult() {
     this.setState({
-      people: fromModelApi.addAdult(this.state.people),
+      people: addAdult(this.state.people),
     });
   }
 
   handleSubtractAdult() {
     this.setState({
-      people: fromModelApi.subtractAdult(this.state.people),
+      people: subtractAdult(this.state.people),
     });
   }
 
   handleAddMinor() {
     this.setState({
-      people: fromModelApi.addMinor(this.state.people),
+      people: addMinor(this.state.people),
     });
   }
 
   handleSubtractMinor() {
     this.setState({
-      people: fromModelApi.subtractMinor(this.state.people),
+      people: subtractMinor(this.state.people),
     });
   }
 
-  handleAnswer() {
-    const { onAdultsSetQuantity, onMinorsSetQuantity, people } = this.props;
-    const adults = fromModelApi.getAdultPeople(this.state.people);
-    const minors = fromModelApi.getMinorPeople(this.state.people);
-    onAdultsSetQuantity(adults);
-    onMinorsSetQuantity(minors);
+  async handleAnswer() {
+    const { onSetPeople, people } = this.props;
+    const previousAdults = getAdultPeople(this.props.people);
+    const previousMinors = getMinorPeople(this.props.people);
+    const adults = getAdultPeople(this.state.people);
+    const minors = getMinorPeople(this.state.people);
+    await onSetPeople(adults, minors);
     this.props.onAnswer();
   }
 
@@ -94,6 +102,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  onSetPeople: (adults, minors) =>
+    dispatch({ type: 'DECLARATION_SET_PEOPLE', adults, minors }),
   onAdultsSetQuantity: quantity =>
     dispatch({ type: 'DECLARATION_ADULTS_SET_QUANTITY', quantity }),
   onMinorsSetQuantity: quantity =>

@@ -5,6 +5,7 @@ import YesNoCard from '../cards/YesNoCard/YesNoCard';
 import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import LargeAmountInfo from './LargeAmountInfo';
 import { getDeclarationPeople, getLargeAmountPresent } from '../../../reducers';
+import { getTotalPeople } from '../../../model/configurationApi';
 
 class LargeAmountPresentContainer extends React.Component {
   constructor(props) {
@@ -45,6 +46,9 @@ class LargeAmountPresentContainer extends React.Component {
   }
 
   render() {
+    if (getTotalPeople(this.props.people) === 1) {
+      return null;
+    }
     return (
       <View>
         {this.props.currentQuestion === 2
