@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Button, TouchableOpacity, Image } from 'react-native';
-import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
 
 import { moderateScale } from '../../../styles/Scaling';
 import * as colors from '../../../styles/colors';
@@ -33,7 +33,7 @@ const ownStyles = {
     paddingLeft: 16,
   },
   mainCategoryText: {
-    fontFamily: 'roboto_regular',
+    fontFamily: 'roboto_medium',
     fontSize: moderateScale(14),
     color: '#24253D',
   },
@@ -54,7 +54,7 @@ const ownStyles = {
     color: '#24253D',
   },
   quantityContainer: {
-    paddingHorizontal: 10,
+    paddingHorizontal: 6,
     backgroundColor: '#9B9B9B',
     borderRadius: 3,
   },
@@ -81,7 +81,7 @@ const GoodInputRow = ({
 }) => (
   <View style={ownStyles.container}>
     <View style={ownStyles.leftSquare}>
-      <Text style={ownStyles.leftSquareText}>{`< 18%`}</Text>
+      <Text style={ownStyles.leftSquareText}>{`< 18% `}</Text>
     </View>
 
     <View style={ownStyles.rowMainTextContainer}>
@@ -92,7 +92,7 @@ const GoodInputRow = ({
       <View style={ownStyles.priceAndQuantityContainer}>
         <Text style={ownStyles.priceText}>9,00 EUR</Text>
         <View style={ownStyles.quantityContainer}>
-          <Text style={ownStyles.quantityText}>{quantity}</Text>
+          <Text style={ownStyles.quantityText}>{`${quantity} Liter`}</Text>
         </View>
       </View>
     </View>
@@ -108,17 +108,12 @@ const GoodInputRow = ({
       />
     </TouchableOpacity>
 
-    {/*touchable for opening modal*/}
     <TouchableOpacity onPress={() => {}} style={ownStyles.touchable}>
       <Image
         source={require('../../../../assets/images/dots.png')}
         style={ownStyles.touchableImage}
       />
     </TouchableOpacity>
-    {/*<Button*/}
-    {/*title={`Add ${category}`}*/}
-    {/*onPress={() => onDeclarationBasketChangeQuantity(category, 5)}*/}
-    {/*/>*/}
   </View>
 );
 

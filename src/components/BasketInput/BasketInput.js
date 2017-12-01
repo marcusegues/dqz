@@ -52,15 +52,6 @@ const BasketInput = ({
 
       return (
         <View style={ownStyles.subcomponentsContainer} key={mainCategory}>
-          {/*<View style={{ alignSelf: 'center' }}>*/}
-          {/*<Text*/}
-          {/*style={{*/}
-          {/*fontFamily: 'roboto_regular',*/}
-          {/*fontSize: moderateScale(14),*/}
-          {/*color: '#24253D',*/}
-          {/*}}*/}
-          {/*>{`${mainCategory}`}</Text>*/}
-          {/*</View>*/}
           {subcomponents}
         </View>
       );
@@ -72,7 +63,7 @@ const BasketInput = ({
         <Text style={ownStyles.cardMainTitle}>Wareneingabe:</Text>
         {components}
       </ScrollView>
-      <RedButton text="Zur Bezahlung" onPress={() => {}} />
+      <RedButton text="ZUR BEZAHLUNG" onPress={() => {}} />
     </View>
   );
 };
