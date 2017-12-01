@@ -78,6 +78,8 @@ export const MainCategories: MainCategoriesType = Immutable.Set([
   'OtherGoods',
 ]);
 
+export const EmptyMainCategories: MainCategoriesType = Immutable.Set();
+
 export type MainCategoriesToCategoriesType = ImmutableMapType<
   MainCategory,
   ImmutableSetType<Category>,
@@ -100,9 +102,9 @@ type Settings = {
 };
 
 const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
-  overAllowance: null,
-  largeAmountPresent: null,
-  mainCategories: MainCategories,
+  overAllowance: undefined,
+  largeAmountPresent: undefined,
+  mainCategories: EmptyMainCategories,
   currentQuestion: 1,
 });
 

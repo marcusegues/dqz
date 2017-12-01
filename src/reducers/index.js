@@ -22,3 +22,6 @@ export const getDeclarationMainCategories = state =>
 
 export const getDeclarationCurrentQuestion = state =>
   fromDeclaration.getDeclarationCurrentQuestion(state.declaration);
+
+export const getDeclarationSettings = state =>
+  fromDeclaration.getDeclarationSettings(state.declaration);

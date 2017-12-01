@@ -13,13 +13,13 @@ class LargeAmountPresentContainer extends React.Component {
     this.handleAnswerNo = this.handleAnswerNo.bind(this);
   }
 
-  handleAnswerYes() {
-    this.props.declarationSetLargeAmountPresentTrue();
+  async handleAnswerYes() {
+    await this.props.declarationSetLargeAmountPresentTrue();
     this.props.onAnswer();
   }
 
-  handleAnswerNo() {
-    this.props.declarationSetLargeAmountPresentFalse();
+  async handleAnswerNo() {
+    await this.props.declarationSetLargeAmountPresentFalse();
     this.props.onAnswer();
   }
 
@@ -47,7 +47,7 @@ class LargeAmountPresentContainer extends React.Component {
   render() {
     return (
       <View>
-        {this.props.current === 2
+        {this.props.currentQuestion === 2
           ? this.getQuestionComponent()
           : this.getAnswerComponent()}
       </View>

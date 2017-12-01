@@ -119,3 +119,5 @@ export const getDeclarationMainCategories = (
 
 export const getDeclarationCurrentQuestion = state =>
   state.getIn(['settings', 'currentQuestion']);
+
+export const getDeclarationSettings = state => state.get('settings');
