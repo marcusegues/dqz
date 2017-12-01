@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Touchable from 'react-native-platform-touchable';
 import { View } from 'react-native';
 import PeopleInput from './PeopleInput';
 import PeopleInputAnswer from './PeopleInputAnswer';
@@ -69,11 +70,15 @@ class PeopleInputContainer extends React.Component {
   }
 
   getAnswerComponent() {
-    return <PeopleInputAnswer people={this.props.people} />;
+    return (
+      <PeopleInputAnswer
+        people={this.props.people}
+        onAnswerPress={this.props.onAnswerPress}
+      />
+    );
   }
 
   render() {
-    console.log(this.props.current);
     return (
       <View>
         {this.props.current === 1

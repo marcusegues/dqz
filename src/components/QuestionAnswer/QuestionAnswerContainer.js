@@ -27,7 +27,7 @@ class QuestionAnswerContainer extends React.Component {
         <PeopleInputContainer
           text="Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?"
           current={this.props.currentQuestion}
-          onPress={() => this.setCurrentQuestion(1)}
+          onAnswerPress={() => this.setCurrentQuestion(1)}
           onAnswerConfirm={() => this.setCurrentQuestion(2)}
         />
       </View>

@@ -6,8 +6,9 @@ import { getTotalPeople } from '../../../model/configurationApi';
 
 const complete = require('../../../../assets/images/complete.png');
 
-const PeopleInputAnswer = ({ people }) => (
+const PeopleInputAnswer = ({ people, onAnswerPress }) => (
   <AnswerCard
+    onAnswerPress={onAnswerPress}
     mainIcon={getTotalPeople(people) === 1 ? 'account' : 'account-multiple'}
   >
     <PeopleInfo people={people} />
