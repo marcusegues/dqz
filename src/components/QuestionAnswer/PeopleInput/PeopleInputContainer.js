@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
 import PeopleInput from './PeopleInput';
+import PeopleInputAnswer from './PeopleInputAnswer';
 import { getDeclarationPeople } from '../../../reducers';
 import * as fromModelApi from '../../../model/configurationApi';
 
@@ -16,18 +17,8 @@ class PeopleInputContainer extends React.Component {
     this.handleAddMinor = this.handleAddMinor.bind(this);
     this.handleSubtractMinor = this.handleSubtractMinor.bind(this);
     this.handleAnswerConfirm = this.handleAnswerConfirm.bind(this);
-    this.handleAnswer = this.handleAnswer.bind(this);
     this.getQuestionComponent = this.getQuestionComponent.bind(this);
     this.getAnswerComponent = this.getAnswerComponent.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { people } = nextProps;
-    if (people !== this.props.people) {
-      const adultsSaved = fromModelApi.getAdultPeople(people);
-      const minorsSaved = fromModelApi.getMinorPeople(people);
-      this.handleAnswer(adultsSaved + minorsSaved);
-    }
   }
 
   handleAddAdult() {
@@ -55,29 +46,12 @@ class PeopleInputContainer extends React.Component {
   }
 
   handleAnswerConfirm() {
-    // the logic here to manage handling the answer should be looked at again
-    // to make sure it is ideal. This is a piece of code with side effects.
     const { onAdultsSetQuantity, onMinorsSetQuantity, people } = this.props;
     const adults = fromModelApi.getAdultPeople(this.state.people);
     const minors = fromModelApi.getMinorPeople(this.state.people);
-    const adultsSaved = fromModelApi.getAdultPeople(people);
-    const minorsSaved = fromModelApi.getMinorPeople(people);
-
-    if (adults === adultsSaved && minors === minorsSaved) {
-      this.handleAnswer(adults + minors);
-    } else {
-      onAdultsSetQuantity(adults);
-      onMinorsSetQuantity(minors);
-    }
-  }
-
-  handleAnswer(quantityPeople) {
-    const { onAnswer } = this.props;
-    if (quantityPeople > 1) {
-      onAnswer('confirmMultiplePersons');
-    } else {
-      onAnswer('confirmSinglePerson');
-    }
+    onAdultsSetQuantity(adults);
+    onMinorsSetQuantity(minors);
+    this.props.onAnswerConfirm();
   }
 
   getQuestionComponent() {
@@ -95,7 +69,7 @@ class PeopleInputContainer extends React.Component {
   }
 
   getAnswerComponent() {
-    return null;
+    return <PeopleInputAnswer people={this.props.people} />;
   }
 
   render() {

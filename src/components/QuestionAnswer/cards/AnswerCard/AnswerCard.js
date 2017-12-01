@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0.1,
+    height: 56,
     width: '95%',
     flexDirection: 'row',
     alignItems: 'center',
