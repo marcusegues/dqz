@@ -11,7 +11,7 @@ import HeaderTitle from '../components/Headers/subcomponents/HeaderTitle';
 import MainScreenHeaderTitle from '../components/Headers/subcomponents/MainScreenHeaderTitle';
 import Logo from '../components/Headers/subcomponents/Logo';
 import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
-
+import BasketInputContainer from '../components/BasketInput/BasketInputContainer';
 import MainMenu from '../screens/MainMenu/MainMenu';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
@@ -56,6 +56,9 @@ const RootStackNavigator = StackNavigator(
     },
     PeopleInput: {
       screen: PeopleInputContainer,
+    },
+    BasketInput: {
+      screen: BasketInputContainer,
     },
   },
   {
