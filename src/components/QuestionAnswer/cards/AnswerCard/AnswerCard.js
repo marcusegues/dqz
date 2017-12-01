@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
 const AnswerCard = ({ mainIcon, status, children, onAnswerPress }) => (
   <Touchable
     style={{
-      flex: 1,
+      height: 56,
       marginLeft: 2,
       marginRight: 2,
       marginTop: 15,

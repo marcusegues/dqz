@@ -17,7 +17,7 @@ class PeopleInputContainer extends React.Component {
     this.handleSubtractAdult = this.handleSubtractAdult.bind(this);
     this.handleAddMinor = this.handleAddMinor.bind(this);
     this.handleSubtractMinor = this.handleSubtractMinor.bind(this);
-    this.handleAnswerConfirm = this.handleAnswerConfirm.bind(this);
+    this.handleAnswer = this.handleAnswer.bind(this);
     this.getQuestionComponent = this.getQuestionComponent.bind(this);
     this.getAnswerComponent = this.getAnswerComponent.bind(this);
   }
@@ -46,20 +46,20 @@ class PeopleInputContainer extends React.Component {
     });
   }
 
-  handleAnswerConfirm() {
+  handleAnswer() {
     const { onAdultsSetQuantity, onMinorsSetQuantity, people } = this.props;
     const adults = fromModelApi.getAdultPeople(this.state.people);
     const minors = fromModelApi.getMinorPeople(this.state.people);
     onAdultsSetQuantity(adults);
     onMinorsSetQuantity(minors);
-    this.props.onAnswerConfirm();
+    this.props.onAnswer();
   }
 
   getQuestionComponent() {
     return (
       <PeopleInput
         people={this.state.people}
-        onAnswerConfirm={this.handleAnswerConfirm}
+        onAnswer={this.handleAnswer}
         onAddAdult={this.handleAddAdult}
         onSubtractAdult={this.handleSubtractAdult}
         onAddMinor={this.handleAddMinor}

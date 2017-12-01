@@ -52,7 +52,7 @@ const ownStyles = {
   },
 };
 
-const ConfirmationCard = ({ text, children, onAnswerConfirm }) => (
+const ConfirmationCard = ({ text, children, onAnswer }) => (
   <View style={ownStyles.contentContainer}>
     <View style={ownStyles.mainTextContainer}>
       <Text style={ownStyles.mainText}>{text}</Text>
@@ -60,7 +60,7 @@ const ConfirmationCard = ({ text, children, onAnswerConfirm }) => (
     <View style={ownStyles.bottomTextContainer}>{children}</View>
 
     <View style={ownStyles.bottomButtonContainer}>
-      <RedButton text="ÜBERNEHMEN" onPress={onAnswerConfirm} />
+      <RedButton text="ÜBERNEHMEN" onPress={onAnswer} />
     </View>
   </View>
 );

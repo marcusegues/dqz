@@ -28,14 +28,18 @@ class QuestionAnswerContainer extends React.Component {
           text="Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?"
           current={this.props.currentQuestion}
           onAnswerPress={() => this.setCurrentQuestion(1)}
-          onAnswerConfirm={() => this.setCurrentQuestion(2)}
+          onAnswer={() => this.setCurrentQuestion(2)}
+        />
+        <LargeAmountPresentContainer
+          current={this.props.currentQuestion}
+          onAnswerPress={() => this.setCurrentQuestion(2)}
+          onAnswer={() => this.setCurrentQuestion(3)}
         />
       </View>
     );
   }
 }
 
-// <LargeAmountPresentContainer onPress={() => this.setCurrentQuestion(2)} />
 // <OverAllowanceContainer onPress={() => this.setCurrentQuestion(3)} />
 // <MainCategoriesContainer onPress={() => this.setCurrentQuestion(4)} />
 const mapStateToProps = state => ({
