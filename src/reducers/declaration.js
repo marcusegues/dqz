@@ -15,7 +15,7 @@ import * as fromModelApi from '../model/configurationApi';
 
 const declaration = (
   state: State = getInitialState(),
-  action: Action
+  action: Action,
 ): State => {
   switch (action.type) {
     case 'DECLARATION_BASKET_CHANGE_QUANTITY': {
@@ -28,8 +28,8 @@ const declaration = (
         fromModelApi.setQuantity(
           basket,
           category,
-          fromModelApi.getQuantity(basket, category) + action.quantityChange
-        )
+          fromModelApi.getQuantity(basket, category) + action.quantityChange,
+        ),
       );
     }
     case 'DECLARATION_ADULTS_CHANGE_QUANTITY': {
@@ -72,20 +72,25 @@ const declaration = (
       // eslint-disable-next-line prefer-destructuring
       const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?
       return state.updateIn(['settings', 'mainCategories'], mainCategories =>
-        mainCategories.add(mainCategory)
+        mainCategories.add(mainCategory),
       );
     }
     case 'DECLARATION_REMOVE_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
       const mainCategory: MainCategory = action.mainCategory;
       return state.updateIn(['settings', 'mainCategories'], mainCategories =>
-        mainCategories.delete(mainCategory)
+        mainCategories.delete(mainCategory),
       );
     }
     case 'DECLARATION_SET_MAIN_CATEGORIES': {
-      // eslint-disable-next-line prefer-destructuring
       const mainCategories: MainCategoriesType = action.mainCategories;
       return state.setIn(['settings', 'mainCategories'], mainCategories);
+    }
+    case 'DECLARATION_SET_CURRENT_QUESTION': {
+      return state.setIn(
+        ['settings', 'currentQuestion'],
+        action.currentQuestion,
+      );
     }
     default: {
       return state;
@@ -108,6 +113,9 @@ export const getLargeAmountPresent = (state: State): boolean =>
   state.getIn(['settings', 'largeAmountPresent'], true);
 
 export const getDeclarationMainCategories = (
-  state: State
+  state: State,
 ): MainCategoriesType =>
   state.getIn(['settings', 'mainCategories'], MainCategories);
+
+export const getDeclarationCurrentQuestion = state =>
+  state.getIn(['settings', 'currentQuestion']);

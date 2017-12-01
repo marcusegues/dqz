@@ -5,21 +5,20 @@ import PeopleInputContainer from './PeopleInput/PeopleInputContainer';
 import LargeAmountPresentContainer from './LargeAmountPresent/LargeAmountPresentContainer';
 import OverAllowanceContainer from './OverAllowance/OverAllowanceContainer';
 import MainCategoriesContainer from './MainCategories/MainCategoriesContainer';
-import { getDeclarationPeople } from '../../reducers';
+import {
+  getDeclarationPeople,
+  getDeclarationCurrentQuestion,
+} from '../../reducers';
 import { getTotalPeople } from '../../model/configurationApi';
 
 class QuestionAnswerContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      current: 1,
-    };
+    this.setCurrentQuestion = this.setCurrentQuestion.bind(this);
   }
 
-  setCurrent(number) {
-    this.setState({
-      current: number,
-    });
+  setCurrentQuestion(currentQuestion) {
+    this.props.onSetCurrentQuestion(currentQuestion);
   }
 
   render() {
@@ -27,23 +26,27 @@ class QuestionAnswerContainer extends React.Component {
       <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
         <PeopleInputContainer
           text="Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?"
-          current={this.state.current}
-          onPress={() => this.setCurrent(1)}
-          onAnswerConfirm={() => this.setCurrent(2)}
+          current={this.props.currentQuestion}
+          onPress={() => this.setCurrentQuestion(1)}
+          onAnswerConfirm={() => this.setCurrentQuestion(2)}
         />
       </View>
     );
   }
 }
 
-// <LargeAmountPresentContainer onPress={() => this.setCurrent(2)} />
-// <OverAllowanceContainer onPress={() => this.setCurrent(3)} />
-// <MainCategoriesContainer onPress={() => this.setCurrent(4)} />
+// <LargeAmountPresentContainer onPress={() => this.setCurrentQuestion(2)} />
+// <OverAllowanceContainer onPress={() => this.setCurrentQuestion(3)} />
+// <MainCategoriesContainer onPress={() => this.setCurrentQuestion(4)} />
 const mapStateToProps = state => ({
+  currentQuestion: getDeclarationCurrentQuestion(state),
   people: getDeclarationPeople(state),
 });
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+  onSetCurrentQuestion: currentQuestion =>
+    dispatch({ type: 'DECLARATION_SET_CURRENT_QUESTION', currentQuestion }),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   QuestionAnswerContainer,

@@ -43,4 +43,8 @@ export type Action =
   | {
     type: 'DECLARATION_SET_MAIN_CATEGORIES',
     mainCategories: MainCategoriesType,
+  }
+  | {
+    type: 'DECLARATION_SET_CURRENT_QUESTION',
+    currentQuestion: number,
   };
