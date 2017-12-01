@@ -1,61 +1,104 @@
 # Starter pack for React-Native -> next up:
 # https://hiddentao.com/archives/2017/02/17/continuous-integration-for-react-native-with-testfairy-testflight-deploy/
+defaults: &dazit_defaults
+  working_directory: ~/project
+  docker:
+    - image: circleci/node:7
 
 version: 2
 jobs:
-   build:
-     docker:
-       - image: circleci/node:7
-     working_directory: ~/project
-     steps:
-       - checkout
-       - run: echo "CircleCI started --- dazit"
-         # If we need private stuff:
-         # - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+  test:
+    <<: *dazit_defaults
+    steps:
+      - checkout
+      - run: echo "CircleCI started --- dazit"
+      # If we need private stuff:
+      # - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
 
-       - restore_cache:
+      - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-       - run:
+      - run:
           name: Install!
           command: npm install
 
-       - save_cache:
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - node_modules
+
+      - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-       - run:
+      - run:
           name: Lint!
           command: npm run lint:tough
 
-       - run:
+      - run:
           name: Flow!
           command: npm run flow
 
-       - run:
+      - run:
           name: Jest
           command: npm run test:coverage
 
-       - run:
-          name: Install documentation.js
-          command: sudo npm install -g documentation
-
-       - run:
-          name: DocJS
-          command: npm run doc:html
-
-       - store_artifacts:
+      - store_artifacts:
           path: ~/project/coverage/lcov-report
           destination: coverage
 
-       - store_artifacts:
+      #- run:
+      #   name: Build!
+      #   command: npm run build
+  deploy:
+    <<: *dazit_defaults
+    steps:
+      - checkout
+      - run: echo "CircleCI deploy --- dazit"
+
+      - attach_workspace:
+          at: ~/project
+
+      - run:
+          name: Install documentation.js
+          command: sudo npm install -g documentation
+
+      - run:
+          name: DocJS
+          command: npm run doc:html
+
+      - store_artifacts:
           path: ~/project/docs
           destination: docs
 
-          #- run:
-          #   name: Build!
-          #   command: npm run build
+      - run: sudo npm install -g exp
+      - run: exp login -u $EXP_USERNAME -p $EXP_PASSWORD
+      - run: |
+          if [[ $CIRCLE_TAG != "" ]]; then
+            exp publish --release-channel $CIRCLE_TAG
+          else
+            exp publish --release-channel $CIRCLE_BRANCH
+          fi
+
+workflows:
+  version: 2
+  test_and_deploy:
+    jobs:
+      - test:
+          filters:
+            tags:
+              only: /\d+\.\d+\.\d+/
+      - deploy:
+          requires:
+            - test
+          filters:
+            tags:
+              only: /\d+\.\d+\.\d+/
+            branches:
+              only:
+                - develop
+                - /release-.*/
