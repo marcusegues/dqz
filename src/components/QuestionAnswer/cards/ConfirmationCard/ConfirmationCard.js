@@ -5,12 +5,14 @@ import RedButton from '../../../Buttons/RedButton';
 
 const ownStyles = {
   contentContainer: {
-    flex: 1,
+    flex: 0.8,
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginTop: verticalScale(10),
-    marginBottom: verticalScale(20),
+    marginBottom: verticalScale(5),
+    marginLeft: 15,
+    marginRight: 15,
     backgroundColor: '#fff',
     width: '95%',
     borderRadius: 2,
@@ -55,7 +57,7 @@ const ownStyles = {
   },
 };
 
-const ConfirmationCard = ({ text, children, onAnswerConfirm }) => (
+const ConfirmationCard = ({ text, children, onAnswer }) => (
   <View style={ownStyles.contentContainer}>
     <View style={ownStyles.mainTextContainer}>
       <Text style={ownStyles.mainText}>{text}</Text>
@@ -64,7 +66,7 @@ const ConfirmationCard = ({ text, children, onAnswerConfirm }) => (
     <View style={ownStyles.bottomSectionWrapper}>
       <View style={ownStyles.bottomTextContainer}>{children}</View>
       <View style={ownStyles.bottomButtonContainer}>
-        <RedButton text="ÜBERNEHMEN" onPress={onAnswerConfirm} />
+        <RedButton text="ÜBERNEHMEN" onPress={onAnswer} />
       </View>
     </View>
   </View>
