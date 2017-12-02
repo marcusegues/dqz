@@ -9,6 +9,8 @@ import {
   getDeclarationPeople,
   getDeclarationCurrentQuestion,
   getDeclarationSettings,
+  getDeclarationInit,
+  getDeclarationInitList,
 } from '../../reducers';
 import { getTotalPeople } from '../../model/configurationApi';
 
@@ -23,8 +25,55 @@ class QuestionAnswerContainer extends React.Component {
     this.props.onSetCurrentQuestion(currentQuestion);
   }
 
+  getNextInitOpenQuestion() {
+    const { currentQuestion, people } = this.props;
+    switch (currentQuestion) {
+      case 'peopleInput': {
+        if (getTotalPeople(people) === 1) {
+          nextQuestion = 'overAllowance';
+        } else {
+          nextQuestion = 'largeAmountPresent';
+        }
+        break;
+      }
+      case 'largeAmountPresent': {
+        if (settings.get('largeAmountPresent')) {
+          nextQuestion = 'largeAmountInput';
+          break;
+        }
+        nextQuestion = 'overAllowance';
+        break;
+      }
+      case 'largeAmountInput': {
+        nextQuestion = 'overAllowance';
+      }
+      default:
+        {
+          nextQuestion = null;
+        }
+        return nextQuestion;
+    }
+  }
+
   selectNextOpenQuestion() {
-    const { settings, people } = this.props;
+    const {
+      settings,
+      people,
+      init,
+      onSetInitFalse,
+      onAddToInitList,
+    } = this.props;
+
+    if (init) {
+      const nextInitQuestion = this.getNextInitOpenQuestion();
+      if (nextInitQuestion) {
+        onAddToInitList(nextInitQuestion);
+        this.setCurrentQuestion(nextInitQuestion);
+        return;
+      }
+      onSetInitFalse();
+    }
+
     if (
       getTotalPeople(people) > 1 &&
       settings.get('largeAmountPresent') === 'notAnswered'
@@ -32,6 +81,7 @@ class QuestionAnswerContainer extends React.Component {
       this.setCurrentQuestion('largeAmountPresent');
       return;
     }
+
     if (
       getTotalPeople(people) > 1 &&
       settings.get('largeAmountsEntered') === 'notAnswered' &&
@@ -41,18 +91,22 @@ class QuestionAnswerContainer extends React.Component {
       this.setCurrentQuestion('largeAmountInput');
       return;
     }
+
     if (settings.get('overAllowance') === 'notAnswered') {
       this.setCurrentQuestion('overAllowance');
       return;
     }
+
     if (settings.get('mainCategories').isEmpty()) {
       this.setCurrentQuestion('mainCategories');
       return;
     }
+
     this.setCurrentQuestion('finished');
   }
 
   render() {
+    const { init, initList } = this.props;
     return (
       <View
         style={{
@@ -72,16 +126,22 @@ class QuestionAnswerContainer extends React.Component {
           currentQuestion={this.props.currentQuestion}
           onAnswerPress={() => this.setCurrentQuestion('largeAmountPresent')}
           onAnswer={this.selectNextOpenQuestion}
+          init={init}
+          initList={initList}
         />
         <LargeAmountInputContainer
           currentQuestion={this.props.currentQuestion}
           onAnswerPress={() => this.setCurrentQuestion('largeAmountInput')}
           onAnswer={this.selectNextOpenQuestion}
+          init={init}
+          initList={initList}
         />
         <OverAllowanceContainer
           currentQuestion={this.props.currentQuestion}
           onAnswerPress={() => this.setCurrentQuestion('overAllowance')}
           onAnswer={this.selectNextOpenQuestion}
+          init={init}
+          initList={initList}
         />
       </View>
     );
@@ -93,13 +153,18 @@ const mapStateToProps = state => ({
   currentQuestion: getDeclarationCurrentQuestion(state),
   people: getDeclarationPeople(state),
   settings: getDeclarationSettings(state),
+  init: getDeclarationInit(state),
+  initList: getDeclarationInitList(state),
 });
 
 const mapDispatchToProps = dispatch => ({
   onSetCurrentQuestion: currentQuestion =>
     dispatch({ type: 'DECLARATION_SET_CURRENT_QUESTION', currentQuestion }),
+  onAddToInitList: nextQuestion =>
+    dispatch({ type: 'DECLARATION_ADD_TO_INIT_LIST', nextQuestion }),
+  onSetInitFalse: () => dispatch({ type: 'DECLARATION_SET_INIT_FALSE' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  QuestionAnswerContainer
+  QuestionAnswerContainer,
 );

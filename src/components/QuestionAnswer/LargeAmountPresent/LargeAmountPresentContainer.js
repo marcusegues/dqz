@@ -51,7 +51,11 @@ class LargeAmountPresentContainer extends React.Component {
   }
 
   render() {
-    if (getTotalPeople(this.props.people) === 1) {
+    const { people, init, initList } = this.props;
+    if (
+      getTotalPeople(people) === 1 ||
+      (init && !initList.has('largeAmountPresent'))
+    ) {
       return null;
     }
     return this.props.currentQuestion === 'largeAmountPresent'
@@ -73,5 +77,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  LargeAmountPresentContainer
+  LargeAmountPresentContainer,
 );

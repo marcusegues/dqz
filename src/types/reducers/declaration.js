@@ -1,6 +1,7 @@
 // @flow
 import type {
   Map as ImmutableMapType,
+  List as ImmutableListType,
   RecordOf,
   RecordFactory,
   Set as ImmutableSetType,
@@ -37,11 +38,11 @@ export const AlcoholCategories: AlcoholCategoriesType = Immutable.Set([
 
 export type TobaccoProductsCategory = 'Cigarettes' | 'Tobacco';
 export type TobaccoProductsCategoriesType = ImmutableSetType<
-  TobaccoProductsCategory
+  TobaccoProductsCategory,
 >;
 
 export const TobaccoProductsCategories: TobaccoProductsCategoriesType = Immutable.Set(
-  ['Cigarettes', 'Tobacco']
+  ['Cigarettes', 'Tobacco'],
 );
 
 export type OtherGoodsCategory =
@@ -82,7 +83,7 @@ export const EmptyMainCategories: MainCategoriesType = Immutable.Set();
 
 export type MainCategoriesToCategoriesType = ImmutableMapType<
   MainCategory,
-  ImmutableSetType<Category>
+  ImmutableSetType<Category>,
 >;
 
 export const MainCategoriesToCategories: MainCategoriesToCategoriesType = Immutable.Map(
@@ -91,7 +92,7 @@ export const MainCategoriesToCategories: MainCategoriesToCategoriesType = Immuta
     Alcohol: AlcoholCategories,
     TobaccoProducts: TobaccoProductsCategories,
     OtherGoods: OtherGoodsCategories,
-  }
+  },
 );
 
 export type OverAllowanceType = boolean | 'notAnswered' | 'dontKnow';
@@ -101,8 +102,13 @@ export type CurrentQuestionType =
   | 'peopleInput'
   | 'overAllowance'
   | 'largeAmountPresent'
+  | 'largeAmountInput'
   | 'mainCategories'
   | 'finished';
+
+export type InitListType = ImmutableListType<CurrentQuestionType>;
+
+export const InitList: InitListType = Immutable.List(['peopleInput']);
 
 type Settings = {
   overAllowance: OverAllowanceType,
@@ -110,6 +116,8 @@ type Settings = {
   largeAmountsEntered: LargeAmountsEnteredType,
   mainCategories: MainCategoriesType,
   currentQuestion: CurrentQuestionType,
+  init: boolean,
+  initList: InitListType,
 };
 
 const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
@@ -118,6 +126,8 @@ const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
   largeAmountsEntered: 'notAnswered',
   mainCategories: EmptyMainCategories,
   currentQuestion: 'peopleInput',
+  init: true,
+  initList: InitList,
 });
 
 export type SettingsType = RecordOf<Settings>;

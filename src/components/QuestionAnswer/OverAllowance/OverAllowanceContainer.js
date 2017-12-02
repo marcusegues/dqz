@@ -64,7 +64,11 @@ class OverAllowanceContainer extends React.Component {
   }
 
   render() {
-    return this.props.currentQuestion === 'overAllowance'
+    const { init, initList, currentQuestion } = this.props;
+    if (init && !initList.has('overAllowance')) {
+      return null;
+    }
+    return currentQuestion === 'overAllowance'
       ? this.getQuestionComponent()
       : this.getAnswerComponent();
   }
@@ -84,5 +88,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  OverAllowanceContainer
+  OverAllowanceContainer,
 );
