@@ -3,7 +3,7 @@ import { verticalScale, moderateScale } from '../../../../../styles/Scaling';
 
 export default StyleSheet.create({
   contentContainer: {
-    flex: 0.8,
+    flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#fff',

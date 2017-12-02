@@ -71,7 +71,6 @@ const ownStyles = StyleSheet.create({
     flex: 0.45,
     paddingLeft: 10,
   },
-
   inputRowRightText: {
     flex: 0.35,
     textAlign: 'right',
