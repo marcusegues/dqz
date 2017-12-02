@@ -14,7 +14,7 @@ const ownStyles = {
     marginLeft: 15,
     marginRight: 15,
     backgroundColor: '#fff',
-    width: '100%',
+    width: '95%',
     borderRadius: 2,
     borderColor: '#ddd',
     ...Platform.select({

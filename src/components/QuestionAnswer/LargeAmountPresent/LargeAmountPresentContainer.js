@@ -7,6 +7,7 @@ import { getDeclarationPeople, getLargeAmountPresent } from '../../../reducers';
 import { getTotalPeople } from '../../../model/configurationApi';
 
 const complete = require('../../../../assets/images/complete.png');
+const incomplete = require('../../../../assets/images/incomplete.png');
 
 class LargeAmountPresentContainer extends React.Component {
   constructor(props) {
@@ -30,7 +31,9 @@ class LargeAmountPresentContainer extends React.Component {
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
         mainIcon="cash-multiple"
-        status={complete}
+        status={
+          this.props.overAllowance === 'notAnswered' ? incomplete : complete
+        }
       >
         <LargeAmountInfo largeAmountPresent={this.props.largeAmountPresent} />
       </AnswerCard>

@@ -6,7 +6,6 @@ import { MAIN_RED } from '../../../../styles/colors';
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
@@ -16,7 +15,6 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderRadius: 2,
     elevation: 3,
-    marginHorizontal: 2,
     marginBottom: 3,
     shadowColor: '#000',
     shadowOffset: { height: 2, width: 0 },
@@ -28,9 +26,6 @@ const styles = StyleSheet.create({
 const AnswerCard = ({ mainIcon, status, children, onAnswerPress }) => (
   <Touchable
     style={{
-      height: 56,
-      marginLeft: 2,
-      marginRight: 2,
       marginTop: 5,
       marginBottom: 5,
       width: '95%',
