@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 
 const OverAllowanceInfo = ({ overAllowance }) => (
   <View>
-    <Text>{`${overAllowance ? 'Yes' : 'Not'} over allowance`}</Text>
+    <Text>{`${overAllowance ? 'Ja' : 'Nein'} über Zulage`}</Text>
   </View>
 );
 
