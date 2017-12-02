@@ -96,20 +96,25 @@ export const MainCategoriesToCategories: MainCategoriesToCategoriesType = Immuta
 
 export type OverAllowanceType = ?boolean;
 export type LargeAmountPresentType = ?boolean;
-export type CurrentQuestionType = number;
+export type CurrentQuestionType =
+  | 'peopleInput'
+  | 'overAllowance'
+  | 'largeAmountPresent'
+  | 'mainCategories'
+  | 'finished';
 
 type Settings = {
-  overAllowance: ?boolean,
+  overAllowance: boolean | 'notAnswered' | 'dontKnow',
   largeAmountPresent: ?boolean,
   mainCategories: MainCategoriesType,
   currentQuestion: CurrentQuestionType,
 };
 
 const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
-  overAllowance: undefined,
-  largeAmountPresent: undefined,
+  overAllowance: 'notAnswered',
+  largeAmountPresent: 'notAnswered',
   mainCategories: EmptyMainCategories,
-  currentQuestion: 1,
+  currentQuestion: 'peopleInput',
 });
 
 export type SettingsType = RecordOf<Settings>;

@@ -26,20 +26,20 @@ class QuestionAnswerContainer extends React.Component {
     const { settings, people } = this.props;
     if (
       getTotalPeople(people) > 1 &&
-      settings.get('largeAmountPresent') === undefined
+      settings.get('largeAmountPresent') === 'notAnswered'
     ) {
-      this.setCurrentQuestion(2);
+      this.setCurrentQuestion('largeAmountPresent');
       return;
     }
-    if (settings.get('overAllowance') === undefined) {
-      this.setCurrentQuestion(3);
+    if (settings.get('overAllowance') === 'notAnswered') {
+      this.setCurrentQuestion('overAllowance');
       return;
     }
     if (settings.get('mainCategories').isEmpty()) {
-      this.setCurrentQuestion(4);
+      this.setCurrentQuestion('mainCategories');
       return;
     }
-    this.setCurrentQuestion(0);
+    this.setCurrentQuestion('finished');
   }
 
   render() {
@@ -48,18 +48,18 @@ class QuestionAnswerContainer extends React.Component {
         <PeopleInputContainer
           text="Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?"
           currentQuestion={this.props.currentQuestion}
-          onAnswerPress={() => this.setCurrentQuestion(1)}
+          onAnswerPress={() => this.setCurrentQuestion('peopleInput')}
           onAnswer={this.selectNextOpenQuestion}
         />
         <LargeAmountPresentContainer
           people={this.props.people}
           currentQuestion={this.props.currentQuestion}
-          onAnswerPress={() => this.setCurrentQuestion(2)}
+          onAnswerPress={() => this.setCurrentQuestion('largeAmountPresent')}
           onAnswer={this.selectNextOpenQuestion}
         />
         <OverAllowanceContainer
           currentQuestion={this.props.currentQuestion}
-          onAnswerPress={() => this.setCurrentQuestion(3)}
+          onAnswerPress={() => this.setCurrentQuestion('overAllowance')}
           onAnswer={this.selectNextOpenQuestion}
         />
       </View>

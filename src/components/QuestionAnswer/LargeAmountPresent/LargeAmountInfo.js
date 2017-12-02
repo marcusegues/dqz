@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 
 const LargeAmountInfo = ({ largeAmountPresent }) => (
   <View>
-    {largeAmountPresent === null ? (
+    {largeAmountPresent === 'notAnswered' ? (
       <Text>Please answer</Text>
     ) : (
       <Text>{`${

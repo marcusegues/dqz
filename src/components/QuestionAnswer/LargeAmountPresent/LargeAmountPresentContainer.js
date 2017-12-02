@@ -51,7 +51,7 @@ class LargeAmountPresentContainer extends React.Component {
     }
     return (
       <View>
-        {this.props.currentQuestion === 2
+        {this.props.currentQuestion === 'largeAmountPresent'
           ? this.getQuestionComponent()
           : this.getAnswerComponent()}
       </View>
