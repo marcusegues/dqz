@@ -155,10 +155,12 @@ const declaration = (
       return state.setIn(['settings', 'currentQuestion'], currentQuestion);
     }
     case 'DECLARATION_ADD_TO_INIT_LIST': {
+      debugger;
       const nextQuestion: CurrentQuestionType = action.nextQuestion;
-      return state.updateIn(['settings', 'initList'], list =>
+      const newState = state.updateIn(['settings', 'initList'], list =>
         list.push(nextQuestion),
       );
+      return newState;
     }
     case 'DECLARATION_SET_INIT_FALSE': {
       const newState = state.setIn(['settings', 'init'], false);

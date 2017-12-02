@@ -54,7 +54,13 @@ const LargeAmountInput = () => (
       {`Wert`}
     </Text>
     <TextInput style={[ownStyles.textInput, { flex: 0.5 }]} placeholder="" />
-
+    <TouchableOpacity onPress={() => {}}>
+      <Entypo
+        name="circle-with-plus"
+        size={moderateScale(28)}
+        color={colors.MAIN_RED}
+      />
+    </TouchableOpacity>
     <Text style={[ownStyles.inputRowRightText]}>EUR</Text>
     <MaterialIcons name="arrow-drop-down" size={30} color="#DC0018" />
   </View>

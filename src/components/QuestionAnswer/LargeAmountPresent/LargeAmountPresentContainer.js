@@ -56,7 +56,7 @@ class LargeAmountPresentContainer extends React.Component {
     const { people, init, initList } = this.props;
     if (
       getTotalPeople(people) === 1 ||
-      (init && !initList.has('largeAmountPresent'))
+      (init && !initList.includes('largeAmountPresent'))
     ) {
       return null;
     }

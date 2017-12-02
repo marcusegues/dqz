@@ -26,7 +26,9 @@ class QuestionAnswerContainer extends React.Component {
   }
 
   getNextInitOpenQuestion() {
-    const { currentQuestion, people } = this.props;
+    const { currentQuestion, people, settings } = this.props;
+    let nextQuestion;
+    debugger;
     switch (currentQuestion) {
       case 'peopleInput': {
         if (getTotalPeople(people) === 1) {
@@ -46,16 +48,16 @@ class QuestionAnswerContainer extends React.Component {
       }
       case 'largeAmountInput': {
         nextQuestion = 'overAllowance';
+        break;
       }
-      default:
-        {
-          nextQuestion = null;
-        }
-        return nextQuestion;
+      default: {
+        nextQuestion = null;
+      }
     }
+    return nextQuestion;
   }
 
-  selectNextOpenQuestion() {
+  async selectNextOpenQuestion() {
     const {
       settings,
       people,
@@ -67,7 +69,8 @@ class QuestionAnswerContainer extends React.Component {
     if (init) {
       const nextInitQuestion = this.getNextInitOpenQuestion();
       if (nextInitQuestion) {
-        onAddToInitList(nextInitQuestion);
+        await onAddToInitList(nextInitQuestion);
+        debugger;
         this.setCurrentQuestion(nextInitQuestion);
         return;
       }

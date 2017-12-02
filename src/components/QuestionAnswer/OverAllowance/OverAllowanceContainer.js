@@ -65,7 +65,8 @@ class OverAllowanceContainer extends React.Component {
 
   render() {
     const { init, initList, currentQuestion } = this.props;
-    if (init && !initList.has('overAllowance')) {
+    debugger;
+    if (init && !initList.includes('overAllowance')) {
       return null;
     }
     return currentQuestion === 'overAllowance'
