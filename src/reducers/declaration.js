@@ -103,6 +103,18 @@ const declaration = (
     case 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE': {
       return state.setIn(['settings', 'largeAmountPresent'], false);
     }
+    case 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_NOT_ANSWERED': {
+      return state.setIn(['settings', 'largeAmountPresent'], 'notAnswered');
+    }
+    case 'DECLARATION_RESET_LARGE_AMOUNTS': {
+      // eslint-disable-next-line prefer-destructuring
+      const basket: Basket = state.get('basket');
+      const category: Category = action.category;
+      return state.set(
+        'basket',
+        fromModelApi.resetLargeAmounts(basket, category),
+      );
+    }
     case 'DECLARATION_ADD_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
       const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?

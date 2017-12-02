@@ -11,6 +11,7 @@ import {
   subtractAdult,
   addMinor,
   subtractMinor,
+  getTotalPeople,
 } from '../../../model/configurationApi';
 
 class PeopleInputContainer extends React.Component {
@@ -76,10 +77,14 @@ class PeopleInputContainer extends React.Component {
   }
 
   async handleAnswer() {
-    const { onSetPeople, onAnswer } = this.props;
+    const { onSetPeople, onAnswer, people } = this.props;
     const adults = getAdultPeople(this.state.people);
     const minors = getMinorPeople(this.state.people);
     await onSetPeople(adults, minors);
+    if (getTotalPeople(people) > 1 && getTotalPeople(this.state.people) === 1) {
+      await this.props.onDeclarationSetLargeAmountNotAnswered();
+      await this.props.onDeclarationResetLargeAmounts();
+    }
     onAnswer();
   }
 
@@ -99,6 +104,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  onDeclarationSetLargeAmountNotAnswered: () =>
+    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_NOT_ANSWERED' }),
+  onDeclarationResetLargeAmounts: () =>
+    dispatch({ type: 'DECLARATION_RESET_LARGE_AMOUNTS', category: 'Meat' }),
   onSetPeople: (adults, minors) =>
     dispatch({ type: 'DECLARATION_SET_PEOPLE', adults, minors }),
   onAdultsSetQuantity: quantity =>
@@ -108,5 +117,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  PeopleInputContainer
+  PeopleInputContainer,
 );

@@ -54,7 +54,13 @@ class QuestionAnswerContainer extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center' }}>
+      <View
+        style={{
+          height: '100%',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
         <PeopleInputContainer
           text="Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?"
           currentQuestion={this.props.currentQuestion}

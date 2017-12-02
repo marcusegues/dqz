@@ -7,6 +7,8 @@ import LargeAmountInfo from './LargeAmountInfo';
 import { getDeclarationPeople, getLargeAmountPresent } from '../../../reducers';
 import { getTotalPeople } from '../../../model/configurationApi';
 
+const complete = require('../../../../assets/images/complete.png');
+
 class LargeAmountPresentContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -29,6 +31,7 @@ class LargeAmountPresentContainer extends React.Component {
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
         mainIcon="cash-multiple"
+        status={complete}
       >
         <LargeAmountInfo largeAmountPresent={this.props.largeAmountPresent} />
       </AnswerCard>
@@ -49,13 +52,9 @@ class LargeAmountPresentContainer extends React.Component {
     if (getTotalPeople(this.props.people) === 1) {
       return null;
     }
-    return (
-      <View>
-        {this.props.currentQuestion === 'largeAmountPresent'
-          ? this.getQuestionComponent()
-          : this.getAnswerComponent()}
-      </View>
-    );
+    return this.props.currentQuestion === 'largeAmountPresent'
+      ? this.getQuestionComponent()
+      : this.getAnswerComponent();
   }
 }
 
@@ -72,5 +71,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  LargeAmountPresentContainer
+  LargeAmountPresentContainer,
 );

@@ -10,9 +10,11 @@ const ownStyles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     marginTop: verticalScale(10),
-    marginBottom: verticalScale(20),
+    marginBottom: verticalScale(5),
+    marginLeft: 15,
+    marginRight: 15,
     backgroundColor: '#fff',
-    width: '95%',
+    width: '100%',
     borderRadius: 2,
     borderColor: '#ddd',
     ...Platform.select({
