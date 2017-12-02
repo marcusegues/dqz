@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { View } from 'react-native';
 import PeopleInputContainer from './PeopleInput/PeopleInputContainer';
 import LargeAmountPresentContainer from './LargeAmountPresent/LargeAmountPresentContainer';
+import LargeAmountInputContainer from './LargeAmountInput/LargeAmountInputContainer';
 import OverAllowanceContainer from './OverAllowance/OverAllowanceContainer';
 import {
   getDeclarationPeople,
@@ -31,6 +32,15 @@ class QuestionAnswerContainer extends React.Component {
       this.setCurrentQuestion('largeAmountPresent');
       return;
     }
+    if (
+      getTotalPeople(people) > 1 &&
+      settings.get('largeAmountsEntered') === 'notAnswered' &&
+      (settings.get('largeAmountPresent') === true ||
+        settings.get('largeAmountPresent') === 'dontKnow')
+    ) {
+      this.setCurrentQuestion('largeAmountInput');
+      return;
+    }
     if (settings.get('overAllowance') === 'notAnswered') {
       this.setCurrentQuestion('overAllowance');
       return;
@@ -57,6 +67,11 @@ class QuestionAnswerContainer extends React.Component {
           onAnswerPress={() => this.setCurrentQuestion('largeAmountPresent')}
           onAnswer={this.selectNextOpenQuestion}
         />
+        <LargeAmountInputContainer
+          currentQuestion={this.props.currentQuestion}
+          onAnswerPress={() => this.setCurrentQuestion('largeAmountInput')}
+          onAnswer={this.selectNextOpenQuestion}
+        />
         <OverAllowanceContainer
           currentQuestion={this.props.currentQuestion}
           onAnswerPress={() => this.setCurrentQuestion('overAllowance')}
@@ -80,5 +95,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  QuestionAnswerContainer
+  QuestionAnswerContainer,
 );

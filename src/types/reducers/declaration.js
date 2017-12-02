@@ -37,11 +37,11 @@ export const AlcoholCategories: AlcoholCategoriesType = Immutable.Set([
 
 export type TobaccoProductsCategory = 'Cigarettes' | 'Tobacco';
 export type TobaccoProductsCategoriesType = ImmutableSetType<
-  TobaccoProductsCategory
+  TobaccoProductsCategory,
 >;
 
 export const TobaccoProductsCategories: TobaccoProductsCategoriesType = Immutable.Set(
-  ['Cigarettes', 'Tobacco']
+  ['Cigarettes', 'Tobacco'],
 );
 
 export type OtherGoodsCategory =
@@ -82,7 +82,7 @@ export const EmptyMainCategories: MainCategoriesType = Immutable.Set();
 
 export type MainCategoriesToCategoriesType = ImmutableMapType<
   MainCategory,
-  ImmutableSetType<Category>
+  ImmutableSetType<Category>,
 >;
 
 export const MainCategoriesToCategories: MainCategoriesToCategoriesType = Immutable.Map(
@@ -91,7 +91,7 @@ export const MainCategoriesToCategories: MainCategoriesToCategoriesType = Immuta
     Alcohol: AlcoholCategories,
     TobaccoProducts: TobaccoProductsCategories,
     OtherGoods: OtherGoodsCategories,
-  }
+  },
 );
 
 export type OverAllowanceType = ?boolean;
@@ -105,7 +105,8 @@ export type CurrentQuestionType =
 
 type Settings = {
   overAllowance: boolean | 'notAnswered' | 'dontKnow',
-  largeAmountPresent: ?boolean,
+  largeAmountPresent: boolean | 'notAnswered' | 'dontKnow',
+  largeAmountsEntered: boolean | 'notAnswered',
   mainCategories: MainCategoriesType,
   currentQuestion: CurrentQuestionType,
 };
@@ -113,6 +114,7 @@ type Settings = {
 const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
   overAllowance: 'notAnswered',
   largeAmountPresent: 'notAnswered',
+  largeAmountsEntered: 'notAnswered',
   mainCategories: EmptyMainCategories,
   currentQuestion: 'peopleInput',
 });

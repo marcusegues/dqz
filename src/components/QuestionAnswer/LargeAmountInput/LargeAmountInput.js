@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, TextInput, StyleSheet } from 'react-native';
 
 const LargeAmountInput = ({}) => (
   <View>
@@ -6,7 +7,7 @@ const LargeAmountInput = ({}) => (
   </View>
 );
 
-const ownStyles = StyleSheets.create({
+const ownStyles = StyleSheet.create({
   textInput: {
     height: 30,
     borderBottomWidth: 1,
