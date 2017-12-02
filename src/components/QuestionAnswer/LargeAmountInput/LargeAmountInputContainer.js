@@ -57,13 +57,10 @@ class LargeAmountInputContainer extends React.Component {
     if (largeAmountPresent === 'notAnswered' || largeAmountPresent === false) {
       return null;
     }
-    return (
-      <View>
-        {this.props.currentQuestion === 'largeAmountInput'
-          ? this.getQuestionComponent()
-          : this.getAnswerComponent()}
-      </View>
-    );
+
+    return this.props.currentQuestion === 'largeAmountInput'
+      ? this.getQuestionComponent()
+      : this.getAnswerComponent();
   }
 }
 

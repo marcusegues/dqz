@@ -89,13 +89,9 @@ class PeopleInputContainer extends React.Component {
   }
 
   render() {
-    return (
-      <View>
-        {this.props.currentQuestion === 'peopleInput'
-          ? this.getQuestionComponent()
-          : this.getAnswerComponent()}
-      </View>
-    );
+    return this.props.currentQuestion === 'peopleInput'
+      ? this.getQuestionComponent()
+      : this.getAnswerComponent();
   }
 }
 

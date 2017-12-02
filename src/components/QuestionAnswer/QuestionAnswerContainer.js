@@ -56,7 +56,7 @@ class QuestionAnswerContainer extends React.Component {
     return (
       <View
         style={{
-          height: '100%',
+          flex: 1,
           flexDirection: 'column',
           alignItems: 'center',
         }}

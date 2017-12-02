@@ -6,7 +6,7 @@ import { MAIN_RED } from '../../../../styles/colors';
 
 const styles = StyleSheet.create({
   container: {
-    width: '95%',
+    width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',

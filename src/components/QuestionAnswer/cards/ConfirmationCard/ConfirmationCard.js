@@ -5,7 +5,7 @@ import RedButton from '../../../Buttons/RedButton';
 
 const ownStyles = {
   contentContainer: {
-    flex: 1,
+    flex: 0.8,
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
