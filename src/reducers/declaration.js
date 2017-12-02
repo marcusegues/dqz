@@ -40,6 +40,7 @@ const declaration = (
       // eslint-disable-next-line prefer-destructuring
       const category: Category = action.category;
       const basket: Basket = state.get('basket');
+      // eslint-disable-next-line prefer-destructuring
       const amount: number = action.amount;
       return state.set(
         'basket',
@@ -49,6 +50,7 @@ const declaration = (
     case 'DECLARATION_BASKET_ADD_LARGE_AMOUNT': {
       // eslint-disable-next-line prefer-destructuring
       const category: Category = action.category;
+      // eslint-disable-next-line prefer-destructuring
       const largeAmount: number = action.largeAmount;
       const basket: Basket = state.get('basket');
       return state.set(
@@ -107,8 +109,8 @@ const declaration = (
       return state.setIn(['settings', 'largeAmountPresent'], 'notAnswered');
     }
     case 'DECLARATION_RESET_LARGE_AMOUNTS': {
-      // eslint-disable-next-line prefer-destructuring
       const basket: Basket = state.get('basket');
+      // eslint-disable-next-line prefer-destructuring
       const category: Category = action.category;
       return state.set(
         'basket',
@@ -135,10 +137,9 @@ const declaration = (
       return state.setIn(['settings', 'mainCategories'], mainCategories);
     }
     case 'DECLARATION_SET_CURRENT_QUESTION': {
-      return state.setIn(
-        ['settings', 'currentQuestion'],
-        action.currentQuestion,
-      );
+      // eslint-disable-next-line prefer-destructuring
+      const currentQuestion: CurrentQuestionType = action.currentQuestion;
+      return state.setIn(['settings', 'currentQuestion'], currentQuestion);
     }
     default: {
       return state;
@@ -155,10 +156,10 @@ export const getDeclarationPeople = (state: State): People =>
   state.get('people');
 
 export const getOverAllowance = (state: State): OverAllowanceType =>
-  state.getIn(['settings', 'overAllowance']);
+  state.getIn(['settings', 'overAllowance'], 'notAnswered');
 
 export const getLargeAmountPresent = (state: State): LargeAmountPresentType =>
-  state.getIn(['settings', 'largeAmountPresent']);
+  state.getIn(['settings', 'largeAmountPresent'], 'notAnswered');
 
 export const getDeclarationMainCategories = (
   state: State,
@@ -167,7 +168,8 @@ export const getDeclarationMainCategories = (
 
 export const getDeclarationCurrentQuestion = (
   state: State,
-): CurrentQuestionType => state.getIn(['settings', 'currentQuestion'], 0);
+): CurrentQuestionType =>
+  state.getIn(['settings', 'currentQuestion'], 'finished');
 
 export const getDeclarationSettings = (state: State): SettingsType =>
   state.get('settings');

@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
 import YesNoCard from '../cards/YesNoCard/YesNoCard';
 import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import OverAllowanceInfo from './OverAllowanceInfo';

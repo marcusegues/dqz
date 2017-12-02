@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
 import PeopleInput from './PeopleInput';
 import PeopleInputAnswer from './PeopleInputAnswer';
 import { getDeclarationPeople } from '../../../reducers';

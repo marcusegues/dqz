@@ -94,8 +94,9 @@ export const MainCategoriesToCategories: MainCategoriesToCategoriesType = Immuta
   },
 );
 
-export type OverAllowanceType = ?boolean;
-export type LargeAmountPresentType = ?boolean;
+export type OverAllowanceType = boolean | 'notAnswered' | 'dontKnow';
+export type LargeAmountPresentType = boolean | 'notAnswered' | 'dontKnow';
+export type LargeAmountsEnteredType = boolean | 'notAnswered';
 export type CurrentQuestionType =
   | 'peopleInput'
   | 'overAllowance'
@@ -104,9 +105,9 @@ export type CurrentQuestionType =
   | 'finished';
 
 type Settings = {
-  overAllowance: boolean | 'notAnswered' | 'dontKnow',
-  largeAmountPresent: boolean | 'notAnswered' | 'dontKnow',
-  largeAmountsEntered: boolean | 'notAnswered',
+  overAllowance: OverAllowanceType,
+  largeAmountPresent: LargeAmountPresentType,
+  largeAmountsEntered: LargeAmountsEnteredType,
   mainCategories: MainCategoriesType,
   currentQuestion: CurrentQuestionType,
 };

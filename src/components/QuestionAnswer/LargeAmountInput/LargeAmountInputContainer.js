@@ -1,17 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
 import ConfirmationCard from '../cards/ConfirmationCard/ConfirmationCard';
 import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import LargeAmountInput from './LargeAmountInput';
 import LargeAmountInputInfo from './LargeAmountInputInfo';
 import {
-  getDeclarationPeople,
-  getLargeAmountPresent,
   getDeclarationBasket,
   getDeclarationSettings,
 } from '../../../reducers';
-import { getTotalPeople, getAmounts } from '../../../model/configurationApi';
+import { getAmounts } from '../../../model/configurationApi';
 
 class LargeAmountInputContainer extends React.Component {
   constructor(props) {
@@ -20,14 +17,6 @@ class LargeAmountInputContainer extends React.Component {
     this.state = {
       largeAmounts: this.props.largeAmounts,
     };
-  }
-
-  async handleAnswer() {
-    const { onAnswer, declarationAddLargeAmount } = this.props;
-    await this.state.largeAmounts.forEach(amount =>
-      declarationAddLargeAmount(amount),
-    );
-    onAnswer();
   }
 
   getQuestionComponent() {
@@ -50,6 +39,14 @@ class LargeAmountInputContainer extends React.Component {
         <LargeAmountInputInfo largeAmounts={this.props.largeAmounts} />
       </AnswerCard>
     );
+  }
+
+  async handleAnswer() {
+    const { onAnswer, declarationAddLargeAmount } = this.props;
+    await this.state.largeAmounts.forEach(amount =>
+      declarationAddLargeAmount(amount),
+    );
+    onAnswer();
   }
 
   render() {
