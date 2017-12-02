@@ -29,6 +29,13 @@
     "react/prop-types": "off",
     "no-underscore-dangle": "off",
     "no-param-reassign": "off",
-    "no-debugger": "off"
+    "no-debugger": "off",
+    "comma-dangle": [2, {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "ignore"
+    }]
   }
 }
