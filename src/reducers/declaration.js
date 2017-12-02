@@ -19,7 +19,7 @@ import * as fromModelApi from '../model/configurationApi';
 
 const declaration = (
   state: State = getInitialState(),
-  action: Action,
+  action: Action
 ): State => {
   switch (action.type) {
     case 'DECLARATION_BASKET_CHANGE_QUANTITY': {
@@ -32,8 +32,8 @@ const declaration = (
         fromModelApi.setQuantity(
           basket,
           category,
-          fromModelApi.getQuantity(basket, category) + action.quantityChange,
-        ),
+          fromModelApi.getQuantity(basket, category) + action.quantityChange
+        )
       );
     }
     case 'DECLARATION_BASKET_ADD_AMOUNT': {
@@ -44,7 +44,7 @@ const declaration = (
       const amount: number = action.amount;
       return state.set(
         'basket',
-        fromModelApi.addAmount(basket, category, amount),
+        fromModelApi.addAmount(basket, category, amount)
       );
     }
     case 'DECLARATION_BASKET_ADD_LARGE_AMOUNT': {
@@ -55,7 +55,7 @@ const declaration = (
       const basket: Basket = state.get('basket');
       return state.set(
         'basket',
-        fromModelApi.addLargeAmount(basket, category, largeAmount),
+        fromModelApi.addLargeAmount(basket, category, largeAmount)
       );
     }
     case 'DECLARATION_ADULTS_CHANGE_QUANTITY': {
@@ -90,7 +90,7 @@ const declaration = (
       const minors: number = action.minors;
       return state.set(
         'people',
-        fromModelApi.setPeople(people, adults, minors),
+        fromModelApi.setPeople(people, adults, minors)
       );
     }
     case 'DECLARATION_SET_OVER_ALLOWANCE_TRUE': {
@@ -114,21 +114,21 @@ const declaration = (
       const category: Category = action.category;
       return state.set(
         'basket',
-        fromModelApi.resetLargeAmounts(basket, category),
+        fromModelApi.resetLargeAmounts(basket, category)
       );
     }
     case 'DECLARATION_ADD_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
       const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?
       return state.updateIn(['settings', 'mainCategories'], mainCategories =>
-        mainCategories.add(mainCategory),
+        mainCategories.add(mainCategory)
       );
     }
     case 'DECLARATION_REMOVE_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
       const mainCategory: MainCategory = action.mainCategory;
       return state.updateIn(['settings', 'mainCategories'], mainCategories =>
-        mainCategories.delete(mainCategory),
+        mainCategories.delete(mainCategory)
       );
     }
     case 'DECLARATION_SET_MAIN_CATEGORIES': {
@@ -162,12 +162,12 @@ export const getLargeAmountPresent = (state: State): LargeAmountPresentType =>
   state.getIn(['settings', 'largeAmountPresent'], 'notAnswered');
 
 export const getDeclarationMainCategories = (
-  state: State,
+  state: State
 ): MainCategoriesType =>
   state.getIn(['settings', 'mainCategories'], MainCategories);
 
 export const getDeclarationCurrentQuestion = (
-  state: State,
+  state: State
 ): CurrentQuestionType =>
   state.getIn(['settings', 'currentQuestion'], 'finished');
 

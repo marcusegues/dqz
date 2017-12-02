@@ -44,7 +44,7 @@ class LargeAmountInputContainer extends React.Component {
   async handleAnswer() {
     const { onAnswer, declarationAddLargeAmount } = this.props;
     await this.state.largeAmounts.forEach(amount =>
-      declarationAddLargeAmount(amount),
+      declarationAddLargeAmount(amount)
     );
     onAnswer();
   }
@@ -76,5 +76,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  LargeAmountInputContainer,
+  LargeAmountInputContainer
 );

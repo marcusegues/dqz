@@ -5,7 +5,7 @@ const LargeAmountInputInfo = ({ largeAmounts }) => (
   <View>
     <Text>{`Insgesamt große Mengen sind ${largeAmounts.reduce(
       (acc, val) => acc + val,
-      0,
+      0
     )}`}</Text>
   </View>
 );
