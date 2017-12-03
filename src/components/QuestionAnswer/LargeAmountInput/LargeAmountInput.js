@@ -109,6 +109,7 @@ class LargeAmountInput extends React.Component {
           <View
             style={{ flex: 1, height: 50, width: 200, flexDirection: 'column' }}
           >
+            {/* TODO use numeric pad */}
             <TextInput
               style={[ownStyles.textInput, { flex: 1 }]}
               value={this.state.input}

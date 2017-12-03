@@ -71,7 +71,7 @@ const RootStackNavigator = StackNavigator(
   {
     navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-    initialRouteName: 'MainMenu',
+    initialRouteName: 'QuestionAnswer',
   }
 );
 

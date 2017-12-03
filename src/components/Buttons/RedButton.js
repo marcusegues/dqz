@@ -14,6 +14,7 @@ const ownStyles = disabled => ({
     borderRadius: 3,
     backgroundColor: colors.MAIN_RED,
     borderColor: '#ddd',
+    marginTop: verticalScale(16),
   },
   touchable: {
     flex: 1,

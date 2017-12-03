@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-
+import { CategoriesInfo } from '../../../model/constants';
 import { moderateScale } from '../../../styles/Scaling';
 import * as colors from '../../../styles/colors';
 
@@ -73,8 +73,6 @@ const ownStyles = {
   },
 };
 
-const img = require('../../../../assets/images/dots.png');
-
 const GoodInputRow = ({
   category,
   quantity,
@@ -82,19 +80,18 @@ const GoodInputRow = ({
   mainCategory,
 }) => (
   <View style={ownStyles.container}>
-    <View style={ownStyles.leftSquare}>
-      <Text style={ownStyles.leftSquareText}>{`< 18% `}</Text>
-    </View>
+    <View style={ownStyles.leftSquare} />
 
     <View style={ownStyles.rowMainTextContainer}>
       <View>
-        <Text style={ownStyles.mainCategoryText}>{mainCategory}</Text>
-        <Text style={ownStyles.categoryText}>{category}</Text>
+        <Text style={ownStyles.mainCategoryText}>{category}</Text>
+        <Text style={ownStyles.categoryText}>{mainCategory}</Text>
       </View>
       <View style={ownStyles.priceAndQuantityContainer}>
-        <Text style={ownStyles.priceText}>9,00 EUR</Text>
         <View style={ownStyles.quantityContainer}>
-          <Text style={ownStyles.quantityText}>{`${quantity} Liter`}</Text>
+          <Text style={ownStyles.quantityText}>{`${
+            quantity
+          } ${CategoriesInfo.get(category).get('unit')}`}</Text>
         </View>
       </View>
     </View>
@@ -108,10 +105,6 @@ const GoodInputRow = ({
         size={moderateScale(30)}
         color={colors.MAIN_RED}
       />
-    </TouchableOpacity>
-
-    <TouchableOpacity onPress={() => {}} style={ownStyles.touchable}>
-      <Image source={img} style={ownStyles.touchableImage} />
     </TouchableOpacity>
   </View>
 );
