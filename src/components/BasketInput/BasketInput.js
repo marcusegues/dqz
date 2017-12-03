@@ -1,23 +1,34 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Platform } from 'react-native';
 import { getQuantity } from '../../model/configurationApi';
 import GoodInputRow from './subcomponents/GoodInputRow';
 import { moderateScale } from '../../styles/Scaling';
-import RedButton from '../Buttons/RedButton';
-
-// Notes: remember that to have a look at configurationApi to find out which methods
-// are available on the basket.
 
 const ownStyles = {
   mainContainer: {
     flex: 1,
     marginTop: 20,
     marginBottom: 30,
+    width: '100%',
   },
   subcomponentsContainer: {
+    width: '100%',
     paddingHorizontal: 5,
   },
   scrollView: {
+    width: '95%',
+    flex: 1,
+    ...Platform.select({
+      ios: {
+        shadowColor: 'black',
+        shadowOffset: { height: 5, width: 2 },
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
+      },
+      android: {
+        elevation: 6,
+      },
+    }),
     borderTopWidth: 1,
     borderColor: '#E0E0E1',
     marginHorizontal: 10,
@@ -58,13 +69,12 @@ const BasketInput = ({
     });
 
   return (
-    <View style={ownStyles.mainContainer}>
-      <ScrollView style={ownStyles.scrollView}>
-        <Text style={ownStyles.cardMainTitle}>Wareneingabe:</Text>
-        {components}
-      </ScrollView>
-      <RedButton text="ZUR BEZAHLUNG" onPress={() => {}} />
-    </View>
+    <ScrollView contentContainerStyle={ownStyles.scrollView}>
+      <Text key={1} style={ownStyles.cardMainTitle}>
+        Wareneingabe:
+      </Text>
+      {components}
+    </ScrollView>
   );
 };
 

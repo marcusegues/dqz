@@ -1,5 +1,8 @@
 import React from 'react';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
+import NavBar from '../NavBar/NavBar';
+import RedButton from '../Buttons/RedButton';
 import {
   getDeclarationBasket,
   getDeclarationMainCategories,
@@ -11,25 +14,42 @@ class BasketInputContainer extends React.Component {
   constructor(props) {
     super(props);
     this.getDisplayedCategoriesByMainCategory = this.getDisplayedCategoriesByMainCategory.bind(
-      this
+      this,
     );
   }
 
   getDisplayedCategoriesByMainCategory() {
     return MainCategoriesToCategories.filter((cats, mainCat) =>
-      this.props.mainCategories.has(mainCat)
+      this.props.mainCategories.has(mainCat),
     );
   }
 
   render() {
     return (
-      <BasketInput
-        categoriesByMainCategory={this.getDisplayedCategoriesByMainCategory()}
-        basket={this.props.basket}
-        onDeclarationBasketChangeQuantity={
-          this.props.onDeclarationBasketChangeQuantity
-        }
-      />
+      <View
+        style={{
+          flex: 1,
+          height: '100%',
+          width: '100%',
+          marginBottom: 16,
+          flexDirection: 'column',
+        }}
+      >
+        <NavBar step={2} />
+        <BasketInput
+          categoriesByMainCategory={this.getDisplayedCategoriesByMainCategory()}
+          basket={this.props.basket}
+          onDeclarationBasketChangeQuantity={
+            this.props.onDeclarationBasketChangeQuantity
+          }
+        />
+        <RedButton
+          text="ZUR BEZAHLUNG"
+          onPress={() => {
+            this.props.navigation.navigate('UnderConstruction');
+          }}
+        />
+      </View>
     );
   }
 }
@@ -49,5 +69,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  BasketInputContainer
+  BasketInputContainer,
 );
