@@ -23,7 +23,7 @@ export default class App extends React.Component {
           onFinish={this._handleFinishLoading}
         />
       );
-    } else {
+    }
       return (
         <View style={styles.container} store={store}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
@@ -35,42 +35,38 @@ export default class App extends React.Component {
           </Provider>
         </View>
       );
-    }
+
   }
 
-  _loadResourcesAsync = async () => {
-    return Promise.all([
+  _loadResourcesAsync = async () => Promise.all([
       Asset.loadAsync([
         require('./assets/images/robot-dev.png'),
         require('./assets/images/robot-prod.png'),
       ]),
-      Font.loadAsync([
-        { Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf') },
-        {
-          open_sans_extra_bold: require('./assets/fonts/OpenSans-ExtraBold.ttf'),
-        },
-        { open_sans_bold: require('./assets/fonts/OpenSans-Bold.ttf') },
-        {
-          open_sans_semi_bold: require('./assets/fonts/OpenSans-SemiBold.ttf'),
-        },
-        { open_sans_regular: require('./assets/fonts/OpenSans-Regular.ttf') },
-        { open_sans_light: require('./assets/fonts/OpenSans-Light.ttf') },
+      Font.loadAsync({
+        Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
 
-        { roboto_bold: require('./assets/fonts/Roboto-Bold.ttf') },
-        { roboto_italic: require('./assets/fonts/Roboto-Italic.ttf') },
-        { roboto_regular: require('./assets/fonts/Roboto-Regular.ttf') },
-        { roboto_light: require('./assets/fonts/Roboto-Light.ttf') },
-        { roboto_medium: require('./assets/fonts/Roboto-Medium.ttf') },
-        { roboto_thin: require('./assets/fonts/Roboto-Thin.ttf') },
+        open_sans_extra_bold: require('./assets/fonts/OpenSans-ExtraBold.ttf'),
+        open_sans_bold: require('./assets/fonts/OpenSans-Bold.ttf'),
+
+        open_sans_semi_bold: require('./assets/fonts/OpenSans-SemiBold.ttf'),
+        open_sans_regular: require('./assets/fonts/OpenSans-Regular.ttf'),
+        open_sans_light: require('./assets/fonts/OpenSans-Light.ttf'),
+
+        roboto_bold: require('./assets/fonts/Roboto-Bold.ttf'),
+        roboto_italic: require('./assets/fonts/Roboto-Italic.ttf'),
+        roboto_regular: require('./assets/fonts/Roboto-Regular.ttf'),
+        roboto_light: require('./assets/fonts/Roboto-Light.ttf'),
+        roboto_medium: require('./assets/fonts/Roboto-Medium.ttf'),
+        roboto_thin: require('./assets/fonts/Roboto-Thin.ttf'),
 
         // This is the font that we are using for our tab bar
-        Ionicons.font,
+        ...Ionicons.font,
         // We include SpaceMono because we use it in HomeScreen.js. Feel free
         // to remove this if you are not using it in your app
-        //{ 'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf') },
-      ]),
+        // { 'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf') },
+      }),
     ]);
-  };
 
   _handleLoadingError = error => {
     // In this case, you might want to report the error to your error
