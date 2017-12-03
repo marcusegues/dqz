@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { CategoriesInfo } from '../../../model/constants';
 import { moderateScale } from '../../../styles/Scaling';
@@ -72,8 +72,6 @@ const ownStyles = {
     height: 30,
   },
 };
-
-const img = require('../../../../assets/images/dots.png');
 
 const GoodInputRow = ({
   category,
