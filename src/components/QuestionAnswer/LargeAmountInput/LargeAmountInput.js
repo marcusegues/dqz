@@ -73,7 +73,9 @@ class LargeAmountInput extends React.Component {
       return;
     }
     if (parseInt(this.state.input, 10) < 300) {
-      this.setState({ validation: 'Bitte Beträge über CHF 300 (unteilbar) eingeben.' });
+      this.setState({
+        validation: 'Bitte Beträge über CHF 300 (unteilbar) eingeben.',
+      });
       return;
     }
     this.props.onAddLargeAmount(this.state.input);

@@ -48,7 +48,12 @@ const ownStyles = {
   },
 };
 
-const ConfirmationCard = ({ text, children, onAnswer }) => (
+const ConfirmationCard = ({
+  text,
+  children,
+  onAnswer,
+  confirmationDisabled,
+}) => (
   <View style={ownStyles.contentContainer}>
     <View style={{ width: '95%' }}>
       <Text style={ownStyles.mainText}>{text}</Text>
@@ -58,8 +63,17 @@ const ConfirmationCard = ({ text, children, onAnswer }) => (
       <View>{children}</View>
     </View>
     <View style={ownStyles.bottomButtonContainer}>
-      <RedButton text="ÜBERNEHMEN" onPress={onAnswer} />
+      <RedButton
+        text="ÜBERNEHMEN"
+        onPress={onAnswer}
+        confirmationDisabled={confirmationDisabled}
+      />
     </View>
   </View>
 );
+
+ConfirmationCard.defaultProps = {
+  confirmationDisabled: false,
+};
+
 export default ConfirmationCard;
