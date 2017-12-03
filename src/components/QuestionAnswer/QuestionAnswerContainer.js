@@ -28,7 +28,6 @@ class QuestionAnswerContainer extends React.Component {
   getNextInitOpenQuestion() {
     const { currentQuestion, people, settings } = this.props;
     let nextQuestion;
-    debugger;
     switch (currentQuestion) {
       case 'peopleInput': {
         if (getTotalPeople(people) === 1) {
@@ -70,7 +69,6 @@ class QuestionAnswerContainer extends React.Component {
       const nextInitQuestion = this.getNextInitOpenQuestion();
       if (nextInitQuestion) {
         await onAddToInitList(nextInitQuestion);
-        debugger;
         this.setCurrentQuestion(nextInitQuestion);
         return;
       }
@@ -169,5 +167,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  QuestionAnswerContainer,
+  QuestionAnswerContainer
 );

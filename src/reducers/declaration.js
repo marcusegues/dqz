@@ -155,7 +155,6 @@ const declaration = (
       return state.setIn(['settings', 'currentQuestion'], currentQuestion);
     }
     case 'DECLARATION_ADD_TO_INIT_LIST': {
-      debugger;
       const nextQuestion: CurrentQuestionType = action.nextQuestion;
       const newState = state.updateIn(['settings', 'initList'], list =>
         list.push(nextQuestion)
