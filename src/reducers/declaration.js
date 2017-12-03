@@ -40,28 +40,6 @@ const declaration = (
         )
       );
     }
-    case 'DECLARATION_BASKET_ADD_AMOUNT': {
-      // eslint-disable-next-line prefer-destructuring
-      const category: Category = action.category;
-      const basket: Basket = state.get('basket');
-      // eslint-disable-next-line prefer-destructuring
-      const amount: number = action.amount;
-      return state.set(
-        'basket',
-        fromModelApi.addAmount(basket, category, amount)
-      );
-    }
-    case 'DECLARATION_BASKET_ADD_LARGE_AMOUNT': {
-      // eslint-disable-next-line prefer-destructuring
-      const category: Category = action.category;
-      // eslint-disable-next-line prefer-destructuring
-      const largeAmount: number = action.largeAmount;
-      const basket: Basket = state.get('basket');
-      return state.set(
-        'basket',
-        fromModelApi.addLargeAmount(basket, category, largeAmount)
-      );
-    }
     case 'DECLARATION_ADULTS_CHANGE_QUANTITY': {
       const people: People = state.get('people');
       const adults: number = people.get('adults');
@@ -103,6 +81,41 @@ const declaration = (
     case 'DECLARATION_SET_OVER_ALLOWANCE_FALSE': {
       return state.setIn(['settings', 'overAllowance'], false);
     }
+    case 'DECLARATION_BASKET_ADD_AMOUNT': {
+      // eslint-disable-next-line prefer-destructuring
+      const category: Category = action.category;
+      const basket: Basket = state.get('basket');
+      // eslint-disable-next-line prefer-destructuring
+      const amount: number = action.amount;
+      return state.set(
+        'basket',
+        fromModelApi.addAmount(basket, category, amount)
+      );
+    }
+    case 'DECLARATION_RESET_AMOUNTS': {
+      const basket: Basket = state.get('basket');
+      // eslint-disable-next-line prefer-destructuring
+      const category: Category = action.category;
+      return state.set('basket', fromModelApi.resetAmounts(basket, category));
+    }
+    case 'DECLARATION_SET_AMOUNTS_ENTERED_TRUE': {
+      return state.setIn(['settings', 'amountsEntered'], true);
+    }
+    case 'DECLARATION_SET_AMOUNTS_ENTERED_NOT_ANSWERED': {
+      console.log('setting amounts entered to not answered');
+      return state.setIn(['settings', 'amountsEntered'], 'notAnswered');
+    }
+    case 'DECLARATION_BASKET_ADD_LARGE_AMOUNT': {
+      // eslint-disable-next-line prefer-destructuring
+      const category: Category = action.category;
+      // eslint-disable-next-line prefer-destructuring
+      const largeAmount: number = action.largeAmount;
+      const basket: Basket = state.get('basket');
+      return state.set(
+        'basket',
+        fromModelApi.addLargeAmount(basket, category, largeAmount)
+      );
+    }
     case 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE': {
       return state.setIn(['settings', 'largeAmountPresent'], true);
     }
@@ -125,7 +138,6 @@ const declaration = (
       return state.setIn(['settings', 'largeAmountsEntered'], true);
     }
     case 'DECLARATION_SET_LARGE_AMOUNTS_ENTERED_NOT_ANSWERED': {
-      debugger;
       return state.setIn(['settings', 'largeAmountsEntered'], 'notAnswered');
     }
     case 'DECLARATION_SET_OVER_ALLOWANCE_NOT_ANSWERED': {

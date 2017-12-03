@@ -78,7 +78,7 @@ class LargeAmountInputContainer extends React.Component {
   }
 
   render() {
-    const { largeAmountPresent } = this.props.settings;
+    const largeAmountPresent = this.props.settings.get('largeAmountPresent');
     if (largeAmountPresent === 'notAnswered' || largeAmountPresent === false) {
       return null;
     }

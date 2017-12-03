@@ -5,6 +5,7 @@ import PeopleInputContainer from './PeopleInput/PeopleInputContainer';
 import LargeAmountPresentContainer from './LargeAmountPresent/LargeAmountPresentContainer';
 import LargeAmountInputContainer from './LargeAmountInput/LargeAmountInputContainer';
 import OverAllowanceContainer from './OverAllowance/OverAllowanceContainer';
+import AmountInputContainer from './AmountInput/AmountInputContainer';
 import {
   getDeclarationPeople,
   getDeclarationCurrentQuestion,
@@ -47,6 +48,18 @@ class QuestionAnswerContainer extends React.Component {
       }
       case 'largeAmountInput': {
         nextQuestion = 'overAllowance';
+        break;
+      }
+      case 'overAllowance': {
+        if (settings.get('overAllowance') === true) {
+          nextQuestion = 'amountInput';
+          break;
+        }
+        nextQuestion = null;
+        break;
+      }
+      case 'amountInput': {
+        nextQuestion = null;
         break;
       }
       default: {
@@ -98,6 +111,14 @@ class QuestionAnswerContainer extends React.Component {
       return;
     }
 
+    if (
+      settings.get('overAllowance') === true &&
+      settings.get('amountsEntered') === 'notAnswered'
+    ) {
+      this.setCurrentQuestion('amountInput');
+      return;
+    }
+
     if (settings.get('mainCategories').isEmpty()) {
       this.setCurrentQuestion('mainCategories');
       return;
@@ -140,6 +161,13 @@ class QuestionAnswerContainer extends React.Component {
         <OverAllowanceContainer
           currentQuestion={this.props.currentQuestion}
           onAnswerPress={() => this.setCurrentQuestion('overAllowance')}
+          onAnswer={this.selectNextOpenQuestion}
+          init={init}
+          initList={initList}
+        />
+        <AmountInputContainer
+          currentQuestion={this.props.currentQuestion}
+          onAnswerPress={() => this.setCurrentQuestion('amountInput')}
           onAnswer={this.selectNextOpenQuestion}
           init={init}
           initList={initList}
