@@ -8,7 +8,11 @@ const MainCategoriesInput = ({
   onAnswer,
   text,
 }) => (
-  <ConfirmationCard text={text} onAnswer={onAnswer}>
+  <ConfirmationCard
+    text={text}
+    onAnswer={onAnswer}
+    confirmationDisabled={!mainCategories.size}
+  >
     <MainCategoriesCheckList
       mainCategories={mainCategories}
       onToggleMainCategory={onToggleMainCategory}
