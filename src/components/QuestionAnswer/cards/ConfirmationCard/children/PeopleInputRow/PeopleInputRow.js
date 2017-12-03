@@ -54,7 +54,7 @@ const PeopleInputRow = ({
         <Entypo
           name="circle-with-minus"
           size={moderateScale(28)}
-          color={colors.LIGHT_GREY}
+          color={displayedQuantity ? colors.MAIN_RED : colors.LIGHT_GREY}
         />
       </TouchableOpacity>
       <Text style={ownStyles.quantity}>{displayedQuantity}</Text>
