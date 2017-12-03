@@ -79,7 +79,8 @@ class AmountInput extends React.Component {
     ) {
       this.setState({
         input: '',
-        validation: 'Bitte ein Betrag über CHF 300 in der vorgehenden Frage eingeben.',
+        validation:
+          'Bitte ein Betrag über CHF 300 in der vorgehenden Frage eingeben.',
       });
       return;
     }
