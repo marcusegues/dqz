@@ -8,7 +8,7 @@ const LargeAmountInfo = ({ largeAmountPresent }) => (
     ) : (
       <Text>{`${
         largeAmountPresent ? 'Ja' : 'Nein'
-      } Große Menge vorhanden`}</Text>
+      } - Grosse Menge vorhanden`}</Text>
     )}
   </View>
 );
