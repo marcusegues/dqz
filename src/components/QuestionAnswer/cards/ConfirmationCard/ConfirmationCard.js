@@ -9,7 +9,7 @@ const ownStyles = {
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: verticalScale(10),
+    marginTop: verticalScale(16),
     marginBottom: verticalScale(5),
     marginLeft: 15,
     marginRight: 15,

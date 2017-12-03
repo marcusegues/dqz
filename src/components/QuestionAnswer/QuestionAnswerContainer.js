@@ -7,6 +7,7 @@ import LargeAmountInputContainer from './LargeAmountInput/LargeAmountInputContai
 import OverAllowanceContainer from './OverAllowance/OverAllowanceContainer';
 import AmountInputContainer from './AmountInput/AmountInputContainer';
 import MainCategoriesInputContainer from './MainCategoriesInput/MainCategoriesInputContainer';
+import RedButton from '../Buttons/RedButton';
 import NavBar from '../NavBar/NavBar';
 import {
   getDeclarationPeople,
@@ -136,53 +137,74 @@ class QuestionAnswerContainer extends React.Component {
       <View
         style={{
           flex: 1,
+          height: '100%',
           flexDirection: 'column',
           alignItems: 'center',
         }}
       >
-        <NavBar step={1} />
-        <PeopleInputContainer
-          text="Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?"
-          currentQuestion={this.props.currentQuestion}
-          onAnswerPress={() => this.setCurrentQuestion('peopleInput')}
-          onAnswer={this.selectNextOpenQuestion}
-        />
-        <LargeAmountPresentContainer
-          people={this.props.people}
-          currentQuestion={this.props.currentQuestion}
-          onAnswerPress={() => this.setCurrentQuestion('largeAmountPresent')}
-          onAnswer={this.selectNextOpenQuestion}
-          init={init}
-          initList={initList}
-        />
-        <LargeAmountInputContainer
-          currentQuestion={this.props.currentQuestion}
-          onAnswerPress={() => this.setCurrentQuestion('largeAmountInput')}
-          onAnswer={this.selectNextOpenQuestion}
-          init={init}
-          initList={initList}
-        />
-        <OverAllowanceContainer
-          currentQuestion={this.props.currentQuestion}
-          onAnswerPress={() => this.setCurrentQuestion('overAllowance')}
-          onAnswer={this.selectNextOpenQuestion}
-          init={init}
-          initList={initList}
-        />
-        <AmountInputContainer
-          currentQuestion={this.props.currentQuestion}
-          onAnswerPress={() => this.setCurrentQuestion('amountInput')}
-          onAnswer={this.selectNextOpenQuestion}
-          init={init}
-          initList={initList}
-        />
-        <MainCategoriesInputContainer
-          currentQuestion={this.props.currentQuestion}
-          onAnswerPress={() => this.setCurrentQuestion('mainCategories')}
-          onAnswer={this.selectNextOpenQuestion}
-          init={init}
-          initList={initList}
-        />
+        <View
+          style={{
+            flex: 1,
+            width: '95%',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <NavBar step={1} />
+          <PeopleInputContainer
+            text="Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?"
+            currentQuestion={this.props.currentQuestion}
+            onAnswerPress={() => this.setCurrentQuestion('peopleInput')}
+            onAnswer={this.selectNextOpenQuestion}
+          />
+          <LargeAmountPresentContainer
+            people={this.props.people}
+            currentQuestion={this.props.currentQuestion}
+            onAnswerPress={() => this.setCurrentQuestion('largeAmountPresent')}
+            onAnswer={this.selectNextOpenQuestion}
+            init={init}
+            initList={initList}
+          />
+          <LargeAmountInputContainer
+            currentQuestion={this.props.currentQuestion}
+            onAnswerPress={() => this.setCurrentQuestion('largeAmountInput')}
+            onAnswer={this.selectNextOpenQuestion}
+            init={init}
+            initList={initList}
+          />
+          <OverAllowanceContainer
+            currentQuestion={this.props.currentQuestion}
+            onAnswerPress={() => this.setCurrentQuestion('overAllowance')}
+            onAnswer={this.selectNextOpenQuestion}
+            init={init}
+            initList={initList}
+          />
+          <AmountInputContainer
+            currentQuestion={this.props.currentQuestion}
+            onAnswerPress={() => this.setCurrentQuestion('amountInput')}
+            onAnswer={this.selectNextOpenQuestion}
+            init={init}
+            initList={initList}
+          />
+          <MainCategoriesInputContainer
+            currentQuestion={this.props.currentQuestion}
+            onAnswerPress={() => this.setCurrentQuestion('mainCategories')}
+            onAnswer={this.selectNextOpenQuestion}
+            init={init}
+            initList={initList}
+          />
+        </View>
+        <View
+          style={{
+            flex: 0.1,
+            marginBottom: 20,
+            marginTop: 16,
+            marginLeft: 16,
+            marginRight: 16,
+          }}
+        >
+          <RedButton text="ZUR WARENEINGABE" />
+        </View>
       </View>
     );
   }
