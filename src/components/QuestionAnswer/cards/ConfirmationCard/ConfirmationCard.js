@@ -20,7 +20,7 @@ const ownStyles = {
     ...Platform.select({
       ios: {
         shadowColor: 'black',
-        shadowOffset: { height: 5, width: 0 },
+        shadowOffset: { height: 5, width: 2 },
         shadowOpacity: 0.2,
         shadowRadius: 3,
       },
