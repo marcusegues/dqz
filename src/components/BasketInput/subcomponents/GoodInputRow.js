@@ -97,7 +97,18 @@ const GoodInputRow = ({
     </View>
 
     <TouchableOpacity
-      onPress={() => onDeclarationBasketChangeQuantity(category, 5)}
+      onPress={() => onDeclarationBasketChangeQuantity(category, -1)}
+      style={ownStyles.touchable}
+    >
+      <Entypo
+        name="circle-with-minus"
+        size={moderateScale(30)}
+        color={quantity ? colors.MAIN_RED : 'lightgray'}
+      />
+    </TouchableOpacity>
+
+    <TouchableOpacity
+      onPress={() => onDeclarationBasketChangeQuantity(category, 1)}
       style={ownStyles.touchable}
     >
       <Entypo

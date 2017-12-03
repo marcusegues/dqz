@@ -38,7 +38,10 @@ const declaration = (
         fromModelApi.setQuantity(
           basket,
           category,
-          fromModelApi.getQuantity(basket, category) + action.quantityChange
+          Math.max(
+            0,
+            fromModelApi.getQuantity(basket, category) + action.quantityChange
+          )
         )
       );
     }
