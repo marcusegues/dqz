@@ -25,7 +25,7 @@ class LargeAmountPresentContainer extends React.Component {
       <YesNoCard
         onAnswerYes={this.handleAnswerYes}
         onAnswerNo={this.handleAnswerNo}
-        text="Ist bei Ihren Waren ein Gegenstand dabei, welcher mehr als CHF 300,- Wert ist?"
+        text="Ist bei Ihren Waren ein Gegenstand dabei, welcher mehr als CHF 300.- Wert ist?"
       />
     );
   }

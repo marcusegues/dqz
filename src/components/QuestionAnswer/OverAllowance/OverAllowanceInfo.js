@@ -5,13 +5,13 @@ class OverAllowanceInfo extends React.Component {
   getText() {
     switch (this.props.overAllowance) {
       case 'notAnswered': {
-        return 'Over Allowance Question.';
+        return 'Freigabe-Frage';
       }
       case true: {
-        return 'Yes over allowance.';
+        return 'Ja, über der Warenfreigabegrenze.';
       }
       case false: {
-        return 'Not over allowance';
+        return 'Nicht über der Warenfreigabegrenze.';
       }
       default: {
         return null;

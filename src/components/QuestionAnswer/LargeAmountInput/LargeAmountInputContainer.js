@@ -28,7 +28,7 @@ class LargeAmountInputContainer extends React.Component {
   getQuestionComponent() {
     return (
       <ConfirmationCard
-        text={`Bitte große Artikel eingeben (> CHF 300)`}
+        text={`Bitte grosse Artikel eingeben (> CHF 300)`}
         onAnswer={this.handleAnswer}
       >
         <LargeAmountInput

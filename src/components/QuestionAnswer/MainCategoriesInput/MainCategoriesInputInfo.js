@@ -5,7 +5,7 @@ class MainCategoriesInputInfo extends React.Component {
   getText() {
     const { mainCategories } = this.props;
     if (mainCategories.isEmpty() || mainCategories === 'notAnswered') {
-      return <Text>MainCategories Question Incomplete</Text>;
+      return <Text>Warenkategorien - muss noch beantwortet werden</Text>;
     }
     return (
       <View>

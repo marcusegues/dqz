@@ -27,7 +27,7 @@ class OverAllowanceContainer extends React.Component {
       fromModelApi.getAdultPeople(people) + fromModelApi.getMinorPeople(people);
 
     if (exceptLast) {
-      return `Is the rest above ${(totalPeople - 1) * 300}?`;
+      return `Ist der restliche Warenwert über ${(totalPeople - 1) * 300}?`;
     }
     return `Übersteigt der Gesamtwert aller Waren CHF ${totalPeople * 300}?`;
   }
