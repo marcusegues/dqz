@@ -132,7 +132,7 @@ class QuestionAnswerContainer extends React.Component {
   }
 
   render() {
-    const { init, initList } = this.props;
+    const { init, initList, navigation } = this.props;
     return (
       <View
         style={{
@@ -194,17 +194,22 @@ class QuestionAnswerContainer extends React.Component {
             initList={initList}
           />
         </View>
-        <View
-          style={{
-            flex: 0.1,
-            marginBottom: 20,
-            marginTop: 16,
-            marginLeft: 16,
-            marginRight: 16,
-          }}
-        >
-          <RedButton text="ZUR WARENEINGABE" />
-        </View>
+        {this.props.currentQuestion !== 'finished' ? null : (
+          <View
+            style={{
+              flex: 0.1,
+              marginBottom: 20,
+              marginTop: 16,
+              marginLeft: 16,
+              marginRight: 16,
+            }}
+          >
+            <RedButton
+              text="ZUR WARENEINGABE"
+              onPress={() => navigation.navigate('BasketInput')}
+            />
+          </View>
+        )}
       </View>
     );
   }
