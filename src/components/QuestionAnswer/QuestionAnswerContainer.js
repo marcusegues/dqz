@@ -6,6 +6,7 @@ import LargeAmountPresentContainer from './LargeAmountPresent/LargeAmountPresent
 import LargeAmountInputContainer from './LargeAmountInput/LargeAmountInputContainer';
 import OverAllowanceContainer from './OverAllowance/OverAllowanceContainer';
 import AmountInputContainer from './AmountInput/AmountInputContainer';
+import MainCategoriesInputContainer from './MainCategoriesInput/MainCategoriesInputContainer';
 import {
   getDeclarationPeople,
   getDeclarationCurrentQuestion,
@@ -55,11 +56,11 @@ class QuestionAnswerContainer extends React.Component {
           nextQuestion = 'amountInput';
           break;
         }
-        nextQuestion = null;
+        nextQuestion = 'mainCategories';
         break;
       }
       case 'amountInput': {
-        nextQuestion = null;
+        nextQuestion = 'mainCategories';
         break;
       }
       default: {
@@ -119,7 +120,8 @@ class QuestionAnswerContainer extends React.Component {
       return;
     }
 
-    if (settings.get('mainCategories').isEmpty()) {
+    const mainCategories = settings.get('mainCategories');
+    if (mainCatgories === 'notAnswered' || mainCategories.isEmpty()) {
       this.setCurrentQuestion('mainCategories');
       return;
     }
@@ -168,6 +170,13 @@ class QuestionAnswerContainer extends React.Component {
         <AmountInputContainer
           currentQuestion={this.props.currentQuestion}
           onAnswerPress={() => this.setCurrentQuestion('amountInput')}
+          onAnswer={this.selectNextOpenQuestion}
+          init={init}
+          initList={initList}
+        />
+        <MainCategoriesInputContainer
+          currentQuestion={this.props.currentQuestion}
+          onAnswerPress={() => this.setCurrentQuestion('mainCategories')}
           onAnswer={this.selectNextOpenQuestion}
           init={init}
           initList={initList}

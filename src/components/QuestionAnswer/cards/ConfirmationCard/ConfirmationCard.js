@@ -51,7 +51,7 @@ const ownStyles = {
 
 const ConfirmationCard = ({ text, children, onAnswer }) => (
   <View style={ownStyles.contentContainer}>
-    <View>
+    <View style={{ width: '95%' }}>
       <Text style={ownStyles.mainText}>{text}</Text>
     </View>
 
