@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import { MaterialIcons, Entypo } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 import { moderateScale } from '../../../styles/Scaling';
 import * as colors from '../../../styles/colors';
 
@@ -57,15 +57,22 @@ class LargeAmountInput extends React.Component {
     this.getTotalAmount = this.getTotalAmount.bind(this);
   }
 
+  getTotalAmount() {
+    return (
+      this.props.largeAmounts.reduce((acc, val) => acc + val, 0) +
+      this.props.savedLargeAmounts.reduce((acc, val) => acc + val, 0)
+    );
+  }
+
   handleAddLargeAmount() {
     if (this.state.input === '') {
       return;
     }
-    if (isNaN(parseInt(this.state.input))) {
+    if (Number.isNaN(parseInt(this.state.input, 10))) {
       this.setState({ input: '', validation: 'Please enter valid number' });
       return;
     }
-    if (parseInt(this.state.input) < 300) {
+    if (parseInt(this.state.input, 10) < 300) {
       this.setState({ validation: 'Enter values larger than 300.' });
       return;
     }
@@ -73,13 +80,6 @@ class LargeAmountInput extends React.Component {
     this.setState({
       input: '',
     });
-  }
-
-  getTotalAmount() {
-    return (
-      this.props.largeAmounts.reduce((acc, val) => acc + val, 0) +
-      this.props.savedLargeAmounts.reduce((acc, val) => acc + val, 0)
-    );
   }
 
   render() {

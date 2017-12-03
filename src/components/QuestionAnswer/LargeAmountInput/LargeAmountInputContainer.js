@@ -61,7 +61,7 @@ class LargeAmountInputContainer extends React.Component {
 
   addLargeAmount(largeAmount) {
     this.setState({
-      largeAmounts: this.state.largeAmounts.push(parseInt(largeAmount)),
+      largeAmounts: this.state.largeAmounts.push(parseInt(largeAmount, 10)),
     });
   }
 

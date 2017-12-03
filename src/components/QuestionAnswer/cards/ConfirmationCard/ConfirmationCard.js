@@ -37,7 +37,6 @@ const ownStyles = {
     color: '#141414',
   },
   bottomSectionWrapper: {
-    justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
     flexDirection: 'column',

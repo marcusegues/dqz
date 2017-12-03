@@ -63,7 +63,7 @@ class AmountInputContainer extends React.Component {
 
   addAmount(amount) {
     this.setState({
-      amounts: this.state.amounts.push(parseInt(amount)),
+      amounts: this.state.amounts.push(parseInt(amount, 10)),
     });
   }
 

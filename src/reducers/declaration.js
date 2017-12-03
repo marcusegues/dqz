@@ -3,6 +3,7 @@ import {
   getInitialState,
   MainCategories,
   InitList,
+  EmptyMainCategories,
 } from '../types/reducers/declaration';
 import type {
   State,
@@ -11,6 +12,7 @@ import type {
   OverAllowanceType,
   LargeAmountPresentType,
   SettingsType,
+  InitListType,
   CurrentQuestionType,
 } from '../types/reducers/declaration';
 import type { Action } from '../types/actions';
@@ -92,17 +94,10 @@ const declaration = (
         fromModelApi.addAmount(basket, category, amount)
       );
     }
-    case 'DECLARATION_RESET_AMOUNTS': {
-      const basket: Basket = state.get('basket');
-      // eslint-disable-next-line prefer-destructuring
-      const category: Category = action.category;
-      return state.set('basket', fromModelApi.resetAmounts(basket, category));
-    }
     case 'DECLARATION_SET_AMOUNTS_ENTERED_TRUE': {
       return state.setIn(['settings', 'amountsEntered'], true);
     }
     case 'DECLARATION_SET_AMOUNTS_ENTERED_NOT_ANSWERED': {
-      console.log('setting amounts entered to not answered');
       return state.setIn(['settings', 'amountsEntered'], 'notAnswered');
     }
     case 'DECLARATION_BASKET_ADD_LARGE_AMOUNT': {
@@ -152,16 +147,32 @@ const declaration = (
     case 'DECLARATION_ADD_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
       const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?
-      return state.updateIn(['settings', 'mainCategories'], mainCategories =>
-        mainCategories.add(mainCategory)
+      const mainCategories = state.getIn(
+        ['settings', 'mainCategories'],
+        EmptyMainCategories
       );
+      if (mainCategories !== 'notAnswered') {
+        return state.setIn(
+          ['settings', 'mainCategories'],
+          mainCategories.add(mainCategory)
+        );
+      }
+      return state; // should never reach this
     }
     case 'DECLARATION_REMOVE_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
-      const mainCategory: MainCategory = action.mainCategory;
-      return state.updateIn(['settings', 'mainCategories'], mainCategories =>
-        mainCategories.delete(mainCategory)
+      const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?
+      const mainCategories = state.getIn(
+        ['settings', 'mainCategories'],
+        EmptyMainCategories
       );
+      if (mainCategories !== 'notAnswered') {
+        return state.setIn(
+          ['settings', 'mainCategories'],
+          mainCategories.delete(mainCategory)
+        );
+      }
+      return state; // should never reach this
     }
     case 'DECLARATION_SET_MAIN_CATEGORIES': {
       // eslint-disable-next-line prefer-destructuring
@@ -174,6 +185,7 @@ const declaration = (
       return state.setIn(['settings', 'currentQuestion'], currentQuestion);
     }
     case 'DECLARATION_ADD_TO_INIT_LIST': {
+      // eslint-disable-next-line prefer-destructuring
       const nextQuestion: CurrentQuestionType = action.nextQuestion;
       const newState = state.updateIn(['settings', 'initList'], list =>
         list.push(nextQuestion)
@@ -220,5 +232,5 @@ export const getDeclarationSettings = (state: State): SettingsType =>
 export const getDeclarationInit = (state: State): boolean =>
   state.getIn(['settings', 'init'], true);
 
-export const getDeclarationInitList = (state: State): boolean =>
-  state.getIn(['settings', 'initList'], true);
+export const getDeclarationInitList = (state: State): InitListType =>
+  state.getIn(['settings', 'initList'], InitList);

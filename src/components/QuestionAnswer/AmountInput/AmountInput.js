@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import { MaterialIcons, Entypo } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 import { moderateScale } from '../../../styles/Scaling';
 import * as colors from '../../../styles/colors';
 import { getTotalPeople } from '../../../model/configurationApi';
@@ -58,16 +58,23 @@ class AmountInput extends React.Component {
     this.getTotalAmount = this.getTotalAmount.bind(this);
   }
 
+  getTotalAmount() {
+    return (
+      this.props.amounts.reduce((acc, val) => acc + val, 0) +
+      this.props.savedAmounts.reduce((acc, val) => acc + val, 0)
+    );
+  }
+
   handleAddAmount() {
     if (this.state.input === '') {
       return;
     }
-    if (isNaN(parseInt(this.state.input))) {
+    if (Number.isNaN(parseInt(this.state.input, 10))) {
       this.setState({ input: '', validation: 'Please enter valid number' });
       return;
     }
     if (
-      parseInt(this.state.input) >= 300 &&
+      parseInt(this.state.input, 10) >= 300 &&
       getTotalPeople(this.props.people) > 1
     ) {
       this.setState({
@@ -80,13 +87,6 @@ class AmountInput extends React.Component {
     this.setState({
       input: '',
     });
-  }
-
-  getTotalAmount() {
-    return (
-      this.props.amounts.reduce((acc, val) => acc + val, 0) +
-      this.props.savedAmounts.reduce((acc, val) => acc + val, 0)
-    );
   }
 
   render() {
