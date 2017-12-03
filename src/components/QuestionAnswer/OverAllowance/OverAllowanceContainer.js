@@ -24,7 +24,7 @@ class OverAllowanceContainer extends React.Component {
     const totalPeople = getTotalPeople(this.props.people);
     const { largeAmountPresent } = this.props;
     if (largeAmountPresent === true) {
-      return `Is the rest above ${(totalPeople - 1) * 300}?`;
+      return `Ist der übrige Warenwert über ${(totalPeople - 1) * 300}?`;
     }
     return `Übersteigt der Gesamtwert aller Waren CHF ${totalPeople * 300}?`;
   }

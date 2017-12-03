@@ -10,7 +10,7 @@ class LargeAmountInputInfo extends React.Component {
   getText() {
     return this.props.largeAmountsEntered === 'notAnswered'
       ? 'Bitte geben Sie die Menge ein'
-      : `Insgesamt große Mengen sind ${this.props.largeAmounts.reduce(
+      : `Insgesamt grosse Mengen sind ${this.props.largeAmounts.reduce(
           (acc, val) => acc + val,
           0
         )}`;
