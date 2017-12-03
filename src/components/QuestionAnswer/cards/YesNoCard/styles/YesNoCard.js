@@ -3,12 +3,14 @@ import { verticalScale, moderateScale } from '../../../../../styles/Scaling';
 
 export default StyleSheet.create({
   contentContainer: {
-    flex: 0.8,
+    flex: 1,
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#fff',
     width: '95%',
     borderRadius: 2,
+    marginTop: verticalScale(16),
+    marginBottom: verticalScale(16),
     borderColor: '#ddd',
     ...Platform.select({
       ios: {

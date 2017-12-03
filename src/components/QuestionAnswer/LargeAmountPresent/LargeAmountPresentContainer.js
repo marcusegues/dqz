@@ -32,7 +32,9 @@ class LargeAmountPresentContainer extends React.Component {
         onAnswerPress={this.props.onAnswerPress}
         mainIcon="cash-multiple"
         status={
-          this.props.overAllowance === 'notAnswered' ? incomplete : complete
+          this.props.largeAmountPresent === 'notAnswered'
+            ? incomplete
+            : complete
         }
       >
         <LargeAmountInfo largeAmountPresent={this.props.largeAmountPresent} />
@@ -41,17 +43,23 @@ class LargeAmountPresentContainer extends React.Component {
   }
 
   async handleAnswerYes() {
-    await this.props.declarationSetLargeAmountPresentTrue();
+    await this.props.onDeclarationSetLargeAmountPresentTrue();
     this.props.onAnswer();
   }
 
   async handleAnswerNo() {
-    await this.props.declarationSetLargeAmountPresentFalse();
+    await this.props.onDeclarationSetLargeAmountsEnteredNotAnswered();
+    await this.props.onDeclarationResetLargeAmounts();
+    await this.props.onDeclarationSetLargeAmountPresentFalse();
     this.props.onAnswer();
   }
 
   render() {
-    if (getTotalPeople(this.props.people) === 1) {
+    const { people, init, initList } = this.props;
+    if (
+      getTotalPeople(people) === 1 ||
+      (init && !initList.includes('largeAmountPresent'))
+    ) {
       return null;
     }
     return this.props.currentQuestion === 'largeAmountPresent'
@@ -66,9 +74,13 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  declarationSetLargeAmountPresentTrue: () =>
+  onDeclarationSetLargeAmountsEnteredNotAnswered: () =>
+    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNTS_ENTERED_NOT_ANSWERED' }),
+  onDeclarationResetLargeAmounts: () =>
+    dispatch({ type: 'DECLARATION_RESET_LARGE_AMOUNTS', category: 'Meat' }),
+  onDeclarationSetLargeAmountPresentTrue: () =>
     dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE' }),
-  declarationSetLargeAmountPresentFalse: () =>
+  onDeclarationSetLargeAmountPresentFalse: () =>
     dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE' }),
 });
 

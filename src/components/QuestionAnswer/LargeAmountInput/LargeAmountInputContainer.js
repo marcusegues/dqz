@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Immutable from 'immutable';
 import ConfirmationCard from '../cards/ConfirmationCard/ConfirmationCard';
 import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import LargeAmountInput from './LargeAmountInput';
@@ -8,15 +9,20 @@ import {
   getDeclarationBasket,
   getDeclarationSettings,
 } from '../../../reducers';
-import { getAmounts } from '../../../model/configurationApi';
+import { getLargeAmounts } from '../../../model/configurationApi';
+
+const complete = require('../../../../assets/images/complete.png');
+const incomplete = require('../../../../assets/images/incomplete.png');
 
 class LargeAmountInputContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.handleAnswer = this.handleAnswer.bind(this);
     this.state = {
-      largeAmounts: this.props.largeAmounts,
+      largeAmounts: Immutable.List(),
     };
+    this.handleAnswer = this.handleAnswer.bind(this);
+    this.getQuestionComponent = this.getQuestionComponent.bind(this);
+    this.addLargeAmount = this.addLargeAmount.bind(this);
   }
 
   getQuestionComponent() {
@@ -25,7 +31,11 @@ class LargeAmountInputContainer extends React.Component {
         text={`Bitte große Artikel eingeben (> CHF 300)`}
         onAnswer={this.handleAnswer}
       >
-        <LargeAmountInput />
+        <LargeAmountInput
+          onAddLargeAmount={this.addLargeAmount}
+          largeAmounts={this.state.largeAmounts}
+          savedLargeAmounts={this.props.largeAmounts}
+        />
       </ConfirmationCard>
     );
   }
@@ -35,22 +45,40 @@ class LargeAmountInputContainer extends React.Component {
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
         mainIcon="cash-multiple"
+        status={
+          this.props.settings.get('largeAmountsEntered') === 'notAnswered'
+            ? incomplete
+            : complete
+        }
       >
-        <LargeAmountInputInfo largeAmounts={this.props.largeAmounts} />
+        <LargeAmountInputInfo
+          largeAmounts={this.props.largeAmounts}
+          largeAmountsEntered={this.props.settings.get('largeAmountsEntered')}
+        />
       </AnswerCard>
     );
   }
 
+  addLargeAmount(largeAmount) {
+    this.setState({
+      largeAmounts: this.state.largeAmounts.push(parseInt(largeAmount, 10)),
+    });
+  }
+
   async handleAnswer() {
-    const { onAnswer, declarationAddLargeAmount } = this.props;
-    await this.state.largeAmounts.forEach(amount =>
-      declarationAddLargeAmount(amount)
-    );
+    const { onAnswer, onDeclarationAddLargeAmount } = this.props;
+    await this.state.largeAmounts.forEach(amount => {
+      onDeclarationAddLargeAmount(amount);
+    });
+    this.setState({
+      largeAmounts: Immutable.List(),
+    });
+    await this.props.onDeclarationSetLargeAmountsEnteredTrue();
     onAnswer();
   }
 
   render() {
-    const { largeAmountPresent } = this.props.settings;
+    const largeAmountPresent = this.props.settings.get('largeAmountPresent');
     if (largeAmountPresent === 'notAnswered' || largeAmountPresent === false) {
       return null;
     }
@@ -62,12 +90,14 @@ class LargeAmountInputContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  largeAmounts: getAmounts(getDeclarationBasket(state), 'Meat'),
+  largeAmounts: getLargeAmounts(getDeclarationBasket(state), 'Meat'),
   settings: getDeclarationSettings(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  declarationAddLargeAmount: largeAmount =>
+  onDeclarationSetLargeAmountsEnteredTrue: () =>
+    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNTS_ENTERED_TRUE' }),
+  onDeclarationAddLargeAmount: largeAmount =>
     dispatch({
       type: 'DECLARATION_BASKET_ADD_LARGE_AMOUNT',
       category: 'Meat',

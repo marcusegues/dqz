@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderRadius: 2,
     elevation: 3,
-    marginBottom: 3,
     shadowColor: '#000',
     shadowOffset: { height: 2, width: 0 },
     shadowOpacity: 0.1,
@@ -26,9 +25,9 @@ const styles = StyleSheet.create({
 const AnswerCard = ({ mainIcon, status, children, onAnswerPress }) => (
   <Touchable
     style={{
-      marginTop: 5,
-      marginBottom: 5,
       width: '95%',
+      marginTop: 4,
+      marginBottom: 4,
     }}
     onPress={onAnswerPress}
   >

@@ -25,3 +25,9 @@ export const getDeclarationCurrentQuestion = state =>
 
 export const getDeclarationSettings = state =>
   fromDeclaration.getDeclarationSettings(state.declaration);
+
+export const getDeclarationInit = state =>
+  fromDeclaration.getDeclarationInit(state.declaration);
+
+export const getDeclarationInitList = state =>
+  fromDeclaration.getDeclarationInitList(state.declaration);

@@ -80,9 +80,13 @@ class PeopleInputContainer extends React.Component {
     const adults = getAdultPeople(this.state.people);
     const minors = getMinorPeople(this.state.people);
     await onSetPeople(adults, minors);
+    await this.props.onDeclarationSetOverAllowanceNotAnswered();
+    await this.props.onDeclarationSetAmountsEnteredNotAnswered();
+    await this.props.onDeclarationResetAmounts();
     if (getTotalPeople(people) > 1 && getTotalPeople(this.state.people) === 1) {
-      await this.props.onDeclarationSetLargeAmountNotAnswered();
+      await this.props.onDeclarationSetLargeAmountPresentNotAnswered();
       await this.props.onDeclarationResetLargeAmounts();
+      await this.props.onDeclarationSetLargeAmountsEnteredNotAnswered();
     }
     onAnswer();
   }
@@ -99,10 +103,18 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onDeclarationSetLargeAmountNotAnswered: () =>
+  onDeclarationSetOverAllowanceNotAnswered: () =>
+    dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_NOT_ANSWERED' }),
+  onDeclarationSetLargeAmountsEnteredNotAnswered: () =>
+    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNTS_ENTERED_NOT_ANSWERED' }),
+  onDeclarationSetAmountsEnteredNotAnswered: () =>
+    dispatch({ type: 'DECLARATION_SET_AMOUNTS_ENTERED_NOT_ANSWERED' }),
+  onDeclarationSetLargeAmountPresentNotAnswered: () =>
     dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_NOT_ANSWERED' }),
   onDeclarationResetLargeAmounts: () =>
     dispatch({ type: 'DECLARATION_RESET_LARGE_AMOUNTS', category: 'Meat' }),
+  onDeclarationResetAmounts: () =>
+    dispatch({ type: 'DECLARATION_RESET_AMOUNTS', category: 'Meat' }),
   onSetPeople: (adults, minors) =>
     dispatch({ type: 'DECLARATION_SET_PEOPLE', adults, minors }),
   onAdultsSetQuantity: quantity =>

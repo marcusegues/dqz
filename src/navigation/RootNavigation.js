@@ -64,7 +64,7 @@ const RootStackNavigator = StackNavigator(
   {
     navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-    initialRouteName: 'Screens',
+    initialRouteName: 'MainMenu',
   }
 );
 

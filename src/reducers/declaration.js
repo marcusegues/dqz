@@ -1,5 +1,10 @@
 // @flow
-import { getInitialState, MainCategories } from '../types/reducers/declaration';
+import {
+  getInitialState,
+  MainCategories,
+  InitList,
+  EmptyMainCategories,
+} from '../types/reducers/declaration';
 import type {
   State,
   MainCategory,
@@ -7,6 +12,7 @@ import type {
   OverAllowanceType,
   LargeAmountPresentType,
   SettingsType,
+  InitListType,
   CurrentQuestionType,
 } from '../types/reducers/declaration';
 import type { Action } from '../types/actions';
@@ -34,28 +40,6 @@ const declaration = (
           category,
           fromModelApi.getQuantity(basket, category) + action.quantityChange
         )
-      );
-    }
-    case 'DECLARATION_BASKET_ADD_AMOUNT': {
-      // eslint-disable-next-line prefer-destructuring
-      const category: Category = action.category;
-      const basket: Basket = state.get('basket');
-      // eslint-disable-next-line prefer-destructuring
-      const amount: number = action.amount;
-      return state.set(
-        'basket',
-        fromModelApi.addAmount(basket, category, amount)
-      );
-    }
-    case 'DECLARATION_BASKET_ADD_LARGE_AMOUNT': {
-      // eslint-disable-next-line prefer-destructuring
-      const category: Category = action.category;
-      // eslint-disable-next-line prefer-destructuring
-      const largeAmount: number = action.largeAmount;
-      const basket: Basket = state.get('basket');
-      return state.set(
-        'basket',
-        fromModelApi.addLargeAmount(basket, category, largeAmount)
       );
     }
     case 'DECLARATION_ADULTS_CHANGE_QUANTITY': {
@@ -99,6 +83,34 @@ const declaration = (
     case 'DECLARATION_SET_OVER_ALLOWANCE_FALSE': {
       return state.setIn(['settings', 'overAllowance'], false);
     }
+    case 'DECLARATION_BASKET_ADD_AMOUNT': {
+      // eslint-disable-next-line prefer-destructuring
+      const category: Category = action.category;
+      const basket: Basket = state.get('basket');
+      // eslint-disable-next-line prefer-destructuring
+      const amount: number = action.amount;
+      return state.set(
+        'basket',
+        fromModelApi.addAmount(basket, category, amount)
+      );
+    }
+    case 'DECLARATION_SET_AMOUNTS_ENTERED_TRUE': {
+      return state.setIn(['settings', 'amountsEntered'], true);
+    }
+    case 'DECLARATION_SET_AMOUNTS_ENTERED_NOT_ANSWERED': {
+      return state.setIn(['settings', 'amountsEntered'], 'notAnswered');
+    }
+    case 'DECLARATION_BASKET_ADD_LARGE_AMOUNT': {
+      // eslint-disable-next-line prefer-destructuring
+      const category: Category = action.category;
+      // eslint-disable-next-line prefer-destructuring
+      const largeAmount: number = action.largeAmount;
+      const basket: Basket = state.get('basket');
+      return state.set(
+        'basket',
+        fromModelApi.addLargeAmount(basket, category, largeAmount)
+      );
+    }
     case 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE': {
       return state.setIn(['settings', 'largeAmountPresent'], true);
     }
@@ -117,19 +129,50 @@ const declaration = (
         fromModelApi.resetLargeAmounts(basket, category)
       );
     }
+    case 'DECLARATION_SET_LARGE_AMOUNTS_ENTERED_TRUE': {
+      return state.setIn(['settings', 'largeAmountsEntered'], true);
+    }
+    case 'DECLARATION_SET_LARGE_AMOUNTS_ENTERED_NOT_ANSWERED': {
+      return state.setIn(['settings', 'largeAmountsEntered'], 'notAnswered');
+    }
+    case 'DECLARATION_SET_OVER_ALLOWANCE_NOT_ANSWERED': {
+      return state.setIn(['settings', 'overAllowance'], 'notAnswered');
+    }
+    case 'DECLARATION_RESET_AMOUNTS': {
+      const basket: Basket = state.get('basket');
+      // eslint-disable-next-line prefer-destructuring
+      const category: Category = action.category;
+      return state.set('basket', fromModelApi.resetAmounts(basket, category));
+    }
     case 'DECLARATION_ADD_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
       const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?
-      return state.updateIn(['settings', 'mainCategories'], mainCategories =>
-        mainCategories.add(mainCategory)
+      const mainCategories = state.getIn(
+        ['settings', 'mainCategories'],
+        EmptyMainCategories
       );
+      if (mainCategories !== 'notAnswered') {
+        return state.setIn(
+          ['settings', 'mainCategories'],
+          mainCategories.add(mainCategory)
+        );
+      }
+      return state; // should never reach this
     }
     case 'DECLARATION_REMOVE_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
-      const mainCategory: MainCategory = action.mainCategory;
-      return state.updateIn(['settings', 'mainCategories'], mainCategories =>
-        mainCategories.delete(mainCategory)
+      const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?
+      const mainCategories = state.getIn(
+        ['settings', 'mainCategories'],
+        EmptyMainCategories
       );
+      if (mainCategories !== 'notAnswered') {
+        return state.setIn(
+          ['settings', 'mainCategories'],
+          mainCategories.delete(mainCategory)
+        );
+      }
+      return state; // should never reach this
     }
     case 'DECLARATION_SET_MAIN_CATEGORIES': {
       // eslint-disable-next-line prefer-destructuring
@@ -140,6 +183,18 @@ const declaration = (
       // eslint-disable-next-line prefer-destructuring
       const currentQuestion: CurrentQuestionType = action.currentQuestion;
       return state.setIn(['settings', 'currentQuestion'], currentQuestion);
+    }
+    case 'DECLARATION_ADD_TO_INIT_LIST': {
+      // eslint-disable-next-line prefer-destructuring
+      const nextQuestion: CurrentQuestionType = action.nextQuestion;
+      const newState = state.updateIn(['settings', 'initList'], list =>
+        list.push(nextQuestion)
+      );
+      return newState;
+    }
+    case 'DECLARATION_SET_INIT_FALSE': {
+      const newState = state.setIn(['settings', 'init'], false);
+      return newState.setIn(['settings', 'initList'], InitList);
     }
     default: {
       return state;
@@ -173,3 +228,9 @@ export const getDeclarationCurrentQuestion = (
 
 export const getDeclarationSettings = (state: State): SettingsType =>
   state.get('settings');
+
+export const getDeclarationInit = (state: State): boolean =>
+  state.getIn(['settings', 'init'], true);
+
+export const getDeclarationInitList = (state: State): InitListType =>
+  state.getIn(['settings', 'initList'], InitList);

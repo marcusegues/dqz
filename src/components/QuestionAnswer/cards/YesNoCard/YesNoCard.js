@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, View } from 'react-native';
 import RedButton from '../../../../components/Buttons/RedButton';
 import styles from './styles/YesNoCard';
 import {
@@ -31,9 +31,6 @@ const YesNoCard = ({ text, onAnswerYes, onAnswerNo }) => (
     <View style={styles.mainTextContainer}>
       <Text style={styles.mainText}>{text}</Text>
     </View>
-    <TouchableOpacity style={ownStyles.notSureTouchable}>
-      <Text style={ownStyles.notSureText}>ICH BIN MIR NICHT SICHER</Text>
-    </TouchableOpacity>
     <View style={ownStyles.buttonContainer}>
       <View style={{ flex: 0.49 }}>
         <RedButton onPress={onAnswerYes} text="JA" />

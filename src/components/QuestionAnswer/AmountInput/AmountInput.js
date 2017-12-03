@@ -10,6 +10,7 @@ import {
 import { Entypo } from '@expo/vector-icons';
 import { moderateScale } from '../../../styles/Scaling';
 import * as colors from '../../../styles/colors';
+import { getTotalPeople } from '../../../model/configurationApi';
 
 const incomplete = require('../../../../assets/images/incomplete.png');
 
@@ -46,25 +47,25 @@ const ownStyles = StyleSheet.create({
   },
 });
 
-class LargeAmountInput extends React.Component {
+class AmountInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       input: '',
       validation: '',
     };
-    this.handleAddLargeAmount = this.handleAddLargeAmount.bind(this);
+    this.handleAddAmount = this.handleAddAmount.bind(this);
     this.getTotalAmount = this.getTotalAmount.bind(this);
   }
 
   getTotalAmount() {
     return (
-      this.props.largeAmounts.reduce((acc, val) => acc + val, 0) +
-      this.props.savedLargeAmounts.reduce((acc, val) => acc + val, 0)
+      this.props.amounts.reduce((acc, val) => acc + val, 0) +
+      this.props.savedAmounts.reduce((acc, val) => acc + val, 0)
     );
   }
 
-  handleAddLargeAmount() {
+  handleAddAmount() {
     if (this.state.input === '') {
       return;
     }
@@ -72,11 +73,17 @@ class LargeAmountInput extends React.Component {
       this.setState({ input: '', validation: 'Please enter valid number' });
       return;
     }
-    if (parseInt(this.state.input, 10) < 300) {
-      this.setState({ validation: 'Enter values larger than 300.' });
+    if (
+      parseInt(this.state.input, 10) >= 300 &&
+      getTotalPeople(this.props.people) > 1
+    ) {
+      this.setState({
+        input: '',
+        validation: 'Please enter items > 300 in previous question.',
+      });
       return;
     }
-    this.props.onAddLargeAmount(this.state.input);
+    this.props.onAddAmount(this.state.input);
     this.setState({
       input: '',
     });
@@ -137,7 +144,7 @@ class LargeAmountInput extends React.Component {
               ) : null}
             </View>
           </View>
-          <TouchableOpacity onPress={() => this.handleAddLargeAmount()}>
+          <TouchableOpacity onPress={() => this.handleAddAmount()}>
             <Entypo
               name="circle-with-plus"
               size={moderateScale(28)}
@@ -149,9 +156,9 @@ class LargeAmountInput extends React.Component {
         <View
           style={{ height: 25, alignSelf: 'flex-start', paddingHorizontal: 10 }}
         >
-          <Text>{`${this.props.savedLargeAmounts.join(', ')}${
-            this.props.savedLargeAmounts.isEmpty() ? '' : ', '
-          }${this.props.largeAmounts.join(', ')}`}</Text>
+          <Text>{`${this.props.savedAmounts.join(', ')}${
+            this.props.savedAmounts.isEmpty() ? '' : ', '
+          }${this.props.amounts.join(', ')}`}</Text>
         </View>
         <View
           style={{ height: 25, alignSelf: 'flex-start', paddingHorizontal: 10 }}
@@ -169,4 +176,4 @@ class LargeAmountInput extends React.Component {
   }
 }
 
-export default LargeAmountInput;
+export default AmountInput;
