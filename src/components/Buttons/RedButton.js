@@ -4,7 +4,7 @@ import Touchable from 'react-native-platform-touchable';
 import * as colors from './../../styles/colors';
 import { verticalScale, moderateScale } from '../../styles/Scaling';
 
-const ownStyles = {
+const ownStyles = disabled => ({
   bottomButtonContainer: {
     width: '95%',
     alignSelf: 'center',
@@ -18,7 +18,7 @@ const ownStyles = {
   },
   touchable: {
     flex: 1,
-    backgroundColor: colors.MAIN_RED,
+    backgroundColor: disabled ? 'lightgray' : colors.MAIN_RED,
     borderRadius: 3,
     ...Platform.select({
       ios: {
@@ -40,17 +40,22 @@ const ownStyles = {
     fontWeight: '500',
     paddingVertical: verticalScale(16),
   },
-};
+});
 
-const RedButton = ({ text, onPress }) => (
-  <View style={ownStyles.bottomButtonContainer}>
+const RedButton = ({ text, onPress, confirmationDisabled }) => (
+  <View style={ownStyles(confirmationDisabled).bottomButtonContainer}>
     <Touchable
       onPress={onPress}
-      style={ownStyles.touchable}
-      background={Touchable.Ripple(colors.MAIN_RED)}
+      style={ownStyles(confirmationDisabled).touchable}
+      disabled={confirmationDisabled}
     >
-      <Text style={ownStyles.touchableText}>{text}</Text>
+      <Text style={ownStyles(confirmationDisabled).touchableText}>{text}</Text>
     </Touchable>
   </View>
 );
+
+RedButton.defaultProps = {
+  confirmationDisabled: false,
+};
+
 export default RedButton;
