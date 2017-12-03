@@ -54,12 +54,14 @@ class OverAllowanceContainer extends React.Component {
   }
 
   async handleAnswerYes() {
-    await this.props.declarationSetOverAllowanceTrue();
+    await this.props.onDeclarationSetOverAllowanceTrue();
     this.props.onAnswer();
   }
 
   async handleAnswerNo() {
-    await this.props.declarationSetOverAllowanceFalse();
+    await this.props.onDeclarationSetOverAllowanceFalse();
+    await this.props.onDeclarationSetAmountsEnteredNotAnswered();
+    await this.props.onDeclarationResetAmounts();
     this.props.onAnswer();
   }
 
@@ -81,9 +83,13 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  declarationSetOverAllowanceTrue: () =>
+  onDeclarationSetAmountsEnteredNotAnswered: () =>
+    dispatch({ type: 'DECLARATION_SET_AMOUNTS_ENTERED_NOT_ANSWERED' }),
+  onDeclarationResetAmounts: () =>
+    dispatch({ type: 'DECLARATION_RESET_AMOUNTS', category: 'Meat' }),
+  onDeclarationSetOverAllowanceTrue: () =>
     dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_TRUE' }),
-  declarationSetOverAllowanceFalse: () =>
+  onDeclarationSetOverAllowanceFalse: () =>
     dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_FALSE' }),
 });
 
