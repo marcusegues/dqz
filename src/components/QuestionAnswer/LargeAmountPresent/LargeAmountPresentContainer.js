@@ -43,12 +43,14 @@ class LargeAmountPresentContainer extends React.Component {
   }
 
   async handleAnswerYes() {
-    await this.props.declarationSetLargeAmountPresentTrue();
+    await this.props.onDeclarationSetLargeAmountPresentTrue();
     this.props.onAnswer();
   }
 
   async handleAnswerNo() {
-    await this.props.declarationSetLargeAmountPresentFalse();
+    await this.props.onDeclarationSetLargeAmountsEnteredNotAnswered();
+    await this.props.onDeclarationResetLargeAmounts();
+    await this.props.onDeclarationSetLargeAmountPresentFalse();
     this.props.onAnswer();
   }
 
@@ -72,9 +74,13 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  declarationSetLargeAmountPresentTrue: () =>
+  onDeclarationSetLargeAmountsEnteredNotAnswered: () =>
+    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNTS_ENTERED_NOT_ANSWERED' }),
+  onDeclarationResetLargeAmounts: () =>
+    dispatch({ type: 'DECLARATION_RESET_LARGE_AMOUNTS', category: 'Meat' }),
+  onDeclarationSetLargeAmountPresentTrue: () =>
     dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE' }),
-  declarationSetLargeAmountPresentFalse: () =>
+  onDeclarationSetLargeAmountPresentFalse: () =>
     dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE' }),
 });
 

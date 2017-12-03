@@ -121,6 +121,13 @@ const declaration = (
         fromModelApi.resetLargeAmounts(basket, category)
       );
     }
+    case 'DECLARATION_SET_LARGE_AMOUNTS_ENTERED_TRUE': {
+      return state.setIn(['settings', 'largeAmountsEntered'], true);
+    }
+    case 'DECLARATION_SET_LARGE_AMOUNTS_ENTERED_NOT_ANSWERED': {
+      debugger;
+      return state.setIn(['settings', 'largeAmountsEntered'], 'notAnswered');
+    }
     case 'DECLARATION_SET_OVER_ALLOWANCE_NOT_ANSWERED': {
       return state.setIn(['settings', 'overAllowance'], 'notAnswered');
     }
