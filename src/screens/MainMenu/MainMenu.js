@@ -31,7 +31,11 @@ const MainMenu = ({ navigation }) => (
           />
         </MenuTileComponent>
 
-        <MenuTileComponent icon="receipt" text="MEINE QUITTUNGEN">
+        <MenuTileComponent
+          icon="receipt"
+          text="MEINE QUITTUNGEN"
+          onPress={() => navigation.navigate('UnderConstruction')}
+        >
           <View style={styles.iconAndBadgeWrapper}>
             <MaterialIcons
               name="receipt"
@@ -44,15 +48,26 @@ const MainMenu = ({ navigation }) => (
           </View>
         </MenuTileComponent>
 
-        <MenuTileComponent text="ZOLL-RECHNER">
+        <MenuTileComponent
+          text="ZOLL-RECHNER"
+          onPress={() => navigation.navigate('UnderConstruction')}
+        >
           <MaterialCommunityIcons name="calculator" size={47} color="#9B9B9B" />
         </MenuTileComponent>
 
-        <MenuTileComponent icon="info" text="NÜTZLICHE INFOS">
+        <MenuTileComponent
+          icon="info"
+          text="NÜTZLICHE INFOS"
+          onPress={() => navigation.navigate('UnderConstruction')}
+        >
           <MaterialIcons name="info" size={moderateScale(47)} color="#9B9B9B" />
         </MenuTileComponent>
 
-        <MenuTileComponent icon="shopping-cart" text="GESPEICHERTE WARENKÖRBE">
+        <MenuTileComponent
+          icon="shopping-cart"
+          text="GESPEICHERTE WARENKÖRBE"
+          onPress={() => navigation.navigate('UnderConstruction')}
+        >
           <View style={styles.iconAndBadgeWrapper}>
             <MaterialIcons
               name="shopping-cart"
@@ -65,7 +80,10 @@ const MainMenu = ({ navigation }) => (
           </View>
         </MenuTileComponent>
 
-        <MenuTileComponent text="EINSTELLUNGEN">
+        <MenuTileComponent
+          text="EINSTELLUNGEN"
+          onPress={() => navigation.navigate('UnderConstruction')}
+        >
           <MaterialIcons
             name="settings"
             size={moderateScale(47)}
