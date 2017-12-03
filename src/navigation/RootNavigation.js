@@ -1,8 +1,8 @@
 import { Notifications } from 'expo';
 import React from 'react';
 import { StackNavigator } from 'react-navigation';
-import QuestionAnswerFlow from '../components/QuestionAnswerFlow/QuestionAnswerFlow';
-import PeopleInputContainer from '../components/QuestionAnswerFlow/cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
+import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
+import PeopleInputContainer from '../components/QuestionAnswer/cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OnBoarding from '../screens/OnBoarding/OnBoarding';
 import ScreensView from '../screens/ScreensView/ScreensView';
 import { MAIN_RED, MAIN_BACKGROUND_COLOR } from '../styles/colors';
@@ -33,7 +33,7 @@ const RootStackNavigator = StackNavigator(
       }),
     },
     QuestionAnswer: {
-      screen: QuestionAnswerFlow,
+      screen: QuestionAnswerContainer,
       navigationOptions: () => ({
         headerTitle: <HeaderTitle text="Waren deklarieren" />,
       }),

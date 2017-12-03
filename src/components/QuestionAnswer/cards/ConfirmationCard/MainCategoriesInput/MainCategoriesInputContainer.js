@@ -46,6 +46,7 @@ class MainCategoriesInputContainer extends React.Component {
         mainCategories={this.state.mainCategories}
         onToggleMainCategory={this.handleToggleMainCategory}
         onAnswerConfirm={this.handleAnswerConfirm}
+        text="Welche Art Waren führen Sie mit sich?"
       />
     );
   }

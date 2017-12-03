@@ -19,3 +19,9 @@ export const getLargeAmountPresent = state =>
 
 export const getDeclarationMainCategories = state =>
   fromDeclaration.getDeclarationMainCategories(state.declaration);
+
+export const getDeclarationCurrentQuestion = state =>
+  fromDeclaration.getDeclarationCurrentQuestion(state.declaration);
+
+export const getDeclarationSettings = state =>
+  fromDeclaration.getDeclarationSettings(state.declaration);

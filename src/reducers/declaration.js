@@ -4,6 +4,10 @@ import type {
   State,
   MainCategory,
   MainCategoriesType,
+  OverAllowanceType,
+  LargeAmountPresentType,
+  SettingsType,
+  CurrentQuestionType,
 } from '../types/reducers/declaration';
 import type { Action } from '../types/actions';
 import type {
@@ -32,6 +36,28 @@ const declaration = (
         )
       );
     }
+    case 'DECLARATION_BASKET_ADD_AMOUNT': {
+      // eslint-disable-next-line prefer-destructuring
+      const category: Category = action.category;
+      const basket: Basket = state.get('basket');
+      // eslint-disable-next-line prefer-destructuring
+      const amount: number = action.amount;
+      return state.set(
+        'basket',
+        fromModelApi.addAmount(basket, category, amount)
+      );
+    }
+    case 'DECLARATION_BASKET_ADD_LARGE_AMOUNT': {
+      // eslint-disable-next-line prefer-destructuring
+      const category: Category = action.category;
+      // eslint-disable-next-line prefer-destructuring
+      const largeAmount: number = action.largeAmount;
+      const basket: Basket = state.get('basket');
+      return state.set(
+        'basket',
+        fromModelApi.addLargeAmount(basket, category, largeAmount)
+      );
+    }
     case 'DECLARATION_ADULTS_CHANGE_QUANTITY': {
       const people: People = state.get('people');
       const adults: number = people.get('adults');
@@ -56,6 +82,17 @@ const declaration = (
       const quantity: number = action.quantity;
       return state.set('people', fromModelApi.setMinorPeople(people, quantity));
     }
+    case 'DECLARATION_SET_PEOPLE': {
+      const people: People = state.get('people');
+      // eslint-disable-next-line prefer-destructuring
+      const adults: number = action.adults;
+      // eslint-disable-next-line prefer-destructuring
+      const minors: number = action.minors;
+      return state.set(
+        'people',
+        fromModelApi.setPeople(people, adults, minors)
+      );
+    }
     case 'DECLARATION_SET_OVER_ALLOWANCE_TRUE': {
       return state.setIn(['settings', 'overAllowance'], true);
     }
@@ -67,6 +104,18 @@ const declaration = (
     }
     case 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE': {
       return state.setIn(['settings', 'largeAmountPresent'], false);
+    }
+    case 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_NOT_ANSWERED': {
+      return state.setIn(['settings', 'largeAmountPresent'], 'notAnswered');
+    }
+    case 'DECLARATION_RESET_LARGE_AMOUNTS': {
+      const basket: Basket = state.get('basket');
+      // eslint-disable-next-line prefer-destructuring
+      const category: Category = action.category;
+      return state.set(
+        'basket',
+        fromModelApi.resetLargeAmounts(basket, category)
+      );
     }
     case 'DECLARATION_ADD_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
@@ -87,6 +136,11 @@ const declaration = (
       const mainCategories: MainCategoriesType = action.mainCategories;
       return state.setIn(['settings', 'mainCategories'], mainCategories);
     }
+    case 'DECLARATION_SET_CURRENT_QUESTION': {
+      // eslint-disable-next-line prefer-destructuring
+      const currentQuestion: CurrentQuestionType = action.currentQuestion;
+      return state.setIn(['settings', 'currentQuestion'], currentQuestion);
+    }
     default: {
       return state;
     }
@@ -101,13 +155,21 @@ export const getDeclarationBasket = (state: State): Basket =>
 export const getDeclarationPeople = (state: State): People =>
   state.get('people');
 
-export const getOverAllowance = (state: State): boolean =>
-  state.getIn(['settings', 'overAllowance'], true);
+export const getOverAllowance = (state: State): OverAllowanceType =>
+  state.getIn(['settings', 'overAllowance'], 'notAnswered');
 
-export const getLargeAmountPresent = (state: State): boolean =>
-  state.getIn(['settings', 'largeAmountPresent'], true);
+export const getLargeAmountPresent = (state: State): LargeAmountPresentType =>
+  state.getIn(['settings', 'largeAmountPresent'], 'notAnswered');
 
 export const getDeclarationMainCategories = (
   state: State
 ): MainCategoriesType =>
   state.getIn(['settings', 'mainCategories'], MainCategories);
+
+export const getDeclarationCurrentQuestion = (
+  state: State
+): CurrentQuestionType =>
+  state.getIn(['settings', 'currentQuestion'], 'finished');
+
+export const getDeclarationSettings = (state: State): SettingsType =>
+  state.get('settings');

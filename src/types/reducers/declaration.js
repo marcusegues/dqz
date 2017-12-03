@@ -78,6 +78,8 @@ export const MainCategories: MainCategoriesType = Immutable.Set([
   'OtherGoods',
 ]);
 
+export const EmptyMainCategories: MainCategoriesType = Immutable.Set();
+
 export type MainCategoriesToCategoriesType = ImmutableMapType<
   MainCategory,
   ImmutableSetType<Category>
@@ -92,19 +94,33 @@ export const MainCategoriesToCategories: MainCategoriesToCategoriesType = Immuta
   }
 );
 
+export type OverAllowanceType = boolean | 'notAnswered' | 'dontKnow';
+export type LargeAmountPresentType = boolean | 'notAnswered' | 'dontKnow';
+export type LargeAmountsEnteredType = boolean | 'notAnswered';
+export type CurrentQuestionType =
+  | 'peopleInput'
+  | 'overAllowance'
+  | 'largeAmountPresent'
+  | 'mainCategories'
+  | 'finished';
+
 type Settings = {
-  overAllowance: boolean,
-  largeAmountPresent: boolean,
+  overAllowance: OverAllowanceType,
+  largeAmountPresent: LargeAmountPresentType,
+  largeAmountsEntered: LargeAmountsEnteredType,
   mainCategories: MainCategoriesType,
+  currentQuestion: CurrentQuestionType,
 };
 
 const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
-  overAllowance: true,
-  largeAmountPresent: true,
-  mainCategories: MainCategories,
+  overAllowance: 'notAnswered',
+  largeAmountPresent: 'notAnswered',
+  largeAmountsEntered: 'notAnswered',
+  mainCategories: EmptyMainCategories,
+  currentQuestion: 'peopleInput',
 });
 
-type SettingsType = RecordOf<Settings>;
+export type SettingsType = RecordOf<Settings>;
 
 type StateObj = {
   people: People,
