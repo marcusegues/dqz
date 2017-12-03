@@ -9,7 +9,7 @@ import { moderateScale } from '../../styles/Scaling';
 
 const mountains = require('../../../assets/images/background-mountains3.jpg');
 
-const MainMenu = () => (
+const MainMenu = ({ navigation }) => (
   <View style={styles.container}>
     <View style={styles.backgroundImageContainer}>
       <Image
@@ -20,7 +20,10 @@ const MainMenu = () => (
     </View>
     <View style={styles.contentContainer}>
       <View style={styles.tileContainer}>
-        <MenuTileComponent text="WAREN DEKLARIEREN">
+        <MenuTileComponent
+          onPress={() => navigation.navigate('QuestionAnswer')}
+          text="WAREN DEKLARIEREN"
+        >
           <MaterialIcons
             name="add-shopping-cart"
             size={moderateScale(47)}

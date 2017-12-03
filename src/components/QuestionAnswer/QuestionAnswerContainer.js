@@ -7,6 +7,7 @@ import LargeAmountInputContainer from './LargeAmountInput/LargeAmountInputContai
 import OverAllowanceContainer from './OverAllowance/OverAllowanceContainer';
 import AmountInputContainer from './AmountInput/AmountInputContainer';
 import MainCategoriesInputContainer from './MainCategoriesInput/MainCategoriesInputContainer';
+import NavBar from '../NavBar/NavBar';
 import {
   getDeclarationPeople,
   getDeclarationCurrentQuestion,
@@ -139,6 +140,7 @@ class QuestionAnswerContainer extends React.Component {
           alignItems: 'center',
         }}
       >
+        <NavBar step={1} />
         <PeopleInputContainer
           text="Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?"
           currentQuestion={this.props.currentQuestion}
