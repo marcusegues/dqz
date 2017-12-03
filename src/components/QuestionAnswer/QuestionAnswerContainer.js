@@ -121,7 +121,7 @@ class QuestionAnswerContainer extends React.Component {
     }
 
     const mainCategories = settings.get('mainCategories');
-    if (mainCatgories === 'notAnswered' || mainCategories.isEmpty()) {
+    if (mainCategories === 'notAnswered' || mainCategories.isEmpty()) {
       this.setCurrentQuestion('mainCategories');
       return;
     }

@@ -74,8 +74,8 @@ class MainCategoriesInputContainer extends React.Component {
     }
   }
 
-  handleAnswer() {
-    this.props.onSetMainCategories(this.state.mainCategories);
+  async handleAnswer() {
+    await this.props.onSetMainCategories(this.state.mainCategories);
     this.props.onAnswer();
   }
 

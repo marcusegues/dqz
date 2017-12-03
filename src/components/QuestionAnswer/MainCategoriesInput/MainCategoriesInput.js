@@ -5,10 +5,10 @@ import MainCategoriesCheckList from '../cards/ConfirmationCard/children/MainCate
 const MainCategoriesInput = ({
   mainCategories,
   onToggleMainCategory,
-  onAnswerConfirm,
+  onAnswer,
   text,
 }) => (
-  <ConfirmationCard text={text} onAnswerConfirm={onAnswerConfirm}>
+  <ConfirmationCard text={text} onAnswer={onAnswer}>
     <MainCategoriesCheckList
       mainCategories={mainCategories}
       onToggleMainCategory={onToggleMainCategory}
