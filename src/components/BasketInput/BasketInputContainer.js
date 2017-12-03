@@ -14,13 +14,13 @@ class BasketInputContainer extends React.Component {
   constructor(props) {
     super(props);
     this.getDisplayedCategoriesByMainCategory = this.getDisplayedCategoriesByMainCategory.bind(
-      this,
+      this
     );
   }
 
   getDisplayedCategoriesByMainCategory() {
     return MainCategoriesToCategories.filter((cats, mainCat) =>
-      this.props.mainCategories.has(mainCat),
+      this.props.mainCategories.has(mainCat)
     );
   }
 
@@ -67,5 +67,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  BasketInputContainer,
+  BasketInputContainer
 );
