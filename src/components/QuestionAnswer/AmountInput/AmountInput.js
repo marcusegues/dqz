@@ -70,7 +70,7 @@ class AmountInput extends React.Component {
       return;
     }
     if (Number.isNaN(parseInt(this.state.input, 10))) {
-      this.setState({ input: '', validation: 'Please enter valid number' });
+      this.setState({ input: '', validation: 'Bitte gültige Zahl eingeben' });
       return;
     }
     if (
@@ -79,7 +79,7 @@ class AmountInput extends React.Component {
     ) {
       this.setState({
         input: '',
-        validation: 'Please enter items > 300 in previous question.',
+        validation: 'Bitte ein Betrag über CHF 300 in der vorgehenden Frage eingeben.',
       });
       return;
     }
