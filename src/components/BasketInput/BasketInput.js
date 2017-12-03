@@ -17,7 +17,6 @@ const ownStyles = {
   },
   scrollView: {
     width: '95%',
-    flex: 1,
     ...Platform.select({
       ios: {
         shadowColor: 'black',
@@ -69,12 +68,14 @@ const BasketInput = ({
     });
 
   return (
-    <ScrollView contentContainerStyle={ownStyles.scrollView}>
-      <Text key={1} style={ownStyles.cardMainTitle}>
-        Wareneingabe:
-      </Text>
-      {components}
-    </ScrollView>
+    <View style={{ flex: 1 }}>
+      <ScrollView contentContainerStyle={ownStyles.scrollView}>
+        <Text key={1} style={ownStyles.cardMainTitle}>
+          Wareneingabe:
+        </Text>
+        {components}
+      </ScrollView>
+    </View>
   );
 };
 
