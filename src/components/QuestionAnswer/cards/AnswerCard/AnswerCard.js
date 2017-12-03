@@ -26,6 +26,7 @@ const AnswerCard = ({ mainIcon, status, children, onAnswerPress }) => (
   <Touchable
     style={{
       width: '95%',
+      marginTop: 4,
       marginBottom: 4,
     }}
     onPress={onAnswerPress}

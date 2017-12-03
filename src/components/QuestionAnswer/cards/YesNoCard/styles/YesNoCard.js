@@ -10,6 +10,7 @@ export default StyleSheet.create({
     width: '95%',
     borderRadius: 2,
     marginTop: verticalScale(16),
+    marginBottom: verticalScale(16),
     borderColor: '#ddd',
     ...Platform.select({
       ios: {

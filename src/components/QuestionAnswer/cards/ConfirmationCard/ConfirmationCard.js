@@ -10,7 +10,7 @@ const ownStyles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     marginTop: verticalScale(16),
-    marginBottom: verticalScale(5),
+    marginBottom: verticalScale(16),
     marginLeft: 15,
     marginRight: 15,
     backgroundColor: '#fff',

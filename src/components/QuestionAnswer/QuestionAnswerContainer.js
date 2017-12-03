@@ -138,6 +138,7 @@ class QuestionAnswerContainer extends React.Component {
         style={{
           flex: 1,
           height: '100%',
+          marginBottom: 16,
           flexDirection: 'column',
           alignItems: 'center',
         }}
