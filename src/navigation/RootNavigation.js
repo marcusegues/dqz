@@ -39,12 +39,6 @@ const RootStackNavigator = StackNavigator(
         headerTitle: <HeaderTitle text="Waren deklarieren" />,
       }),
     },
-    UnderConstruction: {
-      screen: UnderConstruction,
-      navigationOptions: () => ({
-        headerTitle: <HeaderTitle text="In Bearbeitung" />,
-      }),
-    },
     OnBoarding: {
       screen: OnBoarding,
     },
@@ -67,11 +61,17 @@ const RootStackNavigator = StackNavigator(
     BasketInput: {
       screen: BasketInputContainer,
     },
+    UnderConstruction: {
+      screen: UnderConstruction,
+      navigationOptions: () => ({
+        headerTitle: <HeaderTitle text="In Bearbeitung" />,
+      }),
+    },
   },
   {
     navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-    initialRouteName: 'QuestionAnswer',
+    initialRouteName: 'MainMenu',
   }
 );
 
