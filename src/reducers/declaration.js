@@ -3,7 +3,7 @@ import {
   getInitialState,
   MainCategories,
   InitList,
-  EmptyMainCategories,
+  EmptyMainCategories
 } from '../types/reducers/declaration';
 import type {
   State,
@@ -13,15 +13,18 @@ import type {
   LargeAmountPresentType,
   SettingsType,
   InitListType,
-  CurrentQuestionType,
+  CurrentQuestionType
 } from '../types/reducers/declaration';
 import type { Action } from '../types/actions';
 import type {
   Basket,
   Category,
-  People,
+  People
 } from '../model/types/basketPeopleTypes';
+import { VatReport, DutyReport } from '../model/types/calculationTypes';
 import * as fromModelApi from '../model/configurationApi';
+import { calculateDuty } from '../model/dutyCalculations';
+import { calculateVat } from '../model/vatCalculations';
 
 const declaration = (
   state: State = getInitialState(),
@@ -199,6 +202,16 @@ const declaration = (
       const newState = state.setIn(['settings', 'init'], false);
       return newState.setIn(['settings', 'initList'], InitList);
     }
+    case 'DECLARATION_CALCULATE_DUES': {
+      let newState = state.set(
+        'dutyReport',
+        calculateDuty(state.get('basket'), state.get('people'))
+      );
+      return newState.set(
+        'vatReport',
+        calculateVat(state.get('basket'), state.get('people'))
+      );
+    }
     default: {
       return state;
     }
@@ -237,3 +250,9 @@ export const getDeclarationInit = (state: State): boolean =>
 
 export const getDeclarationInitList = (state: State): InitListType =>
   state.getIn(['settings', 'initList'], InitList);
+
+export const getDeclarationVatReport = (state: State): VatReport =>
+  state.get('vatReport');
+
+export const getDeclarationDutyReport = (state: State): DutyReport =>
+  state.get('dutyReport');
