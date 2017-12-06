@@ -44,10 +44,11 @@ const RootStackNavigator = StackNavigator(
     },
     MainMenu: {
       screen: MainMenu,
-      navigationOptions: ({ navigationOptions }) => ({
+      navigationOptions: ({ navigationOptions, navigation }) => ({
         ...navigationOptions,
         headerTitle: <MainScreenHeaderTitle />,
-        headerRight: <OptionsButton />,
+        headerLeft: <Logo />,
+        headerRight: <OptionsButton navigation={navigation} />,
         headerStyle: {
           ...navigationOptions.headerStyle,
           borderBottomWidth: 5,
