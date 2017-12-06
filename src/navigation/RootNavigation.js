@@ -44,10 +44,11 @@ const RootStackNavigator = StackNavigator(
     },
     MainMenu: {
       screen: MainMenu,
-      navigationOptions: ({ navigationOptions }) => ({
+      navigationOptions: ({ navigationOptions, navigation }) => ({
         ...navigationOptions,
         headerTitle: <MainScreenHeaderTitle />,
-        headerRight: <OptionsButton />,
+        headerLeft: <Logo />,
+        headerRight: <OptionsButton navigation={navigation} />,
         headerStyle: {
           ...navigationOptions.headerStyle,
           borderBottomWidth: 5,
@@ -72,7 +73,7 @@ const RootStackNavigator = StackNavigator(
     navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
     initialRouteName: 'MainMenu',
-  }
+  },
 );
 
 export default class RootNavigator extends React.Component {
@@ -94,7 +95,7 @@ export default class RootNavigator extends React.Component {
 
     // Watch for incoming notifications
     this._notificationSubscription = Notifications.addListener(
-      this._handleNotification
+      this._handleNotification,
     );
   }
 
