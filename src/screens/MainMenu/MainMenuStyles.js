@@ -5,22 +5,14 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: '#F5F5F5'
   },
-  backgroundImageContainer: {
-    flex: 0.5
-  },
-  backgroundImage: {
-    flex: 1
-  },
   contentContainer: {
-    flex: 0.8,
+    flex: 0.7,
     width: '100%',
     justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: '-20%'
+    alignItems: 'center'
   },
   tileContainer: {
     flex: 1,

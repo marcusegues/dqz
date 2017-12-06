@@ -11,11 +11,15 @@ const mountains = require('../../../assets/images/mainScreen.png');
 
 const MainMenu = ({ navigation }) => (
   <View style={styles.container}>
-    <View style={styles.backgroundImageContainer}>
+    <View style={{ flex: 0.25, flexDirection: 'row' }}>
       <Image
         source={mountains}
-        style={styles.backgroundImage}
-        resizeMode="contain"
+        style={{
+          flex: 1,
+          width: undefined,
+          height: undefined,
+          resizeMode: 'cover'
+        }}
       />
     </View>
     <View style={styles.contentContainer}>
