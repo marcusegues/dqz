@@ -1,23 +1,21 @@
 import React from 'react';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import PeopleInput from './PeopleInput';
 import PeopleInputAnswer from './PeopleInputAnswer';
 import { getDeclarationPeople } from '../../../reducers';
 import {
-  getAdultPeople,
-  getMinorPeople,
   addAdult,
   subtractAdult,
   addMinor,
   subtractMinor,
-  getTotalPeople,
 } from '../../../model/configurationApi';
 
 class PeopleInputContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      people: this.props.people,
+      people: this.props.qaState.people,
     };
     this.handleAddAdult = this.handleAddAdult.bind(this);
     this.handleSubtractAdult = this.handleSubtractAdult.bind(this);
@@ -45,7 +43,7 @@ class PeopleInputContainer extends React.Component {
   getAnswerComponent() {
     return (
       <PeopleInputAnswer
-        people={this.props.people}
+        people={this.state.people}
         onAnswerPress={this.props.onAnswerPress}
       />
     );
@@ -75,26 +73,23 @@ class PeopleInputContainer extends React.Component {
     });
   }
 
-  async handleAnswer() {
-    const { onSetPeople, onAnswer, people } = this.props;
-    const adults = getAdultPeople(this.state.people);
-    const minors = getMinorPeople(this.state.people);
-    await onSetPeople(adults, minors);
-    await this.props.onDeclarationSetOverAllowanceNotAnswered();
-    await this.props.onDeclarationSetAmountsEnteredNotAnswered();
-    await this.props.onDeclarationResetAmounts();
-    if (getTotalPeople(people) > 1 && getTotalPeople(this.state.people) === 1) {
-      await this.props.onDeclarationSetLargeAmountPresentNotAnswered();
-      await this.props.onDeclarationResetLargeAmounts();
-      await this.props.onDeclarationSetLargeAmountsEnteredNotAnswered();
-    }
-    onAnswer();
+  handleAnswer() {
+    const { onAnswer, people } = this.props;
+    onAnswer(people);
   }
 
   render() {
-    return this.props.currentQuestion === 'peopleInput'
-      ? this.getQuestionComponent()
-      : this.getAnswerComponent();
+    switch (this.props.questionState) {
+      case 'expanded': {
+        return this.getQuestionComponent();
+      }
+      case 'collapsed': {
+        return this.getAnswerComponent();
+      }
+      default: {
+        return <View />;
+      }
+    }
   }
 }
 
@@ -102,26 +97,7 @@ const mapStateToProps = state => ({
   people: getDeclarationPeople(state),
 });
 
-const mapDispatchToProps = dispatch => ({
-  onDeclarationSetOverAllowanceNotAnswered: () =>
-    dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_NOT_ANSWERED' }),
-  onDeclarationSetLargeAmountsEnteredNotAnswered: () =>
-    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNTS_ENTERED_NOT_ANSWERED' }),
-  onDeclarationSetAmountsEnteredNotAnswered: () =>
-    dispatch({ type: 'DECLARATION_SET_AMOUNTS_ENTERED_NOT_ANSWERED' }),
-  onDeclarationSetLargeAmountPresentNotAnswered: () =>
-    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_NOT_ANSWERED' }),
-  onDeclarationResetLargeAmounts: () =>
-    dispatch({ type: 'DECLARATION_RESET_LARGE_AMOUNTS', category: 'Meat' }),
-  onDeclarationResetAmounts: () =>
-    dispatch({ type: 'DECLARATION_RESET_AMOUNTS', category: 'Meat' }),
-  onSetPeople: (adults, minors) =>
-    dispatch({ type: 'DECLARATION_SET_PEOPLE', adults, minors }),
-  onAdultsSetQuantity: quantity =>
-    dispatch({ type: 'DECLARATION_ADULTS_SET_QUANTITY', quantity }),
-  onMinorsSetQuantity: quantity =>
-    dispatch({ type: 'DECLARATION_MINORS_SET_QUANTITY', quantity }),
-});
+const mapDispatchToProps = () => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(
   PeopleInputContainer

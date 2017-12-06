@@ -1,5 +1,7 @@
+// @flow
 import React from 'react';
-import { View } from 'react-native';
+// $FlowFixMe
+import { FlatList, View } from 'react-native';
 import { connect } from 'react-redux';
 
 import NavBar from '../NavBar/NavBar';
@@ -17,21 +19,95 @@ import {
   getDeclarationPeople,
   getDeclarationSettings,
 } from '../../reducers';
+import type { People } from '../../model/types/basketPeopleTypes';
+import { initPeople } from '../../model/configurationApi';
 
-class QuestionAnswerContainer2 extends React.Component {
+type questionType =
+  | 'peopleInput'
+  | 'hasLargeAmount'
+  | 'largeAmountInput'
+  | 'overAllowance'
+  | 'amountInput'
+  | 'mainCategories'
+  | 'none';
+
+type questionState = 'expanded' | 'hidden' | 'collapsed';
+
+type State = {
+  questionStates: { [questionType]: questionState },
+  people: People,
+};
+
+class QuestionAnswerContainer2 extends React.Component<any, State> {
   constructor() {
     super();
 
-    this.state = { currentQuestion: 0 };
+    this.state = {
+      people: initPeople,
+      questionStates: { peopleInput: 'collapsed' },
+    };
   }
 
-  setCurrentQuestion(question) {
-    this.setState({ currentQuestion: question });
+  updateQA() {
+    // for now, just close all the things
+    this.setState({
+      questionStates: { peopleInput: 'collapsed' },
+    });
+  }
+
+  expandQuestion(question: questionType) {
+    const { questionStates } = this.state;
+    questionStates[question] = 'expanded';
+    this.setState({
+      questionStates,
+    });
   }
 
   render() {
-    const { currentQuestion } = this.state;
+    const { questionStates } = this.state;
+    const { peopleInput } = questionStates;
     const { navigation } = this.props;
+
+    const flatListData = [
+      {
+        key: 'peopleInput',
+        component: (
+          <PeopleInputContainer
+            qaState={this.state}
+            onAnswerPress={() => {
+              this.expandQuestion('peopleInput');
+            }}
+            questionState={peopleInput}
+            onAnswer={(peopleAnswer: People) => {
+              this.setState({
+                people: peopleAnswer,
+              });
+              this.updateQA();
+            }}
+          />
+        ),
+      },
+      {
+        key: 'hasLargeAmount',
+        component: <LargeAmountPresentContainer />,
+      },
+      {
+        key: 'largeAmountInput',
+        component: <LargeAmountInputContainer />,
+      },
+      {
+        key: 'overAllowance',
+        component: <OverAllowanceContainer />,
+      },
+      {
+        key: 'amountInput',
+        component: <AmountInputContainer />,
+      },
+      {
+        key: 'mainCategories',
+        component: <MainCategoriesInputContainer />,
+      },
+    ];
     return (
       <View
         style={{
@@ -51,35 +127,10 @@ class QuestionAnswerContainer2 extends React.Component {
           }}
         >
           <NavBar step={1} />
-          <PeopleInputContainer
-            currentQuestion={currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('peopleInput')}
-            onAnswer={this.selectNextOpenQuestion}
-          />
-          <LargeAmountPresentContainer
-            currentQuestion={currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('largeAmountPresent')}
-            onAnswer={this.selectNextOpenQuestion}
-          />
-          <LargeAmountInputContainer
-            currentQuestion={currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('largeAmountInput')}
-            onAnswer={this.selectNextOpenQuestion}
-          />
-          <OverAllowanceContainer
-            currentQuestion={currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('overAllowance')}
-            onAnswer={this.selectNextOpenQuestion}
-          />
-          <AmountInputContainer
-            currentQuestion={currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('amountInput')}
-            onAnswer={this.selectNextOpenQuestion}
-          />
-          <MainCategoriesInputContainer
-            currentQuestion={currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('mainCategories')}
-            onAnswer={this.selectNextOpenQuestion}
+          <FlatList
+            style={{ width: '100%' }}
+            data={flatListData}
+            renderItem={({ item }) => item.component}
           />
         </View>
         {this.props.currentQuestion !== 'finished' ? null : (
