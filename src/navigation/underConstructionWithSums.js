@@ -6,7 +6,7 @@ import { getDeclarationVatReport, getDeclarationDutyReport } from '../reducers';
 const style = {
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
 };
 
 class UnderConstructionWithSums extends React.Component {
@@ -27,11 +27,11 @@ class UnderConstructionWithSums extends React.Component {
 
 const mapStateToProps = state => ({
   vatReport: getDeclarationVatReport(state),
-  dutyReport: getDeclarationDutyReport(state)
+  dutyReport: getDeclarationDutyReport(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  onCalculateDues: () => dispatch({ type: 'DECLARATION_CALCULATE_DUES' })
+  onCalculateDues: () => dispatch({ type: 'DECLARATION_CALCULATE_DUES' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
