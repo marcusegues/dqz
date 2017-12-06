@@ -6,7 +6,7 @@ import OverAllowanceInfo from './OverAllowanceInfo';
 import {
   getDeclarationPeople,
   getOverAllowance,
-  getLargeAmountPresent
+  getLargeAmountPresent,
 } from '../../../reducers';
 import { getTotalPeople } from '../../../model/configurationApi';
 
@@ -80,7 +80,7 @@ class OverAllowanceContainer extends React.Component {
 const mapStateToProps = state => ({
   people: getDeclarationPeople(state),
   overAllowance: getOverAllowance(state),
-  largeAmountPresent: getLargeAmountPresent(state)
+  largeAmountPresent: getLargeAmountPresent(state),
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -91,7 +91,7 @@ const mapDispatchToProps = dispatch => ({
   onDeclarationSetOverAllowanceTrue: () =>
     dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_TRUE' }),
   onDeclarationSetOverAllowanceFalse: () =>
-    dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_FALSE' })
+    dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_FALSE' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
