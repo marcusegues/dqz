@@ -21,7 +21,10 @@ import type {
   Category,
   People,
 } from '../model/types/basketPeopleTypes';
+import type { VatReport, DutyReport } from '../model/types/calculationTypes';
 import * as fromModelApi from '../model/configurationApi';
+import { calculateDuty } from '../model/dutyCalculations';
+import { calculateVat } from '../model/vatCalculations';
 
 const declaration = (
   state: State = getInitialState(),
@@ -199,6 +202,16 @@ const declaration = (
       const newState = state.setIn(['settings', 'init'], false);
       return newState.setIn(['settings', 'initList'], InitList);
     }
+    case 'DECLARATION_CALCULATE_DUES': {
+      const newState = state.set(
+        'dutyReport',
+        calculateDuty(state.get('basket'), state.get('people'))
+      );
+      return newState.set(
+        'vatReport',
+        calculateVat(state.get('basket'), state.get('people'))
+      );
+    }
     default: {
       return state;
     }
@@ -237,3 +250,9 @@ export const getDeclarationInit = (state: State): boolean =>
 
 export const getDeclarationInitList = (state: State): InitListType =>
   state.getIn(['settings', 'initList'], InitList);
+
+export const getDeclarationVatReport = (state: State): VatReport =>
+  state.get('vatReport');
+
+export const getDeclarationDutyReport = (state: State): DutyReport =>
+  state.get('dutyReport');

@@ -45,7 +45,9 @@ class BasketInputContainer extends React.Component {
         />
         <RedButton
           text="ZUR BEZAHLUNG"
-          onPress={() => this.props.navigation.navigate('UnderConstruction')}
+          onPress={() =>
+            this.props.navigation.navigate('UnderConstructionWithSums')
+          }
         />
       </View>
     );
