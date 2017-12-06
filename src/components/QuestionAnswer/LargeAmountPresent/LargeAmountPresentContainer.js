@@ -8,6 +8,7 @@ import { getTotalPeople } from '../../../model/configurationApi';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
+const mainIcon = require('../../../../assets/icons/mwst.png');
 
 class LargeAmountPresentContainer extends React.Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class LargeAmountPresentContainer extends React.Component {
     return (
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
-        mainIcon="cash-multiple"
+        mainIcon={mainIcon}
         status={
           this.props.largeAmountPresent === 'notAnswered'
             ? incomplete
@@ -70,7 +71,7 @@ class LargeAmountPresentContainer extends React.Component {
 
 const mapStateToProps = state => ({
   people: getDeclarationPeople(state),
-  largeAmountPresent: getLargeAmountPresent(state),
+  largeAmountPresent: getLargeAmountPresent(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -81,7 +82,7 @@ const mapDispatchToProps = dispatch => ({
   onDeclarationSetLargeAmountPresentTrue: () =>
     dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE' }),
   onDeclarationSetLargeAmountPresentFalse: () =>
-    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE' }),
+    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE' })
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
