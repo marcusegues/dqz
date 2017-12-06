@@ -6,32 +6,32 @@ export default StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: '#F5F5F5'
+    backgroundColor: '#F5F5F5',
   },
   contentContainer: {
     flex: 0.7,
     width: '100%',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   tileContainer: {
     flex: 1,
     ...Platform.select({
       ios: {
-        width: moderateScale(370)
+        width: moderateScale(370),
       },
       android: {
-        width: moderateScale(370, 0.6)
-      }
+        width: moderateScale(370, 0.6),
+      },
     }),
 
     flexDirection: 'row',
     justifyContent: 'center',
     alignContent: 'center',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
   },
   iconAndBadgeWrapper: {
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   redBadge: {
     borderWidth: 1,
@@ -44,11 +44,11 @@ export default StyleSheet.create({
     borderRadius: 100,
     position: 'absolute',
     top: -10,
-    right: -7
+    right: -7,
   },
   badgeValue: {
     color: '#fff',
     fontSize: moderateScale(14),
-    fontFamily: 'roboto_regular'
-  }
+    fontFamily: 'roboto_regular',
+  },
 });

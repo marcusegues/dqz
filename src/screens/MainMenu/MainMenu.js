@@ -18,7 +18,7 @@ const MainMenu = ({ navigation }) => (
           flex: 1,
           width: undefined,
           height: undefined,
-          resizeMode: 'cover'
+          resizeMode: 'cover',
         }}
       />
     </View>
