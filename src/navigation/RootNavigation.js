@@ -16,6 +16,7 @@ import MainMenu from '../screens/MainMenu/MainMenu';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
+import { QuestionAnswerContainer2 } from '../components/QuestionAnswer/QuestionAnswerContainer2';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -37,6 +38,12 @@ const RootStackNavigator = StackNavigator(
       screen: QuestionAnswerContainer,
       navigationOptions: () => ({
         headerTitle: <HeaderTitle text="Waren deklarieren" />,
+      }),
+    },
+    QuestionAnswer2: {
+      screen: QuestionAnswerContainer2,
+      navigationOptions: () => ({
+        headerTitle: <HeaderTitle text="Waren deklarieren - 2" />,
       }),
     },
     OnBoarding: {

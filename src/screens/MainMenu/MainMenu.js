@@ -34,7 +34,7 @@ const MainMenu = ({ navigation }) => (
         <MenuTileComponent
           icon="receipt"
           text="MEINE QUITTUNGEN"
-          onPress={() => navigation.navigate('UnderConstruction')}
+          onPress={() => navigation.navigate('QuestionAnswer2')}
         >
           <View style={styles.iconAndBadgeWrapper}>
             <MaterialIcons
@@ -43,7 +43,7 @@ const MainMenu = ({ navigation }) => (
               color="#9B9B9B"
             />
             <View style={styles.redBadge}>
-              <Text style={styles.badgeValue}>2</Text>
+              <Text style={styles.badgeValue}>123</Text>
             </View>
           </View>
         </MenuTileComponent>
