@@ -6,12 +6,13 @@ import OverAllowanceInfo from './OverAllowanceInfo';
 import {
   getDeclarationPeople,
   getOverAllowance,
-  getLargeAmountPresent,
+  getLargeAmountPresent
 } from '../../../reducers';
 import { getTotalPeople } from '../../../model/configurationApi';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
+const mainIcon = require('../../../../assets/icons/wertFreiGrenze.png');
 
 class OverAllowanceContainer extends React.Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class OverAllowanceContainer extends React.Component {
     return (
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
-        mainIcon="crown"
+        mainIcon={mainIcon}
         status={
           this.props.overAllowance === 'notAnswered' ? incomplete : complete
         }
@@ -79,7 +80,7 @@ class OverAllowanceContainer extends React.Component {
 const mapStateToProps = state => ({
   people: getDeclarationPeople(state),
   overAllowance: getOverAllowance(state),
-  largeAmountPresent: getLargeAmountPresent(state),
+  largeAmountPresent: getLargeAmountPresent(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -90,7 +91,7 @@ const mapDispatchToProps = dispatch => ({
   onDeclarationSetOverAllowanceTrue: () =>
     dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_TRUE' }),
   onDeclarationSetOverAllowanceFalse: () =>
-    dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_FALSE' }),
+    dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_FALSE' })
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(

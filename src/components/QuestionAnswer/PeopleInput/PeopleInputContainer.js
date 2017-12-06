@@ -10,14 +10,14 @@ import {
   subtractAdult,
   addMinor,
   subtractMinor,
-  getTotalPeople,
+  getTotalPeople
 } from '../../../model/configurationApi';
 
 class PeopleInputContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      people: this.props.people,
+      people: this.props.people
     };
     this.handleAddAdult = this.handleAddAdult.bind(this);
     this.handleSubtractAdult = this.handleSubtractAdult.bind(this);
@@ -53,25 +53,25 @@ class PeopleInputContainer extends React.Component {
 
   handleAddAdult() {
     this.setState({
-      people: addAdult(this.state.people),
+      people: addAdult(this.state.people)
     });
   }
 
   handleSubtractAdult() {
     this.setState({
-      people: subtractAdult(this.state.people),
+      people: subtractAdult(this.state.people)
     });
   }
 
   handleAddMinor() {
     this.setState({
-      people: addMinor(this.state.people),
+      people: addMinor(this.state.people)
     });
   }
 
   handleSubtractMinor() {
     this.setState({
-      people: subtractMinor(this.state.people),
+      people: subtractMinor(this.state.people)
     });
   }
 
@@ -99,7 +99,7 @@ class PeopleInputContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  people: getDeclarationPeople(state),
+  people: getDeclarationPeople(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -120,7 +120,7 @@ const mapDispatchToProps = dispatch => ({
   onAdultsSetQuantity: quantity =>
     dispatch({ type: 'DECLARATION_ADULTS_SET_QUANTITY', quantity }),
   onMinorsSetQuantity: quantity =>
-    dispatch({ type: 'DECLARATION_MINORS_SET_QUANTITY', quantity }),
+    dispatch({ type: 'DECLARATION_MINORS_SET_QUANTITY', quantity })
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(

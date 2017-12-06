@@ -8,18 +8,19 @@ import AmountInputInfo from './AmountInputInfo';
 import {
   getDeclarationBasket,
   getDeclarationSettings,
-  getDeclarationPeople,
+  getDeclarationPeople
 } from '../../../reducers';
 import { getAmounts } from '../../../model/configurationApi';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
+const mainIcon = require('../../../../assets/icons/mwst.png');
 
 class AmountInputContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      amounts: Immutable.List(),
+      amounts: Immutable.List()
     };
     this.handleAnswer = this.handleAnswer.bind(this);
     this.getQuestionComponent = this.getQuestionComponent.bind(this);
@@ -46,7 +47,7 @@ class AmountInputContainer extends React.Component {
     return (
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
-        mainIcon="cash-multiple"
+        mainIcon={mainIcon}
         status={
           this.props.settings.get('amountsEntered') === 'notAnswered'
             ? incomplete
@@ -63,7 +64,7 @@ class AmountInputContainer extends React.Component {
 
   addAmount(amount) {
     this.setState({
-      amounts: this.state.amounts.push(parseInt(amount, 10)),
+      amounts: this.state.amounts.push(parseInt(amount, 10))
     });
   }
 
@@ -73,7 +74,7 @@ class AmountInputContainer extends React.Component {
       onDeclarationAddAmount(amount);
     });
     this.setState({
-      amounts: Immutable.List(),
+      amounts: Immutable.List()
     });
     await this.props.onDeclarationSetAmountsEnteredTrue();
     onAnswer();
@@ -94,7 +95,7 @@ class AmountInputContainer extends React.Component {
 const mapStateToProps = state => ({
   people: getDeclarationPeople(state),
   amounts: getAmounts(getDeclarationBasket(state), 'Meat'),
-  settings: getDeclarationSettings(state),
+  settings: getDeclarationSettings(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -104,8 +105,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch({
       type: 'DECLARATION_BASKET_ADD_AMOUNT',
       category: 'Meat',
-      amount,
-    }),
+      amount
+    })
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(

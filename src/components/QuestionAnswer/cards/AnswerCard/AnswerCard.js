@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: { height: 2, width: 0 },
     shadowOpacity: 0.1,
-    shadowRadius: 2,
-  },
+    shadowRadius: 2
+  }
 });
 
 const AnswerCard = ({ mainIcon, status, children, onAnswerPress }) => (
@@ -27,23 +27,24 @@ const AnswerCard = ({ mainIcon, status, children, onAnswerPress }) => (
     style={{
       width: '95%',
       marginTop: 4,
-      marginBottom: 4,
+      marginBottom: 4
     }}
     onPress={onAnswerPress}
   >
     <View style={styles.container}>
-      <MaterialCommunityIcons
-        name={mainIcon}
-        size={34}
-        style={{}}
-        color={MAIN_RED}
+      <Image
+        source={mainIcon}
+        style={{
+          width: 32,
+          height: 32
+        }}
       />
       <View style={{ flex: 0.7 }}>{children}</View>
       <Image
         source={status}
         style={{
           width: 32,
-          height: 32,
+          height: 32
         }}
       />
     </View>

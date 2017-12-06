@@ -7,18 +7,19 @@ import LargeAmountInput from './LargeAmountInput';
 import LargeAmountInputInfo from './LargeAmountInputInfo';
 import {
   getDeclarationBasket,
-  getDeclarationSettings,
+  getDeclarationSettings
 } from '../../../reducers';
 import { getLargeAmounts } from '../../../model/configurationApi';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
+const mainIcon = require('../../../../assets/icons/mwst.png');
 
 class LargeAmountInputContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      largeAmounts: Immutable.List(),
+      largeAmounts: Immutable.List()
     };
     this.handleAnswer = this.handleAnswer.bind(this);
     this.getQuestionComponent = this.getQuestionComponent.bind(this);
@@ -44,7 +45,7 @@ class LargeAmountInputContainer extends React.Component {
     return (
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
-        mainIcon="cash-multiple"
+        mainIcon={mainIcon}
         status={
           this.props.settings.get('largeAmountsEntered') === 'notAnswered'
             ? incomplete
@@ -61,7 +62,7 @@ class LargeAmountInputContainer extends React.Component {
 
   addLargeAmount(largeAmount) {
     this.setState({
-      largeAmounts: this.state.largeAmounts.push(parseInt(largeAmount, 10)),
+      largeAmounts: this.state.largeAmounts.push(parseInt(largeAmount, 10))
     });
   }
 
@@ -71,7 +72,7 @@ class LargeAmountInputContainer extends React.Component {
       onDeclarationAddLargeAmount(amount);
     });
     this.setState({
-      largeAmounts: Immutable.List(),
+      largeAmounts: Immutable.List()
     });
     await this.props.onDeclarationSetLargeAmountsEnteredTrue();
     onAnswer();
@@ -91,7 +92,7 @@ class LargeAmountInputContainer extends React.Component {
 
 const mapStateToProps = state => ({
   largeAmounts: getLargeAmounts(getDeclarationBasket(state), 'Meat'),
-  settings: getDeclarationSettings(state),
+  settings: getDeclarationSettings(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -101,8 +102,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch({
       type: 'DECLARATION_BASKET_ADD_LARGE_AMOUNT',
       category: 'Meat',
-      largeAmount,
-    }),
+      largeAmount
+    })
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
