@@ -18,7 +18,7 @@ class UnderConstructionWithSums extends React.Component {
     const { vatReport, dutyReport } = this.props;
     return (
       <View style={style}>
-        <Text>{`Zu bezahlender Betrag: ${vatReport.get('totalVat') +
+        <Text>{`Zu bezahlender Betrag (Total): CHF ${vatReport.get('totalVat') +
           dutyReport.get('totalDuty')}`}</Text>
       </View>
     );
