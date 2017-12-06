@@ -1,5 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
+import { connect } from 'react-redux';
+
 import NavBar from '../NavBar/NavBar';
 import PeopleInputContainer from './PeopleInput/PeopleInputContainer';
 import LargeAmountPresentContainer from './LargeAmountPresent/LargeAmountPresentContainer';
@@ -8,8 +10,15 @@ import OverAllowanceContainer from './OverAllowance/OverAllowanceContainer';
 import AmountInputContainer from './AmountInput/AmountInputContainer';
 import MainCategoriesInputContainer from './MainCategoriesInput/MainCategoriesInputContainer';
 import RedButton from '../Buttons/RedButton';
+import {
+  getDeclarationCurrentQuestion,
+  getDeclarationInit,
+  getDeclarationInitList,
+  getDeclarationPeople,
+  getDeclarationSettings,
+} from '../../reducers';
 
-export class QuestionAnswerContainer2 extends React.Component {
+class QuestionAnswerContainer2 extends React.Component {
   constructor() {
     super();
 
@@ -93,3 +102,23 @@ export class QuestionAnswerContainer2 extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  currentQuestion: getDeclarationCurrentQuestion(state),
+  people: getDeclarationPeople(state),
+  settings: getDeclarationSettings(state),
+  init: getDeclarationInit(state),
+  initList: getDeclarationInitList(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+  onSetCurrentQuestion: currentQuestion =>
+    dispatch({ type: 'DECLARATION_SET_CURRENT_QUESTION', currentQuestion }),
+  onAddToInitList: nextQuestion =>
+    dispatch({ type: 'DECLARATION_ADD_TO_INIT_LIST', nextQuestion }),
+  onSetInitFalse: () => dispatch({ type: 'DECLARATION_SET_INIT_FALSE' }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(
+  QuestionAnswerContainer2
+);

@@ -16,7 +16,7 @@ import MainMenu from '../screens/MainMenu/MainMenu';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
-import { QuestionAnswerContainer2 } from '../components/QuestionAnswer/QuestionAnswerContainer2';
+import QuestionAnswerContainer2 from '../components/QuestionAnswer/QuestionAnswerContainer2';
 
 const RootStackNavigator = StackNavigator(
   {
