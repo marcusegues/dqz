@@ -21,7 +21,7 @@ import type {
   Category,
   People
 } from '../model/types/basketPeopleTypes';
-import { VatReport, DutyReport } from '../model/types/calculationTypes';
+import type { VatReport, DutyReport } from '../model/types/calculationTypes';
 import * as fromModelApi from '../model/configurationApi';
 import { calculateDuty } from '../model/dutyCalculations';
 import { calculateVat } from '../model/vatCalculations';
@@ -203,7 +203,7 @@ const declaration = (
       return newState.setIn(['settings', 'initList'], InitList);
     }
     case 'DECLARATION_CALCULATE_DUES': {
-      let newState = state.set(
+      const newState = state.set(
         'dutyReport',
         calculateDuty(state.get('basket'), state.get('people'))
       );
