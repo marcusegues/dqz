@@ -13,9 +13,9 @@ import Logo from '../components/Headers/subcomponents/Logo';
 import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
 import BasketInputContainer from '../components/BasketInput/BasketInputContainer';
 import MainMenu from '../screens/MainMenu/MainMenu';
-
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
+import UnderConstructionWithSums from './underConstructionWithSums';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -64,6 +64,12 @@ const RootStackNavigator = StackNavigator(
     },
     UnderConstruction: {
       screen: UnderConstruction,
+      navigationOptions: () => ({
+        headerTitle: <HeaderTitle text="In Bearbeitung" />,
+      }),
+    },
+    UnderConstructionWithSums: {
+      screen: UnderConstructionWithSums,
       navigationOptions: () => ({
         headerTitle: <HeaderTitle text="In Bearbeitung" />,
       }),

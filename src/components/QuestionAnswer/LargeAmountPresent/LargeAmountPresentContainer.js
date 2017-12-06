@@ -71,7 +71,7 @@ class LargeAmountPresentContainer extends React.Component {
 
 const mapStateToProps = state => ({
   people: getDeclarationPeople(state),
-  largeAmountPresent: getLargeAmountPresent(state)
+  largeAmountPresent: getLargeAmountPresent(state),
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -82,7 +82,7 @@ const mapDispatchToProps = dispatch => ({
   onDeclarationSetLargeAmountPresentTrue: () =>
     dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE' }),
   onDeclarationSetLargeAmountPresentFalse: () =>
-    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE' })
+    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(

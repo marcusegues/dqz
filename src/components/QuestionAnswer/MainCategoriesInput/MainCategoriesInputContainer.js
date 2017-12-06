@@ -17,7 +17,7 @@ class MainCategoriesInputContainer extends React.Component {
       mainCategories:
         this.props.mainCategories === 'notAnswered'
           ? EmptyMainCategories
-          : this.props.mainCategories
+          : this.props.mainCategories,
     };
     this.handleAddMainCategory = this.handleAddMainCategory.bind(this);
     this.handleRemoveMainCategory = this.handleRemoveMainCategory.bind(this);
@@ -57,13 +57,13 @@ class MainCategoriesInputContainer extends React.Component {
 
   handleAddMainCategory(mainCategory) {
     this.setState({
-      mainCategories: this.state.mainCategories.add(mainCategory)
+      mainCategories: this.state.mainCategories.add(mainCategory),
     });
   }
 
   handleRemoveMainCategory(mainCategory) {
     this.setState({
-      mainCategories: this.state.mainCategories.delete(mainCategory)
+      mainCategories: this.state.mainCategories.delete(mainCategory),
     });
   }
 
@@ -92,12 +92,12 @@ class MainCategoriesInputContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  mainCategories: getDeclarationMainCategories(state)
+  mainCategories: getDeclarationMainCategories(state),
 });
 
 const mapDispatchToProps = dispatch => ({
   onSetMainCategories: mainCategories =>
-    dispatch({ type: 'DECLARATION_SET_MAIN_CATEGORIES', mainCategories })
+    dispatch({ type: 'DECLARATION_SET_MAIN_CATEGORIES', mainCategories }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(

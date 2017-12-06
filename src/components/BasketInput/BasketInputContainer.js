@@ -5,7 +5,7 @@ import NavBar from '../NavBar/NavBar';
 import RedButton from '../Buttons/RedButton';
 import {
   getDeclarationBasket,
-  getDeclarationMainCategories
+  getDeclarationMainCategories,
 } from '../../reducers';
 import { MainCategoriesToCategories } from '../../types/reducers/declaration';
 import BasketInput from './BasketInput';
@@ -32,7 +32,7 @@ class BasketInputContainer extends React.Component {
           height: '100%',
           width: '100%',
           marginBottom: 16,
-          flexDirection: 'column'
+          flexDirection: 'column',
         }}
       >
         <NavBar step={2} />
@@ -45,7 +45,9 @@ class BasketInputContainer extends React.Component {
         />
         <RedButton
           text="ZUR BEZAHLUNG"
-          onPress={() => this.props.navigation.navigate('UnderConstruction')}
+          onPress={() =>
+            this.props.navigation.navigate('UnderConstructionWithSums')
+          }
         />
       </View>
     );
@@ -54,7 +56,7 @@ class BasketInputContainer extends React.Component {
 
 const mapStateToProps = state => ({
   basket: getDeclarationBasket(state),
-  mainCategories: getDeclarationMainCategories(state)
+  mainCategories: getDeclarationMainCategories(state),
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -62,8 +64,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch({
       type: 'DECLARATION_BASKET_CHANGE_QUANTITY',
       category,
-      quantityChange
-    })
+      quantityChange,
+    }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
