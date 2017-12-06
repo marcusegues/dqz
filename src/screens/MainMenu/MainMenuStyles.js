@@ -10,7 +10,7 @@ export default StyleSheet.create({
     backgroundColor: '#F5F5F5',
   },
   backgroundImageContainer: {
-    flex: 0.3,
+    flex: 0.5,
   },
   backgroundImage: {
     flex: 1,

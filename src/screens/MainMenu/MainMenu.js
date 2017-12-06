@@ -7,7 +7,7 @@ import MenuTileComponent from './Subcomponents/MenuTileComponent';
 import styles from './MainMenuStyles';
 import { moderateScale } from '../../styles/Scaling';
 
-const mountains = require('../../../assets/images/background-mountains3.jpg');
+const mountains = require('../../../assets/images/mainScreen.png');
 
 const MainMenu = ({ navigation }) => (
   <View style={styles.container}>
