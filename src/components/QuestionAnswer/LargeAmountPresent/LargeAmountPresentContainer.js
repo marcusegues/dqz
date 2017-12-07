@@ -1,10 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { View } from 'react-native';
+
 import YesNoCard from '../cards/YesNoCard/YesNoCard';
 import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import LargeAmountInfo from './LargeAmountInfo';
-import { getDeclarationPeople, getLargeAmountPresent } from '../../../reducers';
-import { getTotalPeople } from '../../../model/configurationApi';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
@@ -27,63 +26,39 @@ class LargeAmountPresentContainer extends React.Component {
   }
 
   getAnswerComponent() {
+    const { hasLargeAmount } = this.props.qaState;
     return (
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
         mainIcon="cash-multiple"
-        status={
-          this.props.largeAmountPresent === 'notAnswered'
-            ? incomplete
-            : complete
-        }
+        status={this.props.questionState === 'warning' ? incomplete : complete}
       >
-        <LargeAmountInfo largeAmountPresent={this.props.largeAmountPresent} />
+        <LargeAmountInfo largeAmountPresent={hasLargeAmount} />
       </AnswerCard>
     );
   }
 
-  async handleAnswerYes() {
-    await this.props.onDeclarationSetLargeAmountPresentTrue();
-    this.props.onAnswer();
+  handleAnswerYes() {
+    this.props.onAnswer(true);
   }
 
-  async handleAnswerNo() {
-    await this.props.onDeclarationSetLargeAmountsEnteredNotAnswered();
-    await this.props.onDeclarationResetLargeAmounts();
-    await this.props.onDeclarationSetLargeAmountPresentFalse();
-    this.props.onAnswer();
+  handleAnswerNo() {
+    this.props.onAnswer(false);
   }
 
   render() {
-    const { people, init, initList } = this.props;
-    if (
-      getTotalPeople(people) === 1 ||
-      (init && !initList.includes('largeAmountPresent'))
-    ) {
-      return null;
+    switch (this.props.questionState) {
+      case 'expanded': {
+        return this.getQuestionComponent();
+      }
+      case 'collapsed': {
+        return this.getAnswerComponent();
+      }
+      default: {
+        return <View />;
+      }
     }
-    return this.props.currentQuestion === 'largeAmountPresent'
-      ? this.getQuestionComponent()
-      : this.getAnswerComponent();
   }
 }
 
-const mapStateToProps = state => ({
-  people: getDeclarationPeople(state),
-  largeAmountPresent: getLargeAmountPresent(state),
-});
-
-const mapDispatchToProps = dispatch => ({
-  onDeclarationSetLargeAmountsEnteredNotAnswered: () =>
-    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNTS_ENTERED_NOT_ANSWERED' }),
-  onDeclarationResetLargeAmounts: () =>
-    dispatch({ type: 'DECLARATION_RESET_LARGE_AMOUNTS', category: 'Meat' }),
-  onDeclarationSetLargeAmountPresentTrue: () =>
-    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE' }),
-  onDeclarationSetLargeAmountPresentFalse: () =>
-    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE' }),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(
-  LargeAmountPresentContainer
-);
+export default LargeAmountPresentContainer;

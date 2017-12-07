@@ -1,9 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import { connect } from 'react-redux';
+
 import PeopleInput from './PeopleInput';
 import PeopleInputAnswer from './PeopleInputAnswer';
-import { getDeclarationPeople } from '../../../reducers';
 import {
   addAdult,
   subtractAdult,
@@ -93,12 +92,4 @@ class PeopleInputContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  people: getDeclarationPeople(state),
-});
-
-const mapDispatchToProps = () => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(
-  PeopleInputContainer
-);
+export default PeopleInputContainer;

@@ -1,4 +1,5 @@
 // @flow
+/* eslint react/no-unused-state: 0 */
 import React from 'react';
 // $FlowFixMe
 import { FlatList, View } from 'react-native';
@@ -31,11 +32,12 @@ type questionType =
   | 'mainCategories'
   | 'none';
 
-type questionState = 'expanded' | 'hidden' | 'collapsed';
+type questionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
 
 type State = {
   questionStates: { [questionType]: questionState },
   people: People,
+  hasLargeAmount: boolean,
 };
 
 class QuestionAnswerContainer2 extends React.Component<any, State> {
@@ -44,14 +46,18 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
 
     this.state = {
       people: initPeople,
-      questionStates: { peopleInput: 'collapsed' },
+      hasLargeAmount: true,
+      questionStates: {
+        peopleInput: 'collapsed',
+        hasLargeAmount: 'collapsed',
+      },
     };
   }
 
   updateQA() {
     // for now, just close all the things
     this.setState({
-      questionStates: { peopleInput: 'collapsed' },
+      questionStates: { peopleInput: 'collapsed', hasLargeAmount: 'collapsed' },
     });
   }
 
@@ -65,7 +71,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
 
   render() {
     const { questionStates } = this.state;
-    const { peopleInput } = questionStates;
+    const { peopleInput, hasLargeAmount } = questionStates;
     const { navigation } = this.props;
 
     const flatListData = [
@@ -89,7 +95,21 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
       },
       {
         key: 'hasLargeAmount',
-        component: <LargeAmountPresentContainer />,
+        component: (
+          <LargeAmountPresentContainer
+            qaState={this.state}
+            onAnswerPress={() => {
+              this.expandQuestion('hasLargeAmount');
+            }}
+            questionState={hasLargeAmount}
+            onAnswer={(hasLargeAmountAnswer: boolean) => {
+              this.setState({
+                hasLargeAmount: hasLargeAmountAnswer,
+              });
+              this.updateQA();
+            }}
+          />
+        ),
       },
       {
         key: 'largeAmountInput',
