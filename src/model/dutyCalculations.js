@@ -2,14 +2,14 @@
 
 import type {
   Map as ImmutableMapType,
-  List as ImmutableListType,
+  List as ImmutableListType
 } from 'immutable';
 import Immutable from 'immutable';
 import type {
   Basket,
   Category,
   DutyBracket,
-  People,
+  People
 } from './types/basketPeopleTypes';
 import type { DutyReport } from './types/calculationTypes';
 import { CategoriesArray, CategoriesRates } from './constants';
@@ -72,6 +72,6 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
   });
   return makeDutyReportRecord({
     totalDuty: total,
-    dutyByCategoryRaw: reportByCategory,
+    dutyByCategoryRaw: reportByCategory
   });
 };

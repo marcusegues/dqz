@@ -3,7 +3,7 @@ import {
   getInitialState,
   MainCategories,
   InitList,
-  EmptyMainCategories,
+  EmptyMainCategories
 } from '../types/reducers/declaration';
 import type {
   State,
@@ -13,13 +13,13 @@ import type {
   LargeAmountPresentType,
   SettingsType,
   InitListType,
-  CurrentQuestionType,
+  CurrentQuestionType
 } from '../types/reducers/declaration';
 import type { Action } from '../types/actions';
 import type {
   Basket,
   Category,
-  People,
+  People
 } from '../model/types/basketPeopleTypes';
 import type { VatReport, DutyReport } from '../model/types/calculationTypes';
 import * as fromModelApi from '../model/configurationApi';

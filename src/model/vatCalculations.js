@@ -3,23 +3,23 @@
 import type {
   List as ImmutableListType,
   OrderedMap as ImmutableOrderedMapType,
-  Map as ImmutableMapType,
+  Map as ImmutableMapType
 } from 'immutable';
 import Immutable from 'immutable';
 
 import type { Basket, People, Category } from './types/basketPeopleTypes';
 import type {
   AllAmountsPerVatBracket,
-  VatReport,
+  VatReport
 } from './types/calculationTypes';
 import {
   CategoriesArray,
   CategoriesRates,
-  IndividualAllowance,
+  IndividualAllowance
 } from './constants';
 import {
   makeAllAmountsPerVatBracketRecord,
-  makeVatReportRecord,
+  makeVatReportRecord
 } from './types/calculationTypes';
 import { rounding } from './utils';
 
@@ -217,6 +217,6 @@ export const calculateVat = (basket: Basket, people: People): VatReport => {
   const vatNormal = calculateVatNormalItems(afterAllowance);
   return makeVatReportRecord({
     totalVat: vatLarge + vatNormal,
-    vatByCategoryRaw: vatByCategory(basket),
+    vatByCategoryRaw: vatByCategory(basket)
   });
 };
