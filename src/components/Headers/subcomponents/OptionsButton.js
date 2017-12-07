@@ -2,10 +2,10 @@ import React from 'react';
 import Touchable from 'react-native-platform-touchable';
 import { Ionicons } from '@expo/vector-icons';
 
-const OptionsButton = () => (
+const OptionsButton = ({ navigation }) => (
   <Touchable
     onPress={() => {
-      // navigation.navigate('DrawerToggle');
+      navigation.navigate('UnderConstruction');
     }}
   >
     <Ionicons name="ios-menu" size={30} />

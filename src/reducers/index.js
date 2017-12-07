@@ -31,3 +31,9 @@ export const getDeclarationInit = state =>
 
 export const getDeclarationInitList = state =>
   fromDeclaration.getDeclarationInitList(state.declaration);
+
+export const getDeclarationVatReport = state =>
+  fromDeclaration.getDeclarationVatReport(state.declaration);
+
+export const getDeclarationDutyReport = state =>
+  fromDeclaration.getDeclarationDutyReport(state.declaration);

@@ -14,6 +14,7 @@ import { getAmounts } from '../../../model/configurationApi';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
+const mainIcon = require('../../../../assets/icons/mwst.png');
 
 class AmountInputContainer extends React.Component {
   constructor(props) {
@@ -46,7 +47,7 @@ class AmountInputContainer extends React.Component {
     return (
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
-        mainIcon="cash-multiple"
+        mainIcon={mainIcon}
         status={
           this.props.settings.get('amountsEntered') === 'notAnswered'
             ? incomplete

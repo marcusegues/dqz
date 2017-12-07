@@ -8,6 +8,7 @@ import AnswerCard from '../cards/AnswerCard/AnswerCard';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
+const mainIcon = require('../../../../assets/icons/mainCategories.png');
 
 class MainCategoriesInputContainer extends React.Component {
   constructor(props) {
@@ -42,7 +43,7 @@ class MainCategoriesInputContainer extends React.Component {
     return (
       <AnswerCard
         onAnswerPress={onAnswerPress}
-        mainIcon="owl"
+        mainIcon={mainIcon}
         status={
           mainCategories === 'notAnswered' || mainCategories.isEmpty()
             ? incomplete
