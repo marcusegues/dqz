@@ -1,9 +1,8 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 import { View, Text, Image } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
-
 import styles from '../../styles/OnBoardingStyles';
-import { translate } from 'react-i18next';
 
 const img = require('../../../assets/icons/logo.png');
 
