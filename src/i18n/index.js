@@ -1,13 +1,14 @@
 import i18n from 'i18next';
+import Expo from 'expo';
 
 const languageDetector = {
   type: 'languageDetector',
   async: true, // flags below detection to be async
-  detect: callback => {
-    return /*'en'; */ Expo.Util.getCurrentLocaleAsync().then(lng => {
+  detect: callback => 
+     /* 'en'; */ Expo.Util.getCurrentLocaleAsync().then(lng => {
       callback(lng);
-    });
-  },
+    })
+  ,
   init: () => {},
   cacheUserLanguage: () => {},
 };
