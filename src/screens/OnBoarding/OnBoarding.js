@@ -25,7 +25,7 @@ const OnBoarding = ({ t, i18n, navigation }) => (
       <View
         style={{
           alignItems: 'center',
-          justifyContent: 'space-around'
+          justifyContent: 'space-around',
         }}
       >
         <Text style={styles.selectLanguageText}>
