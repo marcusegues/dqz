@@ -88,7 +88,7 @@ const WrappedRootStackNavigator = () => (
   <RootStackNavigator screenProps={{ t: i18n.getFixedT() }} />
 );
 
-const ReloadAppOnLanguageChange = translate('common', {
+const ReloadAppOnLanguageChange = translate(null, {
   bindI18n: 'languageChanged',
   bindStore: false,
 })(WrappedRootStackNavigator);
