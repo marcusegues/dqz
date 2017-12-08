@@ -47,14 +47,20 @@ const OnBoarding = ({ t, i18n, navigation }) => (
           <Touchable
             style={styles.languageButton}
             background={Touchable.Ripple('#006699')}
-            onPress={() => i18n.changeLanguage('fr')}
+            onPress={() => {
+              i18n.changeLanguage('fr');
+              navigation.navigate('MainMenu');
+            }}
           >
             <Text style={styles.languageButtonText}>FR</Text>
           </Touchable>
           <Touchable
             style={styles.languageButton}
             background={Touchable.Ripple('#006699')}
-            onPress={() => i18n.changeLanguage('it')}
+            onPress={() => {
+              i18n.changeLanguage('it');
+              navigation.navigate('MainMenu');
+            }}
           >
             <Text style={styles.languageButtonText}>IT</Text>
           </Touchable>
