@@ -26,7 +26,6 @@ import { rounding } from './utils';
 /**
  * For TESTING only
  */
-
 export const vatByCategory = (
   basket: Basket
 ): ImmutableMapType<Category, number> => {
