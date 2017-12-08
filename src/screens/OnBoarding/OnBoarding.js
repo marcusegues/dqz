@@ -3,10 +3,11 @@ import { View, Text, Image } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 
 import styles from '../../styles/OnBoardingStyles';
+import { translate } from 'react-i18next';
 
 const img = require('../../../assets/icons/logo.png');
 
-const OnBoarding = () => (
+const OnBoarding = ({ t, i18n, navigation }) => (
   <View style={styles.container}>
     <View style={styles.contentContainer}>
       <Text style={styles.welcomeTitle}>Welcome to</Text>
@@ -17,9 +18,7 @@ const OnBoarding = () => (
           <Text style={styles.appTitleCalc}>Calc</Text>
         </Text>
       </View>
-      <Text style={styles.mainText}>
-        We’ve set your language based on your current system settings:
-      </Text>
+      <Text style={styles.mainText}>{t('onBoardingMessage')}</Text>
       <View style={styles.currentLanguageView}>
         <Text style={styles.currentLanguageText}>EN</Text>
       </View>
@@ -27,7 +26,7 @@ const OnBoarding = () => (
       <View
         style={{
           alignItems: 'center',
-          justifyContent: 'space-around',
+          justifyContent: 'space-around'
         }}
       >
         <Text style={styles.selectLanguageText}>
@@ -38,18 +37,24 @@ const OnBoarding = () => (
           <Touchable
             style={styles.languageButton}
             background={Touchable.Ripple('#006699')}
+            onPress={() => {
+              i18n.changeLanguage('de');
+              navigation.navigate('MainMenu');
+            }}
           >
             <Text style={styles.languageButtonText}>DE</Text>
           </Touchable>
           <Touchable
             style={styles.languageButton}
             background={Touchable.Ripple('#006699')}
+            onPress={() => i18n.changeLanguage('fr')}
           >
             <Text style={styles.languageButtonText}>FR</Text>
           </Touchable>
           <Touchable
             style={styles.languageButton}
             background={Touchable.Ripple('#006699')}
+            onPress={() => i18n.changeLanguage('it')}
           >
             <Text style={styles.languageButtonText}>IT</Text>
           </Touchable>
@@ -67,4 +72,4 @@ const OnBoarding = () => (
   </View>
 );
 
-export default OnBoarding;
+export default translate('translation')(OnBoarding);

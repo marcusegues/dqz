@@ -10,12 +10,30 @@ i18n.use(LanguageDetector).init({
   resources: {
     en: {
       translation: {
-        declareGoods: 'Declare Goods'
+        declareGoods: 'Declare Goods',
+        onBoardingMessage:
+          'We’ve set your language based on your current system settings:'
       }
     },
     de: {
       translation: {
-        declareGoods: 'Waren Deklarieren'
+        declareGoods: 'Waren Deklarieren',
+        onBoardingMessage:
+          'Wir haben Ihre Sprache basierend auf Ihren aktuellen Systemeinstellungen festgelegt'
+      }
+    },
+    fr: {
+      translation: {
+        declareGoods: 'Déclarer les marchandises',
+        onBoarding:
+          'Nous avons défini votre langue en fonction de vos paramètres système actuels'
+      }
+    },
+    it: {
+      translation: {
+        declareGoods: 'Dichiarare le merci',
+        onBoarding:
+          'Abbiamo impostato la tua lingua in base alle tue attuali impostazioni di sistema'
       }
     }
   },

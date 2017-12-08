@@ -31,18 +31,18 @@ const RootStackNavigator = StackNavigator(
         headerStyle: {
           ...navigationOptions.headerStyle,
           borderBottomWidth: 5,
-          borderBottomColor: MAIN_RED,
-        },
-      }),
+          borderBottomColor: MAIN_RED
+        }
+      })
     },
     QuestionAnswer: {
       screen: QuestionAnswerContainer,
       navigationOptions: () => ({
-        headerTitle: <HeaderTitle text="Waren deklarieren" />,
-      }),
+        headerTitle: <HeaderTitle text="Waren deklarieren" />
+      })
     },
     OnBoarding: {
-      screen: OnBoarding,
+      screen: OnBoarding
     },
     MainMenu: {
       screen: MainMenu,
@@ -54,34 +54,34 @@ const RootStackNavigator = StackNavigator(
         headerStyle: {
           ...navigationOptions.headerStyle,
           borderBottomWidth: 5,
-          borderBottomColor: MAIN_RED,
-        },
-      }),
+          borderBottomColor: MAIN_RED
+        }
+      })
     },
     PeopleInput: {
-      screen: PeopleInputContainer,
+      screen: PeopleInputContainer
     },
     BasketInput: {
-      screen: BasketInputContainer,
+      screen: BasketInputContainer
     },
     UnderConstruction: {
       screen: UnderConstruction,
       navigationOptions: () => ({
-        headerTitle: <HeaderTitle text="In Bearbeitung" />,
-      }),
+        headerTitle: <HeaderTitle text="In Bearbeitung" />
+      })
     },
     UnderConstructionWithSums: {
       screen: UnderConstructionWithSums,
       navigationOptions: () => ({
-        headerTitle: <HeaderTitle text="In Bearbeitung" />,
-      }),
-    },
+        headerTitle: <HeaderTitle text="In Bearbeitung" />
+      })
+    }
   },
   {
     navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-    initialRouteName: 'MainMenu',
-  },
+    initialRouteName: 'OnBoarding'
+  }
 );
 
 const WrappedRootStackNavigator = () => (
@@ -90,7 +90,7 @@ const WrappedRootStackNavigator = () => (
 
 const ReloadAppOnLanguageChange = translate('common', {
   bindI18n: 'languageChanged',
-  bindStore: false,
+  bindStore: false
 })(WrappedRootStackNavigator);
 
 export default class RootNavigator extends React.Component {
@@ -112,7 +112,7 @@ export default class RootNavigator extends React.Component {
 
     // Watch for incoming notifications
     this._notificationSubscription = Notifications.addListener(
-      this._handleNotification,
+      this._handleNotification
     );
   }
 
