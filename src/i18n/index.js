@@ -4,11 +4,8 @@ import Expo from 'expo';
 const languageDetector = {
   type: 'languageDetector',
   async: true, // flags below detection to be async
-  detect: callback => 
-     /* 'en'; */ Expo.Util.getCurrentLocaleAsync().then(lng => {
-      callback(lng);
-    })
-  ,
+  detect: callback =>
+    Expo.Util.getCurrentLocaleAsync().then(lng => callback(lng)),
   init: () => {},
   cacheUserLanguage: () => {},
 };
