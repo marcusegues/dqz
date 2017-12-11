@@ -43,6 +43,9 @@ const RootStackNavigator = StackNavigator(
     },
     OnBoarding: {
       screen: OnBoarding,
+      navigationOptions: () => ({
+        header: null,
+      }),
     },
     MainMenu: {
       screen: MainMenu,

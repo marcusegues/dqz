@@ -1,5 +1,9 @@
 import i18n from 'i18next';
 import Expo from 'expo';
+import { en } from './locales/en';
+import { fr } from './locales/fr';
+import { de } from './locales/de';
+import { it } from './locales/it';
 
 const languageDetector = {
   type: 'languageDetector',
@@ -13,38 +17,12 @@ const languageDetector = {
 i18n.use(languageDetector).init({
   fallbackLng: 'de',
 
-  ns: ['translations'],
-  defaultNS: 'translations',
   debug: true,
   resources: {
-    en: {
-      translation: {
-        declareGoods: 'Declare Goods',
-        onBoardingMessage:
-          'We’ve set your language based on your current system settings:',
-      },
-    },
-    de: {
-      translation: {
-        declareGoods: 'Waren Deklarieren',
-        onBoardingMessage:
-          'Wir haben Ihre Sprache basierend auf Ihren aktuellen Systemeinstellungen festgelegt',
-      },
-    },
-    fr: {
-      translation: {
-        declareGoods: 'Déclarer les marchandises',
-        onBoarding:
-          'Nous avons défini votre langue en fonction de vos paramètres système actuels',
-      },
-    },
-    it: {
-      translation: {
-        declareGoods: 'Dichiarare le merci',
-        onBoarding:
-          'Abbiamo impostato la tua lingua in base alle tue attuali impostazioni di sistema',
-      },
-    },
+    en,
+    de,
+    fr,
+    it,
   },
   interpolation: {
     escapeValue: false, // not needed for react!!
