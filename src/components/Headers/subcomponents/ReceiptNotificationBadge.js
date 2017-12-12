@@ -5,7 +5,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { moderateScale } from '../../../styles/Scaling';
 import ownStyles from '../styles/ReceiptNotificationBadge';
 
-const ReceiptNotificationBadge = ({ navigation }) => (
+const ReceiptNotificationBadge = () => (
   <Touchable onPress={() => {}}>
     <View style={ownStyles.container}>
       <MaterialCommunityIcons

@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { moderateScale } from '../../../styles/Scaling';
 import { GREY } from '../../../styles/colors';
 
-const OptionsGearIcon = ({ navigation }) => (
+const OptionsGearIcon = () => (
   <Touchable onPress={() => {}}>
     <MaterialCommunityIcons
       name="settings"
