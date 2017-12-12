@@ -2,25 +2,6 @@ import { StyleSheet, Platform } from 'react-native';
 import { scale, verticalScale, moderateScale } from '../../../styles/Scaling';
 
 export default StyleSheet.create({
-  currentLanguageView: {
-    backgroundColor: '#FFFFFF',
-    paddingHorizontal: scale(45),
-    paddingVertical: verticalScale(15),
-    alignContent: 'center',
-    justifyContent: 'center',
-    borderBottomWidth: 5,
-    borderBottomColor: '#DC0018',
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOffset: { height: 2, width: 0 },
-    shadowOpacity: 0.25,
-    shadowRadius: 1.5,
-  },
-  currentLanguageText: {
-    fontFamily: 'roboto_medium',
-    fontSize: moderateScale(48),
-    textAlign: 'center',
-  },
   container: {
     flex: 1,
     flexDirection: 'column',
@@ -70,6 +51,25 @@ export default StyleSheet.create({
   appTitleCalc: {
     fontFamily: 'roboto_light',
     fontSize: moderateScale(56),
+  },
+  currentLanguageView: {
+    backgroundColor: '#FFFFFF',
+    paddingHorizontal: scale(45),
+    paddingVertical: verticalScale(15),
+    alignContent: 'center',
+    justifyContent: 'center',
+    borderBottomWidth: 5,
+    borderBottomColor: '#DC0018',
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { height: 2, width: 0 },
+    shadowOpacity: 0.25,
+    shadowRadius: 1.5,
+  },
+  currentLanguageText: {
+    fontFamily: 'roboto_medium',
+    fontSize: moderateScale(48),
+    textAlign: 'center',
   },
   selectLanguageText: {
     fontFamily: 'roboto_regular',
