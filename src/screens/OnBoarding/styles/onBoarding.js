@@ -1,5 +1,5 @@
 import { StyleSheet, Platform } from 'react-native';
-import { scale, verticalScale, moderateScale } from './Scaling';
+import { scale, verticalScale, moderateScale } from '../../../styles/Scaling';
 
 export default StyleSheet.create({
   container: {
@@ -52,25 +52,6 @@ export default StyleSheet.create({
     fontFamily: 'roboto_light',
     fontSize: moderateScale(56),
   },
-  currentLanguageView: {
-    paddingHorizontal: scale(45),
-    paddingVertical: verticalScale(15),
-    alignContent: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#FFFFFF',
-    borderBottomWidth: 5,
-    borderBottomColor: '#DC0018',
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOffset: { height: 2, width: 0 },
-    shadowOpacity: 0.25,
-    shadowRadius: 1.5,
-  },
-  currentLanguageText: {
-    fontFamily: 'roboto_medium',
-    fontSize: moderateScale(48),
-    textAlign: 'center',
-  },
   selectLanguageText: {
     fontFamily: 'roboto_regular',
     fontSize: moderateScale(18),
@@ -80,24 +61,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '90%',
-  },
-  languageButton: {
-    backgroundColor: '#fff',
-    paddingVertical: verticalScale(17),
-    paddingHorizontal: scale(33),
-    alignSelf: 'center',
-    borderWidth: 0.5,
-    borderColor: '#ccc',
-    borderRadius: 2,
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOffset: { height: 1, width: 0 },
-    shadowOpacity: 0.25,
-    shadowRadius: 1.5,
-  },
-  languageButtonText: {
-    fontFamily: 'roboto_medium',
-    fontSize: moderateScale(18),
   },
   saveSettingsButtonContainer: {
     flexDirection: 'row',

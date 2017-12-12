@@ -1,6 +1,8 @@
-import { Notifications } from 'expo';
 import React from 'react';
+import { Notifications } from 'expo';
+import { translate } from 'react-i18next';
 import { StackNavigator } from 'react-navigation';
+import i18n from '../i18n';
 import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
 import PeopleInputContainer from '../components/QuestionAnswer/cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OnBoarding from '../screens/OnBoarding/OnBoarding';
@@ -41,6 +43,9 @@ const RootStackNavigator = StackNavigator(
     },
     OnBoarding: {
       screen: OnBoarding,
+      navigationOptions: () => ({
+        header: null,
+      }),
     },
     MainMenu: {
       screen: MainMenu,
@@ -78,9 +83,18 @@ const RootStackNavigator = StackNavigator(
   {
     navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-    initialRouteName: 'MainMenu',
+    initialRouteName: 'OnBoarding',
   }
 );
+
+const WrappedRootStackNavigator = () => (
+  <RootStackNavigator screenProps={{ t: i18n.getFixedT() }} />
+);
+
+const ReloadAppOnLanguageChange = translate(null, {
+  bindI18n: 'languageChanged',
+  bindStore: false,
+})(WrappedRootStackNavigator);
 
 export default class RootNavigator extends React.Component {
   componentDidMount() {
@@ -108,6 +122,6 @@ export default class RootNavigator extends React.Component {
   _handleNotification = () => {};
 
   render() {
-    return <RootStackNavigator />;
+    return <ReloadAppOnLanguageChange />;
   }
 }

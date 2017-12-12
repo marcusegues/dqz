@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 import { View, Text, Image } from 'react-native';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -9,7 +10,7 @@ import { moderateScale } from '../../styles/Scaling';
 
 const mountains = require('../../../assets/images/mainScreen.png');
 
-const MainMenu = ({ navigation }) => (
+const MainMenu = ({ navigation, t }) => (
   <View style={styles.container}>
     <View style={{ flex: 0.25, flexDirection: 'row' }}>
       <Image
@@ -26,7 +27,7 @@ const MainMenu = ({ navigation }) => (
       <View style={styles.tileContainer}>
         <MenuTileComponent
           onPress={() => navigation.navigate('QuestionAnswer')}
-          text="WAREN DEKLARIEREN"
+          text={t('declareGoods')}
         >
           <MaterialIcons
             name="add-shopping-cart"
@@ -99,4 +100,4 @@ const MainMenu = ({ navigation }) => (
   </View>
 );
 
-export default MainMenu;
+export default translate(['general', 'mainMenu'])(MainMenu);
