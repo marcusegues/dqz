@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { moderateScale } from '../../../styles/Scaling';
+import { Platform, StyleSheet } from 'react-native';
+import { moderateScale, scale } from '../../../styles/Scaling';
 import { MAIN_RED, WHITE } from '../../../styles/colors';
 
 export default StyleSheet.create({
@@ -9,7 +9,16 @@ export default StyleSheet.create({
     marginHorizontal: 16,
   },
   topContainer: {
-    flex: 0.42,
+    ...Platform.select({
+      ios: {
+        flex: 0.42,
+      },
+      android: {
+        flex: 1,
+        // flex: 0.26,
+      },
+    }),
+
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -26,7 +35,16 @@ export default StyleSheet.create({
     width: '100%',
   },
   bottomContainer: {
-    flex: 0.58,
+    ...Platform.select({
+      ios: {
+        flex: 0.58,
+      },
+      android: {
+        flex: 2,
+        // flex: 0.74,
+      },
+    }),
+
     flexDirection: 'column',
     flexWrap: 'wrap',
     justifyContent: 'flex-end',

@@ -1,9 +1,20 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import { scale, verticalScale, moderateScale } from '../../../styles/Scaling';
 import { BLACK, WHITE } from '../../../styles/colors';
 
 export default StyleSheet.create({
   container: {
+    ...Platform.select({
+      ios: {
+        width: scale(152),
+        height: scale(135),
+      },
+      android: {
+        width: scale(112),
+        height: scale(100),
+      },
+    }),
+
     width: scale(152),
     height: scale(135),
     flexDirection: 'column',
