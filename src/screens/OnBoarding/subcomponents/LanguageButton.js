@@ -1,6 +1,8 @@
 // @flow
 import React from 'react';
+// $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
+// $FlowFixMe
 import { Text } from 'react-native';
 import { languageButton, languageButtonText } from '../styles/languageButton';
 import type {
