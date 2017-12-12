@@ -26,4 +26,4 @@ class LargeAmountInputInfo extends React.Component {
   }
 }
 
-export default translate(['general', 'largeAmountInput'])(LargeAmountInputInfo);
+export default translate(['largeAmountInput'])(LargeAmountInputInfo);
