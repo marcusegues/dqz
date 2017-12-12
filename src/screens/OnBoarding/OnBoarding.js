@@ -14,7 +14,6 @@ class OnBoarding extends React.Component {
   }
   render() {
     const { t, i18n, navigation } = this.props;
-    console.log(i18n.language);
     return (
       <View style={styles.container}>
         <View style={styles.contentContainer}>
@@ -26,7 +25,9 @@ class OnBoarding extends React.Component {
               <Text style={styles.appTitleCalc}>Calc</Text>
             </Text>
           </View>
-          <Text style={styles.mainText}>{t('onBoardingMessage')}</Text>
+          <Text style={styles.mainText}>
+            {t('onBoarding:onBoardingMessage')}
+          </Text>
           <LanguageButton
             size={'large'}
             selected={this.systemLanguage === i18n.language}
@@ -39,7 +40,9 @@ class OnBoarding extends React.Component {
               justifyContent: 'space-around',
             }}
           >
-            <Text style={styles.selectLanguageText}>{t('selectLanguage')}</Text>
+            <Text style={styles.selectLanguageText}>
+              {t('onBoarding:selectLanguage')}
+            </Text>
 
             <View style={styles.languageButtonsContainer}>
               {languageCodeList.map(language => {
@@ -63,7 +66,12 @@ class OnBoarding extends React.Component {
               style={styles.saveSettingsButton}
               background={Touchable.Ripple('#006699')}
             >
-              <Text style={styles.saveSettingsButtonText}>SAVE SETTINGS</Text>
+              <Text
+                style={styles.saveSettingsButtonText}
+                onPress={() => navigation.navigate('MainMenu')}
+              >
+                SAVE SETTINGS
+              </Text>
             </Touchable>
           </View>
         </View>
@@ -72,4 +80,4 @@ class OnBoarding extends React.Component {
   }
 }
 
-export default translate('onBoarding')(OnBoarding);
+export default translate(['general', 'onBoarding'])(OnBoarding);

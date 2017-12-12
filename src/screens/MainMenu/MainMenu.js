@@ -100,4 +100,4 @@ const MainMenu = ({ navigation, t }) => (
   </View>
 );
 
-export default translate('mainMenu')(MainMenu);
+export default translate(['general', 'mainMenu'])(MainMenu);

@@ -32,7 +32,7 @@ export const languageButton = (styleOptions: StyleOptionsType) => {
 export const languageButtonText = (styleOptions: StyleOptionsType) => {
   const { size, selected } = styleOptions;
   return {
-    fontFamily: selected ? 'roboto_bold' : 'roboto_medium',
+    fontFamily: selected ? 'roboto_bold' : 'roboto_regular',
     fontSize: size === 'small' ? moderateScale(18) : moderateScale(48),
     textAlign: 'center',
   };
