@@ -1,5 +1,5 @@
 import { Platform, StyleSheet } from 'react-native';
-import { moderateScale, scale } from '../../../styles/Scaling';
+import { moderateScale } from '../../../styles/Scaling';
 import { MAIN_RED, WHITE } from '../../../styles/colors';
 
 export default StyleSheet.create({
@@ -41,7 +41,6 @@ export default StyleSheet.create({
       },
       android: {
         flex: 2,
-        // flex: 0.74,
       },
     }),
 
