@@ -51,6 +51,10 @@ const RootStackNavigator = StackNavigator(
         ...navigationOptions,
         headerLeft: <InfoIcon navigation={navigation} />,
         headerRight: <MainMenuHeaderRight navigation={navigation} />,
+        headerStyle: {
+          ...navigationOptions.headerStyle,
+          elevation: 0,
+        },
       }),
     },
     PeopleInput: {
