@@ -8,11 +8,13 @@ import ScreensView from '../screens/ScreensView/ScreensView';
 import { MAIN_RED, MAIN_BACKGROUND_COLOR } from '../styles/colors';
 import { defaultNavigationOptions } from './navigationOptions';
 import HeaderTitle from '../components/Headers/subcomponents/HeaderTitle';
-import MainScreenHeaderTitle from '../components/Headers/subcomponents/MainScreenHeaderTitle';
 import Logo from '../components/Headers/subcomponents/Logo';
 import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
+import InfoIcon from '../components/Headers/subcomponents/InfoIcon';
+import MainMenuHeaderRight from '../components/Headers/subcomponents/MainMenuHeaderRight';
 import BasketInputContainer from '../components/BasketInput/BasketInputContainer';
 import MainMenu from '../screens/MainMenu/MainMenu';
+
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
 import UnderConstructionWithSums from './underConstructionWithSums';
@@ -42,18 +44,13 @@ const RootStackNavigator = StackNavigator(
     OnBoarding: {
       screen: OnBoarding,
     },
+
     MainMenu: {
       screen: MainMenu,
       navigationOptions: ({ navigationOptions, navigation }) => ({
         ...navigationOptions,
-        headerTitle: <MainScreenHeaderTitle />,
-        headerLeft: <Logo />,
-        headerRight: <OptionsButton navigation={navigation} />,
-        headerStyle: {
-          ...navigationOptions.headerStyle,
-          borderBottomWidth: 5,
-          borderBottomColor: MAIN_RED,
-        },
+        headerLeft: <InfoIcon navigation={navigation} />,
+        headerRight: <MainMenuHeaderRight navigation={navigation} />,
       }),
     },
     PeopleInput: {

@@ -24,21 +24,19 @@ export default class App extends React.Component {
         />
       );
     }
-      return (
-        <View style={styles.container} store={store}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          {Platform.OS === 'android' && (
-            <View style={styles.statusBarUnderlay} />
-          )}
-          <Provider store={store}>
-            <RootNavigation />
-          </Provider>
-        </View>
-      );
-
+    return (
+      <View style={styles.container} store={store}>
+        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+        {Platform.OS === 'android' && <View style={styles.statusBarUnderlay} />}
+        <Provider store={store}>
+          <RootNavigation />
+        </Provider>
+      </View>
+    );
   }
 
-  _loadResourcesAsync = async () => Promise.all([
+  _loadResourcesAsync = async () =>
+    Promise.all([
       Asset.loadAsync([
         require('./assets/images/robot-dev.png'),
         require('./assets/images/robot-prod.png'),
