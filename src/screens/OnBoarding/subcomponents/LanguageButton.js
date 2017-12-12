@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
-import { Text } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
+import { Text } from 'react-native';
 import { languageButton, languageButtonText } from '../styles/languageButton';
 import type {
   LanguageButtonSizeType,

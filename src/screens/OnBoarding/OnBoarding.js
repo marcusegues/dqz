@@ -5,6 +5,7 @@ import { View, Text, Image } from 'react-native';
 import { LanguageButton } from './subcomponents/LanguageButton';
 import { languageCodeList } from './types';
 import styles from './styles/onBoarding';
+
 const img = require('../../../assets/icons/logo.png');
 
 class OnBoarding extends React.Component {
@@ -29,7 +30,7 @@ class OnBoarding extends React.Component {
             {t('onBoarding:onBoardingMessage')}
           </Text>
           <LanguageButton
-            size={'large'}
+            size="large"
             selected={this.systemLanguage === i18n.language}
             languageCode={this.systemLanguage}
             onPress={() => i18n.changeLanguage(this.systemLanguage)}
@@ -52,7 +53,7 @@ class OnBoarding extends React.Component {
                 return (
                   <LanguageButton
                     key={language}
-                    size={'small'}
+                    size="small"
                     selected={language === i18n.language}
                     languageCode={language}
                     onPress={() => i18n.changeLanguage(language)}

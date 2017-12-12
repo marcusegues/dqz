@@ -9,7 +9,7 @@ class LargeAmountInputInfo extends React.Component {
   }
 
   getText() {
-    const { i18n, t } = this.props;
+    const { t } = this.props;
     return this.props.largeAmountsEntered === 'notAnswered'
       ? t('largeAmountInput:pleaseInput')
       : t('largeAmountInput:totalLargeAmount', {
