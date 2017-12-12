@@ -4,7 +4,7 @@ import ReceiptNotificationBadge from './ReceiptNotificationBadge';
 import OptionsGearIcon from './OptionsGearIcon';
 import ownStyles from '../styles/MainMenuHeaderRight';
 
-const MainMenuHeaderRight = ({ navigation }) => (
+const MainMenuHeaderRight = () => (
   <View style={ownStyles.container}>
     <ReceiptNotificationBadge />
     <OptionsGearIcon />
