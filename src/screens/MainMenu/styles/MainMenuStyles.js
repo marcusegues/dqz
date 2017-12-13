@@ -31,15 +31,6 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'transparent',
-    width: '100%',
-  },
-  appTitleWrapper: {
-    flexDirection: 'row',
-    width: '90%',
-    justifyContent: 'space-around',
-  },
-  titleWrapper: {
-    flexDirection: 'row',
   },
   bottomContainer: {
     ...Platform.select({
@@ -50,7 +41,6 @@ export default StyleSheet.create({
         flex: 2,
       },
     }),
-
     flexDirection: 'column',
     flexWrap: 'wrap',
     justifyContent: 'flex-end',

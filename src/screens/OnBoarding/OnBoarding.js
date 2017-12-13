@@ -5,8 +5,7 @@ import { View, Text, Image } from 'react-native';
 import { LanguageButton } from './subcomponents/LanguageButton';
 import { languageCodeList } from './types';
 import styles from './styles/onBoarding';
-
-const img = require('../../../assets/icons/logo.png');
+import AppTitle from '../../components/AppTitle/AppTitle';
 
 class OnBoarding extends React.Component {
   constructor(props) {
@@ -19,13 +18,7 @@ class OnBoarding extends React.Component {
       <View style={styles.container}>
         <View style={styles.contentContainer}>
           <Text style={styles.welcomeTitle}>Welcome to</Text>
-          <View style={styles.appTitleWrapper}>
-            <Image source={img} style={styles.logo} resizeMode="contain" />
-            <Text style={styles.appTitleToll}>
-              Toll
-              <Text style={styles.appTitleCalc}>Calc</Text>
-            </Text>
-          </View>
+          <AppTitle />
           <Text style={styles.mainText}>
             {t('onBoarding:onBoardingMessage')}
           </Text>

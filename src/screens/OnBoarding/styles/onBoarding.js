@@ -27,24 +27,6 @@ export default StyleSheet.create({
     fontSize: moderateScale(28),
     textAlign: 'center',
   },
-  appTitleWrapper: {
-    flexDirection: 'row',
-    width: '90%',
-    justifyContent: 'space-around',
-  },
-  logo: {
-    width: scale(42),
-    height: null,
-  },
-  appTitleToll: {
-    color: '#1A1A1A',
-    fontFamily: 'roboto_bold',
-    fontSize: moderateScale(47),
-  },
-  appTitleCalc: {
-    fontFamily: 'roboto_light',
-    fontSize: moderateScale(47),
-  },
   selectLanguageText: {
     fontFamily: 'roboto_regular',
     fontSize: moderateScale(18),

@@ -3,26 +3,19 @@ import { translate } from 'react-i18next';
 import { View, Text, Image } from 'react-native';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import MenuTile from './Subcomponents/MenuTile';
-import styles from '../OnBoarding/styles/onBoarding';
 import ownStyles from './styles/MainMenuStyles';
 import { moderateScale } from '../../styles/Scaling';
 import { GREY } from '../../styles/colors';
+import AppTitle from '../../components/AppTitle/AppTitle';
 
 const switzerland = require('../../../assets/images/Swiss_Country.png');
-const img = require('../../../assets/icons/logo.png');
 
 const MainMenu = ({ navigation }) => (
   <View style={ownStyles.mainContainer}>
     <View style={ownStyles.topContainer}>
       <Image source={switzerland} style={ownStyles.backgroundImage} />
       <View style={ownStyles.logoAndTitleContainer}>
-        <View style={ownStyles.appTitleWrapper}>
-          <Image source={img} style={styles.logo} resizeMode="contain" />
-          <View style={ownStyles.titleWrapper}>
-            <Text style={styles.appTitleToll}>We</Text>
-            <Text style={styles.appTitleCalc}>Declare</Text>
-          </View>
-        </View>
+        <AppTitle />
       </View>
     </View>
     <View style={ownStyles.bottomContainer}>

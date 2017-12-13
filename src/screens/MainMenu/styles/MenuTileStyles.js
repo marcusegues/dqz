@@ -14,8 +14,7 @@ export default StyleSheet.create({
     marginBottom: 16,
   },
   contentContainer: {
-    flex: 0.6,
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center',
   },
   text: {
@@ -24,5 +23,6 @@ export default StyleSheet.create({
     color: BLACK,
     fontFamily: 'roboto_medium',
     textAlign: 'center',
+    marginTop: verticalScale(15),
   },
 });
