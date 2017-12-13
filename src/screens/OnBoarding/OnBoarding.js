@@ -1,7 +1,7 @@
 import React from 'react';
 import Touchable from 'react-native-platform-touchable';
 import { translate } from 'react-i18next';
-import { View, Text, Image } from 'react-native';
+import { View, Text } from 'react-native';
 import { LanguageButton } from './subcomponents/LanguageButton';
 import { languageCodeList } from './types';
 import styles from './styles/onBoarding';
