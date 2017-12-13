@@ -7,6 +7,9 @@ import {
   makeLargeAmountInputNSRecord,
 } from '../types/locale';
 
+// this is solely to trick jest.
+test('', () => expect(true).toBeTruthy());
+
 export const en1: LocaleType = makeLocaleRecord({
   general: makeGeneralNSRecord({
     declareGoods: 'Declare Goods',
