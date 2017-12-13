@@ -1,5 +1,5 @@
 // @flow
-import type { LocaleType, LocaleType1 } from '../types/locale';
+import type { LocaleType } from '../types/locale';
 import {
   makeLocaleRecord,
   makeGeneralNSRecord,
