@@ -18,10 +18,10 @@ const MainMenu = ({ navigation, t }) => (
       <View style={ownStyles.logoAndTitleContainer}>
         <View style={styles.appTitleWrapper}>
           <Image source={img} style={styles.logo} resizeMode="contain" />
-          <Text style={styles.appTitleToll}>
-            We
+          <View style={ownStyles.titleWrapper}>
+            <Text style={styles.appTitleToll}>We</Text>
             <Text style={styles.appTitleCalc}>Declare</Text>
-          </Text>
+          </View>
         </View>
       </View>
     </View>

@@ -34,6 +34,9 @@ export default StyleSheet.create({
     backgroundColor: 'transparent',
     width: '100%',
   },
+  titleWrapper: {
+    flexDirection: 'row',
+  },
   bottomContainer: {
     ...Platform.select({
       ios: {
