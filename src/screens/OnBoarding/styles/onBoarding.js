@@ -29,15 +29,8 @@ export default StyleSheet.create({
   },
   appTitleWrapper: {
     flexDirection: 'row',
-    ...Platform.select({
-      ios: {
-        width: '78%',
-      },
-      android: {
-        width: '70%',
-      },
-    }),
-    justifyContent: 'space-between',
+    width: '90%',
+    justifyContent: 'space-around',
   },
   logo: {
     width: scale(42),
