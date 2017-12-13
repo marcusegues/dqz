@@ -26,12 +26,8 @@ function keyify(obj, prefix = '') {
 
 describe('locales', () => {
   test('all have same keys', () => {
-    const enKeyified = keyify(en.toJS());
-    const deKeyified = keyify(de.toJS());
-    const frKeyified = keyify(fr.toJS());
-    const itKeyified = keyify(it.toJS());
     expect(
-      objectsHaveSameKeys(enKeyified, deKeyified, frKeyified, itKeyified)
+      objectsHaveSameKeys(...[en, de, fr, it].map(l => keyify(l.toJS())))
     ).toBe(true);
   });
 });
