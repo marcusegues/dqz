@@ -11,7 +11,7 @@ import { GREY } from '../../styles/colors';
 const switzerland = require('../../../assets/images/Swiss_Country.png');
 const img = require('../../../assets/icons/logo.png');
 
-const MainMenu = ({ navigation, t }) => (
+const MainMenu = ({ navigation }) => (
   <View style={ownStyles.mainContainer}>
     <View style={ownStyles.topContainer}>
       <Image source={switzerland} style={ownStyles.backgroundImage} />
