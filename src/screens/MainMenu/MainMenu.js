@@ -3,7 +3,7 @@ import { translate } from 'react-i18next';
 import { View, Text, Image } from 'react-native';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import MenuTile from './Subcomponents/MenuTile';
-import styles from '../../styles/OnBoardingStyles';
+import styles from '../OnBoarding/styles/onBoarding';
 import ownStyles from './styles/MainMenuStyles';
 import { moderateScale } from '../../styles/Scaling';
 import { GREY } from '../../styles/colors';
@@ -16,7 +16,7 @@ const MainMenu = ({ navigation, t }) => (
     <View style={ownStyles.topContainer}>
       <Image source={switzerland} style={ownStyles.backgroundImage} />
       <View style={ownStyles.logoAndTitleContainer}>
-        <View style={styles.appTitleWrapper}>
+        <View style={ownStyles.appTitleWrapper}>
           <Image source={img} style={styles.logo} resizeMode="contain" />
           <View style={ownStyles.titleWrapper}>
             <Text style={styles.appTitleToll}>We</Text>

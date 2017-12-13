@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { scale, verticalScale, moderateScale } from './Scaling';
+import { StyleSheet, Platform } from 'react-native';
+import { scale, verticalScale, moderateScale } from '../../../styles/Scaling';
 
 export default StyleSheet.create({
   container: {
@@ -29,8 +29,15 @@ export default StyleSheet.create({
   },
   appTitleWrapper: {
     flexDirection: 'row',
-    width: '90%',
-    justifyContent: 'space-around',
+    ...Platform.select({
+      ios: {
+        width: '78%',
+      },
+      android: {
+        width: '70%',
+      },
+    }),
+    justifyContent: 'space-between',
   },
   logo: {
     width: scale(42),

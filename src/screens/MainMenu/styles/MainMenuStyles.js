@@ -34,6 +34,11 @@ export default StyleSheet.create({
     backgroundColor: 'transparent',
     width: '100%',
   },
+  appTitleWrapper: {
+    flexDirection: 'row',
+    width: '90%',
+    justifyContent: 'space-around',
+  },
   titleWrapper: {
     flexDirection: 'row',
   },
