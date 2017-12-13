@@ -1,4 +1,5 @@
 // @flow
+/* global expect, test, describe */
 import type { LocaleType } from '../types/locale';
 import {
   makeLocaleRecord,
