@@ -1,4 +1,5 @@
-import { en1, en2, en3, de1, fr1, it1 } from './exampleLocales';
+/* global expect, test, describe */
+import { en1, en2, de1, fr1, it1 } from './exampleLocales';
 
 const objectsHaveSameKeys = (...objects) => {
   const allKeys = objects.reduce(
@@ -10,8 +11,8 @@ const objectsHaveSameKeys = (...objects) => {
 };
 
 function arrayifyKeys(object) {
-  let array = [];
-  if (typeof object == 'object' && !Array.isArray(object)) {
+  const array = [];
+  if (typeof object === 'object' && !Array.isArray(object)) {
     Object.keys(object).forEach(key => {
       array.push(key);
       if (typeof object[key] !== 'string') {
@@ -23,14 +24,13 @@ function arrayifyKeys(object) {
 }
 
 function keyify(obj, prefix = '') {
-  return Object.keys(obj).reduce(function(res, el) {
+  return Object.keys(obj).reduce((res, el) => {
     if (Array.isArray(obj[el])) {
       return res;
     } else if (obj[el] !== null && typeof obj[el] === 'object') {
-      return [...res, ...keyify(obj[el], prefix + el + '.')];
-    } else {
-      return [...res, prefix + el];
+      return [...res, ...keyify(obj[el], `${prefix}${el}.`)];
     }
+    return [...res, prefix + el];
   }, []);
 }
 
