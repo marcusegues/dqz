@@ -19,6 +19,8 @@ import registerForPushNotificationsAsync from '../../api/registerForPushNotifica
 import { UnderConstruction } from './underConstruction';
 import UnderConstructionWithSums from './underConstructionWithSums';
 
+import PickerModal from '../components/Modals/pickerModal';
+
 const RootStackNavigator = StackNavigator(
   {
     Screens: {
@@ -67,6 +69,11 @@ const RootStackNavigator = StackNavigator(
     BasketInput: {
       screen: BasketInputContainer,
     },
+
+    PickerModal: {
+      screen: PickerModal,
+    },
+
     UnderConstruction: {
       screen: UnderConstruction,
       navigationOptions: () => ({
@@ -83,7 +90,8 @@ const RootStackNavigator = StackNavigator(
   {
     navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-    initialRouteName: 'OnBoarding',
+    initialRouteName: 'PickerModal',
+    // initialRouteName: 'OnBoarding',
   }
 );
 
