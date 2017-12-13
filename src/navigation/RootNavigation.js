@@ -53,6 +53,7 @@ const RootStackNavigator = StackNavigator(
         headerRight: <MainMenuHeaderRight navigation={navigation} />,
         headerStyle: {
           ...navigationOptions.headerStyle,
+          paddingRight: 10,
           elevation: 0,
         },
       }),
