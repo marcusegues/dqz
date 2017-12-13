@@ -22,6 +22,7 @@ import {
 } from '../../reducers';
 import type { People } from '../../model/types/basketPeopleTypes';
 import { initPeople } from '../../model/configurationApi';
+import { EmptyMainCategories } from '../../types/reducers/declaration';
 
 type questionType =
   | 'peopleInput'
@@ -37,19 +38,22 @@ type questionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
 type State = {
   questionStates: { [questionType]: questionState },
   people: People,
-  hasLargeAmount: boolean,
+  mainCategories: MainCategoriesType,
 };
 
 class QuestionAnswerContainer2 extends React.Component<any, State> {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      people: initPeople,
-      hasLargeAmount: true,
+      people: this.props.people,
+      mainCategories:
+        this.props.mainCategories === 'notAnswered'
+          ? EmptyMainCategories
+          : this.props.mainCategories,
       questionStates: {
         peopleInput: 'collapsed',
-        hasLargeAmount: 'collapsed',
+        mainCategories: 'collapsed',
       },
     };
   }
@@ -71,7 +75,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
 
   render() {
     const { questionStates } = this.state;
-    const { peopleInput, hasLargeAmount } = questionStates;
+    const { peopleInput, mainCategories } = questionStates;
     const { navigation } = this.props;
 
     const flatListData = [
@@ -94,17 +98,17 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
         ),
       },
       {
-        key: 'hasLargeAmount',
+        key: 'mainCategories',
         component: (
-          <LargeAmountPresentContainer
+          <MainCategoriesInputContainer
             qaState={this.state}
             onAnswerPress={() => {
-              this.expandQuestion('hasLargeAmount');
+              this.expandQuestion('mainCategories');
             }}
-            questionState={hasLargeAmount}
-            onAnswer={(hasLargeAmountAnswer: boolean) => {
+            questionState={mainCatgories}
+            onAnswer={(mainCategories: MainCategoriesType) => {
               this.setState({
-                hasLargeAmount: hasLargeAmountAnswer,
+                mainCategories: mainCategories,
               });
               this.updateQA();
             }}

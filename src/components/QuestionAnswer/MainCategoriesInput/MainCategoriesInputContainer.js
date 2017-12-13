@@ -18,12 +18,7 @@ class MainCategoriesInputContainer extends React.Component {
           ? EmptyMainCategories
           : this.props.mainCategories,
     };
-    this.handleAddMainCategory = this.handleAddMainCategory.bind(this);
-    this.handleRemoveMainCategory = this.handleRemoveMainCategory.bind(this);
-    this.handleToggleMainCategory = this.handleToggleMainCategory.bind(this);
     this.handleAnswer = this.handleAnswer.bind(this);
-    this.getQuestionComponent = this.getQuestionComponent.bind(this);
-    this.getAnswerComponent = this.getAnswerComponent.bind(this);
   }
 
   getQuestionComponent() {
