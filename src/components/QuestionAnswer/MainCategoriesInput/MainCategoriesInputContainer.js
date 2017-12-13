@@ -69,31 +69,23 @@ class MainCategoriesInputContainer extends React.Component {
     }
   }
 
-  async handleAnswer() {
-    await this.props.onSetMainCategories(this.state.mainCategories);
-    this.props.onAnswer();
+  handleAnswer() {
+    this.props.onAnswer(this.state.mainCategories);
   }
 
   render() {
-    const { init, initList, currentQuestion } = this.props;
-    if (init && !initList.includes('mainCategories')) {
-      return null;
+    switch (this.props.questionState) {
+      case 'expanded': {
+        return this.getQuestionComponent();
+      }
+      case 'collapsed': {
+        return this.getAnswerComponent();
+      }
+      default: {
+        return <View />;
+      }
     }
-    return currentQuestion === 'mainCategories'
-      ? this.getQuestionComponent()
-      : this.getAnswerComponent();
   }
 }
 
-const mapStateToProps = state => ({
-  mainCategories: getDeclarationMainCategories(state),
-});
-
-const mapDispatchToProps = dispatch => ({
-  onSetMainCategories: mainCategories =>
-    dispatch({ type: 'DECLARATION_SET_MAIN_CATEGORIES', mainCategories }),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(
-  MainCategoriesInputContainer
-);
+export default MainCategoriesInputContainer;
