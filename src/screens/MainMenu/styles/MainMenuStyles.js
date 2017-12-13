@@ -15,7 +15,6 @@ export default StyleSheet.create({
       },
       android: {
         flex: 1,
-        // flex: 0.26,
       },
     }),
 

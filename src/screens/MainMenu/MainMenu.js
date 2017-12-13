@@ -28,7 +28,7 @@ const MainMenu = ({ navigation, t }) => (
     <View style={ownStyles.bottomContainer}>
       <MenuTile
         onPress={() => navigation.navigate('QuestionAnswer')}
-        text={t('declareGoods')}
+        text="WAREN DEKLARIEREN"
       >
         <MaterialIcons
           name="add-shopping-cart"
