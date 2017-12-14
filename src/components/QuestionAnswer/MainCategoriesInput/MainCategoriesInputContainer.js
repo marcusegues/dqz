@@ -14,12 +14,15 @@ class MainCategoriesInputContainer extends React.Component {
   constructor(props) {
     super(props);
     this.handleAnswer = this.handleAnswer.bind(this);
+    this.state = {
+      mainCategories: this.props.qaState.settings.get('mainCategories'),
+    };
   }
 
   getQuestionComponent() {
     return (
       <MainCategoriesInput
-        mainCategories={this.props.mainCategories}
+        mainCategories={this.state.mainCategories}
         onToggleMainCategory={this.handleToggleMainCategory}
         onAnswer={this.handleAnswer}
         text="Welche Art Waren führen Sie mit sich?"
@@ -40,7 +43,7 @@ class MainCategoriesInputContainer extends React.Component {
             : complete
         }
       >
-        <MainCategoriesInputInfo mainCategories={this.props.mainCategories} />
+        <MainCategoriesInputInfo mainCategories={mainCategories} />
       </AnswerCard>
     );
   }

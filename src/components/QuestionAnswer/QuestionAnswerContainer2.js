@@ -89,10 +89,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
             }}
             questionState={peopleInput}
             onAnswer={(peopleAnswer: People) => {
-              this.setState({
-                people: peopleAnswer,
-              });
-              this.updateQA();
+              this.props.onSetPeople(peopleAnswer).then(this.updateQA());
             }}
           />
         ),
@@ -107,13 +104,9 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
             }}
             questionState={mainCategories}
             onAnswer={(mainCategories: MainCategoriesType) => {
-              this.setState({
-                settings: this.state.settings.set(
-                  'mainCategories',
-                  mainCategories
-                ),
-              });
-              this.updateQA();
+              this.props
+                .onSetMainCategories(mainCategories)
+                .then(this.updateQA());
             }}
           />
         ),
@@ -185,16 +178,21 @@ const mapStateToProps = state => ({
   currentQuestion: getDeclarationCurrentQuestion(state),
   people: getDeclarationPeople(state),
   settings: getDeclarationSettings(state),
-  init: getDeclarationInit(state),
-  initList: getDeclarationInitList(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSetCurrentQuestion: currentQuestion =>
-    dispatch({ type: 'DECLARATION_SET_CURRENT_QUESTION', currentQuestion }),
-  onAddToInitList: nextQuestion =>
-    dispatch({ type: 'DECLARATION_ADD_TO_INIT_LIST', nextQuestion }),
-  onSetInitFalse: () => dispatch({ type: 'DECLARATION_SET_INIT_FALSE' }),
+  onSetPeople: (people: People) => {
+    return new Promise(resolve => {
+      dispatch({ type: 'DECLARATION_SET_PEOPLE', people });
+      resolve();
+    });
+  },
+  onSetMainCategories: (mainCategories: MainCategoriesType) => {
+    return new Promise(resolve => {
+      dispatch({ type: 'DECLARATION_SET_MAIN_CATEGORIES', mainCategories });
+      resolve();
+    });
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
