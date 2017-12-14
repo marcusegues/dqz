@@ -1,6 +1,8 @@
-import { Notifications } from 'expo';
 import React from 'react';
+import { Notifications } from 'expo';
+import { translate } from 'react-i18next';
 import { StackNavigator } from 'react-navigation';
+import i18n from '../i18n';
 import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
 import PeopleInputContainer from '../components/QuestionAnswer/cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OnBoarding from '../screens/OnBoarding/OnBoarding';
@@ -8,15 +10,17 @@ import ScreensView from '../screens/ScreensView/ScreensView';
 import { MAIN_RED, MAIN_BACKGROUND_COLOR } from '../styles/colors';
 import { defaultNavigationOptions } from './navigationOptions';
 import HeaderTitle from '../components/Headers/subcomponents/HeaderTitle';
-import MainScreenHeaderTitle from '../components/Headers/subcomponents/MainScreenHeaderTitle';
 import Logo from '../components/Headers/subcomponents/Logo';
 import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
+import InfoIcon from '../components/Headers/subcomponents/InfoIcon';
+import MainMenuHeaderRight from '../components/Headers/subcomponents/MainMenuHeaderRight';
 import BasketInputContainer from '../components/BasketInput/BasketInputContainer';
 import MainMenu from '../screens/MainMenu/MainMenu';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
 import QuestionAnswerContainer2 from '../components/QuestionAnswer/QuestionAnswerContainer2';
+import UnderConstructionWithSums from './underConstructionWithSums';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -48,17 +52,20 @@ const RootStackNavigator = StackNavigator(
     },
     OnBoarding: {
       screen: OnBoarding,
+      navigationOptions: () => ({
+        header: null,
+      }),
     },
+
     MainMenu: {
       screen: MainMenu,
-      navigationOptions: ({ navigationOptions }) => ({
+      navigationOptions: ({ navigationOptions, navigation }) => ({
         ...navigationOptions,
-        headerTitle: <MainScreenHeaderTitle />,
-        headerRight: <OptionsButton />,
+        headerLeft: <InfoIcon navigation={navigation} />,
+        headerRight: <MainMenuHeaderRight navigation={navigation} />,
         headerStyle: {
           ...navigationOptions.headerStyle,
-          borderBottomWidth: 5,
-          borderBottomColor: MAIN_RED,
+          elevation: 0,
         },
       }),
     },
@@ -74,13 +81,28 @@ const RootStackNavigator = StackNavigator(
         headerTitle: <HeaderTitle text="In Bearbeitung" />,
       }),
     },
+    UnderConstructionWithSums: {
+      screen: UnderConstructionWithSums,
+      navigationOptions: () => ({
+        headerTitle: <HeaderTitle text="In Bearbeitung" />,
+      }),
+    },
   },
   {
     navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-    initialRouteName: 'MainMenu',
+    initialRouteName: 'OnBoarding',
   }
 );
+
+const WrappedRootStackNavigator = () => (
+  <RootStackNavigator screenProps={{ t: i18n.getFixedT() }} />
+);
+
+const ReloadAppOnLanguageChange = translate(null, {
+  bindI18n: 'languageChanged',
+  bindStore: false,
+})(WrappedRootStackNavigator);
 
 export default class RootNavigator extends React.Component {
   componentDidMount() {
@@ -108,6 +130,6 @@ export default class RootNavigator extends React.Component {
   _handleNotification = () => {};
 
   render() {
-    return <RootStackNavigator />;
+    return <ReloadAppOnLanguageChange />;
   }
 }

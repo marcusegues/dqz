@@ -12,6 +12,7 @@ import { getTotalPeople } from '../../../model/configurationApi';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
+const mainIcon = require('../../../../assets/icons/wertFreiGrenze.png');
 
 class OverAllowanceContainer extends React.Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class OverAllowanceContainer extends React.Component {
     return (
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
-        mainIcon="crown"
+        mainIcon={mainIcon}
         status={
           this.props.overAllowance === 'notAnswered' ? incomplete : complete
         }

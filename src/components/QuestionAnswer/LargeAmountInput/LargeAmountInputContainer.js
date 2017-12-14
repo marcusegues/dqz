@@ -13,6 +13,7 @@ import { getLargeAmounts } from '../../../model/configurationApi';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
+const mainIcon = require('../../../../assets/icons/mwst.png');
 
 class LargeAmountInputContainer extends React.Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class LargeAmountInputContainer extends React.Component {
     return (
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
-        mainIcon="cash-multiple"
+        mainIcon={mainIcon}
         status={
           this.props.settings.get('largeAmountsEntered') === 'notAnswered'
             ? incomplete

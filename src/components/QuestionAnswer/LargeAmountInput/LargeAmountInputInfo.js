@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { translate } from 'react-i18next';
 
 class LargeAmountInputInfo extends React.Component {
   constructor(props) {
@@ -8,12 +9,12 @@ class LargeAmountInputInfo extends React.Component {
   }
 
   getText() {
+    const { t } = this.props;
     return this.props.largeAmountsEntered === 'notAnswered'
-      ? 'Bitte geben Sie die Menge ein'
-      : `Insgesamt grosse Mengen sind ${this.props.largeAmounts.reduce(
-          (acc, val) => acc + val,
-          0
-        )}`;
+      ? t('largeAmountInput:pleaseInput')
+      : t('largeAmountInput:totalLargeAmount', {
+          value: this.props.largeAmounts.reduce((acc, val) => acc + val, 0),
+        });
   }
 
   render() {
@@ -25,4 +26,4 @@ class LargeAmountInputInfo extends React.Component {
   }
 }
 
-export default LargeAmountInputInfo;
+export default translate(['largeAmountInput'])(LargeAmountInputInfo);

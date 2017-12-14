@@ -22,7 +22,10 @@ import {
 } from '../../reducers';
 import type { People } from '../../model/types/basketPeopleTypes';
 import { initPeople } from '../../model/configurationApi';
-import { EmptyMainCategories } from '../../types/reducers/declaration';
+import {
+  EmptyMainCategories,
+  SettingsType,
+} from '../../types/reducers/declaration';
 
 type questionType =
   | 'peopleInput'
@@ -38,7 +41,7 @@ type questionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
 type State = {
   questionStates: { [questionType]: questionState },
   people: People,
-  mainCategories: MainCategoriesType,
+  settings: SettingsType,
 };
 
 class QuestionAnswerContainer2 extends React.Component<any, State> {
@@ -47,10 +50,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
 
     this.state = {
       people: this.props.people,
-      mainCategories:
-        this.props.mainCategories === 'notAnswered'
-          ? EmptyMainCategories
-          : this.props.mainCategories,
+      settings: this.props.settings,
       questionStates: {
         peopleInput: 'collapsed',
         mainCategories: 'collapsed',
@@ -105,10 +105,13 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
             onAnswerPress={() => {
               this.expandQuestion('mainCategories');
             }}
-            questionState={mainCatgories}
+            questionState={mainCategories}
             onAnswer={(mainCategories: MainCategoriesType) => {
               this.setState({
-                mainCategories: mainCategories,
+                settings: this.state.settings.set(
+                  'mainCategories',
+                  mainCategories
+                ),
               });
               this.updateQA();
             }}

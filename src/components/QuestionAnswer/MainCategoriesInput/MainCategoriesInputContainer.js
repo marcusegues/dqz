@@ -8,23 +8,18 @@ import AnswerCard from '../cards/AnswerCard/AnswerCard';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
+const mainIcon = require('../../../../assets/icons/mainCategories.png');
 
 class MainCategoriesInputContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      mainCategories:
-        this.props.mainCategories === 'notAnswered'
-          ? EmptyMainCategories
-          : this.props.mainCategories,
-    };
     this.handleAnswer = this.handleAnswer.bind(this);
   }
 
   getQuestionComponent() {
     return (
       <MainCategoriesInput
-        mainCategories={this.state.mainCategories}
+        mainCategories={this.props.mainCategories}
         onToggleMainCategory={this.handleToggleMainCategory}
         onAnswer={this.handleAnswer}
         text="Welche Art Waren führen Sie mit sich?"
@@ -33,18 +28,19 @@ class MainCategoriesInputContainer extends React.Component {
   }
 
   getAnswerComponent() {
-    const { onAnswerPress, mainCategories } = this.props;
+    const { settings } = this.props.qaState;
+    const mainCategories = settings.get('mainCategories');
     return (
       <AnswerCard
-        onAnswerPress={onAnswerPress}
-        mainIcon="owl"
+        onAnswerPress={this.props.onAnswerPress}
+        mainIcon={mainIcon}
         status={
           mainCategories === 'notAnswered' || mainCategories.isEmpty()
             ? incomplete
             : complete
         }
       >
-        <MainCategoriesInputInfo mainCategories={this.state.mainCategories} />
+        <MainCategoriesInputInfo mainCategories={this.props.mainCategories} />
       </AnswerCard>
     );
   }
