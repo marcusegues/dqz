@@ -4,10 +4,8 @@ import React from 'react';
 // $FlowFixMe
 import { FlatList, View } from 'react-native';
 import { connect } from 'react-redux';
-
 import NavBar from '../NavBar/NavBar';
 import PeopleInputContainer from './PeopleInput/PeopleInputContainer';
-import LargeAmountPresentContainer from './LargeAmountPresent/LargeAmountPresentContainer';
 import LargeAmountInputContainer from './LargeAmountInput/LargeAmountInputContainer';
 import OverAllowanceContainer from './OverAllowance/OverAllowanceContainer';
 import AmountInputContainer from './AmountInput/AmountInputContainer';
@@ -15,17 +13,11 @@ import MainCategoriesInputContainer from './MainCategoriesInput/MainCategoriesIn
 import RedButton from '../Buttons/RedButton';
 import {
   getDeclarationCurrentQuestion,
-  getDeclarationInit,
-  getDeclarationInitList,
   getDeclarationPeople,
   getDeclarationSettings,
 } from '../../reducers';
 import type { People } from '../../model/types/basketPeopleTypes';
-import { initPeople } from '../../model/configurationApi';
-import {
-  EmptyMainCategories,
-  SettingsType,
-} from '../../types/reducers/declaration';
+import { SettingsType } from '../../types/reducers/declaration';
 
 type questionType =
   | 'peopleInput'
@@ -58,11 +50,23 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
     };
   }
 
-  updateQA() {
+  componentWillReceiveProps(nextProps) {
+    this.updateQA(true);
+  }
+
+  updateQA(collapseAll: boolean) {
     // for now, just close all the things
-    this.setState({
-      questionStates: { peopleInput: 'collapsed', hasLargeAmount: 'collapsed' },
-    });
+    if (collapseAll) {
+      this.setState({
+        questionStates: {
+          peopleInput: 'collapsed',
+          mainCategories: 'collapsed',
+        },
+      });
+    } else {
+      // do something...
+      this.setState({});
+    }
   }
 
   expandQuestion(question: questionType) {
@@ -84,12 +88,15 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
         component: (
           <PeopleInputContainer
             qaState={this.state}
-            onAnswerPress={() => {
+            onAnswerCardPress={() => {
               this.expandQuestion('peopleInput');
             }}
             questionState={peopleInput}
-            onAnswer={(peopleAnswer: People) => {
-              this.props.onSetPeople(peopleAnswer).then(this.updateQA());
+            onUpdate={people => {
+              this.setState({ people });
+            }}
+            onAnswer={() => {
+              this.props.onSetPeople(this.state.people);
             }}
           />
         ),
@@ -99,14 +106,22 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
         component: (
           <MainCategoriesInputContainer
             qaState={this.state}
-            onAnswerPress={() => {
+            onAnswerCardPress={() => {
               this.expandQuestion('mainCategories');
             }}
             questionState={mainCategories}
-            onAnswer={(mainCategories: MainCategoriesType) => {
-              this.props
-                .onSetMainCategories(mainCategories)
-                .then(this.updateQA());
+            onUpdate={mainCategories => {
+              this.setState({
+                settings: this.state.settings.set(
+                  'mainCategories',
+                  mainCategories
+                ),
+              });
+            }}
+            onAnswer={() => {
+              this.props.onSetMainCategories(
+                this.state.settings.get('mainCategories')
+              );
             }}
           />
         ),
@@ -122,10 +137,6 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
       {
         key: 'amountInput',
         component: <AmountInputContainer />,
-      },
-      {
-        key: 'mainCategories',
-        component: <MainCategoriesInputContainer />,
       },
     ];
     return (

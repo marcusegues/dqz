@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { getDeclarationMainCategories } from '../../../reducers';
 import MainCategoriesInput from './MainCategoriesInput';
@@ -14,17 +15,20 @@ class MainCategoriesInputContainer extends React.Component {
   constructor(props) {
     super(props);
     this.handleAnswer = this.handleAnswer.bind(this);
-    this.state = {
-      mainCategories: this.props.qaState.settings.get('mainCategories'),
-    };
+    this.getQuestionComponent = this.getQuestionComponent.bind(this);
+    this.getAnswerComponent = this.getAnswerComponent.bind(this);
   }
 
   getQuestionComponent() {
+    const mainCategories = this.props.qaState.settings.get('mainCategories');
     return (
       <MainCategoriesInput
-        mainCategories={this.state.mainCategories}
-        onToggleMainCategory={this.handleToggleMainCategory}
-        onAnswer={this.handleAnswer}
+        mainCategories={mainCategories}
+        onToggleMainCategory={mainCategory => {
+          const newMainCategories = this.handleToggleMainCategory(mainCategory);
+          this.handleUpdate(newMainCategories);
+        }}
+        onAnswer={this.props.onAnswer}
         text="Welche Art Waren führen Sie mit sich?"
       />
     );
@@ -33,14 +37,13 @@ class MainCategoriesInputContainer extends React.Component {
   getAnswerComponent() {
     const { settings } = this.props.qaState;
     const mainCategories = settings.get('mainCategories');
+    debugger;
     return (
       <AnswerCard
-        onAnswerPress={this.props.onAnswerPress}
+        onAnswerCardPress={this.props.onAnswerCardPress}
         mainIcon={mainIcon}
         status={
-          mainCategories === 'notAnswered' || mainCategories.isEmpty()
-            ? incomplete
-            : complete
+          mainCategories === mainCategories.isEmpty() ? incomplete : complete
         }
       >
         <MainCategoriesInputInfo mainCategories={mainCategories} />
@@ -48,28 +51,22 @@ class MainCategoriesInputContainer extends React.Component {
     );
   }
 
-  handleAddMainCategory(mainCategory) {
-    this.setState({
-      mainCategories: this.state.mainCategories.add(mainCategory),
-    });
-  }
-
-  handleRemoveMainCategory(mainCategory) {
-    this.setState({
-      mainCategories: this.state.mainCategories.delete(mainCategory),
-    });
+  handleUpdate(mainCategories) {
+    this.props.onUpdate(mainCategories);
   }
 
   handleToggleMainCategory(mainCategory) {
-    if (this.state.mainCategories.has(mainCategory)) {
-      this.handleRemoveMainCategory(mainCategory);
-    } else {
-      this.handleAddMainCategory(mainCategory);
+    const { settings } = this.props.qaState;
+    const mainCategories = settings.get('mainCategories');
+    debugger;
+    if (mainCategories.has(mainCategory)) {
+      return mainCategories.delete(mainCategory);
     }
+    return mainCategories.add(mainCategory);
   }
 
   handleAnswer() {
-    this.props.onAnswer(this.state.mainCategories);
+    this.props.onAnswer();
   }
 
   render() {

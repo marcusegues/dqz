@@ -5,35 +5,28 @@ import PeopleInput from './PeopleInput';
 import PeopleInputAnswer from './PeopleInputAnswer';
 import {
   addAdult,
-  subtractAdult,
   addMinor,
+  subtractAdult,
   subtractMinor,
 } from '../../../model/configurationApi';
 
 class PeopleInputContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      people: this.props.qaState.people,
-    };
-    this.handleAddAdult = this.handleAddAdult.bind(this);
-    this.handleSubtractAdult = this.handleSubtractAdult.bind(this);
-    this.handleAddMinor = this.handleAddMinor.bind(this);
-    this.handleSubtractMinor = this.handleSubtractMinor.bind(this);
-    this.handleAnswer = this.handleAnswer.bind(this);
     this.getQuestionComponent = this.getQuestionComponent.bind(this);
     this.getAnswerComponent = this.getAnswerComponent.bind(this);
   }
 
   getQuestionComponent() {
+    const { people } = this.props.qaState;
     return (
       <PeopleInput
-        people={this.state.people}
-        onAnswer={this.handleAnswer}
-        onAddAdult={this.handleAddAdult}
-        onSubtractAdult={this.handleSubtractAdult}
-        onAddMinor={this.handleAddMinor}
-        onSubtractMinor={this.handleSubtractMinor}
+        people={people}
+        onAnswer={this.props.onAnswer}
+        onAddAdult={() => this.handleUpdate(addAdult(people))}
+        onSubtractAdult={() => this.handleUpdate(subtractAdult(people))}
+        onAddMinor={() => this.handleUpdate(addMinor(people))}
+        onSubtractMinor={() => this.handleUpdate(subtractMinor(people))}
         text={this.props.text}
       />
     );
@@ -42,39 +35,14 @@ class PeopleInputContainer extends React.Component {
   getAnswerComponent() {
     return (
       <PeopleInputAnswer
-        people={this.state.people}
-        onAnswerPress={this.props.onAnswerPress}
+        people={this.props.qaState.people}
+        onAnswerCardPress={this.props.onAnswerCardPress}
       />
     );
   }
 
-  handleAddAdult() {
-    this.setState({
-      people: addAdult(this.state.people),
-    });
-  }
-
-  handleSubtractAdult() {
-    this.setState({
-      people: subtractAdult(this.state.people),
-    });
-  }
-
-  handleAddMinor() {
-    this.setState({
-      people: addMinor(this.state.people),
-    });
-  }
-
-  handleSubtractMinor() {
-    this.setState({
-      people: subtractMinor(this.state.people),
-    });
-  }
-
-  handleAnswer() {
-    const { onAnswer, people } = this.props;
-    onAnswer(people);
+  handleUpdate(people) {
+    this.props.onUpdate(people);
   }
 
   render() {

@@ -70,7 +70,7 @@ export type MainCategory =
   | 'TobaccoProducts'
   | 'OtherGoods';
 
-export type MainCategoriesType = ImmutableSetType<MainCategory> | 'notAnswered';
+export type MainCategoriesType = ImmutableSetType<MainCategory>;
 
 export const MainCategories: MainCategoriesType = Immutable.Set([
   'Foods',
@@ -128,7 +128,7 @@ const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
   largeAmountPresent: 'notAnswered',
   largeAmountsEntered: 'notAnswered',
   amountsEntered: 'notAnswered',
-  mainCategories: 'notAnswered',
+  mainCategories: EmptyMainCategories,
   currentQuestion: 'peopleInput',
   init: true,
   initList: InitList,

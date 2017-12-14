@@ -5,9 +5,9 @@ import PeopleInfo from './PeopleInfo';
 const complete = require('../../../../assets/images/complete.png');
 const mainIcon = require('../../../../assets/icons/travellers.png');
 
-const PeopleInputAnswer = ({ people, onAnswerPress }) => (
+const PeopleInputAnswer = ({ people, onAnswerCardPress }) => (
   <AnswerCard
-    onAnswerPress={onAnswerPress}
+    onAnswerCardPress={onAnswerCardPress}
     mainIcon={mainIcon}
     status={complete}
   >

@@ -20,14 +20,14 @@ const styles = StyleSheet.create({
   },
 });
 
-const AnswerCard = ({ mainIcon, status, children, onAnswerPress }) => (
+const AnswerCard = ({ mainIcon, status, children, onAnswerCardPress }) => (
   <Touchable
     style={{
       width: '95%',
       marginTop: 4,
       marginBottom: 4,
     }}
-    onPress={onAnswerPress}
+    onPress={onAnswerCardPress}
   >
     <View style={styles.container}>
       <Image
