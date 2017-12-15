@@ -78,16 +78,7 @@ const declaration = (
       return state.set('people', fromModelApi.setMinorPeople(people, quantity));
     }
     case 'DECLARATION_SET_PEOPLE': {
-      const people: People = state.get('people');
-      // eslint-disable-next-line prefer-destructuring
-      const adults: number = action.adults;
-      // eslint-disable-next-line prefer-destructuring
-      const minors: number = action.minors;
-      debugger;
-      return state.set(
-        'people',
-        fromModelApi.setPeople(people, adults, minors)
-      );
+      return state.set('people', action.people);
     }
     case 'DECLARATION_SET_OVER_ALLOWANCE_TRUE': {
       return state.setIn(['settings', 'overAllowance'], true);

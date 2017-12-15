@@ -19,7 +19,6 @@ import type {
   SettingsType,
   MainCategoriesType,
 } from '../../types/reducers/declaration';
-import { getAdultPeople, getMinorPeople } from '../../model/configurationApi';
 
 type questionType =
   | 'peopleInput'
@@ -206,19 +205,12 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onDeclarationSetPeople: (people: People) =>
-    new Promise(resolve => {
-      dispatch({
-        type: 'DECLARATION_SET_PEOPLE',
-        adults: getAdultPeople(people),
-        minors: getMinorPeople(people),
-      });
-      resolve();
+    dispatch({
+      type: 'DECLARATION_SET_PEOPLE',
+      people,
     }),
   onDeclarationSetMainCategories: (mainCategories: MainCategoriesType) =>
-    new Promise(resolve => {
-      dispatch({ type: 'DECLARATION_SET_MAIN_CATEGORIES', mainCategories });
-      resolve();
-    }),
+    dispatch({ type: 'DECLARATION_SET_MAIN_CATEGORIES', mainCategories }),
   onDeclarationBasketChangeQuantity: (category, quantityChange) =>
     dispatch({
       type: 'DECLARATION_BASKET_CHANGE_QUANTITY',
