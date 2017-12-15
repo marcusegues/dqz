@@ -126,18 +126,6 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
           />
         ),
       },
-      {
-        key: 'largeAmountInput',
-        component: <LargeAmountInputContainer />,
-      },
-      {
-        key: 'overAllowance',
-        component: <OverAllowanceContainer />,
-      },
-      {
-        key: 'amountInput',
-        component: <AmountInputContainer />,
-      },
     ];
     return (
       <View

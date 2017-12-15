@@ -1,10 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import { connect } from 'react-redux';
-import { getDeclarationMainCategories } from '../../../reducers';
 import MainCategoriesInput from './MainCategoriesInput';
 import MainCategoriesInputInfo from './MainCategoriesInputInfo';
-import { EmptyMainCategories } from '../../../types/reducers/declaration';
 import AnswerCard from '../cards/AnswerCard/AnswerCard';
 
 const complete = require('../../../../assets/images/complete.png');
@@ -37,14 +34,13 @@ class MainCategoriesInputContainer extends React.Component {
   getAnswerComponent() {
     const { settings } = this.props.qaState;
     const mainCategories = settings.get('mainCategories');
+    console.log(mainCategories);
     debugger;
     return (
       <AnswerCard
         onAnswerCardPress={this.props.onAnswerCardPress}
         mainIcon={mainIcon}
-        status={
-          mainCategories === mainCategories.isEmpty() ? incomplete : complete
-        }
+        status={mainCategories.isEmpty() ? incomplete : complete}
       >
         <MainCategoriesInputInfo mainCategories={mainCategories} />
       </AnswerCard>
