@@ -6,9 +6,6 @@ import { FlatList, View } from 'react-native';
 import { connect } from 'react-redux';
 import NavBar from '../NavBar/NavBar';
 import PeopleInputContainer from './PeopleInput/PeopleInputContainer';
-import LargeAmountInputContainer from './LargeAmountInput/LargeAmountInputContainer';
-import OverAllowanceContainer from './OverAllowance/OverAllowanceContainer';
-import AmountInputContainer from './AmountInput/AmountInputContainer';
 import MainCategoriesInputContainer from './MainCategoriesInput/MainCategoriesInputContainer';
 import RedButton from '../Buttons/RedButton';
 import {
@@ -17,7 +14,10 @@ import {
   getDeclarationSettings,
 } from '../../reducers';
 import type { People } from '../../model/types/basketPeopleTypes';
-import { SettingsType } from '../../types/reducers/declaration';
+import type {
+  SettingsType,
+  MainCategoriesType,
+} from '../../types/reducers/declaration';
 import { getAdultPeople, getMinorPeople } from '../../model/configurationApi';
 
 type questionType =
@@ -51,7 +51,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps() {
     this.updateQA(true);
   }
 
@@ -97,7 +97,6 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
               this.setState({ people });
             }}
             onAnswer={() => {
-              console.log(this.state.people.toJS());
               this.props.onSetPeople(this.state.people);
             }}
           />
@@ -112,12 +111,9 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
               this.expandQuestion('mainCategories');
             }}
             questionState={mainCategories}
-            onUpdate={mainCategories => {
+            onUpdate={m => {
               this.setState({
-                settings: this.state.settings.set(
-                  'mainCategories',
-                  mainCategories
-                ),
+                settings: this.state.settings.set('mainCategories', m),
               });
             }}
             onAnswer={() => {
@@ -182,22 +178,20 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSetPeople: (people: People) => {
-    return new Promise(resolve => {
+  onSetPeople: (people: People) =>
+    new Promise(resolve => {
       dispatch({
         type: 'DECLARATION_SET_PEOPLE',
         adults: getAdultPeople(people),
         minors: getMinorPeople(people),
       });
       resolve();
-    });
-  },
-  onSetMainCategories: (mainCategories: MainCategoriesType) => {
-    return new Promise(resolve => {
+    }),
+  onSetMainCategories: (mainCategories: MainCategoriesType) =>
+    new Promise(resolve => {
       dispatch({ type: 'DECLARATION_SET_MAIN_CATEGORIES', mainCategories });
       resolve();
-    });
-  },
+    }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
