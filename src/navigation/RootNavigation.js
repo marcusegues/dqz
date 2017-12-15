@@ -3,8 +3,6 @@ import { Notifications } from 'expo';
 import { translate } from 'react-i18next';
 import { StackNavigator } from 'react-navigation';
 import i18n from '../i18n';
-import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
-import PeopleInputContainer from '../components/QuestionAnswer/cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OnBoarding from '../screens/OnBoarding/OnBoarding';
 import ScreensView from '../screens/ScreensView/ScreensView';
 import { MAIN_RED, MAIN_BACKGROUND_COLOR } from '../styles/colors';
@@ -19,7 +17,7 @@ import MainMenu from '../screens/MainMenu/MainMenu';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
-import QuestionAnswerContainer2 from '../components/QuestionAnswer/QuestionAnswerContainer2';
+import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
 import UnderConstructionWithSums from './underConstructionWithSums';
 
 const RootStackNavigator = StackNavigator(
@@ -40,12 +38,6 @@ const RootStackNavigator = StackNavigator(
     },
     QuestionAnswer: {
       screen: QuestionAnswerContainer,
-      navigationOptions: () => ({
-        headerTitle: <HeaderTitle text="Waren deklarieren" />,
-      }),
-    },
-    QuestionAnswer2: {
-      screen: QuestionAnswerContainer2,
       navigationOptions: () => ({
         headerTitle: <HeaderTitle text="Waren deklarieren - 2" />,
       }),
@@ -68,9 +60,6 @@ const RootStackNavigator = StackNavigator(
           elevation: 0,
         },
       }),
-    },
-    PeopleInput: {
-      screen: PeopleInputContainer,
     },
     BasketInput: {
       screen: BasketInputContainer,

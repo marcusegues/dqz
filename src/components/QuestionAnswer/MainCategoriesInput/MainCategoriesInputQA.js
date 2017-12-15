@@ -1,12 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import MainCategoriesInput from './MainCategoriesInput';
-import MainCategoriesInputInfo from './MainCategoriesInputInfo';
-import AnswerCard from '../cards/AnswerCard/AnswerCard';
-
-const complete = require('../../../../assets/images/complete.png');
-const incomplete = require('../../../../assets/images/incomplete.png');
-const mainIcon = require('../../../../assets/icons/mainCategories.png');
+import MainCategoriesInput from '../cards/ConfirmationCard/configured/MainCategoriesInput/MainCategoriesInputConfirmationCard';
+import MainCategoriesInputAnswerCard from '../cards/AnswerCard/configured/MainCategoriesInput/MainCategoriesInputAnswerCard';
 
 class MainCategoriesInputContainer extends React.Component {
   constructor(props) {
@@ -34,14 +29,13 @@ class MainCategoriesInputContainer extends React.Component {
   getAnswerComponent() {
     const { settings } = this.props.qaState;
     const mainCategories = settings.get('mainCategories');
+    const status = mainCategories.isEmpty() ? 'incomplete' : 'complete';
     return (
-      <AnswerCard
+      <MainCategoriesInputAnswerCard
+        mainCategories={mainCategories}
         onAnswerCardPress={this.props.onAnswerCardPress}
-        mainIcon={mainIcon}
-        status={mainCategories.isEmpty() ? incomplete : complete}
-      >
-        <MainCategoriesInputInfo mainCategories={mainCategories} />
-      </AnswerCard>
+        status={status}
+      />
     );
   }
 

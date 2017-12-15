@@ -1,138 +1,157 @@
+// @flow
+/* eslint react/no-unused-state: 0 */
 import React from 'react';
+// $FlowFixMe
+import { FlatList, View } from 'react-native';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
-import PeopleInputContainer from './PeopleInput/PeopleInputContainer';
-import LargeAmountPresentContainer from './LargeAmountPresent/LargeAmountPresentContainer';
-import LargeAmountInputContainer from './LargeAmountInput/LargeAmountInputContainer';
-import OverAllowanceContainer from './OverAllowance/OverAllowanceContainer';
-import AmountInputContainer from './AmountInput/AmountInputContainer';
-import MainCategoriesInputContainer from './MainCategoriesInput/MainCategoriesInputContainer';
-import RedButton from '../Buttons/RedButton';
 import NavBar from '../NavBar/NavBar';
+import RedButton from '../Buttons/RedButton';
+import PeopleInputQA from './PeopleInput/PeopleInputQA';
+import MainCategoriesInputQA from './MainCategoriesInput/MainCategoriesInputQA';
+import QuantityInputQA from './QuantityInput/QuantityInputQA';
 import {
+  getDeclarationBasket,
   getDeclarationPeople,
-  getDeclarationCurrentQuestion,
   getDeclarationSettings,
-  getDeclarationInit,
-  getDeclarationInitList,
 } from '../../reducers';
-import { getTotalPeople } from '../../model/configurationApi';
+import type { People, Basket } from '../../model/types/basketPeopleTypes';
+import type {
+  SettingsType,
+  MainCategoriesType,
+} from '../../types/reducers/declaration';
+import { getAdultPeople, getMinorPeople } from '../../model/configurationApi';
 
-class QuestionAnswerContainer extends React.Component {
+type questionType =
+  | 'peopleInput'
+  | 'hasLargeAmount'
+  | 'largeAmountInput'
+  | 'overAllowance'
+  | 'amountInput'
+  | 'mainCategories'
+  | 'quantityInput'
+  | 'none';
+
+type questionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
+
+type State = {
+  questionStates: { [questionType]: questionState },
+  basket: Basket,
+  people: People,
+  settings: SettingsType,
+};
+
+class QuestionAnswerContainer2 extends React.Component<any, State> {
   constructor(props) {
     super(props);
-    this.setCurrentQuestion = this.setCurrentQuestion.bind(this);
-    this.selectNextOpenQuestion = this.selectNextOpenQuestion.bind(this);
+
+    this.state = {
+      basket: this.props.basket,
+      people: this.props.people,
+      settings: this.props.settings,
+      questionStates: {
+        peopleInput: 'collapsed',
+        mainCategories: 'collapsed',
+        quantityInput: 'collapsed',
+      },
+    };
   }
 
-  setCurrentQuestion(currentQuestion) {
-    this.props.onSetCurrentQuestion(currentQuestion);
+  componentWillReceiveProps() {
+    this.updateQA(true);
   }
 
-  getNextInitOpenQuestion() {
-    const { currentQuestion, people, settings } = this.props;
-    let nextQuestion;
-    switch (currentQuestion) {
-      case 'peopleInput': {
-        if (getTotalPeople(people) === 1) {
-          nextQuestion = 'overAllowance';
-        } else {
-          nextQuestion = 'largeAmountPresent';
-        }
-        break;
-      }
-      case 'largeAmountPresent': {
-        if (settings.get('largeAmountPresent')) {
-          nextQuestion = 'largeAmountInput';
-          break;
-        }
-        nextQuestion = 'overAllowance';
-        break;
-      }
-      case 'largeAmountInput': {
-        nextQuestion = 'overAllowance';
-        break;
-      }
-      case 'overAllowance': {
-        if (settings.get('overAllowance') === true) {
-          nextQuestion = 'amountInput';
-          break;
-        }
-        nextQuestion = 'mainCategories';
-        break;
-      }
-      case 'amountInput': {
-        nextQuestion = 'mainCategories';
-        break;
-      }
-      default: {
-        nextQuestion = null;
-      }
+  updateQA(collapseAll: boolean) {
+    // for now, just close all the things
+    if (collapseAll) {
+      this.setState({
+        questionStates: {
+          peopleInput: 'collapsed',
+          mainCategories: 'collapsed',
+          quantityInput: 'collapsed',
+        },
+      });
+    } else {
+      // do something...
+      this.setState({});
     }
-    return nextQuestion;
   }
 
-  async selectNextOpenQuestion() {
-    const {
-      settings,
-      people,
-      init,
-      onSetInitFalse,
-      onAddToInitList,
-    } = this.props;
-
-    if (init) {
-      const nextInitQuestion = this.getNextInitOpenQuestion();
-      if (nextInitQuestion) {
-        await onAddToInitList(nextInitQuestion);
-        this.setCurrentQuestion(nextInitQuestion);
-        return;
-      }
-      onSetInitFalse();
-    }
-
-    if (
-      getTotalPeople(people) > 1 &&
-      settings.get('largeAmountPresent') === 'notAnswered'
-    ) {
-      this.setCurrentQuestion('largeAmountPresent');
-      return;
-    }
-
-    if (
-      getTotalPeople(people) > 1 &&
-      settings.get('largeAmountsEntered') === 'notAnswered' &&
-      (settings.get('largeAmountPresent') === true ||
-        settings.get('largeAmountPresent') === 'dontKnow')
-    ) {
-      this.setCurrentQuestion('largeAmountInput');
-      return;
-    }
-
-    if (settings.get('overAllowance') === 'notAnswered') {
-      this.setCurrentQuestion('overAllowance');
-      return;
-    }
-
-    if (
-      settings.get('overAllowance') === true &&
-      settings.get('amountsEntered') === 'notAnswered'
-    ) {
-      this.setCurrentQuestion('amountInput');
-      return;
-    }
-
-    const mainCategories = settings.get('mainCategories');
-    if (mainCategories === 'notAnswered' || mainCategories.isEmpty()) {
-      this.setCurrentQuestion('mainCategories');
-      return;
-    }
-
-    this.setCurrentQuestion('finished');
+  expandQuestion(question: questionType) {
+    const { questionStates } = this.state;
+    questionStates[question] = 'expanded';
+    this.setState({
+      questionStates,
+    });
   }
 
   render() {
-    const { init, initList, navigation } = this.props;
+    const { questionStates } = this.state;
+    const { peopleInput, mainCategories, quantityInput } = questionStates;
+    const { navigation } = this.props;
+
+    const flatListData = [
+      {
+        key: 'peopleInput',
+        component: (
+          <PeopleInputQA
+            qaState={this.state}
+            onAnswerCardPress={() => {
+              this.expandQuestion('peopleInput');
+            }}
+            questionState={peopleInput}
+            onUpdate={people => {
+              this.setState({ people });
+            }}
+            onAnswer={() => {
+              this.props.onDeclarationSetPeople(this.state.people);
+            }}
+          />
+        ),
+      },
+      {
+        key: 'mainCategories',
+        component: (
+          <MainCategoriesInputQA
+            qaState={this.state}
+            onAnswerCardPress={() => {
+              this.expandQuestion('mainCategories');
+            }}
+            questionState={mainCategories}
+            onUpdate={m => {
+              this.setState({
+                settings: this.state.settings.set('mainCategories', m),
+              });
+            }}
+            onAnswer={() => {
+              this.props.onDeclarationSetMainCategories(
+                this.state.settings.get('mainCategories')
+              );
+            }}
+          />
+        ),
+      },
+      {
+        key: 'quantityInput',
+        component: (
+          <QuantityInputQA
+            qaState={this.state}
+            onAnswerCardPress={() => {
+              this.expandQuestion('quantityInput');
+            }}
+            questionState={quantityInput}
+            onUpdate={basket => {
+              this.setState({
+                basket,
+              });
+            }}
+            onAnswer={() => {
+              this.props.onDeclarationSetBasket(this.state.basket);
+            }}
+          />
+        ),
+      },
+    ];
+
     return (
       <View
         style={{
@@ -152,47 +171,10 @@ class QuestionAnswerContainer extends React.Component {
           }}
         >
           <NavBar step={1} />
-          <PeopleInputContainer
-            text="Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?"
-            currentQuestion={this.props.currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('peopleInput')}
-            onAnswer={this.selectNextOpenQuestion}
-          />
-          <LargeAmountPresentContainer
-            people={this.props.people}
-            currentQuestion={this.props.currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('largeAmountPresent')}
-            onAnswer={this.selectNextOpenQuestion}
-            init={init}
-            initList={initList}
-          />
-          <LargeAmountInputContainer
-            currentQuestion={this.props.currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('largeAmountInput')}
-            onAnswer={this.selectNextOpenQuestion}
-            init={init}
-            initList={initList}
-          />
-          <OverAllowanceContainer
-            currentQuestion={this.props.currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('overAllowance')}
-            onAnswer={this.selectNextOpenQuestion}
-            init={init}
-            initList={initList}
-          />
-          <AmountInputContainer
-            currentQuestion={this.props.currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('amountInput')}
-            onAnswer={this.selectNextOpenQuestion}
-            init={init}
-            initList={initList}
-          />
-          <MainCategoriesInputContainer
-            currentQuestion={this.props.currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('mainCategories')}
-            onAnswer={this.selectNextOpenQuestion}
-            init={init}
-            initList={initList}
+          <FlatList
+            style={{ width: '100%' }}
+            data={flatListData}
+            renderItem={({ item }) => item.component}
           />
         </View>
         {this.props.currentQuestion !== 'finished' ? null : (
@@ -216,23 +198,37 @@ class QuestionAnswerContainer extends React.Component {
   }
 }
 
-// <MainCategoriesContainer onPress={() => this.setCurrentQuestion(4)} />
 const mapStateToProps = state => ({
-  currentQuestion: getDeclarationCurrentQuestion(state),
+  basket: getDeclarationBasket(state),
   people: getDeclarationPeople(state),
   settings: getDeclarationSettings(state),
-  init: getDeclarationInit(state),
-  initList: getDeclarationInitList(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSetCurrentQuestion: currentQuestion =>
-    dispatch({ type: 'DECLARATION_SET_CURRENT_QUESTION', currentQuestion }),
-  onAddToInitList: nextQuestion =>
-    dispatch({ type: 'DECLARATION_ADD_TO_INIT_LIST', nextQuestion }),
-  onSetInitFalse: () => dispatch({ type: 'DECLARATION_SET_INIT_FALSE' }),
+  onDeclarationSetPeople: (people: People) =>
+    new Promise(resolve => {
+      dispatch({
+        type: 'DECLARATION_SET_PEOPLE',
+        adults: getAdultPeople(people),
+        minors: getMinorPeople(people),
+      });
+      resolve();
+    }),
+  onDeclarationSetMainCategories: (mainCategories: MainCategoriesType) =>
+    new Promise(resolve => {
+      dispatch({ type: 'DECLARATION_SET_MAIN_CATEGORIES', mainCategories });
+      resolve();
+    }),
+  onDeclarationBasketChangeQuantity: (category, quantityChange) =>
+    dispatch({
+      type: 'DECLARATION_BASKET_CHANGE_QUANTITY',
+      category,
+      quantityChange,
+    }),
+  onDeclarationSetBasket: basket =>
+    dispatch({ type: 'DECLARATION_SET_BASKET', basket }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  QuestionAnswerContainer
+  QuestionAnswerContainer2
 );

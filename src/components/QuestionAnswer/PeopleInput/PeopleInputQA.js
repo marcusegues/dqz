@@ -1,8 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-
-import PeopleInput from './PeopleInput';
-import PeopleInputAnswer from './PeopleInputAnswer';
+import PeopleInputAnswerCard from '../cards/AnswerCard/configured/PeopleInput/PeopleInputAnswerCard';
+import PeopleInputConfirmationCard from '../cards/ConfirmationCard/configured/PeopleInput/PeopleInputConfirmationCard';
 import {
   addAdult,
   addMinor,
@@ -10,7 +9,7 @@ import {
   subtractMinor,
 } from '../../../model/configurationApi';
 
-class PeopleInputContainer extends React.Component {
+class PeopleInputQA extends React.Component {
   constructor(props) {
     super(props);
     this.getQuestionComponent = this.getQuestionComponent.bind(this);
@@ -20,7 +19,7 @@ class PeopleInputContainer extends React.Component {
   getQuestionComponent() {
     const { people } = this.props.qaState;
     return (
-      <PeopleInput
+      <PeopleInputConfirmationCard
         people={people}
         onAnswer={this.props.onAnswer}
         onAddAdult={() => this.handleUpdate(addAdult(people))}
@@ -34,7 +33,7 @@ class PeopleInputContainer extends React.Component {
 
   getAnswerComponent() {
     return (
-      <PeopleInputAnswer
+      <PeopleInputAnswerCard
         people={this.props.qaState.people}
         onAnswerCardPress={this.props.onAnswerCardPress}
       />
@@ -60,4 +59,4 @@ class PeopleInputContainer extends React.Component {
   }
 }
 
-export default PeopleInputContainer;
+export default PeopleInputQA;

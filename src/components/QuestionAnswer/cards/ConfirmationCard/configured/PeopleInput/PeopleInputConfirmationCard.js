@@ -1,10 +1,10 @@
 import React from 'react';
-import ConfirmationCard from '../cards/ConfirmationCard/ConfirmationCard';
-import AdultInputRow from '../cards/ConfirmationCard/children/PeopleInputRow/configured/AdultInputRow';
-import MinorInputRow from '../cards/ConfirmationCard/children/PeopleInputRow/configured/MinorInputRow';
-import { getTotalPeople } from '../../../model/configurationApi';
+import ConfirmationCard from '../../ConfirmationCard';
+import AdultInputRow from '../../children/PeopleInputRow/configured/AdultInputRow';
+import MinorInputRow from '../../children/PeopleInputRow/configured/MinorInputRow';
+import { getTotalPeople } from '../../../../../../model/configurationApi';
 
-const PeopleInput = ({
+const PeopleInputConfirmationCard = ({
   people,
   onAddAdult,
   onSubtractAdult,
@@ -31,4 +31,4 @@ const PeopleInput = ({
   </ConfirmationCard>
 );
 
-export default PeopleInput;
+export default PeopleInputConfirmationCard;

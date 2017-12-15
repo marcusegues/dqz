@@ -20,7 +20,7 @@ const MainMenu = ({ navigation }) => (
     </View>
     <View style={ownStyles.bottomContainer}>
       <MenuTile
-        onPress={() => navigation.navigate('QuestionAnswer2')}
+        onPress={() => navigation.navigate('QuestionAnswer')}
         text="WAREN DEKLARIEREN"
       >
         <MaterialIcons
@@ -29,7 +29,6 @@ const MainMenu = ({ navigation }) => (
           color={GREY}
         />
       </MenuTile>
-
 
       <MenuTile
         text="ZOLL-RECHNER"
