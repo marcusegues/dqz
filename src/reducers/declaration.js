@@ -48,6 +48,10 @@ const declaration = (
         )
       );
     }
+    case 'DECLARATION_SET_BASKET': {
+      const basket: Basket = action.basket;
+      return state.set('basket', basket);
+    }
     case 'DECLARATION_ADULTS_CHANGE_QUANTITY': {
       const people: People = state.get('people');
       const adults: number = people.get('adults');

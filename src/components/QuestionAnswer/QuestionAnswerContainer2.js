@@ -5,15 +5,16 @@ import React from 'react';
 import { FlatList, View } from 'react-native';
 import { connect } from 'react-redux';
 import NavBar from '../NavBar/NavBar';
+import RedButton from '../Buttons/RedButton';
 import PeopleInputContainer from './PeopleInput/PeopleInputContainer';
 import MainCategoriesInputContainer from './MainCategoriesInput/MainCategoriesInputContainer';
-import RedButton from '../Buttons/RedButton';
+import QuantityInputContainer from './QuantityInput/QuantityInputContainer';
 import {
-  getDeclarationCurrentQuestion,
+  getDeclarationBasket,
   getDeclarationPeople,
   getDeclarationSettings,
 } from '../../reducers';
-import type { People } from '../../model/types/basketPeopleTypes';
+import type { People, Basket } from '../../model/types/basketPeopleTypes';
 import type {
   SettingsType,
   MainCategoriesType,
@@ -27,12 +28,14 @@ type questionType =
   | 'overAllowance'
   | 'amountInput'
   | 'mainCategories'
+  | 'quantityInput'
   | 'none';
 
 type questionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
 
 type State = {
   questionStates: { [questionType]: questionState },
+  basket: Basket,
   people: People,
   settings: SettingsType,
 };
@@ -42,11 +45,13 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
     super(props);
 
     this.state = {
+      basket: this.props.basket,
       people: this.props.people,
       settings: this.props.settings,
       questionStates: {
         peopleInput: 'collapsed',
         mainCategories: 'collapsed',
+        quantityInput: 'collapsed',
       },
     };
   }
@@ -62,6 +67,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
         questionStates: {
           peopleInput: 'collapsed',
           mainCategories: 'collapsed',
+          quantityInput: 'collapsed',
         },
       });
     } else {
@@ -80,7 +86,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
 
   render() {
     const { questionStates } = this.state;
-    const { peopleInput, mainCategories } = questionStates;
+    const { peopleInput, mainCategories, quantityInput } = questionStates;
     const { navigation } = this.props;
 
     const flatListData = [
@@ -97,7 +103,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
               this.setState({ people });
             }}
             onAnswer={() => {
-              this.props.onSetPeople(this.state.people);
+              this.props.onDeclarationSetPeople(this.state.people);
             }}
           />
         ),
@@ -117,9 +123,29 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
               });
             }}
             onAnswer={() => {
-              this.props.onSetMainCategories(
+              this.props.onDeclarationSetMainCategories(
                 this.state.settings.get('mainCategories')
               );
+            }}
+          />
+        ),
+      },
+      {
+        key: 'quantityInput',
+        component: (
+          <QuantityInputContainer
+            qaState={this.state}
+            onAnswerCardPress={() => {
+              this.expandQuestion('quantityInput');
+            }}
+            questionState={quantityInput}
+            onUpdate={basket => {
+              this.setState({
+                basket,
+              });
+            }}
+            onAnswer={() => {
+              this.props.onDeclarationSetBasket(this.state.basket);
             }}
           />
         ),
@@ -173,13 +199,13 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
 }
 
 const mapStateToProps = state => ({
-  currentQuestion: getDeclarationCurrentQuestion(state),
+  basket: getDeclarationBasket(state),
   people: getDeclarationPeople(state),
   settings: getDeclarationSettings(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSetPeople: (people: People) =>
+  onDeclarationSetPeople: (people: People) =>
     new Promise(resolve => {
       dispatch({
         type: 'DECLARATION_SET_PEOPLE',
@@ -188,11 +214,19 @@ const mapDispatchToProps = dispatch => ({
       });
       resolve();
     }),
-  onSetMainCategories: (mainCategories: MainCategoriesType) =>
+  onDeclarationSetMainCategories: (mainCategories: MainCategoriesType) =>
     new Promise(resolve => {
       dispatch({ type: 'DECLARATION_SET_MAIN_CATEGORIES', mainCategories });
       resolve();
     }),
+  onDeclarationBasketChangeQuantity: (category, quantityChange) =>
+    dispatch({
+      type: 'DECLARATION_BASKET_CHANGE_QUANTITY',
+      category,
+      quantityChange,
+    }),
+  onDeclarationSetBasket: basket =>
+    dispatch({ type: 'DECLARATION_SET_BASKET', basket }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(

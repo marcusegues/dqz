@@ -1,6 +1,6 @@
 // @flow
 
-import type { Category } from '../../model/types/basketPeopleTypes';
+import type { Category, Basket } from '../../model/types/basketPeopleTypes';
 import type {
   MainCategory,
   MainCategoriesType,
@@ -13,6 +13,10 @@ export type Action =
     type: 'DECLARATION_BASKET_CHANGE_QUANTITY',
     category: Category,
     quantityChange: number,
+  }
+  | {
+    type: 'DECLARATION_SET_BASKET',
+    basket: Basket,
   }
   | {
     type: 'DECLARATION_BASKET_ADD_AMOUNT',
