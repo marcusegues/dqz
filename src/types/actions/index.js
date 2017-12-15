@@ -90,4 +90,20 @@ export type Action =
   }
   | {
     type: 'DECLARATION_SET_AMOUNTS_ENTERED_TRUE',
+  }
+  | {
+    type: 'DECLARATION_CALCULATE_DUES',
+  }
+  | {
+    type: 'DECLARATION_RESET_AMOUNTS',
+    category: Category,
+  }
+  | {
+    type: 'DECLARATION_SET_OVER_ALLOWANCE_NOT_ANSWERED',
+  }
+  | {
+    type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE',
+  }
+  | {
+    type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE',
   };

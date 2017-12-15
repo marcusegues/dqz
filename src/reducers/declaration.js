@@ -106,12 +106,7 @@ const declaration = (
         fromModelApi.addAmount(basket, category, amount)
       );
     }
-    case 'DECLARATION_SET_AMOUNTS_ENTERED_TRUE': {
-      return state.setIn(['settings', 'amountsEntered'], true);
-    }
-    case 'DECLARATION_SET_AMOUNTS_ENTERED_NOT_ANSWERED': {
-      return state.setIn(['settings', 'amountsEntered'], 'notAnswered');
-    }
+
     case 'DECLARATION_BASKET_ADD_LARGE_AMOUNT': {
       // eslint-disable-next-line prefer-destructuring
       const category: Category = action.category;
@@ -140,12 +135,6 @@ const declaration = (
         'basket',
         fromModelApi.resetLargeAmounts(basket, category)
       );
-    }
-    case 'DECLARATION_SET_LARGE_AMOUNTS_ENTERED_TRUE': {
-      return state.setIn(['settings', 'largeAmountsEntered'], true);
-    }
-    case 'DECLARATION_SET_LARGE_AMOUNTS_ENTERED_NOT_ANSWERED': {
-      return state.setIn(['settings', 'largeAmountsEntered'], 'notAnswered');
     }
     case 'DECLARATION_SET_OVER_ALLOWANCE_NOT_ANSWERED': {
       return state.setIn(['settings', 'overAllowance'], 'notAnswered');
@@ -190,23 +179,6 @@ const declaration = (
       // eslint-disable-next-line prefer-destructuring
       const mainCategories: MainCategoriesType = action.mainCategories;
       return state.setIn(['settings', 'mainCategories'], mainCategories);
-    }
-    case 'DECLARATION_SET_CURRENT_QUESTION': {
-      // eslint-disable-next-line prefer-destructuring
-      const currentQuestion: CurrentQuestionType = action.currentQuestion;
-      return state.setIn(['settings', 'currentQuestion'], currentQuestion);
-    }
-    case 'DECLARATION_ADD_TO_INIT_LIST': {
-      // eslint-disable-next-line prefer-destructuring
-      const nextQuestion: CurrentQuestionType = action.nextQuestion;
-      const newState = state.updateIn(['settings', 'initList'], list =>
-        list.push(nextQuestion)
-      );
-      return newState;
-    }
-    case 'DECLARATION_SET_INIT_FALSE': {
-      const newState = state.setIn(['settings', 'init'], false);
-      return newState.setIn(['settings', 'initList'], InitList);
     }
     case 'DECLARATION_CALCULATE_DUES': {
       const newState = state.set(
