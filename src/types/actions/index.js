@@ -30,9 +30,19 @@ export type Action =
     quantityChange: number,
   }
   | {
+    type: 'DECLARATION_ADULTS_SET_QUANTITY',
+    category: Category,
+    quantity: number,
+  }
+  | {
     type: 'DECLARATION_MINORS_CHANGE_QUANTITY',
     category: Category,
     quantityChange: number,
+  }
+  | {
+    type: 'DECLARATION_MINORS_SET_QUANTITY',
+    category: Category,
+    quantity: number,
   }
   | {
     type: 'DECLARATION_SET_OVER_ALLOWANCE_TRUE',
