@@ -87,4 +87,7 @@ export type Action =
     type: 'DECLARATION_SET_PEOPLE',
     adults: number,
     minors: number,
+  }
+  | {
+    type: 'DECLARATION_SET_AMOUNTS_ENTERED_TRUE',
   };
