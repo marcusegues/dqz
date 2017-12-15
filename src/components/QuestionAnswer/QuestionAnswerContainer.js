@@ -35,18 +35,31 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
   constructor(props) {
     super(props);
 
-    const main = this.props.settings.get('mainCategories');
-
     this.state = {
       basket: this.props.basket,
       people: this.props.people,
       settings: this.props.settings,
       questionStates: {
         peopleInput: 'expanded',
+        mainCategories: 'hidden',
+        quantityInput: 'hidden',
+      },
+    };
+  }
+
+  componentDidMount() {
+    this.setInitStates();
+  }
+
+  setInitStates() {
+    const main = this.props.settings.get('mainCategories');
+    this.setState({
+      questionStates: {
+        peopleInput: main.size ? 'collapsed' : 'expanded',
         mainCategories: main.size ? 'collapsed' : 'hidden',
         quantityInput: main.size ? 'collapsed' : 'hidden',
       },
-    };
+    });
   }
 
   setQuestionStates(justAnswered: questionType) {
