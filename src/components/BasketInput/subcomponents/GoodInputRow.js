@@ -76,7 +76,7 @@ const ownStyles = {
 const GoodInputRow = ({
   category,
   quantity,
-  onDeclarationBasketChangeQuantity,
+  onBasketChangeQuantity,
   mainCategory,
 }) => (
   <View style={ownStyles.container}>
@@ -97,7 +97,7 @@ const GoodInputRow = ({
     </View>
 
     <TouchableOpacity
-      onPress={() => onDeclarationBasketChangeQuantity(category, -10)}
+      onPress={() => onBasketChangeQuantity(category, -10)}
       style={ownStyles.touchable}
     >
       <Entypo
@@ -108,7 +108,7 @@ const GoodInputRow = ({
     </TouchableOpacity>
 
     <TouchableOpacity
-      onPress={() => onDeclarationBasketChangeQuantity(category, -1)}
+      onPress={() => onBasketChangeQuantity(category, -1)}
       style={ownStyles.touchable}
     >
       <Entypo
@@ -119,7 +119,7 @@ const GoodInputRow = ({
     </TouchableOpacity>
 
     <TouchableOpacity
-      onPress={() => onDeclarationBasketChangeQuantity(category, 1)}
+      onPress={() => onBasketChangeQuantity(category, 1)}
       style={ownStyles.touchable}
     >
       <Entypo
@@ -130,7 +130,7 @@ const GoodInputRow = ({
     </TouchableOpacity>
 
     <TouchableOpacity
-      onPress={() => onDeclarationBasketChangeQuantity(category, 10)}
+      onPress={() => onBasketChangeQuantity(category, 10)}
       style={ownStyles.touchable}
     >
       <Entypo

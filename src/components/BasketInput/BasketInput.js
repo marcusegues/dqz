@@ -55,7 +55,7 @@ const BasketInput = ({
           key={category}
           category={category}
           quantity={getQuantity(basket, category)}
-          onDeclarationBasketChangeQuantity={onBasketChangeQuantity}
+          onBasketChangeQuantity={onBasketChangeQuantity}
           mainCategory={mainCategory}
         />
       ));
