@@ -20,15 +20,7 @@ import type {
   MainCategoriesType,
 } from '../../types/reducers/declaration';
 
-type questionType =
-  | 'peopleInput'
-  | 'hasLargeAmount'
-  | 'largeAmountInput'
-  | 'overAllowance'
-  | 'amountInput'
-  | 'mainCategories'
-  | 'quantityInput'
-  | 'none';
+type questionType = 'peopleInput' | 'mainCategories' | 'quantityInput' | 'none';
 
 type questionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
 
@@ -43,36 +35,34 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
   constructor(props) {
     super(props);
 
+    const main = this.props.settings.get('mainCategories');
+
     this.state = {
       basket: this.props.basket,
       people: this.props.people,
       settings: this.props.settings,
       questionStates: {
-        peopleInput: 'collapsed',
-        mainCategories: 'collapsed',
-        quantityInput: 'collapsed',
+        peopleInput: 'expanded',
+        mainCategories: main.size ? 'collapsed' : 'hidden',
+        quantityInput: main.size ? 'collapsed' : 'hidden',
       },
     };
   }
 
-  componentWillReceiveProps() {
-    this.updateQA(true);
+  setQuestionStates() {
+    const main = this.state.settings.get('mainCategories');
+    this.setState({
+      questionStates: {
+        peopleInput: 'collapsed',
+        mainCategories: 'collapsed',
+        quantityInput: main.size ? 'collapsed' : 'hidden',
+      },
+    });
   }
 
-  updateQA(collapseAll: boolean) {
-    // for now, just close all the things
-    if (collapseAll) {
-      this.setState({
-        questionStates: {
-          peopleInput: 'collapsed',
-          mainCategories: 'collapsed',
-          quantityInput: 'collapsed',
-        },
-      });
-    } else {
-      // do something...
-      this.setState({});
-    }
+  updateQA() {
+    this.setQuestionStates();
+    this.setState({});
   }
 
   expandQuestion(question: questionType) {
@@ -103,6 +93,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
             }}
             onAnswer={() => {
               this.props.onDeclarationSetPeople(this.state.people);
+              this.updateQA();
             }}
           />
         ),
@@ -116,15 +107,19 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
               this.expandQuestion('mainCategories');
             }}
             questionState={mainCategories}
-            onUpdate={m => {
+            onUpdate={activeCategories => {
               this.setState({
-                settings: this.state.settings.set('mainCategories', m),
+                settings: this.state.settings.set(
+                  'mainCategories',
+                  activeCategories
+                ),
               });
             }}
             onAnswer={() => {
               this.props.onDeclarationSetMainCategories(
                 this.state.settings.get('mainCategories')
               );
+              this.updateQA();
             }}
           />
         ),
@@ -145,6 +140,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
             }}
             onAnswer={() => {
               this.props.onDeclarationSetBasket(this.state.basket);
+              this.updateQA();
             }}
           />
         ),
@@ -210,7 +206,10 @@ const mapDispatchToProps = dispatch => ({
       people,
     }),
   onDeclarationSetMainCategories: (mainCategories: MainCategoriesType) =>
-    dispatch({ type: 'DECLARATION_SET_MAIN_CATEGORIES', mainCategories }),
+    dispatch({
+      type: 'DECLARATION_SET_MAIN_CATEGORIES',
+      mainCategories,
+    }),
   onDeclarationBasketChangeQuantity: (category, quantityChange) =>
     dispatch({
       type: 'DECLARATION_BASKET_CHANGE_QUANTITY',
@@ -218,7 +217,10 @@ const mapDispatchToProps = dispatch => ({
       quantityChange,
     }),
   onDeclarationSetBasket: basket =>
-    dispatch({ type: 'DECLARATION_SET_BASKET', basket }),
+    dispatch({
+      type: 'DECLARATION_SET_BASKET',
+      basket,
+    }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
