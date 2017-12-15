@@ -1,10 +1,6 @@
 // @flow
 
-import type {
-  Category,
-  Basket,
-  People,
-} from '../../model/types/basketPeopleTypes';
+import type { Category, Basket } from '../../model/types/basketPeopleTypes';
 import type {
   MainCategory,
   MainCategoriesType,
