@@ -34,7 +34,6 @@ class MainCategoriesInputContainer extends React.Component {
   getAnswerComponent() {
     const { settings } = this.props.qaState;
     const mainCategories = settings.get('mainCategories');
-    console.log(mainCategories);
     return (
       <AnswerCard
         onAnswerCardPress={this.props.onAnswerCardPress}
