@@ -35,7 +35,6 @@ class MainCategoriesInputContainer extends React.Component {
     const { settings } = this.props.qaState;
     const mainCategories = settings.get('mainCategories');
     console.log(mainCategories);
-    debugger;
     return (
       <AnswerCard
         onAnswerCardPress={this.props.onAnswerCardPress}
@@ -54,7 +53,6 @@ class MainCategoriesInputContainer extends React.Component {
   handleToggleMainCategory(mainCategory) {
     const { settings } = this.props.qaState;
     const mainCategories = settings.get('mainCategories');
-    debugger;
     if (mainCategories.has(mainCategory)) {
       return mainCategories.delete(mainCategory);
     }

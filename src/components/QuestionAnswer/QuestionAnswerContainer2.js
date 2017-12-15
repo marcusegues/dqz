@@ -18,6 +18,7 @@ import {
 } from '../../reducers';
 import type { People } from '../../model/types/basketPeopleTypes';
 import { SettingsType } from '../../types/reducers/declaration';
+import { getAdultPeople, getMinorPeople } from '../../model/configurationApi';
 
 type questionType =
   | 'peopleInput'
@@ -96,6 +97,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
               this.setState({ people });
             }}
             onAnswer={() => {
+              console.log(this.state.people.toJS());
               this.props.onSetPeople(this.state.people);
             }}
           />
@@ -182,7 +184,11 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onSetPeople: (people: People) => {
     return new Promise(resolve => {
-      dispatch({ type: 'DECLARATION_SET_PEOPLE', people });
+      dispatch({
+        type: 'DECLARATION_SET_PEOPLE',
+        adults: getAdultPeople(people),
+        minors: getMinorPeople(people),
+      });
       resolve();
     });
   },

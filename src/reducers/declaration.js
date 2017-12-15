@@ -78,6 +78,7 @@ const declaration = (
       const adults: number = action.adults;
       // eslint-disable-next-line prefer-destructuring
       const minors: number = action.minors;
+      debugger;
       return state.set(
         'people',
         fromModelApi.setPeople(people, adults, minors)
