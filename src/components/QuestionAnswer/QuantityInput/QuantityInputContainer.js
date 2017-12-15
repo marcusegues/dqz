@@ -1,15 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import PeopleInput from './PeopleInput';
-import PeopleInputAnswer from './PeopleInputAnswer';
-import {
-  addAdult,
-  addMinor,
-  getTotalPeople,
-  subtractAdult,
-  subtractMinor,
-} from '../../../model/configurationApi';
+import { getTotalPeople } from '../../../model/configurationApi';
 
 class QuantityInputContainer extends React.Component {
   constructor(props) {
@@ -23,28 +15,18 @@ class QuantityInputContainer extends React.Component {
     return (
       <ConfirmationCard
         text={text}
-        onAnswer={onAnswer}
+        onAnswer={this.props.onAnswer}
         confirmationDisabled={!getTotalPeople(people)}
-      >
-        <AdultInputRow
-          people={people}
-          onAddAdult={onAddAdult}
-          onSubtractAdult={onSubtractAdult}
-        />
-        <MinorInputRow
-          people={people}
-          onAddMinor={onAddMinor}
-          onSubtractMinor={onSubtractMinor}
-        />
-      </ConfirmationCard>
+      />
     );
   }
 
   getAnswerComponent() {
     return (
-      <PeopleInputAnswer
-        people={this.props.qaState.people}
+      <AnswerCard
         onAnswerCardPress={this.props.onAnswerCardPress}
+        mainIcon={mainIcon}
+        status={mainCategories.isEmpty() ? incomplete : complete}
       />
     );
   }

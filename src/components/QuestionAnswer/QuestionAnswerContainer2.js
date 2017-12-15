@@ -125,6 +125,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
         ),
       },
     ];
+
     return (
       <View
         style={{
