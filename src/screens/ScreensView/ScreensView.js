@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 import NavBar from '../../components/NavBar/NavBar';
 import GoodInputModal from '../../components/Modals/GoodInputModal/GoodInputModal';
+import PickerModal from '../../components/Modals/pickerModal';
 
 class ScreensView extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class ScreensView extends React.Component {
             { key: `QuestionAnswer` },
             { key: `GoodInputModal` },
             { key: `BasketInput` },
+            { key: `pickerModal` },
           ]}
           renderItem={({ item }) => (
             <Text
@@ -39,7 +41,7 @@ class ScreensView extends React.Component {
                 fontFamily: 'roboto_bold',
               }}
               onPress={() => {
-                if (item.key === `GoodInputModal`) {
+                if (item.key === `pickerModal`) {
                   this.setState({ modalVisible: true });
                   return;
                 }
@@ -50,7 +52,12 @@ class ScreensView extends React.Component {
             </Text>
           )}
         />
-        <GoodInputModal
+
+        {/*<GoodInputModal*/}
+        {/*modalVisible={this.state.modalVisible}*/}
+        {/*toggleModalVisible={this.toggleModalVisible}*/}
+        {/*/>*/}
+        <PickerModal
           modalVisible={this.state.modalVisible}
           toggleModalVisible={this.toggleModalVisible}
         />

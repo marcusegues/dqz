@@ -1,7 +1,8 @@
 import React from 'react';
+
 import { Text } from 'react-native';
 
-const HeaderTitle = ({ text }) => (
+const HeaderTitle = ({ text }) =>
   <Text
     style={{
       fontSize: 18,
@@ -10,7 +11,6 @@ const HeaderTitle = ({ text }) => (
     }}
   >
     {text}
-  </Text>
-);
+  </Text>;
 
 export default HeaderTitle;

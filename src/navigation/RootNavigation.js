@@ -91,13 +91,13 @@ const RootStackNavigator = StackNavigator(
     navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
     initialRouteName: 'PickerModal',
+    // initialRouteName: 'Screens',
     // initialRouteName: 'OnBoarding',
   }
 );
 
-const WrappedRootStackNavigator = () => (
-  <RootStackNavigator screenProps={{ t: i18n.getFixedT() }} />
-);
+const WrappedRootStackNavigator = () =>
+  <RootStackNavigator screenProps={{ t: i18n.getFixedT() }} />;
 
 const ReloadAppOnLanguageChange = translate(null, {
   bindI18n: 'languageChanged',
