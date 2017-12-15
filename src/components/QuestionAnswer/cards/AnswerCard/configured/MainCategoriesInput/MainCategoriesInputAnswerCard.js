@@ -4,17 +4,17 @@ import MainCategoriesInputInfo from '../../children/MainCategoriesInputInfo';
 
 const complete = require('../../../../../../../assets/images/complete.png');
 const incomplete = require('../../../../../../../assets/images/incomplete.png');
-const mainIcon = require('../../../../../../../assets/icons/travellers.png');
+const mainIcon = require('../../../../../../../assets/icons/mainCategories.png');
 
 const MainCategoriesInputAnswerCard = ({
   mainCategories,
   onAnswerCardPress,
-  questionState,
+  status,
 }) => (
   <AnswerCard
     onAnswerCardPress={onAnswerCardPress}
     mainIcon={mainIcon}
-    status={questionState === 'complete' ? complete : incomplete}
+    status={status === 'complete' ? complete : incomplete}
   >
     <MainCategoriesInputInfo mainCategories={mainCategories} />
   </AnswerCard>

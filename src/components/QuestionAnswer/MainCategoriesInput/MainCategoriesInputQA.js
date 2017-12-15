@@ -29,7 +29,7 @@ class MainCategoriesInputContainer extends React.Component {
   getAnswerComponent() {
     const { settings } = this.props.qaState;
     const mainCategories = settings.get('mainCategories');
-    const status = mainCategories.isEmpty() ? 'incomplete' : 'complete';
+    const status = mainCategories.size ? 'complete' : 'incomplete';
     return (
       <MainCategoriesInputAnswerCard
         mainCategories={mainCategories}
