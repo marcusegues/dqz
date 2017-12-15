@@ -1,6 +1,10 @@
 // @flow
 
-import type { Category, Basket } from '../../model/types/basketPeopleTypes';
+import type {
+  Category,
+  Basket,
+  People,
+} from '../../model/types/basketPeopleTypes';
 import type {
   MainCategory,
   MainCategoriesType,
@@ -82,4 +86,9 @@ export type Action =
   | {
     type: 'DECLARATION_RESET_LARGE_AMOUNTS',
     category: Category,
+  }
+  | {
+    type: 'DECLARATION_SET_PEOPLE',
+    adults: number,
+    minors: number,
   };
