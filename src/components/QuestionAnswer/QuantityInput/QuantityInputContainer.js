@@ -3,10 +3,12 @@ import { View } from 'react-native';
 import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import ConfirmationCard from '../cards/ConfirmationCard/ConfirmationCard';
 import BasketInput from '../../BasketInput/BasketInput';
-import { getTotalPeople } from '../../../model/configurationApi';
+import {
+  getTotalPeople,
+  setQuantity,
+  getQuantity,
+} from '../../../model/configurationApi';
 import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
-import * as fromModelApi from '../../../model/configurationApi';
-import type { Basket, Category } from '../../../model/types/basketPeopleTypes';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
@@ -60,13 +62,13 @@ class QuantityInputContainer extends React.Component {
     );
   }
 
-  handleUpdate(category: Category, quantityChange: number) {
-    const basket = this.props.qaState.basket;
+  handleUpdate(category, quantityChange) {
+    const { basket } = this.props.qaState;
 
-    const updatedBasket = fromModelApi.setQuantity(
+    const updatedBasket = setQuantity(
       basket,
       category,
-      Math.max(0, fromModelApi.getQuantity(basket, category) + quantityChange)
+      Math.max(0, getQuantity(basket, category) + quantityChange)
     );
     return this.props.onUpdate(updatedBasket);
   }

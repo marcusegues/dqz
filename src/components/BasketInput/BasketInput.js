@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, Platform } from 'react-native';
+import { View, ScrollView, Platform } from 'react-native';
 import { getQuantity } from '../../model/configurationApi';
 import GoodInputRow from './subcomponents/GoodInputRow';
 import { moderateScale } from '../../styles/Scaling';

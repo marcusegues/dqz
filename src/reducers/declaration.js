@@ -49,6 +49,7 @@ const declaration = (
       );
     }
     case 'DECLARATION_SET_BASKET': {
+      // eslint-disable-next-line prefer-destructuring
       const basket: Basket = action.basket;
       return state.set('basket', basket);
     }
