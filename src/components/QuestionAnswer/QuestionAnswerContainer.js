@@ -49,28 +49,63 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
     };
   }
 
-  setQuestionStates() {
-    const main = this.state.settings.get('mainCategories');
+  setQuestionStates(justAnswered: questionType) {
+    // todo: put in own module with proper accessors
+    const { settings } = this.state;
+    const mainCategories = settings.get('mainCategories');
+    // do case analysis
+
+    const peopleInputState: questionState = 'collapsed';
+    let mainCategoriesState: questionState = 'collapsed';
+    let quantityInputState: questionState = 'collapsed';
+
+    switch (justAnswered) {
+      case 'peopleInput': {
+        if (!mainCategories.size) {
+          mainCategoriesState = 'expanded';
+          quantityInputState = 'hidden';
+        }
+        break;
+      }
+      case 'mainCategories': {
+        if (mainCategories.size) {
+          quantityInputState = 'expanded';
+        }
+        break;
+      }
+      default:
+    }
+
     this.setState({
       questionStates: {
-        peopleInput: 'collapsed',
-        mainCategories: 'collapsed',
-        quantityInput: main.size ? 'collapsed' : 'hidden',
+        peopleInput: peopleInputState,
+        mainCategories: mainCategoriesState,
+        quantityInput: quantityInputState,
       },
     });
   }
 
-  updateQA() {
-    this.setQuestionStates();
-    this.setState({});
+  collapseAllExistingExceptOne(expand: questionType) {
+    const { questionStates } = this.state;
+
+    const getQuestionState = (type: questionType) => {
+      if (questionStates[type] === 'hidden') {
+        return 'hidden';
+      }
+      return type === expand ? 'expanded' : 'collapsed';
+    };
+
+    this.setState({
+      questionStates: {
+        peopleInput: getQuestionState('peopleInput'),
+        mainCategories: getQuestionState('mainCategories'),
+        quantityInput: getQuestionState('quantityInput'),
+      },
+    });
   }
 
-  expandQuestion(question: questionType) {
-    const { questionStates } = this.state;
-    questionStates[question] = 'expanded';
-    this.setState({
-      questionStates,
-    });
+  updateQA(justAnswered: questionType) {
+    this.setQuestionStates(justAnswered);
   }
 
   render() {
@@ -85,7 +120,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
           <PeopleInputQA
             qaState={this.state}
             onAnswerCardPress={() => {
-              this.expandQuestion('peopleInput');
+              this.collapseAllExistingExceptOne('peopleInput');
             }}
             questionState={peopleInput}
             onUpdate={people => {
@@ -93,7 +128,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
             }}
             onAnswer={() => {
               this.props.onDeclarationSetPeople(this.state.people);
-              this.updateQA();
+              this.updateQA('peopleInput');
             }}
           />
         ),
@@ -104,7 +139,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
           <MainCategoriesInputQA
             qaState={this.state}
             onAnswerCardPress={() => {
-              this.expandQuestion('mainCategories');
+              this.collapseAllExistingExceptOne('mainCategories');
             }}
             questionState={mainCategories}
             onUpdate={activeCategories => {
@@ -119,7 +154,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
               this.props.onDeclarationSetMainCategories(
                 this.state.settings.get('mainCategories')
               );
-              this.updateQA();
+              this.updateQA('mainCategories');
             }}
           />
         ),
@@ -130,7 +165,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
           <QuantityInputQA
             qaState={this.state}
             onAnswerCardPress={() => {
-              this.expandQuestion('quantityInput');
+              this.collapseAllExistingExceptOne('quantityInput');
             }}
             questionState={quantityInput}
             onUpdate={basket => {
@@ -140,7 +175,7 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
             }}
             onAnswer={() => {
               this.props.onDeclarationSetBasket(this.state.basket);
-              this.updateQA();
+              this.updateQA('quantityInput');
             }}
           />
         ),
