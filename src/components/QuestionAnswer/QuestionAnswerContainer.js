@@ -42,10 +42,10 @@ export type QAState = {
 
 export type cardProps = {
   qaState: QAState,
-  onAnswerCardPress: any,
+  onAnswerCardPress: any, // TODO
   questionState: questionState,
-  onUpdate: any,
-  onAnswer: any,
+  onUpdate: any, // TODO
+  onAnswer: any, // TODO
 };
 
 // TODO: flowtype the props
