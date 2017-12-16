@@ -123,7 +123,7 @@ type Settings = {
   initList: InitListType,
 };
 
-const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
+export const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
   overAllowance: 'notAnswered',
   largeAmountPresent: 'notAnswered',
   largeAmountsEntered: 'notAnswered',

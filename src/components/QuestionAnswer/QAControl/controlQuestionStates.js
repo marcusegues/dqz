@@ -11,8 +11,9 @@ const setQuestionState = (
   questionStates: { [questionType]: questionState }
 ): QAState => Object.assign({}, qaState, { questionStates });
 
-export const setInitStates = (qaState: QAState, props: any): QAState => {
-  const main = props.settings.get('mainCategories');
+export const setInitStates = (qaState: QAState): QAState => {
+  const { settings } = qaState;
+  const main = settings.get('mainCategories');
   return setQuestionState(qaState, {
     peopleInput: main.size ? 'collapsed' : 'expanded',
     mainCategories: main.size ? 'collapsed' : 'hidden',
@@ -24,7 +25,6 @@ export const setQuestionStates = (
   justAnswered: questionType,
   qaState: QAState
 ): QAState => {
-  // todo: put in own module with proper accessors
   const { settings } = qaState;
   const mainCategories = settings.get('mainCategories');
   // do case analysis

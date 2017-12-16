@@ -61,7 +61,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
   }
 
   initState() {
-    this.setState(setInitStates(this.state, this.props));
+    this.setState(setInitStates(this.state));
   }
 
   updateQA(justAnswered: questionType) {
