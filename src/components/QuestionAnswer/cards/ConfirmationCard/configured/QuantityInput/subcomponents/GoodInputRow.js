@@ -95,50 +95,6 @@ const GoodInputRow = ({
         </View>
       </View>
     </View>
-
-    <TouchableOpacity
-      onPress={() => onBasketChangeQuantity(category, -10)}
-      style={ownStyles.touchable}
-    >
-      <Entypo
-        name="circle-with-minus"
-        size={moderateScale(50)}
-        color={quantity ? colors.MAIN_RED : 'lightgray'}
-      />
-    </TouchableOpacity>
-
-    <TouchableOpacity
-      onPress={() => onBasketChangeQuantity(category, -1)}
-      style={ownStyles.touchable}
-    >
-      <Entypo
-        name="circle-with-minus"
-        size={moderateScale(30)}
-        color={quantity ? colors.MAIN_RED : 'lightgray'}
-      />
-    </TouchableOpacity>
-
-    <TouchableOpacity
-      onPress={() => onBasketChangeQuantity(category, 1)}
-      style={ownStyles.touchable}
-    >
-      <Entypo
-        name="circle-with-plus"
-        size={moderateScale(30)}
-        color={colors.MAIN_RED}
-      />
-    </TouchableOpacity>
-
-    <TouchableOpacity
-      onPress={() => onBasketChangeQuantity(category, 10)}
-      style={ownStyles.touchable}
-    >
-      <Entypo
-        name="circle-with-plus"
-        size={moderateScale(50)}
-        color={colors.MAIN_RED}
-      />
-    </TouchableOpacity>
   </View>
 );
 
