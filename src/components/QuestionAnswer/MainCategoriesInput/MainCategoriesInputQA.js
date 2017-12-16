@@ -1,74 +1,64 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View } from 'react-native';
 import MainCategoriesInputConfirmationCard from '../cards/ConfirmationCard/configured/MainCategoriesInput/MainCategoriesInputConfirmationCard';
 import MainCategoriesInputAnswerCard from '../cards/AnswerCard/configured/MainCategoriesInput/MainCategoriesInputAnswerCard';
 
-class MainCategoriesInputContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleAnswer = this.handleAnswer.bind(this);
-    this.getQuestionComponent = this.getQuestionComponent.bind(this);
-    this.getAnswerComponent = this.getAnswerComponent.bind(this);
-  }
+// todo: flowtype props
+const MainCategoriesInputContainer = (props: any) => {
+  const handleUpdate = mainCategories => {
+    props.onUpdate(mainCategories);
+  };
 
-  getQuestionComponent() {
-    const mainCategories = this.props.qaState.settings.get('mainCategories');
-    return (
-      <MainCategoriesInputConfirmationCard
-        mainCategories={mainCategories}
-        onToggleMainCategory={mainCategory => {
-          const newMainCategories = this.handleToggleMainCategory(mainCategory);
-          this.handleUpdate(newMainCategories);
-        }}
-        onAnswer={this.props.onAnswer}
-        text="Welche Art Waren führen Sie mit sich?"
-      />
-    );
-  }
-
-  getAnswerComponent() {
-    const { settings } = this.props.qaState;
-    const mainCategories = settings.get('mainCategories');
-    const status = mainCategories.size ? 'complete' : 'incomplete';
-    return (
-      <MainCategoriesInputAnswerCard
-        mainCategories={mainCategories}
-        onAnswerCardPress={this.props.onAnswerCardPress}
-        status={status}
-      />
-    );
-  }
-
-  handleUpdate(mainCategories) {
-    this.props.onUpdate(mainCategories);
-  }
-
-  handleToggleMainCategory(mainCategory) {
-    const { settings } = this.props.qaState;
+  const handleToggleMainCategory = mainCategory => {
+    const { settings } = props.qaState;
     const mainCategories = settings.get('mainCategories');
     if (mainCategories.has(mainCategory)) {
       return mainCategories.delete(mainCategory);
     }
     return mainCategories.add(mainCategory);
-  }
+  };
 
-  handleAnswer() {
-    this.props.onAnswer();
-  }
+  const getQuestionComponent = () => {
+    const mainCategories = props.qaState.settings.get('mainCategories');
+    return (
+      <MainCategoriesInputConfirmationCard
+        mainCategories={mainCategories}
+        onToggleMainCategory={mainCategory => {
+          const newMainCategories = handleToggleMainCategory(mainCategory);
+          handleUpdate(newMainCategories);
+        }}
+        onAnswer={props.onAnswer}
+        text="Welche Art Waren führen Sie mit sich?"
+      />
+    );
+  };
 
-  render() {
-    switch (this.props.questionState) {
-      case 'expanded': {
-        return this.getQuestionComponent();
-      }
-      case 'collapsed': {
-        return this.getAnswerComponent();
-      }
-      default: {
-        return <View />;
-      }
+  const getAnswerComponent = () => {
+    const { settings } = props.qaState;
+    const mainCategories = settings.get('mainCategories');
+    const status = mainCategories.size ? 'complete' : 'incomplete';
+    return (
+      <MainCategoriesInputAnswerCard
+        mainCategories={mainCategories}
+        onAnswerCardPress={props.onAnswerCardPress}
+        status={status}
+      />
+    );
+  };
+
+  switch (props.questionState) {
+    case 'expanded': {
+      return getQuestionComponent();
+    }
+    case 'collapsed': {
+      return getAnswerComponent();
+    }
+    default: {
+      return <View />;
     }
   }
-}
+};
 
 export default MainCategoriesInputContainer;
