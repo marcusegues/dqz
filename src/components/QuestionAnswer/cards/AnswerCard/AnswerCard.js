@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
 const AnswerCard = ({ mainIcon, status, children, onAnswerCardPress }) => (
   <Touchable
     style={{
-      width: '95%',
+      width: '100%',
       marginTop: 4,
       marginBottom: 4,
     }}

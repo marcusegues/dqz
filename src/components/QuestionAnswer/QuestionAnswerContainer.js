@@ -31,7 +31,7 @@ type State = {
   settings: SettingsType,
 };
 
-class QuestionAnswerContainer2 extends React.Component<any, State> {
+class QuestionAnswerContainer extends React.Component<any, State> {
   constructor(props) {
     super(props);
 
@@ -67,7 +67,6 @@ class QuestionAnswerContainer2 extends React.Component<any, State> {
     const { settings } = this.state;
     const mainCategories = settings.get('mainCategories');
     // do case analysis
-
     const peopleInputState: questionState = 'collapsed';
     let mainCategoriesState: questionState = 'collapsed';
     let quantityInputState: questionState = 'collapsed';
@@ -272,5 +271,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  QuestionAnswerContainer2
+  QuestionAnswerContainer
 );

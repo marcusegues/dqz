@@ -11,10 +11,8 @@ const ownStyles = {
     alignItems: 'center',
     marginTop: verticalScale(16),
     marginBottom: verticalScale(16),
-    marginLeft: 15,
-    marginRight: 15,
     backgroundColor: '#fff',
-    width: '95%',
+    width: '100%',
     borderRadius: 2,
     borderColor: '#ddd',
     ...Platform.select({
