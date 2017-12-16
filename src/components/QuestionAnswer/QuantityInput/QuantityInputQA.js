@@ -1,13 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
 import AnswerCard from '../cards/AnswerCard/AnswerCard';
-import ConfirmationCard from '../cards/ConfirmationCard/ConfirmationCard';
-import BasketInput from '../../BasketInput/BasketInput';
-import {
-  getTotalPeople,
-  setQuantity,
-  getQuantity,
-} from '../../../model/configurationApi';
+import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
+import { setQuantity, getQuantity } from '../../../model/configurationApi';
 import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
 
 const complete = require('../../../../assets/images/complete.png');
@@ -32,19 +27,13 @@ class QuantityInputContainer extends React.Component {
   }
 
   getQuestionComponent() {
-    const { people } = this.props.qaState;
     return (
-      <ConfirmationCard
-        text="Mengeneingabe"
+      <QuantityInputConfirmationCard
         onAnswer={this.props.onAnswer}
-        confirmationDisabled={!getTotalPeople(people)}
-      >
-        <BasketInput
-          categoriesByMainCategory={this.getDisplayedCategoriesByMainCategory()}
-          basket={this.props.qaState.basket}
-          onBasketChangeQuantity={this.handleUpdate}
-        />
-      </ConfirmationCard>
+        categoriesByMainCategory={this.getDisplayedCategoriesByMainCategory()}
+        basket={this.props.qaState.basket}
+        onBasketChangeQuantity={this.handleUpdate}
+      />
     );
   }
 
