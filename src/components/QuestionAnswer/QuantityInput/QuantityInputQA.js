@@ -7,13 +7,13 @@ import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/
 import { setQuantity, getQuantity } from '../../../model/configurationApi';
 import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
+import type { cardProps } from '../QuestionAnswerContainer';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
 const mainIcon = require('../../../../assets/icons/mainCategories.png');
 
-// todo: flowtype props
-const QuantityInputContainer = (props: any) => {
+const QuantityInputContainer = (props: cardProps) => {
   const handleUpdate = (category: Category, quantityChange: number) => {
     const { basket } = props.qaState;
 

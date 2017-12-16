@@ -4,9 +4,9 @@ import React from 'react';
 import { View } from 'react-native';
 import MainCategoriesInputConfirmationCard from '../cards/ConfirmationCard/configured/MainCategoriesInput/MainCategoriesInputConfirmationCard';
 import MainCategoriesInputAnswerCard from '../cards/AnswerCard/configured/MainCategoriesInput/MainCategoriesInputAnswerCard';
+import type { cardProps } from '../QuestionAnswerContainer';
 
-// todo: flowtype props
-const MainCategoriesInputContainer = (props: any) => {
+const MainCategoriesInputContainer = (props: cardProps) => {
   const handleUpdate = mainCategories => {
     props.onUpdate(mainCategories);
   };

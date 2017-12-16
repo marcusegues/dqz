@@ -40,6 +40,14 @@ export type QAState = {
   settings: SettingsType,
 };
 
+export type cardProps = {
+  qaState: QAState,
+  onAnswerCardPress: any,
+  questionState: questionState,
+  onUpdate: any,
+  onAnswer: any,
+};
+
 // TODO: flowtype the props
 class QuestionAnswerContainer extends React.Component<any, QAState> {
   constructor(props) {

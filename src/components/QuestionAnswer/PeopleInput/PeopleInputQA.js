@@ -11,9 +11,9 @@ import {
   subtractMinor,
 } from '../../../model/configurationApi';
 import type { People } from '../../../model/types/basketPeopleTypes';
+import type { cardProps } from '../QuestionAnswerContainer';
 
-// todo: flowtype props
-const PeopleInputQA = (props: any) => {
+const PeopleInputQA = (props: cardProps) => {
   const handleUpdate = (people: People) => {
     props.onUpdate(people);
   };
@@ -28,7 +28,6 @@ const PeopleInputQA = (props: any) => {
         onSubtractAdult={() => handleUpdate(subtractAdult(people))}
         onAddMinor={() => handleUpdate(addMinor(people))}
         onSubtractMinor={() => handleUpdate(subtractMinor(people))}
-        text={props.text}
       />
     );
   };
