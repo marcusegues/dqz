@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, ScrollView, Platform } from 'react-native';
-import { getQuantity } from '../../model/configurationApi';
+import { getQuantity } from '../../../../../../model/configurationApi';
 import GoodInputRow from './subcomponents/GoodInputRow';
-import { moderateScale } from '../../styles/Scaling';
+import { moderateScale } from '../../../../../../styles/Scaling';
 
 const ownStyles = {
   mainContainer: {

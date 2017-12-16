@@ -12,7 +12,6 @@ import Logo from '../components/Headers/subcomponents/Logo';
 import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
 import InfoIcon from '../components/Headers/subcomponents/InfoIcon';
 import MainMenuHeaderRight from '../components/Headers/subcomponents/MainMenuHeaderRight';
-import BasketInputContainer from '../components/BasketInput/BasketInputContainer';
 import MainMenu from '../screens/MainMenu/MainMenu';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
@@ -61,9 +60,7 @@ const RootStackNavigator = StackNavigator(
         },
       }),
     },
-    BasketInput: {
-      screen: BasketInputContainer,
-    },
+
     UnderConstruction: {
       screen: UnderConstruction,
       navigationOptions: () => ({

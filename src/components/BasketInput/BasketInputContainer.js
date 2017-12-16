@@ -8,7 +8,7 @@ import {
   getDeclarationMainCategories,
 } from '../../reducers';
 import { MainCategoriesToCategories } from '../../types/reducers/declaration';
-import BasketInput from './BasketInput';
+import BasketInput from '../QuestionAnswer/cards/ConfirmationCard/configured/QuantityInput/QuantityInput';
 
 class BasketInputContainer extends React.Component {
   constructor(props) {

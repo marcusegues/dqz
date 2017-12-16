@@ -1,6 +1,6 @@
 import React from 'react';
 import ConfirmationCard from '../../ConfirmationCard';
-import BasketInput from '../../../../../BasketInput/BasketInput';
+import QuantityInput from './QuantityInput';
 const QuantityInputConfirmationCard = ({
   basket,
   onAnswer,
@@ -8,7 +8,7 @@ const QuantityInputConfirmationCard = ({
   categoriesByMainCategory,
 }) => (
   <ConfirmationCard text="Mengeneingabe" onAnswer={onAnswer}>
-    <BasketInput
+    <QuantityInput
       categoriesByMainCategory={categoriesByMainCategory}
       basket={basket}
       onBasketChangeQuantity={onBasketChangeQuantity}

@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-import { CategoriesInfo } from '../../../model/constants';
-import { moderateScale } from '../../../styles/Scaling';
-import * as colors from '../../../styles/colors';
+import { CategoriesInfo } from '../../../../../../../model/constants';
+import { moderateScale } from '../../../../../../../styles/Scaling';
+import * as colors from '../../../../../../../styles/colors';
 
 const ownStyles = {
   container: {
