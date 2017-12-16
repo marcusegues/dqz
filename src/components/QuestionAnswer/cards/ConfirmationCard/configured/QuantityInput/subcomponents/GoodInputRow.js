@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import Touchable from 'react-native-platform-touchable';
+import { View, Text } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { CategoriesInfo } from '../../../../../../../model/constants';
 import { moderateScale } from '../../../../../../../styles/Scaling';
@@ -94,6 +95,15 @@ const GoodInputRow = ({
           } ${CategoriesInfo.get(category).get('unit')}`}</Text>
         </View>
       </View>
+    </View>
+    <View>
+      <Touchable onPress={() => onBasketChangeQuantity(category, 10)}>
+        <Entypo
+          name="chevron-right"
+          size={moderateScale(32)}
+          color={colors.MAIN_RED}
+        />
+      </Touchable>
     </View>
   </View>
 );

@@ -1,6 +1,7 @@
 import React from 'react';
 import ConfirmationCard from '../../ConfirmationCard';
 import QuantityInput from './QuantityInput';
+
 const QuantityInputConfirmationCard = ({
   basket,
   onAnswer,
