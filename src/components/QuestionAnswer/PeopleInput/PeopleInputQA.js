@@ -1,4 +1,6 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View } from 'react-native';
 import PeopleInputAnswerCard from '../cards/AnswerCard/configured/PeopleInput/PeopleInputAnswerCard';
 import PeopleInputConfirmationCard from '../cards/ConfirmationCard/configured/PeopleInput/PeopleInputConfirmationCard';
@@ -8,55 +10,47 @@ import {
   subtractAdult,
   subtractMinor,
 } from '../../../model/configurationApi';
+import type { People } from '../../../model/types/basketPeopleTypes';
 
-class PeopleInputQA extends React.Component {
-  constructor(props) {
-    super(props);
-    this.getQuestionComponent = this.getQuestionComponent.bind(this);
-    this.getAnswerComponent = this.getAnswerComponent.bind(this);
-  }
+// todo: flowtype props
+const PeopleInputQA = (props: any) => {
+  const handleUpdate = (people: People) => {
+    props.onUpdate(people);
+  };
 
-  getQuestionComponent() {
-    const { people } = this.props.qaState;
+  const getQuestionComponent = () => {
+    const { people } = props.qaState;
     return (
       <PeopleInputConfirmationCard
         people={people}
-        onAnswer={this.props.onAnswer}
-        onAddAdult={() => this.handleUpdate(addAdult(people))}
-        onSubtractAdult={() => this.handleUpdate(subtractAdult(people))}
-        onAddMinor={() => this.handleUpdate(addMinor(people))}
-        onSubtractMinor={() => this.handleUpdate(subtractMinor(people))}
-        text={this.props.text}
+        onAnswer={props.onAnswer}
+        onAddAdult={() => handleUpdate(addAdult(people))}
+        onSubtractAdult={() => handleUpdate(subtractAdult(people))}
+        onAddMinor={() => handleUpdate(addMinor(people))}
+        onSubtractMinor={() => handleUpdate(subtractMinor(people))}
+        text={props.text}
       />
     );
-  }
+  };
 
-  getAnswerComponent() {
-    return (
-      <PeopleInputAnswerCard
-        people={this.props.qaState.people}
-        onAnswerCardPress={this.props.onAnswerCardPress}
-      />
-    );
-  }
+  const getAnswerComponent = () => (
+    <PeopleInputAnswerCard
+      people={props.qaState.people}
+      onAnswerCardPress={props.onAnswerCardPress}
+    />
+  );
 
-  handleUpdate(people) {
-    this.props.onUpdate(people);
-  }
-
-  render() {
-    switch (this.props.questionState) {
-      case 'expanded': {
-        return this.getQuestionComponent();
-      }
-      case 'collapsed': {
-        return this.getAnswerComponent();
-      }
-      default: {
-        return <View />;
-      }
+  switch (props.questionState) {
+    case 'expanded': {
+      return getQuestionComponent();
+    }
+    case 'collapsed': {
+      return getAnswerComponent();
+    }
+    default: {
+      return <View />;
     }
   }
-}
+};
 
 export default PeopleInputQA;

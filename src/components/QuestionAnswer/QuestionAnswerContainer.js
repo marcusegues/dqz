@@ -40,6 +40,7 @@ export type QAState = {
   settings: SettingsType,
 };
 
+// TODO: flowtype the props
 class QuestionAnswerContainer extends React.Component<any, QAState> {
   constructor(props) {
     super(props);
