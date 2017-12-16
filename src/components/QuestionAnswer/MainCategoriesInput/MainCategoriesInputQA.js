@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import MainCategoriesInput from '../cards/ConfirmationCard/configured/MainCategoriesInput/MainCategoriesInputConfirmationCard';
+import MainCategoriesInputConfirmationCard from '../cards/ConfirmationCard/configured/MainCategoriesInput/MainCategoriesInputConfirmationCard';
 import MainCategoriesInputAnswerCard from '../cards/AnswerCard/configured/MainCategoriesInput/MainCategoriesInputAnswerCard';
 
 class MainCategoriesInputContainer extends React.Component {
@@ -14,7 +14,7 @@ class MainCategoriesInputContainer extends React.Component {
   getQuestionComponent() {
     const mainCategories = this.props.qaState.settings.get('mainCategories');
     return (
-      <MainCategoriesInput
+      <MainCategoriesInputConfirmationCard
         mainCategories={mainCategories}
         onToggleMainCategory={mainCategory => {
           const newMainCategories = this.handleToggleMainCategory(mainCategory);
