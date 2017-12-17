@@ -56,8 +56,6 @@ export type cardProps = {
 class QuestionAnswerContainer extends React.Component<any, QAState> {
   constructor(props) {
     super(props);
-    (this: any).showQuantityInputModal = this.showQuantityInputModal.bind(this);
-    (this: any).hideQuantityInputModal = this.hideQuantityInputModal.bind(this);
     this.state = {
       quantityModalAnim: new Animated.Value(height), // Initial value for position top: screen height
       basket: this.props.basket,
@@ -179,7 +177,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
               this.props.onDeclarationSetBasket(this.state.basket);
               this.updateQA('quantityInput');
             }}
-            onShowQuantityInputModal={this.showQuantityInputModal}
+            onShowQuantityInputModal={() => this.showQuantityInputModal()}
           />
         ),
       },
@@ -229,7 +227,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         )}
         <GoodQuantityListModal
           positionTop={this.state.quantityModalAnim}
-          onHideModal={this.hideQuantityInputModal}
+          onHideModal={() => this.hideQuantityInputModal()}
         />
       </View>
     );
