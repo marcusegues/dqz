@@ -1,13 +1,22 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Animated, Dimensions, View } from 'react-native';
+import {
+  Animated,
+  Dimensions,
+  View,
+  Modal,
+  Text,
+  Platform,
+} from 'react-native';
+import Touchable from 'react-native-platform-touchable';
 import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
-import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
+import GoodQuantityListModal from '../../Modals/GoodQuantityListModal2/GoodQuantityListModal2';
 import { setQuantity, getQuantity } from '../../../model/configurationApi';
 import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
+import { verticalScale } from '../../../styles/Scaling';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
@@ -20,6 +29,7 @@ class QuantityInputQA extends React.Component {
     super(props);
     this.state = {
       quantityModalAnim: new Animated.Value(height), // Initial value for position top: screen height
+      modalVisible: false,
     };
   }
 
@@ -44,15 +54,15 @@ class QuantityInputQA extends React.Component {
     return (
       <View>
         <QuantityInputConfirmationCard
-          onShowQuantityInputModal={() => this.showQuantityInputModal()}
+          onShowQuantityInputModal={() => this.showModal()}
           onAnswer={this.props.onAnswer}
           categoriesByMainCategory={this.getDisplayedCategoriesByMainCategory()}
           basket={this.props.qaState.basket}
           onBasketChangeQuantity={this.handleUpdate}
         />
         <GoodQuantityListModal
-          positionTop={this.state.quantityModalAnim}
-          onHideModal={() => this.hideQuantityInputModal()}
+          modalVisible={this.state.modalVisible}
+          onHide={() => this.hideModal()}
         />
       </View>
     );
@@ -72,11 +82,19 @@ class QuantityInputQA extends React.Component {
     );
   }
 
+  showModal() {
+    this.setState({ modalVisible: true });
+  }
+
+  hideModal() {
+    this.setState({ modalVisible: false });
+  }
+
   showQuantityInputModal() {
     Animated.spring(
       this.state.quantityModalAnim, // The animated value to drive
       {
-        toValue: 0, // Animate to position top: 0
+        toValue: -100, // Animate to position top: 0
         speed: 20,
         bounciness: 0,
       }
