@@ -2,7 +2,7 @@ import React from 'react';
 import { Platform, View } from 'react-native';
 import { verticalScale } from '../../styles/Scaling';
 
-const Card = ({ children }) => (
+const ModalCard = ({ children }) => (
   <View
     style={{
       flex: 1,
@@ -31,4 +31,4 @@ const Card = ({ children }) => (
   </View>
 );
 
-export default Card;
+export default ModalCard;
