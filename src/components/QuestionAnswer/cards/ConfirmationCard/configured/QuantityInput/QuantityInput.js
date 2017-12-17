@@ -42,7 +42,7 @@ const ownStyles = {
   },
 };
 
-const BasketInput = ({
+const QuantityInput = ({
   onShowQuantityInputModal,
   basket,
   categoriesByMainCategory,
@@ -86,4 +86,4 @@ const BasketInput = ({
   );
 };
 
-export default BasketInput;
+export default QuantityInput;
