@@ -13,7 +13,7 @@ const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
 const mainIcon = require('../../../../assets/icons/mainCategories.png');
 
-const QuantityInputContainer = (props: cardProps) => {
+const QuantityInputContainer = (props: any) => {
   const handleUpdate = (category: Category, quantityChange: number) => {
     const { basket } = props.qaState;
 
@@ -32,6 +32,7 @@ const QuantityInputContainer = (props: cardProps) => {
 
   const getQuestionComponent = () => (
     <QuantityInputConfirmationCard
+      onShowQuantityInputModal={props.onShowQuantityInputModal}
       onAnswer={props.onAnswer}
       categoriesByMainCategory={getDisplayedCategoriesByMainCategory()}
       basket={props.qaState.basket}

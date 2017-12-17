@@ -13,6 +13,7 @@ import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
 import InfoIcon from '../components/Headers/subcomponents/InfoIcon';
 import MainMenuHeaderRight from '../components/Headers/subcomponents/MainMenuHeaderRight';
 import MainMenu from '../screens/MainMenu/MainMenu';
+import GoodQuantityInput from '../components/QuestionAnswer/QuantityInput/GoodQuantityListModal';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
@@ -47,7 +48,9 @@ const RootStackNavigator = StackNavigator(
         header: null,
       }),
     },
-
+    GoodQuantityInput: {
+      screen: GoodQuantityInput,
+    },
     MainMenu: {
       screen: MainMenu,
       navigationOptions: ({ navigationOptions, navigation }) => ({
@@ -77,7 +80,7 @@ const RootStackNavigator = StackNavigator(
   {
     navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-    initialRouteName: 'OnBoarding',
+    initialRouteName: 'QuestionAnswer',
   }
 );
 

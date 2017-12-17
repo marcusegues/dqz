@@ -75,9 +75,10 @@ const ownStyles = {
 };
 
 const GoodInputRow = ({
+  onShowQuantityInputModal,
   category,
+  basket,
   quantity,
-  onBasketChangeQuantity,
   mainCategory,
 }) => (
   <View style={ownStyles.container}>
@@ -97,7 +98,7 @@ const GoodInputRow = ({
       </View>
     </View>
     <View>
-      <Touchable onPress={() => onBasketChangeQuantity(category, 10)}>
+      <Touchable onPress={onShowQuantityInputModal}>
         <Entypo
           name="chevron-right"
           size={moderateScale(32)}

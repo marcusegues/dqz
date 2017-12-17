@@ -43,6 +43,7 @@ const ownStyles = {
 };
 
 const BasketInput = ({
+  onShowQuantityInputModal,
   basket,
   categoriesByMainCategory,
   onBasketChangeQuantity,
@@ -52,9 +53,11 @@ const BasketInput = ({
     .map(([mainCategory, categories]) => {
       const subcomponents = categories.map(category => (
         <GoodInputRow
+          onShowQuantityInputModal={onShowQuantityInputModal}
           key={category}
           category={category}
           quantity={getQuantity(basket, category)}
+          basket={basket}
           onBasketChangeQuantity={onBasketChangeQuantity}
           mainCategory={mainCategory}
         />
