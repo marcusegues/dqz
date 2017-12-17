@@ -5,14 +5,14 @@ import ModalCard from '../ModalCard';
 import AppModal from '../AppModal';
 
 const GoodQuantityListModal = ({ modalVisible, onHide }) => (
-    <AppModal modalVisible={modalVisible}>
-      <ModalCard>
-        <Text>Text</Text>
-        <Touchable onPress={onHide}>
-          <Text>Hide</Text>
-        </Touchable>
-      </ModalCard>
-    </AppModal>
-  );
+  <AppModal modalVisible={modalVisible}>
+    <ModalCard>
+      <Text>Text</Text>
+      <Touchable onPress={onHide}>
+        <Text>Hide</Text>
+      </Touchable>
+    </ModalCard>
+  </AppModal>
+);
 
 export default GoodQuantityListModal;

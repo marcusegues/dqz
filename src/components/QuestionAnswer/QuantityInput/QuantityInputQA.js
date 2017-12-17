@@ -18,7 +18,7 @@ export type State = {
 };
 
 class QuantityInputQA extends React.Component<any, State> {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       modalVisible: false,
