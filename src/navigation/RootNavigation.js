@@ -3,8 +3,6 @@ import { Notifications } from 'expo';
 import { translate } from 'react-i18next';
 import { StackNavigator } from 'react-navigation';
 import i18n from '../i18n';
-import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
-import PeopleInputContainer from '../components/QuestionAnswer/cards/ConfirmationCard/PeopleInput/PeopleInputContainer';
 import OnBoarding from '../screens/OnBoarding/OnBoarding';
 import ScreensView from '../screens/ScreensView/ScreensView';
 import { MAIN_RED, MAIN_BACKGROUND_COLOR } from '../styles/colors';
@@ -14,11 +12,11 @@ import Logo from '../components/Headers/subcomponents/Logo';
 import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
 import InfoIcon from '../components/Headers/subcomponents/InfoIcon';
 import MainMenuHeaderRight from '../components/Headers/subcomponents/MainMenuHeaderRight';
-import BasketInputContainer from '../components/BasketInput/BasketInputContainer';
 import MainMenu from '../screens/MainMenu/MainMenu';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
+import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
 import UnderConstructionWithSums from './underConstructionWithSums';
 
 const RootStackNavigator = StackNavigator(
@@ -40,7 +38,7 @@ const RootStackNavigator = StackNavigator(
     QuestionAnswer: {
       screen: QuestionAnswerContainer,
       navigationOptions: () => ({
-        headerTitle: <HeaderTitle text="Waren deklarieren" />,
+        headerTitle: <HeaderTitle text="Waren deklarieren - 2" />,
       }),
     },
     OnBoarding: {
@@ -62,12 +60,7 @@ const RootStackNavigator = StackNavigator(
         },
       }),
     },
-    PeopleInput: {
-      screen: PeopleInputContainer,
-    },
-    BasketInput: {
-      screen: BasketInputContainer,
-    },
+
     UnderConstruction: {
       screen: UnderConstruction,
       navigationOptions: () => ({

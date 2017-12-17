@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import Touchable from 'react-native-platform-touchable';
+import { View, Text } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-import { CategoriesInfo } from '../../../model/constants';
-import { moderateScale } from '../../../styles/Scaling';
-import * as colors from '../../../styles/colors';
+import { CategoriesInfo } from '../../../../../../../model/constants';
+import { moderateScale } from '../../../../../../../styles/Scaling';
+import * as colors from '../../../../../../../styles/colors';
 
 const ownStyles = {
   container: {
@@ -76,7 +77,7 @@ const ownStyles = {
 const GoodInputRow = ({
   category,
   quantity,
-  onDeclarationBasketChangeQuantity,
+  onBasketChangeQuantity,
   mainCategory,
 }) => (
   <View style={ownStyles.container}>
@@ -95,50 +96,15 @@ const GoodInputRow = ({
         </View>
       </View>
     </View>
-
-    <TouchableOpacity
-      onPress={() => onDeclarationBasketChangeQuantity(category, -10)}
-      style={ownStyles.touchable}
-    >
-      <Entypo
-        name="circle-with-minus"
-        size={moderateScale(50)}
-        color={quantity ? colors.MAIN_RED : 'lightgray'}
-      />
-    </TouchableOpacity>
-
-    <TouchableOpacity
-      onPress={() => onDeclarationBasketChangeQuantity(category, -1)}
-      style={ownStyles.touchable}
-    >
-      <Entypo
-        name="circle-with-minus"
-        size={moderateScale(30)}
-        color={quantity ? colors.MAIN_RED : 'lightgray'}
-      />
-    </TouchableOpacity>
-
-    <TouchableOpacity
-      onPress={() => onDeclarationBasketChangeQuantity(category, 1)}
-      style={ownStyles.touchable}
-    >
-      <Entypo
-        name="circle-with-plus"
-        size={moderateScale(30)}
-        color={colors.MAIN_RED}
-      />
-    </TouchableOpacity>
-
-    <TouchableOpacity
-      onPress={() => onDeclarationBasketChangeQuantity(category, 10)}
-      style={ownStyles.touchable}
-    >
-      <Entypo
-        name="circle-with-plus"
-        size={moderateScale(50)}
-        color={colors.MAIN_RED}
-      />
-    </TouchableOpacity>
+    <View>
+      <Touchable onPress={() => onBasketChangeQuantity(category, 10)}>
+        <Entypo
+          name="chevron-right"
+          size={moderateScale(32)}
+          color={colors.MAIN_RED}
+        />
+      </Touchable>
+    </View>
   </View>
 );
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import ConfirmationCard from '../cards/ConfirmationCard/ConfirmationCard';
-import MainCategoriesCheckList from '../cards/ConfirmationCard/children/MainCategoriesCheckList/MainCategoriesCheckList';
+import ConfirmationCard from '../../ConfirmationCard';
+import MainCategoriesCheckList from '../../children/MainCategoriesCheckList/MainCategoriesCheckList';
 
-const MainCategoriesInput = ({
+const MainCategoriesInputConfirmationCard = ({
   mainCategories,
   onToggleMainCategory,
   onAnswer,
@@ -20,4 +20,4 @@ const MainCategoriesInput = ({
   </ConfirmationCard>
 );
 
-export default MainCategoriesInput;
+export default MainCategoriesInputConfirmationCard;

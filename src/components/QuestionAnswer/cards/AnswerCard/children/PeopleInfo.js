@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import {
   getAdultPeople,
   getMinorPeople,
-} from '../../../model/configurationApi';
+} from '../../../../../model/configurationApi';
 
 const PeopleInfo = ({ people }) => {
   const adults = getAdultPeople(people);

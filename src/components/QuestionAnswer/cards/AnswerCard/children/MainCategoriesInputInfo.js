@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 class MainCategoriesInputInfo extends React.Component {
   getText() {
     const { mainCategories } = this.props;
-    if (mainCategories.isEmpty() || mainCategories === 'notAnswered') {
+    if (mainCategories === 'notAnswered' || mainCategories.isEmpty()) {
       return <Text>Warenkategorien - muss noch beantwortet werden</Text>;
     }
     return (

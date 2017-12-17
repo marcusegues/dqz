@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, ScrollView, Platform } from 'react-native';
-import { getQuantity } from '../../model/configurationApi';
+import { View, ScrollView, Platform } from 'react-native';
+import { getQuantity } from '../../../../../../model/configurationApi';
 import GoodInputRow from './subcomponents/GoodInputRow';
-import { moderateScale } from '../../styles/Scaling';
+import { moderateScale } from '../../../../../../styles/Scaling';
 
 const ownStyles = {
   mainContainer: {
@@ -45,7 +45,7 @@ const ownStyles = {
 const BasketInput = ({
   basket,
   categoriesByMainCategory,
-  onDeclarationBasketChangeQuantity,
+  onBasketChangeQuantity,
 }) => {
   const components = categoriesByMainCategory
     .entrySeq()
@@ -55,7 +55,7 @@ const BasketInput = ({
           key={category}
           category={category}
           quantity={getQuantity(basket, category)}
-          onDeclarationBasketChangeQuantity={onDeclarationBasketChangeQuantity}
+          onBasketChangeQuantity={onBasketChangeQuantity}
           mainCategory={mainCategory}
         />
       ));
@@ -68,11 +68,15 @@ const BasketInput = ({
     });
 
   return (
-    <View style={{ flex: 1 }}>
+    <View
+      style={{
+        flex: 1,
+        height: '100%',
+        width: '100%',
+        flexDirection: 'column',
+      }}
+    >
       <ScrollView contentContainerStyle={ownStyles.scrollView}>
-        <Text key={1} style={ownStyles.cardMainTitle}>
-          Wareneingabe:
-        </Text>
         {components}
       </ScrollView>
     </View>
