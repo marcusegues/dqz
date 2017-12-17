@@ -13,7 +13,7 @@ import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
 import InfoIcon from '../components/Headers/subcomponents/InfoIcon';
 import MainMenuHeaderRight from '../components/Headers/subcomponents/MainMenuHeaderRight';
 import MainMenu from '../screens/MainMenu/MainMenu';
-import GoodQuantityInput from '../components/QuestionAnswer/QuantityInput/GoodQuantityListModal';
+import GoodQuantityInput from '../components/Modals/BottomTopModal';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';

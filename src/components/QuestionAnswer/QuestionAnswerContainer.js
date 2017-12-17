@@ -9,7 +9,7 @@ import RedButton from '../Buttons/RedButton';
 import PeopleInputQA from './PeopleInput/PeopleInputQA';
 import MainCategoriesInputQA from './MainCategoriesInput/MainCategoriesInputQA';
 import QuantityInputQA from './QuantityInput/QuantityInputQA';
-import GoodQuantityListModal from './QuantityInput/GoodQuantityListModal';
+import GoodQuantityListModal from '../Modals/GoodQuantityListModal/GoodQuantityListModal';
 import {
   getDeclarationBasket,
   getDeclarationPeople,
@@ -56,8 +56,8 @@ export type cardProps = {
 class QuestionAnswerContainer extends React.Component<any, QAState> {
   constructor(props) {
     super(props);
-    this.showQuantityInputModal = this.showQuantityInputModal.bind(this);
-    this.hideQuantityInputModal = this.hideQuantityInputModal.bind(this);
+    (this: any).showQuantityInputModal = this.showQuantityInputModal.bind(this);
+    (this: any).hideQuantityInputModal = this.hideQuantityInputModal.bind(this);
     this.state = {
       quantityModalAnim: new Animated.Value(height), // Initial value for position top: screen height
       basket: this.props.basket,
@@ -165,7 +165,6 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         key: 'quantityInput',
         component: (
           <QuantityInputQA
-            navigation={this.props.navigation}
             qaState={this.state}
             onAnswerCardPress={() => {
               this.setState(
@@ -230,7 +229,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         )}
         <GoodQuantityListModal
           positionTop={this.state.quantityModalAnim}
-          onHideQuantityInputModal={this.hideQuantityInputModal}
+          onHideModal={this.hideQuantityInputModal}
         />
       </View>
     );
