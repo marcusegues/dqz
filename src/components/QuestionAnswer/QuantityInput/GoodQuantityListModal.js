@@ -1,10 +1,9 @@
 import React from 'react';
 import Touchable from 'react-native-platform-touchable';
-import { Animated, Platform, Text, View } from 'react-native';
+import { Animated, Platform, Text } from 'react-native';
 import { verticalScale } from '../../../styles/Scaling';
 
-const GoodQuantityListModal = ({ positionTop, onHideQuantityInputModal }) => {
-  return (
+const GoodQuantityListModal = ({ positionTop, onHideQuantityInputModal }) => (
     <Animated.View
       style={{
         position: 'absolute', // Bind opacity to animated value
@@ -37,6 +36,5 @@ const GoodQuantityListModal = ({ positionTop, onHideQuantityInputModal }) => {
       </Touchable>
     </Animated.View>
   );
-};
 
 export default GoodQuantityListModal;

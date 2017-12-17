@@ -2,7 +2,7 @@
 /* eslint react/no-unused-state: 0 */
 import React from 'react';
 // $FlowFixMe
-import { FlatList, View, Text, Dimensions, Animated } from 'react-native';
+import { FlatList, View, Dimensions, Animated } from 'react-native';
 import { connect } from 'react-redux';
 import NavBar from '../NavBar/NavBar';
 import RedButton from '../Buttons/RedButton';
@@ -37,6 +37,7 @@ export type questionType =
 export type questionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
 
 export type QAState = {
+  quantityModalAnim: any, // TODO
   questionStates: { [questionType]: questionState },
   basket: Basket,
   people: People,
@@ -44,7 +45,6 @@ export type QAState = {
 };
 
 export type cardProps = {
-  navigation: any,
   qaState: QAState,
   onAnswerCardPress: any, // TODO
   questionState: questionState,
@@ -56,7 +56,8 @@ export type cardProps = {
 class QuestionAnswerContainer extends React.Component<any, QAState> {
   constructor(props) {
     super(props);
-
+    this.showQuantityInputModal = this.showQuantityInputModal.bind(this);
+    this.hideQuantityInputModal = this.hideQuantityInputModal.bind(this);
     this.state = {
       quantityModalAnim: new Animated.Value(height), // Initial value for position top: screen height
       basket: this.props.basket,
@@ -68,8 +69,6 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         quantityInput: 'hidden',
       },
     };
-    this.showQuantityInputModal = this.showQuantityInputModal.bind(this);
-    this.hideQuantityInputModal = this.hideQuantityInputModal.bind(this);
   }
 
   componentDidMount() {
@@ -86,7 +85,6 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
 
   showQuantityInputModal() {
     Animated.spring(
-      // Animate over time
       this.state.quantityModalAnim, // The animated value to drive
       {
         toValue: 0, // Animate to position top: 0

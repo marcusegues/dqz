@@ -77,7 +77,6 @@ const ownStyles = {
 const GoodInputRow = ({
   onShowQuantityInputModal,
   category,
-  basket,
   quantity,
   mainCategory,
 }) => (
