@@ -8,6 +8,7 @@ import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuanti
 import { setQuantity, getQuantity } from '../../../model/configurationApi';
 import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
+import type { cardProps } from '../QuestionAnswerContainer';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
@@ -17,8 +18,8 @@ export type State = {
   modalVisible: boolean,
 };
 
-class QuantityInputQA extends React.Component<any, State> {
-  constructor(props: any) {
+class QuantityInputQA extends React.Component<cardProps, State> {
+  constructor(props: cardProps) {
     super(props);
     this.state = {
       modalVisible: false,
