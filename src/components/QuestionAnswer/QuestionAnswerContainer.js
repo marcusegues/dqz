@@ -9,7 +9,7 @@ import RedButton from '../Buttons/RedButton';
 import PeopleInputQA from './PeopleInput/PeopleInputQA';
 import MainCategoriesInputQA from './MainCategoriesInput/MainCategoriesInputQA';
 import QuantityInputQA from './QuantityInput/QuantityInputQA';
-import GoodQuantityListModal from '../Modals/GoodQuantityListModal/GoodQuantityListModal';
+
 import {
   getDeclarationBasket,
   getDeclarationPeople,
@@ -26,8 +26,6 @@ import {
   setQuestionStates,
 } from './QAControl/controlQuestionStates';
 
-const { height } = Dimensions.get('window');
-
 export type questionType =
   | 'peopleInput'
   | 'mainCategories'
@@ -37,7 +35,6 @@ export type questionType =
 export type questionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
 
 export type QAState = {
-  quantityModalAnim: any, // TODO
   questionStates: { [questionType]: questionState },
   basket: Basket,
   people: People,
@@ -57,7 +54,6 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
   constructor(props) {
     super(props);
     this.state = {
-      quantityModalAnim: new Animated.Value(height), // Initial value for position top: screen height
       basket: this.props.basket,
       people: this.props.people,
       settings: this.props.settings,
@@ -79,29 +75,6 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
 
   updateQA(justAnswered: questionType) {
     this.setState(setQuestionStates(justAnswered, this.state));
-  }
-
-  showQuantityInputModal() {
-    Animated.spring(
-      this.state.quantityModalAnim, // The animated value to drive
-      {
-        toValue: 0, // Animate to position top: 0
-        speed: 20,
-        bounciness: 0,
-      }
-    ).start(); // Starts the animation
-  }
-
-  hideQuantityInputModal() {
-    Animated.spring(
-      // Animate over time
-      this.state.quantityModalAnim, // The animated value to drive
-      {
-        toValue: height, // Animate to position top: 0
-        speed: 20,
-        bounciness: 0,
-      }
-    ).start(); // Starts the animation
   }
 
   render() {
@@ -177,7 +150,6 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
               this.props.onDeclarationSetBasket(this.state.basket);
               this.updateQA('quantityInput');
             }}
-            onShowQuantityInputModal={() => this.showQuantityInputModal()}
           />
         ),
       },
@@ -225,10 +197,6 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             />
           </View>
         )}
-        <GoodQuantityListModal
-          positionTop={this.state.quantityModalAnim}
-          onHideModal={() => this.hideQuantityInputModal()}
-        />
       </View>
     );
   }

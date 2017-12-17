@@ -1,9 +1,10 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { View } from 'react-native';
+import { Animated, Dimensions, View } from 'react-native';
 import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
+import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { setQuantity, getQuantity } from '../../../model/configurationApi';
 import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
@@ -12,56 +13,100 @@ const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
 const mainIcon = require('../../../../assets/icons/mainCategories.png');
 
-const QuantityInputQA = (props: any) => {
-  const handleUpdate = (category: Category, quantityChange: number) => {
-    const { basket } = props.qaState;
+const { height } = Dimensions.get('window');
+
+class QuantityInputQA extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      quantityModalAnim: new Animated.Value(height), // Initial value for position top: screen height
+    };
+  }
+
+  handleUpdate(category: Category, quantityChange: number) {
+    const { basket } = this.props.qaState;
 
     const updatedBasket = setQuantity(
       basket,
       category,
       Math.max(0, getQuantity(basket, category) + quantityChange)
     );
-    return props.onUpdate(updatedBasket);
-  };
+    return this.props.onUpdate(updatedBasket);
+  }
 
-  const getDisplayedCategoriesByMainCategory = () =>
-    MainCategoriesToCategories.filter((cats, mainCat) =>
-      props.qaState.settings.get('mainCategories').has(mainCat)
+  getDisplayedCategoriesByMainCategory() {
+    return MainCategoriesToCategories.filter((cats, mainCat) =>
+      this.props.qaState.settings.get('mainCategories').has(mainCat)
     );
+  }
 
-  const getQuestionComponent = () => (
-    <QuantityInputConfirmationCard
-      onShowQuantityInputModal={props.onShowQuantityInputModal}
-      onAnswer={props.onAnswer}
-      categoriesByMainCategory={getDisplayedCategoriesByMainCategory()}
-      basket={props.qaState.basket}
-      onBasketChangeQuantity={handleUpdate}
-    />
-  );
+  getQuestionComponent() {
+    return (
+      <View>
+        <QuantityInputConfirmationCard
+          onShowQuantityInputModal={() => this.showQuantityInputModal()}
+          onAnswer={this.props.onAnswer}
+          categoriesByMainCategory={this.getDisplayedCategoriesByMainCategory()}
+          basket={this.props.qaState.basket}
+          onBasketChangeQuantity={this.handleUpdate}
+        />
+        <GoodQuantityListModal
+          positionTop={this.state.quantityModalAnim}
+          onHideModal={() => this.hideQuantityInputModal()}
+        />
+      </View>
+    );
+  }
 
-  const getAnswerComponent = () => (
-    <AnswerCard
-      onAnswerCardPress={props.onAnswerCardPress}
-      mainIcon={mainIcon}
-      status={
-        props.qaState.settings.get('mainCategories').isEmpty()
-          ? incomplete
-          : complete
+  getAnswerComponent() {
+    return (
+      <AnswerCard
+        onAnswerCardPress={this.props.onAnswerCardPress}
+        mainIcon={mainIcon}
+        status={
+          this.props.qaState.settings.get('mainCategories').isEmpty()
+            ? incomplete
+            : complete
+        }
+      />
+    );
+  }
+
+  showQuantityInputModal() {
+    Animated.spring(
+      this.state.quantityModalAnim, // The animated value to drive
+      {
+        toValue: 0, // Animate to position top: 0
+        speed: 20,
+        bounciness: 0,
       }
-    />
-  );
+    ).start(); // Starts the animation
+  }
 
-  switch (props.questionState) {
-    case 'expanded': {
-      return getQuestionComponent();
-    }
-    case 'collapsed': {
-      return getAnswerComponent();
-    }
-    default: {
-      return <View />;
+  hideQuantityInputModal() {
+    Animated.spring(
+      // Animate over time
+      this.state.quantityModalAnim, // The animated value to drive
+      {
+        toValue: height, // Animate to position top: 0
+        speed: 20,
+        bounciness: 0,
+      }
+    ).start(); // Starts the animation
+  }
+
+  render() {
+    switch (this.props.questionState) {
+      case 'expanded': {
+        return this.getQuestionComponent();
+      }
+      case 'collapsed': {
+        return this.getAnswerComponent();
+      }
+      default: {
+        return <View />;
+      }
     }
   }
-};
-
+}
 export default QuantityInputQA;
