@@ -1,15 +1,18 @@
 import React from 'react';
-import Touchable from 'react-native-platform-touchable';
 import { Text } from 'react-native';
-import BottomTopModal from '../BottomTopModal';
+import Touchable from 'react-native-platform-touchable';
+import ModalCard from '../ModalCard';
+import AppModal from '../AppModal';
 
-const GoodQuantityListModal = ({ positionTop, onHideModal }) => (
-  <BottomTopModal positionTop={positionTop}>
-    <Text>Text</Text>
-    <Touchable onPress={onHideModal}>
-      <Text>Hide</Text>
-    </Touchable>
-  </BottomTopModal>
-);
+const GoodQuantityListModal = ({ modalVisible, onHide }) => (
+    <AppModal modalVisible={modalVisible}>
+      <ModalCard>
+        <Text>Text</Text>
+        <Touchable onPress={onHide}>
+          <Text>Hide</Text>
+        </Touchable>
+      </ModalCard>
+    </AppModal>
+  );
 
 export default GoodQuantityListModal;

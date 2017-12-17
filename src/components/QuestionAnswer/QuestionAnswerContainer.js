@@ -2,7 +2,7 @@
 /* eslint react/no-unused-state: 0 */
 import React from 'react';
 // $FlowFixMe
-import { FlatList, View, Dimensions, Animated } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { connect } from 'react-redux';
 import NavBar from '../NavBar/NavBar';
 import RedButton from '../Buttons/RedButton';

@@ -13,12 +13,12 @@ import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
 import InfoIcon from '../components/Headers/subcomponents/InfoIcon';
 import MainMenuHeaderRight from '../components/Headers/subcomponents/MainMenuHeaderRight';
 import MainMenu from '../screens/MainMenu/MainMenu';
-import GoodQuantityInput from '../components/Modals/BottomTopModal';
 
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
 import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
 import UnderConstructionWithSums from './underConstructionWithSums';
+import GoodQuantityListModal from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -48,8 +48,8 @@ const RootStackNavigator = StackNavigator(
         header: null,
       }),
     },
-    GoodQuantityInput: {
-      screen: GoodQuantityInput,
+    GoodQuantityListModal: {
+      screen: GoodQuantityListModal,
     },
     MainMenu: {
       screen: MainMenu,

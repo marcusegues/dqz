@@ -1,10 +1,10 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Dimensions, View } from 'react-native';
+import { View } from 'react-native';
 import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
-import GoodQuantityListModal from '../../Modals/GoodQuantityListModal2/GoodQuantityListModal2';
+import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { setQuantity, getQuantity } from '../../../model/configurationApi';
 import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
@@ -13,23 +13,16 @@ const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
 const mainIcon = require('../../../../assets/icons/mainCategories.png');
 
-class QuantityInputQA extends React.Component {
+export type State = {
+  modalVisible: boolean,
+};
+
+class QuantityInputQA extends React.Component<any, State> {
   constructor(props) {
     super(props);
     this.state = {
       modalVisible: false,
     };
-  }
-
-  handleUpdate(category: Category, quantityChange: number) {
-    const { basket } = this.props.qaState;
-
-    const updatedBasket = setQuantity(
-      basket,
-      category,
-      Math.max(0, getQuantity(basket, category) + quantityChange)
-    );
-    return this.props.onUpdate(updatedBasket);
   }
 
   getDisplayedCategoriesByMainCategory() {
@@ -68,6 +61,17 @@ class QuantityInputQA extends React.Component {
         }
       />
     );
+  }
+
+  handleUpdate(category: Category, quantityChange: number) {
+    const { basket } = this.props.qaState;
+
+    const updatedBasket = setQuantity(
+      basket,
+      category,
+      Math.max(0, getQuantity(basket, category) + quantityChange)
+    );
+    return this.props.onUpdate(updatedBasket);
   }
 
   handleShowModal() {
