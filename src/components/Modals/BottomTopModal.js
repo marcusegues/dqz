@@ -1,6 +1,5 @@
 import React from 'react';
-import Touchable from 'react-native-platform-touchable';
-import { Animated, Platform, Text } from 'react-native';
+import { Animated, Platform } from 'react-native';
 import { verticalScale } from '../../styles/Scaling';
 
 const BottomTopModal = ({ positionTop, children }) => (
