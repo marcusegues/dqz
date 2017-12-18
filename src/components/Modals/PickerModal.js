@@ -1,63 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text, Picker, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Picker, TouchableOpacity } from 'react-native';
 import AppModal from './AppModal';
 import RedButton from '../Buttons/RedButton';
-import { moderateScale, scale, verticalScale } from '../../styles/Scaling';
-import { pickerNumbers, pickerAmount } from './StandardInputPicker';
-import { pickerUnits, pickerDecimalUnits } from './CustomInputPicker';
-
-import { boxShadow } from '../../styles/globalStyles';
-
-const touchableStyles = {
-  alignItems: 'center',
-  paddingVertical: 15,
-};
-
-const touchableTextStyles = {
-  fontFamily: 'roboto_regular',
-  fontSize: moderateScale(14),
-};
-
-const ownStyles = StyleSheet.create({
-  modalContainer: {
-    ...boxShadow,
-    top: '25%',
-    width: '85%',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    paddingBottom: verticalScale(16),
-    borderRadius: 3,
-    alignSelf: 'center',
-    backgroundColor: '#FFF',
-  },
-
-  redButtonWrapper: {
-    marginHorizontal: scale(8),
-    alignItems: 'center',
-    alignSelf: 'center',
-    justifyContent: 'center',
-  },
-  touchableActive: {
-    ...touchableStyles,
-    backgroundColor: '#FFFFFF',
-    borderTopWidth: 3,
-    borderTopColor: '#DC0018',
-  },
-  touchableInactive: {
-    ...touchableStyles,
-    backgroundColor: '#9B9B9B',
-    borderTopWidth: 3,
-    borderTopColor: '#9B9B9B',
-  },
-  touchableActiveText: {
-    ...touchableTextStyles,
-    color: '#000',
-  },
-  touchableInactiveText: {
-    ...touchableTextStyles,
-    color: '#fff',
-  },
-});
+import {
+  standardPickerNumbers,
+  standardPickerAmount,
+  customPickerUnits,
+  customPickerDecimalUnits,
+} from './pickerData';
+import ownStyles from './styles/PickerModal';
+import globalStyles from '../../styles/globalStyles';
 
 class PickerModal extends Component {
   state = {
@@ -92,16 +44,15 @@ class PickerModal extends Component {
   render() {
     const { selected } = this.state;
     const standardInput = selected === 'standardInput';
-    // const customInput = selected === 'customInput';
 
     return (
       <AppModal
         onRequestClose={this.props.onRequestClose}
         modalVisible={this.props.modalVisible}
       >
-        <View style={[ownStyles.modalContainer, {}]}>
-          <View style={{ flexDirection: 'row' }}>
-            <View style={{ flex: 0.5 }}>
+        <View style={[ownStyles.modalContainer, globalStyles.boxShadow]}>
+          <View style={ownStyles.topTouchableContainer}>
+            <View style={ownStyles.topTouchable}>
               <TouchableOpacity
                 onPress={() =>
                   this.setState({
@@ -125,7 +76,7 @@ class PickerModal extends Component {
                 </Text>
               </TouchableOpacity>
             </View>
-            <View style={{ flex: 0.5 }}>
+            <View style={ownStyles.topTouchable}>
               <TouchableOpacity
                 onPress={() =>
                   this.setState({
@@ -153,16 +104,11 @@ class PickerModal extends Component {
 
           <View>
             {standardInput ? (
-              <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'center',
-                }}
-              >
-                <View style={{ flex: 0.25 }}>
+              <View style={ownStyles.pickerContainer}>
+                <View style={ownStyles.pickerNumberColumn}>
                   <Picker
                     selectedValue={this.state.standardInput.number}
-                    onValueChange={(itemValue, itemIndex) =>
+                    onValueChange={itemValue =>
                       this.setState({
                         standardInput: {
                           ...this.state.standardInput,
@@ -174,35 +120,20 @@ class PickerModal extends Component {
                     prompt="Choose value"
                     itemStyle={{}}
                   >
-                    {pickerNumbers.map(i => (
+                    {standardPickerNumbers.map(i => (
                       <Picker.Item key={i.id} label={i.label} value={i.value} />
                     ))}
                   </Picker>
                 </View>
 
-                <View
-                  style={{
-                    flex: 0.15,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    alignSelf: 'center',
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontFamily: 'roboto_regular',
-                      fontSize: moderateScale(16),
-                      color: '#898989',
-                    }}
-                  >
-                    X
-                  </Text>
+                <View style={ownStyles.pickerDividerColumn}>
+                  <Text style={ownStyles.pickerDividerColumnText}>X</Text>
                 </View>
 
-                <View style={{ flex: 0.25 }}>
+                <View style={ownStyles.pickerNumberColumn}>
                   <Picker
                     selectedValue={this.state.standardInput.amount}
-                    onValueChange={(itemValue, itemIndex) =>
+                    onValueChange={itemValue =>
                       this.setState({
                         standardInput: {
                           ...this.state.standardInput,
@@ -213,49 +144,24 @@ class PickerModal extends Component {
                     style={{}}
                     mode="dropdown"
                     prompt="Choose value"
-                    itemStyle={
-                      {
-                        // textAlign: 'left',
-                      }
-                    }
+                    itemStyle={{}}
                   >
-                    {pickerAmount.map(i => (
+                    {standardPickerAmount.map(i => (
                       <Picker.Item key={i.id} label={i.label} value={i.value} />
                     ))}
                   </Picker>
                 </View>
 
-                <View
-                  style={{
-                    flex: 0.2,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    alignSelf: 'center',
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontFamily: 'roboto_regular',
-                      fontSize: moderateScale(14),
-                      color: '#898989',
-                    }}
-                  >
-                    Liter
-                  </Text>
+                <View style={ownStyles.pickerLiterColumn}>
+                  <Text style={ownStyles.pickerLiterColumnText}>Liter</Text>
                 </View>
               </View>
             ) : (
-              <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'center',
-                  // borderWidth: 1,
-                }}
-              >
-                <View style={{ flex: 0.25 }}>
+              <View style={ownStyles.pickerContainer}>
+                <View style={ownStyles.pickerNumberColumn}>
                   <Picker
                     selectedValue={this.state.customInput.units}
-                    onValueChange={(itemValue, itemIndex) =>
+                    onValueChange={itemValue =>
                       this.setState({
                         customInput: {
                           ...this.state.customInput,
@@ -267,34 +173,19 @@ class PickerModal extends Component {
                     prompt="Choose value"
                     itemStyle={{}}
                   >
-                    {pickerUnits.map(i => (
+                    {customPickerUnits.map(i => (
                       <Picker.Item key={i.id} label={i.label} value={i.value} />
                     ))}
                   </Picker>
                 </View>
-                <View
-                  style={{
-                    flex: 0.15,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    alignSelf: 'center',
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontFamily: 'roboto_regular',
-                      fontSize: moderateScale(16),
-                      color: '#898989',
-                    }}
-                  >
-                    ,
-                  </Text>
+                <View style={ownStyles.pickerDividerColumn}>
+                  <Text style={ownStyles.pickerDividerColumnText}>,</Text>
                 </View>
 
-                <View style={{ flex: 0.25 }}>
+                <View style={ownStyles.pickerNumberColumn}>
                   <Picker
                     selectedValue={this.state.customInput.decimalUnits}
-                    onValueChange={(itemValue, itemIndex) =>
+                    onValueChange={itemValue =>
                       this.setState({
                         customInput: {
                           ...this.state.customInput,
@@ -305,35 +196,16 @@ class PickerModal extends Component {
                     style={{}}
                     mode="dropdown"
                     prompt="Choose value"
-                    itemStyle={
-                      {
-                        // textAlign: 'left',
-                      }
-                    }
+                    itemStyle={{}}
                   >
-                    {pickerDecimalUnits.map(i => (
+                    {customPickerDecimalUnits.map(i => (
                       <Picker.Item key={i.id} label={i.label} value={i.value} />
                     ))}
                   </Picker>
                 </View>
 
-                <View
-                  style={{
-                    flex: 0.2,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    alignSelf: 'center',
-                  }}
-                >
-                  <Text
-                    style={{
-                      fontFamily: 'roboto_regular',
-                      fontSize: moderateScale(14),
-                      color: '#898989',
-                    }}
-                  >
-                    Liter
-                  </Text>
+                <View style={ownStyles.pickerLiterColumn}>
+                  <Text style={ownStyles.pickerLiterColumnText}>Liter</Text>
                 </View>
               </View>
             )}

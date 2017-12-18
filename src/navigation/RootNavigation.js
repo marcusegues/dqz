@@ -19,7 +19,7 @@ import registerForPushNotificationsAsync from '../../api/registerForPushNotifica
 import { UnderConstruction } from './underConstruction';
 import UnderConstructionWithSums from './underConstructionWithSums';
 
-import PickerModal from '../components/Modals/pickerModal';
+import PickerModal from '../components/Modals/PickerModal';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -90,14 +90,13 @@ const RootStackNavigator = StackNavigator(
   {
     navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-    initialRouteName: 'PickerModal',
-    // initialRouteName: 'Screens',
-    // initialRouteName: 'OnBoarding',
+    initialRouteName: 'Screens',
   }
 );
 
-const WrappedRootStackNavigator = () =>
-  <RootStackNavigator screenProps={{ t: i18n.getFixedT() }} />;
+const WrappedRootStackNavigator = () => (
+  <RootStackNavigator screenProps={{ t: i18n.getFixedT() }} />
+);
 
 const ReloadAppOnLanguageChange = translate(null, {
   bindI18n: 'languageChanged',
