@@ -9,8 +9,8 @@ import {
 } from '../../../styles/colors';
 
 const touchableStyles = {
-  alignItems: 'center',
   paddingVertical: 15,
+  alignItems: 'center',
 };
 
 const touchableTextStyles = {
