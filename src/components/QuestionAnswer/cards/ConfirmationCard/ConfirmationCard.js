@@ -1,8 +1,7 @@
 import React from 'react';
-import { Text, View, Platform } from 'react-native';
-import { verticalScale, moderateScale } from '../../../../styles/Scaling';
+import { View } from 'react-native';
+import { verticalScale } from '../../../../styles/Scaling';
 import Card from '../Card';
-import CardTitle from '../subcomponents/CardHeaderText';
 import RedButton from '../../../Buttons/RedButton';
 import CardHeader from '../subcomponents/CardHeader';
 

@@ -1,17 +1,47 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { Text } from 'react-native';
+// $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 import ModalCard from '../ModalCard';
 import AppModal from '../AppModal';
-import CardHeader from '../../QuestionAnswer/cards/subcomponents/CardHeader';
+import QuantityInfo from './subcomponents/QuantityInfo';
+import { getQuantity } from '../../../model/configurationApi';
+import type { QuantityInputState } from '../../QuestionAnswer/QuantityInput/QuantityInputQA';
+import type { Basket, Category } from '../../../model/types/basketPeopleTypes';
 
-class GoodQuantityListModal extends React.Component {
+export type GoodQuantityListModalProps = {
+  quantityInputState: QuantityInputState,
+  onHide: () => void,
+  onUpdateQuantity: (category: Category, quantityChange: number) => void,
+  basket: Basket,
+};
+
+class GoodQuantityListModal extends React.Component<
+  GoodQuantityListModalProps,
+  any
+> {
   render() {
-    const { modalVisible, onHide, modalData } = this.props;
+    const { modalVisible, modalCategories } = this.props.quantityInputState;
+    const { onHide, onUpdateQuantity, basket } = this.props;
+    if (modalCategories.category === 'none') {
+      return null;
+    }
+    const newQuantity = getQuantity(basket, modalCategories.category);
     return (
       <AppModal modalVisible={modalVisible}>
         <ModalCard>
-          <CardHeader text={modalData.category} />
+          <QuantityInfo
+            mainCategory={modalCategories.mainCategory}
+            category={modalCategories.category}
+            quantity={newQuantity}
+          />
+          <Touchable
+            onPress={() => onUpdateQuantity(modalCategories.category, 1)}
+          >
+            <Text>Mengen Hinzufügen</Text>
+          </Touchable>
           <Touchable onPress={onHide}>
             <Text>Hide</Text>
           </Touchable>

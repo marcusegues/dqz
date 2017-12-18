@@ -5,6 +5,8 @@ const QuantityInfo = ({ mainCategory, category, quantity }) => (
   <View style={{ flexDirection: 'column' }}>
     <Text>{category}</Text>
     <Text>{mainCategory}</Text>
-    <View>{quantity}</View>
+    <Text>{quantity}</Text>
   </View>
 );
+
+export default QuantityInfo;

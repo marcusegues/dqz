@@ -144,6 +144,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             }}
             questionState={quantityInput}
             onUpdate={basket => {
+              debugger;
               this.setState({
                 basket,
               });
