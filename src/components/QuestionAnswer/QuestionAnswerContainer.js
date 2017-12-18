@@ -25,6 +25,9 @@ import {
   setInitStates,
   setQuestionStates,
 } from './QAControl/controlQuestionStates';
+import { setQuestionStatus } from './QAControl/controlQuestionStatus';
+import type { DutyReport } from '../../model/types/calculationTypes';
+import { calculateDuty } from '../../model/dutyCalculations';
 
 export type questionType =
   | 'peopleInput'
@@ -34,11 +37,15 @@ export type questionType =
 
 export type questionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
 
+export type questionStatusType = 'complete' | 'incomplete';
+
 export type QAState = {
   questionStates: { [questionType]: questionState },
+  questionStatus: { [questionType]: questionStatusType },
   basket: Basket,
   people: People,
   settings: SettingsType,
+  duty: DutyReport,
 };
 
 export type cardProps = {
@@ -54,14 +61,21 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
   constructor(props) {
     super(props);
     this.state = {
-      basket: this.props.basket,
-      people: this.props.people,
-      settings: this.props.settings,
       questionStates: {
         peopleInput: 'expanded',
         mainCategories: 'hidden',
         quantityInput: 'hidden',
       },
+      questionStatus: {
+        peopleInput: 'complete',
+        mainCategories: 'incomplete',
+        quantityInput: 'incomplete',
+      },
+      basket: this.props.basket,
+      people: this.props.people,
+      settings: this.props.settings,
+      // not getting duty as props from redux because dues are not being updated all the time, perhaps they should be
+      duty: calculateDuty(this.props.basket, this.props.people),
     };
   }
 
@@ -73,13 +87,18 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
     this.setState(setInitStates(this.state));
   }
 
+  updateStatus(justUpdated: questionType) {
+    this.setState(setQuestionStatus(justUpdated, this.state));
+  }
+
   updateQA(justAnswered: questionType) {
     this.setState(setQuestionStates(justAnswered, this.state));
   }
 
+  allQuestionsAnswered() {}
+
   render() {
-    const { questionStates } = this.state;
-    const { peopleInput, mainCategories, quantityInput } = questionStates;
+    const { questionStates, questionStatus } = this.state;
     const { navigation } = this.props;
 
     const flatListData = [
@@ -93,9 +112,10 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 collapseAllExistingExceptOne('peopleInput', this.state)
               );
             }}
-            questionState={peopleInput}
+            questionState={questionStates.peopleInput}
+            questionStatus={questionStatus.peopleInput}
             onUpdate={people => {
-              this.setState({ people });
+              this.setState({ people }, () => this.updateStatus('peopleInput'));
             }}
             onAnswer={() => {
               this.props.onDeclarationSetPeople(this.state.people);
@@ -114,14 +134,18 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 collapseAllExistingExceptOne('mainCategories', this.state)
               );
             }}
-            questionState={mainCategories}
+            questionState={questionStates.mainCategories}
+            questionStatus={questionStatus.mainCategories}
             onUpdate={activeCategories => {
-              this.setState({
-                settings: this.state.settings.set(
-                  'mainCategories',
-                  activeCategories
-                ),
-              });
+              this.setState(
+                {
+                  settings: this.state.settings.set(
+                    'mainCategories',
+                    activeCategories
+                  ),
+                },
+                () => this.updateStatus('mainCategories')
+              );
             }}
             onAnswer={() => {
               this.props.onDeclarationSetMainCategories(
@@ -142,11 +166,16 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 collapseAllExistingExceptOne('quantityInput', this.state)
               );
             }}
-            questionState={quantityInput}
+            questionState={questionStates.quantityInput}
+            questionStatus={questionStatus.quantityInput}
             onUpdate={basket => {
-              this.setState({
-                basket,
-              });
+              this.setState(
+                {
+                  basket,
+                  duty: calculateDuty(basket, this.state.people),
+                },
+                () => this.updateStatus('quantityInput')
+              );
             }}
             onAnswer={() => {
               this.props.onDeclarationSetBasket(this.state.basket);

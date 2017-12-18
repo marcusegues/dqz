@@ -38,12 +38,11 @@ const MainCategoriesInputContainer = (props: cardProps) => {
   const getAnswerComponent = () => {
     const { settings } = props.qaState;
     const mainCategories = settings.get('mainCategories');
-    const status = mainCategories.size ? 'complete' : 'incomplete';
     return (
       <MainCategoriesInputAnswerCard
         mainCategories={mainCategories}
         onAnswerCardPress={props.onAnswerCardPress}
-        status={status}
+        status={props.questionStatus}
       />
     );
   };

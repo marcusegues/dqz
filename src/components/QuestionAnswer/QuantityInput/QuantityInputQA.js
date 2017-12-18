@@ -10,6 +10,7 @@ import { MainCategoriesToCategories } from '../../../types/reducers/declaration'
 import type { MainCategory } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
 import type { cardProps } from '../QuestionAnswerContainer';
+import QuantityInputAnswerCard from '../cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
@@ -73,14 +74,10 @@ class QuantityInputQA extends React.Component<cardProps, QuantityInputState> {
 
   getAnswerComponent() {
     return (
-      <AnswerCard
+      <QuantityInputAnswerCard
         onAnswerCardPress={this.props.onAnswerCardPress}
-        mainIcon={mainIcon}
-        status={
-          this.props.qaState.settings.get('mainCategories').isEmpty()
-            ? incomplete
-            : complete
-        }
+        status={this.props.questionStatus}
+        duty={this.props.qaState.duty.totalDuty}
       />
     );
   }
