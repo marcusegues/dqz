@@ -1,4 +1,6 @@
+/* eslint-disable react/no-unused-state */
 // @flow
+// TODO remove eslint-disable
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';

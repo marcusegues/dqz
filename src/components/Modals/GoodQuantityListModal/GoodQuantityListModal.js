@@ -18,6 +18,8 @@ export type GoodQuantityListModalProps = {
   basket: Basket,
 };
 
+// TODO remove disable
+// eslint-disable-next-line react/prefer-stateless-function
 class GoodQuantityListModal extends React.Component<
   GoodQuantityListModalProps,
   any
@@ -38,7 +40,11 @@ class GoodQuantityListModal extends React.Component<
             quantity={newQuantity}
           />
           <Touchable
-            onPress={() => onUpdateQuantity(modalCategories.category, 1)}
+            onPress={() => {
+              if (modalCategories.category !== 'none') {
+                onUpdateQuantity(modalCategories.category, 1);
+              }
+            }}
           >
             <Text>Mengen Hinzufügen</Text>
           </Touchable>
