@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import { Picker, Text, View } from 'react-native';
-import { moderateScale } from '../../styles/Scaling';
 
-const Test = ({ standardInput }) =>
-  <View>
-    {standardInput ? <Text>standardInput</Text> : <Text> No message</Text>}
-  </View>;
+//
+// const Test = ({ standardInput }) =>
+//   <View>
+//     {standardInput ? <Text>standardInput</Text> : <Text> No message</Text>}
+//   </View>;
 
-let pickerNumberId = 0;
-let pickerAmountId = 0;
+let pickerNumberId = 100;
+let pickerAmountId = 100;
 
-const pickerAmount = [
+
+
+
+
+export const pickerAmount = [
   {
     id: (pickerAmountId += 1),
     label: '0.33',
@@ -43,7 +46,7 @@ const pickerAmount = [
   },
 ];
 
-const pickerNumbers = [
+export const pickerNumbers = [
   {
     id: (pickerNumberId += 1),
     label: '1',
@@ -107,85 +110,85 @@ class StandardInputPicker extends Component {
           // borderWidth: 1,
         }}
       >
-        <View style={{ flex: 0.25 }}>
-          <Picker
-            selectedValue={this.state.standardInput.number}
-            onValueChange={itemValue =>
-              this.setState({
-                standardInput: {
-                  ...this.state.standardInput,
-                  number: itemValue,
-                },
-              })}
-            mode="dropdown"
-            prompt="Choose value"
-            itemStyle={{}}
-          >
-            {pickerNumbers.map(i =>
-              <Picker.Item key={i.id} label={i.label} value={i.value} />
-            )}
-          </Picker>
-        </View>
-        <View
-          style={{
-            flex: 0.15,
-            justifyContent: 'center',
-            alignItems: 'center',
-            alignSelf: 'center',
-          }}
-        >
-          <Text
-            style={{
-              fontFamily: 'roboto_regular',
-              fontSize: moderateScale(16),
-              color: '#898989',
-            }}
-          >
-            X
-          </Text>
-        </View>
+        {/*<View style={{ flex: 0.25 }}>*/}
+        {/*<Picker*/}
+        {/*selectedValue={this.state.standardInput.number}*/}
+        {/*onValueChange={itemValue =>*/}
+        {/*this.setState({*/}
+        {/*standardInput: {*/}
+        {/*...this.state.standardInput,*/}
+        {/*number: itemValue,*/}
+        {/*},*/}
+        {/*})}*/}
+        {/*mode="dropdown"*/}
+        {/*prompt="Choose value"*/}
+        {/*itemStyle={{}}*/}
+        {/*>*/}
+        {/*{pickerNumbers.map(i =>*/}
+        {/*<Picker.Item key={i.id} label={i.label} value={i.value} />*/}
+        {/*)}*/}
+        {/*</Picker>*/}
+        {/*</View>*/}
+        {/*<View*/}
+        {/*style={{*/}
+        {/*flex: 0.15,*/}
+        {/*justifyContent: 'center',*/}
+        {/*alignItems: 'center',*/}
+        {/*alignSelf: 'center',*/}
+        {/*}}*/}
+        {/*>*/}
+        {/*<Text*/}
+        {/*style={{*/}
+        {/*fontFamily: 'roboto_regular',*/}
+        {/*fontSize: moderateScale(16),*/}
+        {/*color: '#898989',*/}
+        {/*}}*/}
+        {/*>*/}
+        {/*X*/}
+        {/*</Text>*/}
+        {/*</View>*/}
 
-        <View style={{ flex: 0.25 }}>
-          <Picker
-            selectedValue={this.state.standardInput.amount}
-            onValueChange={itemValue =>
-              this.setState({
-                standardInput: {
-                  ...this.state.standardInput,
-                  amount: itemValue,
-                },
-              })}
-            style={{}}
-            mode="dropdown"
-            prompt="Choose value"
-            itemStyle={{
-              // textAlign: 'left',
-            }}
-          >
-            {pickerAmount.map(i =>
-              <Picker.Item key={i.id} label={i.label} value={i.value} />
-            )}
-          </Picker>
-        </View>
+        {/*<View style={{ flex: 0.25 }}>*/}
+        {/*<Picker*/}
+        {/*selectedValue={this.state.standardInput.amount}*/}
+        {/*onValueChange={itemValue =>*/}
+        {/*this.setState({*/}
+        {/*standardInput: {*/}
+        {/*...this.state.standardInput,*/}
+        {/*amount: itemValue,*/}
+        {/*},*/}
+        {/*})}*/}
+        {/*style={{}}*/}
+        {/*mode="dropdown"*/}
+        {/*prompt="Choose value"*/}
+        {/*itemStyle={{*/}
+        {/*// textAlign: 'left',*/}
+        {/*}}*/}
+        {/*>*/}
+        {/*{pickerAmount.map(i =>*/}
+        {/*<Picker.Item key={i.id} label={i.label} value={i.value} />*/}
+        {/*)}*/}
+        {/*</Picker>*/}
+        {/*</View>*/}
 
-        <View
-          style={{
-            flex: 0.2,
-            justifyContent: 'center',
-            alignItems: 'center',
-            alignSelf: 'center',
-          }}
-        >
-          <Text
-            style={{
-              fontFamily: 'roboto_regular',
-              fontSize: moderateScale(14),
-              color: '#898989',
-            }}
-          >
-            Liter
-          </Text>
-        </View>
+        {/*<View*/}
+        {/*style={{*/}
+        {/*flex: 0.2,*/}
+        {/*justifyContent: 'center',*/}
+        {/*alignItems: 'center',*/}
+        {/*alignSelf: 'center',*/}
+        {/*}}*/}
+        {/*>*/}
+        {/*<Text*/}
+        {/*style={{*/}
+        {/*fontFamily: 'roboto_regular',*/}
+        {/*fontSize: moderateScale(14),*/}
+        {/*color: '#898989',*/}
+        {/*}}*/}
+        {/*>*/}
+        {/*Liter*/}
+        {/*</Text>*/}
+        {/*</View>*/}
       </View>
     );
   }

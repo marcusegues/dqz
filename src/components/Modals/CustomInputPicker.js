@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-import { Picker, Text, View } from 'react-native';
-import { moderateScale } from '../../styles/Scaling';
-
 let pickerDecimalUnitsId = 0;
 let pickerUnitsId = 0;
 
-const pickerUnits = [
+
+
+
+export const pickerUnits = [
   {
     id: (pickerUnitsId += 1),
     label: '1',
@@ -53,7 +52,7 @@ const pickerUnits = [
   },
 ];
 
-const pickerDecimalUnits = [
+export const pickerDecimalUnits = [
   {
     id: (pickerDecimalUnitsId += 1),
     label: '00',
@@ -96,11 +95,6 @@ const pickerDecimalUnits = [
   },
   {
     id: (pickerDecimalUnitsId += 1),
-    label: '70',
-    value: '70',
-  },
-  {
-    id: (pickerDecimalUnitsId += 1),
     label: '80',
     value: '80',
   },
@@ -110,104 +104,3 @@ const pickerDecimalUnits = [
     value: '90',
   },
 ];
-
-class CustomInputPicker extends Component {
-  state = {
-    selected: 'standardInput' || 'customInput',
-    standardInput: { number: Number, amount: Number },
-    customInput: { units: Number, decimalUnits: Number },
-  };
-
-  render() {
-    return (
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'center',
-          // borderWidth: 1,
-        }}
-      >
-        <View style={{ flex: 0.25 }}>
-          <Picker
-            selectedValue={this.state.standardInput.number}
-            onValueChange={itemValue =>
-              this.setState({
-                standardInput: {
-                  ...this.state.standardInput,
-                  number: itemValue,
-                },
-              })}
-            mode="dropdown"
-            prompt="Choose value"
-            itemStyle={{}}
-          >
-            {pickerUnits.map(i =>
-              <Picker.Item key={i.id} label={i.label} value={i.value} />
-            )}
-          </Picker>
-        </View>
-        <View
-          style={{
-            flex: 0.15,
-            justifyContent: 'center',
-            alignItems: 'center',
-            alignSelf: 'center',
-          }}
-        >
-          <Text
-            style={{
-              fontFamily: 'roboto_regular',
-              fontSize: moderateScale(16),
-              color: '#898989',
-            }}
-          >
-            X
-          </Text>
-        </View>
-
-        <View style={{ flex: 0.25 }}>
-          <Picker
-            selectedValue={this.state.standardInput.amount}
-            onValueChange={itemValue =>
-              this.setState({
-                standardInput: {
-                  ...this.state.standardInput,
-                  amount: itemValue,
-                },
-              })}
-            style={{}}
-            mode="dropdown"
-            prompt="Choose value"
-            itemStyle={{
-              // textAlign: 'left',
-            }}
-          >
-            {pickerDecimalUnits.map(i =>
-              <Picker.Item key={i.id} label={i.label} value={i.value} />
-            )}
-          </Picker>
-        </View>
-
-        <View
-          style={{
-            flex: 0.2,
-            justifyContent: 'center',
-            alignItems: 'center',
-            alignSelf: 'center',
-          }}
-        >
-          <Text
-            style={{
-              fontFamily: 'roboto_regular',
-              fontSize: moderateScale(14),
-              color: '#898989',
-            }}
-          >
-            Liter
-          </Text>
-        </View>
-      </View>
-    );
-  }
-}
-export default CustomInputPicker;

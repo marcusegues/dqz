@@ -3,19 +3,12 @@ import { View, Text, Picker, StyleSheet, TouchableOpacity } from 'react-native';
 import AppModal from './AppModal';
 import RedButton from '../Buttons/RedButton';
 import { moderateScale, scale, verticalScale } from '../../styles/Scaling';
-
-import StandardInputPicker from './StandardInputPicker';
-import CustomInputPicker from './CustomInputPicker';
-//
-// const Test = ({ standardInput }) =>
-//   <View>
-//     {standardInput ? <Text>standardInput</Text> : <Text> No message</Text>}
-//   </View>;
+import { pickerNumbers, pickerAmount } from './StandardInputPicker';
+import { pickerUnits, pickerDecimalUnits } from './CustomInputPicker';
 
 const touchableStyles = {
   alignItems: 'center',
   paddingVertical: 15,
-  // borderWidth: 1,
 };
 
 const touchableTextStyles = {
@@ -26,12 +19,9 @@ const touchableTextStyles = {
 const ownStyles = StyleSheet.create({
   modalContainer: {
     top: '25%',
-    // flex: 0.5,
     width: '85%',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    // justifyContent: 'flex-start',
-    // padding: 5,
     paddingBottom: verticalScale(16),
     borderRadius: 3,
     alignSelf: 'center',
@@ -44,10 +34,7 @@ const ownStyles = StyleSheet.create({
   },
 
   redButtonWrapper: {
-    // flex: 1,
-    // borderWidth: 1,
     marginHorizontal: scale(8),
-    // justifyContent: 'flex-end',
     alignItems: 'center',
     alignSelf: 'center',
     justifyContent: 'center',
@@ -83,13 +70,33 @@ class PickerModal extends Component {
     customInput: { units: Number, decimalUnits: Number },
   };
 
-  render() {
-    const totalAmount =
-      this.state.standardInput.number * this.state.standardInput.amount;
+  standardTotalAmount() {
+    if (
+      this.state.standardInput.number > 0 &&
+      this.state.standardInput.amount > 0
+    ) {
+      return `${this.state.standardInput.number *
+        this.state.standardInput.amount} LITER`;
+    }
+    return '';
+  }
+  customTotalAmount() {
+    if (
+      this.state.customInput.units > 0 &&
+      this.state.customInput.decimalUnits >= 0
+    ) {
+      return `${(
+        (this.state.customInput.units + this.state.customInput.decimalUnits) *
+        0.01
+      ).toFixed(2)} LITER`;
+    }
+    return '';
+  }
 
+  render() {
     const { selected } = this.state;
     const standardInput = selected === 'standardInput';
-    const customInput = selected === 'customInput';
+    // const customInput = selected === 'customInput';
 
     return (
       <AppModal
@@ -103,7 +110,8 @@ class PickerModal extends Component {
                 onPress={() =>
                   this.setState({
                     selected: 'standardInput',
-                  })}
+                  })
+                }
                 style={
                   standardInput
                     ? ownStyles.touchableActive
@@ -126,7 +134,8 @@ class PickerModal extends Component {
                 onPress={() =>
                   this.setState({
                     selected: 'customInput',
-                  })}
+                  })
+                }
                 style={
                   standardInput
                     ? ownStyles.touchableInactive
@@ -146,19 +155,201 @@ class PickerModal extends Component {
             </View>
           </View>
 
-          {standardInput ? <StandardInputPicker /> : <CustomInputPicker />}
+          <View>
+            {standardInput ? (
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                }}
+              >
+                <View style={{ flex: 0.25 }}>
+                  <Picker
+                    selectedValue={this.state.standardInput.number}
+                    onValueChange={(itemValue, itemIndex) =>
+                      this.setState({
+                        standardInput: {
+                          ...this.state.standardInput,
+                          number: itemValue,
+                        },
+                      })
+                    }
+                    mode="dropdown"
+                    prompt="Choose value"
+                    itemStyle={{}}
+                  >
+                    {pickerNumbers.map(i => (
+                      <Picker.Item key={i.id} label={i.label} value={i.value} />
+                    ))}
+                  </Picker>
+                </View>
 
-          {/*<StandardInputPicker standardInput={standardInput} />*/}
+                <View
+                  style={{
+                    flex: 0.15,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    alignSelf: 'center',
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontFamily: 'roboto_regular',
+                      fontSize: moderateScale(16),
+                      color: '#898989',
+                    }}
+                  >
+                    X
+                  </Text>
+                </View>
 
+                <View style={{ flex: 0.25 }}>
+                  <Picker
+                    selectedValue={this.state.standardInput.amount}
+                    onValueChange={(itemValue, itemIndex) =>
+                      this.setState({
+                        standardInput: {
+                          ...this.state.standardInput,
+                          amount: itemValue,
+                        },
+                      })
+                    }
+                    style={{}}
+                    mode="dropdown"
+                    prompt="Choose value"
+                    itemStyle={
+                      {
+                        // textAlign: 'left',
+                      }
+                    }
+                  >
+                    {pickerAmount.map(i => (
+                      <Picker.Item key={i.id} label={i.label} value={i.value} />
+                    ))}
+                  </Picker>
+                </View>
+
+                <View
+                  style={{
+                    flex: 0.2,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    alignSelf: 'center',
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontFamily: 'roboto_regular',
+                      fontSize: moderateScale(14),
+                      color: '#898989',
+                    }}
+                  >
+                    Liter
+                  </Text>
+                </View>
+              </View>
+            ) : (
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                  // borderWidth: 1,
+                }}
+              >
+                <View style={{ flex: 0.25 }}>
+                  <Picker
+                    selectedValue={this.state.customInput.units}
+                    onValueChange={(itemValue, itemIndex) =>
+                      this.setState({
+                        customInput: {
+                          ...this.state.customInput,
+                          units: itemValue,
+                        },
+                      })
+                    }
+                    mode="dropdown"
+                    prompt="Choose value"
+                    itemStyle={{}}
+                  >
+                    {pickerUnits.map(i => (
+                      <Picker.Item key={i.id} label={i.label} value={i.value} />
+                    ))}
+                  </Picker>
+                </View>
+                <View
+                  style={{
+                    flex: 0.15,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    alignSelf: 'center',
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontFamily: 'roboto_regular',
+                      fontSize: moderateScale(16),
+                      color: '#898989',
+                    }}
+                  >
+                    ,
+                  </Text>
+                </View>
+
+                <View style={{ flex: 0.25 }}>
+                  <Picker
+                    selectedValue={this.state.customInput.decimalUnits}
+                    onValueChange={(itemValue, itemIndex) =>
+                      this.setState({
+                        customInput: {
+                          ...this.state.customInput,
+                          decimalUnits: itemValue,
+                        },
+                      })
+                    }
+                    style={{}}
+                    mode="dropdown"
+                    prompt="Choose value"
+                    itemStyle={
+                      {
+                        // textAlign: 'left',
+                      }
+                    }
+                  >
+                    {pickerDecimalUnits.map(i => (
+                      <Picker.Item key={i.id} label={i.label} value={i.value} />
+                    ))}
+                  </Picker>
+                </View>
+
+                <View
+                  style={{
+                    flex: 0.2,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    alignSelf: 'center',
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontFamily: 'roboto_regular',
+                      fontSize: moderateScale(14),
+                      color: '#898989',
+                    }}
+                  >
+                    Liter
+                  </Text>
+                </View>
+              </View>
+            )}
+          </View>
           <View style={[ownStyles.redButtonWrapper, {}]}>
-            {/*<RedButton*/}
-            {/*text={*/}
-            {/*totalAmount > 0*/}
-            {/*? `${totalAmount.toFixed(2)} LITER ÜBERNEHMEN`*/}
-            {/*: 'ÜBERNEHMEN'*/}
-            {/*}*/}
-            {/*/>*/}
-            <RedButton text={this.state.selected} />
+            <RedButton
+              text={
+                standardInput
+                  ? `${this.standardTotalAmount()}  ÜBERNEHMEN`
+                  : `${this.customTotalAmount()} ÜBERNEHMEN`
+              }
+            />
           </View>
         </View>
       </AppModal>
