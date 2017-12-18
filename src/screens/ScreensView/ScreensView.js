@@ -27,7 +27,7 @@ class ScreensView extends React.Component {
             { key: `OnBoarding` },
             { key: `MainMenu` },
             { key: `QuestionAnswer` },
-            { key: `GoodInputModal` },
+            { key: `GoodQuantityListModal` },
             { key: `BasketInput` },
           ]}
           renderItem={({ item }) => (
@@ -39,7 +39,7 @@ class ScreensView extends React.Component {
                 fontFamily: 'roboto_bold',
               }}
               onPress={() => {
-                if (item.key === `GoodInputModal`) {
+                if (item.key === `GoodQuantityListModal`) {
                   this.setState({ modalVisible: true });
                   return;
                 }

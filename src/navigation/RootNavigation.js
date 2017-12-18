@@ -18,6 +18,7 @@ import registerForPushNotificationsAsync from '../../api/registerForPushNotifica
 import { UnderConstruction } from './underConstruction';
 import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
 import UnderConstructionWithSums from './underConstructionWithSums';
+import GoodQuantityListModal from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 
 const RootStackNavigator = StackNavigator(
   {
@@ -47,7 +48,9 @@ const RootStackNavigator = StackNavigator(
         header: null,
       }),
     },
-
+    GoodQuantityListModal: {
+      screen: GoodQuantityListModal,
+    },
     MainMenu: {
       screen: MainMenu,
       navigationOptions: ({ navigationOptions, navigation }) => ({
@@ -77,7 +80,7 @@ const RootStackNavigator = StackNavigator(
   {
     navigationOptions: defaultNavigationOptions,
     cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-    initialRouteName: 'OnBoarding',
+    initialRouteName: 'QuestionAnswer',
   }
 );
 

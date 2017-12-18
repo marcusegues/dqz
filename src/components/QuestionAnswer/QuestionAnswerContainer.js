@@ -9,6 +9,7 @@ import RedButton from '../Buttons/RedButton';
 import PeopleInputQA from './PeopleInput/PeopleInputQA';
 import MainCategoriesInputQA from './MainCategoriesInput/MainCategoriesInputQA';
 import QuantityInputQA from './QuantityInput/QuantityInputQA';
+
 import {
   getDeclarationBasket,
   getDeclarationPeople,
@@ -52,7 +53,6 @@ export type cardProps = {
 class QuestionAnswerContainer extends React.Component<any, QAState> {
   constructor(props) {
     super(props);
-
     this.state = {
       basket: this.props.basket,
       people: this.props.people,
@@ -162,6 +162,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         style={{
           flex: 1,
           height: '100%',
+          marginHorizontal: 16,
           marginBottom: 16,
           flexDirection: 'column',
           alignItems: 'center',
@@ -170,7 +171,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         <View
           style={{
             flex: 1,
-            width: '95%',
+            width: '100%',
             flexDirection: 'column',
             alignItems: 'center',
           }}

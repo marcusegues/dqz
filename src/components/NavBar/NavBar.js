@@ -7,7 +7,7 @@ const ownStyles = {
   locatorContainer: {
     // flex: 1,
     // flex: 0.07,
-    width: '95%',
+    width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'center',
