@@ -11,6 +11,7 @@ import {
   MainCategory,
 } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
+import type { cardProps } from '../QuestionAnswerContainer';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
@@ -30,8 +31,8 @@ const initModalData = {
   category: 'none',
 };
 
-class QuantityInputQA extends React.Component<any, State> {
-  constructor(props) {
+class QuantityInputQA extends React.Component<cardProps, State> {
+  constructor(props: cardProps) {
     super(props);
     this.state = {
       basket: this.props.basket,
