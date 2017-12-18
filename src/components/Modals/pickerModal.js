@@ -6,6 +6,8 @@ import { moderateScale, scale, verticalScale } from '../../styles/Scaling';
 import { pickerNumbers, pickerAmount } from './StandardInputPicker';
 import { pickerUnits, pickerDecimalUnits } from './CustomInputPicker';
 
+import { boxShadow } from '../../styles/globalStyles';
+
 const touchableStyles = {
   alignItems: 'center',
   paddingVertical: 15,
@@ -18,6 +20,7 @@ const touchableTextStyles = {
 
 const ownStyles = StyleSheet.create({
   modalContainer: {
+    ...boxShadow,
     top: '25%',
     width: '85%',
     flexDirection: 'column',
@@ -26,11 +29,6 @@ const ownStyles = StyleSheet.create({
     borderRadius: 3,
     alignSelf: 'center',
     backgroundColor: '#FFF',
-    shadowColor: '#000',
-    shadowOffset: { height: 3, width: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3,
-    elevation: 3,
   },
 
   redButtonWrapper: {
@@ -38,8 +36,6 @@ const ownStyles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
     justifyContent: 'center',
-
-    // marginBottom: verticalScale(20),
   },
   touchableActive: {
     ...touchableStyles,
