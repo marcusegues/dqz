@@ -1,3 +1,4 @@
+/* eslint-disable react/prefer-stateless-function,react/prefer-stateless-function */
 // @flow
 import React from 'react';
 // $FlowFixMe
