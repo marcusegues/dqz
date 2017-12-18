@@ -6,7 +6,10 @@ import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
 import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { setQuantity, getQuantity } from '../../../model/configurationApi';
-import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
+import {
+  MainCategoriesToCategories,
+  MainCategory,
+} from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
 
 const complete = require('../../../../assets/images/complete.png');
@@ -14,14 +17,26 @@ const incomplete = require('../../../../assets/images/incomplete.png');
 const mainIcon = require('../../../../assets/icons/mainCategories.png');
 
 export type State = {
+  basket: Basket,
   modalVisible: boolean,
+  modalData: {
+    mainCategory: MainCategory | 'none',
+    category: Category | 'none',
+  },
+};
+
+const initModalData = {
+  mainCategory: 'none',
+  category: 'none',
 };
 
 class QuantityInputQA extends React.Component<any, State> {
   constructor(props) {
     super(props);
     this.state = {
+      basket: this.props.basket,
       modalVisible: false,
+      modalData: initModalData,
     };
   }
 
@@ -35,7 +50,9 @@ class QuantityInputQA extends React.Component<any, State> {
     return (
       <View>
         <QuantityInputConfirmationCard
-          onShowQuantityInputModal={() => this.handleShowModal()}
+          onShowQuantityInputModal={modalData =>
+            this.handleShowModal(modalData)
+          }
           onAnswer={this.props.onAnswer}
           categoriesByMainCategory={this.getDisplayedCategoriesByMainCategory()}
           basket={this.props.qaState.basket}
@@ -44,6 +61,7 @@ class QuantityInputQA extends React.Component<any, State> {
         <GoodQuantityListModal
           modalVisible={this.state.modalVisible}
           onHide={() => this.handleHideModal()}
+          modalData={this.state.modalData}
         />
       </View>
     );
@@ -74,12 +92,12 @@ class QuantityInputQA extends React.Component<any, State> {
     return this.props.onUpdate(updatedBasket);
   }
 
-  handleShowModal() {
-    this.setState({ modalVisible: true });
+  handleShowModal(modalData) {
+    this.setState({ modalVisible: true, modalData });
   }
 
   handleHideModal() {
-    this.setState({ modalVisible: false });
+    this.setState({ modalVisible: false, modalData: initModalData });
   }
 
   render() {
