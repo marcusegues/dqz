@@ -31,6 +31,7 @@ import {
 import { setQuestionFlag } from './QAControl/controlQuestionFlag';
 import type { DutyReport } from '../../model/types/calculationTypes';
 import { calculateDuty } from '../../model/dutyCalculations';
+import { verticalScale } from '../../styles/Scaling';
 
 export type QuestionType =
   | 'peopleInput'
@@ -213,22 +214,22 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             renderItem={({ item }) => item.component}
           />
         </View>
-        {this.allQuestionsAnswered() ? (
-          <View
-            style={{
-              flex: 0.1,
-              marginBottom: 20,
-              marginTop: 16,
-              marginLeft: 16,
-              marginRight: 16,
-            }}
-          >
-            <RedButton
-              text={t('toOverview')}
-              onPress={() => this.props.navigation.navigate('Payment')}
-            />
-          </View>
-        ) : null}
+        <View
+          style={{
+            flex: 0.1,
+            marginBottom: verticalScale(4),
+            marginTop: verticalScale(4),
+            marginLeft: 16,
+            marginRight: 16,
+            backgroundColor: 'transparent',
+          }}
+        >
+          <RedButton
+            text={t('toOverview')}
+            confirmationDisabled={!this.allQuestionsAnswered()}
+            onPress={() => this.props.navigation.navigate('Payment')}
+          />
+        </View>
       </View>
     );
   }
