@@ -31,7 +31,7 @@ class LargeAmountPresentContainer extends React.Component {
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
         mainIcon="cash-multiple"
-        status={this.props.questionState === 'warning' ? incomplete : complete}
+        flag={this.props.questionState === 'warning' ? incomplete : complete}
       >
         <LargeAmountInfo largeAmountPresent={hasLargeAmount} />
       </AnswerCard>

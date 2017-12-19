@@ -48,7 +48,7 @@ class AmountInputContainer extends React.Component {
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
         mainIcon={mainIcon}
-        status={
+        flag={
           this.props.settings.get('amountsEntered') === 'notAnswered'
             ? incomplete
             : complete

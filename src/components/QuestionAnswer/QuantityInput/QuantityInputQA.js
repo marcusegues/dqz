@@ -9,13 +9,9 @@ import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuanti
 import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { MainCategory } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
-import type { cardProps } from '../QuestionAnswerContainer';
-import AnswerCard from '../cards/AnswerCard/AnswerCard';
+import type { CardProps } from '../QuestionAnswerContainer';
+import QuantityInputAnswerCard from '../cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
 import { addQuantity } from '../../../model/configurationApi';
-
-const complete = require('../../../../assets/images/complete.png');
-const incomplete = require('../../../../assets/images/incomplete.png');
-const mainIcon = require('../../../../assets/icons/mainCategories.png');
 
 export type ModalCategoryType = Category | 'none';
 export type ModalMainCategoryType = MainCategory | 'none';
@@ -35,8 +31,8 @@ export type QuantityInputState = {
   modalCategories: ModalCategoriesType,
 };
 
-class QuantityInputQA extends React.Component<cardProps, QuantityInputState> {
-  constructor(props: cardProps) {
+class QuantityInputQA extends React.Component<CardProps, QuantityInputState> {
+  constructor(props: CardProps) {
     super(props);
     this.state = {
       modalVisible: false,
@@ -75,14 +71,10 @@ class QuantityInputQA extends React.Component<cardProps, QuantityInputState> {
 
   getAnswerComponent() {
     return (
-      <AnswerCard
+      <QuantityInputAnswerCard
         onAnswerCardPress={this.props.onAnswerCardPress}
-        mainIcon={mainIcon}
-        status={
-          this.props.qaState.settings.get('mainCategories').isEmpty()
-            ? incomplete
-            : complete
-        }
+        flag={this.props.questionFlag}
+        duty={this.props.qaState.duty.totalDuty}
       />
     );
   }

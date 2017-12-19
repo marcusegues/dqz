@@ -2,13 +2,13 @@
 
 import type {
   QAState,
-  questionState,
-  questionType,
+  QuestionState,
+  QuestionType,
 } from '../QuestionAnswerContainer';
 
 const setQuestionState = (
   qaState: QAState,
-  questionStates: { [questionType]: questionState }
+  questionStates: { [QuestionType]: QuestionState }
 ): QAState => Object.assign({}, qaState, { questionStates });
 
 export const setInitStates = (qaState: QAState): QAState => {
@@ -22,15 +22,15 @@ export const setInitStates = (qaState: QAState): QAState => {
 };
 
 export const setQuestionStates = (
-  justAnswered: questionType,
+  justAnswered: QuestionType,
   qaState: QAState
 ): QAState => {
   const { settings } = qaState;
   const mainCategories = settings.get('mainCategories');
   // do case analysis
-  const peopleInputState: questionState = 'collapsed';
-  let mainCategoriesState: questionState = 'collapsed';
-  let quantityInputState: questionState = 'collapsed';
+  const peopleInputState: QuestionState = 'collapsed';
+  let mainCategoriesState: QuestionState = 'collapsed';
+  let quantityInputState: QuestionState = 'collapsed';
 
   switch (justAnswered) {
     case 'peopleInput': {
@@ -56,12 +56,12 @@ export const setQuestionStates = (
 };
 
 export const collapseAllExistingExceptOne = (
-  expand: questionType,
+  expand: QuestionType,
   qaState: QAState
 ): QAState => {
   const { questionStates } = qaState;
 
-  const getQuestionState = (type: questionType) => {
+  const getQuestionState = (type: QuestionType) => {
     if (questionStates[type] === 'hidden') {
       return 'hidden';
     }
