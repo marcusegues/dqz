@@ -4,7 +4,6 @@ import { getTotalPeople } from '../../../model/configurationApi';
 import type { Basket } from '../../../model/types/basketPeopleTypes';
 
 const anyQuantitiesInBasket = (basket: Basket): boolean => {
-  debugger;
   return basket.valueSeq().some(categoryBasketItem => {
     if (categoryBasketItem.getIn(['volume', 'quantity'])) {
       return true;
@@ -41,7 +40,6 @@ export const setQuestionStatus = (
     }
     default:
   }
-  debugger;
   return {
     ...qaState,
     questionStatus: {
