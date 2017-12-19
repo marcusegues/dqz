@@ -264,11 +264,11 @@ const mapDispatchToProps = dispatch => ({
       type: 'DECLARATION_SET_MAIN_CATEGORIES',
       mainCategories,
     }),
-  onDeclarationBasketChangeQuantity: (category, quantityChange) =>
+  onDeclarationBasketChangeQuantity: (category, quantity) =>
     dispatch({
-      type: 'DECLARATION_BASKET_CHANGE_QUANTITY',
+      type: 'DECLARATION_BASKET_ADD_QUANTITY',
       category,
-      quantityChange,
+      quantity,
     }),
   onDeclarationSetBasket: basket =>
     dispatch({

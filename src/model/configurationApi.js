@@ -26,40 +26,78 @@ export const emptyBasket: Basket = Immutable.Map(
 
 // QUANTITIES
 /**
- * Sets a quantity in a basket for a given category
+ * Adds a quantity in a basket for a given category
  * @param basket
  * @param category
  * @param quantity
  * @returns Basket
  */
-export const setQuantity = (
+export const addQuantity = (
   basket: Basket,
   category: Category,
   quantity: number
-): Basket => basket.setIn([category, 'volume', 'quantity'], quantity);
+): Basket => {
+  if (quantity <= 0) {
+    return basket;
+  }
+  return basket.updateIn([category, 'volume', 'quantities'], q =>
+    q.push(quantity)
+  );
+};
 
 /**
- * Sets several quantites for the given basket
+ * Deletes a quantity in a basket for a given category at index
+ * Note: if index > size of quantities list, quantities won't change.
+ * This exception should be handled elsewhere.
+ * @param basket
+ * @param category
+ * @param index
+ * @returns Basket
+ */
+export const deleteQuantity = (
+  basket: Basket,
+  category: Category,
+  index: number
+): Basket =>
+  basket.updateIn([category, 'volume', 'quantities'], q => q.delete(index));
+
+/**
+ * Helper method, not to be used in the App.
+ * Sets several quantites for the given basket in different categories
  * @param basket
  * @param pairs
  * @returns Basket
  */
-export const setQuantities = (
+export const addQuantities = (
   basket: Basket,
   pairs: Array<{ category: Category, quantity: number }>
 ): Basket =>
   basket.withMutations(bskt => {
-    pairs.forEach(p => setQuantity(bskt, p.category, p.quantity));
+    pairs.forEach(p => addQuantity(bskt, p.category, p.quantity));
   });
 
 /**
- * Gets the quantity for the basket's category
+ * Gets all quantities for the basket's category
+ * @param basket
+ * @param category
+ * @returns List of quantities (number)
+ */
+export const getQuantities = (
+  basket: Basket,
+  category: Category
+): ImmutableListType<number> =>
+  basket.getIn([category, 'volume', 'quantities'], Immutable.List());
+
+/**
+ * Gets the total quantity for the basket's category
  * @param basket
  * @param category
  * @returns number
  */
-export const getQuantity = (basket: Basket, category: Category): number =>
-  basket.getIn([category, 'volume', 'quantity'], 0);
+export const getTotalQuantity = (basket: Basket, category: Category): number =>
+  basket
+    .getIn([category, 'volume', 'quantities'], Immutable.List())
+    .reduce((a, v) => a + v, 0);
 
 // AMOUNTS
 /**

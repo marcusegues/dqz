@@ -2,13 +2,17 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
+import { v4 } from 'uuid';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 import ModalCard from '../ModalCard';
 import AppModal from '../AppModal';
 import QuantityInfo from './subcomponents/QuantityInfo';
-import { getQuantity } from '../../../model/configurationApi';
+import {
+  getQuantities,
+  getTotalQuantity,
+} from '../../../model/configurationApi';
 import type { QuantityInputState } from '../../QuestionAnswer/QuantityInput/QuantityInputQA';
 import type { Basket, Category } from '../../../model/types/basketPeopleTypes';
 
@@ -31,15 +35,20 @@ class GoodQuantityListModal extends React.Component<
     if (modalCategories.category === 'none') {
       return null;
     }
-    const newQuantity = getQuantity(basket, modalCategories.category);
+    const quantities = getQuantities(basket, modalCategories.category);
     return (
       <AppModal modalVisible={modalVisible}>
         <ModalCard>
           <QuantityInfo
             mainCategory={modalCategories.mainCategory}
             category={modalCategories.category}
-            quantity={newQuantity}
+            quantity={() => {
+              if (modalCategories.category !== 'none') {
+                getTotalQuantity(basket, modalCategories.category);
+              }
+            }}
           />
+          <View>{quantities.map(q => <Text key={v4()}>{q}</Text>)}</View>
           <Touchable
             onPress={() => {
               if (modalCategories.category !== 'none') {

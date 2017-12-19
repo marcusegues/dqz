@@ -3,9 +3,9 @@ import type { QAState, questionType } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
 import type { Basket } from '../../../model/types/basketPeopleTypes';
 
-const anyQuantitiesInBasket = (basket: Basket): boolean => {
+export const anyQuantitiesInBasket = (basket: Basket): boolean => {
   return basket.valueSeq().some(categoryBasketItem => {
-    if (categoryBasketItem.getIn(['volume', 'quantity'])) {
+    if (categoryBasketItem.getIn(['volume', 'quantities']).size) {
       return true;
     }
     return false;
