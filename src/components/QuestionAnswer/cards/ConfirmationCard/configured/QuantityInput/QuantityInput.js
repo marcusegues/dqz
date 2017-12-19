@@ -52,7 +52,9 @@ const QuantityInput = ({
     .map(([mainCategory, categories]) => {
       const subcomponents = categories.map(category => (
         <GoodInputRow
-          onShowQuantityInputModal={onShowQuantityInputModal}
+          onShowQuantityInputModal={() => {
+            onShowQuantityInputModal({ mainCategory, category });
+          }}
           key={category}
           category={category}
           quantity={getQuantity(basket, category)}
