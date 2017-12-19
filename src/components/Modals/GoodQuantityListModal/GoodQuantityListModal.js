@@ -56,7 +56,7 @@ class GoodQuantityListModal extends React.Component<
             }}
             text="Mengen Hinzufügen"
           />
-          <RedButton onPress={onHide} text="Hide" />
+          <RedButton onPress={onHide} text="Bestätigen" />
         </ModalCard>
       </AppModal>
     );
