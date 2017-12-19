@@ -26,34 +26,34 @@ import {
   setInitStates,
   setQuestionStates,
 } from './QAControl/controlQuestionStates';
-import { setQuestionStatus } from './QAControl/controlQuestionStatus';
+import { setQuestionFlag } from './QAControl/controlQuestionFlag';
 import type { DutyReport } from '../../model/types/calculationTypes';
 import { calculateDuty } from '../../model/dutyCalculations';
 
-export type questionType =
+export type QuestionType =
   | 'peopleInput'
   | 'mainCategories'
   | 'quantityInput'
   | 'none';
 
-export type questionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
+export type QuestionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
 
-export type questionStatusType = 'complete' | 'incomplete';
+export type QuestionFlag = 'complete' | 'incomplete';
 
 export type QAState = {
-  questionStates: { [questionType]: questionState },
-  questionStatus: { [questionType]: questionStatusType },
+  questionStates: { [QuestionType]: QuestionState },
+  questionFlag: { [QuestionType]: QuestionFlag },
   basket: Basket,
   people: People,
   settings: SettingsType,
   duty: DutyReport,
 };
 
-export type cardProps = {
+export type CardProps = {
   qaState: QAState,
   onAnswerCardPress: any, // TODO
-  questionState: questionState,
-  questionStatus: questionStatusType,
+  questionState: QuestionState,
+  questionFlag: QuestionFlag,
   onUpdate: any, // TODO
   onAnswer: any, // TODO
 };
@@ -68,7 +68,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         mainCategories: 'hidden',
         quantityInput: 'hidden',
       },
-      questionStatus: {
+      questionFlag: {
         peopleInput: 'complete',
         mainCategories: 'incomplete',
         quantityInput: 'incomplete',
@@ -89,23 +89,23 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
     this.setState(setInitStates(this.state));
   }
 
-  updateStatus(justUpdated: questionType) {
-    this.setState(setQuestionStatus(justUpdated, this.state));
+  updateQuestionFlag(justUpdated: QuestionType) {
+    this.setState(setQuestionFlag(justUpdated, this.state));
   }
 
-  updateQA(justAnswered: questionType) {
+  updateQA(justAnswered: QuestionType) {
     this.setState(setQuestionStates(justAnswered, this.state));
   }
 
   allQuestionsAnswered(): boolean {
     // TODO Object.values returns Array<mixed> in flow. Find better way.
-    return Object.values(this.state.questionStatus).every(
-      (status): boolean => status === 'complete'
+    return Object.values(this.state.questionFlag).every(
+      (flag): boolean => flag === 'complete'
     );
   }
 
   render() {
-    const { questionStates, questionStatus } = this.state;
+    const { questionStates, questionFlag } = this.state;
 
     const flatListData = [
       {
@@ -119,9 +119,11 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
               );
             }}
             questionState={questionStates.peopleInput}
-            questionStatus={questionStatus.peopleInput}
+            questionFlag={questionFlag.peopleInput}
             onUpdate={people => {
-              this.setState({ people }, () => this.updateStatus('peopleInput'));
+              this.setState({ people }, () =>
+                this.updateQuestionFlag('peopleInput')
+              );
             }}
             onAnswer={() => {
               this.props.onDeclarationSetPeople(this.state.people);
@@ -141,7 +143,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
               );
             }}
             questionState={questionStates.mainCategories}
-            questionStatus={questionStatus.mainCategories}
+            questionFlag={questionFlag.mainCategories}
             onUpdate={activeCategories => {
               this.setState(
                 {
@@ -150,7 +152,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                     activeCategories
                   ),
                 },
-                () => this.updateStatus('mainCategories')
+                () => this.updateQuestionFlag('mainCategories')
               );
             }}
             onAnswer={() => {
@@ -173,14 +175,14 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
               );
             }}
             questionState={questionStates.quantityInput}
-            questionStatus={questionStatus.quantityInput}
+            questionFlag={questionFlag.quantityInput}
             onUpdate={basket => {
               this.setState(
                 {
                   basket,
                   duty: calculateDuty(basket, this.state.people),
                 },
-                () => this.updateStatus('quantityInput')
+                () => this.updateQuestionFlag('quantityInput')
               );
             }}
             onAnswer={() => {

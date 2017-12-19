@@ -9,12 +9,12 @@ const mainIcon = require('../../../../../../../assets/icons/mainCategories.png')
 const MainCategoriesInputAnswerCard = ({
   mainCategories,
   onAnswerCardPress,
-  status,
+  flag,
 }) => (
   <AnswerCard
     onAnswerCardPress={onAnswerCardPress}
     mainIcon={mainIcon}
-    status={status === 'complete' ? complete : incomplete}
+    flag={flag === 'complete' ? complete : incomplete}
   >
     <MainCategoriesInputInfo mainCategories={mainCategories} />
   </AnswerCard>

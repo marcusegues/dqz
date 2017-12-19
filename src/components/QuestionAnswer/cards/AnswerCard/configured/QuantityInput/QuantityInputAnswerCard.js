@@ -6,11 +6,11 @@ const complete = require('../../../../../../../assets/images/complete.png');
 const incomplete = require('../../../../../../../assets/images/incomplete.png');
 const mainIcon = require('../../../../../../../assets/icons/travellers.png');
 
-const QuantityInputAnswerCard = ({ onAnswerCardPress, status, duty }) => (
+const QuantityInputAnswerCard = ({ onAnswerCardPress, flag, duty }) => (
   <AnswerCard
     onAnswerCardPress={onAnswerCardPress}
     mainIcon={mainIcon}
-    status={status === 'complete' ? complete : incomplete}
+    flag={flag === 'complete' ? complete : incomplete}
   >
     <QuantityInputInfo duty={duty} />
   </AnswerCard>

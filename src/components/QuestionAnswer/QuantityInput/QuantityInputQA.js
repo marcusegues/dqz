@@ -9,7 +9,7 @@ import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuanti
 import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { MainCategory } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
-import type { cardProps } from '../QuestionAnswerContainer';
+import type { CardProps } from '../QuestionAnswerContainer';
 import QuantityInputAnswerCard from '../cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
 import { addQuantity } from '../../../model/configurationApi';
 
@@ -31,8 +31,8 @@ export type QuantityInputState = {
   modalCategories: ModalCategoriesType,
 };
 
-class QuantityInputQA extends React.Component<cardProps, QuantityInputState> {
-  constructor(props: cardProps) {
+class QuantityInputQA extends React.Component<CardProps, QuantityInputState> {
+  constructor(props: CardProps) {
     super(props);
     this.state = {
       modalVisible: false,
@@ -73,7 +73,7 @@ class QuantityInputQA extends React.Component<cardProps, QuantityInputState> {
     return (
       <QuantityInputAnswerCard
         onAnswerCardPress={this.props.onAnswerCardPress}
-        status={this.props.questionStatus}
+        flag={this.props.questionFlag}
         duty={this.props.qaState.duty.totalDuty}
       />
     );

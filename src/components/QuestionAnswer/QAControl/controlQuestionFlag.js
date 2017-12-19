@@ -1,6 +1,6 @@
 // @flow
 import Immutable from 'immutable';
-import type { QAState, questionType } from '../QuestionAnswerContainer';
+import type { QAState, QuestionType } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
 import type { Basket } from '../../../model/types/basketPeopleTypes';
 
@@ -13,26 +13,24 @@ export const anyQuantitiesInBasket = (basket: Basket): boolean =>
           .size
     );
 
-export const setQuestionStatus = (
-  justUpdated: questionType,
+export const setQuestionFlag = (
+  justUpdated: QuestionType,
   qaState: QAState
 ): QAState => {
-  let updatedStatus;
+  let updatedFlag;
   switch (justUpdated) {
     case 'peopleInput': {
-      updatedStatus = getTotalPeople(qaState.people)
-        ? 'complete'
-        : 'incomplete';
+      updatedFlag = getTotalPeople(qaState.people) ? 'complete' : 'incomplete';
       break;
     }
     case 'mainCategories': {
-      updatedStatus = qaState.settings.get('mainCategories').size
+      updatedFlag = qaState.settings.get('mainCategories').size
         ? 'complete'
         : 'incomplete';
       break;
     }
     case 'quantityInput': {
-      updatedStatus =
+      updatedFlag =
         qaState.settings.get('mainCategories').size &&
         anyQuantitiesInBasket(qaState.basket)
           ? 'complete'
@@ -43,9 +41,9 @@ export const setQuestionStatus = (
   }
   return {
     ...qaState,
-    questionStatus: {
-      ...qaState.questionStatus,
-      [justUpdated]: updatedStatus,
+    questionFlag: {
+      ...qaState.questionFlag,
+      [justUpdated]: updatedFlag,
     },
   };
 };

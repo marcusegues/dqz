@@ -11,9 +11,9 @@ import {
   subtractMinor,
 } from '../../../model/configurationApi';
 import type { People } from '../../../model/types/basketPeopleTypes';
-import type { cardProps } from '../QuestionAnswerContainer';
+import type { CardProps } from '../QuestionAnswerContainer';
 
-const PeopleInputQA = (props: cardProps) => {
+const PeopleInputQA = (props: CardProps) => {
   const handleUpdate = (people: People) => {
     props.onUpdate(people);
   };

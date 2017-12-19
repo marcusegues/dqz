@@ -1,5 +1,5 @@
 /* global describe, test, expect */
-import { anyQuantitiesInBasket } from '../controlQuestionStatus';
+import { anyQuantitiesInBasket } from '../controlQuestionFlag';
 import { addQuantity, emptyBasket } from '../../../../model/configurationApi';
 
 describe('Any quantities in basket', () => {
