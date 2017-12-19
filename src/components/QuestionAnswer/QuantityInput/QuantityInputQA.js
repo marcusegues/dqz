@@ -5,8 +5,7 @@ import { View } from 'react-native';
 import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
 import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
-// TODO marcus:
-// import { setQuantity, getQuantity } from '../../../model/configurationApi';
+
 import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
 import type { cardProps } from '../QuestionAnswerContainer';
