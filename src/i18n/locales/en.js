@@ -10,8 +10,11 @@ import {
 
 export const en: LocaleType = makeLocaleRecord({
   general: makeGeneralNSRecord({
-    declareGoods: 'Declare Goods',
-    pleaseSelect: 'Please Select',
+    declareGoods: 'Declare',
+    pleaseSelect: 'Please select',
+    receipts: 'Receipts',
+    calculator: 'Calculator',
+    information: 'Information',
   }),
   onBoarding: makeOnBoardingNSRecord({
     onBoardingMessage:

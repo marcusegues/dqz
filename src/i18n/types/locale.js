@@ -5,11 +5,17 @@ import Immutable from 'immutable';
 type GeneralNS = {
   declareGoods: string,
   pleaseSelect: string,
+  calculator: string,
+  receipts: string,
+  information: string,
 };
 
 export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
   declareGoods: '',
   pleaseSelect: '',
+  calculator: '',
+  receipts: '',
+  information: '',
 });
 
 export type GeneralNSType = RecordOf<GeneralNS>;
