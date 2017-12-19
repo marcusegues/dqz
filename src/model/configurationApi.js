@@ -36,8 +36,14 @@ export const addQuantity = (
   basket: Basket,
   category: Category,
   quantity: number
-): Basket =>
-  basket.updateIn([category, 'volume', 'quantities'], q => q.push(quantity));
+): Basket => {
+  if (quantity <= 0) {
+    return basket;
+  }
+  return basket.updateIn([category, 'volume', 'quantities'], q =>
+    q.push(quantity)
+  );
+};
 
 /**
  * Deletes a quantity in a basket for a given category at index
