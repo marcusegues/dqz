@@ -99,6 +99,16 @@ describe('The basket / quantites: ', () => {
     expect(getTotalQuantity(b5, 'Meat')).toBe(369);
     expect(getQuantities(b5, 'Meat').size).toBe(3);
   });
+  test('adding quantity of zero has no effect', () => {
+    const b1 = addQuantity(emptyBasket, 'Meat', 0);
+
+    expect(getQuantities(b1, 'Meat').size).toBe(0);
+  });
+  test('adding negative quantity has no effect', () => {
+    const b1 = addQuantity(emptyBasket, 'Meat', -123);
+
+    expect(getQuantities(b1, 'Meat').size).toBe(0);
+  });
 });
 
 describe('The basket / amounts: ', () => {
