@@ -24,6 +24,8 @@ import {
   addQuantity,
   subtractAdult,
   subtractMinor,
+  getQuantities,
+  deleteQuantity,
 } from '../configurationApi';
 import { CategoriesArray } from '../constants';
 
@@ -70,6 +72,32 @@ describe('The basket / quantites: ', () => {
     CategoriesArray.forEach(c =>
       expect(getTotalQuantity(quantityBasket3, c)).toBe(0)
     );
+  });
+  test('can add multiple quantites in one category', () => {
+    const b1 = addQuantity(emptyBasket, 'Meat', 123);
+    const b2 = addQuantity(b1, 'Meat', 123);
+    const b3 = addQuantity(b2, 'Meat', 123);
+    expect(getTotalQuantity(b3, 'Meat')).toBe(369);
+    expect(getQuantities(b3, 'Meat').size).toBe(3);
+  });
+
+  test('can delete quantites in a category', () => {
+    const b1 = addQuantity(emptyBasket, 'Meat', 123);
+    const b2 = addQuantity(b1, 'Meat', 12);
+    const b3 = addQuantity(b2, 'Meat', 1);
+    const b4 = deleteQuantity(b3, 'Meat', 2);
+    expect(getTotalQuantity(b4, 'Meat')).toBe(135);
+    expect(getQuantities(b4, 'Meat').size).toBe(2);
+  });
+
+  test('deleting with too high an index has no effect', () => {
+    const b1 = addQuantity(emptyBasket, 'Meat', 123);
+    const b2 = addQuantity(b1, 'Meat', 123);
+    const b3 = addQuantity(b2, 'Meat', 123);
+    const b4 = deleteQuantity(b3, 'Meat', 3);
+    const b5 = deleteQuantity(b4, 'Meat', 33333);
+    expect(getTotalQuantity(b5, 'Meat')).toBe(369);
+    expect(getQuantities(b5, 'Meat').size).toBe(3);
   });
 });
 
