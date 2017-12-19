@@ -1,4 +1,6 @@
+/* eslint-disable react/no-unused-state */
 // @flow
+// TODO remove eslint-disable
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
@@ -7,6 +9,7 @@ import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/
 import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { setQuantity, getQuantity } from '../../../model/configurationApi';
 import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
+import type { MainCategory } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
 import type { cardProps } from '../QuestionAnswerContainer';
 
@@ -14,15 +17,30 @@ const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
 const mainIcon = require('../../../../assets/icons/mainCategories.png');
 
-export type State = {
-  modalVisible: boolean,
+export type ModalCategoryType = Category | 'none';
+export type ModalMainCategoryType = MainCategory | 'none';
+
+export type ModalCategoriesType = {
+  mainCategory: ModalMainCategoryType,
+  category: ModalCategoryType,
 };
 
-class QuantityInputQA extends React.Component<cardProps, State> {
+const initModalCategories = {
+  mainCategory: 'none',
+  category: 'none',
+};
+
+export type QuantityInputState = {
+  modalVisible: boolean,
+  modalCategories: ModalCategoriesType,
+};
+
+class QuantityInputQA extends React.Component<cardProps, QuantityInputState> {
   constructor(props: cardProps) {
     super(props);
     this.state = {
       modalVisible: false,
+      modalCategories: initModalCategories,
     };
   }
 
@@ -36,15 +54,20 @@ class QuantityInputQA extends React.Component<cardProps, State> {
     return (
       <View>
         <QuantityInputConfirmationCard
-          onShowQuantityInputModal={() => this.handleShowModal()}
+          onShowQuantityInputModal={(modalCategories: ModalCategoriesType) =>
+            this.handleShowModal(modalCategories)
+          }
           onAnswer={this.props.onAnswer}
           categoriesByMainCategory={this.getDisplayedCategoriesByMainCategory()}
           basket={this.props.qaState.basket}
-          onBasketChangeQuantity={this.handleUpdate}
         />
         <GoodQuantityListModal
-          modalVisible={this.state.modalVisible}
           onHide={() => this.handleHideModal()}
+          quantityInputState={this.state}
+          basket={this.props.qaState.basket}
+          onUpdateQuantity={(category: Category, quantityChange: number) => {
+            this.handleUpdate(category, quantityChange);
+          }}
         />
       </View>
     );
@@ -66,7 +89,6 @@ class QuantityInputQA extends React.Component<cardProps, State> {
 
   handleUpdate(category: Category, quantityChange: number) {
     const { basket } = this.props.qaState;
-
     const updatedBasket = setQuantity(
       basket,
       category,
@@ -75,12 +97,15 @@ class QuantityInputQA extends React.Component<cardProps, State> {
     return this.props.onUpdate(updatedBasket);
   }
 
-  handleShowModal() {
-    this.setState({ modalVisible: true });
+  handleShowModal(modalCategories: ModalCategoriesType) {
+    this.setState({ modalVisible: true, modalCategories });
   }
 
   handleHideModal() {
-    this.setState({ modalVisible: false });
+    this.setState({
+      modalVisible: false,
+      modalCategories: initModalCategories,
+    });
   }
 
   render() {
