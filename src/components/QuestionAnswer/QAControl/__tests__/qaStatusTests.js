@@ -1,9 +1,6 @@
-import {
-  anyQuantitiesInBasket,
-  setQuestionStatus,
-} from '../controlQuestionStatus';
-import { emptyBasket } from '../../../../model/configurationApi';
-import { addQuantity } from '../../../../model/configurationApi';
+/* global describe, test, expect */
+import { anyQuantitiesInBasket } from '../controlQuestionStatus';
+import { addQuantity, emptyBasket } from '../../../../model/configurationApi';
 
 describe('Any quantities in basket', () => {
   test('returns false if empty basket', () => {

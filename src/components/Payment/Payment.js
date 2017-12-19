@@ -1,5 +1,7 @@
+/* eslint-disable react/no-unused-state, no-console */
+// TODO remove above line
 import React from 'react';
-import { WebView, View } from 'react-native';
+import { View } from 'react-native';
 import Overview from '../Overview/Overview';
 import Saferpay from '../../../saferpay';
 import NavBar from '../NavBar/NavBar';

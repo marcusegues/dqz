@@ -1,16 +1,17 @@
 // @flow
+import Immutable from 'immutable';
 import type { QAState, questionType } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
 import type { Basket } from '../../../model/types/basketPeopleTypes';
 
-export const anyQuantitiesInBasket = (basket: Basket): boolean => {
-  return basket.valueSeq().some(categoryBasketItem => {
-    if (categoryBasketItem.getIn(['volume', 'quantities']).size) {
-      return true;
-    }
-    return false;
-  });
-};
+export const anyQuantitiesInBasket = (basket: Basket): boolean =>
+  basket
+    .valueSeq()
+    .some(
+      categoryBasketItem =>
+        !!categoryBasketItem.getIn(['volume', 'quantities'], Immutable.List())
+          .size
+    );
 
 export const setQuestionStatus = (
   justUpdated: questionType,
