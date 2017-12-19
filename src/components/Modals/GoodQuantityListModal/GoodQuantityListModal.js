@@ -19,6 +19,8 @@ export type GoodQuantityListModalProps = {
   basket: Basket,
 };
 
+// TODO remove disable
+// eslint-disable-next-line react/prefer-stateless-function
 class GoodQuantityListModal extends React.Component<
   GoodQuantityListModalProps,
   any
