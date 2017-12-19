@@ -29,7 +29,6 @@ import {
 import { setQuestionStatus } from './QAControl/controlQuestionStatus';
 import type { DutyReport } from '../../model/types/calculationTypes';
 import { calculateDuty } from '../../model/dutyCalculations';
-import OverviewModal from '../Modals/OverviewModal/OverviewModal';
 
 export type questionType =
   | 'peopleInput'
@@ -48,7 +47,6 @@ export type QAState = {
   people: People,
   settings: SettingsType,
   duty: DutyReport,
-  showOverview: boolean,
 };
 
 export type cardProps = {
@@ -80,7 +78,6 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
       settings: this.props.settings,
       // not getting duty as props from redux because dues are not being updated all the time, perhaps they should be
       duty: calculateDuty(this.props.basket, this.props.people),
-      showOverview: false,
     };
   }
 
@@ -233,14 +230,10 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
           >
             <RedButton
               text="ZUR UBERSICHT"
-              onPress={() => this.setState({ showOverview: true })}
+              onPress={() => this.props.navigation.navigate('Payment')}
             />
           </View>
         ) : null}
-        <OverviewModal
-          modalVisible={this.state.showOverview}
-          onHide={() => this.setState({ showOverview: false })}
-        />
       </View>
     );
   }

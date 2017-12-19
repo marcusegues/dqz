@@ -13,7 +13,7 @@ import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
 import InfoIcon from '../components/Headers/subcomponents/InfoIcon';
 import MainMenuHeaderRight from '../components/Headers/subcomponents/MainMenuHeaderRight';
 import MainMenu from '../screens/MainMenu/MainMenu';
-
+import Payment from '../components/Payment/Payment';
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
 import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
@@ -40,6 +40,9 @@ export const stackNavigatorScreens = {
     navigationOptions: () => ({
       headerTitle: <HeaderTitle text="Waren deklarieren" />,
     }),
+  },
+  Payment: {
+    screen: Payment,
   },
   OnBoarding: {
     screen: OnBoarding,
