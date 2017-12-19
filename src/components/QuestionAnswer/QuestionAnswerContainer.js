@@ -4,6 +4,8 @@ import React from 'react';
 // $FlowFixMe
 import { FlatList, View } from 'react-native';
 import { connect } from 'react-redux';
+import { translate } from 'react-i18next';
+
 import NavBar from '../NavBar/NavBar';
 import RedButton from '../Buttons/RedButton';
 import PeopleInputQA from './PeopleInput/PeopleInputQA';
@@ -104,6 +106,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
 
   render() {
     const { questionStates, questionFlag } = this.state;
+    const { t } = this.props;
 
     const flatListData = [
       {
@@ -221,7 +224,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             }}
           >
             <RedButton
-              text="ZUR UBERSICHT"
+              text={t('toOverview')}
               onPress={() => this.props.navigation.navigate('Payment')}
             />
           </View>
@@ -263,5 +266,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  QuestionAnswerContainer
+  translate(['qaFlow'])(QuestionAnswerContainer)
 );

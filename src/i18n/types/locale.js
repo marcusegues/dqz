@@ -42,16 +42,28 @@ export const makeLargeAmountInputNSRecord: RecordFactory<
 
 export type LargeAmountInputNSType = RecordOf<LargeAmountInputNS>;
 
+type QAFlowNS = {
+  toOverview: string,
+};
+
+export const makeQAFlowNSRecord: RecordFactory<QAFlowNS> = Immutable.Record({
+  toOverview: '',
+});
+
+export type QAFlowNSType = RecordOf<QAFlowNS>;
+
 type Locale = {
   onBoarding: OnBoardingNSType,
   general: GeneralNSType,
   largeAmountInput: LargeAmountInputNSType,
+  qaFlow: QAFlowNSType,
 };
 
 export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
   onBoarding: makeOnBoardingNSRecord(),
   general: makeGeneralNSRecord(),
   largeAmountInput: makeLargeAmountInputNSRecord(),
+  qaFlow: makeQAFlowNSRecord(),
 });
 
 export type LocaleType = RecordOf<Locale>;
