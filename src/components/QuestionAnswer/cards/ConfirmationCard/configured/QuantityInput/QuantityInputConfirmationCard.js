@@ -6,7 +6,7 @@ const QuantityInputConfirmationCard = ({
   onShowQuantityInputModal,
   basket,
   onAnswer,
-  onBasketChangeQuantity,
+  onBasketAddQuantity,
   categoriesByMainCategory,
 }) => (
   <ConfirmationCard text="Mengeneingabe" onAnswer={onAnswer}>
@@ -14,7 +14,6 @@ const QuantityInputConfirmationCard = ({
       onShowQuantityInputModal={onShowQuantityInputModal}
       categoriesByMainCategory={categoriesByMainCategory}
       basket={basket}
-      onBasketChangeQuantity={onBasketChangeQuantity}
     />
   </ConfirmationCard>
 );

@@ -31,26 +31,14 @@ const declaration = (
   action: Action
 ): State => {
   switch (action.type) {
-    case 'DECLARATION_BASKET_CHANGE_QUANTITY': {
+    case 'DECLARATION_BASKET_ADD_QUANTITY': {
       // eslint-disable-next-line prefer-destructuring
-      // TODO marcus
-      return state;
-      /*
       const category: Category = action.category;
       const basket: Basket = state.get('basket');
-
       return state.setIn(
         ['basket'],
-        fromModelApi.setQuantity(
-          basket,
-          category,
-          Math.max(
-            0,
-            fromModelApi.getQuantity(basket, category) + action.quantityChange
-          )
-        )
+        fromModelApi.addQuantity(basket, category, action.quantity)
       );
-      */
     }
     case 'DECLARATION_SET_BASKET': {
       // eslint-disable-next-line prefer-destructuring

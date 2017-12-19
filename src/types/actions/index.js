@@ -14,9 +14,9 @@ import type {
 export type Action =
   // declaration
   | {
-    type: 'DECLARATION_BASKET_CHANGE_QUANTITY',
+    type: 'DECLARATION_BASKET_ADD_QUANTITY',
     category: Category,
-    quantityChange: number,
+    quantity: number,
   }
   | {
     type: 'DECLARATION_SET_BASKET',

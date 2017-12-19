@@ -46,7 +46,6 @@ const QuantityInput = ({
   onShowQuantityInputModal,
   basket,
   categoriesByMainCategory,
-  onBasketChangeQuantity,
 }) => {
   const components = categoriesByMainCategory
     .entrySeq()
@@ -58,7 +57,6 @@ const QuantityInput = ({
           category={category}
           quantity={getQuantity(basket, category)}
           basket={basket}
-          onBasketChangeQuantity={onBasketChangeQuantity}
           mainCategory={mainCategory}
         />
       ));

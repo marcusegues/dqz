@@ -42,7 +42,7 @@ class QuantityInputQA extends React.Component<cardProps, State> {
           onAnswer={this.props.onAnswer}
           categoriesByMainCategory={this.getDisplayedCategoriesByMainCategory()}
           basket={this.props.qaState.basket}
-          onBasketChangeQuantity={this.handleUpdate}
+          onBasketAddQuantity={this.handleUpdate}
         />
         <GoodQuantityListModal
           modalVisible={this.state.modalVisible}
@@ -66,18 +66,10 @@ class QuantityInputQA extends React.Component<cardProps, State> {
     );
   }
 
-  handleUpdate(category: Category, quantityChange: number) {
+  handleUpdate(category: Category, quantity: number) {
     const { basket } = this.props.qaState;
 
-    // TODO marcus, you have to figure out when to add a quantity to basket
-    const updatedBasket = addQuantity(basket, category, quantityChange);
-    /*
-    const updatedBasket = setQuantity(
-      basket,
-      category,
-      Math.max(0, getQuantity(basket, category) + quantityChange)
-    );
-    */
+    const updatedBasket = addQuantity(basket, category, quantity);
     return this.props.onUpdate(updatedBasket);
   }
 
