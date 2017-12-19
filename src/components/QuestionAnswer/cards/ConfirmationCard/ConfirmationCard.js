@@ -1,7 +1,9 @@
 import React from 'react';
 import { Text, View, Platform } from 'react-native';
 import { verticalScale, moderateScale } from '../../../../styles/Scaling';
+import * as globalStyles from '../../../../styles/globalStyles';
 import RedButton from '../../../Buttons/RedButton';
+import { BLACK } from '../../../../styles/colors';
 
 const ownStyles = {
   contentContainer: {
@@ -9,21 +11,20 @@ const ownStyles = {
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: verticalScale(16),
-    marginBottom: verticalScale(16),
+    marginTop: verticalScale(5),
+    marginBottom: verticalScale(5),
     backgroundColor: '#fff',
     width: '100%',
     borderRadius: 2,
-    borderColor: '#ddd',
     ...Platform.select({
       ios: {
-        shadowColor: 'black',
-        shadowOffset: { height: 5, width: 2 },
-        shadowOpacity: 0.2,
-        shadowRadius: 3,
+        shadowColor: BLACK,
+        shadowOffset: { height: 1, width: 1 },
+        shadowOpacity: 0.25,
+        shadowRadius: 2,
       },
       android: {
-        elevation: 6,
+        elevation: 2,
       },
     }),
   },
@@ -31,7 +32,7 @@ const ownStyles = {
     fontFamily: 'roboto_regular',
     fontSize: moderateScale(24),
     lineHeight: verticalScale(32),
-    paddingTop: verticalScale(15),
+    paddingVertical: verticalScale(15),
     color: '#141414',
   },
   bottomSectionWrapper: {
@@ -42,7 +43,7 @@ const ownStyles = {
   },
   bottomButtonContainer: {
     justifyContent: 'center',
-    marginVertical: verticalScale(15),
+    marginBottom: verticalScale(15),
   },
 };
 
@@ -52,7 +53,7 @@ const ConfirmationCard = ({
   onAnswer,
   confirmationDisabled,
 }) => (
-  <View style={ownStyles.contentContainer}>
+  <View style={[ownStyles.contentContainer, globalStyles.boxShadow]}>
     <View style={{ width: '95%' }}>
       <Text style={ownStyles.mainText}>{text}</Text>
     </View>

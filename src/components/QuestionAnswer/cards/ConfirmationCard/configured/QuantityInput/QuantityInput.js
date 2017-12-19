@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { getQuantity } from '../../../../../../model/configurationApi';
 import GoodInputRow from './subcomponents/GoodInputRow';
 import { moderateScale } from '../../../../../../styles/Scaling';
@@ -7,37 +7,18 @@ import { moderateScale } from '../../../../../../styles/Scaling';
 const ownStyles = {
   mainContainer: {
     flex: 1,
-    marginTop: 20,
-    marginBottom: 30,
     width: '100%',
+    justifyContent: 'center',
   },
   subcomponentsContainer: {
     width: '100%',
-    // paddingHorizontal: 5,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: 1,
     borderColor: '#E0E0E1',
-    // borderColor: '#9B9B9B',
   },
   scrollView: {
     width: '100%',
-
-    // width: '95%',
-    // ...Platform.select({
-    //   ios: {
-    //     shadowColor: 'black',
-    //     shadowOffset: { height: 5, width: 2 },
-    //     shadowOpacity: 0.2,
-    //     shadowRadius: 3,
-    //   },
-    //   android: {
-    //     elevation: 6,
-    //   },
-    // }),
-    // borderTopWidth: 1,
     borderColor: '#E0E0E1',
-    // marginHorizontal: 10,
     paddingHorizontal: 10,
-    marginBottom: 15,
     backgroundColor: '#fff',
   },
   cardMainTitle: {

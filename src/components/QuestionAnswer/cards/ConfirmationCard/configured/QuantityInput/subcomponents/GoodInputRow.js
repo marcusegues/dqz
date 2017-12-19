@@ -1,16 +1,15 @@
 import React from 'react';
 import Touchable from 'react-native-platform-touchable';
-import { View, Text, StyleSheet, Image } from 'react-native';
-import { Entypo, MaterialIcons } from '@expo/vector-icons';
+import { View, Text, Image } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
 import { CategoriesInfo } from '../../../../../../../model/constants';
 import { moderateScale } from '../../../../../../../styles/Scaling';
-import * as colors from '../../../../../../../styles/colors';
 
 const ownStyles = {
   container: {
     flex: 1,
     width: '100%',
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: 1,
     justifyContent: 'space-between',
 
     borderColor: '#E0E0E1',
@@ -19,8 +18,8 @@ const ownStyles = {
     paddingHorizontal: 0,
   },
   categoryIcon: {
-    // height: 64,
-    // width: 64,
+    height: 64,
+    width: 64,
     // backgroundColor: '#D8D8D8',
     alignItems: 'center',
     justifyContent: 'center',
@@ -49,8 +48,6 @@ const ownStyles = {
   },
   priceAndQuantityContainer: {
     flex: 1,
-    // borderWidth: 1,
-
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
@@ -96,7 +93,9 @@ const GoodInputRow = ({
   <View style={ownStyles.container}>
     <View style={ownStyles.categoryIcon}>
       <Image
-        source={cigarette}
+        source={
+          category === 'Cigarettes' || category === 'Tobacco' ? cigarette : meat
+        }
         style={{ width: 40, height: 40 }}
         resizeMode="contain"
       />
@@ -117,11 +116,7 @@ const GoodInputRow = ({
     </View>
     <View style={ownStyles.chevronRight}>
       <Touchable onPress={onShowQuantityInputModal}>
-        <Entypo
-          name="chevron-right"
-          size={moderateScale(22)}
-          color={colors.BLACK}
-        />
+        <Entypo name="chevron-right" size={moderateScale(30)} color="#24253D" />
       </Touchable>
     </View>
   </View>
