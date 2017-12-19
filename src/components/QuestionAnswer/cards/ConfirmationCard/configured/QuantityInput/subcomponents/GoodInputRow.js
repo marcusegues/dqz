@@ -1,6 +1,6 @@
 import React from 'react';
 import Touchable from 'react-native-platform-touchable';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { Entypo, MaterialIcons } from '@expo/vector-icons';
 import { CategoriesInfo } from '../../../../../../../model/constants';
 import { moderateScale } from '../../../../../../../styles/Scaling';
@@ -18,10 +18,10 @@ const ownStyles = {
     paddingVertical: 15,
     paddingHorizontal: 0,
   },
-  leftSquare: {
-    height: 64,
-    width: 64,
-    backgroundColor: '#D8D8D8',
+  categoryIcon: {
+    // height: 64,
+    // width: 64,
+    // backgroundColor: '#D8D8D8',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -84,6 +84,9 @@ const ownStyles = {
   },
 };
 
+const cigarette = require('../../../../../../../../assets/icons/cigarette_new.png');
+const meat = require('../../../../../../../../assets/icons/meat_new.png');
+
 const GoodInputRow = ({
   onShowQuantityInputModal,
   category,
@@ -91,7 +94,13 @@ const GoodInputRow = ({
   mainCategory,
 }) => (
   <View style={ownStyles.container}>
-    <View style={ownStyles.leftSquare} />
+    <View style={ownStyles.categoryIcon}>
+      <Image
+        source={cigarette}
+        style={{ width: 40, height: 40 }}
+        resizeMode="contain"
+      />
+    </View>
 
     <View style={ownStyles.rowMainTextContainer}>
       <View>
@@ -103,15 +112,6 @@ const GoodInputRow = ({
           <Text
             style={ownStyles.quantityText}
           >{`${quantity} ${CategoriesInfo.get(category).get('unit')}`}</Text>
-        </View>
-        <View>
-          <Touchable onPress={onShowQuantityInputModal}>
-            <MaterialIcons
-              name="info-outline"
-              size={moderateScale(13)}
-              color={colors.BLACK}
-            />
-          </Touchable>
         </View>
       </View>
     </View>
