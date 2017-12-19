@@ -48,12 +48,14 @@ export type QAState = {
   people: People,
   settings: SettingsType,
   duty: DutyReport,
+  showOverview: boolean,
 };
 
 export type cardProps = {
   qaState: QAState,
   onAnswerCardPress: any, // TODO
   questionState: questionState,
+  questionStatus: questionStatusType,
   onUpdate: any, // TODO
   onAnswer: any, // TODO
 };
@@ -100,13 +102,12 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
 
   allQuestionsAnswered(): boolean {
     return Object.values(this.state.questionStatus).every(
-      (status: questionStatusType) => status === 'complete'
+      (status: questionStatusType): boolean => status === 'complete'
     );
   }
 
   render() {
     const { questionStates, questionStatus } = this.state;
-    const { navigation } = this.props;
 
     const flatListData = [
       {

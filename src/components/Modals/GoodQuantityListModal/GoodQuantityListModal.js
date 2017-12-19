@@ -39,7 +39,11 @@ class GoodQuantityListModal extends React.Component<
             quantity={newQuantity}
           />
           <Touchable
-            onPress={() => onUpdateQuantity(modalCategories.category, 1)}
+            onPress={() => {
+              if (modalCategories.category !== 'none') {
+                onUpdateQuantity(modalCategories.category, 1);
+              }
+            }}
           >
             <Text>Mengen Hinzufügen</Text>
           </Touchable>

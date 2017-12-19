@@ -1,6 +1,7 @@
 // @flow
 import type { QAState, questionType } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
+import type { Basket } from '../../../model/types/basketPeopleTypes';
 
 const anyQuantitiesInBasket = (basket: Basket): boolean => {
   debugger;
@@ -8,6 +9,7 @@ const anyQuantitiesInBasket = (basket: Basket): boolean => {
     if (categoryBasketItem.getIn(['volume', 'quantity'])) {
       return true;
     }
+    return false;
   });
 };
 

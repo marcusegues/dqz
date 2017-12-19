@@ -1,8 +1,8 @@
+/* eslint-disable react/no-unused-state */
 // @flow
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
-import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
 import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { setQuantity, getQuantity } from '../../../model/configurationApi';
@@ -11,10 +11,6 @@ import type { MainCategory } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
 import type { cardProps } from '../QuestionAnswerContainer';
 import QuantityInputAnswerCard from '../cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
-
-const complete = require('../../../../assets/images/complete.png');
-const incomplete = require('../../../../assets/images/incomplete.png');
-const mainIcon = require('../../../../assets/icons/mainCategories.png');
 
 export type ModalCategoryType = Category | 'none';
 export type ModalMainCategoryType = MainCategory | 'none';
