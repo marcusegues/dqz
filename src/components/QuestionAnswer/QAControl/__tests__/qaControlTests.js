@@ -17,6 +17,11 @@ const blankState = {
     mainCategories: 'hidden',
     quantityInput: 'hidden',
   },
+  questionFlag: {
+    peopleInput: 'complete',
+    mainCategories: 'incomplete',
+    quantityInput: 'incomplete',
+  },
 };
 
 const stateWithMainCategories = {
@@ -27,6 +32,11 @@ const stateWithMainCategories = {
     peopleInput: 'collapsed',
     mainCategories: 'collapsed',
     quantityInput: 'collapsed',
+  },
+  questionFlag: {
+    peopleInput: 'complete',
+    mainCategories: 'incomplete',
+    quantityInput: 'incomplete',
   },
 };
 
