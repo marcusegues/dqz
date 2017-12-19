@@ -14,6 +14,7 @@ import {
   getDeclarationBasket,
   getDeclarationPeople,
   getDeclarationSettings,
+  getDeclarationDutyReport,
 } from '../../reducers';
 import type { People, Basket } from '../../model/types/basketPeopleTypes';
 import type {
@@ -28,6 +29,7 @@ import {
 import { setQuestionStatus } from './QAControl/controlQuestionStatus';
 import type { DutyReport } from '../../model/types/calculationTypes';
 import { calculateDuty } from '../../model/dutyCalculations';
+import OverviewModal from '../Modals/OverviewModal/OverviewModal';
 
 export type questionType =
   | 'peopleInput'
@@ -76,6 +78,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
       settings: this.props.settings,
       // not getting duty as props from redux because dues are not being updated all the time, perhaps they should be
       duty: calculateDuty(this.props.basket, this.props.people),
+      showOverview: false,
     };
   }
 
@@ -95,7 +98,11 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
     this.setState(setQuestionStates(justAnswered, this.state));
   }
 
-  allQuestionsAnswered() {}
+  allQuestionsAnswered(): boolean {
+    return Object.values(this.state.questionStatus).every(
+      (status: questionStatusType) => status === 'complete'
+    );
+  }
 
   render() {
     const { questionStates, questionStatus } = this.state;
@@ -212,7 +219,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             renderItem={({ item }) => item.component}
           />
         </View>
-        {this.props.currentQuestion !== 'finished' ? null : (
+        {this.allQuestionsAnswered() ? (
           <View
             style={{
               flex: 0.1,
@@ -223,11 +230,15 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             }}
           >
             <RedButton
-              text="ZUR WARENEINGABE"
-              onPress={() => navigation.navigate('BasketInput')}
+              text="ZUR UBERSICHT"
+              onPress={() => this.setState({ showOverview: true })}
             />
           </View>
-        )}
+        ) : null}
+        <OverviewModal
+          modalVisible={this.state.showOverview}
+          onHide={() => this.setState({ showOverview: false })}
+        />
       </View>
     );
   }
@@ -236,6 +247,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
 const mapStateToProps = state => ({
   basket: getDeclarationBasket(state),
   people: getDeclarationPeople(state),
+  dutyReport: getDeclarationDutyReport(state),
   settings: getDeclarationSettings(state),
 });
 
