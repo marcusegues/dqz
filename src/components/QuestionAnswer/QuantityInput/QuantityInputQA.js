@@ -4,14 +4,14 @@
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
-import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
 import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
-import { setQuantity, getQuantity } from '../../../model/configurationApi';
 import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { MainCategory } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
 import type { cardProps } from '../QuestionAnswerContainer';
+import AnswerCard from '../cards/AnswerCard/AnswerCard';
+import { addQuantity } from '../../../model/configurationApi';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
@@ -87,13 +87,11 @@ class QuantityInputQA extends React.Component<cardProps, QuantityInputState> {
     );
   }
 
-  handleUpdate(category: Category, quantityChange: number) {
+  handleUpdate(category: Category, quantity: number) {
     const { basket } = this.props.qaState;
-    const updatedBasket = setQuantity(
-      basket,
-      category,
-      Math.max(0, getQuantity(basket, category) + quantityChange)
-    );
+
+    const updatedBasket = addQuantity(basket, category, quantity);
+
     return this.props.onUpdate(updatedBasket);
   }
 

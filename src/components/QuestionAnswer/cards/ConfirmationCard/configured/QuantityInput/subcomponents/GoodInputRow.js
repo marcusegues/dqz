@@ -77,7 +77,7 @@ const ownStyles = {
 const GoodInputRow = ({
   onShowQuantityInputModal,
   category,
-  quantity,
+  totalQuantity,
   mainCategory,
 }) => (
   <View style={ownStyles.container}>
@@ -91,7 +91,7 @@ const GoodInputRow = ({
       <View style={ownStyles.priceAndQuantityContainer}>
         <View style={ownStyles.quantityContainer}>
           <Text style={ownStyles.quantityText}>{`${
-            quantity
+            totalQuantity
           } ${CategoriesInfo.get(category).get('unit')}`}</Text>
         </View>
       </View>
