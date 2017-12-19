@@ -9,7 +9,7 @@ const ModalCard = ({ children }) => (
       flexDirection: 'column',
       alignItems: 'center',
       marginHorizontal: 16,
-      marginTop: verticalScale(16),
+      marginTop: verticalScale(32),
       marginBottom: verticalScale(16),
       backgroundColor: '#fff',
       borderRadius: 2,
