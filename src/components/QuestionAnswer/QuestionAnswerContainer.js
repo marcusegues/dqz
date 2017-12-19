@@ -101,8 +101,9 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
   }
 
   allQuestionsAnswered(): boolean {
+    // TODO Object.values returns Array<mixed> in flow. Find better way.
     return Object.values(this.state.questionStatus).every(
-      (status: questionStatusType): boolean => status === 'complete'
+      (status): boolean => status === 'complete'
     );
   }
 
