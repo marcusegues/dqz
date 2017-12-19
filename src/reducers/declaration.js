@@ -33,6 +33,9 @@ const declaration = (
   switch (action.type) {
     case 'DECLARATION_BASKET_CHANGE_QUANTITY': {
       // eslint-disable-next-line prefer-destructuring
+      // TODO marcus
+      return state;
+      /*
       const category: Category = action.category;
       const basket: Basket = state.get('basket');
 
@@ -47,6 +50,7 @@ const declaration = (
           )
         )
       );
+      */
     }
     case 'DECLARATION_SET_BASKET': {
       // eslint-disable-next-line prefer-destructuring

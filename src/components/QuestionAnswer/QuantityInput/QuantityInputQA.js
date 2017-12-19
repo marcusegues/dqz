@@ -5,10 +5,12 @@ import { View } from 'react-native';
 import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
 import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
-import { setQuantity, getQuantity } from '../../../model/configurationApi';
+// TODO marcus:
+// import { setQuantity, getQuantity } from '../../../model/configurationApi';
 import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
 import type { cardProps } from '../QuestionAnswerContainer';
+import { addQuantity } from '../../../model/configurationApi';
 
 const complete = require('../../../../assets/images/complete.png');
 const incomplete = require('../../../../assets/images/incomplete.png');
@@ -67,11 +69,15 @@ class QuantityInputQA extends React.Component<cardProps, State> {
   handleUpdate(category: Category, quantityChange: number) {
     const { basket } = this.props.qaState;
 
+    // TODO marcus, you have to figure out when to add a quantity to basket
+    const updatedBasket = addQuantity(basket, category, quantityChange);
+    /*
     const updatedBasket = setQuantity(
       basket,
       category,
       Math.max(0, getQuantity(basket, category) + quantityChange)
     );
+    */
     return this.props.onUpdate(updatedBasket);
   }
 

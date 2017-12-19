@@ -15,7 +15,7 @@ import type { DutyReport } from './types/calculationTypes';
 import { CategoriesArray, CategoriesRates } from './constants';
 import { makeDutyReportRecord } from './types/calculationTypes';
 import { rounding } from './utils';
-import { getQuantity } from './configurationApi';
+import { getTotalQuantity } from './configurationApi';
 
 export const calculateDuty = (basket: Basket, people: People): DutyReport => {
   let total = 0;
@@ -24,7 +24,7 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
     number
   > = Immutable.Map().withMutations(r => {
     CategoriesArray.forEach(c => {
-      const quantityRaw: number = getQuantity(basket, c);
+      const quantityRaw: number = getTotalQuantity(basket, c);
       const adultsOnly: boolean = CategoriesRates.getIn(
         [c, 'adultsOnly'],
         false
@@ -39,7 +39,7 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
       );
       allowanceRaw *= peopleCount;
       if (dutyDependency) {
-        allowanceRaw -= getQuantity(basket, dutyDependency);
+        allowanceRaw -= getTotalQuantity(basket, dutyDependency);
         allowanceRaw = Math.max(0, allowanceRaw);
       }
 

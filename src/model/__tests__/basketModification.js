@@ -12,7 +12,7 @@ import {
   getAmounts,
   getLargeAmounts,
   getMinorPeople,
-  getQuantity,
+  getTotalQuantity,
   getTotalPeople,
   initPeople,
   resetAmounts,
@@ -20,8 +20,8 @@ import {
   setAdultPeople,
   setMinorPeople,
   setPeople,
-  setQuantities,
-  setQuantity,
+  addQuantities,
+  addQuantity,
   subtractAdult,
   subtractMinor,
 } from '../configurationApi';
@@ -29,8 +29,8 @@ import { CategoriesArray } from '../constants';
 
 const basket1: Basket = emptyBasket;
 
-const quantityBasket1: Basket = setQuantity(basket1, 'Butter', 1234);
-const quantityBasket2: Basket = setQuantities(basket1, [
+const quantityBasket1: Basket = addQuantity(basket1, 'Butter', 1234);
+const quantityBasket2: Basket = addQuantities(basket1, [
   { category: 'Meat', quantity: 123 },
   { category: 'Butter', quantity: 321 },
 ]);
@@ -52,21 +52,23 @@ const oneAdultOneMinor = addMinor(initPeople);
 
 describe('The basket / quantites: ', () => {
   test('defaults to 0 quantity', () => {
-    CategoriesArray.forEach(c => expect(getQuantity(emptyBasket, c)).toBe(0));
+    CategoriesArray.forEach(c =>
+      expect(getTotalQuantity(emptyBasket, c)).toBe(0)
+    );
   });
   test('has individually set quantities: ', () => {
-    expect(getQuantity(quantityBasket1, 'Butter')).toBe(1234);
+    expect(getTotalQuantity(quantityBasket1, 'Butter')).toBe(1234);
   });
   test('leaves other quantities untouched: ', () => {
-    expect(getQuantity(quantityBasket1, 'Meat')).toBe(0);
+    expect(getTotalQuantity(quantityBasket1, 'Meat')).toBe(0);
   });
   test('has sync set quantities: ', () => {
-    expect(getQuantity(quantityBasket2, 'Butter')).toBe(321);
-    expect(getQuantity(quantityBasket2, 'Meat')).toBe(123);
+    expect(getTotalQuantity(quantityBasket2, 'Butter')).toBe(321);
+    expect(getTotalQuantity(quantityBasket2, 'Meat')).toBe(123);
   });
   test('is immutable', () => {
     CategoriesArray.forEach(c =>
-      expect(getQuantity(quantityBasket3, c)).toBe(0)
+      expect(getTotalQuantity(quantityBasket3, c)).toBe(0)
     );
   });
 });
