@@ -89,12 +89,10 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
     this.setState(setInitStates(this.state));
   }
 
-  updateQuestionFlag(justUpdated: QuestionType) {
-    this.setState(setQuestionFlag(justUpdated, this.state));
-  }
-
   updateQA(justAnswered: QuestionType) {
-    this.setState(setQuestionStates(justAnswered, this.state));
+    const updateStates: QAState = setQuestionStates(justAnswered, this.state);
+    const updateFlags: QAState = setQuestionFlag(justAnswered, updateStates);
+    this.setState(updateFlags);
   }
 
   allQuestionsAnswered(): boolean {
@@ -121,9 +119,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             questionState={questionStates.peopleInput}
             questionFlag={questionFlag.peopleInput}
             onUpdate={people => {
-              this.setState({ people }, () =>
-                this.updateQuestionFlag('peopleInput')
-              );
+              this.setState({ people });
             }}
             onAnswer={() => {
               this.props.onDeclarationSetPeople(this.state.people);
@@ -145,15 +141,12 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             questionState={questionStates.mainCategories}
             questionFlag={questionFlag.mainCategories}
             onUpdate={activeCategories => {
-              this.setState(
-                {
-                  settings: this.state.settings.set(
-                    'mainCategories',
-                    activeCategories
-                  ),
-                },
-                () => this.updateQuestionFlag('mainCategories')
-              );
+              this.setState({
+                settings: this.state.settings.set(
+                  'mainCategories',
+                  activeCategories
+                ),
+              });
             }}
             onAnswer={() => {
               this.props.onDeclarationSetMainCategories(
@@ -177,13 +170,10 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             questionState={questionStates.quantityInput}
             questionFlag={questionFlag.quantityInput}
             onUpdate={basket => {
-              this.setState(
-                {
-                  basket,
-                  duty: calculateDuty(basket, this.state.people),
-                },
-                () => this.updateQuestionFlag('quantityInput')
-              );
+              this.setState({
+                basket,
+                duty: calculateDuty(basket, this.state.people),
+              });
             }}
             onAnswer={() => {
               this.props.onDeclarationSetBasket(this.state.basket);
