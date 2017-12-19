@@ -1,10 +1,6 @@
 import React from 'react';
 import { View, ScrollView, Platform } from 'react-native';
-import {
-  getQuantities,
-  getQuantity,
-  getTotalQuantity,
-} from '../../../../../../model/configurationApi';
+import { getTotalQuantity } from '../../../../../../model/configurationApi';
 import GoodInputRow from './subcomponents/GoodInputRow';
 import { moderateScale } from '../../../../../../styles/Scaling';
 
