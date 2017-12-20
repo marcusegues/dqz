@@ -5,6 +5,7 @@ import { Entypo } from '@expo/vector-icons';
 import { CategoriesInfo } from '../../../../../../../model/constants';
 import { moderateScale } from '../../../../../../../styles/Scaling';
 import QuantityIcon from '../../../../../../General Components/QuantityIcon';
+import CategoryIcon from './subcomponents/CategoryIcon';
 
 const ownStyles = {
   container: {
@@ -18,12 +19,7 @@ const ownStyles = {
     paddingVertical: 15,
     paddingHorizontal: 0,
   },
-  categoryIcon: {
-    height: 64,
-    width: 64,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
   leftSquareText: {
     fontSize: moderateScale(14),
     color: '#898989',
@@ -77,18 +73,11 @@ const GoodInputRow = ({
 }) => (
   <Touchable onPress={onShowQuantityInputModal}>
     <View style={ownStyles.container}>
-      <View style={ownStyles.categoryIcon}>
-        <Image
-          source={
-            category === 'Cigarettes' || category === 'Tobacco'
-              ? cigarette
-              : meat
-          }
-          style={{ width: 40, height: 40 }}
-          resizeMode="contain"
-        />
-      </View>
-
+      <CategoryIcon
+        source={
+          category === 'Cigarettes' || category === 'Tobacco' ? cigarette : meat
+        }
+      />
       <View style={ownStyles.rowMainTextContainer}>
         <View>
           <Text style={ownStyles.mainCategoryText}>{category}</Text>
