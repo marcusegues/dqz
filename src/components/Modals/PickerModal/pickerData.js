@@ -18,7 +18,7 @@ const liquidsAmountsPicker: Array<PickerItem> = pickerItemGenerator([
   '0.33',
   '0.5',
   '0.75',
-  '1.0',
+  '1',
   '1.5',
   '2',
 ]);

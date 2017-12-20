@@ -32,7 +32,7 @@ class PickerModal extends React.Component<any, PickerState> {
     selected: 'standardInput' || 'customInput',
     standardInput: {
       number: '1',
-      amount: '0.33',
+      amount: '1',
     },
     customInput: {
       units: '1',
