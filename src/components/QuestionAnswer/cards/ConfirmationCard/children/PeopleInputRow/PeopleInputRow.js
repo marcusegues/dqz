@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { Entypo } from '@expo/vector-icons';
 import { moderateScale } from '../../../../../../styles/Scaling';
 import * as colors from '../../../../../../styles/colors';
 
@@ -31,6 +31,10 @@ const ownStyles = {
     fontFamily: 'roboto_regular',
     color: '#24253D',
   },
+  image: {
+    height: moderateScale(28),
+    width: moderateScale(40),
+  },
 };
 
 const PeopleInputRow = ({
@@ -42,11 +46,7 @@ const PeopleInputRow = ({
 }) => (
   <View style={ownStyles.container}>
     <View style={ownStyles.rowContainer}>
-      <MaterialCommunityIcons
-        name={icon}
-        size={moderateScale(32)}
-        color={colors.MAIN_RED}
-      />
+      <Image source={icon} style={ownStyles.image} resizeMode="contain" />
       {children.textComponent}
     </View>
     <View style={ownStyles.rowChangeValueContainer}>
