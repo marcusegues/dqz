@@ -8,6 +8,9 @@ type GeneralNS = {
   calculator: string,
   receipts: string,
   information: string,
+  navbarFirst: string,
+  navbarSecond: string,
+  navbarThird: string,
 };
 
 export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
@@ -16,6 +19,9 @@ export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
   calculator: '',
   receipts: '',
   information: '',
+  navbarFirst: '',
+  navbarSecond: '',
+  navbarThird: '',
 });
 
 export type GeneralNSType = RecordOf<GeneralNS>;
