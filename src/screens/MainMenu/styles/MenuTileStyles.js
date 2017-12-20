@@ -23,6 +23,7 @@ export default StyleSheet.create({
     color: BLACK,
     fontFamily: 'roboto_medium',
     textAlign: 'center',
-    marginTop: verticalScale(15),
+    marginTop: verticalScale(10),
+    paddingHorizontal: scale(15),
   },
 });

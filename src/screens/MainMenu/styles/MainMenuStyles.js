@@ -32,6 +32,9 @@ export default StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'transparent',
   },
+  greyLogo: {
+    height: moderateScale(51),
+  },
   bottomContainer: {
     ...Platform.select({
       ios: {

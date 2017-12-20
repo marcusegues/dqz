@@ -12,7 +12,7 @@ export const fr: LocaleType = makeLocaleRecord({
     declareGoods: 'Déclarer',
     pleaseSelect: 'Veuillez sélectionner',
     receipts: 'Reçus',
-    calculator: 'Calculateur',
+    guideline: 'Guide',
     information: 'Information',
     navbarFirst: 'Voyage',
     navbarSecond: 'Paiement',
