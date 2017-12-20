@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { translate } from 'react-i18next';
 import PeopleInputRow from '../PeopleInputRow';
 import * as fromModelApi from '../../../../../../../model/configurationApi';
 import { moderateScale } from '../../../../../../../styles/Scaling';
@@ -19,7 +20,7 @@ export const ownStyles = {
 
 const kids = require('../../../../../../../../assets/icons/kids.png');
 
-const MinorInputRow = ({ onAddMinor, onSubtractMinor, people }) => (
+const MinorInputRow = ({ onAddMinor, onSubtractMinor, people, t }) => (
   <PeopleInputRow
     onAdd={onAddMinor}
     onSubtract={onSubtractMinor}
@@ -30,12 +31,12 @@ const MinorInputRow = ({ onAddMinor, onSubtractMinor, people }) => (
     {{
       textComponent: (
         <View>
-          <Text style={ownStyles.categoryTitleText}>Kinder & Jugendliche</Text>
-          <Text style={ownStyles.categoryAgeText}>unter 17 Jahre</Text>
+          <Text style={ownStyles.categoryTitleText}>{t('minor')}</Text>
+          <Text style={ownStyles.categoryAgeText}>{t('minorInfo')}</Text>
         </View>
       ),
     }}
   </PeopleInputRow>
 );
 
-export default MinorInputRow;
+export default translate(['qaFlow'])(MinorInputRow);
