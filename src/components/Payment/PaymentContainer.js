@@ -3,11 +3,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
-import Touchable from 'react-native-platform-touchable';
 import Overview from '../Overview/Overview';
 import Saferpay from '../../../saferpay';
 import NavBar from '../NavBar/NavBar';
 import PaymentWebView from './PaymentWebView';
+import RedButton from '../Buttons/RedButton';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -100,9 +100,10 @@ class PaymentContainer extends React.Component {
         <NavBar step={2} />
         {this.state.paymentStatus === 'abort' ? <Text>Aborted</Text> : null}
         <Overview initializePayment={() => this.initializePayment()} />
-        <Touchable onPress={() => this.initializePayment()}>
-          <Text>Zur Bezahlung</Text>
-        </Touchable>
+        <RedButton
+          onPress={() => this.initializePayment()}
+          text="Zur Bezahlung"
+        />
         {this.state.redirectDataLoaded ? (
           <View style={{ position: 'absolute', top: 0 }}>
             <PaymentWebView
