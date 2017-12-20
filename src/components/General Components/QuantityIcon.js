@@ -4,14 +4,14 @@ import { CategoriesInfo } from '../../model/constants';
 
 const ownStyles = StyleSheet.create({
   quantityContainer: {
-    paddingHorizontal: 6,
-    backgroundColor: '#9B9B9B',
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    backgroundColor: '#E0E0E1',
     borderRadius: 3,
-    marginTop: 10,
   },
   quantityText: {
-    color: '#fff',
-    fontSize: 12,
+    color: 'black',
+    fontSize: 14,
     fontFamily: 'roboto_regular',
   },
 });

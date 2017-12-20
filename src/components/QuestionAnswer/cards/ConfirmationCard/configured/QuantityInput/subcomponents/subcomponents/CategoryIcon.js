@@ -15,9 +15,9 @@ const ownStyles = StyleSheet.create({
 });
 
 const CategoryIcon = ({ source }) => (
-    <View style={ownStyles.categoryIcon}>
-      <Image source={source} style={ownStyles.image} resizeMode="contain" />
-    </View>
-  );
+  <View style={ownStyles.categoryIcon}>
+    <Image source={source} style={ownStyles.image} resizeMode="contain" />
+  </View>
+);
 
 export default CategoryIcon;
