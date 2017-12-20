@@ -5,12 +5,14 @@ import * as fromModelApi from '../../../../../../../model/configurationApi';
 
 import { ownStyles } from './MinorInputRow';
 
+const kids = require('../../../../../../../../assets/icons/adult.png');
+
 const AdultInputRow = ({ onAddAdult, onSubtractAdult, people }) => (
   <PeopleInputRow
     onAdd={onAddAdult}
     onSubtract={onSubtractAdult}
     people={people}
-    icon="human-male"
+    icon={kids}
     displayedQuantity={fromModelApi.getAdultPeople(people)}
   >
     {{
