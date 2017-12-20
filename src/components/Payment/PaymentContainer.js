@@ -8,11 +8,7 @@ import Saferpay from '../../../saferpay';
 import NavBar from '../NavBar/NavBar';
 import PaymentWebView from './PaymentWebView';
 import RedButton from '../Buttons/RedButton';
-import {
-  getDeclarationBasket,
-  getDeclarationDutyReport,
-  getDeclarationPeople,
-} from '../../reducers';
+import { getDeclarationBasket, getDeclarationPeople } from '../../reducers';
 import { calculateDuty } from '../../model/dutyCalculations';
 
 const baseUrl = 'http://ambrite.ch';
@@ -109,7 +105,11 @@ class PaymentContainer extends React.Component {
       >
         <NavBar step={2} />
         {this.state.paymentStatus === 'abort' ? <Text>Aborted</Text> : null}
-        <Overview initializePayment={() => this.initializePayment()} />
+        <Overview
+          people={this.props.people}
+          basket={this.props.basket}
+          initializePayment={() => this.initializePayment()}
+        />
         <RedButton
           onPress={() => this.initializePayment()}
           text="Zur Bezahlung"
@@ -130,7 +130,6 @@ class PaymentContainer extends React.Component {
 const mapStateToProps = state => ({
   basket: getDeclarationBasket(state),
   people: getDeclarationPeople(state),
-  dutyReport: getDeclarationDutyReport(state),
 });
 
 export default connect(mapStateToProps)(PaymentContainer);

@@ -74,7 +74,9 @@ const GoodInputRow = ({
       <View style={ownStyles.rowMainTextContainer}>
         <CardRowText text={category} />
         <CardRowSubText text={mainCategory} />
-        <QuantityIcon quantity={totalQuantity} category={category} />
+        <View style={{ marginTop: 10 }}>
+          <QuantityIcon quantity={totalQuantity} category={category} />
+        </View>
       </View>
       <View style={ownStyles.chevronRight}>
         <Entypo name="chevron-right" size={moderateScale(30)} color="#24253D" />

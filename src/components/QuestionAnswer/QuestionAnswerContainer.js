@@ -189,7 +189,6 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         ),
       },
     ];
-
     return (
       <View
         style={{
