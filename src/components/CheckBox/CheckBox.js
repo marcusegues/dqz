@@ -1,36 +1,26 @@
 import React from 'react';
 import { View } from 'react-native';
-import Touchable from 'react-native-platform-touchable';
-import { MAIN_RED } from '../../styles/colors';
+import { MaterialIcons } from '@expo/vector-icons';
 
-const CheckBox = ({ checked, onPress }) => (
-  <Touchable
-    style={{
-      height: 17,
-      width: 17,
-      borderRadius: 8.5,
-      borderColor: 'black',
-      borderWidth: 1,
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-    }}
-    onPress={onPress}
-  >
+import { MAIN_RED, GREY } from '../../styles/colors';
+import { moderateScale } from '../../styles/Scaling';
+
+const CheckBox = ({ checked }) => (
+  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
     {checked ? (
-      <View
-        checked={checked}
-        style={{
-          height: 12,
-          width: 12,
-          borderRadius: 6,
-          backgroundColor: MAIN_RED,
-        }}
+      <MaterialIcons
+        name="check-circle"
+        size={moderateScale(35)}
+        color={MAIN_RED}
       />
     ) : (
-      <View />
+      <MaterialIcons
+        name="radio-button-unchecked"
+        size={moderateScale(35)}
+        color={GREY}
+      />
     )}
-  </Touchable>
+  </View>
 );
 
 export default CheckBox;
