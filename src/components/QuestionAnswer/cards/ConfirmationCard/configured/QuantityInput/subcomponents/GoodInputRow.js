@@ -4,23 +4,22 @@ import { View, Text } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { CategoriesInfo } from '../../../../../../../model/constants';
 import { moderateScale } from '../../../../../../../styles/Scaling';
-import * as colors from '../../../../../../../styles/colors';
+import QuantityIcon from '../../../../../../General Components/QuantityIcon';
+import CategoryIcon from './subcomponents/CategoryIcon';
 
 const ownStyles = {
   container: {
+    flex: 1,
+    width: '100%',
     borderTopWidth: 1,
+    justifyContent: 'space-between',
+
     borderColor: '#E0E0E1',
     flexDirection: 'row',
     paddingVertical: 15,
-    paddingHorizontal: 10,
+    paddingHorizontal: 0,
   },
-  leftSquare: {
-    height: 64,
-    width: 64,
-    backgroundColor: '#D8D8D8',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+
   leftSquareText: {
     fontSize: moderateScale(14),
     color: '#898989',
@@ -29,7 +28,7 @@ const ownStyles = {
   rowMainTextContainer: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     alignItems: 'flex-start',
     paddingLeft: 16,
   },
@@ -43,26 +42,15 @@ const ownStyles = {
     fontSize: moderateScale(12),
     color: '#898989',
   },
-  priceAndQuantityContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-  },
+
   priceText: {
     paddingRight: 8,
     fontFamily: 'roboto_regular',
     fontSize: 18,
     color: '#24253D',
   },
-  quantityContainer: {
-    paddingHorizontal: 6,
-    backgroundColor: '#9B9B9B',
-    borderRadius: 3,
-  },
-  quantityText: {
-    color: '#fff',
-    fontSize: 12,
-    fontFamily: 'roboto_regular',
+  chevronRight: {
+    alignSelf: 'center',
   },
   touchable: {
     justifyContent: 'center',
@@ -74,38 +62,39 @@ const ownStyles = {
   },
 };
 
+const cigarette = require('../../../../../../../../assets/icons/cigarette_new.png');
+const meat = require('../../../../../../../../assets/icons/meat_new.png');
+
 const GoodInputRow = ({
   onShowQuantityInputModal,
   category,
   totalQuantity,
   mainCategory,
 }) => (
-  <View style={ownStyles.container}>
-    <View style={ownStyles.leftSquare} />
-
-    <View style={ownStyles.rowMainTextContainer}>
-      <View>
-        <Text style={ownStyles.mainCategoryText}>{category}</Text>
-        <Text style={ownStyles.categoryText}>{mainCategory}</Text>
-      </View>
-      <View style={ownStyles.priceAndQuantityContainer}>
-        <View style={ownStyles.quantityContainer}>
-          <Text style={ownStyles.quantityText}>{`${
-            totalQuantity
-          } ${CategoriesInfo.get(category).get('unit')}`}</Text>
+  <Touchable onPress={onShowQuantityInputModal}>
+    <View style={ownStyles.container}>
+      <CategoryIcon
+        source={
+          category === 'Cigarettes' || category === 'Tobacco' ? cigarette : meat
+        }
+      />
+      <View style={ownStyles.rowMainTextContainer}>
+        <View>
+          <Text style={ownStyles.mainCategoryText}>{category}</Text>
+          <Text style={ownStyles.categoryText}>{mainCategory}</Text>
+        </View>
+        <View style={{ marginTop: 10 }}>
+          <QuantityIcon
+            quantity={totalQuantity}
+            unit={CategoriesInfo.get(category).get('unit')}
+          />
         </View>
       </View>
+      <View style={ownStyles.chevronRight}>
+        <Entypo name="chevron-right" size={moderateScale(30)} color="#24253D" />
+      </View>
     </View>
-    <View>
-      <Touchable onPress={onShowQuantityInputModal}>
-        <Entypo
-          name="chevron-right"
-          size={moderateScale(32)}
-          color={colors.MAIN_RED}
-        />
-      </Touchable>
-    </View>
-  </View>
+  </Touchable>
 );
 
 export default GoodInputRow;
