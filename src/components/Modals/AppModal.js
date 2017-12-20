@@ -1,10 +1,11 @@
 import React from 'react';
 import { Modal } from 'react-native';
 
-const AppModal = ({ modalVisible, children }) => (
+const AppModal = ({ modalVisible, children, transparent = true }) => (
   <Modal
     animationType="slide"
-    transparent
+    transparent={transparent}
+    style={{ backgroundColor: 'red' }}
     visible={modalVisible}
     onRequestClose={() => {}}
   >
