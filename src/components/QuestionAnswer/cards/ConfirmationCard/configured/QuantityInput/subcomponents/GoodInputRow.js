@@ -74,7 +74,7 @@ const GoodInputRow = ({
         }
       />
       <View style={ownStyles.rowMainTextContainer}>
-        <CardRowText text={t('OtherFood')} />
+        <CardRowText text={t(category)} />
         <CardRowSubText text={mainCategory} />
         <View style={{ marginTop: 10 }}>
           <QuantityIcon quantity={totalQuantity} category={category} />
