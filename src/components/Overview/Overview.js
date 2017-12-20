@@ -27,21 +27,23 @@ class Overview extends React.Component {
           {dutyReport
             .get('dutyByCategoryRaw')
             .entrySeq()
-            .filter(entry => entry[1] > 0)
+            .filter(entry => getTotalQuantity(basket, entry[0]) > 0)
             .map(([category, duty], idx) => (
-                <DutyRow
-                  borderTop={idx === 0}
-                  key={category}
-                  mainCategory={category}
-                  category={category}
-                  quantity={getTotalQuantity(basket, category)}
-                  duty={duty}
-                />
-              ))}
+              <DutyRow
+                borderTop={idx === 0}
+                key={category}
+                mainCategory={category}
+                category={category}
+                quantity={getTotalQuantity(basket, category)}
+                duty={duty.toFixed(2)}
+              />
+            ))}
           <View
             style={{ alignSelf: 'flex-end', marginRight: 16, marginTop: 16 }}
           >
-            <CardRowText text={`Summe (CHF): ${dutyReport.totalDuty}`} />
+            <CardRowText
+              text={`Summe (CHF): ${dutyReport.totalDuty.toFixed(2)}`}
+            />
           </View>
         </View>
       </Card>
