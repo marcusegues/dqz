@@ -7,7 +7,9 @@ const CardHeader = ({ text }) => (
   <View
     style={{
       width: '100%',
-      marginVertical: verticalScale(16),
+      marginTop: verticalScale(16),
+      alignSelf: 'flex-start',
+      marginHorizontal: verticalScale(16),
     }}
   >
     <CardHeaderText text={text} />
