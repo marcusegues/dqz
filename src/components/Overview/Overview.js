@@ -10,6 +10,7 @@ import DutyRow from './subcomponents/DutyRow';
 import { calculateDuty } from '../../model/dutyCalculations';
 import CardRowSubText from '../QuestionAnswer/cards/subcomponents/CardRowSubText';
 import CardRowText from '../QuestionAnswer/cards/subcomponents/CardRowText';
+import { getMainCategory } from '../../types/reducers/declaration';
 
 class Overview extends React.Component {
   render() {
@@ -32,7 +33,7 @@ class Overview extends React.Component {
               <DutyRow
                 borderTop={idx === 0}
                 key={category}
-                mainCategory={category}
+                mainCategory={getMainCategory(category)}
                 category={category}
                 quantity={getTotalQuantity(basket, category)}
                 duty={duty.toFixed(2)}
