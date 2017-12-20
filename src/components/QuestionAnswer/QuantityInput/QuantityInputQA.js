@@ -11,7 +11,7 @@ import type { MainCategory } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleTypes';
 import type { CardProps } from '../QuestionAnswerContainer';
 import QuantityInputAnswerCard from '../cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
-import { addQuantity } from '../../../model/configurationApi';
+import { addQuantity, deleteQuantity } from '../../../model/configurationApi';
 
 export type ModalCategoryType = Category | 'none';
 export type ModalMainCategoryType = MainCategory | 'none';
@@ -61,8 +61,11 @@ class QuantityInputQA extends React.Component<CardProps, QuantityInputState> {
           onHide={() => this.handleHideModal()}
           quantityInputState={this.state}
           basket={this.props.qaState.basket}
-          onUpdateQuantity={(category: Category, quantityChange: number) => {
-            this.handleUpdate(category, quantityChange);
+          onAddQuantity={(category: Category, quantity: number) => {
+            this.handleAddQuantity(category, quantity);
+          }}
+          onDeleteQuantity={(category: Category, index: number) => {
+            this.handleDeleteQuantity(category, index);
           }}
         />
       </View>
@@ -79,12 +82,22 @@ class QuantityInputQA extends React.Component<CardProps, QuantityInputState> {
     );
   }
 
-  handleUpdate(category: Category, quantity: number) {
+  handleAddQuantity(category: Category, quantity: number) {
     const { basket } = this.props.qaState;
 
     const updatedBasket = addQuantity(basket, category, quantity);
+    this.handleUpdate(updatedBasket);
+  }
 
-    return this.props.onUpdate(updatedBasket);
+  handleDeleteQuantity(category: Category, index: number) {
+    const { basket } = this.props.qaState;
+
+    const updatedBasket = deleteQuantity(basket, category, index);
+    this.handleUpdate(updatedBasket);
+  }
+
+  handleUpdate(basket: Basket) {
+    return this.props.onUpdate(basket);
   }
 
   handleShowModal(modalCategories: ModalCategoriesType) {

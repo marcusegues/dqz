@@ -3,7 +3,10 @@ import Touchable from 'react-native-platform-touchable';
 import { View, Text } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { CategoriesInfo } from '../../../../../../../model/constants';
-import { moderateScale } from '../../../../../../../styles/Scaling';
+import {
+  moderateScale,
+  verticalScale,
+} from '../../../../../../../styles/Scaling';
 import QuantityIcon from '../../../../../../General Components/QuantityIcon';
 import CategoryIcon from './subcomponents/CategoryIcon';
 import CardRowText from '../../../../subcomponents/CardRowText';
@@ -30,9 +33,8 @@ const ownStyles = {
   rowMainTextContainer: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    paddingLeft: 16,
+    marginLeft: verticalScale(16),
   },
 
   priceText: {
@@ -73,12 +75,7 @@ const GoodInputRow = ({
       <View style={ownStyles.rowMainTextContainer}>
         <CardRowText text={category} />
         <CardRowSubText text={mainCategory} />
-        <View style={{ marginTop: 10 }}>
-          <QuantityIcon
-            quantity={totalQuantity}
-            unit={CategoriesInfo.get(category).get('unit')}
-          />
-        </View>
+        <QuantityIcon quantity={totalQuantity} category={category} />
       </View>
       <View style={ownStyles.chevronRight}>
         <Entypo name="chevron-right" size={moderateScale(30)} color="#24253D" />

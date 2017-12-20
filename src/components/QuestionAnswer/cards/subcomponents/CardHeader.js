@@ -9,6 +9,7 @@ const CardHeader = ({ text }) => (
       width: '100%',
       marginTop: verticalScale(16),
       alignSelf: 'flex-start',
+      marginHorizontal: verticalScale(16),
     }}
   >
     <CardHeaderText text={text} />

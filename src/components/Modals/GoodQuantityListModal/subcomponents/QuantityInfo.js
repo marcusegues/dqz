@@ -3,12 +3,21 @@ import { View, Text } from 'react-native';
 import CardHeader from '../../../QuestionAnswer/cards/subcomponents/CardHeader';
 import CardHeaderText from '../../../QuestionAnswer/cards/subcomponents/CardHeaderText';
 import CardHeaderSubText from '../../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
+import QuantityIcon from '../../../General Components/QuantityIcon';
+import { verticalScale } from '../../../../styles/Scaling';
 
 const QuantityInfo = ({ mainCategory, category, totalQuantity }) => (
-  <View style={{ flexDirection: 'column', alignSelf: 'flex-start' }}>
-    <CardHeader text={category} />
+  <View
+    style={{
+      flexDirection: 'column',
+      alignSelf: 'flex-start',
+      alignItems: 'flex-start',
+      margin: verticalScale(16),
+    }}
+  >
+    <CardHeaderText text={category} />
     <CardHeaderSubText text={mainCategory} />
-    <Text>{totalQuantity}</Text>
+    <QuantityIcon quantity={totalQuantity} category={category} />
   </View>
 );
 
