@@ -7,22 +7,24 @@ import { moderateScale } from '../../../../../../../styles/Scaling';
 export const ownStyles = {
   categoryTitleText: {
     fontFamily: 'roboto_medium',
-    fontSize: moderateScale(14),
+    fontSize: moderateScale(13),
     color: '#24253D',
   },
   categoryAgeText: {
     fontFamily: 'roboto_regular',
-    fontSize: moderateScale(12),
+    fontSize: moderateScale(11),
     color: '#898989',
   },
 };
+
+const kids = require('../../../../../../../../assets/icons/kids.png');
 
 const MinorInputRow = ({ onAddMinor, onSubtractMinor, people }) => (
   <PeopleInputRow
     onAdd={onAddMinor}
     onSubtract={onSubtractMinor}
     people={people}
-    icon="human-child"
+    icon={kids}
     displayedQuantity={fromModelApi.getMinorPeople(people)}
   >
     {{
