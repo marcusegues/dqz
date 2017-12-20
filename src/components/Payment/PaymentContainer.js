@@ -8,6 +8,12 @@ import Saferpay from '../../../saferpay';
 import NavBar from '../NavBar/NavBar';
 import PaymentWebView from './PaymentWebView';
 import RedButton from '../Buttons/RedButton';
+import {
+  getDeclarationBasket,
+  getDeclarationDutyReport,
+  getDeclarationPeople,
+} from '../../reducers';
+import { calculateDuty } from '../../model/dutyCalculations';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -33,9 +39,13 @@ class PaymentContainer extends React.Component {
   }
 
   initializePayment() {
+    const { basket, people } = this.props;
     this.setState({ isLoadingRedirectData: true }, () => {
       this.saferpay
-        .initializePayment(500, 'EUR')
+        .initializePayment(
+          100 * calculateDuty(basket, people).get('totalDuty', 0),
+          'CHF'
+        )
         .then(responseJson => {
           console.log('response is', responseJson);
           this.setState({
@@ -117,4 +127,10 @@ class PaymentContainer extends React.Component {
   }
 }
 
-export default connect(null, null)(PaymentContainer);
+const mapStateToProps = state => ({
+  basket: getDeclarationBasket(state),
+  people: getDeclarationPeople(state),
+  dutyReport: getDeclarationDutyReport(state),
+});
+
+export default connect(mapStateToProps)(PaymentContainer);
