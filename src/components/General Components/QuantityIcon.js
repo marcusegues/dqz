@@ -14,12 +14,10 @@ const ownStyles = StyleSheet.create({
   },
 });
 
-const QuantityIcon = () => (
-    <View style={ownStyles.quantityContainer}>
-      <Text style={ownStyles.quantityText}>{`${this.props.quantity} ${
-        this.props.unit
-      }`}</Text>
-    </View>
-  );
+const QuantityIcon = ({ quantity, unit }) => (
+  <View style={ownStyles.quantityContainer}>
+    <Text style={ownStyles.quantityText}>{`${quantity} ${unit}`}</Text>
+  </View>
+);
 
 export default QuantityIcon;

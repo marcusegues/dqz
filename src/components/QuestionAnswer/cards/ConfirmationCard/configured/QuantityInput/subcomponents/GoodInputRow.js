@@ -83,10 +83,12 @@ const GoodInputRow = ({
           <Text style={ownStyles.mainCategoryText}>{category}</Text>
           <Text style={ownStyles.categoryText}>{mainCategory}</Text>
         </View>
-        <QuantityIcon
-          quantity={totalQuantity}
-          unit={CategoriesInfo.get(category).get('unit')}
-        />
+        <View style={{ marginTop: 10 }}>
+          <QuantityIcon
+            quantity={totalQuantity}
+            unit={CategoriesInfo.get(category).get('unit')}
+          />
+        </View>
       </View>
       <View style={ownStyles.chevronRight}>
         <Entypo name="chevron-right" size={moderateScale(30)} color="#24253D" />
