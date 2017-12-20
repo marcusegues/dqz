@@ -2,6 +2,63 @@
 import type { RecordOf, RecordFactory } from 'immutable';
 import Immutable from 'immutable';
 
+export type Category =
+  | 'Meat'
+  | 'Butter'
+  | 'Oils'
+  | 'OtherFood'
+  | 'AlcSoft'
+  | 'AlcHard'
+  | 'Cigarettes'
+  | 'Tobacco'
+  | 'Meds'
+  | 'Books'
+  | 'Magazines'
+  | 'Flowers'
+  | 'AnimalFeed'
+  | 'Fertilizer'
+  | 'Other';
+
+type CategoriesNS = {
+  Meat: string,
+  Butter: string,
+  Oils: string,
+  OtherFood: string,
+  AlcSoft: string,
+  AlcHard: string,
+  Cigarettes: string,
+  Tobacco: string,
+  Med: string,
+  Books: string,
+  Magazines: string,
+  Flowers: string,
+  AnimalFeed: string,
+  Fertilizer: string,
+  Other: string,
+};
+
+export const makeCategoriesNSRecord: RecordFactory<
+  CategoriesNS
+> = Immutable.Record({
+  Meat: '',
+  Butter: '',
+  Oils: '',
+  OtherFood: '',
+  AlcSoft: '',
+  AlcHard: '',
+  Cigarettes: '',
+  Tobacco: '',
+  Med: '',
+  Books: '',
+  Magazines: '',
+  Flowers: '',
+  AnimalFeed: '',
+  Fertilizer: '',
+  Other: '',
+});
+
+export type CategoriesNSType = RecordOf<CategoriesNS>;
+
 type GeneralNS = {
   declareGoods: string,
   pleaseSelect: string,
@@ -91,6 +148,7 @@ type Locale = {
 };
 
 export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
+  categories: makeCategoriesNSRecord(),
   onBoarding: makeOnBoardingNSRecord(),
   general: makeGeneralNSRecord(),
   largeAmountInput: makeLargeAmountInputNSRecord(),
