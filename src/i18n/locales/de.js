@@ -11,11 +11,11 @@ import {
 
 export const de: LocaleType = makeLocaleRecord({
   general: makeGeneralNSRecord({
-    declareGoods: 'Deklarieren',
+    declareGoods: 'Waren anmelden',
     pleaseSelect: 'Bitte auswählen',
-    receipts: 'Quittungen',
-    calculator: 'Zollrechner',
-    information: 'Wisenswertes',
+    receipts: 'Quittungen Schweizer Zoll',
+    guideline: 'Ihr Weg durch den Schweizer Zoll',
+    information: 'Informationen zum Gebrauch der App',
     navbarFirst: 'Ihre Reise',
     navbarSecond: 'Bezahlung',
     navbarThird: 'Zollschein',

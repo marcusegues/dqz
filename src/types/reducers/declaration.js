@@ -95,6 +95,20 @@ export const MainCategoriesToCategories: MainCategoriesToCategoriesType = Immuta
   }
 );
 
+// TODO improve types
+export const getMainCategory = (category: any): MainCategory => {
+  if (FoodsCategories.has(category)) {
+    return 'Foods';
+  }
+  if (AlcoholCategories.has(category)) {
+    return 'Alcohol';
+  }
+  if (TobaccoProductsCategories.has(category)) {
+    return 'TobaccoProducts';
+  }
+  return 'OtherGoods';
+};
+
 export type OverAllowanceType = boolean | 'notAnswered' | 'dontKnow';
 export type LargeAmountPresentType = boolean | 'notAnswered' | 'dontKnow';
 export type LargeAmountsEnteredType = boolean | 'notAnswered';

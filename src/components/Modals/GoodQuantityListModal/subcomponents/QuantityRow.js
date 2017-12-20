@@ -6,21 +6,10 @@ import CardRowText from '../../../QuestionAnswer/cards/subcomponents/CardRowText
 import { moderateScale } from '../../../../styles/Scaling';
 import { GREY } from '../../../../styles/colors';
 import { CategoriesInfo } from '../../../../model/constants';
-
-const quantityRowContainerStyles = borderTop => ({
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'space-around',
-  borderBottomWidth: 1,
-  borderColor: '#E0E0E1',
-  paddingVertical: 15,
-  paddingHorizontal: 12,
-  marginHorizontal: 4,
-  borderTopWidth: borderTop ? 1 : 0,
-});
+import Row from '../../../Rows/Row';
 
 const QuantityRow = ({ quantity, onDelete, category, borderTop = false }) => (
-  <View style={quantityRowContainerStyles(borderTop)}>
+  <Row borderTop={borderTop}>
     <View style={{ flex: 1 }}>
       <CardRowText
         text={`${quantity} ${CategoriesInfo.get(category).get('unit')}`}
@@ -29,7 +18,7 @@ const QuantityRow = ({ quantity, onDelete, category, borderTop = false }) => (
     <Touchable onPress={onDelete}>
       <MaterialIcons name="cancel" size={moderateScale(28)} color={GREY} />
     </Touchable>
-  </View>
+  </Row>
 );
 
 export default QuantityRow;

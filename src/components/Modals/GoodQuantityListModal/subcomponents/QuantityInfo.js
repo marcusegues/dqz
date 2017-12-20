@@ -16,7 +16,9 @@ const QuantityInfo = ({ mainCategory, category, totalQuantity }) => (
   >
     <CardHeaderText text={category} />
     <CardHeaderSubText text={mainCategory} />
-    <QuantityIcon quantity={totalQuantity} category={category} />
+    <View style={{ marginTop: 10 }}>
+      <QuantityIcon quantity={totalQuantity} category={category} />
+    </View>
   </View>
 );
 

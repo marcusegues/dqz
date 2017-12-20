@@ -19,15 +19,18 @@ export default StyleSheet.create({
   },
   welcomeTitle: {
     fontFamily: 'roboto_bold',
-    fontSize: moderateScale(28),
+    fontSize: moderateScale(18),
     textAlign: 'center',
   },
   mainText: {
     fontFamily: 'roboto_regular',
-    fontSize: moderateScale(28),
+    fontSize: moderateScale(18),
     textAlign: 'center',
+    lineHeight: moderateScale(27),
+    color: '#4A4A4A',
   },
   selectLanguageText: {
+    color: '#4A4A4A',
     fontFamily: 'roboto_regular',
     fontSize: moderateScale(18),
     paddingBottom: verticalScale(15),
@@ -35,22 +38,5 @@ export default StyleSheet.create({
   languageButtonsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: '90%',
-  },
-  saveSettingsButtonContainer: {
-    flexDirection: 'row',
-  },
-  saveSettingsButton: {
-    flex: 1,
-    width: '100%',
-    backgroundColor: '#006699',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  saveSettingsButtonText: {
-    paddingVertical: verticalScale(20),
-    color: '#fff',
-    fontFamily: 'roboto_medium',
-    fontSize: moderateScale(18),
   },
 });

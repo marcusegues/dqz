@@ -1,11 +1,14 @@
 import React from 'react';
 import Touchable from 'react-native-platform-touchable';
 import { translate } from 'react-i18next';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import { LanguageButton } from './subcomponents/LanguageButton';
 import { languageCodeList } from './types';
 import styles from './styles/onBoarding';
 import AppTitle from '../../components/AppTitle/AppTitle';
+import { moderateScale } from '../../styles/Scaling';
+
+const img = require('../../../assets/images/done_big.png');
 
 class OnBoarding extends React.Component {
   constructor(props) {
@@ -17,8 +20,11 @@ class OnBoarding extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.contentContainer}>
-          <Text style={styles.welcomeTitle}>Welcome to</Text>
-          <AppTitle />
+          <View>
+            <Text style={styles.welcomeTitle}>Welcome to</Text>
+            <AppTitle />
+          </View>
+
           <Text style={styles.mainText}>
             {t('onBoarding:onBoardingMessage')}
           </Text>
@@ -55,19 +61,17 @@ class OnBoarding extends React.Component {
               })}
             </View>
           </View>
-          <View style={styles.saveSettingsButtonContainer}>
-            <Touchable
-              style={styles.saveSettingsButton}
-              background={Touchable.Ripple('#006699')}
-            >
-              <Text
-                style={styles.saveSettingsButtonText}
-                onPress={() => navigation.navigate('MainMenu')}
-              >
-                SAVE SETTINGS
-              </Text>
-            </Touchable>
-          </View>
+          <Touchable
+            style={{}}
+            background={Touchable.Ripple('#006699')}
+            onPress={() => navigation.navigate('MainMenu')}
+          >
+            <Image
+              source={img}
+              style={{ width: moderateScale(70), height: moderateScale(70) }}
+              resizeMode="cover"
+            />
+          </Touchable>
         </View>
       </View>
     );
