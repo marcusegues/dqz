@@ -25,7 +25,6 @@ const redirectsUrlKeys = {
 class PaymentContainer extends React.Component {
   constructor(props) {
     super(props);
-    const { basket, people } = this.props;
     this.state = {
       isLoadingRedirectData: false,
       redirectDataLoaded: false,
@@ -33,7 +32,6 @@ class PaymentContainer extends React.Component {
       paymentToken: null,
       paymentStatus: null,
     };
-    this.totalDuty = calculateDuty(basket, people).get('totalDuty', 0);
   }
 
   componentDidMount() {
@@ -41,10 +39,13 @@ class PaymentContainer extends React.Component {
   }
 
   initializePayment() {
-    if (this.totalDuty > 0) {
+    const { basket, people } = this.props;
+    const totalDuty = calculateDuty(basket, people).get('totalDuty', 0);
+
+    if (totalDuty > 0) {
       this.setState({ isLoadingRedirectData: true }, () => {
         this.saferpay
-          .initializePayment(100 * this.totalDuty, 'CHF')
+          .initializePayment(100 * totalDuty, 'CHF')
           .then(responseJson => {
             // console.log('response is', responseJson);
             this.setState({
@@ -97,6 +98,7 @@ class PaymentContainer extends React.Component {
   }
 
   render() {
+    const { basket, people } = this.props;
     return (
       <View
         style={{
@@ -122,7 +124,9 @@ class PaymentContainer extends React.Component {
         <RedButton
           onPress={() => this.initializePayment()}
           text="Zur Bezahlung"
-          confirmationDisabled={this.totalDuty < 1}
+          confirmationDisabled={
+            calculateDuty(basket, people).get('totalDuty', 0) < 1
+          }
         />
         {this.state.redirectDataLoaded ? (
           <View style={{ position: 'absolute', top: 0 }}>
