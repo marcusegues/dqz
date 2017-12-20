@@ -1,48 +1,76 @@
-import React, { Component } from 'react';
+// @flow
+import React from 'react';
+// $FlowFixMe
 import { View, Text, Picker, TouchableOpacity } from 'react-native';
-import AppModal from './AppModal';
-import RedButton from '../Buttons/RedButton';
+import { translate } from 'react-i18next';
+
+import AppModal from '../AppModal';
+import RedButton from '../../Buttons/RedButton';
 import {
   standardPickerNumbers,
   standardPickerAmount,
   customPickerUnits,
   customPickerDecimalUnits,
 } from './pickerData';
-import ownStyles from './styles/PickerModal';
-import globalStyles from '../../styles/globalStyles';
+import ownStyles from '../styles/PickerModal';
+import globalStyles from '../../../styles/globalStyles';
 
-class PickerModal extends Component {
+type PickerState = {
+  selected: 'standardInput' | 'customInput',
+  standardInput: {
+    number: string,
+    amount: string,
+  },
+  customInput: {
+    units: string,
+    decimalUnits: string,
+  },
+};
+
+class PickerModal extends React.Component<any, PickerState> {
   state = {
     selected: 'standardInput' || 'customInput',
-    standardInput: { number: Number, amount: Number },
-    customInput: { units: Number, decimalUnits: Number },
+    standardInput: {
+      number: '1',
+      amount: '0.33',
+    },
+    customInput: {
+      units: '1',
+      decimalUnits: '00',
+    },
   };
 
-  standardTotalAmount() {
-    if (
-      this.state.standardInput.number > 0 &&
-      this.state.standardInput.amount > 0
-    ) {
-      return `${this.state.standardInput.number *
-        this.state.standardInput.amount} LITER`;
+  standardTotalAmount(): number {
+    const {
+      number: numberString,
+      amount: amountString,
+    } = this.state.standardInput;
+
+    const number = +numberString;
+    const amount = +amountString;
+    if (number < 0 || amount < 0) {
+      return 0;
     }
-    return '';
+    return number * amount;
   }
-  customTotalAmount() {
-    if (
-      this.state.customInput.units > 0 &&
-      this.state.customInput.decimalUnits >= 0
-    ) {
-      return `${(
-        (this.state.customInput.units + this.state.customInput.decimalUnits) *
-        0.01
-      ).toFixed(2)} LITER`;
+
+  customTotalAmount(): number {
+    const {
+      units: unitsString,
+      decimalUnits: decimalUnitsString,
+    } = this.state.customInput;
+
+    const units = +unitsString;
+    const decimalUnits = +decimalUnitsString;
+    if (units < 0 || decimalUnits < 0) {
+      return 0;
     }
-    return '';
+    return units + decimalUnits / 100;
   }
 
   render() {
     const { selected } = this.state;
+    const { t } = this.props;
     const standardInput = selected === 'standardInput';
 
     return (
@@ -212,11 +240,12 @@ class PickerModal extends Component {
           </View>
           <View style={[ownStyles.redButtonWrapper, {}]}>
             <RedButton
-              text={
-                standardInput
-                  ? `${this.standardTotalAmount()}  ÜBERNEHMEN`
-                  : `${this.customTotalAmount()} ÜBERNEHMEN`
-              }
+              text={t(['confirmPicker'], {
+                value: (standardInput
+                  ? this.standardTotalAmount()
+                  : this.customTotalAmount()
+                ).toFixed(2),
+              })}
             />
           </View>
         </View>
@@ -224,4 +253,5 @@ class PickerModal extends Component {
     );
   }
 }
-export default PickerModal;
+
+export default translate(['modal'])(PickerModal);

@@ -64,11 +64,26 @@ export const makeQAFlowNSRecord: RecordFactory<QAFlowNS> = Immutable.Record({
 
 export type QAFlowNSType = RecordOf<QAFlowNS>;
 
+type ModalNS = {
+  confirmPicker: string,
+};
+
+export const makeModalNSRecord: RecordFactory<ModalNS> = Immutable.Record({
+  confirmPicker: '{{value}}',
+});
+
+export type ModalNSType = RecordOf<ModalNS>;
+
+/**
+ *
+ */
+
 type Locale = {
   onBoarding: OnBoardingNSType,
   general: GeneralNSType,
   largeAmountInput: LargeAmountInputNSType,
   qaFlow: QAFlowNSType,
+  modal: ModalNSType,
 };
 
 export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
@@ -76,6 +91,7 @@ export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
   general: makeGeneralNSRecord(),
   largeAmountInput: makeLargeAmountInputNSRecord(),
   qaFlow: makeQAFlowNSRecord(),
+  modal: makeModalNSRecord(),
 });
 
 export type LocaleType = RecordOf<Locale>;

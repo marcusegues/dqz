@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 import NavBar from '../../components/NavBar/NavBar';
 import GoodInputModal from '../../components/Modals/GoodInputModal/GoodInputModal';
-import PickerModal from '../../components/Modals/PickerModal';
+import PickerModal from '../../components/Modals/PickerModal/PickerModal';
 
 class ScreensView extends React.Component {
   constructor(props) {

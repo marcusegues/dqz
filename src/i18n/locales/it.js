@@ -5,6 +5,7 @@ import {
   makeGeneralNSRecord,
   makeOnBoardingNSRecord,
   makeLargeAmountInputNSRecord,
+  makeModalNSRecord,
 } from '../types/locale';
 
 export const it: LocaleType = makeLocaleRecord({
@@ -27,5 +28,8 @@ export const it: LocaleType = makeLocaleRecord({
     pleaseInput: 'Si prega di inserire i valori',
     totalLargeAmount:
       'il valore totale degli oggetti di grandi dimensioni è {{value}}.',
+  }),
+  modal: makeModalNSRecord({
+    confirmPicker: '💰 {{value}}',
   }),
 });
