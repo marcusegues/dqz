@@ -62,6 +62,11 @@ export default class App extends React.Component {
         roboto_medium: require('./assets/fonts/Roboto-Medium.ttf'),
         roboto_thin: require('./assets/fonts/Roboto-Thin.ttf'),
 
+        exo_thin: require('./assets/fonts/Exo-Thin.otf'),
+        exo_light: require('./assets/fonts/Exo-Light.otf'),
+        exo1_thin: require('./assets/fonts/Exo1-Thin.otf'),
+        exo_extraLight: require('./assets/fonts/Exo-ExtraLight.otf'),
+
         // This is the font that we are using for our tab bar
         ...Ionicons.font,
         // We include SpaceMono because we use it in HomeScreen.js. Feel free
