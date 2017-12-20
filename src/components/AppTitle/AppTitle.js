@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { moderateScale, scale } from '../../styles/Scaling';
-// import ownStyles from './AppTitleStyles';
 
 const img = require('../../../assets/images/logo_red.png');
 

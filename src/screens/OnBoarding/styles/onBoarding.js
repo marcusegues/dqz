@@ -38,6 +38,5 @@ export default StyleSheet.create({
   languageButtonsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: '100%',
   },
 });

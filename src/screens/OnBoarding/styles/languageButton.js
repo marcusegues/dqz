@@ -26,6 +26,8 @@ export const languageButton = (styleOptions: StyleOptionsType) => {
     shadowOffset: { height: 1, width: 0 },
     shadowOpacity: 0.25,
     shadowRadius: 1.5,
+
+    marginHorizontal: 10,
   };
 };
 
