@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { moderateScale, verticalScale } from '../../../../styles/Scaling';
+import { moderateScale } from '../../../../styles/Scaling';
 
 const CardRowText = ({ text }) => (
   <Text

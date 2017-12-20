@@ -1,6 +1,7 @@
 /* eslint-disable react/prefer-stateless-function,react/prefer-stateless-function */
 // @flow
 import React from 'react';
+// $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 // $FlowFixMe
 import { Text, View } from 'react-native';
@@ -15,9 +16,8 @@ import {
 } from '../../../model/configurationApi';
 import type { QuantityInputState } from '../../QuestionAnswer/QuantityInput/QuantityInputQA';
 import type { Basket, Category } from '../../../model/types/basketPeopleTypes';
-import RedButton from '../../Buttons/RedButton';
 import QuantityRow from './subcomponents/QuantityRow';
-import { GREY, MAIN_RED } from '../../../styles/colors';
+import { MAIN_RED } from '../../../styles/colors';
 import { moderateScale } from '../../../styles/Scaling';
 import BackArrow from '../../Headers/subcomponents/BackArrow';
 
@@ -68,6 +68,7 @@ class GoodQuantityListModal extends React.Component<
           />
           {quantities.map((q, idx) => (
             <QuantityRow
+              borderTop={idx === 0}
               key={v4()}
               quantity={q}
               category={modalCategories.category}

@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import CardHeader from '../../../QuestionAnswer/cards/subcomponents/CardHeader';
+import { View } from 'react-native';
 import CardHeaderText from '../../../QuestionAnswer/cards/subcomponents/CardHeaderText';
 import CardHeaderSubText from '../../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
 import QuantityIcon from '../../../General Components/QuantityIcon';
