@@ -17,55 +17,46 @@ export const anyQuantitiesInBasket = (basket: Basket): boolean =>
           .size
     );
 
+const flagRules = (question: QuestionType, qaState: QAState): QuestionFlag => {
+  const { settings } = qaState;
+  const main = settings.get('mainCategories');
+  switch (question) {
+    case 'peopleInput': {
+      return getTotalPeople(qaState.people) ? 'complete' : 'incomplete';
+    }
+    case 'mainCategories': {
+      return main.size ? 'complete' : 'incomplete';
+    }
+    case 'quantityInput': {
+      return main.size && anyQuantitiesInBasket(qaState.basket)
+        ? 'complete'
+        : 'incomplete';
+    }
+    default: {
+      return 'incomplete';
+    }
+  }
+};
+
 const setQuestionFlagInState = (
   qaState: QAState,
   questionFlag: { [QuestionType]: QuestionFlag }
 ): QAState => Object.assign({}, qaState, { questionFlag });
 
-export const setInitFlags = (qaState: QAState): QAState => {
-  const { settings } = qaState;
-  const main = settings.get('mainCategories');
-  return setQuestionFlagInState(qaState, {
-    peopleInput: getTotalPeople(qaState.people) ? 'complete' : 'incomplete',
-    mainCategories: main.size ? 'complete' : 'incomplete',
-    quantityInput:
-      main.size && anyQuantitiesInBasket(qaState.basket)
-        ? 'complete'
-        : 'incomplete',
+export const setInitFlags = (qaState: QAState): QAState =>
+  setQuestionFlagInState(qaState, {
+    peopleInput: flagRules('peopleInput', qaState),
+    mainCategories: flagRules('mainCategories', qaState),
+    quantityInput: flagRules('quantityInput', qaState),
   });
-};
 
 export const setQuestionFlag = (
   justUpdated: QuestionType,
   qaState: QAState
-): QAState => {
-  let updatedFlag;
-  switch (justUpdated) {
-    case 'peopleInput': {
-      updatedFlag = getTotalPeople(qaState.people) ? 'complete' : 'incomplete';
-      break;
-    }
-    case 'mainCategories': {
-      updatedFlag = qaState.settings.get('mainCategories').size
-        ? 'complete'
-        : 'incomplete';
-      break;
-    }
-    case 'quantityInput': {
-      updatedFlag =
-        qaState.settings.get('mainCategories').size &&
-        anyQuantitiesInBasket(qaState.basket)
-          ? 'complete'
-          : 'incomplete';
-      break;
-    }
-    default:
-  }
-  return {
-    ...qaState,
-    questionFlag: {
-      ...qaState.questionFlag,
-      [justUpdated]: updatedFlag,
-    },
-  };
-};
+): QAState => ({
+  ...qaState,
+  questionFlag: {
+    ...qaState.questionFlag,
+    [justUpdated]: flagRules(justUpdated, qaState),
+  },
+});
