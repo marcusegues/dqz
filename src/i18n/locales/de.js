@@ -13,7 +13,7 @@ export const de: LocaleType = makeLocaleRecord({
     declareGoods: 'Waren anmelden',
     pleaseSelect: 'Bitte auswählen',
     receipts: 'Quittungen Schweizer Zoll',
-    calculator: 'Ihr Weg durch den Schweizer Zoll',
+    guideline: 'Ihr Weg durch den Schweizer Zoll',
     information: 'Informationen zum Gebrauch der App',
     navbarFirst: 'Ihre Reise',
     navbarSecond: 'Bezahlung',

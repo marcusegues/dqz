@@ -13,7 +13,7 @@ export const en: LocaleType = makeLocaleRecord({
     declareGoods: 'Declare',
     pleaseSelect: 'Please select',
     receipts: 'Receipts',
-    calculator: 'Calculator',
+    guideline: 'Guideline',
     information: 'Information',
     navbarFirst: 'Journey',
     navbarSecond: 'Payment',

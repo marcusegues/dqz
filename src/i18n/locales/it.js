@@ -12,7 +12,7 @@ export const it: LocaleType = makeLocaleRecord({
     declareGoods: '🛃️',
     pleaseSelect: '',
     receipts: '🦄',
-    calculator: '😸',
+    guideline: '😸',
     information: '🏎',
     navbarFirst: '✈️',
     navbarSecond: '💸',

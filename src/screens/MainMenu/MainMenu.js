@@ -32,7 +32,7 @@ const MainMenu = ({ navigation, t }) => (
       </MenuTile>
 
       <MenuTile
-        text={t('calculator').toUpperCase()}
+        text={t('guideline').toUpperCase()}
         onPress={() => navigation.navigate('UnderConstruction')}
       >
         <Image
