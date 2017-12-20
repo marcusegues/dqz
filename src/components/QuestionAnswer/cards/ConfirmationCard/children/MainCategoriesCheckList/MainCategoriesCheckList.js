@@ -1,4 +1,5 @@
 import React from 'react';
+import Touchable from 'react-native-platform-touchable';
 import { View, Text, FlatList, Dimensions, StyleSheet } from 'react-native';
 import CheckBox from '../../../../../CheckBox/CheckBox';
 import { MainCategories } from '../../../../../../types/reducers/declaration';
@@ -18,6 +19,7 @@ const ownStyles = StyleSheet.create({
   },
   flatListRow: {
     flexDirection: 'row',
+    alignItems: 'center',
     width: '100%',
     paddingVertical: verticalScale(13),
     paddingLeft: scale(15),
@@ -43,15 +45,16 @@ const MainCategoriesCheckList = ({ mainCategories, onToggleMainCategory }) => {
       <FlatList
         data={flatListData}
         renderItem={({ item }) => (
-          <View style={ownStyles.flatListRow}>
-            <CheckBox
-              checked={mainCategories.has(item.key)}
-              onPress={() => {
-                onToggleMainCategory(item.key);
-              }}
-            />
-            <Text style={ownStyles.flatListText}>{item.key}</Text>
-          </View>
+          <Touchable
+            onPress={() => {
+              onToggleMainCategory(item.key);
+            }}
+          >
+            <View style={ownStyles.flatListRow}>
+              <CheckBox checked={mainCategories.has(item.key)} />
+              <Text style={ownStyles.flatListText}>{item.key}</Text>
+            </View>
+          </Touchable>
         )}
       />
     </View>
