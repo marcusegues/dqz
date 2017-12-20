@@ -44,6 +44,7 @@ export const de: LocaleType = makeLocaleRecord({
     navbarFirst: 'Ihre Reise',
     navbarSecond: 'Bezahlung',
     navbarThird: 'Zollschein',
+    customsDuty: 'Zollabgabe',
   }),
   onBoarding: makeOnBoardingNSRecord({
     onBoardingMessage:
