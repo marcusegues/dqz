@@ -28,7 +28,7 @@ import {
   setInitStates,
   setQuestionStates,
 } from './QAControl/controlQuestionStates';
-import { setQuestionFlag } from './QAControl/controlQuestionFlag';
+import { setInitFlags, setQuestionFlag } from './QAControl/controlQuestionFlag';
 import type { DutyReport } from '../../model/types/calculationTypes';
 import { calculateDuty } from '../../model/dutyCalculations';
 import { verticalScale } from '../../styles/Scaling';
@@ -89,7 +89,9 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
   }
 
   initState() {
-    this.setState(setInitStates(this.state));
+    const setStates = setInitStates(this.state);
+    const setFlags = setInitFlags(setStates);
+    this.setState(setFlags);
   }
 
   updateQA(justAnswered: QuestionType) {
@@ -187,7 +189,6 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         ),
       },
     ];
-
     return (
       <View
         style={{

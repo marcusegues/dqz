@@ -9,7 +9,6 @@ const CardHeaderText = ({ text }) => (
       fontSize: 24, // Should we use scaling here? They're breaking the design.
       lineHeight: verticalScale(32),
       color: '#141414',
-      marginHorizontal: verticalScale(16),
     }}
   >
     {text}

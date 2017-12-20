@@ -8,11 +8,7 @@ import Saferpay from '../../../saferpay';
 import NavBar from '../NavBar/NavBar';
 import PaymentWebView from './PaymentWebView';
 import RedButton from '../Buttons/RedButton';
-import {
-  getDeclarationBasket,
-  getDeclarationDutyReport,
-  getDeclarationPeople,
-} from '../../reducers';
+import { getDeclarationBasket, getDeclarationPeople } from '../../reducers';
 import { calculateDuty } from '../../model/dutyCalculations';
 
 const baseUrl = 'http://ambrite.ch';
@@ -40,24 +36,27 @@ class PaymentContainer extends React.Component {
 
   initializePayment() {
     const { basket, people } = this.props;
-    this.setState({ isLoadingRedirectData: true }, () => {
-      this.saferpay
-        .initializePayment(
-          100 * calculateDuty(basket, people).get('totalDuty', 0),
-          'CHF'
-        )
-        .then(responseJson => {
-          console.log('response is', responseJson);
-          this.setState({
-            isLoadingRedirectData: false,
-            redirectDataLoaded: true,
-            redirectUrl: responseJson.RedirectUrl,
-            paymentToken: responseJson.Token,
-            paymentStatus: 'start',
-          });
-        })
-        .catch(error => console.log('Error is', error));
-    });
+    const totalDuty = calculateDuty(basket, people).get('totalDuty', 0);
+
+    if (totalDuty > 0) {
+      this.setState({ isLoadingRedirectData: true }, () => {
+        this.saferpay
+          .initializePayment(100 * totalDuty, 'CHF')
+          .then(responseJson => {
+            // console.log('response is', responseJson);
+            this.setState({
+              isLoadingRedirectData: false,
+              redirectDataLoaded: true,
+              redirectUrl: responseJson.RedirectUrl,
+              paymentToken: responseJson.Token,
+              paymentStatus: 'start',
+            });
+          })
+          .catch(error => console.log('Error is', error));
+      });
+    } else {
+      console.log(`totalDuty is 0!`);
+    }
   }
 
   checkWebViewUrl(state) {
@@ -95,7 +94,7 @@ class PaymentContainer extends React.Component {
   }
 
   render() {
-    console.log('state is', this.state);
+    const { basket, people } = this.props;
     return (
       <View
         style={{
@@ -108,11 +107,27 @@ class PaymentContainer extends React.Component {
         }}
       >
         <NavBar step={2} />
-        {this.state.paymentStatus === 'abort' ? <Text>Aborted</Text> : null}
-        <Overview initializePayment={() => this.initializePayment()} />
+        {this.state.paymentStatus === 'success' ? (
+          <Text style={{ color: 'green' }}>Payment success</Text>
+        ) : null}
+        {this.state.paymentStatus === 'abort' ? (
+          <Text style={{ color: 'red' }}>Payment aborted</Text>
+        ) : null}
+        {this.state.paymentStatus === 'fail' ? (
+          <Text style={{ color: 'red' }}>Payment failed</Text>
+        ) : null}
+        <Overview
+          people={this.props.people}
+          basket={this.props.basket}
+          initializePayment={() => this.initializePayment()}
+        />
+
         <RedButton
           onPress={() => this.initializePayment()}
           text="Zur Bezahlung"
+          confirmationDisabled={
+            calculateDuty(basket, people).get('totalDuty', 0) < 1
+          }
         />
         {this.state.redirectDataLoaded ? (
           <View style={{ position: 'absolute', top: 0 }}>
@@ -130,7 +145,6 @@ class PaymentContainer extends React.Component {
 const mapStateToProps = state => ({
   basket: getDeclarationBasket(state),
   people: getDeclarationPeople(state),
-  dutyReport: getDeclarationDutyReport(state),
 });
 
 export default connect(mapStateToProps)(PaymentContainer);

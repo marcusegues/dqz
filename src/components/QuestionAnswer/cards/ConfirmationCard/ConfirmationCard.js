@@ -14,7 +14,7 @@ const ownStyles = {
   },
   bottomButtonContainer: {
     justifyContent: 'center',
-    marginVertical: verticalScale(15),
+    marginBottom: verticalScale(15),
   },
 };
 
@@ -26,7 +26,6 @@ const ConfirmationCard = ({
 }) => (
   <Card>
     <CardHeader text={text} />
-
     <View style={ownStyles.bottomSectionWrapper}>
       <View>{children}</View>
     </View>
