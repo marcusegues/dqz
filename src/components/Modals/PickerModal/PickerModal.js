@@ -7,10 +7,9 @@ import { translate } from 'react-i18next';
 import AppModal from '../AppModal';
 import RedButton from '../../Buttons/RedButton';
 import {
-  standardPickerNumbers,
-  standardPickerAmount,
-  customPickerUnits,
-  customPickerDecimalUnits,
+  liquidsAmountsPicker,
+  rangeItemsPicker,
+  pickerDecimalUnits,
 } from './pickerData';
 import ownStyles from '../styles/PickerModal';
 import globalStyles from '../../../styles/globalStyles';
@@ -152,7 +151,7 @@ class PickerModal extends React.Component<any, PickerState> {
                     prompt="Choose value"
                     itemStyle={{}}
                   >
-                    {standardPickerNumbers.map(i => (
+                    {rangeItemsPicker(1, 9, 1).map(i => (
                       <Picker.Item key={i.id} label={i.label} value={i.value} />
                     ))}
                   </Picker>
@@ -178,7 +177,7 @@ class PickerModal extends React.Component<any, PickerState> {
                     prompt="Choose value"
                     itemStyle={{}}
                   >
-                    {standardPickerAmount.map(i => (
+                    {liquidsAmountsPicker.map(i => (
                       <Picker.Item key={i.id} label={i.label} value={i.value} />
                     ))}
                   </Picker>
@@ -205,7 +204,7 @@ class PickerModal extends React.Component<any, PickerState> {
                     prompt="Choose value"
                     itemStyle={{}}
                   >
-                    {customPickerUnits.map(i => (
+                    {rangeItemsPicker(1, 9, 1).map(i => (
                       <Picker.Item key={i.id} label={i.label} value={i.value} />
                     ))}
                   </Picker>
@@ -230,7 +229,7 @@ class PickerModal extends React.Component<any, PickerState> {
                     prompt="Choose value"
                     itemStyle={{}}
                   >
-                    {customPickerDecimalUnits.map(i => (
+                    {pickerDecimalUnits.map(i => (
                       <Picker.Item key={i.id} label={i.label} value={i.value} />
                     ))}
                   </Picker>
