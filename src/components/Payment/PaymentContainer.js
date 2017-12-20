@@ -1,10 +1,13 @@
 /* eslint-disable react/no-unused-state, no-console */
 // TODO remove above line
 import React from 'react';
-import { View } from 'react-native';
+import { connect } from 'react-redux';
+import { View, Text } from 'react-native';
+import Touchable from 'react-native-platform-touchable';
 import Overview from '../Overview/Overview';
 import Saferpay from '../../../saferpay';
 import NavBar from '../NavBar/NavBar';
+import PaymentWebView from './PaymentWebView';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -13,7 +16,7 @@ const redirectsUrlKeys = {
   abort: `/abort`,
 };
 
-class Payment extends React.Component {
+class PaymentContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,18 +28,25 @@ class Payment extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.saferpay = new Saferpay(baseUrl, redirectsUrlKeys);
+  }
+
   initializePayment() {
     this.setState({ isLoadingRedirectData: true }, () => {
-      Saferpay.initializePayment(500, 'EUR')
+      this.saferpay
+        .initializePayment(500, 'EUR')
         .then(responseJson => {
+          console.log('response is', responseJson);
           this.setState({
             isLoadingRedirectData: false,
+            redirectDataLoaded: true,
             redirectUrl: responseJson.RedirectUrl,
             paymentToken: responseJson.Token,
             paymentStatus: 'start',
           });
         })
-        .catch(error => console.log(error));
+        .catch(error => console.log('Error is', error));
     });
   }
 
@@ -75,6 +85,7 @@ class Payment extends React.Component {
   }
 
   render() {
+    console.log('state is', this.state);
     return (
       <View
         style={{
@@ -87,10 +98,22 @@ class Payment extends React.Component {
         }}
       >
         <NavBar step={2} />
-        <Overview />
+        {this.state.paymentStatus === 'abort' ? <Text>Aborted</Text> : null}
+        <Overview initializePayment={() => this.initializePayment()} />
+        <Touchable onPress={() => this.initializePayment()}>
+          <Text>Zur Bezahlung</Text>
+        </Touchable>
+        {this.state.redirectDataLoaded ? (
+          <View style={{ position: 'absolute', top: 0 }}>
+            <PaymentWebView
+              source={{ uri: this.state.redirectUrl }}
+              onNavigationStateChange={e => this.checkWebViewUrl(e)}
+            />
+          </View>
+        ) : null}
       </View>
     );
   }
 }
 
-export default Payment;
+export default connect(null, null)(PaymentContainer);
