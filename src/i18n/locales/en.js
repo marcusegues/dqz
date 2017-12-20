@@ -42,7 +42,7 @@ export const en: LocaleType = makeLocaleRecord({
     declareGoods: 'Declare',
     pleaseSelect: 'Please select',
     receipts: 'Receipts',
-    guideline: 'Guideline.', // TODO: if I put "Guideline", the last "e" is not displayed... huh?
+    guideline: 'Guideline',
     information: 'Information',
     navbarFirst: 'Journey',
     navbarSecond: 'Payment',
