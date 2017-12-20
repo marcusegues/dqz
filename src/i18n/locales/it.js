@@ -8,26 +8,12 @@ import {
   makeModalNSRecord,
   makeCategoriesNSRecord,
   makeQAFlowNSRecord,
+  makeMainCategoriesNSRecord,
 } from '../types/locale';
 
 export const it: LocaleType = makeLocaleRecord({
-  categories: makeCategoriesNSRecord({
-    Meat: 'Meat',
-    Butter: 'Butter',
-    Oils: 'Oils',
-    OtherFood: 'Other Foods',
-    AlcSoft: 'Alcohol <18%',
-    AlcHard: 'Alcohol >18%',
-    Cigarettes: 'Cigarettes',
-    Tobacco: 'Tobacco',
-    Med: 'Medicine',
-    Books: 'Books',
-    Magazines: 'Magazines',
-    Flowers: 'Flowers',
-    AnimalFeed: 'Animal Feed',
-    Fertilizer: 'Fertilizer',
-    Other: 'Other Goods',
-  }),
+  categories: makeCategoriesNSRecord({}),
+  mainCategories: makeMainCategoriesNSRecord({}),
   general: makeGeneralNSRecord({
     declareGoods: '🛃️',
     pleaseSelect: '',

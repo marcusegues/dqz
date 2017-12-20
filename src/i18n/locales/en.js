@@ -8,6 +8,7 @@ import {
   makeQAFlowNSRecord,
   makeModalNSRecord,
   makeCategoriesNSRecord,
+  makeMainCategoriesNSRecord,
 } from '../types/locale';
 
 export const en: LocaleType = makeLocaleRecord({
@@ -26,7 +27,13 @@ export const en: LocaleType = makeLocaleRecord({
     Flowers: 'Flowers',
     AnimalFeed: 'Animal Feed',
     Fertilizer: 'Fertilizer',
-    Other: 'Other Goods',
+    Other: 'Other',
+  }),
+  mainCategories: makeMainCategoriesNSRecord({
+    Foods: 'Foods',
+    Alcohol: `Alcohol`,
+    TobaccoProducts: 'Tobacco Products',
+    OtherGoods: 'Other Goods',
   }),
   general: makeGeneralNSRecord({
     declareGoods: 'Declare',

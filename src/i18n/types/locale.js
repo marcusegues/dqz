@@ -2,22 +2,23 @@
 import type { RecordOf, RecordFactory } from 'immutable';
 import Immutable from 'immutable';
 
-export type Category =
-  | 'Meat'
-  | 'Butter'
-  | 'Oils'
-  | 'OtherFood'
-  | 'AlcSoft'
-  | 'AlcHard'
-  | 'Cigarettes'
-  | 'Tobacco'
-  | 'Meds'
-  | 'Books'
-  | 'Magazines'
-  | 'Flowers'
-  | 'AnimalFeed'
-  | 'Fertilizer'
-  | 'Other';
+type MainCategoriesNS = {
+  Foods: string,
+  Alcohol: string,
+  TobaccoProducts: string,
+  OtherGoods: string,
+};
+
+export const makeMainCategoriesNSRecord: RecordFactory<
+  MainCategoriesNS
+> = Immutable.Record({
+  Foods: 'i18n',
+  Alcohol: 'i18n',
+  TobaccoProducts: 'i18n',
+  OtherGoods: 'i18n',
+});
+
+export type MainCategoriesNSType = RecordOf<MainCategoriesNS>;
 
 type CategoriesNS = {
   Meat: string,
@@ -40,21 +41,21 @@ type CategoriesNS = {
 export const makeCategoriesNSRecord: RecordFactory<
   CategoriesNS
 > = Immutable.Record({
-  Meat: '',
-  Butter: '',
-  Oils: '',
-  OtherFood: '',
-  AlcSoft: '',
-  AlcHard: '',
-  Cigarettes: '',
-  Tobacco: '',
-  Med: '',
-  Books: '',
-  Magazines: '',
-  Flowers: '',
-  AnimalFeed: '',
-  Fertilizer: '',
-  Other: '',
+  Meat: 'i18n',
+  Butter: 'i18n',
+  Oils: 'i18n',
+  OtherFood: 'i18n',
+  AlcSoft: 'i18n',
+  AlcHard: 'i18n',
+  Cigarettes: 'i18n',
+  Tobacco: 'i18n',
+  Med: 'i18n',
+  Books: 'i18n',
+  Magazines: 'i18n',
+  Flowers: 'i18n',
+  AnimalFeed: 'i18n',
+  Fertilizer: 'i18n',
+  Other: 'i18n',
 });
 
 export type CategoriesNSType = RecordOf<CategoriesNS>;
@@ -164,6 +165,7 @@ type Locale = {
 };
 
 export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
+  mainCategories: makeMainCategoriesNSRecord(),
   categories: makeCategoriesNSRecord(),
   onBoarding: makeOnBoardingNSRecord(),
   general: makeGeneralNSRecord(),

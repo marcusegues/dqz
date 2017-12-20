@@ -74,8 +74,8 @@ const GoodInputRow = ({
         }
       />
       <View style={ownStyles.rowMainTextContainer}>
-        <CardRowText text={t(category)} />
-        <CardRowSubText text={mainCategory} />
+        <CardRowText text={t(`categories:${category}`)} />
+        <CardRowSubText text={t(`mainCategories:${mainCategory}`)} />
         <View style={{ marginTop: 10 }}>
           <QuantityIcon quantity={totalQuantity} category={category} />
         </View>
@@ -87,4 +87,4 @@ const GoodInputRow = ({
   </Touchable>
 );
 
-export default translate(['categories'])(GoodInputRow);
+export default translate(['mainCategories', 'categories'])(GoodInputRow);
