@@ -9,6 +9,8 @@ import {
   makeCategoriesNSRecord,
   makeQAFlowNSRecord,
   makeMainCategoriesNSRecord,
+  makeMainCategoriesInputNSRecord,
+  makeQuantityInputNSRecord,
 } from '../types/locale';
 
 export const it: LocaleType = makeLocaleRecord({
@@ -29,11 +31,8 @@ export const it: LocaleType = makeLocaleRecord({
       'Abbiamo impostato la tua lingua in base alle tue attuali impostazioni di sistema',
     selectLanguage: 'Seleziona una lingua diversa',
   }),
-  largeAmountInput: makeLargeAmountInputNSRecord({
-    pleaseInput: 'Si prega di inserire i valori',
-    totalLargeAmount:
-      'il valore totale degli oggetti di grandi dimensioni è {{value}}.',
-  }),
+  mainCategoriesInput: makeMainCategoriesInputNSRecord({}),
+  quantityInput: makeQuantityInputNSRecord({}),
   qaFlow: makeQAFlowNSRecord({}),
   modal: makeModalNSRecord({
     confirmPicker: '💰 {{value}}',

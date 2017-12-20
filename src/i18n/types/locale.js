@@ -29,7 +29,7 @@ type CategoriesNS = {
   AlcHard: string,
   Cigarettes: string,
   Tobacco: string,
-  Med: string,
+  Meds: string,
   Books: string,
   Magazines: string,
   Flowers: string,
@@ -49,7 +49,7 @@ export const makeCategoriesNSRecord: RecordFactory<
   AlcHard: 'i18n',
   Cigarettes: 'i18n',
   Tobacco: 'i18n',
-  Med: 'i18n',
+  Meds: 'i18n',
   Books: 'i18n',
   Magazines: 'i18n',
   Flowers: 'i18n',
@@ -71,6 +71,7 @@ type GeneralNS = {
   navbarThird: string,
   customsDuty: string,
   goodCategories: string,
+  confirm: string,
 };
 
 export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
@@ -84,6 +85,7 @@ export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
   navbarThird: 'i18n',
   customsDuty: 'i18n',
   goodCategories: 'i18n',
+  confirm: 'i18n',
 });
 
 export type GeneralNSType = RecordOf<GeneralNS>;
@@ -102,19 +104,29 @@ export const makeOnBoardingNSRecord: RecordFactory<
 
 export type OnBoardingNSType = RecordOf<OnBoardingNS>;
 
-type LargeAmountInputNS = {
-  pleaseInput: string,
-  totalLargeAmount: string,
+type MainCategoriesInputNS = {
+  mainCategoriesQuestion: string,
 };
 
-export const makeLargeAmountInputNSRecord: RecordFactory<
-  LargeAmountInputNS
+export const makeMainCategoriesInputNSRecord: RecordFactory<
+  MainCategoriesInputNS
 > = Immutable.Record({
-  pleaseInput: 'i18n',
-  totalLargeAmount: 'i18n',
+  mainCategoriesQuestion: 'i18n',
 });
 
-export type LargeAmountInputNSType = RecordOf<LargeAmountInputNS>;
+export type MainCategoriesInputNSType = RecordOf<MainCategoriesInputNS>;
+
+type QuantityInputNS = {
+  quantityInput: string,
+};
+
+export const makeQuantityInputNSRecord: RecordFactory<
+  QuantityInputNS
+> = Immutable.Record({
+  quantityInput: 'i18n',
+});
+
+export type QuantityInputNSType = RecordOf<QuantityInputNS>;
 
 type QAFlowNS = {
   toOverview: string,
@@ -161,9 +173,12 @@ export type ModalNSType = RecordOf<ModalNS>;
  */
 
 type Locale = {
+  mainCategories: MainCategoriesNSType,
+  categories: CategoriesNSType,
   onBoarding: OnBoardingNSType,
   general: GeneralNSType,
-  largeAmountInput: LargeAmountInputNSType,
+  mainCategoriesInput: MainCategoriesInputNSType,
+  quantityInput: QuantityInputNSType,
   qaFlow: QAFlowNSType,
   modal: ModalNSType,
 };
@@ -173,7 +188,8 @@ export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
   categories: makeCategoriesNSRecord(),
   onBoarding: makeOnBoardingNSRecord(),
   general: makeGeneralNSRecord(),
-  largeAmountInput: makeLargeAmountInputNSRecord(),
+  mainCategoriesInput: makeMainCategoriesInputNSRecord(),
+  quantityInput: makeQuantityInputNSRecord(),
   qaFlow: makeQAFlowNSRecord(),
   modal: makeModalNSRecord(),
 });

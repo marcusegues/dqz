@@ -9,6 +9,8 @@ import {
   makeModalNSRecord,
   makeCategoriesNSRecord,
   makeMainCategoriesNSRecord,
+  makeMainCategoriesInputNSRecord,
+  makeQuantityInputNSRecord,
 } from '../types/locale';
 
 export const en: LocaleType = makeLocaleRecord({
@@ -21,7 +23,7 @@ export const en: LocaleType = makeLocaleRecord({
     AlcHard: 'Alcohol >18%',
     Cigarettes: 'Cigarettes',
     Tobacco: 'Tobacco',
-    Med: 'Medicine',
+    Meds: 'Medicine',
     Books: 'Books',
     Magazines: 'Magazines',
     Flowers: 'Flowers',
@@ -46,15 +48,18 @@ export const en: LocaleType = makeLocaleRecord({
     navbarThird: 'Receipt',
     customsDuty: 'Customs duty',
     goodCategories: 'Good Categories',
+    confirm: 'Confirm',
   }),
   onBoarding: makeOnBoardingNSRecord({
     onBoardingMessage:
       'We’ve set your language based on your current system settings:',
     selectLanguage: 'Select a different language',
   }),
-  largeAmountInput: makeLargeAmountInputNSRecord({
-    pleaseInput: 'Please input the values',
-    totalLargeAmount: 'Total value of large items is {{value}}.',
+  mainCategoriesInput: makeMainCategoriesInputNSRecord({
+    mainCategoriesQuestion: 'What types of goods are you carrying?',
+  }),
+  quantityInput: makeQuantityInputNSRecord({
+    quantityInput: 'Quantity input',
   }),
   qaFlow: makeQAFlowNSRecord({
     toOverview: 'To Overview',

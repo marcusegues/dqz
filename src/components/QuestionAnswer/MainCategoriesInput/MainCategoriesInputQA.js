@@ -30,7 +30,6 @@ const MainCategoriesInputContainer = (props: CardProps) => {
           handleUpdate(newMainCategories);
         }}
         onAnswer={props.onAnswer}
-        text="Welche Art Waren führen Sie mit sich?"
       />
     );
   };

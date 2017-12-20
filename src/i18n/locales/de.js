@@ -9,6 +9,8 @@ import {
   makeModalNSRecord,
   makeCategoriesNSRecord,
   makeMainCategoriesNSRecord,
+  makeMainCategoriesInputNSRecord,
+  makeQuantityInputNSRecord,
 } from '../types/locale';
 
 export const de: LocaleType = makeLocaleRecord({
@@ -21,7 +23,7 @@ export const de: LocaleType = makeLocaleRecord({
     AlcHard: 'Alkohol gehalt über 18% Vol.',
     Cigarettes: 'Zigaretten & Zigarren',
     Tobacco: 'andere Tabakfabrikate',
-    Med: 'Medikamente',
+    Meds: 'Medikamente',
     Books: 'Bücher',
     Magazines: 'Zeitschriften',
     Flowers: 'Schnittblumen & Pflanzen',
@@ -46,15 +48,18 @@ export const de: LocaleType = makeLocaleRecord({
     navbarThird: 'Zollschein',
     customsDuty: 'Zollabgabe',
     goodCategories: 'Warenkategorien',
+    confirm: 'Übernehmen',
   }),
   onBoarding: makeOnBoardingNSRecord({
     onBoardingMessage:
       'Wir haben Ihre Sprache basierend auf Ihren aktuellen Systemeinstellungen festgelegt',
     selectLanguage: 'Wählen Sie eine andere Sprache',
   }),
-  largeAmountInput: makeLargeAmountInputNSRecord({
-    pleaseInput: 'Bitte geben Sie die Menge ein',
-    totalLargeAmount: 'Insgesamt grosse Mengen sind {{value}}.',
+  mainCategoriesInput: makeMainCategoriesInputNSRecord({
+    mainCategoriesQuestion: 'Welche Art Waren führen Sie mit sich?',
+  }),
+  quantityInput: makeQuantityInputNSRecord({
+    quantityInput: 'Mengeneingabe',
   }),
   qaFlow: makeQAFlowNSRecord({
     toOverview: 'Zur Übersicht',
