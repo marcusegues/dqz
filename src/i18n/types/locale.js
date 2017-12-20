@@ -14,14 +14,14 @@ type GeneralNS = {
 };
 
 export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
-  declareGoods: '',
-  pleaseSelect: '',
-  guideline: '',
-  receipts: '',
-  information: '',
-  navbarFirst: '',
-  navbarSecond: '',
-  navbarThird: '',
+  declareGoods: 'i18n',
+  pleaseSelect: 'i18n',
+  guideline: 'i18n',
+  receipts: 'i18n',
+  information: 'i18n',
+  navbarFirst: 'i18n',
+  navbarSecond: 'i18n',
+  navbarThird: 'i18n',
 });
 
 export type GeneralNSType = RecordOf<GeneralNS>;
@@ -34,8 +34,8 @@ type OnBoardingNS = {
 export const makeOnBoardingNSRecord: RecordFactory<
   OnBoardingNS
 > = Immutable.Record({
-  onBoardingMessage: '',
-  selectLanguage: '',
+  onBoardingMessage: 'i18n',
+  selectLanguage: 'i18n',
 });
 
 export type OnBoardingNSType = RecordOf<OnBoardingNS>;
@@ -48,18 +48,34 @@ type LargeAmountInputNS = {
 export const makeLargeAmountInputNSRecord: RecordFactory<
   LargeAmountInputNS
 > = Immutable.Record({
-  pleaseInput: '',
-  totalLargeAmount: '',
+  pleaseInput: 'i18n',
+  totalLargeAmount: 'i18n',
 });
 
 export type LargeAmountInputNSType = RecordOf<LargeAmountInputNS>;
 
 type QAFlowNS = {
   toOverview: string,
+  adult: string,
+  adultInfo: string,
+  adultCount: string,
+  adultCount_plural: string,
+  minor: string,
+  minorInfo: string,
+  minorCount: string,
+  minorCount_plural: string,
 };
 
 export const makeQAFlowNSRecord: RecordFactory<QAFlowNS> = Immutable.Record({
-  toOverview: '',
+  toOverview: 'i18n',
+  adult: 'i18n',
+  adultInfo: 'i18n',
+  adultCount: 'i18n: {{value}}',
+  adultCount_plural: 'i18n: {{value}}',
+  minor: 'i18n',
+  minorInfo: 'i18n',
+  minorCount: 'i18n: {{value}}',
+  minorCount_plural: 'i18n: {{value}}',
 });
 
 export type QAFlowNSType = RecordOf<QAFlowNS>;
@@ -71,9 +87,9 @@ type ModalNS = {
 };
 
 export const makeModalNSRecord: RecordFactory<ModalNS> = Immutable.Record({
-  confirmPicker: '{{value}}',
-  standardCategoryPicker: '',
-  individualCategoryPicker: '',
+  confirmPicker: 'i18n: {{value}}',
+  standardCategoryPicker: 'i18n',
+  individualCategoryPicker: 'i18n',
 });
 
 export type ModalNSType = RecordOf<ModalNS>;

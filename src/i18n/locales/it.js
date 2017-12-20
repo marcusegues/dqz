@@ -6,6 +6,7 @@ import {
   makeOnBoardingNSRecord,
   makeLargeAmountInputNSRecord,
   makeModalNSRecord,
+  makeQAFlowNSRecord,
 } from '../types/locale';
 
 export const it: LocaleType = makeLocaleRecord({
@@ -29,6 +30,7 @@ export const it: LocaleType = makeLocaleRecord({
     totalLargeAmount:
       'il valore totale degli oggetti di grandi dimensioni è {{value}}.',
   }),
+  qaFlow: makeQAFlowNSRecord({}),
   modal: makeModalNSRecord({
     confirmPicker: '💰 {{value}}',
     standardCategoryPicker: '🏟️',

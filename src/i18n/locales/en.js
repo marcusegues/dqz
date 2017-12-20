@@ -31,6 +31,14 @@ export const en: LocaleType = makeLocaleRecord({
   }),
   qaFlow: makeQAFlowNSRecord({
     toOverview: 'To Overview',
+    adult: 'Adults',
+    adultInfo: '17+ years',
+    adultCount: '{{value}} Adult',
+    adultCount_plural: '{{value}} Adults',
+    minor: 'Kids & Teens',
+    minorInfo: 'under 17 years',
+    minorCount: '{{value}} Minor (below 17)',
+    minorCount_plural: '{{value}} Minors (below 17)',
   }),
   modal: makeModalNSRecord({
     confirmPicker: 'Confirm {{value}}',
