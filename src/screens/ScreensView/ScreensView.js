@@ -69,7 +69,7 @@ class ScreensView extends React.Component {
         />
         <PickerModal
           modalVisible={this.state.pickerModalVisible}
-          toggleModalVisible={this.toggleModalVisible}
+          toggleModalVisible={this.togglePickerVisible}
         />
       </View>
     );

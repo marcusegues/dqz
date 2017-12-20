@@ -20,16 +20,16 @@ const quantityRowContainerStyles = borderTop => ({
 });
 
 const QuantityRow = ({ quantity, onDelete, category, borderTop = false }) => (
-    <View style={quantityRowContainerStyles(borderTop)}>
-      <View style={{ flex: 1 }}>
-        <CardRowText
-          text={`${quantity} ${CategoriesInfo.get(category).get('unit')}`}
-        />
-      </View>
-      <Touchable onPress={onDelete}>
-        <MaterialIcons name="cancel" size={moderateScale(28)} color={GREY} />
-      </Touchable>
+  <View style={quantityRowContainerStyles(borderTop)}>
+    <View style={{ flex: 1 }}>
+      <CardRowText
+        text={`${quantity} ${CategoriesInfo.get(category).get('unit')}`}
+      />
     </View>
-  );
+    <Touchable onPress={onDelete}>
+      <MaterialIcons name="cancel" size={moderateScale(28)} color={GREY} />
+    </Touchable>
+  </View>
+);
 
 export default QuantityRow;

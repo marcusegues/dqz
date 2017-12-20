@@ -70,8 +70,12 @@ class PickerModal extends React.Component<any, PickerState> {
 
   render() {
     const { selected } = this.state;
-    const { t } = this.props;
+    const { t, confirmAction } = this.props;
     const standardInput = selected === 'standardInput';
+
+    const currentAmount: number = standardInput
+      ? this.standardTotalAmount()
+      : this.customTotalAmount();
 
     return (
       <AppModal
@@ -240,11 +244,9 @@ class PickerModal extends React.Component<any, PickerState> {
           </View>
           <View style={[ownStyles.redButtonWrapper, {}]}>
             <RedButton
+              onPress={() => confirmAction(currentAmount)}
               text={t(['confirmPicker'], {
-                value: (standardInput
-                  ? this.standardTotalAmount()
-                  : this.customTotalAmount()
-                ).toFixed(2),
+                value: currentAmount.toFixed(2),
               })}
             />
           </View>

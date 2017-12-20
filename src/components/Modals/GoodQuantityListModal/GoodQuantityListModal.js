@@ -20,6 +20,7 @@ import QuantityRow from './subcomponents/QuantityRow';
 import { MAIN_RED } from '../../../styles/colors';
 import { moderateScale } from '../../../styles/Scaling';
 import BackArrow from '../../Headers/subcomponents/BackArrow';
+import PickerModal from '../PickerModal/PickerModal';
 
 export type GoodQuantityListModalProps = {
   quantityInputState: QuantityInputState,
@@ -29,15 +30,41 @@ export type GoodQuantityListModalProps = {
   basket: Basket,
 };
 
-// TODO remove disable
-// eslint-disable-next-line react/prefer-stateless-function
+type GoodQuantityListModalState = {
+  pickerModalVisible: boolean,
+};
+
 class GoodQuantityListModal extends React.Component<
   GoodQuantityListModalProps,
-  any
+  GoodQuantityListModalState
 > {
+  constructor() {
+    super();
+    this.state = {
+      pickerModalVisible: false,
+    };
+  }
+
+  togglePickerVisible() {
+    this.setState({
+      pickerModalVisible: !this.state.pickerModalVisible,
+    });
+  }
+
+  confirmPicker(amount: number) {
+    const { onAddQuantity, quantityInputState } = this.props;
+    const { modalCategories } = quantityInputState;
+
+    this.togglePickerVisible();
+    if (modalCategories.category !== 'none') {
+      onAddQuantity(modalCategories.category, amount);
+    }
+  }
+
   render() {
+    const { pickerModalVisible } = this.state;
     const { modalVisible, modalCategories } = this.props.quantityInputState;
-    const { onHide, onAddQuantity, onDeleteQuantity, basket } = this.props;
+    const { onHide, onDeleteQuantity, basket } = this.props;
     if (modalCategories.category === 'none') {
       return null;
     }
@@ -82,9 +109,7 @@ class GoodQuantityListModal extends React.Component<
           <Touchable
             style={{ marginTop: 16 }}
             onPress={() => {
-              if (modalCategories.category !== 'none') {
-                onAddQuantity(modalCategories.category, 1);
-              }
+              this.togglePickerVisible();
             }}
           >
             <Entypo
@@ -94,6 +119,11 @@ class GoodQuantityListModal extends React.Component<
             />
           </Touchable>
         </ModalCard>
+        <PickerModal
+          modalVisible={pickerModalVisible}
+          toggleModalVisible={() => this.togglePickerVisible()}
+          confirmAction={amount => this.confirmPicker(amount)}
+        />
       </AppModal>
     );
   }
