@@ -1,7 +1,7 @@
 import React from 'react';
 import { translate } from 'react-i18next';
 import { View, Text, Image } from 'react-native';
-import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 import MenuTile from './Subcomponents/MenuTile';
 import ownStyles from './styles/MainMenuStyles';
 import { moderateScale } from '../../styles/Scaling';
@@ -9,6 +9,7 @@ import { GREY } from '../../styles/colors';
 import AppTitle from '../../components/AppTitle/AppTitle';
 
 const switzerland = require('../../../assets/images/Swiss_Country.png');
+const greyLogo = require('../../../assets/images/grey_logo.png');
 
 const MainMenu = ({ navigation, t }) => (
   <View style={ownStyles.mainContainer}>
@@ -34,7 +35,11 @@ const MainMenu = ({ navigation, t }) => (
         text={t('calculator').toUpperCase()}
         onPress={() => navigation.navigate('UnderConstruction')}
       >
-        <MaterialCommunityIcons name="calculator" size={47} color={GREY} />
+        <Image
+          source={greyLogo}
+          style={ownStyles.greyLogo}
+          resizeMode="contain"
+        />
       </MenuTile>
 
       <MenuTile
