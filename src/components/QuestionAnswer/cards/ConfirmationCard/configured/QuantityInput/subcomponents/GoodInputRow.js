@@ -111,11 +111,9 @@ const GoodInputRow = ({
         </View>
         <View style={ownStyles.priceAndQuantityContainer}>
           <View style={ownStyles.quantityContainer}>
-            <Text
-              style={ownStyles.quantityText}
-            >{`${totalQuantity} ${CategoriesInfo.get(category).get(
-              'unit'
-            )}`}</Text>
+            <Text style={ownStyles.quantityText}>{`${
+              totalQuantity
+            } ${CategoriesInfo.get(category).get('unit')}`}</Text>
           </View>
         </View>
       </View>
