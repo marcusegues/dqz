@@ -11,6 +11,7 @@ import {
   makeMainCategoriesNSRecord,
   makeMainCategoriesInputNSRecord,
   makeQuantityInputNSRecord,
+  makePeopleInputNSRecord,
 } from '../types/locale';
 
 export const en: LocaleType = makeLocaleRecord({
@@ -54,6 +55,10 @@ export const en: LocaleType = makeLocaleRecord({
     onBoardingMessage:
       'We’ve set your language based on your current system settings:',
     selectLanguage: 'Select a different language',
+  }),
+  peopleInput: makePeopleInputNSRecord({
+    peopleInputQuestion:
+      'How many travelers should be included in this customs declaration?',
   }),
   mainCategoriesInput: makeMainCategoriesInputNSRecord({
     mainCategoriesQuestion: 'What types of goods are you carrying?',

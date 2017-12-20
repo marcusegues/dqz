@@ -3,6 +3,7 @@ import ConfirmationCard from '../../ConfirmationCard';
 import AdultInputRow from '../../children/PeopleInputRow/configured/AdultInputRow';
 import MinorInputRow from '../../children/PeopleInputRow/configured/MinorInputRow';
 import { getTotalPeople } from '../../../../../../model/configurationApi';
+import { translate } from 'react-i18next';
 
 const PeopleInputConfirmationCard = ({
   people,
@@ -11,9 +12,10 @@ const PeopleInputConfirmationCard = ({
   onAddMinor,
   onSubtractMinor,
   onAnswer,
+  t,
 }) => (
   <ConfirmationCard
-    text="Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?"
+    text={t('peopleInputQuestion')}
     onAnswer={onAnswer}
     confirmationDisabled={!getTotalPeople(people)}
   >
@@ -30,4 +32,4 @@ const PeopleInputConfirmationCard = ({
   </ConfirmationCard>
 );
 
-export default PeopleInputConfirmationCard;
+export default translate(['peopleInput'])(PeopleInputConfirmationCard);

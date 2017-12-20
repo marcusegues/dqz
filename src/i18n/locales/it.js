@@ -11,6 +11,7 @@ import {
   makeMainCategoriesNSRecord,
   makeMainCategoriesInputNSRecord,
   makeQuantityInputNSRecord,
+  makePeopleInputNSRecord,
 } from '../types/locale';
 
 export const it: LocaleType = makeLocaleRecord({
@@ -31,6 +32,7 @@ export const it: LocaleType = makeLocaleRecord({
       'Abbiamo impostato la tua lingua in base alle tue attuali impostazioni di sistema',
     selectLanguage: 'Seleziona una lingua diversa',
   }),
+  peopleInput: makePeopleInputNSRecord({}),
   mainCategoriesInput: makeMainCategoriesInputNSRecord({}),
   quantityInput: makeQuantityInputNSRecord({}),
   qaFlow: makeQAFlowNSRecord({}),

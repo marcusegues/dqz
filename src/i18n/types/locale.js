@@ -1,6 +1,7 @@
 // @flow
 import type { RecordOf, RecordFactory } from 'immutable';
 import Immutable from 'immutable';
+import type { People } from '../../model/types/basketPeopleTypes';
 
 type MainCategoriesNS = {
   Foods: string,
@@ -104,6 +105,18 @@ export const makeOnBoardingNSRecord: RecordFactory<
 
 export type OnBoardingNSType = RecordOf<OnBoardingNS>;
 
+type PeopleInputNS = {
+  peopleInputQuestion: string,
+};
+
+export const makePeopleInputNSRecord: RecordFactory<
+  PeopleInputNS
+> = Immutable.Record({
+  peopleInputQuestion: 'i18n',
+});
+
+export type PeopleInputNSType = RecordOf<PeopleInputNS>;
+
 type MainCategoriesInputNS = {
   mainCategoriesQuestion: string,
 };
@@ -177,6 +190,7 @@ type Locale = {
   categories: CategoriesNSType,
   onBoarding: OnBoardingNSType,
   general: GeneralNSType,
+  peopleInput: PeopleInputNS,
   mainCategoriesInput: MainCategoriesInputNSType,
   quantityInput: QuantityInputNSType,
   qaFlow: QAFlowNSType,
@@ -188,6 +202,7 @@ export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
   categories: makeCategoriesNSRecord(),
   onBoarding: makeOnBoardingNSRecord(),
   general: makeGeneralNSRecord(),
+  peopleInput: makePeopleInputNSRecord(),
   mainCategoriesInput: makeMainCategoriesInputNSRecord(),
   quantityInput: makeQuantityInputNSRecord(),
   qaFlow: makeQAFlowNSRecord(),
