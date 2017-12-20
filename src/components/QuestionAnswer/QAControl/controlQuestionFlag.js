@@ -1,6 +1,10 @@
 // @flow
 import Immutable from 'immutable';
-import type { QAState, QuestionType } from '../QuestionAnswerContainer';
+import type {
+  QAState,
+  QuestionFlag,
+  QuestionType,
+} from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
 import type { Basket } from '../../../model/types/basketPeopleTypes';
 
@@ -12,6 +16,24 @@ export const anyQuantitiesInBasket = (basket: Basket): boolean =>
         !!categoryBasketItem.getIn(['volume', 'quantities'], Immutable.List())
           .size
     );
+
+const setQuestionFlagInState = (
+  qaState: QAState,
+  questionFlag: { [QuestionType]: QuestionFlag }
+): QAState => Object.assign({}, qaState, { questionFlag });
+
+export const setInitFlags = (qaState: QAState): QAState => {
+  const { settings } = qaState;
+  const main = settings.get('mainCategories');
+  return setQuestionFlagInState(qaState, {
+    peopleInput: getTotalPeople(qaState.people) ? 'complete' : 'incomplete',
+    mainCategories: main.size ? 'complete' : 'incomplete',
+    quantityInput:
+      main.size && anyQuantitiesInBasket(qaState.basket)
+        ? 'complete'
+        : 'incomplete',
+  });
+};
 
 export const setQuestionFlag = (
   justUpdated: QuestionType,
