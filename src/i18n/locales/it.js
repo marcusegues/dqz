@@ -9,11 +9,14 @@ import {
 
 export const it: LocaleType = makeLocaleRecord({
   general: makeGeneralNSRecord({
-    declareGoods: '☃️',
+    declareGoods: '🛃️',
     pleaseSelect: '',
     receipts: '🦄',
     calculator: '😸',
     information: '🏎',
+    navbarFirst: '✈️',
+    navbarSecond: '💸',
+    navbarThird: '📇',
   }),
   onBoarding: makeOnBoardingNSRecord({
     onBoardingMessage:

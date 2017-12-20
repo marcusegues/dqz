@@ -10,6 +10,6 @@ const style = {
 
 export const UnderConstruction = () => (
   <View style={style}>
-    <Text style={{ fontSize: 48 }}>🚧</Text>
+    <Text style={{ fontSize: 64 }}>🚧🛃🚧</Text>
   </View>
 );
