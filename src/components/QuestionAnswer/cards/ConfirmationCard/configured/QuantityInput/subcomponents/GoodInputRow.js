@@ -4,8 +4,7 @@ import { View, Text, Image } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { CategoriesInfo } from '../../../../../../../model/constants';
 import { moderateScale } from '../../../../../../../styles/Scaling';
-import QuantityIcon from "../../../../../../General Components/QuantityIcon";
-
+import QuantityIcon from '../../../../../../General Components/QuantityIcon';
 
 const ownStyles = {
   container: {
@@ -22,7 +21,6 @@ const ownStyles = {
   categoryIcon: {
     height: 64,
     width: 64,
-    // backgroundColor: '#D8D8D8',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -74,7 +72,7 @@ const meat = require('../../../../../../../../assets/icons/meat_new.png');
 const GoodInputRow = ({
   onShowQuantityInputModal,
   category,
-  quantity,
+  totalQuantity,
   mainCategory,
 }) => (
   <Touchable onPress={onShowQuantityInputModal}>
@@ -96,7 +94,10 @@ const GoodInputRow = ({
           <Text style={ownStyles.mainCategoryText}>{category}</Text>
           <Text style={ownStyles.categoryText}>{mainCategory}</Text>
         </View>
-        <QuantityIcon quantity={quantity} unit={CategoriesInfo.get(category).get('unit')}/>
+        <QuantityIcon
+          quantity={totalQuantity}
+          unit={CategoriesInfo.get(category).get('unit')}
+        />
       </View>
       <View style={ownStyles.chevronRight}>
         <Entypo name="chevron-right" size={moderateScale(30)} color="#24253D" />

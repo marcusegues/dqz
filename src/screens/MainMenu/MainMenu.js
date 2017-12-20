@@ -10,7 +10,7 @@ import AppTitle from '../../components/AppTitle/AppTitle';
 
 const switzerland = require('../../../assets/images/Swiss_Country.png');
 
-const MainMenu = ({ navigation }) => (
+const MainMenu = ({ navigation, t }) => (
   <View style={ownStyles.mainContainer}>
     <View style={ownStyles.topContainer}>
       <Image source={switzerland} style={ownStyles.backgroundImage} />
@@ -21,7 +21,7 @@ const MainMenu = ({ navigation }) => (
     <View style={ownStyles.bottomContainer}>
       <MenuTile
         onPress={() => navigation.navigate('QuestionAnswer')}
-        text="WAREN DEKLARIEREN"
+        text={t('declareGoods').toUpperCase()}
       >
         <MaterialIcons
           name="add-shopping-cart"
@@ -31,7 +31,7 @@ const MainMenu = ({ navigation }) => (
       </MenuTile>
 
       <MenuTile
-        text="ZOLL-RECHNER"
+        text={t('calculator').toUpperCase()}
         onPress={() => navigation.navigate('UnderConstruction')}
       >
         <MaterialCommunityIcons name="calculator" size={47} color={GREY} />
@@ -39,7 +39,7 @@ const MainMenu = ({ navigation }) => (
 
       <MenuTile
         icon="receipt"
-        text="ZOLL-BELEGE"
+        text={t('receipts').toUpperCase()}
         onPress={() => navigation.navigate('UnderConstruction')}
         style={{ alignSelf: 'center' }}
       >
@@ -53,7 +53,7 @@ const MainMenu = ({ navigation }) => (
 
       <MenuTile
         icon="info"
-        text="WISSENSWERTES"
+        text={t('information').toUpperCase()}
         onPress={() => navigation.navigate('UnderConstruction')}
       >
         <MaterialIcons name="info" size={moderateScale(47)} color={GREY} />
