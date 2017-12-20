@@ -4,6 +4,8 @@ import React from 'react';
 // $FlowFixMe
 import { FlatList, View } from 'react-native';
 import { connect } from 'react-redux';
+import { translate } from 'react-i18next';
+
 import NavBar from '../NavBar/NavBar';
 import RedButton from '../Buttons/RedButton';
 import PeopleInputQA from './PeopleInput/PeopleInputQA';
@@ -14,6 +16,7 @@ import {
   getDeclarationBasket,
   getDeclarationPeople,
   getDeclarationSettings,
+  getDeclarationDutyReport,
 } from '../../reducers';
 import type { People, Basket } from '../../model/types/basketPeopleTypes';
 import type {
@@ -25,26 +28,35 @@ import {
   setInitStates,
   setQuestionStates,
 } from './QAControl/controlQuestionStates';
+import { setQuestionFlag } from './QAControl/controlQuestionFlag';
+import type { DutyReport } from '../../model/types/calculationTypes';
+import { calculateDuty } from '../../model/dutyCalculations';
+import { verticalScale } from '../../styles/Scaling';
 
-export type questionType =
+export type QuestionType =
   | 'peopleInput'
   | 'mainCategories'
   | 'quantityInput'
   | 'none';
 
-export type questionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
+export type QuestionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
+
+export type QuestionFlag = 'complete' | 'incomplete';
 
 export type QAState = {
-  questionStates: { [questionType]: questionState },
+  questionStates: { [QuestionType]: QuestionState },
+  questionFlag: { [QuestionType]: QuestionFlag },
   basket: Basket,
   people: People,
   settings: SettingsType,
+  duty: DutyReport,
 };
 
-export type cardProps = {
+export type CardProps = {
   qaState: QAState,
   onAnswerCardPress: any, // TODO
-  questionState: questionState,
+  questionState: QuestionState,
+  questionFlag: QuestionFlag,
   onUpdate: any, // TODO
   onAnswer: any, // TODO
 };
@@ -54,14 +66,21 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
   constructor(props) {
     super(props);
     this.state = {
-      basket: this.props.basket,
-      people: this.props.people,
-      settings: this.props.settings,
       questionStates: {
         peopleInput: 'expanded',
         mainCategories: 'hidden',
         quantityInput: 'hidden',
       },
+      questionFlag: {
+        peopleInput: 'complete',
+        mainCategories: 'incomplete',
+        quantityInput: 'incomplete',
+      },
+      basket: this.props.basket,
+      people: this.props.people,
+      settings: this.props.settings,
+      // not getting duty as props from redux because dues are not being updated all the time, perhaps they should be
+      duty: calculateDuty(this.props.basket, this.props.people),
     };
   }
 
@@ -73,14 +92,22 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
     this.setState(setInitStates(this.state));
   }
 
-  updateQA(justAnswered: questionType) {
-    this.setState(setQuestionStates(justAnswered, this.state));
+  updateQA(justAnswered: QuestionType) {
+    const updateStates: QAState = setQuestionStates(justAnswered, this.state);
+    const updateFlags: QAState = setQuestionFlag(justAnswered, updateStates);
+    this.setState(updateFlags);
+  }
+
+  allQuestionsAnswered(): boolean {
+    // TODO Object.values returns Array<mixed> in flow. Find better way.
+    return Object.values(this.state.questionFlag).every(
+      (flag): boolean => flag === 'complete'
+    );
   }
 
   render() {
-    const { questionStates } = this.state;
-    const { peopleInput, mainCategories, quantityInput } = questionStates;
-    const { navigation } = this.props;
+    const { questionStates, questionFlag } = this.state;
+    const { t } = this.props;
 
     const flatListData = [
       {
@@ -93,7 +120,8 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 collapseAllExistingExceptOne('peopleInput', this.state)
               );
             }}
-            questionState={peopleInput}
+            questionState={questionStates.peopleInput}
+            questionFlag={questionFlag.peopleInput}
             onUpdate={people => {
               this.setState({ people });
             }}
@@ -114,7 +142,8 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 collapseAllExistingExceptOne('mainCategories', this.state)
               );
             }}
-            questionState={mainCategories}
+            questionState={questionStates.mainCategories}
+            questionFlag={questionFlag.mainCategories}
             onUpdate={activeCategories => {
               this.setState({
                 settings: this.state.settings.set(
@@ -142,10 +171,12 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 collapseAllExistingExceptOne('quantityInput', this.state)
               );
             }}
-            questionState={quantityInput}
+            questionState={questionStates.quantityInput}
+            questionFlag={questionFlag.quantityInput}
             onUpdate={basket => {
               this.setState({
                 basket,
+                duty: calculateDuty(basket, this.state.people),
               });
             }}
             onAnswer={() => {
@@ -183,22 +214,22 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             renderItem={({ item }) => item.component}
           />
         </View>
-        {this.props.currentQuestion !== 'finished' ? null : (
-          <View
-            style={{
-              flex: 0.1,
-              marginBottom: 20,
-              marginTop: 16,
-              marginLeft: 16,
-              marginRight: 16,
-            }}
-          >
-            <RedButton
-              text="ZUR WARENEINGABE"
-              onPress={() => navigation.navigate('BasketInput')}
-            />
-          </View>
-        )}
+        <View
+          style={{
+            flex: 0.1,
+            marginBottom: verticalScale(4),
+            marginTop: verticalScale(4),
+            marginLeft: 16,
+            marginRight: 16,
+            backgroundColor: 'transparent',
+          }}
+        >
+          <RedButton
+            text={t('toOverview')}
+            confirmationDisabled={!this.allQuestionsAnswered()}
+            onPress={() => this.props.navigation.navigate('Payment')}
+          />
+        </View>
       </View>
     );
   }
@@ -207,6 +238,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
 const mapStateToProps = state => ({
   basket: getDeclarationBasket(state),
   people: getDeclarationPeople(state),
+  dutyReport: getDeclarationDutyReport(state),
   settings: getDeclarationSettings(state),
 });
 
@@ -221,11 +253,11 @@ const mapDispatchToProps = dispatch => ({
       type: 'DECLARATION_SET_MAIN_CATEGORIES',
       mainCategories,
     }),
-  onDeclarationBasketChangeQuantity: (category, quantityChange) =>
+  onDeclarationBasketChangeQuantity: (category, quantity) =>
     dispatch({
-      type: 'DECLARATION_BASKET_CHANGE_QUANTITY',
+      type: 'DECLARATION_BASKET_ADD_QUANTITY',
       category,
-      quantityChange,
+      quantity,
     }),
   onDeclarationSetBasket: basket =>
     dispatch({
@@ -235,5 +267,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  QuestionAnswerContainer
+  translate(['qaFlow'])(QuestionAnswerContainer)
 );

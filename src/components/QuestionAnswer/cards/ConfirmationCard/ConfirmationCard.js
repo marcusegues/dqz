@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text, View, Platform } from 'react-native';
+import { View, Platform } from 'react-native';
 import { verticalScale, moderateScale } from '../../../../styles/Scaling';
-import * as globalStyles from '../../../../styles/globalStyles';
+import Card from '../Card';
 import RedButton from '../../../Buttons/RedButton';
+import CardHeader from '../subcomponents/CardHeader';
 import { BLACK } from '../../../../styles/colors';
 
 const ownStyles = {
@@ -53,11 +54,8 @@ const ConfirmationCard = ({
   onAnswer,
   confirmationDisabled,
 }) => (
-  <View style={[ownStyles.contentContainer, globalStyles.boxShadow]}>
-    <View style={{ width: '95%' }}>
-      <Text style={ownStyles.mainText}>{text}</Text>
-    </View>
-
+  <Card>
+    <CardHeader text={text} />
     <View style={ownStyles.bottomSectionWrapper}>
       <View>{children}</View>
     </View>
@@ -68,7 +66,7 @@ const ConfirmationCard = ({
         confirmationDisabled={confirmationDisabled}
       />
     </View>
-  </View>
+  </Card>
 );
 
 ConfirmationCard.defaultProps = {

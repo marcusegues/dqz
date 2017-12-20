@@ -4,9 +4,9 @@ import React from 'react';
 import { View } from 'react-native';
 import MainCategoriesInputConfirmationCard from '../cards/ConfirmationCard/configured/MainCategoriesInput/MainCategoriesInputConfirmationCard';
 import MainCategoriesInputAnswerCard from '../cards/AnswerCard/configured/MainCategoriesInput/MainCategoriesInputAnswerCard';
-import type { cardProps } from '../QuestionAnswerContainer';
+import type { CardProps } from '../QuestionAnswerContainer';
 
-const MainCategoriesInputContainer = (props: cardProps) => {
+const MainCategoriesInputContainer = (props: CardProps) => {
   const handleUpdate = mainCategories => {
     props.onUpdate(mainCategories);
   };
@@ -38,12 +38,11 @@ const MainCategoriesInputContainer = (props: cardProps) => {
   const getAnswerComponent = () => {
     const { settings } = props.qaState;
     const mainCategories = settings.get('mainCategories');
-    const status = mainCategories.size ? 'complete' : 'incomplete';
     return (
       <MainCategoriesInputAnswerCard
         mainCategories={mainCategories}
         onAnswerCardPress={props.onAnswerCardPress}
-        status={status}
+        flag={props.questionFlag}
       />
     );
   };

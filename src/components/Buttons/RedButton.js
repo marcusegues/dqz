@@ -49,7 +49,9 @@ const RedButton = ({ text, onPress, confirmationDisabled }) => (
       style={ownStyles(confirmationDisabled).touchable}
       disabled={confirmationDisabled}
     >
-      <Text style={ownStyles(confirmationDisabled).touchableText}>{text}</Text>
+      <Text style={ownStyles(confirmationDisabled).touchableText}>
+        {text.toUpperCase()}
+      </Text>
     </Touchable>
   </View>
 );

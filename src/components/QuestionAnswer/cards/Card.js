@@ -1,15 +1,15 @@
 import React from 'react';
 import { Platform, View } from 'react-native';
-import { verticalScale } from '../../styles/Scaling';
+import { verticalScale } from '../../../styles/Scaling';
 
-const ModalCard = ({ children }) => (
+const Card = ({ children }) => (
   <View
     style={{
       flex: 1,
       flexDirection: 'column',
+      justifyContent: 'space-between',
       alignItems: 'center',
-      marginHorizontal: 16,
-      marginTop: verticalScale(32),
+      marginTop: verticalScale(16),
       marginBottom: verticalScale(16),
       backgroundColor: '#fff',
       borderRadius: 2,
@@ -31,4 +31,4 @@ const ModalCard = ({ children }) => (
   </View>
 );
 
-export default ModalCard;
+export default Card;

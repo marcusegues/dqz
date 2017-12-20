@@ -9,7 +9,7 @@ const PeopleInputAnswerCard = ({ people, onAnswerCardPress }) => (
   <AnswerCard
     onAnswerCardPress={onAnswerCardPress}
     mainIcon={mainIcon}
-    status={complete}
+    flag={complete}
   >
     <PeopleInfo people={people} />
   </AnswerCard>

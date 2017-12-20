@@ -13,75 +13,82 @@ import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
 import InfoIcon from '../components/Headers/subcomponents/InfoIcon';
 import MainMenuHeaderRight from '../components/Headers/subcomponents/MainMenuHeaderRight';
 import MainMenu from '../screens/MainMenu/MainMenu';
-
+import Payment from '../components/Payment/Payment';
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
 import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
 import UnderConstructionWithSums from './underConstructionWithSums';
 import GoodQuantityListModal from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 
-const RootStackNavigator = StackNavigator(
-  {
-    Screens: {
-      screen: ScreensView,
-      navigationOptions: ({ navigationOptions }) => ({
-        ...navigationOptions,
-        headerTitle: <HeaderTitle text="Screens" />,
-        headerLeft: <Logo />,
-        headerRight: <OptionsButton />,
-        headerStyle: {
-          ...navigationOptions.headerStyle,
-          borderBottomWidth: 5,
-          borderBottomColor: MAIN_RED,
-        },
-      }),
-    },
-    QuestionAnswer: {
-      screen: QuestionAnswerContainer,
-      navigationOptions: () => ({
-        headerTitle: <HeaderTitle text="Waren deklarieren - 2" />,
-      }),
-    },
-    OnBoarding: {
-      screen: OnBoarding,
-      navigationOptions: () => ({
-        header: null,
-      }),
-    },
-    GoodQuantityListModal: {
-      screen: GoodQuantityListModal,
-    },
-    MainMenu: {
-      screen: MainMenu,
-      navigationOptions: ({ navigationOptions, navigation }) => ({
-        ...navigationOptions,
-        headerLeft: <InfoIcon navigation={navigation} />,
-        headerRight: <MainMenuHeaderRight navigation={navigation} />,
-        headerStyle: {
-          ...navigationOptions.headerStyle,
-          elevation: 0,
-        },
-      }),
-    },
-
-    UnderConstruction: {
-      screen: UnderConstruction,
-      navigationOptions: () => ({
-        headerTitle: <HeaderTitle text="In Bearbeitung" />,
-      }),
-    },
-    UnderConstructionWithSums: {
-      screen: UnderConstructionWithSums,
-      navigationOptions: () => ({
-        headerTitle: <HeaderTitle text="In Bearbeitung" />,
-      }),
-    },
+export const stackNavigatorScreens = {
+  Screens: {
+    screen: ScreensView,
+    navigationOptions: ({ navigationOptions }) => ({
+      ...navigationOptions,
+      headerTitle: <HeaderTitle text="Screens" />,
+      headerLeft: <Logo />,
+      headerRight: <OptionsButton />,
+      headerStyle: {
+        ...navigationOptions.headerStyle,
+        borderBottomWidth: 5,
+        borderBottomColor: MAIN_RED,
+      },
+    }),
   },
-  {
-    navigationOptions: defaultNavigationOptions,
-    cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-    initialRouteName: 'QuestionAnswer',
-  }
+  QuestionAnswer: {
+    screen: QuestionAnswerContainer,
+    navigationOptions: () => ({
+      headerTitle: <HeaderTitle text="Waren deklarieren" />,
+    }),
+  },
+  Payment: {
+    screen: Payment,
+  },
+  OnBoarding: {
+    screen: OnBoarding,
+    navigationOptions: () => ({
+      header: null,
+    }),
+  },
+  GoodQuantityListModal: {
+    screen: GoodQuantityListModal,
+  },
+  MainMenu: {
+    screen: MainMenu,
+    navigationOptions: ({ navigationOptions, navigation }) => ({
+      ...navigationOptions,
+      headerLeft: <InfoIcon navigation={navigation} />,
+      headerRight: <MainMenuHeaderRight navigation={navigation} />,
+      headerStyle: {
+        ...navigationOptions.headerStyle,
+        elevation: 0,
+      },
+    }),
+  },
+
+  UnderConstruction: {
+    screen: UnderConstruction,
+    navigationOptions: () => ({
+      headerTitle: <HeaderTitle text="In Bearbeitung" />,
+    }),
+  },
+  UnderConstructionWithSums: {
+    screen: UnderConstructionWithSums,
+    navigationOptions: () => ({
+      headerTitle: <HeaderTitle text="In Bearbeitung" />,
+    }),
+  },
+};
+
+export const stackNavigatorConfig = {
+  navigationOptions: defaultNavigationOptions,
+  cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
+  initialRouteName: 'OnBoarding',
+};
+
+const RootStackNavigator = StackNavigator(
+  stackNavigatorScreens,
+  stackNavigatorConfig
 );
 
 const WrappedRootStackNavigator = () => (

@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const AnswerCard = ({ mainIcon, status, children, onAnswerCardPress }) => (
+const AnswerCard = ({ mainIcon, flag, children, onAnswerCardPress }) => (
   <Touchable
     style={{
       width: '100%',
@@ -39,7 +39,7 @@ const AnswerCard = ({ mainIcon, status, children, onAnswerCardPress }) => (
       />
       <View style={{ flex: 0.7 }}>{children}</View>
       <Image
-        source={status}
+        source={flag}
         style={{
           width: 32,
           height: 32,

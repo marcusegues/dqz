@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
-import { getQuantity } from '../../../../../../model/configurationApi';
+import { getTotalQuantity } from '../../../../../../model/configurationApi';
 import GoodInputRow from './subcomponents/GoodInputRow';
 import { moderateScale } from '../../../../../../styles/Scaling';
 
@@ -33,19 +33,19 @@ const QuantityInput = ({
   onShowQuantityInputModal,
   basket,
   categoriesByMainCategory,
-  onBasketChangeQuantity,
 }) => {
   const components = categoriesByMainCategory
     .entrySeq()
     .map(([mainCategory, categories]) => {
       const subcomponents = categories.map(category => (
         <GoodInputRow
-          onShowQuantityInputModal={onShowQuantityInputModal}
+          onShowQuantityInputModal={() => {
+            onShowQuantityInputModal({ mainCategory, category });
+          }}
           key={category}
           category={category}
-          quantity={getQuantity(basket, category)}
+          totalQuantity={getTotalQuantity(basket, category)}
           basket={basket}
-          onBasketChangeQuantity={onBasketChangeQuantity}
           mainCategory={mainCategory}
         />
       ));

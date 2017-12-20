@@ -4,7 +4,7 @@ import {
   addAmount,
   addLargeAmount,
   emptyBasket,
-  setQuantity,
+  addQuantity,
 } from '../configurationApi';
 import type { Basket } from '../types/basketPeopleTypes';
 
@@ -15,16 +15,16 @@ export const sampleBasket1: Basket = emptyBasket.withMutations(basket => {
   basket = addAmount(basket, 'Butter', 12.34);
   basket = addAmount(basket, 'Butter', 125);
   basket = addLargeAmount(basket, 'Butter', 525);
-  basket = setQuantity(basket, 'Butter', 23);
+  basket = addQuantity(basket, 'Butter', 23);
 
   basket = addAmount(basket, 'Meat', 12);
   basket = addAmount(basket, 'Meat', 31);
-  basket = setQuantity(basket, 'Meat', 111);
+  basket = addQuantity(basket, 'Meat', 111);
 
   basket = addAmount(basket, 'Tobacco', 11);
   basket = addAmount(basket, 'Tobacco', 33);
   basket = addLargeAmount(basket, 'Tobacco', 5555);
-  basket = setQuantity(basket, 'Tobacco', 3219);
+  basket = addQuantity(basket, 'Tobacco', 3219);
 
   return basket;
 });
@@ -40,16 +40,16 @@ export const sampleBasket2: Basket = emptyBasket.withMutations(basket => {
   basket = addAmount(basket, 'Butter', 125);
   basket = addAmount(basket, 'Butter', 125);
   basket = addLargeAmount(basket, 'Butter', 525);
-  basket = setQuantity(basket, 'Butter', 123);
+  basket = addQuantity(basket, 'Butter', 123);
 
   basket = addAmount(basket, 'Meat', 12);
   basket = addAmount(basket, 'Meat', 31);
-  basket = setQuantity(basket, 'Meat', 111);
+  basket = addQuantity(basket, 'Meat', 111);
 
   basket = addAmount(basket, 'Tobacco', 11);
   basket = addAmount(basket, 'Tobacco', 33);
   basket = addLargeAmount(basket, 'Tobacco', 5555);
-  basket = setQuantity(basket, 'Tobacco', 3219);
+  basket = addQuantity(basket, 'Tobacco', 3219);
 
   return basket;
 });
@@ -73,33 +73,33 @@ export const sampleBasket4: Basket = emptyBasket.withMutations(basket => {
   return basket;
 });
 
-export const sampleBasket5: Basket = setQuantity(
+export const sampleBasket5: Basket = addQuantity(
   emptyBasket,
   'Cigarettes',
   100
 );
 
 export const sampleBasket6: Basket = emptyBasket.withMutations(basket => {
-  basket = setQuantity(basket, 'Tobacco', 50);
-  basket = setQuantity(basket, 'Cigarettes', 250);
+  basket = addQuantity(basket, 'Tobacco', 50);
+  basket = addQuantity(basket, 'Cigarettes', 250);
   return basket;
 });
 
 export const sampleBasket7: Basket = emptyBasket.withMutations(basket => {
-  basket = setQuantity(basket, 'Tobacco', 250);
-  basket = setQuantity(basket, 'Cigarettes', 50);
+  basket = addQuantity(basket, 'Tobacco', 250);
+  basket = addQuantity(basket, 'Cigarettes', 50);
   return basket;
 });
 
 export const sampleBasket8: Basket = emptyBasket.withMutations(basket => {
-  basket = setQuantity(basket, 'Tobacco', 250);
-  basket = setQuantity(basket, 'Cigarettes', 250);
+  basket = addQuantity(basket, 'Tobacco', 250);
+  basket = addQuantity(basket, 'Cigarettes', 250);
   return basket;
 });
 
 export const sampleBasket9: Basket = emptyBasket.withMutations(basket => {
-  basket = setQuantity(basket, 'Tobacco', 300);
-  basket = setQuantity(basket, 'Cigarettes', 300);
+  basket = addQuantity(basket, 'Tobacco', 300);
+  basket = addQuantity(basket, 'Cigarettes', 300);
   return basket;
 });
 
@@ -210,24 +210,24 @@ export const ezvBasket13: Basket = emptyBasket.withMutations(basket => {
 const exR = 1.19;
 export const presentationBasket1: Basket = emptyBasket.withMutations(basket => {
   basket = addAmount(basket, 'Meat', 240 * exR);
-  basket = setQuantity(basket, 'Meat', 12);
+  basket = addQuantity(basket, 'Meat', 12);
   basket = addAmount(basket, 'AlcSoft', 30 * exR);
-  basket = setQuantity(basket, 'AlcSoft', 1.5);
+  basket = addQuantity(basket, 'AlcSoft', 1.5);
   basket = addAmount(basket, 'AlcSoft', 50 * exR);
-  basket = setQuantity(basket, 'AlcSoft', 1);
+  basket = addQuantity(basket, 'AlcSoft', 1);
   basket = addAmount(basket, 'Butter', 20 * exR);
-  basket = setQuantity(basket, 'Butter', 2);
+  basket = addQuantity(basket, 'Butter', 2);
   basket = addLargeAmount(basket, 'Other', 400 * exR);
   return basket;
 });
 
 export const presentationBasket2: Basket = emptyBasket.withMutations(basket => {
   basket = addAmount(basket, 'Meat', 40 * exR);
-  basket = setQuantity(basket, 'Meat', 2);
+  basket = addQuantity(basket, 'Meat', 2);
   basket = addAmount(basket, 'AlcHard', 50 * exR);
-  basket = setQuantity(basket, 'AlcHard', 2);
+  basket = addQuantity(basket, 'AlcHard', 2);
   basket = addAmount(basket, 'Butter', 20 * exR);
-  basket = setQuantity(basket, 'Butter', 2);
+  basket = addQuantity(basket, 'Butter', 2);
   basket = addAmount(basket, 'Other', 200 * exR);
   basket = addAmount(basket, 'OtherFood', 350 * exR);
   return basket;
@@ -250,13 +250,13 @@ export const florian1: Basket = emptyBasket.withMutations(basket => {
   basket = addAmount(basket, 'Other', 56.78);
   basket = addLargeAmount(basket, 'Other', 567.89);
 
-  basket = setQuantity(basket, 'Meat', 33);
-  basket = setQuantity(basket, 'Butter', 9);
-  basket = setQuantity(basket, 'Oils', 6);
-  basket = setQuantity(basket, 'AlcSoft', 7);
-  basket = setQuantity(basket, 'AlcHard', 6);
-  basket = setQuantity(basket, 'Cigarettes', 26);
-  basket = setQuantity(basket, 'Tobacco', 10);
+  basket = addQuantity(basket, 'Meat', 33);
+  basket = addQuantity(basket, 'Butter', 9);
+  basket = addQuantity(basket, 'Oils', 6);
+  basket = addQuantity(basket, 'AlcSoft', 7);
+  basket = addQuantity(basket, 'AlcHard', 6);
+  basket = addQuantity(basket, 'Cigarettes', 26);
+  basket = addQuantity(basket, 'Tobacco', 10);
 
   return basket;
 });

@@ -5,12 +5,16 @@ import {
   makeGeneralNSRecord,
   makeOnBoardingNSRecord,
   makeLargeAmountInputNSRecord,
+  makeQAFlowNSRecord,
 } from '../types/locale';
 
 export const en: LocaleType = makeLocaleRecord({
   general: makeGeneralNSRecord({
-    declareGoods: 'Declare Goods',
-    pleaseSelect: 'Please Select',
+    declareGoods: 'Declare',
+    pleaseSelect: 'Please select',
+    receipts: 'Receipts',
+    calculator: 'Calculator',
+    information: 'Information',
   }),
   onBoarding: makeOnBoardingNSRecord({
     onBoardingMessage:
@@ -20,5 +24,8 @@ export const en: LocaleType = makeLocaleRecord({
   largeAmountInput: makeLargeAmountInputNSRecord({
     pleaseInput: 'Please input the values',
     totalLargeAmount: 'Total value of large items is {{value}}.',
+  }),
+  qaFlow: makeQAFlowNSRecord({
+    toOverview: 'To Overview',
   }),
 });

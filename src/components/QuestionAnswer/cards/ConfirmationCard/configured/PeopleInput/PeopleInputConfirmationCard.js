@@ -11,10 +11,9 @@ const PeopleInputConfirmationCard = ({
   onAddMinor,
   onSubtractMinor,
   onAnswer,
-  text,
 }) => (
   <ConfirmationCard
-    text={text}
+    text="Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?"
     onAnswer={onAnswer}
     confirmationDisabled={!getTotalPeople(people)}
   >

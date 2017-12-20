@@ -60,11 +60,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onDeclarationBasketChangeQuantity: (category, quantityChange) =>
+  onDeclarationBasketChangeQuantity: (category, quantity) =>
     dispatch({
-      type: 'DECLARATION_BASKET_CHANGE_QUANTITY',
+      type: 'DECLARATION_BASKET_ADD_QUANTITY',
       category,
-      quantityChange,
+      quantity,
     }),
 });
 

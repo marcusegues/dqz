@@ -45,7 +45,7 @@ class OverAllowanceContainer extends React.Component {
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
         mainIcon={mainIcon}
-        status={
+        flag={
           this.props.overAllowance === 'notAnswered' ? incomplete : complete
         }
       >

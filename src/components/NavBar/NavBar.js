@@ -47,7 +47,7 @@ const NavBar = ({ step }) => (
         step === 1 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
       }
     >
-      Ihre Daten
+      Ihre Reise
     </Text>
     <View style={ownStyles.locatorLine} />
     <Text
@@ -55,7 +55,7 @@ const NavBar = ({ step }) => (
         step === 2 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
       }
     >
-      Ihre Waren
+      Bezahlung
     </Text>
     <View style={ownStyles.locatorLine} />
     <Text
@@ -63,7 +63,7 @@ const NavBar = ({ step }) => (
         step === 3 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
       }
     >
-      Bezahlung
+      Zollschein
     </Text>
   </View>
 );

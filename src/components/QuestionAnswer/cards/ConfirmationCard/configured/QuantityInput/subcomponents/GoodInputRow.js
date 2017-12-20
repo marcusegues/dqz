@@ -87,7 +87,7 @@ const meat = require('../../../../../../../../assets/icons/meat_new.png');
 const GoodInputRow = ({
   onShowQuantityInputModal,
   category,
-  quantity,
+  totalQuantity,
   mainCategory,
 }) => (
   <Touchable onPress={onShowQuantityInputModal}>
@@ -113,7 +113,9 @@ const GoodInputRow = ({
           <View style={ownStyles.quantityContainer}>
             <Text
               style={ownStyles.quantityText}
-            >{`${quantity} ${CategoriesInfo.get(category).get('unit')}`}</Text>
+            >{`${totalQuantity} ${CategoriesInfo.get(category).get(
+              'unit'
+            )}`}</Text>
           </View>
         </View>
       </View>
