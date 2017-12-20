@@ -47,6 +47,7 @@ const ownStyles = {
     color: '#898989',
   },
   priceAndQuantityContainer: {
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
