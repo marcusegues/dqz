@@ -4,6 +4,8 @@ import { View, Text, Image } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { CategoriesInfo } from '../../../../../../../model/constants';
 import { moderateScale } from '../../../../../../../styles/Scaling';
+import QuantityIcon from "../../../../../../General Components/QuantityIcon";
+
 
 const ownStyles = {
   container: {
@@ -46,12 +48,7 @@ const ownStyles = {
     fontSize: moderateScale(12),
     color: '#898989',
   },
-  priceAndQuantityContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
-  },
+
   priceText: {
     paddingRight: 8,
     fontFamily: 'roboto_regular',
@@ -60,16 +57,6 @@ const ownStyles = {
   },
   chevronRight: {
     alignSelf: 'center',
-  },
-  quantityContainer: {
-    paddingHorizontal: 6,
-    backgroundColor: '#9B9B9B',
-    borderRadius: 3,
-  },
-  quantityText: {
-    color: '#fff',
-    fontSize: 12,
-    fontFamily: 'roboto_regular',
   },
   touchable: {
     justifyContent: 'center',
@@ -109,13 +96,7 @@ const GoodInputRow = ({
           <Text style={ownStyles.mainCategoryText}>{category}</Text>
           <Text style={ownStyles.categoryText}>{mainCategory}</Text>
         </View>
-        <View style={ownStyles.priceAndQuantityContainer}>
-          <View style={ownStyles.quantityContainer}>
-            <Text
-              style={ownStyles.quantityText}
-            >{`${quantity} ${CategoriesInfo.get(category).get('unit')}`}</Text>
-          </View>
-        </View>
+        <QuantityIcon quantity={quantity} unit={CategoriesInfo.get(category).get('unit')}/>
       </View>
       <View style={ownStyles.chevronRight}>
         <Entypo name="chevron-right" size={moderateScale(30)} color="#24253D" />
