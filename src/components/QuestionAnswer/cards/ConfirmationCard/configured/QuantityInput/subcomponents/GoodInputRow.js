@@ -20,7 +20,6 @@ const ownStyles = {
   categoryIcon: {
     height: 64,
     width: 64,
-    // backgroundColor: '#D8D8D8',
     alignItems: 'center',
     justifyContent: 'center',
   },
