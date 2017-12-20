@@ -24,7 +24,6 @@ export default StyleSheet.create({
     fontFamily: 'roboto_medium',
     textAlign: 'center',
     marginTop: verticalScale(10),
-    // marginTop: verticalScale(15),
     paddingHorizontal: scale(15),
   },
 });
