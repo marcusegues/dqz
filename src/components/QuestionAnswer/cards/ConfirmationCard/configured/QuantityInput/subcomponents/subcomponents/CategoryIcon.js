@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Image } from 'react-native';
-import { StyleSheet } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 
 const ownStyles = StyleSheet.create({
   categoryIcon: {
@@ -15,12 +14,10 @@ const ownStyles = StyleSheet.create({
   },
 });
 
-const CategoryIcon = ({ source }) => {
-  return (
+const CategoryIcon = ({ source }) => (
     <View style={ownStyles.categoryIcon}>
       <Image source={source} style={ownStyles.image} resizeMode="contain" />
     </View>
   );
-};
 
 export default CategoryIcon;

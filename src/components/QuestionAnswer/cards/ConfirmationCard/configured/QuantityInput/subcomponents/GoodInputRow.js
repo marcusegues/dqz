@@ -1,6 +1,6 @@
 import React from 'react';
 import Touchable from 'react-native-platform-touchable';
-import { View, Text, Image } from 'react-native';
+import { View, Text } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { CategoriesInfo } from '../../../../../../../model/constants';
 import { moderateScale } from '../../../../../../../styles/Scaling';

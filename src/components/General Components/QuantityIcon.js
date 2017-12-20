@@ -14,16 +14,12 @@ const ownStyles = StyleSheet.create({
   },
 });
 
-class QuantityIcon extends React.Component {
-  render() {
-    return (
-      <View style={ownStyles.quantityContainer}>
-        <Text style={ownStyles.quantityText}>{`${this.props.quantity} ${
-          this.props.unit
-        }`}</Text>
-      </View>
-    );
-  }
-}
+const QuantityIcon = () => (
+    <View style={ownStyles.quantityContainer}>
+      <Text style={ownStyles.quantityText}>{`${this.props.quantity} ${
+        this.props.unit
+      }`}</Text>
+    </View>
+  );
 
 export default QuantityIcon;
