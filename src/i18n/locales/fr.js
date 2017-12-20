@@ -14,6 +14,9 @@ export const fr: LocaleType = makeLocaleRecord({
     receipts: 'Reçus',
     calculator: 'Calculateur',
     information: 'Information',
+    navbarFirst: 'Voyage',
+    navbarSecond: 'Paiement',
+    navbarThird: 'Reçu',
   }),
   onBoarding: makeOnBoardingNSRecord({
     onBoardingMessage:
