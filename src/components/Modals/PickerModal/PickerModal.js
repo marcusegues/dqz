@@ -7,12 +7,13 @@ import { translate } from 'react-i18next';
 import AppModal from '../AppModal';
 import RedButton from '../../Buttons/RedButton';
 import {
-  liquidsAmountsPicker,
   rangeItemsPicker,
   pickerDecimalUnits,
+  amountsPicker,
 } from './pickerData';
 import ownStyles from '../styles/PickerModal';
 import globalStyles from '../../../styles/globalStyles';
+import { CategoriesInfo } from '../../../model/constants';
 
 type PickerState = {
   selected: 'standardInput' | 'customInput',
@@ -69,8 +70,9 @@ class PickerModal extends React.Component<any, PickerState> {
 
   render() {
     const { selected } = this.state;
-    const { t, confirmAction } = this.props;
+    const { t, confirmAction, category } = this.props;
     const standardInput = selected === 'standardInput';
+    const unit = CategoriesInfo.getIn([category, 'unit'], '');
 
     const currentAmount: number = standardInput
       ? this.standardTotalAmount()
@@ -151,7 +153,7 @@ class PickerModal extends React.Component<any, PickerState> {
                     prompt="Choose value"
                     itemStyle={{}}
                   >
-                    {rangeItemsPicker(1, 9, 1).map(i => (
+                    {rangeItemsPicker(1, 100, 1).map(i => (
                       <Picker.Item key={i.id} label={i.label} value={i.value} />
                     ))}
                   </Picker>
@@ -177,14 +179,14 @@ class PickerModal extends React.Component<any, PickerState> {
                     prompt="Choose value"
                     itemStyle={{}}
                   >
-                    {liquidsAmountsPicker.map(i => (
+                    {amountsPicker(category).map(i => (
                       <Picker.Item key={i.id} label={i.label} value={i.value} />
                     ))}
                   </Picker>
                 </View>
 
-                <View style={ownStyles.pickerLiterColumn}>
-                  <Text style={ownStyles.pickerLiterColumnText}>Liter</Text>
+                <View style={ownStyles.pickerUnitColumn}>
+                  <Text style={ownStyles.pickerUnitColumnText}>{unit}</Text>
                 </View>
               </View>
             ) : (
@@ -204,7 +206,7 @@ class PickerModal extends React.Component<any, PickerState> {
                     prompt="Choose value"
                     itemStyle={{}}
                   >
-                    {rangeItemsPicker(1, 9, 1).map(i => (
+                    {rangeItemsPicker(1, 100, 1).map(i => (
                       <Picker.Item key={i.id} label={i.label} value={i.value} />
                     ))}
                   </Picker>
@@ -235,8 +237,8 @@ class PickerModal extends React.Component<any, PickerState> {
                   </Picker>
                 </View>
 
-                <View style={ownStyles.pickerLiterColumn}>
-                  <Text style={ownStyles.pickerLiterColumnText}>Liter</Text>
+                <View style={ownStyles.pickerUnitColumn}>
+                  <Text style={ownStyles.pickerUnitColumnText}>{unit}</Text>
                 </View>
               </View>
             )}
@@ -245,7 +247,7 @@ class PickerModal extends React.Component<any, PickerState> {
             <RedButton
               onPress={() => confirmAction(currentAmount)}
               text={t(['confirmPicker'], {
-                value: currentAmount.toFixed(2),
+                value: `${currentAmount.toFixed(2)} ${unit}`,
               })}
             />
           </View>

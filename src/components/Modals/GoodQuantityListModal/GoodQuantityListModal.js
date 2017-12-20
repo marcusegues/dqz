@@ -123,6 +123,7 @@ class GoodQuantityListModal extends React.Component<
           modalVisible={pickerModalVisible}
           toggleModalVisible={() => this.togglePickerVisible()}
           confirmAction={amount => this.confirmPicker(amount)}
+          category={modalCategories.category}
         />
       </AppModal>
     );

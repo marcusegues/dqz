@@ -79,13 +79,13 @@ export default StyleSheet.create({
     fontSize: moderateScale(16),
     color: DARK_GREY,
   },
-  pickerLiterColumn: {
+  pickerUnitColumn: {
     flex: 0.2,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
   },
-  pickerLiterColumnText: {
+  pickerUnitColumnText: {
     fontFamily: 'roboto_regular',
     fontSize: moderateScale(14),
     color: DARK_GREY,
