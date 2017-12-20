@@ -70,6 +70,7 @@ type GeneralNS = {
   navbarSecond: string,
   navbarThird: string,
   customsDuty: string,
+  goodCategories: string,
 };
 
 export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
@@ -82,6 +83,7 @@ export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
   navbarSecond: 'i18n',
   navbarThird: 'i18n',
   customsDuty: 'i18n',
+  goodCategories: 'i18n',
 });
 
 export type GeneralNSType = RecordOf<GeneralNS>;

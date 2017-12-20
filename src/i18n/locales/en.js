@@ -45,6 +45,7 @@ export const en: LocaleType = makeLocaleRecord({
     navbarSecond: 'Payment',
     navbarThird: 'Receipt',
     customsDuty: 'Customs duty',
+    goodCategories: 'Good Categories',
   }),
   onBoarding: makeOnBoardingNSRecord({
     onBoardingMessage:

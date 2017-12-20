@@ -17,8 +17,8 @@ export const de: LocaleType = makeLocaleRecord({
     Butter: 'Butter & Rahm',
     Oils: 'Öle/Fette/Margarine',
     OtherFood: 'Sonstige Lebensmittel & alkoholfreie Getränke',
-    AlcSoft: 'Alkohol über 0.5 % bis 18 % Vol.%',
-    AlcHard: 'Alkohol von über 18 % Vol.',
+    AlcSoft: 'Alkohol gehalt 0.5% bis 18% Vol.',
+    AlcHard: 'Alkohol gehalt über 18% Vol.',
     Cigarettes: 'Zigaretten & Zigarren',
     Tobacco: 'andere Tabakfabrikate',
     Med: 'Medikamente',
@@ -45,6 +45,7 @@ export const de: LocaleType = makeLocaleRecord({
     navbarSecond: 'Bezahlung',
     navbarThird: 'Zollschein',
     customsDuty: 'Zollabgabe',
+    goodCategories: 'Warenkategorien',
   }),
   onBoarding: makeOnBoardingNSRecord({
     onBoardingMessage:
