@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React from 'react';
 import { Text, View } from 'react-native';
 
@@ -9,6 +10,6 @@ const style = {
 
 export const UnderConstruction = () => (
   <View style={style}>
-    <Text>In Bearbeitung.</Text>
+    <Text style={{ fontSize: 48 }}>🚧</Text>
   </View>
 );
