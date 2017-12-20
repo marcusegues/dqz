@@ -42,7 +42,7 @@ const ownStyles = disabled => ({
   },
 });
 
-const RedButton = ({ text, onPress, confirmationDisabled }) =>
+const RedButton = ({ text, onPress, confirmationDisabled }) => (
   <View style={ownStyles(confirmationDisabled).bottomButtonContainer}>
     <Touchable
       onPress={onPress}
@@ -50,10 +50,11 @@ const RedButton = ({ text, onPress, confirmationDisabled }) =>
       disabled={confirmationDisabled}
     >
       <Text style={ownStyles(confirmationDisabled).touchableText}>
-        {text}
+        {text.toUpperCase()}
       </Text>
     </Touchable>
-  </View>;
+  </View>
+);
 
 RedButton.defaultProps = {
   confirmationDisabled: false,

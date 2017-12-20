@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { translate } from 'react-i18next';
 
 import { scale, verticalScale, moderateScale } from '../../styles/Scaling';
 
@@ -7,7 +8,7 @@ const ownStyles = {
   locatorContainer: {
     // flex: 1,
     // flex: 0.07,
-    width: '95%',
+    width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'center',
@@ -40,14 +41,14 @@ const ownStyles = {
   },
 };
 
-const NavBar = ({ step }) => (
+const NavBar = ({ step, t }) => (
   <View style={ownStyles.locatorContainer}>
     <Text
       style={
         step === 1 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
       }
     >
-      Ihre Daten
+      {t('navbarFirst')}
     </Text>
     <View style={ownStyles.locatorLine} />
     <Text
@@ -55,7 +56,7 @@ const NavBar = ({ step }) => (
         step === 2 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
       }
     >
-      Ihre Waren
+      {t('navbarSecond')}
     </Text>
     <View style={ownStyles.locatorLine} />
     <Text
@@ -63,9 +64,9 @@ const NavBar = ({ step }) => (
         step === 3 ? ownStyles.activeLocatorText : ownStyles.unhighlightedText
       }
     >
-      Bezahlung
+      {t('navbarThird')}
     </Text>
   </View>
 );
 
-export default NavBar;
+export default translate(['general'])(NavBar);

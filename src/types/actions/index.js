@@ -1,6 +1,10 @@
 // @flow
 
-import type { Category } from '../../model/types/basketPeopleTypes';
+import type {
+  Category,
+  Basket,
+  People,
+} from '../../model/types/basketPeopleTypes';
 import type {
   MainCategory,
   MainCategoriesType,
@@ -10,9 +14,13 @@ import type {
 export type Action =
   // declaration
   | {
-    type: 'DECLARATION_BASKET_CHANGE_QUANTITY',
+    type: 'DECLARATION_BASKET_ADD_QUANTITY',
     category: Category,
-    quantityChange: number,
+    quantity: number,
+  }
+  | {
+    type: 'DECLARATION_SET_BASKET',
+    basket: Basket,
   }
   | {
     type: 'DECLARATION_BASKET_ADD_AMOUNT',
@@ -30,9 +38,19 @@ export type Action =
     quantityChange: number,
   }
   | {
+    type: 'DECLARATION_ADULTS_SET_QUANTITY',
+    category: Category,
+    quantity: number,
+  }
+  | {
     type: 'DECLARATION_MINORS_CHANGE_QUANTITY',
     category: Category,
     quantityChange: number,
+  }
+  | {
+    type: 'DECLARATION_MINORS_SET_QUANTITY',
+    category: Category,
+    quantity: number,
   }
   | {
     type: 'DECLARATION_SET_OVER_ALLOWANCE_TRUE',
@@ -68,4 +86,27 @@ export type Action =
   | {
     type: 'DECLARATION_RESET_LARGE_AMOUNTS',
     category: Category,
+  }
+  | {
+    type: 'DECLARATION_SET_PEOPLE',
+    people: People,
+  }
+  | {
+    type: 'DECLARATION_SET_AMOUNTS_ENTERED_TRUE',
+  }
+  | {
+    type: 'DECLARATION_CALCULATE_DUES',
+  }
+  | {
+    type: 'DECLARATION_RESET_AMOUNTS',
+    category: Category,
+  }
+  | {
+    type: 'DECLARATION_SET_OVER_ALLOWANCE_NOT_ANSWERED',
+  }
+  | {
+    type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE',
+  }
+  | {
+    type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE',
   };

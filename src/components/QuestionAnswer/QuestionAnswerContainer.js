@@ -1,143 +1,199 @@
+// @flow
+/* eslint react/no-unused-state: 0 */
 import React from 'react';
+// $FlowFixMe
+import { FlatList, View } from 'react-native';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
-import PeopleInputContainer from './PeopleInput/PeopleInputContainer';
-import LargeAmountPresentContainer from './LargeAmountPresent/LargeAmountPresentContainer';
-import LargeAmountInputContainer from './LargeAmountInput/LargeAmountInputContainer';
-import OverAllowanceContainer from './OverAllowance/OverAllowanceContainer';
-import AmountInputContainer from './AmountInput/AmountInputContainer';
-import MainCategoriesInputContainer from './MainCategoriesInput/MainCategoriesInputContainer';
-import RedButton from '../Buttons/RedButton';
-import NavBar from '../NavBar/NavBar';
-import {
-  getDeclarationPeople,
-  getDeclarationCurrentQuestion,
-  getDeclarationSettings,
-  getDeclarationInit,
-  getDeclarationInitList,
-} from '../../reducers';
-import { getTotalPeople } from '../../model/configurationApi';
+import { translate } from 'react-i18next';
 
-class QuestionAnswerContainer extends React.Component {
+import NavBar from '../NavBar/NavBar';
+import RedButton from '../Buttons/RedButton';
+import PeopleInputQA from './PeopleInput/PeopleInputQA';
+import MainCategoriesInputQA from './MainCategoriesInput/MainCategoriesInputQA';
+import QuantityInputQA from './QuantityInput/QuantityInputQA';
+
+import {
+  getDeclarationBasket,
+  getDeclarationPeople,
+  getDeclarationSettings,
+  getDeclarationDutyReport,
+} from '../../reducers';
+import type { People, Basket } from '../../model/types/basketPeopleTypes';
+import type {
+  SettingsType,
+  MainCategoriesType,
+} from '../../types/reducers/declaration';
+import {
+  collapseAllExistingExceptOne,
+  setInitStates,
+  setQuestionStates,
+} from './QAControl/controlQuestionStates';
+import { setQuestionFlag } from './QAControl/controlQuestionFlag';
+import type { DutyReport } from '../../model/types/calculationTypes';
+import { calculateDuty } from '../../model/dutyCalculations';
+import { verticalScale } from '../../styles/Scaling';
+
+export type QuestionType =
+  | 'peopleInput'
+  | 'mainCategories'
+  | 'quantityInput'
+  | 'none';
+
+export type QuestionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
+
+export type QuestionFlag = 'complete' | 'incomplete';
+
+export type QAState = {
+  questionStates: { [QuestionType]: QuestionState },
+  questionFlag: { [QuestionType]: QuestionFlag },
+  basket: Basket,
+  people: People,
+  settings: SettingsType,
+  duty: DutyReport,
+};
+
+export type CardProps = {
+  qaState: QAState,
+  onAnswerCardPress: any, // TODO
+  questionState: QuestionState,
+  questionFlag: QuestionFlag,
+  onUpdate: any, // TODO
+  onAnswer: any, // TODO
+};
+
+// TODO: flowtype the props
+class QuestionAnswerContainer extends React.Component<any, QAState> {
   constructor(props) {
     super(props);
-    this.setCurrentQuestion = this.setCurrentQuestion.bind(this);
-    this.selectNextOpenQuestion = this.selectNextOpenQuestion.bind(this);
+    this.state = {
+      questionStates: {
+        peopleInput: 'expanded',
+        mainCategories: 'hidden',
+        quantityInput: 'hidden',
+      },
+      questionFlag: {
+        peopleInput: 'complete',
+        mainCategories: 'incomplete',
+        quantityInput: 'incomplete',
+      },
+      basket: this.props.basket,
+      people: this.props.people,
+      settings: this.props.settings,
+      // not getting duty as props from redux because dues are not being updated all the time, perhaps they should be
+      duty: calculateDuty(this.props.basket, this.props.people),
+    };
   }
 
-  setCurrentQuestion(currentQuestion) {
-    this.props.onSetCurrentQuestion(currentQuestion);
+  componentDidMount() {
+    this.initState();
   }
 
-  getNextInitOpenQuestion() {
-    const { currentQuestion, people, settings } = this.props;
-    let nextQuestion;
-    switch (currentQuestion) {
-      case 'peopleInput': {
-        if (getTotalPeople(people) === 1) {
-          nextQuestion = 'overAllowance';
-        } else {
-          nextQuestion = 'largeAmountPresent';
-        }
-        break;
-      }
-      case 'largeAmountPresent': {
-        if (settings.get('largeAmountPresent')) {
-          nextQuestion = 'largeAmountInput';
-          break;
-        }
-        nextQuestion = 'overAllowance';
-        break;
-      }
-      case 'largeAmountInput': {
-        nextQuestion = 'overAllowance';
-        break;
-      }
-      case 'overAllowance': {
-        if (settings.get('overAllowance') === true) {
-          nextQuestion = 'amountInput';
-          break;
-        }
-        nextQuestion = 'mainCategories';
-        break;
-      }
-      case 'amountInput': {
-        nextQuestion = 'mainCategories';
-        break;
-      }
-      default: {
-        nextQuestion = null;
-      }
-    }
-    return nextQuestion;
+  initState() {
+    this.setState(setInitStates(this.state));
   }
 
-  async selectNextOpenQuestion() {
-    const {
-      settings,
-      people,
-      init,
-      onSetInitFalse,
-      onAddToInitList,
-    } = this.props;
+  updateQA(justAnswered: QuestionType) {
+    const updateStates: QAState = setQuestionStates(justAnswered, this.state);
+    const updateFlags: QAState = setQuestionFlag(justAnswered, updateStates);
+    this.setState(updateFlags);
+  }
 
-    if (init) {
-      const nextInitQuestion = this.getNextInitOpenQuestion();
-      if (nextInitQuestion) {
-        await onAddToInitList(nextInitQuestion);
-        this.setCurrentQuestion(nextInitQuestion);
-        return;
-      }
-      onSetInitFalse();
-    }
-
-    if (
-      getTotalPeople(people) > 1 &&
-      settings.get('largeAmountPresent') === 'notAnswered'
-    ) {
-      this.setCurrentQuestion('largeAmountPresent');
-      return;
-    }
-
-    if (
-      getTotalPeople(people) > 1 &&
-      settings.get('largeAmountsEntered') === 'notAnswered' &&
-      (settings.get('largeAmountPresent') === true ||
-        settings.get('largeAmountPresent') === 'dontKnow')
-    ) {
-      this.setCurrentQuestion('largeAmountInput');
-      return;
-    }
-
-    if (settings.get('overAllowance') === 'notAnswered') {
-      this.setCurrentQuestion('overAllowance');
-      return;
-    }
-
-    if (
-      settings.get('overAllowance') === true &&
-      settings.get('amountsEntered') === 'notAnswered'
-    ) {
-      this.setCurrentQuestion('amountInput');
-      return;
-    }
-
-    const mainCategories = settings.get('mainCategories');
-    if (mainCategories === 'notAnswered' || mainCategories.isEmpty()) {
-      this.setCurrentQuestion('mainCategories');
-      return;
-    }
-
-    this.setCurrentQuestion('finished');
+  allQuestionsAnswered(): boolean {
+    // TODO Object.values returns Array<mixed> in flow. Find better way.
+    return Object.values(this.state.questionFlag).every(
+      (flag): boolean => flag === 'complete'
+    );
   }
 
   render() {
-    const { init, initList, navigation } = this.props;
+    const { questionStates, questionFlag } = this.state;
+    const { t } = this.props;
+
+    const flatListData = [
+      {
+        key: 'peopleInput',
+        component: (
+          <PeopleInputQA
+            qaState={this.state}
+            onAnswerCardPress={() => {
+              this.setState(
+                collapseAllExistingExceptOne('peopleInput', this.state)
+              );
+            }}
+            questionState={questionStates.peopleInput}
+            questionFlag={questionFlag.peopleInput}
+            onUpdate={people => {
+              this.setState({ people });
+            }}
+            onAnswer={() => {
+              this.props.onDeclarationSetPeople(this.state.people);
+              this.updateQA('peopleInput');
+            }}
+          />
+        ),
+      },
+      {
+        key: 'mainCategories',
+        component: (
+          <MainCategoriesInputQA
+            qaState={this.state}
+            onAnswerCardPress={() => {
+              this.setState(
+                collapseAllExistingExceptOne('mainCategories', this.state)
+              );
+            }}
+            questionState={questionStates.mainCategories}
+            questionFlag={questionFlag.mainCategories}
+            onUpdate={activeCategories => {
+              this.setState({
+                settings: this.state.settings.set(
+                  'mainCategories',
+                  activeCategories
+                ),
+              });
+            }}
+            onAnswer={() => {
+              this.props.onDeclarationSetMainCategories(
+                this.state.settings.get('mainCategories')
+              );
+              this.updateQA('mainCategories');
+            }}
+          />
+        ),
+      },
+      {
+        key: 'quantityInput',
+        component: (
+          <QuantityInputQA
+            qaState={this.state}
+            onAnswerCardPress={() => {
+              this.setState(
+                collapseAllExistingExceptOne('quantityInput', this.state)
+              );
+            }}
+            questionState={questionStates.quantityInput}
+            questionFlag={questionFlag.quantityInput}
+            onUpdate={basket => {
+              this.setState({
+                basket,
+                duty: calculateDuty(basket, this.state.people),
+              });
+            }}
+            onAnswer={() => {
+              this.props.onDeclarationSetBasket(this.state.basket);
+              this.updateQA('quantityInput');
+            }}
+          />
+        ),
+      },
+    ];
+
     return (
       <View
         style={{
           flex: 1,
           height: '100%',
+          marginHorizontal: 16,
           marginBottom: 16,
           flexDirection: 'column',
           alignItems: 'center',
@@ -146,93 +202,70 @@ class QuestionAnswerContainer extends React.Component {
         <View
           style={{
             flex: 1,
-            width: '95%',
+            width: '100%',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
           <NavBar step={1} />
-          <PeopleInputContainer
-            text="Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?"
-            currentQuestion={this.props.currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('peopleInput')}
-            onAnswer={this.selectNextOpenQuestion}
-          />
-          <LargeAmountPresentContainer
-            people={this.props.people}
-            currentQuestion={this.props.currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('largeAmountPresent')}
-            onAnswer={this.selectNextOpenQuestion}
-            init={init}
-            initList={initList}
-          />
-          <LargeAmountInputContainer
-            currentQuestion={this.props.currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('largeAmountInput')}
-            onAnswer={this.selectNextOpenQuestion}
-            init={init}
-            initList={initList}
-          />
-          <OverAllowanceContainer
-            currentQuestion={this.props.currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('overAllowance')}
-            onAnswer={this.selectNextOpenQuestion}
-            init={init}
-            initList={initList}
-          />
-          <AmountInputContainer
-            currentQuestion={this.props.currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('amountInput')}
-            onAnswer={this.selectNextOpenQuestion}
-            init={init}
-            initList={initList}
-          />
-          <MainCategoriesInputContainer
-            currentQuestion={this.props.currentQuestion}
-            onAnswerPress={() => this.setCurrentQuestion('mainCategories')}
-            onAnswer={this.selectNextOpenQuestion}
-            init={init}
-            initList={initList}
+          <FlatList
+            style={{ width: '100%' }}
+            data={flatListData}
+            renderItem={({ item }) => item.component}
           />
         </View>
-        {this.props.currentQuestion !== 'finished' ? null : (
-          <View
-            style={{
-              flex: 0.1,
-              marginBottom: 20,
-              marginTop: 16,
-              marginLeft: 16,
-              marginRight: 16,
-            }}
-          >
-            <RedButton
-              text="ZUR WARENEINGABE"
-              onPress={() => navigation.navigate('BasketInput')}
-            />
-          </View>
-        )}
+        <View
+          style={{
+            flex: 0.1,
+            marginBottom: verticalScale(4),
+            marginTop: verticalScale(4),
+            marginLeft: 16,
+            marginRight: 16,
+            backgroundColor: 'transparent',
+          }}
+        >
+          <RedButton
+            text={t('toOverview')}
+            confirmationDisabled={!this.allQuestionsAnswered()}
+            onPress={() => this.props.navigation.navigate('Payment')}
+          />
+        </View>
       </View>
     );
   }
 }
 
-// <MainCategoriesContainer onPress={() => this.setCurrentQuestion(4)} />
 const mapStateToProps = state => ({
-  currentQuestion: getDeclarationCurrentQuestion(state),
+  basket: getDeclarationBasket(state),
   people: getDeclarationPeople(state),
+  dutyReport: getDeclarationDutyReport(state),
   settings: getDeclarationSettings(state),
-  init: getDeclarationInit(state),
-  initList: getDeclarationInitList(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSetCurrentQuestion: currentQuestion =>
-    dispatch({ type: 'DECLARATION_SET_CURRENT_QUESTION', currentQuestion }),
-  onAddToInitList: nextQuestion =>
-    dispatch({ type: 'DECLARATION_ADD_TO_INIT_LIST', nextQuestion }),
-  onSetInitFalse: () => dispatch({ type: 'DECLARATION_SET_INIT_FALSE' }),
+  onDeclarationSetPeople: (people: People) =>
+    dispatch({
+      type: 'DECLARATION_SET_PEOPLE',
+      people,
+    }),
+  onDeclarationSetMainCategories: (mainCategories: MainCategoriesType) =>
+    dispatch({
+      type: 'DECLARATION_SET_MAIN_CATEGORIES',
+      mainCategories,
+    }),
+  onDeclarationBasketChangeQuantity: (category, quantity) =>
+    dispatch({
+      type: 'DECLARATION_BASKET_ADD_QUANTITY',
+      category,
+      quantity,
+    }),
+  onDeclarationSetBasket: basket =>
+    dispatch({
+      type: 'DECLARATION_SET_BASKET',
+      basket,
+    }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  QuestionAnswerContainer
+  translate(['qaFlow'])(QuestionAnswerContainer)
 );

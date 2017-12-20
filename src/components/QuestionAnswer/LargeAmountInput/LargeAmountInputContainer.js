@@ -46,7 +46,7 @@ class LargeAmountInputContainer extends React.Component {
       <AnswerCard
         onAnswerPress={this.props.onAnswerPress}
         mainIcon={mainIcon}
-        status={
+        flag={
           this.props.settings.get('largeAmountsEntered') === 'notAnswered'
             ? incomplete
             : complete

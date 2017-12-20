@@ -8,7 +8,7 @@ import {
   getDeclarationMainCategories,
 } from '../../reducers';
 import { MainCategoriesToCategories } from '../../types/reducers/declaration';
-import BasketInput from './BasketInput';
+import BasketInput from '../QuestionAnswer/cards/ConfirmationCard/configured/QuantityInput/QuantityInput';
 
 class BasketInputContainer extends React.Component {
   constructor(props) {
@@ -60,11 +60,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onDeclarationBasketChangeQuantity: (category, quantityChange) =>
+  onDeclarationBasketChangeQuantity: (category, quantity) =>
     dispatch({
-      type: 'DECLARATION_BASKET_CHANGE_QUANTITY',
+      type: 'DECLARATION_BASKET_ADD_QUANTITY',
       category,
-      quantityChange,
+      quantity,
     }),
 });
 

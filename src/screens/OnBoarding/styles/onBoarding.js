@@ -1,4 +1,4 @@
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { scale, verticalScale, moderateScale } from '../../../styles/Scaling';
 
 export default StyleSheet.create({
@@ -26,31 +26,6 @@ export default StyleSheet.create({
     fontFamily: 'roboto_regular',
     fontSize: moderateScale(28),
     textAlign: 'center',
-  },
-  appTitleWrapper: {
-    flexDirection: 'row',
-    ...Platform.select({
-      ios: {
-        width: '78%',
-      },
-      android: {
-        width: '70%',
-      },
-    }),
-    justifyContent: 'space-between',
-  },
-  logo: {
-    width: scale(52),
-    height: null,
-  },
-  appTitleToll: {
-    color: '#1A1A1A',
-    fontFamily: 'roboto_bold',
-    fontSize: moderateScale(56),
-  },
-  appTitleCalc: {
-    fontFamily: 'roboto_light',
-    fontSize: moderateScale(56),
   },
   selectLanguageText: {
     fontFamily: 'roboto_regular',
