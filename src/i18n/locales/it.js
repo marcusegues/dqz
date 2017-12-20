@@ -31,5 +31,7 @@ export const it: LocaleType = makeLocaleRecord({
   }),
   modal: makeModalNSRecord({
     confirmPicker: '💰 {{value}}',
+    standardCategoryPicker: '🏟️',
+    individualCategoryPicker: '🔀',
   }),
 });

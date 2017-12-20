@@ -66,10 +66,14 @@ export type QAFlowNSType = RecordOf<QAFlowNS>;
 
 type ModalNS = {
   confirmPicker: string,
+  standardCategoryPicker: string,
+  individualCategoryPicker: string,
 };
 
 export const makeModalNSRecord: RecordFactory<ModalNS> = Immutable.Record({
   confirmPicker: '{{value}}',
+  standardCategoryPicker: '',
+  individualCategoryPicker: '',
 });
 
 export type ModalNSType = RecordOf<ModalNS>;

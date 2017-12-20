@@ -34,5 +34,7 @@ export const de: LocaleType = makeLocaleRecord({
   }),
   modal: makeModalNSRecord({
     confirmPicker: '{{value}} übernehmen',
+    standardCategoryPicker: 'Standardmengen',
+    individualCategoryPicker: 'Genaue Mengen',
   }),
 });

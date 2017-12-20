@@ -100,7 +100,7 @@ class PickerModal extends React.Component<any, PickerState> {
                       : ownStyles.touchableInactiveText
                   }
                 >
-                  STANDARDMENGEN
+                  {t('standardCategoryPicker').toUpperCase()}
                 </Text>
               </TouchableOpacity>
             </View>
@@ -124,7 +124,7 @@ class PickerModal extends React.Component<any, PickerState> {
                       : ownStyles.touchableActiveText
                   }
                 >
-                  INDIVIDUELL
+                  {t('individualCategoryPicker').toUpperCase()}
                 </Text>
               </TouchableOpacity>
             </View>
