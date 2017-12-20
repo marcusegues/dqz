@@ -1,11 +1,15 @@
 import React from 'react';
 import Touchable from 'react-native-platform-touchable';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
-import { CategoriesInfo } from '../../../../../../../model/constants';
-import { moderateScale } from '../../../../../../../styles/Scaling';
+import {
+  moderateScale,
+  verticalScale,
+} from '../../../../../../../styles/Scaling';
 import QuantityIcon from '../../../../../../General Components/QuantityIcon';
 import CategoryIcon from './subcomponents/CategoryIcon';
+import CardRowText from '../../../../subcomponents/CardRowText';
+import CardRowSubText from '../../../../subcomponents/CardRowSubText';
 
 const ownStyles = {
   container: {
@@ -28,19 +32,8 @@ const ownStyles = {
   rowMainTextContainer: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    paddingLeft: 16,
-  },
-  mainCategoryText: {
-    fontFamily: 'roboto_medium',
-    fontSize: moderateScale(14),
-    color: '#24253D',
-  },
-  categoryText: {
-    fontFamily: 'roboto_regular',
-    fontSize: moderateScale(12),
-    color: '#898989',
+    marginLeft: verticalScale(16),
   },
 
   priceText: {
@@ -79,16 +72,9 @@ const GoodInputRow = ({
         }
       />
       <View style={ownStyles.rowMainTextContainer}>
-        <View>
-          <Text style={ownStyles.mainCategoryText}>{category}</Text>
-          <Text style={ownStyles.categoryText}>{mainCategory}</Text>
-        </View>
-        <View style={{ marginTop: 10 }}>
-          <QuantityIcon
-            quantity={totalQuantity}
-            unit={CategoriesInfo.get(category).get('unit')}
-          />
-        </View>
+        <CardRowText text={category} />
+        <CardRowSubText text={mainCategory} />
+        <QuantityIcon quantity={totalQuantity} category={category} />
       </View>
       <View style={ownStyles.chevronRight}>
         <Entypo name="chevron-right" size={moderateScale(30)} color="#24253D" />
