@@ -7,7 +7,7 @@ import { GREY } from '../../../styles/colors';
 const InfoIcon = ({ navigation }) => (
   <Touchable
     onPress={() => {
-      navigation.navigate('OnBoarding');
+      navigation.goBack();
     }}
   >
     <MaterialCommunityIcons
