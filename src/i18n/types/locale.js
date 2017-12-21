@@ -142,6 +142,7 @@ export const makeQuantityInputNSRecord: RecordFactory<
 export type QuantityInputNSType = RecordOf<QuantityInputNS>;
 
 type QAFlowNS = {
+  declareGoods: string,
   toOverview: string,
   adult: string,
   adultInfo: string,
@@ -154,6 +155,7 @@ type QAFlowNS = {
 };
 
 export const makeQAFlowNSRecord: RecordFactory<QAFlowNS> = Immutable.Record({
+  declareGoods: 'i18n',
   toOverview: 'i18n',
   adult: 'i18n',
   adultInfo: 'i18n',

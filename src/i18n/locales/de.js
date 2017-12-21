@@ -67,6 +67,7 @@ export const de: LocaleType = makeLocaleRecord({
     quantityInput: 'Mengeneingabe',
   }),
   qaFlow: makeQAFlowNSRecord({
+    declareGoods: 'Waren Deklarieren',
     toOverview: 'Zur Übersicht',
     adult: 'Erwachsene',
     adultInfo: '17+ Jahre',
