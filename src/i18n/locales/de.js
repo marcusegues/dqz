@@ -4,7 +4,6 @@ import {
   makeLocaleRecord,
   makeGeneralNSRecord,
   makeOnBoardingNSRecord,
-  makeLargeAmountInputNSRecord,
   makeQAFlowNSRecord,
   makeModalNSRecord,
   makeCategoriesNSRecord,

@@ -1,9 +1,9 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 import ConfirmationCard from '../../ConfirmationCard';
 import AdultInputRow from '../../children/PeopleInputRow/configured/AdultInputRow';
 import MinorInputRow from '../../children/PeopleInputRow/configured/MinorInputRow';
 import { getTotalPeople } from '../../../../../../model/configurationApi';
-import { translate } from 'react-i18next';
 
 const PeopleInputConfirmationCard = ({
   people,

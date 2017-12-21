@@ -64,11 +64,9 @@ export type CardProps = {
 
 // TODO: flowtype the props
 class QuestionAnswerContainer extends React.Component<any, QAState> {
-  static navigationOptions = ({ screenProps }) => {
-    return {
+  static navigationOptions = ({ screenProps }) => ({
       headerTitle: <HeaderTitle text={screenProps.t('qaFlow:declareGoods')} />,
-    };
-  };
+    });
 
   constructor(props) {
     super(props);

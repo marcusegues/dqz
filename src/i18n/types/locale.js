@@ -1,7 +1,6 @@
 // @flow
 import type { RecordOf, RecordFactory } from 'immutable';
 import Immutable from 'immutable';
-import type { People } from '../../model/types/basketPeopleTypes';
 
 type MainCategoriesNS = {
   Foods: string,
