@@ -1,5 +1,6 @@
 import React from 'react';
 import Touchable from 'react-native-platform-touchable';
+import { translate } from 'react-i18next';
 import { View } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import {
@@ -63,6 +64,7 @@ const GoodInputRow = ({
   category,
   totalQuantity,
   mainCategory,
+  t,
 }) => (
   <Touchable onPress={onShowQuantityInputModal}>
     <View style={ownStyles.container}>
@@ -72,8 +74,8 @@ const GoodInputRow = ({
         }
       />
       <View style={ownStyles.rowMainTextContainer}>
-        <CardRowText text={category} />
-        <CardRowSubText text={mainCategory} />
+        <CardRowText text={t(`categories:${category}`)} />
+        <CardRowSubText text={t(`mainCategories:${mainCategory}`)} />
         <View style={{ marginTop: 10 }}>
           <QuantityIcon quantity={totalQuantity} category={category} />
         </View>
@@ -85,4 +87,4 @@ const GoodInputRow = ({
   </Touchable>
 );
 
-export default GoodInputRow;
+export default translate(['mainCategories', 'categories'])(GoodInputRow);

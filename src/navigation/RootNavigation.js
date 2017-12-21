@@ -37,9 +37,6 @@ export const stackNavigatorScreens = {
   },
   QuestionAnswer: {
     screen: QuestionAnswerContainer,
-    navigationOptions: () => ({
-      headerTitle: <HeaderTitle text="Waren deklarieren" />,
-    }),
   },
   Payment: {
     screen: PaymentContainer,

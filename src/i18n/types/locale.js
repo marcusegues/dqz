@@ -2,6 +2,64 @@
 import type { RecordOf, RecordFactory } from 'immutable';
 import Immutable from 'immutable';
 
+type MainCategoriesNS = {
+  Foods: string,
+  Alcohol: string,
+  TobaccoProducts: string,
+  OtherGoods: string,
+};
+
+export const makeMainCategoriesNSRecord: RecordFactory<
+  MainCategoriesNS
+> = Immutable.Record({
+  Foods: 'i18n',
+  Alcohol: 'i18n',
+  TobaccoProducts: 'i18n',
+  OtherGoods: 'i18n',
+});
+
+export type MainCategoriesNSType = RecordOf<MainCategoriesNS>;
+
+type CategoriesNS = {
+  Meat: string,
+  Butter: string,
+  Oils: string,
+  OtherFood: string,
+  AlcSoft: string,
+  AlcHard: string,
+  Cigarettes: string,
+  Tobacco: string,
+  Meds: string,
+  Books: string,
+  Magazines: string,
+  Flowers: string,
+  AnimalFeed: string,
+  Fertilizer: string,
+  Other: string,
+};
+
+export const makeCategoriesNSRecord: RecordFactory<
+  CategoriesNS
+> = Immutable.Record({
+  Meat: 'i18n',
+  Butter: 'i18n',
+  Oils: 'i18n',
+  OtherFood: 'i18n',
+  AlcSoft: 'i18n',
+  AlcHard: 'i18n',
+  Cigarettes: 'i18n',
+  Tobacco: 'i18n',
+  Meds: 'i18n',
+  Books: 'i18n',
+  Magazines: 'i18n',
+  Flowers: 'i18n',
+  AnimalFeed: 'i18n',
+  Fertilizer: 'i18n',
+  Other: 'i18n',
+});
+
+export type CategoriesNSType = RecordOf<CategoriesNS>;
+
 type GeneralNS = {
   declareGoods: string,
   pleaseSelect: string,
@@ -11,6 +69,10 @@ type GeneralNS = {
   navbarFirst: string,
   navbarSecond: string,
   navbarThird: string,
+  customsDuty: string,
+  goodCategories: string,
+  confirm: string,
+  toPayment: string,
 };
 
 export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
@@ -22,11 +84,16 @@ export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
   navbarFirst: 'i18n',
   navbarSecond: 'i18n',
   navbarThird: 'i18n',
+  customsDuty: 'i18n',
+  goodCategories: 'i18n',
+  confirm: 'i18n',
+  toPayment: 'i18n',
 });
 
 export type GeneralNSType = RecordOf<GeneralNS>;
 
 type OnBoardingNS = {
+  welcome: string,
   onBoardingMessage: string,
   selectLanguage: string,
 };
@@ -34,27 +101,65 @@ type OnBoardingNS = {
 export const makeOnBoardingNSRecord: RecordFactory<
   OnBoardingNS
 > = Immutable.Record({
+  welcome: 'i18n',
   onBoardingMessage: 'i18n',
   selectLanguage: 'i18n',
 });
 
 export type OnBoardingNSType = RecordOf<OnBoardingNS>;
 
-type LargeAmountInputNS = {
-  pleaseInput: string,
-  totalLargeAmount: string,
+type PeopleInputNS = {
+  peopleInputQuestion: string,
 };
 
-export const makeLargeAmountInputNSRecord: RecordFactory<
-  LargeAmountInputNS
+export const makePeopleInputNSRecord: RecordFactory<
+  PeopleInputNS
 > = Immutable.Record({
-  pleaseInput: 'i18n',
-  totalLargeAmount: 'i18n',
+  peopleInputQuestion: 'i18n',
 });
 
-export type LargeAmountInputNSType = RecordOf<LargeAmountInputNS>;
+export type PeopleInputNSType = RecordOf<PeopleInputNS>;
+
+type MainCategoriesInputNS = {
+  mainCategoriesQuestion: string,
+};
+
+export const makeMainCategoriesInputNSRecord: RecordFactory<
+  MainCategoriesInputNS
+> = Immutable.Record({
+  mainCategoriesQuestion: 'i18n',
+});
+
+export type MainCategoriesInputNSType = RecordOf<MainCategoriesInputNS>;
+
+type QuantityInputNS = {
+  quantityInput: string,
+};
+
+export const makeQuantityInputNSRecord: RecordFactory<
+  QuantityInputNS
+> = Immutable.Record({
+  quantityInput: 'i18n',
+});
+
+export type QuantityInputNSType = RecordOf<QuantityInputNS>;
+
+type PaymentNS = {
+  overViewTitle: string,
+  dutyColumn: string,
+  sumText: string,
+};
+
+export const makePaymentNSRecord: RecordFactory<PaymentNS> = Immutable.Record({
+  overViewTitle: 'i18n',
+  dutyColumn: 'i18n',
+  sumText: 'i18n',
+});
+
+export type PaymentNSType = RecordOf<PaymentNS>;
 
 type QAFlowNS = {
+  declareGoods: string,
   toOverview: string,
   adult: string,
   adultInfo: string,
@@ -67,6 +172,7 @@ type QAFlowNS = {
 };
 
 export const makeQAFlowNSRecord: RecordFactory<QAFlowNS> = Immutable.Record({
+  declareGoods: 'i18n',
   toOverview: 'i18n',
   adult: 'i18n',
   adultInfo: 'i18n',
@@ -99,19 +205,29 @@ export type ModalNSType = RecordOf<ModalNS>;
  */
 
 type Locale = {
+  mainCategories: MainCategoriesNSType,
+  categories: CategoriesNSType,
   onBoarding: OnBoardingNSType,
   general: GeneralNSType,
-  largeAmountInput: LargeAmountInputNSType,
+  peopleInput: PeopleInputNSType,
+  mainCategoriesInput: MainCategoriesInputNSType,
+  quantityInput: QuantityInputNSType,
   qaFlow: QAFlowNSType,
   modal: ModalNSType,
+  payment: PaymentNSType,
 };
 
 export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
+  mainCategories: makeMainCategoriesNSRecord(),
+  categories: makeCategoriesNSRecord(),
   onBoarding: makeOnBoardingNSRecord(),
   general: makeGeneralNSRecord(),
-  largeAmountInput: makeLargeAmountInputNSRecord(),
+  peopleInput: makePeopleInputNSRecord(),
+  mainCategoriesInput: makeMainCategoriesInputNSRecord(),
+  quantityInput: makeQuantityInputNSRecord(),
   qaFlow: makeQAFlowNSRecord(),
   modal: makeModalNSRecord(),
+  payment: makePaymentNSRecord(),
 });
 
 export type LocaleType = RecordOf<Locale>;

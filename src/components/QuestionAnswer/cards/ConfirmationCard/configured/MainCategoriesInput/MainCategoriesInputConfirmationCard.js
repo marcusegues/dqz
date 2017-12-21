@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 import ConfirmationCard from '../../ConfirmationCard';
 import MainCategoriesCheckList from '../../children/MainCategoriesCheckList/MainCategoriesCheckList';
 
@@ -6,10 +7,10 @@ const MainCategoriesInputConfirmationCard = ({
   mainCategories,
   onToggleMainCategory,
   onAnswer,
-  text,
+  t,
 }) => (
   <ConfirmationCard
-    text={text}
+    text={t('mainCategoriesQuestion')}
     onAnswer={onAnswer}
     confirmationDisabled={!mainCategories.size}
   >
@@ -20,4 +21,6 @@ const MainCategoriesInputConfirmationCard = ({
   </ConfirmationCard>
 );
 
-export default MainCategoriesInputConfirmationCard;
+export default translate(['mainCategoriesInput'])(
+  MainCategoriesInputConfirmationCard
+);

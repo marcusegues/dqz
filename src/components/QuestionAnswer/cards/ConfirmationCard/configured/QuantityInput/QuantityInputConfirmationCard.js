@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 import ConfirmationCard from '../../ConfirmationCard';
 import QuantityInput from './QuantityInput';
 
@@ -7,8 +8,9 @@ const QuantityInputConfirmationCard = ({
   basket,
   onAnswer,
   categoriesByMainCategory,
+  t,
 }) => (
-  <ConfirmationCard text="Mengeneingabe" onAnswer={onAnswer}>
+  <ConfirmationCard text={t('quantityInput')} onAnswer={onAnswer}>
     <QuantityInput
       onShowQuantityInputModal={onShowQuantityInputModal}
       categoriesByMainCategory={categoriesByMainCategory}
@@ -17,4 +19,4 @@ const QuantityInputConfirmationCard = ({
   </ConfirmationCard>
 );
 
-export default QuantityInputConfirmationCard;
+export default translate(['quantityInput'])(QuantityInputConfirmationCard);

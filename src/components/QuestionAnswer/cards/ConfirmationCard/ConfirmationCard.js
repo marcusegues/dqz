@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 import { View } from 'react-native';
 import { verticalScale } from '../../../../styles/Scaling';
 import Card from '../Card';
@@ -23,6 +24,7 @@ const ConfirmationCard = ({
   children,
   onAnswer,
   confirmationDisabled,
+  t,
 }) => (
   <Card>
     <CardHeader text={text} />
@@ -31,7 +33,7 @@ const ConfirmationCard = ({
     </View>
     <View style={ownStyles.bottomButtonContainer}>
       <RedButton
-        text="ÜBERNEHMEN"
+        text={t('confirm')}
         onPress={onAnswer}
         confirmationDisabled={confirmationDisabled}
       />
@@ -43,4 +45,4 @@ ConfirmationCard.defaultProps = {
   confirmationDisabled: false,
 };
 
-export default ConfirmationCard;
+export default translate(['general'])(ConfirmationCard);

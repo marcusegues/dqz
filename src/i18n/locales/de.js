@@ -4,12 +4,40 @@ import {
   makeLocaleRecord,
   makeGeneralNSRecord,
   makeOnBoardingNSRecord,
-  makeLargeAmountInputNSRecord,
   makeQAFlowNSRecord,
   makeModalNSRecord,
+  makeCategoriesNSRecord,
+  makeMainCategoriesNSRecord,
+  makeMainCategoriesInputNSRecord,
+  makeQuantityInputNSRecord,
+  makePeopleInputNSRecord,
+  makePaymentNSRecord,
 } from '../types/locale';
 
 export const de: LocaleType = makeLocaleRecord({
+  categories: makeCategoriesNSRecord({
+    Meat: 'Fleisch & Fleischzubereitung',
+    Butter: 'Butter & Rahm',
+    Oils: 'Öle/Fette/Margarine',
+    OtherFood: 'Sonstige Lebensmittel & alkoholfreie Getränke',
+    AlcSoft: 'Alkohol gehalt 0.5% bis 18% Vol.',
+    AlcHard: 'Alkohol gehalt über 18% Vol.',
+    Cigarettes: 'Zigaretten & Zigarren',
+    Tobacco: 'Andere Tabakfabrikate',
+    Meds: 'Medikamente',
+    Books: 'Bücher',
+    Magazines: 'Zeitschriften',
+    Flowers: 'Schnittblumen & Pflanzen',
+    AnimalFeed: 'Tierfutter',
+    Fertilizer: 'Dünger',
+    Other: 'Sonstige Waren',
+  }),
+  mainCategories: makeMainCategoriesNSRecord({
+    Foods: 'Lebensmittel',
+    Alcohol: `Alkohol`,
+    TobaccoProducts: 'Tabak',
+    OtherGoods: 'Anderes',
+  }),
   general: makeGeneralNSRecord({
     declareGoods: 'Waren anmelden',
     pleaseSelect: 'Bitte auswählen',
@@ -19,17 +47,29 @@ export const de: LocaleType = makeLocaleRecord({
     navbarFirst: 'Ihre Reise',
     navbarSecond: 'Bezahlung',
     navbarThird: 'Zollschein',
+    customsDuty: 'Zollabgabe',
+    goodCategories: 'Warenkategorien',
+    confirm: 'Übernehmen',
+    toPayment: 'Zur Bezahlung',
   }),
   onBoarding: makeOnBoardingNSRecord({
+    welcome: 'Willkommen zu',
     onBoardingMessage:
       'Wir haben Ihre Sprache basierend auf Ihren aktuellen Systemeinstellungen festgelegt',
     selectLanguage: 'Wählen Sie eine andere Sprache',
   }),
-  largeAmountInput: makeLargeAmountInputNSRecord({
-    pleaseInput: 'Bitte geben Sie die Menge ein',
-    totalLargeAmount: 'Insgesamt grosse Mengen sind {{value}}.',
+  peopleInput: makePeopleInputNSRecord({
+    peopleInputQuestion:
+      'Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?',
+  }),
+  mainCategoriesInput: makeMainCategoriesInputNSRecord({
+    mainCategoriesQuestion: 'Welche Art Waren führen Sie mit sich?',
+  }),
+  quantityInput: makeQuantityInputNSRecord({
+    quantityInput: 'Mengeneingabe',
   }),
   qaFlow: makeQAFlowNSRecord({
+    declareGoods: 'Waren Deklarieren',
     toOverview: 'Zur Übersicht',
     adult: 'Erwachsene',
     adultInfo: '17+ Jahre',
@@ -44,5 +84,10 @@ export const de: LocaleType = makeLocaleRecord({
     confirmPicker: '{{value}} übernehmen',
     standardCategoryPicker: 'Standardmengen',
     individualCategoryPicker: 'Genaue Mengen',
+  }),
+  payment: makePaymentNSRecord({
+    overViewTitle: 'Übersicht ihrer Anmeldung',
+    dutyColumn: 'Zollabgabe in CHF',
+    sumText: 'Summe (CHF)',
   }),
 });

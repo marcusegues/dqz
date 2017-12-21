@@ -4,12 +4,19 @@ import {
   makeLocaleRecord,
   makeGeneralNSRecord,
   makeOnBoardingNSRecord,
-  makeLargeAmountInputNSRecord,
   makeModalNSRecord,
+  makeCategoriesNSRecord,
   makeQAFlowNSRecord,
+  makeMainCategoriesNSRecord,
+  makeMainCategoriesInputNSRecord,
+  makeQuantityInputNSRecord,
+  makePeopleInputNSRecord,
+  makePaymentNSRecord,
 } from '../types/locale';
 
 export const it: LocaleType = makeLocaleRecord({
+  categories: makeCategoriesNSRecord({}),
+  mainCategories: makeMainCategoriesNSRecord({}),
   general: makeGeneralNSRecord({
     declareGoods: '🛃️',
     pleaseSelect: '',
@@ -21,19 +28,19 @@ export const it: LocaleType = makeLocaleRecord({
     navbarThird: '📇',
   }),
   onBoarding: makeOnBoardingNSRecord({
+    welcome: 'Benvenuto a',
     onBoardingMessage:
       'Abbiamo impostato la tua lingua in base alle tue attuali impostazioni di sistema',
     selectLanguage: 'Seleziona una lingua diversa',
   }),
-  largeAmountInput: makeLargeAmountInputNSRecord({
-    pleaseInput: 'Si prega di inserire i valori',
-    totalLargeAmount:
-      'il valore totale degli oggetti di grandi dimensioni è {{value}}.',
-  }),
+  peopleInput: makePeopleInputNSRecord({}),
+  mainCategoriesInput: makeMainCategoriesInputNSRecord({}),
+  quantityInput: makeQuantityInputNSRecord({}),
   qaFlow: makeQAFlowNSRecord({}),
   modal: makeModalNSRecord({
     confirmPicker: '💰 {{value}}',
     standardCategoryPicker: '🏟️',
     individualCategoryPicker: '🔀',
   }),
+  payment: makePaymentNSRecord({}),
 });

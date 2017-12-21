@@ -1,16 +1,19 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { translate } from 'react-i18next';
 
 class MainCategoriesInputInfo extends React.Component {
   getText() {
-    const { mainCategories } = this.props;
+    const { mainCategories, t } = this.props;
     if (mainCategories === 'notAnswered' || mainCategories.isEmpty()) {
       return <Text>Warenkategorien - muss noch beantwortet werden</Text>;
     }
     return (
       <View>
-        <Text>Warenkategorien:</Text>
-        <Text>{mainCategories.join(', ')}</Text>
+        <Text>{`${t(`general:goodCategories`)}:`}</Text>
+        <Text>
+          {mainCategories.map(key => t(`mainCategories:${key}`)).join(', ')}
+        </Text>
       </View>
     );
   }
@@ -19,4 +22,6 @@ class MainCategoriesInputInfo extends React.Component {
   }
 }
 
-export default MainCategoriesInputInfo;
+export default translate(['mainCategories', 'general'])(
+  MainCategoriesInputInfo
+);

@@ -32,6 +32,7 @@ import { setInitFlags, setQuestionFlag } from './QAControl/controlQuestionFlag';
 import type { DutyReport } from '../../model/types/calculationTypes';
 import { calculateDuty } from '../../model/dutyCalculations';
 import { verticalScale } from '../../styles/Scaling';
+import HeaderTitle from '../Headers/subcomponents/HeaderTitle';
 
 export type QuestionType =
   | 'peopleInput'
@@ -63,6 +64,10 @@ export type CardProps = {
 
 // TODO: flowtype the props
 class QuestionAnswerContainer extends React.Component<any, QAState> {
+  static navigationOptions = ({ screenProps }) => ({
+    headerTitle: <HeaderTitle text={screenProps.t('qaFlow:declareGoods')} />,
+  });
+
   constructor(props) {
     super(props);
     this.state = {

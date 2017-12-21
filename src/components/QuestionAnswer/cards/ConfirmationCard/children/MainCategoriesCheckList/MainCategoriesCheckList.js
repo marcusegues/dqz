@@ -1,4 +1,5 @@
 import React from 'react';
+import { translate } from 'react-i18next';
 import Touchable from 'react-native-platform-touchable';
 import { View, Text, FlatList, Dimensions, StyleSheet } from 'react-native';
 import CheckBox from '../../../../../CheckBox/CheckBox';
@@ -34,7 +35,11 @@ const ownStyles = StyleSheet.create({
   },
 });
 
-const MainCategoriesCheckList = ({ mainCategories, onToggleMainCategory }) => {
+const MainCategoriesCheckList = ({
+  mainCategories,
+  onToggleMainCategory,
+  t,
+}) => {
   const flatListData = [];
   MainCategories.forEach(cat => {
     flatListData.push({ key: cat });
@@ -52,7 +57,7 @@ const MainCategoriesCheckList = ({ mainCategories, onToggleMainCategory }) => {
           >
             <View style={ownStyles.flatListRow}>
               <CheckBox checked={mainCategories.has(item.key)} />
-              <Text style={ownStyles.flatListText}>{item.key}</Text>
+              <Text style={ownStyles.flatListText}>{t(item.key)}</Text>
             </View>
           </Touchable>
         )}
@@ -61,4 +66,4 @@ const MainCategoriesCheckList = ({ mainCategories, onToggleMainCategory }) => {
   );
 };
 
-export default MainCategoriesCheckList;
+export default translate(['mainCategories'])(MainCategoriesCheckList);

@@ -21,7 +21,7 @@ class OnBoarding extends React.Component {
       <View style={styles.container}>
         <View style={styles.contentContainer}>
           <View>
-            <Text style={styles.welcomeTitle}>Welcome to</Text>
+            <Text style={styles.welcomeTitle}>{t('onBoarding:welcome')}</Text>
             <AppTitle />
           </View>
 
