@@ -12,6 +12,7 @@ import {
   makeMainCategoriesInputNSRecord,
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
+  makePaymentNSRecord,
 } from '../types/locale';
 
 export const de: LocaleType = makeLocaleRecord({
@@ -23,7 +24,7 @@ export const de: LocaleType = makeLocaleRecord({
     AlcSoft: 'Alkohol gehalt 0.5% bis 18% Vol.',
     AlcHard: 'Alkohol gehalt über 18% Vol.',
     Cigarettes: 'Zigaretten & Zigarren',
-    Tobacco: 'andere Tabakfabrikate',
+    Tobacco: 'Andere Tabakfabrikate',
     Meds: 'Medikamente',
     Books: 'Bücher',
     Magazines: 'Zeitschriften',
@@ -50,6 +51,7 @@ export const de: LocaleType = makeLocaleRecord({
     customsDuty: 'Zollabgabe',
     goodCategories: 'Warenkategorien',
     confirm: 'Übernehmen',
+    toPayment: 'Zur Bezahlung',
   }),
   onBoarding: makeOnBoardingNSRecord({
     onBoardingMessage:
@@ -82,5 +84,10 @@ export const de: LocaleType = makeLocaleRecord({
     confirmPicker: '{{value}} übernehmen',
     standardCategoryPicker: 'Standardmengen',
     individualCategoryPicker: 'Genaue Mengen',
+  }),
+  payment: makePaymentNSRecord({
+    overViewTitle: 'Übersicht ihrer Anmeldung',
+    dutyColumn: 'Zollabgabe in CHF',
+    sumText: 'Summe (CHF)',
   }),
 });

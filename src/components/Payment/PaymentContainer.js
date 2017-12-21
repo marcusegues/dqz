@@ -1,6 +1,8 @@
 /* eslint-disable react/no-unused-state, no-console */
 // TODO remove above line
 import React from 'react';
+// $FlowFixMe
+import { translate } from 'react-i18next';
 import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 import Overview from '../Overview/Overview';
@@ -94,7 +96,7 @@ class PaymentContainer extends React.Component {
   }
 
   render() {
-    const { basket, people } = this.props;
+    const { basket, people, t } = this.props;
     return (
       <View
         style={{
@@ -124,7 +126,7 @@ class PaymentContainer extends React.Component {
 
         <RedButton
           onPress={() => this.initializePayment()}
-          text="Zur Bezahlung"
+          text={t('toPayment')}
           confirmationDisabled={
             calculateDuty(basket, people).get('totalDuty', 0) < 1
           }
@@ -147,4 +149,6 @@ const mapStateToProps = state => ({
   people: getDeclarationPeople(state),
 });
 
-export default connect(mapStateToProps)(PaymentContainer);
+export default connect(mapStateToProps)(
+  translate(['general'])(PaymentContainer)
+);

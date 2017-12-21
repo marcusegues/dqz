@@ -12,6 +12,7 @@ import {
   makeMainCategoriesInputNSRecord,
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
+  makePaymentNSRecord,
 } from '../types/locale';
 
 export const en: LocaleType = makeLocaleRecord({
@@ -50,6 +51,7 @@ export const en: LocaleType = makeLocaleRecord({
     customsDuty: 'Customs duty',
     goodCategories: 'Good Categories',
     confirm: 'Confirm',
+    toPayment: 'Make Payment',
   }),
   onBoarding: makeOnBoardingNSRecord({
     onBoardingMessage:
@@ -82,5 +84,10 @@ export const en: LocaleType = makeLocaleRecord({
     confirmPicker: 'Confirm {{value}}',
     standardCategoryPicker: 'Standard',
     individualCategoryPicker: 'Exact',
+  }),
+  payment: makePaymentNSRecord({
+    overViewTitle: 'Summary of your Declaration',
+    dutyColumn: 'Customs Duty in CHF',
+    sumText: 'Sum (CHF)',
   }),
 });

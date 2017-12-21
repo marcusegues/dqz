@@ -12,6 +12,7 @@ import {
   makeMainCategoriesInputNSRecord,
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
+  makePaymentNSRecord,
 } from '../types/locale';
 
 export const it: LocaleType = makeLocaleRecord({
@@ -41,4 +42,5 @@ export const it: LocaleType = makeLocaleRecord({
     standardCategoryPicker: '🏟️',
     individualCategoryPicker: '🔀',
   }),
+  payment: makePaymentNSRecord({}),
 });

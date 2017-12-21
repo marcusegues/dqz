@@ -1,6 +1,8 @@
 /* eslint-disable react/prefer-stateless-function,react/prefer-stateless-function */
 import React from 'react';
 // $FlowFixMe
+import { translate } from 'react-i18next';
+// $FlowFixMe
 import { View } from 'react-native';
 // $FlowFixMe
 import Card from '../QuestionAnswer/cards/Card';
@@ -14,15 +16,15 @@ import { getMainCategory } from '../../types/reducers/declaration';
 
 class Overview extends React.Component {
   render() {
-    const { basket, people } = this.props;
+    const { basket, people, t } = this.props;
     const dutyReport = calculateDuty(basket, people);
     return (
       <Card>
-        <CardHeader text="Übersicht Ihrer Anmeldung" />
+        <CardHeader text={t('overViewTitle')} />
         <View
           style={{ alignSelf: 'flex-end', marginRight: 16, marginBottom: 2 }}
         >
-          <CardRowSubText text="Zollabgabe in CHF" />
+          <CardRowSubText text={t('dutyColumn')} />
         </View>
         <View style={{ flex: 1, width: '100%' }}>
           {dutyReport
@@ -43,7 +45,7 @@ class Overview extends React.Component {
             style={{ alignSelf: 'flex-end', marginRight: 16, marginTop: 16 }}
           >
             <CardRowText
-              text={`Summe (CHF): ${dutyReport.totalDuty.toFixed(2)}`}
+              text={`${t('sumText')}: ${dutyReport.totalDuty.toFixed(2)}`}
             />
           </View>
         </View>
@@ -52,4 +54,4 @@ class Overview extends React.Component {
   }
 }
 
-export default Overview;
+export default translate(['payment'])(Overview);

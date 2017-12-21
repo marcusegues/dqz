@@ -73,6 +73,7 @@ type GeneralNS = {
   customsDuty: string,
   goodCategories: string,
   confirm: string,
+  toPayment: string,
 };
 
 export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
@@ -87,6 +88,7 @@ export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
   customsDuty: 'i18n',
   goodCategories: 'i18n',
   confirm: 'i18n',
+  toPayment: 'i18n',
 });
 
 export type GeneralNSType = RecordOf<GeneralNS>;
@@ -140,6 +142,20 @@ export const makeQuantityInputNSRecord: RecordFactory<
 });
 
 export type QuantityInputNSType = RecordOf<QuantityInputNS>;
+
+type PaymentNS = {
+  overViewTitle: string,
+  dutyColumn: string,
+  sumText: string,
+};
+
+export const makePaymentNSRecord: RecordFactory<PaymentNS> = Immutable.Record({
+  overViewTitle: 'i18n',
+  dutyColumn: 'i18n',
+  sumText: 'i18n',
+});
+
+export type PaymentNSType = RecordOf<PaymentNS>;
 
 type QAFlowNS = {
   declareGoods: string,
@@ -197,6 +213,7 @@ type Locale = {
   quantityInput: QuantityInputNSType,
   qaFlow: QAFlowNSType,
   modal: ModalNSType,
+  payment: PaymentNSType,
 };
 
 export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
@@ -209,6 +226,7 @@ export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
   quantityInput: makeQuantityInputNSRecord(),
   qaFlow: makeQAFlowNSRecord(),
   modal: makeModalNSRecord(),
+  payment: makePaymentNSRecord(),
 });
 
 export type LocaleType = RecordOf<Locale>;
