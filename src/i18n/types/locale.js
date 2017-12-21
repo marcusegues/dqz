@@ -209,7 +209,7 @@ type Locale = {
   categories: CategoriesNSType,
   onBoarding: OnBoardingNSType,
   general: GeneralNSType,
-  peopleInput: PeopleInputNS,
+  peopleInput: PeopleInputNSType,
   mainCategoriesInput: MainCategoriesInputNSType,
   quantityInput: QuantityInputNSType,
   qaFlow: QAFlowNSType,
