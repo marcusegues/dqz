@@ -28,6 +28,7 @@ export const fr: LocaleType = makeLocaleRecord({
     navbarThird: 'Reçu',
   }),
   onBoarding: makeOnBoardingNSRecord({
+    welcome: 'Bienvenue à',
     onBoardingMessage:
       'Nous avons défini votre langue en fonction de vos paramètres système actuels',
     selectLanguage: 'Choisissez une autre langue',

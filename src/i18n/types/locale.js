@@ -93,6 +93,7 @@ export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
 export type GeneralNSType = RecordOf<GeneralNS>;
 
 type OnBoardingNS = {
+  welcome: string,
   onBoardingMessage: string,
   selectLanguage: string,
 };
@@ -100,6 +101,7 @@ type OnBoardingNS = {
 export const makeOnBoardingNSRecord: RecordFactory<
   OnBoardingNS
 > = Immutable.Record({
+  welcome: 'i18n',
   onBoardingMessage: 'i18n',
   selectLanguage: 'i18n',
 });

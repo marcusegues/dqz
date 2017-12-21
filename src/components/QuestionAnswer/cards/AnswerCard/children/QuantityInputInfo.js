@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 
 const QuantityInputInfo = ({ duty, t }) => (
   <View>
-    <Text>{`${t(`customsDuty`)}:`}</Text>
+    <Text>{`${t(`customsDuty`)} (CHF):`}</Text>
     <Text>{duty}</Text>
   </View>
 );

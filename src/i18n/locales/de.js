@@ -53,6 +53,7 @@ export const de: LocaleType = makeLocaleRecord({
     toPayment: 'Zur Bezahlung',
   }),
   onBoarding: makeOnBoardingNSRecord({
+    welcome: 'Willkommen zu',
     onBoardingMessage:
       'Wir haben Ihre Sprache basierend auf Ihren aktuellen Systemeinstellungen festgelegt',
     selectLanguage: 'Wählen Sie eine andere Sprache',
