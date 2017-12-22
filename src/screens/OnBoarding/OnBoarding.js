@@ -1,14 +1,12 @@
 import React from 'react';
-import Touchable from 'react-native-platform-touchable';
+import { View } from 'react-native';
 import { translate } from 'react-i18next';
-import { View, Text, Image } from 'react-native';
 import { LanguageButton } from './subcomponents/LanguageButton';
 import { languageCodeList } from './types';
 import styles from './styles/onBoarding';
-import AppTitle from '../../components/AppTitle/AppTitle';
-import { moderateScale } from '../../styles/Scaling';
-
-const img = require('../../../assets/images/done_big.png');
+import OnBoardingContainer from './subcomponents/OnBoardingContainer';
+import OnBoardingParagraph from './subcomponents/OnBoardingParagraph';
+import DoneButton from './subcomponents/DoneButton';
 
 class OnBoarding extends React.Component {
   constructor(props) {
@@ -18,62 +16,38 @@ class OnBoarding extends React.Component {
   render() {
     const { t, i18n, navigation } = this.props;
     return (
-      <View style={styles.container}>
-        <View style={styles.contentContainer}>
-          <View>
-            <Text style={styles.welcomeTitle}>{t('onBoarding:welcome')}</Text>
-            <AppTitle />
-          </View>
+      <OnBoardingContainer>
+        <OnBoardingParagraph text={t('onBoarding:onBoardingMessage')} />
+        <LanguageButton
+          size="large"
+          selected={this.systemLanguage === i18n.language}
+          languageCode={this.systemLanguage}
+          onPress={() => i18n.changeLanguage(this.systemLanguage)}
+        />
 
-          <Text style={styles.mainText}>
-            {t('onBoarding:onBoardingMessage')}
-          </Text>
-          <LanguageButton
-            size="large"
-            selected={this.systemLanguage === i18n.language}
-            languageCode={this.systemLanguage}
-            onPress={() => i18n.changeLanguage(this.systemLanguage)}
-          />
-          <View
-            style={{
-              alignItems: 'center',
-              justifyContent: 'space-around',
-            }}
-          >
-            <Text style={styles.selectLanguageText}>
-              {t('onBoarding:selectLanguage')}
-            </Text>
-
-            <View style={styles.languageButtonsContainer}>
-              {languageCodeList.map(language => {
-                if (language === this.systemLanguage) {
-                  return null;
-                }
-                return (
-                  <LanguageButton
-                    key={language}
-                    size="small"
-                    selected={language === i18n.language}
-                    languageCode={language}
-                    onPress={() => i18n.changeLanguage(language)}
-                  />
-                );
-              })}
-            </View>
+        <View style={styles.languageButtonsSection}>
+          <OnBoardingParagraph text={t('onBoarding:selectLanguage')} />
+          <View style={styles.languageButtons}>
+            {languageCodeList.map(language => {
+              if (language === this.systemLanguage) {
+                return null;
+              }
+              return (
+                <LanguageButton
+                  key={language}
+                  size="small"
+                  selected={language === i18n.language}
+                  languageCode={language}
+                  onPress={() => i18n.changeLanguage(language)}
+                />
+              );
+            })}
           </View>
-          <Touchable
-            style={{}}
-            background={Touchable.Ripple('#006699')}
-            onPress={() => navigation.navigate('MainMenu')}
-          >
-            <Image
-              source={img}
-              style={{ width: moderateScale(70), height: moderateScale(70) }}
-              resizeMode="cover"
-            />
-          </Touchable>
         </View>
-      </View>
+        <DoneButton
+          handlePress={() => navigation.navigate('OnBoardingTaxScreen')}
+        />
+      </OnBoardingContainer>
     );
   }
 }
