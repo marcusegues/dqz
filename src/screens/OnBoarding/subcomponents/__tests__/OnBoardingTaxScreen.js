@@ -9,7 +9,7 @@ jest.mock('react-i18next', () => ({
 }));
 
 describe('OnBoardingTaxScreen', () => {
-  test('renders according to snapshot', () => {
+  test('renders according to snapshot and DoneButton fires navigation', () => {
     const navMock = jest.fn();
     const component = shallow(
       <OnBoardingTaxScreen navigation={{ navigate: navMock }} />
