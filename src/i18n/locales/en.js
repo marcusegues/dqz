@@ -57,6 +57,9 @@ export const en: LocaleType = makeLocaleRecord({
     onBoardingMessage:
       'We’ve set your language based on your current system settings:',
     selectLanguage: 'Select a different language',
+    confirmationVat: 'I hereby confirm to accept the general vat rate of ',
+    confirmationVat2: 'in this application.',
+    vatInformation: 'Further information',
   }),
   peopleInput: makePeopleInputNSRecord({
     peopleInputQuestion:

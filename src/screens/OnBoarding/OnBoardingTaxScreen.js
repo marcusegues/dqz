@@ -1,5 +1,7 @@
+// @flow
 import React from 'react';
 import { translate } from 'react-i18next';
+// $FlowFixMe
 import { Text, View } from 'react-native';
 import OnBoardingContainer from './subcomponents/OnBoardingContainer';
 import OnBoardingParagraph from './subcomponents/OnBoardingParagraph';
@@ -24,25 +26,23 @@ const ownStyles = {
   },
 };
 
-class OnBoardingTaxScreen extends React.Component {
-  constructor(props) {
-    super(props);
-    this.systemLanguage = this.props.i18n.language;
-  }
-  render() {
-    const { navigation } = this.props;
-    return (
-      <OnBoardingContainer>
-        <View style={ownStyles.container}>
-          <OnBoardingParagraph text="Hiermit bestätige ich, dass ich den einheitlichen Mehrwertsteuersatz von " />
-          <Text style={ownStyles.percents}>7.7%</Text>
-          <OnBoardingParagraph text="bei der Verzollung von Waren akzeptiere." />
-        </View>
-        <Text style={ownStyles.bottomText}>WEITERE INFORMATIONEN</Text>
-        <DoneButton handlePress={() => navigation.navigate('MainMenu')} />
-      </OnBoardingContainer>
-    );
-  }
-}
+type OnBoardingTaxScreenProps = {
+  t: (field: string, params?: {}) => void,
+  navigation: any,
+};
 
-export default translate(['general', 'onBoarding'])(OnBoardingTaxScreen);
+const OnBoardingTaxScreen = ({ navigation, t }: OnBoardingTaxScreenProps) => (
+  <OnBoardingContainer>
+    <View style={ownStyles.container}>
+      <OnBoardingParagraph text={t('confirmationVat')} />
+      <Text style={ownStyles.percents}>7.7%</Text>
+      <OnBoardingParagraph text={t('confirmationVat2')} />
+    </View>
+    <Text style={ownStyles.bottomText}>
+      {(t('vatInformation') || '').toUpperCase()}
+    </Text>
+    <DoneButton handlePress={() => navigation.navigate('MainMenu')} />
+  </OnBoardingContainer>
+);
+
+export default translate(['onBoarding'])(OnBoardingTaxScreen);
