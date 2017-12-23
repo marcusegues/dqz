@@ -1,5 +1,8 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { Image } from 'react-native';
+// $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 import { moderateScale } from '../../../styles/Scaling';
 
@@ -12,9 +15,11 @@ const ownStyles = {
   },
 };
 
-const DoneButton = ({ handlePress }) => (
+type DoneButtonProps = {
+  handlePress: () => void,
+};
+const DoneButton = ({ handlePress }: DoneButtonProps) => (
   <Touchable
-    style={{}}
     background={Touchable.Ripple('#006699')}
     onPress={() => handlePress()}
   >
