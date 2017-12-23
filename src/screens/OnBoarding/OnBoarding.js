@@ -59,7 +59,7 @@ class OnBoarding extends React.Component<OnBoardingProps, OnBoardingState> {
           </View>
         </View>
         <DoneButton
-          handlePress={() => navigation.navigate('OnBoardingTaxScreen')}
+          onPress={() => navigation.navigate('OnBoardingTaxScreen')}
         />
       </OnBoardingContainer>
     );
