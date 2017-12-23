@@ -16,13 +16,10 @@ const ownStyles = {
 };
 
 type DoneButtonProps = {
-  handlePress: () => void,
+  onPress: () => void,
 };
-const DoneButton = ({ handlePress }: DoneButtonProps) => (
-  <Touchable
-    background={Touchable.Ripple('#006699')}
-    onPress={() => handlePress()}
-  >
+const DoneButton = ({ onPress }: DoneButtonProps) => (
+  <Touchable background={Touchable.Ripple('#006699')} onPress={() => onPress()}>
     <Image source={img} style={ownStyles.image} resizeMode="cover" />
   </Touchable>
 );

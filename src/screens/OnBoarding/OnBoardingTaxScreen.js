@@ -41,7 +41,7 @@ const OnBoardingTaxScreen = ({ navigation, t }: OnBoardingTaxScreenProps) => (
     <Text style={ownStyles.bottomText}>
       {(t('vatInformation') || '').toUpperCase()}
     </Text>
-    <DoneButton handlePress={() => navigation.navigate('MainMenu')} />
+    <DoneButton onPress={() => navigation.navigate('MainMenu')} />
   </OnBoardingContainer>
 );
 
