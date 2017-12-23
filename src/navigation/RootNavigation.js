@@ -19,6 +19,7 @@ import { UnderConstruction } from './underConstruction';
 import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
 import UnderConstructionWithSums from './underConstructionWithSums';
 import GoodQuantityListModal from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
+import OnBoardingTaxScreen from '../screens/OnBoarding/OnBoardingTaxScreen';
 
 export const stackNavigatorScreens = {
   Screens: {
@@ -43,6 +44,12 @@ export const stackNavigatorScreens = {
   },
   OnBoarding: {
     screen: OnBoarding,
+    navigationOptions: () => ({
+      header: null,
+    }),
+  },
+  OnBoardingTaxScreen: {
+    screen: OnBoardingTaxScreen,
     navigationOptions: () => ({
       header: null,
     }),
