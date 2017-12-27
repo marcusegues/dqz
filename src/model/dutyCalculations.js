@@ -10,7 +10,7 @@ import type {
   Category,
   DutyBracket,
   People,
-} from './types/basketPeopleTypes';
+} from './types/basketPeopleAmountsTypes';
 import type { DutyReport } from './types/calculationTypes';
 import { CategoriesArray, CategoriesRates } from './constants';
 import { makeDutyReportRecord } from './types/calculationTypes';

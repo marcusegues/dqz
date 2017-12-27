@@ -6,7 +6,7 @@ import {
   emptyBasket,
   addQuantity,
 } from '../configurationApi';
-import type { Basket } from '../types/basketPeopleTypes';
+import type { Basket } from '../types/basketPeopleAmountsTypes';
 
 // this is solely to trick jest.
 test('', () => expect(true).toBeTruthy());

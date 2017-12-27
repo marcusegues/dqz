@@ -11,10 +11,11 @@ import type {
   Basket,
   People,
   Category,
-} from '../../model/types/basketPeopleTypes';
+  Amounts,
+} from '../../model/types/basketPeopleAmountsTypes';
 import type { VatReport, DutyReport } from '../../model/types/calculationTypes';
 import { emptyBasket } from '../../model/configurationApi';
-import { makePeopleRecord } from '../../model/types/basketPeopleTypes';
+import { makePeopleRecord } from '../../model/types/basketPeopleAmountsTypes';
 import {
   makeDutyReportRecord,
   makeVatReportRecord,
@@ -159,6 +160,7 @@ type StateObj = {
   settings: SettingsType,
   currencyObject: CurrencyObject,
   validCurrencies: boolean,
+  amounts: Amounts,
 };
 
 export const getInitialState: RecordFactory<StateObj> = Immutable.Record({
@@ -169,6 +171,7 @@ export const getInitialState: RecordFactory<StateObj> = Immutable.Record({
   settings: makeSettingsRecord(),
   currencyObject: {},
   validCurrencies: false,
+  amounts: Immutable.Map(),
 });
 
 export type State = RecordOf<StateObj>;

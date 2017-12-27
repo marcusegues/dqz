@@ -18,7 +18,10 @@ import {
   getDeclarationSettings,
   getDeclarationDutyReport,
 } from '../../reducers';
-import type { People, Basket } from '../../model/types/basketPeopleTypes';
+import type {
+  People,
+  Basket,
+} from '../../model/types/basketPeopleAmountsTypes';
 import type {
   SettingsType,
   MainCategoriesType,

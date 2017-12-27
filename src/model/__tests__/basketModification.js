@@ -1,7 +1,7 @@
 // @flow
 /* global expect, test, describe */
 import Immutable from 'immutable';
-import type { Basket } from '../types/basketPeopleTypes';
+import type { Basket } from '../types/basketPeopleAmountsTypes';
 import {
   addAdult,
   addAmount,

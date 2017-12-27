@@ -10,7 +10,7 @@ import {
   vatByCategory,
   totalAmounts,
   applyAllowancesLastPerson,
-} from '../vatCalculations';
+} from '../vatCalculationsLegacy';
 import {
   ezvBasket1,
   ezvBasket10,
@@ -33,7 +33,7 @@ import {
   sampleBasket4,
 } from './fullBaskets';
 import { addAdult, addMinor, initPeople } from '../configurationApi';
-import { IndividualAllowance } from '../constants';
+import { INDIVIDUALALLOWANCE } from '../constants';
 
 const b1 = summarizeByVatBracket(sampleBasket1);
 const b2 = summarizeByVatBracket(sampleBasket2);
@@ -83,10 +83,10 @@ describe('VAT Calculations', () => {
   test('calculate allowance correctly', () => {
     expect(calculateAllowancesExceptLast(initPeople)).toBe(0);
     expect(calculateAllowancesExceptLast(addAdult(initPeople))).toBe(
-      IndividualAllowance
+      INDIVIDUALALLOWANCE
     );
     expect(calculateAllowancesExceptLast(addMinor(initPeople))).toBe(
-      IndividualAllowance
+      INDIVIDUALALLOWANCE
     );
   });
 

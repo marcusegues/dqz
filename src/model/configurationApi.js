@@ -3,16 +3,19 @@
 import Immutable from 'immutable';
 import type { List as ImmutableListType } from 'immutable';
 import type {
+  Amounts,
   Basket,
   Category,
   CategoryBasketItem,
   People,
-} from './types/basketPeopleTypes';
+} from './types/basketPeopleAmountsTypes';
 import { CategoriesArray } from './constants';
 import {
+  makeAmountsOfCurrencyRecord,
   makeCategoryBasketItemRecord,
   makePeopleRecord,
-} from './types/basketPeopleTypes';
+} from './types/basketPeopleAmountsTypes';
+import type { Currency } from './currencies';
 
 const emptyItem: CategoryBasketItem = makeCategoryBasketItemRecord();
 
@@ -100,86 +103,105 @@ export const getTotalQuantity = (basket: Basket, category: Category): number =>
     .reduce((a, v) => a + v, 0);
 
 // AMOUNTS
+export const initAmounts: Amounts = Immutable.Map();
+
+/**
+ * Helper to create currency section if not present
+ */
+const addCurrencyIfNeeded = (amounts: Amounts, currency: Currency): Amounts => {
+  if (amounts.has(currency)) {
+    return amounts;
+  }
+  return amounts.set(currency, makeAmountsOfCurrencyRecord());
+};
+
 /**
  * Adds an amount in a given category of a basket
- * @param basket
- * @param category
+ * @param amounts
+ * @param currency
  * @param amount
- * @returns Basket
+ * @returns Amounts type
  */
 export const addAmount = (
-  basket: Basket,
-  category: Category,
+  amounts: Amounts,
+  currency: Currency,
   amount: number
 ): Basket =>
-  basket.updateIn([category, 'volume', 'amounts'], Immutable.List(), amounts =>
-    amounts.push(amount)
+  addCurrencyIfNeeded(amounts, currency).updateIn(
+    [currency, 'amounts'],
+    Immutable.List(),
+    list => list.push(amount)
   );
 
 /**
  * Resets the amounts in a basket's category
- * @param basket
- * @param category
- * @returns Basket
+ * @param amounts
+ * @param currency
+ * @returns Amounts type
  */
-export const resetAmounts = (basket: Basket, category: Category): Basket =>
-  basket.setIn([category, 'volume', 'amounts'], Immutable.List());
+export const resetAmounts = (amounts: Amounts, currency: Currency): Amounts =>
+  addCurrencyIfNeeded(amounts, currency).setIn(
+    [currency, 'amounts'],
+    Immutable.List()
+  );
 
 /**
  * Gets the amounts of a basket's category
- * @param basket
- * @param category
+ * @param amounts
+ * @param currency
  * @returns ImmutableListType<number>
  */
 export const getAmounts = (
-  basket: Basket,
-  category: Category
+  amounts: Amounts,
+  currency: Currency
 ): ImmutableListType<number> =>
-  basket.getIn([category, 'volume', 'amounts'], Immutable.List());
-
-// TODO: remove single amounts (depends on the UI implementation)
+  amounts.getIn([currency, 'amounts'], Immutable.List());
 
 // AMOUNTS LARGE
 /**
  * Adds a large amount in a given category of a basket
- * @param basket
- * @param category
+ * @param amounts
+ * @param currency
  * @param amountLarge
- * @returns Basket
+ * @returns Amount type
  */
 export const addLargeAmount = (
-  basket: Basket,
-  category: Category,
+  amounts: Amounts,
+  currency: Currency,
   amountLarge: number
-): Basket =>
-  basket.updateIn(
-    [category, 'volume', 'amountsLarge'],
+): Amounts =>
+  addCurrencyIfNeeded(amounts, currency).updateIn(
+    [currency, 'amountsLarge'],
     Immutable.List(),
-    amountsLarge => amountsLarge.push(amountLarge)
+    list => list.push(amountLarge)
   );
 
 /**
  * Resets the large amounts in a basket's category
- * @param basket
- * @param category
+ * @param amounts
+ * @param currency
  * @returns Basket
  */
-export const resetLargeAmounts = (basket: Basket, category: Category): Basket =>
-  basket.setIn([category, 'volume', 'amountsLarge'], Immutable.List());
+export const resetLargeAmounts = (
+  amounts: Amounts,
+  currency: Currency
+): Amounts =>
+  addCurrencyIfNeeded(amounts, currency).setIn(
+    [currency, 'amountsLarge'],
+    Immutable.List()
+  );
 
 /**
  * Gets the large amounts of a basket's category
- * @param basket
- * @param category
+ * @param amounts
+ * @param currency
  * @returns ImmutableListType<number>
  */
 export const getLargeAmounts = (
-  basket: Basket,
-  category: Category
+  amounts: Amounts,
+  currency: Currency
 ): ImmutableListType<number> =>
-  basket.getIn([category, 'volume', 'amountsLarge'], Immutable.List());
-
-// TODO: remove single large amounts (depends on the UI implementation)
+  amounts.getIn([currency, 'amountsLarge'], Immutable.List());
 
 /**
  * Returns an init people configuration (1 adult, no minor)

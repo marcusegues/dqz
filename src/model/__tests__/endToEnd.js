@@ -7,7 +7,7 @@ import {
   presentationBasket2,
 } from './fullBaskets';
 import { calculateDuty } from '../dutyCalculations';
-import { calculateVat } from '../vatCalculations';
+import { calculateVat } from '../vatCalculationsLegacy';
 
 // parties
 const oneAdult = initPeople;

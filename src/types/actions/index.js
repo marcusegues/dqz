@@ -4,13 +4,13 @@ import type {
   Category,
   Basket,
   People,
-} from '../../model/types/basketPeopleTypes';
+} from '../../model/types/basketPeopleAmountsTypes';
 import type {
   MainCategory,
   MainCategoriesType,
   CurrentQuestionType,
 } from '../reducers/declaration';
-import type { CurrencyObject } from '../../model/currencies';
+import type { Currency, CurrencyObject } from '../../model/currencies';
 
 export type Action =
   // declaration
@@ -30,12 +30,12 @@ export type Action =
   }
   | {
     type: 'DECLARATION_BASKET_ADD_AMOUNT',
-    category: Category,
+    currency: Currency,
     amount: number,
   }
   | {
     type: 'DECLARATION_BASKET_ADD_LARGE_AMOUNT',
-    category: Category,
+    currency: Currency,
     largeAmount: number,
   }
   | {
@@ -91,7 +91,7 @@ export type Action =
   }
   | {
     type: 'DECLARATION_RESET_LARGE_AMOUNTS',
-    category: Category,
+    currency: Currency,
   }
   | {
     type: 'DECLARATION_SET_PEOPLE',
@@ -105,7 +105,7 @@ export type Action =
   }
   | {
     type: 'DECLARATION_RESET_AMOUNTS',
-    category: Category,
+    currency: Currency,
   }
   | {
     type: 'DECLARATION_SET_OVER_ALLOWANCE_NOT_ANSWERED',

@@ -5,14 +5,16 @@ import type {
   Category,
   CategoryInfoType,
   RatesType,
-} from './types/basketPeopleTypes';
+} from './types/basketPeopleAmountsTypes';
 import {
   makeCategoryInfoRecord,
   makeDutyBracketRecord,
   makeRatesRecord,
-} from './types/basketPeopleTypes';
+} from './types/basketPeopleAmountsTypes';
 
-export const IndividualAllowance: number = 300;
+export const INDIVIDUALALLOWANCE: number = 300;
+
+export const OVERALLVATRATE = 0.077;
 
 export const CATEGORIES: Set<Category> = new Set([
   'Meat',

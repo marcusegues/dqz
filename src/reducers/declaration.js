@@ -20,27 +20,18 @@ import type {
   Basket,
   Category,
   People,
-} from '../model/types/basketPeopleTypes';
+} from '../model/types/basketPeopleAmountsTypes';
 import type { VatReport, DutyReport } from '../model/types/calculationTypes';
-import * as fromModelApi from '../model/configurationApi';
+import * as modelApi from '../model/configurationApi';
 import { calculateDuty } from '../model/dutyCalculations';
-import { calculateVat } from '../model/vatCalculations';
-import type { CurrencyObject } from '../model/currencies';
+import { calculateVat } from '../model/vatCalculationsLegacy';
+import type { Currency, CurrencyObject } from '../model/currencies';
 
 const declaration = (
   state: State = getInitialState(),
   action: Action
 ): State => {
   switch (action.type) {
-    case 'DECLARATION_BASKET_ADD_QUANTITY': {
-      // eslint-disable-next-line prefer-destructuring
-      const category: Category = action.category;
-      const basket: Basket = state.get('basket');
-      return state.setIn(
-        ['basket'],
-        fromModelApi.addQuantity(basket, category, action.quantity)
-      );
-    }
     case 'UPDATE_CURRENCIES': {
       // eslint-disable-next-line prefer-destructuring
       const currencyObject: CurrencyObject = action.currencyObject;
@@ -49,7 +40,15 @@ const declaration = (
 
       const s1 = state.set('currencyObject', currencyObject);
       return s1.set('validCurrencies', validCurrencies);
-      // return s1;
+    }
+    case 'DECLARATION_BASKET_ADD_QUANTITY': {
+      // eslint-disable-next-line prefer-destructuring
+      const category: Category = action.category;
+      const basket: Basket = state.get('basket');
+      return state.setIn(
+        ['basket'],
+        modelApi.addQuantity(basket, category, action.quantity)
+      );
     }
     case 'DECLARATION_SET_BASKET': {
       // eslint-disable-next-line prefer-destructuring
@@ -60,25 +59,25 @@ const declaration = (
       const people: People = state.get('people');
       const adults: number = people.get('adults');
       const quantity: number = adults + action.quantityChange;
-      return state.set('people', fromModelApi.setAdultPeople(people, quantity));
+      return state.set('people', modelApi.setAdultPeople(people, quantity));
     }
     case 'DECLARATION_MINORS_CHANGE_QUANTITY': {
       const people: People = state.get('people');
       const minors: number = people.get('minors');
       const quantity: number = minors + action.quantityChange;
-      return state.set('people', fromModelApi.setMinorPeople(people, quantity));
+      return state.set('people', modelApi.setMinorPeople(people, quantity));
     }
     case 'DECLARATION_ADULTS_SET_QUANTITY': {
       const people: People = state.get('people');
       // eslint-disable-next-line prefer-destructuring
       const quantity: number = action.quantity;
-      return state.set('people', fromModelApi.setAdultPeople(people, quantity));
+      return state.set('people', modelApi.setAdultPeople(people, quantity));
     }
     case 'DECLARATION_MINORS_SET_QUANTITY': {
       const people: People = state.get('people');
       // eslint-disable-next-line prefer-destructuring
       const quantity: number = action.quantity;
-      return state.set('people', fromModelApi.setMinorPeople(people, quantity));
+      return state.set('people', modelApi.setMinorPeople(people, quantity));
     }
     case 'DECLARATION_SET_PEOPLE': {
       return state.set('people', action.people);
@@ -91,25 +90,22 @@ const declaration = (
     }
     case 'DECLARATION_BASKET_ADD_AMOUNT': {
       // eslint-disable-next-line prefer-destructuring
-      const category: Category = action.category;
+      const currency: Currency = action.currency;
       const basket: Basket = state.get('basket');
       // eslint-disable-next-line prefer-destructuring
       const amount: number = action.amount;
-      return state.set(
-        'basket',
-        fromModelApi.addAmount(basket, category, amount)
-      );
+      return state.set('basket', modelApi.addAmount(basket, currency, amount));
     }
 
     case 'DECLARATION_BASKET_ADD_LARGE_AMOUNT': {
       // eslint-disable-next-line prefer-destructuring
-      const category: Category = action.category;
+      const currency: Currency = action.currency;
       // eslint-disable-next-line prefer-destructuring
       const largeAmount: number = action.largeAmount;
       const basket: Basket = state.get('basket');
       return state.set(
         'basket',
-        fromModelApi.addLargeAmount(basket, category, largeAmount)
+        modelApi.addLargeAmount(basket, currency, largeAmount)
       );
     }
     case 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE': {
@@ -124,11 +120,8 @@ const declaration = (
     case 'DECLARATION_RESET_LARGE_AMOUNTS': {
       const basket: Basket = state.get('basket');
       // eslint-disable-next-line prefer-destructuring
-      const category: Category = action.category;
-      return state.set(
-        'basket',
-        fromModelApi.resetLargeAmounts(basket, category)
-      );
+      const currency: Currency = action.currency;
+      return state.set('basket', modelApi.resetLargeAmounts(basket, currency));
     }
     case 'DECLARATION_SET_OVER_ALLOWANCE_NOT_ANSWERED': {
       return state.setIn(['settings', 'overAllowance'], 'notAnswered');
@@ -136,8 +129,8 @@ const declaration = (
     case 'DECLARATION_RESET_AMOUNTS': {
       const basket: Basket = state.get('basket');
       // eslint-disable-next-line prefer-destructuring
-      const category: Category = action.category;
-      return state.set('basket', fromModelApi.resetAmounts(basket, category));
+      const currency: Currency = action.currency;
+      return state.set('basket', modelApi.resetAmounts(basket, currency));
     }
     case 'DECLARATION_ADD_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
