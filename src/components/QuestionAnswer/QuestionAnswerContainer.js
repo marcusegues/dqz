@@ -116,7 +116,13 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
   }
 
   render() {
-    const { questionStates, questionFlag } = this.state;
+    const {
+      questionStates,
+      questionFlag,
+      people,
+      basket,
+      settings,
+    } = this.state;
     const { t } = this.props;
 
     const flatListData = [
@@ -132,11 +138,14 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             }}
             questionState={questionStates.peopleInput}
             questionFlag={questionFlag.peopleInput}
-            onUpdate={people => {
-              this.setState({ people });
+            onUpdate={newPeople => {
+              this.setState({
+                people: newPeople,
+                duty: calculateDuty(basket, newPeople),
+              });
             }}
             onAnswer={() => {
-              this.props.onDeclarationSetPeople(this.state.people);
+              this.props.onDeclarationSetPeople(people);
               this.updateQA('peopleInput');
             }}
           />
@@ -156,15 +165,12 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             questionFlag={questionFlag.mainCategories}
             onUpdate={activeCategories => {
               this.setState({
-                settings: this.state.settings.set(
-                  'mainCategories',
-                  activeCategories
-                ),
+                settings: settings.set('mainCategories', activeCategories),
               });
             }}
             onAnswer={() => {
               this.props.onDeclarationSetMainCategories(
-                this.state.settings.get('mainCategories')
+                settings.get('mainCategories')
               );
               this.updateQA('mainCategories');
             }}
@@ -183,14 +189,14 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             }}
             questionState={questionStates.quantityInput}
             questionFlag={questionFlag.quantityInput}
-            onUpdate={basket => {
+            onUpdate={newBasket => {
               this.setState({
-                basket,
-                duty: calculateDuty(basket, this.state.people),
+                basket: newBasket,
+                duty: calculateDuty(newBasket, people),
               });
             }}
             onAnswer={() => {
-              this.props.onDeclarationSetBasket(this.state.basket);
+              this.props.onDeclarationSetBasket(basket);
               this.updateQA('quantityInput');
             }}
           />
