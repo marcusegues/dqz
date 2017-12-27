@@ -221,6 +221,30 @@ export const maerkiExamples1: Amounts = initAmounts.withMutations(amounts => {
   amounts = addAmount(amounts, 'EUR', 156.21);
   amounts = addAmount(amounts, 'USD', 129.28);
   amounts = addAmount(amounts, 'USD', 87.99);
-  amounts = addLargeAmount(amounts, 'USD', 12.34);
+  amounts = addAmount(amounts, 'USD', 12.34);
+  return amounts;
+});
+
+export const maerkiExamples2: Amounts = initAmounts.withMutations(amounts => {
+  amounts = addAmount(amounts, 'EUR', 114.45);
+  amounts = addAmount(amounts, 'EUR', 87.48);
+  amounts = addLargeAmount(amounts, 'EUR', 450.56);
+  amounts = addLargeAmount(amounts, 'EUR', 879.43);
+  amounts = addLargeAmount(amounts, 'EUR', 340.21);
+  amounts = addAmount(amounts, 'USD', 88.54);
+  amounts = addLargeAmount(amounts, 'USD', 659.77);
+  amounts = addLargeAmount(amounts, 'USD', 911.23);
+  return amounts;
+});
+
+export const maerkiExamples3: Amounts = initAmounts.withMutations(amounts => {
+  amounts = addAmount(amounts, 'EUR', 114.45);
+  amounts = addAmount(amounts, 'EUR', 87.48);
+  amounts = addLargeAmount(amounts, 'EUR', 450.56);
+  amounts = addLargeAmount(amounts, 'EUR', 879.43);
+  amounts = addLargeAmount(amounts, 'EUR', 340.21);
+  amounts = addAmount(amounts, 'USD', 88.54);
+  amounts = addLargeAmount(amounts, 'USD', 659.77);
+  amounts = addLargeAmount(amounts, 'USD', 911.23);
   return amounts;
 });
