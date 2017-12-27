@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Provider } from 'react-redux';
 import RootNavigation from './src/navigation/RootNavigation';
 import configureStore from './src/configureStore';
+import { parseCurrencyXML } from './src/model/currencies';
 
 const store = configureStore();
 window.myStore = store;
@@ -73,6 +74,12 @@ export default class App extends React.Component {
         // to remove this if you are not using it in your app
         // { 'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf') },
       }),
+      // load currencies
+      fetch(
+        'http://www.pwebapps.ezv.admin.ch/apps/rates/rate/getxml?activeSearchType=yesterday'
+      )
+        .then(response => response.text())
+        .then(rawdata => parseCurrencyXML(rawdata, store)),
     ]);
 
   _handleLoadingError = error => {

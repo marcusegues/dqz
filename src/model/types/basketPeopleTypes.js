@@ -27,11 +27,6 @@ export type Category =
   | 'Fertilizer'
   | 'Other';
 
-/**
- * todo, jsdoc
- */
-export type ExchangeRate = number;
-
 // CATEGORY INFO
 type CategoryInfoContent = {
   name: string,
