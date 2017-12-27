@@ -34,7 +34,7 @@ export const CATEGORIES: Set<Category> = new Set([
   'Other',
 ]);
 
-export const CategoriesArray = Array.from(CATEGORIES.values());
+export const categoriesArray = Array.from(CATEGORIES.values());
 
 export const CategoriesRates: RatesType = Immutable.Map([
   [

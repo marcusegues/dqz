@@ -12,7 +12,7 @@ import type {
   People,
 } from './types/basketPeopleAmountsTypes';
 import type { DutyReport } from './types/calculationTypes';
-import { CategoriesArray, CategoriesRates } from './constants';
+import { categoriesArray, CategoriesRates } from './constants';
 import { makeDutyReportRecord } from './types/calculationTypes';
 import { rounding } from './utils';
 import { getTotalQuantity } from './configurationApi';
@@ -23,7 +23,7 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
     Category,
     number
   > = Immutable.Map().withMutations(r => {
-    CategoriesArray.forEach(c => {
+    categoriesArray.forEach(c => {
       const quantityRaw: number = getTotalQuantity(basket, c);
       const adultsOnly: boolean = CategoriesRates.getIn(
         [c, 'adultsOnly'],

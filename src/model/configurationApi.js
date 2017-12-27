@@ -9,7 +9,7 @@ import type {
   CategoryBasketItem,
   People,
 } from './types/basketPeopleAmountsTypes';
-import { CategoriesArray } from './constants';
+import { categoriesArray } from './constants';
 import {
   makeAmountsOfCurrencyRecord,
   makeCategoryBasketItemRecord,
@@ -24,7 +24,7 @@ const emptyItem: CategoryBasketItem = makeCategoryBasketItemRecord();
  * @type Basket
  */
 export const emptyBasket: Basket = Immutable.Map(
-  CategoriesArray.map(c => [c, emptyItem])
+  categoriesArray.map(c => [c, emptyItem])
 );
 
 // QUANTITIES
@@ -126,7 +126,7 @@ export const addAmount = (
   amounts: Amounts,
   currency: Currency,
   amount: number
-): Basket =>
+): Amounts =>
   addCurrencyIfNeeded(amounts, currency).updateIn(
     [currency, 'amounts'],
     Immutable.List(),

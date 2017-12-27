@@ -39,7 +39,23 @@ export const currenciesArray: Array<Currency> = [
 
 export type CurrencyObject = { [Currency]: number };
 
-export const currencyExample: CurrencyObject = {};
+export const currencyExample: CurrencyObject = {
+  EUR: 1.17796,
+  USD: 0.99205,
+  CHF: 1,
+  AUD: 2,
+  CAD: 3,
+  DKK: 4,
+  GBP: 5,
+  HKD: 6,
+  JPY: 7,
+  MXN: 8,
+  NOK: 9,
+  NZD: 10,
+  RUB: 11,
+  SEK: 12,
+  ZAR: 13,
+};
 
 // export const getFilteredCurrencies = (): CurrencyObject => {};
 

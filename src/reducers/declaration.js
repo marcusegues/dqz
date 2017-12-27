@@ -24,8 +24,8 @@ import type {
 import type { VatReport, DutyReport } from '../model/types/calculationTypes';
 import * as modelApi from '../model/configurationApi';
 import { calculateDuty } from '../model/dutyCalculations';
-import { calculateVat } from '../model/vatCalculationsLegacy';
 import type { Currency, CurrencyObject } from '../model/currencies';
+import { calculateVat } from '../model/vatCalculations';
 
 const declaration = (
   state: State = getInitialState(),
@@ -168,13 +168,18 @@ const declaration = (
       return state.setIn(['settings', 'mainCategories'], mainCategories);
     }
     case 'DECLARATION_CALCULATE_DUES': {
+      // TODO remove? we don't want that in state.
       const newState = state.set(
         'dutyReport',
         calculateDuty(state.get('basket'), state.get('people'))
       );
       return newState.set(
         'vatReport',
-        calculateVat(state.get('basket'), state.get('people'))
+        calculateVat(
+          state.get('amounts'),
+          state.get('people'),
+          state.get('currencyObject')
+        )
       );
     }
     default: {

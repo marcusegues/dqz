@@ -60,10 +60,10 @@ export const calculateVat = (
 
   grandTotals.amounts = Math.max(
     0,
-    calculateAllowancesExceptLast(people) - grandTotals.amounts
+    grandTotals.amounts - calculateAllowancesExceptLast(people)
   );
 
-  const sumLastPerson = grandTotals.amounts + grandTotals.largeAmounts;
+  const sumLastPerson = grandTotals.amounts + grandTotals.amountsLarge;
 
   if (sumLastPerson <= INDIVIDUALALLOWANCE) {
     return makeVatReportRecord({
