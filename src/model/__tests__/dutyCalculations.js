@@ -2,8 +2,6 @@
 /* global expect, test, describe */
 import { calculateDuty } from '../dutyCalculations';
 import {
-  presentationBasket1,
-  presentationBasket2,
   sampleBasket1,
   sampleBasket5,
   sampleBasket6,

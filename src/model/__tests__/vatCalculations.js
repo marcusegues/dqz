@@ -14,6 +14,7 @@ import {
   ezvAmounts7,
   ezvAmounts8,
   ezvAmounts9,
+  maerkiExamples1,
   sampleAmounts1,
   sampleAmounts2,
   sampleAmounts3,
@@ -98,5 +99,8 @@ describe('VAT Calculations', () => {
     expect(
       calculateVat(ezvAmounts13, threeAdults, currencyExample)
     ).toMatchSnapshot();
+    expect(
+      calculateVat(maerkiExamples1, twoAdults, currencyExample).get('totalVat')
+    ).toBe(35.35);
   });
 });

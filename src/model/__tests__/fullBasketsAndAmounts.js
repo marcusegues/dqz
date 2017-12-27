@@ -214,3 +214,13 @@ export const ezvAmounts13: Amounts = initAmounts.withMutations(amounts => {
   amounts = addLargeAmount(amounts, 'EUR', 500);
   return amounts;
 });
+
+export const maerkiExamples1: Amounts = initAmounts.withMutations(amounts => {
+  amounts = addAmount(amounts, 'EUR', 250.15);
+  amounts = addAmount(amounts, 'EUR', 45.67);
+  amounts = addAmount(amounts, 'EUR', 156.21);
+  amounts = addAmount(amounts, 'USD', 129.28);
+  amounts = addAmount(amounts, 'USD', 87.99);
+  amounts = addLargeAmount(amounts, 'USD', 12.34);
+  return amounts;
+});

@@ -17,6 +17,7 @@ import type {
 } from '../types/reducers/declaration';
 import type { Action } from '../types/actions';
 import type {
+  Amounts,
   Basket,
   Category,
   People,
@@ -91,10 +92,13 @@ const declaration = (
     case 'DECLARATION_BASKET_ADD_AMOUNT': {
       // eslint-disable-next-line prefer-destructuring
       const currency: Currency = action.currency;
-      const basket: Basket = state.get('basket');
+      const amounts: Amounts = state.get('amounts');
       // eslint-disable-next-line prefer-destructuring
       const amount: number = action.amount;
-      return state.set('basket', modelApi.addAmount(basket, currency, amount));
+      return state.set(
+        'amounts',
+        modelApi.addAmount(amounts, currency, amount)
+      );
     }
 
     case 'DECLARATION_BASKET_ADD_LARGE_AMOUNT': {
@@ -102,10 +106,10 @@ const declaration = (
       const currency: Currency = action.currency;
       // eslint-disable-next-line prefer-destructuring
       const largeAmount: number = action.largeAmount;
-      const basket: Basket = state.get('basket');
+      const amounts: Amounts = state.get('amounts');
       return state.set(
-        'basket',
-        modelApi.addLargeAmount(basket, currency, largeAmount)
+        'amounts',
+        modelApi.addLargeAmount(amounts, currency, largeAmount)
       );
     }
     case 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE': {
@@ -118,19 +122,22 @@ const declaration = (
       return state.setIn(['settings', 'largeAmountPresent'], 'notAnswered');
     }
     case 'DECLARATION_RESET_LARGE_AMOUNTS': {
-      const basket: Basket = state.get('basket');
+      const amounts: Amounts = state.get('amounts');
       // eslint-disable-next-line prefer-destructuring
       const currency: Currency = action.currency;
-      return state.set('basket', modelApi.resetLargeAmounts(basket, currency));
+      return state.set(
+        'amounts',
+        modelApi.resetLargeAmounts(amounts, currency)
+      );
     }
     case 'DECLARATION_SET_OVER_ALLOWANCE_NOT_ANSWERED': {
       return state.setIn(['settings', 'overAllowance'], 'notAnswered');
     }
     case 'DECLARATION_RESET_AMOUNTS': {
-      const basket: Basket = state.get('basket');
+      const amounts: Amounts = state.get('amounts');
       // eslint-disable-next-line prefer-destructuring
       const currency: Currency = action.currency;
-      return state.set('basket', modelApi.resetAmounts(basket, currency));
+      return state.set('amounts', modelApi.resetAmounts(amounts, currency));
     }
     case 'DECLARATION_ADD_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
