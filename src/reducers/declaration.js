@@ -25,6 +25,7 @@ import type { VatReport, DutyReport } from '../model/types/calculationTypes';
 import * as fromModelApi from '../model/configurationApi';
 import { calculateDuty } from '../model/dutyCalculations';
 import { calculateVat } from '../model/vatCalculations';
+import type { CurrencyObject } from '../model/currencies';
 
 const declaration = (
   state: State = getInitialState(),
@@ -39,6 +40,16 @@ const declaration = (
         ['basket'],
         fromModelApi.addQuantity(basket, category, action.quantity)
       );
+    }
+    case 'UPDATE_CURRENCIES': {
+      // eslint-disable-next-line prefer-destructuring
+      const currencyObject: CurrencyObject = action.currencyObject;
+      // eslint-disable-next-line prefer-destructuring
+      const validCurrencies: boolean = action.validCurrencies;
+
+      const s1 = state.set('currencyObject', currencyObject);
+      return s1.set('validCurrencies', validCurrencies);
+      // return s1;
     }
     case 'DECLARATION_SET_BASKET': {
       // eslint-disable-next-line prefer-destructuring
@@ -217,3 +228,9 @@ export const getDeclarationVatReport = (state: State): VatReport =>
 
 export const getDeclarationDutyReport = (state: State): DutyReport =>
   state.get('dutyReport');
+
+export const getCurrenciesObject = (state: State): CurrencyObject =>
+  state.get('currencyObject');
+
+export const getCurrencyState = (state: State): boolean =>
+  state.get('validCurrencies');

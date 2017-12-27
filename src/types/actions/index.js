@@ -10,9 +10,15 @@ import type {
   MainCategoriesType,
   CurrentQuestionType,
 } from '../reducers/declaration';
+import type { CurrencyObject } from '../../model/currencies';
 
 export type Action =
   // declaration
+  | {
+    type: 'UPDATE_CURRENCIES',
+    currencyObject: CurrencyObject,
+    validCurrencies: boolean,
+  }
   | {
     type: 'DECLARATION_BASKET_ADD_QUANTITY',
     category: Category,

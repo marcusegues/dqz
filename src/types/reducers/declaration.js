@@ -19,6 +19,7 @@ import {
   makeDutyReportRecord,
   makeVatReportRecord,
 } from '../../model/types/calculationTypes';
+import type { CurrencyObject } from '../../model/currencies';
 
 export type FoodsCategory = 'Meat' | 'Butter' | 'Oils' | 'OtherFood';
 export type FoodsCategoriesType = ImmutableSetType<FoodsCategory>;
@@ -156,6 +157,8 @@ type StateObj = {
   vatReport: VatReport,
   dutyReport: DutyReport,
   settings: SettingsType,
+  currencyObject: CurrencyObject,
+  validCurrencies: boolean,
 };
 
 export const getInitialState: RecordFactory<StateObj> = Immutable.Record({
@@ -164,6 +167,8 @@ export const getInitialState: RecordFactory<StateObj> = Immutable.Record({
   vatReport: makeVatReportRecord(),
   dutyReport: makeDutyReportRecord(),
   settings: makeSettingsRecord(),
+  currencyObject: {},
+  validCurrencies: false,
 });
 
 export type State = RecordOf<StateObj>;
