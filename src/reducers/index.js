@@ -37,3 +37,9 @@ export const getDeclarationVatReport = state =>
 
 export const getDeclarationDutyReport = state =>
   fromDeclaration.getDeclarationDutyReport(state.declaration);
+
+export const getCurrencies = state =>
+  fromDeclaration.getCurrenciesObject(state.declaration);
+
+export const getCurrencyState = state =>
+  fromDeclaration.getCurrencyState(state.declaration);

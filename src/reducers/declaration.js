@@ -17,13 +17,15 @@ import type {
 } from '../types/reducers/declaration';
 import type { Action } from '../types/actions';
 import type {
+  Amounts,
   Basket,
   Category,
   People,
-} from '../model/types/basketPeopleTypes';
+} from '../model/types/basketPeopleAmountsTypes';
 import type { VatReport, DutyReport } from '../model/types/calculationTypes';
-import * as fromModelApi from '../model/configurationApi';
+import * as modelApi from '../model/configurationApi';
 import { calculateDuty } from '../model/dutyCalculations';
+import type { Currency, CurrencyObject } from '../model/currencies';
 import { calculateVat } from '../model/vatCalculations';
 
 const declaration = (
@@ -31,13 +33,22 @@ const declaration = (
   action: Action
 ): State => {
   switch (action.type) {
+    case 'UPDATE_CURRENCIES': {
+      // eslint-disable-next-line prefer-destructuring
+      const currencyObject: CurrencyObject = action.currencyObject;
+      // eslint-disable-next-line prefer-destructuring
+      const validCurrencies: boolean = action.validCurrencies;
+
+      const s1 = state.set('currencyObject', currencyObject);
+      return s1.set('validCurrencies', validCurrencies);
+    }
     case 'DECLARATION_BASKET_ADD_QUANTITY': {
       // eslint-disable-next-line prefer-destructuring
       const category: Category = action.category;
       const basket: Basket = state.get('basket');
       return state.setIn(
         ['basket'],
-        fromModelApi.addQuantity(basket, category, action.quantity)
+        modelApi.addQuantity(basket, category, action.quantity)
       );
     }
     case 'DECLARATION_SET_BASKET': {
@@ -49,25 +60,25 @@ const declaration = (
       const people: People = state.get('people');
       const adults: number = people.get('adults');
       const quantity: number = adults + action.quantityChange;
-      return state.set('people', fromModelApi.setAdultPeople(people, quantity));
+      return state.set('people', modelApi.setAdultPeople(people, quantity));
     }
     case 'DECLARATION_MINORS_CHANGE_QUANTITY': {
       const people: People = state.get('people');
       const minors: number = people.get('minors');
       const quantity: number = minors + action.quantityChange;
-      return state.set('people', fromModelApi.setMinorPeople(people, quantity));
+      return state.set('people', modelApi.setMinorPeople(people, quantity));
     }
     case 'DECLARATION_ADULTS_SET_QUANTITY': {
       const people: People = state.get('people');
       // eslint-disable-next-line prefer-destructuring
       const quantity: number = action.quantity;
-      return state.set('people', fromModelApi.setAdultPeople(people, quantity));
+      return state.set('people', modelApi.setAdultPeople(people, quantity));
     }
     case 'DECLARATION_MINORS_SET_QUANTITY': {
       const people: People = state.get('people');
       // eslint-disable-next-line prefer-destructuring
       const quantity: number = action.quantity;
-      return state.set('people', fromModelApi.setMinorPeople(people, quantity));
+      return state.set('people', modelApi.setMinorPeople(people, quantity));
     }
     case 'DECLARATION_SET_PEOPLE': {
       return state.set('people', action.people);
@@ -80,25 +91,25 @@ const declaration = (
     }
     case 'DECLARATION_BASKET_ADD_AMOUNT': {
       // eslint-disable-next-line prefer-destructuring
-      const category: Category = action.category;
-      const basket: Basket = state.get('basket');
+      const currency: Currency = action.currency;
+      const amounts: Amounts = state.get('amounts');
       // eslint-disable-next-line prefer-destructuring
       const amount: number = action.amount;
       return state.set(
-        'basket',
-        fromModelApi.addAmount(basket, category, amount)
+        'amounts',
+        modelApi.addAmount(amounts, currency, amount)
       );
     }
 
     case 'DECLARATION_BASKET_ADD_LARGE_AMOUNT': {
       // eslint-disable-next-line prefer-destructuring
-      const category: Category = action.category;
+      const currency: Currency = action.currency;
       // eslint-disable-next-line prefer-destructuring
       const largeAmount: number = action.largeAmount;
-      const basket: Basket = state.get('basket');
+      const amounts: Amounts = state.get('amounts');
       return state.set(
-        'basket',
-        fromModelApi.addLargeAmount(basket, category, largeAmount)
+        'amounts',
+        modelApi.addLargeAmount(amounts, currency, largeAmount)
       );
     }
     case 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE': {
@@ -111,22 +122,22 @@ const declaration = (
       return state.setIn(['settings', 'largeAmountPresent'], 'notAnswered');
     }
     case 'DECLARATION_RESET_LARGE_AMOUNTS': {
-      const basket: Basket = state.get('basket');
+      const amounts: Amounts = state.get('amounts');
       // eslint-disable-next-line prefer-destructuring
-      const category: Category = action.category;
+      const currency: Currency = action.currency;
       return state.set(
-        'basket',
-        fromModelApi.resetLargeAmounts(basket, category)
+        'amounts',
+        modelApi.resetLargeAmounts(amounts, currency)
       );
     }
     case 'DECLARATION_SET_OVER_ALLOWANCE_NOT_ANSWERED': {
       return state.setIn(['settings', 'overAllowance'], 'notAnswered');
     }
     case 'DECLARATION_RESET_AMOUNTS': {
-      const basket: Basket = state.get('basket');
+      const amounts: Amounts = state.get('amounts');
       // eslint-disable-next-line prefer-destructuring
-      const category: Category = action.category;
-      return state.set('basket', fromModelApi.resetAmounts(basket, category));
+      const currency: Currency = action.currency;
+      return state.set('amounts', modelApi.resetAmounts(amounts, currency));
     }
     case 'DECLARATION_ADD_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
@@ -164,13 +175,18 @@ const declaration = (
       return state.setIn(['settings', 'mainCategories'], mainCategories);
     }
     case 'DECLARATION_CALCULATE_DUES': {
+      // TODO remove? we don't want that in state.
       const newState = state.set(
         'dutyReport',
         calculateDuty(state.get('basket'), state.get('people'))
       );
       return newState.set(
         'vatReport',
-        calculateVat(state.get('basket'), state.get('people'))
+        calculateVat(
+          state.get('amounts'),
+          state.get('people'),
+          state.get('currencyObject')
+        )
       );
     }
     default: {
@@ -217,3 +233,9 @@ export const getDeclarationVatReport = (state: State): VatReport =>
 
 export const getDeclarationDutyReport = (state: State): DutyReport =>
   state.get('dutyReport');
+
+export const getCurrenciesObject = (state: State): CurrencyObject =>
+  state.get('currencyObject');
+
+export const getCurrencyState = (state: State): boolean =>
+  state.get('validCurrencies');
