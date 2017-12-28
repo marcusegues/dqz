@@ -160,6 +160,7 @@ type StateObj = {
   settings: SettingsType,
   currencyObject: CurrencyObject,
   validCurrencies: boolean,
+  currencyDate: Date,
   amounts: Amounts,
 };
 
@@ -171,6 +172,7 @@ export const getInitialState: RecordFactory<StateObj> = Immutable.Record({
   settings: makeSettingsRecord(),
   currencyObject: {},
   validCurrencies: false,
+  currencyDate: new Date('2000-01-01'),
   amounts: Immutable.Map(),
 });
 

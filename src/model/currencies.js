@@ -62,6 +62,7 @@ export const currencyExample: CurrencyObject = {
 export const parseCurrencyXML = (rawdata: any, store: any): void => {
   let currencyObject: CurrencyObject = { CHF: 1 };
   let validCurrencies: boolean = false;
+  let currencyDate: Date = new Date('2000-01-01');
 
   parseString(rawdata, (e, r) => {
     if (!r) {
@@ -71,7 +72,8 @@ export const parseCurrencyXML = (rawdata: any, store: any): void => {
       // console.log('Normal Case');
       validCurrencies = true;
       const { wechselkurse } = r;
-      const { devise } = wechselkurse;
+      const { devise, datum } = wechselkurse;
+      currencyDate = new Date(datum[0]);
       devise
         .filter(d => currenciesArray.indexOf(d.$.code.toUpperCase()) > -1)
         .forEach(c => {
@@ -86,5 +88,6 @@ export const parseCurrencyXML = (rawdata: any, store: any): void => {
     type: 'UPDATE_CURRENCIES',
     currencyObject,
     validCurrencies,
+    currencyDate,
   });
 };
