@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 // @flow
 import {
   getInitialState,
@@ -34,16 +35,15 @@ const declaration = (
 ): State => {
   switch (action.type) {
     case 'UPDATE_CURRENCIES': {
-      // eslint-disable-next-line prefer-destructuring
       const currencyObject: CurrencyObject = action.currencyObject;
-      // eslint-disable-next-line prefer-destructuring
       const validCurrencies: boolean = action.validCurrencies;
+      const currencyDate: Date = action.currencyDate;
 
       const s1 = state.set('currencyObject', currencyObject);
-      return s1.set('validCurrencies', validCurrencies);
+      const s2 = s1.set('currencyDate', currencyDate);
+      return s2.set('validCurrencies', validCurrencies);
     }
     case 'DECLARATION_BASKET_ADD_QUANTITY': {
-      // eslint-disable-next-line prefer-destructuring
       const category: Category = action.category;
       const basket: Basket = state.get('basket');
       return state.setIn(
@@ -52,7 +52,6 @@ const declaration = (
       );
     }
     case 'DECLARATION_SET_BASKET': {
-      // eslint-disable-next-line prefer-destructuring
       const basket: Basket = action.basket;
       return state.set('basket', basket);
     }
@@ -70,13 +69,11 @@ const declaration = (
     }
     case 'DECLARATION_ADULTS_SET_QUANTITY': {
       const people: People = state.get('people');
-      // eslint-disable-next-line prefer-destructuring
       const quantity: number = action.quantity;
       return state.set('people', modelApi.setAdultPeople(people, quantity));
     }
     case 'DECLARATION_MINORS_SET_QUANTITY': {
       const people: People = state.get('people');
-      // eslint-disable-next-line prefer-destructuring
       const quantity: number = action.quantity;
       return state.set('people', modelApi.setMinorPeople(people, quantity));
     }
@@ -90,10 +87,8 @@ const declaration = (
       return state.setIn(['settings', 'overAllowance'], false);
     }
     case 'DECLARATION_BASKET_ADD_AMOUNT': {
-      // eslint-disable-next-line prefer-destructuring
       const currency: Currency = action.currency;
       const amounts: Amounts = state.get('amounts');
-      // eslint-disable-next-line prefer-destructuring
       const amount: number = action.amount;
       return state.set(
         'amounts',

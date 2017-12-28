@@ -18,6 +18,7 @@ export type Action =
     type: 'UPDATE_CURRENCIES',
     currencyObject: CurrencyObject,
     validCurrencies: boolean,
+    currencyDate: Date,
   }
   | {
     type: 'DECLARATION_BASKET_ADD_QUANTITY',
