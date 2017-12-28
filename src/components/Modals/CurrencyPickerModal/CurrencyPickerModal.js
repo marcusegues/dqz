@@ -15,7 +15,7 @@ import styles from '../styles/CurrencyPickerModal';
 
 type PickerState = {
   currency: string,
-  amount: number,
+  amount: string,
 };
 
 class CurrencyPickerModal extends React.Component<any, PickerState> {
