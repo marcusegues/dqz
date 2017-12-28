@@ -84,8 +84,7 @@ export const stackNavigatorScreens = {
 export const stackNavigatorConfig = {
   navigationOptions: defaultNavigationOptions,
   cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-  initialRouteName: 'CurrencyPickerModal',
-  // initialRouteName: 'Screens',
+  initialRouteName: 'OnBoarding',
 };
 
 const RootStackNavigator = StackNavigator(
