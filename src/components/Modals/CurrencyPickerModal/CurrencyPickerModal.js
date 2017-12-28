@@ -12,7 +12,7 @@ import CardHeader from '../../QuestionAnswer/cards/subcomponents/CardHeader';
 import CardHeaderSubText from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
 import { currencyPicker } from './currencyPickerData';
 import styles from '../styles/CurrencyPickerModal';
-import { IndividualAllowance } from '../../../model/constants';
+import { INDIVIDUALALLOWANCE } from '../../../model/constants';
 
 type PickerState = {
   currency: string,
@@ -35,7 +35,7 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
       >
         <PickerCard style={{ top: '16%' }}>
           <CardHeader
-            text={t(['currencyPickerTitle'], { value: IndividualAllowance })}
+            text={t(['currencyPickerTitle'], { value: INDIVIDUALALLOWANCE })}
           />
           <CardHeaderSubText text={t(['currencyPickerSubTitle'])} />
 
