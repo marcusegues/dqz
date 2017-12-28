@@ -41,10 +41,10 @@ export const fr: LocaleType = makeLocaleRecord({
     confirmPicker: 'Confirmer {{value}}',
     standardCategoryPicker: 'Standard',
     individualCategoryPicker: 'Exact',
-    currencyPickerTitle: "Ramassez l'objet avec plus de 300.00 CHF",
+    currencyPickerTitle: "Ramassez l'objet avec plus de {{value}} CHF",
     currencyPickerSubTitle:
       "Enregistrer la valeur nette de l'article dans sa devise d'origine:",
-    currencyPickerCourse: 'bien sûr de',
+    currencyPickerRate: 'i18n',
   }),
   payment: makePaymentNSRecord({}),
 });

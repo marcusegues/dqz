@@ -12,6 +12,7 @@ import CardHeader from '../../QuestionAnswer/cards/subcomponents/CardHeader';
 import CardHeaderSubText from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
 import { currencyPicker } from './currencyPickerData';
 import styles from '../styles/CurrencyPickerModal';
+import { IndividualAllowance } from '../../../model/constants';
 
 type PickerState = {
   currency: string,
@@ -33,7 +34,9 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
         modalVisible={this.props.modalVisible}
       >
         <PickerCard style={{ top: '16%' }}>
-          <CardHeader text={t(['currencyPickerTitle'])} />
+          <CardHeader
+            text={t(['currencyPickerTitle'], { value: IndividualAllowance })}
+          />
           <CardHeaderSubText text={t(['currencyPickerSubTitle'])} />
 
           <View style={[ownStyles.pickerContainer, {}]}>
@@ -77,7 +80,7 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
               marginTop: 10,
               textAlign: 'center',
             }}
-            text={`102.13 CHF (${t(['currencyPickerCourse'])} 11.12.2017)`}
+            text={`102.13 CHF (${t(['currencyPickerRate'])} 11.12.2017)`}
           />
         </PickerCard>
       </AppModal>

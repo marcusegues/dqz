@@ -84,10 +84,10 @@ export const en: LocaleType = makeLocaleRecord({
     confirmPicker: 'Confirm {{value}}',
     standardCategoryPicker: 'Standard',
     individualCategoryPicker: 'Exact',
-    currencyPickerTitle: 'Collect item with more than 300.00 CHF',
+    currencyPickerTitle: 'Enter item with more than {{value}} CHF',
     currencyPickerSubTitle:
       'Record the net value of the item in its original currency:',
-    currencyPickerCourse: 'course from',
+    currencyPickerRate: 'Rate of',
   }),
   payment: makePaymentNSRecord({
     overViewTitle: 'Summary of your Declaration',
