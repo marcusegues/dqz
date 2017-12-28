@@ -50,6 +50,14 @@ export default class App extends React.Component {
         require('./assets/images/Swiss_Country.png'),
         require('./assets/images/grey_logo.png'),
         require('./assets/images/kreuz.png'),
+
+        require('./assets/icons/mwst.png'),
+        require('./assets/icons/mainCategories.png'),
+        require('./assets/icons/travellers.png'),
+        require('./assets/icons/adult.png'),
+        require('./assets/icons/kids.png'),
+        require('./assets/icons/cigarette_new.png'),
+        require('./assets/icons/meat_new.png'),
       ]),
       Font.loadAsync({
         open_sans_extra_bold: require('./assets/fonts/OpenSans-ExtraBold.ttf'),
