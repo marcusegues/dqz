@@ -1,21 +1,20 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { View, Picker, TextInput, StyleSheet } from 'react-native';
+import { View, Picker, TextInput } from 'react-native';
 import { translate } from 'react-i18next';
 import AppModal from '../AppModal';
 import RedButton from '../../Buttons/RedButton';
-import ownStyles from '../styles/PickerModal';
 import PickerCard from './subComponents/PickerCard';
 import PickerComponent from './subComponents/PickerComponent';
 import CardHeader from '../../QuestionAnswer/cards/subcomponents/CardHeader';
 import CardHeaderSubText from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
 import { currencyPicker } from './currencyPickerData';
-import { moderateScale } from '../../../styles/Scaling';
+import ownStyles from '../styles/CurrencyPickerModal';
 
 type PickerState = {
   currency: string,
-  amount: number,
+  amount: string,
 };
 
 class CurrencyPickerModal extends React.Component<any, PickerState> {
@@ -38,18 +37,7 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
 
           <View style={[ownStyles.pickerContainer, {}]}>
             <TextInput
-              style={{
-                height: 40,
-                borderColor: '#A0A0A0',
-                width: 110,
-                borderBottomWidth: StyleSheet.hairlineWidth,
-                borderBottomColor: '#9B9B9B',
-                textAlign: 'center',
-                marginHorizontal: 20,
-                fontFamily: 'roboto_regular',
-                fontSize: moderateScale(24),
-                color: '#1a1a1a',
-              }}
+              style={ownStyles.textInput}
               onChangeText={value => this.setState({ amount: value })}
               value={this.state.amount}
               autoFocus
