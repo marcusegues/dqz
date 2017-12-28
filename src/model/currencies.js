@@ -60,13 +60,12 @@ export const currencyExample: CurrencyObject = {
 // export const getFilteredCurrencies = (): CurrencyObject => {};
 
 export const parseCurrencyXML = (rawdata: any, store: any): void => {
-  // console.log(rawdata);
   let currencyObject: CurrencyObject = {};
   let validCurrencies: boolean = false;
 
   parseString(rawdata, (e, r) => {
     if (!r) {
-      // console.log('Error Case'); // TODO
+      // console.log('Error Case');
       currenciesArray.forEach(c => {
         currencyObject[c] = 1.23;
       });
@@ -77,10 +76,15 @@ export const parseCurrencyXML = (rawdata: any, store: any): void => {
       const { devise } = wechselkurse;
       currencyObject = devise
         .filter(d => currenciesArray.indexOf(d.$.code.toUpperCase()) > -1)
-        .map(c => ({ [c.$.code.toUpperCase()]: c.kurs[0] }));
+        .map(c => {
+          const kurs = c.kurs[0];
+          const waehrung = c.waehrung[0];
+          const multiplier = +waehrung.replace(/ .*/, '');
+          const exchangeRate = kurs / multiplier;
+          return { [c.$.code.toUpperCase()]: exchangeRate };
+        });
     }
   });
-  // console.log(currencyObject);
   store.dispatch({
     type: 'UPDATE_CURRENCIES',
     currencyObject,
