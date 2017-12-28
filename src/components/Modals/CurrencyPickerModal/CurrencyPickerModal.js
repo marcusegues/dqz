@@ -33,8 +33,8 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
         modalVisible={this.props.modalVisible}
       >
         <PickerCard style={{ top: '16%' }}>
-          <CardHeader text="Gegenstand mit mehr als 300.00 CHF erfassen" />
-          <CardHeaderSubText text="Erfassen Sie den Nettowert des Gegenstands in seiner Original-Währung: " />
+          <CardHeader text={t(['currencyPickerTitle'])} />
+          <CardHeaderSubText text={t(['currencyPickerSubTitle'])} />
 
           <View style={[ownStyles.pickerContainer, {}]}>
             <TextInput
@@ -77,7 +77,7 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
               marginTop: 10,
               textAlign: 'center',
             }}
-            text="102.13 CHF (Kurs vom 11.12.2017)"
+            text={`102.13 CHF (${t(['currencyPickerCourse'])} 11.12.2017)`}
           />
         </PickerCard>
       </AppModal>

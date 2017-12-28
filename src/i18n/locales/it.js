@@ -41,6 +41,10 @@ export const it: LocaleType = makeLocaleRecord({
     confirmPicker: '💰 {{value}}',
     standardCategoryPicker: '🏟️',
     individualCategoryPicker: '🔀',
+    currencyPickerTitle: 'Raccogli oggetti con oltre 300.00 CHF',
+    currencyPickerSubTitle:
+      "Registra il valore netto dell'articolo nella sua valuta originale:",
+    currencyPickerCourse: 'ovviamente da',
   }),
   payment: makePaymentNSRecord({}),
 });
