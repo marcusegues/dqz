@@ -5,16 +5,17 @@ import { View, Picker, TextInput } from 'react-native';
 import { translate } from 'react-i18next';
 import AppModal from '../AppModal';
 import RedButton from '../../Buttons/RedButton';
+import ownStyles from '../styles/PickerModal';
 import PickerCard from './subComponents/PickerCard';
 import PickerComponent from './subComponents/PickerComponent';
 import CardHeader from '../../QuestionAnswer/cards/subcomponents/CardHeader';
 import CardHeaderSubText from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
 import { currencyPicker } from './currencyPickerData';
-import ownStyles from '../styles/CurrencyPickerModal';
+import styles from '../styles/CurrencyPickerModal';
 
 type PickerState = {
   currency: string,
-  amount: string,
+  amount: number,
 };
 
 class CurrencyPickerModal extends React.Component<any, PickerState> {
@@ -37,7 +38,7 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
 
           <View style={[ownStyles.pickerContainer, {}]}>
             <TextInput
-              style={ownStyles.textInput}
+              style={styles.textInput}
               onChangeText={value => this.setState({ amount: value })}
               value={this.state.amount}
               autoFocus
