@@ -11,14 +11,16 @@ import type {
   Basket,
   People,
   Category,
-} from '../../model/types/basketPeopleTypes';
+  Amounts,
+} from '../../model/types/basketPeopleAmountsTypes';
 import type { VatReport, DutyReport } from '../../model/types/calculationTypes';
 import { emptyBasket } from '../../model/configurationApi';
-import { makePeopleRecord } from '../../model/types/basketPeopleTypes';
+import { makePeopleRecord } from '../../model/types/basketPeopleAmountsTypes';
 import {
   makeDutyReportRecord,
   makeVatReportRecord,
 } from '../../model/types/calculationTypes';
+import type { CurrencyObject } from '../../model/currencies';
 
 export type FoodsCategory = 'Meat' | 'Butter' | 'Oils' | 'OtherFood';
 export type FoodsCategoriesType = ImmutableSetType<FoodsCategory>;
@@ -156,6 +158,9 @@ type StateObj = {
   vatReport: VatReport,
   dutyReport: DutyReport,
   settings: SettingsType,
+  currencyObject: CurrencyObject,
+  validCurrencies: boolean,
+  amounts: Amounts,
 };
 
 export const getInitialState: RecordFactory<StateObj> = Immutable.Record({
@@ -164,6 +169,9 @@ export const getInitialState: RecordFactory<StateObj> = Immutable.Record({
   vatReport: makeVatReportRecord(),
   dutyReport: makeDutyReportRecord(),
   settings: makeSettingsRecord(),
+  currencyObject: {},
+  validCurrencies: false,
+  amounts: Immutable.Map(),
 });
 
 export type State = RecordOf<StateObj>;

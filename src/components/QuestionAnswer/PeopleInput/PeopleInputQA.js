@@ -10,7 +10,7 @@ import {
   subtractAdult,
   subtractMinor,
 } from '../../../model/configurationApi';
-import type { People } from '../../../model/types/basketPeopleTypes';
+import type { People } from '../../../model/types/basketPeopleAmountsTypes';
 import type { CardProps } from '../QuestionAnswerContainer';
 
 const PeopleInputQA = (props: CardProps) => {

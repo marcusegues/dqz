@@ -1,6 +1,6 @@
 // @flow
 
-import type { Category } from '../../../model/types/basketPeopleTypes';
+import type { Category } from '../../../model/types/basketPeopleAmountsTypes';
 
 type PickerItem = {
   id: number,

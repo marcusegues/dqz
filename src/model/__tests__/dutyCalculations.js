@@ -2,15 +2,13 @@
 /* global expect, test, describe */
 import { calculateDuty } from '../dutyCalculations';
 import {
-  presentationBasket1,
-  presentationBasket2,
   sampleBasket1,
   sampleBasket5,
   sampleBasket6,
   sampleBasket7,
   sampleBasket8,
   sampleBasket9,
-} from './fullBaskets';
+} from './fullBasketsAndAmounts';
 import {
   addAdult,
   addMinor,
@@ -66,13 +64,6 @@ describe('Duty Calculations', () => {
   test('it calculates duty under various scenarios - 20 Adults', () => {
     expect(
       calculateDuty(sampleBasket1, setAdultPeople(initPeople, 20))
-    ).toMatchSnapshot();
-  });
-
-  test('calculate duty for presentation baskets', () => {
-    expect(calculateDuty(presentationBasket1, initPeople)).toMatchSnapshot();
-    expect(
-      calculateDuty(presentationBasket2, addMinor(initPeople))
     ).toMatchSnapshot();
   });
 });

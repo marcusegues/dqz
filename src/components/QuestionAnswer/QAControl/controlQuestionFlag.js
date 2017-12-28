@@ -6,7 +6,7 @@ import type {
   QuestionType,
 } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
-import type { Basket } from '../../../model/types/basketPeopleTypes';
+import type { Basket } from '../../../model/types/basketPeopleAmountsTypes';
 
 export const anyQuantitiesInBasket = (basket: Basket): boolean =>
   basket

@@ -1,7 +1,7 @@
 // @flow
 /* global expect, test, describe */
 import Immutable from 'immutable';
-import type { Basket } from '../types/basketPeopleTypes';
+import type { Amounts, Basket } from '../types/basketPeopleAmountsTypes';
 import {
   addAdult,
   addAmount,
@@ -26,8 +26,10 @@ import {
   subtractMinor,
   getQuantities,
   deleteQuantity,
+  initAmounts,
 } from '../configurationApi';
-import { CategoriesArray } from '../constants';
+import { categoriesArray } from '../constants';
+import { currenciesArray } from '../currencies';
 
 const basket1: Basket = emptyBasket;
 
@@ -38,15 +40,11 @@ const quantityBasket2: Basket = addQuantities(basket1, [
 ]);
 const quantityBasket3: Basket = basket1;
 
-const amountBasket1: Basket = addAmount(basket1, 'Butter', 12.34);
-const amountBasket2: Basket = addAmount(amountBasket1, 'Butter', 34.56);
+const amounts1: Amounts = addAmount(initAmounts, 'EUR', 12.34);
+const amounts2: Amounts = addAmount(amounts1, 'EUR', 34.56);
 
-const largeAmountBasket1: Basket = addLargeAmount(basket1, 'Tobacco', 1234);
-const largeAmountBasket2: Basket = addLargeAmount(
-  largeAmountBasket1,
-  'Tobacco',
-  1234
-);
+const largeAmounts1: Amounts = addLargeAmount(amounts1, 'EUR', 1234);
+const largeAmounts2: Amounts = addLargeAmount(largeAmounts1, 'EUR', 1234);
 
 const twoAdultsNoMinor = addAdult(initPeople);
 const noAdultsNoMinor = subtractAdult(initPeople);
@@ -54,7 +52,7 @@ const oneAdultOneMinor = addMinor(initPeople);
 
 describe('The basket / quantites: ', () => {
   test('defaults to 0 quantity', () => {
-    CategoriesArray.forEach(c =>
+    categoriesArray.forEach(c =>
       expect(getTotalQuantity(emptyBasket, c)).toBe(0)
     );
   });
@@ -69,7 +67,7 @@ describe('The basket / quantites: ', () => {
     expect(getTotalQuantity(quantityBasket2, 'Meat')).toBe(123);
   });
   test('is immutable', () => {
-    CategoriesArray.forEach(c =>
+    categoriesArray.forEach(c =>
       expect(getTotalQuantity(quantityBasket3, c)).toBe(0)
     );
   });
@@ -111,53 +109,53 @@ describe('The basket / quantites: ', () => {
   });
 });
 
-describe('The basket / amounts: ', () => {
+describe('The Amounts: ', () => {
   test('defaults to empty set of amounts', () => {
-    CategoriesArray.forEach(c =>
-      expect(getAmounts(emptyBasket, c)).toBe(Immutable.List())
+    currenciesArray.forEach(c =>
+      expect(getAmounts(initAmounts, c)).toBe(Immutable.List())
     );
   });
   test('adds amounts: ', () => {
-    expect(getAmounts(amountBasket1, 'Butter').toString()).toBe(
+    expect(getAmounts(amounts1, 'EUR').toString()).toBe(
       Immutable.List([12.34]).toString()
     );
   });
   test('adds another amount: ', () => {
-    expect(getAmounts(amountBasket2, 'Butter').toString()).toBe(
+    expect(getAmounts(amounts2, 'EUR').toString()).toBe(
       Immutable.List([12.34, 34.56]).toString()
     );
   });
   test('leaves other amounts untouched: ', () => {
-    expect(getAmounts(amountBasket1, 'Meat')).toBe(Immutable.List());
+    expect(getAmounts(amounts1, 'USD')).toBe(Immutable.List());
   });
   test('resets amounts: ', () => {
-    const resetted: Basket = resetAmounts(amountBasket1, 'Butter');
-    expect(getAmounts(resetted, 'Butter')).toBe(Immutable.List());
+    const resetted: Amounts = resetAmounts(amounts1, 'EUR');
+    expect(getAmounts(resetted, 'EUR')).toBe(Immutable.List());
   });
 });
 
-describe('The basket / large amounts: ', () => {
+describe('The large amounts: ', () => {
   test('defaults to empty set of amounts', () => {
-    CategoriesArray.forEach(c =>
-      expect(getLargeAmounts(emptyBasket, c)).toBe(Immutable.List())
+    currenciesArray.forEach(c =>
+      expect(getLargeAmounts(initAmounts, c)).toBe(Immutable.List())
     );
   });
   test('adds large amounts: ', () => {
-    expect(getLargeAmounts(largeAmountBasket1, 'Tobacco').toString()).toBe(
+    expect(getLargeAmounts(largeAmounts1, 'EUR').toString()).toBe(
       Immutable.List([1234]).toString()
     );
   });
   test('adds another large amount: ', () => {
-    expect(getLargeAmounts(largeAmountBasket2, 'Tobacco').toString()).toBe(
+    expect(getLargeAmounts(largeAmounts2, 'EUR').toString()).toBe(
       Immutable.List([1234, 1234]).toString()
     );
   });
   test('leaves other large amounts untouched: ', () => {
-    expect(getLargeAmounts(amountBasket1, 'Meat')).toBe(Immutable.List());
+    expect(getLargeAmounts(amounts1, 'USD')).toBe(Immutable.List());
   });
   test('resets large amounts: ', () => {
-    const resetted: Basket = resetLargeAmounts(amountBasket1, 'Tobacco');
-    expect(getLargeAmounts(resetted, 'Tobacco')).toBe(Immutable.List());
+    const resetted: Amounts = resetLargeAmounts(amounts1, 'EUR');
+    expect(getLargeAmounts(resetted, 'EUR')).toBe(Immutable.List());
   });
 });
 

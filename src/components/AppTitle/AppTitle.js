@@ -28,8 +28,9 @@ const ownStyles = {
   },
   logo: {
     width: null,
-    height: scale(60),
-    marginVertical: 10,
+    height: scale(70),
+    marginTop: 17,
+    marginBottom: 8,
   },
 };
 

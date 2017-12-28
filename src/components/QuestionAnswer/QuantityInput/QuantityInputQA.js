@@ -8,7 +8,10 @@ import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/
 import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { MainCategory } from '../../../types/reducers/declaration';
-import type { Basket, Category } from '../../../model/types/basketPeopleTypes';
+import type {
+  Basket,
+  Category,
+} from '../../../model/types/basketPeopleAmountsTypes';
 import type { CardProps } from '../QuestionAnswerContainer';
 import QuantityInputAnswerCard from '../cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
 import { addQuantity, deleteQuantity } from '../../../model/configurationApi';

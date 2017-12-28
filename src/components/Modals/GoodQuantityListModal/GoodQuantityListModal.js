@@ -15,7 +15,10 @@ import {
   getTotalQuantity,
 } from '../../../model/configurationApi';
 import type { QuantityInputState } from '../../QuestionAnswer/QuantityInput/QuantityInputQA';
-import type { Basket, Category } from '../../../model/types/basketPeopleTypes';
+import type {
+  Basket,
+  Category,
+} from '../../../model/types/basketPeopleAmountsTypes';
 import QuantityRow from './subcomponents/QuantityRow';
 import { MAIN_RED } from '../../../styles/colors';
 import { moderateScale } from '../../../styles/Scaling';

@@ -57,6 +57,10 @@ export const de: LocaleType = makeLocaleRecord({
     onBoardingMessage:
       'Wir haben Ihre Sprache basierend auf Ihren aktuellen Systemeinstellungen festgelegt',
     selectLanguage: 'Wählen Sie eine andere Sprache',
+    confirmationVat:
+      'Hiermit bestätige ich, dass ich den einheitlichen Mehrwertsteuersatz von ',
+    confirmationVat2: 'bei der Verzollung von Waren akzeptiere.',
+    vatInformation: 'Weitere Informationen',
   }),
   peopleInput: makePeopleInputNSRecord({
     peopleInputQuestion:
