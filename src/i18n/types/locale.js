@@ -96,6 +96,9 @@ type OnBoardingNS = {
   welcome: string,
   onBoardingMessage: string,
   selectLanguage: string,
+  confirmationVat: string,
+  confirmationVat2: string,
+  vatInformation: string,
 };
 
 export const makeOnBoardingNSRecord: RecordFactory<
@@ -104,6 +107,9 @@ export const makeOnBoardingNSRecord: RecordFactory<
   welcome: 'i18n',
   onBoardingMessage: 'i18n',
   selectLanguage: 'i18n',
+  confirmationVat: 'i18n',
+  confirmationVat2: 'i18n',
+  vatInformation: 'i18n',
 });
 
 export type OnBoardingNSType = RecordOf<OnBoardingNS>;

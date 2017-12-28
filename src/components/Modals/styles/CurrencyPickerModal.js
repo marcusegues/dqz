@@ -6,7 +6,7 @@ export default StyleSheet.create({
     height: 40,
     borderColor: '#A0A0A0',
     width: 110,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: 1,
     borderBottomColor: '#9B9B9B',
     textAlign: 'center',
     marginHorizontal: 20,

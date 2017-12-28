@@ -6,6 +6,7 @@ import type {
   List as ImmutableListType,
 } from 'immutable';
 import Immutable from 'immutable';
+import type { Currency } from '../currencies';
 
 /**
  * todo, jsdoc
@@ -26,11 +27,6 @@ export type Category =
   | 'AnimalFeed'
   | 'Fertilizer'
   | 'Other';
-
-/**
- * todo, jsdoc
- */
-export type ExchangeRate = number;
 
 // CATEGORY INFO
 type CategoryInfoContent = {
@@ -55,41 +51,22 @@ export type CategoryInfoType = ImmutableMapType<Category, CategoryInfo>;
 // CATEGORY VOLUME
 type CategoryVolumeContent = {
   quantities: ImmutableListType<number>,
-  amounts: ImmutableListType<number>,
-  amountsLarge: ImmutableListType<number>,
 };
 const makeCategoryVolumeRecord: RecordFactory<
   CategoryVolumeContent
 > = Immutable.Record({
   quantities: Immutable.List(),
-  amounts: Immutable.List(),
-  amountsLarge: Immutable.List(),
 });
 type CategoryVolume = RecordOf<CategoryVolumeContent>;
-
-// CATEGORY DUES
-type CategoryDuesContent = {
-  duty: number,
-  vat: number,
-};
-const makeCategoryDuesRecord: RecordFactory<
-  CategoryDuesContent
-> = Immutable.Record({
-  duty: 0,
-  vat: 0,
-});
-type CategoryDues = RecordOf<CategoryDuesContent>;
 
 // CATEGORY BASKET ITEM
 type CategoryBasketItemContent = {
   volume: CategoryVolume,
-  dues: CategoryDues,
 };
 export const makeCategoryBasketItemRecord: RecordFactory<
   CategoryBasketItemContent
 > = Immutable.Record({
   volume: makeCategoryVolumeRecord(),
-  dues: makeCategoryDuesRecord(),
 });
 
 /**
@@ -98,7 +75,7 @@ export const makeCategoryBasketItemRecord: RecordFactory<
 export type CategoryBasketItem = RecordOf<CategoryBasketItemContent>;
 
 /**
- * todo, jsdoc
+ * Basket Type, omnipresent
  */
 export type Basket = ImmutableMapType<Category, CategoryBasketItem>;
 
@@ -147,3 +124,20 @@ export const makePeopleRecord: RecordFactory<PeopleContent> = Immutable.Record({
   minors: 0,
 });
 export type People = RecordOf<PeopleContent>;
+
+// AMOUNTS
+type AmountsOfCurrencyContent = {
+  amounts: ImmutableListType<number>,
+  amountsLarge: ImmutableListType<number>,
+};
+
+export const makeAmountsOfCurrencyRecord: RecordFactory<
+  AmountsOfCurrencyContent
+> = Immutable.Record({
+  amounts: Immutable.List(),
+  amountsLarge: Immutable.List(),
+});
+
+export type AmountsOfCurrency = RecordOf<AmountsOfCurrencyContent>;
+
+export type Amounts = ImmutableMapType<Currency, AmountsOfCurrency>;

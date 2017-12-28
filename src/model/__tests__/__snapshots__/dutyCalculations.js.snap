@@ -1,51 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Duty Calculations calculate duty for presentation baskets 1`] = `
-Immutable.Record {
-  "totalDuty": 209,
-  "dutyByCategoryRaw": Immutable.Map {
-    "Butter": 16,
-    "Oils": 0,
-    "Cigarettes": 0,
-    "AlcSoft": 0,
-    "Fertilizer": 0,
-    "AlcHard": 0,
-    "Meds": 0,
-    "Books": 0,
-    "Meat": 193,
-    "OtherFood": 0,
-    "Other": 0,
-    "Tobacco": 0,
-    "Flowers": 0,
-    "AnimalFeed": 0,
-    "Magazines": 0,
-  },
-}
-`;
-
-exports[`Duty Calculations calculate duty for presentation baskets 2`] = `
-Immutable.Record {
-  "totalDuty": 15,
-  "dutyByCategoryRaw": Immutable.Map {
-    "Butter": 0,
-    "Oils": 0,
-    "Cigarettes": 0,
-    "AlcSoft": 0,
-    "Fertilizer": 0,
-    "AlcHard": 15,
-    "Meds": 0,
-    "Books": 0,
-    "Meat": 0,
-    "OtherFood": 0,
-    "Other": 0,
-    "Tobacco": 0,
-    "Flowers": 0,
-    "AnimalFeed": 0,
-    "Magazines": 0,
-  },
-}
-`;
-
 exports[`Duty Calculations it calculates duty under various scenarios - 1 Adult + 1 Minor 1`] = `
 Immutable.Record {
   "totalDuty": 3019.9,

@@ -20,6 +20,7 @@ import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswer
 import UnderConstructionWithSums from './underConstructionWithSums';
 import GoodQuantityListModal from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import CurrencyPickerModal from '../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
+import OnBoardingTaxScreen from '../screens/OnBoarding/OnBoardingTaxScreen';
 
 export const stackNavigatorScreens = {
   Screens: {
@@ -44,6 +45,12 @@ export const stackNavigatorScreens = {
   },
   OnBoarding: {
     screen: OnBoarding,
+    navigationOptions: () => ({
+      header: null,
+    }),
+  },
+  OnBoardingTaxScreen: {
+    screen: OnBoardingTaxScreen,
     navigationOptions: () => ({
       header: null,
     }),
