@@ -40,48 +40,45 @@ export const currenciesArray: Array<Currency> = [
 export type CurrencyObject = { [Currency]: number };
 
 export const currencyExample: CurrencyObject = {
-  EUR: 1.17796,
-  USD: 0.99205,
+  AUD: 0.77355,
+  CAD: 0.78784,
   CHF: 1,
-  AUD: 2,
-  CAD: 3,
-  DKK: 4,
-  GBP: 5,
-  HKD: 6,
-  JPY: 7,
-  MXN: 8,
-  NOK: 9,
-  NZD: 10,
-  RUB: 11,
-  SEK: 12,
-  ZAR: 13,
+  DKK: 0.15924670000000002,
+  EUR: 1.17796, // fixed for Maerki Example
+  GBP: 1.33658,
+  HKD: 0.1279084,
+  JPY: 0.0088304,
+  MXN: 0.05034,
+  NOK: 0.1203345,
+  NZD: 0.70344,
+  RUB: 0.017327699999999998,
+  SEK: 0.1201607,
+  USD: 0.99205, // fixed for Maerki Example
+  ZAR: 0.07995,
 };
 
 // export const getFilteredCurrencies = (): CurrencyObject => {};
 
 export const parseCurrencyXML = (rawdata: any, store: any): void => {
-  let currencyObject: CurrencyObject = {};
+  let currencyObject: CurrencyObject = { CHF: 1 };
   let validCurrencies: boolean = false;
 
   parseString(rawdata, (e, r) => {
     if (!r) {
       // console.log('Error Case');
-      currenciesArray.forEach(c => {
-        currencyObject[c] = 1.23;
-      });
+      currencyObject = currencyExample;
     } else {
       // console.log('Normal Case');
       validCurrencies = true;
       const { wechselkurse } = r;
       const { devise } = wechselkurse;
-      currencyObject = devise
+      devise
         .filter(d => currenciesArray.indexOf(d.$.code.toUpperCase()) > -1)
-        .map(c => {
+        .forEach(c => {
           const kurs = c.kurs[0];
           const waehrung = c.waehrung[0];
           const multiplier = +waehrung.replace(/ .*/, '');
-          const exchangeRate = kurs / multiplier;
-          return { [c.$.code.toUpperCase()]: exchangeRate };
+          currencyObject[c.$.code.toUpperCase()] = kurs / multiplier;
         });
     }
   });
