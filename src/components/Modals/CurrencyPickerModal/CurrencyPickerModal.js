@@ -40,13 +40,13 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
             <TextInput
               style={styles.textInput}
               onChangeText={value => this.setState({ amount: value })}
-              value={this.state.amount}
+              value={amount}
               autoFocus
               numeric
             />
 
             <PickerComponent
-              selectedValue={this.state.currency}
+              selectedValue={currency}
               onValueChange={itemValue =>
                 this.setState({
                   currency: itemValue,
@@ -73,7 +73,10 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
             />
           </View>
           <CardHeaderSubText
-            style={{ marginTop: 10, textAlign: 'center' }}
+            style={{
+              marginTop: 10,
+              textAlign: 'center',
+            }}
             text="102.13 CHF (Kurs vom 11.12.2017)"
           />
         </PickerCard>

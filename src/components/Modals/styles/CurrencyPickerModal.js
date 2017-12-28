@@ -14,4 +14,8 @@ export default StyleSheet.create({
     fontSize: moderateScale(24),
     color: '#1a1a1a',
   },
+  subText: {
+    marginTop: 10,
+    textAlign: 'center',
+  },
 });
