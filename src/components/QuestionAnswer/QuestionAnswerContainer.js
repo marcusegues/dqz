@@ -36,6 +36,7 @@ import {
 import { setInitFlags, setQuestionFlag } from './QAControl/controlQuestionFlag';
 import { verticalScale } from '../../styles/Scaling';
 import HeaderTitle from '../Headers/subcomponents/HeaderTitle';
+import { onUpdateFactory } from './QAControl/validation';
 
 export type QuestionType =
   | 'peopleInput'
@@ -184,13 +185,17 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             }}
             questionState={questionStates.peopleInput}
             questionFlag={questionFlag.peopleInput}
-            onUpdate={newPeople => {
-              onDeclarationSetPeople(newPeople);
-              this.updateFlagsOptimistically(
-                'peopleInput',
-                Object.assign({}, qaStateEnriched, { people: newPeople })
-              );
-            }}
+            onUpdate={onUpdateFactory(
+              'peopleInput',
+              newPeople => {
+                onDeclarationSetPeople(newPeople);
+                this.updateFlagsOptimistically(
+                  'peopleInput',
+                  Object.assign({}, qaStateEnriched, { people: newPeople })
+                );
+              },
+              qaStateEnriched
+            )}
             onAnswer={() => {
               onDeclarationSetPeople(people);
               this.updateQA('peopleInput');
