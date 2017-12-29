@@ -128,7 +128,7 @@ export type InitListType = ImmutableListType<CurrentQuestionType>;
 
 export const InitList: InitListType = Immutable.List(['peopleInput']);
 
-type Settings = {
+type SettingsContent = {
   overAllowance: OverAllowanceType,
   largeAmountPresent: LargeAmountPresentType,
   largeAmountsEntered: LargeAmountsEnteredType,
@@ -139,7 +139,9 @@ type Settings = {
   initList: InitListType,
 };
 
-export const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
+export const makeSettingsRecord: RecordFactory<
+  SettingsContent
+> = Immutable.Record({
   overAllowance: 'notAnswered',
   largeAmountPresent: 'notAnswered',
   largeAmountsEntered: 'notAnswered',
@@ -150,14 +152,14 @@ export const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
   initList: InitList,
 });
 
-export type SettingsType = RecordOf<Settings>;
+export type Settings = RecordOf<SettingsContent>;
 
 type StateObj = {
   people: People,
   basket: Basket,
   vatReport: VatReport,
   dutyReport: DutyReport,
-  settings: SettingsType,
+  settings: Settings,
   currencyObject: CurrencyObject,
   validCurrencies: boolean,
   currencyDate: Date,
