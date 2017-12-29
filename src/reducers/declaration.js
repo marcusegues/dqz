@@ -12,7 +12,7 @@ import type {
   MainCategoriesType,
   OverAllowanceType,
   LargeAmountPresentType,
-  SettingsType,
+  Settings,
   InitListType,
   CurrentQuestionType,
 } from '../types/reducers/declaration';
@@ -23,11 +23,8 @@ import type {
   Category,
   People,
 } from '../model/types/basketPeopleAmountsTypes';
-import type { VatReport, DutyReport } from '../model/types/calculationTypes';
 import * as modelApi from '../model/configurationApi';
-import { calculateDuty } from '../model/dutyCalculations';
 import type { Currency, CurrencyObject } from '../model/currencies';
-import { calculateVat } from '../model/vatCalculations';
 
 const declaration = (
   state: State = getInitialState(),
@@ -169,21 +166,6 @@ const declaration = (
       const mainCategories: MainCategoriesType = action.mainCategories;
       return state.setIn(['settings', 'mainCategories'], mainCategories);
     }
-    case 'DECLARATION_CALCULATE_DUES': {
-      // TODO remove? we don't want that in state.
-      const newState = state.set(
-        'dutyReport',
-        calculateDuty(state.get('basket'), state.get('people'))
-      );
-      return newState.set(
-        'vatReport',
-        calculateVat(
-          state.get('amounts'),
-          state.get('people'),
-          state.get('currencyObject')
-        )
-      );
-    }
     default: {
       return state;
     }
@@ -197,6 +179,9 @@ export const getDeclarationBasket = (state: State): Basket =>
 
 export const getDeclarationPeople = (state: State): People =>
   state.get('people');
+
+export const getDeclarationAmounts = (state: State): Amounts =>
+  state.get('amounts');
 
 export const getOverAllowance = (state: State): OverAllowanceType =>
   state.getIn(['settings', 'overAllowance'], 'notAnswered');
@@ -214,7 +199,7 @@ export const getDeclarationCurrentQuestion = (
 ): CurrentQuestionType =>
   state.getIn(['settings', 'currentQuestion'], 'finished');
 
-export const getDeclarationSettings = (state: State): SettingsType =>
+export const getDeclarationSettings = (state: State): Settings =>
   state.get('settings');
 
 export const getDeclarationInit = (state: State): boolean =>
@@ -222,12 +207,6 @@ export const getDeclarationInit = (state: State): boolean =>
 
 export const getDeclarationInitList = (state: State): InitListType =>
   state.getIn(['settings', 'initList'], InitList);
-
-export const getDeclarationVatReport = (state: State): VatReport =>
-  state.get('vatReport');
-
-export const getDeclarationDutyReport = (state: State): DutyReport =>
-  state.get('dutyReport');
 
 export const getCurrenciesObject = (state: State): CurrencyObject =>
   state.get('currencyObject');

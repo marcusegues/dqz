@@ -1,7 +1,7 @@
 // @flow
 import Immutable from 'immutable';
 import type {
-  QAState,
+  QAStateEnriched,
   QuestionFlag,
   QuestionType,
 } from '../QuestionAnswerContainer';
@@ -17,7 +17,10 @@ export const anyQuantitiesInBasket = (basket: Basket): boolean =>
           .size
     );
 
-const flagRules = (question: QuestionType, qaState: QAState): QuestionFlag => {
+const flagRules = (
+  question: QuestionType,
+  qaState: QAStateEnriched
+): QuestionFlag => {
   const { settings } = qaState;
   const main = settings.get('mainCategories');
   switch (question) {
@@ -39,11 +42,11 @@ const flagRules = (question: QuestionType, qaState: QAState): QuestionFlag => {
 };
 
 const setQuestionFlagInState = (
-  qaState: QAState,
+  qaState: QAStateEnriched,
   questionFlag: { [QuestionType]: QuestionFlag }
-): QAState => Object.assign({}, qaState, { questionFlag });
+): QAStateEnriched => Object.assign({}, qaState, { questionFlag });
 
-export const setInitFlags = (qaState: QAState): QAState =>
+export const setInitFlags = (qaState: QAStateEnriched): QAStateEnriched =>
   setQuestionFlagInState(qaState, {
     peopleInput: flagRules('peopleInput', qaState),
     mainCategories: flagRules('mainCategories', qaState),
@@ -52,8 +55,8 @@ export const setInitFlags = (qaState: QAState): QAState =>
 
 export const setQuestionFlag = (
   justUpdated: QuestionType,
-  qaState: QAState
-): QAState => ({
+  qaState: QAStateEnriched
+): QAStateEnriched => ({
   ...qaState,
   questionFlag: {
     ...qaState.questionFlag,

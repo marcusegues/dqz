@@ -5,11 +5,7 @@ import { connect } from 'react-redux';
 import { MaterialIcons } from '@expo/vector-icons';
 import { moderateScale } from '../../../styles/Scaling';
 import ownStyles from '../styles/ReceiptNotificationBadge';
-import {
-  getDeclarationBasket,
-  getDeclarationDutyReport,
-  getDeclarationPeople,
-} from '../../../reducers';
+import { getDeclarationBasket, getDeclarationPeople } from '../../../reducers';
 import { calculateDuty } from '../../../model/dutyCalculations';
 import { MAIN_RED } from '../../../styles/colors';
 
@@ -39,7 +35,6 @@ const ReceiptNotificationBadge = ({ basket, people }) => {
 const mapStateToProps = state => ({
   basket: getDeclarationBasket(state),
   people: getDeclarationPeople(state),
-  dutyReport: getDeclarationDutyReport(state),
 });
 
 export default connect(mapStateToProps)(ReceiptNotificationBadge);

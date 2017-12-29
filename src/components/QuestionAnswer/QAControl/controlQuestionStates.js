@@ -1,17 +1,17 @@
 // @flow
 
 import type {
-  QAState,
+  QAStateEnriched,
   QuestionState,
   QuestionType,
 } from '../QuestionAnswerContainer';
 
 const setQuestionState = (
-  qaState: QAState,
+  qaState: QAStateEnriched,
   questionStates: { [QuestionType]: QuestionState }
-): QAState => Object.assign({}, qaState, { questionStates });
+): QAStateEnriched => Object.assign({}, qaState, { questionStates });
 
-export const setInitStates = (qaState: QAState): QAState => {
+export const setInitStates = (qaState: QAStateEnriched): QAStateEnriched => {
   const { settings } = qaState;
   const main = settings.get('mainCategories');
   return setQuestionState(qaState, {
@@ -23,8 +23,8 @@ export const setInitStates = (qaState: QAState): QAState => {
 
 export const setQuestionStates = (
   justAnswered: QuestionType,
-  qaState: QAState
-): QAState => {
+  qaState: QAStateEnriched
+): QAStateEnriched => {
   const { settings } = qaState;
   const mainCategories = settings.get('mainCategories');
   // do case analysis
@@ -57,8 +57,8 @@ export const setQuestionStates = (
 
 export const collapseAllExistingExceptOne = (
   expand: QuestionType,
-  qaState: QAState
-): QAState => {
+  qaState: QAStateEnriched
+): QAStateEnriched => {
   const { questionStates } = qaState;
 
   const getQuestionState = (type: QuestionType) => {

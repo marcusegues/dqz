@@ -11,6 +11,9 @@ export const getDeclarationBasket = state =>
 export const getDeclarationPeople = state =>
   fromDeclaration.getDeclarationPeople(state.declaration);
 
+export const getDeclarationAmounts = state =>
+  fromDeclaration.getDeclarationAmounts(state.declaration);
+
 export const getOverAllowance = state =>
   fromDeclaration.getOverAllowance(state.declaration);
 
@@ -31,12 +34,6 @@ export const getDeclarationInit = state =>
 
 export const getDeclarationInitList = state =>
   fromDeclaration.getDeclarationInitList(state.declaration);
-
-export const getDeclarationVatReport = state =>
-  fromDeclaration.getDeclarationVatReport(state.declaration);
-
-export const getDeclarationDutyReport = state =>
-  fromDeclaration.getDeclarationDutyReport(state.declaration);
 
 export const getCurrencies = state =>
   fromDeclaration.getCurrenciesObject(state.declaration);

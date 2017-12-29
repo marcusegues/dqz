@@ -16,15 +16,17 @@ import {
   getDeclarationBasket,
   getDeclarationPeople,
   getDeclarationSettings,
-  getDeclarationDutyReport,
+  getDeclarationAmounts,
+  getDeclarationMainCategories,
 } from '../../reducers';
 import type {
-  People,
+  Amounts,
   Basket,
+  People,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type {
-  SettingsType,
   MainCategoriesType,
+  Settings,
 } from '../../types/reducers/declaration';
 import {
   collapseAllExistingExceptOne,
@@ -32,8 +34,6 @@ import {
   setQuestionStates,
 } from './QAControl/controlQuestionStates';
 import { setInitFlags, setQuestionFlag } from './QAControl/controlQuestionFlag';
-import type { DutyReport } from '../../model/types/calculationTypes';
-import { calculateDuty } from '../../model/dutyCalculations';
 import { verticalScale } from '../../styles/Scaling';
 import HeaderTitle from '../Headers/subcomponents/HeaderTitle';
 
@@ -50,14 +50,19 @@ export type QuestionFlag = 'complete' | 'incomplete';
 export type QAState = {
   questionStates: { [QuestionType]: QuestionState },
   questionFlag: { [QuestionType]: QuestionFlag },
+};
+
+export type QAStateEnriched = {
+  questionStates: { [QuestionType]: QuestionState },
+  questionFlag: { [QuestionType]: QuestionFlag },
+  amounts: Amounts,
   basket: Basket,
   people: People,
-  settings: SettingsType,
-  duty: DutyReport,
+  settings: Settings,
 };
 
 export type CardProps = {
-  qaState: QAState,
+  qaState: QAStateEnriched,
   onAnswerCardPress: any, // TODO
   questionState: QuestionState,
   questionFlag: QuestionFlag,
@@ -84,11 +89,6 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         mainCategories: 'incomplete',
         quantityInput: 'incomplete',
       },
-      basket: this.props.basket,
-      people: this.props.people,
-      settings: this.props.settings,
-      // not getting duty as props from redux because dues are not being updated all the time, perhaps they should be
-      duty: calculateDuty(this.props.basket, this.props.people),
     };
   }
 
@@ -96,16 +96,44 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
     this.initState();
   }
 
+  enrichState(): QAStateEnriched {
+    const { questionStates, questionFlag } = this.state;
+    const { amounts, basket, people, settings } = this.props;
+
+    return {
+      questionStates,
+      questionFlag,
+      amounts,
+      basket,
+      people,
+      settings,
+    };
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  simplifyState(enrichedState: QAStateEnriched): QAState {
+    return {
+      questionStates: enrichedState.questionStates,
+      questionFlag: enrichedState.questionFlag,
+    };
+  }
+
   initState() {
-    const setStates = setInitStates(this.state);
-    const setFlags = setInitFlags(setStates);
-    this.setState(setFlags);
+    const setStates: QAStateEnriched = setInitStates(this.enrichState());
+    const setFlags: QAStateEnriched = setInitFlags(setStates);
+    this.setState(this.simplifyState(setFlags));
   }
 
   updateQA(justAnswered: QuestionType) {
-    const updateStates: QAState = setQuestionStates(justAnswered, this.state);
-    const updateFlags: QAState = setQuestionFlag(justAnswered, updateStates);
-    this.setState(updateFlags);
+    const updateStates: QAStateEnriched = setQuestionStates(
+      justAnswered,
+      this.enrichState()
+    );
+    const updateFlags: QAStateEnriched = setQuestionFlag(
+      justAnswered,
+      updateStates
+    );
+    this.setState(this.simplifyState(updateFlags));
   }
 
   allQuestionsAnswered(): boolean {
@@ -116,36 +144,38 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
   }
 
   render() {
+    const { questionStates, questionFlag } = this.state;
     const {
-      questionStates,
-      questionFlag,
-      people,
+      t,
       basket,
-      settings,
-    } = this.state;
-    const { t } = this.props;
+      people,
+      mainCategories,
+      onDeclarationSetMainCategories,
+      onDeclarationSetPeople,
+    } = this.props;
+
+    const qaStateEnriched: QAStateEnriched = this.enrichState();
 
     const flatListData = [
       {
         key: 'peopleInput',
         component: (
           <PeopleInputQA
-            qaState={this.state}
+            qaState={qaStateEnriched}
             onAnswerCardPress={() => {
               this.setState(
-                collapseAllExistingExceptOne('peopleInput', this.state)
+                this.simplifyState(
+                  collapseAllExistingExceptOne('peopleInput', qaStateEnriched)
+                )
               );
             }}
             questionState={questionStates.peopleInput}
             questionFlag={questionFlag.peopleInput}
             onUpdate={newPeople => {
-              this.setState({
-                people: newPeople,
-                duty: calculateDuty(basket, newPeople),
-              });
+              onDeclarationSetPeople(newPeople);
             }}
             onAnswer={() => {
-              this.props.onDeclarationSetPeople(people);
+              onDeclarationSetPeople(people);
               this.updateQA('peopleInput');
             }}
           />
@@ -155,23 +185,24 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         key: 'mainCategories',
         component: (
           <MainCategoriesInputQA
-            qaState={this.state}
+            qaState={qaStateEnriched}
             onAnswerCardPress={() => {
               this.setState(
-                collapseAllExistingExceptOne('mainCategories', this.state)
+                this.simplifyState(
+                  collapseAllExistingExceptOne(
+                    'mainCategories',
+                    qaStateEnriched
+                  )
+                )
               );
             }}
             questionState={questionStates.mainCategories}
             questionFlag={questionFlag.mainCategories}
             onUpdate={activeCategories => {
-              this.setState({
-                settings: settings.set('mainCategories', activeCategories),
-              });
+              onDeclarationSetMainCategories(activeCategories);
             }}
             onAnswer={() => {
-              this.props.onDeclarationSetMainCategories(
-                settings.get('mainCategories')
-              );
+              onDeclarationSetMainCategories(mainCategories);
               this.updateQA('mainCategories');
             }}
           />
@@ -181,19 +212,18 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         key: 'quantityInput',
         component: (
           <QuantityInputQA
-            qaState={this.state}
+            qaState={qaStateEnriched}
             onAnswerCardPress={() => {
               this.setState(
-                collapseAllExistingExceptOne('quantityInput', this.state)
+                this.simplifyState(
+                  collapseAllExistingExceptOne('quantityInput', qaStateEnriched)
+                )
               );
             }}
             questionState={questionStates.quantityInput}
             questionFlag={questionFlag.quantityInput}
             onUpdate={newBasket => {
-              this.setState({
-                basket: newBasket,
-                duty: calculateDuty(newBasket, people),
-              });
+              this.props.onDeclarationSetBasket(newBasket);
             }}
             onAnswer={() => {
               this.props.onDeclarationSetBasket(basket);
@@ -253,8 +283,9 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
 const mapStateToProps = state => ({
   basket: getDeclarationBasket(state),
   people: getDeclarationPeople(state),
-  dutyReport: getDeclarationDutyReport(state),
+  amounts: getDeclarationAmounts(state),
   settings: getDeclarationSettings(state),
+  mainCategories: getDeclarationMainCategories(state),
 });
 
 const mapDispatchToProps = dispatch => ({
