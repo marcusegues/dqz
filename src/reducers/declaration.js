@@ -83,7 +83,7 @@ const declaration = (
     case 'DECLARATION_SET_OVER_ALLOWANCE_FALSE': {
       return state.setIn(['settings', 'overAllowance'], false);
     }
-    case 'DECLARATION_BASKET_ADD_AMOUNT': {
+    case 'DECLARATION_ADD_AMOUNT': {
       const currency: Currency = action.currency;
       const amounts: Amounts = state.get('amounts');
       const amount: number = action.amount;

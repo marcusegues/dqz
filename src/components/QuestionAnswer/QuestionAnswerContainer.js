@@ -124,6 +124,17 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
     this.setState(this.simplifyState(setFlags));
   }
 
+  updateFlagsOptimistically(
+    justAnswered: QuestionType,
+    enrichedState: QAStateEnriched
+  ) {
+    const updateFlags: QAStateEnriched = setQuestionFlag(
+      justAnswered,
+      enrichedState
+    );
+    this.setState(this.simplifyState(updateFlags));
+  }
+
   updateQA(justAnswered: QuestionType) {
     const updateStates: QAStateEnriched = setQuestionStates(
       justAnswered,
@@ -150,8 +161,10 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
       basket,
       people,
       mainCategories,
+      settings,
       onDeclarationSetMainCategories,
       onDeclarationSetPeople,
+      onDeclarationSetBasket,
     } = this.props;
 
     const qaStateEnriched: QAStateEnriched = this.enrichState();
@@ -173,6 +186,10 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             questionFlag={questionFlag.peopleInput}
             onUpdate={newPeople => {
               onDeclarationSetPeople(newPeople);
+              this.updateFlagsOptimistically(
+                'peopleInput',
+                Object.assign({}, qaStateEnriched, { people: newPeople })
+              );
             }}
             onAnswer={() => {
               onDeclarationSetPeople(people);
@@ -200,6 +217,12 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             questionFlag={questionFlag.mainCategories}
             onUpdate={activeCategories => {
               onDeclarationSetMainCategories(activeCategories);
+              this.updateFlagsOptimistically(
+                'mainCategories',
+                Object.assign({}, qaStateEnriched, {
+                  settings: settings.set('mainCategories', activeCategories),
+                })
+              );
             }}
             onAnswer={() => {
               onDeclarationSetMainCategories(mainCategories);
@@ -223,10 +246,14 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             questionState={questionStates.quantityInput}
             questionFlag={questionFlag.quantityInput}
             onUpdate={newBasket => {
-              this.props.onDeclarationSetBasket(newBasket);
+              onDeclarationSetBasket(newBasket);
+              this.updateFlagsOptimistically(
+                'quantityInput',
+                Object.assign({}, qaStateEnriched, { basket: newBasket })
+              );
             }}
             onAnswer={() => {
-              this.props.onDeclarationSetBasket(basket);
+              onDeclarationSetBasket(basket);
               this.updateQA('quantityInput');
             }}
           />
