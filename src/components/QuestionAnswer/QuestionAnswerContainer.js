@@ -220,15 +220,19 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             }}
             questionState={questionStates.mainCategories}
             questionFlag={questionFlag.mainCategories}
-            onUpdate={activeCategories => {
-              onDeclarationSetMainCategories(activeCategories);
-              this.updateFlagsOptimistically(
-                'mainCategories',
-                Object.assign({}, qaStateEnriched, {
-                  settings: settings.set('mainCategories', activeCategories),
-                })
-              );
-            }}
+            onUpdate={onUpdateFactory(
+              'mainCategories',
+              activeCategories => {
+                onDeclarationSetMainCategories(activeCategories);
+                this.updateFlagsOptimistically(
+                  'mainCategories',
+                  Object.assign({}, qaStateEnriched, {
+                    settings: settings.set('mainCategories', activeCategories),
+                  })
+                );
+              },
+              qaStateEnriched
+            )}
             onAnswer={() => {
               onDeclarationSetMainCategories(mainCategories);
               this.updateQA('mainCategories');
@@ -250,13 +254,17 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             }}
             questionState={questionStates.quantityInput}
             questionFlag={questionFlag.quantityInput}
-            onUpdate={newBasket => {
-              onDeclarationSetBasket(newBasket);
-              this.updateFlagsOptimistically(
-                'quantityInput',
-                Object.assign({}, qaStateEnriched, { basket: newBasket })
-              );
-            }}
+            onUpdate={onUpdateFactory(
+              'quantityInput',
+              newBasket => {
+                onDeclarationSetBasket(newBasket);
+                this.updateFlagsOptimistically(
+                  'quantityInput',
+                  Object.assign({}, qaStateEnriched, { basket: newBasket })
+                );
+              },
+              qaStateEnriched
+            )}
             onAnswer={() => {
               onDeclarationSetBasket(basket);
               this.updateQA('quantityInput');

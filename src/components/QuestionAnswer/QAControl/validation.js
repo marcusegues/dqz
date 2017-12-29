@@ -3,17 +3,20 @@
 import { Alert } from 'react-native';
 
 import type { QAStateEnriched, QuestionType } from '../QuestionAnswerContainer';
-import type { People } from '../../../model/types/basketPeopleAmountsTypes';
+import type {
+  Basket,
+  People,
+} from '../../../model/types/basketPeopleAmountsTypes';
 import { getAdultPeople } from '../../../model/configurationApi';
 
-type UpdateFunction = (people: People) => void;
-type NewValue = People;
+type UpdateFunction<T> = (input: T) => void;
+type NewValue = People | Basket;
 
 export const onUpdateFactory = (
   questionType: QuestionType,
-  onUpdate: UpdateFunction,
+  onUpdate: UpdateFunction<NewValue>,
   oldState: QAStateEnriched
-): UpdateFunction => (newValue: NewValue) => {
+): UpdateFunction<NewValue> => (newValue: any /* TODO, but how? */) => {
   switch (questionType) {
     case 'peopleInput': {
       if (!getAdultPeople(newValue) && getAdultPeople(oldState.people)) {
