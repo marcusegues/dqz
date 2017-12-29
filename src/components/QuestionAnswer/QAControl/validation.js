@@ -3,20 +3,18 @@
 import { Alert } from 'react-native';
 
 import type { QAStateEnriched, QuestionType } from '../QuestionAnswerContainer';
-import type {
-  Basket,
-  People,
-} from '../../../model/types/basketPeopleAmountsTypes';
 import { getAdultPeople } from '../../../model/configurationApi';
 
 type UpdateFunction<T> = (input: T) => void;
-type NewValue = People | Basket;
+// type NewValue = People | Basket;
 
 export const onUpdateFactory = (
   questionType: QuestionType,
-  onUpdate: UpdateFunction<NewValue>,
+  onUpdate: UpdateFunction<any /* TODO, but how? */>,
   oldState: QAStateEnriched
-): UpdateFunction<NewValue> => (newValue: any /* TODO, but how? */) => {
+): UpdateFunction<any /* TODO, but how? */> => (
+  newValue: any /* TODO, but how? */
+) => {
   switch (questionType) {
     case 'peopleInput': {
       if (!getAdultPeople(newValue) && getAdultPeople(oldState.people)) {
@@ -27,7 +25,7 @@ export const onUpdateFactory = (
             [
               {
                 text: 'Oooops, no.',
-                onPress: () => console.log('Cancel Pressed'),
+                onPress: () => {},
                 style: 'cancel',
               },
               {
