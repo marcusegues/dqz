@@ -83,6 +83,15 @@ export const de: LocaleType = makeLocaleRecord({
     minorInfo: 'unter 17 Jahre',
     minorCount: '{{value}} Kind (unter 17 Jahre)',
     minorCount_plural: '{{value}} Kinder (unter 17 Jahre)',
+    validateNoAdultsTitle: 'Keine Erwachsene',
+    validateNoAdultsSubtitle: 'Bitte Rechtmässigkeit sicherstellen.',
+    validateGenericYes: 'Ja',
+    validateGenericNo: 'Nein',
+    validateMainCategoryRemoveTitle:
+      'Sind Sie sicher, dass Sie diese Hauptkategorie entfernen möchten?',
+    validateMainCategoryRemoveSubtitle:
+      'Im Moment enthalten gewisse Unterkategorien Mengen, nämlich: {{value}}',
+    validateMainCategoryRemoveYes: 'Ja - löscht entsprechende Mengen',
   }),
   modal: makeModalNSRecord({
     confirmPicker: '{{value}} übernehmen',

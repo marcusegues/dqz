@@ -50,7 +50,8 @@ type Trigger =
 
 export const onUpdateFactory = (
   trigger: Trigger,
-  oldState: QAStateEnriched
+  oldState: QAStateEnriched,
+  t: any
 ): void => {
   switch (trigger.questionType) {
     case 'peopleInput': {
@@ -59,16 +60,16 @@ export const onUpdateFactory = (
         const func: UpdateFunction<People> = trigger.onUpdate;
         const showAlert = () => {
           Alert.alert(
-            'Are you sure you want no adults?',
-            'Some foo.',
+            t('qaFlow:validateNoAdultsTitle'),
+            t('qaFlow:validateNoAdultsSubtitle'),
             [
               {
-                text: 'Oooops, no.',
+                text: t('qaFlow:validateGenericNo'),
                 onPress: () => {},
                 style: 'cancel',
               },
               {
-                text: 'Yes. I know what I am doing.',
+                text: t('qaFlow:validateGenericYes'),
                 onPress: () => func(input),
               },
             ],
@@ -116,26 +117,23 @@ export const onUpdateFactory = (
         const problems = Array.from(affectedCategories)
           .map(
             ac =>
-              `${ac.category} (${ac.quantity} ${CategoriesInfo.getIn(
-                [ac.category, 'unit'],
-                ''
-              )})`
+              `${ac.category} (${t(
+                `categories:${ac.quantity}`
+              )} ${CategoriesInfo.getIn([ac.category, 'unit'], '')})`
           )
           .join(', ');
         const showAlert = () => {
           Alert.alert(
-            'Are you sure you want to remove this category?',
-            `You have goods in the respective subcategories, namely: ${
-              problems
-            }`,
+            t('qaFlow:validateMainCategoryRemoveTitle'),
+            t('qaFlow:validateMainCategoryRemoveSubtitle', { value: problems }),
             [
               {
-                text: 'Oooops, no.',
+                text: t('qaFlow:validateGenericNo'),
                 onPress: () => {},
                 style: 'cancel',
               },
               {
-                text: 'Yes (reset respective amounts).',
+                text: t('qaFlow:validateMainCategoryRemoveYes'),
                 onPress: () => {
                   func({
                     mainCategories: input,

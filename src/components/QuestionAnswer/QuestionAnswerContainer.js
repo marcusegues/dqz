@@ -200,7 +200,8 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                   },
                   people: newPeople,
                 },
-                qaStateEnriched
+                qaStateEnriched,
+                t
               )
             }
             onAnswer={() => {
@@ -249,7 +250,8 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                   },
                   mainCategories: newCategories,
                 },
-                qaStateEnriched
+                qaStateEnriched,
+                t
               )
             }
             onAnswer={() => {
@@ -288,7 +290,8 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                   },
                   basket: newBasket,
                 },
-                qaStateEnriched
+                qaStateEnriched,
+                t
               )
             }
             onAnswer={() => {
@@ -336,7 +339,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
           }}
         >
           <RedButton
-            text={t('toOverview')}
+            text={t('qaFlow:toOverview')}
             confirmationDisabled={!this.allQuestionsAnswered()}
             onPress={() => this.props.navigation.navigate('Payment')}
           />
@@ -379,5 +382,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  translate(['qaFlow'])(QuestionAnswerContainer)
+  translate(['qaFlow', 'categories'])(QuestionAnswerContainer)
 );
