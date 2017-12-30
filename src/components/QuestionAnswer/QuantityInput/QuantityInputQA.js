@@ -6,7 +6,7 @@ import React from 'react';
 import { View } from 'react-native';
 import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
 import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
-import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
+import { mainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { MainCategory } from '../../../types/reducers/declaration';
 import type {
   Basket,
@@ -45,7 +45,7 @@ class QuantityInputQA extends React.Component<CardProps, QuantityInputState> {
   }
 
   getDisplayedCategoriesByMainCategory() {
-    return MainCategoriesToCategories.filter((cats, mainCat) =>
+    return mainCategoriesToCategories.filter((cats, mainCat) =>
       this.props.qaState.settings.get('mainCategories').has(mainCat)
     );
   }

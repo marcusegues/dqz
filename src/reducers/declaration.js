@@ -2,19 +2,19 @@
 // @flow
 import {
   getInitialState,
-  MainCategories,
-  InitList,
+  mainCategories,
+  initList,
   EmptyMainCategories,
 } from '../types/reducers/declaration';
 import type {
   State,
   MainCategory,
-  MainCategoriesType,
-  OverAllowanceType,
-  LargeAmountPresentType,
+  MainCategories,
+  OverAllowance,
+  LargeAmountPresent,
   Settings,
-  InitListType,
-  CurrentQuestionType,
+  InitList,
+  CurrentQuestion,
 } from '../types/reducers/declaration';
 import type { Action } from '../types/actions';
 import type {
@@ -134,14 +134,14 @@ const declaration = (
     case 'DECLARATION_ADD_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
       const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?
-      const mainCategories = state.getIn(
+      const mainCategoriesAnswer = state.getIn(
         ['settings', 'mainCategories'],
         EmptyMainCategories
       );
-      if (mainCategories !== 'notAnswered') {
+      if (mainCategoriesAnswer !== 'notAnswered') {
         return state.setIn(
           ['settings', 'mainCategories'],
-          mainCategories.add(mainCategory)
+          mainCategoriesAnswer.add(mainCategory)
         );
       }
       return state; // should never reach this
@@ -149,22 +149,22 @@ const declaration = (
     case 'DECLARATION_REMOVE_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
       const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?
-      const mainCategories = state.getIn(
+      const mainCategoriesAnswer = state.getIn(
         ['settings', 'mainCategories'],
         EmptyMainCategories
       );
-      if (mainCategories !== 'notAnswered') {
+      if (mainCategoriesAnswer !== 'notAnswered') {
         return state.setIn(
           ['settings', 'mainCategories'],
-          mainCategories.delete(mainCategory)
+          mainCategoriesAnswer.delete(mainCategory)
         );
       }
       return state; // should never reach this
     }
     case 'DECLARATION_SET_MAIN_CATEGORIES': {
       // eslint-disable-next-line prefer-destructuring
-      const mainCategories: MainCategoriesType = action.mainCategories;
-      return state.setIn(['settings', 'mainCategories'], mainCategories);
+      const mainCategoriesAnswer: MainCategories = action.mainCategories;
+      return state.setIn(['settings', 'mainCategories'], mainCategoriesAnswer);
     }
     default: {
       return state;
@@ -183,20 +183,16 @@ export const getDeclarationPeople = (state: State): People =>
 export const getDeclarationAmounts = (state: State): Amounts =>
   state.get('amounts');
 
-export const getOverAllowance = (state: State): OverAllowanceType =>
+export const getOverAllowance = (state: State): OverAllowance =>
   state.getIn(['settings', 'overAllowance'], 'notAnswered');
 
-export const getLargeAmountPresent = (state: State): LargeAmountPresentType =>
+export const getLargeAmountPresent = (state: State): LargeAmountPresent =>
   state.getIn(['settings', 'largeAmountPresent'], 'notAnswered');
 
-export const getDeclarationMainCategories = (
-  state: State
-): MainCategoriesType =>
-  state.getIn(['settings', 'mainCategories'], MainCategories);
+export const getDeclarationMainCategories = (state: State): MainCategories =>
+  state.getIn(['settings', 'mainCategories'], mainCategories);
 
-export const getDeclarationCurrentQuestion = (
-  state: State
-): CurrentQuestionType =>
+export const getDeclarationCurrentQuestion = (state: State): CurrentQuestion =>
   state.getIn(['settings', 'currentQuestion'], 'finished');
 
 export const getDeclarationSettings = (state: State): Settings =>
@@ -205,8 +201,8 @@ export const getDeclarationSettings = (state: State): Settings =>
 export const getDeclarationInit = (state: State): boolean =>
   state.getIn(['settings', 'init'], true);
 
-export const getDeclarationInitList = (state: State): InitListType =>
-  state.getIn(['settings', 'initList'], InitList);
+export const getDeclarationInitList = (state: State): InitList =>
+  state.getIn(['settings', 'initList'], initList);
 
 export const getCurrenciesObject = (state: State): CurrencyObject =>
   state.get('currencyObject');

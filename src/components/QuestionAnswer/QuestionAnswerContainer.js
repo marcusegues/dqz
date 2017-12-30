@@ -25,7 +25,7 @@ import type {
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type {
-  MainCategoriesType,
+  MainCategories,
   Settings,
 } from '../../types/reducers/declaration';
 import {
@@ -360,7 +360,7 @@ const mapDispatchToProps = dispatch => ({
       type: 'DECLARATION_SET_PEOPLE',
       people,
     }),
-  onDeclarationSetMainCategories: (mainCategories: MainCategoriesType) =>
+  onDeclarationSetMainCategories: (mainCategories: MainCategories) =>
     dispatch({
       type: 'DECLARATION_SET_MAIN_CATEGORIES',
       mainCategories,

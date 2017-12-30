@@ -7,8 +7,8 @@ import type {
 } from '../../model/types/basketPeopleAmountsTypes';
 import type {
   MainCategory,
-  MainCategoriesType,
-  CurrentQuestionType,
+  MainCategories,
+  CurrentQuestion,
 } from '../reducers/declaration';
 import type { Currency, CurrencyObject } from '../../model/currencies';
 
@@ -81,11 +81,11 @@ export type Action =
   }
   | {
     type: 'DECLARATION_SET_MAIN_CATEGORIES',
-    mainCategories: MainCategoriesType,
+    mainCategories: MainCategories,
   }
   | {
     type: 'DECLARATION_SET_CURRENT_QUESTION',
-    currentQuestion: CurrentQuestionType,
+    currentQuestion: CurrentQuestion,
   }
   | {
     type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_NOT_ANSWERED',

@@ -15,7 +15,7 @@ import type {
 } from '../../../model/types/basketPeopleAmountsTypes';
 import { CategoriesInfo } from '../../../model/constants';
 import type {
-  MainCategoriesType,
+  MainCategories,
   MainCategory,
 } from '../../../types/reducers/declaration';
 import { getSubCategories } from '../../../types/reducers/declaration';
@@ -37,10 +37,10 @@ type QuantityInputTrigger = {
 type MainCategoriesTrigger = {
   questionType: 'mainCategories',
   onUpdate: UpdateFunction<{
-    mainCategories: MainCategoriesType,
+    mainCategories: MainCategories,
     basket: Basket,
   }>,
-  mainCategories: MainCategoriesType,
+  mainCategories: MainCategories,
 };
 
 type Trigger =
@@ -84,10 +84,8 @@ export const onUpdateFactory = (
     }
     case 'mainCategories': {
       const unselectedCategories: Set<MainCategory> = new Set();
-      const newCats: MainCategoriesType = trigger.mainCategories;
-      const oldCats: MainCategoriesType = oldState.settings.get(
-        'mainCategories'
-      );
+      const newCats: MainCategories = trigger.mainCategories;
+      const oldCats: MainCategories = oldState.settings.get('mainCategories');
       oldCats.forEach(c => {
         if (!newCats.has(c)) {
           unselectedCategories.add(c);
@@ -109,9 +107,9 @@ export const onUpdateFactory = (
         });
       }
       if (affectedCategories.size) {
-        const input: MainCategoriesType = trigger.mainCategories;
+        const input: MainCategories = trigger.mainCategories;
         const func: UpdateFunction<{
-          mainCategories: MainCategoriesType,
+          mainCategories: MainCategories,
           basket: Basket,
         }> =
           trigger.onUpdate;
