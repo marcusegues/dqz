@@ -231,8 +231,12 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
               onUpdateFactory(
                 {
                   questionType: 'mainCategories',
-                  onUpdate: updatedCategories => {
+                  onUpdate: ({
+                    mainCategories: updatedCategories,
+                    basket: updatedBasket,
+                  }) => {
                     onDeclarationSetMainCategories(updatedCategories);
+                    onDeclarationSetBasket(updatedBasket);
                     this.updateFlagsOptimistically(
                       'mainCategories',
                       Object.assign({}, qaStateEnriched, {

@@ -12,6 +12,10 @@ import type {
   People,
   Category,
   Amounts,
+  FoodsCategory,
+  AlcoholCategory,
+  TobaccoProductsCategory,
+  OtherGoodsCategory,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { VatReport, DutyReport } from '../../model/types/calculationTypes';
 import { emptyBasket } from '../../model/configurationApi';
@@ -22,7 +26,6 @@ import {
 } from '../../model/types/calculationTypes';
 import type { CurrencyObject } from '../../model/currencies';
 
-export type FoodsCategory = 'Meat' | 'Butter' | 'Oils' | 'OtherFood';
 export type FoodsCategoriesType = ImmutableSetType<FoodsCategory>;
 export const FoodsCategories: FoodsCategoriesType = Immutable.Set([
   'Meat',
@@ -31,14 +34,12 @@ export const FoodsCategories: FoodsCategoriesType = Immutable.Set([
   'OtherFood',
 ]);
 
-export type AlcoholCategory = 'AlcSoft' | 'AlcHard';
 export type AlcoholCategoriesType = ImmutableSetType<AlcoholCategory>;
 export const AlcoholCategories: AlcoholCategoriesType = Immutable.Set([
   'AlcSoft',
   'AlcHard',
 ]);
 
-export type TobaccoProductsCategory = 'Cigarettes' | 'Tobacco';
 export type TobaccoProductsCategoriesType = ImmutableSetType<
   TobaccoProductsCategory
 >;
@@ -47,14 +48,6 @@ export const TobaccoProductsCategories: TobaccoProductsCategoriesType = Immutabl
   ['Cigarettes', 'Tobacco']
 );
 
-export type OtherGoodsCategory =
-  | 'Meds'
-  | 'Books'
-  | 'Magazines'
-  | 'Flowers'
-  | 'AnimalFeed'
-  | 'Fertilizer'
-  | 'Other';
 export type OtherGoodsCategoriesType = ImmutableSetType<OtherGoodsCategory>;
 export const OtherGoodsCategories: OtherGoodsCategoriesType = Immutable.Set([
   'Meds',
@@ -109,6 +102,24 @@ export const getMainCategory = (category: any): MainCategory => {
     return 'TobaccoProducts';
   }
   return 'OtherGoods';
+};
+
+export const getSubCategories = (
+  main: MainCategory
+): ImmutableSetType<Category> => {
+  switch (main) {
+    case 'Foods': {
+      return FoodsCategories;
+    }
+    case 'Alcohol': {
+      return AlcoholCategories;
+    }
+    case 'TobaccoProducts': {
+      return TobaccoProductsCategories;
+    }
+    default:
+      return OtherGoodsCategories;
+  }
 };
 
 export type OverAllowanceType = boolean | 'notAnswered' | 'dontKnow';
