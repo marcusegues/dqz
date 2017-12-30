@@ -2,22 +2,48 @@
 // $FlowFixMe
 import { Alert } from 'react-native';
 
-import type { QAStateEnriched, QuestionType } from '../QuestionAnswerContainer';
+import type { QAStateEnriched } from '../QuestionAnswerContainer';
 import { getAdultPeople } from '../../../model/configurationApi';
+import type {
+  Basket,
+  People,
+} from '../../../model/types/basketPeopleAmountsTypes';
+import type { MainCategoriesType } from '../../../types/reducers/declaration';
 
 type UpdateFunction<T> = (input: T) => void;
-// type NewValue = People | Basket;
+
+type PeopleInputTrigger = {
+  questionType: 'peopleInput',
+  onUpdate: UpdateFunction<People>,
+  people: People,
+};
+
+type QuantityInputTrigger = {
+  questionType: 'quantityInput',
+  onUpdate: UpdateFunction<Basket>,
+  basket: Basket,
+};
+
+type MainCategoriesTrigger = {
+  questionType: 'mainCategories',
+  onUpdate: UpdateFunction<MainCategoriesType>,
+  mainCategories: MainCategoriesType,
+};
+
+type Trigger =
+  | PeopleInputTrigger
+  | QuantityInputTrigger
+  | MainCategoriesTrigger;
 
 export const onUpdateFactory = (
-  questionType: QuestionType,
-  onUpdate: UpdateFunction<any /* TODO, but how? */>,
+  trigger: Trigger,
   oldState: QAStateEnriched
-): UpdateFunction<any /* TODO, but how? */> => (
-  newValue: any /* TODO, but how? */
-) => {
-  switch (questionType) {
+): void => {
+  switch (trigger.questionType) {
     case 'peopleInput': {
-      if (!getAdultPeople(newValue) && getAdultPeople(oldState.people)) {
+      if (!getAdultPeople(trigger.people) && getAdultPeople(oldState.people)) {
+        const input: People = trigger.people;
+        const func: UpdateFunction<People> = trigger.onUpdate;
         const showAlert = () => {
           Alert.alert(
             'Are you sure you want no adults?',
@@ -30,7 +56,7 @@ export const onUpdateFactory = (
               },
               {
                 text: 'Yes. I know what I am doing.',
-                onPress: () => onUpdate(newValue),
+                onPress: () => func(input),
               },
             ],
             { cancelable: true }
@@ -39,12 +65,13 @@ export const onUpdateFactory = (
 
         showAlert();
       } else {
-        onUpdate(newValue);
+        trigger.onUpdate(trigger.people);
       }
       break;
     }
     default: {
-      onUpdate(newValue);
+      // eslint-disable-next-line no-console
+      console.log('foo');
     }
   }
 };
