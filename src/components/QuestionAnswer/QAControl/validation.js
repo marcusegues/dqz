@@ -6,7 +6,6 @@ import type { QAStateEnriched } from '../QuestionAnswerContainer';
 import {
   getAdultPeople,
   getTotalQuantity,
-  resetQuantities,
   resetQuantitiesMultipleCategories,
 } from '../../../model/configurationApi';
 import type {
