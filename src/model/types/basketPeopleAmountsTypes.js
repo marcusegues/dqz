@@ -11,15 +11,11 @@ import type { Currency } from '../currencies';
 /**
  * todo, jsdoc
  */
-export type Category =
-  | 'Meat'
-  | 'Butter'
-  | 'Oils'
-  | 'OtherFood'
-  | 'AlcSoft'
-  | 'AlcHard'
-  | 'Cigarettes'
-  | 'Tobacco'
+
+export type FoodsCategory = 'Meat' | 'Butter' | 'Oils' | 'OtherFood';
+export type AlcoholCategory = 'AlcSoft' | 'AlcHard';
+export type TobaccoProductsCategory = 'Cigarettes' | 'Tobacco';
+export type OtherGoodsCategory =
   | 'Meds'
   | 'Books'
   | 'Magazines'
@@ -27,6 +23,12 @@ export type Category =
   | 'AnimalFeed'
   | 'Fertilizer'
   | 'Other';
+
+export type Category =
+  | FoodsCategory
+  | AlcoholCategory
+  | TobaccoProductsCategory
+  | OtherGoodsCategory;
 
 // CATEGORY INFO
 type CategoryInfoContent = {

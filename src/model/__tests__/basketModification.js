@@ -27,6 +27,8 @@ import {
   getQuantities,
   deleteQuantity,
   initAmounts,
+  resetQuantities,
+  resetQuantitiesMultipleCategories,
 } from '../configurationApi';
 import { categoriesArray } from '../constants';
 import { currenciesArray } from '../currencies';
@@ -50,22 +52,40 @@ const twoAdultsNoMinor = addAdult(initPeople);
 const noAdultsNoMinor = subtractAdult(initPeople);
 const oneAdultOneMinor = addMinor(initPeople);
 
+const resetter: Basket = emptyBasket.withMutations(basket => {
+  basket = addQuantity(basket, 'Butter', 23);
+  basket = addQuantity(basket, 'Butter', 23);
+  basket = addQuantity(basket, 'Butter', 23);
+  basket = addQuantity(basket, 'Meat', 111);
+  basket = addQuantity(basket, 'Meat', 111);
+  basket = addQuantity(basket, 'Meat', 111);
+  basket = addQuantity(basket, 'Tobacco', 3219);
+  basket = addQuantity(basket, 'Tobacco', 3219);
+  basket = addQuantity(basket, 'Tobacco', 3219);
+
+  return basket;
+});
+
 describe('The basket / quantites: ', () => {
   test('defaults to 0 quantity', () => {
     categoriesArray.forEach(c =>
       expect(getTotalQuantity(emptyBasket, c)).toBe(0)
     );
   });
+
   test('has individually set quantities: ', () => {
     expect(getTotalQuantity(quantityBasket1, 'Butter')).toBe(1234);
   });
+
   test('leaves other quantities untouched: ', () => {
     expect(getTotalQuantity(quantityBasket1, 'Meat')).toBe(0);
   });
+
   test('has sync set quantities: ', () => {
     expect(getTotalQuantity(quantityBasket2, 'Butter')).toBe(321);
     expect(getTotalQuantity(quantityBasket2, 'Meat')).toBe(123);
   });
+
   test('is immutable', () => {
     categoriesArray.forEach(c =>
       expect(getTotalQuantity(quantityBasket3, c)).toBe(0)
@@ -97,11 +117,23 @@ describe('The basket / quantites: ', () => {
     expect(getTotalQuantity(b5, 'Meat')).toBe(369);
     expect(getQuantities(b5, 'Meat').size).toBe(3);
   });
+
+  test('can reset the quantites of a category', () => {
+    expect(resetQuantities(resetter, 'Meat')).toMatchSnapshot();
+  });
+
+  test('can reset the quantites of multiple categorie', () => {
+    expect(
+      resetQuantitiesMultipleCategories(resetter, ['Meat', 'Butter'])
+    ).toMatchSnapshot();
+  });
+
   test('adding quantity of zero has no effect', () => {
     const b1 = addQuantity(emptyBasket, 'Meat', 0);
 
     expect(getQuantities(b1, 'Meat').size).toBe(0);
   });
+
   test('adding negative quantity has no effect', () => {
     const b1 = addQuantity(emptyBasket, 'Meat', -123);
 

@@ -25,7 +25,7 @@ import type {
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type {
-  MainCategoriesType,
+  MainCategories,
   Settings,
 } from '../../types/reducers/declaration';
 import {
@@ -36,6 +36,7 @@ import {
 import { setInitFlags, setQuestionFlag } from './QAControl/controlQuestionFlag';
 import { verticalScale } from '../../styles/Scaling';
 import HeaderTitle from '../Headers/subcomponents/HeaderTitle';
+import { onUpdateFactory } from './QAControl/validation';
 
 export type QuestionType =
   | 'peopleInput'
@@ -184,13 +185,25 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             }}
             questionState={questionStates.peopleInput}
             questionFlag={questionFlag.peopleInput}
-            onUpdate={newPeople => {
-              onDeclarationSetPeople(newPeople);
-              this.updateFlagsOptimistically(
-                'peopleInput',
-                Object.assign({}, qaStateEnriched, { people: newPeople })
-              );
-            }}
+            onUpdate={newPeople =>
+              onUpdateFactory(
+                {
+                  questionType: 'peopleInput',
+                  onUpdate: updatedPeople => {
+                    onDeclarationSetPeople(updatedPeople);
+                    this.updateFlagsOptimistically(
+                      'peopleInput',
+                      Object.assign({}, qaStateEnriched, {
+                        people: updatedPeople,
+                      })
+                    );
+                  },
+                  people: newPeople,
+                },
+                qaStateEnriched,
+                t
+              )
+            }
             onAnswer={() => {
               onDeclarationSetPeople(people);
               this.updateQA('peopleInput');
@@ -215,15 +228,32 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             }}
             questionState={questionStates.mainCategories}
             questionFlag={questionFlag.mainCategories}
-            onUpdate={activeCategories => {
-              onDeclarationSetMainCategories(activeCategories);
-              this.updateFlagsOptimistically(
-                'mainCategories',
-                Object.assign({}, qaStateEnriched, {
-                  settings: settings.set('mainCategories', activeCategories),
-                })
-              );
-            }}
+            onUpdate={newCategories =>
+              onUpdateFactory(
+                {
+                  questionType: 'mainCategories',
+                  onUpdate: ({
+                    mainCategories: updatedCategories,
+                    basket: updatedBasket,
+                  }) => {
+                    onDeclarationSetMainCategories(updatedCategories);
+                    onDeclarationSetBasket(updatedBasket);
+                    this.updateFlagsOptimistically(
+                      'mainCategories',
+                      Object.assign({}, qaStateEnriched, {
+                        settings: settings.set(
+                          'mainCategories',
+                          updatedCategories
+                        ),
+                      })
+                    );
+                  },
+                  mainCategories: newCategories,
+                },
+                qaStateEnriched,
+                t
+              )
+            }
             onAnswer={() => {
               onDeclarationSetMainCategories(mainCategories);
               this.updateQA('mainCategories');
@@ -245,13 +275,25 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             }}
             questionState={questionStates.quantityInput}
             questionFlag={questionFlag.quantityInput}
-            onUpdate={newBasket => {
-              onDeclarationSetBasket(newBasket);
-              this.updateFlagsOptimistically(
-                'quantityInput',
-                Object.assign({}, qaStateEnriched, { basket: newBasket })
-              );
-            }}
+            onUpdate={newBasket =>
+              onUpdateFactory(
+                {
+                  questionType: 'quantityInput',
+                  onUpdate: updatedBasket => {
+                    onDeclarationSetBasket(updatedBasket);
+                    this.updateFlagsOptimistically(
+                      'quantityInput',
+                      Object.assign({}, qaStateEnriched, {
+                        basket: updatedBasket,
+                      })
+                    );
+                  },
+                  basket: newBasket,
+                },
+                qaStateEnriched,
+                t
+              )
+            }
             onAnswer={() => {
               onDeclarationSetBasket(basket);
               this.updateQA('quantityInput');
@@ -297,7 +339,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
           }}
         >
           <RedButton
-            text={t('toOverview')}
+            text={t('qaFlow:toOverview')}
             confirmationDisabled={!this.allQuestionsAnswered()}
             onPress={() => this.props.navigation.navigate('Payment')}
           />
@@ -321,7 +363,7 @@ const mapDispatchToProps = dispatch => ({
       type: 'DECLARATION_SET_PEOPLE',
       people,
     }),
-  onDeclarationSetMainCategories: (mainCategories: MainCategoriesType) =>
+  onDeclarationSetMainCategories: (mainCategories: MainCategories) =>
     dispatch({
       type: 'DECLARATION_SET_MAIN_CATEGORIES',
       mainCategories,
@@ -340,5 +382,5 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  translate(['qaFlow'])(QuestionAnswerContainer)
+  translate(['qaFlow', 'categories'])(QuestionAnswerContainer)
 );
