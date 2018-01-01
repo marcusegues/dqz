@@ -35,7 +35,7 @@ const declaration = (
       const s2 = s1.set('currencyDate', currencyDate);
       return s2.set('validCurrencies', validCurrencies);
     }
-    case 'DECLARATION_BASKET_ADD_QUANTITY': {
+    case 'BASKET_ADD_QUANTITY': {
       const category: Category = action.category;
       const basket: Basket = state.get('basket');
       return state.setIn(
@@ -43,36 +43,36 @@ const declaration = (
         modelApi.addQuantity(basket, category, action.quantity)
       );
     }
-    case 'DECLARATION_SET_BASKET': {
+    case 'SET_BASKET': {
       const basket: Basket = action.basket;
       return state.set('basket', basket);
     }
-    case 'DECLARATION_ADULTS_CHANGE_QUANTITY': {
+    case 'ADULTS_CHANGE_QUANTITY': {
       const people: People = state.get('people');
       const adults: number = people.get('adults');
       const quantity: number = adults + action.quantityChange;
       return state.set('people', modelApi.setAdultPeople(people, quantity));
     }
-    case 'DECLARATION_MINORS_CHANGE_QUANTITY': {
+    case 'MINORS_CHANGE_QUANTITY': {
       const people: People = state.get('people');
       const minors: number = people.get('minors');
       const quantity: number = minors + action.quantityChange;
       return state.set('people', modelApi.setMinorPeople(people, quantity));
     }
-    case 'DECLARATION_ADULTS_SET_QUANTITY': {
+    case 'ADULTS_SET_QUANTITY': {
       const people: People = state.get('people');
       const quantity: number = action.quantity;
       return state.set('people', modelApi.setAdultPeople(people, quantity));
     }
-    case 'DECLARATION_MINORS_SET_QUANTITY': {
+    case 'MINORS_SET_QUANTITY': {
       const people: People = state.get('people');
       const quantity: number = action.quantity;
       return state.set('people', modelApi.setMinorPeople(people, quantity));
     }
-    case 'DECLARATION_SET_PEOPLE': {
+    case 'SET_PEOPLE': {
       return state.set('people', action.people);
     }
-    case 'DECLARATION_ADD_AMOUNT': {
+    case 'ADD_AMOUNT': {
       const currency: Currency = action.currency;
       const amounts: Amounts = state.get('amounts');
       const amount: number = action.amount;
@@ -81,7 +81,7 @@ const declaration = (
         modelApi.addAmount(amounts, currency, amount)
       );
     }
-    case 'DECLARATION_ADD_LARGE_AMOUNT': {
+    case 'ADD_LARGE_AMOUNT': {
       const currency: Currency = action.currency;
       const largeAmount: number = action.largeAmount;
       const amounts: Amounts = state.get('amounts');
@@ -90,7 +90,7 @@ const declaration = (
         modelApi.addLargeAmount(amounts, currency, largeAmount)
       );
     }
-    case 'DECLARATION_RESET_LARGE_AMOUNTS': {
+    case 'RESET_LARGE_AMOUNTS': {
       const amounts: Amounts = state.get('amounts');
       const currency: Currency = action.currency;
       return state.set(
@@ -98,12 +98,12 @@ const declaration = (
         modelApi.resetLargeAmounts(amounts, currency)
       );
     }
-    case 'DECLARATION_RESET_AMOUNTS': {
+    case 'RESET_AMOUNTS': {
       const amounts: Amounts = state.get('amounts');
       const currency: Currency = action.currency;
       return state.set('amounts', modelApi.resetAmounts(amounts, currency));
     }
-    case 'DECLARATION_ADD_MAIN_CATEGORY': {
+    case 'ADD_MAIN_CATEGORY': {
       const mainCategory: MainCategory = action.mainCategory;
       const mainCategoriesAnswer = state.getIn(
         ['settings', 'mainCategories'],
@@ -117,7 +117,7 @@ const declaration = (
       }
       return state;
     }
-    case 'DECLARATION_REMOVE_MAIN_CATEGORY': {
+    case 'REMOVE_MAIN_CATEGORY': {
       const mainCategory: MainCategory = action.mainCategory;
       const mainCategoriesAnswer = state.getIn(
         ['settings', 'mainCategories'],
@@ -131,7 +131,7 @@ const declaration = (
       }
       return state;
     }
-    case 'DECLARATION_SET_MAIN_CATEGORIES': {
+    case 'SET_MAIN_CATEGORIES': {
       const mainCategoriesAnswer: MainCategories = action.mainCategories;
       return state.setIn(['settings', 'mainCategories'], mainCategoriesAnswer);
     }

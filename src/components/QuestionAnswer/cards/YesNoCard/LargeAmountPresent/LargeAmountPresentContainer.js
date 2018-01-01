@@ -37,9 +37,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   declarationSetLargeAmountPresentTrue: () =>
-    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE' }),
+    dispatch({ type: 'SET_LARGE_AMOUNT_PRESENT_TRUE' }),
   declarationSetLargeAmountPresentFalse: () =>
-    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE' }),
+    dispatch({ type: 'SET_LARGE_AMOUNT_PRESENT_FALSE' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(

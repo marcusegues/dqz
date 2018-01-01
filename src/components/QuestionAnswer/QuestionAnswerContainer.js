@@ -360,23 +360,23 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onDeclarationSetPeople: (people: People) =>
     dispatch({
-      type: 'DECLARATION_SET_PEOPLE',
+      type: 'SET_PEOPLE',
       people,
     }),
   onDeclarationSetMainCategories: (mainCategories: MainCategories) =>
     dispatch({
-      type: 'DECLARATION_SET_MAIN_CATEGORIES',
+      type: 'SET_MAIN_CATEGORIES',
       mainCategories,
     }),
   onDeclarationBasketChangeQuantity: (category, quantity) =>
     dispatch({
-      type: 'DECLARATION_BASKET_ADD_QUANTITY',
+      type: 'BASKET_ADD_QUANTITY',
       category,
       quantity,
     }),
   onDeclarationSetBasket: basket =>
     dispatch({
-      type: 'DECLARATION_SET_BASKET',
+      type: 'SET_BASKET',
       basket,
     }),
 });

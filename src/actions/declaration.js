@@ -3,8 +3,8 @@ export const toggleMainCategory = mainCategory => (dispatch, getState) => {
   if (
     state.declaration.getIn(['settings', 'mainCategories']).has(mainCategory)
   ) {
-    dispatch({ type: 'DECLARATION_REMOVE_MAIN_CATEGORY', mainCategory });
+    dispatch({ type: 'REMOVE_MAIN_CATEGORY', mainCategory });
   } else {
-    dispatch({ type: 'DECLARATION_ADD_MAIN_CATEGORY', mainCategory });
+    dispatch({ type: 'ADD_MAIN_CATEGORY', mainCategory });
   }
 };

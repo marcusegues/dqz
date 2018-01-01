@@ -49,9 +49,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   declarationSetOverAllowanceTrue: () =>
-    dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_TRUE' }),
+    dispatch({ type: 'SET_OVER_ALLOWANCE_TRUE' }),
   declarationSetOverAllowanceFalse: () =>
-    dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_FALSE' }),
+    dispatch({ type: 'SET_OVER_ALLOWANCE_FALSE' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(

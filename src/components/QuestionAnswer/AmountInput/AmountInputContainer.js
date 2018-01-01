@@ -96,10 +96,10 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onDeclarationSetAmountsEnteredTrue: () =>
-    dispatch({ type: 'DECLARATION_SET_AMOUNTS_ENTERED_TRUE' }),
+    dispatch({ type: 'SET_AMOUNTS_ENTERED_TRUE' }),
   onDeclarationAddAmount: amount =>
     dispatch({
-      type: 'DECLARATION_ADD_AMOUNT',
+      type: 'ADD_AMOUNT',
       category: 'Meat',
       amount,
     }),

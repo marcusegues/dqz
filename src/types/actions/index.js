@@ -17,68 +17,68 @@ export type Action =
     currencyDate: Date,
   }
   | {
-    type: 'DECLARATION_BASKET_ADD_QUANTITY',
+    type: 'BASKET_ADD_QUANTITY',
     category: Category,
     quantity: number,
   }
   | {
-    type: 'DECLARATION_SET_BASKET',
+    type: 'SET_BASKET',
     basket: Basket,
   }
   | {
-    type: 'DECLARATION_ADD_AMOUNT',
+    type: 'ADD_AMOUNT',
     currency: Currency,
     amount: number,
   }
   | {
-    type: 'DECLARATION_ADD_LARGE_AMOUNT',
+    type: 'ADD_LARGE_AMOUNT',
     currency: Currency,
     largeAmount: number,
   }
   | {
-    type: 'DECLARATION_ADULTS_CHANGE_QUANTITY',
+    type: 'ADULTS_CHANGE_QUANTITY',
     category: Category,
     quantityChange: number,
   }
   | {
-    type: 'DECLARATION_ADULTS_SET_QUANTITY',
+    type: 'ADULTS_SET_QUANTITY',
     category: Category,
     quantity: number,
   }
   | {
-    type: 'DECLARATION_MINORS_CHANGE_QUANTITY',
+    type: 'MINORS_CHANGE_QUANTITY',
     category: Category,
     quantityChange: number,
   }
   | {
-    type: 'DECLARATION_MINORS_SET_QUANTITY',
+    type: 'MINORS_SET_QUANTITY',
     category: Category,
     quantity: number,
   }
   | {
-    type: 'DECLARATION_ADD_MAIN_CATEGORY',
+    type: 'ADD_MAIN_CATEGORY',
     mainCategory: MainCategory,
   }
   | {
-    type: 'DECLARATION_REMOVE_MAIN_CATEGORY',
+    type: 'REMOVE_MAIN_CATEGORY',
     mainCategory: MainCategory,
   }
   | {
-    type: 'DECLARATION_SET_MAIN_CATEGORIES',
+    type: 'SET_MAIN_CATEGORIES',
     mainCategories: MainCategories,
   }
   | {
-    type: 'DECLARATION_RESET_LARGE_AMOUNTS',
+    type: 'RESET_LARGE_AMOUNTS',
     currency: Currency,
   }
   | {
-    type: 'DECLARATION_SET_PEOPLE',
+    type: 'SET_PEOPLE',
     people: People,
   }
   | {
-    type: 'DECLARATION_SET_AMOUNTS_ENTERED_TRUE',
+    type: 'SET_AMOUNTS_ENTERED_TRUE',
   }
   | {
-    type: 'DECLARATION_RESET_AMOUNTS',
+    type: 'RESET_AMOUNTS',
     currency: Currency,
   };
