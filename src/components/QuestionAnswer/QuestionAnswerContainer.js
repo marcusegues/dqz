@@ -13,11 +13,11 @@ import MainCategoriesInputQA from './MainCategoriesInput/MainCategoriesInputQA';
 import QuantityInputQA from './QuantityInput/QuantityInputQA';
 
 import {
-  getDeclarationBasket,
-  getDeclarationPeople,
-  getDeclarationSettings,
-  getDeclarationAmounts,
-  getDeclarationMainCategories,
+  getBasket,
+  getPeople,
+  getSettings,
+  getAmounts,
+  getMainCategories,
 } from '../../reducers';
 import type {
   Amounts,
@@ -350,11 +350,11 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
 }
 
 const mapStateToProps = state => ({
-  basket: getDeclarationBasket(state),
-  people: getDeclarationPeople(state),
-  amounts: getDeclarationAmounts(state),
-  settings: getDeclarationSettings(state),
-  mainCategories: getDeclarationMainCategories(state),
+  basket: getBasket(state),
+  people: getPeople(state),
+  amounts: getAmounts(state),
+  settings: getSettings(state),
+  mainCategories: getMainCategories(state),
 });
 
 const mapDispatchToProps = dispatch => ({

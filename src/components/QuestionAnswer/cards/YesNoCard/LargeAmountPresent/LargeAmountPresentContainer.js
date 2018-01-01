@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import YesNoCard from '../YesNoCard';
-import { getDeclarationPeople } from '../../../../../reducers';
+import { getPeople } from '../../../../../reducers';
 
 class LargeAmountPresentContainer extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class LargeAmountPresentContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  people: getDeclarationPeople(state),
+  people: getPeople(state),
 });
 
 const mapDispatchToProps = dispatch => ({

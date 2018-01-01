@@ -5,11 +5,7 @@ import ConfirmationCard from '../cards/ConfirmationCard/ConfirmationCard';
 import AnswerCard from '../cards/AnswerCard/AnswerCard';
 import AmountInput from './AmountInput';
 import AmountInputInfo from './AmountInputInfo';
-import {
-  getDeclarationBasket,
-  getDeclarationSettings,
-  getDeclarationPeople,
-} from '../../../reducers';
+import { getBasket, getSettings, getPeople } from '../../../reducers';
 import { getAmounts } from '../../../model/configurationApi';
 
 const complete = require('../../../../assets/images/complete.png');
@@ -93,9 +89,9 @@ class AmountInputContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  people: getDeclarationPeople(state),
-  amounts: getAmounts(getDeclarationBasket(state), 'Meat'),
-  settings: getDeclarationSettings(state),
+  people: getPeople(state),
+  amounts: getAmounts(getBasket(state), 'Meat'),
+  settings: getSettings(state),
 });
 
 const mapDispatchToProps = dispatch => ({

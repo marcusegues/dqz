@@ -5,11 +5,7 @@ import type {
   Basket,
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
-import type {
-  MainCategory,
-  MainCategories,
-  CurrentQuestion,
-} from '../reducers/declaration';
+import type { MainCategory, MainCategories } from '../reducers/declaration';
 import type { Currency, CurrencyObject } from '../../model/currencies';
 
 export type Action =
@@ -35,7 +31,7 @@ export type Action =
     amount: number,
   }
   | {
-    type: 'DECLARATION_BASKET_ADD_LARGE_AMOUNT',
+    type: 'DECLARATION_ADD_LARGE_AMOUNT',
     currency: Currency,
     largeAmount: number,
   }
@@ -60,18 +56,6 @@ export type Action =
     quantity: number,
   }
   | {
-    type: 'DECLARATION_SET_OVER_ALLOWANCE_TRUE',
-  }
-  | {
-    type: 'DECLARATION_SET_OVER_ALLOWANCE_FALSE',
-  }
-  | {
-    type: 'DECLARATION_SET_LARGE_AMOUNTS_TRUE',
-  }
-  | {
-    type: 'DECLARATION_SET_LARGE_AMOUNTS_FALSE',
-  }
-  | {
     type: 'DECLARATION_ADD_MAIN_CATEGORY',
     mainCategory: MainCategory,
   }
@@ -82,13 +66,6 @@ export type Action =
   | {
     type: 'DECLARATION_SET_MAIN_CATEGORIES',
     mainCategories: MainCategories,
-  }
-  | {
-    type: 'DECLARATION_SET_CURRENT_QUESTION',
-    currentQuestion: CurrentQuestion,
-  }
-  | {
-    type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_NOT_ANSWERED',
   }
   | {
     type: 'DECLARATION_RESET_LARGE_AMOUNTS',
@@ -102,18 +79,6 @@ export type Action =
     type: 'DECLARATION_SET_AMOUNTS_ENTERED_TRUE',
   }
   | {
-    type: 'DECLARATION_CALCULATE_DUES',
-  }
-  | {
     type: 'DECLARATION_RESET_AMOUNTS',
     currency: Currency,
-  }
-  | {
-    type: 'DECLARATION_SET_OVER_ALLOWANCE_NOT_ANSWERED',
-  }
-  | {
-    type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE',
-  }
-  | {
-    type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE',
   };

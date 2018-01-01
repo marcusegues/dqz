@@ -3,18 +3,13 @@
 import {
   getInitialState,
   mainCategories,
-  initList,
   EmptyMainCategories,
 } from '../types/reducers/declaration';
 import type {
   State,
   MainCategory,
   MainCategories,
-  OverAllowance,
-  LargeAmountPresent,
   Settings,
-  InitList,
-  CurrentQuestion,
 } from '../types/reducers/declaration';
 import type { Action } from '../types/actions';
 import type {
@@ -77,12 +72,6 @@ const declaration = (
     case 'DECLARATION_SET_PEOPLE': {
       return state.set('people', action.people);
     }
-    case 'DECLARATION_SET_OVER_ALLOWANCE_TRUE': {
-      return state.setIn(['settings', 'overAllowance'], true);
-    }
-    case 'DECLARATION_SET_OVER_ALLOWANCE_FALSE': {
-      return state.setIn(['settings', 'overAllowance'], false);
-    }
     case 'DECLARATION_ADD_AMOUNT': {
       const currency: Currency = action.currency;
       const amounts: Amounts = state.get('amounts');
@@ -92,11 +81,8 @@ const declaration = (
         modelApi.addAmount(amounts, currency, amount)
       );
     }
-
-    case 'DECLARATION_BASKET_ADD_LARGE_AMOUNT': {
-      // eslint-disable-next-line prefer-destructuring
+    case 'DECLARATION_ADD_LARGE_AMOUNT': {
       const currency: Currency = action.currency;
-      // eslint-disable-next-line prefer-destructuring
       const largeAmount: number = action.largeAmount;
       const amounts: Amounts = state.get('amounts');
       return state.set(
@@ -104,36 +90,21 @@ const declaration = (
         modelApi.addLargeAmount(amounts, currency, largeAmount)
       );
     }
-    case 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE': {
-      return state.setIn(['settings', 'largeAmountPresent'], true);
-    }
-    case 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE': {
-      return state.setIn(['settings', 'largeAmountPresent'], false);
-    }
-    case 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_NOT_ANSWERED': {
-      return state.setIn(['settings', 'largeAmountPresent'], 'notAnswered');
-    }
     case 'DECLARATION_RESET_LARGE_AMOUNTS': {
       const amounts: Amounts = state.get('amounts');
-      // eslint-disable-next-line prefer-destructuring
       const currency: Currency = action.currency;
       return state.set(
         'amounts',
         modelApi.resetLargeAmounts(amounts, currency)
       );
     }
-    case 'DECLARATION_SET_OVER_ALLOWANCE_NOT_ANSWERED': {
-      return state.setIn(['settings', 'overAllowance'], 'notAnswered');
-    }
     case 'DECLARATION_RESET_AMOUNTS': {
       const amounts: Amounts = state.get('amounts');
-      // eslint-disable-next-line prefer-destructuring
       const currency: Currency = action.currency;
       return state.set('amounts', modelApi.resetAmounts(amounts, currency));
     }
     case 'DECLARATION_ADD_MAIN_CATEGORY': {
-      // eslint-disable-next-line prefer-destructuring
-      const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?
+      const mainCategory: MainCategory = action.mainCategory;
       const mainCategoriesAnswer = state.getIn(
         ['settings', 'mainCategories'],
         EmptyMainCategories
@@ -144,11 +115,10 @@ const declaration = (
           mainCategoriesAnswer.add(mainCategory)
         );
       }
-      return state; // should never reach this
+      return state;
     }
     case 'DECLARATION_REMOVE_MAIN_CATEGORY': {
-      // eslint-disable-next-line prefer-destructuring
-      const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?
+      const mainCategory: MainCategory = action.mainCategory;
       const mainCategoriesAnswer = state.getIn(
         ['settings', 'mainCategories'],
         EmptyMainCategories
@@ -159,10 +129,9 @@ const declaration = (
           mainCategoriesAnswer.delete(mainCategory)
         );
       }
-      return state; // should never reach this
+      return state;
     }
     case 'DECLARATION_SET_MAIN_CATEGORIES': {
-      // eslint-disable-next-line prefer-destructuring
       const mainCategoriesAnswer: MainCategories = action.mainCategories;
       return state.setIn(['settings', 'mainCategories'], mainCategoriesAnswer);
     }
@@ -174,35 +143,16 @@ const declaration = (
 
 export default declaration;
 
-export const getDeclarationBasket = (state: State): Basket =>
-  state.get('basket');
+export const getBasket = (state: State): Basket => state.get('basket');
 
-export const getDeclarationPeople = (state: State): People =>
-  state.get('people');
+export const getPeople = (state: State): People => state.get('people');
 
-export const getDeclarationAmounts = (state: State): Amounts =>
-  state.get('amounts');
+export const getAmounts = (state: State): Amounts => state.get('amounts');
 
-export const getOverAllowance = (state: State): OverAllowance =>
-  state.getIn(['settings', 'overAllowance'], 'notAnswered');
-
-export const getLargeAmountPresent = (state: State): LargeAmountPresent =>
-  state.getIn(['settings', 'largeAmountPresent'], 'notAnswered');
-
-export const getDeclarationMainCategories = (state: State): MainCategories =>
+export const getMainCategories = (state: State): MainCategories =>
   state.getIn(['settings', 'mainCategories'], mainCategories);
 
-export const getDeclarationCurrentQuestion = (state: State): CurrentQuestion =>
-  state.getIn(['settings', 'currentQuestion'], 'finished');
-
-export const getDeclarationSettings = (state: State): Settings =>
-  state.get('settings');
-
-export const getDeclarationInit = (state: State): boolean =>
-  state.getIn(['settings', 'init'], true);
-
-export const getDeclarationInitList = (state: State): InitList =>
-  state.getIn(['settings', 'initList'], initList);
+export const getSettings = (state: State): Settings => state.get('settings');
 
 export const getCurrenciesObject = (state: State): CurrencyObject =>
   state.get('currencyObject');

@@ -10,7 +10,7 @@ import Saferpay from '../../../saferpay';
 import NavBar from '../NavBar/NavBar';
 import PaymentWebView from './PaymentWebView';
 import RedButton from '../Buttons/RedButton';
-import { getDeclarationBasket, getDeclarationPeople } from '../../reducers';
+import { getBasket, getPeople } from '../../reducers';
 import { calculateDuty } from '../../model/dutyCalculations';
 
 const baseUrl = 'http://ambrite.ch';
@@ -145,8 +145,8 @@ class PaymentContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  basket: getDeclarationBasket(state),
-  people: getDeclarationPeople(state),
+  basket: getBasket(state),
+  people: getPeople(state),
 });
 
 export default connect(mapStateToProps)(
