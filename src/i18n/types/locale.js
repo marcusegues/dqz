@@ -198,7 +198,7 @@ type ModalNS = {
   individualCategoryPicker: string,
   currencyPickerTitle: string,
   currencyPickerSubTitle: string,
-  currencyPickerCourse: string,
+  currencyPickerRate: string,
 };
 
 export const makeModalNSRecord: RecordFactory<ModalNS> = Immutable.Record({
@@ -207,7 +207,7 @@ export const makeModalNSRecord: RecordFactory<ModalNS> = Immutable.Record({
   individualCategoryPicker: 'i18n',
   currencyPickerTitle: 'i18n',
   currencyPickerSubTitle: 'i18n',
-  currencyPickerCourse: 'i18n',
+  currencyPickerRate: 'i18n',
 });
 
 export type ModalNSType = RecordOf<ModalNS>;
