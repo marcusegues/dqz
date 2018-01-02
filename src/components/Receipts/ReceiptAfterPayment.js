@@ -18,7 +18,7 @@ import { calculateDuty } from '../../model/dutyCalculations';
 class ReceiptAfterPayment extends React.Component {
   render() {
     const { basket, people, t } = this.props;
-    const dutyReport = calculateDuty(basket, people);
+    // const dutyReport = calculateDuty(basket, people);
     return (
       <ScrollViewCard>
         <Logo />
@@ -69,57 +69,49 @@ class ReceiptAfterPayment extends React.Component {
             style={{ fontSize: moderateScale(12), alignSelf: 'flex-end' }}
           />
 
-          <View style={{ flex: 1, width: '100%' }}>
-            {/*{dutyReport*/}
-            {/*.get('dutyByCategoryRaw')*/}
-            {/*.entrySeq()*/}
-            {/*.filter(entry => getTotalQuantity(basket, entry[0]) > 0)*/}
-            {/*.map(([category, duty], idx) => (*/}
-            {/*<DutyRow*/}
-            {/*borderTop={idx === 0}*/}
-            {/*key={category}*/}
-            {/*mainCategory={getMainCategory(category)}*/}
-            {/*category={category}*/}
-            {/*quantity={getTotalQuantity(basket, category)}*/}
-            {/*duty={duty.toFixed(2)}*/}
-            {/*/>*/}
-            {/*))}*/}
-            <View
-              style={{ alignSelf: 'flex-end', marginRight: 16, marginTop: 16 }}
-            >
-              <CardRowText
-                text={`${t('sumText')}: ${dutyReport.totalDuty.toFixed(2)}`}
-              />
-            </View>
-          </View>
-
-          {/*<DutyRow*/}
-          {/*borderTop={1 > 2}*/}
-          {/*key="Alco"*/}
-          {/*mainCategory="dfa"*/}
-          {/*category="dfasf"*/}
-          {/*quantity={3}*/}
-          {/*duty={33}*/}
+          {/*<View style={{ flex: 1, width: '100%' }}>*/}
+          {/* {dutyReport */}
+          {/* .get('dutyByCategoryRaw') */}
+          {/* .entrySeq() */}
+          {/* .filter(entry => getTotalQuantity(basket, entry[0]) > 0) */}
+          {/* .map(([category, duty], idx) => ( */}
+          {/* <DutyRow */}
+          {/* borderTop={idx === 0} */}
+          {/* key={category} */}
+          {/* mainCategory={getMainCategory(category)} */}
+          {/* category={category} */}
+          {/* quantity={getTotalQuantity(basket, category)} */}
+          {/* duty={duty.toFixed(2)} */}
+          {/* /> */}
+          {/* ))} */}
+          {/*<View*/}
+          {/*style={{ alignSelf: 'flex-end', marginRight: 16, marginTop: 16 }}*/}
+          {/*>*/}
+          {/*<CardRowText*/}
+          {/*text={`${t('sumText')}: ${dutyReport.totalDuty.toFixed(2)}`}*/}
           {/*/>*/}
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
-          <Text>1</Text>
+          {/*</View>*/}
         </View>
+
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        <Text>1</Text>
+        {/*</View>*/}
       </ScrollViewCard>
     );
   }
