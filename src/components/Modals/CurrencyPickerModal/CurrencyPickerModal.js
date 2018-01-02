@@ -1,14 +1,14 @@
 // @flow
 import React from 'react';
+
+// $FlowFixMe
 import {
   TextInput,
   TouchableWithoutFeedback,
   View,
-  Picker,
   Keyboard,
+  Picker,
 } from 'react-native';
-// $FlowFixMe
-
 import { translate } from 'react-i18next';
 import AppModal from '../AppModal';
 import RedButton from '../../Buttons/RedButton';
