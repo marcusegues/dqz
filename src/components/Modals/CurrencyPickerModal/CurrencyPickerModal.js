@@ -19,12 +19,7 @@ import { currencyPicker } from './currencyPickerData';
 import styles from '../styles/CurrencyPickerModal';
 import { INDIVIDUALALLOWANCE } from '../../../model/constants';
 
-type PickerState = {
-  currency: string,
-  amount: number,
-};
-
-class CurrencyPickerModal extends React.Component<any, PickerState> {
+class CurrencyPickerModal extends React.Component {
   state = {
     amount: 0,
     currency: 'EUR',
