@@ -20,6 +20,9 @@ import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswer
 import UnderConstructionWithSums from './underConstructionWithSums';
 import GoodQuantityListModal from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import OnBoardingTaxScreen from '../screens/OnBoarding/OnBoardingTaxScreen';
+import ReceiptAfterPayment from '../components/Receipts/ReceiptAfterPayment';
+import HomeIcon from '../components/Headers/subcomponents/HomeIcon';
+import DownloadIcon from '../components/Headers/subcomponents/DownloadIcon';
 
 export const stackNavigatorScreens = {
   Screens: {
@@ -82,12 +85,20 @@ export const stackNavigatorScreens = {
       headerTitle: <HeaderTitle text="In Bearbeitung" />,
     }),
   },
+  ReceiptAfterPayment: {
+    screen: ReceiptAfterPayment,
+    navigationOptions: ({ navigation }) => ({
+      headerTitle: <HeaderTitle text="Quittung Schweizer Zoll" />,
+      headerLeft: <HomeIcon navigation={navigation} />,
+      headerRight: <DownloadIcon navigation={navigation} />,
+    }),
+  },
 };
 
 export const stackNavigatorConfig = {
   navigationOptions: defaultNavigationOptions,
   cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-  initialRouteName: 'OnBoarding',
+  initialRouteName: 'ReceiptAfterPayment',
 };
 
 const RootStackNavigator = StackNavigator(
