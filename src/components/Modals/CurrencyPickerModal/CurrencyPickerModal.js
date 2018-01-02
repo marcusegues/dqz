@@ -21,6 +21,7 @@ import CardHeaderSubText from '../../QuestionAnswer/cards/subcomponents/CardHead
 import { currencyPicker } from './currencyPickerData';
 import styles from '../styles/CurrencyPickerModal';
 import { INDIVIDUALALLOWANCE } from '../../../model/constants';
+import { currenciesArray } from '../../../model/currencies';
 
 type PickerState = {
   currency: string,
@@ -88,9 +89,20 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
                 }}
                 style={{ flex: 0.5 }}
               >
-                {currencyPicker.map(i => (
-                  <Picker.Item key={i.label} label={i.label} value={i.value} />
-                ))}
+                {currencyPicker
+                  .filter(c => currenciesArray.indexOf(c.value) > -1)
+                  .sort(
+                    (a, b) =>
+                      currenciesArray.indexOf(a.value) -
+                      currenciesArray.indexOf(b.value)
+                  )
+                  .map(i => (
+                    <Picker.Item
+                      key={i.label}
+                      label={i.label}
+                      value={i.value}
+                    />
+                  ))}
               </PickerComponent>
             </View>
           </TouchableWithoutFeedback>
