@@ -53,7 +53,7 @@ class CurrencyPickerModal extends React.Component<
       typeof amount !== 'number' || amount <= 0;
 
     let redButtonText: string = t(['confirmPicker'], {
-      value: `${amount.toFixed(2)} ${currency}`,
+      value: `${currency} ${amount.toFixed(2)}`,
     });
     let subButtonText: string = `CHF ${(
       amount * currencyObject[currency]
