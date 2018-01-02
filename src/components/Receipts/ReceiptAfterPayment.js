@@ -4,20 +4,22 @@ import { translate } from 'react-i18next';
 import ScrollViewCard from './subComponents/ScrollViewCard';
 import Logo from './subComponents/Logo';
 import { moderateScale, verticalScale } from '../../styles/Scaling';
-import CardHeaderSubText from '../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
+// import CardHeaderSubText from '../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
 import CardRowText from '../QuestionAnswer/cards/subcomponents/CardRowText';
 import ReceiptSubText from './subComponents/ReceiptSubText';
 import ValidUntilBlock from './subComponents/ValidUntilBlock';
-import DutyRow from '../Overview/subcomponents/DutyRow';
-import { getTotalQuantity } from '../../model/configurationApi';
-import { getMainCategory } from '../../types/reducers/declaration';
-import { calculateDuty } from '../../model/dutyCalculations';
+// import DutyRow from '../Overview/subcomponents/DutyRow';
+// import { getTotalQuantity } from '../../model/configurationApi';
+// import { getMainCategory } from '../../types/reducers/declaration';
+// import { calculateDuty } from '../../model/dutyCalculations';
+import Row from '../Rows/Row';
 
 // const ownStyles = {};
 
 class ReceiptAfterPayment extends React.Component {
   render() {
-    const { basket, people, t } = this.props;
+    const { t } = this.props;
+    // const { basket, people, t } = this.props;
     // const dutyReport = calculateDuty(basket, people);
     return (
       <ScrollViewCard>
@@ -69,6 +71,35 @@ class ReceiptAfterPayment extends React.Component {
             style={{ fontSize: moderateScale(12), alignSelf: 'flex-end' }}
           />
 
+          <Row borderTop>
+            <Text>DutyRow like in Overview.js</Text>
+          </Row>
+          <Row borderTop>
+            <Text>DutyRow like in Overview.js</Text>
+          </Row>
+
+          <ReceiptSubText
+            text="Zollabgabe in CHF:"
+            style={{
+              fontSize: moderateScale(12),
+              alignSelf: 'flex-end',
+              marginTop: 25,
+            }}
+          />
+          <Row borderTop>
+            <Text>DutyRow like in Overview.js</Text>
+          </Row>
+          <Row borderTop>
+            <Text>DutyRow like in Overview.js</Text>
+          </Row>
+
+          <CardRowText
+            text={`${t('sumText')}: 56.20`}
+            // text={`${t('sumText')}: ${dutyReport.totalDuty.toFixed(2)}`}
+            style={{ alignSelf: 'flex-end', marginVertical: 20 }}
+          />
+          <ReceiptSubText text="Diese Quittung wird ein Jahr lang gespeichert. Solange können Sie die Quittung jederzeit in der App aufrufen." />
+
           {/*<View style={{ flex: 1, width: '100%' }}>*/}
           {/* {dutyReport */}
           {/* .get('dutyByCategoryRaw') */}
@@ -92,26 +123,6 @@ class ReceiptAfterPayment extends React.Component {
           {/*/>*/}
           {/*</View>*/}
         </View>
-
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        <Text>1</Text>
-        {/*</View>*/}
       </ScrollViewCard>
     );
   }
