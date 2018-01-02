@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import declaration, * as fromDeclaration from './declaration';
+import { formatDate } from '../model/utils';
 
 const root = combineReducers({ declaration });
 
@@ -23,3 +24,6 @@ export const getCurrencies = state =>
 
 export const getCurrencyState = state =>
   fromDeclaration.getCurrencyState(state.declaration);
+
+export const getFormattedCurrencyDate = state =>
+  formatDate(fromDeclaration.getCurrencyDate(state.declaration));

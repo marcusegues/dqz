@@ -23,3 +23,13 @@ export const rounding = (x: number): number => {
 
   return adjusted / 100;
 };
+
+export const formatDate = (d: Date) => {
+  const mm = d.getMonth() + 1;
+  const dd = d.getDate();
+  return [
+    (dd > 9 ? '' : '0') + dd,
+    (mm > 9 ? '' : '0') + mm,
+    d.getFullYear(),
+  ].join('.');
+};

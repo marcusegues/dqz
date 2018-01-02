@@ -159,3 +159,6 @@ export const getCurrenciesObject = (state: State): CurrencyObject =>
 
 export const getCurrencyState = (state: State): boolean =>
   state.get('validCurrencies');
+
+export const getCurrencyDate = (state: State): Date =>
+  state.get('currencyDate');

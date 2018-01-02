@@ -64,6 +64,7 @@ export default StyleSheet.create({
   pickerContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
+    alignItems: 'center',
   },
   pickerNumberColumn: {
     flex: 0.25,

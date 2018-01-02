@@ -97,6 +97,11 @@ export const de: LocaleType = makeLocaleRecord({
     confirmPicker: '{{value}} übernehmen',
     standardCategoryPicker: 'Standardmengen',
     individualCategoryPicker: 'Genaue Mengen',
+    currencyPickerTitle: 'Gegenstand mit mehr als CHF {{value}} erfassen',
+    currencyPickerSubTitle:
+      'Erfassen Sie den Nettowert des Gegenstands in seiner Original-Währung: ',
+    currencyPickerRate: 'Kurs vom',
+    currencyPickerInvalidInput: 'Ungültige/leere Eingabe',
   }),
   payment: makePaymentNSRecord({
     overViewTitle: 'Übersicht ihrer Anmeldung',
