@@ -222,12 +222,20 @@ type ModalNS = {
   confirmPicker: string,
   standardCategoryPicker: string,
   individualCategoryPicker: string,
+  currencyPickerTitle: string,
+  currencyPickerSubTitle: string,
+  currencyPickerRate: string,
+  currencyPickerInvalidInput: string,
 };
 
 export const makeModalNSRecord: RecordFactory<ModalNS> = Immutable.Record({
   confirmPicker: 'i18n: {{value}}',
   standardCategoryPicker: 'i18n',
   individualCategoryPicker: 'i18n',
+  currencyPickerTitle: 'i18n',
+  currencyPickerSubTitle: 'i18n',
+  currencyPickerRate: 'i18n',
+  currencyPickerInvalidInput: 'i18n',
 });
 
 export type ModalNSType = RecordOf<ModalNS>;
