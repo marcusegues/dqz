@@ -1,4 +1,6 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View, Text } from 'react-native';
 import { translate } from 'react-i18next';
 import ScrollViewCard from './subComponents/ScrollViewCard';
@@ -24,28 +26,32 @@ const ownStyles = {
   },
 };
 
-const ReceiptAfterPayment = ({ t }) => (
+type ReceiptAfterPaymentScreenProps = {
+  t: (field: string, params?: {}) => void,
+};
+
+const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
   <ScrollViewCard>
     <Logo />
-
     <Text style={ownStyles.topSumText}>CHF 56.50</Text>
-
     <ReceiptSubText
-      text="Zollabgabe: 56.50   |   Mehrwertsteuer: 0.00"
+      // text="ewfwe"
+      text={`${t('customsDuty')}: 56.50   |   ${t('vat')}: 0.00`}
       style={{
         alignSelf: 'center',
       }}
     />
     <View style={ownStyles.contentContainer}>
       <CardRowText
-        text="Bezahlt am 20.12.2017 um 17:40 Uhr mit:"
+        // text="tre"
+        text={`${t('paidOn')} 20.12.2017 ${t('at')} 17:40 ${t('time')}:`}
         style={{ marginVertical: verticalScale(15) }}
       />
       <ReceiptSubText text="Mastercard XXXX XXXX XXXX 1234" />
-      <ReceiptSubText text="Transaktions-ID (SIX): 123-456-789" />
+      <ReceiptSubText text={`${t('transactionId')} (SIX): 123-456-789`} />
       <ValidUntilBlock>
         <CardRowText
-          text="Diese Quittung ist gültig bis:"
+          text={t('receiptValidUntil')}
           style={{ color: '#fff', fontFamily: 'roboto_regular' }}
         />
         <CardRowText
@@ -92,4 +98,4 @@ const ReceiptAfterPayment = ({ t }) => (
   </ScrollViewCard>
 );
 
-export default translate(['payment'])(ReceiptAfterPayment);
+export default translate(['general', 'payment'])(ReceiptAfterPayment);

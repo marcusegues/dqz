@@ -51,6 +51,12 @@ export const en: LocaleType = makeLocaleRecord({
     goodCategories: 'Good Categories',
     confirm: 'Confirm',
     toPayment: 'Make Payment',
+    vat: 'I18N',
+    paidOn: 'I18N',
+    at: 'I18N',
+    time: 'I18N',
+    transactionId: 'I18N',
+    receiptValidUntil: 'I18N',
   }),
   onBoarding: makeOnBoardingNSRecord({
     welcome: 'Welcome to',

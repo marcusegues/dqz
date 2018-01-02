@@ -26,6 +26,12 @@ export const fr: LocaleType = makeLocaleRecord({
     navbarFirst: 'Voyage',
     navbarSecond: 'Paiement',
     navbarThird: 'Reçu',
+    vat: 'I18N',
+    paidOn: 'I18N',
+    at: '️I18N',
+    time: 'I18N',
+    transactionId: '️I18N',
+    receiptValidUntil: 'I18N',
   }),
   onBoarding: makeOnBoardingNSRecord({
     welcome: 'Bienvenue à',

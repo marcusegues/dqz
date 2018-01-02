@@ -73,6 +73,12 @@ type GeneralNS = {
   goodCategories: string,
   confirm: string,
   toPayment: string,
+  vat: string,
+  paidOn: string,
+  at: string,
+  time: string,
+  transactionId: string,
+  receiptValidUntil: 'string',
 };
 
 export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
@@ -88,6 +94,12 @@ export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
   goodCategories: 'i18n',
   confirm: 'i18n',
   toPayment: 'i18n',
+  vat: 'i18n',
+  paidOn: 'i18n',
+  at: 'i18n',
+  time: 'i18n',
+  transactionId: 'i18n',
+  receiptValidUntil: 'i18n',
 });
 
 export type GeneralNSType = RecordOf<GeneralNS>;

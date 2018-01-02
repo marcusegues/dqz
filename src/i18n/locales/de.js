@@ -51,6 +51,12 @@ export const de: LocaleType = makeLocaleRecord({
     goodCategories: 'Warenkategorien',
     confirm: 'Übernehmen',
     toPayment: 'Zur Bezahlung',
+    vat: 'Mehrwertsteuer',
+    paidOn: 'Bezahlt am',
+    at: 'um',
+    time: 'Uhr mit',
+    transactionId: 'Transaktions-ID',
+    receiptValidUntil: 'Diese Quittung ist gültig bis:',
   }),
   onBoarding: makeOnBoardingNSRecord({
     welcome: 'Willkommen zu',
