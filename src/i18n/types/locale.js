@@ -175,6 +175,13 @@ type QAFlowNS = {
   minorInfo: string,
   minorCount: string,
   minorCount_plural: string,
+  validateNoAdultsTitle: string,
+  validateNoAdultsSubtitle: string,
+  validateGenericYes: string,
+  validateGenericNo: string,
+  validateMainCategoryRemoveTitle: string,
+  validateMainCategoryRemoveSubtitle: string,
+  validateMainCategoryRemoveYes: string,
 };
 
 export const makeQAFlowNSRecord: RecordFactory<QAFlowNS> = Immutable.Record({
@@ -188,6 +195,13 @@ export const makeQAFlowNSRecord: RecordFactory<QAFlowNS> = Immutable.Record({
   minorInfo: 'i18n',
   minorCount: 'i18n: {{value}}',
   minorCount_plural: 'i18n: {{value}}',
+  validateNoAdultsTitle: 'i18n',
+  validateNoAdultsSubtitle: 'i18n',
+  validateGenericYes: 'i18n',
+  validateGenericNo: 'i18n',
+  validateMainCategoryRemoveTitle: 'i18n',
+  validateMainCategoryRemoveSubtitle: 'i18n {{value}}',
+  validateMainCategoryRemoveYes: 'i18n',
 });
 
 export type QAFlowNSType = RecordOf<QAFlowNS>;

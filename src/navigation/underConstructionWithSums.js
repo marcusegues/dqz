@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Text, View } from 'react-native';
-import { getDeclarationVatReport, getDeclarationDutyReport } from '../reducers';
 
 const style = {
   display: 'flex',
@@ -25,10 +24,7 @@ class UnderConstructionWithSums extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  vatReport: getDeclarationVatReport(state),
-  dutyReport: getDeclarationDutyReport(state),
-});
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
   onCalculateDues: () => dispatch({ type: 'DECLARATION_CALCULATE_DUES' }),

@@ -2,19 +2,19 @@
 // @flow
 import {
   getInitialState,
-  MainCategories,
-  InitList,
+  mainCategories,
+  initList,
   EmptyMainCategories,
 } from '../types/reducers/declaration';
 import type {
   State,
   MainCategory,
-  MainCategoriesType,
-  OverAllowanceType,
-  LargeAmountPresentType,
-  SettingsType,
-  InitListType,
-  CurrentQuestionType,
+  MainCategories,
+  OverAllowance,
+  LargeAmountPresent,
+  Settings,
+  InitList,
+  CurrentQuestion,
 } from '../types/reducers/declaration';
 import type { Action } from '../types/actions';
 import type {
@@ -23,11 +23,8 @@ import type {
   Category,
   People,
 } from '../model/types/basketPeopleAmountsTypes';
-import type { VatReport, DutyReport } from '../model/types/calculationTypes';
 import * as modelApi from '../model/configurationApi';
-import { calculateDuty } from '../model/dutyCalculations';
 import type { Currency, CurrencyObject } from '../model/currencies';
-import { calculateVat } from '../model/vatCalculations';
 
 const declaration = (
   state: State = getInitialState(),
@@ -86,7 +83,7 @@ const declaration = (
     case 'DECLARATION_SET_OVER_ALLOWANCE_FALSE': {
       return state.setIn(['settings', 'overAllowance'], false);
     }
-    case 'DECLARATION_BASKET_ADD_AMOUNT': {
+    case 'DECLARATION_ADD_AMOUNT': {
       const currency: Currency = action.currency;
       const amounts: Amounts = state.get('amounts');
       const amount: number = action.amount;
@@ -137,14 +134,14 @@ const declaration = (
     case 'DECLARATION_ADD_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
       const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?
-      const mainCategories = state.getIn(
+      const mainCategoriesAnswer = state.getIn(
         ['settings', 'mainCategories'],
         EmptyMainCategories
       );
-      if (mainCategories !== 'notAnswered') {
+      if (mainCategoriesAnswer !== 'notAnswered') {
         return state.setIn(
           ['settings', 'mainCategories'],
-          mainCategories.add(mainCategory)
+          mainCategoriesAnswer.add(mainCategory)
         );
       }
       return state; // should never reach this
@@ -152,37 +149,22 @@ const declaration = (
     case 'DECLARATION_REMOVE_MAIN_CATEGORY': {
       // eslint-disable-next-line prefer-destructuring
       const mainCategory: MainCategory = action.mainCategory; // why can't I omit the declaration and pass directly into add?
-      const mainCategories = state.getIn(
+      const mainCategoriesAnswer = state.getIn(
         ['settings', 'mainCategories'],
         EmptyMainCategories
       );
-      if (mainCategories !== 'notAnswered') {
+      if (mainCategoriesAnswer !== 'notAnswered') {
         return state.setIn(
           ['settings', 'mainCategories'],
-          mainCategories.delete(mainCategory)
+          mainCategoriesAnswer.delete(mainCategory)
         );
       }
       return state; // should never reach this
     }
     case 'DECLARATION_SET_MAIN_CATEGORIES': {
       // eslint-disable-next-line prefer-destructuring
-      const mainCategories: MainCategoriesType = action.mainCategories;
-      return state.setIn(['settings', 'mainCategories'], mainCategories);
-    }
-    case 'DECLARATION_CALCULATE_DUES': {
-      // TODO remove? we don't want that in state.
-      const newState = state.set(
-        'dutyReport',
-        calculateDuty(state.get('basket'), state.get('people'))
-      );
-      return newState.set(
-        'vatReport',
-        calculateVat(
-          state.get('amounts'),
-          state.get('people'),
-          state.get('currencyObject')
-        )
-      );
+      const mainCategoriesAnswer: MainCategories = action.mainCategories;
+      return state.setIn(['settings', 'mainCategories'], mainCategoriesAnswer);
     }
     default: {
       return state;
@@ -198,36 +180,29 @@ export const getDeclarationBasket = (state: State): Basket =>
 export const getDeclarationPeople = (state: State): People =>
   state.get('people');
 
-export const getOverAllowance = (state: State): OverAllowanceType =>
+export const getDeclarationAmounts = (state: State): Amounts =>
+  state.get('amounts');
+
+export const getOverAllowance = (state: State): OverAllowance =>
   state.getIn(['settings', 'overAllowance'], 'notAnswered');
 
-export const getLargeAmountPresent = (state: State): LargeAmountPresentType =>
+export const getLargeAmountPresent = (state: State): LargeAmountPresent =>
   state.getIn(['settings', 'largeAmountPresent'], 'notAnswered');
 
-export const getDeclarationMainCategories = (
-  state: State
-): MainCategoriesType =>
-  state.getIn(['settings', 'mainCategories'], MainCategories);
+export const getDeclarationMainCategories = (state: State): MainCategories =>
+  state.getIn(['settings', 'mainCategories'], mainCategories);
 
-export const getDeclarationCurrentQuestion = (
-  state: State
-): CurrentQuestionType =>
+export const getDeclarationCurrentQuestion = (state: State): CurrentQuestion =>
   state.getIn(['settings', 'currentQuestion'], 'finished');
 
-export const getDeclarationSettings = (state: State): SettingsType =>
+export const getDeclarationSettings = (state: State): Settings =>
   state.get('settings');
 
 export const getDeclarationInit = (state: State): boolean =>
   state.getIn(['settings', 'init'], true);
 
-export const getDeclarationInitList = (state: State): InitListType =>
-  state.getIn(['settings', 'initList'], InitList);
-
-export const getDeclarationVatReport = (state: State): VatReport =>
-  state.get('vatReport');
-
-export const getDeclarationDutyReport = (state: State): DutyReport =>
-  state.get('dutyReport');
+export const getDeclarationInitList = (state: State): InitList =>
+  state.getIn(['settings', 'initList'], initList);
 
 export const getCurrenciesObject = (state: State): CurrencyObject =>
   state.get('currencyObject');

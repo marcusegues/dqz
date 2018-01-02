@@ -12,6 +12,10 @@ import type {
   People,
   Category,
   Amounts,
+  FoodsCategory,
+  AlcoholCategory,
+  TobaccoProductsCategory,
+  OtherGoodsCategory,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { VatReport, DutyReport } from '../../model/types/calculationTypes';
 import { emptyBasket } from '../../model/configurationApi';
@@ -22,41 +26,30 @@ import {
 } from '../../model/types/calculationTypes';
 import type { CurrencyObject } from '../../model/currencies';
 
-export type FoodsCategory = 'Meat' | 'Butter' | 'Oils' | 'OtherFood';
-export type FoodsCategoriesType = ImmutableSetType<FoodsCategory>;
-export const FoodsCategories: FoodsCategoriesType = Immutable.Set([
+export type FoodsCategories = ImmutableSetType<FoodsCategory>;
+export const foodsCategories: FoodsCategories = Immutable.Set([
   'Meat',
   'Butter',
   'Oils',
   'OtherFood',
 ]);
 
-export type AlcoholCategory = 'AlcSoft' | 'AlcHard';
-export type AlcoholCategoriesType = ImmutableSetType<AlcoholCategory>;
-export const AlcoholCategories: AlcoholCategoriesType = Immutable.Set([
+export type AlcoholCategories = ImmutableSetType<AlcoholCategory>;
+export const alcoholCategories: AlcoholCategories = Immutable.Set([
   'AlcSoft',
   'AlcHard',
 ]);
 
-export type TobaccoProductsCategory = 'Cigarettes' | 'Tobacco';
-export type TobaccoProductsCategoriesType = ImmutableSetType<
+export type TobaccoProductsCategories = ImmutableSetType<
   TobaccoProductsCategory
 >;
 
-export const TobaccoProductsCategories: TobaccoProductsCategoriesType = Immutable.Set(
+export const tobaccoProductsCategories: TobaccoProductsCategories = Immutable.Set(
   ['Cigarettes', 'Tobacco']
 );
 
-export type OtherGoodsCategory =
-  | 'Meds'
-  | 'Books'
-  | 'Magazines'
-  | 'Flowers'
-  | 'AnimalFeed'
-  | 'Fertilizer'
-  | 'Other';
-export type OtherGoodsCategoriesType = ImmutableSetType<OtherGoodsCategory>;
-export const OtherGoodsCategories: OtherGoodsCategoriesType = Immutable.Set([
+export type OtherGoodsCategories = ImmutableSetType<OtherGoodsCategory>;
+export const otherGoodsCategories: OtherGoodsCategories = Immutable.Set([
   'Meds',
   'Books',
   'Magazines',
@@ -72,50 +65,68 @@ export type MainCategory =
   | 'TobaccoProducts'
   | 'OtherGoods';
 
-export type MainCategoriesType = ImmutableSetType<MainCategory>;
+export type MainCategories = ImmutableSetType<MainCategory>;
 
-export const MainCategories: MainCategoriesType = Immutable.Set([
+export const mainCategories: MainCategories = Immutable.Set([
   'Foods',
   'Alcohol',
   'TobaccoProducts',
   'OtherGoods',
 ]);
 
-export const EmptyMainCategories: MainCategoriesType = Immutable.Set();
+export const EmptyMainCategories: MainCategories = Immutable.Set();
 
-export type MainCategoriesToCategoriesType = ImmutableMapType<
+export type MainCategoriesToCategories = ImmutableMapType<
   MainCategory,
   ImmutableSetType<Category>
 >;
 
-export const MainCategoriesToCategories: MainCategoriesToCategoriesType = Immutable.Map(
+export const mainCategoriesToCategories: MainCategoriesToCategories = Immutable.Map(
   {
-    Foods: FoodsCategories,
-    Alcohol: AlcoholCategories,
-    TobaccoProducts: TobaccoProductsCategories,
-    OtherGoods: OtherGoodsCategories,
+    Foods: foodsCategories,
+    Alcohol: alcoholCategories,
+    TobaccoProducts: tobaccoProductsCategories,
+    OtherGoods: otherGoodsCategories,
   }
 );
 
 // TODO improve types
 export const getMainCategory = (category: any): MainCategory => {
-  if (FoodsCategories.has(category)) {
+  if (foodsCategories.has(category)) {
     return 'Foods';
   }
-  if (AlcoholCategories.has(category)) {
+  if (alcoholCategories.has(category)) {
     return 'Alcohol';
   }
-  if (TobaccoProductsCategories.has(category)) {
+  if (tobaccoProductsCategories.has(category)) {
     return 'TobaccoProducts';
   }
   return 'OtherGoods';
 };
 
-export type OverAllowanceType = boolean | 'notAnswered' | 'dontKnow';
-export type LargeAmountPresentType = boolean | 'notAnswered' | 'dontKnow';
-export type LargeAmountsEnteredType = boolean | 'notAnswered';
-export type AmountsEnteredType = boolean | 'notAnswered';
-export type CurrentQuestionType =
+export const getSubCategories = (
+  main: MainCategory
+): ImmutableSetType<Category> => {
+  switch (main) {
+    case 'Foods': {
+      return foodsCategories;
+    }
+    case 'Alcohol': {
+      return alcoholCategories;
+    }
+    case 'TobaccoProducts': {
+      return tobaccoProductsCategories;
+    }
+    default:
+      return otherGoodsCategories;
+  }
+};
+
+export type OverAllowance = boolean | 'notAnswered' | 'dontKnow';
+export type LargeAmountPresent = boolean | 'notAnswered' | 'dontKnow';
+export type LargeAmountsEntered = boolean | 'notAnswered';
+export type AmountsEntered = boolean | 'notAnswered';
+export type CurrentQuestion =
   | 'peopleInput'
   | 'overAllowance'
   | 'largeAmountPresent'
@@ -124,22 +135,24 @@ export type CurrentQuestionType =
   | 'mainCategories'
   | 'finished';
 
-export type InitListType = ImmutableListType<CurrentQuestionType>;
+export type InitList = ImmutableListType<CurrentQuestion>;
 
-export const InitList: InitListType = Immutable.List(['peopleInput']);
+export const initList: InitList = Immutable.List(['peopleInput']);
 
-type Settings = {
-  overAllowance: OverAllowanceType,
-  largeAmountPresent: LargeAmountPresentType,
-  largeAmountsEntered: LargeAmountsEnteredType,
-  amountsEntered: AmountsEnteredType,
-  mainCategories: MainCategoriesType,
-  currentQuestion: CurrentQuestionType,
+type SettingsContent = {
+  overAllowance: OverAllowance,
+  largeAmountPresent: LargeAmountPresent,
+  largeAmountsEntered: LargeAmountsEntered,
+  amountsEntered: AmountsEntered,
+  mainCategories: MainCategories,
+  currentQuestion: CurrentQuestion,
   init: boolean,
-  initList: InitListType,
+  initList: InitList,
 };
 
-export const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
+export const makeSettingsRecord: RecordFactory<
+  SettingsContent
+> = Immutable.Record({
   overAllowance: 'notAnswered',
   largeAmountPresent: 'notAnswered',
   largeAmountsEntered: 'notAnswered',
@@ -147,17 +160,17 @@ export const makeSettingsRecord: RecordFactory<Settings> = Immutable.Record({
   mainCategories: EmptyMainCategories,
   currentQuestion: 'peopleInput',
   init: true,
-  initList: InitList,
+  initList,
 });
 
-export type SettingsType = RecordOf<Settings>;
+export type Settings = RecordOf<SettingsContent>;
 
 type StateObj = {
   people: People,
   basket: Basket,
   vatReport: VatReport,
   dutyReport: DutyReport,
-  settings: SettingsType,
+  settings: Settings,
   currencyObject: CurrencyObject,
   validCurrencies: boolean,
   currencyDate: Date,

@@ -103,7 +103,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch({ type: 'DECLARATION_SET_AMOUNTS_ENTERED_TRUE' }),
   onDeclarationAddAmount: amount =>
     dispatch({
-      type: 'DECLARATION_BASKET_ADD_AMOUNT',
+      type: 'DECLARATION_ADD_AMOUNT',
       category: 'Meat',
       amount,
     }),
