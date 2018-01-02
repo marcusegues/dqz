@@ -1,7 +1,14 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { View, Picker, TextInput } from 'react-native';
+import {
+  View,
+  Picker,
+  TextInput,
+  Keyboard,
+  TouchableWithoutFeedback,
+} from 'react-native';
+
 import { translate } from 'react-i18next';
 import AppModal from '../AppModal';
 import RedButton from '../../Buttons/RedButton';
@@ -33,45 +40,53 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
         onRequestClose={this.props.onRequestClose}
         modalVisible={this.props.modalVisible}
       >
-        <PickerCard style={{ top: '16%' }}>
+        <PickerCard style={{ top: '10%' }}>
           <CardHeader
             text={t(['currencyPickerTitle'], { value: INDIVIDUALALLOWANCE })}
           />
           <CardHeaderSubText text={t(['currencyPickerSubTitle'])} />
 
-          <View style={[ownStyles.pickerContainer, {}]}>
-            <TextInput
-              style={styles.textInput}
-              onChangeText={value => this.setState({ amount: value })}
-              value={`${amount}`}
-              autoFocus
-              numeric
-            />
+          <TouchableWithoutFeedback
+            onPress={Keyboard.dismiss}
+            accessible={false}
+          >
+            <View style={ownStyles.pickerContainer}>
+              <TextInput
+                keyboardType="numeric"
+                style={styles.textInput}
+                onChangeText={value => this.setState({ amount: +value })}
+                maxLenght="8"
+                underlineColorAndroid="transparent"
+                blurOnSubmit
+              />
 
-            <PickerComponent
-              selectedValue={currency}
-              onValueChange={itemValue =>
-                this.setState({
-                  currency: itemValue,
-                })
-              }
-              prompt="Choose value"
-              itemStyle={{
-                fontFamily: 'roboto_medium',
-              }}
-              style={{ flex: 0.5 }}
-            >
-              {currencyPicker.map(i => (
-                <Picker.Item key={i.label} label={i.label} value={i.value} />
-              ))}
-            </PickerComponent>
-          </View>
+              <PickerComponent
+                selectedValue={currency}
+                onValueChange={itemValue =>
+                  this.setState({
+                    currency: itemValue,
+                  })
+                }
+                prompt=""
+                itemStyle={{
+                  fontFamily: 'roboto_medium',
+                }}
+                style={{ flex: 0.5 }}
+              >
+                {currencyPicker.map(i => (
+                  <Picker.Item key={i.label} label={i.label} value={i.value} />
+                ))}
+              </PickerComponent>
+            </View>
+          </TouchableWithoutFeedback>
 
           <View style={ownStyles.redButtonWrapper}>
             <RedButton
-              confirmationDisabled={typeof amount === 'number' && amount <= 0}
-              onPress={() => {}}
-              text={typeof amount}
+              confirmationDisabled={typeof amount !== 'number' || amount <= 0}
+              onPress={Keyboard.dismiss}
+              text={t(['confirmPicker'], {
+                value: `${amount} ${currency}`,
+              })}
             />
           </View>
 
