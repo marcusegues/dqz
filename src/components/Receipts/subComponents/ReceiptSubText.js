@@ -8,6 +8,7 @@ const ReceiptSubText = ({ text, style }) => (
       color: '#757575',
       fontFamily: 'roboto_light',
       fontSize: moderateScale(14),
+      paddingBottom: moderateScale(3),
       ...style,
     }}
   >

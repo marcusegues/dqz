@@ -1,6 +1,6 @@
 import React from 'react';
-import { Image, View } from 'react-native';
-import { scale, verticalScale } from '../../../styles/Scaling';
+import { View } from 'react-native';
+import { verticalScale } from '../../../styles/Scaling';
 
 const ownStyles = {
   container: {
@@ -8,7 +8,7 @@ const ownStyles = {
     backgroundColor: '#757575',
     alignItems: 'center',
     paddingVertical: verticalScale(5),
-    marginVertical: verticalScale(20),
+    marginVertical: verticalScale(15),
   },
 };
 
