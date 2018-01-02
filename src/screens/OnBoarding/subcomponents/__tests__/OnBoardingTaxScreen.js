@@ -18,6 +18,6 @@ describe('OnBoardingTaxScreen', () => {
     component.find('DoneButton').forEach(child => {
       child.simulate('press');
     });
-    expect(navMock).toBeCalled();
+    expect(navMock).toBeCalledWith('MainMenu');
   });
 });
