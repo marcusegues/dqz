@@ -74,6 +74,7 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
               text={typeof amount}
             />
           </View>
+
           <CardHeaderSubText
             style={{
               marginTop: 10,

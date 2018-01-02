@@ -2,7 +2,6 @@
 
 exports[`StackNavigation has all screens 1`] = `
 Array [
-  "CurrencyPickerModal",
   "GoodQuantityListModal",
   "MainMenu",
   "OnBoarding",
