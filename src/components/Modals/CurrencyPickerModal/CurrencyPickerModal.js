@@ -13,6 +13,7 @@ import CardHeaderSubText from '../../QuestionAnswer/cards/subcomponents/CardHead
 import { currencyPicker } from './currencyPickerData';
 import styles from '../styles/CurrencyPickerModal';
 import { INDIVIDUALALLOWANCE } from '../../../model/constants';
+import { calculateDuty } from '../../../model/dutyCalculations';
 
 type PickerState = {
   currency: string,
@@ -67,12 +68,15 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
             </PickerComponent>
           </View>
 
-          <View style={[ownStyles.redButtonWrapper, {}]}>
+          <View style={ownStyles.redButtonWrapper}>
             <RedButton
+              // confirmationDisabled={amount <= 0}
+              confirmationDisabled={typeof amount === 'number' && amount <= 0}
               onPress={() => {}}
-              text={t(['confirmPicker'], {
-                value: `${+amount} ${currency}`,
-              })}
+              // text={t(['confirmPicker'], {
+              //   value: `${amount} ${currency}`,
+              // }
+              text={typeof amount}
             />
           </View>
           <CardHeaderSubText
