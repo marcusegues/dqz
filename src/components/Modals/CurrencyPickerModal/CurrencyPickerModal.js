@@ -15,12 +15,12 @@ import styles from '../styles/CurrencyPickerModal';
 
 type PickerState = {
   currency: string,
-  amount: string,
+  amount: number,
 };
 
 class CurrencyPickerModal extends React.Component<any, PickerState> {
   state = {
-    amount: '',
+    amount: 0,
     currency: 'EUR',
   };
 
@@ -40,7 +40,7 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
             <TextInput
               style={styles.textInput}
               onChangeText={value => this.setState({ amount: value })}
-              value={amount}
+              value={`${amount}`}
               autoFocus
               numeric
             />
