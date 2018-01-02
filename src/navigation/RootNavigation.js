@@ -98,8 +98,7 @@ export const stackNavigatorScreens = {
 export const stackNavigatorConfig = {
   navigationOptions: defaultNavigationOptions,
   cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-  // initialRouteName: 'OnBoarding',
-  initialRouteName: 'ReceiptAfterPayment',
+  initialRouteName: 'OnBoarding',
 };
 
 const RootStackNavigator = StackNavigator(
