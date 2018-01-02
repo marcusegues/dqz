@@ -1,10 +1,13 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import {
   TextInput,
   TouchableWithoutFeedback,
   View,
   Keyboard,
   Picker,
+  // $FlowFixMe
 } from 'react-native';
 
 import { translate } from 'react-i18next';
@@ -19,7 +22,12 @@ import { currencyPicker } from './currencyPickerData';
 import styles from '../styles/CurrencyPickerModal';
 import { INDIVIDUALALLOWANCE } from '../../../model/constants';
 
-class CurrencyPickerModal extends React.Component {
+type PickerState = {
+  currency: string,
+  amount: number,
+};
+
+class CurrencyPickerModal extends React.Component<any, PickerState> {
   state = {
     amount: 0,
     currency: 'EUR',
