@@ -41,7 +41,7 @@ export const it: LocaleType = makeLocaleRecord({
     confirmPicker: '💰 {{value}}',
     standardCategoryPicker: '🏟️',
     individualCategoryPicker: '🔀',
-    currencyPickerTitle: 'Raccogli oggetti con oltre {{value}} CHF',
+    currencyPickerTitle: 'Raccogli oggetti con oltre CHF {{value}}',
     currencyPickerSubTitle:
       "Registra il valore netto dell'articolo nella sua valuta originale:",
     currencyPickerRate: 'i18n',
