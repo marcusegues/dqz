@@ -5,7 +5,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import GoodInputModal from '../../components/Modals/GoodInputModal/GoodInputModal';
 import PickerModal from '../../components/Modals/PickerModal/PickerModal';
 import CurrencyPickerModal from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
-import { getCurrencies } from '../../reducers';
+import { getCurrencies, getFormattedCurrencyDate } from '../../reducers';
 
 class ScreensView extends React.Component {
   constructor(props) {
@@ -91,6 +91,7 @@ class ScreensView extends React.Component {
           modalVisible={this.state.currencyPickerModalVisible}
           toggleModalVisible={this.toggleCurrencyPickerVisible}
           currencyObject={this.props.currencyObject}
+          currencyDate={this.props.currencyDate}
         />
       </View>
     );
@@ -99,6 +100,7 @@ class ScreensView extends React.Component {
 
 const mapStateToProps = state => ({
   currencyObject: getCurrencies(state),
+  currencyDate: getFormattedCurrencyDate(state),
 });
 
 export default connect(mapStateToProps)(ScreensView);

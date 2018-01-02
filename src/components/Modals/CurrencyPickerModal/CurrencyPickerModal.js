@@ -34,6 +34,7 @@ type CurrencyPickerProps = {
   onRequestClose: any, // TODO
   modalVisible: boolean,
   currencyObject: CurrencyObject,
+  currencyDate: string,
 };
 
 class CurrencyPickerModal extends React.Component<
@@ -46,7 +47,13 @@ class CurrencyPickerModal extends React.Component<
   };
 
   render() {
-    const { t, onRequestClose, modalVisible, currencyObject } = this.props;
+    const {
+      t,
+      onRequestClose,
+      modalVisible,
+      currencyObject,
+      currencyDate,
+    } = this.props;
     const { amount, currency } = this.state;
 
     const disabledRedButton: boolean =
@@ -55,13 +62,13 @@ class CurrencyPickerModal extends React.Component<
     let redButtonText: string = t(['confirmPicker'], {
       value: `${currency} ${amount.toFixed(2)}`,
     });
-    let subButtonText: string = `CHF ${(
-      amount * currencyObject[currency]
-    ).toFixed(2)} (${t(['currencyPickerRate'])} 11.12.2017)`;
     if (disabledRedButton) {
       redButtonText = t(['currencyPickerInvalidInput']);
-      subButtonText = t(['currencyPickerInvalidInput']);
     }
+    const subButtonText: string = `CHF ${
+      disabledRedButton ? '--' : (amount * currencyObject[currency]).toFixed(2)
+    } (${t(['currencyPickerRate'])} ${currencyDate})`;
+
     return (
       <AppModal onRequestClose={onRequestClose} modalVisible={modalVisible}>
         <PickerCard style={{ top: '10%' }}>

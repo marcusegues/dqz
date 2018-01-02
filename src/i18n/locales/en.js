@@ -100,7 +100,7 @@ export const en: LocaleType = makeLocaleRecord({
     currencyPickerSubTitle:
       'Record the net value of the item in its original currency:',
     currencyPickerRate: 'Rate of',
-    currencyPickerInvalidInput: 'Invalid input',
+    currencyPickerInvalidInput: 'Invalid/empty input',
   }),
   payment: makePaymentNSRecord({
     overViewTitle: 'Summary of your Declaration',

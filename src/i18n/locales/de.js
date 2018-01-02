@@ -101,7 +101,7 @@ export const de: LocaleType = makeLocaleRecord({
     currencyPickerSubTitle:
       'Erfassen Sie den Nettowert des Gegenstands in seiner Original-Währung: ',
     currencyPickerRate: 'Kurs vom',
-    currencyPickerInvalidInput: 'Ungültige Eingabe',
+    currencyPickerInvalidInput: 'Ungültige/leere Eingabe',
   }),
   payment: makePaymentNSRecord({
     overViewTitle: 'Übersicht ihrer Anmeldung',
