@@ -1,13 +1,13 @@
 // @flow
 import React from 'react';
-// $FlowFixMe
 import {
+  TextInput,
+  TouchableWithoutFeedback,
   View,
   Picker,
-  TextInput,
   Keyboard,
-  TouchableWithoutFeedback,
 } from 'react-native';
+// $FlowFixMe
 
 import { translate } from 'react-i18next';
 import AppModal from '../AppModal';
