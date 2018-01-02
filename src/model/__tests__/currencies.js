@@ -589,6 +589,7 @@ describe('Currencies are parsed properly', () => {
     const dispatchMock = jest.fn();
     parseCurrencyXML('foo', { dispatch: dispatchMock });
     expect(dispatchMock).toBeCalledWith({
+      currencyDate: new Date('2000-01-01'),
       currencyObject: {
         AUD: 0.77355,
         CAD: 0.78784,
@@ -615,6 +616,7 @@ describe('Currencies are parsed properly', () => {
     const dispatchMock = jest.fn();
     parseCurrencyXML(xmlString, { dispatch: dispatchMock });
     expect(dispatchMock).toBeCalledWith({
+      currencyDate: new Date('2017-12-27'),
       currencyObject: {
         AUD: 0.77355,
         CAD: 0.78784,

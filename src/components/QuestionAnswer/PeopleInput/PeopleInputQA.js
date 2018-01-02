@@ -10,24 +10,21 @@ import {
   subtractAdult,
   subtractMinor,
 } from '../../../model/configurationApi';
-import type { People } from '../../../model/types/basketPeopleAmountsTypes';
 import type { CardProps } from '../QuestionAnswerContainer';
 
 const PeopleInputQA = (props: CardProps) => {
-  const handleUpdate = (people: People) => {
-    props.onUpdate(people);
-  };
-
   const getQuestionComponent = () => {
-    const { people } = props.qaState;
+    const { onAnswer, onUpdate, qaState } = props;
+    const { people } = qaState;
+
     return (
       <PeopleInputConfirmationCard
         people={people}
-        onAnswer={props.onAnswer}
-        onAddAdult={() => handleUpdate(addAdult(people))}
-        onSubtractAdult={() => handleUpdate(subtractAdult(people))}
-        onAddMinor={() => handleUpdate(addMinor(people))}
-        onSubtractMinor={() => handleUpdate(subtractMinor(people))}
+        onAnswer={onAnswer}
+        onAddAdult={() => onUpdate(addAdult(people))}
+        onSubtractAdult={() => onUpdate(subtractAdult(people))}
+        onAddMinor={() => onUpdate(addMinor(people))}
+        onSubtractMinor={() => onUpdate(subtractMinor(people))}
       />
     );
   };

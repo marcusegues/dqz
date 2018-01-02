@@ -6,7 +6,7 @@ import React from 'react';
 import { View } from 'react-native';
 import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
 import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
-import { MainCategoriesToCategories } from '../../../types/reducers/declaration';
+import { mainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { MainCategory } from '../../../types/reducers/declaration';
 import type {
   Basket,
@@ -15,6 +15,7 @@ import type {
 import type { CardProps } from '../QuestionAnswerContainer';
 import QuantityInputAnswerCard from '../cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
 import { addQuantity, deleteQuantity } from '../../../model/configurationApi';
+import { calculateDuty } from '../../../model/dutyCalculations';
 
 export type ModalCategoryType = Category | 'none';
 export type ModalMainCategoryType = MainCategory | 'none';
@@ -44,26 +45,27 @@ class QuantityInputQA extends React.Component<CardProps, QuantityInputState> {
   }
 
   getDisplayedCategoriesByMainCategory() {
-    return MainCategoriesToCategories.filter((cats, mainCat) =>
+    return mainCategoriesToCategories.filter((cats, mainCat) =>
       this.props.qaState.settings.get('mainCategories').has(mainCat)
     );
   }
 
   getQuestionComponent() {
+    const { onAnswer, qaState } = this.props;
     return (
       <View>
         <QuantityInputConfirmationCard
           onShowQuantityInputModal={(modalCategories: ModalCategoriesType) =>
             this.handleShowModal(modalCategories)
           }
-          onAnswer={this.props.onAnswer}
+          onAnswer={onAnswer}
           categoriesByMainCategory={this.getDisplayedCategoriesByMainCategory()}
-          basket={this.props.qaState.basket}
+          basket={qaState.basket}
         />
         <GoodQuantityListModal
           onHide={() => this.handleHideModal()}
           quantityInputState={this.state}
-          basket={this.props.qaState.basket}
+          basket={qaState.basket}
           onAddQuantity={(category: Category, quantity: number) => {
             this.handleAddQuantity(category, quantity);
           }}
@@ -76,11 +78,13 @@ class QuantityInputQA extends React.Component<CardProps, QuantityInputState> {
   }
 
   getAnswerComponent() {
+    const { qaState, questionFlag, onAnswerCardPress } = this.props;
+    const { basket, people } = qaState;
     return (
       <QuantityInputAnswerCard
-        onAnswerCardPress={this.props.onAnswerCardPress}
-        flag={this.props.questionFlag}
-        duty={this.props.qaState.duty.totalDuty}
+        onAnswerCardPress={onAnswerCardPress}
+        flag={questionFlag}
+        duty={calculateDuty(basket, people).get('totalDuty')}
       />
     );
   }

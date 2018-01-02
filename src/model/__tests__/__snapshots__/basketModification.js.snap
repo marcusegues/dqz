@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The basket / quantites:  can reset the quantites of a category 1`] = `
+Immutable.Map {
+  "Butter": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [
+        23,
+        23,
+        23,
+      ],
+    },
+  },
+  "Oils": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Cigarettes": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "AlcSoft": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Fertilizer": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "AlcHard": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Meds": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Books": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Meat": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "OtherFood": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Other": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Tobacco": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [
+        3219,
+        3219,
+        3219,
+      ],
+    },
+  },
+  "Flowers": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "AnimalFeed": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Magazines": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+}
+`;
+
+exports[`The basket / quantites:  can reset the quantites of multiple categorie 1`] = `
+Immutable.Map {
+  "Butter": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Oils": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Cigarettes": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "AlcSoft": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Fertilizer": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "AlcHard": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Meds": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Books": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Meat": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "OtherFood": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Other": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Tobacco": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [
+        3219,
+        3219,
+        3219,
+      ],
+    },
+  },
+  "Flowers": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "AnimalFeed": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+  "Magazines": Immutable.Record {
+    "volume": Immutable.Record {
+      "quantities": Immutable.List [],
+    },
+  },
+}
+`;

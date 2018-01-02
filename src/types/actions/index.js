@@ -7,8 +7,8 @@ import type {
 } from '../../model/types/basketPeopleAmountsTypes';
 import type {
   MainCategory,
-  MainCategoriesType,
-  CurrentQuestionType,
+  MainCategories,
+  CurrentQuestion,
 } from '../reducers/declaration';
 import type { Currency, CurrencyObject } from '../../model/currencies';
 
@@ -18,6 +18,7 @@ export type Action =
     type: 'UPDATE_CURRENCIES',
     currencyObject: CurrencyObject,
     validCurrencies: boolean,
+    currencyDate: Date,
   }
   | {
     type: 'DECLARATION_BASKET_ADD_QUANTITY',
@@ -29,7 +30,7 @@ export type Action =
     basket: Basket,
   }
   | {
-    type: 'DECLARATION_BASKET_ADD_AMOUNT',
+    type: 'DECLARATION_ADD_AMOUNT',
     currency: Currency,
     amount: number,
   }
@@ -80,11 +81,11 @@ export type Action =
   }
   | {
     type: 'DECLARATION_SET_MAIN_CATEGORIES',
-    mainCategories: MainCategoriesType,
+    mainCategories: MainCategories,
   }
   | {
     type: 'DECLARATION_SET_CURRENT_QUESTION',
-    currentQuestion: CurrentQuestionType,
+    currentQuestion: CurrentQuestion,
   }
   | {
     type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_NOT_ANSWERED',

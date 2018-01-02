@@ -65,6 +65,32 @@ export const deleteQuantity = (
   basket.updateIn([category, 'volume', 'quantities'], q => q.delete(index));
 
 /**
+ * Reset all quantites in a basket for a given category.
+ * @param basket
+ * @param category
+ * @returns Basket
+ */
+export const resetQuantities = (basket: Basket, category: Category): Basket =>
+  basket.setIn([category, 'volume', 'quantities'], Immutable.List());
+
+/**
+ * Reset all quantites in a basket for a given category.
+ * @param basket
+ * @param categories (array of category)
+ * @returns Basket
+ */
+export const resetQuantitiesMultipleCategories = (
+  basket: Basket,
+  categories: Array<Category>
+): Basket =>
+  basket.withMutations(bskt => {
+    categories.forEach(category => {
+      bskt.setIn([category, 'volume', 'quantities'], Immutable.List());
+    });
+    return bskt;
+  });
+
+/**
  * Helper method, not to be used in the App.
  * Sets several quantites for the given basket in different categories
  * @param basket

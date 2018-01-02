@@ -3,7 +3,7 @@ import { translate } from 'react-i18next';
 import Touchable from 'react-native-platform-touchable';
 import { View, Text, FlatList, Dimensions, StyleSheet } from 'react-native';
 import CheckBox from '../../../../../CheckBox/CheckBox';
-import { MainCategories } from '../../../../../../types/reducers/declaration';
+import { mainCategories as mains } from '../../../../../../types/reducers/declaration';
 import {
   scale,
   verticalScale,
@@ -41,7 +41,7 @@ const MainCategoriesCheckList = ({
   t,
 }) => {
   const flatListData = [];
-  MainCategories.forEach(cat => {
+  mains.forEach(cat => {
     flatListData.push({ key: cat });
   });
 
