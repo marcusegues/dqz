@@ -5,6 +5,13 @@ import type {
   QuestionState,
   QuestionType,
 } from '../QuestionAnswerContainer';
+import { getTotalPeople } from '../../../model/configurationApi';
+
+const showLargeAmountsQuestion = (qaState: QAStateEnriched) => {
+  const { people, amounts } = qaState;
+  // TODO important check if large amounts present!
+  return getTotalPeople(people) > 1;
+};
 
 const setQuestionState = (
   qaState: QAStateEnriched,
@@ -18,6 +25,8 @@ export const setInitStates = (qaState: QAStateEnriched): QAStateEnriched => {
     peopleInput: main.size ? 'collapsed' : 'expanded',
     mainCategories: main.size ? 'collapsed' : 'hidden',
     quantityInput: main.size ? 'collapsed' : 'hidden',
+    amounts: main.size ? 'collapsed' : 'hidden',
+    largeAmounts: showLargeAmountsQuestion(qaState) ? 'collapsed' : 'hidden',
   });
 };
 
@@ -31,12 +40,18 @@ export const setQuestionStates = (
   const peopleInputState: QuestionState = 'collapsed';
   let mainCategoriesState: QuestionState = 'collapsed';
   let quantityInputState: QuestionState = 'collapsed';
+  let amountsState: QuestionState = 'collapsed';
+  let largeAmountsState: QuestionState = showLargeAmountsQuestion(qaState)
+    ? 'collapsed'
+    : 'hidden';
 
   switch (justAnswered) {
     case 'peopleInput': {
       if (!mainCategories.size) {
         mainCategoriesState = 'expanded';
         quantityInputState = 'hidden';
+        amountsState = 'hidden';
+        largeAmountsState = 'hidden';
       }
       break;
     }
@@ -46,12 +61,24 @@ export const setQuestionStates = (
       }
       break;
     }
+    case 'quantityInput': {
+      amountsState = 'expanded';
+      break;
+    }
+    case 'amounts': {
+      largeAmountsState = showLargeAmountsQuestion(qaState)
+        ? 'expanded'
+        : 'hidden';
+      break;
+    }
     default:
   }
   return setQuestionState(qaState, {
     peopleInput: peopleInputState,
     mainCategories: mainCategoriesState,
     quantityInput: quantityInputState,
+    amounts: amountsState,
+    largeAmounts: largeAmountsState,
   });
 };
 
@@ -72,5 +99,7 @@ export const collapseAllExistingExceptOne = (
     peopleInput: getQuestionState('peopleInput'),
     mainCategories: getQuestionState('mainCategories'),
     quantityInput: getQuestionState('quantityInput'),
+    amounts: getQuestionState('amounts'),
+    largeAmounts: getQuestionState('largeAmounts'),
   });
 };

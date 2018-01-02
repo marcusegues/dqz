@@ -42,6 +42,8 @@ export type QuestionType =
   | 'peopleInput'
   | 'mainCategories'
   | 'quantityInput'
+  | 'amounts'
+  | 'largeAmounts'
   | 'none';
 
 export type QuestionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
@@ -84,11 +86,15 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         peopleInput: 'expanded',
         mainCategories: 'hidden',
         quantityInput: 'hidden',
+        amounts: 'hidden',
+        largeAmounts: 'hidden',
       },
       questionFlag: {
         peopleInput: 'complete',
         mainCategories: 'incomplete',
         quantityInput: 'incomplete',
+        amounts: 'incomplete',
+        largeAmounts: 'incomplete',
       },
     };
   }
@@ -297,6 +303,70 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
             onAnswer={() => {
               onDeclarationSetBasket(basket);
               this.updateQA('quantityInput');
+            }}
+          />
+        ),
+      },
+      {
+        key: 'amounts',
+        component: (
+          <QuantityInputQA
+            qaState={qaStateEnriched}
+            onAnswerCardPress={() => {
+              this.setState(
+                this.simplifyState(
+                  collapseAllExistingExceptOne('amounts', qaStateEnriched)
+                )
+              );
+            }}
+            questionState={questionStates.amounts}
+            questionFlag={questionFlag.amounts}
+            onUpdate={newAmounts =>
+              onUpdateFactory(
+                {
+                  questionType: 'amounts',
+                  onUpdate: () => {},
+                  amounts: newAmounts,
+                },
+                qaStateEnriched,
+                t
+              )
+            }
+            onAnswer={() => {
+              onDeclarationSetBasket(basket);
+              this.updateQA('amounts');
+            }}
+          />
+        ),
+      },
+      {
+        key: 'largeAmounts',
+        component: (
+          <QuantityInputQA
+            qaState={qaStateEnriched}
+            onAnswerCardPress={() => {
+              this.setState(
+                this.simplifyState(
+                  collapseAllExistingExceptOne('largeAmounts', qaStateEnriched)
+                )
+              );
+            }}
+            questionState={questionStates.largeAmounts}
+            questionFlag={questionFlag.largeAmounts}
+            onUpdate={newAmounts =>
+              onUpdateFactory(
+                {
+                  questionType: 'largeAmounts',
+                  onUpdate: () => {},
+                  amounts: newAmounts,
+                },
+                qaStateEnriched,
+                t
+              )
+            }
+            onAnswer={() => {
+              onDeclarationSetBasket(basket);
+              this.updateQA('largeAmounts');
             }}
           />
         ),
