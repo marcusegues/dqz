@@ -1,9 +1,11 @@
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
+import { connect } from 'react-redux';
 import NavBar from '../../components/NavBar/NavBar';
 import GoodInputModal from '../../components/Modals/GoodInputModal/GoodInputModal';
 import PickerModal from '../../components/Modals/PickerModal/PickerModal';
 import CurrencyPickerModal from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
+import { getCurrencies } from '../../reducers';
 
 class ScreensView extends React.Component {
   constructor(props) {
@@ -88,10 +90,15 @@ class ScreensView extends React.Component {
         <CurrencyPickerModal
           modalVisible={this.state.currencyPickerModalVisible}
           toggleModalVisible={this.toggleCurrencyPickerVisible}
+          currencyObject={this.props.currencyObject}
         />
       </View>
     );
   }
 }
 
-export default ScreensView;
+const mapStateToProps = state => ({
+  currencyObject: getCurrencies(state),
+});
+
+export default connect(mapStateToProps)(ScreensView);
