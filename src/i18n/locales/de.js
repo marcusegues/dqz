@@ -100,7 +100,8 @@ export const de: LocaleType = makeLocaleRecord({
     currencyPickerTitle: 'Gegenstand mit mehr als {{value}} CHF erfassen',
     currencyPickerSubTitle:
       'Erfassen Sie den Nettowert des Gegenstands in seiner Original-Währung: ',
-    currencyPickerRate: 'kurs vom',
+    currencyPickerRate: 'Kurs vom',
+    currencyPickerInvalidInput: 'Ungültige Eingabe',
   }),
   payment: makePaymentNSRecord({
     overViewTitle: 'Übersicht ihrer Anmeldung',

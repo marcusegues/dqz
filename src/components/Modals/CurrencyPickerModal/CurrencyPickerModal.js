@@ -36,6 +36,20 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
   render() {
     const { t } = this.props;
     const { amount, currency } = this.state;
+
+    const disabledRedButton: boolean =
+      typeof amount !== 'number' || amount <= 0;
+
+    let redButtonText: string = t(['confirmPicker'], {
+      value: `${amount.toFixed(2)} ${currency}`,
+    });
+    let subButtonText: string = `102.13 CHF (${t([
+      'currencyPickerRate',
+    ])} 11.12.2017)`;
+    if (disabledRedButton) {
+      redButtonText = t(['currencyPickerInvalidInput']);
+      subButtonText = t(['currencyPickerInvalidInput']);
+    }
     return (
       <AppModal
         onRequestClose={this.props.onRequestClose}
@@ -83,11 +97,9 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
 
           <View style={ownStyles.redButtonWrapper}>
             <RedButton
-              confirmationDisabled={typeof amount !== 'number' || amount <= 0}
+              confirmationDisabled={disabledRedButton}
               onPress={Keyboard.dismiss}
-              text={t(['confirmPicker'], {
-                value: `${amount} ${currency}`,
-              })}
+              text={redButtonText}
             />
           </View>
 
@@ -96,7 +108,7 @@ class CurrencyPickerModal extends React.Component<any, PickerState> {
               marginTop: 10,
               textAlign: 'center',
             }}
-            text={`102.13 CHF (${t(['currencyPickerRate'])} 11.12.2017)`}
+            text={subButtonText}
           />
         </PickerCard>
       </AppModal>
