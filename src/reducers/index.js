@@ -6,35 +6,18 @@ const root = combineReducers({ declaration });
 
 export default root;
 
-export const getDeclarationBasket = state =>
-  fromDeclaration.getDeclarationBasket(state.declaration);
+export const getBasket = state => fromDeclaration.getBasket(state.declaration);
 
-export const getDeclarationPeople = state =>
-  fromDeclaration.getDeclarationPeople(state.declaration);
+export const getPeople = state => fromDeclaration.getPeople(state.declaration);
 
-export const getDeclarationAmounts = state =>
-  fromDeclaration.getDeclarationAmounts(state.declaration);
+export const getAmounts = state =>
+  fromDeclaration.getAmounts(state.declaration);
 
-export const getOverAllowance = state =>
-  fromDeclaration.getOverAllowance(state.declaration);
+export const getMainCategories = state =>
+  fromDeclaration.getMainCategories(state.declaration);
 
-export const getLargeAmountPresent = state =>
-  fromDeclaration.getLargeAmountPresent(state.declaration);
-
-export const getDeclarationMainCategories = state =>
-  fromDeclaration.getDeclarationMainCategories(state.declaration);
-
-export const getDeclarationCurrentQuestion = state =>
-  fromDeclaration.getDeclarationCurrentQuestion(state.declaration);
-
-export const getDeclarationSettings = state =>
-  fromDeclaration.getDeclarationSettings(state.declaration);
-
-export const getDeclarationInit = state =>
-  fromDeclaration.getDeclarationInit(state.declaration);
-
-export const getDeclarationInitList = state =>
-  fromDeclaration.getDeclarationInitList(state.declaration);
+export const getSettings = state =>
+  fromDeclaration.getSettings(state.declaration);
 
 export const getCurrencies = state =>
   fromDeclaration.getCurrenciesObject(state.declaration);
