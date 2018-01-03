@@ -19,6 +19,7 @@ import Row from '../../Rows/Row';
 import CardRowText from '../../QuestionAnswer/cards/subcomponents/CardRowText';
 import CardRowSubText from '../../QuestionAnswer/cards/subcomponents/CardRowSubText';
 import { GREY } from '../../../styles/colors';
+import CloseIcon from '../../General Components/CloseIcon';
 
 const ownStyles = StyleSheet.create({
   container: {
@@ -27,11 +28,6 @@ const ownStyles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingVertical: verticalScale(10),
-  },
-  closeIconContainer: {
-    alignSelf: 'flex-end',
-    paddingRight: 5,
-    paddingTop: 5,
   },
   textContainer: {
     flex: 1,
@@ -57,11 +53,7 @@ const SavedBasketModal = ({
 }: SavedBasketModalProps) => (
   <AppModal onRequestClose={onRequestClose} modalVisible={modalVisible}>
     <PickerCard style={{ top: '30%' }}>
-      <View style={ownStyles.closeIconContainer}>
-        <TouchableWithoutFeedback onPress={() => {}}>
-          <MaterialIcons name="close" size={28} color="#DC0018" />
-        </TouchableWithoutFeedback>
-      </View>
+      <CloseIcon onPress={() => {}} />
       <CardHeader
         text={t('declareGoods')}
         style={{
