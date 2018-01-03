@@ -18,6 +18,8 @@ import {
   makePeopleRecord,
 } from './types/basketPeopleAmountsTypes';
 import type { Currency } from './currencies';
+import { flatAmounts } from './utils';
+import type { FlatAmount } from './utils';
 
 const emptyItem: CategoryBasketItem = makeCategoryBasketItemRecord();
 
@@ -172,6 +174,19 @@ export const resetAmounts = (amounts: Amounts, currency: Currency): Amounts =>
     [currency, 'amounts'],
     Immutable.List()
   );
+
+export const deleteAmount = (amounts: Amounts, id: string): Amounts => {
+  const flat = flatAmounts(amounts);
+  const element: ?FlatAmount = flat.find(a => a.id === id);
+  if (!element) {
+    return amounts;
+  }
+  const amountsKey = element.large ? 'amountsLarge' : 'amounts';
+  const amts = amounts.getIn([element.currency, amountsKey], Immutable.List());
+  const listIdx = amts.findIndex(v => v.id === id);
+  const newAmounts = amts.delete(listIdx);
+  return amounts.setIn([element.currency, amountsKey], newAmounts);
+};
 
 /**
  * Gets the amounts of a basket's category

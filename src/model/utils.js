@@ -1,5 +1,4 @@
 // @flow
-
 import type { Amounts } from './types/basketPeopleAmountsTypes';
 import type { Currency } from './currencies';
 
@@ -41,7 +40,7 @@ export const formatDate = (d: Date): string => {
   ].join('.');
 };
 
-type FlatAmount = {
+export type FlatAmount = {
   currency: Currency,
   amount: number,
   large: boolean,

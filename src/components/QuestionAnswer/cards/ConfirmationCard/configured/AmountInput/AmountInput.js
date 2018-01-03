@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, ScrollView, Text, TouchableOpacity } from 'react-native';
+import { View, ScrollView, TouchableOpacity } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
-import { v4 } from 'uuid';
 import { moderateScale } from '../../../../../../styles/Scaling';
 import * as colors from '../../../../../../styles/colors';
 import { flatAmounts } from '../../../../../../model/utils';
+import AmountsRow from './subcomponents/AmountRow';
 
 const ownStyles = {
   mainContainer: {
@@ -34,16 +34,22 @@ const ownStyles = {
 const AmountInput = ({ onShowAmountInputModal, amounts }) => (
   <View
     style={{
-      flex: 1,
-      height: '100%',
-      width: '100%',
-      flexDirection: 'column',
+      flexDirection: 'row',
+      alignSelf: 'flex-start',
+      marginLeft: 12,
+      marginTop: 12,
     }}
   >
     <ScrollView contentContainerStyle={ownStyles.scrollView}>
       <View>
         {flatAmounts(amounts).map(a => (
-          <Text key={v4()}>{`${a.currency}: ${a.amount}`}</Text>
+          <AmountsRow
+            key={a.id}
+            amount={a.amount}
+            currency={a.currency}
+            id={a.id}
+            onDelete={() => {}}
+          />
         ))}
       </View>
       <TouchableOpacity onPress={() => onShowAmountInputModal()}>
