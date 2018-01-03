@@ -45,10 +45,10 @@ export const flatAmounts = (amounts: Amounts) => {
   }> = [];
   amounts.forEach((v, k) => {
     v.amounts.map(amt =>
-      result.push({ currency: k, amount: amt, large: false })
+      result.push({ currency: k, amount: amt.amount, large: false, id: amt.id })
     );
     v.amountsLarge.map(amt =>
-      result.push({ currency: k, amount: amt, large: true })
+      result.push({ currency: k, amount: amt.amount, large: true, id: amt.id })
     );
   });
   return result;

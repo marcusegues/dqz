@@ -4,6 +4,7 @@ import type {
   Category,
   Basket,
   People,
+  Amounts,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type {
   MainCategory,

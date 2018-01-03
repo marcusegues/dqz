@@ -1,9 +1,11 @@
 // @flow
 
 import Immutable from 'immutable';
+import { v4 } from 'uuid';
 import type { List as ImmutableListType } from 'immutable';
 import type {
   Amounts,
+  AmountWithId,
   Basket,
   Category,
   CategoryBasketItem,
@@ -156,7 +158,7 @@ export const addAmount = (
   addCurrencyIfNeeded(amounts, currency).updateIn(
     [currency, 'amounts'],
     Immutable.List(),
-    list => list.push(amount)
+    list => list.push({ amount, id: v4() })
   );
 
 /**
@@ -180,7 +182,7 @@ export const resetAmounts = (amounts: Amounts, currency: Currency): Amounts =>
 export const getAmounts = (
   amounts: Amounts,
   currency: Currency
-): ImmutableListType<number> =>
+): ImmutableListType<AmountWithId> =>
   amounts.getIn([currency, 'amounts'], Immutable.List());
 
 // AMOUNTS LARGE
@@ -199,7 +201,7 @@ export const addLargeAmount = (
   addCurrencyIfNeeded(amounts, currency).updateIn(
     [currency, 'amountsLarge'],
     Immutable.List(),
-    list => list.push(amountLarge)
+    list => list.push({ amount: amountLarge, id: v4() })
   );
 
 /**
@@ -221,12 +223,12 @@ export const resetLargeAmounts = (
  * Gets the large amounts of a basket's category
  * @param amounts
  * @param currency
- * @returns ImmutableListType<number>
+ * @returns ImmutableListType<AmountWithId>
  */
 export const getLargeAmounts = (
   amounts: Amounts,
   currency: Currency
-): ImmutableListType<number> =>
+): ImmutableListType<AmountWithId> =>
   amounts.getIn([currency, 'amountsLarge'], Immutable.List());
 
 /**
