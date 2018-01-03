@@ -27,9 +27,13 @@ export const rounding = (x: number): number => {
   return adjusted / 100;
 };
 
-export const formatDate = (d: Date) => {
+export const formatDate = (d: Date): string => {
   const mm = d.getMonth() + 1;
   const dd = d.getDate();
+  // eslint-disable-next-line no-restricted-globals
+  if (isNaN(mm) || isNaN(dd)) {
+    return 'Invalid Date';
+  }
   return [
     (dd > 9 ? '' : '0') + dd,
     (mm > 9 ? '' : '0') + mm,

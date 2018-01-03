@@ -148,14 +148,18 @@ describe('The Amounts: ', () => {
     );
   });
   test('adds amounts: ', () => {
-    expect(getAmounts(amounts1, 'EUR').toString()).toBe(
-      Immutable.List([12.34]).toString()
-    );
+    expect(
+      getAmounts(amounts1, 'EUR')
+        .map(a => a.amount)
+        .toString()
+    ).toBe(Immutable.List([12.34]).toString());
   });
   test('adds another amount: ', () => {
-    expect(getAmounts(amounts2, 'EUR').toString()).toBe(
-      Immutable.List([12.34, 34.56]).toString()
-    );
+    expect(
+      getAmounts(amounts2, 'EUR')
+        .map(a => a.amount)
+        .toString()
+    ).toBe(Immutable.List([12.34, 34.56]).toString());
   });
   test('leaves other amounts untouched: ', () => {
     expect(getAmounts(amounts1, 'USD')).toBe(Immutable.List());
@@ -173,14 +177,18 @@ describe('The large amounts: ', () => {
     );
   });
   test('adds large amounts: ', () => {
-    expect(getLargeAmounts(largeAmounts1, 'EUR').toString()).toBe(
-      Immutable.List([1234]).toString()
-    );
+    expect(
+      getLargeAmounts(largeAmounts1, 'EUR')
+        .map(a => a.amount)
+        .toString()
+    ).toBe(Immutable.List([1234]).toString());
   });
   test('adds another large amount: ', () => {
-    expect(getLargeAmounts(largeAmounts2, 'EUR').toString()).toBe(
-      Immutable.List([1234, 1234]).toString()
-    );
+    expect(
+      getLargeAmounts(largeAmounts2, 'EUR')
+        .map(a => a.amount)
+        .toString()
+    ).toBe(Immutable.List([1234, 1234]).toString());
   });
   test('leaves other large amounts untouched: ', () => {
     expect(getLargeAmounts(amounts1, 'USD')).toBe(Immutable.List());
