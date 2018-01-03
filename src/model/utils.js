@@ -1,6 +1,6 @@
 // @flow
 
-import type { Amounts } from './types/basketPeopleAmountsTypes';
+import type { Amounts, AmountWithId } from './types/basketPeopleAmountsTypes';
 import type { Currency } from './currencies';
 
 export const rounding = (x: number): number => {
@@ -41,12 +41,15 @@ export const formatDate = (d: Date): string => {
   ].join('.');
 };
 
-export const flatAmounts = (amounts: Amounts) => {
-  const result: Array<{
-    currency: Currency,
-    amount: number,
-    large: boolean,
-  }> = [];
+type FlatAmount = {
+  currency: Currency,
+  amount: number,
+  large: boolean,
+  id: string,
+};
+
+export const flatAmounts = (amounts: Amounts): Array<FlatAmount> => {
+  const result: Array<FlatAmount> = [];
   amounts.forEach((v, k) => {
     v.amounts.map(amt =>
       result.push({ currency: k, amount: amt.amount, large: false, id: amt.id })
@@ -58,8 +61,8 @@ export const flatAmounts = (amounts: Amounts) => {
   return result;
 };
 
-export const flatNormalAmounts = (amounts: Amounts) =>
+export const flatNormalAmounts = (amounts: Amounts): Array<FlatAmount> =>
   flatAmounts(amounts).filter(a => !a.large);
 
-export const flatLargeAmounts = (amounts: Amounts) =>
+export const flatLargeAmounts = (amounts: Amounts): Array<FlatAmount> =>
   flatAmounts(amounts).filter(a => a.large);
