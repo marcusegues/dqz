@@ -20,6 +20,8 @@ import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswer
 import GoodQuantityListModal from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import OnBoardingTaxScreen from '../screens/OnBoarding/OnBoardingTaxScreen';
 import Information from '../screens/Information/Information';
+import HomeIcon from '../components/Headers/subcomponents/HomeIcon';
+import SearchIcon from '../components/Headers/subcomponents/SearchIcon';
 
 export const stackNavigatorScreens = {
   Screens: {
@@ -78,10 +80,10 @@ export const stackNavigatorScreens = {
   },
   Information: {
     screen: Information,
-    navigationOptions: ({ navigationOptions, navigation }) => ({
+    navigationOptions: ({ navigation }) => ({
       headerTitle: <HeaderTitle text="Wissenswertes" />,
       headerLeft: <HomeIcon navigation={navigation} />,
-      // headerRight: <DownloadIcon navigation={navigation} />,
+      headerRight: <SearchIcon navigation={navigation} />,
     }),
   },
 };
