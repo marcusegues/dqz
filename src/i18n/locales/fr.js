@@ -12,6 +12,7 @@ import {
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
   makePaymentNSRecord,
+  makeInformationNSRecord,
 } from '../types/locale';
 
 export const fr: LocaleType = makeLocaleRecord({
@@ -47,4 +48,19 @@ export const fr: LocaleType = makeLocaleRecord({
     currencyPickerRate: 'i18n',
   }),
   payment: makePaymentNSRecord({}),
+
+  information: makeInformationNSRecord({
+    proceedinAtTheCustoms: 'I18N',
+    proceedinAtTheCustomsSubText: 'I18N',
+    travelDocuments: 'I18N',
+    travelDocumentsSubText: 'I18N',
+    haveGoodsWithMe: 'I18N',
+    haveGoodsWithMeSubText: 'I18N',
+    haveAnimalsOrPlantsWithMe: 'I18N',
+    haveAnimalsOrPlantsWithMeSubText: 'I18N',
+    travelingWithVehicle: 'I18N',
+    travelingWithVehicleSubText: 'I18N',
+    entryByTrain: 'I18N',
+    entryByTrainSubText: 'I18N',
+  }),
 });

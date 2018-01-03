@@ -12,6 +12,7 @@ import {
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
   makePaymentNSRecord,
+  makeInformationNSRecord,
 } from '../types/locale';
 
 export const en: LocaleType = makeLocaleRecord({
@@ -54,7 +55,6 @@ export const en: LocaleType = makeLocaleRecord({
   }),
   onBoarding: makeOnBoardingNSRecord({
     welcome: 'Welcome to',
-    welcome1: 'Welcome 1111',
     onBoardingMessage:
       'We’ve set your language based on your current system settings:',
     selectLanguage: 'Select a different language',
@@ -107,5 +107,20 @@ export const en: LocaleType = makeLocaleRecord({
     overViewTitle: 'Summary of your Declaration',
     dutyColumn: 'Customs Duty in CHF',
     sumText: 'Sum (CHF)',
+  }),
+
+  information: makeInformationNSRecord({
+    proceedinAtTheCustoms: 'I18N',
+    proceedinAtTheCustomsSubText: 'I18N',
+    travelDocuments: 'I18N',
+    travelDocumentsSubText: 'I18N',
+    haveGoodsWithMe: 'I18N',
+    haveGoodsWithMeSubText: 'I18N',
+    haveAnimalsOrPlantsWithMe: 'I18N',
+    haveAnimalsOrPlantsWithMeSubText: 'I18N',
+    travelingWithVehicle: 'I18N',
+    travelingWithVehicleSubText: 'I18N',
+    entryByTrain: 'I18N',
+    entryByTrainSubText: 'I18N',
   }),
 });
