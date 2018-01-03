@@ -1,30 +1,27 @@
 // @flow
 import React from 'react';
 import { translate } from 'react-i18next';
-// $FlowFixMe
-import { Text, View } from 'react-native';
 import ScrollViewCard from './subComponents/ScrollViewCard';
 import InformationRow from './subComponents/InformationRow';
+import { informationData } from './InformationData';
 
-const ownStyles = {};
+// type InformationScreenProps = {
+//   t: (field: string, params?: {}) => void,
+//   navigation: any,
+// };
 
-type InformationScreenProps = {
-  t: (field: string, params?: {}) => void,
-  navigation: any,
-};
-
-const Information = ({ navigation, t }: InformationScreenProps) => (
+// const Information = ({ navigation, t }: InformationScreenProps) => (
+const Information = () => (
   <ScrollViewCard>
-    <InformationRow mainText="mainText" subText="subtext" number="1.1" />
-    <InformationRow mainText="mainText" subText="subtext" number="1.1" />
-    <InformationRow mainText="mainText" subText="subtext" number="1.1" />
-    <InformationRow mainText="mainText" subText="subtext" number="1.1" />
-    <InformationRow mainText="mainText" subText="subtext" number="1.1" />
-    <InformationRow
-      mainText="mainText"
-      subText="subtextkjl lksjdlkjlsjflsdkj lskdjflksjdlfjsdl "
-      number="1.1"
-    />
+    {informationData.map(i => (
+      <InformationRow
+        key={i.number}
+        number={i.number}
+        mainText={i.mainText}
+        subText={i.subText}
+        rowOnPress={() => {}}
+      />
+    ))}
   </ScrollViewCard>
 );
 
