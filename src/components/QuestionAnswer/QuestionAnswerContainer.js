@@ -177,6 +177,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
       onDeclarationSetMainCategories,
       onDeclarationSetPeople,
       onDeclarationSetBasket,
+      onDeclarationSetAmounts,
     } = this.props;
 
     const qaStateEnriched: QAStateEnriched = this.enrichState();
@@ -330,7 +331,15 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
               onUpdateFactory(
                 {
                   questionType: 'amounts',
-                  onUpdate: () => {},
+                  onUpdate: updatedAmounts => {
+                    onDeclarationSetAmounts(updatedAmounts);
+                    this.updateFlagsOptimistically(
+                      'amounts',
+                      Object.assign({}, qaStateEnriched, {
+                        amounts: updatedAmounts,
+                      })
+                    );
+                  },
                   amounts: newAmounts,
                 },
                 qaStateEnriched,
@@ -454,6 +463,11 @@ const mapDispatchToProps = dispatch => ({
     dispatch({
       type: 'DECLARATION_SET_BASKET',
       basket,
+    }),
+  onDeclarationSetAmounts: amounts =>
+    dispatch({
+      type: 'DECLARATION_SET_AMOUNTS',
+      amounts,
     }),
 });
 

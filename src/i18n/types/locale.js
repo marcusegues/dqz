@@ -152,6 +152,18 @@ export const makeQuantityInputNSRecord: RecordFactory<
 
 export type QuantityInputNSType = RecordOf<QuantityInputNS>;
 
+type AmountInputNS = {
+  amountInput: string,
+};
+
+export const makeAmountInputNSRecord: RecordFactory<
+  AmountInputNS
+> = Immutable.Record({
+  amountInput: 'i18n',
+});
+
+export type AmountInputNSType = RecordOf<AmountInputNS>;
+
 type PaymentNS = {
   overViewTitle: string,
   dutyColumn: string,
@@ -242,6 +254,7 @@ type Locale = {
   peopleInput: PeopleInputNSType,
   mainCategoriesInput: MainCategoriesInputNSType,
   quantityInput: QuantityInputNSType,
+  amountInput: AmountInputNSType,
   qaFlow: QAFlowNSType,
   modal: ModalNSType,
   payment: PaymentNSType,
@@ -255,6 +268,7 @@ export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
   peopleInput: makePeopleInputNSRecord(),
   mainCategoriesInput: makeMainCategoriesInputNSRecord(),
   quantityInput: makeQuantityInputNSRecord(),
+  amountInput: makeAmountInputNSRecord(),
   qaFlow: makeQAFlowNSRecord(),
   modal: makeModalNSRecord(),
   payment: makePaymentNSRecord(),

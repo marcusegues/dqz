@@ -4,36 +4,17 @@
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
-import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
-import { mainCategoriesToCategories } from '../../../types/reducers/declaration';
-import type { MainCategory } from '../../../types/reducers/declaration';
-import type {
-  Amounts,
-  Category,
-} from '../../../model/types/basketPeopleAmountsTypes';
+import type { Amounts } from '../../../model/types/basketPeopleAmountsTypes';
 import type { CardProps } from '../QuestionAnswerContainer';
 import { addAmount } from '../../../model/configurationApi';
 import { calculateVat } from '../../../model/vatCalculations';
 import AmountInputAnswerCard from '../cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
 import CurrencyPickerModal from '../../Modals/CurrencyPickerModal/CurrencyPickerModal';
 import type { Currency } from '../../../model/currencies';
-
-export type ModalCategoryType = Category | 'none';
-export type ModalMainCategoryType = MainCategory | 'none';
-
-export type ModalCategoriesType = {
-  mainCategory: ModalMainCategoryType,
-  category: ModalCategoryType,
-};
-
-const initModalCategories = {
-  mainCategory: 'none',
-  category: 'none',
-};
+import AmountInputConfirmationCard from '../cards/ConfirmationCard/configured/AmountInput/AmountInputConfirmationCard';
 
 export type AmountInputState = {
   modalVisible: boolean,
-  modalCategories: ModalCategoriesType,
 };
 
 class AmountInputQA extends React.Component<CardProps, AmountInputState> {
@@ -41,14 +22,7 @@ class AmountInputQA extends React.Component<CardProps, AmountInputState> {
     super(props);
     this.state = {
       modalVisible: false,
-      modalCategories: initModalCategories,
     };
-  }
-
-  getDisplayedCategoriesByMainCategory() {
-    return mainCategoriesToCategories.filter((cats, mainCat) =>
-      this.props.qaState.settings.get('mainCategories').has(mainCat)
-    );
   }
 
   getQuestionComponent() {
@@ -56,13 +30,10 @@ class AmountInputQA extends React.Component<CardProps, AmountInputState> {
     const { currencies } = qaState;
     return (
       <View>
-        <QuantityInputConfirmationCard
-          onShowQuantityInputModal={(modalCategories: ModalCategoriesType) =>
-            this.handleShowModal(modalCategories)
-          }
+        <AmountInputConfirmationCard
+          onShowAmountInputModal={() => this.handleShowModal()}
           onAnswer={onAnswer}
-          categoriesByMainCategory={this.getDisplayedCategoriesByMainCategory()}
-          basket={qaState.basket}
+          amounts={qaState.amounts}
         />
         <CurrencyPickerModal
           onHide={() => this.handleHideModal()}
@@ -111,14 +82,13 @@ class AmountInputQA extends React.Component<CardProps, AmountInputState> {
     return this.props.onUpdate(amounts);
   }
 
-  handleShowModal(modalCategories: ModalCategoriesType) {
-    this.setState({ modalVisible: true, modalCategories });
+  handleShowModal() {
+    this.setState({ modalVisible: true });
   }
 
   handleHideModal() {
     this.setState({
       modalVisible: false,
-      modalCategories: initModalCategories,
     });
   }
 

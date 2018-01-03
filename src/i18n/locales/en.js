@@ -12,6 +12,7 @@ import {
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
   makePaymentNSRecord,
+  makeAmountInputNSRecord,
 } from '../types/locale';
 
 export const en: LocaleType = makeLocaleRecord({
@@ -71,6 +72,9 @@ export const en: LocaleType = makeLocaleRecord({
   }),
   quantityInput: makeQuantityInputNSRecord({
     quantityInput: 'Quantity input',
+  }),
+  amountInput: makeAmountInputNSRecord({
+    amountInput: 'Amount Input',
   }),
   qaFlow: makeQAFlowNSRecord({
     declareGoods: 'Declare Goods',

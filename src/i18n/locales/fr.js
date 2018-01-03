@@ -12,6 +12,7 @@ import {
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
   makePaymentNSRecord,
+  makeAmountInputNSRecord,
 } from '../types/locale';
 
 export const fr: LocaleType = makeLocaleRecord({
@@ -36,6 +37,7 @@ export const fr: LocaleType = makeLocaleRecord({
   peopleInput: makePeopleInputNSRecord({}),
   mainCategoriesInput: makeMainCategoriesInputNSRecord({}),
   quantityInput: makeQuantityInputNSRecord({}),
+  amountInput: makeAmountInputNSRecord({}),
   qaFlow: makeQAFlowNSRecord({}),
   modal: makeModalNSRecord({
     confirmPicker: 'Confirmer {{value}}',

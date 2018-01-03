@@ -30,6 +30,10 @@ export type Action =
     basket: Basket,
   }
   | {
+    type: 'DECLARATION_SET_AMOUNTS',
+    amounts: Amounts,
+  }
+  | {
     type: 'DECLARATION_ADD_AMOUNT',
     currency: Currency,
     amount: number,

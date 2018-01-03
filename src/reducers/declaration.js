@@ -83,6 +83,10 @@ const declaration = (
     case 'DECLARATION_SET_OVER_ALLOWANCE_FALSE': {
       return state.setIn(['settings', 'overAllowance'], false);
     }
+    case 'DECLARATION_SET_AMOUNTS': {
+      const amounts: Amounts = action.amounts;
+      return state.set('amounts', amounts);
+    }
     case 'DECLARATION_ADD_AMOUNT': {
       const currency: Currency = action.currency;
       const amounts: Amounts = state.get('amounts');
@@ -92,7 +96,6 @@ const declaration = (
         modelApi.addAmount(amounts, currency, amount)
       );
     }
-
     case 'DECLARATION_BASKET_ADD_LARGE_AMOUNT': {
       // eslint-disable-next-line prefer-destructuring
       const currency: Currency = action.currency;
