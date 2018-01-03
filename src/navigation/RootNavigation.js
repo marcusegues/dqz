@@ -19,6 +19,7 @@ import { UnderConstruction } from './underConstruction';
 import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
 import GoodQuantityListModal from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import OnBoardingTaxScreen from '../screens/OnBoarding/OnBoardingTaxScreen';
+import Information from '../screens/Information/Information';
 
 export const stackNavigatorScreens = {
   Screens: {
@@ -75,12 +76,20 @@ export const stackNavigatorScreens = {
       headerTitle: <HeaderTitle text="In Bearbeitung" />,
     }),
   },
+  Information: {
+    screen: Information,
+    navigationOptions: ({ navigationOptions, navigation }) => ({
+      headerTitle: <HeaderTitle text="Wissenswertes" />,
+      headerLeft: <HomeIcon navigation={navigation} />,
+      // headerRight: <DownloadIcon navigation={navigation} />,
+    }),
+  },
 };
 
 export const stackNavigatorConfig = {
   navigationOptions: defaultNavigationOptions,
   cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-  initialRouteName: 'OnBoarding',
+  initialRouteName: 'Screens',
 };
 
 const RootStackNavigator = StackNavigator(
