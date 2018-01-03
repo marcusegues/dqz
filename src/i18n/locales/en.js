@@ -54,6 +54,7 @@ export const en: LocaleType = makeLocaleRecord({
   }),
   onBoarding: makeOnBoardingNSRecord({
     welcome: 'Welcome to',
+    welcome1: 'Welcome 1111',
     onBoardingMessage:
       'We’ve set your language based on your current system settings:',
     selectLanguage: 'Select a different language',
