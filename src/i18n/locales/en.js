@@ -101,6 +101,9 @@ export const en: LocaleType = makeLocaleRecord({
       'Record the net value of the item in its original currency:',
     currencyPickerRate: 'Rate of',
     currencyPickerInvalidInput: 'Invalid/empty input',
+    savedBasketDoYoWantToContinue: 'I18N',
+    savedBasketTotalCost: 'I18N {{value}}',
+    savedBasketNewShoppingCart: 'I18N',
   }),
   payment: makePaymentNSRecord({
     overViewTitle: 'Summary of your Declaration',

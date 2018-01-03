@@ -45,6 +45,9 @@ export const it: LocaleType = makeLocaleRecord({
     currencyPickerSubTitle:
       "Registra il valore netto dell'articolo nella sua valuta originale:",
     currencyPickerRate: 'i18n',
+    savedBasketDoYoWantToContinue: 'I18N',
+    savedBasketTotalCost: 'I18N {{value}}',
+    savedBasketNewShoppingCart: 'I18N',
   }),
   payment: makePaymentNSRecord({}),
 });

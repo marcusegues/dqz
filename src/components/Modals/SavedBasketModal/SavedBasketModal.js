@@ -1,16 +1,16 @@
+// @flow
 import React from 'react';
+import { translate } from 'react-i18next';
+// $FlowFixMe
 import {
-  Text,
-  TouchableOpacity,
   TouchableWithoutFeedback,
   View,
   StyleSheet,
-  Touchable,
+  // $FlowFixMe
 } from 'react-native';
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
 import AppModal from '../AppModal';
 import RedButton from '../../Buttons/RedButton';
-import ModalCard from '../ModalCard';
 import PickerCard from '../CurrencyPickerModal/subComponents/PickerCard';
 import CardHeader from '../../QuestionAnswer/cards/subcomponents/CardHeader';
 import CardHeaderSubText from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
@@ -28,6 +28,11 @@ const ownStyles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: verticalScale(10),
   },
+  closeIconContainer: {
+    alignSelf: 'flex-end',
+    paddingRight: 5,
+    paddingTop: 5,
+  },
   textContainer: {
     flex: 1,
     flexDirection: 'column',
@@ -39,12 +44,32 @@ const ownStyles = StyleSheet.create({
   },
 });
 
-const SavedBasketModal = ({ onRequestClose, modalVisible }) => (
+type SavedBasketModalProps = {
+  t: (field: string, params?: {}) => void,
+  modalVisible: boolean,
+  onRequestClose: Function,
+};
+
+const SavedBasketModal = ({
+  onRequestClose,
+  modalVisible,
+  t,
+}: SavedBasketModalProps) => (
   <AppModal onRequestClose={onRequestClose} modalVisible={modalVisible}>
     <PickerCard style={{ top: '30%' }}>
-      <CardHeader text="Waren anmelden" />
+      <View style={ownStyles.closeIconContainer}>
+        <TouchableWithoutFeedback onPress={() => {}}>
+          <MaterialIcons name="close" size={28} color="#DC0018" />
+        </TouchableWithoutFeedback>
+      </View>
+      <CardHeader
+        text={t('declareGoods')}
+        style={{
+          marginTop: 0,
+        }}
+      />
       <CardHeaderSubText
-        text="Möchten Sie mit dem bereits bestehenden Warenkorb fortfahren oder mit einem leeren Warenkorb neu starten?"
+        text={t('modal:savedBasketDoYoWantToContinue')}
         style={{ lineHeight: moderateScale(18), marginBottom: 30 }}
       />
 
@@ -58,7 +83,9 @@ const SavedBasketModal = ({ onRequestClose, modalVisible }) => (
             />
             <View style={ownStyles.textContainer}>
               <CardRowText text="21. November 2017" />
-              <CardRowSubText text="Gesamtkosten: CHF 6.00 " />
+              <CardRowSubText
+                text={t('modal:savedBasketTotalCost', { value: '6.00' })}
+              />
             </View>
             <Entypo
               name="chevron-right"
@@ -70,10 +97,13 @@ const SavedBasketModal = ({ onRequestClose, modalVisible }) => (
       </Row>
 
       <View style={ownStyles.redButtonWrapper}>
-        <RedButton text="Neuer Warenkorb" onPress={() => {}} />
+        <RedButton
+          text={t('modal:savedBasketNewShoppingCart')}
+          onPress={() => {}}
+        />
       </View>
     </PickerCard>
   </AppModal>
 );
 
-export default SavedBasketModal;
+export default translate(['general', 'modal'])(SavedBasketModal);
