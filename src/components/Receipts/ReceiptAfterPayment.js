@@ -35,23 +35,24 @@ const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
     <Logo />
     <Text style={ownStyles.topSumText}>CHF 56.50</Text>
     <ReceiptSubText
-      // text="ewfwe"
-      text={`${t('customsDuty')}: 56.50   |   ${t('vat')}: 0.00`}
+      text="ewfwe"
+      // text={`${t('customsDuty')}: 56.50   |   ${t('vat')}: 0.00`}
       style={{
         alignSelf: 'center',
       }}
     />
     <View style={ownStyles.contentContainer}>
       <CardRowText
-        // text="tre"
-        text={`${t('paidOn')} 20.12.2017 ${t('at')} 17:40 ${t('time')}:`}
+        text="tre"
+        // text={`${t('paidOn')} 20.12.2017 ${t('at')} 17:40 ${t('time')}:`}
         style={{ marginVertical: verticalScale(15) }}
       />
       <ReceiptSubText text="Mastercard XXXX XXXX XXXX 1234" />
-      <ReceiptSubText text={`${t('transactionId')} (SIX): 123-456-789`} />
+      <ReceiptSubText text={t('transactionId')} />
+      {/*<ReceiptSubText text={`${t('transactionId')} (SIX): 123-456-789`} />*/}
       <ValidUntilBlock>
         <CardRowText
-          text={t('receiptValidUntil')}
+          text={t('receiptValidUntil', { value: '333' })}
           style={{ color: '#fff', fontFamily: 'roboto_regular' }}
         />
         <CardRowText
@@ -87,7 +88,8 @@ const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
       </Row>
 
       <CardRowText
-        text={`${t('sumText')}: 56.20`}
+        text="ret"
+        // text={`${t('sumText')}: 56.20`}
         style={{ alignSelf: 'flex-end', marginTop: 15, marginBottom: 35 }}
       />
       <ReceiptSubText

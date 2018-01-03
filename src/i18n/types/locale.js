@@ -78,7 +78,7 @@ type GeneralNS = {
   at: string,
   time: string,
   transactionId: string,
-  receiptValidUntil: 'string',
+  receiptValidUntil: string,
 };
 
 export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({

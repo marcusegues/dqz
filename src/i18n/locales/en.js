@@ -56,7 +56,7 @@ export const en: LocaleType = makeLocaleRecord({
     at: 'I18N',
     time: 'I18N',
     transactionId: 'I18N',
-    receiptValidUntil: 'I18N',
+    receiptValidUntil: 'I18N {{value}}',
   }),
   onBoarding: makeOnBoardingNSRecord({
     welcome: 'Welcome to',
