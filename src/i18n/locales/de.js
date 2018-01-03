@@ -48,6 +48,7 @@ export const de: LocaleType = makeLocaleRecord({
     navbarSecond: 'Bezahlung',
     navbarThird: 'Zollschein',
     customsDuty: 'Zollabgabe',
+    customsVat: 'MWSt',
     goodCategories: 'Warenkategorien',
     confirm: 'Übernehmen',
     toPayment: 'Zur Bezahlung',

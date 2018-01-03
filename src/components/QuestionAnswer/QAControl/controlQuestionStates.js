@@ -8,6 +8,7 @@ import type {
 import { getTotalPeople } from '../../../model/configurationApi';
 
 const showLargeAmountsQuestion = (qaState: QAStateEnriched) => {
+  // eslint-disable-next-line no-unused-vars
   const { people, amounts } = qaState;
   // TODO important check if large amounts present!
   return getTotalPeople(people) > 1;

@@ -48,6 +48,7 @@ export const en: LocaleType = makeLocaleRecord({
     navbarSecond: 'Payment',
     navbarThird: 'Receipt',
     customsDuty: 'Customs duty',
+    customsVat: 'VAT',
     goodCategories: 'Good Categories',
     confirm: 'Confirm',
     toPayment: 'Make Payment',

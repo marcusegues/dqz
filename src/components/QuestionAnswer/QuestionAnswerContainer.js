@@ -18,6 +18,7 @@ import {
   getDeclarationSettings,
   getDeclarationAmounts,
   getDeclarationMainCategories,
+  getCurrencies,
 } from '../../reducers';
 import type {
   Amounts,
@@ -37,6 +38,8 @@ import { setInitFlags, setQuestionFlag } from './QAControl/controlQuestionFlag';
 import { verticalScale } from '../../styles/Scaling';
 import HeaderTitle from '../Headers/subcomponents/HeaderTitle';
 import { onUpdateFactory } from './QAControl/validation';
+import AmountInputQA from './AmountInput/AmountInputQA';
+import type { CurrencyObject } from '../../model/currencies';
 
 export type QuestionType =
   | 'peopleInput'
@@ -62,6 +65,7 @@ export type QAStateEnriched = {
   basket: Basket,
   people: People,
   settings: Settings,
+  currencies: CurrencyObject,
 };
 
 export type CardProps = {
@@ -105,7 +109,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
 
   enrichState(): QAStateEnriched {
     const { questionStates, questionFlag } = this.state;
-    const { amounts, basket, people, settings } = this.props;
+    const { amounts, basket, people, settings, currencies } = this.props;
 
     return {
       questionStates,
@@ -114,6 +118,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
       basket,
       people,
       settings,
+      currencies,
     };
   }
 
@@ -310,7 +315,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
       {
         key: 'amounts',
         component: (
-          <QuantityInputQA
+          <AmountInputQA
             qaState={qaStateEnriched}
             onAnswerCardPress={() => {
               this.setState(
@@ -342,7 +347,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
       {
         key: 'largeAmounts',
         component: (
-          <QuantityInputQA
+          <AmountInputQA
             qaState={qaStateEnriched}
             onAnswerCardPress={() => {
               this.setState(
@@ -425,6 +430,7 @@ const mapStateToProps = state => ({
   amounts: getDeclarationAmounts(state),
   settings: getDeclarationSettings(state),
   mainCategories: getDeclarationMainCategories(state),
+  currencies: getCurrencies(state),
 });
 
 const mapDispatchToProps = dispatch => ({
