@@ -80,7 +80,7 @@ class PickerModal extends React.Component<any, PickerState> {
 
     return (
       <AppModal
-        onRequestClose={this.props.onRequestClose}
+        onRequestClose={this.props.onHide}
         modalVisible={this.props.modalVisible}
       >
         <View style={[ownStyles.modalContainer, globalStyles.boxShadow]}>

@@ -5,17 +5,18 @@ import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
-import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { mainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { MainCategory } from '../../../types/reducers/declaration';
 import type {
-  Basket,
+  Amounts,
   Category,
 } from '../../../model/types/basketPeopleAmountsTypes';
 import type { CardProps } from '../QuestionAnswerContainer';
-import { addQuantity, deleteQuantity } from '../../../model/configurationApi';
+import { addAmount } from '../../../model/configurationApi';
 import { calculateVat } from '../../../model/vatCalculations';
 import AmountInputAnswerCard from '../cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
+import CurrencyPickerModal from '../../Modals/CurrencyPickerModal/CurrencyPickerModal';
+import type { Currency } from '../../../model/currencies';
 
 export type ModalCategoryType = Category | 'none';
 export type ModalMainCategoryType = MainCategory | 'none';
@@ -52,6 +53,7 @@ class AmountInputQA extends React.Component<CardProps, AmountInputState> {
 
   getQuestionComponent() {
     const { onAnswer, qaState } = this.props;
+    const { currencies } = qaState;
     return (
       <View>
         <QuantityInputConfirmationCard
@@ -62,15 +64,17 @@ class AmountInputQA extends React.Component<CardProps, AmountInputState> {
           categoriesByMainCategory={this.getDisplayedCategoriesByMainCategory()}
           basket={qaState.basket}
         />
-        <GoodQuantityListModal
+        <CurrencyPickerModal
           onHide={() => this.handleHideModal()}
-          quantityInputState={this.state}
+          amountInputState={this.state}
+          currencyObject={currencies}
+          currencyDate={new Date()}
           basket={qaState.basket}
-          onAddQuantity={(category: Category, quantity: number) => {
-            this.handleAddQuantity(category, quantity);
+          onAddAmount={(currency: Currency, amount: number) => {
+            this.handleAddAmount(currency, amount);
           }}
-          onDeleteQuantity={(category: Category, index: number) => {
-            this.handleDeleteQuantity(category, index);
+          onDeleteAmount={(currency: Currency, index: number) => {
+            this.handleDeleteAmount(currency, index);
           }}
         />
       </View>
@@ -89,22 +93,22 @@ class AmountInputQA extends React.Component<CardProps, AmountInputState> {
     );
   }
 
-  handleAddQuantity(category: Category, quantity: number) {
-    const { basket } = this.props.qaState;
+  handleAddAmount(currency: Currency, amount: number) {
+    const { amounts } = this.props.qaState;
 
-    const updatedBasket = addQuantity(basket, category, quantity);
-    this.handleUpdate(updatedBasket);
+    const updatedAmounts = addAmount(amounts, currency, amount);
+    this.handleUpdate(updatedAmounts);
   }
 
-  handleDeleteQuantity(category: Category, index: number) {
-    const { basket } = this.props.qaState;
-
-    const updatedBasket = deleteQuantity(basket, category, index);
-    this.handleUpdate(updatedBasket);
+  // eslint-disable-next-line no-unused-vars
+  handleDeleteAmount(currency: Currency, index: number) {
+    const { amounts } = this.props.qaState;
+    // TODO
+    this.handleUpdate(amounts);
   }
 
-  handleUpdate(basket: Basket) {
-    return this.props.onUpdate(basket);
+  handleUpdate(amounts: Amounts) {
+    return this.props.onUpdate(amounts);
   }
 
   handleShowModal(modalCategories: ModalCategoriesType) {

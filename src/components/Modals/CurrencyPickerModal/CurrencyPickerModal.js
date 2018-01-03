@@ -23,6 +23,7 @@ import styles from '../styles/CurrencyPickerModal';
 import { INDIVIDUALALLOWANCE } from '../../../model/constants';
 import { currenciesArray } from '../../../model/currencies';
 import type { Currency, CurrencyObject } from '../../../model/currencies';
+import type { AmountInputState } from '../../QuestionAnswer/AmountInput/AmountInputQA';
 
 type PickerState = {
   currency: Currency,
@@ -31,29 +32,45 @@ type PickerState = {
 
 type CurrencyPickerProps = {
   t: any, // TODO
-  onRequestClose: any, // TODO
-  modalVisible: boolean,
+  onHide: () => void,
   currencyObject: CurrencyObject,
   currencyDate: string,
+  amountInputState: AmountInputState,
+  onAddAmount: (currency: Currency, amount: number) => void,
+  // eslint-disable-next-line react/no-unused-prop-types
+  onDeleteAmount: (currency: Currency, index: number) => void,
 };
 
 class CurrencyPickerModal extends React.Component<
   CurrencyPickerProps,
   PickerState
 > {
-  state = {
-    amount: 0,
-    currency: 'EUR',
-  };
+  constructor() {
+    super();
+    this.state = {
+      amount: 0,
+      currency: 'EUR',
+    };
+  }
+
+  confirmPicker() {
+    const { currency, amount } = this.state;
+    const { onAddAmount, onHide } = this.props;
+    console.log(currency);
+    console.log(amount);
+    onAddAmount(currency, amount);
+    onHide();
+  }
 
   render() {
     const {
       t,
-      onRequestClose,
-      modalVisible,
       currencyObject,
       currencyDate,
+      amountInputState,
+      onHide,
     } = this.props;
+    const { modalVisible } = amountInputState;
     const { amount, currency } = this.state;
 
     const disabledRedButton: boolean =
@@ -70,7 +87,7 @@ class CurrencyPickerModal extends React.Component<
     } (${t(['currencyPickerRate'])} ${currencyDate})`;
 
     return (
-      <AppModal onRequestClose={onRequestClose} modalVisible={modalVisible}>
+      <AppModal modalVisible={modalVisible}>
         <PickerCard style={{ top: '10%' }}>
           <CardHeader
             text={t(['currencyPickerTitle'], { value: INDIVIDUALALLOWANCE })}
@@ -125,7 +142,10 @@ class CurrencyPickerModal extends React.Component<
           <View style={ownStyles.redButtonWrapper}>
             <RedButton
               confirmationDisabled={disabledRedButton}
-              onPress={Keyboard.dismiss}
+              onPress={() => {
+                Keyboard.dismiss();
+                this.confirmPicker();
+              }}
               text={redButtonText}
             />
           </View>
