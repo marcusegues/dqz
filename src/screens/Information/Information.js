@@ -3,7 +3,8 @@ import React from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { Text, View } from 'react-native';
-import OnBoardingContainer from '../OnBoarding/subcomponents/OnBoardingContainer';
+import ScrollViewCard from './subComponents/ScrollViewCard';
+import InformationRow from './subComponents/InformationRow';
 
 const ownStyles = {};
 
@@ -13,18 +14,18 @@ type InformationScreenProps = {
 };
 
 const Information = ({ navigation, t }: InformationScreenProps) => (
-  <OnBoardingContainer>
-    <Text>lkjnslk</Text>
-    {/*<View style={ownStyles.container}>*/}
-    {/*<OnBoardingParagraph text={t('confirmationVat')} />*/}
-    {/*<Text style={ownStyles.percents}>7.7%</Text>*/}
-    {/*<OnBoardingParagraph text={t('confirmationVat2')} />*/}
-    {/*</View>*/}
-    {/*<Text style={ownStyles.bottomText}>*/}
-    {/*{(t('vatInformation') || '').toUpperCase()}*/}
-    {/*</Text>*/}
-    {/*<DoneButton onPress={() => navigation.navigate('MainMenu')} />*/}
-  </OnBoardingContainer>
+  <ScrollViewCard>
+    <InformationRow mainText="mainText" subText="subtext" number="1.1" />
+    <InformationRow mainText="mainText" subText="subtext" number="1.1" />
+    <InformationRow mainText="mainText" subText="subtext" number="1.1" />
+    <InformationRow mainText="mainText" subText="subtext" number="1.1" />
+    <InformationRow mainText="mainText" subText="subtext" number="1.1" />
+    <InformationRow
+      mainText="mainText"
+      subText="subtextkjl lksjdlkjlsjflsdkj lskdjflksjdlfjsdl "
+      number="1.1"
+    />
+  </ScrollViewCard>
 );
 
 export default translate(['onBoarding'])(Information);
