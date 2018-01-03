@@ -19,6 +19,7 @@ import {
   getDeclarationAmounts,
   getDeclarationMainCategories,
   getCurrencies,
+  getFormattedCurrencyDate,
 } from '../../reducers';
 import type {
   Amounts,
@@ -66,6 +67,7 @@ export type QAStateEnriched = {
   people: People,
   settings: Settings,
   currencies: CurrencyObject,
+  currencyDate: string,
 };
 
 export type CardProps = {
@@ -109,7 +111,14 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
 
   enrichState(): QAStateEnriched {
     const { questionStates, questionFlag } = this.state;
-    const { amounts, basket, people, settings, currencies } = this.props;
+    const {
+      amounts,
+      basket,
+      people,
+      settings,
+      currencies,
+      currencyDate,
+    } = this.props;
 
     return {
       questionStates,
@@ -119,6 +128,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
       people,
       settings,
       currencies,
+      currencyDate,
     };
   }
 
@@ -440,6 +450,7 @@ const mapStateToProps = state => ({
   settings: getDeclarationSettings(state),
   mainCategories: getDeclarationMainCategories(state),
   currencies: getCurrencies(state),
+  currencyDate: getFormattedCurrencyDate(state),
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -56,20 +56,12 @@ class CurrencyPickerModal extends React.Component<
   confirmPicker() {
     const { currency, amount } = this.state;
     const { onAddAmount, onHide } = this.props;
-    console.log(currency);
-    console.log(amount);
     onAddAmount(currency, amount);
     onHide();
   }
 
   render() {
-    const {
-      t,
-      currencyObject,
-      currencyDate,
-      amountInputState,
-      onHide,
-    } = this.props;
+    const { t, currencyObject, currencyDate, amountInputState } = this.props;
     const { modalVisible } = amountInputState;
     const { amount, currency } = this.state;
 

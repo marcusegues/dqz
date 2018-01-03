@@ -1,6 +1,6 @@
 // @flow
 
-import type { Amounts, AmountWithId } from './types/basketPeopleAmountsTypes';
+import type { Amounts } from './types/basketPeopleAmountsTypes';
 import type { Currency } from './currencies';
 
 export const rounding = (x: number): number => {

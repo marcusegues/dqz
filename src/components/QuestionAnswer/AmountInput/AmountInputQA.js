@@ -39,7 +39,7 @@ class AmountInputQA extends React.Component<CardProps, AmountInputState> {
           onHide={() => this.handleHideModal()}
           amountInputState={this.state}
           currencyObject={currencies}
-          currencyDate={new Date()}
+          currencyDate={qaState.currencyDate}
           basket={qaState.basket}
           onAddAmount={(currency: Currency, amount: number) => {
             this.handleAddAmount(currency, amount);
