@@ -73,12 +73,6 @@ type GeneralNS = {
   goodCategories: string,
   confirm: string,
   toPayment: string,
-  vat: string,
-  paidOn: string,
-  at: string,
-  time: string,
-  transactionId: string,
-  receiptValidUntil: string,
 };
 
 export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
@@ -94,12 +88,6 @@ export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
   goodCategories: 'i18n',
   confirm: 'i18n',
   toPayment: 'i18n',
-  vat: 'i18n',
-  paidOn: 'i18n',
-  at: 'i18n',
-  time: 'i18n',
-  transactionId: 'i18n',
-  receiptValidUntil: 'i18n',
 });
 
 export type GeneralNSType = RecordOf<GeneralNS>;
@@ -240,6 +228,29 @@ export const makeModalNSRecord: RecordFactory<ModalNS> = Immutable.Record({
 
 export type ModalNSType = RecordOf<ModalNS>;
 
+type ReceiptNS = {
+  dutyAndVat: string,
+  paidOn: string,
+  transactionId: string,
+  receiptValidUntilText: string,
+  receiptValidUntilTime: string,
+  sumText: string,
+  vatColumn: string,
+  receiptStorageNotification: string,
+};
+export const makeReceiptNSRecord: RecordFactory<ReceiptNS> = Immutable.Record({
+  dutyAndVat: 'i18n {{duty}} i18n {{vat}}',
+  paidOn: 'i18n {{date}} i18n {{time}} i18n',
+  transactionId: 'i18n {{value}}',
+  receiptValidUntilText: 'i18n',
+  receiptValidUntilTime: '{{date}} i18n {{time}} i18n',
+  sumText: 'i18n {{value}}',
+  vatColumn: 'i18n',
+  receiptStorageNotification: 'i18n',
+});
+
+export type ReceiptNSType = RecordOf<ReceiptNS>;
+
 /**
  *
  */
@@ -255,6 +266,7 @@ type Locale = {
   qaFlow: QAFlowNSType,
   modal: ModalNSType,
   payment: PaymentNSType,
+  receipt: ReceiptNSType,
 };
 
 export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
@@ -268,6 +280,7 @@ export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
   qaFlow: makeQAFlowNSRecord(),
   modal: makeModalNSRecord(),
   payment: makePaymentNSRecord(),
+  receipt: makeReceiptNSRecord(),
 });
 
 export type LocaleType = RecordOf<Locale>;

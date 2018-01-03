@@ -35,33 +35,34 @@ const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
     <Logo />
     <Text style={ownStyles.topSumText}>CHF 56.50</Text>
     <ReceiptSubText
-      text="ewfwe"
-      // text={`${t('customsDuty')}: 56.50   |   ${t('vat')}: 0.00`}
+      text={t('dutyAndVat', { duty: '56,50', vat: '0,00' })}
       style={{
         alignSelf: 'center',
       }}
     />
+
     <View style={ownStyles.contentContainer}>
       <CardRowText
-        text="tre"
-        // text={`${t('paidOn')} 20.12.2017 ${t('at')} 17:40 ${t('time')}:`}
+        text={t('paidOn', { date: '20.12.2017', time: '17:40' })}
         style={{ marginVertical: verticalScale(15) }}
       />
       <ReceiptSubText text="Mastercard XXXX XXXX XXXX 1234" />
-      <ReceiptSubText text={t('transactionId')} />
-      {/*<ReceiptSubText text={`${t('transactionId')} (SIX): 123-456-789`} />*/}
+      <ReceiptSubText text={t('transactionId', { value: '123-456-789' })} />
       <ValidUntilBlock>
         <CardRowText
-          text={t('receiptValidUntil', { value: '333' })}
+          text={t('receiptValidUntilText')}
           style={{ color: '#fff', fontFamily: 'roboto_regular' }}
         />
         <CardRowText
-          text="20. Dezember 2017   |   19:40 Uhr"
+          text={t('receiptValidUntilTime', {
+            date: '20. Dezember 2017',
+            time: '19:40',
+          })}
           style={{ color: '#fff', fontFamily: 'roboto_regular' }}
         />
       </ValidUntilBlock>
       <ReceiptSubText
-        text="Zollabgabe in CHF:"
+        text={t('payment:dutyColumn')}
         style={{ fontSize: moderateScale(12), alignSelf: 'flex-end' }}
       />
 
@@ -73,7 +74,7 @@ const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
       </Row>
 
       <ReceiptSubText
-        text="Mehrwertsteuer in CHF:"
+        text={t('vatColumn')}
         style={{
           fontSize: moderateScale(12),
           alignSelf: 'flex-end',
@@ -88,16 +89,15 @@ const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
       </Row>
 
       <CardRowText
-        text="ret"
-        // text={`${t('sumText')}: 56.20`}
+        text={t('sumText', { value: 56.5 })}
         style={{ alignSelf: 'flex-end', marginTop: 15, marginBottom: 35 }}
       />
       <ReceiptSubText
-        text="Diese Quittung wird ein Jahr lang gespeichert. Solange können Sie die Quittung jederzeit in der App aufrufen."
-        style={{ paddingBottom: 15 }}
+        text={t('receiptStorageNotification')}
+        style={{ paddingBottom: 15, lineHeight: 18 }}
       />
     </View>
   </ScrollViewCard>
 );
 
-export default translate(['general', 'payment'])(ReceiptAfterPayment);
+export default translate(['receipt', 'payment'])(ReceiptAfterPayment);

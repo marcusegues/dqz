@@ -12,6 +12,7 @@ import {
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
   makePaymentNSRecord,
+  makeReceiptNSRecord,
 } from '../types/locale';
 
 export const en: LocaleType = makeLocaleRecord({
@@ -51,12 +52,6 @@ export const en: LocaleType = makeLocaleRecord({
     goodCategories: 'Good Categories',
     confirm: 'Confirm',
     toPayment: 'Make Payment',
-    vat: 'I18N',
-    paidOn: 'I18N',
-    at: 'I18N',
-    time: 'I18N',
-    transactionId: 'I18N',
-    receiptValidUntil: 'I18N {{value}}',
   }),
   onBoarding: makeOnBoardingNSRecord({
     welcome: 'Welcome to',
@@ -112,5 +107,15 @@ export const en: LocaleType = makeLocaleRecord({
     overViewTitle: 'Summary of your Declaration',
     dutyColumn: 'Customs Duty in CHF',
     sumText: 'Sum (CHF)',
+  }),
+  receipt: makeReceiptNSRecord({
+    dutyAndVat: 'i18n: {{duty}}  |  i18n: {{vat}}',
+    paidOn: 'I18N {{date}} I18N {{time}} I18N:',
+    transactionId: 'I18N: {{value}}',
+    receiptValidUntilText: 'I18N:',
+    receiptValidUntilTime: '{{date}} | {{time}} i18n',
+    sumText: 'I18N Sum: {{value}}',
+    vatColumn: 'I18N:',
+    receiptStorageNotification: 'I18N.',
   }),
 });
