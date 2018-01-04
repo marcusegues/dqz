@@ -41,7 +41,7 @@ const ownStyles = StyleSheet.create({
 });
 
 type SavedBasketModalProps = {
-  t: (field: string, params?: {}) => void,
+  t: (field: string, params?: {}) => string,
   modalVisible: boolean,
   onRequestClose: Function,
 };

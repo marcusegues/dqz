@@ -7,8 +7,8 @@ import { verticalScale } from '../../../../styles/Scaling';
 
 type CardHeaderProps = {
   text: string,
-  children: any,
-  style: any, // TODO
+  children?: any,
+  style?: any, // TODO
 };
 
 const CardHeader = ({ text, children, style }: CardHeaderProps) => (
@@ -25,5 +25,10 @@ const CardHeader = ({ text, children, style }: CardHeaderProps) => (
     {children}
   </View>
 );
+
+CardHeader.defaultProps = {
+  children: [],
+  style: {},
+};
 
 export default CardHeader;
