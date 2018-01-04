@@ -17,7 +17,6 @@ import PaymentContainer from '../components/Payment/PaymentContainer';
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
 import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
-import UnderConstructionWithSums from './underConstructionWithSums';
 import GoodQuantityListModal from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import OnBoardingTaxScreen from '../screens/OnBoarding/OnBoardingTaxScreen';
 import ReceiptAfterPayment from '../components/Receipts/ReceiptAfterPayment';
@@ -75,12 +74,6 @@ export const stackNavigatorScreens = {
 
   UnderConstruction: {
     screen: UnderConstruction,
-    navigationOptions: () => ({
-      headerTitle: <HeaderTitle text="In Bearbeitung" />,
-    }),
-  },
-  UnderConstructionWithSums: {
-    screen: UnderConstructionWithSums,
     navigationOptions: () => ({
       headerTitle: <HeaderTitle text="In Bearbeitung" />,
     }),
