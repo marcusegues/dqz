@@ -6,12 +6,17 @@ import type {
   QuestionType,
 } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
+import { flatLargeAmounts } from '../../../model/utils';
+import type { FlatAmount } from '../../../model/utils';
 
 const showLargeAmountsQuestion = (qaState: QAStateEnriched) => {
-  // eslint-disable-next-line no-unused-vars
   const { people, amounts } = qaState;
+  const largeAmounts: Array<FlatAmount> = flatLargeAmounts(amounts);
+  const hasLargeAmounts: boolean =
+    largeAmounts.reduce((a, v) => a + v.amount, 0) > 0;
+
   // TODO important check if large amounts present!
-  return getTotalPeople(people) > 1;
+  return hasLargeAmounts || getTotalPeople(people) > 1;
 };
 
 const setQuestionState = (
@@ -51,8 +56,6 @@ export const setQuestionStates = (
       if (!mainCategories.size) {
         mainCategoriesState = 'expanded';
         quantityInputState = 'hidden';
-        amountsState = 'hidden';
-        largeAmountsState = 'hidden';
       }
       break;
     }
