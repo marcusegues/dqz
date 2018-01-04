@@ -1,9 +1,17 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View } from 'react-native';
 import CardHeaderText from './CardHeaderText';
 import { verticalScale } from '../../../../styles/Scaling';
 
-const CardHeader = ({ text, children, style }) => (
+type CardHeaderProps = {
+  text: string,
+  children: any,
+  style: any, // TODO
+};
+
+const CardHeader = ({ text, children, style }: CardHeaderProps) => (
   <View
     style={{
       marginTop: verticalScale(16),
