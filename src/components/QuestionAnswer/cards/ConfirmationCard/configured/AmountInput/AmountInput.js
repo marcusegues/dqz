@@ -5,7 +5,10 @@ import { View, ScrollView, TouchableOpacity } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
 import { moderateScale } from '../../../../../../styles/Scaling';
 import * as colors from '../../../../../../styles/colors';
-import { flatAmounts } from '../../../../../../model/utils';
+import {
+  flatLargeAmounts,
+  flatNormalAmounts,
+} from '../../../../../../model/utils';
 import AmountsRow from './subcomponents/AmountRow';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 
@@ -38,12 +41,14 @@ type AmountInputProps = {
   onShowAmountInputModal: () => void,
   amounts: Amounts,
   onDeleteAmount: string => void,
+  large: boolean,
 };
 
 const AmountInput = ({
   onShowAmountInputModal,
   amounts,
   onDeleteAmount,
+  large,
 }: AmountInputProps) => (
   <View
     style={{
@@ -55,15 +60,17 @@ const AmountInput = ({
   >
     <ScrollView contentContainerStyle={ownStyles.scrollView}>
       <View>
-        {flatAmounts(amounts).map(a => (
-          <AmountsRow
-            key={a.id}
-            amount={a.amount}
-            currency={a.currency}
-            id={a.id}
-            onDelete={() => onDeleteAmount(a.id)}
-          />
-        ))}
+        {(large ? flatLargeAmounts(amounts) : flatNormalAmounts(amounts)).map(
+          a => (
+            <AmountsRow
+              key={a.id}
+              amount={a.amount}
+              currency={a.currency}
+              id={a.id}
+              onDelete={() => onDeleteAmount(a.id)}
+            />
+          )
+        )}
       </View>
       <TouchableOpacity onPress={() => onShowAmountInputModal()}>
         <Entypo

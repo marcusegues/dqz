@@ -383,7 +383,15 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
               onUpdateFactory(
                 {
                   questionType: 'largeAmounts',
-                  onUpdate: () => {},
+                  onUpdate: updatedAmounts => {
+                    onDeclarationSetAmounts(updatedAmounts);
+                    this.updateFlagsOptimistically(
+                      'largeAmounts',
+                      Object.assign({}, qaStateEnriched, {
+                        amounts: updatedAmounts,
+                      })
+                    );
+                  },
                   amounts: newAmounts,
                 },
                 qaStateEnriched,

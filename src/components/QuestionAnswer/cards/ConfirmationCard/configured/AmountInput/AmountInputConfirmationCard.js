@@ -11,6 +11,7 @@ type AmountInputConfirmationCardProps = {
   amounts: Amounts,
   onAnswer: any, // TODO
   onDeleteAmount: string => void,
+  large: boolean,
 };
 
 const AmountInputConfirmationCard = ({
@@ -18,12 +19,14 @@ const AmountInputConfirmationCard = ({
   amounts,
   onAnswer,
   t,
+  large,
   onDeleteAmount,
 }: AmountInputConfirmationCardProps) => (
   <ConfirmationCard text={t('amountInput')} onAnswer={onAnswer}>
     <AmountInput
       onShowAmountInputModal={onShowAmountInputModal}
       amounts={amounts}
+      large={large}
       onDeleteAmount={onDeleteAmount}
     />
   </ConfirmationCard>

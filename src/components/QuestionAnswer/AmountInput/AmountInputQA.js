@@ -40,6 +40,7 @@ class AmountInputQA extends React.Component<
     return (
       <View>
         <AmountInputConfirmationCard
+          large={large}
           onShowAmountInputModal={() => this.handleShowModal()}
           onAnswer={onAnswer}
           amounts={qaState.amounts}
@@ -79,9 +80,9 @@ class AmountInputQA extends React.Component<
     const { amounts } = qaState;
 
     if (large) {
-      this.handleUpdate(addAmount(amounts, currency, amount));
-    } else {
       this.handleUpdate(addLargeAmount(amounts, currency, amount));
+    } else {
+      this.handleUpdate(addAmount(amounts, currency, amount));
     }
   }
 
