@@ -15,7 +15,6 @@ import {
   getSettings,
   getCurrencies,
   getCurrencyState,
-  getFormattedCurrencyDate,
 } from '../index';
 
 jest.mock('uuid', () => ({
