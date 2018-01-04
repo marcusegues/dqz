@@ -1,10 +1,13 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View, ScrollView, TouchableOpacity } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
 import { moderateScale } from '../../../../../../styles/Scaling';
 import * as colors from '../../../../../../styles/colors';
 import { flatAmounts } from '../../../../../../model/utils';
 import AmountsRow from './subcomponents/AmountRow';
+import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 
 const ownStyles = {
   mainContainer: {
@@ -31,7 +34,17 @@ const ownStyles = {
   },
 };
 
-const AmountInput = ({ onShowAmountInputModal, amounts, onDeleteAmount }) => (
+type AmountInputProps = {
+  onShowAmountInputModal: () => void,
+  amounts: Amounts,
+  onDeleteAmount: string => void,
+};
+
+const AmountInput = ({
+  onShowAmountInputModal,
+  amounts,
+  onDeleteAmount,
+}: AmountInputProps) => (
   <View
     style={{
       flexDirection: 'row',
