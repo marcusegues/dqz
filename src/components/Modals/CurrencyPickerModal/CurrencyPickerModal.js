@@ -37,6 +37,7 @@ type CurrencyPickerProps = {
   currencyDate: string,
   amountInputState: AmountInputState,
   onAddAmount: (currency: Currency, amount: number) => void,
+  large: boolean,
 };
 
 class CurrencyPickerModal extends React.Component<
@@ -59,7 +60,13 @@ class CurrencyPickerModal extends React.Component<
   }
 
   render() {
-    const { t, currencyObject, currencyDate, amountInputState } = this.props;
+    const {
+      t,
+      currencyObject,
+      currencyDate,
+      amountInputState,
+      large,
+    } = this.props;
     const { modalVisible } = amountInputState;
     const { amount, currency } = this.state;
 
@@ -76,12 +83,16 @@ class CurrencyPickerModal extends React.Component<
       disabledRedButton ? '--' : (amount * currencyObject[currency]).toFixed(2)
     } (${t(['currencyPickerRate'])} ${currencyDate})`;
 
+    let title: string = t(['currencyPickerTitle']);
+    if (large) {
+      title = t(['currencyPickerLargeAmountTitle'], {
+        value: INDIVIDUALALLOWANCE,
+      });
+    }
     return (
       <AppModal modalVisible={modalVisible}>
         <PickerCard style={{ top: '10%' }}>
-          <CardHeader
-            text={t(['currencyPickerTitle'], { value: INDIVIDUALALLOWANCE })}
-          />
+          <CardHeader text={title} />
           <CardHeaderSubText text={t(['currencyPickerSubTitle'])} />
 
           <TouchableWithoutFeedback

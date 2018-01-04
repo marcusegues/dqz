@@ -6,7 +6,11 @@ import React from 'react';
 import { View } from 'react-native';
 import type { Amounts } from '../../../model/types/basketPeopleAmountsTypes';
 import type { CardProps } from '../QuestionAnswerContainer';
-import { addAmount, deleteAmount } from '../../../model/configurationApi';
+import {
+  addAmount,
+  addLargeAmount,
+  deleteAmount,
+} from '../../../model/configurationApi';
 import { calculateVat } from '../../../model/vatCalculations';
 import AmountInputAnswerCard from '../cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
 import CurrencyPickerModal from '../../Modals/CurrencyPickerModal/CurrencyPickerModal';
@@ -17,8 +21,13 @@ export type AmountInputState = {
   modalVisible: boolean,
 };
 
-class AmountInputQA extends React.Component<CardProps, AmountInputState> {
-  constructor(props: CardProps) {
+type ExtendedCardProps = CardProps & { large: boolean };
+
+class AmountInputQA extends React.Component<
+  ExtendedCardProps,
+  AmountInputState
+> {
+  constructor(props: ExtendedCardProps) {
     super(props);
     this.state = {
       modalVisible: false,
@@ -26,7 +35,7 @@ class AmountInputQA extends React.Component<CardProps, AmountInputState> {
   }
 
   getQuestionComponent() {
-    const { onAnswer, qaState } = this.props;
+    const { onAnswer, qaState, large } = this.props;
     const { currencies } = qaState;
     return (
       <View>
@@ -39,6 +48,7 @@ class AmountInputQA extends React.Component<CardProps, AmountInputState> {
           }}
         />
         <CurrencyPickerModal
+          large={large}
           onHide={() => this.handleHideModal()}
           amountInputState={this.state}
           currencyObject={currencies}
@@ -65,16 +75,18 @@ class AmountInputQA extends React.Component<CardProps, AmountInputState> {
   }
 
   handleAddAmount(currency: Currency, amount: number) {
-    const { amounts } = this.props.qaState;
+    const { large, qaState } = this.props;
+    const { amounts } = qaState;
 
-    const updatedAmounts = addAmount(amounts, currency, amount);
-    this.handleUpdate(updatedAmounts);
+    if (large) {
+      this.handleUpdate(addAmount(amounts, currency, amount));
+    } else {
+      this.handleUpdate(addLargeAmount(amounts, currency, amount));
+    }
   }
 
-  // eslint-disable-next-line no-unused-vars
   handleDeleteAmount(id: string) {
     const { amounts } = this.props.qaState;
-    // TODO
     const updatedAmounts = deleteAmount(amounts, id);
     this.handleUpdate(updatedAmounts);
   }

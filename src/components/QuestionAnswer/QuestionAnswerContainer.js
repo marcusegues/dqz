@@ -327,6 +327,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         key: 'amounts',
         component: (
           <AmountInputQA
+            large={false}
             qaState={qaStateEnriched}
             onAnswerCardPress={() => {
               this.setState(
@@ -367,6 +368,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         key: 'largeAmounts',
         component: (
           <AmountInputQA
+            large
             qaState={qaStateEnriched}
             onAnswerCardPress={() => {
               this.setState(

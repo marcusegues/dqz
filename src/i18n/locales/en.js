@@ -101,7 +101,8 @@ export const en: LocaleType = makeLocaleRecord({
     confirmPicker: 'Confirm {{value}}',
     standardCategoryPicker: 'Standard',
     individualCategoryPicker: 'Exact',
-    currencyPickerTitle: 'Enter item with more than CHF {{value}}',
+    currencyPickerTitle: 'Enter item',
+    currencyPickerLargeAmountTitle: 'Enter item with more than CHF {{value}}',
     currencyPickerSubTitle:
       'Record the net value of the item in its original currency:',
     currencyPickerRate: 'Rate of',
