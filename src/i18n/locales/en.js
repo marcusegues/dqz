@@ -109,13 +109,14 @@ export const en: LocaleType = makeLocaleRecord({
     sumText: 'Sum (CHF)',
   }),
   receipt: makeReceiptNSRecord({
-    dutyAndVat: 'i18n: {{duty}}  |  i18n: {{vat}}',
-    paidOn: 'I18N {{date}} I18N {{time}} I18N:',
-    transactionId: 'I18N: {{value}}',
-    receiptValidUntilText: 'I18N:',
-    receiptValidUntilTime: '{{date}} | {{time}} i18n',
+    dutyAndVat: 'Customs duty: {{duty}}  |  vat: {{vat}}',
+    paidOn: "Paid on {{date}} at {{time}} o'clock:",
+    transactionId: 'Transaction-ID (SIX): {{value}}',
+    receiptValidUntilText: 'This receipt is valid until:',
+    receiptValidUntilTime: "{{date}} | {{time}}  o'clock:",
     sumText: 'I18N Sum: {{value}}',
-    vatColumn: 'I18N:',
-    receiptStorageNotification: 'I18N.',
+    vatColumn: 'VAT in CHF:',
+    receiptStorageNotification:
+      'This receipt is stored for a year. As long as you can call the receipt at any time in the app.',
   }),
 });

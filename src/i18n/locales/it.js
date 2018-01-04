@@ -50,13 +50,13 @@ export const it: LocaleType = makeLocaleRecord({
   payment: makePaymentNSRecord({}),
 
   receipt: makeReceiptNSRecord({
-    dutyAndVat: 'i18n: {{duty}}  |  i18n: {{vat}}',
-    paidOn: 'i18n {{date}} i18n {{time}} i18n:',
-    transactionId: 'I18N: {{value}}',
-    receiptValidUntilText: 'I18N',
-    receiptValidUntilTime: '{{date}} | {{time}} i18n',
-    sumText: 'I18N: {{value}}',
-    vatColumn: 'I18N:',
-    receiptStorageNotification: 'I18N.',
+    dutyAndVat: '🏂: {{duty}}  |  🏂: {{vat}}',
+    paidOn: '🏂 {{date}} 🏂 {{time}} 🏂:',
+    transactionId: '🏂: {{value}}',
+    receiptValidUntilText: '🏂',
+    receiptValidUntilTime: '{{date}} | {{time}} 🏂',
+    sumText: '🏂: {{value}}',
+    vatColumn: '🏂:',
+    receiptStorageNotification: '🏂.',
   }),
 });
