@@ -8,7 +8,7 @@ const complete = require('../../../../../../../assets/images/complete.png');
 const incomplete = require('../../../../../../../assets/images/incomplete.png');
 const mainIcon = require('../../../../../../../assets/icons/travellers.png');
 
-type AmountInputAnswerCardState = {
+type AmountInputAnswerCardProps = {
   onAnswerCardPress: any, // TODO
   flag: QuestionFlag,
   vat: number,
@@ -18,7 +18,7 @@ const AmountInputAnswerCard = ({
   onAnswerCardPress,
   flag,
   vat,
-}: AmountInputAnswerCardState) => (
+}: AmountInputAnswerCardProps) => (
   <AnswerCard
     onAnswerCardPress={onAnswerCardPress}
     mainIcon={mainIcon}

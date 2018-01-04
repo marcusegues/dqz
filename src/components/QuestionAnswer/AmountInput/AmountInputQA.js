@@ -64,10 +64,11 @@ class AmountInputQA extends React.Component<
   }
 
   getAnswerComponent() {
-    const { qaState, questionFlag, onAnswerCardPress } = this.props;
+    const { qaState, questionFlag, onAnswerCardPress, large } = this.props;
     const { amounts, people, currencies } = qaState;
     return (
       <AmountInputAnswerCard
+        large={large}
         onAnswerCardPress={onAnswerCardPress}
         flag={questionFlag}
         vat={calculateVat(amounts, people, currencies).get('totalVat')}
