@@ -1,8 +1,14 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { Text } from 'react-native';
 import { verticalScale } from '../../../../styles/Scaling';
 
-const CardHeaderText = ({ text }) => (
+type CardHeaderTextProps = {
+  text: string,
+};
+
+const CardHeaderText = ({ text }: CardHeaderTextProps) => (
   <Text
     style={{
       fontFamily: 'roboto_regular',
