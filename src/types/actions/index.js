@@ -4,6 +4,7 @@ import type {
   Category,
   Basket,
   People,
+  Amounts,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { MainCategory, MainCategories } from '../reducers/declaration';
 import type { Currency, CurrencyObject } from '../../model/currencies';
@@ -29,6 +30,10 @@ export type Action =
     type: 'ADD_AMOUNT',
     currency: Currency,
     amount: number,
+  }
+  | {
+    type: 'SET_AMOUNTS',
+    amounts: Amounts,
   }
   | {
     type: 'ADD_LARGE_AMOUNT',

@@ -12,6 +12,7 @@ import {
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
   makePaymentNSRecord,
+  makeAmountInputNSRecord,
 } from '../types/locale';
 
 export const en: LocaleType = makeLocaleRecord({
@@ -48,6 +49,7 @@ export const en: LocaleType = makeLocaleRecord({
     navbarSecond: 'Payment',
     navbarThird: 'Receipt',
     customsDuty: 'Customs duty',
+    customsVat: 'VAT',
     goodCategories: 'Good Categories',
     confirm: 'Confirm',
     toPayment: 'Make Payment',
@@ -70,6 +72,15 @@ export const en: LocaleType = makeLocaleRecord({
   }),
   quantityInput: makeQuantityInputNSRecord({
     quantityInput: 'Quantity input',
+  }),
+  amountInput: makeAmountInputNSRecord({
+    amountInput: 'Amount Input',
+    amountInputLargeItem: 'Amount Input (items larger than CHF {{value}})',
+    amountInputMoreThan300Text:
+      'Record here any item that is worth more than 300.00 CHF.',
+    amountInputAddItem: 'Add item',
+    amountInputButtonContinue: 'Continue',
+    amountInputButtonBack: 'Back',
   }),
   qaFlow: makeQAFlowNSRecord({
     declareGoods: 'Declare Goods',
@@ -96,7 +107,8 @@ export const en: LocaleType = makeLocaleRecord({
     confirmPicker: 'Confirm {{value}}',
     standardCategoryPicker: 'Standard',
     individualCategoryPicker: 'Exact',
-    currencyPickerTitle: 'Enter item with more than CHF {{value}}',
+    currencyPickerTitle: 'Enter item',
+    currencyPickerLargeAmountTitle: 'Enter item with more than CHF {{value}}',
     currencyPickerSubTitle:
       'Record the net value of the item in its original currency:',
     currencyPickerRate: 'Rate of',

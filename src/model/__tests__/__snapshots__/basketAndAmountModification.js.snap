@@ -1,5 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`The Amounts:  deletes a single amount (or not, if id fake):  1`] = `
+Immutable.Map {
+  "EUR": Immutable.Record {
+    "amounts": Immutable.List [
+      Object {
+        "amount": 12.34,
+        "id": "0",
+      },
+      Object {
+        "amount": 34.56,
+        "id": "1",
+      },
+    ],
+    "amountsLarge": Immutable.List [],
+  },
+}
+`;
+
+exports[`The Amounts:  deletes a single amount (or not, if id fake):  2`] = `
+Immutable.Map {
+  "EUR": Immutable.Record {
+    "amounts": Immutable.List [
+      Object {
+        "amount": 34.56,
+        "id": "1",
+      },
+    ],
+    "amountsLarge": Immutable.List [],
+  },
+}
+`;
+
+exports[`The Amounts:  deletes a single amount (or not, if id fake):  3`] = `
+Immutable.Map {
+  "EUR": Immutable.Record {
+    "amounts": Immutable.List [
+      Object {
+        "amount": 12.34,
+        "id": "0",
+      },
+    ],
+    "amountsLarge": Immutable.List [],
+  },
+}
+`;
+
+exports[`The Amounts:  deletes a single amount (or not, if id fake):  4`] = `
+Immutable.Map {
+  "EUR": Immutable.Record {
+    "amounts": Immutable.List [
+      Object {
+        "amount": 12.34,
+        "id": "0",
+      },
+      Object {
+        "amount": 34.56,
+        "id": "1",
+      },
+    ],
+    "amountsLarge": Immutable.List [],
+  },
+}
+`;
+
 exports[`The basket / quantites:  can reset the quantites of a category 1`] = `
 Immutable.Map {
   "Butter": Immutable.Record {
@@ -168,6 +232,70 @@ Immutable.Map {
     "volume": Immutable.Record {
       "quantities": Immutable.List [],
     },
+  },
+}
+`;
+
+exports[`The large amounts:  deletes a single large amount (or not, if id fake):  1`] = `
+Immutable.Map {
+  "EUR": Immutable.Record {
+    "amounts": Immutable.List [],
+    "amountsLarge": Immutable.List [
+      Object {
+        "amount": 1234,
+        "id": "0",
+      },
+      Object {
+        "amount": 1234,
+        "id": "1",
+      },
+    ],
+  },
+}
+`;
+
+exports[`The large amounts:  deletes a single large amount (or not, if id fake):  2`] = `
+Immutable.Map {
+  "EUR": Immutable.Record {
+    "amounts": Immutable.List [],
+    "amountsLarge": Immutable.List [
+      Object {
+        "amount": 1234,
+        "id": "1",
+      },
+    ],
+  },
+}
+`;
+
+exports[`The large amounts:  deletes a single large amount (or not, if id fake):  3`] = `
+Immutable.Map {
+  "EUR": Immutable.Record {
+    "amounts": Immutable.List [],
+    "amountsLarge": Immutable.List [
+      Object {
+        "amount": 1234,
+        "id": "0",
+      },
+    ],
+  },
+}
+`;
+
+exports[`The large amounts:  deletes a single large amount (or not, if id fake):  4`] = `
+Immutable.Map {
+  "EUR": Immutable.Record {
+    "amounts": Immutable.List [],
+    "amountsLarge": Immutable.List [
+      Object {
+        "amount": 1234,
+        "id": "0",
+      },
+      Object {
+        "amount": 1234,
+        "id": "1",
+      },
+    ],
   },
 }
 `;

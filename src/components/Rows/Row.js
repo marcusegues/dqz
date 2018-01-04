@@ -1,5 +1,12 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View } from 'react-native';
+
+type RowProp = {
+  borderTop?: boolean,
+  children: any,
+};
 
 const quantityRowContainerStyles = borderTop => ({
   flexDirection: 'row',
@@ -13,8 +20,12 @@ const quantityRowContainerStyles = borderTop => ({
   borderTopWidth: borderTop ? 1 : 0,
 });
 
-const Row = ({ borderTop = false, children }) => (
+const Row = ({ borderTop, children }: RowProp) => (
   <View style={quantityRowContainerStyles(borderTop)}>{children}</View>
 );
+
+Row.defaultProps = {
+  borderTop: false,
+};
 
 export default Row;

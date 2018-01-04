@@ -70,6 +70,7 @@ type GeneralNS = {
   navbarSecond: string,
   navbarThird: string,
   customsDuty: string,
+  customsVat: string,
   goodCategories: string,
   confirm: string,
   toPayment: string,
@@ -85,6 +86,7 @@ export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
   navbarSecond: 'i18n',
   navbarThird: 'i18n',
   customsDuty: 'i18n',
+  customsVat: 'i18n',
   goodCategories: 'i18n',
   confirm: 'i18n',
   toPayment: 'i18n',
@@ -150,6 +152,29 @@ export const makeQuantityInputNSRecord: RecordFactory<
 
 export type QuantityInputNSType = RecordOf<QuantityInputNS>;
 
+type AmountInputNS = {
+  amountInput: string,
+  amountInputLargeItem: string,
+  amountInputMoreThan300Text: string,
+  amountInputAddItem: string,
+  amountInputAddItem: string,
+  amountInputButtonContinue: string,
+  amountInputButtonBack: string,
+};
+
+export const makeAmountInputNSRecord: RecordFactory<
+  AmountInputNS
+> = Immutable.Record({
+  amountInput: 'i18n',
+  amountInputLargeItem: 'i18n',
+  amountInputMoreThan300Text: 'i18n',
+  amountInputAddItem: 'i18n',
+  amountInputButtonContinue: 'i18n',
+  amountInputButtonBack: 'i18n',
+});
+
+export type AmountInputNSType = RecordOf<AmountInputNS>;
+
 type PaymentNS = {
   overViewTitle: string,
   dutyColumn: string,
@@ -211,6 +236,7 @@ type ModalNS = {
   standardCategoryPicker: string,
   individualCategoryPicker: string,
   currencyPickerTitle: string,
+  currencyPickerLargeAmountTitle: string,
   currencyPickerSubTitle: string,
   currencyPickerRate: string,
   currencyPickerInvalidInput: string,
@@ -224,6 +250,7 @@ export const makeModalNSRecord: RecordFactory<ModalNS> = Immutable.Record({
   standardCategoryPicker: 'i18n',
   individualCategoryPicker: 'i18n',
   currencyPickerTitle: 'i18n',
+  currencyPickerLargeAmountTitle: 'i18n',
   currencyPickerSubTitle: 'i18n',
   currencyPickerRate: 'i18n',
   currencyPickerInvalidInput: 'i18n',
@@ -246,6 +273,7 @@ type Locale = {
   peopleInput: PeopleInputNSType,
   mainCategoriesInput: MainCategoriesInputNSType,
   quantityInput: QuantityInputNSType,
+  amountInput: AmountInputNSType,
   qaFlow: QAFlowNSType,
   modal: ModalNSType,
   payment: PaymentNSType,
@@ -259,6 +287,7 @@ export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
   peopleInput: makePeopleInputNSRecord(),
   mainCategoriesInput: makeMainCategoriesInputNSRecord(),
   quantityInput: makeQuantityInputNSRecord(),
+  amountInput: makeAmountInputNSRecord(),
   qaFlow: makeQAFlowNSRecord(),
   modal: makeModalNSRecord(),
   payment: makePaymentNSRecord(),
