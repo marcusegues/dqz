@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import YesNoCard from '../YesNoCard';
-import { getDeclarationPeople } from '../../../../../reducers';
+import { getPeople } from '../../../../../reducers';
 
 class LargeAmountPresentContainer extends React.Component {
   constructor(props) {
@@ -32,14 +32,14 @@ class LargeAmountPresentContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  people: getDeclarationPeople(state),
+  people: getPeople(state),
 });
 
 const mapDispatchToProps = dispatch => ({
   declarationSetLargeAmountPresentTrue: () =>
-    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_TRUE' }),
+    dispatch({ type: 'SET_LARGE_AMOUNT_PRESENT_TRUE' }),
   declarationSetLargeAmountPresentFalse: () =>
-    dispatch({ type: 'DECLARATION_SET_LARGE_AMOUNT_PRESENT_FALSE' }),
+    dispatch({ type: 'SET_LARGE_AMOUNT_PRESENT_FALSE' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(

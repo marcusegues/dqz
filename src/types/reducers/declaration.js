@@ -1,7 +1,6 @@
 // @flow
 import type {
   Map as ImmutableMapType,
-  List as ImmutableListType,
   RecordOf,
   RecordFactory,
   Set as ImmutableSetType,
@@ -122,45 +121,14 @@ export const getSubCategories = (
   }
 };
 
-export type OverAllowance = boolean | 'notAnswered' | 'dontKnow';
-export type LargeAmountPresent = boolean | 'notAnswered' | 'dontKnow';
-export type LargeAmountsEntered = boolean | 'notAnswered';
-export type AmountsEntered = boolean | 'notAnswered';
-export type CurrentQuestion =
-  | 'peopleInput'
-  | 'overAllowance'
-  | 'largeAmountPresent'
-  | 'largeAmountInput'
-  | 'amountInput'
-  | 'mainCategories'
-  | 'finished';
-
-export type InitList = ImmutableListType<CurrentQuestion>;
-
-export const initList: InitList = Immutable.List(['peopleInput']);
-
 type SettingsContent = {
-  overAllowance: OverAllowance,
-  largeAmountPresent: LargeAmountPresent,
-  largeAmountsEntered: LargeAmountsEntered,
-  amountsEntered: AmountsEntered,
   mainCategories: MainCategories,
-  currentQuestion: CurrentQuestion,
-  init: boolean,
-  initList: InitList,
 };
 
 export const makeSettingsRecord: RecordFactory<
   SettingsContent
 > = Immutable.Record({
-  overAllowance: 'notAnswered',
-  largeAmountPresent: 'notAnswered',
-  largeAmountsEntered: 'notAnswered',
-  amountsEntered: 'notAnswered',
   mainCategories: EmptyMainCategories,
-  currentQuestion: 'peopleInput',
-  init: true,
-  initList,
 });
 
 export type Settings = RecordOf<SettingsContent>;

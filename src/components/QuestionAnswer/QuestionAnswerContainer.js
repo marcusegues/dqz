@@ -13,11 +13,11 @@ import MainCategoriesInputQA from './MainCategoriesInput/MainCategoriesInputQA';
 import QuantityInputQA from './QuantityInput/QuantityInputQA';
 
 import {
-  getDeclarationBasket,
-  getDeclarationPeople,
-  getDeclarationSettings,
-  getDeclarationAmounts,
-  getDeclarationMainCategories,
+  getBasket,
+  getPeople,
+  getSettings,
+  getAmounts,
+  getMainCategories,
 } from '../../reducers';
 import type {
   Amounts,
@@ -350,33 +350,33 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
 }
 
 const mapStateToProps = state => ({
-  basket: getDeclarationBasket(state),
-  people: getDeclarationPeople(state),
-  amounts: getDeclarationAmounts(state),
-  settings: getDeclarationSettings(state),
-  mainCategories: getDeclarationMainCategories(state),
+  basket: getBasket(state),
+  people: getPeople(state),
+  amounts: getAmounts(state),
+  settings: getSettings(state),
+  mainCategories: getMainCategories(state),
 });
 
 const mapDispatchToProps = dispatch => ({
   onDeclarationSetPeople: (people: People) =>
     dispatch({
-      type: 'DECLARATION_SET_PEOPLE',
+      type: 'SET_PEOPLE',
       people,
     }),
   onDeclarationSetMainCategories: (mainCategories: MainCategories) =>
     dispatch({
-      type: 'DECLARATION_SET_MAIN_CATEGORIES',
+      type: 'SET_MAIN_CATEGORIES',
       mainCategories,
     }),
   onDeclarationBasketChangeQuantity: (category, quantity) =>
     dispatch({
-      type: 'DECLARATION_BASKET_ADD_QUANTITY',
+      type: 'BASKET_ADD_QUANTITY',
       category,
       quantity,
     }),
   onDeclarationSetBasket: basket =>
     dispatch({
-      type: 'DECLARATION_SET_BASKET',
+      type: 'SET_BASKET',
       basket,
     }),
 });
