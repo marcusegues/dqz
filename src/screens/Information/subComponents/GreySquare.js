@@ -9,6 +9,7 @@ const ownStyles = {
     backgroundColor: '#D8D8D8',
     justifyContent: 'center',
     alignItems: 'center',
+    alignSelf: 'center',
   },
   text: {
     fontFamily: 'roboto_regular',

@@ -110,17 +110,21 @@ export const en: LocaleType = makeLocaleRecord({
   }),
 
   information: makeInformationNSRecord({
-    proceedinAtTheCustoms: 'I18N',
-    proceedinAtTheCustomsSubText: 'I18N',
-    travelDocuments: 'I18N',
-    travelDocumentsSubText: 'I18N',
-    haveGoodsWithMe: 'I18N',
-    haveGoodsWithMeSubText: 'I18N',
-    haveAnimalsOrPlantsWithMe: 'I18N',
-    haveAnimalsOrPlantsWithMeSubText: 'I18N',
-    travelingWithVehicle: 'I18N',
-    travelingWithVehicleSubText: 'I18N',
-    entryByTrain: 'I18N',
-    entryByTrainSubText: 'I18N',
+    proceedinAtTheCustoms: 'Proceeding at the customs',
+    proceedinAtTheCustomsSubText:
+      'Far behind, behind the word mountains, far from the lands of vocabulary and consonants live the blind texts.',
+    travelDocuments: 'Travel documents',
+    travelDocumentsSubText:
+      'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
+    haveGoodsWithMe: 'I have goods with me',
+    haveGoodsWithMeSubText:
+      'Far behind, behind the word mountains, far from the lands of vocabulary and consonants live the blind texts.',
+    haveAnimalsOrPlantsWithMe: 'I have animals or plants with me.',
+    haveAnimalsOrPlantsWithMeSubText: 'Far behind live the blind texts.',
+    travelingWithVehicle: "I'm traveling with a vehicle",
+    travelingWithVehicleSubText: 'Far behind live the blind texts.',
+    entryByTrain: 'Entry by train',
+    entryByTrainSubText:
+      'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
   }),
 });
