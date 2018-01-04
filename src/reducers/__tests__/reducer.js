@@ -48,7 +48,8 @@ describe('Currencies...', () => {
         currencyObject: currencyExample,
         validCurrencies: true,
         currencyDate: new Date('2000/01/01'),
-      })
+        // $FlowFixMe - overriding the date
+      }).set('currencyDate', '')
     ).toMatchSnapshot();
   });
 });

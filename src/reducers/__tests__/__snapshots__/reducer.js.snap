@@ -319,7 +319,7 @@ Immutable.Record {
     "ZAR": 0.07995,
   },
   "validCurrencies": true,
-  "currencyDate": 1999-12-31T23:00:00.000Z,
+  "currencyDate": "",
   "amounts": Immutable.Map {},
 }
 `;
