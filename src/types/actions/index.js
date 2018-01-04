@@ -32,9 +32,9 @@ export type Action =
     amount: number,
   }
   | {
-  type: 'SET_AMOUNTS',
-  amounts: Amounts,
-}
+    type: 'SET_AMOUNTS',
+    amounts: Amounts,
+  }
   | {
     type: 'ADD_LARGE_AMOUNT',
     currency: Currency,
