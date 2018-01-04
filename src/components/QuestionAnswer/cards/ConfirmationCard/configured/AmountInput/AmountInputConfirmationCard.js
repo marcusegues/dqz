@@ -36,11 +36,10 @@ const AmountInputConfirmationCard = ({
   }
 
   return (
-    // <ConfirmationCard text={title} onAnswer={onAnswer} style={{ flex: 1 }}>
     <Card>
       <CardHeader text={title} />
       <CardHeaderSubText
-        text={t('amountInputMoreThan300Text')}
+        text={large ? t('amountInputMoreThan300Text') : ''}
         style={{
           alignSelf: 'flex-start',
           borderBottomWidth: 1,
