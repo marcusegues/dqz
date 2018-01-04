@@ -89,10 +89,8 @@ class PickerModal extends React.Component<any, PickerState> {
       : this.customTotalAmount();
 
     return (
-
       <AppModal onRequestClose={onRequestClose} modalVisible={modalVisible}>
         <PickerCard style={{ top: '25%' }}>
-
           <View style={ownStyles.topTouchableContainer}>
             <ModalTab
               standardInput={standardInput}

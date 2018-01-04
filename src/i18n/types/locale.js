@@ -155,6 +155,11 @@ export type QuantityInputNSType = RecordOf<QuantityInputNS>;
 type AmountInputNS = {
   amountInput: string,
   amountInputLargeItem: string,
+  amountInputMoreThan300Text: string,
+  amountInputAddItem: string,
+  amountInputAddItem: string,
+  amountInputButtonContinue: string,
+  amountInputButtonBack: string,
 };
 
 export const makeAmountInputNSRecord: RecordFactory<
