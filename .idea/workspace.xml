@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a3645f12-8ce9-4835-9b7d-64557e844d77" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/i18n/locales/en.js" afterPath="$PROJECT_DIR$/src/i18n/locales/en.js" />
       <change beforePath="$PROJECT_DIR$/src/navigation/RootNavigation.js" afterPath="$PROJECT_DIR$/src/navigation/RootNavigation.js" />
-      <change beforePath="$PROJECT_DIR$/src/screens/Information/subComponents/GreySquare.js" afterPath="$PROJECT_DIR$/src/screens/Information/subComponents/GreySquare.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RootNavigation.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RootNavigation.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/navigation/RootNavigation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="96" column="42" lean-forward="true" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -105,7 +103,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GreySquare.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GreySquare.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/screens/Information/subComponents/GreySquare.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="494">
@@ -157,9 +155,9 @@
         <option value="$PROJECT_DIR$/src/i18n/locales/it.js" />
         <option value="$PROJECT_DIR$/src/i18n/locales/fr.js" />
         <option value="$PROJECT_DIR$/src/i18n/locales/de.js" />
-        <option value="$PROJECT_DIR$/src/navigation/RootNavigation.js" />
         <option value="$PROJECT_DIR$/src/i18n/locales/en.js" />
         <option value="$PROJECT_DIR$/src/screens/Information/subComponents/GreySquare.js" />
+        <option value="$PROJECT_DIR$/src/navigation/RootNavigation.js" />
       </list>
     </option>
   </component>
@@ -522,11 +520,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507232396534</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="--translations added to en.js">
+      <created>1515097317055</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1515097317055</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6468000" />
+    <option name="totallyTimeSpent" value="6553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -599,7 +604,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ignore .idea." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ignore .idea." />
+    <MESSAGE value="--translations added to en.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="--translations added to en.js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -841,16 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/navigation/RootNavigation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/i18n/types/locale.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="679">
@@ -883,6 +879,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/navigation/RootNavigation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="96" column="42" lean-forward="true" selection-start-line="96" selection-start-column="42" selection-end-line="96" selection-end-column="42" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
