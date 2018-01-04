@@ -6,6 +6,7 @@ import GoodInputModal from '../../components/Modals/GoodInputModal/GoodInputModa
 import PickerModal from '../../components/Modals/PickerModal/PickerModal';
 import CurrencyPickerModal from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
 import { getCurrencies, getFormattedCurrencyDate } from '../../reducers';
+import SavedBasketModal from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 
 class ScreensView extends React.Component {
   constructor(props) {
@@ -14,10 +15,14 @@ class ScreensView extends React.Component {
       modalVisible: false,
       pickerModalVisible: false,
       currencyPickerModalVisible: false,
+      savedBasketModalVisible: false,
     };
     this.toggleModalVisible = this.toggleModalVisible.bind(this);
     this.togglePickerVisible = this.togglePickerVisible.bind(this);
     this.toggleCurrencyPickerVisible = this.toggleCurrencyPickerVisible.bind(
+      this
+    );
+    this.toggleSavedBasketModalVisible = this.toggleSavedBasketModalVisible.bind(
       this
     );
   }
@@ -37,6 +42,11 @@ class ScreensView extends React.Component {
       currencyPickerModalVisible: !this.state.currencyPickerModalVisible,
     });
   }
+  toggleSavedBasketModalVisible() {
+    this.setState({
+      savedBasketModalVisible: !this.state.savedBasketModalVisible,
+    });
+  }
 
   render() {
     return (
@@ -51,6 +61,7 @@ class ScreensView extends React.Component {
             { key: `BasketInput` },
             { key: `pickerModal` },
             { key: `currencyPickerModal` },
+            { key: `savedBasketModal` },
           ]}
           renderItem={({ item }) => (
             <Text
@@ -69,6 +80,9 @@ class ScreensView extends React.Component {
                   return;
                 } else if (item.key === `currencyPickerModal`) {
                   this.setState({ currencyPickerModalVisible: true });
+                  return;
+                } else if (item.key === `savedBasketModal`) {
+                  this.setState({ savedBasketModalVisible: true });
                   return;
                 }
                 this.props.navigation.navigate(item.key);
@@ -92,6 +106,10 @@ class ScreensView extends React.Component {
           toggleModalVisible={this.toggleCurrencyPickerVisible}
           currencyObject={this.props.currencyObject}
           currencyDate={this.props.currencyDate}
+        />
+        <SavedBasketModal
+          modalVisible={this.state.savedBasketModalVisible}
+          toggleModalVisible={this.toggleSavedBasketModalVisible}
         />
       </View>
     );
