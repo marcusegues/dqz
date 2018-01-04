@@ -12,6 +12,7 @@ import {
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
   makePaymentNSRecord,
+  makeAmountInputNSRecord,
 } from '../types/locale';
 
 export const de: LocaleType = makeLocaleRecord({
@@ -48,6 +49,7 @@ export const de: LocaleType = makeLocaleRecord({
     navbarSecond: 'Bezahlung',
     navbarThird: 'Zollschein',
     customsDuty: 'Zollabgabe',
+    customsVat: 'MWSt',
     goodCategories: 'Warenkategorien',
     confirm: 'Übernehmen',
     toPayment: 'Zur Bezahlung',
@@ -71,6 +73,13 @@ export const de: LocaleType = makeLocaleRecord({
   }),
   quantityInput: makeQuantityInputNSRecord({
     quantityInput: 'Mengeneingabe',
+  }),
+  amountInput: makeAmountInputNSRecord({
+    amountInput: 'Betragseingabe',
+    amountInputLargeItem: 'Betragseingabe (Waren über CHF {{value}})',
+    amountInputMoreThan300Text:
+      'Erfassen Sie hier jeden Gegenstand, der mehr als 300.00 CHF wert ist.',
+    amountInputAddItem: 'Gegenstand hinzufügen',
   }),
   qaFlow: makeQAFlowNSRecord({
     declareGoods: 'Waren Deklarieren',
@@ -97,7 +106,9 @@ export const de: LocaleType = makeLocaleRecord({
     confirmPicker: '{{value}} übernehmen',
     standardCategoryPicker: 'Standardmengen',
     individualCategoryPicker: 'Genaue Mengen',
-    currencyPickerTitle: 'Gegenstand mit mehr als CHF {{value}} erfassen',
+    currencyPickerTitle: 'Gegenstand erfassen',
+    currencyPickerLargeAmountTitle:
+      'Gegenstand mit mehr als CHF {{value}} erfassen',
     currencyPickerSubTitle:
       'Erfassen Sie den Nettowert des Gegenstands in seiner Original-Währung: ',
     currencyPickerRate: 'Kurs vom',

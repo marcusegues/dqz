@@ -71,6 +71,10 @@ const declaration = (
       const quantity: number = action.quantity;
       return state.set('people', modelApi.setMinorPeople(people, quantity));
     }
+    case 'SET_AMOUNTS': {
+      const amounts: Amounts = action.amounts;
+      return state.set('amounts', amounts);
+    }
     case 'SET_PEOPLE': {
       return state.set('people', action.people);
     }

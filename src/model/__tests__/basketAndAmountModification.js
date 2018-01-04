@@ -29,6 +29,7 @@ import {
   initAmounts,
   resetQuantities,
   resetQuantitiesMultipleCategories,
+  deleteAmount,
 } from '../configurationApi';
 import { categoriesArray } from '../constants';
 import { currenciesArray } from '../currencies';
@@ -47,6 +48,9 @@ const amounts2: Amounts = addAmount(amounts1, 'EUR', 34.56);
 
 const largeAmounts1: Amounts = addLargeAmount(amounts1, 'EUR', 1234);
 const largeAmounts2: Amounts = addLargeAmount(largeAmounts1, 'EUR', 1234);
+
+const largeAmounts3: Amounts = addLargeAmount(initAmounts, 'EUR', 1234);
+const largeAmounts4: Amounts = addLargeAmount(largeAmounts3, 'EUR', 1234);
 
 const twoAdultsNoMinor = addAdult(initPeople);
 const noAdultsNoMinor = subtractAdult(initPeople);
@@ -148,14 +152,18 @@ describe('The Amounts: ', () => {
     );
   });
   test('adds amounts: ', () => {
-    expect(getAmounts(amounts1, 'EUR').toString()).toBe(
-      Immutable.List([12.34]).toString()
-    );
+    expect(
+      getAmounts(amounts1, 'EUR')
+        .map(a => a.amount)
+        .toString()
+    ).toBe(Immutable.List([12.34]).toString());
   });
   test('adds another amount: ', () => {
-    expect(getAmounts(amounts2, 'EUR').toString()).toBe(
-      Immutable.List([12.34, 34.56]).toString()
-    );
+    expect(
+      getAmounts(amounts2, 'EUR')
+        .map(a => a.amount)
+        .toString()
+    ).toBe(Immutable.List([12.34, 34.56]).toString());
   });
   test('leaves other amounts untouched: ', () => {
     expect(getAmounts(amounts1, 'USD')).toBe(Immutable.List());
@@ -163,6 +171,20 @@ describe('The Amounts: ', () => {
   test('resets amounts: ', () => {
     const resetted: Amounts = resetAmounts(amounts1, 'EUR');
     expect(getAmounts(resetted, 'EUR')).toBe(Immutable.List());
+  });
+  test('deletes a single amount (or not, if id fake): ', () => {
+    let i = 0;
+    const amounts = amounts2.withMutations(a => {
+      a.updateIn(['EUR', 'amounts'], list =>
+        // eslint-disable-next-line no-plusplus
+        list.map(aa => Object.assign(aa, { id: `${i++}` }))
+      );
+      return a;
+    });
+    expect(amounts).toMatchSnapshot();
+    expect(deleteAmount(amounts, '0')).toMatchSnapshot();
+    expect(deleteAmount(amounts, '1')).toMatchSnapshot();
+    expect(deleteAmount(amounts, '123')).toMatchSnapshot();
   });
 });
 
@@ -173,14 +195,18 @@ describe('The large amounts: ', () => {
     );
   });
   test('adds large amounts: ', () => {
-    expect(getLargeAmounts(largeAmounts1, 'EUR').toString()).toBe(
-      Immutable.List([1234]).toString()
-    );
+    expect(
+      getLargeAmounts(largeAmounts1, 'EUR')
+        .map(a => a.amount)
+        .toString()
+    ).toBe(Immutable.List([1234]).toString());
   });
   test('adds another large amount: ', () => {
-    expect(getLargeAmounts(largeAmounts2, 'EUR').toString()).toBe(
-      Immutable.List([1234, 1234]).toString()
-    );
+    expect(
+      getLargeAmounts(largeAmounts2, 'EUR')
+        .map(a => a.amount)
+        .toString()
+    ).toBe(Immutable.List([1234, 1234]).toString());
   });
   test('leaves other large amounts untouched: ', () => {
     expect(getLargeAmounts(amounts1, 'USD')).toBe(Immutable.List());
@@ -188,6 +214,20 @@ describe('The large amounts: ', () => {
   test('resets large amounts: ', () => {
     const resetted: Amounts = resetLargeAmounts(amounts1, 'EUR');
     expect(getLargeAmounts(resetted, 'EUR')).toBe(Immutable.List());
+  });
+  test('deletes a single large amount (or not, if id fake): ', () => {
+    let i = 0;
+    const amounts = largeAmounts4.withMutations(a => {
+      a.updateIn(['EUR', 'amountsLarge'], list =>
+        // eslint-disable-next-line no-plusplus
+        list.map(aa => Object.assign(aa, { id: `${i++}` }))
+      );
+      return a;
+    });
+    expect(amounts).toMatchSnapshot();
+    expect(deleteAmount(amounts, '0')).toMatchSnapshot();
+    expect(deleteAmount(amounts, '1')).toMatchSnapshot();
+    expect(deleteAmount(amounts, '123')).toMatchSnapshot();
   });
 });
 

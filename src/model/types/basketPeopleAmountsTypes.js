@@ -128,9 +128,14 @@ export const makePeopleRecord: RecordFactory<PeopleContent> = Immutable.Record({
 export type People = RecordOf<PeopleContent>;
 
 // AMOUNTS
+export type AmountWithId = {
+  amount: number,
+  id: string,
+};
+
 type AmountsOfCurrencyContent = {
-  amounts: ImmutableListType<number>,
-  amountsLarge: ImmutableListType<number>,
+  amounts: ImmutableListType<AmountWithId>,
+  amountsLarge: ImmutableListType<AmountWithId>,
 };
 
 export const makeAmountsOfCurrencyRecord: RecordFactory<

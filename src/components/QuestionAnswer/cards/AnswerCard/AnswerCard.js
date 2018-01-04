@@ -1,5 +1,8 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
+// $FlowFixMe
 import { Image, View, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -20,7 +23,19 @@ const styles = StyleSheet.create({
   },
 });
 
-const AnswerCard = ({ mainIcon, flag, children, onAnswerCardPress }) => (
+type AnswerCardProps = {
+  mainIcon: any,
+  flag: any,
+  children: any,
+  onAnswerCardPress: () => void,
+};
+
+const AnswerCard = ({
+  mainIcon,
+  flag,
+  children,
+  onAnswerCardPress,
+}: AnswerCardProps) => (
   <Touchable
     style={{
       width: '100%',

@@ -1,4 +1,6 @@
 // @flow
+import type { Amounts } from './types/basketPeopleAmountsTypes';
+import type { Currency } from './currencies';
 
 export const rounding = (x: number): number => {
   // this rounding is not perfect, due to floating point
@@ -24,12 +26,42 @@ export const rounding = (x: number): number => {
   return adjusted / 100;
 };
 
-export const formatDate = (d: Date) => {
+export const formatDate = (d: Date): string => {
   const mm = d.getMonth() + 1;
   const dd = d.getDate();
+  // eslint-disable-next-line no-restricted-globals
+  if (isNaN(mm) || isNaN(dd)) {
+    return 'Invalid Date';
+  }
   return [
     (dd > 9 ? '' : '0') + dd,
     (mm > 9 ? '' : '0') + mm,
     d.getFullYear(),
   ].join('.');
 };
+
+export type FlatAmount = {
+  currency: Currency,
+  amount: number,
+  large: boolean,
+  id: string,
+};
+
+export const flatAmounts = (amounts: Amounts): Array<FlatAmount> => {
+  const result: Array<FlatAmount> = [];
+  amounts.forEach((v, k) => {
+    v.amounts.map(amt =>
+      result.push({ currency: k, amount: amt.amount, large: false, id: amt.id })
+    );
+    v.amountsLarge.map(amt =>
+      result.push({ currency: k, amount: amt.amount, large: true, id: amt.id })
+    );
+  });
+  return result;
+};
+
+export const flatNormalAmounts = (amounts: Amounts): Array<FlatAmount> =>
+  flatAmounts(amounts).filter(a => !a.large);
+
+export const flatLargeAmounts = (amounts: Amounts): Array<FlatAmount> =>
+  flatAmounts(amounts).filter(a => a.large);
