@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import YesNoCard from '../YesNoCard';
-import { getDeclarationPeople } from '../../../../../reducers';
+import { getPeople } from '../../../../../reducers';
 import * as fromModelApi from '../../../../../model/configurationApi';
 
 class OverAllowanceContainer extends React.Component {
@@ -44,14 +44,14 @@ class OverAllowanceContainer extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  people: getDeclarationPeople(state),
+  people: getPeople(state),
 });
 
 const mapDispatchToProps = dispatch => ({
   declarationSetOverAllowanceTrue: () =>
-    dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_TRUE' }),
+    dispatch({ type: 'SET_OVER_ALLOWANCE_TRUE' }),
   declarationSetOverAllowanceFalse: () =>
-    dispatch({ type: 'DECLARATION_SET_OVER_ALLOWANCE_FALSE' }),
+    dispatch({ type: 'SET_OVER_ALLOWANCE_FALSE' }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(
