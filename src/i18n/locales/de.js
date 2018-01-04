@@ -102,6 +102,10 @@ export const de: LocaleType = makeLocaleRecord({
       'Erfassen Sie den Nettowert des Gegenstands in seiner Original-Währung: ',
     currencyPickerRate: 'Kurs vom',
     currencyPickerInvalidInput: 'Ungültige/leere Eingabe',
+    savedBasketDoYoWantToContinue:
+      'Möchten Sie mit dem bereits bestehenden Warenkorb fortfahren oder mit einem leeren Warenkorb neu starten?',
+    savedBasketTotalCost: 'Gesamtkosten: CHF {{value}}',
+    savedBasketNewShoppingCart: 'Neuer Warenkorb',
   }),
   payment: makePaymentNSRecord({
     overViewTitle: 'Übersicht ihrer Anmeldung',
