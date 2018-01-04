@@ -37,8 +37,6 @@ type CurrencyPickerProps = {
   currencyDate: string,
   amountInputState: AmountInputState,
   onAddAmount: (currency: Currency, amount: number) => void,
-  // eslint-disable-next-line react/no-unused-prop-types
-  onDeleteAmount: (currency: Currency, index: number) => void,
 };
 
 class CurrencyPickerModal extends React.Component<

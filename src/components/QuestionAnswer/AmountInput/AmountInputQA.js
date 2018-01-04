@@ -6,7 +6,7 @@ import React from 'react';
 import { View } from 'react-native';
 import type { Amounts } from '../../../model/types/basketPeopleAmountsTypes';
 import type { CardProps } from '../QuestionAnswerContainer';
-import { addAmount } from '../../../model/configurationApi';
+import { addAmount, deleteAmount } from '../../../model/configurationApi';
 import { calculateVat } from '../../../model/vatCalculations';
 import AmountInputAnswerCard from '../cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
 import CurrencyPickerModal from '../../Modals/CurrencyPickerModal/CurrencyPickerModal';
@@ -34,6 +34,9 @@ class AmountInputQA extends React.Component<CardProps, AmountInputState> {
           onShowAmountInputModal={() => this.handleShowModal()}
           onAnswer={onAnswer}
           amounts={qaState.amounts}
+          onDeleteAmount={(id: string) => {
+            this.handleDeleteAmount(id);
+          }}
         />
         <CurrencyPickerModal
           onHide={() => this.handleHideModal()}
@@ -43,9 +46,6 @@ class AmountInputQA extends React.Component<CardProps, AmountInputState> {
           basket={qaState.basket}
           onAddAmount={(currency: Currency, amount: number) => {
             this.handleAddAmount(currency, amount);
-          }}
-          onDeleteAmount={(currency: Currency, index: number) => {
-            this.handleDeleteAmount(currency, index);
           }}
         />
       </View>
@@ -72,10 +72,11 @@ class AmountInputQA extends React.Component<CardProps, AmountInputState> {
   }
 
   // eslint-disable-next-line no-unused-vars
-  handleDeleteAmount(currency: Currency, index: number) {
+  handleDeleteAmount(id: string) {
     const { amounts } = this.props.qaState;
     // TODO
-    this.handleUpdate(amounts);
+    const updatedAmounts = deleteAmount(amounts, id);
+    this.handleUpdate(updatedAmounts);
   }
 
   handleUpdate(amounts: Amounts) {

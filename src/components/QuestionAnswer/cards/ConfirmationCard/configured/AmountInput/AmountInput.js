@@ -31,7 +31,7 @@ const ownStyles = {
   },
 };
 
-const AmountInput = ({ onShowAmountInputModal, amounts }) => (
+const AmountInput = ({ onShowAmountInputModal, amounts, onDeleteAmount }) => (
   <View
     style={{
       flexDirection: 'row',
@@ -48,7 +48,7 @@ const AmountInput = ({ onShowAmountInputModal, amounts }) => (
             amount={a.amount}
             currency={a.currency}
             id={a.id}
-            onDelete={() => {}}
+            onDelete={() => onDeleteAmount(a.id)}
           />
         ))}
       </View>

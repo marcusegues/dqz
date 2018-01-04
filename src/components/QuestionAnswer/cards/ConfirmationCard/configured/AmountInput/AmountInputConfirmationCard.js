@@ -8,11 +8,13 @@ const AmountInputConfirmationCard = ({
   amounts,
   onAnswer,
   t,
+  onDeleteAmount,
 }) => (
   <ConfirmationCard text={t('amountInput')} onAnswer={onAnswer}>
     <AmountInput
       onShowAmountInputModal={onShowAmountInputModal}
       amounts={amounts}
+      onDeleteAmount={onDeleteAmount}
     />
   </ConfirmationCard>
 );
