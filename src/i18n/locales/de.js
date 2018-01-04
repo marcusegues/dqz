@@ -77,6 +77,9 @@ export const de: LocaleType = makeLocaleRecord({
   amountInput: makeAmountInputNSRecord({
     amountInput: 'Betragseingabe',
     amountInputLargeItem: 'Betragseingabe (Waren über CHF {{value}})',
+    amountInputMoreThan300Text:
+      'Erfassen Sie hier jeden Gegenstand, der mehr als 300.00 CHF wert ist.',
+    amountInputAddItem: 'Gegenstand hinzufügen',
   }),
   qaFlow: makeQAFlowNSRecord({
     declareGoods: 'Waren Deklarieren',

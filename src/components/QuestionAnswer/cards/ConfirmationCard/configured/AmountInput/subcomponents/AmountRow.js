@@ -16,11 +16,10 @@ type AmountsRowProps = {
   amount: number,
   onDelete: () => void,
   currency: Currency,
-  // borderTop?: boolean,
 };
 
 const AmountsRow = ({ amount, onDelete, currency }: AmountsRowProps) => (
-  <Row>
+  <Row borderTop>
     <View style={{ flex: 1 }}>
       <CardRowText text={`${currency} ${amount}`} />
       <CardRowSubText text={`${currency} ${amount}`} />
@@ -30,9 +29,5 @@ const AmountsRow = ({ amount, onDelete, currency }: AmountsRowProps) => (
     </Touchable>
   </Row>
 );
-//
-// AmountsRow.defaultProps = {
-//   borderTop: false,
-// };
 
 export default AmountsRow;

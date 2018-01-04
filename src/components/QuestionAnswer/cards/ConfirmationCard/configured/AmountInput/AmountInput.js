@@ -1,22 +1,23 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { View, ScrollView, TouchableOpacity } from 'react-native';
+import { View, ScrollView, TouchableOpacity, Text } from 'react-native';
+import { translate } from 'react-i18next';
 import Entypo from '@expo/vector-icons/Entypo';
-import { moderateScale } from '../../../../../../styles/Scaling';
-import * as colors from '../../../../../../styles/colors';
+import { moderateScale, verticalScale } from '../../../../../../styles/Scaling';
 import {
   flatLargeAmounts,
   flatNormalAmounts,
 } from '../../../../../../model/utils';
 import AmountsRow from './subcomponents/AmountRow';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
+import { MAIN_RED, GREY } from '../../../../../../styles/colors';
+import RedButton from '../../../../../Buttons/RedButton';
 
 const ownStyles = {
   mainContainer: {
-    flex: 1,
-    width: '100%',
-    justifyContent: 'center',
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
   },
   subcomponentsContainer: {
     width: '100%',
@@ -26,7 +27,6 @@ const ownStyles = {
   scrollView: {
     width: '100%',
     borderColor: '#E0E0E1',
-    paddingHorizontal: 10,
     backgroundColor: '#fff',
   },
   cardMainTitle: {
@@ -35,6 +35,31 @@ const ownStyles = {
     color: '#141414',
     padding: 15,
   },
+  addButtonContainer: {
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    marginBottom: 40,
+    marginTop: 20,
+  },
+  addButtonText: {
+    fontSize: moderateScale(14),
+    color: MAIN_RED,
+  },
+  addedItemContainer: {
+    flex: 1,
+    width: '100%',
+  },
+  redButtonContainerWrapper: {
+    width: '95%',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignSelf: 'center',
+    marginBottom: verticalScale(16),
+  },
+  redButtonWrapper: {
+    flex: 0.47,
+  },
 };
 
 type AmountInputProps = {
@@ -42,6 +67,7 @@ type AmountInputProps = {
   amounts: Amounts,
   onDeleteAmount: string => void,
   large: boolean,
+  t: any, // TODO
 };
 
 const AmountInput = ({
@@ -49,17 +75,11 @@ const AmountInput = ({
   amounts,
   onDeleteAmount,
   large,
+  t,
 }: AmountInputProps) => (
-  <View
-    style={{
-      flexDirection: 'row',
-      alignSelf: 'flex-start',
-      marginLeft: 12,
-      marginTop: 12,
-    }}
-  >
+  <View style={ownStyles.mainContainer}>
     <ScrollView contentContainerStyle={ownStyles.scrollView}>
-      <View>
+      <View style={ownStyles.addedItemContainer}>
         {(large ? flatLargeAmounts(amounts) : flatNormalAmounts(amounts)).map(
           a => (
             <AmountsRow
@@ -72,15 +92,33 @@ const AmountInput = ({
           )
         )}
       </View>
-      <TouchableOpacity onPress={() => onShowAmountInputModal()}>
-        <Entypo
-          name="circle-with-plus"
-          size={moderateScale(28)}
-          color={colors.MAIN_RED}
-        />
-      </TouchableOpacity>
+      <View style={ownStyles.addButtonContainer}>
+        <TouchableOpacity onPress={() => onShowAmountInputModal()}>
+          <Entypo
+            name="circle-with-plus"
+            size={moderateScale(36)}
+            color={MAIN_RED}
+          />
+        </TouchableOpacity>
+
+        <Text style={ownStyles.addButtonText}>
+          {t('amountInputAddItem').toUpperCase()}
+        </Text>
+      </View>
+      <View style={ownStyles.redButtonContainerWrapper}>
+        <View style={ownStyles.redButtonWrapper}>
+          <RedButton
+            onPress={() => {}}
+            text={t('amountInputButtonBack')}
+            buttonStyle={{ backgroundColor: GREY }}
+          />
+        </View>
+        <View style={ownStyles.redButtonWrapper}>
+          <RedButton text={t('amountInputButtonContinue')} />
+        </View>
+      </View>
     </ScrollView>
   </View>
 );
 
-export default AmountInput;
+export default translate(['amountInput'])(AmountInput);

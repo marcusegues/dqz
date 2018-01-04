@@ -162,6 +162,10 @@ export const makeAmountInputNSRecord: RecordFactory<
 > = Immutable.Record({
   amountInput: 'i18n',
   amountInputLargeItem: 'i18n',
+  amountInputMoreThan300Text: 'i18n',
+  amountInputAddItem: 'i18n',
+  amountInputButtonContinue: 'i18n',
+  amountInputButtonBack: 'i18n',
 });
 
 export type AmountInputNSType = RecordOf<AmountInputNS>;
