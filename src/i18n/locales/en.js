@@ -75,6 +75,7 @@ export const en: LocaleType = makeLocaleRecord({
   }),
   amountInput: makeAmountInputNSRecord({
     amountInput: 'Amount Input',
+    amountInputLargeItem: 'Amount Input (items larger than CHF {{value}})',
   }),
   qaFlow: makeQAFlowNSRecord({
     declareGoods: 'Declare Goods',

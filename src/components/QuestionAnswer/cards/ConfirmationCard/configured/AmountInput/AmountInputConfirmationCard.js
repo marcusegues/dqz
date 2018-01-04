@@ -4,6 +4,7 @@ import { translate } from 'react-i18next';
 import ConfirmationCard from '../../ConfirmationCard';
 import AmountInput from './AmountInput';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
+import { INDIVIDUALALLOWANCE } from '../../../../../../model/constants';
 
 type AmountInputConfirmationCardProps = {
   t: any, // TODO
@@ -21,15 +22,24 @@ const AmountInputConfirmationCard = ({
   t,
   large,
   onDeleteAmount,
-}: AmountInputConfirmationCardProps) => (
-  <ConfirmationCard text={t('amountInput')} onAnswer={onAnswer}>
-    <AmountInput
-      onShowAmountInputModal={onShowAmountInputModal}
-      amounts={amounts}
-      large={large}
-      onDeleteAmount={onDeleteAmount}
-    />
-  </ConfirmationCard>
-);
+}: AmountInputConfirmationCardProps) => {
+  let title: string = t(['amountInput']);
+  if (large) {
+    title = t(['amountInputLargeItem'], {
+      value: INDIVIDUALALLOWANCE,
+    });
+  }
+
+  return (
+    <ConfirmationCard text={title} onAnswer={onAnswer}>
+      <AmountInput
+        onShowAmountInputModal={onShowAmountInputModal}
+        amounts={amounts}
+        large={large}
+        onDeleteAmount={onDeleteAmount}
+      />
+    </ConfirmationCard>
+  );
+};
 
 export default translate(['amountInput'])(AmountInputConfirmationCard);

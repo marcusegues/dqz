@@ -154,12 +154,14 @@ export type QuantityInputNSType = RecordOf<QuantityInputNS>;
 
 type AmountInputNS = {
   amountInput: string,
+  amountInputLargeItem: string,
 };
 
 export const makeAmountInputNSRecord: RecordFactory<
   AmountInputNS
 > = Immutable.Record({
   amountInput: 'i18n',
+  amountInputLargeItem: 'i18n',
 });
 
 export type AmountInputNSType = RecordOf<AmountInputNS>;
