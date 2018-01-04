@@ -1,5 +1,621 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Amounts... ADD_AMOUNT 1`] = `
+Immutable.Record {
+  "people": Immutable.Record {
+    "adults": 1,
+    "minors": 0,
+  },
+  "basket": Immutable.Map {
+    "Butter": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Oils": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Cigarettes": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AlcSoft": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Fertilizer": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AlcHard": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Meds": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Books": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Meat": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "OtherFood": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Other": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Tobacco": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Flowers": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AnimalFeed": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Magazines": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+  },
+  "vatReport": Immutable.Record {
+    "totalVat": 0,
+  },
+  "dutyReport": Immutable.Record {
+    "totalDuty": 0,
+    "dutyByCategoryRaw": Immutable.Map {},
+  },
+  "settings": Immutable.Record {
+    "mainCategories": Immutable.Set [],
+  },
+  "currencyObject": Object {},
+  "validCurrencies": false,
+  "currencyDate": 2000-01-01T00:00:00.000Z,
+  "amounts": Immutable.Map {
+    "EUR": Immutable.Record {
+      "amounts": Immutable.List [
+        Object {
+          "amount": 123456,
+          "id": 1,
+        },
+      ],
+      "amountsLarge": Immutable.List [],
+    },
+  },
+}
+`;
+
+exports[`Amounts... ADD_LARGE_AMOUNT 1`] = `
+Immutable.Record {
+  "people": Immutable.Record {
+    "adults": 1,
+    "minors": 0,
+  },
+  "basket": Immutable.Map {
+    "Butter": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Oils": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Cigarettes": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AlcSoft": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Fertilizer": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AlcHard": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Meds": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Books": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Meat": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "OtherFood": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Other": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Tobacco": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Flowers": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AnimalFeed": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Magazines": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+  },
+  "vatReport": Immutable.Record {
+    "totalVat": 0,
+  },
+  "dutyReport": Immutable.Record {
+    "totalDuty": 0,
+    "dutyByCategoryRaw": Immutable.Map {},
+  },
+  "settings": Immutable.Record {
+    "mainCategories": Immutable.Set [],
+  },
+  "currencyObject": Object {},
+  "validCurrencies": false,
+  "currencyDate": 2000-01-01T00:00:00.000Z,
+  "amounts": Immutable.Map {
+    "EUR": Immutable.Record {
+      "amounts": Immutable.List [],
+      "amountsLarge": Immutable.List [
+        Object {
+          "amount": 123456,
+          "id": 1,
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`Amounts... RESET_AMOUNTS 1`] = `
+Immutable.Record {
+  "people": Immutable.Record {
+    "adults": 1,
+    "minors": 0,
+  },
+  "basket": Immutable.Map {
+    "Butter": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Oils": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Cigarettes": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AlcSoft": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Fertilizer": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AlcHard": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Meds": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Books": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Meat": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "OtherFood": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Other": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Tobacco": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Flowers": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AnimalFeed": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Magazines": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+  },
+  "vatReport": Immutable.Record {
+    "totalVat": 0,
+  },
+  "dutyReport": Immutable.Record {
+    "totalDuty": 0,
+    "dutyByCategoryRaw": Immutable.Map {},
+  },
+  "settings": Immutable.Record {
+    "mainCategories": Immutable.Set [],
+  },
+  "currencyObject": Object {},
+  "validCurrencies": false,
+  "currencyDate": 2000-01-01T00:00:00.000Z,
+  "amounts": Immutable.Map {
+    "EUR": Immutable.Record {
+      "amounts": Immutable.List [],
+      "amountsLarge": Immutable.List [
+        Object {
+          "amount": 525,
+          "id": 1,
+        },
+      ],
+    },
+    "USD": Immutable.Record {
+      "amounts": Immutable.List [
+        Object {
+          "amount": 12,
+          "id": 1,
+        },
+        Object {
+          "amount": 31,
+          "id": 1,
+        },
+      ],
+      "amountsLarge": Immutable.List [],
+    },
+    "CHF": Immutable.Record {
+      "amounts": Immutable.List [
+        Object {
+          "amount": 11,
+          "id": 1,
+        },
+        Object {
+          "amount": 33,
+          "id": 1,
+        },
+      ],
+      "amountsLarge": Immutable.List [
+        Object {
+          "amount": 5555,
+          "id": 1,
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`Amounts... RESET_LARGE_AMOUNTS 1`] = `
+Immutable.Record {
+  "people": Immutable.Record {
+    "adults": 1,
+    "minors": 0,
+  },
+  "basket": Immutable.Map {
+    "Butter": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Oils": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Cigarettes": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AlcSoft": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Fertilizer": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AlcHard": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Meds": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Books": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Meat": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "OtherFood": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Other": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Tobacco": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Flowers": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AnimalFeed": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Magazines": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+  },
+  "vatReport": Immutable.Record {
+    "totalVat": 0,
+  },
+  "dutyReport": Immutable.Record {
+    "totalDuty": 0,
+    "dutyByCategoryRaw": Immutable.Map {},
+  },
+  "settings": Immutable.Record {
+    "mainCategories": Immutable.Set [],
+  },
+  "currencyObject": Object {},
+  "validCurrencies": false,
+  "currencyDate": 2000-01-01T00:00:00.000Z,
+  "amounts": Immutable.Map {
+    "EUR": Immutable.Record {
+      "amounts": Immutable.List [
+        Object {
+          "amount": 12.34,
+          "id": 1,
+        },
+        Object {
+          "amount": 125,
+          "id": 1,
+        },
+      ],
+      "amountsLarge": Immutable.List [],
+    },
+    "USD": Immutable.Record {
+      "amounts": Immutable.List [
+        Object {
+          "amount": 12,
+          "id": 1,
+        },
+        Object {
+          "amount": 31,
+          "id": 1,
+        },
+      ],
+      "amountsLarge": Immutable.List [],
+    },
+    "CHF": Immutable.Record {
+      "amounts": Immutable.List [
+        Object {
+          "amount": 11,
+          "id": 1,
+        },
+        Object {
+          "amount": 33,
+          "id": 1,
+        },
+      ],
+      "amountsLarge": Immutable.List [
+        Object {
+          "amount": 5555,
+          "id": 1,
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`Amounts... SET_AMOUNTS 1`] = `
+Immutable.Record {
+  "people": Immutable.Record {
+    "adults": 1,
+    "minors": 0,
+  },
+  "basket": Immutable.Map {
+    "Butter": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Oils": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Cigarettes": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AlcSoft": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Fertilizer": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AlcHard": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Meds": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Books": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Meat": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "OtherFood": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Other": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Tobacco": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Flowers": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "AnimalFeed": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+    "Magazines": Immutable.Record {
+      "volume": Immutable.Record {
+        "quantities": Immutable.List [],
+      },
+    },
+  },
+  "vatReport": Immutable.Record {
+    "totalVat": 0,
+  },
+  "dutyReport": Immutable.Record {
+    "totalDuty": 0,
+    "dutyByCategoryRaw": Immutable.Map {},
+  },
+  "settings": Immutable.Record {
+    "mainCategories": Immutable.Set [],
+  },
+  "currencyObject": Object {},
+  "validCurrencies": false,
+  "currencyDate": 2000-01-01T00:00:00.000Z,
+  "amounts": Immutable.Map {
+    "EUR": Immutable.Record {
+      "amounts": Immutable.List [
+        Object {
+          "amount": 123,
+          "id": 1,
+        },
+      ],
+      "amountsLarge": Immutable.List [],
+    },
+  },
+}
+`;
+
 exports[`Basket... BASKET_ADD_QUANTITY 1`] = `
 Immutable.Record {
   "people": Immutable.Record {

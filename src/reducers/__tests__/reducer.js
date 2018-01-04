@@ -1,5 +1,5 @@
 // @flow
-/* global describe, test, expect */
+/* global describe, test, expect, jest */
 import Immutable from 'immutable';
 import { getInitialState } from '../../types/reducers/declaration';
 import type { State } from '../../types/reducers/declaration';
@@ -16,12 +16,22 @@ import declaration, {
 import { currencyExample } from '../../model/currencies';
 import {
   addAdult,
+  addAmount,
+  addLargeAmount,
   addMinor,
   addQuantity,
   emptyBasket,
+  initAmounts,
   initPeople,
 } from '../../model/configurationApi';
-import type { Basket } from '../../model/types/basketPeopleAmountsTypes';
+import type {
+  Amounts,
+  Basket,
+} from '../../model/types/basketPeopleAmountsTypes';
+
+jest.mock('uuid', () => ({
+  v4: jest.fn(() => 1),
+}));
 
 const initState: State = getInitialState();
 
@@ -31,6 +41,21 @@ const sampleBasket1: Basket = emptyBasket.withMutations(basket => {
   basket = addQuantity(basket, 'Tobacco', 3219);
 
   return basket;
+});
+
+const sampleAmounts1: Amounts = initAmounts.withMutations(amounts => {
+  amounts = addAmount(amounts, 'EUR', 12.34);
+  amounts = addAmount(amounts, 'EUR', 125);
+  amounts = addLargeAmount(amounts, 'EUR', 525);
+
+  amounts = addAmount(amounts, 'USD', 12);
+  amounts = addAmount(amounts, 'USD', 31);
+
+  amounts = addAmount(amounts, 'CHF', 11);
+  amounts = addAmount(amounts, 'CHF', 33);
+  amounts = addLargeAmount(amounts, 'CHF', 5555);
+
+  return amounts;
 });
 
 describe('Invalid Action...', () => {
@@ -118,8 +143,15 @@ describe('People...', () => {
   });
 });
 
-/* TODO once DAZIT-127 is merged
 describe('Amounts...', () => {
+  test('SET_AMOUNTS', () => {
+    expect(
+      declaration(initState, {
+        type: 'SET_AMOUNTS',
+        amounts: addAmount(initAmounts, 'EUR', 123),
+      })
+    ).toMatchSnapshot();
+  });
   test('ADD_AMOUNT', () => {
     expect(
       declaration(initState, {
@@ -129,8 +161,32 @@ describe('Amounts...', () => {
       })
     ).toMatchSnapshot();
   });
+  test('ADD_LARGE_AMOUNT', () => {
+    expect(
+      declaration(initState, {
+        type: 'ADD_LARGE_AMOUNT',
+        currency: 'EUR',
+        largeAmount: 123456,
+      })
+    ).toMatchSnapshot();
+  });
+  test('RESET_AMOUNTS', () => {
+    expect(
+      declaration(initState.set('amounts', sampleAmounts1), {
+        type: 'RESET_AMOUNTS',
+        currency: 'EUR',
+      })
+    ).toMatchSnapshot();
+  });
+  test('RESET_LARGE_AMOUNTS', () => {
+    expect(
+      declaration(initState.set('amounts', sampleAmounts1), {
+        type: 'RESET_LARGE_AMOUNTS',
+        currency: 'EUR',
+      })
+    ).toMatchSnapshot();
+  });
 });
-*/
 
 describe('Main Categories...', () => {
   test('ADD_MAIN_CATEGORY', () => {
