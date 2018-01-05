@@ -1,4 +1,6 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View } from 'react-native';
 import Entypo from '@expo/vector-icons/Entypo';
 import { moderateScale } from '../../styles/Scaling';
