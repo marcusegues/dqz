@@ -59,7 +59,7 @@ const MainMenu = ({ navigation, t }) => (
       <MenuTile
         icon="info"
         text={t('information').toUpperCase()}
-        onPress={() => navigation.navigate('UnderConstruction')}
+        onPress={() => navigation.navigate('Information')}
       >
         <MaterialIcons name="info" size={moderateScale(47)} color={GREY} />
       </MenuTile>
