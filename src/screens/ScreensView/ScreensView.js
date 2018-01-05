@@ -61,6 +61,7 @@ class ScreensView extends React.Component {
             { key: `BasketInput` },
             { key: `pickerModal` },
             { key: `currencyPickerModal` },
+            { key: `Information` },
             { key: `savedBasketModal` },
           ]}
           renderItem={({ item }) => (
