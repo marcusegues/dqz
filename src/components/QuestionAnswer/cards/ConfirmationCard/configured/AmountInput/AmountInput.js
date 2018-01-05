@@ -105,6 +105,7 @@ const AmountInput = ({
           {t('amountInputAddItem').toUpperCase()}
         </Text>
       </View>
+
       <View style={ownStyles.redButtonContainerWrapper}>
         <View style={ownStyles.redButtonWrapper}>
           <RedButton
