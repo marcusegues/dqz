@@ -1,4 +1,6 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View } from 'react-native';
 import { verticalScale } from '../../../styles/Scaling';
 
@@ -12,7 +14,11 @@ const ownStyles = {
   },
 };
 
-const ValidUntilBlock = ({ children }) => (
+type ValidUntilBlockProps = {
+  children: any,
+};
+
+const ValidUntilBlock = ({ children }: ValidUntilBlockProps) => (
   <View style={ownStyles.container}>{children}</View>
 );
 
