@@ -126,6 +126,7 @@ export const en: LocaleType = makeLocaleRecord({
   }),
 
   information: makeInformationNSRecord({
+    informationTitle: 'Information',
     proceedinAtTheCustoms: 'Proceeding at the customs',
     proceedinAtTheCustomsSubText:
       'Far behind, behind the word mountains, far from the lands of vocabulary and consonants live the blind texts.',

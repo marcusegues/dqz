@@ -126,6 +126,7 @@ export const de: LocaleType = makeLocaleRecord({
   }),
 
   information: makeInformationNSRecord({
+    informationTitle: 'Wissenswertes',
     proceedinAtTheCustoms: 'Vorgehen am Zoll',
     proceedinAtTheCustomsSubText:
       'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',

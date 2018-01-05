@@ -81,7 +81,6 @@ export const stackNavigatorScreens = {
   Information: {
     screen: Information,
     navigationOptions: ({ navigation }) => ({
-      headerTitle: <HeaderTitle text="Wissenswertes" />,
       headerLeft: <HomeIcon navigation={navigation} />,
       headerRight: <SearchIcon navigation={navigation} />,
     }),

@@ -263,6 +263,7 @@ export const makeModalNSRecord: RecordFactory<ModalNS> = Immutable.Record({
 export type ModalNSType = RecordOf<ModalNS>;
 
 type InformationNS = {
+  informationTitle: string,
   proceedinAtTheCustoms: string,
   proceedinAtTheCustomsSubText: string,
   travelDocuments: string,
@@ -280,6 +281,7 @@ type InformationNS = {
 export const makeInformationNSRecord: RecordFactory<
   InformationNS
 > = Immutable.Record({
+  informationTitle: 'i18n',
   proceedinAtTheCustoms: '{{value}}',
   proceedinAtTheCustomsSubText: '{{value}}',
   travelDocuments: '{{value}}',
