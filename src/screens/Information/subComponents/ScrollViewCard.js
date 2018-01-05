@@ -1,4 +1,6 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View, ScrollView } from 'react-native';
 import globalStyles from '../../../styles/globalStyles';
 
@@ -17,7 +19,10 @@ const ownStyles = {
   },
 };
 
-const ScrollViewCard = ({ children }) => (
+type ScrollViewCardProps = {
+  children: any,
+};
+const ScrollViewCard = ({ children }: ScrollViewCardProps) => (
   <View style={ownStyles.container}>
     <ScrollView
       contentContainerStyle={[ownStyles.scrollView, globalStyles.boxShadow]}

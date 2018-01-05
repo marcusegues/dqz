@@ -1,4 +1,6 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { TouchableWithoutFeedback, View } from 'react-native';
 import Row from '../../../components/Rows/Row';
 import CardRowText from '../../../components/QuestionAnswer/cards/subcomponents/CardRowText';
@@ -20,7 +22,19 @@ const ownStyles = {
   },
 };
 
-const InformationRow = ({ mainText, subText, number, rowOnPress }) => (
+type InformationRowProps = {
+  mainText: string,
+  subText: string,
+  number: string,
+  rowOnPress: () => void,
+};
+
+const InformationRow = ({
+  mainText,
+  subText,
+  number,
+  rowOnPress,
+}: InformationRowProps) => (
   <Row>
     <TouchableWithoutFeedback onPress={rowOnPress}>
       <View style={ownStyles.container}>

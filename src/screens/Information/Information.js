@@ -6,7 +6,7 @@ import InformationRow from './subComponents/InformationRow';
 import { informationData } from './InformationData';
 
 type InformationScreenProps = {
-  t: (field: string, params?: {}) => void,
+  t: (field: string, params?: {}) => string,
 };
 
 const Information = ({ t }: InformationScreenProps) => (
