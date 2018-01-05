@@ -1,4 +1,13 @@
-export const informationData = [
+// @flow
+
+type InformationData = {
+  id: number,
+  number: string,
+  dataMainText: string,
+  dataSubText: string,
+};
+
+export const informationData: Array<InformationData> = [
   {
     id: 1,
     number: '1.1',
