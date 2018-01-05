@@ -13,6 +13,7 @@ import {
   makePeopleInputNSRecord,
   makePaymentNSRecord,
   makeInformationNSRecord,
+  makeAmountInputNSRecord,
 } from '../types/locale';
 
 export const it: LocaleType = makeLocaleRecord({
@@ -37,6 +38,7 @@ export const it: LocaleType = makeLocaleRecord({
   peopleInput: makePeopleInputNSRecord({}),
   mainCategoriesInput: makeMainCategoriesInputNSRecord({}),
   quantityInput: makeQuantityInputNSRecord({}),
+  amountInput: makeAmountInputNSRecord({}),
   qaFlow: makeQAFlowNSRecord({}),
   modal: makeModalNSRecord({
     confirmPicker: '💰 {{value}}',
@@ -46,6 +48,9 @@ export const it: LocaleType = makeLocaleRecord({
     currencyPickerSubTitle:
       "Registra il valore netto dell'articolo nella sua valuta originale:",
     currencyPickerRate: 'i18n',
+    savedBasketDoYoWantToContinue: '🔀',
+    savedBasketTotalCost: '🏟️ {{value}}',
+    savedBasketNewShoppingCart: '🔀',
   }),
   payment: makePaymentNSRecord({}),
 

@@ -4,6 +4,7 @@ import type {
   Category,
   Basket,
   People,
+  Amounts,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { MainCategory, MainCategories } from '../reducers/declaration';
 import type { Currency, CurrencyObject } from '../../model/currencies';
@@ -31,28 +32,28 @@ export type Action =
     amount: number,
   }
   | {
+    type: 'SET_AMOUNTS',
+    amounts: Amounts,
+  }
+  | {
     type: 'ADD_LARGE_AMOUNT',
     currency: Currency,
     largeAmount: number,
   }
   | {
     type: 'ADULTS_CHANGE_QUANTITY',
-    category: Category,
     quantityChange: number,
   }
   | {
     type: 'ADULTS_SET_QUANTITY',
-    category: Category,
     quantity: number,
   }
   | {
     type: 'MINORS_CHANGE_QUANTITY',
-    category: Category,
     quantityChange: number,
   }
   | {
     type: 'MINORS_SET_QUANTITY',
-    category: Category,
     quantity: number,
   }
   | {

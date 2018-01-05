@@ -5,12 +5,17 @@ import {
   setInitStates,
   setQuestionStates,
 } from '../controlQuestionStates';
-import { emptyBasket, initPeople } from '../../../../model/configurationApi';
+import {
+  emptyBasket,
+  initAmounts,
+  initPeople,
+} from '../../../../model/configurationApi';
 import { makeSettingsRecord } from '../../../../types/reducers/declaration';
 
 const blankState = {
   basket: emptyBasket,
   people: initPeople,
+  amounts: initAmounts,
   settings: makeSettingsRecord(),
   questionStates: {
     peopleInput: 'expanded',
@@ -27,6 +32,7 @@ const blankState = {
 const stateWithMainCategories = {
   basket: emptyBasket,
   people: initPeople,
+  amounts: initAmounts,
   settings: makeSettingsRecord().set('mainCategories', Immutable.Set('Foo')),
   questionStates: {
     peopleInput: 'collapsed',

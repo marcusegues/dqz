@@ -42,11 +42,11 @@ const ownStyles = disabled => ({
   },
 });
 
-const RedButton = ({ text, onPress, confirmationDisabled }) => (
+const RedButton = ({ text, onPress, confirmationDisabled, buttonStyle }) => (
   <View style={ownStyles(confirmationDisabled).bottomButtonContainer}>
     <Touchable
       onPress={onPress}
-      style={ownStyles(confirmationDisabled).touchable}
+      style={[ownStyles(confirmationDisabled).touchable, { ...buttonStyle }]}
       disabled={confirmationDisabled}
     >
       <Text style={ownStyles(confirmationDisabled).touchableText}>
