@@ -1,8 +1,15 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { Text } from 'react-native';
 import { moderateScale } from '../../../styles/Scaling';
 
-const ReceiptSubText = ({ text, style }) => (
+type ReceiptSubTextProps = {
+  text: string,
+  style?: Object,
+};
+
+const ReceiptSubText = ({ text, style }: ReceiptSubTextProps) => (
   <Text
     style={{
       color: '#757575',
@@ -15,5 +22,9 @@ const ReceiptSubText = ({ text, style }) => (
     {text}
   </Text>
 );
+
+ReceiptSubText.defaultProps = {
+  style: {},
+};
 
 export default ReceiptSubText;

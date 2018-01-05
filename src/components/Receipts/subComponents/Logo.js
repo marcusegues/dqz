@@ -1,4 +1,6 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { Image } from 'react-native';
 import { scale } from '../../../styles/Scaling';
 
@@ -13,8 +15,8 @@ const ownStyles = {
 
 const logo = require('../../../../assets/images/logo_red.png');
 
-const ScrollViewCard = () => (
+const RedLogo = () => (
   <Image source={logo} style={ownStyles.logo} resizeMode="contain" />
 );
 
-export default ScrollViewCard;
+export default RedLogo;

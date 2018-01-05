@@ -5,7 +5,7 @@ import { View, Text } from 'react-native';
 import { translate } from 'react-i18next';
 import ScrollViewCard from './subComponents/ScrollViewCard';
 import Logo from './subComponents/Logo';
-import { moderateScale, verticalScale } from '../../styles/Scaling';
+import { moderateScale, scale, verticalScale } from '../../styles/Scaling';
 import CardRowText from '../QuestionAnswer/cards/subcomponents/CardRowText';
 import ReceiptSubText from './subComponents/ReceiptSubText';
 import ValidUntilBlock from './subComponents/ValidUntilBlock';
@@ -16,18 +16,46 @@ const ownStyles = {
     fontFamily: 'roboto_regular',
     fontSize: moderateScale(28),
     textAlign: 'center',
-    marginTop: 10,
+    marginTop: verticalScale(10),
   },
   contentContainer: {
     borderTopWidth: 1,
     borderTopColor: '#E0E0E1',
-    marginHorizontal: 16,
+    marginHorizontal: scale(16),
     marginTop: verticalScale(15),
+  },
+  receiptSubTextDuty: {
+    fontSize: moderateScale(12),
+    alignSelf: 'flex-end',
+  },
+  cardRowText: {
+    color: '#fff',
+    fontFamily: 'roboto_regular',
+  },
+  cardRowTextSum: {
+    alignSelf: 'flex-end',
+    marginTop: verticalScale(15),
+    marginBottom: verticalScale(35),
+  },
+  cardRowTextPaidOn: {
+    marginVertical: verticalScale(15),
+  },
+  receiptSubTextVat: {
+    fontSize: moderateScale(12),
+    alignSelf: 'flex-end',
+    marginTop: verticalScale(25),
+  },
+  receiptSubTextDutyAndVat: {
+    alignSelf: 'center',
+  },
+  receiptSubTextNotification: {
+    paddingBottom: verticalScale(15),
+    lineHeight: 18,
   },
 };
 
 type ReceiptAfterPaymentScreenProps = {
-  t: (field: string, params?: {}) => void,
+  t: (field: string, params?: {}) => string,
 };
 
 const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
@@ -36,34 +64,35 @@ const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
     <Text style={ownStyles.topSumText}>CHF 56.50</Text>
     <ReceiptSubText
       text={t('dutyAndVat', { duty: '56,50', vat: '0,00' })}
-      style={{
-        alignSelf: 'center',
-      }}
+      style={ownStyles.receiptSubTextDutyAndVat}
     />
 
     <View style={ownStyles.contentContainer}>
       <CardRowText
         text={t('paidOn', { date: '20.12.2017', time: '17:40' })}
-        style={{ marginVertical: verticalScale(15) }}
+        style={ownStyles.cardRowTextPaidOn}
       />
+
+      <CardRowText text={t('paidOn', { date: '20.12.2017', time: '17:40' })} />
+
       <ReceiptSubText text="Mastercard XXXX XXXX XXXX 1234" />
       <ReceiptSubText text={t('transactionId', { value: '123-456-789' })} />
       <ValidUntilBlock>
         <CardRowText
           text={t('receiptValidUntilText')}
-          style={{ color: '#fff', fontFamily: 'roboto_regular' }}
+          style={ownStyles.cardRowText}
         />
         <CardRowText
           text={t('receiptValidUntilTime', {
             date: '20. Dezember 2017',
             time: '19:40',
           })}
-          style={{ color: '#fff', fontFamily: 'roboto_regular' }}
+          style={ownStyles.cardRowText}
         />
       </ValidUntilBlock>
       <ReceiptSubText
         text={t('payment:dutyColumn')}
-        style={{ fontSize: moderateScale(12), alignSelf: 'flex-end' }}
+        style={ownStyles.receiptSubTextDuty}
       />
 
       <Row borderTop>
@@ -75,11 +104,7 @@ const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
 
       <ReceiptSubText
         text={t('vatColumn')}
-        style={{
-          fontSize: moderateScale(12),
-          alignSelf: 'flex-end',
-          marginTop: 25,
-        }}
+        style={ownStyles.receiptSubTextVat}
       />
       <Row borderTop>
         <Text>we can reuse DutyRow like in Overview.js</Text>
@@ -90,14 +115,19 @@ const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
 
       <CardRowText
         text={t('sumText', { value: 56.5 })}
-        style={{ alignSelf: 'flex-end', marginTop: 15, marginBottom: 35 }}
+        style={ownStyles.cardRowTextSum}
       />
       <ReceiptSubText
         text={t('receiptStorageNotification')}
-        style={{ paddingBottom: 15, lineHeight: 18 }}
+        style={ownStyles.receiptSubTextNotification}
       />
     </View>
   </ScrollViewCard>
 );
 
-export default translate(['receipt', 'payment'])(ReceiptAfterPayment);
+export default translate([
+  'receipt',
+  'payment',
+  'mainCategories',
+  'categories',
+])(ReceiptAfterPayment);
