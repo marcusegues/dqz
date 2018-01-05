@@ -40,6 +40,9 @@ export const stackNavigatorScreens = {
   },
   QuestionAnswer: {
     screen: QuestionAnswerContainer,
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HomeIcon navigation={navigation} />,
+    }),
   },
   Payment: {
     screen: PaymentContainer,
