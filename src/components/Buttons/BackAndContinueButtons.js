@@ -20,7 +20,17 @@ const ownStyles = {
   },
 };
 
-const BackAndContinueButtons = ({ onPressBack, onPressContinue, t }) => (
+type BackAndContinueButtonsProps = {
+  onPressBack: () => void,
+  onPressContinue: () => void,
+  t: (field: string, params?: {}) => string,
+};
+
+const BackAndContinueButtons = ({
+  onPressBack,
+  onPressContinue,
+  t,
+}: BackAndContinueButtonsProps) => (
   <View style={ownStyles.redButtonContainerWrapper}>
     <View style={ownStyles.redButtonWrapper}>
       <RedButton
