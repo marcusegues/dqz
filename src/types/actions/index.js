@@ -42,22 +42,18 @@ export type Action =
   }
   | {
     type: 'ADULTS_CHANGE_QUANTITY',
-    category: Category,
     quantityChange: number,
   }
   | {
     type: 'ADULTS_SET_QUANTITY',
-    category: Category,
     quantity: number,
   }
   | {
     type: 'MINORS_CHANGE_QUANTITY',
-    category: Category,
     quantityChange: number,
   }
   | {
     type: 'MINORS_SET_QUANTITY',
-    category: Category,
     quantity: number,
   }
   | {
