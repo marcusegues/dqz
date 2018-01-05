@@ -1,9 +1,16 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { Text } from 'react-native';
 import { GREY } from '../../../../styles/colors';
 import { verticalScale } from '../../../../styles/Scaling';
 
-const CardHeaderSubText = ({ text, style }) => (
+type CardHeaderSubTextProps = {
+  text: string,
+  style?: Object,
+};
+
+const CardHeaderSubText = ({ text, style }: CardHeaderSubTextProps) => (
   <Text
     style={{
       fontFamily: 'roboto_regular',
@@ -17,4 +24,7 @@ const CardHeaderSubText = ({ text, style }) => (
   </Text>
 );
 
+CardHeaderSubText.defaultProps = {
+  style: {},
+};
 export default CardHeaderSubText;

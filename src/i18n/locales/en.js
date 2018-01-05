@@ -12,6 +12,7 @@ import {
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
   makePaymentNSRecord,
+  makeReceiptNSRecord,
   makeInformationNSRecord,
   makeAmountInputNSRecord,
 } from '../types/locale';
@@ -123,6 +124,19 @@ export const en: LocaleType = makeLocaleRecord({
     overViewTitle: 'Summary of your Declaration',
     dutyColumn: 'Customs Duty in CHF',
     sumText: 'Sum (CHF)',
+  }),
+  receipt: makeReceiptNSRecord({
+    dutyAndVat: 'Customs duty: {{duty}}  |  vat: {{vat}}',
+    paidOn: 'Paid on {{date}} at {{time}}:',
+    transactionId: 'Transaction-ID (SIX): {{value}}',
+    receiptValidUntilText: 'This receipt is valid until:',
+    receiptValidUntilTime: '{{date}} | {{time}}:',
+    sumText: 'Sum: {{value}}',
+    vatColumn: 'VAT in CHF:',
+    amountsTitle: 'Total of all goods',
+    amountsSubtitle: 'Sum of all receipts',
+    receiptStorageNotification:
+      'This receipt is stored for a year. As long as you can call the receipt at any time in the app.',
   }),
 
   information: makeInformationNSRecord({

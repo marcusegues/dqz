@@ -33,7 +33,7 @@ const MainMenu = ({ navigation, t }) => (
 
       <MenuTile
         text={t('guideline').toUpperCase()}
-        onPress={() => navigation.navigate('UnderConstruction')}
+        onPress={() => navigation.navigate('Information')}
       >
         <Image
           source={greyLogo}
@@ -45,7 +45,7 @@ const MainMenu = ({ navigation, t }) => (
       <MenuTile
         icon="receipt"
         text={t('receipts').toUpperCase()}
-        onPress={() => navigation.navigate('UnderConstruction')}
+        onPress={() => navigation.navigate('ReceiptAfterPayment')}
         style={{ alignSelf: 'center' }}
       >
         <View>
@@ -59,7 +59,7 @@ const MainMenu = ({ navigation, t }) => (
       <MenuTile
         icon="info"
         text={t('information').toUpperCase()}
-        onPress={() => navigation.navigate('Information')}
+        onPress={() => navigation.navigate('UnderConstruction')}
       >
         <MaterialIcons name="info" size={moderateScale(47)} color={GREY} />
       </MenuTile>

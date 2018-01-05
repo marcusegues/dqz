@@ -12,6 +12,7 @@ import {
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
   makePaymentNSRecord,
+  makeReceiptNSRecord,
   makeInformationNSRecord,
   makeAmountInputNSRecord,
 } from '../types/locale';
@@ -125,6 +126,19 @@ export const de: LocaleType = makeLocaleRecord({
     overViewTitle: 'Übersicht ihrer Anmeldung',
     dutyColumn: 'Zollabgabe in CHF',
     sumText: 'Summe (CHF)',
+  }),
+  receipt: makeReceiptNSRecord({
+    dutyAndVat: 'Zollabgabe: {{duty}}  |  Mehrwertsteuer: {{vat}}',
+    paidOn: 'Bezahlt am {{date}} um {{time}} Uhr mit:',
+    transactionId: 'Transaktions-ID (SIX): {{value}}',
+    receiptValidUntilText: 'Diese Quittung ist gültig bis:',
+    receiptValidUntilTime: '{{date}}  |  {{time}} Uhr',
+    sumText: 'Summe (CHF): {{value}}',
+    vatColumn: 'Mehrwertsteuer in CHF:',
+    amountsTitle: 'Gesamtwert der Waren',
+    amountsSubtitle: 'Summe aller Kaufbelege',
+    receiptStorageNotification:
+      'Diese Quittung wird ein Jahr lang gespeichert. Solange können Sie die Quittung jederzeit in der App aufrufen.',
   }),
 
   information: makeInformationNSRecord({

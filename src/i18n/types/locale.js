@@ -297,6 +297,33 @@ export const makeInformationNSRecord: RecordFactory<
 });
 
 export type InformationNSType = RecordOf<InformationNS>;
+type ReceiptNS = {
+  dutyAndVat: string,
+  paidOn: string,
+  transactionId: string,
+  receiptValidUntilText: string,
+  receiptValidUntilTime: string,
+  sumText: string,
+  vatColumn: string,
+  amountsTitle: string,
+  amountsSubtitle: string,
+  receiptStorageNotification: string,
+};
+export const makeReceiptNSRecord: RecordFactory<ReceiptNS> = Immutable.Record({
+  dutyAndVat: 'i18n {{duty}} i18n {{vat}}',
+  paidOn: 'i18n {{date}} i18n {{time}} i18n',
+  transactionId: 'i18n {{value}}',
+  receiptValidUntilText: 'i18n',
+  receiptValidUntilTime: '{{date}} i18n {{time}} i18n',
+  sumText: 'i18n {{value}}',
+  vatColumn: 'i18n',
+  amountsTitle: 'i18n',
+  amountsSubtitle: 'i18n',
+  receiptStorageNotification: 'i18n',
+});
+
+export type ReceiptNSType = RecordOf<ReceiptNS>;
+
 /**
  *
  */
@@ -313,6 +340,7 @@ type Locale = {
   qaFlow: QAFlowNSType,
   modal: ModalNSType,
   payment: PaymentNSType,
+  receipt: ReceiptNSType,
   information: InformationNSType,
 };
 
@@ -329,6 +357,7 @@ export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
   modal: makeModalNSRecord(),
   payment: makePaymentNSRecord(),
   information: makeInformationNSRecord(),
+  receipt: makeReceiptNSRecord(),
 });
 
 export type LocaleType = RecordOf<Locale>;
