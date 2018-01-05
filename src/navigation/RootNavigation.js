@@ -48,6 +48,9 @@ export const stackNavigatorScreens = {
   },
   Payment: {
     screen: PaymentContainer,
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HomeIcon navigation={navigation} />,
+    }),
   },
   OnBoarding: {
     screen: OnBoarding,

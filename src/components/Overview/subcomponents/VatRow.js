@@ -16,7 +16,7 @@ const VatRow = ({ quantity, vat, borderTop, t }: VatRowProps) => (
     subtitle={t('amountsSubtitle')}
     quantity={quantity}
     result={(+vat).toFixed(2)}
-    categoryText="CHF"
+    unit="CHF"
     borderTop={borderTop}
   />
 );

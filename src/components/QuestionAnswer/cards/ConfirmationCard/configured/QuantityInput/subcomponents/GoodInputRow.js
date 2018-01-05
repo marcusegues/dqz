@@ -1,6 +1,9 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 import { translate } from 'react-i18next';
+// $FlowFixMe
 import { View } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import {
@@ -11,6 +14,9 @@ import QuantityIcon from '../../../../../../General Components/QuantityIcon';
 import CategoryIcon from './subcomponents/CategoryIcon';
 import CardRowText from '../../../../subcomponents/CardRowText';
 import CardRowSubText from '../../../../subcomponents/CardRowSubText';
+import type { Category } from '../../../../../../../model/types/basketPeopleAmountsTypes';
+import type { MainCategory } from '../../../../../../../types/reducers/declaration';
+import { CategoriesInfo } from '../../../../../../../model/constants';
 
 const ownStyles = {
   container: {
@@ -59,13 +65,21 @@ const ownStyles = {
 const cigarette = require('../../../../../../../../assets/icons/cigarette_new.png');
 const meat = require('../../../../../../../../assets/icons/meat_new.png');
 
+type GoodInputRowProps = {
+  onShowQuantityInputModal: () => void,
+  category: Category,
+  totalQuantity: number,
+  mainCategory: MainCategory,
+  t: (field: string, params?: {}) => string,
+};
+
 const GoodInputRow = ({
   onShowQuantityInputModal,
   category,
   totalQuantity,
   mainCategory,
   t,
-}) => (
+}: GoodInputRowProps) => (
   <Touchable onPress={onShowQuantityInputModal}>
     <View style={ownStyles.container}>
       <CategoryIcon
@@ -77,7 +91,10 @@ const GoodInputRow = ({
         <CardRowText text={t(`categories:${category}`)} />
         <CardRowSubText text={t(`mainCategories:${mainCategory}`)} />
         <View style={{ marginTop: 10 }}>
-          <QuantityIcon quantity={totalQuantity} category={category} />
+          <QuantityIcon
+            quantity={totalQuantity}
+            unit={CategoriesInfo.getIn([category, 'unit'], '')}
+          />
         </View>
       </View>
       <View style={ownStyles.chevronRight}>
