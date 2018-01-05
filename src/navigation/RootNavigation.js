@@ -19,8 +19,10 @@ import { UnderConstruction } from './underConstruction';
 import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
 import GoodQuantityListModal from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import OnBoardingTaxScreen from '../screens/OnBoarding/OnBoardingTaxScreen';
-import Information from '../screens/Information/Information';
+import ReceiptAfterPayment from '../components/Receipts/ReceiptAfterPayment';
 import HomeIcon from '../components/Headers/subcomponents/HomeIcon';
+import DownloadIcon from '../components/Headers/subcomponents/DownloadIcon';
+import Information from '../screens/Information/Information';
 import SearchIcon from '../components/Headers/subcomponents/SearchIcon';
 
 export const stackNavigatorScreens = {
@@ -83,6 +85,14 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }) => ({
       headerLeft: <HomeIcon navigation={navigation} />,
       headerRight: <SearchIcon navigation={navigation} />,
+    }),
+  },
+  ReceiptAfterPayment: {
+    screen: ReceiptAfterPayment,
+    navigationOptions: ({ navigation }) => ({
+      headerTitle: <HeaderTitle text="Quittung Schweizer Zoll" />,
+      headerLeft: <HomeIcon navigation={navigation} />,
+      headerRight: <DownloadIcon navigation={navigation} />,
     }),
   },
 };

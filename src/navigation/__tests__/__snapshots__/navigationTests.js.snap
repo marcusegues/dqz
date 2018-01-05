@@ -9,6 +9,7 @@ Array [
   "OnBoardingTaxScreen",
   "Payment",
   "QuestionAnswer",
+  "ReceiptAfterPayment",
   "Screens",
   "UnderConstruction",
 ]

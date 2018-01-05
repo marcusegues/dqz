@@ -1,6 +1,7 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View, Text, StyleSheet } from 'react-native';
-import { CategoriesInfo } from '../../model/constants';
 
 const ownStyles = StyleSheet.create({
   quantityContainer: {
@@ -16,11 +17,14 @@ const ownStyles = StyleSheet.create({
   },
 });
 
-const QuantityIcon = ({ quantity, category }) => (
+type QuantityIconProps = {
+  quantity: number,
+  categoryText: string,
+};
+
+const QuantityIcon = ({ quantity, categoryText }: QuantityIconProps) => (
   <View style={ownStyles.quantityContainer}>
-    <Text style={ownStyles.quantityText}>{`${quantity} ${CategoriesInfo.get(
-      category
-    ).get('unit')}`}</Text>
+    <Text style={ownStyles.quantityText}>{`${quantity} ${categoryText}`}</Text>
   </View>
 );
 

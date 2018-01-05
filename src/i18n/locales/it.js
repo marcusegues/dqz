@@ -12,6 +12,7 @@ import {
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
   makePaymentNSRecord,
+  makeReceiptNSRecord,
   makeInformationNSRecord,
   makeAmountInputNSRecord,
 } from '../types/locale';
@@ -53,6 +54,17 @@ export const it: LocaleType = makeLocaleRecord({
     savedBasketNewShoppingCart: '🔀',
   }),
   payment: makePaymentNSRecord({}),
+
+  receipt: makeReceiptNSRecord({
+    dutyAndVat: '🏂: {{duty}}  |  🏂: {{vat}}',
+    paidOn: '🏂 {{date}} 🏂 {{time}} 🏂:',
+    transactionId: '🏂: {{value}}',
+    receiptValidUntilText: '🏂',
+    receiptValidUntilTime: '{{date}} | {{time}} 🏂',
+    sumText: '🏂: {{value}}',
+    vatColumn: '🏂:',
+    receiptStorageNotification: '🏂.',
+  }),
 
   information: makeInformationNSRecord({
     proceedinAtTheCustoms: 'I18N',
