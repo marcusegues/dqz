@@ -19,12 +19,12 @@ const ownStyles = StyleSheet.create({
 
 type QuantityIconProps = {
   quantity: number,
-  categoryText: string,
+  unit: string,
 };
 
-const QuantityIcon = ({ quantity, categoryText }: QuantityIconProps) => (
+const QuantityIcon = ({ quantity, unit }: QuantityIconProps) => (
   <View style={ownStyles.quantityContainer}>
-    <Text style={ownStyles.quantityText}>{`${quantity} ${categoryText}`}</Text>
+    <Text style={ownStyles.quantityText}>{`${quantity} ${unit}`}</Text>
   </View>
 );
 

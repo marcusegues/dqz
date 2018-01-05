@@ -42,9 +42,15 @@ export const stackNavigatorScreens = {
   },
   QuestionAnswer: {
     screen: QuestionAnswerContainer,
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HomeIcon navigation={navigation} />,
+    }),
   },
   Payment: {
     screen: PaymentContainer,
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HomeIcon navigation={navigation} />,
+    }),
   },
   OnBoarding: {
     screen: OnBoarding,

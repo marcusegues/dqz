@@ -169,13 +169,6 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
     this.setState(this.simplifyState(updateFlags));
   }
 
-  allQuestionsAnswered(): boolean {
-    // TODO Object.values returns Array<mixed> in flow. Find better way.
-    return Object.values(this.state.questionFlag).every(
-      (flag): boolean => flag === 'complete'
-    );
-  }
-
   render() {
     const { questionStates, questionFlag } = this.state;
     const {
@@ -444,7 +437,6 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         >
           <RedButton
             text={t('qaFlow:toOverview')}
-            confirmationDisabled={!this.allQuestionsAnswered()}
             onPress={() => this.props.navigation.navigate('Payment')}
           />
         </View>

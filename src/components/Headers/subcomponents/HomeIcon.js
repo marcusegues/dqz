@@ -13,7 +13,7 @@ type HomeIconProps = {
 const HomeIcon = ({ navigation }: HomeIconProps) => (
   <Touchable
     onPress={() => {
-      navigation.goBack();
+      navigation.navigate('MainMenu');
     }}
   >
     <MaterialIcons name="home" size={moderateScale(28)} color={MAIN_RED} />

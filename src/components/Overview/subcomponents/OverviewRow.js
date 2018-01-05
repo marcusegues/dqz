@@ -13,7 +13,7 @@ type OverviewRowProps = {
   quantity: number,
   result: string,
   borderTop?: boolean,
-  categoryText: string,
+  unit: string,
 };
 
 const OverviewRow = ({
@@ -21,7 +21,7 @@ const OverviewRow = ({
   subtitle,
   quantity,
   result,
-  categoryText,
+  unit,
   borderTop,
 }: OverviewRowProps) => (
   <Row borderTop={borderTop}>
@@ -29,7 +29,7 @@ const OverviewRow = ({
       <CardRowText text={title} />
       <CardRowSubText text={subtitle} />
     </View>
-    <QuantityIcon quantity={quantity} categoryText={categoryText} />
+    <QuantityIcon quantity={quantity} unit={unit} />
     <View style={{ marginLeft: 30 }}>
       <CardRowText text={result} />
     </View>

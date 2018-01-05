@@ -28,7 +28,7 @@ const DutyRow = ({
     subtitle={t(`mainCategories:${mainCategory}`)}
     quantity={quantity}
     result={duty.toFixed(2)}
-    categoryText={CategoriesInfo.getIn([category, 'unit'], '')}
+    unit={CategoriesInfo.getIn([category, 'unit'], '')}
     borderTop={borderTop}
   />
 );
