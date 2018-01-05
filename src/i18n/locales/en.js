@@ -13,6 +13,8 @@ import {
   makePeopleInputNSRecord,
   makePaymentNSRecord,
   makeReceiptNSRecord,
+  makeInformationNSRecord,
+  makeAmountInputNSRecord,
 } from '../types/locale';
 
 export const en: LocaleType = makeLocaleRecord({
@@ -49,6 +51,7 @@ export const en: LocaleType = makeLocaleRecord({
     navbarSecond: 'Payment',
     navbarThird: 'Receipt',
     customsDuty: 'Customs duty',
+    customsVat: 'VAT',
     goodCategories: 'Good Categories',
     confirm: 'Confirm',
     toPayment: 'Make Payment',
@@ -71,6 +74,15 @@ export const en: LocaleType = makeLocaleRecord({
   }),
   quantityInput: makeQuantityInputNSRecord({
     quantityInput: 'Quantity input',
+  }),
+  amountInput: makeAmountInputNSRecord({
+    amountInput: 'Amount Input',
+    amountInputLargeItem: 'Amount Input (items larger than CHF {{value}})',
+    amountInputMoreThan300Text:
+      'Record here any item that is worth more than 300.00 CHF.',
+    amountInputAddItem: 'Add item',
+    amountInputButtonContinue: 'Continue',
+    amountInputButtonBack: 'Back',
   }),
   qaFlow: makeQAFlowNSRecord({
     declareGoods: 'Declare Goods',
@@ -97,11 +109,16 @@ export const en: LocaleType = makeLocaleRecord({
     confirmPicker: 'Confirm {{value}}',
     standardCategoryPicker: 'Standard',
     individualCategoryPicker: 'Exact',
-    currencyPickerTitle: 'Enter item with more than CHF {{value}}',
+    currencyPickerTitle: 'Enter item',
+    currencyPickerLargeAmountTitle: 'Enter item with more than CHF {{value}}',
     currencyPickerSubTitle:
       'Record the net value of the item in its original currency:',
     currencyPickerRate: 'Rate of',
     currencyPickerInvalidInput: 'Invalid/empty input',
+    savedBasketDoYoWantToContinue:
+      'Do you want to continue with an existing basket or start a new one',
+    savedBasketTotalCost: 'Total cost: CHF {{value}}',
+    savedBasketNewShoppingCart: 'New Configuration',
   }),
   payment: makePaymentNSRecord({
     overViewTitle: 'Summary of your Declaration',
@@ -118,5 +135,25 @@ export const en: LocaleType = makeLocaleRecord({
     vatColumn: 'VAT in CHF:',
     receiptStorageNotification:
       'This receipt is stored for a year. As long as you can call the receipt at any time in the app.',
+  }),
+
+  information: makeInformationNSRecord({
+    informationTitle: 'Information',
+    proceedinAtTheCustoms: 'Proceeding at the customs',
+    proceedinAtTheCustomsSubText:
+      'Far behind, behind the word mountains, far from the lands of vocabulary and consonants live the blind texts.',
+    travelDocuments: 'Travel documents',
+    travelDocumentsSubText:
+      'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
+    haveGoodsWithMe: 'I have goods with me',
+    haveGoodsWithMeSubText:
+      'Far behind, behind the word mountains, far from the lands of vocabulary and consonants live the blind texts.',
+    haveAnimalsOrPlantsWithMe: 'I have animals or plants with me.',
+    haveAnimalsOrPlantsWithMeSubText: 'Far behind live the blind texts.',
+    travelingWithVehicle: "I'm traveling with a vehicle",
+    travelingWithVehicleSubText: 'Far behind live the blind texts.',
+    entryByTrain: 'Entry by train',
+    entryByTrainSubText:
+      'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
   }),
 });

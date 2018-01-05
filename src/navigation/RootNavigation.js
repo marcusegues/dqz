@@ -22,6 +22,8 @@ import OnBoardingTaxScreen from '../screens/OnBoarding/OnBoardingTaxScreen';
 import ReceiptAfterPayment from '../components/Receipts/ReceiptAfterPayment';
 import HomeIcon from '../components/Headers/subcomponents/HomeIcon';
 import DownloadIcon from '../components/Headers/subcomponents/DownloadIcon';
+import Information from '../screens/Information/Information';
+import SearchIcon from '../components/Headers/subcomponents/SearchIcon';
 
 export const stackNavigatorScreens = {
   Screens: {
@@ -76,6 +78,13 @@ export const stackNavigatorScreens = {
     screen: UnderConstruction,
     navigationOptions: () => ({
       headerTitle: <HeaderTitle text="In Bearbeitung" />,
+    }),
+  },
+  Information: {
+    screen: Information,
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HomeIcon navigation={navigation} />,
+      headerRight: <SearchIcon navigation={navigation} />,
     }),
   },
   ReceiptAfterPayment: {

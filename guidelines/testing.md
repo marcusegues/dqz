@@ -102,11 +102,43 @@ Taken here: [jest in RN](https://medium.com/react-native-training/learning-to-te
 ### Testing React Components
 
 To test React-Native components, we can use Enzyme. 
-Most of the UI testing can be done using snapshots (see if anything has changed).
+Most of the UI testing can be done using snapshots (see if anything has changed, see next paragraph).
 
 Then, you can simulate press etc., see [Jest in ReactNative (4 Parts)](https://medium.com/react-native-training/learning-to-test-react-native-with-jest-part-1-f782c4e30101) or the [official documentation](http://airbnb.io/enzyme/).
 
 An example for our case is `OnBoardingTaxScreen`.
+
+### Snapshot Testing
+
+Imaging a UI component, like a button. You pass two "props" (react language for arguments) to it, like: `onClickCallback` and `buttonText`. 
+Obviously this little, isolated component should always be the same, no matter the release.
+
+So what you do is you "fake-render" the component with some fixed props and you store the outcome (called snapshot). In the webworld, it would be some `div`s, some `span`s etc. 
+
+Example:
+
+```javascript
+import React from 'react';
+import renderer from 'react-test-renderer';
+import DoneButton from '../DoneButton';
+
+describe('Done Button', () => {
+  test('renders according to snapshot', () => {
+    const component = renderer.create(<DoneButton />).toJSON();
+    expect(component).toMatchSnapshot();
+  });
+});
+```
+
+The test will then re-render the component on every run (or CI pass) and make sure it is still the same. That way we can be confident that the components haven't changed (unit tests).
+
+The same procedure can also be applied to complicated objects, like when rendering state.
+
+If we every change something that change the snapshots, we can simply update these to reflect the new reality.
+
+IMPORTANT when reviewing: when somebody changes the snapshots (or the tests), we have to make sure the new stuff is right.
+
+[Reference]()https://facebook.github.io/jest/docs/en/snapshot-testing.html)
 
 ## Integration Testing
 tbd

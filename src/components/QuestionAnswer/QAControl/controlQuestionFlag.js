@@ -35,6 +35,12 @@ const flagRules = (
         ? 'complete'
         : 'incomplete';
     }
+    case 'amounts': {
+      return qaState.amounts.size ? 'complete' : 'incomplete';
+    }
+    case 'largeAmounts': {
+      return qaState.amounts.size ? 'complete' : 'incomplete';
+    }
     default: {
       return 'incomplete';
     }
@@ -51,6 +57,8 @@ export const setInitFlags = (qaState: QAStateEnriched): QAStateEnriched =>
     peopleInput: flagRules('peopleInput', qaState),
     mainCategories: flagRules('mainCategories', qaState),
     quantityInput: flagRules('quantityInput', qaState),
+    amounts: flagRules('amounts', qaState),
+    largeAmounts: flagRules('largeAmounts', qaState),
   });
 
 export const setQuestionFlag = (

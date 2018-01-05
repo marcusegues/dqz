@@ -13,6 +13,8 @@ import {
   makePeopleInputNSRecord,
   makePaymentNSRecord,
   makeReceiptNSRecord,
+  makeInformationNSRecord,
+  makeAmountInputNSRecord,
 } from '../types/locale';
 
 export const de: LocaleType = makeLocaleRecord({
@@ -49,6 +51,7 @@ export const de: LocaleType = makeLocaleRecord({
     navbarSecond: 'Bezahlung',
     navbarThird: 'Zollschein',
     customsDuty: 'Zollabgabe',
+    customsVat: 'MWSt',
     goodCategories: 'Warenkategorien',
     confirm: 'Übernehmen',
     toPayment: 'Zur Bezahlung',
@@ -72,6 +75,13 @@ export const de: LocaleType = makeLocaleRecord({
   }),
   quantityInput: makeQuantityInputNSRecord({
     quantityInput: 'Mengeneingabe',
+  }),
+  amountInput: makeAmountInputNSRecord({
+    amountInput: 'Betragseingabe',
+    amountInputLargeItem: 'Betragseingabe (Waren über CHF {{value}})',
+    amountInputMoreThan300Text:
+      'Erfassen Sie hier jeden Gegenstand, der mehr als 300.00 CHF wert ist.',
+    amountInputAddItem: 'Gegenstand hinzufügen',
   }),
   qaFlow: makeQAFlowNSRecord({
     declareGoods: 'Waren Deklarieren',
@@ -98,11 +108,17 @@ export const de: LocaleType = makeLocaleRecord({
     confirmPicker: '{{value}} übernehmen',
     standardCategoryPicker: 'Standardmengen',
     individualCategoryPicker: 'Genaue Mengen',
-    currencyPickerTitle: 'Gegenstand mit mehr als CHF {{value}} erfassen',
+    currencyPickerTitle: 'Gegenstand erfassen',
+    currencyPickerLargeAmountTitle:
+      'Gegenstand mit mehr als CHF {{value}} erfassen',
     currencyPickerSubTitle:
       'Erfassen Sie den Nettowert des Gegenstands in seiner Original-Währung: ',
     currencyPickerRate: 'Kurs vom',
     currencyPickerInvalidInput: 'Ungültige/leere Eingabe',
+    savedBasketDoYoWantToContinue:
+      'Möchten Sie mit dem bereits bestehenden Warenkorb fortfahren oder mit einem leeren Warenkorb neu starten?',
+    savedBasketTotalCost: 'Gesamtkosten: CHF {{value}}',
+    savedBasketNewShoppingCart: 'Neuer Warenkorb',
   }),
   payment: makePaymentNSRecord({
     overViewTitle: 'Übersicht ihrer Anmeldung',
@@ -119,5 +135,25 @@ export const de: LocaleType = makeLocaleRecord({
     vatColumn: 'Mehrwertsteuer in CHF:',
     receiptStorageNotification:
       'Diese Quittung wird ein Jahr lang gespeichert. Solange können Sie die Quittung jederzeit in der App aufrufen.',
+  }),
+
+  information: makeInformationNSRecord({
+    informationTitle: 'Wissenswertes',
+    proceedinAtTheCustoms: 'Vorgehen am Zoll',
+    proceedinAtTheCustomsSubText:
+      'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+    travelDocuments: 'Reisedokumente',
+    travelDocumentsSubText:
+      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+    haveGoodsWithMe: 'Ich habe Waren dabei',
+    haveGoodsWithMeSubText:
+      'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+    haveAnimalsOrPlantsWithMe: 'Ich habe Tiere oder Pflanzen dabei',
+    haveAnimalsOrPlantsWithMeSubText: 'Weit hinten leben die Blindtexte.',
+    travelingWithVehicle: 'Ich bin mit einem Fahrzeug unterwegs',
+    travelingWithVehicleSubText: 'Weit hinten leben die Blindtexte.',
+    entryByTrain: 'Einreise per Bahn',
+    entryByTrainSubText:
+      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
   }),
 });

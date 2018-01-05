@@ -7,7 +7,7 @@ import { MAIN_RED } from '../../../styles/colors';
 import { moderateScale } from '../../../styles/Scaling';
 
 type HomeIconProps = {
-  navigation: () => void,
+  navigation: any,
 };
 
 const HomeIcon = ({ navigation }: HomeIconProps) => (

@@ -24,9 +24,11 @@ const getCHFperCurrency = (
 
   const amountsThisCurrency: number = thisCurrency
     .get('amounts', Immutable.List())
+    .map(a => a.amount)
     .reduce(sum, 0);
   const amountsLargeThisCurrency: number = thisCurrency
     .get('amountsLarge', Immutable.List())
+    .map(a => a.amount)
     .reduce(sum, 0);
 
   const exchangeRate: number = currencyObject[currency] || 1;

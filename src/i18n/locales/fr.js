@@ -13,6 +13,8 @@ import {
   makePeopleInputNSRecord,
   makePaymentNSRecord,
   makeReceiptNSRecord,
+  makeInformationNSRecord,
+  makeAmountInputNSRecord,
 } from '../types/locale';
 
 export const fr: LocaleType = makeLocaleRecord({
@@ -37,6 +39,7 @@ export const fr: LocaleType = makeLocaleRecord({
   peopleInput: makePeopleInputNSRecord({}),
   mainCategoriesInput: makeMainCategoriesInputNSRecord({}),
   quantityInput: makeQuantityInputNSRecord({}),
+  amountInput: makeAmountInputNSRecord({}),
   qaFlow: makeQAFlowNSRecord({}),
   modal: makeModalNSRecord({
     confirmPicker: 'Confirmer {{value}}',
@@ -46,6 +49,9 @@ export const fr: LocaleType = makeLocaleRecord({
     currencyPickerSubTitle:
       "Enregistrer la valeur nette de l'article dans sa devise d'origine:",
     currencyPickerRate: 'i18n',
+    savedBasketDoYoWantToContinue: '🔀',
+    savedBasketTotalCost: '🏟️ {{value}}',
+    savedBasketNewShoppingCart: '🔀',
   }),
   payment: makePaymentNSRecord({}),
   receipt: makeReceiptNSRecord({
@@ -57,5 +63,20 @@ export const fr: LocaleType = makeLocaleRecord({
     sumText: '🏂: {{value}}',
     vatColumn: '🏂:',
     receiptStorageNotification: '🏂.',
+  }),
+
+  information: makeInformationNSRecord({
+    proceedinAtTheCustoms: 'I18N',
+    proceedinAtTheCustomsSubText: 'I18N',
+    travelDocuments: 'I18N',
+    travelDocumentsSubText: 'I18N',
+    haveGoodsWithMe: 'I18N',
+    haveGoodsWithMeSubText: 'I18N',
+    haveAnimalsOrPlantsWithMe: 'I18N',
+    haveAnimalsOrPlantsWithMeSubText: 'I18N',
+    travelingWithVehicle: 'I18N',
+    travelingWithVehicleSubText: 'I18N',
+    entryByTrain: 'I18N',
+    entryByTrainSubText: 'I18N',
   }),
 });

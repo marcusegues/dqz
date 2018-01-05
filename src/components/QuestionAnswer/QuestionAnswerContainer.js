@@ -18,6 +18,8 @@ import {
   getSettings,
   getAmounts,
   getMainCategories,
+  getCurrencies,
+  getFormattedCurrencyDate,
 } from '../../reducers';
 import type {
   Amounts,
@@ -37,11 +39,15 @@ import { setInitFlags, setQuestionFlag } from './QAControl/controlQuestionFlag';
 import { verticalScale } from '../../styles/Scaling';
 import HeaderTitle from '../Headers/subcomponents/HeaderTitle';
 import { onUpdateFactory } from './QAControl/validation';
+import AmountInputQA from './AmountInput/AmountInputQA';
+import type { CurrencyObject } from '../../model/currencies';
 
 export type QuestionType =
   | 'peopleInput'
   | 'mainCategories'
   | 'quantityInput'
+  | 'amounts'
+  | 'largeAmounts'
   | 'none';
 
 export type QuestionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
@@ -60,6 +66,8 @@ export type QAStateEnriched = {
   basket: Basket,
   people: People,
   settings: Settings,
+  currencies: CurrencyObject,
+  currencyDate: string,
 };
 
 export type CardProps = {
@@ -84,11 +92,15 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
         peopleInput: 'expanded',
         mainCategories: 'hidden',
         quantityInput: 'hidden',
+        amounts: 'hidden',
+        largeAmounts: 'hidden',
       },
       questionFlag: {
         peopleInput: 'complete',
         mainCategories: 'incomplete',
         quantityInput: 'incomplete',
+        amounts: 'incomplete',
+        largeAmounts: 'incomplete',
       },
     };
   }
@@ -99,7 +111,14 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
 
   enrichState(): QAStateEnriched {
     const { questionStates, questionFlag } = this.state;
-    const { amounts, basket, people, settings } = this.props;
+    const {
+      amounts,
+      basket,
+      people,
+      settings,
+      currencies,
+      currencyDate,
+    } = this.props;
 
     return {
       questionStates,
@@ -108,6 +127,8 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
       basket,
       people,
       settings,
+      currencies,
+      currencyDate,
     };
   }
 
@@ -166,6 +187,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
       onDeclarationSetMainCategories,
       onDeclarationSetPeople,
       onDeclarationSetBasket,
+      onDeclarationSetAmounts,
     } = this.props;
 
     const qaStateEnriched: QAStateEnriched = this.enrichState();
@@ -301,6 +323,88 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
           />
         ),
       },
+      {
+        key: 'amounts',
+        component: (
+          <AmountInputQA
+            large={false}
+            qaState={qaStateEnriched}
+            onAnswerCardPress={() => {
+              this.setState(
+                this.simplifyState(
+                  collapseAllExistingExceptOne('amounts', qaStateEnriched)
+                )
+              );
+            }}
+            questionState={questionStates.amounts}
+            questionFlag={questionFlag.amounts}
+            onUpdate={newAmounts =>
+              onUpdateFactory(
+                {
+                  questionType: 'amounts',
+                  onUpdate: updatedAmounts => {
+                    onDeclarationSetAmounts(updatedAmounts);
+                    this.updateFlagsOptimistically(
+                      'amounts',
+                      Object.assign({}, qaStateEnriched, {
+                        amounts: updatedAmounts,
+                      })
+                    );
+                  },
+                  amounts: newAmounts,
+                },
+                qaStateEnriched,
+                t
+              )
+            }
+            onAnswer={() => {
+              onDeclarationSetBasket(basket);
+              this.updateQA('amounts');
+            }}
+          />
+        ),
+      },
+      {
+        key: 'largeAmounts',
+        component: (
+          <AmountInputQA
+            large
+            qaState={qaStateEnriched}
+            onAnswerCardPress={() => {
+              this.setState(
+                this.simplifyState(
+                  collapseAllExistingExceptOne('largeAmounts', qaStateEnriched)
+                )
+              );
+            }}
+            questionState={questionStates.largeAmounts}
+            questionFlag={questionFlag.largeAmounts}
+            onUpdate={newAmounts =>
+              onUpdateFactory(
+                {
+                  questionType: 'largeAmounts',
+                  onUpdate: updatedAmounts => {
+                    onDeclarationSetAmounts(updatedAmounts);
+                    this.updateFlagsOptimistically(
+                      'largeAmounts',
+                      Object.assign({}, qaStateEnriched, {
+                        amounts: updatedAmounts,
+                      })
+                    );
+                  },
+                  amounts: newAmounts,
+                },
+                qaStateEnriched,
+                t
+              )
+            }
+            onAnswer={() => {
+              onDeclarationSetBasket(basket);
+              this.updateQA('largeAmounts');
+            }}
+          />
+        ),
+      },
     ];
     return (
       <View
@@ -355,6 +459,8 @@ const mapStateToProps = state => ({
   amounts: getAmounts(state),
   settings: getSettings(state),
   mainCategories: getMainCategories(state),
+  currencies: getCurrencies(state),
+  currencyDate: getFormattedCurrencyDate(state),
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -378,6 +484,11 @@ const mapDispatchToProps = dispatch => ({
     dispatch({
       type: 'SET_BASKET',
       basket,
+    }),
+  onDeclarationSetAmounts: amounts =>
+    dispatch({
+      type: 'SET_AMOUNTS',
+      amounts,
     }),
 });
 

@@ -35,6 +35,7 @@ const declaration = (
       const s2 = s1.set('currencyDate', currencyDate);
       return s2.set('validCurrencies', validCurrencies);
     }
+
     case 'BASKET_ADD_QUANTITY': {
       const category: Category = action.category;
       const basket: Basket = state.get('basket');
@@ -47,6 +48,7 @@ const declaration = (
       const basket: Basket = action.basket;
       return state.set('basket', basket);
     }
+
     case 'ADULTS_CHANGE_QUANTITY': {
       const people: People = state.get('people');
       const adults: number = people.get('adults');
@@ -71,6 +73,11 @@ const declaration = (
     }
     case 'SET_PEOPLE': {
       return state.set('people', action.people);
+    }
+
+    case 'SET_AMOUNTS': {
+      const amounts: Amounts = action.amounts;
+      return state.set('amounts', amounts);
     }
     case 'ADD_AMOUNT': {
       const currency: Currency = action.currency;
@@ -103,19 +110,17 @@ const declaration = (
       const currency: Currency = action.currency;
       return state.set('amounts', modelApi.resetAmounts(amounts, currency));
     }
+
     case 'ADD_MAIN_CATEGORY': {
       const mainCategory: MainCategory = action.mainCategory;
       const mainCategoriesAnswer = state.getIn(
         ['settings', 'mainCategories'],
         EmptyMainCategories
       );
-      if (mainCategoriesAnswer !== 'notAnswered') {
-        return state.setIn(
-          ['settings', 'mainCategories'],
-          mainCategoriesAnswer.add(mainCategory)
-        );
-      }
-      return state;
+      return state.setIn(
+        ['settings', 'mainCategories'],
+        mainCategoriesAnswer.add(mainCategory)
+      );
     }
     case 'REMOVE_MAIN_CATEGORY': {
       const mainCategory: MainCategory = action.mainCategory;
@@ -123,13 +128,10 @@ const declaration = (
         ['settings', 'mainCategories'],
         EmptyMainCategories
       );
-      if (mainCategoriesAnswer !== 'notAnswered') {
-        return state.setIn(
-          ['settings', 'mainCategories'],
-          mainCategoriesAnswer.delete(mainCategory)
-        );
-      }
-      return state;
+      return state.setIn(
+        ['settings', 'mainCategories'],
+        mainCategoriesAnswer.delete(mainCategory)
+      );
     }
     case 'SET_MAIN_CATEGORIES': {
       const mainCategoriesAnswer: MainCategories = action.mainCategories;

@@ -5,8 +5,8 @@ import { Text } from 'react-native';
 import { moderateScale } from '../../../../styles/Scaling';
 
 type CardRowTextProps = {
-  style?: Object,
   text: string,
+  style?: {}, // TODO
 };
 
 const CardRowText = ({ text, style }: CardRowTextProps) => (

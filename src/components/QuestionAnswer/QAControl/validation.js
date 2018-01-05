@@ -12,6 +12,7 @@ import type {
   Basket,
   Category,
   People,
+  Amounts,
 } from '../../../model/types/basketPeopleAmountsTypes';
 import { CategoriesInfo } from '../../../model/constants';
 import type {
@@ -43,10 +44,24 @@ type MainCategoriesTrigger = {
   mainCategories: MainCategories,
 };
 
+type AmountsTrigger = {
+  questionType: 'amounts',
+  onUpdate: UpdateFunction<Amounts>,
+  amounts: Amounts,
+};
+
+type LargeAmountsTrigger = {
+  questionType: 'largeAmounts',
+  onUpdate: UpdateFunction<Amounts>,
+  amounts: Amounts,
+};
+
 type Trigger =
   | PeopleInputTrigger
   | QuantityInputTrigger
-  | MainCategoriesTrigger;
+  | MainCategoriesTrigger
+  | AmountsTrigger
+  | LargeAmountsTrigger;
 
 export const onUpdateFactory = (
   trigger: Trigger,
@@ -160,6 +175,14 @@ export const onUpdateFactory = (
     }
     case 'quantityInput': {
       trigger.onUpdate(trigger.basket);
+      break;
+    }
+    case 'amounts': {
+      trigger.onUpdate(trigger.amounts);
+      break;
+    }
+    case 'largeAmounts': {
+      trigger.onUpdate(trigger.amounts);
       break;
     }
     default: {
