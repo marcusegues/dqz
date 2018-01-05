@@ -74,6 +74,8 @@ type GeneralNS = {
   goodCategories: string,
   confirm: string,
   toPayment: string,
+  buttonContinue: string,
+  buttonBack: string,
 };
 
 export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
@@ -90,6 +92,8 @@ export const makeGeneralNSRecord: RecordFactory<GeneralNS> = Immutable.Record({
   goodCategories: 'i18n',
   confirm: 'i18n',
   toPayment: 'i18n',
+  buttonContinue: 'i18n',
+  buttonBack: 'i18n',
 });
 
 export type GeneralNSType = RecordOf<GeneralNS>;
@@ -159,8 +163,6 @@ type AmountInputNS = {
   amountInputMoreThan300Text: string,
   amountInputAddItem: string,
   amountInputAddItem: string,
-  amountInputButtonContinue: string,
-  amountInputButtonBack: string,
 };
 
 export const makeAmountInputNSRecord: RecordFactory<
@@ -170,8 +172,6 @@ export const makeAmountInputNSRecord: RecordFactory<
   amountInputLargeItem: 'i18n',
   amountInputMoreThan300Text: 'i18n',
   amountInputAddItem: 'i18n',
-  amountInputButtonContinue: 'i18n',
-  amountInputButtonBack: 'i18n',
 });
 
 export type AmountInputNSType = RecordOf<AmountInputNS>;

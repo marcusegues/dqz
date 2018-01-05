@@ -35,17 +35,14 @@ const BackAndContinueButtons = ({
     <View style={ownStyles.redButtonWrapper}>
       <RedButton
         onPress={onPressBack}
-        text={t('amountInputButtonBack')}
+        text={t('buttonBack')}
         buttonStyle={{ backgroundColor: GREY }}
       />
     </View>
     <View style={ownStyles.redButtonWrapper}>
-      <RedButton
-        onPress={onPressContinue}
-        text={t('amountInputButtonContinue')}
-      />
+      <RedButton onPress={onPressContinue} text={t('buttonContinue')} />
     </View>
   </View>
 );
 
-export default translate(['amountInput'])(BackAndContinueButtons);
+export default translate(['general'])(BackAndContinueButtons);
