@@ -12,6 +12,7 @@ import {
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
   makePaymentNSRecord,
+  makeInformationNSRecord,
   makeAmountInputNSRecord,
 } from '../types/locale';
 
@@ -122,5 +123,25 @@ export const de: LocaleType = makeLocaleRecord({
     overViewTitle: 'Übersicht ihrer Anmeldung',
     dutyColumn: 'Zollabgabe in CHF',
     sumText: 'Summe (CHF)',
+  }),
+
+  information: makeInformationNSRecord({
+    informationTitle: 'Wissenswertes',
+    proceedinAtTheCustoms: 'Vorgehen am Zoll',
+    proceedinAtTheCustomsSubText:
+      'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+    travelDocuments: 'Reisedokumente',
+    travelDocumentsSubText:
+      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+    haveGoodsWithMe: 'Ich habe Waren dabei',
+    haveGoodsWithMeSubText:
+      'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+    haveAnimalsOrPlantsWithMe: 'Ich habe Tiere oder Pflanzen dabei',
+    haveAnimalsOrPlantsWithMeSubText: 'Weit hinten leben die Blindtexte.',
+    travelingWithVehicle: 'Ich bin mit einem Fahrzeug unterwegs',
+    travelingWithVehicleSubText: 'Weit hinten leben die Blindtexte.',
+    entryByTrain: 'Einreise per Bahn',
+    entryByTrainSubText:
+      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
   }),
 });

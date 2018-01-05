@@ -12,6 +12,7 @@ import {
   makeQuantityInputNSRecord,
   makePeopleInputNSRecord,
   makePaymentNSRecord,
+  makeInformationNSRecord,
   makeAmountInputNSRecord,
 } from '../types/locale';
 
@@ -122,5 +123,25 @@ export const en: LocaleType = makeLocaleRecord({
     overViewTitle: 'Summary of your Declaration',
     dutyColumn: 'Customs Duty in CHF',
     sumText: 'Sum (CHF)',
+  }),
+
+  information: makeInformationNSRecord({
+    informationTitle: 'Information',
+    proceedinAtTheCustoms: 'Proceeding at the customs',
+    proceedinAtTheCustomsSubText:
+      'Far behind, behind the word mountains, far from the lands of vocabulary and consonants live the blind texts.',
+    travelDocuments: 'Travel documents',
+    travelDocumentsSubText:
+      'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
+    haveGoodsWithMe: 'I have goods with me',
+    haveGoodsWithMeSubText:
+      'Far behind, behind the word mountains, far from the lands of vocabulary and consonants live the blind texts.',
+    haveAnimalsOrPlantsWithMe: 'I have animals or plants with me.',
+    haveAnimalsOrPlantsWithMeSubText: 'Far behind live the blind texts.',
+    travelingWithVehicle: "I'm traveling with a vehicle",
+    travelingWithVehicleSubText: 'Far behind live the blind texts.',
+    entryByTrain: 'Entry by train',
+    entryByTrainSubText:
+      'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
   }),
 });

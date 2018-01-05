@@ -96,6 +96,7 @@ export type GeneralNSType = RecordOf<GeneralNS>;
 
 type OnBoardingNS = {
   welcome: string,
+
   onBoardingMessage: string,
   selectLanguage: string,
   confirmationVat: string,
@@ -261,6 +262,41 @@ export const makeModalNSRecord: RecordFactory<ModalNS> = Immutable.Record({
 
 export type ModalNSType = RecordOf<ModalNS>;
 
+type InformationNS = {
+  informationTitle: string,
+  proceedinAtTheCustoms: string,
+  proceedinAtTheCustomsSubText: string,
+  travelDocuments: string,
+  travelDocumentsSubText: string,
+  haveGoodsWithMe: string,
+  haveGoodsWithMeSubText: string,
+  haveAnimalsOrPlantsWithMe: string,
+  haveAnimalsOrPlantsWithMeSubText: string,
+  travelingWithVehicle: string,
+  travelingWithVehicleSubText: string,
+  entryByTrain: string,
+  entryByTrainSubText: string,
+};
+
+export const makeInformationNSRecord: RecordFactory<
+  InformationNS
+> = Immutable.Record({
+  informationTitle: 'i18n',
+  proceedinAtTheCustoms: '{{value}}',
+  proceedinAtTheCustomsSubText: '{{value}}',
+  travelDocuments: '{{value}}',
+  travelDocumentsSubText: '{{value}}',
+  haveGoodsWithMe: '{{value}}',
+  haveGoodsWithMeSubText: '{{value}}',
+  haveAnimalsOrPlantsWithMe: '{{value}}',
+  haveAnimalsOrPlantsWithMeSubText: '{{value}}',
+  travelingWithVehicle: '{{value}}',
+  travelingWithVehicleSubText: '{{value}}',
+  entryByTrain: '{{value}}',
+  entryByTrainSubText: '{{value}}',
+});
+
+export type InformationNSType = RecordOf<InformationNS>;
 /**
  *
  */
@@ -277,6 +313,7 @@ type Locale = {
   qaFlow: QAFlowNSType,
   modal: ModalNSType,
   payment: PaymentNSType,
+  information: InformationNSType,
 };
 
 export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
@@ -291,6 +328,7 @@ export const makeLocaleRecord: RecordFactory<Locale> = Immutable.Record({
   qaFlow: makeQAFlowNSRecord(),
   modal: makeModalNSRecord(),
   payment: makePaymentNSRecord(),
+  information: makeInformationNSRecord(),
 });
 
 export type LocaleType = RecordOf<Locale>;

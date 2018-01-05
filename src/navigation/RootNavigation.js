@@ -19,6 +19,9 @@ import { UnderConstruction } from './underConstruction';
 import QuestionAnswerContainer from '../components/QuestionAnswer/QuestionAnswerContainer';
 import GoodQuantityListModal from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import OnBoardingTaxScreen from '../screens/OnBoarding/OnBoardingTaxScreen';
+import Information from '../screens/Information/Information';
+import HomeIcon from '../components/Headers/subcomponents/HomeIcon';
+import SearchIcon from '../components/Headers/subcomponents/SearchIcon';
 
 export const stackNavigatorScreens = {
   Screens: {
@@ -73,6 +76,13 @@ export const stackNavigatorScreens = {
     screen: UnderConstruction,
     navigationOptions: () => ({
       headerTitle: <HeaderTitle text="In Bearbeitung" />,
+    }),
+  },
+  Information: {
+    screen: Information,
+    navigationOptions: ({ navigation }) => ({
+      headerLeft: <HomeIcon navigation={navigation} />,
+      headerRight: <SearchIcon navigation={navigation} />,
     }),
   },
 };
