@@ -305,6 +305,8 @@ type ReceiptNS = {
   receiptValidUntilTime: string,
   sumText: string,
   vatColumn: string,
+  amountsTitle: string,
+  amountsSubtitle: string,
   receiptStorageNotification: string,
 };
 export const makeReceiptNSRecord: RecordFactory<ReceiptNS> = Immutable.Record({
@@ -315,6 +317,8 @@ export const makeReceiptNSRecord: RecordFactory<ReceiptNS> = Immutable.Record({
   receiptValidUntilTime: '{{date}} i18n {{time}} i18n',
   sumText: 'i18n {{value}}',
   vatColumn: 'i18n',
+  amountsTitle: 'i18n',
+  amountsSubtitle: 'i18n',
   receiptStorageNotification: 'i18n',
 });
 

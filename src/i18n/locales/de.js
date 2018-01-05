@@ -133,6 +133,8 @@ export const de: LocaleType = makeLocaleRecord({
     receiptValidUntilTime: '{{date}}  |  {{time}} Uhr',
     sumText: 'Summe (CHF): {{value}}',
     vatColumn: 'Mehrwertsteuer in CHF:',
+    amountsTitle: 'Gesamtwert der Waren',
+    amountsSubtitle: 'Summe aller Kaufbelege',
     receiptStorageNotification:
       'Diese Quittung wird ein Jahr lang gespeichert. Solange können Sie die Quittung jederzeit in der App aufrufen.',
   }),

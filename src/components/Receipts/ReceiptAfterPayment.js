@@ -9,8 +9,8 @@ import { moderateScale, scale, verticalScale } from '../../styles/Scaling';
 import CardRowText from '../QuestionAnswer/cards/subcomponents/CardRowText';
 import ReceiptSubText from './subComponents/ReceiptSubText';
 import ValidUntilBlock from './subComponents/ValidUntilBlock';
-import Row from '../Rows/Row';
 import DutyRow from '../Overview/subcomponents/DutyRow';
+import VatRow from '../Overview/subcomponents/VatRow';
 
 const ownStyles = {
   topSumText: {
@@ -74,8 +74,6 @@ const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
         style={ownStyles.cardRowTextPaidOn}
       />
 
-      <CardRowText text={t('paidOn', { date: '20.12.2017', time: '17:40' })} />
-
       <ReceiptSubText text="Mastercard XXXX XXXX XXXX 1234" />
       <ReceiptSubText text={t('transactionId', { value: '123-456-789' })} />
       <ValidUntilBlock>
@@ -96,15 +94,15 @@ const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
         style={ownStyles.receiptSubTextDuty}
       />
 
-      <DutyRow mainCategory="Foods" category="Meat" quantity="2" duty="4" />
-      <DutyRow mainCategory="Foods" category="Meat" quantity="2" duty="4" />
+      <DutyRow mainCategory="Foods" category="Meat" quantity={2} duty={4} />
+      <DutyRow mainCategory="Foods" category="Meat" quantity={2} duty={4} />
 
       <ReceiptSubText
         text={t('vatColumn')}
         style={ownStyles.receiptSubTextVat}
       />
-      <DutyRow mainCategory="Foods" category="Meat" quantity="2" duty="4" />
-      <DutyRow mainCategory="Foods" category="Meat" quantity="2" duty="4" />
+      <VatRow quantity={205.59} vat={44} />
+      <VatRow quantity={205.59} vat={12} />
 
       <CardRowText
         text={t('sumText', { value: 56.5 })}
