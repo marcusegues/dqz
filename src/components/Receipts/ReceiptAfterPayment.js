@@ -10,6 +10,7 @@ import CardRowText from '../QuestionAnswer/cards/subcomponents/CardRowText';
 import ReceiptSubText from './subComponents/ReceiptSubText';
 import ValidUntilBlock from './subComponents/ValidUntilBlock';
 import Row from '../Rows/Row';
+import DutyRow from '../Overview/subcomponents/DutyRow';
 
 const ownStyles = {
   topSumText: {
@@ -95,23 +96,15 @@ const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
         style={ownStyles.receiptSubTextDuty}
       />
 
-      <Row borderTop>
-        <Text>we can reuse DutyRow like in Overview.js</Text>
-      </Row>
-      <Row borderTop>
-        <Text>we can reuse DutyRow like in Overview.js</Text>
-      </Row>
+      <DutyRow mainCategory="Foods" category="Meat" quantity="2" duty="4" />
+      <DutyRow mainCategory="Foods" category="Meat" quantity="2" duty="4" />
 
       <ReceiptSubText
         text={t('vatColumn')}
         style={ownStyles.receiptSubTextVat}
       />
-      <Row borderTop>
-        <Text>we can reuse DutyRow like in Overview.js</Text>
-      </Row>
-      <Row borderTop>
-        <Text>we can reuse DutyRow like in Overview.js</Text>
-      </Row>
+      <DutyRow mainCategory="Foods" category="Meat" quantity="2" duty="4" />
+      <DutyRow mainCategory="Foods" category="Meat" quantity="2" duty="4" />
 
       <CardRowText
         text={t('sumText', { value: 56.5 })}
