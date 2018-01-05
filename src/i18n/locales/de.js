@@ -54,6 +54,8 @@ export const de: LocaleType = makeLocaleRecord({
     goodCategories: 'Warenkategorien',
     confirm: 'Übernehmen',
     toPayment: 'Zur Bezahlung',
+    buttonContinue: 'Weiter',
+    buttonBack: 'Zurück',
   }),
   onBoarding: makeOnBoardingNSRecord({
     welcome: 'Willkommen zu',

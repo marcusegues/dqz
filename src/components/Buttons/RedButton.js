@@ -58,6 +58,7 @@ const RedButton = ({ text, onPress, confirmationDisabled, buttonStyle }) => (
 
 RedButton.defaultProps = {
   confirmationDisabled: false,
+  buttonStyle: {},
 };
 
 export default RedButton;
