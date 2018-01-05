@@ -88,7 +88,10 @@ const Overview = ({
         </View>
 
         <View style={{ flex: 1, width: '100%' }}>
-          <VatRow quantity={1234} vat={fullVat} />
+          <VatRow
+            quantity={`~${vatReport.get('totalAmountsApprox')}`}
+            vat={fullVat}
+          />
         </View>
         <View style={{ alignSelf: 'flex-end', marginRight: 16, marginTop: 16 }}>
           <CardRowText

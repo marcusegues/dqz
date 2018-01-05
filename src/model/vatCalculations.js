@@ -60,10 +60,13 @@ export const calculateVat = (
     { amounts: 0, amountsLarge: 0 }
   );
 
-  grandTotals.amounts = Math.max(
+  const afterAllowance = Math.max(
     0,
     grandTotals.amounts - calculateAllowancesExceptLast(people)
   );
+  const effectiveAllowance: number = grandTotals.amounts - afterAllowance;
+
+  grandTotals.amounts = afterAllowance;
 
   const sumLastPerson = grandTotals.amounts + grandTotals.amountsLarge;
 
@@ -79,5 +82,10 @@ export const calculateVat = (
 
   return makeVatReportRecord({
     totalVat: lastStep,
+    totalAmountsApprox: (
+      grandTotals.amounts +
+      grandTotals.amountsLarge +
+      effectiveAllowance
+    ).toFixed(2),
   });
 };

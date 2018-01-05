@@ -3,89 +3,104 @@
 exports[`VAT Calculations it creates a correct vat summary 1`] = `
 Immutable.Record {
   "totalVat": 494.3,
+  "totalAmountsApprox": "6420.00",
 }
 `;
 
 exports[`VAT Calculations it creates a correct vat summary 2`] = `
 Immutable.Record {
   "totalVat": 177,
+  "totalAmountsApprox": "2299.00",
 }
 `;
 
 exports[`VAT Calculations it works with EZV examples 1`] = `
 Immutable.Record {
   "totalVat": 27.2,
+  "totalAmountsApprox": "353.00",
 }
 `;
 
 exports[`VAT Calculations it works with EZV examples 2`] = `
 Immutable.Record {
   "totalVat": 36.25,
+  "totalAmountsApprox": "471.00",
 }
 `;
 
 exports[`VAT Calculations it works with EZV examples 3`] = `
 Immutable.Record {
   "totalVat": 31.25,
+  "totalAmountsApprox": "706.00",
 }
 `;
 
 exports[`VAT Calculations it works with EZV examples 4`] = `
 Immutable.Record {
   "totalVat": 58.5,
+  "totalAmountsApprox": "1060.00",
 }
 `;
 
 exports[`VAT Calculations it works with EZV examples 5`] = `
 Immutable.Record {
   "totalVat": 36.25,
+  "totalAmountsApprox": "471.00",
 }
 `;
 
 exports[`VAT Calculations it works with EZV examples 6`] = `
 Immutable.Record {
   "totalVat": 28.95,
+  "totalAmountsApprox": "376.00",
 }
 `;
 
 exports[`VAT Calculations it works with EZV examples 7`] = `
 Immutable.Record {
   "totalVat": 0,
+  "totalAmountsApprox": "-",
 }
 `;
 
 exports[`VAT Calculations it works with EZV examples 8`] = `
 Immutable.Record {
   "totalVat": 36.75,
+  "totalAmountsApprox": "777.00",
 }
 `;
 
 exports[`VAT Calculations it works with EZV examples 9`] = `
 Immutable.Record {
   "totalVat": 67.55,
+  "totalAmountsApprox": "1177.00",
 }
 `;
 
 exports[`VAT Calculations it works with EZV examples 10`] = `
 Immutable.Record {
   "totalVat": 72.55,
+  "totalAmountsApprox": "942.00",
 }
 `;
 
 exports[`VAT Calculations it works with EZV examples 11`] = `
 Immutable.Record {
   "totalVat": 44.45,
+  "totalAmountsApprox": "1177.00",
 }
 `;
 
 exports[`VAT Calculations it works with EZV examples 12`] = `
 Immutable.Record {
   "totalVat": 45.3,
+  "totalAmountsApprox": "1059.00",
 }
 `;
 
 exports[`VAT Calculations it works with EZV examples 13`] = `
 Immutable.Record {
   "totalVat": 89.75,
+  "totalAmountsApprox": "1765.00",
 }
 `;
