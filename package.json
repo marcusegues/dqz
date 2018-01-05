@@ -14,7 +14,7 @@
     "test:coverage:watch": "jest --watchAll --coverage",
     "flow": "flow",
     "doc:md": "documentation build src/** -f md -o doc/apiDoc.md",
-    "doc:html": "documentation build src/** -f html -o docs --shallow"
+    "doc:html": "documentation build src/** -f html -o docs"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
