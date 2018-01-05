@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state,no-console */
 // @flow
 import React from 'react';
 // $FlowFixMe
@@ -35,9 +36,9 @@ const redirectsUrlKeys = {
 type PaymentContainerState = {
   isLoadingRedirectData: boolean,
   redirectDataLoaded: boolean,
-  redirectUrl?: string,
-  paymentToken?: string,
-  paymentStatus?: string,
+  redirectUrl: ?string,
+  paymentToken: ?string,
+  paymentStatus: ?string,
 };
 
 type PaymentContainerProps = {
@@ -66,6 +67,8 @@ class PaymentContainer extends React.Component<
   componentDidMount() {
     this.saferpay = new Saferpay(baseUrl, redirectsUrlKeys);
   }
+
+  saferpay: any; // TODO
 
   initializePayment() {
     const { basket, people, amounts, currencyObject } = this.props;
