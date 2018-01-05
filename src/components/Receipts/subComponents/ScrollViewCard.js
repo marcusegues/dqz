@@ -10,10 +10,8 @@ const ownStyles = {
     marginBottom: 16,
   },
   scrollView: {
-    // flex: 1,
     width: '100%',
     borderColor: '#E0E0E1',
-    // paddingHorizontal: 10,
     backgroundColor: '#fff',
     borderRadius: 3,
   },
