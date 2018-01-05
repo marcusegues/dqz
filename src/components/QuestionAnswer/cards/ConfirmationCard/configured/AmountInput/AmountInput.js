@@ -11,8 +11,8 @@ import {
 } from '../../../../../../model/utils';
 import AmountsRow from './subcomponents/AmountRow';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
-import { MAIN_RED, GREY } from '../../../../../../styles/colors';
-import RedButton from '../../../../../Buttons/RedButton';
+import { MAIN_RED } from '../../../../../../styles/colors';
+import BackAndContinueButtons from '../../../../../Buttons/BackAndContinueButtons';
 
 const ownStyles = {
   mainContainer: {
@@ -106,18 +106,10 @@ const AmountInput = ({
         </Text>
       </View>
 
-      <View style={ownStyles.redButtonContainerWrapper}>
-        <View style={ownStyles.redButtonWrapper}>
-          <RedButton
-            onPress={() => {}}
-            text={t('amountInputButtonBack')}
-            buttonStyle={{ backgroundColor: GREY }}
-          />
-        </View>
-        <View style={ownStyles.redButtonWrapper}>
-          <RedButton text={t('amountInputButtonContinue')} />
-        </View>
-      </View>
+      <BackAndContinueButtons
+        onPressBack={() => {}}
+        onPressContinue={() => {}}
+      />
     </ScrollView>
   </View>
 );
