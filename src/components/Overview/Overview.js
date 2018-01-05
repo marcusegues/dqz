@@ -14,18 +14,48 @@ import CardRowSubText from '../QuestionAnswer/cards/subcomponents/CardRowSubText
 import CardRowText from '../QuestionAnswer/cards/subcomponents/CardRowText';
 import { getMainCategory } from '../../types/reducers/declaration';
 import type {
+  Amounts,
   Basket,
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
+import ReceiptSubText from '../Receipts/subComponents/ReceiptSubText';
+import VatRow from './subcomponents/VatRow';
+import { moderateScale, verticalScale } from '../../styles/Scaling';
+import { calculateVat } from '../../model/vatCalculations';
+import type { CurrencyObject } from '../../model/currencies';
 
 type OverviewProps = {
   basket: Basket,
   people: People,
+  amounts: Amounts,
+  currencyObject: CurrencyObject,
   t: (field: string, params?: {}) => string,
 };
 
-const Overview = ({ basket, people, t }: OverviewProps) => {
+const ownStyles = {
+  cardRowTextSum: {
+    alignSelf: 'flex-end',
+    marginTop: verticalScale(15),
+    marginBottom: verticalScale(35),
+  },
+  receiptSubTextVat: {
+    fontSize: moderateScale(12),
+    alignSelf: 'flex-end',
+    marginTop: verticalScale(25),
+  },
+};
+
+const Overview = ({
+  basket,
+  people,
+  t,
+  amounts,
+  currencyObject,
+}: OverviewProps) => {
   const dutyReport = calculateDuty(basket, people);
+  const vatReport = calculateVat(amounts, people, currencyObject);
+  const fullVat = vatReport.get('totalVat');
+  const fullDuty = dutyReport.get('totalDuty');
   return (
     <Card>
       <CardHeader text={t('overViewTitle')} />
@@ -47,9 +77,25 @@ const Overview = ({ basket, people, t }: OverviewProps) => {
               duty={duty}
             />
           ))}
+
+        <View
+          style={{ alignSelf: 'flex-end', marginRight: 16, marginBottom: 2 }}
+        >
+          <ReceiptSubText
+            text={t('receipt:vatColumn')}
+            style={ownStyles.receiptSubTextVat}
+          />
+        </View>
+
+        <View style={{ flex: 1, width: '100%' }}>
+          <VatRow quantity={1234} vat={fullVat} />
+        </View>
         <View style={{ alignSelf: 'flex-end', marginRight: 16, marginTop: 16 }}>
           <CardRowText
-            text={`${t('sumText')}: ${dutyReport.totalDuty.toFixed(2)}`}
+            text={t('receipt:sumText', {
+              value: (fullVat + fullDuty).toFixed(2),
+            })}
+            style={ownStyles.cardRowTextSum}
           />
         </View>
       </View>
@@ -57,4 +103,9 @@ const Overview = ({ basket, people, t }: OverviewProps) => {
   );
 };
 
-export default translate(['payment', 'mainCategories', 'categories'])(Overview);
+export default translate([
+  'payment',
+  'receipt',
+  'mainCategories',
+  'categories',
+])(Overview);

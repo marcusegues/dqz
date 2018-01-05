@@ -1,17 +1,29 @@
-/* eslint-disable react/no-unused-state, no-console */
-// TODO remove above line
+// @flow
 import React from 'react';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 import { connect } from 'react-redux';
+// $FlowFixMe
 import { View, Text } from 'react-native';
 import Overview from '../Overview/Overview';
 import Saferpay from '../../../saferpay';
 import NavBar from '../NavBar/NavBar';
 import PaymentWebView from './PaymentWebView';
 import RedButton from '../Buttons/RedButton';
-import { getBasket, getPeople } from '../../reducers';
+import {
+  getAmounts,
+  getBasket,
+  getCurrencies,
+  getPeople,
+} from '../../reducers';
 import { calculateDuty } from '../../model/dutyCalculations';
+import type {
+  Amounts,
+  Basket,
+  People,
+} from '../../model/types/basketPeopleAmountsTypes';
+import type { CurrencyObject } from '../../model/currencies';
+import { calculateVat } from '../../model/vatCalculations';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -20,8 +32,27 @@ const redirectsUrlKeys = {
   abort: `/abort`,
 };
 
-class PaymentContainer extends React.Component {
-  constructor(props) {
+type PaymentContainerState = {
+  isLoadingRedirectData: boolean,
+  redirectDataLoaded: boolean,
+  redirectUrl?: string,
+  paymentToken?: string,
+  paymentStatus?: string,
+};
+
+type PaymentContainerProps = {
+  basket: Basket,
+  people: People,
+  amounts: Amounts,
+  currencyObject: CurrencyObject,
+  t: (field: string, params?: {}) => string,
+};
+
+class PaymentContainer extends React.Component<
+  PaymentContainerProps,
+  PaymentContainerState
+> {
+  constructor(props: PaymentContainerProps) {
     super(props);
     this.state = {
       isLoadingRedirectData: false,
@@ -37,13 +68,18 @@ class PaymentContainer extends React.Component {
   }
 
   initializePayment() {
-    const { basket, people } = this.props;
+    const { basket, people, amounts, currencyObject } = this.props;
     const totalDuty = calculateDuty(basket, people).get('totalDuty', 0);
+    const totalVat = calculateVat(amounts, people, currencyObject).get(
+      'totalVat',
+      0
+    );
+    const totalSum = totalDuty + totalVat;
 
-    if (totalDuty > 0) {
+    if (totalSum > 0) {
       this.setState({ isLoadingRedirectData: true }, () => {
         this.saferpay
-          .initializePayment(100 * totalDuty, 'CHF')
+          .initializePayment(100 * totalSum, 'CHF')
           .then(responseJson => {
             // console.log('response is', responseJson);
             this.setState({
@@ -96,7 +132,10 @@ class PaymentContainer extends React.Component {
   }
 
   render() {
-    const { basket, people, t } = this.props;
+    const { basket, people, amounts, currencyObject, t } = this.props;
+    const totalSum =
+      calculateDuty(basket, people).get('totalDuty') +
+      calculateVat(amounts, people, currencyObject).get('totalVat');
     return (
       <View
         style={{
@@ -119,17 +158,17 @@ class PaymentContainer extends React.Component {
           <Text style={{ color: 'red' }}>Payment failed</Text>
         ) : null}
         <Overview
-          people={this.props.people}
-          basket={this.props.basket}
+          people={people}
+          basket={basket}
+          amounts={amounts}
+          currencyObject={currencyObject}
           initializePayment={() => this.initializePayment()}
         />
 
         <RedButton
           onPress={() => this.initializePayment()}
           text={t('toPayment')}
-          confirmationDisabled={
-            calculateDuty(basket, people).get('totalDuty', 0) < 1
-          }
+          confirmationDisabled={totalSum < 1}
         />
         {this.state.redirectDataLoaded ? (
           <View style={{ position: 'absolute', top: 0 }}>
@@ -147,6 +186,8 @@ class PaymentContainer extends React.Component {
 const mapStateToProps = state => ({
   basket: getBasket(state),
   people: getPeople(state),
+  amounts: getAmounts(state),
+  currencyObject: getCurrencies(state),
 });
 
 export default connect(mapStateToProps)(

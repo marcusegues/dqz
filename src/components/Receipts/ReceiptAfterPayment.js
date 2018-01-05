@@ -102,7 +102,6 @@ const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
         style={ownStyles.receiptSubTextVat}
       />
       <VatRow quantity={205.59} vat={44} />
-      <VatRow quantity={205.59} vat={12} />
 
       <CardRowText
         text={t('sumText', { value: 56.5 })}
