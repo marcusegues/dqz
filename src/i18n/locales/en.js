@@ -55,6 +55,8 @@ export const en: LocaleType = makeLocaleRecord({
     goodCategories: 'Good Categories',
     confirm: 'Confirm',
     toPayment: 'Make Payment',
+    buttonContinue: 'Continue',
+    buttonBack: 'Back',
   }),
   onBoarding: makeOnBoardingNSRecord({
     welcome: 'Welcome to',
@@ -81,8 +83,6 @@ export const en: LocaleType = makeLocaleRecord({
     amountInputMoreThan300Text:
       'Record here any item that is worth more than 300.00 CHF.',
     amountInputAddItem: 'Add item',
-    amountInputButtonContinue: 'Continue',
-    amountInputButtonBack: 'Back',
   }),
   qaFlow: makeQAFlowNSRecord({
     declareGoods: 'Declare Goods',
