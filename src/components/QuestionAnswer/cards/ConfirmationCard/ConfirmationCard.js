@@ -1,13 +1,11 @@
 // @flow
 import React from 'react';
-import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View } from 'react-native';
 import { verticalScale } from '../../../../styles/Scaling';
 import Card from '../Card';
-import RedButton from '../../../Buttons/RedButton';
 import CardHeader from '../subcomponents/CardHeader';
-import BackAndContinueButtons from '../../../Buttons/BackAndContinueButtons';
+import { BackAndContinueButtons } from '../../../Buttons/BackAndContinueButtons';
 
 const ownStyles = {
   bottomSectionWrapper: {
@@ -28,16 +26,14 @@ type ConfirmationCardProps = {
   onAnswer: () => void,
   onBack: () => void,
   confirmationDisabled?: boolean,
-  t: (field: string, params?: {}) => string,
 };
 
-const ConfirmationCard = ({
+export const ConfirmationCard = ({
   text,
   children,
   onAnswer,
   onBack,
   confirmationDisabled,
-  t,
 }: ConfirmationCardProps) => (
   <Card>
     <CardHeader text={text} />
@@ -57,5 +53,3 @@ const ConfirmationCard = ({
 ConfirmationCard.defaultProps = {
   confirmationDisabled: false,
 };
-
-export default translate(['general'])(ConfirmationCard);

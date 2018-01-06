@@ -1,6 +1,6 @@
 import React from 'react';
 import { translate } from 'react-i18next';
-import ConfirmationCard from '../../ConfirmationCard';
+import { ConfirmationCard } from '../../ConfirmationCard';
 import MainCategoriesCheckList from '../../children/MainCategoriesCheckList/MainCategoriesCheckList';
 
 const MainCategoriesInputConfirmationCard = ({

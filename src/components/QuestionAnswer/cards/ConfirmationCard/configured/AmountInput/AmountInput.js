@@ -12,7 +12,8 @@ import {
 import AmountsRow from './subcomponents/AmountRow';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import { MAIN_RED } from '../../../../../../styles/colors';
-import BackAndContinueButtons from '../../../../../Buttons/BackAndContinueButtons';
+import { BackAndContinueButtons } from '../../../../../Buttons/BackAndContinueButtons';
+import type { TFunction } from '../../../../../../types/generalTypes';
 
 const ownStyles = {
   mainContainer: {
@@ -67,7 +68,7 @@ type AmountInputProps = {
   amounts: Amounts,
   onDeleteAmount: string => void,
   large: boolean,
-  t: any, // TODO
+  t: TFunction,
 };
 
 const AmountInput = ({
