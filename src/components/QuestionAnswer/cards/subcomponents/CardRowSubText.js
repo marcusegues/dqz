@@ -1,8 +1,15 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { Text } from 'react-native';
 import { moderateScale } from '../../../../styles/Scaling';
 
-const CardRowSubText = ({ text, style }) => (
+type CardRowSubTextProps = {
+  text: string,
+  style?: {},
+};
+
+export const CardRowSubText = ({ text, style }: CardRowSubTextProps) => (
   <Text
     style={{
       fontFamily: 'roboto_regular',
@@ -15,4 +22,6 @@ const CardRowSubText = ({ text, style }) => (
   </Text>
 );
 
-export default CardRowSubText;
+CardRowSubText.defaultProps = {
+  style: {},
+};

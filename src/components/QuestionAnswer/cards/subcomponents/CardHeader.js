@@ -2,16 +2,16 @@
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
-import CardHeaderText from './CardHeaderText';
+import { CardHeaderText } from './CardHeaderText';
 import { verticalScale } from '../../../../styles/Scaling';
 
 type CardHeaderProps = {
   text: string,
   children?: any,
-  style?: any, // TODO
+  style?: any,
 };
 
-const CardHeader = ({ text, children, style }: CardHeaderProps) => (
+export const CardHeader = ({ text, children, style }: CardHeaderProps) => (
   <View
     style={{
       marginTop: verticalScale(16),
@@ -30,5 +30,3 @@ CardHeader.defaultProps = {
   children: [],
   style: {},
 };
-
-export default CardHeader;

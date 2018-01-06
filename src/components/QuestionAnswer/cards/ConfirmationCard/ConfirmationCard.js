@@ -4,7 +4,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { verticalScale } from '../../../../styles/Scaling';
 import { Card } from '../Card';
-import CardHeader from '../subcomponents/CardHeader';
+import { CardHeader } from '../subcomponents/CardHeader';
 import { BackAndContinueButtons } from '../../../Buttons/BackAndContinueButtons';
 
 const ownStyles = {

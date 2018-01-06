@@ -12,12 +12,12 @@ import { MaterialIcons, Entypo } from '@expo/vector-icons';
 import AppModal from '../AppModal';
 import RedButton from '../../Buttons/RedButton';
 import PickerCard from '../CurrencyPickerModal/subComponents/PickerCard';
-import CardHeader from '../../QuestionAnswer/cards/subcomponents/CardHeader';
-import CardHeaderSubText from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
+import { CardHeader } from '../../QuestionAnswer/cards/subcomponents/CardHeader';
+import { CardHeaderSubText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
 import { moderateScale, scale, verticalScale } from '../../../styles/Scaling';
 import Row from '../../Rows/Row';
-import CardRowText from '../../QuestionAnswer/cards/subcomponents/CardRowText';
-import CardRowSubText from '../../QuestionAnswer/cards/subcomponents/CardRowSubText';
+import { CardRowText } from '../../QuestionAnswer/cards/subcomponents/CardRowText';
+import { CardRowSubText } from '../../QuestionAnswer/cards/subcomponents/CardRowSubText';
 import { GREY } from '../../../styles/colors';
 import CloseIcon from '../../General Components/CloseIcon';
 

@@ -10,7 +10,7 @@ type CardHeaderSubTextProps = {
   style?: Object,
 };
 
-const CardHeaderSubText = ({ text, style }: CardHeaderSubTextProps) => (
+export const CardHeaderSubText = ({ text, style }: CardHeaderSubTextProps) => (
   <Text
     style={{
       fontFamily: 'roboto_regular',
@@ -27,4 +27,3 @@ const CardHeaderSubText = ({ text, style }: CardHeaderSubTextProps) => (
 CardHeaderSubText.defaultProps = {
   style: {},
 };
-export default CardHeaderSubText;

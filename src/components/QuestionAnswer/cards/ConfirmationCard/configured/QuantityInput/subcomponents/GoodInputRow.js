@@ -12,9 +12,9 @@ import {
   verticalScale,
 } from '../../../../../../../styles/Scaling';
 import QuantityIcon from '../../../../../../General Components/QuantityIcon';
-import CategoryIcon from './subcomponents/CategoryIcon';
-import CardRowText from '../../../../subcomponents/CardRowText';
-import CardRowSubText from '../../../../subcomponents/CardRowSubText';
+import { CategoryIcon } from './subcomponents/CategoryIcon';
+import { CardRowText } from '../../../../subcomponents/CardRowText';
+import { CardRowSubText } from '../../../../subcomponents/CardRowSubText';
 import type { Category } from '../../../../../../../model/types/basketPeopleAmountsTypes';
 import type { MainCategory } from '../../../../../../../types/reducers/declaration';
 import { CategoriesInfo } from '../../../../../../../model/constants';

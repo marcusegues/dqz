@@ -3,8 +3,8 @@ import React from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View } from 'react-native';
-import CardHeaderText from '../../../QuestionAnswer/cards/subcomponents/CardHeaderText';
-import CardHeaderSubText from '../../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
+import { CardHeaderText } from '../../../QuestionAnswer/cards/subcomponents/CardHeaderText';
+import { CardHeaderSubText } from '../../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
 import QuantityIcon from '../../../General Components/QuantityIcon';
 import { verticalScale } from '../../../../styles/Scaling';
 import { CategoriesInfo } from '../../../../model/constants';

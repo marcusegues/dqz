@@ -6,12 +6,12 @@ import { translate } from 'react-i18next';
 import { View } from 'react-native';
 // $FlowFixMe
 import { Card } from '../QuestionAnswer/cards/Card';
-import CardHeader from '../QuestionAnswer/cards/subcomponents/CardHeader';
+import { CardHeader } from '../QuestionAnswer/cards/subcomponents/CardHeader';
 import { getTotalQuantity } from '../../model/configurationApi';
 import DutyRow from './subcomponents/DutyRow';
 import { calculateDuty } from '../../model/dutyCalculations';
-import CardRowSubText from '../QuestionAnswer/cards/subcomponents/CardRowSubText';
-import CardRowText from '../QuestionAnswer/cards/subcomponents/CardRowText';
+import { CardRowSubText } from '../QuestionAnswer/cards/subcomponents/CardRowSubText';
+import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
 import { getMainCategory } from '../../types/reducers/declaration';
 import type {
   Amounts,

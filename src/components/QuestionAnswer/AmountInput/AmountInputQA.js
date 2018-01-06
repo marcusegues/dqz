@@ -13,7 +13,7 @@ import { calculateVat } from '../../../model/vatCalculations';
 import { AmountInputAnswerCard } from '../cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
 import CurrencyPickerModal from '../../Modals/CurrencyPickerModal/CurrencyPickerModal';
 import type { Currency } from '../../../model/currencies';
-import AmountInputConfirmationCard from '../cards/ConfirmationCard/configured/AmountInput/AmountInputConfirmationCard';
+import { AmountInputConfirmationCard } from '../cards/ConfirmationCard/configured/AmountInput/AmountInputConfirmationCard';
 
 export type AmountInputState = {
   modalVisible: boolean,
