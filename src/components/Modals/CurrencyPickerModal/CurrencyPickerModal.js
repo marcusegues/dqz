@@ -23,7 +23,6 @@ import styles from '../styles/CurrencyPickerModal';
 import { INDIVIDUALALLOWANCE } from '../../../model/constants';
 import { currenciesArray } from '../../../model/currencies';
 import type { Currency, CurrencyObject } from '../../../model/currencies';
-import type { AmountInputState } from '../../QuestionAnswer/AmountInput/AmountInputQA';
 
 type PickerState = {
   currency: Currency,
@@ -35,7 +34,7 @@ type CurrencyPickerProps = {
   onHide: () => void,
   currencyObject: CurrencyObject,
   currencyDate: string,
-  amountInputState: AmountInputState,
+  modalVisible: boolean,
   onAddAmount: (currency: Currency, amount: number) => void,
   large: boolean,
 };
@@ -60,14 +59,7 @@ class CurrencyPickerModal extends React.Component<
   }
 
   render() {
-    const {
-      t,
-      currencyObject,
-      currencyDate,
-      amountInputState,
-      large,
-    } = this.props;
-    const { modalVisible } = amountInputState;
+    const { t, currencyObject, currencyDate, modalVisible, large } = this.props;
     const { amount, currency } = this.state;
 
     const disabledRedButton: boolean =
