@@ -24,11 +24,13 @@ type BackAndContinueButtonsProps = {
   onPressBack: () => void,
   onPressContinue: () => void,
   t: (field: string, params?: {}) => string,
+  confirmationDisabled?: boolean,
 };
 
 const BackAndContinueButtons = ({
   onPressBack,
   onPressContinue,
+  confirmationDisabled,
   t,
 }: BackAndContinueButtonsProps) => (
   <View style={ownStyles.redButtonContainerWrapper}>
@@ -40,9 +42,17 @@ const BackAndContinueButtons = ({
       />
     </View>
     <View style={ownStyles.redButtonWrapper}>
-      <RedButton onPress={onPressContinue} text={t('buttonContinue')} />
+      <RedButton
+        confirmationDisabled={confirmationDisabled}
+        onPress={onPressContinue}
+        text={t('buttonContinue')}
+      />
     </View>
   </View>
 );
+
+BackAndContinueButtons.defaultProps = {
+  confirmationDisabled: false,
+};
 
 export default translate(['general'])(BackAndContinueButtons);
