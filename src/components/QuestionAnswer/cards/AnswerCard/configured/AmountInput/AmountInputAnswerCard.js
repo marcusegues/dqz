@@ -9,12 +9,12 @@ const incomplete = require('../../../../../../../assets/images/incomplete.png');
 const mainIcon = require('../../../../../../../assets/icons/travellers.png');
 
 type AmountInputAnswerCardProps = {
-  onAnswerCardPress: any, // TODO
+  onAnswerCardPress: () => void,
   flag: QuestionFlag,
   vat: number,
 };
 
-const AmountInputAnswerCard = ({
+export const AmountInputAnswerCard = ({
   onAnswerCardPress,
   flag,
   vat,
@@ -27,5 +27,3 @@ const AmountInputAnswerCard = ({
     <AmountInputInfo vat={vat} />
   </AnswerCard>
 );
-
-export default AmountInputAnswerCard;

@@ -1,4 +1,6 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { moderateScale } from '../../../../../../styles/Scaling';
@@ -37,13 +39,21 @@ const ownStyles = {
   },
 };
 
-const PeopleInputRow = ({
+type PeopleInputRowProps = {
+  onAdd: () => void,
+  onSubtract: () => void,
+  icon: any,
+  displayedQuantity: number,
+  children: any,
+};
+
+export const PeopleInputRow = ({
   onAdd,
   onSubtract,
   icon,
   displayedQuantity,
   children,
-}) => (
+}: PeopleInputRowProps) => (
   <View style={ownStyles.container}>
     <View style={ownStyles.rowContainer}>
       <Image source={icon} style={ownStyles.image} resizeMode="contain" />
@@ -68,5 +78,3 @@ const PeopleInputRow = ({
     </View>
   </View>
 );
-
-export default PeopleInputRow;

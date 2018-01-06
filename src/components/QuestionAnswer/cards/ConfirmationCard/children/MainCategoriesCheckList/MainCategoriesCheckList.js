@@ -1,6 +1,10 @@
+// @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
+// $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
+// $FlowFixMe
 import { View, Text, FlatList, Dimensions, StyleSheet } from 'react-native';
 import CheckBox from '../../../../../CheckBox/CheckBox';
 import { mainCategories as mains } from '../../../../../../types/reducers/declaration';
@@ -9,6 +13,11 @@ import {
   verticalScale,
   moderateScale,
 } from '../../../../../../styles/Scaling';
+import type {
+  MainCategories,
+  MainCategory,
+} from '../../../../../../types/reducers/declaration';
+import type { TFunction } from '../../../../../../types/generalTypes';
 
 const { width } = Dimensions.get('window');
 
@@ -35,11 +44,16 @@ const ownStyles = StyleSheet.create({
   },
 });
 
-const MainCategoriesCheckList = ({
+type MainCategoriesCheckListProps = {
+  mainCategories: MainCategories,
+  onToggleMainCategory: MainCategory => void,
+};
+
+const MainCategoriesCheckListInner = ({
   mainCategories,
   onToggleMainCategory,
   t,
-}) => {
+}: MainCategoriesCheckListProps & { t: TFunction }) => {
   const flatListData = [];
   mains.forEach(cat => {
     flatListData.push({ key: cat });
@@ -66,4 +80,6 @@ const MainCategoriesCheckList = ({
   );
 };
 
-export default translate(['mainCategories'])(MainCategoriesCheckList);
+export const MainCategoriesCheckList = (translate(['mainCategories'])(
+  MainCategoriesCheckListInner
+): ComponentType<MainCategoriesCheckListProps>);

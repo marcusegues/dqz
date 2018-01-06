@@ -3,7 +3,7 @@ import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import { MainCategoriesInputConfirmationCard } from '../cards/ConfirmationCard/configured/MainCategoriesInput/MainCategoriesInputConfirmationCard';
-import MainCategoriesInputAnswerCard from '../cards/AnswerCard/configured/MainCategoriesInput/MainCategoriesInputAnswerCard';
+import { MainCategoriesInputAnswerCard } from '../cards/AnswerCard/configured/MainCategoriesInput/MainCategoriesInputAnswerCard';
 import type { CardProps } from '../QuestionAnswerContainer';
 import type {
   MainCategories,

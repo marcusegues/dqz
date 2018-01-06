@@ -13,7 +13,7 @@ import type {
   Category,
 } from '../../../model/types/basketPeopleAmountsTypes';
 import type { CardProps } from '../QuestionAnswerContainer';
-import QuantityInputAnswerCard from '../cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
+import { QuantityInputAnswerCard } from '../cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
 import { addQuantity, deleteQuantity } from '../../../model/configurationApi';
 import { calculateDuty } from '../../../model/dutyCalculations';
 

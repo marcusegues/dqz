@@ -3,7 +3,7 @@ import React from 'react';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import { ConfirmationCard } from '../../ConfirmationCard';
-import MainCategoriesCheckList from '../../children/MainCategoriesCheckList/MainCategoriesCheckList';
+import { MainCategoriesCheckList } from '../../children/MainCategoriesCheckList/MainCategoriesCheckList';
 import type {
   MainCategories,
   MainCategory,
