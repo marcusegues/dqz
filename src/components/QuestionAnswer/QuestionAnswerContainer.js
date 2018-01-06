@@ -79,6 +79,8 @@ export type CardProps = {
   onAnswer: any, // TODO
 };
 
+export type DirectionType = 'forward' | 'back';
+
 // TODO: flowtype the props
 class QuestionAnswerContainer extends React.Component<any, QAState> {
   static navigationOptions = ({ screenProps }) => ({
@@ -157,9 +159,10 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
     this.setState(this.simplifyState(updateFlags));
   }
 
-  updateQA(justAnswered: QuestionType) {
+  updateQA(justAnswered: QuestionType, direction: DirectionType) {
     const updateStates: QAStateEnriched = setQuestionStates(
       justAnswered,
+      direction,
       this.enrichState()
     );
     const updateFlags: QAStateEnriched = setQuestionFlag(
@@ -219,9 +222,9 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 t
               )
             }
-            onAnswer={() => {
+            onAnswer={(direction: DirectionType) => {
               onDeclarationSetPeople(people);
-              this.updateQA('peopleInput');
+              this.updateQA('peopleInput', direction);
             }}
           />
         ),
@@ -269,9 +272,9 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 t
               )
             }
-            onAnswer={() => {
+            onAnswer={(direction: DirectionType) => {
               onDeclarationSetMainCategories(mainCategories);
-              this.updateQA('mainCategories');
+              this.updateQA('mainCategories', direction);
             }}
           />
         ),
@@ -309,9 +312,9 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 t
               )
             }
-            onAnswer={() => {
+            onAnswer={(direction: DirectionType) => {
               onDeclarationSetBasket(basket);
-              this.updateQA('quantityInput');
+              this.updateQA('quantityInput', direction);
             }}
           />
         ),
@@ -350,9 +353,9 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 t
               )
             }
-            onAnswer={() => {
+            onAnswer={(direction: DirectionType) => {
               onDeclarationSetBasket(basket);
-              this.updateQA('amounts');
+              this.updateQA('amounts', direction);
             }}
           />
         ),
@@ -391,9 +394,9 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 t
               )
             }
-            onAnswer={() => {
+            onAnswer={(direction: DirectionType) => {
               onDeclarationSetBasket(basket);
-              this.updateQA('largeAmounts');
+              this.updateQA('largeAmounts', direction);
             }}
           />
         ),

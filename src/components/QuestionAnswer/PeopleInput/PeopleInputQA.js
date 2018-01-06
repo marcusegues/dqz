@@ -3,7 +3,7 @@ import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import PeopleInputAnswerCard from '../cards/AnswerCard/configured/PeopleInput/PeopleInputAnswerCard';
-import PeopleInputConfirmationCard from '../cards/ConfirmationCard/configured/PeopleInput/PeopleInputConfirmationCard';
+import { PeopleInputConfirmationCard } from '../cards/ConfirmationCard/configured/PeopleInput/PeopleInputConfirmationCard';
 import {
   addAdult,
   addMinor,

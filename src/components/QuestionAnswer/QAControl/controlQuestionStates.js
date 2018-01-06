@@ -1,6 +1,7 @@
 // @flow
 
 import type {
+  DirectionType,
   QAStateEnriched,
   QuestionState,
   QuestionType,
@@ -36,14 +37,21 @@ export const setInitStates = (qaState: QAStateEnriched): QAStateEnriched => {
   });
 };
 
+const fwdNav = (direction: DirectionType): QuestionState =>
+  direction === 'forward' ? 'expanded' : 'collapsed';
+
+const backNav = (direction: DirectionType): QuestionState =>
+  direction === 'back' ? 'expanded' : 'collapsed';
+
 export const setQuestionStates = (
   justAnswered: QuestionType,
+  direction: DirectionType,
   qaState: QAStateEnriched
 ): QAStateEnriched => {
   const { settings } = qaState;
   const mainCategories = settings.get('mainCategories');
   // do case analysis
-  const peopleInputState: QuestionState = 'collapsed';
+  let peopleInputState: QuestionState = 'collapsed';
   let mainCategoriesState: QuestionState = 'collapsed';
   let quantityInputState: QuestionState = 'collapsed';
   let amountsState: QuestionState = 'collapsed';
@@ -54,19 +62,21 @@ export const setQuestionStates = (
   switch (justAnswered) {
     case 'peopleInput': {
       if (!mainCategories.size) {
-        mainCategoriesState = 'expanded';
+        mainCategoriesState = fwdNav(direction);
         quantityInputState = 'hidden';
       }
       break;
     }
     case 'mainCategories': {
       if (mainCategories.size) {
-        quantityInputState = 'expanded';
+        peopleInputState = backNav(direction);
+        quantityInputState = fwdNav(direction);
       }
       break;
     }
     case 'quantityInput': {
-      amountsState = 'expanded';
+      mainCategoriesState = backNav(direction);
+      amountsState = fwdNav(direction);
       break;
     }
     case 'amounts': {
