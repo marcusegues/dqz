@@ -2,18 +2,24 @@
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
-import MainCategoriesInputConfirmationCard from '../cards/ConfirmationCard/configured/MainCategoriesInput/MainCategoriesInputConfirmationCard';
+import { MainCategoriesInputConfirmationCard } from '../cards/ConfirmationCard/configured/MainCategoriesInput/MainCategoriesInputConfirmationCard';
 import MainCategoriesInputAnswerCard from '../cards/AnswerCard/configured/MainCategoriesInput/MainCategoriesInputAnswerCard';
 import type { CardProps } from '../QuestionAnswerContainer';
+import type {
+  MainCategories,
+  MainCategory,
+} from '../../../types/reducers/declaration';
 
-const MainCategoriesInputContainer = (props: CardProps) => {
+export const MainCategoriesInputQA = (props: CardProps) => {
   const handleUpdate = mainCategories => {
     props.onUpdate(mainCategories);
   };
 
-  const handleToggleMainCategory = mainCategory => {
+  const handleToggleMainCategory = (
+    mainCategory: MainCategory
+  ): MainCategories => {
     const { settings } = props.qaState;
-    const mainCategories = settings.get('mainCategories');
+    const mainCategories: MainCategories = settings.get('mainCategories');
     if (mainCategories.has(mainCategory)) {
       return mainCategories.delete(mainCategory);
     }
@@ -21,7 +27,9 @@ const MainCategoriesInputContainer = (props: CardProps) => {
   };
 
   const getQuestionComponent = () => {
-    const mainCategories = props.qaState.settings.get('mainCategories');
+    const mainCategories: MainCategories = props.qaState.settings.get(
+      'mainCategories'
+    );
     return (
       <MainCategoriesInputConfirmationCard
         mainCategories={mainCategories}
@@ -58,5 +66,3 @@ const MainCategoriesInputContainer = (props: CardProps) => {
     }
   }
 };
-
-export default MainCategoriesInputContainer;

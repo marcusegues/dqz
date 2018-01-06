@@ -12,7 +12,7 @@ import {
 } from '../../../model/configurationApi';
 import type { CardProps } from '../QuestionAnswerContainer';
 
-const PeopleInputQA = (props: CardProps) => {
+export const PeopleInputQA = (props: CardProps) => {
   const getQuestionComponent = () => {
     const { onAnswer, onUpdate, qaState } = props;
     const { people } = qaState;
@@ -48,5 +48,3 @@ const PeopleInputQA = (props: CardProps) => {
     }
   }
 };
-
-export default PeopleInputQA;

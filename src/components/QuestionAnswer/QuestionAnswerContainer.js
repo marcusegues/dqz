@@ -8,9 +8,9 @@ import { translate } from 'react-i18next';
 
 import NavBar from '../NavBar/NavBar';
 import RedButton from '../Buttons/RedButton';
-import PeopleInputQA from './PeopleInput/PeopleInputQA';
-import MainCategoriesInputQA from './MainCategoriesInput/MainCategoriesInputQA';
-import QuantityInputQA from './QuantityInput/QuantityInputQA';
+import { PeopleInputQA } from './PeopleInput/PeopleInputQA';
+import { MainCategoriesInputQA } from './MainCategoriesInput/MainCategoriesInputQA';
+import { QuantityInputQA } from './QuantityInput/QuantityInputQA';
 
 import {
   getBasket,
@@ -170,6 +170,9 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
       updateStates
     );
     this.setState(this.simplifyState(updateFlags));
+    if (justAnswered === 'peopleInput' && direction === 'back') {
+      this.props.navigation.goBack();
+    }
   }
 
   render() {

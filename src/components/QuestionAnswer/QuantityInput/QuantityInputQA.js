@@ -4,7 +4,7 @@
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
-import QuantityInputConfirmationCard from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
+import { QuantityInputConfirmationCard } from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
 import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { mainCategoriesToCategories } from '../../../types/reducers/declaration';
 import type { MainCategory } from '../../../types/reducers/declaration';
@@ -35,7 +35,10 @@ export type QuantityInputState = {
   modalCategories: ModalCategoriesType,
 };
 
-class QuantityInputQA extends React.Component<CardProps, QuantityInputState> {
+export class QuantityInputQA extends React.Component<
+  CardProps,
+  QuantityInputState
+> {
   constructor(props: CardProps) {
     super(props);
     this.state = {
@@ -132,4 +135,3 @@ class QuantityInputQA extends React.Component<CardProps, QuantityInputState> {
     }
   }
 }
-export default QuantityInputQA;

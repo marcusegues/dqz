@@ -68,8 +68,8 @@ export const setQuestionStates = (
       break;
     }
     case 'mainCategories': {
+      peopleInputState = backNav(direction);
       if (mainCategories.size) {
-        peopleInputState = backNav(direction);
         quantityInputState = fwdNav(direction);
       }
       break;
@@ -80,6 +80,7 @@ export const setQuestionStates = (
       break;
     }
     case 'amounts': {
+      quantityInputState = backNav(direction);
       largeAmountsState = showLargeAmountsQuestion(qaState)
         ? 'expanded'
         : 'hidden';
