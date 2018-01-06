@@ -3,7 +3,7 @@ import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import { translate } from 'react-i18next';
-import AmountInput from './AmountInput';
+import { AmountInput } from './AmountInput';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import { INDIVIDUALALLOWANCE } from '../../../../../../model/constants';
 import { Card } from '../../../Card';

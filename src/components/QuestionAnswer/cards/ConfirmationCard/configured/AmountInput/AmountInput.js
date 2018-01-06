@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 // $FlowFixMe
 import { View, ScrollView, TouchableOpacity, Text } from 'react-native';
 import { translate } from 'react-i18next';
@@ -9,7 +10,7 @@ import {
   flatLargeAmounts,
   flatNormalAmounts,
 } from '../../../../../../model/utils';
-import AmountsRow from './subcomponents/AmountRow';
+import { AmountRow } from './subcomponents/AmountRow';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import { MAIN_RED } from '../../../../../../styles/colors';
 import { BackAndContinueButtons } from '../../../../../Buttons/BackAndContinueButtons';
@@ -68,22 +69,21 @@ type AmountInputProps = {
   amounts: Amounts,
   onDeleteAmount: string => void,
   large: boolean,
-  t: TFunction,
 };
 
-const AmountInput = ({
+const AmountInputInner = ({
   onShowAmountInputModal,
   amounts,
   onDeleteAmount,
   large,
   t,
-}: AmountInputProps) => (
+}: AmountInputProps & { t: TFunction }) => (
   <View style={ownStyles.mainContainer}>
     <ScrollView contentContainerStyle={ownStyles.scrollView}>
       <View style={ownStyles.addedItemContainer}>
         {(large ? flatLargeAmounts(amounts) : flatNormalAmounts(amounts)).map(
           a => (
-            <AmountsRow
+            <AmountRow
               key={a.id}
               amount={a.amount}
               currency={a.currency}
@@ -115,4 +115,6 @@ const AmountInput = ({
   </View>
 );
 
-export default translate(['amountInput'])(AmountInput);
+export const AmountInput = (translate(['amountInput'])(
+  AmountInputInner
+): ComponentType<AmountInputProps>);

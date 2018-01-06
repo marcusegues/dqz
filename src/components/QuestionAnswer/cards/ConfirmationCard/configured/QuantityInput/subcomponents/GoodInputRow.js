@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 import { translate } from 'react-i18next';
@@ -17,6 +18,7 @@ import CardRowSubText from '../../../../subcomponents/CardRowSubText';
 import type { Category } from '../../../../../../../model/types/basketPeopleAmountsTypes';
 import type { MainCategory } from '../../../../../../../types/reducers/declaration';
 import { CategoriesInfo } from '../../../../../../../model/constants';
+import type { TFunction } from '../../../../../../../types/generalTypes';
 
 const ownStyles = {
   container: {
@@ -70,16 +72,15 @@ type GoodInputRowProps = {
   category: Category,
   totalQuantity: number,
   mainCategory: MainCategory,
-  t: (field: string, params?: {}) => string,
 };
 
-const GoodInputRow = ({
+const GoodInputRowInner = ({
   onShowQuantityInputModal,
   category,
   totalQuantity,
   mainCategory,
   t,
-}: GoodInputRowProps) => (
+}: GoodInputRowProps & { t: TFunction }) => (
   <Touchable onPress={onShowQuantityInputModal}>
     <View style={ownStyles.container}>
       <CategoryIcon
@@ -104,4 +105,6 @@ const GoodInputRow = ({
   </Touchable>
 );
 
-export default translate(['mainCategories', 'categories'])(GoodInputRow);
+export const GoodInputRow = (translate(['mainCategories', 'categories'])(
+  GoodInputRowInner
+): ComponentType<GoodInputRowProps>);

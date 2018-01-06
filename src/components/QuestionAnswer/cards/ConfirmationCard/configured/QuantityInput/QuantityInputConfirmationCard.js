@@ -3,7 +3,7 @@ import React from 'react';
 import { translate } from 'react-i18next';
 import type { ComponentType } from 'react';
 import { ConfirmationCard } from '../../ConfirmationCard';
-import QuantityInput from './QuantityInput';
+import { QuantityInput } from './QuantityInput';
 import type { Basket } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import type { DirectionType } from '../../../../QuestionAnswerContainer';
 import type { TFunction } from '../../../../../../types/generalTypes';
