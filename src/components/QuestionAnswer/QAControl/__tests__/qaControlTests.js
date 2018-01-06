@@ -84,7 +84,7 @@ describe('Test qa control flow', () => {
       stateWithMainCategories
     ).questionStates;
     expect(newState.peopleInput).toBe('collapsed');
-    expect(newState.mainCategories).toBe('collapsed');
+    expect(newState.mainCategories).toBe('expanded');
     expect(newState.quantityInput).toBe('collapsed');
   });
 

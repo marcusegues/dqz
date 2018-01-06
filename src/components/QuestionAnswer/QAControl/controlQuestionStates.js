@@ -61,8 +61,8 @@ export const setQuestionStates = (
 
   switch (justAnswered) {
     case 'peopleInput': {
+      mainCategoriesState = fwdNav(direction);
       if (!mainCategories.size) {
-        mainCategoriesState = fwdNav(direction);
         quantityInputState = 'hidden';
       }
       break;
