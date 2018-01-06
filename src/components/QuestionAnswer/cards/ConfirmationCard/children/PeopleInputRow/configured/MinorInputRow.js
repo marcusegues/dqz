@@ -1,9 +1,14 @@
+// @flow
 import React from 'react';
+import type { ComponentType } from 'react';
+// $FlowFixMe
 import { View, Text } from 'react-native';
 import { translate } from 'react-i18next';
 import { PeopleInputRow } from '../PeopleInputRow';
 import * as fromModelApi from '../../../../../../../model/configurationApi';
 import { moderateScale } from '../../../../../../../styles/Scaling';
+import type { People } from '../../../../../../../model/types/basketPeopleAmountsTypes';
+import type { TFunction } from '../../../../../../../types/generalTypes';
 
 export const ownStyles = {
   categoryTitleText: {
@@ -20,7 +25,18 @@ export const ownStyles = {
 
 const kids = require('../../../../../../../../assets/icons/kids.png');
 
-const MinorInputRow = ({ onAddMinor, onSubtractMinor, people, t }) => (
+type MinorInputRowProps = {
+  onAddMinor: () => void,
+  onSubtractMinor: () => void,
+  people: People,
+};
+
+const MinorInputRowInner = ({
+  onAddMinor,
+  onSubtractMinor,
+  people,
+  t,
+}: MinorInputRowProps & { t: TFunction }) => (
   <PeopleInputRow
     onAdd={onAddMinor}
     onSubtract={onSubtractMinor}
@@ -39,4 +55,6 @@ const MinorInputRow = ({ onAddMinor, onSubtractMinor, people, t }) => (
   </PeopleInputRow>
 );
 
-export default translate(['qaFlow'])(MinorInputRow);
+export const MinorInputRow = (translate(['qaFlow'])(
+  MinorInputRowInner
+): ComponentType<MinorInputRowProps>);
