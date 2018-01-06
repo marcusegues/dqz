@@ -1,12 +1,21 @@
+// @flow
 import React from 'react';
+import type { ComponentType } from 'react';
+// $FlowFixMe
 import { View, Text } from 'react-native';
 import { translate } from 'react-i18next';
 import {
   getAdultPeople,
   getMinorPeople,
 } from '../../../../../model/configurationApi';
+import type { People } from '../../../../../model/types/basketPeopleAmountsTypes';
+import type { TFunction } from '../../../../../types/generalTypes';
 
-const PeopleInfo = ({ people, t }) => {
+type PeopleInfoProps = {
+  people: People,
+};
+
+const PeopleInfoInner = ({ people, t }: PeopleInfoProps & { t: TFunction }) => {
   const adults = getAdultPeople(people);
   const minors = getMinorPeople(people);
   return (
@@ -21,4 +30,6 @@ const PeopleInfo = ({ people, t }) => {
   );
 };
 
-export default translate(['qaFlow'])(PeopleInfo);
+export const PeopleInfo = (translate(['qaFlow'])(
+  PeopleInfoInner
+): ComponentType<PeopleInfoProps>);

@@ -1,6 +1,6 @@
 import React from 'react';
-import AnswerCard from '../../AnswerCard';
-import MainCategoriesInputInfo from '../../children/MainCategoriesInputInfo';
+import { AnswerCard } from '../../AnswerCard';
+import { MainCategoriesInputInfo } from '../../children/MainCategoriesInputInfo';
 
 const complete = require('../../../../../../../assets/images/complete.png');
 const incomplete = require('../../../../../../../assets/images/incomplete.png');

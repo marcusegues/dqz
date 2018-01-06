@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
-import AnswerCard from '../../AnswerCard';
-import AmountInputInfo from '../../children/AmountInputInfo';
+import { AnswerCard } from '../../AnswerCard';
+import { AmountInputInfo } from '../../children/AmountInputInfo';
 import type { QuestionFlag } from '../../../../QuestionAnswerContainer';
 
 const complete = require('../../../../../../../assets/images/complete.png');

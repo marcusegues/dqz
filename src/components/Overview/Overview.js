@@ -5,7 +5,7 @@ import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View } from 'react-native';
 // $FlowFixMe
-import Card from '../QuestionAnswer/cards/Card';
+import { Card } from '../QuestionAnswer/cards/Card';
 import CardHeader from '../QuestionAnswer/cards/subcomponents/CardHeader';
 import { getTotalQuantity } from '../../model/configurationApi';
 import DutyRow from './subcomponents/DutyRow';
