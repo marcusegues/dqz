@@ -69,10 +69,29 @@ describe('Test qa control flow', () => {
     expect(newState.quantityInput).toBe('hidden');
   });
 
+  test('after people input BACK on blank state', () => {
+    const newState = setQuestionStates('peopleInput', 'back', blankState)
+      .questionStates;
+    expect(newState.peopleInput).toBe('collapsed');
+    expect(newState.mainCategories).toBe('collapsed');
+    expect(newState.quantityInput).toBe('hidden');
+  });
+
   test('after people input with main categories FORWARD already present', () => {
     const newState = setQuestionStates(
       'peopleInput',
       'forward',
+      stateWithMainCategories
+    ).questionStates;
+    expect(newState.peopleInput).toBe('collapsed');
+    expect(newState.mainCategories).toBe('collapsed');
+    expect(newState.quantityInput).toBe('collapsed');
+  });
+
+  test('after people input with main categories BACK already present', () => {
+    const newState = setQuestionStates(
+      'peopleInput',
+      'back',
       stateWithMainCategories
     ).questionStates;
     expect(newState.peopleInput).toBe('collapsed');
@@ -91,6 +110,17 @@ describe('Test qa control flow', () => {
     expect(newState.quantityInput).toBe('expanded');
   });
 
+  test('after main categories BACK', () => {
+    const newState = setQuestionStates(
+      'mainCategories',
+      'back',
+      stateWithMainCategories
+    ).questionStates;
+    expect(newState.peopleInput).toBe('expanded');
+    expect(newState.mainCategories).toBe('collapsed');
+    expect(newState.quantityInput).toBe('collapsed');
+  });
+
   test('after quantity input FORWARD', () => {
     const newState = setQuestionStates(
       'quantityInput',
@@ -99,6 +129,17 @@ describe('Test qa control flow', () => {
     ).questionStates;
     expect(newState.peopleInput).toBe('collapsed');
     expect(newState.mainCategories).toBe('collapsed');
+    expect(newState.quantityInput).toBe('collapsed');
+  });
+
+  test('after quantity input BACK', () => {
+    const newState = setQuestionStates(
+      'quantityInput',
+      'back',
+      stateWithMainCategories
+    ).questionStates;
+    expect(newState.peopleInput).toBe('collapsed');
+    expect(newState.mainCategories).toBe('expanded');
     expect(newState.quantityInput).toBe('collapsed');
   });
 
