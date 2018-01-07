@@ -30,7 +30,7 @@ type AnswerCardProps = {
   onAnswerCardPress: () => void,
 };
 
-const AnswerCard = ({
+export const AnswerCard = ({
   mainIcon,
   flag,
   children,
@@ -63,5 +63,3 @@ const AnswerCard = ({
     </View>
   </Touchable>
 );
-
-export default AnswerCard;

@@ -1,36 +1,35 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import { translate } from 'react-i18next';
-import AmountInput from './AmountInput';
+import { AmountInput } from './AmountInput';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import { INDIVIDUALALLOWANCE } from '../../../../../../model/constants';
-import Card from '../../../Card';
-import CardHeader from '../../../subcomponents/CardHeader';
-import CardHeaderSubText from '../../../subcomponents/CardHeaderSubText';
+import { Card } from '../../../Card';
+import { CardHeader } from '../../../subcomponents/CardHeader';
+import { CardHeaderSubText } from '../../../subcomponents/CardHeaderSubText';
 import { verticalScale } from '../../../../../../styles/Scaling';
+import type { TFunction } from '../../../../../../types/generalTypes';
 
 type AmountInputConfirmationCardProps = {
-  t: any, // TODO
   onShowAmountInputModal: () => void,
   amounts: Amounts,
-  // onAnswer: any, // TODO
   onDeleteAmount: string => void,
   large: boolean,
 };
 
-const AmountInputConfirmationCard = ({
+const AmountInputConfirmationCardInner = ({
   onShowAmountInputModal,
   amounts,
-  // onAnswer,
   t,
   large,
   onDeleteAmount,
-}: AmountInputConfirmationCardProps) => {
-  let title: string = t(['amountInput']);
+}: AmountInputConfirmationCardProps & { t: TFunction }) => {
+  let title: string = t('amountInput');
   if (large) {
-    title = t(['amountInputLargeItem'], {
+    title = t('amountInputLargeItem', {
       value: INDIVIDUALALLOWANCE,
     });
   }
@@ -59,4 +58,6 @@ const AmountInputConfirmationCard = ({
   );
 };
 
-export default translate(['amountInput'])(AmountInputConfirmationCard);
+export const AmountInputConfirmationCard = (translate(['amountInput'])(
+  AmountInputConfirmationCardInner
+): ComponentType<AmountInputConfirmationCardProps>);

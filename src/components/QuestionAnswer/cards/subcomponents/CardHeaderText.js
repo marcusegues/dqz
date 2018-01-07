@@ -8,7 +8,7 @@ type CardHeaderTextProps = {
   text: string,
 };
 
-const CardHeaderText = ({ text }: CardHeaderTextProps) => (
+export const CardHeaderText = ({ text }: CardHeaderTextProps) => (
   <Text
     style={{
       fontFamily: 'roboto_regular',
@@ -20,5 +20,3 @@ const CardHeaderText = ({ text }: CardHeaderTextProps) => (
     {text}
   </Text>
 );
-
-export default CardHeaderText;

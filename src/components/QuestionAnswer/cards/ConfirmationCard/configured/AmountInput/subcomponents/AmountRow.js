@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 // $FlowFixMe
@@ -7,29 +8,28 @@ import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { MaterialIcons } from '@expo/vector-icons';
 import Row from '../../../../../../Rows/Row';
-import CardRowText from '../../../../subcomponents/CardRowText';
+import { CardRowText } from '../../../../subcomponents/CardRowText';
 import { moderateScale } from '../../../../../../../styles/Scaling';
 import { GREY } from '../../../../../../../styles/colors';
 import type {
   Currency,
   CurrencyObject,
 } from '../../../../../../../model/currencies';
-import CardRowSubText from '../../../../subcomponents/CardRowSubText';
+import { CardRowSubText } from '../../../../subcomponents/CardRowSubText';
 import { getCurrencies } from '../../../../../../../reducers';
 
-type AmountsRowProps = {
+type AmountRowProps = {
   amount: number,
   onDelete: () => void,
   currency: Currency,
-  currencyObject: CurrencyObject,
 };
 
-const AmountsRow = ({
+const AmountRowInner = ({
   amount,
   onDelete,
   currency,
   currencyObject,
-}: AmountsRowProps) => (
+}: AmountRowProps & { currencyObject: CurrencyObject }) => (
   <Row borderTop>
     <View style={{ flex: 1 }}>
       <CardRowText text={`${currency} ${amount}`} />
@@ -47,4 +47,6 @@ const mapStateToProps = state => ({
   currencyObject: getCurrencies(state),
 });
 
-export default connect(mapStateToProps)(AmountsRow);
+export const AmountRow = (connect(mapStateToProps)(
+  AmountRowInner
+): ComponentType<AmountRowProps>);

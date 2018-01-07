@@ -1,4 +1,6 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View, Image, StyleSheet } from 'react-native';
 
 const ownStyles = StyleSheet.create({
@@ -14,10 +16,12 @@ const ownStyles = StyleSheet.create({
   },
 });
 
-const CategoryIcon = ({ source }) => (
+type CategoryIconProps = {
+  source: string,
+};
+
+export const CategoryIcon = ({ source }: CategoryIconProps) => (
   <View style={ownStyles.categoryIcon}>
     <Image source={source} style={ownStyles.image} resizeMode="contain" />
   </View>
 );
-
-export default CategoryIcon;

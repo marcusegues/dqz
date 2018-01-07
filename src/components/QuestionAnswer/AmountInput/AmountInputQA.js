@@ -1,6 +1,4 @@
-/* eslint-disable react/no-unused-state */
 // @flow
-// TODO remove eslint-disable
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
@@ -12,10 +10,10 @@ import {
   deleteAmount,
 } from '../../../model/configurationApi';
 import { calculateVat } from '../../../model/vatCalculations';
-import AmountInputAnswerCard from '../cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
+import { AmountInputAnswerCard } from '../cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
 import CurrencyPickerModal from '../../Modals/CurrencyPickerModal/CurrencyPickerModal';
 import type { Currency } from '../../../model/currencies';
-import AmountInputConfirmationCard from '../cards/ConfirmationCard/configured/AmountInput/AmountInputConfirmationCard';
+import { AmountInputConfirmationCard } from '../cards/ConfirmationCard/configured/AmountInput/AmountInputConfirmationCard';
 
 export type AmountInputState = {
   modalVisible: boolean,
@@ -23,7 +21,7 @@ export type AmountInputState = {
 
 type ExtendedCardProps = CardProps & { large: boolean };
 
-class AmountInputQA extends React.Component<
+export class AmountInputQA extends React.Component<
   ExtendedCardProps,
   AmountInputState
 > {
@@ -36,6 +34,7 @@ class AmountInputQA extends React.Component<
 
   getQuestionComponent() {
     const { onAnswer, qaState, large } = this.props;
+    const { modalVisible } = this.state;
     const { currencies } = qaState;
     return (
       <View>
@@ -51,7 +50,7 @@ class AmountInputQA extends React.Component<
         <CurrencyPickerModal
           large={large}
           onHide={() => this.handleHideModal()}
-          amountInputState={this.state}
+          modalVisible={modalVisible}
           currencyObject={currencies}
           currencyDate={qaState.currencyDate}
           basket={qaState.basket}
@@ -121,4 +120,3 @@ class AmountInputQA extends React.Component<
     }
   }
 }
-export default AmountInputQA;

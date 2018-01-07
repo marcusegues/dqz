@@ -1,6 +1,7 @@
 // @flow
 /* eslint react/no-unused-state: 0 */
 import React from 'react';
+import type { ComponentType } from 'react';
 // $FlowFixMe
 import { FlatList, View } from 'react-native';
 import { connect } from 'react-redux';
@@ -8,9 +9,9 @@ import { translate } from 'react-i18next';
 
 import NavBar from '../NavBar/NavBar';
 import RedButton from '../Buttons/RedButton';
-import PeopleInputQA from './PeopleInput/PeopleInputQA';
-import MainCategoriesInputQA from './MainCategoriesInput/MainCategoriesInputQA';
-import QuantityInputQA from './QuantityInput/QuantityInputQA';
+import { PeopleInputQA } from './PeopleInput/PeopleInputQA';
+import { MainCategoriesInputQA } from './MainCategoriesInput/MainCategoriesInputQA';
+import { QuantityInputQA } from './QuantityInput/QuantityInputQA';
 
 import {
   getBasket,
@@ -39,8 +40,9 @@ import { setInitFlags, setQuestionFlag } from './QAControl/controlQuestionFlag';
 import { verticalScale } from '../../styles/Scaling';
 import HeaderTitle from '../Headers/subcomponents/HeaderTitle';
 import { onUpdateFactory } from './QAControl/validation';
-import AmountInputQA from './AmountInput/AmountInputQA';
+import { AmountInputQA } from './AmountInput/AmountInputQA';
 import type { CurrencyObject } from '../../model/currencies';
+import type { TFunction } from '../../types/generalTypes';
 
 export type QuestionType =
   | 'peopleInput'
@@ -70,17 +72,39 @@ export type QAStateEnriched = {
   currencyDate: string,
 };
 
+export type DirectionType = 'forward' | 'back';
+
 export type CardProps = {
   qaState: QAStateEnriched,
-  onAnswerCardPress: any, // TODO
+  onAnswerCardPress: () => void,
   questionState: QuestionState,
   questionFlag: QuestionFlag,
-  onUpdate: any, // TODO
-  onAnswer: any, // TODO
+  onUpdate: any => void,
+  onAnswer: DirectionType => void,
 };
 
-// TODO: flowtype the props
-class QuestionAnswerContainer extends React.Component<any, QAState> {
+type QuestionAnswerContainerProps = {
+  navigation: any,
+  // dispatch to props
+  setAmounts: (amounts: Amounts) => void,
+  setPeople: (people: People) => void,
+  setBasket: (basket: Basket) => void,
+  setMainCategories: (mainCategories: MainCategories) => void,
+  // state to props
+  settings: Settings,
+  basket: Basket,
+  amounts: Amounts,
+  people: People,
+  mainCategories: MainCategories,
+  currencies: CurrencyObject,
+  currencyDate: string,
+  t: TFunction,
+};
+
+class QuestionAnswerContainerInner extends React.Component<
+  QuestionAnswerContainerProps,
+  QAState
+> {
   static navigationOptions = ({ screenProps }) => ({
     headerTitle: <HeaderTitle text={screenProps.t('qaFlow:declareGoods')} />,
   });
@@ -157,9 +181,10 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
     this.setState(this.simplifyState(updateFlags));
   }
 
-  updateQA(justAnswered: QuestionType) {
+  updateQA(justAnswered: QuestionType, direction: DirectionType) {
     const updateStates: QAStateEnriched = setQuestionStates(
       justAnswered,
+      direction,
       this.enrichState()
     );
     const updateFlags: QAStateEnriched = setQuestionFlag(
@@ -167,6 +192,9 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
       updateStates
     );
     this.setState(this.simplifyState(updateFlags));
+    if (justAnswered === 'peopleInput' && direction === 'back') {
+      this.props.navigation.goBack();
+    }
   }
 
   render() {
@@ -177,10 +205,10 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
       people,
       mainCategories,
       settings,
-      onDeclarationSetMainCategories,
-      onDeclarationSetPeople,
-      onDeclarationSetBasket,
-      onDeclarationSetAmounts,
+      setMainCategories,
+      setPeople,
+      setBasket,
+      setAmounts,
     } = this.props;
 
     const qaStateEnriched: QAStateEnriched = this.enrichState();
@@ -205,7 +233,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 {
                   questionType: 'peopleInput',
                   onUpdate: updatedPeople => {
-                    onDeclarationSetPeople(updatedPeople);
+                    setPeople(updatedPeople);
                     this.updateFlagsOptimistically(
                       'peopleInput',
                       Object.assign({}, qaStateEnriched, {
@@ -219,9 +247,9 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 t
               )
             }
-            onAnswer={() => {
-              onDeclarationSetPeople(people);
-              this.updateQA('peopleInput');
+            onAnswer={(direction: DirectionType) => {
+              setPeople(people);
+              this.updateQA('peopleInput', direction);
             }}
           />
         ),
@@ -251,8 +279,8 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                     mainCategories: updatedCategories,
                     basket: updatedBasket,
                   }) => {
-                    onDeclarationSetMainCategories(updatedCategories);
-                    onDeclarationSetBasket(updatedBasket);
+                    setMainCategories(updatedCategories);
+                    setBasket(updatedBasket);
                     this.updateFlagsOptimistically(
                       'mainCategories',
                       Object.assign({}, qaStateEnriched, {
@@ -269,9 +297,9 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 t
               )
             }
-            onAnswer={() => {
-              onDeclarationSetMainCategories(mainCategories);
-              this.updateQA('mainCategories');
+            onAnswer={(direction: DirectionType) => {
+              setMainCategories(mainCategories);
+              this.updateQA('mainCategories', direction);
             }}
           />
         ),
@@ -295,7 +323,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 {
                   questionType: 'quantityInput',
                   onUpdate: updatedBasket => {
-                    onDeclarationSetBasket(updatedBasket);
+                    setBasket(updatedBasket);
                     this.updateFlagsOptimistically(
                       'quantityInput',
                       Object.assign({}, qaStateEnriched, {
@@ -309,9 +337,9 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 t
               )
             }
-            onAnswer={() => {
-              onDeclarationSetBasket(basket);
-              this.updateQA('quantityInput');
+            onAnswer={(direction: DirectionType) => {
+              setBasket(basket);
+              this.updateQA('quantityInput', direction);
             }}
           />
         ),
@@ -336,7 +364,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 {
                   questionType: 'amounts',
                   onUpdate: updatedAmounts => {
-                    onDeclarationSetAmounts(updatedAmounts);
+                    setAmounts(updatedAmounts);
                     this.updateFlagsOptimistically(
                       'amounts',
                       Object.assign({}, qaStateEnriched, {
@@ -350,9 +378,9 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 t
               )
             }
-            onAnswer={() => {
-              onDeclarationSetBasket(basket);
-              this.updateQA('amounts');
+            onAnswer={(direction: DirectionType) => {
+              setBasket(basket);
+              this.updateQA('amounts', direction);
             }}
           />
         ),
@@ -377,7 +405,7 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 {
                   questionType: 'largeAmounts',
                   onUpdate: updatedAmounts => {
-                    onDeclarationSetAmounts(updatedAmounts);
+                    setAmounts(updatedAmounts);
                     this.updateFlagsOptimistically(
                       'largeAmounts',
                       Object.assign({}, qaStateEnriched, {
@@ -391,14 +419,15 @@ class QuestionAnswerContainer extends React.Component<any, QAState> {
                 t
               )
             }
-            onAnswer={() => {
-              onDeclarationSetBasket(basket);
-              this.updateQA('largeAmounts');
+            onAnswer={(direction: DirectionType) => {
+              setBasket(basket);
+              this.updateQA('largeAmounts', direction);
             }}
           />
         ),
       },
     ];
+
     return (
       <View
         style={{
@@ -456,34 +485,37 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onDeclarationSetPeople: (people: People) =>
+  setPeople: (people: People) =>
     dispatch({
       type: 'SET_PEOPLE',
       people,
     }),
-  onDeclarationSetMainCategories: (mainCategories: MainCategories) =>
+  setMainCategories: (mainCategories: MainCategories) =>
     dispatch({
       type: 'SET_MAIN_CATEGORIES',
       mainCategories,
     }),
-  onDeclarationBasketChangeQuantity: (category, quantity) =>
+  basketChangeQuantity: (category, quantity) =>
     dispatch({
       type: 'BASKET_ADD_QUANTITY',
       category,
       quantity,
     }),
-  onDeclarationSetBasket: basket =>
+  setBasket: basket =>
     dispatch({
       type: 'SET_BASKET',
       basket,
     }),
-  onDeclarationSetAmounts: amounts =>
+  setAmounts: amounts =>
     dispatch({
       type: 'SET_AMOUNTS',
       amounts,
     }),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  translate(['qaFlow', 'categories'])(QuestionAnswerContainer)
-);
+export const QuestionAnswerContainer = (connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(
+  translate(['qaFlow', 'categories'])(QuestionAnswerContainerInner)
+): ComponentType<{}>);

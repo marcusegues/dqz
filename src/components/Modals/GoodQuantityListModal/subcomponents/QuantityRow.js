@@ -2,7 +2,7 @@ import React from 'react';
 import Touchable from 'react-native-platform-touchable';
 import { View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import CardRowText from '../../../QuestionAnswer/cards/subcomponents/CardRowText';
+import { CardRowText } from '../../../QuestionAnswer/cards/subcomponents/CardRowText';
 import { moderateScale } from '../../../../styles/Scaling';
 import { GREY } from '../../../../styles/colors';
 import { CategoriesInfo } from '../../../../model/constants';

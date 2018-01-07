@@ -1,8 +1,12 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View, ScrollView } from 'react-native';
 import { getTotalQuantity } from '../../../../../../model/configurationApi';
-import GoodInputRow from './subcomponents/GoodInputRow';
+import { GoodInputRow } from './subcomponents/GoodInputRow';
 import { moderateScale } from '../../../../../../styles/Scaling';
+import type { Basket } from '../../../../../../model/types/basketPeopleAmountsTypes';
+import type { ModalCategoriesType } from '../../../../QuantityInput/QuantityInputQA';
 
 const ownStyles = {
   mainContainer: {
@@ -29,11 +33,17 @@ const ownStyles = {
   },
 };
 
-const QuantityInput = ({
+type QuantityInputProps = {
+  onShowQuantityInputModal: ModalCategoriesType => void,
+  basket: Basket,
+  categoriesByMainCategory: any,
+};
+
+export const QuantityInput = ({
   onShowQuantityInputModal,
   basket,
   categoriesByMainCategory,
-}) => {
+}: QuantityInputProps) => {
   const components = categoriesByMainCategory
     .entrySeq()
     .map(([mainCategory, categories]) => {
@@ -72,5 +82,3 @@ const QuantityInput = ({
     </View>
   );
 };
-
-export default QuantityInput;

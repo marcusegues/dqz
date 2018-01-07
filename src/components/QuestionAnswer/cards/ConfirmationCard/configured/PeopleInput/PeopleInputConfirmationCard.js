@@ -1,11 +1,25 @@
+// @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
-import ConfirmationCard from '../../ConfirmationCard';
-import AdultInputRow from '../../children/PeopleInputRow/configured/AdultInputRow';
-import MinorInputRow from '../../children/PeopleInputRow/configured/MinorInputRow';
+import { ConfirmationCard } from '../../ConfirmationCard';
+import { AdultInputRow } from '../../children/PeopleInputRow/configured/AdultInputRow';
+import { MinorInputRow } from '../../children/PeopleInputRow/configured/MinorInputRow';
 import { getTotalPeople } from '../../../../../../model/configurationApi';
+import type { TFunction } from '../../../../../../types/generalTypes';
+import type { People } from '../../../../../../model/types/basketPeopleAmountsTypes';
+import type { DirectionType } from '../../../../QuestionAnswerContainer';
 
-const PeopleInputConfirmationCard = ({
+type PeopleInputConfirmationCardProps = {
+  people: People,
+  onAddAdult: () => void,
+  onSubtractAdult: () => void,
+  onAddMinor: () => void,
+  onSubtractMinor: () => void,
+  onAnswer: DirectionType => void,
+};
+
+const PeopleInputConfirmationCardInner = ({
   people,
   onAddAdult,
   onSubtractAdult,
@@ -13,10 +27,11 @@ const PeopleInputConfirmationCard = ({
   onSubtractMinor,
   onAnswer,
   t,
-}) => (
+}: PeopleInputConfirmationCardProps & { t: TFunction }) => (
   <ConfirmationCard
     text={t('peopleInputQuestion')}
-    onAnswer={onAnswer}
+    onAnswer={() => onAnswer('forward')}
+    onBack={() => onAnswer('back')}
     confirmationDisabled={!getTotalPeople(people)}
   >
     <AdultInputRow
@@ -32,4 +47,6 @@ const PeopleInputConfirmationCard = ({
   </ConfirmationCard>
 );
 
-export default translate(['peopleInput'])(PeopleInputConfirmationCard);
+export const PeopleInputConfirmationCard = (translate(['peopleInput'])(
+  PeopleInputConfirmationCardInner
+): ComponentType<PeopleInputConfirmationCardProps>);

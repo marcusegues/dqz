@@ -6,7 +6,7 @@ import { translate } from 'react-i18next';
 import ScrollViewCard from './subComponents/ScrollViewCard';
 import Logo from './subComponents/Logo';
 import { moderateScale, scale, verticalScale } from '../../styles/Scaling';
-import CardRowText from '../QuestionAnswer/cards/subcomponents/CardRowText';
+import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
 import ReceiptSubText from './subComponents/ReceiptSubText';
 import ValidUntilBlock from './subComponents/ValidUntilBlock';
 import DutyRow from '../Overview/subcomponents/DutyRow';

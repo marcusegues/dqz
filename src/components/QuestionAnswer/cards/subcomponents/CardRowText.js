@@ -6,10 +6,10 @@ import { moderateScale } from '../../../../styles/Scaling';
 
 type CardRowTextProps = {
   text: string,
-  style?: {}, // TODO
+  style?: {},
 };
 
-const CardRowText = ({ text, style }: CardRowTextProps) => (
+export const CardRowText = ({ text, style }: CardRowTextProps) => (
   <Text
     style={{
       fontFamily: 'roboto_medium',
@@ -25,5 +25,3 @@ const CardRowText = ({ text, style }: CardRowTextProps) => (
 CardRowText.defaultProps = {
   style: {},
 };
-
-export default CardRowText;

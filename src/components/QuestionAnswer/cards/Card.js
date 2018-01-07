@@ -1,8 +1,10 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { Platform, View } from 'react-native';
 import { verticalScale } from '../../../styles/Scaling';
 
-const Card = ({ children }) => (
+export const Card = ({ children }: { children: any }) => (
   <View
     style={{
       flex: 1,
@@ -31,5 +33,3 @@ const Card = ({ children }) => (
     {children}
   </View>
 );
-
-export default Card;

@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import { translate } from 'react-i18next';
@@ -23,14 +24,15 @@ const ownStyles = {
 type BackAndContinueButtonsProps = {
   onPressBack: () => void,
   onPressContinue: () => void,
-  t: (field: string, params?: {}) => string,
+  confirmationDisabled?: boolean,
 };
 
-const BackAndContinueButtons = ({
+const BackAndContinueButtonsInner = ({
   onPressBack,
   onPressContinue,
+  confirmationDisabled = false,
   t,
-}: BackAndContinueButtonsProps) => (
+}: BackAndContinueButtonsProps & { t: any }) => (
   <View style={ownStyles.redButtonContainerWrapper}>
     <View style={ownStyles.redButtonWrapper}>
       <RedButton
@@ -40,9 +42,15 @@ const BackAndContinueButtons = ({
       />
     </View>
     <View style={ownStyles.redButtonWrapper}>
-      <RedButton onPress={onPressContinue} text={t('buttonContinue')} />
+      <RedButton
+        confirmationDisabled={confirmationDisabled}
+        onPress={onPressContinue}
+        text={t('buttonContinue')}
+      />
     </View>
   </View>
 );
 
-export default translate(['general'])(BackAndContinueButtons);
+export const BackAndContinueButtons = (translate(['general'])(
+  BackAndContinueButtonsInner
+): ComponentType<BackAndContinueButtonsProps>);
