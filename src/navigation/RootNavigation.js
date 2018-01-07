@@ -4,7 +4,7 @@ import { translate } from 'react-i18next';
 import { StackNavigator } from 'react-navigation';
 import i18n from '../i18n';
 import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
-import ScreensView from '../screens/ScreensView/ScreensView';
+import { ScreensView } from '../screens/ScreensView/ScreensView';
 import { MAIN_RED, MAIN_BACKGROUND_COLOR } from '../styles/colors';
 import { defaultNavigationOptions } from './navigationOptions';
 import HeaderTitle from '../components/Headers/subcomponents/HeaderTitle';
