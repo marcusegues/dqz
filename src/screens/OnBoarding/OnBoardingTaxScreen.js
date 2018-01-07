@@ -3,9 +3,10 @@ import React from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { Text, View } from 'react-native';
-import OnBoardingContainer from './subcomponents/OnBoardingContainer';
-import OnBoardingParagraph from './subcomponents/OnBoardingParagraph';
-import DoneButton from './subcomponents/DoneButton';
+import type { ComponentType } from 'react';
+import { OnBoardingContainer } from './subcomponents/OnBoardingContainer';
+import { OnBoardingParagraph } from './subcomponents/OnBoardingParagraph';
+import { DoneButton } from './subcomponents/DoneButton';
 import { moderateScale } from '../../styles/Scaling';
 import { MAIN_RED } from '../../styles/colors';
 import type { Navigation, TFunction } from '../../types/generalTypes';
@@ -28,11 +29,13 @@ const ownStyles = {
 };
 
 type OnBoardingTaxScreenProps = {
-  t: TFunction,
   navigation: Navigation,
 };
 
-const OnBoardingTaxScreen = ({ navigation, t }: OnBoardingTaxScreenProps) => (
+const OnBoardingTaxScreenInner = ({
+  navigation,
+  t,
+}: OnBoardingTaxScreenProps & { t: TFunction }) => (
   <OnBoardingContainer>
     <View style={ownStyles.container}>
       <OnBoardingParagraph text={t('confirmationVat')} />
@@ -46,4 +49,6 @@ const OnBoardingTaxScreen = ({ navigation, t }: OnBoardingTaxScreenProps) => (
   </OnBoardingContainer>
 );
 
-export default translate(['onBoarding'])(OnBoardingTaxScreen);
+export const OnBoardingTaxScreen = (translate(['onBoarding'])(
+  OnBoardingTaxScreenInner
+): ComponentType<OnBoardingTaxScreenProps>);

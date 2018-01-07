@@ -1,4 +1,6 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { Text } from 'react-native';
 import { moderateScale, scale } from '../../../styles/Scaling';
 
@@ -13,8 +15,10 @@ const ownStyles = {
   },
 };
 
-const OnBoardingParagraph = ({ text }) => (
+type OnBoardingParagraphProps = {
+  text: string,
+};
+
+export const OnBoardingParagraph = ({ text }: OnBoardingParagraphProps) => (
   <Text style={ownStyles.mainText}>{text}</Text>
 );
-
-export default OnBoardingParagraph;

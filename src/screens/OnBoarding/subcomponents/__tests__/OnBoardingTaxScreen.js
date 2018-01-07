@@ -2,7 +2,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import OnBoardingTaxScreen from '../../OnBoardingTaxScreen';
+import { OnBoardingTaxScreen } from '../../OnBoardingTaxScreen';
 
 jest.mock('react-i18next', () => ({
   translate: () => Component => props => <Component t={() => ''} {...props} />,
