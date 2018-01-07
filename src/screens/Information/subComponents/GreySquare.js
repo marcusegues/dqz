@@ -24,10 +24,8 @@ type GreySquareProps = {
   number: string,
 };
 
-const GreySquare = ({ number }: GreySquareProps) => (
+export const GreySquare = ({ number }: GreySquareProps) => (
   <View style={ownStyles.container}>
     <Text style={ownStyles.text}>{number}</Text>
   </View>
 );
-
-export default GreySquare;

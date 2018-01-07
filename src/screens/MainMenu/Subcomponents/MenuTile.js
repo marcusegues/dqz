@@ -1,22 +1,29 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View, Text } from 'react-native';
+// $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 
-import ownStyles from '../styles/MenuTileStyles';
+import { menuTileStyle } from '../styles/MenuTileStyles';
 import { globalStyles } from '../../../styles/globalStyles';
 
-const MenuTile = ({ text, children, onPress }) => (
+type MenuTileProps = {
+  text: string,
+  children: any,
+  onPress: () => void,
+};
+
+export const MenuTile = ({ text, children, onPress }: MenuTileProps) => (
   <Touchable
     onPress={onPress}
-    style={[ownStyles.container, globalStyles.boxShadow]}
+    style={[menuTileStyle.container, globalStyles.boxShadow]}
     background={Touchable.Ripple('#9B9B9B')}
     activeOpacity={1}
   >
-    <View style={ownStyles.contentContainer}>
+    <View style={menuTileStyle.contentContainer}>
       {children}
-      <Text style={ownStyles.text}>{text}</Text>
+      <Text style={menuTileStyle.text}>{text}</Text>
     </View>
   </Touchable>
 );
-
-export default MenuTile;

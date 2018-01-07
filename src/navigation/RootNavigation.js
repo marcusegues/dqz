@@ -12,7 +12,7 @@ import Logo from '../components/Headers/subcomponents/Logo';
 import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
 import InfoIcon from '../components/Headers/subcomponents/InfoIcon';
 import MainMenuHeaderRight from '../components/Headers/subcomponents/MainMenuHeaderRight';
-import MainMenu from '../screens/MainMenu/MainMenu';
+import { MainMenu } from '../screens/MainMenu/MainMenu';
 import PaymentContainer from '../components/Payment/PaymentContainer';
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
@@ -22,7 +22,7 @@ import { OnBoardingTaxScreen } from '../screens/OnBoarding/OnBoardingTaxScreen';
 import ReceiptAfterPayment from '../components/Receipts/ReceiptAfterPayment';
 import HomeIcon from '../components/Headers/subcomponents/HomeIcon';
 import DownloadIcon from '../components/Headers/subcomponents/DownloadIcon';
-import Information from '../screens/Information/Information';
+import { Information } from '../screens/Information/Information';
 import SearchIcon from '../components/Headers/subcomponents/SearchIcon';
 
 export const stackNavigatorScreens = {

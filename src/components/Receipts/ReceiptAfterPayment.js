@@ -3,7 +3,7 @@ import React from 'react';
 // $FlowFixMe
 import { View, Text } from 'react-native';
 import { translate } from 'react-i18next';
-import ScrollViewCard from './subComponents/ScrollViewCard';
+import { ScrollViewCard } from './subComponents/ScrollViewCard';
 import Logo from './subComponents/Logo';
 import { moderateScale, scale, verticalScale } from '../../styles/Scaling';
 import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
