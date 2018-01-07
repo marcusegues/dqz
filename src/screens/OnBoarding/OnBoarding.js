@@ -10,13 +10,14 @@ import OnBoardingContainer from './subcomponents/OnBoardingContainer';
 import OnBoardingParagraph from './subcomponents/OnBoardingParagraph';
 import DoneButton from './subcomponents/DoneButton';
 import type { LanguageCodeType } from './types';
+import type { TFunction } from '../../types/generalTypes';
 
 type OnBoardingState = {
   systemLanguage: LanguageCodeType,
 };
 
 type OnBoardingProps = {
-  t: (field: string, params?: {}) => void,
+  t: TFunction,
   i18n: any,
   navigation: any,
 };

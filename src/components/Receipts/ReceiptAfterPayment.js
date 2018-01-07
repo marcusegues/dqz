@@ -11,6 +11,7 @@ import ReceiptSubText from './subComponents/ReceiptSubText';
 import ValidUntilBlock from './subComponents/ValidUntilBlock';
 import DutyRow from '../Overview/subcomponents/DutyRow';
 import VatRow from '../Overview/subcomponents/VatRow';
+import type { TFunction } from '../../types/generalTypes';
 
 const ownStyles = {
   topSumText: {
@@ -56,7 +57,7 @@ const ownStyles = {
 };
 
 type ReceiptAfterPaymentScreenProps = {
-  t: (field: string, params?: {}) => string,
+  t: TFunction,
 };
 
 const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (

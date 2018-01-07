@@ -20,6 +20,7 @@ import type {
   MainCategory,
 } from '../../../types/reducers/declaration';
 import { getSubCategories } from '../../../types/reducers/declaration';
+import type { TFunction } from '../../../types/generalTypes';
 
 type UpdateFunction<T> = (input: T) => void;
 
@@ -66,7 +67,7 @@ type Trigger =
 export const onUpdateFactory = (
   trigger: Trigger,
   oldState: QAStateEnriched,
-  t: any
+  t: TFunction
 ): void => {
   switch (trigger.questionType) {
     case 'peopleInput': {

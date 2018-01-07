@@ -8,6 +8,7 @@ import OnBoardingParagraph from './subcomponents/OnBoardingParagraph';
 import DoneButton from './subcomponents/DoneButton';
 import { moderateScale } from '../../styles/Scaling';
 import { MAIN_RED } from '../../styles/colors';
+import type { TFunction } from '../../types/generalTypes';
 
 const ownStyles = {
   container: {
@@ -27,7 +28,7 @@ const ownStyles = {
 };
 
 type OnBoardingTaxScreenProps = {
-  t: (field: string, params?: {}) => void,
+  t: TFunction,
   navigation: any,
 };
 

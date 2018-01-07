@@ -5,9 +5,10 @@ import ScrollViewCard from './subComponents/ScrollViewCard';
 import InformationRow from './subComponents/InformationRow';
 import { informationData } from './InformationData';
 import HeaderTitle from '../../components/Headers/subcomponents/HeaderTitle';
+import type { TFunction } from '../../types/generalTypes';
 
 type InformationScreenProps = {
-  t: (field: string, params?: {}) => string,
+  t: TFunction,
 };
 
 class Information extends React.Component<any, InformationScreenProps> {

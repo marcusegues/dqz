@@ -5,6 +5,7 @@ import type { MainCategory } from '../../../types/reducers/declaration';
 import type { Category } from '../../../model/types/basketPeopleAmountsTypes';
 import OverviewRow from './OverviewRow';
 import { CategoriesInfo } from '../../../model/constants';
+import type { TFunction } from '../../../types/generalTypes';
 
 type DutyRowProps = {
   mainCategory: MainCategory,
@@ -12,7 +13,7 @@ type DutyRowProps = {
   quantity: number,
   duty: number,
   borderTop?: boolean,
-  t: (field: string, params?: {}) => string,
+  t: TFunction,
 };
 
 const DutyRow = ({

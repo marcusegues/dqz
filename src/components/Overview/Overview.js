@@ -23,13 +23,14 @@ import VatRow from './subcomponents/VatRow';
 import { moderateScale, verticalScale } from '../../styles/Scaling';
 import { calculateVat } from '../../model/vatCalculations';
 import type { CurrencyObject } from '../../model/currencies';
+import type { TFunction } from '../../types/generalTypes';
 
 type OverviewProps = {
   basket: Basket,
   people: People,
   amounts: Amounts,
   currencyObject: CurrencyObject,
-  t: (field: string, params?: {}) => string,
+  t: TFunction,
 };
 
 const ownStyles = {

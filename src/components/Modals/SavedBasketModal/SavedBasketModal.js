@@ -20,6 +20,7 @@ import { CardRowText } from '../../QuestionAnswer/cards/subcomponents/CardRowTex
 import { CardRowSubText } from '../../QuestionAnswer/cards/subcomponents/CardRowSubText';
 import { GREY } from '../../../styles/colors';
 import CloseIcon from '../../General Components/CloseIcon';
+import type { TFunction } from '../../../types/generalTypes';
 
 const ownStyles = StyleSheet.create({
   container: {
@@ -41,7 +42,7 @@ const ownStyles = StyleSheet.create({
 });
 
 type SavedBasketModalProps = {
-  t: (field: string, params?: {}) => string,
+  t: TFunction,
   modalVisible: boolean,
   onRequestClose: Function,
 };

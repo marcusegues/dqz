@@ -23,6 +23,7 @@ import styles from '../styles/CurrencyPickerModal';
 import { INDIVIDUALALLOWANCE } from '../../../model/constants';
 import { currenciesArray } from '../../../model/currencies';
 import type { Currency, CurrencyObject } from '../../../model/currencies';
+import type { TFunction } from '../../../types/generalTypes';
 
 type PickerState = {
   currency: Currency,
@@ -30,7 +31,7 @@ type PickerState = {
 };
 
 type CurrencyPickerProps = {
-  t: any, // TODO
+  t: TFunction,
   onHide: () => void,
   currencyObject: CurrencyObject,
   currencyDate: string,

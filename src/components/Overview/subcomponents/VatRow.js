@@ -2,12 +2,13 @@
 import React from 'react';
 import { translate } from 'react-i18next';
 import OverviewRow from './OverviewRow';
+import type { TFunction } from '../../../types/generalTypes';
 
 type VatRowProps = {
   quantity: number,
   vat: number,
   borderTop?: boolean,
-  t: (field: string, params?: {}) => string,
+  t: TFunction,
 };
 
 const VatRow = ({ quantity, vat, borderTop, t }: VatRowProps) => (

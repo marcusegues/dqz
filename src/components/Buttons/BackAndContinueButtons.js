@@ -7,6 +7,7 @@ import { translate } from 'react-i18next';
 import { verticalScale } from '../../styles/Scaling';
 import { GREY } from '../../styles/colors';
 import RedButton from './RedButton';
+import type { TFunction } from '../../types/generalTypes';
 
 const ownStyles = {
   redButtonContainerWrapper: {
@@ -32,7 +33,7 @@ const BackAndContinueButtonsInner = ({
   onPressContinue,
   confirmationDisabled = false,
   t,
-}: BackAndContinueButtonsProps & { t: any }) => (
+}: BackAndContinueButtonsProps & { t: TFunction }) => (
   <View style={ownStyles.redButtonContainerWrapper}>
     <View style={ownStyles.redButtonWrapper}>
       <RedButton

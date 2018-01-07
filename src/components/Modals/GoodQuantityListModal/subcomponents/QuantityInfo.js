@@ -10,12 +10,13 @@ import { verticalScale } from '../../../../styles/Scaling';
 import { CategoriesInfo } from '../../../../model/constants';
 import type { MainCategory } from '../../../../types/reducers/declaration';
 import type { Category } from '../../../../model/types/basketPeopleAmountsTypes';
+import type { TFunction } from '../../../../types/generalTypes';
 
 type QuantityInfoProps = {
   mainCategory: MainCategory,
   category: Category,
   totalQuantity: number,
-  t: (field: string, params?: {}) => string,
+  t: TFunction,
 };
 
 const QuantityInfo = ({
