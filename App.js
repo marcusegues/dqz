@@ -1,15 +1,18 @@
+// @flow
 /* eslint-disable global-require */
 /* global window, fetch */
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
+// $FlowFixMe
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+// $FlowFixMe
 import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { Provider } from 'react-redux';
 
 import i18n from './src/i18n';
 import RootNavigation from './src/navigation/RootNavigation';
-import configureStore from './src/configureStore';
+import { configureStore } from './src/configureStore';
 import { parseCurrencyXML } from './src/model/currencies';
 
 const store = configureStore();
@@ -26,12 +29,15 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class App extends React.Component {
+type AppProps = {};
+type AppState = { isLoadingComplete: boolean };
+
+export default class App extends React.Component<AppProps, AppState> {
   state = {
     isLoadingComplete: false,
   };
 
-  handleLoadingError = error => {
+  handleLoadingError = (error: string) => {
     console.warn(error);
   };
 
@@ -74,6 +80,7 @@ export default class App extends React.Component {
         roboto_medium: require('./assets/fonts/Roboto-Medium.ttf'),
         roboto_thin: require('./assets/fonts/Roboto-Thin.ttf'),
 
+        // $FlowFixMe
         exo_extraLight: require('./assets/fonts/Exo-ExtraLight.otf'),
 
         ...Ionicons.font,
