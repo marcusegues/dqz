@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 
 import ownStyles from '../styles/MenuTileStyles';
-import globalStyles from '../../../styles/globalStyles';
+import { globalStyles } from '../../../styles/globalStyles';
 
 const MenuTile = ({ text, children, onPress }) => (
   <Touchable

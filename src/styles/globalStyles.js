@@ -1,7 +1,12 @@
+// @flow
+
+// $FlowFixMe
 import { StyleSheet } from 'react-native';
 import { BLACK } from './colors';
 
-export default StyleSheet.create({
+type GlobalStyles = any; // TODO
+
+export const globalStyles: GlobalStyles = StyleSheet.create({
   boxShadow: {
     elevation: 2,
     shadowColor: BLACK,
