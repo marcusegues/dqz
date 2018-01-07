@@ -1,6 +1,6 @@
 // @flow
 import { combineReducers } from 'redux';
-import declaration, * as fromDeclaration from './declaration';
+import * as appApi from './appReducer';
 import { formatDate } from '../model/utils';
 import type {
   Amounts,
@@ -11,35 +11,33 @@ import type {
   MainCategories,
   Settings,
   State,
-} from '../types/reducers/declaration';
+} from '../types/reducers/appReducer';
 import type { CurrencyObject } from '../model/currencies';
 
-const root = combineReducers({ declaration });
+const root = combineReducers({ appState: appApi.appState });
 
 export default root;
 
-export const getBasket = (state: { declaration: State }): Basket =>
-  fromDeclaration.getBasket(state.declaration);
+export const getBasket = (state: { appState: State }): Basket =>
+  appApi.getBasket(state.appState);
 
-export const getPeople = (state: { declaration: State }): People =>
-  fromDeclaration.getPeople(state.declaration);
+export const getPeople = (state: { appState: State }): People =>
+  appApi.getPeople(state.appState);
 
-export const getAmounts = (state: { declaration: State }): Amounts =>
-  fromDeclaration.getAmounts(state.declaration);
+export const getAmounts = (state: { appState: State }): Amounts =>
+  appApi.getAmounts(state.appState);
 
-export const getMainCategories = (state: {
-  declaration: State,
-}): MainCategories => fromDeclaration.getMainCategories(state.declaration);
+export const getMainCategories = (state: { appState: State }): MainCategories =>
+  appApi.getMainCategories(state.appState);
 
-export const getSettings = (state: { declaration: State }): Settings =>
-  fromDeclaration.getSettings(state.declaration);
+export const getSettings = (state: { appState: State }): Settings =>
+  appApi.getSettings(state.appState);
 
-export const getCurrencies = (state: { declaration: State }): CurrencyObject =>
-  fromDeclaration.getCurrenciesObject(state.declaration);
+export const getCurrencies = (state: { appState: State }): CurrencyObject =>
+  appApi.getCurrenciesObject(state.appState);
 
-export const getCurrencyState = (state: { declaration: State }): boolean =>
-  fromDeclaration.getCurrencyState(state.declaration);
+export const getCurrencyState = (state: { appState: State }): boolean =>
+  appApi.getCurrencyState(state.appState);
 
-export const getFormattedCurrencyDate = (state: {
-  declaration: State,
-}): string => formatDate(fromDeclaration.getCurrencyDate(state.declaration));
+export const getFormattedCurrencyDate = (state: { appState: State }): string =>
+  formatDate(appApi.getCurrencyDate(state.appState));

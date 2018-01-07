@@ -27,10 +27,7 @@ import type {
   Basket,
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
-import type {
-  MainCategories,
-  Settings,
-} from '../../types/reducers/declaration';
+import type { MainCategories, Settings } from '../../types/reducers/appReducer';
 import {
   collapseAllExistingExceptOne,
   setInitStates,

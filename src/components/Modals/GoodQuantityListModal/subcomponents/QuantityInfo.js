@@ -8,7 +8,7 @@ import { CardHeaderSubText } from '../../../QuestionAnswer/cards/subcomponents/C
 import QuantityIcon from '../../../General Components/QuantityIcon';
 import { verticalScale } from '../../../../styles/Scaling';
 import { CategoriesInfo } from '../../../../model/constants';
-import type { MainCategory } from '../../../../types/reducers/declaration';
+import type { MainCategory } from '../../../../types/reducers/appReducer';
 import type { Category } from '../../../../model/types/basketPeopleAmountsTypes';
 import type { TFunction } from '../../../../types/generalTypes';
 

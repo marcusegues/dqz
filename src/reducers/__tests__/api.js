@@ -4,8 +4,8 @@ import Immutable from 'immutable';
 import {
   getInitialState,
   makeSettingsRecord,
-} from '../../types/reducers/declaration';
-import type { State } from '../../types/reducers/declaration';
+} from '../../types/reducers/appReducer';
+import type { State } from '../../types/reducers/appReducer';
 import { emptyBasket, initPeople } from '../../model/configurationApi';
 import {
   getBasket,
@@ -25,37 +25,37 @@ const initState: State = getInitialState();
 
 describe('API', () => {
   test('getBasket', () => {
-    expect(getBasket({ declaration: initState }).toString()).toBe(
+    expect(getBasket({ appState: initState }).toString()).toBe(
       emptyBasket.toString()
     );
   });
   test('getPeople', () => {
-    expect(getPeople({ declaration: initState }).toString()).toBe(
+    expect(getPeople({ appState: initState }).toString()).toBe(
       initPeople.toString()
     );
   });
   test('getAmounts', () => {
-    expect(getAmounts({ declaration: initState }).toString()).toBe(
+    expect(getAmounts({ appState: initState }).toString()).toBe(
       Immutable.Map().toString()
     );
   });
   test('getMainCategories', () => {
-    expect(getMainCategories({ declaration: initState }).toString()).toBe(
+    expect(getMainCategories({ appState: initState }).toString()).toBe(
       Immutable.Set().toString()
     );
   });
   test('getSettings', () => {
-    expect(getSettings({ declaration: initState }).toString()).toBe(
+    expect(getSettings({ appState: initState }).toString()).toBe(
       makeSettingsRecord().toString()
     );
   });
   test('getCurrencies', () => {
-    expect(getCurrencies({ declaration: initState }).toString()).toBe(
+    expect(getCurrencies({ appState: initState }).toString()).toBe(
       {}.toString()
     );
   });
   test('getCurrencyState', () => {
-    expect(getCurrencyState({ declaration: initState }).toString()).toBe(
+    expect(getCurrencyState({ appState: initState }).toString()).toBe(
       false.toString()
     );
   });

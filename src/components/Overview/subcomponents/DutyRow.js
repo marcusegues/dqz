@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { translate } from 'react-i18next';
-import type { MainCategory } from '../../../types/reducers/declaration';
+import type { MainCategory } from '../../../types/reducers/appReducer';
 import type { Category } from '../../../model/types/basketPeopleAmountsTypes';
 import OverviewRow from './OverviewRow';
 import { CategoriesInfo } from '../../../model/constants';

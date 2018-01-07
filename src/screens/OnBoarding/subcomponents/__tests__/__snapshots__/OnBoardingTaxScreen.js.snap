@@ -4,7 +4,7 @@ exports[`OnBoardingTaxScreen renders according to snapshot and DoneButton fires 
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <OnBoardingTaxScreen
+  Symbol(enzyme.__unrendered__): <OnBoardingTaxScreenInner
     navigation={
       Object {
         "navigate": [Function],
