@@ -42,7 +42,7 @@ import HeaderTitle from '../Headers/subcomponents/HeaderTitle';
 import { onUpdateFactory } from './QAControl/validation';
 import { AmountInputQA } from './AmountInput/AmountInputQA';
 import type { CurrencyObject } from '../../model/currencies';
-import type { TFunction } from '../../types/generalTypes';
+import type { Navigation, TFunction } from '../../types/generalTypes';
 
 export type QuestionType =
   | 'peopleInput'
@@ -84,7 +84,7 @@ export type CardProps = {
 };
 
 type QuestionAnswerContainerProps = {
-  navigation: any,
+  navigation: Navigation,
   // dispatch to props
   setAmounts: (amounts: Amounts) => void,
   setPeople: (people: People) => void,

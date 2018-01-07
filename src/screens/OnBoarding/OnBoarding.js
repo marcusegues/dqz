@@ -10,7 +10,7 @@ import OnBoardingContainer from './subcomponents/OnBoardingContainer';
 import OnBoardingParagraph from './subcomponents/OnBoardingParagraph';
 import DoneButton from './subcomponents/DoneButton';
 import type { LanguageCodeType } from './types';
-import type { TFunction } from '../../types/generalTypes';
+import type { Navigation, TFunction } from '../../types/generalTypes';
 
 type OnBoardingState = {
   systemLanguage: LanguageCodeType,
@@ -19,7 +19,7 @@ type OnBoardingState = {
 type OnBoardingProps = {
   t: TFunction,
   i18n: any,
-  navigation: any,
+  navigation: Navigation,
 };
 
 class OnBoarding extends React.Component<OnBoardingProps, OnBoardingState> {
