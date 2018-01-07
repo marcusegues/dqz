@@ -4,21 +4,21 @@ import React from 'react';
 import { View } from 'react-native';
 import { translate } from 'react-i18next';
 import { LanguageButton } from './subcomponents/LanguageButton';
-import { languageCodeList } from './types';
 import styles from './styles/onBoarding';
 import OnBoardingContainer from './subcomponents/OnBoardingContainer';
 import OnBoardingParagraph from './subcomponents/OnBoardingParagraph';
 import DoneButton from './subcomponents/DoneButton';
-import type { LanguageCodeType } from './types';
+import { languages } from '../../i18n';
 import type { Navigation, TFunction } from '../../types/generalTypes';
+import type { Language } from '../../i18n/types/locale';
 
 type OnBoardingState = {
-  systemLanguage: LanguageCodeType,
+  systemLanguage: Language,
 };
 
 type OnBoardingProps = {
   t: TFunction,
-  i18n: any,
+  i18n: { language: Language, changeLanguage: Language => void },
   navigation: Navigation,
 };
 
@@ -43,7 +43,7 @@ class OnBoarding extends React.Component<OnBoardingProps, OnBoardingState> {
         <View style={styles.languageButtonsSection}>
           <OnBoardingParagraph text={t('onBoarding:selectLanguage')} />
           <View style={styles.languageButtons}>
-            {languageCodeList.map(language => {
+            {languages.map(language => {
               if (language === systemLanguage) {
                 return null;
               }

@@ -2,6 +2,9 @@
 import type { RecordOf, RecordFactory } from 'immutable';
 import Immutable from 'immutable';
 
+export type Language = 'de' | 'fr' | 'en' | 'it';
+export type Languages = Array<Language>;
+
 type MainCategoriesNS = {
   Foods: string,
   Alcohol: string,
