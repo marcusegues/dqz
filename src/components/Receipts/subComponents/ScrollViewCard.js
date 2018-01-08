@@ -17,7 +17,7 @@ const ownStyles = {
   },
 };
 
-const ScrollViewCard = ({ children }) => (
+export const ScrollViewCard = ({ children }) => (
   <View style={ownStyles.container}>
     <ScrollView
       contentContainerStyle={[ownStyles.scrollView, globalStyles.boxShadow]}
@@ -26,5 +26,3 @@ const ScrollViewCard = ({ children }) => (
     </ScrollView>
   </View>
 );
-
-export default ScrollViewCard;
