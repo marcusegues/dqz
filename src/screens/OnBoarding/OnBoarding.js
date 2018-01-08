@@ -2,26 +2,30 @@
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
+import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import { LanguageButton } from './subcomponents/LanguageButton';
-import { languageCodeList } from './types';
-import styles from './styles/onBoarding';
-import OnBoardingContainer from './subcomponents/OnBoardingContainer';
-import OnBoardingParagraph from './subcomponents/OnBoardingParagraph';
-import DoneButton from './subcomponents/DoneButton';
-import type { LanguageCodeType } from './types';
+import { onBoardingStyles } from './styles/onBoarding';
+import { OnBoardingContainer } from './subcomponents/OnBoardingContainer';
+import { OnBoardingParagraph } from './subcomponents/OnBoardingParagraph';
+import { DoneButton } from './subcomponents/DoneButton';
+import { languages } from '../../i18n';
+import type { Navigation, TFunction } from '../../types/generalTypes';
+import type { Language } from '../../i18n/types/locale';
 
 type OnBoardingState = {
-  systemLanguage: LanguageCodeType,
+  systemLanguage: Language,
 };
 
 type OnBoardingProps = {
-  t: (field: string, params?: {}) => void,
-  i18n: any,
-  navigation: any,
+  i18n: { language: Language, changeLanguage: Language => void },
+  navigation: Navigation,
 };
 
-class OnBoarding extends React.Component<OnBoardingProps, OnBoardingState> {
+class OnBoardingInner extends React.Component<
+  OnBoardingProps & { t: TFunction },
+  OnBoardingState
+> {
   constructor(props) {
     super(props);
     this.state = { systemLanguage: this.props.i18n.language };
@@ -39,10 +43,10 @@ class OnBoarding extends React.Component<OnBoardingProps, OnBoardingState> {
           onPress={() => i18n.changeLanguage(systemLanguage)}
         />
 
-        <View style={styles.languageButtonsSection}>
+        <View style={onBoardingStyles.languageButtonsSection}>
           <OnBoardingParagraph text={t('onBoarding:selectLanguage')} />
-          <View style={styles.languageButtons}>
-            {languageCodeList.map(language => {
+          <View style={onBoardingStyles.languageButtons}>
+            {languages.map(language => {
               if (language === systemLanguage) {
                 return null;
               }
@@ -66,4 +70,6 @@ class OnBoarding extends React.Component<OnBoardingProps, OnBoardingState> {
   }
 }
 
-export default translate(['general', 'onBoarding'])(OnBoarding);
+export const OnBoarding = (translate(['general', 'onBoarding'])(
+  OnBoardingInner
+): ComponentType<OnBoardingProps>);

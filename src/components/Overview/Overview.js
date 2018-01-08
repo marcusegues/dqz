@@ -12,7 +12,7 @@ import DutyRow from './subcomponents/DutyRow';
 import { calculateDuty } from '../../model/dutyCalculations';
 import { CardRowSubText } from '../QuestionAnswer/cards/subcomponents/CardRowSubText';
 import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
-import { getMainCategory } from '../../types/reducers/declaration';
+import { getMainCategory } from '../../types/reducers/appReducer';
 import type {
   Amounts,
   Basket,
@@ -23,13 +23,14 @@ import VatRow from './subcomponents/VatRow';
 import { moderateScale, verticalScale } from '../../styles/Scaling';
 import { calculateVat } from '../../model/vatCalculations';
 import type { CurrencyObject } from '../../model/currencies';
+import type { TFunction } from '../../types/generalTypes';
 
 type OverviewProps = {
   basket: Basket,
   people: People,
   amounts: Amounts,
   currencyObject: CurrencyObject,
-  t: (field: string, params?: {}) => string,
+  t: TFunction,
 };
 
 const ownStyles = {

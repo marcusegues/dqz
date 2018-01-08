@@ -2,7 +2,7 @@
 import React from 'react';
 import { AnswerCard } from '../../AnswerCard';
 import { MainCategoriesInputInfo } from '../../children/MainCategoriesInputInfo';
-import type { MainCategories } from '../../../../../../types/reducers/declaration';
+import type { MainCategories } from '../../../../../../types/reducers/appReducer';
 import type { QuestionFlag } from '../../../../QuestionAnswerContainer';
 
 const complete = require('../../../../../../../assets/images/complete.png');

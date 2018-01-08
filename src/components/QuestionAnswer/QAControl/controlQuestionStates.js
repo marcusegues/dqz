@@ -16,7 +16,6 @@ const showLargeAmountsQuestion = (qaState: QAStateEnriched) => {
   const hasLargeAmounts: boolean =
     largeAmounts.reduce((a, v) => a + v.amount, 0) > 0;
 
-  // TODO important check if large amounts present!
   return hasLargeAmounts || getTotalPeople(people) > 1;
 };
 

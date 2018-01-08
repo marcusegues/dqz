@@ -5,16 +5,15 @@ import Touchable from 'react-native-platform-touchable';
 // $FlowFixMe
 import { Text } from 'react-native';
 import { languageButton, languageButtonText } from '../styles/languageButton';
-import type {
-  LanguageButtonSizeType,
-  LanguageButtonSelectedType,
-  LanguageCodeType,
-} from '../types';
+import type { Language } from '../../../i18n/types/locale';
+
+export type LanguageButtonSizeType = 'small' | 'large';
+export type LanguageButtonSelectedType = boolean;
 
 type PropsType = {
   size: LanguageButtonSizeType,
   selected: LanguageButtonSelectedType,
-  languageCode: LanguageCodeType,
+  languageCode: Language,
   onPress: () => any,
 };
 

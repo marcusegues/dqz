@@ -8,7 +8,7 @@ import type { CardProps } from '../QuestionAnswerContainer';
 import type {
   MainCategories,
   MainCategory,
-} from '../../../types/reducers/declaration';
+} from '../../../types/reducers/appReducer';
 
 export const MainCategoriesInputQA = (props: CardProps) => {
   const handleUpdate = mainCategories => {

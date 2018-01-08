@@ -1,8 +1,10 @@
+// @flow
+// $FlowFixMe
 import { StyleSheet } from 'react-native';
 import { scale, verticalScale, moderateScale } from '../../../styles/Scaling';
 import { BLACK, WHITE } from '../../../styles/colors';
 
-export default StyleSheet.create({
+export const menuTileStyle: any = StyleSheet.create({
   container: {
     width: scale(152),
     height: scale(135),

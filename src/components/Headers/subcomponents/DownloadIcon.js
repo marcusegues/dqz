@@ -5,9 +5,10 @@ import Touchable from 'react-native-platform-touchable';
 import { MaterialIcons } from '@expo/vector-icons';
 import { MAIN_RED } from '../../../styles/colors';
 import { moderateScale } from '../../../styles/Scaling';
+import type { Navigation } from '../../../types/generalTypes';
 
 type DownloadIconProps = {
-  navigation: () => void,
+  navigation: Navigation,
 };
 
 const DownloadIcon = ({ navigation }: DownloadIconProps) => (

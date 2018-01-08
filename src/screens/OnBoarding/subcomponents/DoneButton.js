@@ -18,10 +18,9 @@ const ownStyles = {
 type DoneButtonProps = {
   onPress: () => void,
 };
-const DoneButton = ({ onPress }: DoneButtonProps) => (
+
+export const DoneButton = ({ onPress }: DoneButtonProps) => (
   <Touchable background={Touchable.Ripple('#006699')} onPress={() => onPress()}>
     <Image source={img} style={ownStyles.image} resizeMode="cover" />
   </Touchable>
 );
-
-export default DoneButton;

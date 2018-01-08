@@ -18,8 +18,9 @@ import { CategoriesInfo } from '../../../model/constants';
 import type {
   MainCategories,
   MainCategory,
-} from '../../../types/reducers/declaration';
-import { getSubCategories } from '../../../types/reducers/declaration';
+} from '../../../types/reducers/appReducer';
+import { getSubCategories } from '../../../types/reducers/appReducer';
+import type { TFunction } from '../../../types/generalTypes';
 
 type UpdateFunction<T> = (input: T) => void;
 
@@ -66,7 +67,7 @@ type Trigger =
 export const onUpdateFactory = (
   trigger: Trigger,
   oldState: QAStateEnriched,
-  t: any
+  t: TFunction
 ): void => {
   switch (trigger.questionType) {
     case 'peopleInput': {

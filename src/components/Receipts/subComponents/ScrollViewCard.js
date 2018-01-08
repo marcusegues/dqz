@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, ScrollView } from 'react-native';
-import globalStyles from '../../../styles/globalStyles';
+import { globalStyles } from '../../../styles/globalStyles';
 
 const ownStyles = {
   container: {

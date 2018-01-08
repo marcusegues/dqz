@@ -25,6 +25,7 @@ import type {
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { CurrencyObject } from '../../model/currencies';
 import { calculateVat } from '../../model/vatCalculations';
+import type { TFunction } from '../../types/generalTypes';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -46,7 +47,7 @@ type PaymentContainerProps = {
   people: People,
   amounts: Amounts,
   currencyObject: CurrencyObject,
-  t: (field: string, params?: {}) => string,
+  t: TFunction,
 };
 
 class PaymentContainer extends React.Component<

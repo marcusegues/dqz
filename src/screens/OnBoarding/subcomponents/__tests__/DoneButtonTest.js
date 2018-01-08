@@ -1,7 +1,7 @@
 /* global describe, test, expect */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import DoneButton from '../DoneButton';
+import { DoneButton } from '../DoneButton';
 
 describe('Done Button', () => {
   test('renders according to snapshot', () => {

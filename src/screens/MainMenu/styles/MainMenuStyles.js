@@ -1,8 +1,10 @@
+// @flow
+// $FlowFixMe
 import { Platform, StyleSheet } from 'react-native';
 import { moderateScale } from '../../../styles/Scaling';
 import { MAIN_RED, WHITE } from '../../../styles/colors';
 
-export default StyleSheet.create({
+export const mainMenuStyles: any = StyleSheet.create({
   mainContainer: {
     flex: 1,
     flexDirection: 'column',

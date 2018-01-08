@@ -10,7 +10,7 @@ import {
   initAmounts,
   initPeople,
 } from '../../../../model/configurationApi';
-import { makeSettingsRecord } from '../../../../types/reducers/declaration';
+import { makeSettingsRecord } from '../../../../types/reducers/appReducer';
 
 const blankState = {
   basket: emptyBasket,

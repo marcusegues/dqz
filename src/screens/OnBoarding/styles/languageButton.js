@@ -3,7 +3,7 @@ import { moderateScale, scale, verticalScale } from '../../../styles/Scaling';
 import type {
   LanguageButtonSelectedType,
   LanguageButtonSizeType,
-} from '../types';
+} from '../subcomponents/LanguageButton';
 
 type StyleOptionsType = {
   size: LanguageButtonSizeType,

@@ -1,9 +1,14 @@
+// @flow
 import i18n from 'i18next';
+// $FlowFixMe
 import Expo from 'expo';
 import { en } from './locales/en';
 import { fr } from './locales/fr';
 import { de } from './locales/de';
 import { it } from './locales/it';
+import type { Language } from './types/locale';
+
+export const languages: Array<Language> = ['de', 'fr', 'it', 'en'];
 
 const languageDetector = {
   type: 'languageDetector',

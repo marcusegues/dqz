@@ -1,4 +1,6 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View, Text, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import NavBar from '../../components/NavBar/NavBar';
@@ -7,8 +9,27 @@ import PickerModal from '../../components/Modals/PickerModal/PickerModal';
 import CurrencyPickerModal from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
 import { getCurrencies, getFormattedCurrencyDate } from '../../reducers';
 import SavedBasketModal from '../../components/Modals/SavedBasketModal/SavedBasketModal';
+import type { Navigation } from '../../types/generalTypes';
+import type { CurrencyObject } from '../../model/currencies';
 
-class ScreensView extends React.Component {
+type ScreensViewProps = {
+  navigation: Navigation,
+};
+
+type ScreensViewState = {
+  modalVisible: boolean,
+  pickerModalVisible: boolean,
+  currencyPickerModalVisible: boolean,
+  savedBasketModalVisible: boolean,
+};
+
+class ScreensViewInner extends React.Component<
+  ScreensViewProps & {
+    currencyObject: CurrencyObject,
+    currencyDate: Date,
+  },
+  ScreensViewState
+> {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,14 +38,6 @@ class ScreensView extends React.Component {
       currencyPickerModalVisible: false,
       savedBasketModalVisible: false,
     };
-    this.toggleModalVisible = this.toggleModalVisible.bind(this);
-    this.togglePickerVisible = this.togglePickerVisible.bind(this);
-    this.toggleCurrencyPickerVisible = this.toggleCurrencyPickerVisible.bind(
-      this
-    );
-    this.toggleSavedBasketModalVisible = this.toggleSavedBasketModalVisible.bind(
-      this
-    );
   }
 
   toggleModalVisible() {
@@ -96,21 +109,21 @@ class ScreensView extends React.Component {
 
         <GoodInputModal
           modalVisible={this.state.modalVisible}
-          toggleModalVisible={this.toggleModalVisible}
+          toggleModalVisible={() => this.toggleModalVisible()}
         />
         <PickerModal
           modalVisible={this.state.pickerModalVisible}
-          toggleModalVisible={this.togglePickerVisible}
+          toggleModalVisible={() => this.togglePickerVisible()}
         />
         <CurrencyPickerModal
           modalVisible={this.state.currencyPickerModalVisible}
-          toggleModalVisible={this.toggleCurrencyPickerVisible}
+          toggleModalVisible={() => this.toggleCurrencyPickerVisible()}
           currencyObject={this.props.currencyObject}
           currencyDate={this.props.currencyDate}
         />
         <SavedBasketModal
           modalVisible={this.state.savedBasketModalVisible}
-          toggleModalVisible={this.toggleSavedBasketModalVisible}
+          toggleModalVisible={() => this.toggleSavedBasketModalVisible()}
         />
       </View>
     );
@@ -122,4 +135,4 @@ const mapStateToProps = state => ({
   currencyDate: getFormattedCurrencyDate(state),
 });
 
-export default connect(mapStateToProps)(ScreensView);
+export const ScreensView = connect(mapStateToProps)(ScreensViewInner);

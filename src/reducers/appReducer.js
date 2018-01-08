@@ -4,13 +4,13 @@ import {
   getInitialState,
   mainCategories,
   EmptyMainCategories,
-} from '../types/reducers/declaration';
+} from '../types/reducers/appReducer';
 import type {
   State,
   MainCategory,
   MainCategories,
   Settings,
-} from '../types/reducers/declaration';
+} from '../types/reducers/appReducer';
 import type { Action } from '../types/actions';
 import type {
   Amounts,
@@ -21,7 +21,7 @@ import type {
 import * as modelApi from '../model/configurationApi';
 import type { Currency, CurrencyObject } from '../model/currencies';
 
-const declaration = (
+export const appState = (
   state: State = getInitialState(),
   action: Action
 ): State => {
@@ -142,8 +142,6 @@ const declaration = (
     }
   }
 };
-
-export default declaration;
 
 export const getBasket = (state: State): Basket => state.get('basket');
 
