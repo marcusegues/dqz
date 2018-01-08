@@ -5,8 +5,18 @@ Full documentation - https://docs.expo.io/versions/latest/guides/building-standa
 ```javascript
 npm install -g exp
 ```
-#### 2. Configure app.json
-Important fields
+
+#### 2. Update package.json
+
+Increase version number.
+```javascript
+{
+    "version": "0.2.1",
+}
+```
+
+#### 3. Configure app.json
+Important fields - must be changed *manually* upon release:
 ```javascript
 {
     "sdkVersion": "23.0.0",
@@ -21,13 +31,13 @@ Important fields
     }
 }
 ```
-**sdkVersion** - need check using sdkVersion with package.json  
-**version** - Should be same as in package.json. Used for Google Store.  
-**buildNumber** - Should be same as version in package.json. Used for Apple Store.  
+**sdkVersion** - need check using sdkVersion of expo with package.json. Only changes when upgrading expo. 
+**version** - Must be same as in package.json. Used for Google Store.  
+**buildNumber** - Must be same as version in package.json. Used for Apple Store.  
 **versionCode** - Version number(integer). Each new google store release should be increased(+1).  
 https://developer.android.com/studio/publish/versioning.html
 
-#### 3. Start the build
+#### 4. Start the build
 ```javascript
 exp start
 ```
@@ -42,7 +52,7 @@ Build for Apple Store
 exp build:ios
 ```
 
-#### 4. Wait for it to finish building
+#### 5. Wait for it to finish building
 [List of builds](https://expo.io/@ambrite/dazit/builds) - https://expo.io/@ambrite/dazit/builds   
 Download .apk (Android) or .ipa (iOS) file.
 
