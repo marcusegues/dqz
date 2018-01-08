@@ -1,0 +1,1009 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReceiptAfterPayment renders according to snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ReceiptAfterPayment
+    t={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": Array [
+        <RedLogo />,
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontFamily": "roboto_regular",
+              "fontSize": 44,
+              "marginTop": 19.61764705882353,
+              "textAlign": "center",
+            }
+          }
+        >
+          CHF 56.50
+        </Text>,
+        <ReceiptSubText
+          style={
+            Object {
+              "alignSelf": "center",
+            }
+          }
+          text=""
+        />,
+        <View
+          style={
+            Object {
+              "borderTopColor": "#E0E0E1",
+              "borderTopWidth": 1,
+              "marginHorizontal": 34.285714285714285,
+              "marginTop": 29.426470588235293,
+            }
+          }
+        >
+          <CardRowText
+            style={
+              Object {
+                "marginVertical": 29.426470588235293,
+              }
+            }
+            text=""
+          />
+          <ReceiptSubText
+            style={Object {}}
+            text="Mastercard XXXX XXXX XXXX 1234"
+          />
+          <ReceiptSubText
+            style={Object {}}
+            text=""
+          />
+          <ValidUntilBlock>
+            <CardRowText
+              style={
+                Object {
+                  "color": "#fff",
+                  "fontFamily": "roboto_regular",
+                }
+              }
+              text=""
+            />
+            <CardRowText
+              style={
+                Object {
+                  "color": "#fff",
+                  "fontFamily": "roboto_regular",
+                }
+              }
+              text=""
+            />
+          </ValidUntilBlock>
+          <ReceiptSubText
+            style={
+              Object {
+                "alignSelf": "flex-end",
+                "fontSize": 18.857142857142858,
+              }
+            }
+            text=""
+          />
+          <Unknown
+            category="Meat"
+            duty={4}
+            mainCategory="Foods"
+            quantity={2}
+          />
+          <Unknown
+            category="Meat"
+            duty={4}
+            mainCategory="Foods"
+            quantity={2}
+          />
+          <ReceiptSubText
+            style={
+              Object {
+                "alignSelf": "flex-end",
+                "fontSize": 18.857142857142858,
+                "marginTop": 49.04411764705882,
+              }
+            }
+            text=""
+          />
+          <Unknown
+            quantity={205.59}
+            vat={44}
+          />
+          <CardRowText
+            style={
+              Object {
+                "alignSelf": "flex-end",
+                "marginBottom": 68.66176470588235,
+                "marginTop": 29.426470588235293,
+              }
+            }
+            text=""
+          />
+          <ReceiptSubText
+            style={
+              Object {
+                "lineHeight": 18,
+                "paddingBottom": 29.426470588235293,
+              }
+            }
+            text=""
+          />
+        </View>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "accessible": true,
+          "allowFontScaling": true,
+          "children": "CHF 56.50",
+          "ellipsizeMode": "tail",
+          "style": Object {
+            "fontFamily": "roboto_regular",
+            "fontSize": 44,
+            "marginTop": 19.61764705882353,
+            "textAlign": "center",
+          },
+        },
+        "ref": null,
+        "rendered": "CHF 56.50",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "style": Object {
+            "alignSelf": "center",
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <CardRowText
+              style={
+                Object {
+                  "marginVertical": 29.426470588235293,
+                }
+              }
+              text=""
+            />,
+            <ReceiptSubText
+              style={Object {}}
+              text="Mastercard XXXX XXXX XXXX 1234"
+            />,
+            <ReceiptSubText
+              style={Object {}}
+              text=""
+            />,
+            <ValidUntilBlock>
+              <CardRowText
+                style={
+                  Object {
+                    "color": "#fff",
+                    "fontFamily": "roboto_regular",
+                  }
+                }
+                text=""
+              />
+              <CardRowText
+                style={
+                  Object {
+                    "color": "#fff",
+                    "fontFamily": "roboto_regular",
+                  }
+                }
+                text=""
+              />
+            </ValidUntilBlock>,
+            <ReceiptSubText
+              style={
+                Object {
+                  "alignSelf": "flex-end",
+                  "fontSize": 18.857142857142858,
+                }
+              }
+              text=""
+            />,
+            <Unknown
+              category="Meat"
+              duty={4}
+              mainCategory="Foods"
+              quantity={2}
+            />,
+            <Unknown
+              category="Meat"
+              duty={4}
+              mainCategory="Foods"
+              quantity={2}
+            />,
+            <ReceiptSubText
+              style={
+                Object {
+                  "alignSelf": "flex-end",
+                  "fontSize": 18.857142857142858,
+                  "marginTop": 49.04411764705882,
+                }
+              }
+              text=""
+            />,
+            <Unknown
+              quantity={205.59}
+              vat={44}
+            />,
+            <CardRowText
+              style={
+                Object {
+                  "alignSelf": "flex-end",
+                  "marginBottom": 68.66176470588235,
+                  "marginTop": 29.426470588235293,
+                }
+              }
+              text=""
+            />,
+            <ReceiptSubText
+              style={
+                Object {
+                  "lineHeight": 18,
+                  "paddingBottom": 29.426470588235293,
+                }
+              }
+              text=""
+            />,
+          ],
+          "style": Object {
+            "borderTopColor": "#E0E0E1",
+            "borderTopWidth": 1,
+            "marginHorizontal": 34.285714285714285,
+            "marginTop": 29.426470588235293,
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "style": Object {
+                "marginVertical": 29.426470588235293,
+              },
+              "text": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "style": Object {},
+              "text": "Mastercard XXXX XXXX XXXX 1234",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "style": Object {},
+              "text": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "children": Array [
+                <CardRowText
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontFamily": "roboto_regular",
+                    }
+                  }
+                  text=""
+                />,
+                <CardRowText
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontFamily": "roboto_regular",
+                    }
+                  }
+                  text=""
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "style": Object {
+                    "color": "#fff",
+                    "fontFamily": "roboto_regular",
+                  },
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "style": Object {
+                    "color": "#fff",
+                    "fontFamily": "roboto_regular",
+                  },
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "style": Object {
+                "alignSelf": "flex-end",
+                "fontSize": 18.857142857142858,
+              },
+              "text": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "category": "Meat",
+              "duty": 4,
+              "mainCategory": "Foods",
+              "quantity": 2,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "category": "Meat",
+              "duty": 4,
+              "mainCategory": "Foods",
+              "quantity": 2,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "style": Object {
+                "alignSelf": "flex-end",
+                "fontSize": 18.857142857142858,
+                "marginTop": 49.04411764705882,
+              },
+              "text": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "quantity": 205.59,
+              "vat": 44,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "style": Object {
+                "alignSelf": "flex-end",
+                "marginBottom": 68.66176470588235,
+                "marginTop": 29.426470588235293,
+              },
+              "text": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "style": Object {
+                "lineHeight": 18,
+                "paddingBottom": 29.426470588235293,
+              },
+              "text": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": Array [
+          <RedLogo />,
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontFamily": "roboto_regular",
+                "fontSize": 44,
+                "marginTop": 19.61764705882353,
+                "textAlign": "center",
+              }
+            }
+          >
+            CHF 56.50
+          </Text>,
+          <ReceiptSubText
+            style={
+              Object {
+                "alignSelf": "center",
+              }
+            }
+            text=""
+          />,
+          <View
+            style={
+              Object {
+                "borderTopColor": "#E0E0E1",
+                "borderTopWidth": 1,
+                "marginHorizontal": 34.285714285714285,
+                "marginTop": 29.426470588235293,
+              }
+            }
+          >
+            <CardRowText
+              style={
+                Object {
+                  "marginVertical": 29.426470588235293,
+                }
+              }
+              text=""
+            />
+            <ReceiptSubText
+              style={Object {}}
+              text="Mastercard XXXX XXXX XXXX 1234"
+            />
+            <ReceiptSubText
+              style={Object {}}
+              text=""
+            />
+            <ValidUntilBlock>
+              <CardRowText
+                style={
+                  Object {
+                    "color": "#fff",
+                    "fontFamily": "roboto_regular",
+                  }
+                }
+                text=""
+              />
+              <CardRowText
+                style={
+                  Object {
+                    "color": "#fff",
+                    "fontFamily": "roboto_regular",
+                  }
+                }
+                text=""
+              />
+            </ValidUntilBlock>
+            <ReceiptSubText
+              style={
+                Object {
+                  "alignSelf": "flex-end",
+                  "fontSize": 18.857142857142858,
+                }
+              }
+              text=""
+            />
+            <Unknown
+              category="Meat"
+              duty={4}
+              mainCategory="Foods"
+              quantity={2}
+            />
+            <Unknown
+              category="Meat"
+              duty={4}
+              mainCategory="Foods"
+              quantity={2}
+            />
+            <ReceiptSubText
+              style={
+                Object {
+                  "alignSelf": "flex-end",
+                  "fontSize": 18.857142857142858,
+                  "marginTop": 49.04411764705882,
+                }
+              }
+              text=""
+            />
+            <Unknown
+              quantity={205.59}
+              vat={44}
+            />
+            <CardRowText
+              style={
+                Object {
+                  "alignSelf": "flex-end",
+                  "marginBottom": 68.66176470588235,
+                  "marginTop": 29.426470588235293,
+                }
+              }
+              text=""
+            />
+            <ReceiptSubText
+              style={
+                Object {
+                  "lineHeight": 18,
+                  "paddingBottom": 29.426470588235293,
+                }
+              }
+              text=""
+            />
+          </View>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "accessible": true,
+            "allowFontScaling": true,
+            "children": "CHF 56.50",
+            "ellipsizeMode": "tail",
+            "style": Object {
+              "fontFamily": "roboto_regular",
+              "fontSize": 44,
+              "marginTop": 19.61764705882353,
+              "textAlign": "center",
+            },
+          },
+          "ref": null,
+          "rendered": "CHF 56.50",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "style": Object {
+              "alignSelf": "center",
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <CardRowText
+                style={
+                  Object {
+                    "marginVertical": 29.426470588235293,
+                  }
+                }
+                text=""
+              />,
+              <ReceiptSubText
+                style={Object {}}
+                text="Mastercard XXXX XXXX XXXX 1234"
+              />,
+              <ReceiptSubText
+                style={Object {}}
+                text=""
+              />,
+              <ValidUntilBlock>
+                <CardRowText
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontFamily": "roboto_regular",
+                    }
+                  }
+                  text=""
+                />
+                <CardRowText
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontFamily": "roboto_regular",
+                    }
+                  }
+                  text=""
+                />
+              </ValidUntilBlock>,
+              <ReceiptSubText
+                style={
+                  Object {
+                    "alignSelf": "flex-end",
+                    "fontSize": 18.857142857142858,
+                  }
+                }
+                text=""
+              />,
+              <Unknown
+                category="Meat"
+                duty={4}
+                mainCategory="Foods"
+                quantity={2}
+              />,
+              <Unknown
+                category="Meat"
+                duty={4}
+                mainCategory="Foods"
+                quantity={2}
+              />,
+              <ReceiptSubText
+                style={
+                  Object {
+                    "alignSelf": "flex-end",
+                    "fontSize": 18.857142857142858,
+                    "marginTop": 49.04411764705882,
+                  }
+                }
+                text=""
+              />,
+              <Unknown
+                quantity={205.59}
+                vat={44}
+              />,
+              <CardRowText
+                style={
+                  Object {
+                    "alignSelf": "flex-end",
+                    "marginBottom": 68.66176470588235,
+                    "marginTop": 29.426470588235293,
+                  }
+                }
+                text=""
+              />,
+              <ReceiptSubText
+                style={
+                  Object {
+                    "lineHeight": 18,
+                    "paddingBottom": 29.426470588235293,
+                  }
+                }
+                text=""
+              />,
+            ],
+            "style": Object {
+              "borderTopColor": "#E0E0E1",
+              "borderTopWidth": 1,
+              "marginHorizontal": 34.285714285714285,
+              "marginTop": 29.426470588235293,
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "style": Object {
+                  "marginVertical": 29.426470588235293,
+                },
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "style": Object {},
+                "text": "Mastercard XXXX XXXX XXXX 1234",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "style": Object {},
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "children": Array [
+                  <CardRowText
+                    style={
+                      Object {
+                        "color": "#fff",
+                        "fontFamily": "roboto_regular",
+                      }
+                    }
+                    text=""
+                  />,
+                  <CardRowText
+                    style={
+                      Object {
+                        "color": "#fff",
+                        "fontFamily": "roboto_regular",
+                      }
+                    }
+                    text=""
+                  />,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "style": Object {
+                      "color": "#fff",
+                      "fontFamily": "roboto_regular",
+                    },
+                    "text": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "style": Object {
+                      "color": "#fff",
+                      "fontFamily": "roboto_regular",
+                    },
+                    "text": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "style": Object {
+                  "alignSelf": "flex-end",
+                  "fontSize": 18.857142857142858,
+                },
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "category": "Meat",
+                "duty": 4,
+                "mainCategory": "Foods",
+                "quantity": 2,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "category": "Meat",
+                "duty": 4,
+                "mainCategory": "Foods",
+                "quantity": 2,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "style": Object {
+                  "alignSelf": "flex-end",
+                  "fontSize": 18.857142857142858,
+                  "marginTop": 49.04411764705882,
+                },
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "quantity": 205.59,
+                "vat": 44,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "style": Object {
+                  "alignSelf": "flex-end",
+                  "marginBottom": 68.66176470588235,
+                  "marginTop": 29.426470588235293,
+                },
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "style": Object {
+                  "lineHeight": 18,
+                  "paddingBottom": 29.426470588235293,
+                },
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
