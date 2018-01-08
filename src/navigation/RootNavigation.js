@@ -1,6 +1,9 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { Notifications } from 'expo';
 import { translate } from 'react-i18next';
+// $FlowFixMe
 import { StackNavigator } from 'react-navigation';
 import i18n from '../i18n';
 import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
@@ -24,11 +27,14 @@ import HomeIcon from '../components/Headers/subcomponents/HomeIcon';
 import DownloadIcon from '../components/Headers/subcomponents/DownloadIcon';
 import { Information } from '../screens/Information/Information';
 import SearchIcon from '../components/Headers/subcomponents/SearchIcon';
+import type { Navigation } from '../types/generalTypes';
+
+type NavigationObject = { navigation: Navigation };
 
 export const stackNavigatorScreens = {
   Screens: {
     screen: ScreensView,
-    navigationOptions: ({ navigationOptions }) => ({
+    navigationOptions: ({ navigationOptions }: { navigationOptions: any }) => ({
       ...navigationOptions,
       headerTitle: <HeaderTitle text="Screens" />,
       headerLeft: <Logo />,
@@ -42,13 +48,13 @@ export const stackNavigatorScreens = {
   },
   QuestionAnswer: {
     screen: QuestionAnswerContainer,
-    navigationOptions: ({ navigation }) => ({
+    navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: <HomeIcon navigation={navigation} />,
     }),
   },
   Payment: {
     screen: PaymentContainer,
-    navigationOptions: ({ navigation }) => ({
+    navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: <HomeIcon navigation={navigation} />,
     }),
   },
@@ -69,7 +75,13 @@ export const stackNavigatorScreens = {
   },
   MainMenu: {
     screen: MainMenu,
-    navigationOptions: ({ navigationOptions, navigation }) => ({
+    navigationOptions: ({
+      navigationOptions,
+      navigation,
+    }: {
+      navigationOptions: any,
+      navigation: Navigation,
+    }) => ({
       ...navigationOptions,
       headerLeft: <InfoIcon navigation={navigation} />,
       headerRight: <MainMenuHeaderRight navigation={navigation} />,
@@ -88,14 +100,14 @@ export const stackNavigatorScreens = {
   },
   Information: {
     screen: Information,
-    navigationOptions: ({ navigation }) => ({
+    navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: <HomeIcon navigation={navigation} />,
       headerRight: <SearchIcon navigation={navigation} />,
     }),
   },
   ReceiptAfterPayment: {
     screen: ReceiptAfterPayment,
-    navigationOptions: ({ navigation }) => ({
+    navigationOptions: ({ navigation }: NavigationObject) => ({
       headerTitle: <HeaderTitle text="Quittung Schweizer Zoll" />,
       headerLeft: <HomeIcon navigation={navigation} />,
       headerRight: <DownloadIcon navigation={navigation} />,
@@ -123,7 +135,7 @@ const ReloadAppOnLanguageChange = translate(null, {
   bindStore: false,
 })(WrappedRootStackNavigator);
 
-export default class RootNavigator extends React.Component {
+export class RootNavigator extends React.Component<{}> {
   componentDidMount() {
     this._notificationSubscription = this._registerForPushNotifications();
   }
@@ -132,6 +144,8 @@ export default class RootNavigator extends React.Component {
     // eslint-disable-next-line
     this._notificationSubscription && this._notificationSubscription.remove();
   }
+
+  _notificationSubscription: any;
 
   _registerForPushNotifications() {
     // Send our push token over to our backend so we can receive notifications
