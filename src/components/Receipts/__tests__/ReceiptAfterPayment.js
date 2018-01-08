@@ -11,6 +11,10 @@ describe('ReceiptAfterPayment', () => {
   test('renders according to snapshot', () => {
     const component = shallow(<ReceiptAfterPayment />).dive();
     expect(component).toMatchSnapshot();
+  });
+
+  test('Finds RedLogo', () => {
+    const component = shallow(<ReceiptAfterPayment />).dive();
     expect(component.find('RedLogo').length).toBe(1);
   });
 });
