@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Notifications } from 'expo';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { StackNavigator } from 'react-navigation';
@@ -17,7 +16,6 @@ import { InfoIcon } from '../components/Headers/subcomponents/InfoIcon';
 import { MainMenuHeaderRight } from '../components/Headers/subcomponents/MainMenuHeaderRight';
 import { MainMenu } from '../screens/MainMenu/MainMenu';
 import { PaymentContainer } from '../components/Payment/PaymentContainer';
-import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
 import { QuestionAnswerContainer } from '../components/QuestionAnswer/QuestionAnswerContainer';
 import { GoodQuantityListModal } from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
@@ -141,34 +139,4 @@ const ReloadAppOnLanguageChange = translate(null, {
   bindStore: false,
 })(WrappedRootStackNavigator);
 
-export class RootNavigator extends React.Component<{}> {
-  componentDidMount() {
-    this._notificationSubscription = this._registerForPushNotifications();
-  }
-
-  componentWillUnmount() {
-    // eslint-disable-next-line
-    this._notificationSubscription && this._notificationSubscription.remove();
-  }
-
-  _notificationSubscription: any;
-
-  _registerForPushNotifications() {
-    // Send our push token over to our backend so we can receive notifications
-    // You can comment the following line out if you want to stop receiving
-    // a notification every time you open the app. Check out the source
-    // for this function in api/registerForPushNotificationsAsync.js
-    registerForPushNotificationsAsync();
-
-    // Watch for incoming notifications
-    this._notificationSubscription = Notifications.addListener(
-      this._handleNotification
-    );
-  }
-
-  _handleNotification = () => {};
-
-  render() {
-    return <ReloadAppOnLanguageChange />;
-  }
-}
+export const RootNavigator = () => <ReloadAppOnLanguageChange />;

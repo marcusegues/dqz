@@ -4,7 +4,7 @@ import type { ComponentType } from 'react';
 // $FlowFixMe
 import { View, Text } from 'react-native';
 import { translate } from 'react-i18next';
-import AppTitle from '../../../components/AppTitle/AppTitle';
+import { AppTitle } from '../../../components/AppTitle/AppTitle';
 import { moderateScale, scale, verticalScale } from '../../../styles/Scaling';
 import type { Children, TFunction } from '../../../types/generalTypes';
 
