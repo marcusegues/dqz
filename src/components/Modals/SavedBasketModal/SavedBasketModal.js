@@ -20,7 +20,7 @@ import { Row } from '../../Rows/Row';
 import { CardRowText } from '../../QuestionAnswer/cards/subcomponents/CardRowText';
 import { CardRowSubText } from '../../QuestionAnswer/cards/subcomponents/CardRowSubText';
 import { GREY } from '../../../styles/colors';
-import CloseIcon from '../../General Components/CloseIcon';
+import { CloseIcon } from '../../General Components/CloseIcon';
 import type { TFunction } from '../../../types/generalTypes';
 
 const ownStyles = StyleSheet.create({
