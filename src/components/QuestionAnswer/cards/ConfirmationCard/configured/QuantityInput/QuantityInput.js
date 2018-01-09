@@ -5,8 +5,11 @@ import { View, ScrollView } from 'react-native';
 import { getTotalQuantity } from '../../../../../../model/configurationApi';
 import { GoodInputRow } from './subcomponents/GoodInputRow';
 import { moderateScale } from '../../../../../../styles/Scaling';
-import type { Basket } from '../../../../../../model/types/basketPeopleAmountsTypes';
-import type { ModalCategoriesType } from '../../../../QuantityInput/QuantityInputQA';
+import type {
+  Basket,
+  Category,
+} from '../../../../../../model/types/basketPeopleAmountsTypes';
+import type { MainCategory } from '../../../../../../types/reducers/appReducer';
 
 const ownStyles = {
   mainContainer: {
@@ -34,7 +37,10 @@ const ownStyles = {
 };
 
 type QuantityInputProps = {
-  onShowQuantityInputModal: ModalCategoriesType => void,
+  onShowQuantityInputModal: (
+    modalCategory: Category,
+    modalMainCategory: MainCategory
+  ) => void,
   basket: Basket,
   categoriesByMainCategory: any,
 };
@@ -50,7 +56,7 @@ export const QuantityInput = ({
       const subcomponents = categories.map(category => (
         <GoodInputRow
           onShowQuantityInputModal={() => {
-            onShowQuantityInputModal({ mainCategory, category });
+            onShowQuantityInputModal(category, mainCategory);
           }}
           key={category}
           category={category}

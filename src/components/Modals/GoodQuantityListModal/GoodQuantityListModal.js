@@ -54,11 +54,11 @@ export class GoodQuantityListModal extends React.Component<
   }
 
   confirmPicker(amount: number) {
-    const { onAddQuantity, modalCategories } = this.props;
+    const { onAddQuantity, modalCategory } = this.props;
 
     this.togglePickerVisible();
-    if (modalCategories.category !== 'none') {
-      onAddQuantity(modalCategories.category, amount);
+    if (modalCategory) {
+      onAddQuantity(modalCategory, amount);
     }
   }
 
@@ -69,17 +69,16 @@ export class GoodQuantityListModal extends React.Component<
       onDeleteQuantity,
       basket,
       modalVisible,
-      modalCategories,
+      modalCategory,
+      modalMainCategory,
     } = this.props;
-    if (modalCategories.category === 'none') {
+    if (!modalCategory || !modalMainCategory) {
       return null;
     }
-    const quantities = getQuantities(basket, modalCategories.category);
-    const totalQuantity =
-      modalCategories.category !== 'none'
-        ? getTotalQuantity(basket, modalCategories.category)
-        : 0;
-
+    const quantities = getQuantities(basket, modalCategory);
+    const totalQuantity = modalCategory
+      ? getTotalQuantity(basket, modalCategory)
+      : 0;
     return (
       <AppModal modalVisible={modalVisible}>
         <ModalCard>
@@ -95,8 +94,8 @@ export class GoodQuantityListModal extends React.Component<
             <Text />
           </View>
           <QuantityInfo
-            mainCategory={modalCategories.mainCategory}
-            category={modalCategories.category}
+            mainCategory={modalMainCategory}
+            category={modalCategory}
             totalQuantity={totalQuantity}
           />
           {quantities.map((q, idx) => (
@@ -104,10 +103,10 @@ export class GoodQuantityListModal extends React.Component<
               borderTop={idx === 0}
               key={v4()}
               quantity={q}
-              category={modalCategories.category}
+              category={modalCategory}
               onDelete={() => {
-                if (modalCategories.category !== 'none') {
-                  onDeleteQuantity(modalCategories.category, idx);
+                if (modalCategory) {
+                  onDeleteQuantity(modalCategory, idx);
                 }
               }}
             />
@@ -129,7 +128,7 @@ export class GoodQuantityListModal extends React.Component<
           modalVisible={pickerModalVisible}
           toggleModalVisible={() => this.togglePickerVisible()}
           confirmAction={amount => this.confirmPicker(amount)}
-          category={modalCategories.category}
+          category={modalCategory}
         />
       </AppModal>
     );

@@ -77,6 +77,6 @@ const NavBarInner = ({ step, t }: NavBarProps & { t: TFunction }) => (
   </View>
 );
 
-export const NavBar = (translate(['onBoarding'])(NavBarInner): ComponentType<
+export const NavBar = (translate(['general'])(NavBarInner): ComponentType<
   NavBarProps
 >);

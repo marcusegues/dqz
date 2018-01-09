@@ -4,13 +4,19 @@ import { translate } from 'react-i18next';
 import type { ComponentType } from 'react';
 import { ConfirmationCard } from '../../ConfirmationCard';
 import { QuantityInput } from './QuantityInput';
-import type { Basket } from '../../../../../../model/types/basketPeopleAmountsTypes';
+import type {
+  Basket,
+  Category,
+} from '../../../../../../model/types/basketPeopleAmountsTypes';
 import type { DirectionType } from '../../../../QuestionAnswerContainer';
 import type { TFunction } from '../../../../../../types/generalTypes';
-import type { ModalCategoriesType } from '../../../../QuantityInput/QuantityInputQA';
+import type { MainCategory } from '../../../../../../types/reducers/appReducer';
 
 type QuantityInputConfirmationCardProps = {
-  onShowQuantityInputModal: (mct: ModalCategoriesType) => void,
+  onShowQuantityInputModal: (
+    modalCategory: Category,
+    modalMainCategory: MainCategory
+  ) => void,
   basket: Basket,
   onAnswer: DirectionType => void,
   categoriesByMainCategory: any, // TODO
