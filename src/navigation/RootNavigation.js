@@ -5,7 +5,7 @@ import { Notifications } from 'expo';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { StackNavigator } from 'react-navigation';
-import i18n from '../i18n';
+import { i18nImplementation } from '../i18n';
 import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
 import { ScreensView } from '../screens/ScreensView/ScreensView';
 import { MAIN_RED, MAIN_BACKGROUND_COLOR } from '../styles/colors';
@@ -127,7 +127,7 @@ const RootStackNavigator = StackNavigator(
 );
 
 const WrappedRootStackNavigator = () => (
-  <RootStackNavigator screenProps={{ t: i18n.getFixedT() }} />
+  <RootStackNavigator screenProps={{ t: i18nImplementation.getFixedT() }} />
 );
 
 const ReloadAppOnLanguageChange = translate(null, {
