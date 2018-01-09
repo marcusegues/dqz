@@ -1,14 +1,14 @@
 {
   "expo": {
     "name": "dazit",
-    "description": "No description",
+    "description": "Customs App",
     "slug": "dazit",
     "privacy": "unlisted",
     "sdkVersion": "23.0.0",
-    "version": "1.0.0",
+    "version": "0.2.1",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
-    "icon": "./assets/images/kreuz.png",
+    "icon": "./assets/icons/store-icon-1024.png",
     "notification": {
       "icon": "./assets/icons/notification-icon.png",
       "color": "#000000"
@@ -20,8 +20,13 @@
       "assetExts": ["ttf"]
     },
     "ios": {
-      "bundleIdentifier": "com.sk3vy.new-project-template",
+      "bundleIdentifier": "com.ambrite.dazit",
+      "buildNumber": "0.2.1",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.ambrite.dazit",
+      "versionCode": 1
     }
   }
 }
