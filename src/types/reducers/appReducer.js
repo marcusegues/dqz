@@ -74,7 +74,6 @@ export const mainCategories: MainCategories = Immutable.Set([
 
 export const EmptyMainCategories: MainCategories = Immutable.Set();
 
-// TODO improve types
 export const getMainCategory = (category: any): MainCategory => {
   if (foodsCategories.has(category)) {
     return 'Foods';

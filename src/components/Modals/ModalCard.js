@@ -5,7 +5,7 @@ import { Platform, View } from 'react-native';
 import { verticalScale } from '../../styles/Scaling';
 
 type ModalCardProps = {
-  children: any, // TODO (see list in GoodQuantityListModal
+  children: any, // TODO (see list in GoodQuantityListModal)
 };
 
 export const ModalCard = ({ children }: ModalCardProps) => (

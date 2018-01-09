@@ -38,7 +38,6 @@ const ReceiptNotificationBadgeInner = ({
   amounts,
   currencyObject,
 }: ReceiptNotificationBadgeProps) => {
-  // TODO -> add vat!
   const duty = calculateDuty(basket, people).get('totalDuty', 0);
   const vat = calculateVat(amounts, people, currencyObject).get('totalVat', 0);
   return (

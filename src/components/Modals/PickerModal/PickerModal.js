@@ -19,6 +19,7 @@ import { PickerComponent } from '../CurrencyPickerModal/subComponents/PickerComp
 import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
 import { PickerUnitColumn } from './subComponents/PickerUnitColumn';
 import type { TFunction } from '../../../types/generalTypes';
+import type { Category } from '../../../model/types/basketPeopleAmountsTypes';
 
 type PickerState = {
   selected: 'standardInput' | 'customInput',
@@ -34,7 +35,7 @@ type PickerState = {
 
 type PickerModalProps = {
   confirmAction: number => void,
-  category: any, // TODO
+  category: Category,
   toggleModalVisible: () => void,
   modalVisible: boolean,
 };
