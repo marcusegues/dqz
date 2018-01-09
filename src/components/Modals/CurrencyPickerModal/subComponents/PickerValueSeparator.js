@@ -1,4 +1,6 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View, Text } from 'react-native';
 import { DARK_GREY } from '../../../../styles/colors';
 import { moderateScale } from '../../../../styles/Scaling';
@@ -17,10 +19,14 @@ const ownStyles = {
   },
 };
 
-const PickerValueSeparator = ({ separator }) => (
+type PickerValueSeparatorProps = {
+  separator: string,
+};
+
+export const PickerValueSeparator = ({
+  separator,
+}: PickerValueSeparatorProps) => (
   <View style={ownStyles.pickerDividerColumn}>
     <Text style={ownStyles.pickerDividerColumnText}>{separator}</Text>
   </View>
 );
-
-export default PickerValueSeparator;

@@ -13,10 +13,10 @@ import {
 } from './pickerData';
 import { pickerModalStyle } from '../styles/PickerModal';
 import { CategoriesInfo } from '../../../model/constants';
-import PickerCard from '../CurrencyPickerModal/subComponents/PickerCard';
+import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
 import { ModalTab } from './subComponents/ModalTab';
-import PickerComponent from '../CurrencyPickerModal/subComponents/PickerComponent';
-import PickerValueSeparator from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
+import { PickerComponent } from '../CurrencyPickerModal/subComponents/PickerComponent';
+import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
 import { PickerUnitColumn } from './subComponents/PickerUnitColumn';
 import type { TFunction } from '../../../types/generalTypes';
 
@@ -183,7 +183,6 @@ class PickerModalInner extends React.Component<
                 }
                 mode="dropdown"
                 prompt=""
-                itemStyle={{}}
               >
                 {rangeItemsPicker(1, 100, 1).map(i => (
                   <Picker.Item key={i.id} label={i.label} value={i.value} />

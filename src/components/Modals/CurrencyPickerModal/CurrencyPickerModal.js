@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 // $FlowFixMe
 import {
   TextInput,
@@ -14,8 +15,8 @@ import { translate } from 'react-i18next';
 import { AppModal } from '../AppModal';
 import RedButton from '../../Buttons/RedButton';
 import { pickerModalStyle } from '../styles/PickerModal';
-import PickerCard from './subComponents/PickerCard';
-import PickerComponent from './subComponents/PickerComponent';
+import { PickerCard } from './subComponents/PickerCard';
+import { PickerComponent } from './subComponents/PickerComponent';
 import { CardHeader } from '../../QuestionAnswer/cards/subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
 import { currencyPicker } from './currencyPickerData';
@@ -30,8 +31,7 @@ type PickerState = {
   amount: number,
 };
 
-type CurrencyPickerProps = {
-  t: TFunction,
+type CurrencyPickerModalProps = {
   onHide: () => void,
   currencyObject: CurrencyObject,
   currencyDate: string,
@@ -40,8 +40,8 @@ type CurrencyPickerProps = {
   large: boolean,
 };
 
-class CurrencyPickerModal extends React.Component<
-  CurrencyPickerProps,
+class CurrencyPickerModalInner extends React.Component<
+  CurrencyPickerModalProps & { t: TFunction },
   PickerState
 > {
   constructor() {
@@ -157,4 +157,6 @@ class CurrencyPickerModal extends React.Component<
   }
 }
 
-export default translate(['modal'])(CurrencyPickerModal);
+export const CurrencyPickerModal = (translate(['modal'])(
+  CurrencyPickerModalInner
+): ComponentType<CurrencyPickerModalProps>);

@@ -1,6 +1,9 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View } from 'react-native';
 import { globalStyles } from '../../../../styles/globalStyles';
+import type { Children } from '../../../../types/generalTypes';
 
 const ownStyles = {
   modalContainer: {
@@ -15,12 +18,15 @@ const ownStyles = {
   },
 };
 
-const ModalContainer = ({ children, style }) => (
+type PickerCardProps = {
+  children: Children,
+  style: {},
+};
+
+export const PickerCard = ({ children, style }: PickerCardProps) => (
   <View
     style={[ownStyles.modalContainer, globalStyles.boxShadow, { ...style }]}
   >
     {children}
   </View>
 );
-
-export default ModalContainer;

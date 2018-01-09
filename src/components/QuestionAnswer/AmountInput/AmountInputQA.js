@@ -11,7 +11,7 @@ import {
 } from '../../../model/configurationApi';
 import { calculateVat } from '../../../model/vatCalculations';
 import { AmountInputAnswerCard } from '../cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
-import CurrencyPickerModal from '../../Modals/CurrencyPickerModal/CurrencyPickerModal';
+import { CurrencyPickerModal } from '../../Modals/CurrencyPickerModal/CurrencyPickerModal';
 import type { Currency } from '../../../model/currencies';
 import { AmountInputConfirmationCard } from '../cards/ConfirmationCard/configured/AmountInput/AmountInputConfirmationCard';
 

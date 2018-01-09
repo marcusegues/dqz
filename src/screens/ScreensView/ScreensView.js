@@ -4,9 +4,9 @@ import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { NavBar } from '../../components/NavBar/NavBar';
-import GoodInputModal from '../../components/Modals/GoodInputModal/GoodInputModal';
+import { GoodInputModal } from '../../components/Modals/GoodInputModal/GoodInputModal';
 import { PickerModal } from '../../components/Modals/PickerModal/PickerModal';
-import CurrencyPickerModal from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
+import { CurrencyPickerModal } from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
 import { getCurrencies, getFormattedCurrencyDate } from '../../reducers';
 import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import type { Navigation } from '../../types/generalTypes';
@@ -26,7 +26,6 @@ type ScreensViewState = {
 class ScreensViewInner extends React.Component<
   ScreensViewProps & {
     currencyObject: CurrencyObject,
-    currencyDate: Date,
   },
   ScreensViewState
 > {
@@ -108,6 +107,7 @@ class ScreensViewInner extends React.Component<
         />
 
         <GoodInputModal
+          onRequestClose={() => {}}
           modalVisible={this.state.modalVisible}
           toggleModalVisible={() => this.toggleModalVisible()}
         />
@@ -121,7 +121,10 @@ class ScreensViewInner extends React.Component<
           modalVisible={this.state.currencyPickerModalVisible}
           toggleModalVisible={() => this.toggleCurrencyPickerVisible()}
           currencyObject={this.props.currencyObject}
-          currencyDate={this.props.currencyDate}
+          currencyDate="xy.zy.1234"
+          onHide={() => {}}
+          onAddAmount={() => {}}
+          large={false}
         />
         <SavedBasketModal
           modalVisible={this.state.savedBasketModalVisible}

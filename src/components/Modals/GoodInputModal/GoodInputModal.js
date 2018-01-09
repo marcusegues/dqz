@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import {
   Text,
@@ -6,6 +7,7 @@ import {
   TouchableWithoutFeedback,
   View,
   StyleSheet,
+  // $FlowFixMe
 } from 'react-native';
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
 import { AppModal } from '../AppModal';
@@ -106,11 +108,17 @@ const ownStyles = StyleSheet.create({
   },
 });
 
-const GoodInputModal = ({
+type GoodInputModalProps = {
+  onRequestClose: () => void,
+  modalVisible: boolean,
+  toggleModalVisible: () => void,
+};
+
+export const GoodInputModal = ({
   onRequestClose,
   modalVisible,
   toggleModalVisible,
-}) => (
+}: GoodInputModalProps) => (
   <AppModal onRequestClose={onRequestClose} modalVisible={modalVisible}>
     <View style={ownStyles.modalContainer}>
       <View style={ownStyles.closeButtonContainer}>
@@ -167,5 +175,3 @@ const GoodInputModal = ({
     </View>
   </AppModal>
 );
-
-export default GoodInputModal;
