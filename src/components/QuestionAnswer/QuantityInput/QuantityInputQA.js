@@ -4,7 +4,6 @@ import React from 'react';
 import { View } from 'react-native';
 import { QuantityInputConfirmationCard } from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
 import { GoodQuantityListModal } from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
-import { mainCategoriesToCategories } from '../../../types/reducers/appReducer';
 import type { MainCategory } from '../../../types/reducers/appReducer';
 import type {
   Basket,
@@ -34,15 +33,10 @@ export class QuantityInputQA extends React.Component<
     };
   }
 
-  getDisplayedCategoriesByMainCategory() {
-    return mainCategoriesToCategories.filter((cats, mainCat) =>
-      this.props.qaState.settings.get('mainCategories').has(mainCat)
-    );
-  }
-
   getQuestionComponent() {
     const { modalVisible, modalCategory, modalMainCategory } = this.state;
     const { onAnswer, qaState } = this.props;
+    const { basket, settings } = qaState;
     return (
       <View>
         <QuantityInputConfirmationCard
@@ -51,15 +45,15 @@ export class QuantityInputQA extends React.Component<
             modalMainCategoryShow: MainCategory
           ) => this.handleShowModal(modalCategoryShow, modalMainCategoryShow)}
           onAnswer={onAnswer}
-          categoriesByMainCategory={this.getDisplayedCategoriesByMainCategory()}
-          basket={qaState.basket}
+          mainCategories={settings.get('mainCategories')}
+          basket={basket}
         />
         <GoodQuantityListModal
           onHide={() => this.handleHideModal()}
           modalVisible={modalVisible}
           modalCategory={modalCategory}
           modalMainCategory={modalMainCategory}
-          basket={qaState.basket}
+          basket={basket}
           onAddQuantity={(category: Category, quantity: number) => {
             this.handleAddQuantity(category, quantity);
           }}

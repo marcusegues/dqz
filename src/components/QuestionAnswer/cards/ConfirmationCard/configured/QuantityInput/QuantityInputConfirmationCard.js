@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { translate } from 'react-i18next';
+import type { Set as ImmutableSetType } from 'immutable';
 import type { ComponentType } from 'react';
 import { ConfirmationCard } from '../../ConfirmationCard';
 import { QuantityInput } from './QuantityInput';
@@ -19,14 +20,14 @@ type QuantityInputConfirmationCardProps = {
   ) => void,
   basket: Basket,
   onAnswer: DirectionType => void,
-  categoriesByMainCategory: any, // TODO
+  mainCategories: ImmutableSetType<MainCategory>,
 };
 
 const QuantityInputConfirmationCardInner = ({
   onShowQuantityInputModal,
   basket,
   onAnswer,
-  categoriesByMainCategory,
+  mainCategories,
   t,
 }: QuantityInputConfirmationCardProps & { t: TFunction }) => (
   <ConfirmationCard
@@ -36,7 +37,7 @@ const QuantityInputConfirmationCardInner = ({
   >
     <QuantityInput
       onShowQuantityInputModal={onShowQuantityInputModal}
-      categoriesByMainCategory={categoriesByMainCategory}
+      mainCategories={mainCategories}
       basket={basket}
     />
   </ConfirmationCard>
