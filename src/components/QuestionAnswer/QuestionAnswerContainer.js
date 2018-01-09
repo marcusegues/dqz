@@ -34,7 +34,7 @@ import {
 } from './QAControl/controlQuestionStates';
 import { setInitFlags, setQuestionFlag } from './QAControl/controlQuestionFlag';
 import { verticalScale } from '../../styles/Scaling';
-import HeaderTitle from '../Headers/subcomponents/HeaderTitle';
+import { HeaderTitle } from '../Headers/subcomponents/HeaderTitle';
 import { onUpdateFactory } from './QAControl/validation';
 import { AmountInputQA } from './AmountInput/AmountInputQA';
 import type { CurrencyObject } from '../../model/currencies';

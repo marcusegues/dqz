@@ -10,11 +10,11 @@ import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
 import { ScreensView } from '../screens/ScreensView/ScreensView';
 import { MAIN_RED, MAIN_BACKGROUND_COLOR } from '../styles/colors';
 import { defaultNavigationOptions } from './navigationOptions';
-import HeaderTitle from '../components/Headers/subcomponents/HeaderTitle';
-import Logo from '../components/Headers/subcomponents/Logo';
-import OptionsButton from '../components/Headers/subcomponents/OptionsButton';
-import InfoIcon from '../components/Headers/subcomponents/InfoIcon';
-import MainMenuHeaderRight from '../components/Headers/subcomponents/MainMenuHeaderRight';
+import { HeaderTitle } from '../components/Headers/subcomponents/HeaderTitle';
+import { Logo } from '../components/Headers/subcomponents/Logo';
+import { OptionsButton } from '../components/Headers/subcomponents/OptionsButton';
+import { InfoIcon } from '../components/Headers/subcomponents/InfoIcon';
+import { MainMenuHeaderRight } from '../components/Headers/subcomponents/MainMenuHeaderRight';
 import { MainMenu } from '../screens/MainMenu/MainMenu';
 import { PaymentContainer } from '../components/Payment/PaymentContainer';
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
@@ -23,10 +23,10 @@ import { QuestionAnswerContainer } from '../components/QuestionAnswer/QuestionAn
 import { GoodQuantityListModal } from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { OnBoardingTaxScreen } from '../screens/OnBoarding/OnBoardingTaxScreen';
 import { ReceiptAfterPayment } from '../components/Receipts/ReceiptAfterPayment';
-import HomeIcon from '../components/Headers/subcomponents/HomeIcon';
-import DownloadIcon from '../components/Headers/subcomponents/DownloadIcon';
+import { HomeIcon } from '../components/Headers/subcomponents/HomeIcon';
+import { DownloadIcon } from '../components/Headers/subcomponents/DownloadIcon';
 import { Information } from '../screens/Information/Information';
-import SearchIcon from '../components/Headers/subcomponents/SearchIcon';
+import { SearchIcon } from '../components/Headers/subcomponents/SearchIcon';
 import type { Navigation } from '../types/generalTypes';
 
 type NavigationObject = { navigation: Navigation };
@@ -34,11 +34,17 @@ type NavigationObject = { navigation: Navigation };
 export const stackNavigatorScreens = {
   Screens: {
     screen: ScreensView,
-    navigationOptions: ({ navigationOptions }: { navigationOptions: any }) => ({
+    navigationOptions: ({
+      navigationOptions,
+      navigation,
+    }: {
+      navigationOptions: any,
+      navigation: Navigation,
+    }) => ({
       ...navigationOptions,
       headerTitle: <HeaderTitle text="Screens" />,
       headerLeft: <Logo />,
-      headerRight: <OptionsButton />,
+      headerRight: <OptionsButton navigation={navigation} />,
       headerStyle: {
         ...navigationOptions.headerStyle,
         borderBottomWidth: 5,

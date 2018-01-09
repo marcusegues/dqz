@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import BackArrow from '../components/Headers/subcomponents/BackArrow';
+import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
 import { MAIN_BACKGROUND_COLOR } from '../styles/colors';
 import type { Navigation } from '../types/generalTypes';
 

@@ -11,7 +11,7 @@ type HomeIconProps = {
   navigation: Navigation,
 };
 
-const HomeIcon = ({ navigation }: HomeIconProps) => (
+export const HomeIcon = ({ navigation }: HomeIconProps) => (
   <Touchable
     onPress={() => {
       navigation.navigate('MainMenu');
@@ -20,5 +20,3 @@ const HomeIcon = ({ navigation }: HomeIconProps) => (
     <MaterialIcons name="home" size={moderateScale(28)} color={MAIN_RED} />
   </Touchable>
 );
-
-export default HomeIcon;

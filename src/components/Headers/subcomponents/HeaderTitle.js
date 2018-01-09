@@ -1,8 +1,9 @@
+// @flow
 import React from 'react';
-
+// $FlowFixMe
 import { Text } from 'react-native';
 
-const HeaderTitle = ({ text }) => (
+export const HeaderTitle = ({ text }: { text: string }) => (
   <Text
     style={{
       fontSize: 18,
@@ -13,5 +14,3 @@ const HeaderTitle = ({ text }) => (
     {text}
   </Text>
 );
-
-export default HeaderTitle;

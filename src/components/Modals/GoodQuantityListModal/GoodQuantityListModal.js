@@ -22,7 +22,7 @@ import type {
 import { QuantityRow } from './subcomponents/QuantityRow';
 import { MAIN_RED } from '../../../styles/colors';
 import { moderateScale } from '../../../styles/Scaling';
-import BackArrow from '../../Headers/subcomponents/BackArrow';
+import { BackArrow } from '../../Headers/subcomponents/BackArrow';
 import { PickerModal } from '../PickerModal/PickerModal';
 
 export type GoodQuantityListModalProps = {
