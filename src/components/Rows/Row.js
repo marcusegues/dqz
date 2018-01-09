@@ -20,12 +20,10 @@ const quantityRowContainerStyles = borderTop => ({
   borderTopWidth: borderTop ? 1 : 0,
 });
 
-const Row = ({ borderTop, children }: RowProp) => (
+export const Row = ({ borderTop, children }: RowProp) => (
   <View style={quantityRowContainerStyles(borderTop)}>{children}</View>
 );
 
 Row.defaultProps = {
   borderTop: false,
 };
-
-export default Row;

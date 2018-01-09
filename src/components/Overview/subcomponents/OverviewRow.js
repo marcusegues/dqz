@@ -5,7 +5,7 @@ import { View } from 'react-native';
 import { CardRowSubText } from '../../QuestionAnswer/cards/subcomponents/CardRowSubText';
 import QuantityIcon from '../../General Components/QuantityIcon';
 import { CardRowText } from '../../QuestionAnswer/cards/subcomponents/CardRowText';
-import Row from '../../Rows/Row';
+import { Row } from '../../Rows/Row';
 
 type OverviewRowProps = {
   title: string,

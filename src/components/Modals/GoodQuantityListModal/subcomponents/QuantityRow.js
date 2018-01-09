@@ -6,7 +6,7 @@ import { CardRowText } from '../../../QuestionAnswer/cards/subcomponents/CardRow
 import { moderateScale } from '../../../../styles/Scaling';
 import { GREY } from '../../../../styles/colors';
 import { CategoriesInfo } from '../../../../model/constants';
-import Row from '../../../Rows/Row';
+import { Row } from '../../../Rows/Row';
 
 const QuantityRow = ({ quantity, onDelete, category, borderTop = false }) => (
   <Row borderTop={borderTop}>

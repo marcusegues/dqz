@@ -7,7 +7,7 @@ import Touchable from 'react-native-platform-touchable';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { MaterialIcons } from '@expo/vector-icons';
-import Row from '../../../../../../Rows/Row';
+import { Row } from '../../../../../../Rows/Row';
 import { CardRowText } from '../../../../subcomponents/CardRowText';
 import { moderateScale } from '../../../../../../../styles/Scaling';
 import { GREY } from '../../../../../../../styles/colors';
