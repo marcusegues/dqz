@@ -11,7 +11,7 @@ import { Overview } from '../Overview/Overview';
 import Saferpay from '../../../saferpay';
 import { NavBar } from '../NavBar/NavBar';
 import { PaymentWebView } from './PaymentWebView';
-import RedButton from '../Buttons/RedButton';
+import { RedButton } from '../Buttons/RedButton';
 import {
   getAmounts,
   getBasket,

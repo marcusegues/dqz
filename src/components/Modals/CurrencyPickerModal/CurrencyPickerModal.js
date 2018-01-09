@@ -13,7 +13,7 @@ import {
 
 import { translate } from 'react-i18next';
 import { AppModal } from '../AppModal';
-import RedButton from '../../Buttons/RedButton';
+import { RedButton } from '../../Buttons/RedButton';
 import { pickerModalStyle } from '../styles/PickerModal';
 import { PickerCard } from './subComponents/PickerCard';
 import { PickerComponent } from './subComponents/PickerComponent';

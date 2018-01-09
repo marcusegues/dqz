@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
 import { AppModal } from '../AppModal';
-import RedButton from '../../Buttons/RedButton';
+import { RedButton } from '../../Buttons/RedButton';
 
 const ownStyles = StyleSheet.create({
   modalContainer: {
@@ -170,7 +170,7 @@ export const GoodInputModal = ({
         <Text style={ownStyles.subPrice}>CHF 55,58</Text>
       </View>
       <View style={ownStyles.redButtonWrapper}>
-        <RedButton text="ÜBERNEHMEN" />
+        <RedButton text="ÜBERNEHMEN" onPress={() => {}} />
       </View>
     </View>
   </AppModal>

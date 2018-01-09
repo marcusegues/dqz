@@ -5,7 +5,7 @@ import type { ComponentType } from 'react';
 import { View, Picker } from 'react-native';
 import { translate } from 'react-i18next';
 import { AppModal } from '../AppModal';
-import RedButton from '../../Buttons/RedButton';
+import { RedButton } from '../../Buttons/RedButton';
 import {
   rangeItemsPicker,
   pickerDecimalUnits,

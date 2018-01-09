@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
 import { AppModal } from '../AppModal';
-import RedButton from '../../Buttons/RedButton';
+import { RedButton } from '../../Buttons/RedButton';
 import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
 import { CardHeader } from '../../QuestionAnswer/cards/subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
