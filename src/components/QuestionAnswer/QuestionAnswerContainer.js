@@ -1,5 +1,4 @@
 // @flow
-/* eslint react/no-unused-state: 0 */
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe

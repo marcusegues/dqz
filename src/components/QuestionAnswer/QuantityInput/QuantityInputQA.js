@@ -1,6 +1,4 @@
-/* eslint-disable react/no-unused-state */
 // @flow
-// TODO remove eslint-disable
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
@@ -54,13 +52,14 @@ export class QuantityInputQA extends React.Component<
   }
 
   getQuestionComponent() {
+    const { modalVisible, modalCategories } = this.state;
     const { onAnswer, qaState } = this.props;
     return (
       <View>
         <QuantityInputConfirmationCard
-          onShowQuantityInputModal={(modalCategories: ModalCategoriesType) =>
-            this.handleShowModal(modalCategories)
-          }
+          onShowQuantityInputModal={(
+            modalCategoriesReturn: ModalCategoriesType
+          ) => this.handleShowModal(modalCategoriesReturn)}
           onAnswer={onAnswer}
           categoriesByMainCategory={this.getDisplayedCategoriesByMainCategory()}
           basket={qaState.basket}
@@ -68,6 +67,8 @@ export class QuantityInputQA extends React.Component<
         <GoodQuantityListModal
           onHide={() => this.handleHideModal()}
           quantityInputState={this.state}
+          modalVisible={modalVisible}
+          modalCategories={modalCategories}
           basket={qaState.basket}
           onAddQuantity={(category: Category, quantity: number) => {
             this.handleAddQuantity(category, quantity);

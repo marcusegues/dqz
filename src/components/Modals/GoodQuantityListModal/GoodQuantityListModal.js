@@ -26,12 +26,11 @@ import BackArrow from '../../Headers/subcomponents/BackArrow';
 import PickerModal from '../PickerModal/PickerModal';
 
 export type GoodQuantityListModalProps = {
-  quantityInputState: QuantityInputState,
   onHide: () => void,
   onAddQuantity: (category: Category, quantityChange: number) => void,
   onDeleteQuantity: (category: Category, index: number) => void,
   basket: Basket,
-};
+} & QuantityInputState;
 
 type GoodQuantityListModalState = {
   pickerModalVisible: boolean,
@@ -55,8 +54,7 @@ class GoodQuantityListModal extends React.Component<
   }
 
   confirmPicker(amount: number) {
-    const { onAddQuantity, quantityInputState } = this.props;
-    const { modalCategories } = quantityInputState;
+    const { onAddQuantity, modalCategories } = this.props;
 
     this.togglePickerVisible();
     if (modalCategories.category !== 'none') {
@@ -66,8 +64,13 @@ class GoodQuantityListModal extends React.Component<
 
   render() {
     const { pickerModalVisible } = this.state;
-    const { modalVisible, modalCategories } = this.props.quantityInputState;
-    const { onHide, onDeleteQuantity, basket } = this.props;
+    const {
+      onHide,
+      onDeleteQuantity,
+      basket,
+      modalVisible,
+      modalCategories,
+    } = this.props;
     if (modalCategories.category === 'none') {
       return null;
     }
