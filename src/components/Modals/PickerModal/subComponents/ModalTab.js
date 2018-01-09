@@ -47,7 +47,7 @@ type ModalTabProps = {
   text: string,
 };
 
-const ModalTab = ({ standardInput, onPress, text }: ModalTabProps) => (
+export const ModalTab = ({ standardInput, onPress, text }: ModalTabProps) => (
   <View style={ownStyles.topTouchable}>
     <TouchableOpacity
       onPress={onPress}
@@ -67,5 +67,3 @@ const ModalTab = ({ standardInput, onPress, text }: ModalTabProps) => (
     </TouchableOpacity>
   </View>
 );
-
-export default ModalTab;

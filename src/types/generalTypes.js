@@ -8,4 +8,3 @@ export type Navigation = {
 };
 
 export type Children = React.ChildrenArray<React.Element<any>>;
-// | React.Element<any>;

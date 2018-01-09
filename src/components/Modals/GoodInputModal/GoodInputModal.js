@@ -8,7 +8,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
-import AppModal from '../AppModal';
+import { AppModal } from '../AppModal';
 import RedButton from '../../Buttons/RedButton';
 
 const ownStyles = StyleSheet.create({

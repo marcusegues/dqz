@@ -7,9 +7,9 @@ import Touchable from 'react-native-platform-touchable';
 import { Text, View } from 'react-native';
 import { v4 } from 'uuid';
 import { Entypo } from '@expo/vector-icons';
-import ModalCard from '../ModalCard';
-import AppModal from '../AppModal';
-import QuantityInfo from './subcomponents/QuantityInfo';
+import { ModalCard } from '../ModalCard';
+import { AppModal } from '../AppModal';
+import { QuantityInfo } from './subcomponents/QuantityInfo';
 import {
   getQuantities,
   getTotalQuantity,
@@ -19,11 +19,11 @@ import type {
   Basket,
   Category,
 } from '../../../model/types/basketPeopleAmountsTypes';
-import QuantityRow from './subcomponents/QuantityRow';
+import { QuantityRow } from './subcomponents/QuantityRow';
 import { MAIN_RED } from '../../../styles/colors';
 import { moderateScale } from '../../../styles/Scaling';
 import BackArrow from '../../Headers/subcomponents/BackArrow';
-import PickerModal from '../PickerModal/PickerModal';
+import { PickerModal } from '../PickerModal/PickerModal';
 
 export type GoodQuantityListModalProps = {
   onHide: () => void,
@@ -36,7 +36,7 @@ type GoodQuantityListModalState = {
   pickerModalVisible: boolean,
 };
 
-class GoodQuantityListModal extends React.Component<
+export class GoodQuantityListModal extends React.Component<
   GoodQuantityListModalProps,
   GoodQuantityListModalState
 > {
@@ -135,5 +135,3 @@ class GoodQuantityListModal extends React.Component<
     );
   }
 }
-
-export default GoodQuantityListModal;

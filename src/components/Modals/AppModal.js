@@ -1,7 +1,20 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { Modal } from 'react-native';
+import type { Children } from '../../types/generalTypes';
 
-const AppModal = ({ modalVisible, children, transparent = true }) => (
+type AppModalProps = {
+  modalVisible: boolean,
+  children: Children,
+  transparent?: boolean,
+};
+
+export const AppModal = ({
+  modalVisible,
+  children,
+  transparent,
+}: AppModalProps) => (
   <Modal
     animationType="slide"
     transparent={transparent}
@@ -13,4 +26,6 @@ const AppModal = ({ modalVisible, children, transparent = true }) => (
   </Modal>
 );
 
-export default AppModal;
+AppModal.defaultProps = {
+  transparent: true,
+};

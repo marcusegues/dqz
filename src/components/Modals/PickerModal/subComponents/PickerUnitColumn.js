@@ -23,10 +23,8 @@ type PickerUnitColumnProps = {
   unit: string,
 };
 
-const PickerUnitColumn = ({ unit }: PickerUnitColumnProps) => (
+export const PickerUnitColumn = ({ unit }: PickerUnitColumnProps) => (
   <View style={ownStyles.pickerUnitColumn}>
     <Text style={ownStyles.pickerUnitColumnText}>{unit}</Text>
   </View>
 );
-
-export default PickerUnitColumn;

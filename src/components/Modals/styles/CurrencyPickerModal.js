@@ -1,7 +1,9 @@
+// @flow
+// $FlowFixMe
 import { StyleSheet } from 'react-native';
 import { moderateScale } from '../../../styles/Scaling';
 
-export default StyleSheet.create({
+export const currencyPickerModal = StyleSheet.create({
   textInput: {
     height: 40,
     borderColor: '#A0A0A0',

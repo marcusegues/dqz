@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { translate } from 'react-i18next';
+import type { ComponentType } from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import { CardHeaderText } from '../../../QuestionAnswer/cards/subcomponents/CardHeaderText';
@@ -16,15 +17,14 @@ type QuantityInfoProps = {
   mainCategory: MainCategory,
   category: Category,
   totalQuantity: number,
-  t: TFunction,
 };
 
-const QuantityInfo = ({
+const QuantityInfoInner = ({
   mainCategory,
   category,
   totalQuantity,
   t,
-}: QuantityInfoProps) => (
+}: QuantityInfoProps & { t: TFunction }) => (
   <View
     style={{
       flexDirection: 'column',
@@ -44,4 +44,6 @@ const QuantityInfo = ({
   </View>
 );
 
-export default translate(['mainCategories', 'categories'])(QuantityInfo);
+export const QuantityInfo = (translate(['mainCategories', 'categories'])(
+  QuantityInfoInner
+): ComponentType<QuantityInfoProps>);

@@ -3,7 +3,7 @@ import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import { QuantityInputConfirmationCard } from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
-import GoodQuantityListModal from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
+import { GoodQuantityListModal } from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { mainCategoriesToCategories } from '../../../types/reducers/appReducer';
 import type { MainCategory } from '../../../types/reducers/appReducer';
 import type {

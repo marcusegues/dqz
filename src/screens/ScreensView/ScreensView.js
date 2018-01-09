@@ -5,10 +5,10 @@ import { View, Text, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { NavBar } from '../../components/NavBar/NavBar';
 import GoodInputModal from '../../components/Modals/GoodInputModal/GoodInputModal';
-import PickerModal from '../../components/Modals/PickerModal/PickerModal';
+import { PickerModal } from '../../components/Modals/PickerModal/PickerModal';
 import CurrencyPickerModal from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
 import { getCurrencies, getFormattedCurrencyDate } from '../../reducers';
-import SavedBasketModal from '../../components/Modals/SavedBasketModal/SavedBasketModal';
+import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import type { Navigation } from '../../types/generalTypes';
 import type { CurrencyObject } from '../../model/currencies';
 
@@ -114,6 +114,8 @@ class ScreensViewInner extends React.Component<
         <PickerModal
           modalVisible={this.state.pickerModalVisible}
           toggleModalVisible={() => this.togglePickerVisible()}
+          confirmAction={() => {}}
+          category="Meat"
         />
         <CurrencyPickerModal
           modalVisible={this.state.currencyPickerModalVisible}

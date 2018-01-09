@@ -20,7 +20,7 @@ import { PaymentContainer } from '../components/Payment/PaymentContainer';
 import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
 import { UnderConstruction } from './underConstruction';
 import { QuestionAnswerContainer } from '../components/QuestionAnswer/QuestionAnswerContainer';
-import GoodQuantityListModal from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
+import { GoodQuantityListModal } from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { OnBoardingTaxScreen } from '../screens/OnBoarding/OnBoardingTaxScreen';
 import { ReceiptAfterPayment } from '../components/Receipts/ReceiptAfterPayment';
 import HomeIcon from '../components/Headers/subcomponents/HomeIcon';
