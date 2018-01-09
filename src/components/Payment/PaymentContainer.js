@@ -7,7 +7,7 @@ import { translate } from 'react-i18next';
 import { connect } from 'react-redux';
 // $FlowFixMe
 import { View, Text } from 'react-native';
-import Overview from '../Overview/Overview';
+import { Overview } from '../Overview/Overview';
 import Saferpay from '../../../saferpay';
 import NavBar from '../NavBar/NavBar';
 import { PaymentWebView } from './PaymentWebView';
@@ -196,5 +196,5 @@ const mapStateToProps = state => ({
 });
 
 export const PaymentContainer = (connect(mapStateToProps)(
-  translate(['general'])
-)(PaymentContainerInner): ComponentType<PaymentContainerProps>);
+  translate(['general'])(PaymentContainerInner)
+): ComponentType<PaymentContainerProps>);

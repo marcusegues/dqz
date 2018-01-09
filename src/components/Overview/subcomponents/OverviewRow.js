@@ -3,20 +3,20 @@ import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import { CardRowSubText } from '../../QuestionAnswer/cards/subcomponents/CardRowSubText';
-import QuantityIcon from '../../General Components/QuantityIcon';
+import { QuantityIcon } from '../../General Components/QuantityIcon';
 import { CardRowText } from '../../QuestionAnswer/cards/subcomponents/CardRowText';
 import { Row } from '../../Rows/Row';
 
 type OverviewRowProps = {
   title: string,
   subtitle: string,
-  quantity: number,
+  quantity: number | string,
   result: string,
   borderTop?: boolean,
   unit: string,
 };
 
-const OverviewRow = ({
+export const OverviewRow = ({
   title,
   subtitle,
   quantity,
@@ -39,5 +39,3 @@ const OverviewRow = ({
 OverviewRow.defaultProps = {
   borderTop: false,
 };
-
-export default OverviewRow;

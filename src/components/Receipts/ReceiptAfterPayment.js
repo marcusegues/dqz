@@ -10,8 +10,8 @@ import { moderateScale, scale, verticalScale } from '../../styles/Scaling';
 import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
 import { ReceiptSubText } from './subComponents/ReceiptSubText';
 import { ValidUntilBlock } from './subComponents/ValidUntilBlock';
-import DutyRow from '../Overview/subcomponents/DutyRow';
-import VatRow from '../Overview/subcomponents/VatRow';
+import { DutyRow } from '../Overview/subcomponents/DutyRow';
+import { VatRow } from '../Overview/subcomponents/VatRow';
 import type { TFunction } from '../../types/generalTypes';
 
 const ownStyles = {
