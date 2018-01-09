@@ -1,10 +1,12 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { moderateScale } from '../../../styles/Scaling';
 import { GREY } from '../../../styles/colors';
 
-const OptionsGearIcon = () => (
+export const OptionsGearIcon = () => (
   <Touchable onPress={() => {}}>
     <MaterialCommunityIcons
       name="settings"
@@ -13,5 +15,3 @@ const OptionsGearIcon = () => (
     />
   </Touchable>
 );
-
-export default OptionsGearIcon;

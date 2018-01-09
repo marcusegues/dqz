@@ -9,7 +9,7 @@ type ReceiptSubTextProps = {
   style?: Object,
 };
 
-const ReceiptSubText = ({ text, style }: ReceiptSubTextProps) => (
+export const ReceiptSubText = ({ text, style }: ReceiptSubTextProps) => (
   <Text
     style={{
       color: '#757575',
@@ -26,5 +26,3 @@ const ReceiptSubText = ({ text, style }: ReceiptSubTextProps) => (
 ReceiptSubText.defaultProps = {
   style: {},
 };
-
-export default ReceiptSubText;

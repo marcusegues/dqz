@@ -5,6 +5,7 @@ import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { moderateScale } from '../../../../../../styles/Scaling';
 import * as colors from '../../../../../../styles/colors';
+import type { Children } from '../../../../../../types/generalTypes';
 
 const ownStyles = {
   container: {
@@ -44,7 +45,7 @@ type PeopleInputRowProps = {
   onSubtract: () => void,
   icon: any,
   displayedQuantity: number,
-  children: any,
+  children: Children,
 };
 
 export const PeopleInputRow = ({
@@ -57,7 +58,7 @@ export const PeopleInputRow = ({
   <View style={ownStyles.container}>
     <View style={ownStyles.rowContainer}>
       <Image source={icon} style={ownStyles.image} resizeMode="contain" />
-      {children.textComponent}
+      {children}
     </View>
     <View style={ownStyles.rowChangeValueContainer}>
       <TouchableOpacity onPress={onSubtract}>

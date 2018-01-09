@@ -2,11 +2,16 @@
 import React from 'react';
 // $FlowFixMe
 import { View, ScrollView } from 'react-native';
+import type { Set as ImmutableSetType } from 'immutable';
 import { getTotalQuantity } from '../../../../../../model/configurationApi';
 import { GoodInputRow } from './subcomponents/GoodInputRow';
 import { moderateScale } from '../../../../../../styles/Scaling';
-import type { Basket } from '../../../../../../model/types/basketPeopleAmountsTypes';
-import type { ModalCategoriesType } from '../../../../QuantityInput/QuantityInputQA';
+import type {
+  Basket,
+  Category,
+} from '../../../../../../model/types/basketPeopleAmountsTypes';
+import type { MainCategory } from '../../../../../../types/reducers/appReducer';
+import { getSubCategories } from '../../../../../../types/reducers/appReducer';
 
 const ownStyles = {
   mainContainer: {
@@ -34,38 +39,40 @@ const ownStyles = {
 };
 
 type QuantityInputProps = {
-  onShowQuantityInputModal: ModalCategoriesType => void,
+  onShowQuantityInputModal: (
+    modalCategory: Category,
+    modalMainCategory: MainCategory
+  ) => void,
   basket: Basket,
-  categoriesByMainCategory: any,
+  mainCategories: ImmutableSetType<MainCategory>,
 };
 
 export const QuantityInput = ({
   onShowQuantityInputModal,
   basket,
-  categoriesByMainCategory,
+  mainCategories,
 }: QuantityInputProps) => {
-  const components = categoriesByMainCategory
-    .entrySeq()
-    .map(([mainCategory, categories]) => {
-      const subcomponents = categories.map(category => (
-        <GoodInputRow
-          onShowQuantityInputModal={() => {
-            onShowQuantityInputModal({ mainCategory, category });
-          }}
-          key={category}
-          category={category}
-          totalQuantity={getTotalQuantity(basket, category)}
-          basket={basket}
-          mainCategory={mainCategory}
-        />
-      ));
+  const components = mainCategories.map(mainCategory => {
+    const categories = getSubCategories(mainCategory);
+    const subcomponents = categories.map(category => (
+      <GoodInputRow
+        onShowQuantityInputModal={() => {
+          onShowQuantityInputModal(category, mainCategory);
+        }}
+        key={category}
+        category={category}
+        totalQuantity={getTotalQuantity(basket, category)}
+        basket={basket}
+        mainCategory={mainCategory}
+      />
+    ));
 
-      return (
-        <View style={ownStyles.subcomponentsContainer} key={mainCategory}>
-          {subcomponents}
-        </View>
-      );
-    });
+    return (
+      <View style={ownStyles.subcomponentsContainer} key={mainCategory}>
+        {subcomponents}
+      </View>
+    );
+  });
 
   return (
     <View

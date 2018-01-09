@@ -5,7 +5,7 @@ import { translate } from 'react-i18next';
 import { ScrollViewCard } from './subComponents/ScrollViewCard';
 import { InformationRow } from './subComponents/InformationRow';
 import { informationData } from './InformationData';
-import HeaderTitle from '../../components/Headers/subcomponents/HeaderTitle';
+import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { TFunction } from '../../types/generalTypes';
 
 class InformationInner extends React.Component<{ t: TFunction }> {

@@ -1,16 +1,17 @@
 /* eslint-disable react/no-unused-state,no-console */
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 import { connect } from 'react-redux';
 // $FlowFixMe
 import { View, Text } from 'react-native';
-import Overview from '../Overview/Overview';
+import { Overview } from '../Overview/Overview';
 import Saferpay from '../../../saferpay';
-import NavBar from '../NavBar/NavBar';
-import PaymentWebView from './PaymentWebView';
-import RedButton from '../Buttons/RedButton';
+import { NavBar } from '../NavBar/NavBar';
+import { PaymentWebView } from './PaymentWebView';
+import { RedButton } from '../Buttons/RedButton';
 import {
   getAmounts,
   getBasket,
@@ -50,7 +51,7 @@ type PaymentContainerProps = {
   t: TFunction,
 };
 
-class PaymentContainer extends React.Component<
+class PaymentContainerInner extends React.Component<
   PaymentContainerProps,
   PaymentContainerState
 > {
@@ -194,6 +195,6 @@ const mapStateToProps = state => ({
   currencyObject: getCurrencies(state),
 });
 
-export default connect(mapStateToProps)(
-  translate(['general'])(PaymentContainer)
-);
+export const PaymentContainer = (connect(mapStateToProps)(
+  translate(['general'])(PaymentContainerInner)
+): ComponentType<PaymentContainerProps>);

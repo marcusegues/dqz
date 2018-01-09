@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import {
@@ -9,17 +10,17 @@ import {
   // $FlowFixMe
 } from 'react-native';
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
-import AppModal from '../AppModal';
-import RedButton from '../../Buttons/RedButton';
-import PickerCard from '../CurrencyPickerModal/subComponents/PickerCard';
+import { AppModal } from '../AppModal';
+import { RedButton } from '../../Buttons/RedButton';
+import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
 import { CardHeader } from '../../QuestionAnswer/cards/subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
 import { moderateScale, scale, verticalScale } from '../../../styles/Scaling';
-import Row from '../../Rows/Row';
+import { Row } from '../../Rows/Row';
 import { CardRowText } from '../../QuestionAnswer/cards/subcomponents/CardRowText';
 import { CardRowSubText } from '../../QuestionAnswer/cards/subcomponents/CardRowSubText';
 import { GREY } from '../../../styles/colors';
-import CloseIcon from '../../General Components/CloseIcon';
+import { CloseIcon } from '../../General Components/CloseIcon';
 import type { TFunction } from '../../../types/generalTypes';
 
 const ownStyles = StyleSheet.create({
@@ -42,17 +43,16 @@ const ownStyles = StyleSheet.create({
 });
 
 type SavedBasketModalProps = {
-  t: TFunction,
   modalVisible: boolean,
-  onRequestClose: Function,
+  toggleModalVisible: () => void,
 };
 
-const SavedBasketModal = ({
-  onRequestClose,
+const SavedBasketModalInner = ({
+  toggleModalVisible,
   modalVisible,
   t,
-}: SavedBasketModalProps) => (
-  <AppModal onRequestClose={onRequestClose} modalVisible={modalVisible}>
+}: SavedBasketModalProps & { t: TFunction }) => (
+  <AppModal onRequestClose={toggleModalVisible} modalVisible={modalVisible}>
     <PickerCard style={{ top: '30%' }}>
       <CloseIcon onPress={() => {}} />
       <CardHeader
@@ -99,4 +99,6 @@ const SavedBasketModal = ({
   </AppModal>
 );
 
-export default translate(['general', 'modal'])(SavedBasketModal);
+export const SavedBasketModal = (translate(['general', 'modal'])(
+  SavedBasketModalInner
+): ComponentType<SavedBasketModalProps>);

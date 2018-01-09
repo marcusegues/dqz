@@ -19,7 +19,7 @@ const languageDetector = {
   cacheUserLanguage: () => {},
 };
 
-i18n.use(languageDetector).init({
+export const i18nImplementation = i18n.use(languageDetector).init({
   fallbackLng: 'de',
 
   debug: true,
@@ -40,5 +40,3 @@ i18n.use(languageDetector).init({
     nsMode: 'default',
   },
 });
-
-export default i18n;

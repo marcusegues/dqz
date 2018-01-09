@@ -1,26 +1,33 @@
 // @flow
 import React from 'react';
 import { translate } from 'react-i18next';
+import type { Set as ImmutableSetType } from 'immutable';
 import type { ComponentType } from 'react';
 import { ConfirmationCard } from '../../ConfirmationCard';
 import { QuantityInput } from './QuantityInput';
-import type { Basket } from '../../../../../../model/types/basketPeopleAmountsTypes';
+import type {
+  Basket,
+  Category,
+} from '../../../../../../model/types/basketPeopleAmountsTypes';
 import type { DirectionType } from '../../../../QuestionAnswerContainer';
 import type { TFunction } from '../../../../../../types/generalTypes';
-import type { ModalCategoriesType } from '../../../../QuantityInput/QuantityInputQA';
+import type { MainCategory } from '../../../../../../types/reducers/appReducer';
 
 type QuantityInputConfirmationCardProps = {
-  onShowQuantityInputModal: (mct: ModalCategoriesType) => void,
+  onShowQuantityInputModal: (
+    modalCategory: Category,
+    modalMainCategory: MainCategory
+  ) => void,
   basket: Basket,
   onAnswer: DirectionType => void,
-  categoriesByMainCategory: any, // TODO
+  mainCategories: ImmutableSetType<MainCategory>,
 };
 
 const QuantityInputConfirmationCardInner = ({
   onShowQuantityInputModal,
   basket,
   onAnswer,
-  categoriesByMainCategory,
+  mainCategories,
   t,
 }: QuantityInputConfirmationCardProps & { t: TFunction }) => (
   <ConfirmationCard
@@ -30,7 +37,7 @@ const QuantityInputConfirmationCardInner = ({
   >
     <QuantityInput
       onShowQuantityInputModal={onShowQuantityInputModal}
-      categoriesByMainCategory={categoriesByMainCategory}
+      mainCategories={mainCategories}
       basket={basket}
     />
   </ConfirmationCard>

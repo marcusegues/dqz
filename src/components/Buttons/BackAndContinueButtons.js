@@ -6,7 +6,7 @@ import { View } from 'react-native';
 import { translate } from 'react-i18next';
 import { verticalScale } from '../../styles/Scaling';
 import { GREY } from '../../styles/colors';
-import RedButton from './RedButton';
+import { RedButton } from './RedButton';
 import type { TFunction } from '../../types/generalTypes';
 
 const ownStyles = {

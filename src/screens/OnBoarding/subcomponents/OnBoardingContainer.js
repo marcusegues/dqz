@@ -4,9 +4,9 @@ import type { ComponentType } from 'react';
 // $FlowFixMe
 import { View, Text } from 'react-native';
 import { translate } from 'react-i18next';
-import AppTitle from '../../../components/AppTitle/AppTitle';
+import { AppTitle } from '../../../components/AppTitle/AppTitle';
 import { moderateScale, scale, verticalScale } from '../../../styles/Scaling';
-import type { TFunction } from '../../../types/generalTypes';
+import type { Children, TFunction } from '../../../types/generalTypes';
 
 const ownStyles = {
   container: {
@@ -32,7 +32,7 @@ const ownStyles = {
 };
 
 type OnBoardingContainerProps = {
-  children: any,
+  children: Children,
 };
 
 const OnBoardingContainerInner = ({

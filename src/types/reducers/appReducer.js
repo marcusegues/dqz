@@ -1,6 +1,5 @@
 // @flow
 import type {
-  Map as ImmutableMapType,
   RecordOf,
   RecordFactory,
   Set as ImmutableSetType,
@@ -75,21 +74,6 @@ export const mainCategories: MainCategories = Immutable.Set([
 
 export const EmptyMainCategories: MainCategories = Immutable.Set();
 
-export type MainCategoriesToCategories = ImmutableMapType<
-  MainCategory,
-  ImmutableSetType<Category>
->;
-
-export const mainCategoriesToCategories: MainCategoriesToCategories = Immutable.Map(
-  {
-    Foods: foodsCategories,
-    Alcohol: alcoholCategories,
-    TobaccoProducts: tobaccoProductsCategories,
-    OtherGoods: otherGoodsCategories,
-  }
-);
-
-// TODO improve types
 export const getMainCategory = (category: any): MainCategory => {
   if (foodsCategories.has(category)) {
     return 'Foods';

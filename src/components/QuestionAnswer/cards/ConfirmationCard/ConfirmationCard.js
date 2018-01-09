@@ -6,6 +6,7 @@ import { verticalScale } from '../../../../styles/Scaling';
 import { Card } from '../Card';
 import { CardHeader } from '../subcomponents/CardHeader';
 import { BackAndContinueButtons } from '../../../Buttons/BackAndContinueButtons';
+import type { Children } from '../../../../types/generalTypes';
 
 const ownStyles = {
   bottomSectionWrapper: {
@@ -22,7 +23,7 @@ const ownStyles = {
 
 type ConfirmationCardProps = {
   text: string,
-  children: any,
+  children: Children,
   onAnswer: () => void,
   onBack: () => void,
   confirmationDisabled?: boolean,

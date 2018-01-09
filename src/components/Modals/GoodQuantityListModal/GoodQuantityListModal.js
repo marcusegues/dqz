@@ -1,4 +1,3 @@
-/* eslint-disable react/prefer-stateless-function,react/prefer-stateless-function */
 // @flow
 import React from 'react';
 // $FlowFixMe
@@ -7,9 +6,9 @@ import Touchable from 'react-native-platform-touchable';
 import { Text, View } from 'react-native';
 import { v4 } from 'uuid';
 import { Entypo } from '@expo/vector-icons';
-import ModalCard from '../ModalCard';
-import AppModal from '../AppModal';
-import QuantityInfo from './subcomponents/QuantityInfo';
+import { ModalCard } from '../ModalCard';
+import { AppModal } from '../AppModal';
+import { QuantityInfo } from './subcomponents/QuantityInfo';
 import {
   getQuantities,
   getTotalQuantity,
@@ -19,25 +18,24 @@ import type {
   Basket,
   Category,
 } from '../../../model/types/basketPeopleAmountsTypes';
-import QuantityRow from './subcomponents/QuantityRow';
+import { QuantityRow } from './subcomponents/QuantityRow';
 import { MAIN_RED } from '../../../styles/colors';
 import { moderateScale } from '../../../styles/Scaling';
-import BackArrow from '../../Headers/subcomponents/BackArrow';
-import PickerModal from '../PickerModal/PickerModal';
+import { BackArrow } from '../../Headers/subcomponents/BackArrow';
+import { PickerModal } from '../PickerModal/PickerModal';
 
 export type GoodQuantityListModalProps = {
-  quantityInputState: QuantityInputState,
   onHide: () => void,
   onAddQuantity: (category: Category, quantityChange: number) => void,
   onDeleteQuantity: (category: Category, index: number) => void,
   basket: Basket,
-};
+} & QuantityInputState;
 
 type GoodQuantityListModalState = {
   pickerModalVisible: boolean,
 };
 
-class GoodQuantityListModal extends React.Component<
+export class GoodQuantityListModal extends React.Component<
   GoodQuantityListModalProps,
   GoodQuantityListModalState
 > {
@@ -55,28 +53,31 @@ class GoodQuantityListModal extends React.Component<
   }
 
   confirmPicker(amount: number) {
-    const { onAddQuantity, quantityInputState } = this.props;
-    const { modalCategories } = quantityInputState;
+    const { onAddQuantity, modalCategory } = this.props;
 
     this.togglePickerVisible();
-    if (modalCategories.category !== 'none') {
-      onAddQuantity(modalCategories.category, amount);
+    if (modalCategory) {
+      onAddQuantity(modalCategory, amount);
     }
   }
 
   render() {
     const { pickerModalVisible } = this.state;
-    const { modalVisible, modalCategories } = this.props.quantityInputState;
-    const { onHide, onDeleteQuantity, basket } = this.props;
-    if (modalCategories.category === 'none') {
+    const {
+      onHide,
+      onDeleteQuantity,
+      basket,
+      modalVisible,
+      modalCategory,
+      modalMainCategory,
+    } = this.props;
+    if (!modalCategory || !modalMainCategory) {
       return null;
     }
-    const quantities = getQuantities(basket, modalCategories.category);
-    const totalQuantity =
-      modalCategories.category !== 'none'
-        ? getTotalQuantity(basket, modalCategories.category)
-        : 0;
-
+    const quantities = getQuantities(basket, modalCategory);
+    const totalQuantity = modalCategory
+      ? getTotalQuantity(basket, modalCategory)
+      : 0;
     return (
       <AppModal modalVisible={modalVisible}>
         <ModalCard>
@@ -92,8 +93,8 @@ class GoodQuantityListModal extends React.Component<
             <Text />
           </View>
           <QuantityInfo
-            mainCategory={modalCategories.mainCategory}
-            category={modalCategories.category}
+            mainCategory={modalMainCategory}
+            category={modalCategory}
             totalQuantity={totalQuantity}
           />
           {quantities.map((q, idx) => (
@@ -101,10 +102,10 @@ class GoodQuantityListModal extends React.Component<
               borderTop={idx === 0}
               key={v4()}
               quantity={q}
-              category={modalCategories.category}
+              category={modalCategory}
               onDelete={() => {
-                if (modalCategories.category !== 'none') {
-                  onDeleteQuantity(modalCategories.category, idx);
+                if (modalCategory) {
+                  onDeleteQuantity(modalCategory, idx);
                 }
               }}
             />
@@ -126,11 +127,9 @@ class GoodQuantityListModal extends React.Component<
           modalVisible={pickerModalVisible}
           toggleModalVisible={() => this.togglePickerVisible()}
           confirmAction={amount => this.confirmPicker(amount)}
-          category={modalCategories.category}
+          category={modalCategory}
         />
       </AppModal>
     );
   }
 }
-
-export default GoodQuantityListModal;

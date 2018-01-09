@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 // $FlowFixMe
 import {
   TextInput,
@@ -11,15 +12,15 @@ import {
 } from 'react-native';
 
 import { translate } from 'react-i18next';
-import AppModal from '../AppModal';
-import RedButton from '../../Buttons/RedButton';
-import ownStyles from '../styles/PickerModal';
-import PickerCard from './subComponents/PickerCard';
-import PickerComponent from './subComponents/PickerComponent';
+import { AppModal } from '../AppModal';
+import { RedButton } from '../../Buttons/RedButton';
+import { pickerModalStyle } from '../styles/PickerModal';
+import { PickerCard } from './subComponents/PickerCard';
+import { PickerComponent } from './subComponents/PickerComponent';
 import { CardHeader } from '../../QuestionAnswer/cards/subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
 import { currencyPicker } from './currencyPickerData';
-import styles from '../styles/CurrencyPickerModal';
+import { currencyPickerModal } from '../styles/CurrencyPickerModal';
 import { INDIVIDUALALLOWANCE } from '../../../model/constants';
 import { currenciesArray } from '../../../model/currencies';
 import type { Currency, CurrencyObject } from '../../../model/currencies';
@@ -30,8 +31,7 @@ type PickerState = {
   amount: number,
 };
 
-type CurrencyPickerProps = {
-  t: TFunction,
+type CurrencyPickerModalProps = {
   onHide: () => void,
   currencyObject: CurrencyObject,
   currencyDate: string,
@@ -40,8 +40,8 @@ type CurrencyPickerProps = {
   large: boolean,
 };
 
-class CurrencyPickerModal extends React.Component<
-  CurrencyPickerProps,
+class CurrencyPickerModalInner extends React.Component<
+  CurrencyPickerModalProps & { t: TFunction },
   PickerState
 > {
   constructor() {
@@ -92,10 +92,10 @@ class CurrencyPickerModal extends React.Component<
             onPress={Keyboard.dismiss}
             accessible={false}
           >
-            <View style={ownStyles.pickerContainer}>
+            <View style={pickerModalStyle.pickerContainer}>
               <TextInput
                 keyboardType="numeric"
-                style={styles.textInput}
+                style={currencyPickerModal.textInput}
                 onChangeText={value => this.setState({ amount: +value })}
                 maxLenght="8"
                 underlineColorAndroid="transparent"
@@ -133,7 +133,7 @@ class CurrencyPickerModal extends React.Component<
             </View>
           </TouchableWithoutFeedback>
 
-          <View style={ownStyles.redButtonWrapper}>
+          <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
               confirmationDisabled={disabledRedButton}
               onPress={() => {
@@ -157,4 +157,6 @@ class CurrencyPickerModal extends React.Component<
   }
 }
 
-export default translate(['modal'])(CurrencyPickerModal);
+export const CurrencyPickerModal = (translate(['modal'])(
+  CurrencyPickerModalInner
+): ComponentType<CurrencyPickerModalProps>);

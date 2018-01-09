@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -8,7 +9,7 @@ import { View } from 'react-native';
 import { Card } from '../QuestionAnswer/cards/Card';
 import { CardHeader } from '../QuestionAnswer/cards/subcomponents/CardHeader';
 import { getTotalQuantity } from '../../model/configurationApi';
-import DutyRow from './subcomponents/DutyRow';
+import { DutyRow } from './subcomponents/DutyRow';
 import { calculateDuty } from '../../model/dutyCalculations';
 import { CardRowSubText } from '../QuestionAnswer/cards/subcomponents/CardRowSubText';
 import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
@@ -18,19 +19,19 @@ import type {
   Basket,
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
-import ReceiptSubText from '../Receipts/subComponents/ReceiptSubText';
-import VatRow from './subcomponents/VatRow';
+import { ReceiptSubText } from '../Receipts/subComponents/ReceiptSubText';
+import { VatRow } from './subcomponents/VatRow';
 import { moderateScale, verticalScale } from '../../styles/Scaling';
 import { calculateVat } from '../../model/vatCalculations';
 import type { CurrencyObject } from '../../model/currencies';
 import type { TFunction } from '../../types/generalTypes';
+import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 
 type OverviewProps = {
   basket: Basket,
   people: People,
   amounts: Amounts,
   currencyObject: CurrencyObject,
-  t: TFunction,
 };
 
 const ownStyles = {
@@ -46,15 +47,15 @@ const ownStyles = {
   },
 };
 
-const Overview = ({
+const OverviewInner = ({
   basket,
   people,
   t,
   amounts,
   currencyObject,
-}: OverviewProps) => {
-  const dutyReport = calculateDuty(basket, people);
-  const vatReport = calculateVat(amounts, people, currencyObject);
+}: OverviewProps & { t: TFunction }) => {
+  const dutyReport: DutyReport = calculateDuty(basket, people);
+  const vatReport: VatReport = calculateVat(amounts, people, currencyObject);
   const fullVat = vatReport.get('totalVat');
   const fullDuty = dutyReport.get('totalDuty');
   return (
@@ -107,9 +108,9 @@ const Overview = ({
   );
 };
 
-export default translate([
+export const Overview = (translate([
   'payment',
   'receipt',
   'mainCategories',
   'categories',
-])(Overview);
+])(OverviewInner): ComponentType<OverviewProps>);

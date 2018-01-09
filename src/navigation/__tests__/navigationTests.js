@@ -1,3 +1,4 @@
+// @flow
 /* global describe, test, expect */
 
 import { stackNavigatorConfig, stackNavigatorScreens } from '../RootNavigation';

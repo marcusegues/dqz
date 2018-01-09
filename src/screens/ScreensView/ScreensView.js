@@ -3,12 +3,12 @@ import React from 'react';
 // $FlowFixMe
 import { View, Text, FlatList } from 'react-native';
 import { connect } from 'react-redux';
-import NavBar from '../../components/NavBar/NavBar';
-import GoodInputModal from '../../components/Modals/GoodInputModal/GoodInputModal';
-import PickerModal from '../../components/Modals/PickerModal/PickerModal';
-import CurrencyPickerModal from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
+import { NavBar } from '../../components/NavBar/NavBar';
+import { GoodInputModal } from '../../components/Modals/GoodInputModal/GoodInputModal';
+import { PickerModal } from '../../components/Modals/PickerModal/PickerModal';
+import { CurrencyPickerModal } from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
 import { getCurrencies, getFormattedCurrencyDate } from '../../reducers';
-import SavedBasketModal from '../../components/Modals/SavedBasketModal/SavedBasketModal';
+import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import type { Navigation } from '../../types/generalTypes';
 import type { CurrencyObject } from '../../model/currencies';
 
@@ -26,7 +26,6 @@ type ScreensViewState = {
 class ScreensViewInner extends React.Component<
   ScreensViewProps & {
     currencyObject: CurrencyObject,
-    currencyDate: Date,
   },
   ScreensViewState
 > {
@@ -108,18 +107,24 @@ class ScreensViewInner extends React.Component<
         />
 
         <GoodInputModal
+          onRequestClose={() => {}}
           modalVisible={this.state.modalVisible}
           toggleModalVisible={() => this.toggleModalVisible()}
         />
         <PickerModal
           modalVisible={this.state.pickerModalVisible}
           toggleModalVisible={() => this.togglePickerVisible()}
+          confirmAction={() => {}}
+          category="Meat"
         />
         <CurrencyPickerModal
           modalVisible={this.state.currencyPickerModalVisible}
           toggleModalVisible={() => this.toggleCurrencyPickerVisible()}
           currencyObject={this.props.currencyObject}
-          currencyDate={this.props.currencyDate}
+          currencyDate="xy.zy.1234"
+          onHide={() => {}}
+          onAddAmount={() => {}}
+          large={false}
         />
         <SavedBasketModal
           modalVisible={this.state.savedBasketModalVisible}

@@ -2,10 +2,11 @@
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
+import type { Children } from '../../types/generalTypes';
 
 type RowProp = {
   borderTop?: boolean,
-  children: any,
+  children: Children,
 };
 
 const quantityRowContainerStyles = borderTop => ({
@@ -20,12 +21,10 @@ const quantityRowContainerStyles = borderTop => ({
   borderTopWidth: borderTop ? 1 : 0,
 });
 
-const Row = ({ borderTop, children }: RowProp) => (
+export const Row = ({ borderTop, children }: RowProp) => (
   <View style={quantityRowContainerStyles(borderTop)}>{children}</View>
 );
 
 Row.defaultProps = {
   borderTop: false,
 };
-
-export default Row;

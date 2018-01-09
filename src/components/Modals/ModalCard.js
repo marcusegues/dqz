@@ -1,8 +1,14 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { Platform, View } from 'react-native';
 import { verticalScale } from '../../styles/Scaling';
 
-const ModalCard = ({ children }) => (
+type ModalCardProps = {
+  children: any, // TODO (see list in GoodQuantityListModal)
+};
+
+export const ModalCard = ({ children }: ModalCardProps) => (
   <View
     style={{
       flex: 1,
@@ -30,5 +36,3 @@ const ModalCard = ({ children }) => (
     {children}
   </View>
 );
-
-export default ModalCard;

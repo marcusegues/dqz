@@ -9,7 +9,7 @@ import { MenuTile } from './Subcomponents/MenuTile';
 import { mainMenuStyles } from './styles/MainMenuStyles';
 import { moderateScale } from '../../styles/Scaling';
 import { GREY } from '../../styles/colors';
-import AppTitle from '../../components/AppTitle/AppTitle';
+import { AppTitle } from '../../components/AppTitle/AppTitle';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 
 const switzerland = require('../../../assets/images/Swiss_Country.png');

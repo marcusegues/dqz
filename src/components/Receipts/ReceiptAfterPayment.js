@@ -1,16 +1,17 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 // $FlowFixMe
 import { View, Text } from 'react-native';
 import { translate } from 'react-i18next';
 import { ScrollViewCard } from './subComponents/ScrollViewCard';
-import Logo from './subComponents/Logo';
+import { RedLogo } from './subComponents/Logo';
 import { moderateScale, scale, verticalScale } from '../../styles/Scaling';
 import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
-import ReceiptSubText from './subComponents/ReceiptSubText';
-import ValidUntilBlock from './subComponents/ValidUntilBlock';
-import DutyRow from '../Overview/subcomponents/DutyRow';
-import VatRow from '../Overview/subcomponents/VatRow';
+import { ReceiptSubText } from './subComponents/ReceiptSubText';
+import { ValidUntilBlock } from './subComponents/ValidUntilBlock';
+import { DutyRow } from '../Overview/subcomponents/DutyRow';
+import { VatRow } from '../Overview/subcomponents/VatRow';
 import type { TFunction } from '../../types/generalTypes';
 
 const ownStyles = {
@@ -60,9 +61,9 @@ type ReceiptAfterPaymentScreenProps = {
   t: TFunction,
 };
 
-const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
+const ReceiptAfterPaymentInner = ({ t }: ReceiptAfterPaymentScreenProps) => (
   <ScrollViewCard>
-    <Logo />
+    <RedLogo />
     <Text style={ownStyles.topSumText}>CHF 56.50</Text>
     <ReceiptSubText
       text={t('dutyAndVat', { duty: '56,50', vat: '0,00' })}
@@ -116,9 +117,9 @@ const ReceiptAfterPayment = ({ t }: ReceiptAfterPaymentScreenProps) => (
   </ScrollViewCard>
 );
 
-export default translate([
+export const ReceiptAfterPayment = (translate([
   'receipt',
   'payment',
   'mainCategories',
   'categories',
-])(ReceiptAfterPayment);
+])(ReceiptAfterPaymentInner): ComponentType<{}>);

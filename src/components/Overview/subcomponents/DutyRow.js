@@ -1,9 +1,10 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import type { MainCategory } from '../../../types/reducers/appReducer';
 import type { Category } from '../../../model/types/basketPeopleAmountsTypes';
-import OverviewRow from './OverviewRow';
+import { OverviewRow } from './OverviewRow';
 import { CategoriesInfo } from '../../../model/constants';
 import type { TFunction } from '../../../types/generalTypes';
 
@@ -13,17 +14,16 @@ type DutyRowProps = {
   quantity: number,
   duty: number,
   borderTop?: boolean,
-  t: TFunction,
 };
 
-const DutyRow = ({
+const DutyRowInner = ({
   mainCategory,
   category,
   quantity,
   duty,
-  borderTop,
+  borderTop = false,
   t,
-}: DutyRowProps) => (
+}: DutyRowProps & { t: TFunction }) => (
   <OverviewRow
     title={t(`categories:${category}`)}
     subtitle={t(`mainCategories:${mainCategory}`)}
@@ -34,8 +34,6 @@ const DutyRow = ({
   />
 );
 
-DutyRow.defaultProps = {
-  borderTop: false,
-};
-
-export default translate(['mainCategories', 'categories'])(DutyRow);
+export const DutyRow = (translate(['mainCategories', 'categories'])(
+  DutyRowInner
+): ComponentType<DutyRowProps>);

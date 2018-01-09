@@ -1,5 +1,8 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { Text, View, Platform } from 'react-native';
+// $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 import * as colors from './../../styles/colors';
 import { verticalScale, moderateScale } from '../../styles/Scaling';
@@ -42,7 +45,19 @@ const ownStyles = disabled => ({
   },
 });
 
-const RedButton = ({ text, onPress, confirmationDisabled, buttonStyle }) => (
+type RedButtonProps = {
+  text: string,
+  onPress: () => void,
+  confirmationDisabled?: boolean,
+  buttonStyle?: {},
+};
+
+export const RedButton = ({
+  text,
+  onPress,
+  confirmationDisabled,
+  buttonStyle,
+}: RedButtonProps) => (
   <View style={ownStyles(confirmationDisabled).bottomButtonContainer}>
     <Touchable
       onPress={onPress}
@@ -60,5 +75,3 @@ RedButton.defaultProps = {
   confirmationDisabled: false,
   buttonStyle: {},
 };
-
-export default RedButton;

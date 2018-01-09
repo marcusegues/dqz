@@ -1,14 +1,14 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View } from 'react-native';
-import ReceiptNotificationBadge from './ReceiptNotificationBadge';
-import OptionsGearIcon from './OptionsGearIcon';
-import ownStyles from '../styles/MainMenuHeaderRight';
+import { ReceiptNotificationBadge } from './ReceiptNotificationBadge';
+import { OptionsGearIcon } from './OptionsGearIcon';
+import { mainMenuHeaderRightStyle } from '../styles/MainMenuHeaderRight';
 
-const MainMenuHeaderRight = () => (
-  <View style={ownStyles.container}>
+export const MainMenuHeaderRight = () => (
+  <View style={mainMenuHeaderRightStyle.container}>
     <ReceiptNotificationBadge />
     <OptionsGearIcon />
   </View>
 );
-
-export default MainMenuHeaderRight;

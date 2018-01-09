@@ -1,5 +1,4 @@
 // @flow
-/* eslint react/no-unused-state: 0 */
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
@@ -7,8 +6,8 @@ import { FlatList, View } from 'react-native';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 
-import NavBar from '../NavBar/NavBar';
-import RedButton from '../Buttons/RedButton';
+import { NavBar } from '../NavBar/NavBar';
+import { RedButton } from '../Buttons/RedButton';
 import { PeopleInputQA } from './PeopleInput/PeopleInputQA';
 import { MainCategoriesInputQA } from './MainCategoriesInput/MainCategoriesInputQA';
 import { QuantityInputQA } from './QuantityInput/QuantityInputQA';
@@ -35,7 +34,7 @@ import {
 } from './QAControl/controlQuestionStates';
 import { setInitFlags, setQuestionFlag } from './QAControl/controlQuestionFlag';
 import { verticalScale } from '../../styles/Scaling';
-import HeaderTitle from '../Headers/subcomponents/HeaderTitle';
+import { HeaderTitle } from '../Headers/subcomponents/HeaderTitle';
 import { onUpdateFactory } from './QAControl/validation';
 import { AmountInputQA } from './AmountInput/AmountInputQA';
 import type { CurrencyObject } from '../../model/currencies';

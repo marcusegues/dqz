@@ -1,7 +1,9 @@
+// @flow
+// $FlowFixMe
 import { StyleSheet } from 'react-native';
 import { scale } from '../../../styles/Scaling';
 
-export default StyleSheet.create({
+export const pickerModalStyle = StyleSheet.create({
   topTouchableContainer: {
     flexDirection: 'row',
   },

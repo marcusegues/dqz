@@ -1,11 +1,13 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import { MAIN_RED, GREY } from '../../styles/colors';
 import { moderateScale } from '../../styles/Scaling';
 
-const CheckBox = ({ checked }) => (
+export const CheckBox = ({ checked }: { checked: boolean }) => (
   <View style={{ flexDirection: 'row', alignItems: 'center' }}>
     {checked ? (
       <MaterialIcons
@@ -22,5 +24,3 @@ const CheckBox = ({ checked }) => (
     )}
   </View>
 );
-
-export default CheckBox;

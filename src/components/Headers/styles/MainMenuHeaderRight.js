@@ -1,6 +1,8 @@
+// @flow
+// $FlowFixMe
 import { StyleSheet } from 'react-native';
 
-export default StyleSheet.create({
+export const mainMenuHeaderRightStyle = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',

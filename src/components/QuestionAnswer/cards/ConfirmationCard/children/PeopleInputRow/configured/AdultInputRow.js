@@ -32,14 +32,10 @@ const AdultInputRowInner = ({
     icon={adults}
     displayedQuantity={fromModelApi.getAdultPeople(people)}
   >
-    {{
-      textComponent: (
-        <View>
-          <Text style={ownStyles.categoryTitleText}>{t('adult')}</Text>
-          <Text style={ownStyles.categoryAgeText}>{t('adultInfo')}</Text>
-        </View>
-      ),
-    }}
+    <View>
+      <Text style={ownStyles.categoryTitleText}>{t('adult')}</Text>
+      <Text style={ownStyles.categoryAgeText}>{t('adultInfo')}</Text>
+    </View>
   </PeopleInputRow>
 );
 

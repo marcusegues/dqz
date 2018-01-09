@@ -21,7 +21,6 @@ type AllAmountsPerVatContent = {
   normal: AmountsInBracket,
 };
 
-// TODO can extend here if we want to keep totals per category (for receipt)
 export const makeAllAmountsPerVatBracketRecord: RecordFactory<
   AllAmountsPerVatContent
 > = Immutable.Record({

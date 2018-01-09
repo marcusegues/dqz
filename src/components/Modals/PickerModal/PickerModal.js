@@ -1,22 +1,25 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 // $FlowFixMe
 import { View, Picker } from 'react-native';
 import { translate } from 'react-i18next';
-import AppModal from '../AppModal';
-import RedButton from '../../Buttons/RedButton';
+import { AppModal } from '../AppModal';
+import { RedButton } from '../../Buttons/RedButton';
 import {
   rangeItemsPicker,
   pickerDecimalUnits,
   amountsPicker,
 } from './pickerData';
-import ownStyles from '../styles/PickerModal';
+import { pickerModalStyle } from '../styles/PickerModal';
 import { CategoriesInfo } from '../../../model/constants';
-import PickerCard from '../CurrencyPickerModal/subComponents/PickerCard';
-import ModalTab from './subComponents/ModalTab';
-import PickerComponent from '../CurrencyPickerModal/subComponents/PickerComponent';
-import PickerValueSeparator from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
-import PickerUnitColumn from './subComponents/PickerUnitColumn';
+import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
+import { ModalTab } from './subComponents/ModalTab';
+import { PickerComponent } from '../CurrencyPickerModal/subComponents/PickerComponent';
+import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
+import { PickerUnitColumn } from './subComponents/PickerUnitColumn';
+import type { TFunction } from '../../../types/generalTypes';
+import type { Category } from '../../../model/types/basketPeopleAmountsTypes';
 
 type PickerState = {
   selected: 'standardInput' | 'customInput',
@@ -30,7 +33,17 @@ type PickerState = {
   },
 };
 
-class PickerModal extends React.Component<any, PickerState> {
+type PickerModalProps = {
+  confirmAction: number => void,
+  category: Category,
+  toggleModalVisible: () => void,
+  modalVisible: boolean,
+};
+
+class PickerModalInner extends React.Component<
+  PickerModalProps & { t: TFunction },
+  PickerState
+> {
   state = {
     selected: 'standardInput' || 'customInput',
     standardInput: {
@@ -77,7 +90,7 @@ class PickerModal extends React.Component<any, PickerState> {
       t,
       confirmAction,
       category,
-      onRequestClose,
+      toggleModalVisible,
       modalVisible,
     } = this.props;
     const standardInput = selected === 'standardInput';
@@ -89,9 +102,9 @@ class PickerModal extends React.Component<any, PickerState> {
       : this.customTotalAmount();
 
     return (
-      <AppModal onRequestClose={onRequestClose} modalVisible={modalVisible}>
+      <AppModal onRequestClose={toggleModalVisible} modalVisible={modalVisible}>
         <PickerCard style={{ top: '25%' }}>
-          <View style={ownStyles.topTouchableContainer}>
+          <View style={pickerModalStyle.topTouchableContainer}>
             <ModalTab
               standardInput={standardInput}
               onPress={() =>
@@ -113,7 +126,7 @@ class PickerModal extends React.Component<any, PickerState> {
           </View>
 
           {standardInput ? (
-            <View style={ownStyles.pickerContainer}>
+            <View style={pickerModalStyle.pickerContainer}>
               <PickerComponent
                 selectedValue={this.state.standardInput.number}
                 onValueChange={itemValue =>
@@ -158,7 +171,7 @@ class PickerModal extends React.Component<any, PickerState> {
               <PickerUnitColumn unit={unit} />
             </View>
           ) : (
-            <View style={ownStyles.pickerContainer}>
+            <View style={pickerModalStyle.pickerContainer}>
               <PickerComponent
                 selectedValue={this.state.customInput.units}
                 onValueChange={itemValue =>
@@ -171,7 +184,6 @@ class PickerModal extends React.Component<any, PickerState> {
                 }
                 mode="dropdown"
                 prompt=""
-                itemStyle={{}}
               >
                 {rangeItemsPicker(1, 100, 1).map(i => (
                   <Picker.Item key={i.id} label={i.label} value={i.value} />
@@ -203,7 +215,7 @@ class PickerModal extends React.Component<any, PickerState> {
             </View>
           )}
 
-          <View style={ownStyles.redButtonWrapper}>
+          <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
               onPress={() => confirmAction(currentAmount)}
               text={t(['confirmPicker'], {
@@ -217,4 +229,6 @@ class PickerModal extends React.Component<any, PickerState> {
   }
 }
 
-export default translate(['modal'])(PickerModal);
+export const PickerModal = (translate(['modal'])(
+  PickerModalInner
+): ComponentType<PickerModalProps>);

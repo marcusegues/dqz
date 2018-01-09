@@ -1,8 +1,10 @@
+// @flow
+// $FlowFixMe
 import { StyleSheet } from 'react-native';
 import { moderateScale, scale } from '../../../styles/Scaling';
 import { MAIN_RED } from '../../../styles/colors';
 
-export default StyleSheet.create({
+export const receiptNotificationBadgeStyle = StyleSheet.create({
   container: {
     minWidth: scale(105),
     maxWidth: scale(180),

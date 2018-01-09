@@ -10,8 +10,8 @@ import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { Provider } from 'react-redux';
 
-import i18n from './src/i18n';
-import RootNavigation from './src/navigation/RootNavigation';
+import { i18nImplementation } from './src/i18n';
+import { RootNavigator } from './src/navigation/RootNavigation';
 import { configureStore } from './src/configureStore';
 import { parseCurrencyXML } from './src/model/currencies';
 
@@ -107,8 +107,8 @@ export default class App extends React.Component<AppProps, AppState> {
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
         {Platform.OS === 'android' && <View style={styles.statusBarUnderlay} />}
         <Provider store={store}>
-          <I18nextProvider i18n={i18n}>
-            <RootNavigation />
+          <I18nextProvider i18n={i18nImplementation}>
+            <RootNavigator />
           </I18nextProvider>
         </Provider>
       </View>

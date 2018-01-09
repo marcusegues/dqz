@@ -7,10 +7,11 @@ import Touchable from 'react-native-platform-touchable';
 
 import { menuTileStyle } from '../styles/MenuTileStyles';
 import { globalStyles } from '../../../styles/globalStyles';
+import type { Children } from '../../../types/generalTypes';
 
 type MenuTileProps = {
   text: string,
-  children: any,
+  children: Children,
   onPress: () => void,
 };
 

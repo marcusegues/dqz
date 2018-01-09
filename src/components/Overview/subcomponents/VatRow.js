@@ -1,17 +1,22 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
-import OverviewRow from './OverviewRow';
+import { OverviewRow } from './OverviewRow';
 import type { TFunction } from '../../../types/generalTypes';
 
 type VatRowProps = {
-  quantity: number,
+  quantity: number | string,
   vat: number,
   borderTop?: boolean,
-  t: TFunction,
 };
 
-const VatRow = ({ quantity, vat, borderTop, t }: VatRowProps) => (
+const VatRowInner = ({
+  quantity,
+  vat,
+  borderTop = false,
+  t,
+}: VatRowProps & { t: TFunction }) => (
   <OverviewRow
     title={t('amountsTitle')}
     subtitle={t('amountsSubtitle')}
@@ -22,8 +27,6 @@ const VatRow = ({ quantity, vat, borderTop, t }: VatRowProps) => (
   />
 );
 
-VatRow.defaultProps = {
-  borderTop: false,
-};
-
-export default translate(['receipt'])(VatRow);
+export const VatRow = (translate(['receipt'])(VatRowInner): ComponentType<
+  VatRowProps
+>);

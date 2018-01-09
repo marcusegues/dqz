@@ -1,4 +1,6 @@
-export const currencyPicker = [
+// @flow
+
+export const currencyPicker: Array<{ label: string, value: string }> = [
   { label: ' 🇪🇺 EUR', value: 'EUR' },
   { label: ' 🇺🇸 USD', value: 'USD' },
   { label: ' 🇦🇪 AED', value: 'AED' },

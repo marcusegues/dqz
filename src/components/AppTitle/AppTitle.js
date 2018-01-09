@@ -1,4 +1,6 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { View, Text, Image } from 'react-native';
 import { moderateScale, scale } from '../../styles/Scaling';
 
@@ -34,7 +36,7 @@ const ownStyles = {
   },
 };
 
-const AppTitle = () => (
+export const AppTitle = () => (
   <View style={ownStyles.appTitleContainer}>
     <Image source={img} style={ownStyles.logo} resizeMode="contain" />
     <View style={ownStyles.titleWrapper}>
@@ -42,5 +44,3 @@ const AppTitle = () => (
     </View>
   </View>
 );
-
-export default AppTitle;

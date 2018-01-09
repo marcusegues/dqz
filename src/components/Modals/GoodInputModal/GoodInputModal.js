@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import {
   Text,
@@ -6,10 +7,11 @@ import {
   TouchableWithoutFeedback,
   View,
   StyleSheet,
+  // $FlowFixMe
 } from 'react-native';
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
-import AppModal from '../AppModal';
-import RedButton from '../../Buttons/RedButton';
+import { AppModal } from '../AppModal';
+import { RedButton } from '../../Buttons/RedButton';
 
 const ownStyles = StyleSheet.create({
   modalContainer: {
@@ -106,11 +108,17 @@ const ownStyles = StyleSheet.create({
   },
 });
 
-const GoodInputModal = ({
+type GoodInputModalProps = {
+  onRequestClose: () => void,
+  modalVisible: boolean,
+  toggleModalVisible: () => void,
+};
+
+export const GoodInputModal = ({
   onRequestClose,
   modalVisible,
   toggleModalVisible,
-}) => (
+}: GoodInputModalProps) => (
   <AppModal onRequestClose={onRequestClose} modalVisible={modalVisible}>
     <View style={ownStyles.modalContainer}>
       <View style={ownStyles.closeButtonContainer}>
@@ -162,10 +170,8 @@ const GoodInputModal = ({
         <Text style={ownStyles.subPrice}>CHF 55,58</Text>
       </View>
       <View style={ownStyles.redButtonWrapper}>
-        <RedButton text="ÜBERNEHMEN" />
+        <RedButton text="ÜBERNEHMEN" onPress={() => {}} />
       </View>
     </View>
   </AppModal>
 );
-
-export default GoodInputModal;

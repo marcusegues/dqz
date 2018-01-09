@@ -15,8 +15,6 @@ const ownStyles = {
 
 const logo = require('../../../../assets/images/logo_red.png');
 
-const RedLogo = () => (
+export const RedLogo = () => (
   <Image source={logo} style={ownStyles.logo} resizeMode="contain" />
 );
-
-export default RedLogo;

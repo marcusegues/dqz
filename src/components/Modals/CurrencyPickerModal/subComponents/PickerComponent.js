@@ -1,5 +1,8 @@
+// @flow
 import React from 'react';
+// $FlowFixMe
 import { Picker, View } from 'react-native';
+import type { Children } from '../../../../types/generalTypes';
 
 const ownStyles = {
   pickerColumn: {
@@ -7,14 +10,23 @@ const ownStyles = {
   },
 };
 
-const PickerComponent = ({
+type PickerComponentProps = {
+  selectedValue: string,
+  onValueChange: () => void,
+  prompt: string,
+  children: Children,
+  itemStyle?: {},
+  style?: {},
+};
+
+export const PickerComponent = ({
   selectedValue,
   onValueChange,
   prompt,
   children,
   itemStyle,
   style,
-}) => (
+}: PickerComponentProps) => (
   <View style={[ownStyles.pickerColumn, { ...style }]}>
     <Picker
       selectedValue={selectedValue}
@@ -28,4 +40,7 @@ const PickerComponent = ({
   </View>
 );
 
-export default PickerComponent;
+PickerComponent.defaultProps = {
+  style: {},
+  itemStyle: {},
+};
