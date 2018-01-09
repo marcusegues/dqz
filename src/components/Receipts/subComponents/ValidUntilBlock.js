@@ -3,6 +3,7 @@ import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import { verticalScale } from '../../../styles/Scaling';
+import type { Children } from '../../../types/generalTypes';
 
 const ownStyles = {
   container: {
@@ -15,11 +16,9 @@ const ownStyles = {
 };
 
 type ValidUntilBlockProps = {
-  children: any,
+  children: Children,
 };
 
-const ValidUntilBlock = ({ children }: ValidUntilBlockProps) => (
+export const ValidUntilBlock = ({ children }: ValidUntilBlockProps) => (
   <View style={ownStyles.container}>{children}</View>
 );
-
-export default ValidUntilBlock;

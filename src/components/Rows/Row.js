@@ -2,10 +2,11 @@
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
+import type { Children } from '../../types/generalTypes';
 
 type RowProp = {
   borderTop?: boolean,
-  children: any,
+  children: Children,
 };
 
 const quantityRowContainerStyles = borderTop => ({

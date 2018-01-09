@@ -3,6 +3,7 @@ import React from 'react';
 // $FlowFixMe
 import { View, ScrollView } from 'react-native';
 import { globalStyles } from '../../../styles/globalStyles';
+import type { Children } from '../../../types/generalTypes';
 
 const ownStyles = {
   container: {
@@ -20,7 +21,7 @@ const ownStyles = {
 };
 
 type ScrollViewCardProps = {
-  children: any,
+  children: Children,
 };
 
 export const ScrollViewCard = ({ children }: ScrollViewCardProps) => (

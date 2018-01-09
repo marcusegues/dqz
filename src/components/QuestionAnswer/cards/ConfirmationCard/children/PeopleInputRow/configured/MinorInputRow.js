@@ -44,14 +44,10 @@ const MinorInputRowInner = ({
     icon={kids}
     displayedQuantity={fromModelApi.getMinorPeople(people)}
   >
-    {{
-      textComponent: (
-        <View>
-          <Text style={ownStyles.categoryTitleText}>{t('minor')}</Text>
-          <Text style={ownStyles.categoryAgeText}>{t('minorInfo')}</Text>
-        </View>
-      ),
-    }}
+    <View>
+      <Text style={ownStyles.categoryTitleText}>{t('minor')}</Text>
+      <Text style={ownStyles.categoryAgeText}>{t('minorInfo')}</Text>
+    </View>
   </PeopleInputRow>
 );
 

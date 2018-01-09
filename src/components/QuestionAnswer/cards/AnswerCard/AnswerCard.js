@@ -4,6 +4,7 @@ import React from 'react';
 import Touchable from 'react-native-platform-touchable';
 // $FlowFixMe
 import { Image, View, StyleSheet } from 'react-native';
+import type { Children } from '../../../../types/generalTypes';
 
 const styles = StyleSheet.create({
   container: {
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
 type AnswerCardProps = {
   mainIcon: any,
   flag: any,
-  children: any,
+  children: Children,
   onAnswerCardPress: () => void,
 };
 

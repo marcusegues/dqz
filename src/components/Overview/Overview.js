@@ -18,7 +18,7 @@ import type {
   Basket,
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
-import ReceiptSubText from '../Receipts/subComponents/ReceiptSubText';
+import { ReceiptSubText } from '../Receipts/subComponents/ReceiptSubText';
 import VatRow from './subcomponents/VatRow';
 import { moderateScale, verticalScale } from '../../styles/Scaling';
 import { calculateVat } from '../../model/vatCalculations';
