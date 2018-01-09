@@ -6,7 +6,7 @@ import { FlatList, View } from 'react-native';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 
-import NavBar from '../NavBar/NavBar';
+import { NavBar } from '../NavBar/NavBar';
 import RedButton from '../Buttons/RedButton';
 import { PeopleInputQA } from './PeopleInput/PeopleInputQA';
 import { MainCategoriesInputQA } from './MainCategoriesInput/MainCategoriesInputQA';

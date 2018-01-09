@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 import { Overview } from '../Overview/Overview';
 import Saferpay from '../../../saferpay';
-import NavBar from '../NavBar/NavBar';
+import { NavBar } from '../NavBar/NavBar';
 import { PaymentWebView } from './PaymentWebView';
 import RedButton from '../Buttons/RedButton';
 import {

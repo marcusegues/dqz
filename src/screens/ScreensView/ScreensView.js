@@ -3,7 +3,7 @@ import React from 'react';
 // $FlowFixMe
 import { View, Text, FlatList } from 'react-native';
 import { connect } from 'react-redux';
-import NavBar from '../../components/NavBar/NavBar';
+import { NavBar } from '../../components/NavBar/NavBar';
 import GoodInputModal from '../../components/Modals/GoodInputModal/GoodInputModal';
 import PickerModal from '../../components/Modals/PickerModal/PickerModal';
 import CurrencyPickerModal from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';

@@ -1,8 +1,12 @@
+// @flow
 import React from 'react';
+import type { ComponentType } from 'react';
+// $FlowFixMe
 import { View, Text } from 'react-native';
 import { translate } from 'react-i18next';
 
 import { scale, verticalScale, moderateScale } from '../../styles/Scaling';
+import type { TFunction } from '../../types/generalTypes';
 
 const ownStyles = {
   locatorContainer: {
@@ -41,7 +45,11 @@ const ownStyles = {
   },
 };
 
-const NavBar = ({ step, t }) => (
+type NavBarProps = {
+  step: 1 | 2 | 3,
+};
+
+const NavBarInner = ({ step, t }: NavBarProps & { t: TFunction }) => (
   <View style={ownStyles.locatorContainer}>
     <Text
       style={
@@ -69,4 +77,6 @@ const NavBar = ({ step, t }) => (
   </View>
 );
 
-export default translate(['general'])(NavBar);
+export const NavBar = (translate(['onBoarding'])(NavBarInner): ComponentType<
+  NavBarProps
+>);
