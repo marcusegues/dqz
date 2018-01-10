@@ -1,10 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { DoneButton } from '../DoneButton';
+import { RightChevronIcon } from '../RightChevronIcon';
 
-describe('Done Button', () => {
+describe('RightChevronIcon', () => {
   test('renders according to snapshot', () => {
-    const component = renderer.create(<DoneButton />).toJSON();
+    const component = renderer.create(<RightChevronIcon />).toJSON();
     expect(component).toMatchSnapshot();
   });
 });

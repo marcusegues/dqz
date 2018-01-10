@@ -1,4 +1,3 @@
-/* global describe, test, expect */
 import Immutable from 'immutable';
 import { anyQuantitiesInBasket, setQuestionFlag } from '../controlQuestionFlag';
 import {

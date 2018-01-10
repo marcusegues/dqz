@@ -1,5 +1,3 @@
-/* global describe, expect, test, jest */
-
 import { parseCurrencyXML } from '../currencies';
 
 const xmlString =

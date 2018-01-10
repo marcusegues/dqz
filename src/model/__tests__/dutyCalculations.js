@@ -1,5 +1,4 @@
 // @flow
-/* global expect, test, describe */
 import { calculateDuty } from '../dutyCalculations';
 import {
   sampleBasket1,

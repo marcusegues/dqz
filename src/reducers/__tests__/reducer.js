@@ -1,5 +1,4 @@
 // @flow
-/* global describe, test, expect, jest */
 import Immutable from 'immutable';
 import { getInitialState } from '../../types/reducers/appReducer';
 import type { State } from '../../types/reducers/appReducer';
