@@ -15,9 +15,7 @@ describe('RedButton', () => {
 
   test('has uppercase text', () => {
     const str = 'foo';
-    const component = shallow(
-      <RedButton text={str} onPress={jest.fn()} />
-    ).dive();
+    const component = shallow(<RedButton text={str} onPress={jest.fn()} />);
     expect(component.containsMatchingElement(Text)).toBe(true);
     expect(
       component.containsMatchingElement(<Text>{str.toUpperCase()}</Text>)
