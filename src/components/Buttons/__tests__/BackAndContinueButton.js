@@ -1,8 +1,6 @@
 import renderer from 'react-test-renderer';
 import React from 'react';
-import { Text } from 'react-native';
 import { shallow } from 'enzyme';
-import Touchable from 'react-native-platform-touchable';
 import { BackAndContinueButtons } from '../BackAndContinueButtons';
 import { RedButton } from '../RedButton';
 
