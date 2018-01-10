@@ -15,6 +15,7 @@ import type {
 import type { CurrencyObject } from '../model/currencies';
 import { calculateVat } from '../model/vatCalculations';
 import { calculateDuty } from '../model/dutyCalculations';
+import type { DutyReport, VatReport } from '../model/types/calculationTypes';
 
 const root = combineReducers({ appState: appApi.appState });
 
@@ -59,3 +60,13 @@ export const getTotalDuty = (state: { appState: State }): number =>
 
 export const getTotalFees = (state: { appState: State }): number =>
   getTotalVat(state) + getTotalDuty(state);
+
+export const getDutyReport = (state: { appState: State }): DutyReport =>
+  calculateDuty(state.appState.basket, state.appState.people);
+
+export const getVatReport = (state: { appState: State }): VatReport =>
+  calculateVat(
+    state.appState.amounts,
+    state.appState.people,
+    state.appState.currencyObject
+  );
