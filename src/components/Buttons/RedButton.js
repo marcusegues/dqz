@@ -60,7 +60,7 @@ export const RedButton = ({
 }: RedButtonProps) => (
   <View style={ownStyles(confirmationDisabled).bottomButtonContainer}>
     <Touchable
-      onPress={onPress}
+      onPress={() => onPress()}
       style={[ownStyles(confirmationDisabled).touchable, { ...buttonStyle }]}
       disabled={confirmationDisabled}
     >

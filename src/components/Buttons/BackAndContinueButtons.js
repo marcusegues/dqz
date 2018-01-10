@@ -37,7 +37,7 @@ const BackAndContinueButtonsInner = ({
   <View style={ownStyles.redButtonContainerWrapper}>
     <View style={ownStyles.redButtonWrapper}>
       <RedButton
-        onPress={onPressBack}
+        onPress={() => onPressBack()}
         text={t('buttonBack')}
         buttonStyle={{ backgroundColor: GREY }}
       />
@@ -45,7 +45,7 @@ const BackAndContinueButtonsInner = ({
     <View style={ownStyles.redButtonWrapper}>
       <RedButton
         confirmationDisabled={confirmationDisabled}
-        onPress={onPressContinue}
+        onPress={() => onPressContinue()}
         text={t('buttonContinue')}
       />
     </View>

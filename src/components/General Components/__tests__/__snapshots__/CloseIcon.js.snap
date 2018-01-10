@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CloseIcon renders according to snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "flex-end",
+      "paddingRight": 5,
+      "paddingTop": 5,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  />
+</View>
+`;
