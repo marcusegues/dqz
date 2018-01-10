@@ -18,6 +18,8 @@ import {
   getTotalVat,
   getTotalDuty,
   getTotalFees,
+  getVatReport,
+  getDutyReport,
 } from '../index';
 import {
   sampleAmounts1,
@@ -78,5 +80,15 @@ describe('API', () => {
   });
   test('getTotalFees', () => {
     expect(getTotalFees({ appState: amountAndQuantityState })).toBe(3604.3);
+  });
+  test('getVatReport', () => {
+    expect(
+      getVatReport({ appState: amountAndQuantityState })
+    ).toMatchSnapshot();
+  });
+  test('getDutyReport', () => {
+    expect(
+      getDutyReport({ appState: amountAndQuantityState })
+    ).toMatchSnapshot();
   });
 });
