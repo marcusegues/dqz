@@ -13,6 +13,8 @@ import type {
   State,
 } from '../types/reducers/appReducer';
 import type { CurrencyObject } from '../model/currencies';
+import { calculateVat } from '../model/vatCalculations';
+import { calculateDuty } from '../model/dutyCalculations';
 
 const root = combineReducers({ appState: appApi.appState });
 
@@ -41,3 +43,19 @@ export const getCurrencyState = (state: { appState: State }): boolean =>
 
 export const getFormattedCurrencyDate = (state: { appState: State }): string =>
   formatDate(appApi.getCurrencyDate(state.appState));
+
+export const getTotalVat = (state: { appState: State }): number =>
+  calculateVat(
+    state.appState.amounts,
+    state.appState.people,
+    state.appState.currencyObject
+  ).get('totalVat', 0);
+
+export const getTotalDuty = (state: { appState: State }): number =>
+  calculateDuty(state.appState.basket, state.appState.people).get(
+    'totalDuty',
+    0
+  );
+
+export const getTotalFees = (state: { appState: State }): number =>
+  getTotalVat(state) + getTotalDuty(state);

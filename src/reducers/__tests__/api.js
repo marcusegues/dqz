@@ -15,13 +15,24 @@ import {
   getSettings,
   getCurrencies,
   getCurrencyState,
+  getTotalVat,
+  getTotalDuty,
+  getTotalFees,
 } from '../index';
+import {
+  sampleAmounts1,
+  sampleBasket1,
+} from '../../model/__tests__/fullBasketsAndAmounts';
 
 jest.mock('uuid', () => ({
   v4: jest.fn(() => 1),
 }));
 
 const initState: State = getInitialState();
+
+const amountAndQuantityState = initState
+  .set('amounts', sampleAmounts1)
+  .set('basket', sampleBasket1);
 
 describe('API', () => {
   test('getBasket', () => {
@@ -58,5 +69,14 @@ describe('API', () => {
     expect(getCurrencyState({ appState: initState }).toString()).toBe(
       false.toString()
     );
+  });
+  test('getTotalVat', () => {
+    expect(getTotalVat({ appState: amountAndQuantityState })).toBe(485.4);
+  });
+  test('getTotalDuty', () => {
+    expect(getTotalDuty({ appState: amountAndQuantityState })).toBe(3118.9);
+  });
+  test('getTotalFees', () => {
+    expect(getTotalFees({ appState: amountAndQuantityState })).toBe(3604.3);
   });
 });
