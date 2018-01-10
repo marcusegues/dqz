@@ -9,64 +9,38 @@ import { connect } from 'react-redux';
 import { MaterialIcons } from '@expo/vector-icons';
 import { moderateScale } from '../../../styles/Scaling';
 import { receiptNotificationBadgeStyle } from '../styles/ReceiptNotificationBadge';
-import {
-  getBasket,
-  getPeople,
-  getCurrencies,
-  getAmounts,
-} from '../../../reducers';
-import { calculateDuty } from '../../../model/dutyCalculations';
+import { getTotalFees } from '../../../reducers';
 import { MAIN_RED } from '../../../styles/colors';
-import { calculateVat } from '../../../model/vatCalculations';
-import type {
-  Amounts,
-  Basket,
-  People,
-} from '../../../model/types/basketPeopleAmountsTypes';
-import type { CurrencyObject } from '../../../model/currencies';
 
 type ReceiptNotificationBadgeProps = {
-  basket: Basket,
-  people: People,
-  amounts: Amounts,
-  currencyObject: CurrencyObject,
+  fees: number,
 };
 
 const ReceiptNotificationBadgeInner = ({
-  basket,
-  people,
-  amounts,
-  currencyObject,
-}: ReceiptNotificationBadgeProps) => {
-  const duty = calculateDuty(basket, people).get('totalDuty', 0);
-  const vat = calculateVat(amounts, people, currencyObject).get('totalVat', 0);
-  return (
-    <Touchable onPress={() => {}}>
-      <View
-        style={[
-          receiptNotificationBadgeStyle.container,
-          { backgroundColor: duty + vat ? MAIN_RED : 'lightgray' },
-        ]}
-      >
-        <MaterialIcons
-          name="shopping-cart"
-          size={moderateScale(17)}
-          color="white"
-          style={receiptNotificationBadgeStyle.receiptIcon}
-        />
-        <Text style={receiptNotificationBadgeStyle.amountText}>
-          CHF {(vat + duty).toFixed(2)}
-        </Text>
-      </View>
-    </Touchable>
-  );
-};
+  fees,
+}: ReceiptNotificationBadgeProps) => (
+  <Touchable onPress={() => {}}>
+    <View
+      style={[
+        receiptNotificationBadgeStyle.container,
+        { backgroundColor: fees ? MAIN_RED : 'lightgray' },
+      ]}
+    >
+      <MaterialIcons
+        name="shopping-cart"
+        size={moderateScale(17)}
+        color="white"
+        style={receiptNotificationBadgeStyle.receiptIcon}
+      />
+      <Text style={receiptNotificationBadgeStyle.amountText}>
+        CHF {fees.toFixed(2)}
+      </Text>
+    </View>
+  </Touchable>
+);
 
 const mapStateToProps = state => ({
-  basket: getBasket(state),
-  people: getPeople(state),
-  currencyObject: getCurrencies(state),
-  amounts: getAmounts(state),
+  fees: getTotalFees(state),
 });
 
 export const ReceiptNotificationBadge = (connect(mapStateToProps)(

@@ -10,28 +10,20 @@ import { Card } from '../QuestionAnswer/cards/Card';
 import { CardHeader } from '../QuestionAnswer/cards/subcomponents/CardHeader';
 import { getTotalQuantity } from '../../model/configurationApi';
 import { DutyRow } from './subcomponents/DutyRow';
-import { calculateDuty } from '../../model/dutyCalculations';
 import { CardRowSubText } from '../QuestionAnswer/cards/subcomponents/CardRowSubText';
 import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
 import { getMainCategory } from '../../types/reducers/appReducer';
-import type {
-  Amounts,
-  Basket,
-  People,
-} from '../../model/types/basketPeopleAmountsTypes';
+import type { Basket } from '../../model/types/basketPeopleAmountsTypes';
 import { ReceiptSubText } from '../Receipts/subComponents/ReceiptSubText';
 import { VatRow } from './subcomponents/VatRow';
 import { moderateScale, verticalScale } from '../../styles/Scaling';
-import { calculateVat } from '../../model/vatCalculations';
-import type { CurrencyObject } from '../../model/currencies';
 import type { TFunction } from '../../types/generalTypes';
 import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 
 type OverviewProps = {
+  dutyReport: DutyReport,
+  vatReport: VatReport,
   basket: Basket,
-  people: People,
-  amounts: Amounts,
-  currencyObject: CurrencyObject,
 };
 
 const ownStyles = {
@@ -48,14 +40,11 @@ const ownStyles = {
 };
 
 const OverviewInner = ({
+  dutyReport,
+  vatReport,
   basket,
-  people,
   t,
-  amounts,
-  currencyObject,
 }: OverviewProps & { t: TFunction }) => {
-  const dutyReport: DutyReport = calculateDuty(basket, people);
-  const vatReport: VatReport = calculateVat(amounts, people, currencyObject);
   const fullVat = vatReport.get('totalVat');
   const fullDuty = dutyReport.get('totalDuty');
   return (
@@ -69,14 +58,14 @@ const OverviewInner = ({
           .get('dutyByCategoryRaw')
           .entrySeq()
           .filter(entry => getTotalQuantity(basket, entry[0]) > 0)
-          .map(([category, duty], idx) => (
+          .map(([category, dutyOfCategory], idx) => (
             <DutyRow
               borderTop={idx === 0}
               key={category}
               mainCategory={getMainCategory(category)}
               category={category}
               quantity={getTotalQuantity(basket, category)}
-              duty={duty}
+              duty={dutyOfCategory}
             />
           ))}
 
@@ -92,7 +81,7 @@ const OverviewInner = ({
         <View style={{ flex: 1, width: '100%' }}>
           <VatRow
             quantity={`~${vatReport.get('totalAmountsApprox')}`}
-            vat={fullVat}
+            vat={vatReport.get('totalVat')}
           />
         </View>
         <View style={{ alignSelf: 'flex-end', marginRight: 16, marginTop: 16 }}>

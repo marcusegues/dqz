@@ -13,20 +13,14 @@ import { NavBar } from '../NavBar/NavBar';
 import { PaymentWebView } from './PaymentWebView';
 import { RedButton } from '../Buttons/RedButton';
 import {
-  getAmounts,
   getBasket,
-  getCurrencies,
-  getPeople,
+  getDutyReport,
+  getTotalFees,
+  getVatReport,
 } from '../../reducers';
-import { calculateDuty } from '../../model/dutyCalculations';
-import type {
-  Amounts,
-  Basket,
-  People,
-} from '../../model/types/basketPeopleAmountsTypes';
-import type { CurrencyObject } from '../../model/currencies';
-import { calculateVat } from '../../model/vatCalculations';
 import type { TFunction } from '../../types/generalTypes';
+import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
+import type { Basket } from '../../model/types/basketPeopleAmountsTypes';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -43,19 +37,20 @@ type PaymentContainerState = {
   paymentStatus: ?string,
 };
 
-type PaymentContainerProps = {
+type PaymentContainerProps = {};
+
+type ReduxInject = {
+  fees: number,
   basket: Basket,
-  people: People,
-  amounts: Amounts,
-  currencyObject: CurrencyObject,
-  t: TFunction,
+  dutyReport: DutyReport,
+  vatReport: VatReport,
 };
 
 class PaymentContainerInner extends React.Component<
-  PaymentContainerProps,
+  PaymentContainerProps & ReduxInject & { t: TFunction },
   PaymentContainerState
 > {
-  constructor(props: PaymentContainerProps) {
+  constructor(props: PaymentContainerProps & ReduxInject & { t: TFunction }) {
     super(props);
     this.state = {
       isLoadingRedirectData: false,
@@ -73,20 +68,13 @@ class PaymentContainerInner extends React.Component<
   saferpay: any; // TODO
 
   initializePayment() {
-    const { basket, people, amounts, currencyObject } = this.props;
-    const totalDuty = calculateDuty(basket, people).get('totalDuty', 0);
-    const totalVat = calculateVat(amounts, people, currencyObject).get(
-      'totalVat',
-      0
-    );
-    const totalSum = totalDuty + totalVat;
+    const { fees } = this.props;
 
-    if (totalSum > 0) {
+    if (fees > 0) {
       this.setState({ isLoadingRedirectData: true }, () => {
         this.saferpay
-          .initializePayment(100 * totalSum, 'CHF')
+          .initializePayment(100 * fees, 'CHF')
           .then(responseJson => {
-            // console.log('response is', responseJson);
             this.setState({
               isLoadingRedirectData: false,
               redirectDataLoaded: true,
@@ -97,8 +85,6 @@ class PaymentContainerInner extends React.Component<
           })
           .catch(error => console.log('Error is', error));
       });
-    } else {
-      console.log(`totalDuty is 0!`);
     }
   }
 
@@ -137,10 +123,7 @@ class PaymentContainerInner extends React.Component<
   }
 
   render() {
-    const { basket, people, amounts, currencyObject, t } = this.props;
-    const totalSum =
-      calculateDuty(basket, people).get('totalDuty') +
-      calculateVat(amounts, people, currencyObject).get('totalVat');
+    const { basket, t, dutyReport, vatReport, fees } = this.props;
     return (
       <View
         style={{
@@ -163,17 +146,16 @@ class PaymentContainerInner extends React.Component<
           <Text style={{ color: 'red' }}>Payment failed</Text>
         ) : null}
         <Overview
-          people={people}
+          dutyReport={dutyReport}
+          vatReport={vatReport}
           basket={basket}
-          amounts={amounts}
-          currencyObject={currencyObject}
           initializePayment={() => this.initializePayment()}
         />
 
         <RedButton
           onPress={() => this.initializePayment()}
           text={t('toPayment')}
-          confirmationDisabled={totalSum < 1}
+          confirmationDisabled={fees < 1}
         />
         {this.state.redirectDataLoaded ? (
           <View style={{ position: 'absolute', top: 0 }}>
@@ -189,10 +171,10 @@ class PaymentContainerInner extends React.Component<
 }
 
 const mapStateToProps = state => ({
+  fees: getTotalFees(state),
+  dutyReport: getDutyReport(state),
+  vatReport: getVatReport(state),
   basket: getBasket(state),
-  people: getPeople(state),
-  amounts: getAmounts(state),
-  currencyObject: getCurrencies(state),
 });
 
 export const PaymentContainer = (connect(mapStateToProps)(
