@@ -8,7 +8,7 @@ describe('CheckBox', () => {
     expect(component).toMatchSnapshot();
   });
   test('renders according to snapshot checked', () => {
-    const component = renderer.create(<CheckBox checked={true} />).toJSON();
+    const component = renderer.create(<CheckBox checked />).toJSON();
     expect(component).toMatchSnapshot();
   });
 });
