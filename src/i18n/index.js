@@ -14,7 +14,7 @@ const languageDetector = {
   type: 'languageDetector',
   async: true, // flags below detection to be async
   detect: callback =>
-    Expo.Util.getCurrentLocaleAsync().then(lng => callback(lng)),
+    Expo.Util.getCurrentLocaleAsync().then(lng => callback(lng.substr(0, 2))),
   init: () => {},
   cacheUserLanguage: () => {},
 };
