@@ -13,6 +13,15 @@ describe('RedButton', () => {
     expect(component).toMatchSnapshot();
   });
 
+  test('renders according to snapshot if disabled', () => {
+    const component = renderer
+      .create(
+        <RedButton text="text" onPress={jest.fn()} confirmationDisabled />
+      )
+      .toJSON();
+    expect(component).toMatchSnapshot();
+  });
+
   test('has uppercase text', () => {
     const str = 'foo';
     const component = shallow(<RedButton text={str} onPress={jest.fn()} />);
