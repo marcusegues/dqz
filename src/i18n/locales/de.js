@@ -1,24 +1,8 @@
 // @flow
-import type { LocaleType } from '../types/locale';
-import {
-  makeLocaleRecord,
-  makeGeneralNSRecord,
-  makeOnBoardingNSRecord,
-  makeQAFlowNSRecord,
-  makeModalNSRecord,
-  makeCategoriesNSRecord,
-  makeMainCategoriesNSRecord,
-  makeMainCategoriesInputNSRecord,
-  makeQuantityInputNSRecord,
-  makePeopleInputNSRecord,
-  makePaymentNSRecord,
-  makeReceiptNSRecord,
-  makeInformationNSRecord,
-  makeAmountInputNSRecord,
-} from '../types/locale';
+import type { Locale } from '../types/locale';
 
-export const de: LocaleType = makeLocaleRecord({
-  categories: makeCategoriesNSRecord({
+export const de: Locale = {
+  categories: {
     Meat: 'Fleisch & Fleischzubereitung',
     Butter: 'Butter & Rahm',
     Oils: 'Öle/Fette/Margarine',
@@ -34,14 +18,14 @@ export const de: LocaleType = makeLocaleRecord({
     AnimalFeed: 'Tierfutter',
     Fertilizer: 'Dünger',
     Other: 'Sonstige Waren',
-  }),
-  mainCategories: makeMainCategoriesNSRecord({
+  },
+  mainCategories: {
     Foods: 'Lebensmittel',
     Alcohol: `Alkohol`,
     TobaccoProducts: 'Tabak',
     OtherGoods: 'Anderes',
-  }),
-  general: makeGeneralNSRecord({
+  },
+  general: {
     declareGoods: 'Waren anmelden',
     pleaseSelect: 'Bitte auswählen',
     receipts: 'Quittungen Schweizer Zoll',
@@ -57,8 +41,8 @@ export const de: LocaleType = makeLocaleRecord({
     toPayment: 'Zur Bezahlung',
     buttonContinue: 'Weiter',
     buttonBack: 'Zurück',
-  }),
-  onBoarding: makeOnBoardingNSRecord({
+  },
+  onBoarding: {
     welcome: 'Willkommen zu',
     onBoardingMessage:
       'Wir haben Ihre Sprache basierend auf Ihren aktuellen Systemeinstellungen festgelegt',
@@ -67,25 +51,25 @@ export const de: LocaleType = makeLocaleRecord({
       'Hiermit bestätige ich, dass ich den einheitlichen Mehrwertsteuersatz von ',
     confirmationVat2: 'bei der Verzollung von Waren akzeptiere.',
     vatInformation: 'Weitere Informationen',
-  }),
-  peopleInput: makePeopleInputNSRecord({
+  },
+  peopleInput: {
     peopleInputQuestion:
       'Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?',
-  }),
-  mainCategoriesInput: makeMainCategoriesInputNSRecord({
+  },
+  mainCategoriesInput: {
     mainCategoriesQuestion: 'Welche Art Waren führen Sie mit sich?',
-  }),
-  quantityInput: makeQuantityInputNSRecord({
+  },
+  quantityInput: {
     quantityInput: 'Mengeneingabe',
-  }),
-  amountInput: makeAmountInputNSRecord({
+  },
+  amountInput: {
     amountInput: 'Betragseingabe',
     amountInputLargeItem: 'Betragseingabe (Waren über CHF {{value}})',
     amountInputMoreThan300Text:
       'Erfassen Sie hier jeden Gegenstand, der mehr als 300.00 CHF wert ist.',
     amountInputAddItem: 'Gegenstand hinzufügen',
-  }),
-  qaFlow: makeQAFlowNSRecord({
+  },
+  qaFlow: {
     declareGoods: 'Waren Deklarieren',
     toOverview: 'Zur Übersicht',
     adult: 'Erwachsene',
@@ -105,8 +89,8 @@ export const de: LocaleType = makeLocaleRecord({
     validateMainCategoryRemoveSubtitle:
       'Im Moment enthalten gewisse Unterkategorien Mengen, nämlich: {{value}}',
     validateMainCategoryRemoveYes: 'Ja - löscht entsprechende Mengen',
-  }),
-  modal: makeModalNSRecord({
+  },
+  modal: {
     confirmPicker: '{{value}} übernehmen',
     standardCategoryPicker: 'Standardmengen',
     individualCategoryPicker: 'Genaue Mengen',
@@ -121,13 +105,13 @@ export const de: LocaleType = makeLocaleRecord({
       'Möchten Sie mit dem bereits bestehenden Warenkorb fortfahren oder mit einem leeren Warenkorb neu starten?',
     savedBasketTotalCost: 'Gesamtkosten: CHF {{value}}',
     savedBasketNewShoppingCart: 'Neuer Warenkorb',
-  }),
-  payment: makePaymentNSRecord({
+  },
+  payment: {
     overViewTitle: 'Übersicht ihrer Anmeldung',
     dutyColumn: 'Zollabgabe in CHF',
     sumText: 'Summe (CHF)',
-  }),
-  receipt: makeReceiptNSRecord({
+  },
+  receipt: {
     dutyAndVat: 'Zollabgabe: {{duty}}  |  Mehrwertsteuer: {{vat}}',
     paidOn: 'Bezahlt am {{date}} um {{time}} Uhr mit:',
     transactionId: 'Transaktions-ID (SIX): {{value}}',
@@ -139,9 +123,8 @@ export const de: LocaleType = makeLocaleRecord({
     amountsSubtitle: 'Summe aller Kaufbelege',
     receiptStorageNotification:
       'Diese Quittung wird ein Jahr lang gespeichert. Solange können Sie die Quittung jederzeit in der App aufrufen.',
-  }),
-
-  information: makeInformationNSRecord({
+  },
+  information: {
     informationTitle: 'Wissenswertes',
     proceedinAtTheCustoms: 'Vorgehen am Zoll',
     proceedinAtTheCustomsSubText:
@@ -159,5 +142,5 @@ export const de: LocaleType = makeLocaleRecord({
     entryByTrain: 'Einreise per Bahn',
     entryByTrainSubText:
       'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-  }),
-});
+  },
+};

@@ -1,24 +1,8 @@
 // @flow
-import type { LocaleType } from '../types/locale';
-import {
-  makeLocaleRecord,
-  makeGeneralNSRecord,
-  makeOnBoardingNSRecord,
-  makeQAFlowNSRecord,
-  makeModalNSRecord,
-  makeCategoriesNSRecord,
-  makeMainCategoriesNSRecord,
-  makeMainCategoriesInputNSRecord,
-  makeQuantityInputNSRecord,
-  makePeopleInputNSRecord,
-  makePaymentNSRecord,
-  makeReceiptNSRecord,
-  makeInformationNSRecord,
-  makeAmountInputNSRecord,
-} from '../types/locale';
+import type { Locale } from '../types/locale';
 
-export const en: LocaleType = makeLocaleRecord({
-  categories: makeCategoriesNSRecord({
+export const en: Locale = {
+  categories: {
     Meat: 'Meat',
     Butter: 'Butter',
     Oils: 'Oils',
@@ -34,14 +18,14 @@ export const en: LocaleType = makeLocaleRecord({
     AnimalFeed: 'Animal Feed',
     Fertilizer: 'Fertilizer',
     Other: 'Other',
-  }),
-  mainCategories: makeMainCategoriesNSRecord({
+  },
+  mainCategories: {
     Foods: 'Foods',
     Alcohol: `Alcohol`,
     TobaccoProducts: 'Tobacco Products',
     OtherGoods: 'Other Goods',
-  }),
-  general: makeGeneralNSRecord({
+  },
+  general: {
     declareGoods: 'Declare',
     pleaseSelect: 'Please select',
     receipts: 'Receipts',
@@ -57,8 +41,8 @@ export const en: LocaleType = makeLocaleRecord({
     toPayment: 'Make Payment',
     buttonContinue: 'Continue',
     buttonBack: 'Back',
-  }),
-  onBoarding: makeOnBoardingNSRecord({
+  },
+  onBoarding: {
     welcome: 'Welcome to',
     onBoardingMessage:
       'We’ve set your language based on your current system settings:',
@@ -66,25 +50,25 @@ export const en: LocaleType = makeLocaleRecord({
     confirmationVat: 'I hereby confirm to accept the general vat rate of ',
     confirmationVat2: 'in this application.',
     vatInformation: 'Further information',
-  }),
-  peopleInput: makePeopleInputNSRecord({
+  },
+  peopleInput: {
     peopleInputQuestion:
       'How many travelers should be included in this customs declaration?',
-  }),
-  mainCategoriesInput: makeMainCategoriesInputNSRecord({
+  },
+  mainCategoriesInput: {
     mainCategoriesQuestion: 'What types of goods are you carrying?',
-  }),
-  quantityInput: makeQuantityInputNSRecord({
+  },
+  quantityInput: {
     quantityInput: 'Quantity input',
-  }),
-  amountInput: makeAmountInputNSRecord({
+  },
+  amountInput: {
     amountInput: 'Amount Input',
     amountInputLargeItem: 'Amount Input (items larger than CHF {{value}})',
     amountInputMoreThan300Text:
       'Record here any item that is worth more than 300.00 CHF.',
     amountInputAddItem: 'Add item',
-  }),
-  qaFlow: makeQAFlowNSRecord({
+  },
+  qaFlow: {
     declareGoods: 'Declare Goods',
     toOverview: 'To Overview',
     adult: 'Adults',
@@ -104,8 +88,8 @@ export const en: LocaleType = makeLocaleRecord({
     validateMainCategoryRemoveSubtitle:
       'Currently, some subcategories contain quantities: {{value}}',
     validateMainCategoryRemoveYes: 'Yes, remove resp. quantities',
-  }),
-  modal: makeModalNSRecord({
+  },
+  modal: {
     confirmPicker: 'Confirm {{value}}',
     standardCategoryPicker: 'Standard',
     individualCategoryPicker: 'Exact',
@@ -119,13 +103,13 @@ export const en: LocaleType = makeLocaleRecord({
       'Do you want to continue with an existing basket or start a new one',
     savedBasketTotalCost: 'Total cost: CHF {{value}}',
     savedBasketNewShoppingCart: 'New Configuration',
-  }),
-  payment: makePaymentNSRecord({
+  },
+  payment: {
     overViewTitle: 'Summary of your Declaration',
     dutyColumn: 'Customs Duty in CHF',
     sumText: 'Sum (CHF)',
-  }),
-  receipt: makeReceiptNSRecord({
+  },
+  receipt: {
     dutyAndVat: 'Customs duty: {{duty}}  |  vat: {{vat}}',
     paidOn: 'Paid on {{date}} at {{time}}:',
     transactionId: 'Transaction-ID (SIX): {{value}}',
@@ -137,9 +121,8 @@ export const en: LocaleType = makeLocaleRecord({
     amountsSubtitle: 'Sum of all receipts',
     receiptStorageNotification:
       'This receipt is stored for a year. As long as you can call the receipt at any time in the app.',
-  }),
-
-  information: makeInformationNSRecord({
+  },
+  information: {
     informationTitle: 'Information',
     proceedinAtTheCustoms: 'Proceeding at the customs',
     proceedinAtTheCustomsSubText:
@@ -157,5 +140,5 @@ export const en: LocaleType = makeLocaleRecord({
     entryByTrain: 'Entry by train',
     entryByTrainSubText:
       'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
-  }),
-});
+  },
+};
