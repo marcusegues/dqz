@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`API getDutyReport 1`] = `
+Immutable.Record {
+  "totalDuty": 3118.9,
+  "dutyByCategoryRaw": Immutable.Map {
+    "Butter": 352,
+    "Oils": 0,
+    "Cigarettes": 0,
+    "AlcSoft": 0,
+    "Fertilizer": 0,
+    "AlcHard": 0,
+    "Meds": 0,
+    "Books": 0,
+    "Meat": 2470,
+    "OtherFood": 0,
+    "Other": 0,
+    "Tobacco": 296.9,
+    "Flowers": 0,
+    "AnimalFeed": 0,
+    "Magazines": 0,
+  },
+}
+`;
+
+exports[`API getVatReport 1`] = `
+Immutable.Record {
+  "totalVat": 485.4,
+  "totalAmountsApprox": "6304.00",
+}
+`;
