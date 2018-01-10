@@ -1,5 +1,3 @@
-/* global test, expect, describe */
-
 import i18n from 'i18next';
 import { fr } from '../locales/fr';
 import { it } from '../locales/it';

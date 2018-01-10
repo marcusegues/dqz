@@ -1,5 +1,4 @@
 // @flow
-/* global describe, test, expect, jest */
 import Immutable from 'immutable';
 import {
   getInitialState,

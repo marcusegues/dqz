@@ -1,4 +1,3 @@
-/* global expect, test, describe */
 import { rounding } from '../utils';
 
 describe('The model rounds correctly', () => {

@@ -1,5 +1,4 @@
 // @flow
-/* global describe, expect, test */
 
 // NOTE: rounding is tested in roudingTest.js
 

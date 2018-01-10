@@ -1,5 +1,4 @@
 // @flow
-/* global expect, test, describe */
 import {
   ezvAmounts1,
   ezvAmounts10,

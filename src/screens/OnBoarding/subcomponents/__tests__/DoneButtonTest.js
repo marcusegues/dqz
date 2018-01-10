@@ -1,4 +1,3 @@
-/* global describe, test, expect */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { DoneButton } from '../DoneButton';

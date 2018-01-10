@@ -1,5 +1,4 @@
 // @flow
-/* global expect, test */
 import {
   addAmount,
   addLargeAmount,

@@ -1,4 +1,3 @@
-/* global expect, test, describe */
 import Immutable from 'immutable';
 import {
   collapseAllExistingExceptOne,

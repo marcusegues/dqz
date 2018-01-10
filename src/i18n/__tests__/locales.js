@@ -1,4 +1,3 @@
-/* global expect, test, describe */
 import { en } from '../locales/en';
 import { de } from '../locales/de';
 import { fr } from '../locales/fr';
