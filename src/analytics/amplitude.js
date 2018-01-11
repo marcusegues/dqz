@@ -16,9 +16,12 @@ export const sendEventToAmplitude = (event: AnalyticsEvent): void => {
       break;
     }
     case 'QACardOpened': {
+      /*
+      DISABLED, as called too often
       Amplitude.logEventWithProperties('QACard opened', {
         cardName: event.cardName,
       });
+      */
       break;
     }
     case 'LanguageChanged': {

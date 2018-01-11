@@ -13,6 +13,7 @@ import { ValidUntilBlock } from './subComponents/ValidUntilBlock';
 import { DutyRow } from '../Overview/subcomponents/DutyRow';
 import { VatRow } from '../Overview/subcomponents/VatRow';
 import type { TFunction } from '../../types/generalTypes';
+import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 
 const ownStyles = {
   topSumText: {
@@ -61,61 +62,78 @@ type ReceiptAfterPaymentScreenProps = {
   t: TFunction,
 };
 
-const ReceiptAfterPaymentInner = ({ t }: ReceiptAfterPaymentScreenProps) => (
-  <ScrollViewCard>
-    <RedLogo />
-    <Text style={ownStyles.topSumText}>CHF 56.50</Text>
-    <ReceiptSubText
-      text={t('dutyAndVat', { duty: '56,50', vat: '0,00' })}
-      style={ownStyles.receiptSubTextDutyAndVat}
-    />
+class ReceiptAfterPaymentInner extends React.Component<
+  ReceiptAfterPaymentScreenProps
+> {
+  componentWillMount() {
+    analyticsScreenMounted('ReceiptAfterPayment');
+  }
 
-    <View style={ownStyles.contentContainer}>
-      <CardRowText
-        text={t('paidOn', { date: '20.12.2017', time: '17:40' })}
-        style={ownStyles.cardRowTextPaidOn}
-      />
-
-      <ReceiptSubText text="Mastercard XXXX XXXX XXXX 1234" />
-      <ReceiptSubText text={t('transactionId', { value: '123-456-789' })} />
-      <ValidUntilBlock>
-        <CardRowText
-          text={t('receiptValidUntilText')}
-          style={ownStyles.cardRowText}
-        />
-        <CardRowText
-          text={t('receiptValidUntilTime', {
-            date: '20. Dezember 2017',
-            time: '19:40',
+  render() {
+    const { t } = this.props;
+    return (
+      <ScrollViewCard>
+        <RedLogo />
+        <Text style={ownStyles.topSumText}>CHF 56.50</Text>
+        <ReceiptSubText
+          text={t('dutyAndVat', {
+            duty: '56,50',
+            vat: '0,00',
           })}
-          style={ownStyles.cardRowText}
+          style={ownStyles.receiptSubTextDutyAndVat}
         />
-      </ValidUntilBlock>
-      <ReceiptSubText
-        text={t('payment:dutyColumn')}
-        style={ownStyles.receiptSubTextDuty}
-      />
 
-      <DutyRow mainCategory="Foods" category="Meat" quantity={2} duty={4} />
-      <DutyRow mainCategory="Foods" category="Meat" quantity={2} duty={4} />
+        <View style={ownStyles.contentContainer}>
+          <CardRowText
+            text={t('paidOn', {
+              date: '20.12.2017',
+              time: '17:40',
+            })}
+            style={ownStyles.cardRowTextPaidOn}
+          />
 
-      <ReceiptSubText
-        text={t('vatColumn')}
-        style={ownStyles.receiptSubTextVat}
-      />
-      <VatRow quantity={205.59} vat={44} />
+          <ReceiptSubText text="Mastercard XXXX XXXX XXXX 1234" />
+          <ReceiptSubText text={t('transactionId', { value: '123-456-789' })} />
+          <ValidUntilBlock>
+            <CardRowText
+              text={t('receiptValidUntilText')}
+              style={ownStyles.cardRowText}
+            />
+            <CardRowText
+              text={t('receiptValidUntilTime', {
+                date: '20. Dezember 2017',
+                time: '19:40',
+              })}
+              style={ownStyles.cardRowText}
+            />
+          </ValidUntilBlock>
+          <ReceiptSubText
+            text={t('payment:dutyColumn')}
+            style={ownStyles.receiptSubTextDuty}
+          />
 
-      <CardRowText
-        text={t('sumText', { value: 56.5 })}
-        style={ownStyles.cardRowTextSum}
-      />
-      <ReceiptSubText
-        text={t('receiptStorageNotification')}
-        style={ownStyles.receiptSubTextNotification}
-      />
-    </View>
-  </ScrollViewCard>
-);
+          <DutyRow mainCategory="Foods" category="Meat" quantity={2} duty={4} />
+          <DutyRow mainCategory="Foods" category="Meat" quantity={2} duty={4} />
+
+          <ReceiptSubText
+            text={t('vatColumn')}
+            style={ownStyles.receiptSubTextVat}
+          />
+          <VatRow quantity={205.59} vat={44} />
+
+          <CardRowText
+            text={t('sumText', { value: 56.5 })}
+            style={ownStyles.cardRowTextSum}
+          />
+          <ReceiptSubText
+            text={t('receiptStorageNotification')}
+            style={ownStyles.receiptSubTextNotification}
+          />
+        </View>
+      </ScrollViewCard>
+    );
+  }
+}
 
 export const ReceiptAfterPayment = (translate([
   'receipt',

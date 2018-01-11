@@ -21,6 +21,10 @@ import {
 import type { TFunction } from '../../types/generalTypes';
 import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 import type { Basket } from '../../model/types/basketPeopleAmountsTypes';
+import {
+  analyticsCustom,
+  analyticsScreenMounted,
+} from '../../analytics/analyticsApi';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -61,6 +65,10 @@ class PaymentContainerInner extends React.Component<
     };
   }
 
+  componentWillMount() {
+    analyticsScreenMounted('PaymentContainer');
+  }
+
   componentDidMount() {
     this.saferpay = new Saferpay(baseUrl, redirectsUrlKeys);
   }
@@ -93,14 +101,17 @@ class PaymentContainerInner extends React.Component<
     let paymentStatus = '';
     switch (state.url) {
       case `${baseUrl}${redirectsUrlKeys.success}`:
+        analyticsCustom('Successful payment');
         stateChanged = true;
         paymentStatus = 'success';
         break;
       case `${baseUrl}${redirectsUrlKeys.fail}`:
+        analyticsCustom('Failed payment');
         stateChanged = true;
         paymentStatus = 'fail';
         break;
       case `${baseUrl}${redirectsUrlKeys.abort}`:
+        analyticsCustom('Aborted payment');
         stateChanged = true;
         paymentStatus = 'abort';
         break;

@@ -38,6 +38,10 @@ export default class App extends React.Component<AppProps, AppState> {
     isLoadingComplete: false,
   };
 
+  componentWillMount() {
+    analyticsCustom('DAZIT started');
+  }
+
   componentDidMount() {
     Amplitude.initialize('ee20b545e82f0d7c753ab98b5bc9103e');
     Amplitude.setUserId(Constants.deviceId);
@@ -57,7 +61,10 @@ export default class App extends React.Component<AppProps, AppState> {
       isDevice,
       sessionId,
     });
-    analyticsCustom('DAZIT started');
+  }
+
+  componentWillUnmount() {
+    analyticsCustom('DAZIT unmounted');
   }
 
   handleLoadingError = (error: string) => {
