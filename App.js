@@ -14,6 +14,7 @@ import { i18nImplementation } from './src/i18n';
 import { RootNavigator } from './src/navigation/RootNavigation';
 import { configureStore } from './src/configureStore';
 import { parseCurrencyXML } from './src/model/currencies';
+import { analyticsCustom } from './src/analytics/analyticsApi';
 
 const store = configureStore();
 window.myStore = store;
@@ -56,7 +57,7 @@ export default class App extends React.Component<AppProps, AppState> {
       isDevice,
       sessionId,
     });
-    Amplitude.logEvent('DAZIT App started');
+    analyticsCustom('DAZIT started');
   }
 
   handleLoadingError = (error: string) => {

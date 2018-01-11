@@ -14,6 +14,7 @@ import { DoneButton } from './subcomponents/DoneButton';
 import { languages } from '../../i18n';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import type { Language } from '../../i18n/types/locale';
+import { analyticsLanguageChanged } from '../../analytics/analyticsApi';
 
 type OnBoardingState = {
   systemLanguage: Language,
@@ -59,9 +60,7 @@ class OnBoardingInner extends React.Component<
                   selected={language === i18n.language}
                   languageCode={language}
                   onPress={() => {
-                    Amplitude.logEventWithProperties('Language changed', {
-                      language,
-                    });
+                    analyticsLanguageChanged(language);
                     i18n.changeLanguage(language);
                   }}
                 />

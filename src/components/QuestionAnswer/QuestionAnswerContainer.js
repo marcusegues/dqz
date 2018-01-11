@@ -41,6 +41,7 @@ import { onUpdateFactory } from './QAControl/validation';
 import { AmountInputQA } from './AmountInput/AmountInputQA';
 import type { CurrencyObject } from '../../model/currencies';
 import type { Navigation, TFunction } from '../../types/generalTypes';
+import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 
 export type QuestionType =
   | 'peopleInput'
@@ -128,7 +129,7 @@ class QuestionAnswerContainerInner extends React.Component<
   }
 
   componentDidMount() {
-    Amplitude.logEvent('QuestionAnswerContainer mounted');
+    analyticsScreenMounted('QuestionAnswerContainer');
     this.initState();
   }
 
