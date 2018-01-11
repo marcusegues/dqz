@@ -12,4 +12,8 @@ export type AnalyticsEvent =
   | {
       type: 'LanguageChanged',
       language: string,
+    }
+  | {
+      type: 'QACardOpened',
+      cardName: string,
     };

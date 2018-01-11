@@ -13,6 +13,7 @@ import type { CardProps } from '../QuestionAnswerContainer';
 import { QuantityInputAnswerCard } from '../cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
 import { addQuantity, deleteQuantity } from '../../../model/configurationApi';
 import { calculateDuty } from '../../../model/dutyCalculations';
+import { analyticsQACardOpenend } from '../../../analytics/analyticsApi';
 
 export type QuantityInputState = {
   modalVisible: boolean,
@@ -34,6 +35,7 @@ export class QuantityInputQA extends React.Component<
   }
 
   getQuestionComponent() {
+    analyticsQACardOpenend('QuantityInput');
     const { modalVisible, modalCategory, modalMainCategory } = this.state;
     const { onAnswer, qaState } = this.props;
     const { basket, settings } = qaState;

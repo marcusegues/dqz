@@ -14,6 +14,7 @@ import { AmountInputAnswerCard } from '../cards/AnswerCard/configured/AmountInpu
 import { CurrencyPickerModal } from '../../Modals/CurrencyPickerModal/CurrencyPickerModal';
 import type { Currency } from '../../../model/currencies';
 import { AmountInputConfirmationCard } from '../cards/ConfirmationCard/configured/AmountInput/AmountInputConfirmationCard';
+import { analyticsQACardOpenend } from '../../../analytics/analyticsApi';
 
 export type AmountInputState = {
   modalVisible: boolean,
@@ -34,6 +35,11 @@ export class AmountInputQA extends React.Component<
 
   getQuestionComponent() {
     const { onAnswer, qaState, large } = this.props;
+    if (large) {
+      analyticsQACardOpenend('AmountInput (large items)');
+    } else {
+      analyticsQACardOpenend('AmountInput (normal items)');
+    }
     const { modalVisible } = this.state;
     const { currencies } = qaState;
     return (

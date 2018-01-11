@@ -3,8 +3,6 @@ import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
 import { FlatList, View } from 'react-native';
-// $FlowFixMe
-import { Amplitude } from 'expo';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 
@@ -128,8 +126,11 @@ class QuestionAnswerContainerInner extends React.Component<
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     analyticsScreenMounted('QuestionAnswerContainer');
+  }
+
+  componentDidMount() {
     this.initState();
   }
 

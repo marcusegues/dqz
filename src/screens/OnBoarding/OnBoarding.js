@@ -3,8 +3,6 @@ import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import type { ComponentType } from 'react';
-// $FlowFixMe
-import { Amplitude } from 'expo';
 import { translate } from 'react-i18next';
 import { LanguageButton } from './subcomponents/LanguageButton';
 import { onBoardingStyles } from './styles/onBoarding';
@@ -33,6 +31,12 @@ class OnBoardingInner extends React.Component<
     super(props);
     this.state = { systemLanguage: this.props.i18n.language };
   }
+
+  changeLanguage(language) {
+    analyticsLanguageChanged(language);
+    this.props.i18n.changeLanguage(language);
+  }
+
   render() {
     const { t, i18n, navigation } = this.props;
     const { systemLanguage } = this.state;
@@ -43,7 +47,7 @@ class OnBoardingInner extends React.Component<
           size="large"
           selected={systemLanguage === i18n.language}
           languageCode={systemLanguage}
-          onPress={() => i18n.changeLanguage(systemLanguage)}
+          onPress={() => this.changeLanguage(systemLanguage)}
         />
 
         <View style={onBoardingStyles.languageButtonsSection}>
@@ -59,10 +63,7 @@ class OnBoardingInner extends React.Component<
                   size="small"
                   selected={language === i18n.language}
                   languageCode={language}
-                  onPress={() => {
-                    analyticsLanguageChanged(language);
-                    i18n.changeLanguage(language);
-                  }}
+                  onPress={() => this.changeLanguage(language)}
                 />
               );
             })}
