@@ -45,13 +45,14 @@ This is necessary because during the build process your app will be republished 
 
 Build for Google Store(*We have backup with keystore*)
 ```javascript
-exp build:android
+exp build:android --release-channel build-0.2.1
 ```
 Build for Apple Store
 ```javascript
-exp build:ios
+exp build:ios --release-channel build-0.2.1
 ```
-
+IMPORTANT! **exp build** command include **exp publish** command and if **--release-channel** is ***empty*** exp will update **default** release channel.   
+*WARNING: Channel features are in beta.*
 #### 5. Wait for it to finish building
 [List of builds](https://expo.io/@ambrite/dazit/builds) - https://expo.io/@ambrite/dazit/builds   
 Download .apk (Android) or .ipa (iOS) file.
