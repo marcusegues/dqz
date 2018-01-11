@@ -3,6 +3,8 @@ import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import type { ComponentType } from 'react';
+// $FlowFixMe
+import { Amplitude } from 'expo';
 import { translate } from 'react-i18next';
 import { LanguageButton } from './subcomponents/LanguageButton';
 import { onBoardingStyles } from './styles/onBoarding';
@@ -56,7 +58,12 @@ class OnBoardingInner extends React.Component<
                   size="small"
                   selected={language === i18n.language}
                   languageCode={language}
-                  onPress={() => i18n.changeLanguage(language)}
+                  onPress={() => {
+                    Amplitude.logEventWithProperties('Language changed', {
+                      language,
+                    });
+                    i18n.changeLanguage(language);
+                  }}
                 />
               );
             })}
