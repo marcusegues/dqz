@@ -39,7 +39,11 @@ import { onUpdateFactory } from './QAControl/validation';
 import { AmountInputQA } from './AmountInput/AmountInputQA';
 import type { CurrencyObject } from '../../model/currencies';
 import type { Navigation, TFunction } from '../../types/generalTypes';
-import { analyticsScreenMounted } from '../../analytics/analyticsApi';
+import {
+  analyticsMainCategoriesChanged,
+  analyticsPeopleChanged,
+  analyticsScreenMounted,
+} from '../../analytics/analyticsApi';
 
 export type QuestionType =
   | 'peopleInput'
@@ -234,6 +238,7 @@ class QuestionAnswerContainerInner extends React.Component<
                 {
                   questionType: 'peopleInput',
                   onUpdate: updatedPeople => {
+                    analyticsPeopleChanged(updatedPeople);
                     setPeople(updatedPeople);
                     this.updateFlagsOptimistically(
                       'peopleInput',
@@ -281,6 +286,7 @@ class QuestionAnswerContainerInner extends React.Component<
                     basket: updatedBasket,
                   }) => {
                     setMainCategories(updatedCategories);
+                    analyticsMainCategoriesChanged(updatedCategories);
                     setBasket(updatedBasket);
                     this.updateFlagsOptimistically(
                       'mainCategories',
@@ -325,6 +331,7 @@ class QuestionAnswerContainerInner extends React.Component<
                   questionType: 'quantityInput',
                   onUpdate: updatedBasket => {
                     setBasket(updatedBasket);
+                    // analytics are in the component (add/delete)
                     this.updateFlagsOptimistically(
                       'quantityInput',
                       Object.assign({}, qaStateEnriched, {

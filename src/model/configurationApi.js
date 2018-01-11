@@ -175,6 +175,12 @@ export const resetAmounts = (amounts: Amounts, currency: Currency): Amounts =>
     Immutable.List()
   );
 
+/**
+ * Deletes amount with a given ID
+ * @param amounts
+ * @param id
+ * @returns {Amounts}
+ */
 export const deleteAmount = (amounts: Amounts, id: string): Amounts => {
   const flat = flatAmounts(amounts);
   const element: ?FlatAmount = flat.find(a => a.id === id);
@@ -186,6 +192,21 @@ export const deleteAmount = (amounts: Amounts, id: string): Amounts => {
   const listIdx = amts.findIndex(v => v.id === id);
   const newAmounts = amts.delete(listIdx);
   return amounts.setIn([element.currency, amountsKey], newAmounts);
+};
+
+/**
+ * Gets amount at index
+ * @param amounts
+ * @param id
+ * @returns The amount (type FlatAmount) or undefined
+ */
+export const getAmount = (amounts: Amounts, id: string): FlatAmount => {
+  const flat = flatAmounts(amounts);
+  const el = flat.find(a => a.id === id);
+  if (el) {
+    return el;
+  }
+  return { amount: 0, currency: 'CHF', large: false, id: 'N/A' };
 };
 
 /**

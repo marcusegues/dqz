@@ -1,6 +1,11 @@
 // @flow
 
+import { Set as ImmutableSetType } from 'immutable';
 import { sendEventToAmplitude } from './amplitude';
+import { getAdultPeople, getMinorPeople } from '../model/configurationApi';
+import type { Category, People } from '../model/types/basketPeopleAmountsTypes';
+import type { MainCategory } from '../types/reducers/appReducer';
+import type { Currency } from '../model/currencies';
 
 export const analyticsCustom = (eventName: string) =>
   sendEventToAmplitude({ type: 'Custom', eventName });
@@ -17,3 +22,59 @@ export const analyticsLanguageChanged = (language: string) =>
 
 export const analyticsQACardOpenend = (cardName: string) =>
   sendEventToAmplitude({ type: 'QACardOpened', cardName });
+
+export const analyticsPeopleChanged = (people: People) =>
+  sendEventToAmplitude({
+    type: 'PeopleChanged',
+    adults: getAdultPeople(people),
+    minors: getMinorPeople(people),
+  });
+
+export const analyticsMainCategoriesChanged = (
+  mainCategories: ImmutableSetType<MainCategory>
+) =>
+  sendEventToAmplitude({
+    type: 'MainCategoriesChanged',
+    mainCategories,
+  });
+
+export const analyticsQuantityAdded = (category: Category, quantity: number) =>
+  sendEventToAmplitude({
+    type: 'QuantityAdded',
+    category,
+    quantity,
+  });
+
+export const analyticsQuantityDeleted = (
+  category: Category,
+  quantity: number
+) =>
+  sendEventToAmplitude({
+    type: 'QuantityDeleted',
+    category,
+    quantity,
+  });
+
+export const analyticsAmountAdded = (
+  currency: Currency,
+  amount: number,
+  large: boolean
+) =>
+  sendEventToAmplitude({
+    type: 'AmountAdded',
+    currency,
+    amount,
+    large,
+  });
+
+export const analyticsAmountDeleted = (
+  currency: Currency,
+  amount: number,
+  large: boolean
+) =>
+  sendEventToAmplitude({
+    type: 'AmountDeleted',
+    currency,
+    amount,
+    large,
+  });

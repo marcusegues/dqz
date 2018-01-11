@@ -8,13 +8,19 @@ import {
   addAmount,
   addLargeAmount,
   deleteAmount,
+  getAmount,
 } from '../../../model/configurationApi';
 import { calculateVat } from '../../../model/vatCalculations';
 import { AmountInputAnswerCard } from '../cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
 import { CurrencyPickerModal } from '../../Modals/CurrencyPickerModal/CurrencyPickerModal';
 import type { Currency } from '../../../model/currencies';
 import { AmountInputConfirmationCard } from '../cards/ConfirmationCard/configured/AmountInput/AmountInputConfirmationCard';
-import { analyticsQACardOpenend } from '../../../analytics/analyticsApi';
+import {
+  analyticsAmountAdded,
+  analyticsAmountDeleted,
+  analyticsQACardOpenend,
+} from '../../../analytics/analyticsApi';
+import type { FlatAmount } from '../../../model/utils';
 
 export type AmountInputState = {
   modalVisible: boolean,
@@ -85,6 +91,8 @@ export class AmountInputQA extends React.Component<
     const { large, qaState } = this.props;
     const { amounts } = qaState;
 
+    analyticsAmountAdded(currency, amount, large);
+
     if (large) {
       this.handleUpdate(addLargeAmount(amounts, currency, amount));
     } else {
@@ -94,6 +102,8 @@ export class AmountInputQA extends React.Component<
 
   handleDeleteAmount(id: string) {
     const { amounts } = this.props.qaState;
+    const amount: FlatAmount = getAmount(amounts, id);
+    analyticsAmountDeleted(amount.currency, amount.amount, amount.large);
     const updatedAmounts = deleteAmount(amounts, id);
     this.handleUpdate(updatedAmounts);
   }

@@ -11,9 +11,17 @@ import type {
 } from '../../../model/types/basketPeopleAmountsTypes';
 import type { CardProps } from '../QuestionAnswerContainer';
 import { QuantityInputAnswerCard } from '../cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
-import { addQuantity, deleteQuantity } from '../../../model/configurationApi';
+import {
+  addQuantity,
+  deleteQuantity,
+  getQuantities,
+} from '../../../model/configurationApi';
 import { calculateDuty } from '../../../model/dutyCalculations';
-import { analyticsQACardOpenend } from '../../../analytics/analyticsApi';
+import {
+  analyticsQACardOpenend,
+  analyticsQuantityAdded,
+  analyticsQuantityDeleted,
+} from '../../../analytics/analyticsApi';
 
 export type QuantityInputState = {
   modalVisible: boolean,
@@ -83,6 +91,7 @@ export class QuantityInputQA extends React.Component<
     const { basket } = this.props.qaState;
 
     const updatedBasket = addQuantity(basket, category, quantity);
+    analyticsQuantityAdded(category, quantity);
     this.handleUpdate(updatedBasket);
   }
 
@@ -90,6 +99,10 @@ export class QuantityInputQA extends React.Component<
     const { basket } = this.props.qaState;
 
     const updatedBasket = deleteQuantity(basket, category, index);
+    analyticsQuantityDeleted(
+      category,
+      getQuantities(basket, category).get(index, 0)
+    );
     this.handleUpdate(updatedBasket);
   }
 
