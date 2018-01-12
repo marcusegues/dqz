@@ -17,12 +17,19 @@ import {
   getDutyReport,
   getTotalFees,
   getVatReport,
+  getAmounts,
+  getTotalDuty,
+  getTotalVat,
 } from '../../reducers';
 import type { TFunction } from '../../types/generalTypes';
 import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
-import type { Basket } from '../../model/types/basketPeopleAmountsTypes';
+import type {
+  Amounts,
+  Basket,
+} from '../../model/types/basketPeopleAmountsTypes';
 import {
   analyticsCustom,
+  analyticsInitPayment,
   analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
 
@@ -45,9 +52,12 @@ type PaymentContainerProps = {};
 
 type ReduxInject = {
   fees: number,
+  amounts: Amounts,
   basket: Basket,
   dutyReport: DutyReport,
+  duty: number,
   vatReport: VatReport,
+  vat: number,
 };
 
 class PaymentContainerInner extends React.Component<
@@ -76,8 +86,8 @@ class PaymentContainerInner extends React.Component<
   saferpay: any; // TODO
 
   initializePayment() {
-    const { fees } = this.props;
-
+    const { fees, duty, vat, amounts, basket } = this.props;
+    analyticsInitPayment(amounts, basket, duty, vat);
     if (fees > 0) {
       this.setState({ isLoadingRedirectData: true }, () => {
         this.saferpay
@@ -184,7 +194,10 @@ class PaymentContainerInner extends React.Component<
 const mapStateToProps = state => ({
   fees: getTotalFees(state),
   dutyReport: getDutyReport(state),
+  duty: getTotalDuty(state),
+  vat: getTotalVat(state),
   vatReport: getVatReport(state),
+  amounts: getAmounts(state),
   basket: getBasket(state),
 });
 

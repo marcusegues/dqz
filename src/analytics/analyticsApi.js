@@ -3,7 +3,12 @@
 import { Set as ImmutableSetType } from 'immutable';
 import { sendEventToAmplitude } from './amplitude';
 import { getAdultPeople, getMinorPeople } from '../model/configurationApi';
-import type { Category, People } from '../model/types/basketPeopleAmountsTypes';
+import type {
+  Amounts,
+  Basket,
+  Category,
+  People,
+} from '../model/types/basketPeopleAmountsTypes';
 import type { MainCategory } from '../types/reducers/appReducer';
 import type { Currency } from '../model/currencies';
 
@@ -77,4 +82,18 @@ export const analyticsAmountDeleted = (
     currency,
     amount,
     large,
+  });
+
+export const analyticsInitPayment = (
+  amounts: Amounts,
+  basket: Basket,
+  duty: number,
+  vat: number
+) =>
+  sendEventToAmplitude({
+    type: 'InitPayment',
+    amounts,
+    basket,
+    duty,
+    vat,
   });

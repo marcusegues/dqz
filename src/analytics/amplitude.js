@@ -76,6 +76,16 @@ export const sendEventToAmplitude = (event: AnalyticsEvent): void => {
       });
       break;
     }
+    case 'InitPayment': {
+      const { amounts, basket, duty, vat } = event;
+      Amplitude.logEventWithProperties('Payment Initialized', {
+        amounts: JSON.stringify(amounts),
+        basket: JSON.stringify(basket),
+        duty,
+        vat,
+      });
+      break;
+    }
     default:
   }
 };

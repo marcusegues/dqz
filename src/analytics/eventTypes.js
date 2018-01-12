@@ -2,7 +2,11 @@
 
 import { Set as ImmutableSetType } from 'immutable';
 import type { MainCategory } from '../types/reducers/appReducer';
-import type { Category } from '../model/types/basketPeopleAmountsTypes';
+import type {
+  Amounts,
+  Basket,
+  Category,
+} from '../model/types/basketPeopleAmountsTypes';
 import type { Currency } from '../model/currencies';
 
 export type AnalyticsEvent =
@@ -52,4 +56,11 @@ export type AnalyticsEvent =
       amount: number,
       currency: Currency,
       large: boolean,
+    }
+  | {
+      type: 'InitPayment',
+      amounts: Amounts,
+      basket: Basket,
+      duty: number,
+      vat: number,
     };
