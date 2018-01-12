@@ -1,6 +1,6 @@
 // @flow
 
-import { Set as ImmutableSetType } from 'immutable';
+import type { Set as ImmutableSetType } from 'immutable';
 import type { MainCategory } from '../types/reducers/appReducer';
 import type {
   Amounts,
