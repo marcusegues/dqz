@@ -136,6 +136,7 @@ class QuestionAnswerContainerInner extends React.Component<
 
   componentDidMount() {
     this.initState();
+    analyticsPeopleChanged(this.props.people);
   }
 
   enrichState(): QAStateEnriched {
