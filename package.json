@@ -13,6 +13,7 @@
     "test:coverage": "jest --coverage",
     "test:coverage:watch": "jest --watchAll --coverage",
     "flow": "flow",
+    "flow:coverage": "flow-coverage-report -i 'src/**/*.js' -x 'src/**/__tests__/**' -t html -t json -t text --threshold 90",
     "doc:md": "documentation build src/** -f md -o doc/apiDoc.md",
     "doc:html": "documentation build src/** -f html -o docs"
   },
@@ -60,6 +61,7 @@
     "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-react": "^7.5.1",
     "flow-bin": "^0.60.1",
+    "flow-coverage-report": "^0.4.0",
     "immutable-devtools": "0.0.7",
     "jest": "^21.2.1",
     "jest-expo": "^23.0.0",
