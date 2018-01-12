@@ -3,7 +3,6 @@
 // $FlowFixMe
 import { Amplitude } from 'expo';
 import type { AnalyticsEvent } from './eventTypes';
-import { mainCategories } from '../types/reducers/appReducer';
 
 export const sendEventToAmplitude = (event: AnalyticsEvent): void => {
   switch (event.type) {
@@ -40,7 +39,7 @@ export const sendEventToAmplitude = (event: AnalyticsEvent): void => {
     }
     case 'MainCategoriesChanged': {
       Amplitude.logEventWithProperties('Main Categories changed', {
-        mainCategories: mainCategories.join(', '),
+        mainCategories: event.mainCategories.join(', '),
       });
       break;
     }
