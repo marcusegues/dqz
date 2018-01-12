@@ -1,5 +1,6 @@
 node_modules/**/*
 .expo/**/*
+flow-coverage/**/*
 coverage/**/*
 .idea/**/*
 docs/
