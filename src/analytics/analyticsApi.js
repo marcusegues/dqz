@@ -12,9 +12,17 @@ import type {
 import type { MainCategory } from '../types/reducers/appReducer';
 import type { Currency } from '../model/currencies';
 
+/**
+ * Log a custom event (string)
+ * @param eventName
+ */
 export const analyticsCustom = (eventName: string) =>
   sendEventToAmplitude({ type: 'Custom', eventName });
 
+/**
+ * Log the mount event of a screen
+ * @param screen
+ */
 export const analyticsScreenMounted = (screen: string) => {
   sendEventToAmplitude({
     type: 'ScreenMounted',
@@ -22,12 +30,24 @@ export const analyticsScreenMounted = (screen: string) => {
   });
 };
 
+/**
+ * Log the event of language change
+ * @param language
+ */
 export const analyticsLanguageChanged = (language: string) =>
   sendEventToAmplitude({ type: 'LanguageChanged', language });
 
+/**
+ * Log the event of a QA Card opened
+ * @param cardName
+ */
 export const analyticsQACardOpenend = (cardName: string) =>
   sendEventToAmplitude({ type: 'QACardOpened', cardName });
 
+/**
+ * Log the event of people input changed
+ * @param people
+ */
 export const analyticsPeopleChanged = (people: People) =>
   sendEventToAmplitude({
     type: 'PeopleChanged',
@@ -35,6 +55,10 @@ export const analyticsPeopleChanged = (people: People) =>
     minors: getMinorPeople(people),
   });
 
+/**
+ * Log the event of a change in main categories
+ * @param mainCategories
+ */
 export const analyticsMainCategoriesChanged = (
   mainCategories: ImmutableSetType<MainCategory>
 ) =>
@@ -43,6 +67,11 @@ export const analyticsMainCategoriesChanged = (
     mainCategories,
   });
 
+/**
+ * Log the event of a quantity added
+ * @param category
+ * @param quantity
+ */
 export const analyticsQuantityAdded = (category: Category, quantity: number) =>
   sendEventToAmplitude({
     type: 'QuantityAdded',
@@ -50,6 +79,11 @@ export const analyticsQuantityAdded = (category: Category, quantity: number) =>
     quantity,
   });
 
+/**
+ * Log the event of a quantity deleted
+ * @param category
+ * @param quantity
+ */
 export const analyticsQuantityDeleted = (
   category: Category,
   quantity: number
@@ -60,6 +94,12 @@ export const analyticsQuantityDeleted = (
     quantity,
   });
 
+/**
+ * Log the event of an amuount added
+ * @param currency
+ * @param amount
+ * @param large
+ */
 export const analyticsAmountAdded = (
   currency: Currency,
   amount: number,
@@ -72,6 +112,12 @@ export const analyticsAmountAdded = (
     large,
   });
 
+/**
+ * Log the event of an amount deleted
+ * @param currency
+ * @param amount
+ * @param large
+ */
 export const analyticsAmountDeleted = (
   currency: Currency,
   amount: number,
@@ -84,6 +130,13 @@ export const analyticsAmountDeleted = (
     large,
   });
 
+/**
+ * Log the event of a payment initialized
+ * @param amounts
+ * @param basket
+ * @param duty
+ * @param vat
+ */
 export const analyticsInitPayment = (
   amounts: Amounts,
   basket: Basket,
