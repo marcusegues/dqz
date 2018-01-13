@@ -6,7 +6,7 @@ import { I18nextProvider } from 'react-i18next';
 // $FlowFixMe
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 // $FlowFixMe
-import { AppLoading, Asset, Font, Amplitude, Constants } from 'expo';
+import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import { Provider } from 'react-redux';
 
@@ -45,22 +45,6 @@ export default class App extends React.Component<AppProps, AppState> {
 
   componentDidMount() {
     initAmplitude();
-    const {
-      platform,
-      appOwnership,
-      deviceId,
-      deviceYearClass,
-      isDevice,
-      sessionId,
-    } = Constants;
-    Amplitude.setUserProperties({
-      platform,
-      appOwnership,
-      deviceId,
-      deviceYearClass,
-      isDevice,
-      sessionId,
-    });
   }
 
   componentWillUnmount() {

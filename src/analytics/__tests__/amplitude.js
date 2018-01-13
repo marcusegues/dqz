@@ -1,6 +1,10 @@
 // @flow
 import Immutable from 'immutable';
-import { sendEventToAmplitude } from '../amplitude';
+import {
+  amplitudeToken,
+  initAmplitude,
+  sendEventToAmplitude,
+} from '../amplitude';
 // $FlowFixMe
 const expo = require('expo');
 
@@ -8,12 +12,36 @@ jest.mock('expo', () => ({
   Amplitude: {
     logEvent: jest.fn(),
     logEventWithProperties: jest.fn(),
+    initialize: jest.fn(),
+    setUserId: jest.fn(),
+    setUserProperties: jest.fn(),
+  },
+  Constants: {
+    platform: 'platform',
+    appOwnership: 'appOwnership',
+    deviceId: 'deviceId',
+    deviceYearClass: 'deviceYearClass',
+    isDevice: 'isDevice',
+    sessionId: 'sessionId',
   },
 }));
 
 // note: not perfect implementation, but well..
 
 describe('Test sendEventToAmplitude', () => {
+  test('init', () => {
+    initAmplitude();
+    expect(expo.Amplitude.initialize).toBeCalledWith(amplitudeToken);
+    expect(expo.Amplitude.setUserId).toBeCalledWith('deviceId');
+    expect(expo.Amplitude.setUserProperties).toBeCalledWith({
+      appOwnership: 'appOwnership',
+      deviceId: 'deviceId',
+      deviceYearClass: 'deviceYearClass',
+      isDevice: 'isDevice',
+      platform: 'platform',
+      sessionId: 'sessionId',
+    });
+  });
   test('ScreenMounted', () => {
     sendEventToAmplitude({ type: 'ScreenMounted', screen: 'Thing' });
     expect(expo.Amplitude.logEvent).toHaveBeenCalledWith('Thing has mounted');

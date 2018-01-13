@@ -4,9 +4,27 @@
 import { Amplitude, Constants } from 'expo';
 import type { AnalyticsEvent } from './eventTypes';
 
+export const amplitudeToken = 'ee20b545e82f0d7c753ab98b5bc9103e';
+
 export const initAmplitude = () => {
-  Amplitude.initialize('ee20b545e82f0d7c753ab98b5bc9103e');
+  Amplitude.initialize(amplitudeToken);
   Amplitude.setUserId(Constants.deviceId);
+  const {
+    platform,
+    appOwnership,
+    deviceId,
+    deviceYearClass,
+    isDevice,
+    sessionId,
+  } = Constants;
+  Amplitude.setUserProperties({
+    platform,
+    appOwnership,
+    deviceId,
+    deviceYearClass,
+    isDevice,
+    sessionId,
+  });
 };
 
 export const sendEventToAmplitude = (event: AnalyticsEvent): void => {
