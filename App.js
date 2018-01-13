@@ -15,6 +15,7 @@ import { RootNavigator } from './src/navigation/RootNavigation';
 import { configureStore } from './src/configureStore';
 import { parseCurrencyXML } from './src/model/currencies';
 import { analyticsCustom } from './src/analytics/analyticsApi';
+import { initAmplitude } from './src/analytics/amplitude';
 
 const store = configureStore();
 window.myStore = store;
@@ -43,8 +44,7 @@ export default class App extends React.Component<AppProps, AppState> {
   }
 
   componentDidMount() {
-    Amplitude.initialize('ee20b545e82f0d7c753ab98b5bc9103e');
-    Amplitude.setUserId(Constants.deviceId);
+    initAmplitude();
     const {
       platform,
       appOwnership,

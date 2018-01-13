@@ -1,8 +1,13 @@
 // @flow
 
 // $FlowFixMe
-import { Amplitude } from 'expo';
+import { Amplitude, Constants } from 'expo';
 import type { AnalyticsEvent } from './eventTypes';
+
+export const initAmplitude = () => {
+  Amplitude.initialize('ee20b545e82f0d7c753ab98b5bc9103e');
+  Amplitude.setUserId(Constants.deviceId);
+};
 
 export const sendEventToAmplitude = (event: AnalyticsEvent): void => {
   switch (event.type) {
