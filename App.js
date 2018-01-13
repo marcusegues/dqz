@@ -55,10 +55,6 @@ export default class App extends React.Component<AppProps, AppStateT> {
     initAmplitude();
   }
 
-  componentWillUnmount() {
-    analyticsCustom('DAZIT unmounted');
-  }
-
   // eslint-disable-next-line class-methods-use-this
   handleAppStateChange(nextAppState: ExpoAppState) {
     analyticsAppStateChanged(nextAppState);
