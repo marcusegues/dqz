@@ -3,6 +3,7 @@ import Immutable from 'immutable';
 import {
   analyticsAmountAdded,
   analyticsAmountDeleted,
+  analyticsAppStateChanged,
   analyticsCustom,
   analyticsInitPayment,
   analyticsLanguageChanged,
@@ -118,6 +119,14 @@ describe('API calls', () => {
       duty: 123,
       type: 'InitPayment',
       vat: 321,
+    });
+  });
+
+  test('AppStateChanged', () => {
+    analyticsAppStateChanged('inactive');
+    expect(amp.sendEventToAmplitude).toHaveBeenCalledWith({
+      type: 'AppStateChanged',
+      appState: 'inactive',
     });
   });
 });

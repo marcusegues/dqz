@@ -11,6 +11,7 @@ import type {
 } from '../model/types/basketPeopleAmountsTypes';
 import type { MainCategory } from '../types/reducers/appReducer';
 import type { Currency } from '../model/currencies';
+import type { ExpoAppState } from '../../App';
 
 /**
  * Log a custom event (string)
@@ -149,4 +150,14 @@ export const analyticsInitPayment = (
     basket,
     duty,
     vat,
+  });
+
+/**
+ * Log the event of an appstate change
+ * @param state
+ */
+export const analyticsAppStateChanged = (appState: ExpoAppState) =>
+  sendEventToAmplitude({
+    type: 'AppStateChanged',
+    appState,
   });

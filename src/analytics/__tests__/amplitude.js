@@ -143,4 +143,15 @@ describe('Test sendEventToAmplitude', () => {
       { amounts: '"amounts"', basket: '"basket"', duty: 123, vat: 321 }
     );
   });
+
+  test('AppStateChanged', () => {
+    sendEventToAmplitude({
+      type: 'AppStateChanged',
+      appState: 'active',
+    });
+    expect(expo.Amplitude.logEventWithProperties).toHaveBeenCalledWith(
+      'App State Changed',
+      { appState: 'active' }
+    );
+  });
 });

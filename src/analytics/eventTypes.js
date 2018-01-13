@@ -8,6 +8,7 @@ import type {
   Category,
 } from '../model/types/basketPeopleAmountsTypes';
 import type { Currency } from '../model/currencies';
+import type { ExpoAppState } from '../../App';
 
 export type AnalyticsEvent =
   | {
@@ -63,4 +64,8 @@ export type AnalyticsEvent =
       basket: Basket,
       duty: number,
       vat: number,
+    }
+  | {
+      type: 'AppStateChanged',
+      appState: ExpoAppState,
     };

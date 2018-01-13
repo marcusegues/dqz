@@ -108,6 +108,12 @@ export const sendEventToAmplitude = (event: AnalyticsEvent): void => {
       });
       break;
     }
+    case 'AppStateChanged': {
+      Amplitude.logEventWithProperties('App State Changed', {
+        appState: event.appState,
+      });
+      break;
+    }
     default:
   }
 };
