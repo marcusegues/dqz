@@ -33,8 +33,8 @@ class OnBoardingInner extends React.Component<
   }
 
   changeLanguage(language) {
-    analyticsLanguageChanged(language);
     this.props.i18n.changeLanguage(language);
+    analyticsLanguageChanged(language);
   }
 
   render() {
