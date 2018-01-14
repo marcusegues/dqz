@@ -12,6 +12,7 @@ import { DoneButton } from './subcomponents/DoneButton';
 import { languages } from '../../i18n';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import type { Language } from '../../i18n/types/locale';
+import { analyticsLanguageChanged } from '../../analytics/analyticsApi';
 
 type OnBoardingState = {
   systemLanguage: Language,
@@ -30,6 +31,12 @@ class OnBoardingInner extends React.Component<
     super(props);
     this.state = { systemLanguage: this.props.i18n.language };
   }
+
+  changeLanguage(language) {
+    this.props.i18n.changeLanguage(language);
+    analyticsLanguageChanged(language);
+  }
+
   render() {
     const { t, i18n, navigation } = this.props;
     const { systemLanguage } = this.state;
@@ -40,7 +47,7 @@ class OnBoardingInner extends React.Component<
           size="large"
           selected={systemLanguage === i18n.language}
           languageCode={systemLanguage}
-          onPress={() => i18n.changeLanguage(systemLanguage)}
+          onPress={() => this.changeLanguage(systemLanguage)}
         />
 
         <View style={onBoardingStyles.languageButtonsSection}>
@@ -56,7 +63,7 @@ class OnBoardingInner extends React.Component<
                   size="small"
                   selected={language === i18n.language}
                   languageCode={language}
-                  onPress={() => i18n.changeLanguage(language)}
+                  onPress={() => this.changeLanguage(language)}
                 />
               );
             })}

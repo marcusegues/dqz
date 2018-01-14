@@ -4,7 +4,7 @@
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
 // $FlowFixMe
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View, AppState } from 'react-native';
 // $FlowFixMe
 import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
@@ -14,6 +14,11 @@ import { i18nImplementation } from './src/i18n';
 import { RootNavigator } from './src/navigation/RootNavigation';
 import { configureStore } from './src/configureStore';
 import { parseCurrencyXML } from './src/model/currencies';
+import {
+  analyticsAppStateChanged,
+  analyticsCustom,
+} from './src/analytics/analyticsApi';
+import { initAmplitude } from './src/analytics/amplitude';
 
 const store = configureStore();
 window.myStore = store;
@@ -30,12 +35,31 @@ const styles = StyleSheet.create({
 });
 
 type AppProps = {};
-type AppState = { isLoadingComplete: boolean };
+type AppStateT = { isLoadingComplete: boolean };
 
-export default class App extends React.Component<AppProps, AppState> {
+export type ExpoAppState = 'active' | 'inactive' | 'background';
+
+export default class App extends React.Component<AppProps, AppStateT> {
   state = {
     isLoadingComplete: false,
   };
+
+  componentWillMount() {
+    analyticsCustom('DAZIT started');
+  }
+
+  componentDidMount() {
+    AppState.addEventListener('change', next =>
+      this.handleAppStateChange(next)
+    );
+    initAmplitude();
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  handleAppStateChange(nextAppState: ExpoAppState) {
+    analyticsAppStateChanged(nextAppState);
+    // will add async storage here
+  }
 
   handleLoadingError = (error: string) => {
     console.warn(error);

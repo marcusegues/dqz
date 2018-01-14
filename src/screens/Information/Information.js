@@ -7,6 +7,7 @@ import { InformationRow } from './subComponents/InformationRow';
 import { informationData } from './InformationData';
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { TFunction } from '../../types/generalTypes';
+import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 
 class InformationInner extends React.Component<{ t: TFunction }> {
   static navigationOptions = ({ screenProps }) => ({
@@ -14,6 +15,10 @@ class InformationInner extends React.Component<{ t: TFunction }> {
       <HeaderTitle text={screenProps.t('information:informationTitle')} />
     ),
   });
+
+  componentWillMount() {
+    analyticsScreenMounted('Information');
+  }
 
   render() {
     const { t } = this.props;
