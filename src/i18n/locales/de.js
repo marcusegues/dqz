@@ -143,4 +143,26 @@ export const de: Locale = {
     entryByTrainSubText:
       'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
   },
+  appInformation: {
+    appInfoTitle: 'Über die App',
+    leftTabText: 'Impressium',
+    rightTabText: 'Entwicklung',
+    publisher: 'Herausgeberin',
+    customsAdministrationAddressTitle: 'Eidgenössische Zollverwaltung EZV',
+    contact: 'Kontakt',
+    customsInfoCenter:
+      'Auskunftszentrale Zoll\n058 467 15 15\nzollauskunft@ezv.admin.ch',
+    reachability: 'Erreichbarkeit:',
+    workingHours: 'Montag – Freitag, 8.00 – 11.30 und 13.30 bis 17.00',
+    generalCustomsDirectorate:
+      'Oberzolldirektion\nMonbijoustrasse 40\n' +
+      '3003 Bern\n' +
+      'http://www.ezv.admin.ch',
+    designAndDevelopment: 'Design & Entwicklung',
+    ambriteAddress:
+      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch\nhttp://www.ambrite.ch',
+    disclaimerTitle: 'Disclaimer',
+    disclaimerText:
+      'Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten. Damit das Layout nun nicht nackt im Raume steht und sich klein und leer vorkommt, springe ich ein: der Blindtext. Genau zu diesem Zwecke erschaffen, immer im Schatten meines großen Bruders »Lorem Ipsum«, freue ich mich jedes Mal, wenn Sie ein paar Zeilen lesen. Denn esse est percipi - Sein ist wahrgenommen werden. Und weil Sie nun schon die Güte haben, mich ein paar weitere Sätze lang zu begleiten, möchte ich diese Gelegenheit nutzen, Ihnen nicht nur als Lückenfüller zu dienen, sondern auf etwas hinzuweisen, das es ebenso verdient wahrgenommen zu werden: Webstandards nämlich.',
+  },
 };

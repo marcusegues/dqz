@@ -43,21 +43,21 @@ const ownStyles = {
 
 type ModalTabProps = {
   onPress: Function,
-  standardInput: boolean,
+  activeTab: boolean,
   text: string,
 };
 
-export const ModalTab = ({ standardInput, onPress, text }: ModalTabProps) => (
+export const ModalTab = ({ activeTab, onPress, text }: ModalTabProps) => (
   <View style={ownStyles.topTouchable}>
     <TouchableOpacity
       onPress={onPress}
       style={
-        standardInput ? ownStyles.touchableActive : ownStyles.touchableInactive
+        activeTab ? ownStyles.touchableActive : ownStyles.touchableInactive
       }
     >
       <Text
         style={
-          standardInput
+          activeTab
             ? ownStyles.touchableActiveText
             : ownStyles.touchableInactiveText
         }
