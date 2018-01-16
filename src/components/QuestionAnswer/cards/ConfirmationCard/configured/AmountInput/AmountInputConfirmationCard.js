@@ -7,8 +7,6 @@ import { translate } from 'react-i18next';
 import { AmountInput } from './AmountInput';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import { INDIVIDUALALLOWANCE } from '../../../../../../model/constants';
-import { Card } from '../../../Card';
-import { CardHeader } from '../../../subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../../subcomponents/CardHeaderSubText';
 import { verticalScale } from '../../../../../../styles/Scaling';
 import type { TFunction } from '../../../../../../types/generalTypes';

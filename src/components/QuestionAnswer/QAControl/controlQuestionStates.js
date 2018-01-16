@@ -55,8 +55,6 @@ export const setQuestionStates = (
     ? 'collapsed'
     : 'hidden';
 
-  console.log('f000');
-  console.log(justAnswered);
   switch (justAnswered) {
     case 'peopleInput': {
       if (direction === 'back') {
