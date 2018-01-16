@@ -13,7 +13,6 @@ import {
 import { AmountRow } from './subcomponents/AmountRow';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import { MAIN_RED } from '../../../../../../styles/colors';
-import { BackAndContinueButtons } from '../../../../../Buttons/BackAndContinueButtons';
 import type { TFunction } from '../../../../../../types/generalTypes';
 
 const ownStyles = {

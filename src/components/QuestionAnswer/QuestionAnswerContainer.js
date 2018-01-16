@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 
 import { NavBar } from '../NavBar/NavBar';
-import { RedButton } from '../Buttons/RedButton';
 import { PeopleInputQA } from './PeopleInput/PeopleInputQA';
 import { MainCategoriesInputQA } from './MainCategoriesInput/MainCategoriesInputQA';
 import { QuantityInputQA } from './QuantityInput/QuantityInputQA';
@@ -33,7 +32,6 @@ import {
   setQuestionStates,
 } from './QAControl/controlQuestionStates';
 import { setInitFlags, setQuestionFlag } from './QAControl/controlQuestionFlag';
-import { verticalScale } from '../../styles/Scaling';
 import { HeaderTitle } from '../Headers/subcomponents/HeaderTitle';
 import { onUpdateFactory } from './QAControl/validation';
 import { AmountInputQA } from './AmountInput/AmountInputQA';
@@ -463,21 +461,6 @@ class QuestionAnswerContainerInner extends React.Component<
             style={{ width: '100%' }}
             data={flatListData}
             renderItem={({ item }) => item.component}
-          />
-        </View>
-        <View
-          style={{
-            flex: 0.1,
-            marginBottom: verticalScale(4),
-            marginTop: verticalScale(4),
-            marginLeft: 16,
-            marginRight: 16,
-            backgroundColor: 'transparent',
-          }}
-        >
-          <RedButton
-            text={t('qaFlow:toOverview')}
-            onPress={() => this.props.navigation.navigate('Payment')}
           />
         </View>
       </View>
