@@ -192,6 +192,7 @@ class QuestionAnswerContainerInner extends React.Component<
     const updateStates: QAStateEnriched = setQuestionStates(
       justAnswered,
       direction,
+      this.props.navigation,
       this.enrichState()
     );
     const updateFlags: QAStateEnriched = setQuestionFlag(
@@ -199,9 +200,6 @@ class QuestionAnswerContainerInner extends React.Component<
       updateStates
     );
     this.setState(this.simplifyState(updateFlags));
-    if (justAnswered === 'peopleInput' && direction === 'back') {
-      this.props.navigation.goBack();
-    }
   }
 
   render() {

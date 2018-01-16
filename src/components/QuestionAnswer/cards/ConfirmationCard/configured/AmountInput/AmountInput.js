@@ -106,11 +106,6 @@ const AmountInputInner = ({
           {t('amountInputAddItem').toUpperCase()}
         </Text>
       </View>
-
-      <BackAndContinueButtons
-        onPressBack={() => {}}
-        onPressContinue={() => {}}
-      />
     </ScrollView>
   </View>
 );

@@ -8,6 +8,7 @@ import type {
 } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
 import { hasLargeAmount } from '../../../model/utils';
+import type { Navigation } from '../../../types/generalTypes';
 
 const showLargeAmountsQuestion = (qaState: QAStateEnriched) => {
   const { people, amounts } = qaState;
@@ -40,6 +41,7 @@ const backNav = (direction: DirectionType): QuestionState =>
 export const setQuestionStates = (
   justAnswered: QuestionType,
   direction: DirectionType,
+  navigation: Navigation,
   qaState: QAStateEnriched
 ): QAStateEnriched => {
   const { settings } = qaState;
@@ -53,8 +55,13 @@ export const setQuestionStates = (
     ? 'collapsed'
     : 'hidden';
 
+  console.log('f000');
+  console.log(justAnswered);
   switch (justAnswered) {
     case 'peopleInput': {
+      if (direction === 'back') {
+        navigation.goBack();
+      }
       mainCategoriesState = fwdNav(direction);
       if (!mainCategories.size) {
         quantityInputState = 'hidden';
@@ -75,9 +82,21 @@ export const setQuestionStates = (
     }
     case 'amounts': {
       quantityInputState = backNav(direction);
-      largeAmountsState = showLargeAmountsQuestion(qaState)
-        ? 'expanded'
-        : 'hidden';
+      if (showLargeAmountsQuestion(qaState)) {
+        largeAmountsState = fwdNav(direction);
+      } else {
+        if (direction === 'forward') {
+          navigation.navigate('Payment');
+        }
+        largeAmountsState = 'hidden';
+      }
+      break;
+    }
+    case 'largeAmounts': {
+      amountsState = backNav(direction);
+        if (direction === 'forward') {
+          navigation.navigate('Payment');
+        }
       break;
     }
     default:
