@@ -143,8 +143,8 @@ export const en: Locale = {
   },
   appInformation: {
     appInfoTitle: 'About the app',
-    leftTabText: 'imprint',
-    rightTabText: 'development',
+    leftTabText: 'Imprint',
+    rightTabText: 'Development',
     publisher: 'Publisher',
     customsAdministrationAddressTitle: 'Federal Customs Administration',
     contact: 'Contact',

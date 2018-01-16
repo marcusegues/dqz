@@ -145,7 +145,7 @@ export const de: Locale = {
   },
   appInformation: {
     appInfoTitle: 'Über die App',
-    leftTabText: 'Impressium',
+    leftTabText: 'Impressum',
     rightTabText: 'Entwicklung',
     publisher: 'Herausgeberin',
     customsAdministrationAddressTitle: 'Eidgenössische Zollverwaltung EZV',

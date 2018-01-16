@@ -63,7 +63,7 @@ type AppInfoState = {
 const logo = require('../../../assets/images/logo_with_text.png');
 const ambriteLogo = require('../../../assets/images/ambrite_logo.png');
 
-class AppInfoScreen extends React.Component<{ t: TFunction }, AppInfoState> {
+class AppInfoInner extends React.Component<{ t: TFunction }, AppInfoState> {
   static navigationOptions = ({ screenProps }) => ({
     headerTitle: (
       <HeaderTitle text={screenProps.t('appInformation:appInfoTitle')} />
@@ -74,7 +74,7 @@ class AppInfoScreen extends React.Component<{ t: TFunction }, AppInfoState> {
   };
 
   componentWillMount() {
-    analyticsScreenMounted('Information');
+    analyticsScreenMounted('AboutApplication');
   }
 
   render() {
@@ -150,5 +150,5 @@ class AppInfoScreen extends React.Component<{ t: TFunction }, AppInfoState> {
 }
 
 export const AppInfo = (translate(['appInformation'])(
-  AppInfoScreen
+  AppInfoInner
 ): ComponentType<{}>);
