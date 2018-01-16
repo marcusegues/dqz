@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AppInfo renders according to snapshot and DoneButton fires navigation 1`] = `
+exports[`AppInfo renders according to snapshot and simulates click on ModalTab 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
