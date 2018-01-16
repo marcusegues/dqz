@@ -44,6 +44,7 @@ import {
   analyticsPeopleChanged,
   analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
+import { hasLargeAmount } from '../../model/utils';
 
 export type QuestionType =
   | 'peopleInput'
@@ -380,6 +381,9 @@ class QuestionAnswerContainerInner extends React.Component<
                         amounts: updatedAmounts,
                       })
                     );
+                    const tempState = this.state;
+                    tempState.questionStates.largeAmounts = hasLargeAmount(newAmounts) ? 'collapsed' : 'hidden';
+                    this.setState(tempState);
                   },
                   amounts: newAmounts,
                 },

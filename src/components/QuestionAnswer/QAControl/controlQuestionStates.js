@@ -7,16 +7,11 @@ import type {
   QuestionType,
 } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
-import { flatLargeAmounts } from '../../../model/utils';
-import type { FlatAmount } from '../../../model/utils';
+import { hasLargeAmount } from '../../../model/utils';
 
 const showLargeAmountsQuestion = (qaState: QAStateEnriched) => {
   const { people, amounts } = qaState;
-  const largeAmounts: Array<FlatAmount> = flatLargeAmounts(amounts);
-  const hasLargeAmounts: boolean =
-    largeAmounts.reduce((a, v) => a + v.amount, 0) > 0;
-
-  return hasLargeAmounts || getTotalPeople(people) > 1;
+  return hasLargeAmount(amounts) && getTotalPeople(people) > 1;
 };
 
 const setQuestionState = (

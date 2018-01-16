@@ -1,6 +1,7 @@
 // @flow
 import type { Amounts } from './types/basketPeopleAmountsTypes';
 import type { Currency } from './currencies';
+import { INDIVIDUALALLOWANCE } from './constants';
 
 export const rounding = (x: number): number => {
   // this rounding is not perfect, due to floating point
@@ -65,3 +66,6 @@ export const flatAllAmounts = (amounts: Amounts): Array<FlatAmount> =>
 
 export const flatLargeAmounts = (amounts: Amounts): Array<FlatAmount> =>
   flatAmounts(amounts).filter(a => a.large);
+
+export const hasLargeAmount = (amounts: Amounts): boolean =>
+  flatAllAmounts(amounts).reduce((a,v) => Math.max(a,v.amount), 0) > INDIVIDUALALLOWANCE;
