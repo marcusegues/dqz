@@ -99,6 +99,7 @@ export const en: Locale = {
       'Record the net value of the item in its original currency:',
     currencyPickerRate: 'Rate of',
     currencyPickerInvalidInput: 'Invalid/empty input',
+    currencyPickerNoOffsettingInput: 'No offsetting amount',
     savedBasketDoYoWantToContinue:
       'Do you want to continue with an existing basket or start a new one',
     savedBasketTotalCost: 'Total cost: CHF {{value}}',

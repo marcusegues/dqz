@@ -94,6 +94,7 @@ export const it: Locale = {
     currencyPickerSubTitle: '🈯',
     currencyPickerRate: '🈯',
     currencyPickerInvalidInput: '🈯',
+    currencyPickerNoOffsettingInput: '🈯',
     savedBasketDoYoWantToContinue: '🈯',
     savedBasketTotalCost: '🈯',
     savedBasketNewShoppingCart: '🈯',
