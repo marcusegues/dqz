@@ -42,10 +42,17 @@ const ownStyles = {
     color: '#141414',
     padding: scale(15),
   },
+  enterValueContainer: {
+    alignSelf: 'flex-start',
+    paddingTop: verticalScale(16),
+    paddingBottom: verticalScale(35),
+  },
   addButtonContainer: {
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
+    backgroundColor: '#F5F5F5',
+    marginHorizontal: scale(16),
     marginBottom: 0,
   },
   addButtonText: {
@@ -69,6 +76,15 @@ const ownStyles = {
   redButtonWrapper: {
     flex: 0.47,
   },
+  lastExchangeRate: {
+    paddingBottom: verticalScale(16),
+  },
+  redPlusIconContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: verticalScale(5),
+    marginBottom: verticalScale(30),
+  },
 };
 
 type AmountInputProps = {
@@ -85,12 +101,45 @@ const AmountInputInner = ({
   large,
   t,
 }: AmountInputProps & { t: TFunction }) => {
-  const relevantAmounts = large ? flatLargeAmounts(amounts) : flatNormalAmounts(amounts);
-  return <View style={ownStyles.mainContainer}>
-    <ScrollView contentContainerStyle={ownStyles.scrollView}>
-      <View style={ownStyles.addedItemContainer}>
-        {relevantAmounts.map(
-          a => (
+  const relevantAmounts = large
+    ? flatLargeAmounts(amounts)
+    : flatNormalAmounts(amounts);
+  return (
+    <View style={ownStyles.mainContainer}>
+      <ScrollView contentContainerStyle={ownStyles.scrollView}>
+        {relevantAmounts.length ? (
+          <CardHeaderSubText
+            text={large ? '' : t('lastExchangeRate')}
+            style={ownStyles.lastExchangeRate}
+          />
+        ) : (
+          <View style={ownStyles.addButtonContainer}>
+            <CardHeaderSubText
+              text={
+                large
+                  ? t('amountInputLargeItemGreyBox')
+                  : t('amountInputEnterValue')
+              }
+              style={ownStyles.enterValueContainer}
+            />
+
+            <TouchableOpacity onPress={() => onShowAmountInputModal()}>
+              <Entypo
+                name="circle-with-plus"
+                size={moderateScale(46)}
+                color={MAIN_RED}
+              />
+            </TouchableOpacity>
+
+            <Text style={ownStyles.addButtonText}>
+              {large
+                ? t('amountInputAddItemLarge').toUpperCase()
+                : t('amountInputAddItem').toUpperCase()}
+            </Text>
+          </View>
+        )}
+        <View style={ownStyles.addedItemContainer}>
+          {relevantAmounts.map(a => (
             <AmountRow
               key={a.id}
               amount={a.amount}
@@ -98,39 +147,29 @@ const AmountInputInner = ({
               id={a.id}
               onDelete={() => onDeleteAmount(a.id)}
             />
-          )
+          ))}
+        </View>
+        {relevantAmounts.length ? (
+          <View style={ownStyles.redPlusIconContainer}>
+            <TouchableOpacity onPress={() => onShowAmountInputModal()}>
+              <Entypo
+                name="circle-with-plus"
+                size={moderateScale(46)}
+                color={MAIN_RED}
+              />
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <Text />
         )}
-      </View>
-      <Text>{relevantAmounts.length ? 'YAY!' : 'NAY'}</Text>
-      <View
-        style={[
-          ownStyles.addButtonContainer,
-          { backgroundColor: '#F5F5F5', marginHorizontal: 16 },
-        ]}
-      >
-        <CardHeaderSubText
-          text={t('amountInputEnterValue')}
-          style={{ alignSelf: 'flex-start', paddingTop: 16, paddingBottom: 35 }}
+
+        <BackAndContinueButtons
+          onPressBack={() => {}}
+          onPressContinue={() => {}}
         />
-        <TouchableOpacity onPress={() => onShowAmountInputModal()}>
-          <Entypo
-            name="circle-with-plus"
-            size={moderateScale(46)}
-            color={MAIN_RED}
-          />
-        </TouchableOpacity>
-
-        <Text style={ownStyles.addButtonText}>
-          {t('amountInputAddItem').toUpperCase()}
-        </Text>
-      </View>
-
-      <BackAndContinueButtons
-        onPressBack={() => {}}
-        onPressContinue={() => {}}
-      />
-    </ScrollView>
-  </View>
+      </ScrollView>
+    </View>
+  );
 };
 
 export const AmountInput = (translate(['amountInput'])(

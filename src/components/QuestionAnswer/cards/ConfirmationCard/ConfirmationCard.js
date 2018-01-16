@@ -2,7 +2,6 @@
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
-import { verticalScale } from '../../../../styles/Scaling';
 import { Card } from '../Card';
 import { CardHeader } from '../subcomponents/CardHeader';
 import { BackAndContinueButtons } from '../../../Buttons/BackAndContinueButtons';
@@ -17,7 +16,6 @@ const ownStyles = {
   },
   bottomButtonContainer: {
     justifyContent: 'center',
-    marginBottom: verticalScale(15),
   },
 };
 
