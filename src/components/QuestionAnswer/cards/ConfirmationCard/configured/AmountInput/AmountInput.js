@@ -5,7 +5,11 @@ import type { ComponentType } from 'react';
 import { View, ScrollView, TouchableOpacity, Text } from 'react-native';
 import { translate } from 'react-i18next';
 import Entypo from '@expo/vector-icons/Entypo';
-import { moderateScale, verticalScale } from '../../../../../../styles/Scaling';
+import {
+  moderateScale,
+  scale,
+  verticalScale,
+} from '../../../../../../styles/Scaling';
 import {
   flatLargeAmounts,
   flatNormalAmounts,
@@ -15,6 +19,7 @@ import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsT
 import { MAIN_RED } from '../../../../../../styles/colors';
 import { BackAndContinueButtons } from '../../../../../Buttons/BackAndContinueButtons';
 import type { TFunction } from '../../../../../../types/generalTypes';
+import { CardHeaderSubText } from '../../../subcomponents/CardHeaderSubText';
 
 const ownStyles = {
   mainContainer: {
@@ -35,18 +40,20 @@ const ownStyles = {
     fontFamily: 'roboto_regular',
     fontSize: moderateScale(24),
     color: '#141414',
-    padding: 15,
+    padding: scale(15),
   },
   addButtonContainer: {
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    marginBottom: 40,
-    marginTop: 20,
+    marginBottom: 0,
   },
   addButtonText: {
     fontSize: moderateScale(14),
     color: MAIN_RED,
+    fontFamily: 'roboto_medium',
+    marginTop: verticalScale(10),
+    marginBottom: verticalScale(30),
   },
   addedItemContainer: {
     flex: 1,
@@ -93,11 +100,20 @@ const AmountInputInner = ({
           )
         )}
       </View>
-      <View style={ownStyles.addButtonContainer}>
+      <View
+        style={[
+          ownStyles.addButtonContainer,
+          { backgroundColor: '#F5F5F5', marginHorizontal: 16 },
+        ]}
+      >
+        <CardHeaderSubText
+          text={t('amountInputEnterValue')}
+          style={{ alignSelf: 'flex-start', paddingTop: 16, paddingBottom: 35 }}
+        />
         <TouchableOpacity onPress={() => onShowAmountInputModal()}>
           <Entypo
             name="circle-with-plus"
-            size={moderateScale(36)}
+            size={moderateScale(46)}
             color={MAIN_RED}
           />
         </TouchableOpacity>

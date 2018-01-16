@@ -71,7 +71,7 @@ type AmountInputTranslations = {
   amountInputLargeItem: string,
   amountInputMoreThan300Text: string,
   amountInputAddItem: string,
-  amountInputAddItem: string,
+  amountInputEnterValue: string,
 };
 
 type PaymentTranslations = {

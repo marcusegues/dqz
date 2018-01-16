@@ -10,8 +10,41 @@ import { INDIVIDUALALLOWANCE } from '../../../../../../model/constants';
 import { Card } from '../../../Card';
 import { CardHeader } from '../../../subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../../subcomponents/CardHeaderSubText';
-import { verticalScale } from '../../../../../../styles/Scaling';
+import { scale, verticalScale } from '../../../../../../styles/Scaling';
 import type { TFunction } from '../../../../../../types/generalTypes';
+import { CardRowText } from '../../../subcomponents/CardRowText';
+import { BlueInfoIcon } from '../../../../../Headers/subcomponents/BlueInfoIcon';
+import { QuantityIcon } from '../../../../../General Components/QuantityIcon';
+
+const ownStyles = {
+  cardHeaderContainer: {
+    width: '100%',
+    paddingRight: scale(35),
+  },
+  infoIcon: {
+    position: 'absolute',
+    top: verticalScale(16),
+    right: scale(16),
+  },
+  currentTotalValue: {
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
+  },
+  currentTotalValueText: {
+    alignSelf: 'flex-start',
+    marginLeft: scale(16),
+    marginRight: scale(10),
+  },
+  amountInputMoreThan300Text: {
+    alignSelf: 'flex-start',
+    // borderBottomWidth: 1,
+    // borderBottomColor: 'black',
+    marginBottom: verticalScale(16),
+  },
+  amountInputContainer: {
+    justifyContent: 'center',
+  },
+};
 
 type AmountInputConfirmationCardProps = {
   onShowAmountInputModal: () => void,
@@ -36,17 +69,27 @@ const AmountInputConfirmationCardInner = ({
 
   return (
     <Card>
-      <CardHeader text={title} />
+      <View style={ownStyles.cardHeaderContainer}>
+        <CardHeader text={title} />
+      </View>
+      <View style={ownStyles.infoIcon}>
+        <BlueInfoIcon />
+      </View>
+
+      <View style={ownStyles.currentTotalValue}>
+        <CardRowText
+          text={t('currentTotalValue')}
+          style={ownStyles.currentTotalValueText}
+        />
+
+        <QuantityIcon unit="CHF" quantity={22} />
+      </View>
+
       <CardHeaderSubText
         text={large ? t('amountInputMoreThan300Text') : ''}
-        style={{
-          alignSelf: 'flex-start',
-          borderBottomWidth: 1,
-          borderBottomColor: 'black',
-          marginBottom: verticalScale(16),
-        }}
+        style={ownStyles.amountInputMoreThan300Text}
       />
-      <View style={{ justifyContent: 'center' }}>
+      <View style={ownStyles.amountInputContainer}>
         <AmountInput
           onShowAmountInputModal={onShowAmountInputModal}
           amounts={amounts}

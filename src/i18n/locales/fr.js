@@ -65,6 +65,8 @@ export const fr: Locale = {
     amountInputLargeItem: '🈯',
     amountInputMoreThan300Text: '🈯',
     amountInputAddItem: '🈯',
+    amountInputEnterValue: '🈯',
+    currentTotalValue: '🈯',
   },
   qaFlow: {
     declareGoods: '🈯',
