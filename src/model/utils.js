@@ -53,7 +53,7 @@ export const flatAmounts = (amounts: Amounts): Array<FlatAmount> => {
     v.amounts.map(amt =>
       result.push({ currency: k, amount: amt.amount, large: false, id: amt.id })
     );
-    v.amountsLarge.map(amt =>
+    v.largeAmounts.map(amt =>
       result.push({ currency: k, amount: amt.amount, large: true, id: amt.id })
     );
   });

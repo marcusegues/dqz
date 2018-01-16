@@ -217,7 +217,7 @@ describe('The large amounts: ', () => {
   test('deletes a single large amount (or not, if id fake): ', () => {
     let i = 0;
     const amounts = largeAmounts4.withMutations(a => {
-      a.updateIn(['EUR', 'amountsLarge'], list =>
+      a.updateIn(['EUR', 'largeAmounts'], list =>
         // eslint-disable-next-line no-plusplus
         list.map(aa => Object.assign(aa, { id: `${i++}` }))
       );
