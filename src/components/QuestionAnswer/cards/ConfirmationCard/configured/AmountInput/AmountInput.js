@@ -84,11 +84,12 @@ const AmountInputInner = ({
   onDeleteAmount,
   large,
   t,
-}: AmountInputProps & { t: TFunction }) => (
-  <View style={ownStyles.mainContainer}>
+}: AmountInputProps & { t: TFunction }) => {
+  const relevantAmounts = large ? flatLargeAmounts(amounts) : flatNormalAmounts(amounts);
+  return <View style={ownStyles.mainContainer}>
     <ScrollView contentContainerStyle={ownStyles.scrollView}>
       <View style={ownStyles.addedItemContainer}>
-        {(large ? flatLargeAmounts(amounts) : flatNormalAmounts(amounts)).map(
+        {relevantAmounts.map(
           a => (
             <AmountRow
               key={a.id}
@@ -100,6 +101,7 @@ const AmountInputInner = ({
           )
         )}
       </View>
+      <Text>{relevantAmounts.length ? 'YAY!' : 'NAY'}</Text>
       <View
         style={[
           ownStyles.addButtonContainer,
@@ -129,7 +131,7 @@ const AmountInputInner = ({
       />
     </ScrollView>
   </View>
-);
+};
 
 export const AmountInput = (translate(['amountInput'])(
   AmountInputInner
