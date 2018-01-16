@@ -60,7 +60,7 @@ export const flatAmounts = (amounts: Amounts): Array<FlatAmount> => {
   return result;
 };
 
-export const flatNormalAmounts = (amounts: Amounts): Array<FlatAmount> =>
+export const flatAllAmounts = (amounts: Amounts): Array<FlatAmount> =>
   flatAmounts(amounts).filter(a => !a.large);
 
 export const flatLargeAmounts = (amounts: Amounts): Array<FlatAmount> =>
