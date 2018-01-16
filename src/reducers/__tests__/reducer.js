@@ -193,7 +193,7 @@ describe('Main Categories...', () => {
     expect(
       appState(initState, {
         type: 'ADD_MAIN_CATEGORY',
-        mainCategory: 'Foods',
+        mainCategory: 'Meat',
       })
     ).toMatchSnapshot();
   });
@@ -201,7 +201,7 @@ describe('Main Categories...', () => {
     expect(
       appState(initState, {
         type: 'REMOVE_MAIN_CATEGORY',
-        mainCategory: 'Foods',
+        mainCategory: 'Meat',
       })
     ).toMatchSnapshot();
   });
@@ -210,11 +210,11 @@ describe('Main Categories...', () => {
       appState(
         appState(initState, {
           type: 'ADD_MAIN_CATEGORY',
-          mainCategory: 'Foods',
+          mainCategory: 'Meat',
         }),
         {
           type: 'REMOVE_MAIN_CATEGORY',
-          mainCategory: 'Foods',
+          mainCategory: 'Meat',
         }
       )
     ).toMatchSnapshot();
@@ -223,7 +223,7 @@ describe('Main Categories...', () => {
     expect(
       appState(initState, {
         type: 'SET_MAIN_CATEGORIES',
-        mainCategories: Immutable.Set(['Foods', 'Alcohol']),
+        mainCategories: Immutable.Set(['Meat', 'Alcohol']),
       })
     ).toMatchSnapshot();
   });

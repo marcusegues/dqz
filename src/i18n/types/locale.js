@@ -3,7 +3,9 @@
 export type Language = 'de' | 'fr' | 'en' | 'it';
 
 type MainCategoriesTranslations = {
-  Foods: string,
+  Meat: string,
+  Butter: string,
+  Oil: string,
   Alcohol: string,
   TobaccoProducts: string,
   OtherGoods: string,
