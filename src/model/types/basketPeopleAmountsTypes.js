@@ -9,13 +9,16 @@ import Immutable from 'immutable';
 import type { Currency } from '../currencies';
 
 /**
- * todo, jsdoc
+ * Declare the Main Categories
  */
 
-export type FoodsCategory = 'Meat' | 'Butter' | 'Oils' | 'OtherFood';
+export type MeatCategory = 'Meat';
+export type ButterCategory = 'Butter';
+export type OilCategory = 'Oils';
 export type AlcoholCategory = 'AlcSoft' | 'AlcHard';
 export type TobaccoProductsCategory = 'Cigarettes' | 'Tobacco';
 export type OtherGoodsCategory =
+  | 'OtherFood'
   | 'Meds'
   | 'Books'
   | 'Magazines'
@@ -25,7 +28,9 @@ export type OtherGoodsCategory =
   | 'Other';
 
 export type Category =
-  | FoodsCategory
+  | MeatCategory
+  | ButterCategory
+  | OilCategory
   | AlcoholCategory
   | TobaccoProductsCategory
   | OtherGoodsCategory;

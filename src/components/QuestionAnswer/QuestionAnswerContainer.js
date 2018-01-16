@@ -378,7 +378,11 @@ class QuestionAnswerContainerInner extends React.Component<
                       })
                     );
                     const tempState = this.state;
-                    tempState.questionStates.largeAmounts = hasLargeAmount(newAmounts) ? 'collapsed' : 'hidden';
+                    tempState.questionStates.largeAmounts = hasLargeAmount(
+                      newAmounts
+                    )
+                      ? 'collapsed'
+                      : 'hidden';
                     this.setState(tempState);
                   },
                   amounts: newAmounts,

@@ -92,9 +92,9 @@ export const setQuestionStates = (
     }
     case 'largeAmounts': {
       amountsState = backNav(direction);
-        if (direction === 'forward') {
-          navigation.navigate('Payment');
-        }
+      if (direction === 'forward') {
+        navigation.navigate('Payment');
+      }
       break;
     }
     default:

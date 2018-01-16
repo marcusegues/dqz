@@ -1142,7 +1142,7 @@ Immutable.Record {
   },
   "settings": Immutable.Record {
     "mainCategories": Immutable.Set [
-      "Foods",
+      "Meat",
     ],
   },
   "currencyObject": Object {},
@@ -1346,7 +1346,7 @@ Immutable.Record {
   },
   "settings": Immutable.Record {
     "mainCategories": Immutable.Set [
-      "Foods",
+      "Meat",
       "Alcohol",
     ],
   },
