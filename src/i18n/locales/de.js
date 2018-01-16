@@ -3,7 +3,7 @@ import type { Locale } from '../types/locale';
 
 export const de: Locale = {
   categories: {
-    Meat: 'Fleisch & Fleischzubereitung',
+    Meat: 'Fleisch & Fleischzub.',
     Butter: 'Butter & Rahm',
     Oils: 'Öle/Fette/Margarine',
     OtherFood: 'Sonstige Lebensmittel & alkoholfreie Getränke',
@@ -20,12 +20,12 @@ export const de: Locale = {
     Other: 'Sonstige Waren',
   },
   mainCategories: {
-    Meat: 'Fleisch & Fleischzubereitung',
+    Meat: 'Fleisch & -zub.',
     Butter: 'Butter & Rahm',
     Oil: 'Öle, Fette, Margarine',
     Alcohol: `Alkohol`,
     TobaccoProducts: 'Tabak',
-    OtherGoods: 'Anderes',
+    OtherGoods: 'Andere Waren',
   },
   general: {
     declareGoods: 'Waren anmelden',

@@ -17,7 +17,7 @@ export const en: Locale = {
     Flowers: 'Flowers',
     AnimalFeed: 'Animal Feed',
     Fertilizer: 'Fertilizer',
-    Other: 'Other',
+    Other: 'Other Goods',
   },
   mainCategories: {
     Meat: 'Meat',
