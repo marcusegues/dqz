@@ -34,7 +34,7 @@ const getCHFperCurrency = (
   const exchangeRate: number = currencyObject[currency] || 1;
 
   return {
-    amounts: Math.floor(exchangeRate * amountsThisCurrency),
+    amounts: Math.floor(exchangeRate * (amountsThisCurrency - amountsLargeThisCurrency)),
     amountsLarge: Math.floor(exchangeRate * amountsLargeThisCurrency),
   };
 };

@@ -18,6 +18,12 @@ Array [
     "amount": 525,
     "currency": "EUR",
     "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 525,
+    "currency": "EUR",
+    "id": "x",
     "large": true,
   },
   Object {
@@ -40,6 +46,12 @@ Array [
   },
   Object {
     "amount": 33,
+    "currency": "CHF",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 5555,
     "currency": "CHF",
     "id": "x",
     "large": false,
@@ -85,6 +97,12 @@ Array [
     "large": false,
   },
   Object {
+    "amount": 525,
+    "currency": "EUR",
+    "id": "x",
+    "large": false,
+  },
+  Object {
     "amount": 12,
     "currency": "USD",
     "id": "x",
@@ -104,6 +122,12 @@ Array [
   },
   Object {
     "amount": 33,
+    "currency": "CHF",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 5555,
     "currency": "CHF",
     "id": "x",
     "large": false,
