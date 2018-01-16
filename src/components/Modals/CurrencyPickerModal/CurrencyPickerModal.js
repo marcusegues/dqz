@@ -93,15 +93,6 @@ class CurrencyPickerModalInner extends React.Component<
             accessible={false}
           >
             <View style={pickerModalStyle.pickerContainer}>
-              <TextInput
-                keyboardType="numeric"
-                style={currencyPickerModal.textInput}
-                onChangeText={value => this.setState({ amount: +value })}
-                maxLenght="8"
-                underlineColorAndroid="transparent"
-                blurOnSubmit
-              />
-
               <PickerComponent
                 selectedValue={currency}
                 onValueChange={itemValue =>
@@ -130,6 +121,14 @@ class CurrencyPickerModalInner extends React.Component<
                     />
                   ))}
               </PickerComponent>
+              <TextInput
+                keyboardType="numeric"
+                style={currencyPickerModal.textInput}
+                onChangeText={value => this.setState({ amount: +value })}
+                maxLenght="8"
+                underlineColorAndroid="transparent"
+                blurOnSubmit
+              />
             </View>
           </TouchableWithoutFeedback>
 
