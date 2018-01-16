@@ -366,7 +366,7 @@ type JestObjectType = {
   requireMock(moduleName: string): any,
   /**
    * Resets the module registry - the cache of all required modules. This is
-   * useful to isolate modules where local state might conflict between tests.
+   * useful to isolate modules where local state might conflict between __tests__.
    */
   resetModules(): JestObjectType,
   /**
@@ -437,18 +437,18 @@ declare function beforeEach(
   fn: (done: () => void) => ?Promise<mixed>,
   timeout?: number
 ): void;
-/** Runs this function after all tests have finished inside this context */
+/** Runs this function after all __tests__ have finished inside this context */
 declare function afterAll(
   fn: (done: () => void) => ?Promise<mixed>,
   timeout?: number
 ): void;
-/** Runs this function before any tests have started inside this context */
+/** Runs this function before any __tests__ have started inside this context */
 declare function beforeAll(
   fn: (done: () => void) => ?Promise<mixed>,
   timeout?: number
 ): void;
 
-/** A context for grouping tests together */
+/** A context for grouping __tests__ together */
 declare var describe: {
   /**
    * Creates a block that groups together several related tests in one "test suite"
@@ -524,9 +524,9 @@ declare function fit(
 ): void;
 /** An individual test unit */
 declare var test: typeof it;
-/** A disabled group of tests */
+/** A disabled group of __tests__ */
 declare var xdescribe: typeof describe;
-/** A focused group of tests */
+/** A focused group of __tests__ */
 declare var fdescribe: typeof describe;
 /** A disabled individual test */
 declare var xit: typeof it;
