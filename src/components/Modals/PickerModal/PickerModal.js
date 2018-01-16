@@ -106,7 +106,7 @@ class PickerModalInner extends React.Component<
         <PickerCard style={{ top: '25%' }}>
           <View style={pickerModalStyle.topTouchableContainer}>
             <ModalTab
-              standardInput={standardInput}
+              activeTab={standardInput}
               onPress={() =>
                 this.setState({
                   selected: 'standardInput',
@@ -115,7 +115,7 @@ class PickerModalInner extends React.Component<
               text={t('standardCategoryPicker').toUpperCase()}
             />
             <ModalTab
-              standardInput={customInput}
+              activeTab={customInput}
               onPress={() =>
                 this.setState({
                   selected: 'customInput',

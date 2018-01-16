@@ -21,11 +21,13 @@ import { QuestionAnswerContainer } from '../components/QuestionAnswer/QuestionAn
 import { GoodQuantityListModal } from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { OnBoardingTaxScreen } from '../screens/OnBoarding/OnBoardingTaxScreen';
 import { ReceiptAfterPayment } from '../components/Receipts/ReceiptAfterPayment';
+import { AppInfo } from '../screens/AppInfo/AppInfo';
 import { HomeIcon } from '../components/Headers/subcomponents/HomeIcon';
 import { DownloadIcon } from '../components/Headers/subcomponents/DownloadIcon';
 import { Information } from '../screens/Information/Information';
 import { SearchIcon } from '../components/Headers/subcomponents/SearchIcon';
 import type { Navigation } from '../types/generalTypes';
+import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
 
 type NavigationObject = { navigation: Navigation };
 
@@ -115,6 +117,17 @@ export const stackNavigatorScreens = {
       headerTitle: <HeaderTitle text="Quittung Schweizer Zoll" />,
       headerLeft: <HomeIcon navigation={navigation} />,
       headerRight: <DownloadIcon navigation={navigation} />,
+    }),
+  },
+  AppInfo: {
+    screen: AppInfo,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
     }),
   },
 };

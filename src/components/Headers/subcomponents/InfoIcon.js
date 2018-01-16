@@ -10,7 +10,7 @@ import type { Navigation } from '../../../types/generalTypes';
 export const InfoIcon = ({ navigation }: { navigation: Navigation }) => (
   <Touchable
     onPress={() => {
-      navigation.goBack();
+      navigation.navigate('AppInfo');
     }}
   >
     <MaterialCommunityIcons

@@ -141,4 +141,26 @@ export const en: Locale = {
     entryByTrainSubText:
       'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
   },
+  appInformation: {
+    appInfoTitle: 'About the app',
+    leftTabText: 'Imprint',
+    rightTabText: 'Development',
+    publisher: 'Publisher',
+    customsAdministrationAddressTitle: 'Federal Customs Administration',
+    contact: 'Contact',
+    customsInfoCenter:
+      'Customs Information Center\n058 467 15 15\nzollauskunft@ezv.admin.ch',
+    reachability: 'Reachability:',
+    workingHours: 'Monday – Friday, 8.00 – 11.30 and 13.30 to 17.00',
+    generalCustomsDirectorate:
+      'General Directorate of Customs\nMonbijoustrasse 40\n' +
+      '3003 Bern\n' +
+      'http://www.ezv.admin.ch',
+    designAndDevelopment: 'Design & Development',
+    ambriteAddress:
+      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch\nhttp://www.ambrite.ch',
+    disclaimerTitle: 'Disclaimer',
+    disclaimerText:
+      'The same old lyre everywhere. The layout is finished, the text is slow in coming. So that the layout does not stand naked in the room and looks small and empty, I jump in: the blind text. Created exactly for this purpose, always in the shadow of my big brother "Lorem Ipsum," I rejoice every time you read a few lines. Because eating est percipi - being is to be perceived. And because you\'re kind enough to accompany me for a few more sentences, I\'d like to take this opportunity to serve you not just as a filler, but to point out something that deserves to be recognized as well: web standards.',
+  },
 };

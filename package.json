@@ -11,6 +11,7 @@
     "lint:tough": "eslint src --max-warnings=0",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
+    "test:coverage:ci": "jest --coverage --maxWorkers 2",
     "test:coverage:watch": "jest --watchAll --coverage",
     "flow": "flow",
     "flow:coverage": "flow-coverage-report -i 'src/**/*.js' -x 'src/**/__tests__/**' -t html -t json -t text --threshold 90",
