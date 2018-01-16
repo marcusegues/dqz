@@ -135,14 +135,14 @@ export type AmountWithId = {
 
 type AmountsOfCurrencyContent = {
   amounts: ImmutableListType<AmountWithId>,
-  amountsLarge: ImmutableListType<AmountWithId>,
+  largeAmounts: ImmutableListType<AmountWithId>,
 };
 
 export const makeAmountsOfCurrencyRecord: RecordFactory<
   AmountsOfCurrencyContent
 > = Immutable.Record({
   amounts: Immutable.List(),
-  amountsLarge: Immutable.List(),
+  largeAmounts: Immutable.List(),
 });
 
 export type AmountsOfCurrency = RecordOf<AmountsOfCurrencyContent>;

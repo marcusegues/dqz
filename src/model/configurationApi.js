@@ -187,7 +187,7 @@ export const deleteAmount = (amounts: Amounts, id: string): Amounts => {
   if (!element) {
     return amounts;
   }
-  const amountsKey = element.large ? 'amountsLarge' : 'amounts';
+  const amountsKey = element.large ? 'largeAmounts' : 'amounts';
   const amts = amounts.getIn([element.currency, amountsKey], Immutable.List());
   const listIdx = amts.findIndex(v => v.id === id);
   const newAmounts = amts.delete(listIdx);
@@ -235,7 +235,7 @@ export const addLargeAmount = (
   amountLarge: number
 ): Amounts =>
   addCurrencyIfNeeded(amounts, currency).updateIn(
-    [currency, 'amountsLarge'],
+    [currency, 'largeAmounts'],
     Immutable.List(),
     list => list.push({ amount: amountLarge, id: v4() })
   );
@@ -251,7 +251,7 @@ export const resetLargeAmounts = (
   currency: Currency
 ): Amounts =>
   addCurrencyIfNeeded(amounts, currency).setIn(
-    [currency, 'amountsLarge'],
+    [currency, 'largeAmounts'],
     Immutable.List()
   );
 
@@ -265,7 +265,7 @@ export const getLargeAmounts = (
   amounts: Amounts,
   currency: Currency
 ): ImmutableListType<AmountWithId> =>
-  amounts.getIn([currency, 'amountsLarge'], Immutable.List());
+  amounts.getIn([currency, 'largeAmounts'], Immutable.List());
 
 /**
  * Returns an init people configuration (1 adult, no minor)

@@ -101,6 +101,7 @@ export const de: Locale = {
       'Erfassen Sie den Nettowert des Gegenstands in seiner Original-Währung: ',
     currencyPickerRate: 'Kurs vom',
     currencyPickerInvalidInput: 'Ungültige/leere Eingabe',
+    currencyPickerNoOffsettingInput: 'Kein entsprechender Betrag',
     savedBasketDoYoWantToContinue:
       'Möchten Sie mit dem bereits bestehenden Warenkorb fortfahren oder mit einem leeren Warenkorb neu starten?',
     savedBasketTotalCost: 'Gesamtkosten: CHF {{value}}',

@@ -7,17 +7,18 @@ import { translate } from 'react-i18next';
 import { AmountInput } from './AmountInput';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import { INDIVIDUALALLOWANCE } from '../../../../../../model/constants';
-import { Card } from '../../../Card';
-import { CardHeader } from '../../../subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../../subcomponents/CardHeaderSubText';
 import { verticalScale } from '../../../../../../styles/Scaling';
 import type { TFunction } from '../../../../../../types/generalTypes';
+import { ConfirmationCard } from '../../ConfirmationCard';
+import type { DirectionType } from '../../../../QuestionAnswerContainer';
 
 type AmountInputConfirmationCardProps = {
   onShowAmountInputModal: () => void,
   amounts: Amounts,
   onDeleteAmount: string => void,
   large: boolean,
+  onAnswer: DirectionType => void,
 };
 
 const AmountInputConfirmationCardInner = ({
@@ -25,6 +26,7 @@ const AmountInputConfirmationCardInner = ({
   amounts,
   t,
   large,
+  onAnswer,
   onDeleteAmount,
 }: AmountInputConfirmationCardProps & { t: TFunction }) => {
   let title: string = t('amountInput');
@@ -35,8 +37,11 @@ const AmountInputConfirmationCardInner = ({
   }
 
   return (
-    <Card>
-      <CardHeader text={title} />
+    <ConfirmationCard
+      text={title}
+      onAnswer={() => onAnswer('forward')}
+      onBack={() => onAnswer('back')}
+    >
       <CardHeaderSubText
         text={large ? t('amountInputMoreThan300Text') : ''}
         style={{
@@ -46,7 +51,7 @@ const AmountInputConfirmationCardInner = ({
           marginBottom: verticalScale(16),
         }}
       />
-      <View style={{ justifyContent: 'center' }}>
+      <View style={{ justifyContent: 'center', width: '100%' }}>
         <AmountInput
           onShowAmountInputModal={onShowAmountInputModal}
           amounts={amounts}
@@ -54,7 +59,7 @@ const AmountInputConfirmationCardInner = ({
           onDeleteAmount={onDeleteAmount}
         />
       </View>
-    </Card>
+    </ConfirmationCard>
   );
 };
 

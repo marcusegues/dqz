@@ -5,7 +5,7 @@
 import {
   flatAmounts,
   flatLargeAmounts,
-  flatNormalAmounts,
+  flatAllAmounts,
   formatDate,
 } from '../utils';
 import { sampleAmounts1 } from './fullBasketsAndAmounts';
@@ -27,8 +27,8 @@ describe('Flat amounts does what it should', () => {
     expect(noIds).toMatchSnapshot();
   });
 
-  test('flatNormalAmounts', () => {
-    const noIds = flatNormalAmounts(sampleAmounts1).map(a => {
+  test('flatAllAmounts', () => {
+    const noIds = flatAllAmounts(sampleAmounts1).map(a => {
       a.id = 'x';
       return a;
     });
