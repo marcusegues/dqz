@@ -10,7 +10,9 @@ import type {
   People,
   Category,
   Amounts,
-  FoodsCategory,
+  MeatCategory,
+  ButterCategory,
+  OilCategory,
   AlcoholCategory,
   TobaccoProductsCategory,
   OtherGoodsCategory,
@@ -24,13 +26,14 @@ import {
 } from '../../model/types/calculationTypes';
 import type { CurrencyObject } from '../../model/currencies';
 
-export type FoodsCategories = ImmutableSetType<FoodsCategory>;
-export const foodsCategories: FoodsCategories = Immutable.Set([
-  'Meat',
-  'Butter',
-  'Oils',
-  'OtherFood',
-]);
+export type MeatCategories = ImmutableSetType<MeatCategory>;
+export const meatCategories: MeatCategories = Immutable.Set(['Meat']);
+
+export type ButterCategories = ImmutableSetType<ButterCategory>;
+export const butterCategories: ButterCategories = Immutable.Set(['Butter']);
+
+export type OilCategories = ImmutableSetType<OilCategory>;
+export const oilCategories: OilCategories = Immutable.Set(['Oils']);
 
 export type AlcoholCategories = ImmutableSetType<AlcoholCategory>;
 export const alcoholCategories: AlcoholCategories = Immutable.Set([
@@ -54,11 +57,14 @@ export const otherGoodsCategories: OtherGoodsCategories = Immutable.Set([
   'Flowers',
   'AnimalFeed',
   'Fertilizer',
+  'OtherFood',
   'Other',
 ]);
 
 export type MainCategory =
-  | 'Foods'
+  | 'Meat'
+  | 'Butter'
+  | 'Oil'
   | 'Alcohol'
   | 'TobaccoProducts'
   | 'OtherGoods';
@@ -66,7 +72,9 @@ export type MainCategory =
 export type MainCategories = ImmutableSetType<MainCategory>;
 
 export const mainCategories: MainCategories = Immutable.Set([
-  'Foods',
+  'Meat',
+  'Butter',
+  'Oil',
   'Alcohol',
   'TobaccoProducts',
   'OtherGoods',
@@ -75,8 +83,14 @@ export const mainCategories: MainCategories = Immutable.Set([
 export const EmptyMainCategories: MainCategories = Immutable.Set();
 
 export const getMainCategory = (category: any): MainCategory => {
-  if (foodsCategories.has(category)) {
-    return 'Foods';
+  if (meatCategories.has(category)) {
+    return 'Meat';
+  }
+  if (butterCategories.has(category)) {
+    return 'Butter';
+  }
+  if (oilCategories.has(category)) {
+    return 'Oil';
   }
   if (alcoholCategories.has(category)) {
     return 'Alcohol';
@@ -91,8 +105,14 @@ export const getSubCategories = (
   main: MainCategory
 ): ImmutableSetType<Category> => {
   switch (main) {
-    case 'Foods': {
-      return foodsCategories;
+    case 'Meat': {
+      return meatCategories;
+    }
+    case 'Butter': {
+      return butterCategories;
+    }
+    case 'Oil': {
+      return oilCategories;
     }
     case 'Alcohol': {
       return alcoholCategories;

@@ -71,11 +71,11 @@ describe('Test sendEventToAmplitude', () => {
   test('MainCategoriesChanged', () => {
     sendEventToAmplitude({
       type: 'MainCategoriesChanged',
-      mainCategories: Immutable.Set(['Foods', 'TobaccoProducts']),
+      mainCategories: Immutable.Set(['Meat', 'TobaccoProducts']),
     });
     expect(expo.Amplitude.logEventWithProperties).toHaveBeenCalledWith(
       'Main Categories changed',
-      { mainCategories: 'Foods, TobaccoProducts' }
+      { mainCategories: 'Meat, TobaccoProducts' }
     );
   });
 

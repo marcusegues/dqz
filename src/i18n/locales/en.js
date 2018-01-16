@@ -20,7 +20,9 @@ export const en: Locale = {
     Other: 'Other',
   },
   mainCategories: {
-    Foods: 'Foods',
+    Meat: 'Meat',
+    Butter: 'Butter & Cream',
+    Oil: 'Oils & Fat',
     Alcohol: `Alcohol`,
     TobaccoProducts: 'Tobacco Products',
     OtherGoods: 'Other Goods',

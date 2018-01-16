@@ -20,7 +20,9 @@ export const de: Locale = {
     Other: 'Sonstige Waren',
   },
   mainCategories: {
-    Foods: 'Lebensmittel',
+    Meat: 'Fleisch & Fleischzubereitung',
+    Butter: 'Butter & Rahm',
+    Oil: 'Öle, Fette, Margarine',
     Alcohol: `Alkohol`,
     TobaccoProducts: 'Tabak',
     OtherGoods: 'Anderes',

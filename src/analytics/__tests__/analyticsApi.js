@@ -65,9 +65,9 @@ describe('API calls', () => {
   });
 
   test('MainCategoriesChanged', () => {
-    analyticsMainCategoriesChanged(Immutable.Set(['Foods']));
+    analyticsMainCategoriesChanged(Immutable.Set(['Meat']));
     expect(amp.sendEventToAmplitude).toHaveBeenCalledWith({
-      mainCategories: Immutable.Set(['Foods']),
+      mainCategories: Immutable.Set(['Meat']),
       type: 'MainCategoriesChanged',
     });
   });

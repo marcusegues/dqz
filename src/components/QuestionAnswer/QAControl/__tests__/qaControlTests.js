@@ -70,9 +70,13 @@ describe('Test qa control flow', () => {
 
   test('after people input BACK on blank state', () => {
     const spy = jest.fn();
-    const mockNav = { goBack: spy};
-    const newState = setQuestionStates('peopleInput', 'back', mockNav, blankState)
-      .questionStates;
+    const mockNav = { goBack: spy };
+    const newState = setQuestionStates(
+      'peopleInput',
+      'back',
+      mockNav,
+      blankState
+    ).questionStates;
     expect(newState.peopleInput).toBe('collapsed');
     expect(newState.mainCategories).toBe('collapsed');
     expect(newState.quantityInput).toBe('hidden');
@@ -82,7 +86,8 @@ describe('Test qa control flow', () => {
   test('after people input with main categories FORWARD already present', () => {
     const newState = setQuestionStates(
       'peopleInput',
-      'forward', {},
+      'forward',
+      {},
       stateWithMainCategories
     ).questionStates;
     expect(newState.peopleInput).toBe('collapsed');
@@ -92,10 +97,11 @@ describe('Test qa control flow', () => {
 
   test('after people input with main categories BACK already present', () => {
     const spy = jest.fn();
-    const mockNav = { goBack: spy};
+    const mockNav = { goBack: spy };
     const newState = setQuestionStates(
       'peopleInput',
-      'back',mockNav,
+      'back',
+      mockNav,
       stateWithMainCategories
     ).questionStates;
     expect(newState.peopleInput).toBe('collapsed');
@@ -107,7 +113,8 @@ describe('Test qa control flow', () => {
   test('after main categories FORWARD', () => {
     const newState = setQuestionStates(
       'mainCategories',
-      'forward',{},
+      'forward',
+      {},
       stateWithMainCategories
     ).questionStates;
     expect(newState.peopleInput).toBe('collapsed');
@@ -118,7 +125,8 @@ describe('Test qa control flow', () => {
   test('after main categories BACK', () => {
     const newState = setQuestionStates(
       'mainCategories',
-      'back',{},
+      'back',
+      {},
       stateWithMainCategories
     ).questionStates;
     expect(newState.peopleInput).toBe('expanded');
@@ -129,7 +137,8 @@ describe('Test qa control flow', () => {
   test('after quantity input FORWARD', () => {
     const newState = setQuestionStates(
       'quantityInput',
-      'forward',{},
+      'forward',
+      {},
       stateWithMainCategories
     ).questionStates;
     expect(newState.peopleInput).toBe('collapsed');
@@ -140,7 +149,8 @@ describe('Test qa control flow', () => {
   test('after quantity input BACK', () => {
     const newState = setQuestionStates(
       'quantityInput',
-      'back',{},
+      'back',
+      {},
       stateWithMainCategories
     ).questionStates;
     expect(newState.peopleInput).toBe('collapsed');

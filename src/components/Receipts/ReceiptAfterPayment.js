@@ -112,8 +112,8 @@ class ReceiptAfterPaymentInner extends React.Component<
             style={ownStyles.receiptSubTextDuty}
           />
 
-          <DutyRow mainCategory="Foods" category="Meat" quantity={2} duty={4} />
-          <DutyRow mainCategory="Foods" category="Meat" quantity={2} duty={4} />
+          <DutyRow mainCategory="Meat" category="Meat" quantity={2} duty={4} />
+          <DutyRow mainCategory="Meat" category="Meat" quantity={2} duty={4} />
 
           <ReceiptSubText
             text={t('vatColumn')}
