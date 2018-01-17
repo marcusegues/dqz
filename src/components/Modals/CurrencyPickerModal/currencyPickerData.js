@@ -3,6 +3,7 @@
 export const currencyPicker: Array<{ label: string, value: string }> = [
   { label: ' 🇪🇺 EUR', value: 'EUR' },
   { label: ' 🇺🇸 USD', value: 'USD' },
+  { label: ' 🇨🇭 CHF', value: 'CHF' },
   { label: ' 🇦🇪 AED', value: 'AED' },
   { label: ' 🇦🇱 ALL', value: 'ALL' },
   { label: ' 🇦🇷 ARS', value: 'ARS' },

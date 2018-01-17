@@ -21,7 +21,7 @@ import {
   getTotalDuty,
   getTotalVat,
 } from '../../reducers';
-import type { TFunction } from '../../types/generalTypes';
+import type { Navigation, TFunction } from '../../types/generalTypes';
 import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 import type {
   Amounts,
@@ -48,7 +48,9 @@ type PaymentContainerState = {
   paymentStatus: ?string,
 };
 
-type PaymentContainerProps = {};
+type PaymentContainerProps = {
+  navigation: Navigation,
+};
 
 type ReduxInject = {
   fees: number,
@@ -138,6 +140,9 @@ class PaymentContainerInner extends React.Component<
         },
         () => {
           console.log('Payment finished');
+          if (paymentStatus === 'success') {
+            this.props.navigation.navigate('ReceiptAfterPayment');
+          }
         }
       );
     }

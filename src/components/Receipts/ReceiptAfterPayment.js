@@ -73,6 +73,8 @@ class ReceiptAfterPaymentInner extends React.Component<
     analyticsScreenMounted('ReceiptAfterPayment');
   }
 
+  image: any;
+
   async capture() {
     const snapshot = await takeSnapshotAsync(this.image, {
       format: 'png',

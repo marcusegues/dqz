@@ -12,7 +12,9 @@ import type { Navigation } from '../../../types/generalTypes';
 
 const showLargeAmountsQuestion = (qaState: QAStateEnriched) => {
   const { people, amounts } = qaState;
-  return hasLargeAmount(amounts) && getTotalPeople(people) > 1;
+  return (
+    hasLargeAmount(amounts, qaState.currencies) && getTotalPeople(people) > 1
+  );
 };
 
 const setQuestionState = (
