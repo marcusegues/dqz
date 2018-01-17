@@ -7,8 +7,8 @@ export const de: Locale = {
     Butter: 'Butter & Rahm',
     Oils: 'Öle/Fette/Margarine',
     OtherFood: 'Sonstige Lebensmittel & alkoholfreie Getränke',
-    AlcSoft: 'Alkohol gehalt 0.5% bis 18% Vol.',
-    AlcHard: 'Alkohol gehalt über 18% Vol.',
+    AlcSoft: 'Alkoholgehalt 0.5% bis 18% Vol.',
+    AlcHard: 'Alkoholgehalt über 18% Vol.',
     Cigarettes: 'Zigaretten & Zigarren',
     Tobacco: 'Andere Tabakfabrikate',
     Meds: 'Medikamente',
@@ -35,7 +35,7 @@ export const de: Locale = {
     information: 'Informationen zum Gebrauch der App',
     navbarFirst: 'Ihre Reise',
     navbarSecond: 'Bezahlung',
-    navbarThird: 'Zollschein',
+    navbarThird: 'Quittung',
     customsDuty: 'Zollabgabe',
     customsVat: 'MWSt',
     goodCategories: 'Warenkategorien',
@@ -59,16 +59,16 @@ export const de: Locale = {
       'Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?',
   },
   mainCategoriesInput: {
-    mainCategoriesQuestion: 'Welche Art Waren führen Sie mit sich?',
+    mainCategoriesQuestion: 'Welche Waren möchten Sie anmelden?',
   },
   quantityInput: {
     quantityInput: 'Mengeneingabe',
   },
   amountInput: {
-    amountInput: 'Betragseingabe',
+    amountInput: 'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Waren.',
     amountInputLargeItem: 'Betragseingabe (Waren über CHF {{value}})',
     amountInputMoreThan300Text:
-      'Erfassen Sie hier jeden Gegenstand, der mehr als 300.00 CHF wert ist.',
+      'Erfassen Sie hier jeden Gegenstand, der mehr als CHF 300.00 CHF wert ist.',
     amountInputAddItem: 'Gegenstand hinzufügen',
   },
   qaFlow: {
@@ -90,7 +90,7 @@ export const de: Locale = {
       'Sind Sie sicher, dass Sie diese Hauptkategorie entfernen möchten?',
     validateMainCategoryRemoveSubtitle:
       'Im Moment enthalten gewisse Unterkategorien Mengen, nämlich: {{value}}',
-    validateMainCategoryRemoveYes: 'Ja - löscht entsprechende Mengen',
+    validateMainCategoryRemoveYes: 'Ja - ich möchte die entsprechenden Mengen löschen',
   },
   modal: {
     confirmPicker: '{{value}} übernehmen',
