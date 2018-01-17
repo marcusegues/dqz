@@ -89,3 +89,11 @@ export const hasOffsettingAmount = (
     .reduce((a, v) => v.amount + a, 0);
   return totalsOfCurrency - largePerCurrency > amount;
 };
+
+export const totalAllAmounts = (
+  amounts: Amounts,
+  currencyObject: CurrencyObject
+): number => {
+  const flat = flatAmounts(amounts);
+  return flat.reduce((a, v) => a + v.amount * currencyObject[v.currency], 0);
+};
