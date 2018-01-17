@@ -99,7 +99,7 @@ export const de: Locale = {
     validateMainCategoryRemoveSubtitle:
       'Im Moment enthalten gewisse Unterkategorien Mengen, nämlich: {{value}}',
     validateMainCategoryRemoveYes:
-      'Ja - ich möchte die entsprechenden Mengen löschen',
+      'Ja - ich möchte dies löschen',
   },
   modal: {
     confirmPicker: '{{value}} übernehmen',
