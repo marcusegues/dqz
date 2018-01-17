@@ -43,6 +43,7 @@ import {
   analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
 import { hasLargeAmount } from '../../model/utils';
+import { getTotalPeople } from '../../model/configurationApi';
 
 export type QuestionType =
   | 'peopleInput'
@@ -378,11 +379,10 @@ class QuestionAnswerContainerInner extends React.Component<
                       })
                     );
                     const tempState = this.state;
-                    tempState.questionStates.largeAmounts = hasLargeAmount(
-                      newAmounts
-                    )
-                      ? 'collapsed'
-                      : 'hidden';
+                    tempState.questionStates.largeAmounts =
+                      hasLargeAmount(newAmounts) && getTotalPeople(people) > 1
+                        ? 'collapsed'
+                        : 'hidden';
                     this.setState(tempState);
                   },
                   amounts: newAmounts,
