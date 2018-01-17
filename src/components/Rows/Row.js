@@ -10,6 +10,7 @@ type RowProp = {
 };
 
 const quantityRowContainerStyles = borderTop => ({
+  flex: 1,
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'space-around',
@@ -19,7 +20,7 @@ const quantityRowContainerStyles = borderTop => ({
   paddingHorizontal: 12,
   marginHorizontal: 4,
   borderTopWidth: borderTop ? 1 : 0,
-  width: '100%'
+
 });
 
 export const Row = ({ borderTop, children }: RowProp) => (

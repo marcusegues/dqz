@@ -99,7 +99,7 @@ class CurrencyPickerModalInner extends React.Component<
     }
     return (
       <AppModal modalVisible={modalVisible}>
-        <PickerCard style={{ top: '10%' }}>
+        <PickerCard style={{ top: '15%' }}>
           <CardHeader text={title} />
           <CardHeaderSubText text={t(['currencyPickerSubTitle'])} />
 

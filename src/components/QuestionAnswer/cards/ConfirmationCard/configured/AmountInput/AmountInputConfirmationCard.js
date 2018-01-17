@@ -37,6 +37,7 @@ const ownStyles = {
   },
   amountInputContainer: {
     justifyContent: 'center',
+    
   },
 };
 
