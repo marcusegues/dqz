@@ -22,7 +22,6 @@ const quantityRowContainerStyles = borderTop => ({
   paddingHorizontal: 12,
   marginHorizontal: 4,
   borderTopWidth: borderTop ? 1 : 0,
-
 });
 
 export const Row = ({ borderTop, children }: RowProp) => (
