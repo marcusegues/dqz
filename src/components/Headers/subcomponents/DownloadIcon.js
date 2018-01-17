@@ -3,7 +3,7 @@ import React from 'react';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 import { MaterialIcons } from '@expo/vector-icons';
-import { MAIN_RED } from '../../../styles/colors';
+import { GREY } from '../../../styles/colors';
 import { moderateScale } from '../../../styles/Scaling';
 import type { Navigation } from '../../../types/generalTypes';
 
@@ -14,9 +14,9 @@ type DownloadIconProps = {
 export const DownloadIcon = ({ navigation }: DownloadIconProps) => (
   <Touchable
     onPress={() => {
-      navigation.goBack();
+      // navigation.goBack();
     }}
   >
-    <MaterialIcons name="get-app" size={moderateScale(28)} color={MAIN_RED} />
+    <MaterialIcons name="get-app" size={moderateScale(28)} color={GREY} />
   </Touchable>
 );
