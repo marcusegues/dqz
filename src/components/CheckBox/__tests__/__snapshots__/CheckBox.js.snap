@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBox renders according to snapshot checked 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={false}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "color": "#DC0018",
+          "fontSize": 55,
+        },
+        undefined,
+        Object {
+          "fontFamily": "material",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+      ]
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`CheckBox renders according to snapshot unchecked 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  />
+</View>
+`;

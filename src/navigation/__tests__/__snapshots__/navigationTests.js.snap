@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StackNavigation has all screens 1`] = `
+Array [
+  "AppInfo",
+  "GoodQuantityListModal",
+  "Information",
+  "MainMenu",
+  "OnBoarding",
+  "OnBoardingTaxScreen",
+  "Payment",
+  "QuestionAnswer",
+  "ReceiptAfterPayment",
+  "Screens",
+  "UnderConstruction",
+]
+`;

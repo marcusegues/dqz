@@ -1,92 +1,155 @@
-import { Notifications } from 'expo';
+// @flow
 import React from 'react';
+// $FlowFixMe
+import { translate } from 'react-i18next';
+// $FlowFixMe
 import { StackNavigator } from 'react-navigation';
+import { i18nImplementation } from '../i18n';
+import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
+import { ScreensView } from '../screens/ScreensView/ScreensView';
+import { MAIN_RED, MAIN_BACKGROUND_COLOR } from '../styles/colors';
+import { defaultNavigationOptions } from './navigationOptions';
+import { HeaderTitle } from '../components/Headers/subcomponents/HeaderTitle';
+import { Logo } from '../components/Headers/subcomponents/Logo';
+import { OptionsButton } from '../components/Headers/subcomponents/OptionsButton';
+import { InfoIcon } from '../components/Headers/subcomponents/InfoIcon';
+import { MainMenuHeaderRight } from '../components/Headers/subcomponents/MainMenuHeaderRight';
+import { MainMenu } from '../screens/MainMenu/MainMenu';
+import { PaymentContainer } from '../components/Payment/PaymentContainer';
+import { UnderConstruction } from './underConstruction';
+import { QuestionAnswerContainer } from '../components/QuestionAnswer/QuestionAnswerContainer';
+import { GoodQuantityListModal } from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
+import { OnBoardingTaxScreen } from '../screens/OnBoarding/OnBoardingTaxScreen';
+import { ReceiptAfterPayment } from '../components/Receipts/ReceiptAfterPayment';
+import { AppInfo } from '../screens/AppInfo/AppInfo';
+import { HomeIcon } from '../components/Headers/subcomponents/HomeIcon';
+import { DownloadIcon } from '../components/Headers/subcomponents/DownloadIcon';
+import { Information } from '../screens/Information/Information';
+import { SearchIcon } from '../components/Headers/subcomponents/SearchIcon';
+import type { Navigation } from '../types/generalTypes';
+import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
 
-import MainTabNavigator from './MainTabNavigator';
-import HomeScreen from '../screens/Home/HomeScreen';
-import DeclareGoodsContainer from '../screens/DeclareGoods/DeclareGoodsContainer';
-import SelectedGoodsContainer from '../screens/SelectedGoods/SelectedGoodsContainer';
-import BasketContainer from '../screens/Basket/BasketContainer';
+type NavigationObject = { navigation: Navigation };
 
-import registerForPushNotificationsAsync from '../../api/registerForPushNotificationsAsync';
-import { TouchableOpacity } from 'react-native';
-import { Entypo } from '@expo/vector-icons';
-
-const RootStackNavigator = StackNavigator(
-  {
-    Main: {
-      screen: HomeScreen,
-      navigationOptions: {
-        header: null,
-      },
-    },
-    DeclareGoods: {
-      screen: DeclareGoodsContainer,
-      navigationOptions: ({ navigation }) => ({
-        title: 'Waren deklarieren',
-        headerRight: (
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('Basket');
-            }}
-          >
-            <Entypo name="shopping-cart" size={40} color="black" />
-          </TouchableOpacity>
-        ),
-        headerStyle: { paddingRight: 20 },
-      }),
-    },
-    SelectedGoods: {
-      screen: SelectedGoodsContainer,
-      navigationOptions: ({ navigation }) => ({
-        title: 'SelectedGoods',
-      }),
-    },
-    Basket: {
-      screen: BasketContainer,
-      navigationOptions: ({ navigation }) => ({
-        title: 'Basket',
-      }),
-    },
-  },
-  {
-    navigationOptions: () => ({
-      headerTitleStyle: {
-        fontWeight: 'normal',
+export const stackNavigatorScreens = {
+  Screens: {
+    screen: ScreensView,
+    navigationOptions: ({
+      navigationOptions,
+      navigation,
+    }: {
+      navigationOptions: any,
+      navigation: Navigation,
+    }) => ({
+      ...navigationOptions,
+      headerTitle: <HeaderTitle text="Screens" />,
+      headerLeft: <Logo />,
+      headerRight: <OptionsButton navigation={navigation} />,
+      headerStyle: {
+        ...navigationOptions.headerStyle,
+        borderBottomWidth: 5,
+        borderBottomColor: MAIN_RED,
       },
     }),
-  }
+  },
+  QuestionAnswer: {
+    screen: QuestionAnswerContainer,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: <HomeIcon navigation={navigation} />,
+    }),
+  },
+  Payment: {
+    screen: PaymentContainer,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: <HomeIcon navigation={navigation} />,
+    }),
+  },
+  OnBoarding: {
+    screen: OnBoarding,
+    navigationOptions: () => ({
+      header: null,
+    }),
+  },
+  OnBoardingTaxScreen: {
+    screen: OnBoardingTaxScreen,
+    navigationOptions: () => ({
+      header: null,
+    }),
+  },
+  GoodQuantityListModal: {
+    screen: GoodQuantityListModal,
+  },
+  MainMenu: {
+    screen: MainMenu,
+    navigationOptions: ({
+      navigationOptions,
+      navigation,
+    }: {
+      navigationOptions: any,
+      navigation: Navigation,
+    }) => ({
+      ...navigationOptions,
+      headerLeft: <InfoIcon navigation={navigation} />,
+      headerRight: <MainMenuHeaderRight navigation={navigation} />,
+      headerStyle: {
+        ...navigationOptions.headerStyle,
+        elevation: 0,
+      },
+    }),
+  },
+
+  UnderConstruction: {
+    screen: UnderConstruction,
+    navigationOptions: () => ({
+      headerTitle: <HeaderTitle text="In Bearbeitung" />,
+    }),
+  },
+  Information: {
+    screen: Information,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: <HomeIcon navigation={navigation} />,
+      headerRight: <SearchIcon navigation={navigation} />,
+    }),
+  },
+  ReceiptAfterPayment: {
+    screen: ReceiptAfterPayment,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerTitle: <HeaderTitle text="Quittung Schweizer Zoll" />,
+      headerLeft: <HomeIcon navigation={navigation} />,
+      headerRight: <DownloadIcon navigation={navigation} />,
+    }),
+  },
+  AppInfo: {
+    screen: AppInfo,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+};
+
+export const stackNavigatorConfig = {
+  navigationOptions: defaultNavigationOptions,
+  cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
+  initialRouteName: 'OnBoarding',
+};
+
+const RootStackNavigator = StackNavigator(
+  stackNavigatorScreens,
+  stackNavigatorConfig
 );
 
-export default class RootNavigator extends React.Component {
-  componentDidMount() {
-    this._notificationSubscription = this._registerForPushNotifications();
-  }
+const WrappedRootStackNavigator = () => (
+  <RootStackNavigator screenProps={{ t: i18nImplementation.getFixedT() }} />
+);
 
-  componentWillUnmount() {
-    this._notificationSubscription && this._notificationSubscription.remove();
-  }
+const ReloadAppOnLanguageChange = translate(null, {
+  bindI18n: 'languageChanged',
+  bindStore: false,
+})(WrappedRootStackNavigator);
 
-  render() {
-    return <RootStackNavigator />;
-  }
-
-  _registerForPushNotifications() {
-    // Send our push token over to our backend so we can receive notifications
-    // You can comment the following line out if you want to stop receiving
-    // a notification every time you open the app. Check out the source
-    // for this function in api/registerForPushNotificationsAsync.js
-    registerForPushNotificationsAsync();
-
-    // Watch for incoming notifications
-    this._notificationSubscription = Notifications.addListener(
-      this._handleNotification
-    );
-  }
-
-  _handleNotification = ({ origin, data }) => {
-    console.log(
-      `Push notification ${origin} with data: ${JSON.stringify(data)}`
-    );
-  };
-}
+export const RootNavigator = () => <ReloadAppOnLanguageChange />;

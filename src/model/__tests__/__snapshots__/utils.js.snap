@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flat amounts does what it should flatAllAmounts 1`] = `
+Array [
+  Object {
+    "amount": 12.34,
+    "currency": "EUR",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 125,
+    "currency": "EUR",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 525,
+    "currency": "EUR",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 12,
+    "currency": "USD",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 31,
+    "currency": "USD",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 11,
+    "currency": "CHF",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 33,
+    "currency": "CHF",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 5555,
+    "currency": "CHF",
+    "id": "x",
+    "large": false,
+  },
+]
+`;
+
+exports[`Flat amounts does what it should flatAmounts 1`] = `
+Array [
+  Object {
+    "amount": 12.34,
+    "currency": "EUR",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 125,
+    "currency": "EUR",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 525,
+    "currency": "EUR",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 525,
+    "currency": "EUR",
+    "id": "x",
+    "large": true,
+  },
+  Object {
+    "amount": 12,
+    "currency": "USD",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 31,
+    "currency": "USD",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 11,
+    "currency": "CHF",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 33,
+    "currency": "CHF",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 5555,
+    "currency": "CHF",
+    "id": "x",
+    "large": false,
+  },
+  Object {
+    "amount": 5555,
+    "currency": "CHF",
+    "id": "x",
+    "large": true,
+  },
+]
+`;
+
+exports[`Flat amounts does what it should flatLargeAmounts 1`] = `
+Array [
+  Object {
+    "amount": 525,
+    "currency": "EUR",
+    "id": "x",
+    "large": true,
+  },
+  Object {
+    "amount": 5555,
+    "currency": "CHF",
+    "id": "x",
+    "large": true,
+  },
+]
+`;
