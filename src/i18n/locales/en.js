@@ -64,11 +64,17 @@ export const en: Locale = {
     quantityInput: 'Quantity input',
   },
   amountInput: {
-    amountInput: 'Amount Input',
-    amountInputLargeItem: 'Amount Input (items larger than CHF {{value}})',
-    amountInputMoreThan300Text:
-      'Record here any item that is worth more than 300.00 CHF.',
-    amountInputAddItem: 'Add item',
+    amountInput: 'Please enter here the value of all goods carried.',
+    amountInputLargeItem:
+      'Do you carry individual items worth over {{value}} francs?',
+    amountInputLargeItemGreyBox:
+      'Record here any item that is worth more than CHF 300.00.',
+    amountInputAddItem: 'Add value',
+    amountInputAddItemLarge: 'Add item',
+    amountInputEnterValue: 'Enter the value without foreign VAT (net value).',
+    currentTotalValue: 'Current total value:',
+    lastExchangeRate:
+      'Based on the last available exchange rate, which is updated when paying.',
   },
   qaFlow: {
     declareGoods: 'Declare Goods',

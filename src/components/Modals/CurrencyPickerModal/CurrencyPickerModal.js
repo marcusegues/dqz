@@ -99,7 +99,7 @@ class CurrencyPickerModalInner extends React.Component<
     }
     return (
       <AppModal modalVisible={modalVisible}>
-        <PickerCard style={{ top: '10%' }}>
+        <PickerCard style={{ top: '15%' }}>
           <CardHeader text={title} />
           <CardHeaderSubText text={t(['currencyPickerSubTitle'])} />
 
@@ -108,15 +108,6 @@ class CurrencyPickerModalInner extends React.Component<
             accessible={false}
           >
             <View style={pickerModalStyle.pickerContainer}>
-              <TextInput
-                keyboardType="numeric"
-                style={currencyPickerModal.textInput}
-                onChangeText={value => this.setState({ amount: +value })}
-                maxLenght="8"
-                underlineColorAndroid="transparent"
-                blurOnSubmit
-              />
-
               <PickerComponent
                 selectedValue={currency}
                 onValueChange={itemValue =>
@@ -145,6 +136,14 @@ class CurrencyPickerModalInner extends React.Component<
                     />
                   ))}
               </PickerComponent>
+              <TextInput
+                keyboardType="numeric"
+                style={currencyPickerModal.textInput}
+                onChangeText={value => this.setState({ amount: +value })}
+                maxLenght="8"
+                underlineColorAndroid="transparent"
+                blurOnSubmit
+              />
             </View>
           </TouchableWithoutFeedback>
 

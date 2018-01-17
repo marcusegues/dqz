@@ -16,7 +16,7 @@ const AmountInputInfoInner = ({
 }: AmountInputInfoProps & { t: TFunction }) => (
   <View>
     <Text>{`${t(`customsVat`)}:`}</Text>
-    <Text>{`CHF ${vat.toFixed(2)} <<TODO: not clear what to put here>>`}</Text>
+    <Text>{`CHF ${vat.toFixed(2)}`}</Text>
   </View>
 );
 

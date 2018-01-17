@@ -5,6 +5,7 @@ import Touchable from 'react-native-platform-touchable';
 // $FlowFixMe
 import { Image, View, StyleSheet } from 'react-native';
 import type { Children } from '../../../../types/generalTypes';
+import { verticalScale } from '../../../../styles/Scaling';
 
 const styles = StyleSheet.create({
   container: {
@@ -40,8 +41,8 @@ export const AnswerCard = ({
   <Touchable
     style={{
       width: '100%',
-      marginTop: 4,
-      marginBottom: 4,
+      // marginTop: 4,
+      marginBottom: verticalScale(4),
     }}
     onPress={onAnswerCardPress}
   >

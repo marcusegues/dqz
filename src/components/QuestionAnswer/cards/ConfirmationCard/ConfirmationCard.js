@@ -2,13 +2,23 @@
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
-import { verticalScale } from '../../../../styles/Scaling';
 import { Card } from '../Card';
 import { CardHeader } from '../subcomponents/CardHeader';
 import { BackAndContinueButtons } from '../../../Buttons/BackAndContinueButtons';
 import type { Children } from '../../../../types/generalTypes';
+import { scale, verticalScale } from '../../../../styles/Scaling';
+import { BlueInfoIcon } from '../../../Headers/subcomponents/BlueInfoIcon';
 
 const ownStyles = {
+  cardHeaderContainer: {
+    width: '100%',
+    paddingRight: scale(35),
+  },
+  infoIcon: {
+    position: 'absolute',
+    top: verticalScale(16),
+    right: scale(16),
+  },
   bottomSectionWrapper: {
     alignItems: 'center',
     flex: 1,
@@ -17,7 +27,6 @@ const ownStyles = {
   },
   bottomButtonContainer: {
     justifyContent: 'center',
-    marginBottom: verticalScale(15),
   },
 };
 
@@ -37,7 +46,15 @@ export const ConfirmationCard = ({
   confirmationDisabled,
 }: ConfirmationCardProps) => (
   <Card>
-    <CardHeader text={text} />
+    <View style={{ flexDirection: 'row' }}>
+      <View style={ownStyles.cardHeaderContainer}>
+        <CardHeader text={text} />
+      </View>
+      <View style={ownStyles.infoIcon}>
+        <BlueInfoIcon onPress={() => {}} />
+      </View>
+    </View>
+
     <View style={ownStyles.bottomSectionWrapper}>
       <View>{children}</View>
     </View>
