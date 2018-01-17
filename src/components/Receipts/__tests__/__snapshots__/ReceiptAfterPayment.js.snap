@@ -102,13 +102,13 @@ ShallowWrapper {
           <Unknown
             category="Meat"
             duty={4}
-            mainCategory="Foods"
+            mainCategory="Meat"
             quantity={2}
           />
           <Unknown
             category="Meat"
             duty={4}
-            mainCategory="Foods"
+            mainCategory="Meat"
             quantity={2}
           />
           <ReceiptSubText
@@ -246,13 +246,13 @@ ShallowWrapper {
             <Unknown
               category="Meat"
               duty={4}
-              mainCategory="Foods"
+              mainCategory="Meat"
               quantity={2}
             />,
             <Unknown
               category="Meat"
               duty={4}
-              mainCategory="Foods"
+              mainCategory="Meat"
               quantity={2}
             />,
             <ReceiptSubText
@@ -419,7 +419,7 @@ ShallowWrapper {
             "props": Object {
               "category": "Meat",
               "duty": 4,
-              "mainCategory": "Foods",
+              "mainCategory": "Meat",
               "quantity": 2,
             },
             "ref": null,
@@ -433,7 +433,7 @@ ShallowWrapper {
             "props": Object {
               "category": "Meat",
               "duty": 4,
-              "mainCategory": "Foods",
+              "mainCategory": "Meat",
               "quantity": 2,
             },
             "ref": null,
@@ -594,13 +594,13 @@ ShallowWrapper {
             <Unknown
               category="Meat"
               duty={4}
-              mainCategory="Foods"
+              mainCategory="Meat"
               quantity={2}
             />
             <Unknown
               category="Meat"
               duty={4}
-              mainCategory="Foods"
+              mainCategory="Meat"
               quantity={2}
             />
             <ReceiptSubText
@@ -738,13 +738,13 @@ ShallowWrapper {
               <Unknown
                 category="Meat"
                 duty={4}
-                mainCategory="Foods"
+                mainCategory="Meat"
                 quantity={2}
               />,
               <Unknown
                 category="Meat"
                 duty={4}
-                mainCategory="Foods"
+                mainCategory="Meat"
                 quantity={2}
               />,
               <ReceiptSubText
@@ -911,7 +911,7 @@ ShallowWrapper {
               "props": Object {
                 "category": "Meat",
                 "duty": 4,
-                "mainCategory": "Foods",
+                "mainCategory": "Meat",
                 "quantity": 2,
               },
               "ref": null,
@@ -925,7 +925,7 @@ ShallowWrapper {
               "props": Object {
                 "category": "Meat",
                 "duty": 4,
-                "mainCategory": "Foods",
+                "mainCategory": "Meat",
                 "quantity": 2,
               },
               "ref": null,

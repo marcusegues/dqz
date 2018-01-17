@@ -20,7 +20,9 @@ export const it: Locale = {
     Other: '🈯',
   },
   mainCategories: {
-    Foods: '🈯',
+    Meat: '🈯',
+    Butter: '🈯',
+    Oil: '🈯',
     Alcohol: '🈯',
     TobaccoProducts: '🈯',
     OtherGoods: '🈯',
