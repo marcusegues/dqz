@@ -13,8 +13,9 @@ type DownloadIconProps = {
 
 export const DownloadIcon = ({ navigation }: DownloadIconProps) => (
   <Touchable
+    disabled
     onPress={() => {
-      // navigation.goBack();
+      navigation.goBack();
     }}
   >
     <MaterialIcons name="get-app" size={moderateScale(28)} color={GREY} />
