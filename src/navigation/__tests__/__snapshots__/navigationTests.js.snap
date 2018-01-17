@@ -12,6 +12,7 @@ Array [
   "QuestionAnswer",
   "ReceiptAfterPayment",
   "Screens",
+  "TempUsefullInfoScreen",
   "UnderConstruction",
 ]
 `;
