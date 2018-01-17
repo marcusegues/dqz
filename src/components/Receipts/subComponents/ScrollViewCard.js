@@ -24,6 +24,8 @@ type ScrollViewCardProps = {
   children: Children,
 };
 
+// needs to be stateful for the snapshot functionality
+// eslint-disable-next-line react/prefer-stateless-function
 export class ScrollViewCard extends React.Component<ScrollViewCardProps> {
   render() {
     return (
