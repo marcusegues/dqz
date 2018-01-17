@@ -12,6 +12,9 @@ import { CardHeader } from '../../../subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../../subcomponents/CardHeaderSubText';
 import { scale, verticalScale } from '../../../../../../styles/Scaling';
 import type { TFunction } from '../../../../../../types/generalTypes';
+import { ConfirmationCard } from '../../ConfirmationCard';
+import type { DirectionType } from '../../../../QuestionAnswerContainer';
+
 import { CardRowText } from '../../../subcomponents/CardRowText';
 import { BlueInfoIcon } from '../../../../../Headers/subcomponents/BlueInfoIcon';
 import { QuantityIcon } from '../../../../../General Components/QuantityIcon';
@@ -55,6 +58,7 @@ type AmountInputConfirmationCardProps = {
   amounts: Amounts,
   onDeleteAmount: string => void,
   large: boolean,
+  onAnswer: DirectionType => void,
 };
 
 const AmountInputConfirmationCardInner = ({
@@ -62,6 +66,7 @@ const AmountInputConfirmationCardInner = ({
   amounts,
   t,
   large,
+  onAnswer,
   onDeleteAmount,
 }: AmountInputConfirmationCardProps & { t: TFunction }) => {
   let title: string = t('amountInput');
@@ -72,7 +77,11 @@ const AmountInputConfirmationCardInner = ({
   }
 
   return (
-    <Card>
+      <ConfirmationCard
+          text={title}
+          onAnswer={() => onAnswer('forward')}
+          onBack={() => onAnswer('back')}
+      >
       <View style={ownStyles.cardHeaderContainer}>
         <CardHeader text={title} />
       </View>
@@ -107,7 +116,7 @@ const AmountInputConfirmationCardInner = ({
           onDeleteAmount={onDeleteAmount}
         />
       </View>
-    </Card>
+    </ConfirmationCard>
   );
 };
 

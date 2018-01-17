@@ -11,6 +11,7 @@ import { getCurrencies, getFormattedCurrencyDate } from '../../reducers';
 import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import type { Navigation } from '../../types/generalTypes';
 import type { CurrencyObject } from '../../model/currencies';
+import { initAmounts } from '../../model/configurationApi';
 
 type ScreensViewProps = {
   navigation: Navigation,
@@ -124,6 +125,7 @@ class ScreensViewInner extends React.Component<
           currencyDate="xy.zy.1234"
           onHide={() => {}}
           onAddAmount={() => {}}
+          amounts={initAmounts}
           large={false}
         />
         <SavedBasketModal

@@ -105,7 +105,7 @@ Immutable.Record {
           "id": 1,
         },
       ],
-      "amountsLarge": Immutable.List [],
+      "largeAmounts": Immutable.List [],
     },
   },
 }
@@ -211,7 +211,7 @@ Immutable.Record {
   "amounts": Immutable.Map {
     "EUR": Immutable.Record {
       "amounts": Immutable.List [],
-      "amountsLarge": Immutable.List [
+      "largeAmounts": Immutable.List [
         Object {
           "amount": 123456,
           "id": 1,
@@ -322,7 +322,7 @@ Immutable.Record {
   "amounts": Immutable.Map {
     "EUR": Immutable.Record {
       "amounts": Immutable.List [],
-      "amountsLarge": Immutable.List [
+      "largeAmounts": Immutable.List [
         Object {
           "amount": 525,
           "id": 1,
@@ -340,7 +340,7 @@ Immutable.Record {
           "id": 1,
         },
       ],
-      "amountsLarge": Immutable.List [],
+      "largeAmounts": Immutable.List [],
     },
     "CHF": Immutable.Record {
       "amounts": Immutable.List [
@@ -353,7 +353,7 @@ Immutable.Record {
           "id": 1,
         },
       ],
-      "amountsLarge": Immutable.List [
+      "largeAmounts": Immutable.List [
         Object {
           "amount": 5555,
           "id": 1,
@@ -473,7 +473,7 @@ Immutable.Record {
           "id": 1,
         },
       ],
-      "amountsLarge": Immutable.List [],
+      "largeAmounts": Immutable.List [],
     },
     "USD": Immutable.Record {
       "amounts": Immutable.List [
@@ -486,7 +486,7 @@ Immutable.Record {
           "id": 1,
         },
       ],
-      "amountsLarge": Immutable.List [],
+      "largeAmounts": Immutable.List [],
     },
     "CHF": Immutable.Record {
       "amounts": Immutable.List [
@@ -499,7 +499,7 @@ Immutable.Record {
           "id": 1,
         },
       ],
-      "amountsLarge": Immutable.List [
+      "largeAmounts": Immutable.List [
         Object {
           "amount": 5555,
           "id": 1,
@@ -615,7 +615,7 @@ Immutable.Record {
           "id": 1,
         },
       ],
-      "amountsLarge": Immutable.List [],
+      "largeAmounts": Immutable.List [],
     },
   },
 }

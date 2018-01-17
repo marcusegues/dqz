@@ -65,7 +65,7 @@ export class AmountInputQA extends React.Component<
           modalVisible={modalVisible}
           currencyObject={currencies}
           currencyDate={qaState.currencyDate}
-          basket={qaState.basket}
+          amounts={qaState.amounts}
           onAddAmount={(currency: Currency, amount: number) => {
             this.handleAddAmount(currency, amount);
           }}

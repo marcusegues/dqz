@@ -25,6 +25,8 @@ import { INDIVIDUALALLOWANCE } from '../../../model/constants';
 import { currenciesArray } from '../../../model/currencies';
 import type { Currency, CurrencyObject } from '../../../model/currencies';
 import type { TFunction } from '../../../types/generalTypes';
+import type { Amounts } from '../../../model/types/basketPeopleAmountsTypes';
+import { hasOffsettingAmount } from '../../../model/utils';
 
 type PickerState = {
   currency: Currency,
@@ -38,6 +40,7 @@ type CurrencyPickerModalProps = {
   modalVisible: boolean,
   onAddAmount: (currency: Currency, amount: number) => void,
   large: boolean,
+  amounts: Amounts,
 };
 
 class CurrencyPickerModalInner extends React.Component<
@@ -60,11 +63,17 @@ class CurrencyPickerModalInner extends React.Component<
   }
 
   render() {
-    const { t, currencyObject, currencyDate, modalVisible, large } = this.props;
+    const {
+      t,
+      currencyObject,
+      currencyDate,
+      modalVisible,
+      large,
+      amounts,
+    } = this.props;
     const { amount, currency } = this.state;
 
-    const disabledRedButton: boolean =
-      typeof amount !== 'number' || amount <= 0;
+    let disabledRedButton: boolean = typeof amount !== 'number' || amount <= 0;
 
     let redButtonText: string = t(['confirmPicker'], {
       value: `${currency} ${amount.toFixed(2)}`,
@@ -72,6 +81,12 @@ class CurrencyPickerModalInner extends React.Component<
     if (disabledRedButton) {
       redButtonText = t(['currencyPickerInvalidInput']);
     }
+
+    if (large && !hasOffsettingAmount(amounts, amount, currency)) {
+      disabledRedButton = true;
+      redButtonText = t(['currencyPickerNoOffsettingInput']);
+    }
+
     const subButtonText: string = `CHF ${
       disabledRedButton ? '--' : (amount * currencyObject[currency]).toFixed(2)
     } (${t(['currencyPickerRate'])} ${currencyDate})`;

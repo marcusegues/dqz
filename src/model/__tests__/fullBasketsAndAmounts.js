@@ -22,6 +22,7 @@ export const sampleBasket1: Basket = emptyBasket.withMutations(basket => {
 export const sampleAmounts1: Amounts = initAmounts.withMutations(amounts => {
   amounts = addAmount(amounts, 'EUR', 12.34);
   amounts = addAmount(amounts, 'EUR', 125);
+  amounts = addAmount(amounts, 'EUR', 525);
   amounts = addLargeAmount(amounts, 'EUR', 525);
 
   amounts = addAmount(amounts, 'USD', 12);
@@ -29,6 +30,7 @@ export const sampleAmounts1: Amounts = initAmounts.withMutations(amounts => {
 
   amounts = addAmount(amounts, 'CHF', 11);
   amounts = addAmount(amounts, 'CHF', 33);
+  amounts = addAmount(amounts, 'CHF', 5555);
   amounts = addLargeAmount(amounts, 'CHF', 5555);
 
   return amounts;
@@ -52,6 +54,7 @@ export const sampleAmounts2: Amounts = initAmounts.withMutations(amounts => {
   amounts = addAmount(amounts, 'EUR', 125);
   amounts = addAmount(amounts, 'EUR', 125);
   amounts = addAmount(amounts, 'EUR', 125);
+  amounts = addAmount(amounts, 'EUR', 525);
   amounts = addLargeAmount(amounts, 'EUR', 525);
 
   amounts = addAmount(amounts, 'USD', 12);
@@ -59,6 +62,7 @@ export const sampleAmounts2: Amounts = initAmounts.withMutations(amounts => {
 
   amounts = addAmount(amounts, 'ZAR', 11);
   amounts = addAmount(amounts, 'ZAR', 33);
+  amounts = addAmount(amounts, 'ZAR', 5555);
   amounts = addLargeAmount(amounts, 'ZAR', 5555);
 
   return amounts;
@@ -152,12 +156,14 @@ export const ezvAmounts4: Amounts = initAmounts.withMutations(amounts => {
 });
 
 export const ezvAmounts5: Amounts = initAmounts.withMutations(amounts => {
+  amounts = addAmount(amounts, 'EUR', 400);
   amounts = addLargeAmount(amounts, 'EUR', 400);
   return amounts;
 });
 
 // https://www.ezv.admin.ch/ezv/de/home/information-private/reisen-und-einkaufen--freimengen-und-wertfreigrenze/einfuhr-in-die-schweiz/warenwert-bis-chf-300--mehrwertsteuerfrei/anwendungsbeispiele-der-wertfreigrenze-bei-mehreren-personen.html
 export const ezvAmounts6: Amounts = initAmounts.withMutations(amounts => {
+  amounts = addAmount(amounts, 'EUR', 320);
   amounts = addLargeAmount(amounts, 'EUR', 320);
   return amounts;
 });
@@ -184,6 +190,7 @@ export const ezvAmounts9: Amounts = initAmounts.withMutations(amounts => {
 });
 
 export const ezvAmounts10: Amounts = initAmounts.withMutations(amounts => {
+  amounts = addAmount(amounts, 'EUR', 800);
   amounts = addLargeAmount(amounts, 'EUR', 800);
   return amounts;
 });
@@ -200,6 +207,7 @@ export const ezvAmounts11: Amounts = initAmounts.withMutations(amounts => {
 export const ezvAmounts12: Amounts = initAmounts.withMutations(amounts => {
   amounts = addAmount(amounts, 'EUR', 200);
   amounts = addAmount(amounts, 'EUR', 200);
+  amounts = addAmount(amounts, 'EUR', 500);
   amounts = addLargeAmount(amounts, 'EUR', 500);
   return amounts;
 });
@@ -210,6 +218,7 @@ export const ezvAmounts13: Amounts = initAmounts.withMutations(amounts => {
   amounts = addAmount(amounts, 'EUR', 200);
   amounts = addAmount(amounts, 'EUR', 200);
   amounts = addAmount(amounts, 'EUR', 200);
+  amounts = addAmount(amounts, 'EUR', 500);
   amounts = addLargeAmount(amounts, 'EUR', 500);
   return amounts;
 });
@@ -227,10 +236,15 @@ export const maerkiExamples1: Amounts = initAmounts.withMutations(amounts => {
 export const maerkiExamples2: Amounts = initAmounts.withMutations(amounts => {
   amounts = addAmount(amounts, 'EUR', 114.45);
   amounts = addAmount(amounts, 'EUR', 87.48);
+  amounts = addAmount(amounts, 'EUR', 450.56);
+  amounts = addAmount(amounts, 'EUR', 879.43);
+  amounts = addAmount(amounts, 'EUR', 340.21);
   amounts = addLargeAmount(amounts, 'EUR', 450.56);
   amounts = addLargeAmount(amounts, 'EUR', 879.43);
   amounts = addLargeAmount(amounts, 'EUR', 340.21);
   amounts = addAmount(amounts, 'USD', 88.54);
+  amounts = addAmount(amounts, 'USD', 659.77);
+  amounts = addAmount(amounts, 'USD', 911.23);
   amounts = addLargeAmount(amounts, 'USD', 659.77);
   amounts = addLargeAmount(amounts, 'USD', 911.23);
   return amounts;
@@ -239,10 +253,15 @@ export const maerkiExamples2: Amounts = initAmounts.withMutations(amounts => {
 export const maerkiExamples3: Amounts = initAmounts.withMutations(amounts => {
   amounts = addAmount(amounts, 'EUR', 114.45);
   amounts = addAmount(amounts, 'EUR', 87.48);
+  amounts = addAmount(amounts, 'EUR', 450.56);
+  amounts = addAmount(amounts, 'EUR', 879.43);
+  amounts = addAmount(amounts, 'EUR', 340.21);
   amounts = addLargeAmount(amounts, 'EUR', 450.56);
   amounts = addLargeAmount(amounts, 'EUR', 879.43);
   amounts = addLargeAmount(amounts, 'EUR', 340.21);
   amounts = addAmount(amounts, 'USD', 88.54);
+  amounts = addAmount(amounts, 'USD', 659.77);
+  amounts = addAmount(amounts, 'USD', 911.23);
   amounts = addLargeAmount(amounts, 'USD', 659.77);
   amounts = addLargeAmount(amounts, 'USD', 911.23);
   return amounts;

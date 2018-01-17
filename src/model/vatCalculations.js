@@ -11,7 +11,7 @@ import { rounding } from './utils';
 
 type totalPerCurrency = {
   amounts: number,
-  amountsLarge: number,
+  largeAmounts: number,
 };
 
 const getCHFperCurrency = (
@@ -26,16 +26,18 @@ const getCHFperCurrency = (
     .get('amounts', Immutable.List())
     .map(a => a.amount)
     .reduce(sum, 0);
-  const amountsLargeThisCurrency: number = thisCurrency
-    .get('amountsLarge', Immutable.List())
+  const largeAmountsThisCurrency: number = thisCurrency
+    .get('largeAmounts', Immutable.List())
     .map(a => a.amount)
     .reduce(sum, 0);
 
   const exchangeRate: number = currencyObject[currency] || 1;
 
   return {
-    amounts: Math.floor(exchangeRate * amountsThisCurrency),
-    amountsLarge: Math.floor(exchangeRate * amountsLargeThisCurrency),
+    amounts: Math.floor(
+      exchangeRate * Math.max(0, amountsThisCurrency - largeAmountsThisCurrency)
+    ),
+    largeAmounts: Math.floor(exchangeRate * largeAmountsThisCurrency),
   };
 };
 
@@ -54,10 +56,10 @@ export const calculateVat = (
   const grandTotals: totalPerCurrency = sumsPerCurrency.reduce(
     (a, v) => {
       a.amounts += v.amounts;
-      a.amountsLarge += v.amountsLarge;
+      a.largeAmounts += v.largeAmounts;
       return a;
     },
-    { amounts: 0, amountsLarge: 0 }
+    { amounts: 0, largeAmounts: 0 }
   );
 
   const afterAllowance = Math.max(
@@ -68,7 +70,7 @@ export const calculateVat = (
 
   grandTotals.amounts = afterAllowance;
 
-  const sumLastPerson = grandTotals.amounts + grandTotals.amountsLarge;
+  const sumLastPerson = grandTotals.amounts + grandTotals.largeAmounts;
 
   if (sumLastPerson <= INDIVIDUALALLOWANCE) {
     return makeVatReportRecord({
@@ -78,13 +80,13 @@ export const calculateVat = (
 
   const lastStep: number =
     rounding(OVERALLVATRATE * grandTotals.amounts) +
-    rounding(OVERALLVATRATE * grandTotals.amountsLarge);
+    rounding(OVERALLVATRATE * grandTotals.largeAmounts);
 
   return makeVatReportRecord({
     totalVat: lastStep,
     totalAmountsApprox: (
       grandTotals.amounts +
-      grandTotals.amountsLarge +
+      grandTotals.largeAmounts +
       effectiveAllowance
     ).toFixed(2),
   });

@@ -12,7 +12,7 @@ import {
 } from '../../../../../../styles/Scaling';
 import {
   flatLargeAmounts,
-  flatNormalAmounts,
+  flatAllAmounts,
 } from '../../../../../../model/utils';
 import { AmountRow } from './subcomponents/AmountRow';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
@@ -103,7 +103,7 @@ const AmountInputInner = ({
 }: AmountInputProps & { t: TFunction }) => {
   const relevantAmounts = large
     ? flatLargeAmounts(amounts)
-    : flatNormalAmounts(amounts);
+    : flatAllAmounts(amounts);
   return (
     <View style={ownStyles.mainContainer}>
       <ScrollView contentContainerStyle={ownStyles.scrollView}>
