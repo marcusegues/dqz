@@ -3,7 +3,9 @@
 export type Language = 'de' | 'fr' | 'en' | 'it';
 
 type MainCategoriesTranslations = {
-  Foods: string,
+  Meat: string,
+  Butter: string,
+  Oil: string,
   Alcohol: string,
   TobaccoProducts: string,
   OtherGoods: string,
@@ -69,9 +71,12 @@ type QuantityInputTranslations = {
 type AmountInputTranslations = {
   amountInput: string,
   amountInputLargeItem: string,
-  amountInputMoreThan300Text: string,
   amountInputAddItem: string,
-  amountInputAddItem: string,
+  amountInputEnterValue: string,
+  amountInputLargeItemGreyBox: string,
+  amountInputAddItemLarge: string,
+  currentTotalValue: string,
+  lastExchangeRate: string,
 };
 
 type PaymentTranslations = {
@@ -109,6 +114,7 @@ type ModalTranslations = {
   currencyPickerSubTitle: string,
   currencyPickerRate: string,
   currencyPickerInvalidInput: string,
+  currencyPickerNoOffsettingInput: string,
   savedBasketDoYoWantToContinue: string,
   savedBasketTotalCost: string,
   savedBasketNewShoppingCart: string,

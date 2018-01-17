@@ -7,16 +7,12 @@ import type {
   QuestionType,
 } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
-import { flatLargeAmounts } from '../../../model/utils';
-import type { FlatAmount } from '../../../model/utils';
+import { hasLargeAmount } from '../../../model/utils';
+import type { Navigation } from '../../../types/generalTypes';
 
 const showLargeAmountsQuestion = (qaState: QAStateEnriched) => {
   const { people, amounts } = qaState;
-  const largeAmounts: Array<FlatAmount> = flatLargeAmounts(amounts);
-  const hasLargeAmounts: boolean =
-    largeAmounts.reduce((a, v) => a + v.amount, 0) > 0;
-
-  return hasLargeAmounts || getTotalPeople(people) > 1;
+  return hasLargeAmount(amounts) && getTotalPeople(people) > 1;
 };
 
 const setQuestionState = (
@@ -45,6 +41,7 @@ const backNav = (direction: DirectionType): QuestionState =>
 export const setQuestionStates = (
   justAnswered: QuestionType,
   direction: DirectionType,
+  navigation: Navigation,
   qaState: QAStateEnriched
 ): QAStateEnriched => {
   const { settings } = qaState;
@@ -60,6 +57,9 @@ export const setQuestionStates = (
 
   switch (justAnswered) {
     case 'peopleInput': {
+      if (direction === 'back') {
+        navigation.goBack();
+      }
       mainCategoriesState = fwdNav(direction);
       if (!mainCategories.size) {
         quantityInputState = 'hidden';
@@ -80,9 +80,21 @@ export const setQuestionStates = (
     }
     case 'amounts': {
       quantityInputState = backNav(direction);
-      largeAmountsState = showLargeAmountsQuestion(qaState)
-        ? 'expanded'
-        : 'hidden';
+      if (showLargeAmountsQuestion(qaState)) {
+        largeAmountsState = fwdNav(direction);
+      } else {
+        if (direction === 'forward') {
+          navigation.navigate('Payment');
+        }
+        largeAmountsState = 'hidden';
+      }
+      break;
+    }
+    case 'largeAmounts': {
+      amountsState = backNav(direction);
+      if (direction === 'forward') {
+        navigation.navigate('Payment');
+      }
       break;
     }
     default:

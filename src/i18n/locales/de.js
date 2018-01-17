@@ -3,12 +3,12 @@ import type { Locale } from '../types/locale';
 
 export const de: Locale = {
   categories: {
-    Meat: 'Fleisch & Fleischzubereitung',
+    Meat: 'Fleisch & Fleischzub.',
     Butter: 'Butter & Rahm',
     Oils: 'Öle/Fette/Margarine',
     OtherFood: 'Sonstige Lebensmittel & alkoholfreie Getränke',
-    AlcSoft: 'Alkohol gehalt 0.5% bis 18% Vol.',
-    AlcHard: 'Alkohol gehalt über 18% Vol.',
+    AlcSoft: 'Alkoholgehalt 0.5% bis 18% Vol.',
+    AlcHard: 'Alkoholgehalt über 18% Vol.',
     Cigarettes: 'Zigaretten & Zigarren',
     Tobacco: 'Andere Tabakfabrikate',
     Meds: 'Medikamente',
@@ -20,10 +20,12 @@ export const de: Locale = {
     Other: 'Sonstige Waren',
   },
   mainCategories: {
-    Foods: 'Lebensmittel',
+    Meat: 'Fleisch & -zub.',
+    Butter: 'Butter & Rahm',
+    Oil: 'Öle, Fette, Margarine',
     Alcohol: `Alkohol`,
     TobaccoProducts: 'Tabak',
-    OtherGoods: 'Anderes',
+    OtherGoods: 'Andere Waren',
   },
   general: {
     declareGoods: 'Waren anmelden',
@@ -33,7 +35,7 @@ export const de: Locale = {
     information: 'Informationen zum Gebrauch der App',
     navbarFirst: 'Ihre Reise',
     navbarSecond: 'Bezahlung',
-    navbarThird: 'Zollschein',
+    navbarThird: 'Quittung',
     customsDuty: 'Zollabgabe',
     customsVat: 'MWSt',
     goodCategories: 'Warenkategorien',
@@ -57,17 +59,25 @@ export const de: Locale = {
       'Wie viele Reisende sollen bei der Verzollung berücksichtigt werden?',
   },
   mainCategoriesInput: {
-    mainCategoriesQuestion: 'Welche Art Waren führen Sie mit sich?',
+    mainCategoriesQuestion: 'Welche Waren möchten Sie anmelden?',
   },
   quantityInput: {
     quantityInput: 'Mengeneingabe',
   },
   amountInput: {
-    amountInput: 'Betragseingabe',
-    amountInputLargeItem: 'Betragseingabe (Waren über CHF {{value}})',
-    amountInputMoreThan300Text:
-      'Erfassen Sie hier jeden Gegenstand, der mehr als 300.00 CHF wert ist.',
-    amountInputAddItem: 'Gegenstand hinzufügen',
+    amountInput:
+      'Bitte erfassen Sie hier den Wert sämtlicher mitgeführten Waren.',
+    amountInputLargeItem:
+      'Führen Sie einzelne Gegenstände mit einem Wert von über {{value}} Franken mit?',
+    amountInputLargeItemGreyBox:
+      'Erfassen Sie hier jeden Gegenstand, der mehr als CHF 300.00 wert ist.',
+    amountInputAddItem: 'Wert hinzufügen',
+    amountInputAddItemLarge: 'Gegenstand hinzufügen',
+    amountInputEnterValue:
+      'Erfassen Sie den Wert ohne ausländische Mehrwertsteuer (Nettowert).',
+    currentTotalValue: 'Aktueller Gesamtwert:',
+    lastExchangeRate:
+      'Basierend auf dem letzten verfügbaren Wechsel-kurs, welcher beim Bezahlen aktualisiert wird.',
   },
   qaFlow: {
     declareGoods: 'Waren Deklarieren',
@@ -88,7 +98,7 @@ export const de: Locale = {
       'Sind Sie sicher, dass Sie diese Hauptkategorie entfernen möchten?',
     validateMainCategoryRemoveSubtitle:
       'Im Moment enthalten gewisse Unterkategorien Mengen, nämlich: {{value}}',
-    validateMainCategoryRemoveYes: 'Ja - löscht entsprechende Mengen',
+    validateMainCategoryRemoveYes: 'Ja - ich möchte die entsprechenden Mengen löschen',
   },
   modal: {
     confirmPicker: '{{value}} übernehmen',
@@ -101,6 +111,7 @@ export const de: Locale = {
       'Erfassen Sie den Nettowert des Gegenstands in seiner Original-Währung: ',
     currencyPickerRate: 'Kurs vom',
     currencyPickerInvalidInput: 'Ungültige/leere Eingabe',
+    currencyPickerNoOffsettingInput: 'Kein entsprechender Betrag',
     savedBasketDoYoWantToContinue:
       'Möchten Sie mit dem bereits bestehenden Warenkorb fortfahren oder mit einem leeren Warenkorb neu starten?',
     savedBasketTotalCost: 'Gesamtkosten: CHF {{value}}',

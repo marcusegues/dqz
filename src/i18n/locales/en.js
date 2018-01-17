@@ -17,10 +17,12 @@ export const en: Locale = {
     Flowers: 'Flowers',
     AnimalFeed: 'Animal Feed',
     Fertilizer: 'Fertilizer',
-    Other: 'Other',
+    Other: 'Other Goods',
   },
   mainCategories: {
-    Foods: 'Foods',
+    Meat: 'Meat',
+    Butter: 'Butter & Cream',
+    Oil: 'Oils & Fat',
     Alcohol: `Alcohol`,
     TobaccoProducts: 'Tobacco Products',
     OtherGoods: 'Other Goods',
@@ -62,11 +64,17 @@ export const en: Locale = {
     quantityInput: 'Quantity input',
   },
   amountInput: {
-    amountInput: 'Amount Input',
-    amountInputLargeItem: 'Amount Input (items larger than CHF {{value}})',
-    amountInputMoreThan300Text:
-      'Record here any item that is worth more than 300.00 CHF.',
-    amountInputAddItem: 'Add item',
+    amountInput: 'Please enter here the value of all goods carried.',
+    amountInputLargeItem:
+      'Do you carry individual items worth over {{value}} francs?',
+    amountInputLargeItemGreyBox:
+      'Record here any item that is worth more than CHF 300.00.',
+    amountInputAddItem: 'Add value',
+    amountInputAddItemLarge: 'Add item',
+    amountInputEnterValue: 'Enter the value without foreign VAT (net value).',
+    currentTotalValue: 'Current total value:',
+    lastExchangeRate:
+      'Based on the last available exchange rate, which is updated when paying.',
   },
   qaFlow: {
     declareGoods: 'Declare Goods',
@@ -99,6 +107,7 @@ export const en: Locale = {
       'Record the net value of the item in its original currency:',
     currencyPickerRate: 'Rate of',
     currencyPickerInvalidInput: 'Invalid/empty input',
+    currencyPickerNoOffsettingInput: 'No offsetting amount',
     savedBasketDoYoWantToContinue:
       'Do you want to continue with an existing basket or start a new one',
     savedBasketTotalCost: 'Total cost: CHF {{value}}',

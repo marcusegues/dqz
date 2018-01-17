@@ -9,13 +9,16 @@ import Immutable from 'immutable';
 import type { Currency } from '../currencies';
 
 /**
- * todo, jsdoc
+ * Declare the Main Categories
  */
 
-export type FoodsCategory = 'Meat' | 'Butter' | 'Oils' | 'OtherFood';
+export type MeatCategory = 'Meat';
+export type ButterCategory = 'Butter';
+export type OilCategory = 'Oils';
 export type AlcoholCategory = 'AlcSoft' | 'AlcHard';
 export type TobaccoProductsCategory = 'Cigarettes' | 'Tobacco';
 export type OtherGoodsCategory =
+  | 'OtherFood'
   | 'Meds'
   | 'Books'
   | 'Magazines'
@@ -25,7 +28,9 @@ export type OtherGoodsCategory =
   | 'Other';
 
 export type Category =
-  | FoodsCategory
+  | MeatCategory
+  | ButterCategory
+  | OilCategory
   | AlcoholCategory
   | TobaccoProductsCategory
   | OtherGoodsCategory;
@@ -135,14 +140,14 @@ export type AmountWithId = {
 
 type AmountsOfCurrencyContent = {
   amounts: ImmutableListType<AmountWithId>,
-  amountsLarge: ImmutableListType<AmountWithId>,
+  largeAmounts: ImmutableListType<AmountWithId>,
 };
 
 export const makeAmountsOfCurrencyRecord: RecordFactory<
   AmountsOfCurrencyContent
 > = Immutable.Record({
   amounts: Immutable.List(),
-  amountsLarge: Immutable.List(),
+  largeAmounts: Immutable.List(),
 });
 
 export type AmountsOfCurrency = RecordOf<AmountsOfCurrencyContent>;
