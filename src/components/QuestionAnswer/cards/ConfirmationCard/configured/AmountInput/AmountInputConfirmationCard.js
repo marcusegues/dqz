@@ -8,13 +8,12 @@ import { AmountInput } from './AmountInput';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import { INDIVIDUALALLOWANCE } from '../../../../../../model/constants';
 import { CardHeaderSubText } from '../../../subcomponents/CardHeaderSubText';
-import { scale, verticalScale } from '../../../../../../styles/Scaling';
 import type { TFunction } from '../../../../../../types/generalTypes';
 import { ConfirmationCard } from '../../ConfirmationCard';
 import type { DirectionType } from '../../../../QuestionAnswerContainer';
 import { CardRowText } from '../../../subcomponents/CardRowText';
-import { BlueInfoIcon } from '../../../../../Headers/subcomponents/BlueInfoIcon';
 import { QuantityIcon } from '../../../../../General Components/QuantityIcon';
+import { scale, verticalScale } from '../../../../../../styles/Scaling';
 
 const ownStyles = {
   currentTotalValueContainer: {

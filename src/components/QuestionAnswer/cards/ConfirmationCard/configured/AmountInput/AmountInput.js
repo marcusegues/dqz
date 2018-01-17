@@ -5,11 +5,7 @@ import type { ComponentType } from 'react';
 import { View, ScrollView, TouchableOpacity, Text } from 'react-native';
 import { translate } from 'react-i18next';
 import Entypo from '@expo/vector-icons/Entypo';
-import {
-  moderateScale,
-  scale,
-  verticalScale,
-} from '../../../../../../styles/Scaling';
+
 import {
   flatLargeAmounts,
   flatAllAmounts,
@@ -19,6 +15,11 @@ import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsT
 import { MAIN_RED } from '../../../../../../styles/colors';
 import type { TFunction } from '../../../../../../types/generalTypes';
 import { CardHeaderSubText } from '../../../subcomponents/CardHeaderSubText';
+import {
+  moderateScale,
+  scale,
+  verticalScale,
+} from '../../../../../../styles/Scaling';
 
 const ownStyles = {
   mainContainer: {
@@ -51,7 +52,7 @@ const ownStyles = {
     justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: '#F5F5F5',
-    // marginHorizontal: scale(16),
+    marginHorizontal: scale(10),
     marginBottom: 0,
   },
   addButtonText: {
