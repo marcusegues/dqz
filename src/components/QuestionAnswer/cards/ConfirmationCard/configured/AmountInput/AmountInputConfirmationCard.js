@@ -7,28 +7,16 @@ import { translate } from 'react-i18next';
 import { AmountInput } from './AmountInput';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import { INDIVIDUALALLOWANCE } from '../../../../../../model/constants';
-import { Card } from '../../../Card';
-import { CardHeader } from '../../../subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../../subcomponents/CardHeaderSubText';
 import { scale, verticalScale } from '../../../../../../styles/Scaling';
 import type { TFunction } from '../../../../../../types/generalTypes';
 import { ConfirmationCard } from '../../ConfirmationCard';
 import type { DirectionType } from '../../../../QuestionAnswerContainer';
-
 import { CardRowText } from '../../../subcomponents/CardRowText';
 import { BlueInfoIcon } from '../../../../../Headers/subcomponents/BlueInfoIcon';
 import { QuantityIcon } from '../../../../../General Components/QuantityIcon';
 
 const ownStyles = {
-  cardHeaderContainer: {
-    width: '100%',
-    paddingRight: scale(35),
-  },
-  infoIcon: {
-    position: 'absolute',
-    top: verticalScale(16),
-    right: scale(16),
-  },
   currentTotalValueContainer: {
     width: '100%',
   },
@@ -77,18 +65,11 @@ const AmountInputConfirmationCardInner = ({
   }
 
   return (
-      <ConfirmationCard
-          text={title}
-          onAnswer={() => onAnswer('forward')}
-          onBack={() => onAnswer('back')}
-      >
-      <View style={ownStyles.cardHeaderContainer}>
-        <CardHeader text={title} />
-      </View>
-      <View style={ownStyles.infoIcon}>
-        <BlueInfoIcon onPress={() => {}} />
-      </View>
-
+    <ConfirmationCard
+      text={title}
+      onAnswer={() => onAnswer('forward')}
+      onBack={() => onAnswer('back')}
+    >
       {large ? (
         <Text />
       ) : (

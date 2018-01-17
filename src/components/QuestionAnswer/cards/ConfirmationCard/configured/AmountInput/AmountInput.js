@@ -17,7 +17,6 @@ import {
 import { AmountRow } from './subcomponents/AmountRow';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import { MAIN_RED } from '../../../../../../styles/colors';
-import { BackAndContinueButtons } from '../../../../../Buttons/BackAndContinueButtons';
 import type { TFunction } from '../../../../../../types/generalTypes';
 import { CardHeaderSubText } from '../../../subcomponents/CardHeaderSubText';
 
@@ -52,7 +51,7 @@ const ownStyles = {
     justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: '#F5F5F5',
-    marginHorizontal: scale(16),
+    // marginHorizontal: scale(16),
     marginBottom: 0,
   },
   addButtonText: {
@@ -162,11 +161,6 @@ const AmountInputInner = ({
         ) : (
           <Text />
         )}
-
-        <BackAndContinueButtons
-          onPressBack={() => {}}
-          onPressContinue={() => {}}
-        />
       </ScrollView>
     </View>
   );
