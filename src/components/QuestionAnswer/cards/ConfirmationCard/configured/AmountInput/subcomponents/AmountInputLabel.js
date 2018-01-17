@@ -28,6 +28,6 @@ type AmountInputLabelProps = {
 
 export const AmountInputLabel = ({ quantity }: AmountInputLabelProps) => (
   <View style={ownStyles.quantityContainer}>
-    <Text style={ownStyles.quantityText}>{`CHF ${quantity}`}</Text>
+    <Text style={ownStyles.quantityText}>{`CHF ${quantity.toFixed(2)}`}</Text>
   </View>
 );

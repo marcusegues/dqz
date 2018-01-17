@@ -47,6 +47,7 @@ type AmountInputConfirmationCardProps = {
   onDeleteAmount: string => void,
   large: boolean,
   onAnswer: DirectionType => void,
+  totalAmounts: number,
 };
 
 const AmountInputConfirmationCardInner = ({
@@ -56,6 +57,7 @@ const AmountInputConfirmationCardInner = ({
   large,
   onAnswer,
   onDeleteAmount,
+  totalAmounts,
 }: AmountInputConfirmationCardProps & { t: TFunction }) => {
   let title: string = t('amountInput');
   if (large) {
@@ -79,7 +81,7 @@ const AmountInputConfirmationCardInner = ({
               text={t('currentTotalValue')}
               style={ownStyles.currentTotalValueText}
             />
-            <AmountInputLabel quantity={23332} />
+            <AmountInputLabel quantity={totalAmounts} />
           </View>
 
           <CardHeaderSubText
