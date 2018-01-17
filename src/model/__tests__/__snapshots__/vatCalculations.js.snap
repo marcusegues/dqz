@@ -9,8 +9,8 @@ Immutable.Record {
 
 exports[`VAT Calculations it creates a correct vat summary 2`] = `
 Immutable.Record {
-  "totalVat": 177,
-  "totalAmountsApprox": "2299.00",
+  "totalVat": 176.65,
+  "totalAmountsApprox": "2294.00",
 }
 `;
 
