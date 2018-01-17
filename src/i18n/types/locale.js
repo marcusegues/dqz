@@ -71,9 +71,12 @@ type QuantityInputTranslations = {
 type AmountInputTranslations = {
   amountInput: string,
   amountInputLargeItem: string,
-  amountInputMoreThan300Text: string,
   amountInputAddItem: string,
-  amountInputAddItem: string,
+  amountInputEnterValue: string,
+  amountInputLargeItemGreyBox: string,
+  amountInputAddItemLarge: string,
+  currentTotalValue: string,
+  lastExchangeRate: string,
 };
 
 type PaymentTranslations = {

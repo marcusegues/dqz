@@ -65,11 +65,19 @@ export const de: Locale = {
     quantityInput: 'Mengeneingabe',
   },
   amountInput: {
-    amountInput: 'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Waren.',
-    amountInputLargeItem: 'Betragseingabe (Waren über CHF {{value}})',
-    amountInputMoreThan300Text:
-      'Erfassen Sie hier jeden Gegenstand, der mehr als CHF 300.00 CHF wert ist.',
-    amountInputAddItem: 'Gegenstand hinzufügen',
+    amountInput:
+      'Bitte erfassen Sie hier den Wert sämtlicher mitgeführten Waren.',
+    amountInputLargeItem:
+      'Führen Sie einzelne Gegenstände mit einem Wert von über {{value}} Franken mit?',
+    amountInputLargeItemGreyBox:
+      'Erfassen Sie hier jeden Gegenstand, der mehr als CHF 300.00 wert ist.',
+    amountInputAddItem: 'Wert hinzufügen',
+    amountInputAddItemLarge: 'Gegenstand hinzufügen',
+    amountInputEnterValue:
+      'Erfassen Sie den Wert ohne ausländische Mehrwertsteuer (Nettowert).',
+    currentTotalValue: 'Aktueller Gesamtwert:',
+    lastExchangeRate:
+      'Basierend auf dem letzten verfügbaren Wechsel-kurs, welcher beim Bezahlen aktualisiert wird.',
   },
   qaFlow: {
     declareGoods: 'Waren Deklarieren',
