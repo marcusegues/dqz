@@ -67,9 +67,14 @@ export const flatAllAmounts = (amounts: Amounts): Array<FlatAmount> =>
 export const flatLargeAmounts = (amounts: Amounts): Array<FlatAmount> =>
   flatAmounts(amounts).filter(a => a.large);
 
-export const hasLargeAmount = (amounts: Amounts): boolean =>
-  flatAllAmounts(amounts).reduce((a, v) => Math.max(a, v.amount), 0) >
-  INDIVIDUALALLOWANCE;
+export const hasLargeAmount = (
+  amounts: Amounts,
+  currencyObject: CurrencyObject
+): boolean =>
+  flatAllAmounts(amounts).reduce(
+    (a, v) => Math.max(a, v.amount * currencyObject[v.currency]),
+    0
+  ) > INDIVIDUALALLOWANCE;
 
 export const hasOffsettingAmount = (
   amounts: Amounts,
