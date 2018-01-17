@@ -2,7 +2,11 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
-import { View, Text } from 'react-native';
+import { View, Text, CameraRoll } from 'react-native';
+// $FlowFixMe
+import Touchable from 'react-native-platform-touchable';
+// $FlowFixMe
+import { takeSnapshotAsync } from 'expo';
 import { translate } from 'react-i18next';
 import { ScrollViewCard } from './subComponents/ScrollViewCard';
 import { RedLogo } from './subComponents/Logo';
@@ -69,11 +73,30 @@ class ReceiptAfterPaymentInner extends React.Component<
     analyticsScreenMounted('ReceiptAfterPayment');
   }
 
+  async capture() {
+    const snapshot = await takeSnapshotAsync(this.image, {
+      format: 'png',
+      quality: 1,
+      result: 'file',
+    });
+    await CameraRoll.saveToCameraRoll(snapshot, 'photo');
+  }
+
   render() {
     const { t } = this.props;
     return (
-      <ScrollViewCard>
-        <RedLogo />
+      <ScrollViewCard
+        ref={ref => {
+          this.image = ref;
+        }}
+      >
+        <Touchable
+          onPress={() => {
+            this.capture();
+          }}
+        >
+          <RedLogo />
+        </Touchable>
         <Text style={ownStyles.topSumText}>CHF 56.50</Text>
         <ReceiptSubText
           text={t('dutyAndVat', {

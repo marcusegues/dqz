@@ -10,6 +10,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { MAIN_RED } from '../../../styles/colors';
 import { moderateScale } from '../../../styles/Scaling';
 import type { Navigation } from '../../../types/generalTypes';
+import { ReceiptAfterPayment } from '../../Receipts/ReceiptAfterPayment';
 
 type DownloadIconProps = {
   navigation: Navigation,
