@@ -207,6 +207,7 @@ class QuestionAnswerContainerInner extends React.Component<
       t,
       basket,
       people,
+      currencies,
       mainCategories,
       settings,
       setMainCategories,
@@ -380,7 +381,8 @@ class QuestionAnswerContainerInner extends React.Component<
                     );
                     const tempState = this.state;
                     tempState.questionStates.largeAmounts =
-                      hasLargeAmount(newAmounts) && getTotalPeople(people) > 1
+                      hasLargeAmount(newAmounts, currencies) &&
+                      getTotalPeople(people) > 1
                         ? 'collapsed'
                         : 'hidden';
                     this.setState(tempState);
