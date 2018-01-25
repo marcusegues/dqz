@@ -33,7 +33,7 @@ class InformationInner extends React.Component<{
             number={i.number}
             mainText={t(i.dataMainText)}
             subText={t(i.dataSubText)}
-            rowOnPress={() => navigation.navigate('UsefullInfoScreenTemplate')}
+            rowOnPress={() => navigation.navigate('UsefulInfoScreenTemplate')}
           />
         ))}
       </ScrollViewCard>

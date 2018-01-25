@@ -28,15 +28,15 @@ const ownStyles = {
   },
 };
 
-type usefullInfoScreenTemplateProps = {
+type usefulInfoScreenTemplateProps = {
   t: TFunction,
 };
 
 const infoImage = require('../../../../assets/images/infoImage.png');
 
-const UsefullInfoScreenTemplateInner = ({
+const UsefulInfoScreenTemplateInner = ({
   t,
-}: usefullInfoScreenTemplateProps) => (
+}: usefulInfoScreenTemplateProps) => (
   <UsefulInformationCard cardHeaderText={t('allowancesFoodAlcoholTobacco')}>
     <Image source={infoImage} style={{}} />
     <Text style={ownStyles.paragraph}>
@@ -50,6 +50,6 @@ const UsefullInfoScreenTemplateInner = ({
   </UsefulInformationCard>
 );
 
-export const UsefullInfoScreenTemplate = (translate(['information'])(
-  UsefullInfoScreenTemplateInner
-): ComponentType<usefullInfoScreenTemplateProps>);
+export const UsefulInfoScreenTemplate = (translate(['information'])(
+  UsefulInfoScreenTemplateInner
+): ComponentType<usefulInfoScreenTemplateProps>);
