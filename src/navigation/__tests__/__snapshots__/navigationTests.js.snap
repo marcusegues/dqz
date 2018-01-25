@@ -13,5 +13,6 @@ Array [
   "ReceiptAfterPayment",
   "Screens",
   "UnderConstruction",
+  "UsefulInfoScreenTemplate",
 ]
 `;

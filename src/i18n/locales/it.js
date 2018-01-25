@@ -137,6 +137,8 @@ export const it: Locale = {
     travelingWithVehicleSubText: '🈯',
     entryByTrain: '🈯',
     entryByTrainSubText: '🈯',
+    allowancesFoodAlcoholTobacco: '🈯',
+    allowancesFoodAlcoholTobaccoText: '🈯',
   },
   appInformation: {
     appInfoTitle: '🈯',
