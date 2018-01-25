@@ -12,8 +12,8 @@ import type { TFunction } from '../../../../../../types/generalTypes';
 import { ConfirmationCard } from '../../ConfirmationCard';
 import type { DirectionType } from '../../../../QuestionAnswerContainer';
 import { CardRowText } from '../../../subcomponents/CardRowText';
-import { QuantityIcon } from '../../../../../General Components/QuantityIcon';
 import { scale, verticalScale } from '../../../../../../styles/Scaling';
+import { AmountInputLabel } from './subcomponents/AmountInputLabel';
 
 const ownStyles = {
   currentTotalValueContainer: {
@@ -47,6 +47,7 @@ type AmountInputConfirmationCardProps = {
   onDeleteAmount: string => void,
   large: boolean,
   onAnswer: DirectionType => void,
+  totalAmounts: number,
 };
 
 const AmountInputConfirmationCardInner = ({
@@ -56,6 +57,7 @@ const AmountInputConfirmationCardInner = ({
   large,
   onAnswer,
   onDeleteAmount,
+  totalAmounts,
 }: AmountInputConfirmationCardProps & { t: TFunction }) => {
   let title: string = t('amountInput');
   if (large) {
@@ -79,7 +81,7 @@ const AmountInputConfirmationCardInner = ({
               text={t('currentTotalValue')}
               style={ownStyles.currentTotalValueText}
             />
-            <QuantityIcon unit="CHF" quantity={22} />
+            <AmountInputLabel quantity={totalAmounts} />
           </View>
 
           <CardHeaderSubText
