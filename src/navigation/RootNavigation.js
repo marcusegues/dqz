@@ -28,7 +28,7 @@ import { Information } from '../screens/Information/Information';
 import { SearchIcon } from '../components/Headers/subcomponents/SearchIcon';
 import type { Navigation } from '../types/generalTypes';
 import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
-import { TempUsefullInfoScreen } from '../screens/Information/subComponents/TempUsefullInfoScreen';
+import { UsefullInfoScreenTemplate } from '../screens/Information/subComponents/UsefullInfoScreenTemplate';
 
 type NavigationObject = { navigation: Navigation };
 
@@ -112,8 +112,8 @@ export const stackNavigatorScreens = {
       headerRight: <SearchIcon navigation={navigation} />,
     }),
   },
-  TempUsefullInfoScreen: {
-    screen: TempUsefullInfoScreen,
+  UsefullInfoScreenTemplate: {
+    screen: UsefullInfoScreenTemplate,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: (
         <BackArrow

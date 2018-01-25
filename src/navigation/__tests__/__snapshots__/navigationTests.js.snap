@@ -12,7 +12,7 @@ Array [
   "QuestionAnswer",
   "ReceiptAfterPayment",
   "Screens",
-  "TempUsefullInfoScreen",
   "UnderConstruction",
+  "UsefullInfoScreenTemplate",
 ]
 `;

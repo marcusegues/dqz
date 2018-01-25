@@ -1,9 +1,12 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
+import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View, Text, Image } from 'react-native';
 import { UsefulInformationCard } from './UsefulInformationCard';
 import { moderateScale, scale, verticalScale } from '../../../styles/Scaling';
+import type { TFunction } from '../../../types/generalTypes';
 
 const ownStyles = {
   image: {
@@ -15,7 +18,7 @@ const ownStyles = {
     fontSize: moderateScale(14),
     color: '#1A1A1A',
     lineHeight: 21,
-    paddingTop: 16,
+    paddingTop: verticalScale(16),
   },
   yellowSection: {
     backgroundColor: '#FFF8BE',
@@ -25,26 +28,28 @@ const ownStyles = {
   },
 };
 
+type usefullInfoScreenTemplateProps = {
+  t: TFunction,
+};
+
 const infoImage = require('../../../../assets/images/infoImage.png');
 
-export const TempUsefullInfoScreen = () => (
-  <UsefulInformationCard cardHeaderText="Freimengen: Lebensmittel, Alkohol und Tabak">
+const UsefullInfoScreenTemplateInner = ({
+  t,
+}: usefullInfoScreenTemplateProps) => (
+  <UsefulInformationCard cardHeaderText={t('allowancesFoodAlcoholTobacco')}>
     <Image source={infoImage} style={{}} />
     <Text style={ownStyles.paragraph}>
-      Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein,
-      sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren,
-      für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer
-      gewissen Menge Zoll bezahlen müssen (siehe nachstehende Tabelle). Die
-      Freimengen gelten pro Person und pro Tag.
+      {t('allowancesFoodAlcoholTobaccoText')}
     </Text>
     <View style={ownStyles.yellowSection}>
       <Text style={ownStyles.paragraph}>
-        Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein,
-        sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren,
-        für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer
-        gewissen Menge Zoll bezahlen müssen (siehe nachstehende Tabelle). Die
-        Freimengen gelten pro Person und pro Tag.
+        {t('allowancesFoodAlcoholTobaccoText')}
       </Text>
     </View>
   </UsefulInformationCard>
 );
+
+export const UsefullInfoScreenTemplate = (translate(['information'])(
+  UsefullInfoScreenTemplateInner
+): ComponentType<usefullInfoScreenTemplateProps>);
