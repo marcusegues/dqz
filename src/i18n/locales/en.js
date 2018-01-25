@@ -154,6 +154,9 @@ export const en: Locale = {
     entryByTrain: 'Entry by train',
     entryByTrainSubText:
       'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
+    allowancesFoodAlcoholTobacco: 'Allowances: food, alcohol and tobacco',
+    allowancesFoodAlcoholTobaccoText:
+      'Introduce goods for your private use or as a gift these are duty-free. Exceptions are so-called sensitive goods,for you for agricultural or health-political reasons from one have to pay a certain amount of duty (see table below). The Allowances are per person per day.',
   },
   appInformation: {
     appInfoTitle: 'About the app',

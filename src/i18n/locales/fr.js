@@ -142,6 +142,8 @@ export const fr: Locale = {
     travelingWithVehicleSubText: '🈯',
     entryByTrain: '🈯',
     entryByTrainSubText: '🈯',
+    allowancesFoodAlcoholTobacco: '🈯',
+    allowancesFoodAlcoholTobaccoText: '🈯',
   },
   appInformation: {
     appInfoTitle: '🈯',

@@ -134,6 +134,8 @@ type InformationTranslations = {
   travelingWithVehicleSubText: string,
   entryByTrain: string,
   entryByTrainSubText: string,
+  allowancesFoodAlcoholTobacco: string,
+  allowancesFoodAlcoholTobaccoText: string,
 };
 
 type ReceiptTranslations = {

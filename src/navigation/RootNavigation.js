@@ -29,6 +29,7 @@ import { Information } from '../screens/Information/Information';
 import { SearchIcon } from '../components/Headers/subcomponents/SearchIcon';
 import type { Navigation } from '../types/generalTypes';
 import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
+import { UsefulInfoScreenTemplate } from '../screens/Information/subComponents/UsefulInfoScreenTemplate';
 
 type NavigationObject = { navigation: Navigation };
 
@@ -110,6 +111,18 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: <HomeIcon navigation={navigation} />,
       headerRight: <SearchIcon navigation={navigation} />,
+    }),
+  },
+  UsefulInfoScreenTemplate: {
+    screen: UsefulInfoScreenTemplate,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+      headerTitle: <HeaderTitle text="Wissenswertes" />,
     }),
   },
   ReceiptAfterPayment: {
