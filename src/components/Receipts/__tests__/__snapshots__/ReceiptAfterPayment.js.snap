@@ -17,10 +17,14 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "class",
     "props": Object {
       "children": Array [
-        <RedLogo />,
+        <PlatformTouchable
+          onPress={[Function]}
+        >
+          <RedLogo />
+        </PlatformTouchable>,
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -147,15 +151,26 @@ ShallowWrapper {
         </View>,
       ],
     },
-    "ref": null,
+    "ref": [Function],
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
+        "nodeType": "class",
+        "props": Object {
+          "children": <RedLogo />,
+          "onPress": [Function],
+        },
         "ref": null,
-        "rendered": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
         "type": [Function],
       },
       Object {
@@ -509,10 +524,14 @@ ShallowWrapper {
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "class",
       "props": Object {
         "children": Array [
-          <RedLogo />,
+          <PlatformTouchable
+            onPress={[Function]}
+          >
+            <RedLogo />
+          </PlatformTouchable>,
           <Text
             accessible={true}
             allowFontScaling={true}
@@ -639,15 +658,26 @@ ShallowWrapper {
           </View>,
         ],
       },
-      "ref": null,
+      "ref": [Function],
       "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
+          "nodeType": "class",
+          "props": Object {
+            "children": <RedLogo />,
+            "onPress": [Function],
+          },
           "ref": null,
-          "rendered": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
           "type": [Function],
         },
         Object {
