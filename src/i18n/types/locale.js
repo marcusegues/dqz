@@ -147,6 +147,11 @@ type ReceiptTranslations = {
   amountsTitle: string,
   amountsSubtitle: string,
   receiptStorageNotification: string,
+  allReceiptsNavigationHeaderTitle: string,
+  allReceiptsCurrentReceipt: string,
+  allReceiptsOlderReceipts: string,
+  allReceiptsSumInFranks: string,
+  allReceiptsDate: string,
 };
 
 type AppInformationTranslations = {

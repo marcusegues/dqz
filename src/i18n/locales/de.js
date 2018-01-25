@@ -134,6 +134,11 @@ export const de: Locale = {
     amountsSubtitle: 'Summe aller Kaufbelege',
     receiptStorageNotification:
       'Diese Quittung wird ein Jahr lang gespeichert. Solange können Sie die Quittung jederzeit in der App aufrufen.',
+    allReceiptsNavigationHeaderTitle: 'Quittungen Schweizer Zoll',
+    allReceiptsCurrentReceipt: 'Aktuelle Quittung:',
+    allReceiptsOlderReceipts: 'Ältere Quittungen:',
+    allReceiptsSumInFranks: 'CHF {{value}}',
+    allReceiptsDate: 'vom {{value}}',
   },
   information: {
     informationTitle: 'Wissenswertes',

@@ -122,6 +122,11 @@ export const fr: Locale = {
     amountsTitle: '🈯',
     amountsSubtitle: '🈯',
     receiptStorageNotification: '🈯',
+    allReceiptsNavigationHeaderTitle: '🈯',
+    allReceiptsCurrentReceipt: '🈯',
+    allReceiptsOlderReceipts: '🈯',
+    allReceiptsSumInFranks: '🈯',
+    allReceiptsDate: '🈯',
   },
   information: {
     informationTitle: '🈯',
