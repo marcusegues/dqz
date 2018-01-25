@@ -6,10 +6,13 @@ import { ScrollViewCard } from './subComponents/ScrollViewCard';
 import { InformationRow } from './subComponents/InformationRow';
 import { informationData } from './InformationData';
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
-import type { TFunction } from '../../types/generalTypes';
+import type { Navigation, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 
-class InformationInner extends React.Component<{ t: TFunction }> {
+class InformationInner extends React.Component<{
+  t: TFunction,
+  navigation: Navigation,
+}> {
   static navigationOptions = ({ screenProps }) => ({
     headerTitle: (
       <HeaderTitle text={screenProps.t('information:informationTitle')} />
@@ -21,7 +24,7 @@ class InformationInner extends React.Component<{ t: TFunction }> {
   }
 
   render() {
-    const { t } = this.props;
+    const { t, navigation } = this.props;
     return (
       <ScrollViewCard>
         {informationData.map(i => (
@@ -30,7 +33,7 @@ class InformationInner extends React.Component<{ t: TFunction }> {
             number={i.number}
             mainText={t(i.dataMainText)}
             subText={t(i.dataSubText)}
-            rowOnPress={() => {}}
+            rowOnPress={() => navigation.navigate('UsefullInfoScreenTemplate')}
           />
         ))}
       </ScrollViewCard>
