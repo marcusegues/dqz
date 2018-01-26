@@ -130,6 +130,11 @@ export const en: Locale = {
     amountsSubtitle: 'Sum of all receipts',
     receiptStorageNotification:
       'This receipt is stored for a year. As long as you can call the receipt at any time in the app.',
+    allReceiptsNavigationHeaderTitle: 'Swiss Customs Receipts',
+    allReceiptsCurrentReceipt: 'Current receipt:',
+    allReceiptsOlderReceipts: 'Older receipts:',
+    allReceiptsSumInFranks: 'CHF {{value}}',
+    allReceiptsDate: 'from {{value}}',
   },
   information: {
     informationTitle: 'Information',

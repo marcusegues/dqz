@@ -21,6 +21,7 @@ import { QuestionAnswerContainer } from '../components/QuestionAnswer/QuestionAn
 import { GoodQuantityListModal } from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { OnBoardingTaxScreen } from '../screens/OnBoarding/OnBoardingTaxScreen';
 import { ReceiptAfterPayment } from '../components/Receipts/ReceiptAfterPayment';
+import { AllReceipts } from '../components/Receipts/AllReceipts';
 import { AppInfo } from '../screens/AppInfo/AppInfo';
 import { HomeIcon } from '../components/Headers/subcomponents/HomeIcon';
 import { DownloadIcon } from '../components/Headers/subcomponents/DownloadIcon';
@@ -130,6 +131,27 @@ export const stackNavigatorScreens = {
       headerTitle: <HeaderTitle text="Quittung Schweizer Zoll" />,
       headerLeft: <HomeIcon navigation={navigation} />,
       headerRight: <DownloadIcon navigation={navigation} />,
+    }),
+  },
+  AllReceipts: {
+    screen: AllReceipts,
+    navigationOptions: ({
+      navigationOptions,
+      navigation,
+    }: {
+      navigationOptions: any,
+      navigation: Navigation,
+    }) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+      headerStyle: {
+        ...navigationOptions.headerStyle,
+        paddingRight: 0,
+      },
     }),
   },
   AppInfo: {
