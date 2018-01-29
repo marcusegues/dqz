@@ -13,9 +13,11 @@ import { languages } from '../../i18n';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import type { Language } from '../../i18n/types/locale';
 import { analyticsLanguageChanged } from '../../analytics/analyticsApi';
+import { fetchSettingsAcceptRate } from '../../asyncStorage/storageApi';
 
 type OnBoardingState = {
   systemLanguage: Language,
+  nextScreen: 'OnBoardingTaxScreen' | 'MainMenu',
 };
 
 type OnBoardingProps = {
@@ -29,7 +31,20 @@ class OnBoardingInner extends React.Component<
 > {
   constructor(props) {
     super(props);
-    this.state = { systemLanguage: this.props.i18n.language };
+    this.state = {
+      systemLanguage: this.props.i18n.language,
+      nextScreen: 'OnBoardingTaxScreen',
+    };
+  }
+
+  componentDidMount() {
+    this.setNextScreen();
+  }
+
+  setNextScreen() {
+    fetchSettingsAcceptRate().then(b =>
+      this.setState({ nextScreen: b ? 'MainMenu' : 'OnBoardingTaxScreen' })
+    );
   }
 
   changeLanguage(language) {
@@ -39,7 +54,7 @@ class OnBoardingInner extends React.Component<
 
   render() {
     const { t, i18n, navigation } = this.props;
-    const { systemLanguage } = this.state;
+    const { systemLanguage, nextScreen } = this.state;
     return (
       <OnBoardingContainer>
         <OnBoardingParagraph text={t('onBoarding:onBoardingMessage')} />
@@ -69,9 +84,7 @@ class OnBoardingInner extends React.Component<
             })}
           </View>
         </View>
-        <DoneButton
-          onPress={() => navigation.navigate('OnBoardingTaxScreen')}
-        />
+        <DoneButton onPress={() => navigation.navigate(nextScreen)} />
       </OnBoardingContainer>
     );
   }

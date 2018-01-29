@@ -25,6 +25,9 @@ export const storeItem = async (key: StoreType, item: any): Promise<boolean> =>
 export const storeCurrencyObject = (currencyObject: CurrencyObject) =>
   storeItem('CurrencyObject', currencyObject);
 
+export const storeSettingsAcceptRate = (flag: boolean) =>
+  storeItem('SettingsAcceptRate', flag);
+
 /**
  * Fetch a currency object
  * @returns {Promise<CurrencyObject>}
