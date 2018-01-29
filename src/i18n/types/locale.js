@@ -115,6 +115,7 @@ type ModalTranslations = {
   currencyPickerRate: string,
   currencyPickerInvalidInput: string,
   currencyPickerNoOffsettingInput: string,
+  currencyPickerTooSmallLargeAmount: string,
   savedBasketDoYoWantToContinue: string,
   savedBasketTotalCost: string,
   savedBasketNewShoppingCart: string,
@@ -134,6 +135,8 @@ type InformationTranslations = {
   travelingWithVehicleSubText: string,
   entryByTrain: string,
   entryByTrainSubText: string,
+  allowancesFoodAlcoholTobacco: string,
+  allowancesFoodAlcoholTobaccoText: string,
 };
 
 type ReceiptTranslations = {
@@ -147,6 +150,11 @@ type ReceiptTranslations = {
   amountsTitle: string,
   amountsSubtitle: string,
   receiptStorageNotification: string,
+  allReceiptsNavigationHeaderTitle: string,
+  allReceiptsCurrentReceipt: string,
+  allReceiptsOlderReceipts: string,
+  allReceiptsSumInFranks: string,
+  allReceiptsDate: string,
 };
 
 type AppInformationTranslations = {

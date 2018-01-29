@@ -108,6 +108,7 @@ export const en: Locale = {
     currencyPickerRate: 'Rate of',
     currencyPickerInvalidInput: 'Invalid/empty input',
     currencyPickerNoOffsettingInput: 'No offsetting amount',
+    currencyPickerTooSmallLargeAmount: 'Amount too small',
     savedBasketDoYoWantToContinue:
       'Do you want to continue with an existing basket or start a new one',
     savedBasketTotalCost: 'Total cost: CHF {{value}}',
@@ -130,6 +131,11 @@ export const en: Locale = {
     amountsSubtitle: 'Sum of all receipts',
     receiptStorageNotification:
       'This receipt is stored for a year. As long as you can call the receipt at any time in the app.',
+    allReceiptsNavigationHeaderTitle: 'Swiss Customs Receipts',
+    allReceiptsCurrentReceipt: 'Current receipt:',
+    allReceiptsOlderReceipts: 'Older receipts:',
+    allReceiptsSumInFranks: 'CHF {{value}}',
+    allReceiptsDate: 'from {{value}}',
   },
   information: {
     informationTitle: 'Information',
@@ -149,6 +155,9 @@ export const en: Locale = {
     entryByTrain: 'Entry by train',
     entryByTrainSubText:
       'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
+    allowancesFoodAlcoholTobacco: 'Allowances: food, alcohol and tobacco',
+    allowancesFoodAlcoholTobaccoText:
+      'Introduce goods for your private use or as a gift these are duty-free. Exceptions are so-called sensitive goods,for you for agricultural or health-political reasons from one have to pay a certain amount of duty (see table below). The Allowances are per person per day.',
   },
   appInformation: {
     appInfoTitle: 'About the app',

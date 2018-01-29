@@ -53,7 +53,7 @@ const MainMenuInner = ({ navigation, t }: MainMenuProps & { t: TFunction }) => (
       <MenuTile
         icon="receipt"
         text={t('receipts').toUpperCase()}
-        onPress={() => navigation.navigate('ReceiptAfterPayment')}
+        onPress={() => navigation.navigate('AllReceipts')}
         style={{ alignSelf: 'center' }}
       >
         <View>

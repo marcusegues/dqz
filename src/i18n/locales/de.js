@@ -112,6 +112,7 @@ export const de: Locale = {
     currencyPickerRate: 'Kurs vom',
     currencyPickerInvalidInput: 'Ungültige/leere Eingabe',
     currencyPickerNoOffsettingInput: 'Kein entsprechender Betrag',
+    currencyPickerTooSmallLargeAmount: 'Betrag zu gering',
     savedBasketDoYoWantToContinue:
       'Möchten Sie mit dem bereits bestehenden Warenkorb fortfahren oder mit einem leeren Warenkorb neu starten?',
     savedBasketTotalCost: 'Gesamtkosten: CHF {{value}}',
@@ -134,6 +135,11 @@ export const de: Locale = {
     amountsSubtitle: 'Summe aller Kaufbelege',
     receiptStorageNotification:
       'Diese Quittung wird ein Jahr lang gespeichert. Solange können Sie die Quittung jederzeit in der App aufrufen.',
+    allReceiptsNavigationHeaderTitle: 'Quittungen Schweizer Zoll',
+    allReceiptsCurrentReceipt: 'Aktuelle Quittung:',
+    allReceiptsOlderReceipts: 'Ältere Quittungen:',
+    allReceiptsSumInFranks: 'CHF {{value}}',
+    allReceiptsDate: 'vom {{value}}',
   },
   information: {
     informationTitle: 'Wissenswertes',
@@ -153,6 +159,9 @@ export const de: Locale = {
     entryByTrain: 'Einreise per Bahn',
     entryByTrainSubText:
       'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+    allowancesFoodAlcoholTobacco: 'Freimengen: Lebensmittel, Alkohol und Tabak',
+    allowancesFoodAlcoholTobaccoText:
+      'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer gewissen Amount Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
   },
   appInformation: {
     appInfoTitle: 'Über die App',

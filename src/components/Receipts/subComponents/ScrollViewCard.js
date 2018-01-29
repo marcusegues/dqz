@@ -24,12 +24,18 @@ type ScrollViewCardProps = {
   children: Children,
 };
 
-export const ScrollViewCard = ({ children }: ScrollViewCardProps) => (
-  <View style={ownStyles.container}>
-    <ScrollView
-      contentContainerStyle={[ownStyles.scrollView, globalStyles.boxShadow]}
-    >
-      {children}
-    </ScrollView>
-  </View>
-);
+// needs to be stateful for the snapshot functionality
+// eslint-disable-next-line react/prefer-stateless-function
+export class ScrollViewCard extends React.Component<ScrollViewCardProps> {
+  render() {
+    return (
+      <View style={ownStyles.container}>
+        <ScrollView
+          contentContainerStyle={[ownStyles.scrollView, globalStyles.boxShadow]}
+        >
+          {this.props.children}
+        </ScrollView>
+      </View>
+    );
+  }
+}

@@ -102,6 +102,7 @@ export const it: Locale = {
     currencyPickerRate: '🈯',
     currencyPickerInvalidInput: '🈯',
     currencyPickerNoOffsettingInput: '🈯',
+    currencyPickerTooSmallLargeAmount: '🈯',
     savedBasketDoYoWantToContinue: '🈯',
     savedBasketTotalCost: '🈯',
     savedBasketNewShoppingCart: '🈯',
@@ -122,6 +123,11 @@ export const it: Locale = {
     amountsTitle: '🈯',
     amountsSubtitle: '🈯',
     receiptStorageNotification: '🈯',
+    allReceiptsNavigationHeaderTitle: '🈯',
+    allReceiptsCurrentReceipt: '🈯',
+    allReceiptsOlderReceipts: '🈯',
+    allReceiptsSumInFranks: '🈯',
+    allReceiptsDate: '🈯',
   },
   information: {
     informationTitle: '🈯',
@@ -137,6 +143,8 @@ export const it: Locale = {
     travelingWithVehicleSubText: '🈯',
     entryByTrain: '🈯',
     entryByTrainSubText: '🈯',
+    allowancesFoodAlcoholTobacco: '🈯',
+    allowancesFoodAlcoholTobaccoText: '🈯',
   },
   appInformation: {
     appInfoTitle: '🈯',

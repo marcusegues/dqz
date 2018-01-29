@@ -21,6 +21,7 @@ import { QuestionAnswerContainer } from '../components/QuestionAnswer/QuestionAn
 import { GoodQuantityListModal } from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { OnBoardingTaxScreen } from '../screens/OnBoarding/OnBoardingTaxScreen';
 import { ReceiptAfterPayment } from '../components/Receipts/ReceiptAfterPayment';
+import { AllReceipts } from '../components/Receipts/AllReceipts';
 import { AppInfo } from '../screens/AppInfo/AppInfo';
 import { HomeIcon } from '../components/Headers/subcomponents/HomeIcon';
 import { DownloadIcon } from '../components/Headers/subcomponents/DownloadIcon';
@@ -28,6 +29,7 @@ import { Information } from '../screens/Information/Information';
 import { SearchIcon } from '../components/Headers/subcomponents/SearchIcon';
 import type { Navigation } from '../types/generalTypes';
 import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
+import { UsefulInfoScreenTemplate } from '../screens/Information/subComponents/UsefulInfoScreenTemplate';
 
 type NavigationObject = { navigation: Navigation };
 
@@ -111,12 +113,45 @@ export const stackNavigatorScreens = {
       headerRight: <SearchIcon navigation={navigation} />,
     }),
   },
+  UsefulInfoScreenTemplate: {
+    screen: UsefulInfoScreenTemplate,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+      headerTitle: <HeaderTitle text="Wissenswertes" />,
+    }),
+  },
   ReceiptAfterPayment: {
     screen: ReceiptAfterPayment,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerTitle: <HeaderTitle text="Quittung Schweizer Zoll" />,
       headerLeft: <HomeIcon navigation={navigation} />,
       headerRight: <DownloadIcon navigation={navigation} />,
+    }),
+  },
+  AllReceipts: {
+    screen: AllReceipts,
+    navigationOptions: ({
+      navigationOptions,
+      navigation,
+    }: {
+      navigationOptions: any,
+      navigation: Navigation,
+    }) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+      headerStyle: {
+        ...navigationOptions.headerStyle,
+        paddingRight: 0,
+      },
     }),
   },
   AppInfo: {
