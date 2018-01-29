@@ -4,7 +4,10 @@ import React from 'react';
 // $FlowFixMe
 import { Text, View } from 'react-native';
 import { RedButton } from '../components/Buttons/RedButton';
-import { storeSettingsAcceptRate } from '../asyncStorage/storageApi';
+import {
+  storeSettingsAcceptRate,
+  storeSettingsHasLanguage,
+} from '../asyncStorage/storageApi';
 
 const style = {
   display: 'flex',
@@ -20,6 +23,12 @@ export const UnderConstruction = () => (
       text="Reset tax acceptance"
       onPress={() => {
         storeSettingsAcceptRate(false);
+      }}
+    />
+    <RedButton
+      text="Reset language definition"
+      onPress={() => {
+        storeSettingsHasLanguage(false);
       }}
     />
   </View>

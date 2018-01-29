@@ -13,7 +13,11 @@ import { languages } from '../../i18n';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import type { Language } from '../../i18n/types/locale';
 import { analyticsLanguageChanged } from '../../analytics/analyticsApi';
-import { fetchSettingsAcceptRate } from '../../asyncStorage/storageApi';
+import {
+  fetchSettingsAcceptRate,
+  fetchSettingsHasLanguage,
+  storeSettingsHasLanguage,
+} from '../../asyncStorage/storageApi';
 
 type OnBoardingState = {
   systemLanguage: Language,
@@ -37,7 +41,8 @@ class OnBoardingInner extends React.Component<
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
+    this.checkLanguages();
     this.setNextScreen();
   }
 
@@ -45,6 +50,15 @@ class OnBoardingInner extends React.Component<
     fetchSettingsAcceptRate().then(b =>
       this.setState({ nextScreen: b ? 'MainMenu' : 'OnBoardingTaxScreen' })
     );
+  }
+
+  checkLanguages() {
+    fetchSettingsHasLanguage().then(b => {
+      console.log(b);
+      if (b) {
+        this.props.navigation.navigate('MainMenu');
+      }
+    });
   }
 
   changeLanguage(language) {
@@ -84,7 +98,12 @@ class OnBoardingInner extends React.Component<
             })}
           </View>
         </View>
-        <DoneButton onPress={() => navigation.navigate(nextScreen)} />
+        <DoneButton
+          onPress={() => {
+            storeSettingsHasLanguage(true);
+            navigation.navigate(nextScreen);
+          }}
+        />
       </OnBoardingContainer>
     );
   }
