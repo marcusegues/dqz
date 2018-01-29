@@ -22,10 +22,10 @@ export const fetchGenericDataAsyncStorage = async (
   try {
     const value = await AsyncStorage.getItem(`@Dazit:${key}`);
     if (value !== null) {
-      // eslint-disable-next-line no-console
-      console.log(value);
+      return value;
     }
   } catch (error) {
     // Error retrieving data
   }
+  return 'error';
 };

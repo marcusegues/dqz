@@ -25,7 +25,10 @@ export const UnderConstruction = () => (
     <RedButton
       text="Read"
       onPress={() => {
-        fetchGenericData('test');
+        fetchGenericData('test')
+          // eslint-disable-next-line no-console
+          .then(v => console.log(`Value: ${v}`))
+          .catch();
       }}
     />
   </View>
