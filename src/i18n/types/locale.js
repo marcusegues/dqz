@@ -119,6 +119,7 @@ type ModalTranslations = {
   savedBasketDoYoWantToContinue: string,
   savedBasketTotalCost: string,
   savedBasketNewShoppingCart: string,
+  closeModalText: string,
 };
 
 type InformationTranslations = {

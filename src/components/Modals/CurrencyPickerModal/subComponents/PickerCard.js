@@ -7,7 +7,6 @@ import type { Children } from '../../../../types/generalTypes';
 
 const ownStyles = {
   modalContainer: {
-    top: '25%',
     paddingBottom: 16,
     width: '85%',
     flexDirection: 'column',

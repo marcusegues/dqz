@@ -25,6 +25,8 @@ import {
   makeVatReportRecord,
 } from '../../model/types/calculationTypes';
 import type { CurrencyObject } from '../../model/currencies';
+import { makePaymentDataRecord } from '../generalTypes';
+import type { PaymentData } from '../generalTypes';
 
 export type MeatCategories = ImmutableSetType<MeatCategory>;
 export const meatCategories: MeatCategories = Immutable.Set(['Meat']);
@@ -147,6 +149,7 @@ type StateObj = {
   validCurrencies: boolean,
   currencyDate: Date,
   amounts: Amounts,
+  paymentData: PaymentData,
 };
 
 export const getInitialState: RecordFactory<StateObj> = Immutable.Record({
@@ -159,6 +162,7 @@ export const getInitialState: RecordFactory<StateObj> = Immutable.Record({
   validCurrencies: false,
   currencyDate: new Date('2000-01-01'),
   amounts: Immutable.Map(),
+  paymentData: makePaymentDataRecord(),
 });
 
 export type State = RecordOf<StateObj>;
