@@ -4,6 +4,7 @@
 import { AsyncStorage } from 'react-native';
 import type { CurrencyObject } from '../model/currencies';
 import type { StoreType } from './storeTypes';
+import { currencyExample } from '../model/currencies';
 
 export const storeItemAsyncStorage = async (
   key: StoreType,
@@ -46,4 +47,4 @@ const parser = (key: StoreType, fallback: any): any =>
 
 export const fetchCurrencyObjectsAsyncStorage = async (
   key: StoreType
-): Promise<CurrencyObject> => parser(key, {});
+): Promise<CurrencyObject> => parser(key, currencyExample);
