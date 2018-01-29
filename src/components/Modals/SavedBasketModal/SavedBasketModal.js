@@ -22,6 +22,7 @@ import { CardRowSubText } from '../../QuestionAnswer/cards/subcomponents/CardRow
 import { GREY } from '../../../styles/colors';
 import { CloseIcon } from '../../General Components/CloseIcon';
 import type { TFunction } from '../../../types/generalTypes';
+import { ModalCloseText } from '../ModalCloseText';
 
 const ownStyles = StyleSheet.create({
   container: {
@@ -52,8 +53,13 @@ const SavedBasketModalInner = ({
   modalVisible,
   t,
 }: SavedBasketModalProps & { t: TFunction }) => (
-  <AppModal onRequestClose={toggleModalVisible} modalVisible={modalVisible}>
-    <PickerCard style={{ top: '30%' }}>
+  <AppModal
+    onRequestClose={toggleModalVisible}
+    modalVisible={modalVisible}
+    animationIn="bounceInLeft"
+    animationOut="bounceOutLeft"
+  >
+    <PickerCard style={{}}>
       <CloseIcon onPress={() => {}} />
       <CardHeader
         text={t('declareGoods')}
@@ -96,6 +102,10 @@ const SavedBasketModalInner = ({
         />
       </View>
     </PickerCard>
+    <ModalCloseText
+      onModalHide={toggleModalVisible}
+      text={t('modal:closeModalText')}
+    />
   </AppModal>
 );
 
