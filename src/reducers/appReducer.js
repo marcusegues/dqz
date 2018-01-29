@@ -20,6 +20,7 @@ import type {
 } from '../model/types/basketPeopleAmountsTypes';
 import * as modelApi from '../model/configurationApi';
 import type { Currency, CurrencyObject } from '../model/currencies';
+import type { PaymentData } from '../types/generalTypes';
 
 export const appState = (
   state: State = getInitialState(),
@@ -137,6 +138,12 @@ export const appState = (
       const mainCategoriesAnswer: MainCategories = action.mainCategories;
       return state.setIn(['settings', 'mainCategories'], mainCategoriesAnswer);
     }
+
+    case 'SET_PAYMENT_DATA': {
+      const paymentData: PaymentData = action.paymentData;
+      return state.set('paymentData', paymentData);
+    }
+
     default: {
       return state;
     }
@@ -162,3 +169,6 @@ export const getCurrencyState = (state: State): boolean =>
 
 export const getCurrencyDate = (state: State): Date =>
   state.get('currencyDate');
+
+export const getPaymentData = (state: State): PaymentData =>
+  state.get('paymentData');
