@@ -80,7 +80,7 @@ export const pickerDecimalUnits = pickerItemGenerator([
   '90',
 ]);
 
-export const pickerHours = pickerItemGenerator([
+export const pickerHours: Array<PickerItem> = pickerItemGenerator([
   '00',
   '01',
   '02',
@@ -108,7 +108,7 @@ export const pickerHours = pickerItemGenerator([
   '23',
 ]);
 
-export const pickerMinutes = pickerItemGenerator([
+export const pickerMinutes: Array<PickerItem> = pickerItemGenerator([
   '00',
   '05',
   '10',

@@ -27,6 +27,20 @@ import {
 } from '../PickerModal/pickerData';
 import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
 import { ModalCloseText } from '../ModalCloseText';
+import { formatDate } from '../../../model/utils';
+
+const ownStyles = {
+  container: {
+    width: '100%',
+    alignSelf: 'center',
+    justifyContent: 'space-around',
+  },
+  validUntilText: {
+    marginTop: verticalScale(10),
+    textAlign: 'center',
+    fontSize: moderateScale(12),
+  },
+};
 
 type PickerState = {
   date: string,
@@ -35,11 +49,11 @@ type PickerState = {
 };
 
 type TimePickerModalProps = {
-  // onHide: () => void,
   modalVisible: boolean,
   toggleModalVisible: () => void,
-  // onAddAmount: (currency: Currency, amount: number) => void,
 };
+
+const now = new Date();
 
 class TimePickerModalInner extends React.Component<
   TimePickerModalProps & { t: TFunction },
@@ -48,18 +62,11 @@ class TimePickerModalInner extends React.Component<
   constructor() {
     super();
     this.state = {
-      date: '',
+      date: `${formatDate(now)}`,
       hours: '00',
       minutes: '00',
     };
   }
-
-  // confirmPicker() {
-  //   const { currency, amount } = this.state;
-  //   const { onAddAmount, onHide } = this.props;
-  //   onAddAmount(currency, amount);
-  //   onHide();
-  // }
 
   render() {
     const { t, modalVisible, toggleModalVisible } = this.props;
@@ -71,7 +78,11 @@ class TimePickerModalInner extends React.Component<
         animationIn="slideInUp"
         animationOut="slideOutDown"
       >
-        <PickerCard style={{ width: '95%' }}>
+        <PickerCard
+          style={{
+            width: '100%',
+          }}
+        >
           <CardHeader text={t('timePickerTitle')} />
           <CardHeaderSubText text={t(['timePickerSubTitle'])} />
 
@@ -79,7 +90,9 @@ class TimePickerModalInner extends React.Component<
             onPress={Keyboard.dismiss}
             accessible={false}
           >
-            <View style={[pickerModalStyle.pickerContainer, { width: '100%' }]}>
+            <View
+              style={[pickerModalStyle.pickerContainer, ownStyles.container]}
+            >
               <PickerComponent
                 selectedValue={date}
                 onValueChange={itemValue =>
@@ -90,7 +103,7 @@ class TimePickerModalInner extends React.Component<
                 mode="dropdown"
                 prompt=""
                 itemStyle={{}}
-                style={{ flex: 0.4 }}
+                style={{ flex: 0.5 }}
               >
                 {pickerDates.map(i => (
                   <Picker.Item key={i.id} label={i.label} value={i.value} />
@@ -106,7 +119,8 @@ class TimePickerModalInner extends React.Component<
                 }
                 mode="dropdown"
                 prompt=""
-                itemStyle={{}}
+                itemStyle={{ textAlign: 'right' }}
+                style={{ flex: 0.15 }}
               >
                 {pickerHours.map(i => (
                   <Picker.Item key={i.id} label={i.label} value={i.value} />
@@ -125,6 +139,7 @@ class TimePickerModalInner extends React.Component<
                 mode="dropdown"
                 prompt=""
                 itemStyle={{}}
+                style={{ flex: 0.15 }}
               >
                 {pickerMinutes.map(i => (
                   <Picker.Item key={i.id} label={i.label} value={i.value} />
@@ -136,23 +151,17 @@ class TimePickerModalInner extends React.Component<
           </TouchableWithoutFeedback>
 
           <CardHeaderSubText
-            style={{
-              marginTop: verticalScale(10),
-              textAlign: 'center',
-              fontSize: moderateScale(12),
-            }}
-            text={t('timePickerRegistrationValidUntil', {
-              date: '24.01.2018',
-              time: '18:30',
+            style={ownStyles.validUntilText}
+            text={t(['timePickerRegistrationValidUntil'], {
+              date: `${date}`,
+              time: `${hours}:${minutes}`,
             })}
           />
 
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
-              // confirmationDisabled={disabledRedButton}
               onPress={() => {
                 Keyboard.dismiss();
-                // this.confirmPicker();
               }}
               text={t('timePickerTakeOverThePeriod')}
             />

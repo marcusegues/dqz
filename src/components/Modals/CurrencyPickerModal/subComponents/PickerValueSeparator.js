@@ -9,6 +9,7 @@ const ownStyles = {
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
+    flex: 0.1,
   },
   pickerDividerColumnText: {
     fontFamily: 'roboto_regular',
