@@ -79,7 +79,11 @@ export class GoodQuantityListModal extends React.Component<
       ? getTotalQuantity(basket, modalCategory)
       : 0;
     return (
-      <AppModal modalVisible={modalVisible}>
+      <AppModal
+        modalVisible={modalVisible}
+        animationIn="bounceInUp"
+        animationOut="bounceOutDown"
+      >
         <ModalCard>
           <View
             style={{
