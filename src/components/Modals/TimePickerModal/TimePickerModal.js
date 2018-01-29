@@ -68,8 +68,8 @@ class TimePickerModalInner extends React.Component<
     return (
       <AppModal
         modalVisible={modalVisible}
-        animationIn="bounceInLeft"
-        animationOut="bounceOutLeft"
+        animationIn="slideInUp"
+        animationOut="slideOutDown"
       >
         <PickerCard style={{ width: '95%' }}>
           <CardHeader text={t('timePickerTitle')} />
