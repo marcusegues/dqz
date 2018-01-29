@@ -4,7 +4,11 @@ import React from 'react';
 // $FlowFixMe
 import { Text, View } from 'react-native';
 import { RedButton } from '../components/Buttons/RedButton';
-import { fetchGenericData, storeItem } from '../asyncStorage/storageApi';
+import {
+  storeCurrencyObject,
+  fetchCurrencyObject,
+} from '../asyncStorage/storageApi';
+import { currencyExample } from '../model/currencies';
 
 const style = {
   display: 'flex',
@@ -19,15 +23,15 @@ export const UnderConstruction = () => (
     <RedButton
       text="Write"
       onPress={() => {
-        storeItem('test', new Date());
+        storeCurrencyObject(currencyExample);
       }}
     />
     <RedButton
       text="Read"
       onPress={() => {
-        fetchGenericData('test')
+        fetchCurrencyObject()
           // eslint-disable-next-line no-console
-          .then(v => console.log(`Value: ${v}`))
+          .then(v => console.log(v))
           .catch();
       }}
     />

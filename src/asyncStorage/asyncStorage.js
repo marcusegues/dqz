@@ -2,9 +2,11 @@
 
 // $FlowFixMe
 import { AsyncStorage } from 'react-native';
+import type { CurrencyObject } from '../model/currencies';
+import type { StoreType } from './storeTypes';
 
 export const storeItemAsyncStorage = async (
-  key: string,
+  key: StoreType,
   item: any
 ): Promise<boolean> => {
   try {
@@ -17,8 +19,8 @@ export const storeItemAsyncStorage = async (
 };
 
 export const fetchGenericDataAsyncStorage = async (
-  key: string
-): Promise<any> => {
+  key: StoreType
+): Promise<string> => {
   try {
     const value = await AsyncStorage.getItem(`@Dazit:${key}`);
     if (value !== null) {
@@ -27,5 +29,19 @@ export const fetchGenericDataAsyncStorage = async (
   } catch (error) {
     // Error retrieving data
   }
-  return 'error';
+  return '';
+};
+
+export const fetchCurrencyObjectsAsyncStorage = async (
+  key: StoreType
+): Promise<CurrencyObject> => {
+  try {
+    const value = await AsyncStorage.getItem(`@Dazit:${key}`);
+    if (value !== null) {
+      return JSON.parse(value);
+    }
+  } catch (error) {
+    // Error retrieving data
+  }
+  return {};
 };
