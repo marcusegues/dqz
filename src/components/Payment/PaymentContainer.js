@@ -94,7 +94,7 @@ class PaymentContainerInner extends React.Component<
     this.saferpay = new Saferpay(baseUrl, redirectsUrlKeys);
   }
 
-  saferpay: any; // TODO
+  saferpay: Saferpay; // TODO
 
   initializePayment() {
     const {
@@ -115,17 +115,24 @@ class PaymentContainerInner extends React.Component<
             setPaymentData(
               // $FlowFixMe
               paymentData.merge({
+                // $FlowFixMe
                 specVersion: responseJson.ResponseHeader.SpecVersion,
+                // $FlowFixMe
                 requestId: responseJson.ResponseHeader.RequestId,
+                // $FlowFixMe
                 token: responseJson.Token,
+                // $FlowFixMe
                 tokenExpiration: responseJson.Expiration,
+                // $FlowFixMe
                 redirectUrl: responseJson.RedirectUrl,
               })
             );
             this.setState({
               isLoadingRedirectData: false,
               redirectDataLoaded: true,
+              // $FlowFixMe
               redirectUrl: responseJson.RedirectUrl,
+              // $FlowFixMe
               paymentToken: responseJson.Token,
               paymentStatus: 'start',
             });

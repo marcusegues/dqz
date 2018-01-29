@@ -1,7 +1,21 @@
+// @flow
+/* global fetch */
+
+import type { Currency } from './src/model/currencies';
+
+type RedirectsUrlKeys = {
+  success: string,
+  fail: string,
+  abort: string,
+};
+
 export default class Saferpay {
+  baseUrl: string;
+  redirectsUrlKeys: RedirectsUrlKeys;
+
   constructor(
-    baseUrl = 'http://ambrite.ch',
-    redirectsUrlKeys = {
+    baseUrl: string = 'http://ambrite.ch',
+    redirectsUrlKeys: RedirectsUrlKeys = {
       success: `/success`,
       fail: `/fail`,
       abort: `/abort`,
@@ -11,7 +25,11 @@ export default class Saferpay {
     this.redirectsUrlKeys = redirectsUrlKeys;
   }
 
-  initializePayment(amountValue, currency = 'EUR', requestId) {
+  initializePayment(
+    amountValue: number,
+    currency: Currency,
+    requestId: string
+  ) {
     const requestJson = {
       RequestHeader: {
         SpecVersion: '1.8',
@@ -67,7 +85,8 @@ export default class Saferpay {
   // The PaymentPage will do that automatically for you.
   // The Assert only calls for the result!
   // So, if you call the Assert, the transaction already happened!
-  assertPayment(token, requestId) {
+  // eslint-disable-next-line class-methods-use-this
+  assertPayment(token: string, requestId: string) {
     const requestJson = {
       RequestHeader: {
         SpecVersion: '1.8',
