@@ -16,6 +16,7 @@ import type { CurrencyObject } from '../model/currencies';
 import { calculateVat } from '../model/vatCalculations';
 import { calculateDuty } from '../model/dutyCalculations';
 import type { DutyReport, VatReport } from '../model/types/calculationTypes';
+import type { PaymentData } from '../types/generalTypes';
 
 /**
  * Combines reducers (currently just one)
@@ -135,3 +136,11 @@ export const getVatReport = (state: { appState: State }): VatReport =>
     state.appState.people,
     state.appState.currencyObject
   );
+
+/**
+ * Gets current payment data
+ * @param state
+ * @returns {PaymentData}
+ */
+export const getPaymentData = (state: { appState: State }): PaymentData =>
+  appApi.getPaymentData(state.appState);
