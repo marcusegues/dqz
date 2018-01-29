@@ -108,6 +108,7 @@ export const en: Locale = {
     currencyPickerRate: 'Rate of',
     currencyPickerInvalidInput: 'Invalid/empty input',
     currencyPickerNoOffsettingInput: 'No offsetting amount',
+    currencyPickerTooSmallLargeAmount: 'Amount too small',
     savedBasketDoYoWantToContinue:
       'Do you want to continue with an existing basket or start a new one',
     savedBasketTotalCost: 'Total cost: CHF {{value}}',

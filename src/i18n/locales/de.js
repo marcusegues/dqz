@@ -112,6 +112,7 @@ export const de: Locale = {
     currencyPickerRate: 'Kurs vom',
     currencyPickerInvalidInput: 'Ungültige/leere Eingabe',
     currencyPickerNoOffsettingInput: 'Kein entsprechender Betrag',
+    currencyPickerTooSmallLargeAmount: 'Betrag zu gering',
     savedBasketDoYoWantToContinue:
       'Möchten Sie mit dem bereits bestehenden Warenkorb fortfahren oder mit einem leeren Warenkorb neu starten?',
     savedBasketTotalCost: 'Gesamtkosten: CHF {{value}}',

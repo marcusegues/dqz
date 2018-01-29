@@ -85,6 +85,11 @@ class CurrencyPickerModalInner extends React.Component<
       redButtonText = t(['currencyPickerInvalidInput']);
     }
 
+    if (large && currencyObject[currency] * amount < INDIVIDUALALLOWANCE) {
+      disabledRedButton = true;
+      redButtonText = t(['currencyPickerTooSmallLargeAmount']);
+    }
+
     if (large && !hasOffsettingAmount(amounts, amount, currency)) {
       disabledRedButton = true;
       redButtonText = t(['currencyPickerNoOffsettingInput']);
