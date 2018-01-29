@@ -2,6 +2,7 @@
 
 import {
   fetchCurrencyObjectsAsyncStorage,
+  fetchSettingsAcceptRateAsyncStorage,
   storeItemAsyncStorage,
 } from './asyncStorage';
 import type { CurrencyObject } from '../model/currencies';
@@ -30,3 +31,6 @@ export const storeCurrencyObject = (currencyObject: CurrencyObject) =>
  */
 export const fetchCurrencyObject = async (): Promise<CurrencyObject> =>
   fetchCurrencyObjectsAsyncStorage('CurrencyObject');
+
+export const fetchSettingsAcceptRate = async (): Promise<CurrencyObject> =>
+  fetchSettingsAcceptRateAsyncStorage('SettingsAcceptRate');

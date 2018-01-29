@@ -1,6 +1,10 @@
 // @flow
 // $FlowFixMe
 import { parseString } from 'react-native-xml2js';
+import {
+  fetchCurrencyObject,
+  storeCurrencyObject,
+} from '../asyncStorage/storageApi';
 
 export type Currency =
   | 'EUR'
@@ -234,14 +238,21 @@ export const currencyExample: CurrencyObject = {
 // export const getFilteredCurrencies = (): CurrencyObject => {};
 
 export const parseCurrencyXML = (rawdata: any, store: any): void => {
-  let currencyObject: CurrencyObject = { CHF: 1 };
+  const currencyObject: CurrencyObject = { CHF: 1 };
   let validCurrencies: boolean = false;
   let currencyDate: Date = new Date('2000-01-01');
 
   parseString(rawdata, (e, r) => {
     if (!r) {
       // console.log('Error Case');
-      currencyObject = currencyExample;
+      fetchCurrencyObject().then(co =>
+        store.dispatch({
+          type: 'UPDATE_CURRENCIES',
+          currencyObject: co,
+          validCurrencies,
+          currencyDate,
+        })
+      );
     } else {
       // console.log('Normal Case');
       validCurrencies = true;
@@ -256,12 +267,14 @@ export const parseCurrencyXML = (rawdata: any, store: any): void => {
           const multiplier = +waehrung.replace(/ .*/, '');
           currencyObject[c.$.code.toUpperCase()] = kurs / multiplier;
         });
+      storeCurrencyObject(currencyObject).then(() => {
+        store.dispatch({
+          type: 'UPDATE_CURRENCIES',
+          currencyObject,
+          validCurrencies,
+          currencyDate,
+        });
+      });
     }
-  });
-  store.dispatch({
-    type: 'UPDATE_CURRENCIES',
-    currencyObject,
-    validCurrencies,
-    currencyDate,
   });
 };

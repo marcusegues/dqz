@@ -48,3 +48,7 @@ const parser = (key: StoreType, fallback: any): any =>
 export const fetchCurrencyObjectsAsyncStorage = async (
   key: StoreType
 ): Promise<CurrencyObject> => parser(key, currencyExample);
+
+export const fetchSettingsAcceptRateAsyncStorage = async (
+  key: StoreType
+): Promise<CurrencyObject> => parser(key, currencyExample);

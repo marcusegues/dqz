@@ -1,3 +1,3 @@
 // @flow
 
-export type StoreType = 'CurrencyObject';
+export type StoreType = 'CurrencyObject' | 'SettingsAcceptRate';
