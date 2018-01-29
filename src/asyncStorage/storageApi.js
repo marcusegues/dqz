@@ -8,6 +8,7 @@ import {
 } from './asyncStorage';
 import type { CurrencyObject } from '../model/currencies';
 import type { StoreType } from './storeTypes';
+import type { Language } from '../i18n/types/locale';
 
 /**
  * Stores item (stringified) under key - do NOT use directly!
@@ -39,7 +40,7 @@ export const storeSettingsAcceptRate = (flag: boolean) =>
  * @param flag
  * @returns {Promise<boolean>}
  */
-export const storeSettingsHasLanguage = (flag: boolean) =>
+export const storeSettingsHasLanguage = (flag: Language) =>
   storeItem('SettingsHasLanguage', flag);
 
 /**
@@ -53,12 +54,12 @@ export const fetchCurrencyObject = async (): Promise<CurrencyObject> =>
  * Fetches the accept-rate flag
  * @returns {Promise<CurrencyObject>}
  */
-export const fetchSettingsAcceptRate = async (): Promise<CurrencyObject> =>
+export const fetchSettingsAcceptRate = async (): Promise<boolean> =>
   fetchSettingsAcceptRateAsyncStorage('SettingsAcceptRate');
 
 /**
  * Fetches the language-set flag
  * @returns {Promise<CurrencyObject>}
  */
-export const fetchSettingsHasLanguage = async (): Promise<CurrencyObject> =>
+export const fetchSettingsHasLanguage = async (): Promise<Language> =>
   fetchSettingsHasLanguageAsyncStorage('SettingsHasLanguage');

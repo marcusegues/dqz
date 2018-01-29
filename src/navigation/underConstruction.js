@@ -26,9 +26,15 @@ export const UnderConstruction = () => (
       }}
     />
     <RedButton
-      text="Reset language definition"
+      text="Set EN language"
       onPress={() => {
-        storeSettingsHasLanguage(false);
+        storeSettingsHasLanguage('en');
+      }}
+    />
+    <RedButton
+      text="Set DE language"
+      onPress={() => {
+        storeSettingsHasLanguage('de');
       }}
     />
   </View>

@@ -53,15 +53,22 @@ class OnBoardingInner extends React.Component<
   }
 
   checkLanguages() {
-    fetchSettingsHasLanguage().then(b => {
-      console.log(b);
-      if (b) {
-        this.props.navigation.navigate('MainMenu');
+    const { i18n, navigation } = this.props;
+    fetchSettingsHasLanguage().then(lang => {
+      if (lang) {
+        i18n.changeLanguage(lang);
+        fetchSettingsAcceptRate().then(bb => {
+          if (bb) {
+            navigation.navigate('MainMenu');
+          } else {
+            navigation.navigate('OnBoardingTaxScreen');
+          }
+        });
       }
     });
   }
 
-  changeLanguage(language) {
+  changeLanguage(language: Language) {
     this.props.i18n.changeLanguage(language);
     analyticsLanguageChanged(language);
   }
@@ -100,7 +107,7 @@ class OnBoardingInner extends React.Component<
         </View>
         <DoneButton
           onPress={() => {
-            storeSettingsHasLanguage(true);
+            storeSettingsHasLanguage(i18n.language);
             navigation.navigate(nextScreen);
           }}
         />
