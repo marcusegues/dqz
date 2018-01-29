@@ -4,6 +4,7 @@ import React from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { StackNavigator } from 'react-navigation';
+import { View } from 'react-native';
 import { i18nImplementation } from '../i18n';
 import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
 import { ScreensView } from '../screens/ScreensView/ScreensView';
@@ -30,6 +31,7 @@ import { SearchIcon } from '../components/Headers/subcomponents/SearchIcon';
 import type { Navigation } from '../types/generalTypes';
 import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
 import { UsefulInfoScreenTemplate } from '../screens/Information/subComponents/UsefulInfoScreenTemplate';
+import { SnackBarsContainer } from '../components/SnackBars/SnackBarsContainer';
 
 type NavigationObject = { navigation: Navigation };
 
@@ -170,7 +172,7 @@ export const stackNavigatorScreens = {
 export const stackNavigatorConfig = {
   navigationOptions: defaultNavigationOptions,
   cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-  initialRouteName: 'OnBoarding',
+  initialRouteName: 'QuestionAnswer',
 };
 
 const RootStackNavigator = StackNavigator(
@@ -179,7 +181,10 @@ const RootStackNavigator = StackNavigator(
 );
 
 const WrappedRootStackNavigator = () => (
-  <RootStackNavigator screenProps={{ t: i18nImplementation.getFixedT() }} />
+  <View style={{ width: '100%', height: '100%' }}>
+    <RootStackNavigator screenProps={{ t: i18nImplementation.getFixedT() }} />
+    <SnackBarsContainer />
+  </View>
 );
 
 const ReloadAppOnLanguageChange = translate(null, {

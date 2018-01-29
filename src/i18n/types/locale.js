@@ -47,6 +47,11 @@ type GeneralTranslations = {
   buttonBack: string,
 };
 
+type SnackBarTranslations = {
+  limitExceeded: string,
+  showBorder: string,
+};
+
 type OnBoardingTranslations = {
   welcome: string,
   onBoardingMessage: string,
@@ -182,6 +187,7 @@ export type Locale = {
   categories: CategoriesTranslations,
   onBoarding: OnBoardingTranslations,
   general: GeneralTranslations,
+  snackBar: SnackBarTranslations,
   peopleInput: PeopleInputTranslations,
   mainCategoriesInput: MainCategoriesInputTranslations,
   quantityInput: QuantityInputTranslations,
