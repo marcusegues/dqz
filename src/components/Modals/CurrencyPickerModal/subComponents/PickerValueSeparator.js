@@ -13,9 +13,9 @@ const ownStyles = {
     alignSelf: 'center',
   },
   pickerDividerColumnText: {
-    fontFamily: 'roboto_regular',
+    fontFamily: 'roboto_bold',
     fontSize: moderateScale(16),
-    color: DARK_GREY,
+    color: '#000',
   },
 };
 
