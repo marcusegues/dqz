@@ -123,6 +123,7 @@ type ModalTranslations = {
   timePickerSubTitle: 'string',
   timePickerRegistrationValidUntil: 'string',
   timePickerTakeOverThePeriod: 'string',
+  closeModalText: string,
 };
 
 type InformationTranslations = {

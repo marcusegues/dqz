@@ -113,6 +113,7 @@ export const en: Locale = {
       'Do you want to continue with an existing basket or start a new one',
     savedBasketTotalCost: 'Total cost: CHF {{value}}',
     savedBasketNewShoppingCart: 'New Configuration',
+    closeModalText: 'Close',
     timePickerTitle: 'Select the period of entry',
     timePickerSubTitle: 'When would you like to cross the border?',
     timePickerRegistrationValidUntil:
