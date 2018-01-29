@@ -3,6 +3,8 @@
 import React from 'react';
 // $FlowFixMe
 import { Text, View } from 'react-native';
+import { RedButton } from '../components/Buttons/RedButton';
+import { fetchGenericData, storeItem } from '../asyncStorage/storageApi';
 
 const style = {
   display: 'flex',
@@ -13,5 +15,18 @@ const style = {
 export const UnderConstruction = () => (
   <View style={style}>
     <Text style={{ fontSize: 64 }}>🚧🛃🚧</Text>
+    <Text>Async Test</Text>
+    <RedButton
+      text="Write"
+      onPress={() => {
+        storeItem('test', new Date());
+      }}
+    />
+    <RedButton
+      text="Read"
+      onPress={() => {
+        fetchGenericData('test');
+      }}
+    />
   </View>
 );
