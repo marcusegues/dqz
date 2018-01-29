@@ -102,6 +102,7 @@ export const fr: Locale = {
     currencyPickerRate: '🈯',
     currencyPickerInvalidInput: '🈯',
     currencyPickerNoOffsettingInput: '🈯',
+    currencyPickerTooSmallLargeAmount: '🈯',
     savedBasketDoYoWantToContinue: '🈯',
     savedBasketTotalCost: '🈯',
     savedBasketNewShoppingCart: '🈯',
