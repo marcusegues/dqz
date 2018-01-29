@@ -81,8 +81,8 @@ export class GoodQuantityListModal extends React.Component<
     return (
       <AppModal
         modalVisible={modalVisible}
-        animationIn="bounceInUp"
-        animationOut="bounceOutDown"
+        animationIn="slideInUp"
+        animationOut="slideOutDown"
       >
         <ModalCard>
           <View

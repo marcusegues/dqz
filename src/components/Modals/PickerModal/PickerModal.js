@@ -105,10 +105,10 @@ class PickerModalInner extends React.Component<
     return (
       <AppModal
         modalVisible={modalVisible}
-        animationIn="bounceInLeft"
-        animationOut="bounceOutLeft"
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
       >
-        <PickerCard style={{ width: '100%' }}>
+        <PickerCard style={{ width: '95%' }}>
           <View style={pickerModalStyle.topTouchableContainer}>
             <ModalTab
               activeTab={standardInput}
