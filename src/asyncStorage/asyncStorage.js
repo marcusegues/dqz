@@ -32,16 +32,18 @@ export const fetchGenericDataAsyncStorage = async (
   return '';
 };
 
+const parser = (key: StoreType, fallback: any): any =>
+  fetchGenericDataAsyncStorage(key).then(value => {
+    if (value.length) {
+      try {
+        return JSON.parse(value);
+      } catch (e) {
+        // Error
+      }
+    }
+    return fallback;
+  });
+
 export const fetchCurrencyObjectsAsyncStorage = async (
   key: StoreType
-): Promise<CurrencyObject> => {
-  try {
-    const value = await AsyncStorage.getItem(`@Dazit:${key}`);
-    if (value !== null) {
-      return JSON.parse(value);
-    }
-  } catch (error) {
-    // Error retrieving data
-  }
-  return {};
-};
+): Promise<CurrencyObject> => parser(key, {});
