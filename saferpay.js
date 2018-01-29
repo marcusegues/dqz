@@ -11,12 +11,12 @@ export default class Saferpay {
     this.redirectsUrlKeys = redirectsUrlKeys;
   }
 
-  initializePayment(amountValue, currency = 'EUR') {
+  initializePayment(amountValue, currency = 'EUR', requestId) {
     const requestJson = {
       RequestHeader: {
         SpecVersion: '1.8',
         CustomerId: '242565',
-        RequestId: '54bf704e57c3040b5a2fac71acd25db7',
+        RequestId: requestId,
         RetryIndicator: 0,
         ClientInfo: {
           ShopInfo: 'My Shop',
@@ -42,7 +42,7 @@ export default class Saferpay {
         Abort: `${this.baseUrl}${this.redirectsUrlKeys.abort}`,
       },
     };
-    console.log(requestJson);
+    // console.log(requestJson);
     return (
       fetch('https://test.saferpay.com/api/Payment/v1/PaymentPage/Initialize', {
         headers: {
@@ -60,13 +60,19 @@ export default class Saferpay {
         })
     );
   }
+  // With the PaymentPage Assert, the results of a transaction are requested.
+  // The returned data may be stored on the merchant side.
 
-  assertPayment(token) {
+  // Important: The Assert does NOT do the transaction itself.
+  // The PaymentPage will do that automatically for you.
+  // The Assert only calls for the result!
+  // So, if you call the Assert, the transaction already happened!
+  assertPayment(token, requestId) {
     const requestJson = {
       RequestHeader: {
         SpecVersion: '1.8',
         CustomerId: '242565',
-        RequestId: '54bf704e57c3040b5a2fac71acd25db7',
+        RequestId: requestId,
         RetryIndicator: 0,
       },
       Token: token,

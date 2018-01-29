@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unused-state,no-console */
 // @flow
 import React from 'react';
+import uuidv1 from 'uuid/v1';
 import type { ComponentType } from 'react';
 // $FlowFixMe
 import { translate } from 'react-i18next';
@@ -20,8 +21,13 @@ import {
   getAmounts,
   getTotalDuty,
   getTotalVat,
+  getPaymentData,
 } from '../../reducers';
-import type { Navigation, TFunction } from '../../types/generalTypes';
+import type {
+  Navigation,
+  PaymentData,
+  TFunction,
+} from '../../types/generalTypes';
 import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 import type {
   Amounts,
@@ -50,6 +56,8 @@ type PaymentContainerState = {
 
 type PaymentContainerProps = {
   navigation: Navigation,
+  // dispatch to props
+  setPaymentData: (paymentData: PaymentData) => void,
 };
 
 type ReduxInject = {
@@ -60,6 +68,7 @@ type ReduxInject = {
   duty: number,
   vatReport: VatReport,
   vat: number,
+  paymentData: PaymentData,
 };
 
 class PaymentContainerInner extends React.Component<
@@ -88,13 +97,31 @@ class PaymentContainerInner extends React.Component<
   saferpay: any; // TODO
 
   initializePayment() {
-    const { fees, duty, vat, amounts, basket } = this.props;
+    const {
+      fees,
+      duty,
+      vat,
+      amounts,
+      basket,
+      setPaymentData,
+      paymentData,
+    } = this.props;
     analyticsInitPayment(amounts, basket, duty, vat);
     if (fees > 0) {
       this.setState({ isLoadingRedirectData: true }, () => {
         this.saferpay
-          .initializePayment(100 * fees, 'CHF')
+          .initializePayment(100 * fees, 'CHF', uuidv1())
           .then(responseJson => {
+            setPaymentData(
+              // $FlowFixMe
+              paymentData.merge({
+                specVersion: responseJson.ResponseHeader.SpecVersion,
+                requestId: responseJson.ResponseHeader.RequestId,
+                token: responseJson.Token,
+                tokenExpiration: responseJson.Expiration,
+                redirectUrl: responseJson.RedirectUrl,
+              })
+            );
             this.setState({
               isLoadingRedirectData: false,
               redirectDataLoaded: true,
@@ -109,6 +136,7 @@ class PaymentContainerInner extends React.Component<
   }
 
   checkWebViewUrl(state) {
+    const { setPaymentData, paymentData } = this.props;
     let stateChanged = false;
     let paymentStatus = '';
     switch (state.url) {
@@ -133,14 +161,20 @@ class PaymentContainerInner extends React.Component<
     }
 
     if (stateChanged) {
+      setPaymentData(
+        // $FlowFixMe
+        paymentData.merge({
+          status: paymentStatus,
+        })
+      );
       this.setState(
         {
           redirectDataLoaded: false,
           paymentStatus,
         },
         () => {
-          console.log('Payment finished');
           if (paymentStatus === 'success') {
+            // TODO Yuri: somewhere here should be AsyncStore.save(receipt);
             this.props.navigation.navigate('ReceiptAfterPayment');
           }
         }
@@ -149,7 +183,7 @@ class PaymentContainerInner extends React.Component<
   }
 
   render() {
-    const { basket, t, dutyReport, vatReport, fees } = this.props;
+    const { basket, t, dutyReport, vatReport, fees, paymentData } = this.props;
     return (
       <View
         style={{
@@ -163,13 +197,19 @@ class PaymentContainerInner extends React.Component<
       >
         <NavBar step={2} />
         {this.state.paymentStatus === 'success' ? (
-          <Text style={{ color: 'green' }}>Payment success</Text>
+          <Text style={{ color: 'green' }}>
+            Payment success({paymentData.status})
+          </Text>
         ) : null}
         {this.state.paymentStatus === 'abort' ? (
-          <Text style={{ color: 'red' }}>Payment aborted</Text>
+          <Text style={{ color: 'red' }}>
+            Payment aborted({paymentData.status})
+          </Text>
         ) : null}
         {this.state.paymentStatus === 'fail' ? (
-          <Text style={{ color: 'red' }}>Payment failed</Text>
+          <Text style={{ color: 'red' }}>
+            Payment failed({paymentData.status})
+          </Text>
         ) : null}
         <Overview
           dutyReport={dutyReport}
@@ -196,6 +236,14 @@ class PaymentContainerInner extends React.Component<
   }
 }
 
+const mapDispatchToProps = dispatch => ({
+  setPaymentData: (paymentData: PaymentData) =>
+    dispatch({
+      type: 'SET_PAYMENT_DATA',
+      paymentData,
+    }),
+});
+
 const mapStateToProps = state => ({
   fees: getTotalFees(state),
   dutyReport: getDutyReport(state),
@@ -204,8 +252,9 @@ const mapStateToProps = state => ({
   vatReport: getVatReport(state),
   amounts: getAmounts(state),
   basket: getBasket(state),
+  paymentData: getPaymentData(state),
 });
 
-export const PaymentContainer = (connect(mapStateToProps)(
+export const PaymentContainer = (connect(mapStateToProps, mapDispatchToProps)(
   translate(['general'])(PaymentContainerInner)
 ): ComponentType<PaymentContainerProps>);
