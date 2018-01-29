@@ -56,21 +56,24 @@ export const storeSettingsHasLanguage = (flag: Language) =>
  * @param basket
  * @returns {Promise<boolean>}
  */
-export const storeBasket = (basket: Basket) => storeItem('Basket', basket);
+export const storeBasket = (basket: Basket) =>
+  storeItem('Basket', basket.toJS());
 
 /**
  * Stores amounts
  * @param amounts
  * @returns {Promise<boolean>}
  */
-export const storeAmounts = (amounts: Amounts) => storeItem('Amounts', amounts);
+export const storeAmounts = (amounts: Amounts) =>
+  storeItem('Amounts', amounts.toJS());
 
 /**
  * Stores people
  * @param people
  * @returns {Promise<boolean>}
  */
-export const storePeople = (people: People) => storeItem('People', people);
+export const storePeople = (people: People) =>
+  storeItem('People', people.toJS());
 
 /**
  * Fetch a currency object

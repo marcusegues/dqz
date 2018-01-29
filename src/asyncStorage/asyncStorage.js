@@ -1,5 +1,5 @@
 // @flow
-
+import Immutable from 'immutable';
 // $FlowFixMe
 import { AsyncStorage } from 'react-native';
 import type { CurrencyObject } from '../model/currencies';
@@ -44,6 +44,18 @@ export const fetchGenericDataAsyncStorage = async (
   return '';
 };
 
+const parserImmutable = (key: StoreType, fallback: any): any =>
+  fetchGenericDataAsyncStorage(key).then(value => {
+    if (value.length) {
+      try {
+        return Immutable.fromJS(JSON.parse(value));
+      } catch (e) {
+        // Error
+      }
+    }
+    return fallback;
+  });
+
 const parser = (key: StoreType, fallback: any): any =>
   fetchGenericDataAsyncStorage(key).then(value => {
     if (value.length) {
@@ -70,12 +82,12 @@ export const fetchSettingsHasLanguageAsyncStorage = async (
 
 export const fetchBasketAsyncStorage = async (
   key: StoreType
-): Promise<Basket> => parser(key, emptyBasket);
+): Promise<Basket> => parserImmutable(key, emptyBasket);
 
 export const fetchAmountsAsyncStorage = async (
   key: StoreType
-): Promise<Amounts> => parser(key, initAmounts);
+): Promise<Amounts> => parserImmutable(key, initAmounts);
 
 export const fetchPeopleAsyncStorage = async (
   key: StoreType
-): Promise<People> => parser(key, initPeople);
+): Promise<People> => parserImmutable(key, initPeople);
