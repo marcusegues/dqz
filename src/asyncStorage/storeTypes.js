@@ -3,4 +3,7 @@
 export type StoreType =
   | 'CurrencyObject'
   | 'SettingsAcceptRate'
-  | 'SettingsHasLanguage';
+  | 'SettingsHasLanguage'
+  | 'Basket'
+  | 'People'
+  | 'Amounts';
