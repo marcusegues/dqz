@@ -106,6 +106,7 @@ export const it: Locale = {
     savedBasketDoYoWantToContinue: '🈯',
     savedBasketTotalCost: '🈯',
     savedBasketNewShoppingCart: '🈯',
+    closeModalText: '🈯',
   },
   payment: {
     overViewTitle: '🈯',

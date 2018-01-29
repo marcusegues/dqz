@@ -1,31 +1,36 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Modal } from 'react-native';
+import Modal from 'react-native-modal';
+
 import type { Children } from '../../types/generalTypes';
 
 type AppModalProps = {
   modalVisible: boolean,
   children: Children,
-  transparent?: boolean,
+  animationIn: string,
+  animationOut: string,
 };
 
 export const AppModal = ({
   modalVisible,
   children,
-  transparent,
+  animationIn,
+  animationOut,
 }: AppModalProps) => (
   <Modal
-    animationType="slide"
-    transparent={transparent}
-    style={{ backgroundColor: 'red' }}
-    visible={modalVisible}
+    style={{}}
+    isVisible={modalVisible}
     onRequestClose={() => {}}
+    backdropColor="black"
+    backdropOpacity={0.8}
+    animationIn={animationIn}
+    animationOut={animationOut}
+    animationInTiming={1000}
+    animationOutTiming={1000}
+    backdropTransitionInTiming={1000}
+    backdropTransitionOutTiming={1000}
   >
     {children}
   </Modal>
 );
-
-AppModal.defaultProps = {
-  transparent: true,
-};

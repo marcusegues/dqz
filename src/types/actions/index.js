@@ -8,6 +8,7 @@ import type {
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { MainCategory, MainCategories } from '../reducers/appReducer';
 import type { Currency, CurrencyObject } from '../../model/currencies';
+import type { PaymentData } from '../../types/generalTypes';
 
 export type Action =
   | {
@@ -81,4 +82,8 @@ export type Action =
   | {
       type: 'RESET_AMOUNTS',
       currency: Currency,
+    }
+  | {
+      type: 'SET_PAYMENT_DATA',
+      paymentData: PaymentData,
     };
