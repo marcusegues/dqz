@@ -110,6 +110,7 @@ export const it: Locale = {
     timePickerSubTitle: '🈯',
     timePickerRegistrationValidUntil: '🈯',
     timePickerTakeOverThePeriod: '🈯',
+    timePickerTimePrefix: '🈯',
     closeModalText: '🈯',
   },
   payment: {

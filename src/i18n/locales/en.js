@@ -119,6 +119,7 @@ export const en: Locale = {
     timePickerRegistrationValidUntil:
       'Please be sure to enter with this registration within two hours. This registration is valid until {{date}} at {{time}}.',
     timePickerTakeOverThePeriod: 'Take over the period',
+    timePickerTimePrefix: '',
   },
   payment: {
     overViewTitle: 'Summary of your Declaration',

@@ -3,7 +3,6 @@ import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
 import {
-  TextInput,
   TouchableWithoutFeedback,
   View,
   Keyboard,
@@ -17,39 +16,29 @@ import { RedButton } from '../../Buttons/RedButton';
 import { pickerModalStyle } from '../styles/PickerModal';
 import { CardHeader } from '../../QuestionAnswer/cards/subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
-import { currencyPicker } from '../CurrencyPickerModal/currencyPickerData';
-import { currencyPickerModal } from '../styles/CurrencyPickerModal';
-import { INDIVIDUALALLOWANCE } from '../../../model/constants';
-import { currenciesArray } from '../../../model/currencies';
-import type { Currency, CurrencyObject } from '../../../model/currencies';
 import type { TFunction } from '../../../types/generalTypes';
-import type { Amounts } from '../../../model/types/basketPeopleAmountsTypes';
-import { hasOffsettingAmount } from '../../../model/utils';
 import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
 import { PickerComponent } from '../CurrencyPickerModal/subComponents/PickerComponent';
 import { moderateScale, verticalScale } from '../../../styles/Scaling';
 import {
   pickerHours,
-  rangeItemsPicker,
   pickerMinutes,
+  pickerDates,
 } from '../PickerModal/pickerData';
 import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
+import { ModalCloseText } from '../ModalCloseText';
 
 type PickerState = {
-  currency: Currency,
-  amount: number,
-  hours: number,
-  minutes: number,
+  date: string,
+  hours: string,
+  minutes: string,
 };
 
 type TimePickerModalProps = {
-  onHide: () => void,
-  currencyObject: CurrencyObject,
-  currencyDate: string,
+  // onHide: () => void,
   modalVisible: boolean,
-  onAddAmount: (currency: Currency, amount: number) => void,
-  // large: boolean,
-  // amounts: Amounts,
+  toggleModalVisible: () => void,
+  // onAddAmount: (currency: Currency, amount: number) => void,
 };
 
 class TimePickerModalInner extends React.Component<
@@ -59,24 +48,29 @@ class TimePickerModalInner extends React.Component<
   constructor() {
     super();
     this.state = {
+      date: '',
       hours: '00',
       minutes: '00',
     };
   }
 
-  confirmPicker() {
-    const { currency, amount } = this.state;
-    const { onAddAmount, onHide } = this.props;
-    onAddAmount(currency, amount);
-    onHide();
-  }
+  // confirmPicker() {
+  //   const { currency, amount } = this.state;
+  //   const { onAddAmount, onHide } = this.props;
+  //   onAddAmount(currency, amount);
+  //   onHide();
+  // }
 
   render() {
-    const { t, currencyObject, currencyDate, modalVisible } = this.props;
-    const { hours, minutes } = this.state;
+    const { t, modalVisible, toggleModalVisible } = this.props;
+    const { date, hours, minutes } = this.state;
 
     return (
-      <AppModal modalVisible={modalVisible}>
+      <AppModal
+        modalVisible={modalVisible}
+        animationIn="bounceInLeft"
+        animationOut="bounceOutLeft"
+      >
         <PickerCard style={{ width: '95%' }}>
           <CardHeader text={t('timePickerTitle')} />
           <CardHeaderSubText text={t(['timePickerSubTitle'])} />
@@ -85,7 +79,24 @@ class TimePickerModalInner extends React.Component<
             onPress={Keyboard.dismiss}
             accessible={false}
           >
-            <View style={pickerModalStyle.pickerContainer}>
+            <View style={[pickerModalStyle.pickerContainer, { width: '100%' }]}>
+              <PickerComponent
+                selectedValue={date}
+                onValueChange={itemValue =>
+                  this.setState({
+                    date: itemValue,
+                  })
+                }
+                mode="dropdown"
+                prompt=""
+                itemStyle={{}}
+                style={{ flex: 0.4 }}
+              >
+                {pickerDates.map(i => (
+                  <Picker.Item key={i.id} label={i.label} value={i.value} />
+                ))}
+              </PickerComponent>
+
               <PickerComponent
                 selectedValue={hours}
                 onValueChange={itemValue =>
@@ -120,7 +131,7 @@ class TimePickerModalInner extends React.Component<
                 ))}
               </PickerComponent>
 
-              <PickerValueSeparator separator="Uhr" />
+              <PickerValueSeparator separator={t('timePickerTimePrefix')} />
             </View>
           </TouchableWithoutFeedback>
 
@@ -147,6 +158,10 @@ class TimePickerModalInner extends React.Component<
             />
           </View>
         </PickerCard>
+        <ModalCloseText
+          onModalHide={toggleModalVisible}
+          text={t('closeModalText')}
+        />
       </AppModal>
     );
   }

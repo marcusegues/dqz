@@ -123,6 +123,7 @@ export const de: Locale = {
     timePickerRegistrationValidUntil:
       'Bitte achten Sie darauf, innherhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist bis zum {{date}} um {{time}} Uhr gültig.',
     timePickerTakeOverThePeriod: 'Zeitraum übernehmen',
+    timePickerTimePrefix: 'Uhr',
   },
   payment: {
     overViewTitle: 'Übersicht ihrer Anmeldung',

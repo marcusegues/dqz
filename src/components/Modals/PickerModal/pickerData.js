@@ -121,3 +121,26 @@ export const pickerMinutes = pickerItemGenerator([
   '50',
   '55',
 ]);
+
+let today = new Date();
+let date = today.getDate();
+let month = today.getMonth() + 1; // January is 0
+const year = today.getFullYear();
+
+if (date < 10) {
+  date = `0${date}`;
+}
+
+if (month < 10) {
+  month = `0${month}`;
+}
+
+today = `${month}.${date}.${year}`;
+const tomorrow = `${month}.${date + 1}.${year}`;
+const afterTomorrow = `${month}.${date + 2}.${year}`;
+
+export const pickerDates = pickerItemGenerator([
+  today,
+  tomorrow,
+  afterTomorrow,
+]);
