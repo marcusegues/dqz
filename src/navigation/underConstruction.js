@@ -26,13 +26,13 @@ export const UnderConstruction = () => (
       }}
     />
     <RedButton
-      text="Set EN language"
+      text="Set EN language in async"
       onPress={() => {
         storeSettingsHasLanguage('en');
       }}
     />
     <RedButton
-      text="Set DE language"
+      text="Set DE language in async"
       onPress={() => {
         storeSettingsHasLanguage('de');
       }}
