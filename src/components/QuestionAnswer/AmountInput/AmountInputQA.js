@@ -64,6 +64,7 @@ export class AmountInputQA extends React.Component<
         <CurrencyPickerModal
           large={large}
           onHide={() => this.handleHideModal()}
+          toggleModalVisible={() => this.handleHideModal()}
           modalVisible={modalVisible}
           currencyObject={currencies}
           currencyDate={qaState.currencyDate}

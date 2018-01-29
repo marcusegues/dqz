@@ -112,6 +112,7 @@ export const en: Locale = {
       'Do you want to continue with an existing basket or start a new one',
     savedBasketTotalCost: 'Total cost: CHF {{value}}',
     savedBasketNewShoppingCart: 'New Configuration',
+    closeModalText: 'Close',
   },
   payment: {
     overViewTitle: 'Summary of your Declaration',
