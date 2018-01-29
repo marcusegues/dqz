@@ -5,6 +5,7 @@ import { AsyncStorage } from 'react-native';
 import type { CurrencyObject } from '../model/currencies';
 import type { StoreType } from './storeTypes';
 import { currencyExample } from '../model/currencies';
+import type { Language } from '../i18n/types/locale';
 
 export const storeItemAsyncStorage = async (
   key: StoreType,
@@ -48,3 +49,11 @@ const parser = (key: StoreType, fallback: any): any =>
 export const fetchCurrencyObjectsAsyncStorage = async (
   key: StoreType
 ): Promise<CurrencyObject> => parser(key, currencyExample);
+
+export const fetchSettingsAcceptRateAsyncStorage = async (
+  key: StoreType
+): Promise<boolean> => parser(key, false);
+
+export const fetchSettingsHasLanguageAsyncStorage = async (
+  key: StoreType
+): Promise<Language> => parser(key, 'de');

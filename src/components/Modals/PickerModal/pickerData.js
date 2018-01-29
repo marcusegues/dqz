@@ -1,6 +1,7 @@
 // @flow
 
 import type { Category } from '../../../model/types/basketPeopleAmountsTypes';
+import { formatDate } from '../../../model/utils';
 
 type PickerItem = {
   id: number,
@@ -122,25 +123,11 @@ export const pickerMinutes = pickerItemGenerator([
   '55',
 ]);
 
-let today = new Date();
-let date = today.getDate();
-let month = today.getMonth() + 1; // January is 0
-const year = today.getFullYear();
-
-if (date < 10) {
-  date = `0${date}`;
-}
-
-if (month < 10) {
-  month = `0${month}`;
-}
-
-today = `${month}.${date}.${year}`;
-const tomorrow = `${month}.${date + 1}.${year}`;
-const afterTomorrow = `${month}.${date + 2}.${year}`;
+const now = new Date();
+const oneDay = 86400000;
 
 export const pickerDates = pickerItemGenerator([
-  today,
-  tomorrow,
-  afterTomorrow,
+  formatDate(now),
+  formatDate(new Date(now.getTime() + oneDay)),
+  formatDate(new Date(now.getTime() + oneDay + oneDay)),
 ]);

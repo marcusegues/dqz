@@ -10,6 +10,7 @@ import { DoneButton } from './subcomponents/DoneButton';
 import { moderateScale } from '../../styles/Scaling';
 import { MAIN_RED } from '../../styles/colors';
 import type { Navigation, TFunction } from '../../types/generalTypes';
+import { storeSettingsAcceptRate } from '../../asyncStorage/storageApi';
 
 const ownStyles = {
   container: {
@@ -45,7 +46,12 @@ const OnBoardingTaxScreenInner = ({
     <Text style={ownStyles.bottomText}>
       {(t('vatInformation') || '').toUpperCase()}
     </Text>
-    <DoneButton onPress={() => navigation.navigate('MainMenu')} />
+    <DoneButton
+      onPress={() => {
+        storeSettingsAcceptRate(true);
+        navigation.navigate('MainMenu');
+      }}
+    />
   </OnBoardingContainer>
 );
 

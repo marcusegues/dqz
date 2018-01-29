@@ -13,9 +13,15 @@ import { languages } from '../../i18n';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import type { Language } from '../../i18n/types/locale';
 import { analyticsLanguageChanged } from '../../analytics/analyticsApi';
+import {
+  fetchSettingsAcceptRate,
+  fetchSettingsHasLanguage,
+  storeSettingsHasLanguage,
+} from '../../asyncStorage/storageApi';
 
 type OnBoardingState = {
   systemLanguage: Language,
+  nextScreen: 'OnBoardingTaxScreen' | 'MainMenu',
 };
 
 type OnBoardingProps = {
@@ -29,17 +35,47 @@ class OnBoardingInner extends React.Component<
 > {
   constructor(props) {
     super(props);
-    this.state = { systemLanguage: this.props.i18n.language };
+    this.state = {
+      systemLanguage: this.props.i18n.language,
+      nextScreen: 'OnBoardingTaxScreen',
+    };
   }
 
-  changeLanguage(language) {
+  componentWillMount() {
+    this.checkLanguages();
+    this.setNextScreen();
+  }
+
+  setNextScreen() {
+    fetchSettingsAcceptRate().then(b =>
+      this.setState({ nextScreen: b ? 'MainMenu' : 'OnBoardingTaxScreen' })
+    );
+  }
+
+  checkLanguages() {
+    const { i18n, navigation } = this.props;
+    fetchSettingsHasLanguage().then(lang => {
+      if (lang) {
+        i18n.changeLanguage(lang);
+        fetchSettingsAcceptRate().then(bb => {
+          if (bb) {
+            navigation.navigate('MainMenu');
+          } else {
+            navigation.navigate('OnBoardingTaxScreen');
+          }
+        });
+      }
+    });
+  }
+
+  changeLanguage(language: Language) {
     this.props.i18n.changeLanguage(language);
     analyticsLanguageChanged(language);
   }
 
   render() {
     const { t, i18n, navigation } = this.props;
-    const { systemLanguage } = this.state;
+    const { systemLanguage, nextScreen } = this.state;
     return (
       <OnBoardingContainer>
         <OnBoardingParagraph text={t('onBoarding:onBoardingMessage')} />
@@ -70,7 +106,10 @@ class OnBoardingInner extends React.Component<
           </View>
         </View>
         <DoneButton
-          onPress={() => navigation.navigate('OnBoardingTaxScreen')}
+          onPress={() => {
+            storeSettingsHasLanguage(i18n.language);
+            navigation.navigate(nextScreen);
+          }}
         />
       </OnBoardingContainer>
     );
