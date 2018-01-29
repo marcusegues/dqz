@@ -94,7 +94,7 @@ class PaymentContainerInner extends React.Component<
     this.saferpay = new Saferpay(baseUrl, redirectsUrlKeys);
   }
 
-  saferpay: Saferpay; // TODO
+  saferpay: Saferpay;
 
   initializePayment() {
     const {
