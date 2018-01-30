@@ -89,7 +89,6 @@ class ReceiptAfterPaymentInner extends React.Component<
 
   render() {
     const { t, paymentData } = this.props;
-    console.log(paymentData);
     return (
       <ScrollViewCard
         ref={ref => {
@@ -122,8 +121,8 @@ class ReceiptAfterPaymentInner extends React.Component<
           />
 
           <ReceiptSubText
-            text={`${paymentData.get('transaction').brandName} ${
-              paymentData.get('transaction').cardNumber
+            text={`${paymentData.transaction.brandName} ${
+              paymentData.transaction.cardNumber
             }`}
           />
           <ReceiptSubText text={t('transactionId', { value: '123-456-789' })} />
