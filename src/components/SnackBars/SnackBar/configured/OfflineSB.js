@@ -1,4 +1,6 @@
 import React from 'react';
 import { SnackBar } from '../SnackBar';
 
-export const OfflineSB = () => <SnackBar text="Offline" />;
+export const OfflineSB = ({ sbState }) => (
+  <SnackBar text="Offline" sbState={sbState} />
+);

@@ -1,48 +1,69 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
 import { connect } from 'react-redux';
 // $FlowFixMe
 import { View, StyleSheet, FlatList } from 'react-native';
 import { translate } from 'react-i18next';
 import { LimitExceededSB } from './SnackBar/configured/LimitExceededSB';
 import { OfflineSB } from './SnackBar/configured/OfflineSB';
+import { getAmounts } from '../../reducers';
+import type { Amounts } from '../../model/types/basketPeopleAmountsTypes';
+import { setInitStates } from './SnackBarsControl/controlSnackBarStates';
 
 const ownStyles = StyleSheet.create({
   snackBar: {
-    flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    position: 'absolute',
-    bottom: 0,
     width: '100%',
-    paddingHorizontal: 16,
-    paddingVertical: 16,
   },
 });
 
-type SnackBarType = 'declaredLimitExceeded' | 'offline';
+type SnackBarType = 'limitExceeded' | 'offline';
 
-type SnackBarState = 'hidden' | 'displayed';
+export type SnackBarState = 'hidden' | 'displayed';
 
-type SnackBarsState = {
-  snackBarstate: { [SnackBarType]: SnackBarState },
+export type SBState = {
+  snackBarStates: { [SnackBarType]: SnackBarState },
 };
 
-type SnackBarProps = {};
+type SnackBarContainerProps = {
+  amounts: Amounts,
+};
 
 class SnackBarsContainerInner extends React.Component<
-  SnackBarProps,
-  SnackBarsState
+  SnackBarContainerProps,
+  SBState
 > {
+  constructor(props) {
+    super(props);
+    this.state = {
+      snackBarStates: {
+        limitExceeded: 'hidden',
+        offline: 'hidden',
+      },
+    };
+  }
+
+  componentDidMount() {
+    this.initState();
+  }
+
+  initState() {
+    const newState = setInitStates(this.state, this.props.amounts);
+    this.setState(newState);
+  }
+
   render() {
+    const { snackBarStates } = this.state;
     const flatListData = [
       {
         key: 'limitExceeded',
-        component: <LimitExceededSB />,
+        component: <LimitExceededSB sbState={snackBarStates.limitExceeded} />,
       },
       {
         key: 'offline',
-        component: <OfflineSB />,
+        component: <OfflineSB sbState={snackBarStates.offline} />,
       },
     ];
     return (
@@ -57,10 +78,10 @@ class SnackBarsContainerInner extends React.Component<
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  amounts: getAmounts(state),
+});
 
-const mapDispatchToProps = dispatch => ({});
-
-export const SnackBarsContainer = (connect(mapStateToProps, mapDispatchToProps)(
+export const SnackBarsContainer = (connect(mapStateToProps, null)(
   translate(['snackBars'])(SnackBarsContainerInner)
 ): ComponentType<{}>);

@@ -4,6 +4,7 @@ import React from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { StackNavigator } from 'react-navigation';
+// $FlowFixMe
 import { View } from 'react-native';
 import { i18nImplementation } from '../i18n';
 import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
@@ -172,7 +173,7 @@ export const stackNavigatorScreens = {
 export const stackNavigatorConfig = {
   navigationOptions: defaultNavigationOptions,
   cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-  initialRouteName: 'QuestionAnswer',
+  initialRouteName: 'OnBoarding',
 };
 
 const RootStackNavigator = StackNavigator(
@@ -180,12 +181,28 @@ const RootStackNavigator = StackNavigator(
   stackNavigatorConfig
 );
 
-const WrappedRootStackNavigator = () => (
-  <View style={{ width: '100%', height: '100%' }}>
-    <RootStackNavigator screenProps={{ t: i18nImplementation.getFixedT() }} />
-    <SnackBarsContainer />
-  </View>
-);
+class WrappedRootStackNavigator extends React.Component {
+  render() {
+    return (
+      <View
+        style={{
+          flexDirection: 'column',
+          width: '100%',
+          flex: 1,
+          justifyContent: 'space-between',
+        }}
+      >
+        <RootStackNavigator
+          ref={nav => {
+            this.navigator = nav;
+          }}
+          screenProps={{ t: i18nImplementation.getFixedT() }}
+        />
+        <SnackBarsContainer />
+      </View>
+    );
+  }
+}
 
 const ReloadAppOnLanguageChange = translate(null, {
   bindI18n: 'languageChanged',
