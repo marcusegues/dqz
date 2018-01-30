@@ -3,7 +3,7 @@ import React from 'react';
 // $FlowFixMe
 import { View, StyleSheet, Text } from 'react-native';
 import { SNACKBAR_GREY, WHITE } from '../../../styles/colors';
-import type {SnackBarStateType} from '../SnackBarsContainer';
+import type { SnackBarStateType } from '../SnackBarsContainer';
 
 const ownStyles = StyleSheet.create({
   snackBar: {
