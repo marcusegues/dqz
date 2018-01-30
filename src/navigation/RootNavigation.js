@@ -4,6 +4,8 @@ import React from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { StackNavigator } from 'react-navigation';
+// $FlowFixMe
+import { View } from 'react-native';
 import { i18nImplementation } from '../i18n';
 import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
 import { ScreensView } from '../screens/ScreensView/ScreensView';
@@ -30,6 +32,7 @@ import { SearchIcon } from '../components/Headers/subcomponents/SearchIcon';
 import type { Navigation } from '../types/generalTypes';
 import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
 import { UsefulInfoScreenTemplate } from '../screens/Information/subComponents/UsefulInfoScreenTemplate';
+import { SnackBarsContainer } from '../components/SnackBars/SnackBarsContainer';
 
 type NavigationObject = { navigation: Navigation };
 
@@ -179,7 +182,17 @@ const RootStackNavigator = StackNavigator(
 );
 
 const WrappedRootStackNavigator = () => (
-  <RootStackNavigator screenProps={{ t: i18nImplementation.getFixedT() }} />
+  <View
+    style={{
+      flexDirection: 'column',
+      width: '100%',
+      flex: 1,
+      justifyContent: 'space-between',
+    }}
+  >
+    <RootStackNavigator screenProps={{ t: i18nImplementation.getFixedT() }} />
+    <SnackBarsContainer />
+  </View>
 );
 
 const ReloadAppOnLanguageChange = translate(null, {

@@ -448,8 +448,6 @@ class QuestionAnswerContainerInner extends React.Component<
         style={{
           flex: 1,
           height: '100%',
-          marginHorizontal: 16,
-          marginBottom: 16,
           flexDirection: 'column',
           alignItems: 'center',
         }}
@@ -460,6 +458,8 @@ class QuestionAnswerContainerInner extends React.Component<
             width: '100%',
             flexDirection: 'column',
             alignItems: 'center',
+            paddingHorizontal: 16,
+            paddingBottom: 16,
           }}
         >
           <NavBar step={1} />
