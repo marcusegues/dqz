@@ -44,6 +44,11 @@ export const de: Locale = {
     buttonContinue: 'Weiter',
     buttonBack: 'Zurück',
   },
+  snackBar: {
+    limitExceeded:
+      'Warenwert für die App überschritten. Bitte melden Sie Ihre Waren mündlich beim Grenzübergang an.',
+    showBorder: 'Grenzübergang anzeigen',
+  },
   onBoarding: {
     welcome: 'Willkommen zu',
     onBoardingMessage:

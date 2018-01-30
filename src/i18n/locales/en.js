@@ -44,6 +44,11 @@ export const en: Locale = {
     buttonContinue: 'Continue',
     buttonBack: 'Back',
   },
+  snackBar: {
+    limitExceeded:
+      'Goods value for the app exceeded. Please report your goods at the border crossing',
+    showBorder: 'Show border crossing',
+  },
   onBoarding: {
     welcome: 'Welcome to',
     onBoardingMessage:

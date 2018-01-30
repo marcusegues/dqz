@@ -44,6 +44,10 @@ export const it: Locale = {
     buttonContinue: '🈯',
     buttonBack: '🈯',
   },
+  snackBar: {
+    limitExceeded: '🈯',
+    showBorder: '🈯',
+  },
   onBoarding: {
     welcome: 'Benvenuto a',
     onBoardingMessage:
