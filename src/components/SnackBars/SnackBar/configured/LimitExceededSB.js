@@ -1,14 +1,13 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
-// $FlowFixMe
-import {translate} from "react-i18next";
+import { translate } from "react-i18next";
 import { SnackBar } from '../SnackBar';
-import type {SBState} from "../../SnackBarsContainer";
+import type {SnackBarStateType} from "../../SnackBarsContainer";
 import type {TFunction} from "../../../../types/generalTypes";
 
 type LimitExceededSBProps = {
-    sbState: SBState
+    sbState: SnackBarStateType
 }
 
 const LimitExceededSBInner = ({ sbState, t }: LimitExceededSBProps & { t: TFunction }) => (
