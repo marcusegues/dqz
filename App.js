@@ -117,7 +117,7 @@ export default class App extends React.Component<AppProps, AppStateT> {
       )
         .then(response => response.text())
         .then(rawdata => parseCurrencyXML(rawdata, store))
-        .catch(e => parseCurrencyXML('invalid', store)),
+        .catch(_ => parseCurrencyXML('invalid', store)),
     ]);
 
   render() {

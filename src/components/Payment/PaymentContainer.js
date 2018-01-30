@@ -39,9 +39,11 @@ import {
   analyticsInitPayment,
   analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
+
 import { totalAllAmounts } from '../../model/utils';
 import { MAX_DECLARED_CHF } from '../../constants/declaration';
 import type { CurrencyObject } from '../../model/currencies';
+import { storeClearDeclaration } from '../../asyncStorage/storageApi';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -154,6 +156,7 @@ class PaymentContainerInner extends React.Component<
     switch (state.url) {
       case `${baseUrl}${redirectsUrlKeys.success}`:
         analyticsCustom('Successful payment');
+        storeClearDeclaration();
         stateChanged = true;
         paymentStatus = 'success';
         break;
