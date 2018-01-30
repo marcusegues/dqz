@@ -116,7 +116,8 @@ export default class App extends React.Component<AppProps, AppStateT> {
         'http://www.pwebapps.ezv.admin.ch/apps/rates/rate/getxml?activeSearchType=yesterday'
       )
         .then(response => response.text())
-        .then(rawdata => parseCurrencyXML(rawdata, store)),
+        .then(rawdata => parseCurrencyXML(rawdata, store))
+        .catch(e => parseCurrencyXML('invalid', store)),
     ]);
 
   render() {
