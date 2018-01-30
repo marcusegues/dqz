@@ -4,12 +4,11 @@ import type { ComponentType } from 'react';
 import { connect } from 'react-redux';
 // $FlowFixMe
 import { View, StyleSheet, FlatList } from 'react-native';
-import { translate } from 'react-i18next';
 import { LimitExceededSB } from './SnackBar/configured/LimitExceededSB';
-import { OfflineSB } from './SnackBar/configured/OfflineSB';
-import { getAmounts } from '../../reducers';
+import { getAmounts, getCurrencies } from '../../reducers';
 import type { Amounts } from '../../model/types/basketPeopleAmountsTypes';
-import { setInitStates } from './SnackBarsControl/controlSnackBarStates';
+import { updateState } from './SnackBarsControl/controlSnackBarStates';
+import type { CurrencyObject } from '../../model/currencies';
 
 const ownStyles = StyleSheet.create({
   snackBar: {
@@ -19,16 +18,27 @@ const ownStyles = StyleSheet.create({
   },
 });
 
-type SnackBarType = 'limitExceeded' | 'offline';
+type SnackBarType = 'limitExceeded';
 
-export type SnackBarState = 'hidden' | 'displayed';
+export type SnackBarStateType = 'hidden' | 'displayed';
+
+type SnackBarStatesObjectType = { [SnackBarType]: SnackBarStateType };
 
 export type SBState = {
-  snackBarStates: { [SnackBarType]: SnackBarState },
+  snackBarStates: SnackBarStatesObjectType,
+};
+
+export type SBStateEnriched = {
+  snackBarStates: SnackBarStatesObjectType,
+  amounts: Amounts,
+  currencies: CurrencyObject,
 };
 
 type SnackBarContainerProps = {
+  // eslint-disable-next-line react/no-unused-prop-types
   amounts: Amounts,
+  // eslint-disable-next-line react/no-unused-prop-types
+  currencies: CurrencyObject,
 };
 
 class SnackBarsContainerInner extends React.Component<
@@ -40,18 +50,38 @@ class SnackBarsContainerInner extends React.Component<
     this.state = {
       snackBarStates: {
         limitExceeded: 'hidden',
-        offline: 'hidden',
       },
     };
   }
 
   componentDidMount() {
-    this.initState();
+    this.updateState(this.props);
   }
 
-  initState() {
-    const newState = setInitStates(this.state, this.props.amounts);
-    this.setState(newState);
+  componentWillReceiveProps(nextProps) {
+    this.updateState(nextProps);
+  }
+
+  enrichState(props: SnackBarContainerProps): SBStateEnriched {
+    const { snackBarStates } = this.state;
+    const { amounts, currencies } = props;
+    return {
+      snackBarStates,
+      amounts,
+      currencies,
+    };
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  simplifyState(enrichedState: SBStateEnriched): SBState {
+    return {
+      snackBarStates: enrichedState.snackBarStates,
+    };
+  }
+
+  updateState(props: SnackBarContainerProps): void {
+    const newState: SBStateEnriched = updateState(this.enrichState(props));
+    this.setState(this.simplifyState(newState));
   }
 
   render() {
@@ -60,10 +90,6 @@ class SnackBarsContainerInner extends React.Component<
       {
         key: 'limitExceeded',
         component: <LimitExceededSB sbState={snackBarStates.limitExceeded} />,
-      },
-      {
-        key: 'offline',
-        component: <OfflineSB sbState={snackBarStates.offline} />,
       },
     ];
     return (
@@ -80,8 +106,9 @@ class SnackBarsContainerInner extends React.Component<
 
 const mapStateToProps = state => ({
   amounts: getAmounts(state),
+  currencies: getCurrencies(state),
 });
 
 export const SnackBarsContainer = (connect(mapStateToProps, null)(
-  translate(['snackBars'])(SnackBarsContainerInner)
+  SnackBarsContainerInner
 ): ComponentType<{}>);

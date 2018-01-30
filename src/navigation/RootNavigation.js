@@ -181,28 +181,19 @@ const RootStackNavigator = StackNavigator(
   stackNavigatorConfig
 );
 
-class WrappedRootStackNavigator extends React.Component {
-  render() {
-    return (
-      <View
-        style={{
-          flexDirection: 'column',
-          width: '100%',
-          flex: 1,
-          justifyContent: 'space-between',
-        }}
-      >
-        <RootStackNavigator
-          ref={nav => {
-            this.navigator = nav;
-          }}
-          screenProps={{ t: i18nImplementation.getFixedT() }}
-        />
-        <SnackBarsContainer />
-      </View>
-    );
-  }
-}
+const WrappedRootStackNavigator = () => (
+  <View
+    style={{
+      flexDirection: 'column',
+      width: '100%',
+      flex: 1,
+      justifyContent: 'space-between',
+    }}
+  >
+    <RootStackNavigator screenProps={{ t: i18nImplementation.getFixedT() }} />
+    <SnackBarsContainer />
+  </View>
+);
 
 const ReloadAppOnLanguageChange = translate(null, {
   bindI18n: 'languageChanged',

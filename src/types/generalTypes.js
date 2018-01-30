@@ -12,6 +12,7 @@ export type TFunction = (field: string | Array<string>, params?: {}) => string;
 export type Navigation = {
   goBack: (?string) => void,
   navigate: (route: string) => void,
+  state: Object,
 };
 
 /**

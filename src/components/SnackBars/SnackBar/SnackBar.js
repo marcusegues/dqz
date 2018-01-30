@@ -3,7 +3,7 @@ import React from 'react';
 // $FlowFixMe
 import { View, StyleSheet, Text } from 'react-native';
 import { SNACKBAR_GREY, WHITE } from '../../../styles/colors';
-import type { SnackBarState } from '../SnackBarsContainer';
+import type { SBState } from '../SnackBarsContainer';
 
 const ownStyles = StyleSheet.create({
   snackBar: {
@@ -28,8 +28,9 @@ export const SnackBar = ({
   sbState,
 }: {
   text: String,
-  sbState: SnackBarState,
-}) => sbState === 'hidden' ? (
+  sbState: SBState,
+}) =>
+  sbState === 'hidden' ? (
     <View />
   ) : (
     <View style={ownStyles.snackBar}>
