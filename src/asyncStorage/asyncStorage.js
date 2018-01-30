@@ -17,6 +17,7 @@ import {
   initPeople,
 } from '../model/configurationApi';
 import { makeAmountsOfCurrencyRecord } from '../model/types/basketPeopleAmountsTypes';
+import type { MainCategories } from '../types/reducers/appReducer';
 
 export const storeItemAsyncStorage = async (
   key: StoreType,
@@ -51,6 +52,18 @@ const parserImmutable = (key: StoreType, fallback: any): any =>
     if (value.length) {
       try {
         return Immutable.fromJS(JSON.parse(value));
+      } catch (e) {
+        // Error
+      }
+    }
+    return fallback;
+  });
+
+const parserImmutableMainCategories = (key: StoreType, fallback: any): any =>
+  fetchGenericDataAsyncStorage(key).then(value => {
+    if (value.length) {
+      try {
+        return Immutable.Set(JSON.parse(value));
       } catch (e) {
         // Error
       }
@@ -111,3 +124,8 @@ export const fetchAmountsAsyncStorage = async (
 export const fetchPeopleAsyncStorage = async (
   key: StoreType
 ): Promise<People> => parserImmutable(key, initPeople);
+
+export const fetchMainCategoriesAsyncStorage = async (
+  key: StoreType
+): Promise<MainCategories> =>
+  parserImmutableMainCategories(key, Immutable.Set());

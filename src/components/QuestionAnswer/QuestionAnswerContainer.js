@@ -47,9 +47,11 @@ import { getTotalPeople } from '../../model/configurationApi';
 import {
   fetchAmounts,
   fetchBasket,
+  fetchMainCategories,
   fetchPeople,
   storeAmounts,
   storeBasket,
+  storeMainCategories,
   storePeople,
 } from '../../asyncStorage/storageApi';
 
@@ -502,11 +504,13 @@ const mapDispatchToProps = dispatch => ({
       people,
     });
   },
-  setMainCategories: (mainCategories: MainCategories) =>
+  setMainCategories: (mainCategories: MainCategories) => {
+    storeMainCategories(mainCategories);
     dispatch({
       type: 'SET_MAIN_CATEGORIES',
       mainCategories,
-    }),
+    });
+  },
   basketChangeQuantity: (category, quantity) =>
     dispatch({
       type: 'BASKET_ADD_QUANTITY',
@@ -544,6 +548,12 @@ const mapDispatchToProps = dispatch => ({
       dispatch({
         type: 'SET_AMOUNTS',
         amounts,
+      });
+    });
+    fetchMainCategories().then(mainCategories => {
+      dispatch({
+        type: 'SET_MAIN_CATEGORIES',
+        mainCategories,
       });
     });
   },

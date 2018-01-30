@@ -4,6 +4,7 @@ import {
   fetchAmountsAsyncStorage,
   fetchBasketAsyncStorage,
   fetchCurrencyObjectsAsyncStorage,
+  fetchMainCategoriesAsyncStorage,
   fetchPeopleAsyncStorage,
   fetchSettingsAcceptRateAsyncStorage,
   fetchSettingsHasLanguageAsyncStorage,
@@ -17,6 +18,7 @@ import type {
   Basket,
   People,
 } from '../model/types/basketPeopleAmountsTypes';
+import type { MainCategories } from '../types/reducers/appReducer';
 
 /**
  * Stores item (stringified) under key - do NOT use directly!
@@ -68,6 +70,14 @@ export const storeAmounts = (amounts: Amounts) =>
   storeItem('Amounts', amounts.toJS());
 
 /**
+ * Store main categories (part of ABP)
+ * @param mainCategories
+ * @returns {Promise<boolean>}
+ */
+export const storeMainCategories = (mainCategories: MainCategories) =>
+  storeItem('MainCategories', mainCategories.toJS());
+
+/**
  * Stores people
  * @param people
  * @returns {Promise<boolean>}
@@ -104,3 +114,6 @@ export const fetchAmounts = async (): Promise<Amounts> =>
 
 export const fetchPeople = async (): Promise<People> =>
   fetchPeopleAsyncStorage('People');
+
+export const fetchMainCategories = async (): Promise<MainCategories> =>
+  fetchMainCategoriesAsyncStorage('MainCategories');

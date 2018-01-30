@@ -6,4 +6,5 @@ export type StoreType =
   | 'SettingsHasLanguage'
   | 'Basket'
   | 'People'
+  | 'MainCategories'
   | 'Amounts';
