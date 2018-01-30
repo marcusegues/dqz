@@ -22,6 +22,7 @@ import {
   getTotalDuty,
   getTotalVat,
   getPaymentData,
+  getCurrencies,
 } from '../../reducers';
 import type {
   Navigation,
@@ -38,6 +39,10 @@ import {
   analyticsInitPayment,
   analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
+
+import { totalAllAmounts } from '../../model/utils';
+import { MAX_DECLARED_CHF } from '../../constants/declaration';
+import type { CurrencyObject } from '../../model/currencies';
 import { storeClearDeclaration } from '../../asyncStorage/storageApi';
 
 const baseUrl = 'http://ambrite.ch';
@@ -64,6 +69,7 @@ type PaymentContainerProps = {
 type ReduxInject = {
   fees: number,
   amounts: Amounts,
+  currencies: CurrencyObject,
   basket: Basket,
   dutyReport: DutyReport,
   duty: number,
@@ -192,7 +198,16 @@ class PaymentContainerInner extends React.Component<
   }
 
   render() {
-    const { basket, t, dutyReport, vatReport, fees, paymentData } = this.props;
+    const {
+      basket,
+      t,
+      dutyReport,
+      vatReport,
+      fees,
+      paymentData,
+      currencies,
+      amounts,
+    } = this.props;
     return (
       <View
         style={{
@@ -230,7 +245,9 @@ class PaymentContainerInner extends React.Component<
         <RedButton
           onPress={() => this.initializePayment()}
           text={t('toPayment')}
-          confirmationDisabled={fees < 1}
+          confirmationDisabled={
+            fees < 1 || totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF
+          }
         />
         {this.state.redirectDataLoaded ? (
           <View style={{ position: 'absolute', top: 0 }}>
@@ -261,6 +278,7 @@ const mapStateToProps = state => ({
   vatReport: getVatReport(state),
   amounts: getAmounts(state),
   basket: getBasket(state),
+  currencies: getCurrencies(state),
   paymentData: getPaymentData(state),
 });
 
