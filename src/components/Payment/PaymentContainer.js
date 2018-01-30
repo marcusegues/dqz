@@ -38,6 +38,7 @@ import {
   analyticsInitPayment,
   analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
+import { storeClearDeclaration } from '../../asyncStorage/storageApi';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -149,6 +150,7 @@ class PaymentContainerInner extends React.Component<
     switch (state.url) {
       case `${baseUrl}${redirectsUrlKeys.success}`:
         analyticsCustom('Successful payment');
+        storeClearDeclaration();
         stateChanged = true;
         paymentStatus = 'success';
         break;
