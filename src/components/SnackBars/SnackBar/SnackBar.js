@@ -14,7 +14,6 @@ const ownStyles = StyleSheet.create({
     width: '100%',
     paddingHorizontal: 16,
     paddingVertical: 16,
-    marginBottom: 5,
   },
   snackBarText: {
     color: WHITE,
@@ -27,7 +26,7 @@ export const SnackBar = ({
   text,
   sbState,
 }: {
-  text: String,
+  text: string,
   sbState: SBState,
 }) =>
   sbState === 'hidden' ? (
