@@ -45,6 +45,7 @@ export const fetchGenericDataAsyncStorage = async (
   return '';
 };
 
+// TODO: write abstract parser that accepts any parser function in success case
 const parserImmutable = (key: StoreType, fallback: any): any =>
   fetchGenericDataAsyncStorage(key).then(value => {
     if (value.length) {
