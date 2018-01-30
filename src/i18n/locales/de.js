@@ -122,6 +122,13 @@ export const de: Locale = {
       'Möchten Sie mit dem bereits bestehenden Warenkorb fortfahren oder mit einem leeren Warenkorb neu starten?',
     savedBasketTotalCost: 'Gesamtkosten: CHF {{value}}',
     savedBasketNewShoppingCart: 'Neuer Warenkorb',
+    closeModalText: 'Schliessen',
+    timePickerTitle: 'Zeitraum der Einreise wählen',
+    timePickerSubTitle: 'Wann möchten Sie die Grenze überqueren?',
+    timePickerRegistrationValidUntil:
+      'Bitte achten Sie darauf, innherhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist bis zum {{date}} um {{time}} Uhr gültig.',
+    timePickerTakeOverThePeriod: 'Zeitraum übernehmen',
+    timePickerTimePrefix: 'Uhr',
   },
   payment: {
     overViewTitle: 'Übersicht ihrer Anmeldung',

@@ -124,6 +124,12 @@ type ModalTranslations = {
   savedBasketDoYoWantToContinue: string,
   savedBasketTotalCost: string,
   savedBasketNewShoppingCart: string,
+  timePickerTitle: string,
+  timePickerSubTitle: string,
+  timePickerRegistrationValidUntil: string,
+  timePickerTakeOverThePeriod: string,
+  closeModalText: string,
+  timePickerTimePrefix: string,
 };
 
 type InformationTranslations = {

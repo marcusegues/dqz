@@ -27,6 +27,7 @@ import type { Currency, CurrencyObject } from '../../../model/currencies';
 import type { TFunction } from '../../../types/generalTypes';
 import type { Amounts } from '../../../model/types/basketPeopleAmountsTypes';
 import { hasOffsettingAmount } from '../../../model/utils';
+import { ModalCloseText } from '../ModalCloseText';
 
 type PickerState = {
   currency: Currency,
@@ -41,6 +42,7 @@ type CurrencyPickerModalProps = {
   onAddAmount: (currency: Currency, amount: number) => void,
   large: boolean,
   amounts: Amounts,
+  toggleModalVisible: () => void,
 };
 
 class CurrencyPickerModalInner extends React.Component<
@@ -70,6 +72,7 @@ class CurrencyPickerModalInner extends React.Component<
       modalVisible,
       large,
       amounts,
+      toggleModalVisible,
     } = this.props;
     const { amount, currency } = this.state;
 
@@ -103,8 +106,14 @@ class CurrencyPickerModalInner extends React.Component<
       });
     }
     return (
-      <AppModal modalVisible={modalVisible}>
-        <PickerCard style={{ top: '15%' }}>
+      <AppModal
+        modalVisible={modalVisible}
+        onSwipe={toggleModalVisible}
+        onRequestClose={toggleModalVisible}
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
+      >
+        <PickerCard style={{ width: '100%' }}>
           <CardHeader text={title} />
           <CardHeaderSubText text={t(['currencyPickerSubTitle'])} />
 
@@ -124,7 +133,7 @@ class CurrencyPickerModalInner extends React.Component<
                 itemStyle={{
                   fontFamily: 'roboto_medium',
                 }}
-                style={{ flex: 0.5 }}
+                style={{ flex: 0.6 }}
               >
                 {currencyPicker
                   .filter(c => currenciesArray.indexOf(c.value) > -1)
@@ -171,6 +180,10 @@ class CurrencyPickerModalInner extends React.Component<
             text={subButtonText}
           />
         </PickerCard>
+        <ModalCloseText
+          onModalHide={toggleModalVisible}
+          text={t('closeModalText')}
+        />
       </AppModal>
     );
   }

@@ -20,6 +20,7 @@ import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/Picke
 import { PickerUnitColumn } from './subComponents/PickerUnitColumn';
 import type { TFunction } from '../../../types/generalTypes';
 import type { Category } from '../../../model/types/basketPeopleAmountsTypes';
+import { ModalCloseText } from '../ModalCloseText';
 
 type PickerState = {
   selected: 'standardInput' | 'customInput',
@@ -102,8 +103,12 @@ class PickerModalInner extends React.Component<
       : this.customTotalAmount();
 
     return (
-      <AppModal onRequestClose={toggleModalVisible} modalVisible={modalVisible}>
-        <PickerCard style={{ top: '25%' }}>
+      <AppModal
+        modalVisible={modalVisible}
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
+      >
+        <PickerCard style={{ width: '95%' }}>
           <View style={pickerModalStyle.topTouchableContainer}>
             <ModalTab
               activeTab={standardInput}
@@ -224,6 +229,10 @@ class PickerModalInner extends React.Component<
             />
           </View>
         </PickerCard>
+        <ModalCloseText
+          onModalHide={toggleModalVisible}
+          text={t('closeModalText')}
+        />
       </AppModal>
     );
   }

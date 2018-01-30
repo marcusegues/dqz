@@ -119,7 +119,12 @@ export const GoodInputModal = ({
   modalVisible,
   toggleModalVisible,
 }: GoodInputModalProps) => (
-  <AppModal onRequestClose={onRequestClose} modalVisible={modalVisible}>
+  <AppModal
+    onRequestClose={onRequestClose}
+    modalVisible={modalVisible}
+    animationIn="bounceInLeft"
+    animationOut="bounceOutLeft"
+  >
     <View style={ownStyles.modalContainer}>
       <View style={ownStyles.closeButtonContainer}>
         <TouchableWithoutFeedback
