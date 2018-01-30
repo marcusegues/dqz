@@ -110,8 +110,8 @@ class CurrencyPickerModalInner extends React.Component<
         modalVisible={modalVisible}
         onSwipe={toggleModalVisible}
         onRequestClose={toggleModalVisible}
-        animationIn="bounceInLeft"
-        animationOut="bounceOutLeft"
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
       >
         <PickerCard style={{ width: '100%' }}>
           <CardHeader text={title} />

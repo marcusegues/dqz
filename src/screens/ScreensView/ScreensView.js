@@ -7,6 +7,7 @@ import { NavBar } from '../../components/NavBar/NavBar';
 import { GoodInputModal } from '../../components/Modals/GoodInputModal/GoodInputModal';
 import { PickerModal } from '../../components/Modals/PickerModal/PickerModal';
 import { CurrencyPickerModal } from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
+import { TimePickerModal } from '../../components/Modals/TimePickerModal/TimePickerModal';
 import { getCurrencies, getFormattedCurrencyDate } from '../../reducers';
 import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import type { Navigation } from '../../types/generalTypes';
@@ -22,6 +23,7 @@ type ScreensViewState = {
   pickerModalVisible: boolean,
   currencyPickerModalVisible: boolean,
   savedBasketModalVisible: boolean,
+  timePickerModalVisible: boolean,
 };
 
 class ScreensViewInner extends React.Component<
@@ -37,6 +39,7 @@ class ScreensViewInner extends React.Component<
       pickerModalVisible: false,
       currencyPickerModalVisible: false,
       savedBasketModalVisible: false,
+      timePickerModalVisible: false,
     };
   }
 
@@ -60,6 +63,11 @@ class ScreensViewInner extends React.Component<
       savedBasketModalVisible: !this.state.savedBasketModalVisible,
     });
   }
+  toggleTimePickerModalVisible() {
+    this.setState({
+      timePickerModalVisible: !this.state.timePickerModalVisible,
+    });
+  }
 
   render() {
     return (
@@ -76,6 +84,7 @@ class ScreensViewInner extends React.Component<
             { key: `currencyPickerModal` },
             { key: `Information` },
             { key: `savedBasketModal` },
+            { key: `timePickerModal` },
           ]}
           renderItem={({ item }) => (
             <Text
@@ -97,6 +106,9 @@ class ScreensViewInner extends React.Component<
                   return;
                 } else if (item.key === `savedBasketModal`) {
                   this.setState({ savedBasketModalVisible: true });
+                  return;
+                } else if (item.key === `timePickerModal`) {
+                  this.setState({ timePickerModalVisible: true });
                   return;
                 }
                 this.props.navigation.navigate(item.key);
@@ -121,6 +133,16 @@ class ScreensViewInner extends React.Component<
         <CurrencyPickerModal
           modalVisible={this.state.currencyPickerModalVisible}
           toggleModalVisible={() => this.toggleCurrencyPickerVisible()}
+          currencyObject={this.props.currencyObject}
+          currencyDate="xy.zy.1234"
+          onHide={() => {}}
+          onAddAmount={() => {}}
+          amounts={initAmounts}
+          large={false}
+        />
+        <TimePickerModal
+          modalVisible={this.state.timePickerModalVisible}
+          toggleModalVisible={() => this.toggleTimePickerModalVisible()}
           currencyObject={this.props.currencyObject}
           currencyDate="xy.zy.1234"
           onHide={() => {}}

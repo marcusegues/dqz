@@ -106,6 +106,11 @@ export const it: Locale = {
     savedBasketDoYoWantToContinue: '🈯',
     savedBasketTotalCost: '🈯',
     savedBasketNewShoppingCart: '🈯',
+    timePickerTitle: '🈯',
+    timePickerSubTitle: '🈯',
+    timePickerRegistrationValidUntil: '🈯',
+    timePickerTakeOverThePeriod: '🈯',
+    timePickerTimePrefix: '🈯',
     closeModalText: '🈯',
   },
   payment: {
