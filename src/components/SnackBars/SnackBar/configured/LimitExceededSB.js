@@ -1,10 +1,9 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
-import { SnackBar } from '../SnackBar';
 // $FlowFixMe
 import {translate} from "react-i18next";
-
+import { SnackBar } from '../SnackBar';
 import type {SBState} from "../../SnackBarsContainer";
 import type {TFunction} from "../../../../types/generalTypes";
 
