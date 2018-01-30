@@ -45,6 +45,7 @@ import {
 import { hasLargeAmount } from '../../model/utils';
 import { getTotalPeople } from '../../model/configurationApi';
 import {
+  fetchAmounts,
   fetchBasket,
   fetchPeople,
   storeAmounts,
@@ -538,13 +539,13 @@ const mapDispatchToProps = dispatch => ({
         type: 'SET_PEOPLE',
         people,
       });
-    }); /*
+    });
     fetchAmounts().then(amounts => {
       dispatch({
         type: 'SET_AMOUNTS',
         amounts,
       });
-    });*/
+    });
   },
 });
 

@@ -16,6 +16,7 @@ import {
   initAmounts,
   initPeople,
 } from '../model/configurationApi';
+import { makeAmountsOfCurrencyRecord } from '../model/types/basketPeopleAmountsTypes';
 
 export const storeItemAsyncStorage = async (
   key: StoreType,
@@ -56,6 +57,24 @@ const parserImmutable = (key: StoreType, fallback: any): any =>
     return fallback;
   });
 
+const parserImmutableAmounts = (key: StoreType, fallback: any): any =>
+  fetchGenericDataAsyncStorage(key).then(value => {
+    if (value.length) {
+      try {
+        const amountsMap = Immutable.Map(JSON.parse(value));
+        return amountsMap.map(d =>
+          makeAmountsOfCurrencyRecord({
+            amounts: Immutable.List(d.amounts),
+            largeAmounts: Immutable.List(d.largeAmounts),
+          })
+        );
+      } catch (e) {
+        // Error
+      }
+    }
+    return fallback;
+  });
+
 const parser = (key: StoreType, fallback: any): any =>
   fetchGenericDataAsyncStorage(key).then(value => {
     if (value.length) {
@@ -86,7 +105,7 @@ export const fetchBasketAsyncStorage = async (
 
 export const fetchAmountsAsyncStorage = async (
   key: StoreType
-): Promise<Amounts> => parserImmutable(key, initAmounts);
+): Promise<Amounts> => parserImmutableAmounts(key, initAmounts);
 
 export const fetchPeopleAsyncStorage = async (
   key: StoreType
