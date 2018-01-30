@@ -1,4 +1,5 @@
 // @flow
+import Immutable from 'immutable';
 
 import {
   fetchAmountsAsyncStorage,
@@ -19,6 +20,11 @@ import type {
   People,
 } from '../model/types/basketPeopleAmountsTypes';
 import type { MainCategories } from '../types/reducers/appReducer';
+import {
+  emptyBasket,
+  initAmounts,
+  initPeople,
+} from '../model/configurationApi';
 
 /**
  * Stores item (stringified) under key - do NOT use directly!
@@ -85,6 +91,12 @@ export const storeMainCategories = (mainCategories: MainCategories) =>
 export const storePeople = (people: People) =>
   storeItem('People', people.toJS());
 
+export const storeClearDeclaration = () => {
+  storeMainCategories(Immutable.Set());
+  storeBasket(emptyBasket);
+  storePeople(initPeople);
+  storeAmounts(initAmounts);
+};
 /**
  * Fetch a currency object
  * @returns {Promise<CurrencyObject>}
