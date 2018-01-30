@@ -27,6 +27,7 @@ import type {
   Navigation,
   PaymentData,
   TFunction,
+  PaymentTransaction,
 } from '../../types/generalTypes';
 import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 import type {
@@ -170,12 +171,6 @@ class PaymentContainerInner extends React.Component<
     }
 
     if (stateChanged) {
-      setPaymentData(
-        // $FlowFixMe
-        paymentData.merge({
-          status: paymentStatus,
-        })
-      );
       this.setState(
         {
           redirectDataLoaded: false,
@@ -183,8 +178,53 @@ class PaymentContainerInner extends React.Component<
         },
         () => {
           if (paymentStatus === 'success') {
-            // TODO Yuri: somewhere here should be AsyncStore.save(receipt);
-            this.props.navigation.navigate('ReceiptAfterPayment');
+            this.saferpay
+              .assertPayment(
+                // $FlowFixMe
+                paymentData.get('token'),
+                // $FlowFixMe
+                paymentData.get('requestId')
+              )
+              .then(responseJson => {
+                const paymentTransaction: PaymentTransaction = {
+                  // $FlowFixMe
+                  status: responseJson.Transaction.Status,
+                  // $FlowFixMe
+                  id: responseJson.Transaction.Id,
+                  // $FlowFixMe
+                  date: responseJson.Transaction.Date,
+                  // $FlowFixMe
+                  amountValue: responseJson.Transaction.Amount.Value,
+                  // $FlowFixMe
+                  currencyCode: responseJson.Transaction.Amount.CurrencyCode,
+                  // $FlowFixMe
+                  paymentMethod: responseJson.PaymentMeans.Brand.PaymentMethod,
+                  // $FlowFixMe
+                  brandName: responseJson.PaymentMeans.Brand.Name,
+                  // $FlowFixMe
+                  cardNumber: responseJson.PaymentMeans.Card.MaskedNumber,
+                  // $FlowFixMe
+                  cardHolderName: responseJson.PaymentMeans.Card.HolderName,
+                  // $FlowFixMe
+                  ipAddress: responseJson.Payer.IpAddress,
+                  // $FlowFixMe
+                  ipLocation: responseJson.Payer.IpLocation,
+                };
+                return setPaymentData(
+                  // $FlowFixMe
+                  paymentData.merge({
+                    // $FlowFixMe
+                    status: paymentStatus,
+                    // $FlowFixMe
+                    transaction: paymentTransaction,
+                  })
+                );
+              })
+              .then(() => {
+                // TODO Yuri: somewhere here should be AsyncStore.save(receipt);
+                this.props.navigation.navigate('ReceiptAfterPayment');
+              })
+              .catch(error => console.log('Error is', error));
           }
         }
       );
