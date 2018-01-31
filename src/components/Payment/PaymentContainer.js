@@ -22,6 +22,8 @@ import {
   getTotalDuty,
   getTotalVat,
   getPaymentData,
+  getPeople,
+  getCurrencies,
 } from '../../reducers';
 import type {
   Navigation,
@@ -33,13 +35,19 @@ import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 import type {
   Amounts,
   Basket,
+  People,
 } from '../../model/types/basketPeopleAmountsTypes';
 import {
   analyticsCustom,
   analyticsInitPayment,
   analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
-import { storeClearDeclaration } from '../../asyncStorage/storageApi';
+import {
+  storeClearDeclaration,
+  storeReceipt,
+} from '../../asyncStorage/storageApi';
+import type { Receipt } from '../../types/receiptTypes';
+import type { CurrencyObject } from '../../model/currencies';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -71,6 +79,8 @@ type ReduxInject = {
   vatReport: VatReport,
   vat: number,
   paymentData: PaymentData,
+  people: People,
+  currencyObject: CurrencyObject,
 };
 
 class PaymentContainerInner extends React.Component<
@@ -115,19 +125,17 @@ class PaymentContainerInner extends React.Component<
           .initializePayment(100 * fees, 'CHF', uuidv1())
           .then(responseJson => {
             setPaymentData(
-              // $FlowFixMe
-              paymentData.merge({
+              paymentData
                 // $FlowFixMe
-                specVersion: responseJson.ResponseHeader.SpecVersion,
+                .set('specVersion', responseJson.ResponseHeader.SpecVersion)
                 // $FlowFixMe
-                requestId: responseJson.ResponseHeader.RequestId,
+                .set('requestId', responseJson.ResponseHeader.RequestId)
                 // $FlowFixMe
-                token: responseJson.Token,
+                .set('token', responseJson.Token)
                 // $FlowFixMe
-                tokenExpiration: responseJson.Expiration,
+                .set('tokenExpiration', responseJson.Expiration)
                 // $FlowFixMe
-                redirectUrl: responseJson.RedirectUrl,
-              })
+                .set('redirectUrl', responseJson.RedirectUrl)
             );
             this.setState({
               isLoadingRedirectData: false,
@@ -145,7 +153,14 @@ class PaymentContainerInner extends React.Component<
   }
 
   checkWebViewUrl(state) {
-    const { setPaymentData, paymentData } = this.props;
+    const {
+      setPaymentData,
+      paymentData,
+      amounts,
+      basket,
+      people,
+      currencyObject,
+    } = this.props;
     let stateChanged = false;
     let paymentStatus = '';
     switch (state.url) {
@@ -210,20 +225,25 @@ class PaymentContainerInner extends React.Component<
                   // $FlowFixMe
                   ipLocation: responseJson.Payer.IpLocation,
                 };
-                return setPaymentData(
-                  // $FlowFixMe
-                  paymentData.merge({
-                    // $FlowFixMe
-                    status: paymentStatus,
-                    // $FlowFixMe
-                    transaction: paymentTransaction,
-                  })
-                );
+
+                const newPaymentData: PaymentData = paymentData
+                  .set('status', paymentStatus)
+                  .set('transaction', paymentTransaction);
+
+                setPaymentData(newPaymentData);
+                const receiptId = uuidv1(); // TODO: should be stored into redux store and get in ReceiptAfterPayment
+                // $FlowFixMe
+                const receipt: Receipt = {
+                  receiptId,
+                  amounts,
+                  people,
+                  basket,
+                  currencyObject,
+                  paymentData: newPaymentData,
+                };
+                return storeReceipt(receipt);
               })
-              .then(() => {
-                // TODO Yuri: somewhere here should be AsyncStore.save(receipt);
-                this.props.navigation.navigate('ReceiptAfterPayment');
-              })
+              .then(this.props.navigation.navigate('ReceiptAfterPayment'))
               .catch(error => console.log('Error is', error));
           }
         }
@@ -301,6 +321,8 @@ const mapStateToProps = state => ({
   vatReport: getVatReport(state),
   amounts: getAmounts(state),
   basket: getBasket(state),
+  people: getPeople(state),
+  currencyObject: getCurrencies(state),
   paymentData: getPaymentData(state),
 });
 

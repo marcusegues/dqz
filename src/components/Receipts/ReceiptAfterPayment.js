@@ -20,6 +20,11 @@ import { VatRow } from '../Overview/subcomponents/VatRow';
 import type { PaymentData, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { getPaymentData } from '../../reducers';
+import {
+  clearReceipt,
+  fetchReceiptByrReceiptId,
+  fetchReceipts,
+} from '../../asyncStorage/storageApi';
 
 const ownStyles = {
   topSumText: {
@@ -88,6 +93,9 @@ class ReceiptAfterPaymentInner extends React.Component<
   }
 
   render() {
+    // TODO: Example how to get receipt by ReceiptId from Redux
+    // fetchReceiptByrReceiptId(receiptId).then(r => console.log(r));
+
     const { t, paymentData } = this.props;
     return (
       <ScrollViewCard

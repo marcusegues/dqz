@@ -1,8 +1,10 @@
 // @flow
 import Immutable from 'immutable';
+import type { List } from 'immutable';
 // $FlowFixMe
 import { AsyncStorage } from 'react-native';
 import type { CurrencyObject } from '../model/currencies';
+import type { Receipt } from '../types/receiptTypes';
 import type { StoreType } from './storeTypes';
 import { currencyExample } from '../model/currencies';
 import type { Language } from '../i18n/types/locale';
@@ -100,6 +102,22 @@ const parser = (key: StoreType, fallback: any): any =>
     }
     return fallback;
   });
+
+const parserImmutableReceipts = (key: StoreType, fallback: any): any =>
+  fetchGenericDataAsyncStorage(key).then(value => {
+    if (value.length) {
+      try {
+        return Immutable.List(JSON.parse(value));
+      } catch (e) {
+        // Error
+      }
+    }
+    return fallback;
+  });
+
+export const fetchReceiptsAsyncStorage = async (
+  key: StoreType
+): Promise<List<Receipt>> => parserImmutableReceipts(key, Immutable.List());
 
 export const fetchCurrencyObjectsAsyncStorage = async (
   key: StoreType
