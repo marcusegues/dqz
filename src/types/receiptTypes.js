@@ -15,6 +15,6 @@ export type Receipt = {
   amounts: Amounts,
   people: People,
   basket: Basket,
-  currencyObject: CurrencyObject,
+  currencies: CurrencyObject,
   paymentData: PaymentData,
 };
