@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
+import { connect } from 'react-redux';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -20,11 +21,19 @@ import { moderateScale, verticalScale } from '../../styles/Scaling';
 import type { TFunction } from '../../types/generalTypes';
 import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 import { PeriodOfEntryRow } from './subcomponents/PeriodOfEntryRow';
+import { TimePickerModal } from '../Modals/TimePickerModal/TimePickerModal';
+import { getReceiptEntryTime } from '../../reducers';
 
 type OverviewProps = {
   dutyReport: DutyReport,
   vatReport: VatReport,
   basket: Basket,
+  modalVisible: boolean,
+  setReceiptEntryTime: (receiptEntryTime: string) => void,
+};
+
+type OverviewState = {
+  modalVisible: boolean,
 };
 
 const ownStyles = {
@@ -40,75 +49,115 @@ const ownStyles = {
   },
 };
 
-const OverviewInner = ({
-  dutyReport,
-  vatReport,
-  basket,
-  t,
-}: OverviewProps & { t: TFunction }) => {
-  const fullVat = vatReport.get('totalVat');
-  const fullDuty = dutyReport.get('totalDuty');
-  return (
-    <Card>
-      <CardHeader text={t('overViewTitle')} />
-      <View style={{ alignSelf: 'flex-end', marginRight: 16, marginBottom: 2 }}>
-        <CardRowSubText text={t('dutyColumn')} />
-      </View>
-      <View style={{ flex: 1, width: '100%' }}>
-        {dutyReport
-          .get('dutyByCategoryRaw')
-          .entrySeq()
-          .filter(entry => getTotalQuantity(basket, entry[0]) > 0)
-          .map(([category, dutyOfCategory], idx) => (
-            <DutyRow
-              borderTop={idx === 0}
-              key={category}
-              mainCategory={getMainCategory(category)}
-              category={category}
-              quantity={getTotalQuantity(basket, category)}
-              duty={dutyOfCategory}
-            />
-          ))}
+class OverviewInner extends React.Component<
+  OverviewProps & { t: TFunction },
+  OverviewState
+> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalVisible: this.props.modalVisible,
+    };
+  }
 
+  handleShowModal() {
+    this.setState({ modalVisible: true });
+  }
+
+  handleHideModal() {
+    this.setState({
+      modalVisible: false,
+    });
+  }
+
+  handleSetReceiptEntryTime(entryTime: string) {
+    this.props.setReceiptEntryTime(entryTime);
+  }
+
+  render() {
+    console.log(this.props.receiptEntryTime);
+    const { dutyReport, vatReport, basket, t } = this.props;
+    const fullVat = vatReport.get('totalVat');
+    const fullDuty = dutyReport.get('totalDuty');
+    return (
+      <Card>
+        <CardHeader text={t('overViewTitle')} />
         <View
           style={{ alignSelf: 'flex-end', marginRight: 16, marginBottom: 2 }}
         >
-          <ReceiptSubText
-            text={t('receipt:vatColumn')}
-            style={ownStyles.receiptSubTextVat}
-          />
+          <CardRowSubText text={t('dutyColumn')} />
         </View>
-
         <View style={{ flex: 1, width: '100%' }}>
-          <VatRow
-            quantity={`~${vatReport.get('totalAmountsApprox')}`}
-            vat={vatReport.get('totalVat')}
-          />
-        </View>
+          {dutyReport
+            .get('dutyByCategoryRaw')
+            .entrySeq()
+            .filter(entry => getTotalQuantity(basket, entry[0]) > 0)
+            .map(([category, dutyOfCategory], idx) => (
+              <DutyRow
+                borderTop={idx === 0}
+                key={category}
+                mainCategory={getMainCategory(category)}
+                category={category}
+                quantity={getTotalQuantity(basket, category)}
+                duty={dutyOfCategory}
+              />
+            ))}
 
-        <PeriodOfEntryRow
-          title={t('receipt:entryTime')}
-          subtitle={t('receipt:chooseOtherEntryTime')}
-          time="Heute, 16:30 - 18:30 Uhr"
-          onPress={() => {}}
+          <View
+            style={{ alignSelf: 'flex-end', marginRight: 16, marginBottom: 2 }}
+          >
+            <ReceiptSubText
+              text={t('receipt:vatColumn')}
+              style={ownStyles.receiptSubTextVat}
+            />
+          </View>
+
+          <View style={{ flex: 1, width: '100%' }}>
+            <VatRow
+              quantity={`~${vatReport.get('totalAmountsApprox')}`}
+              vat={vatReport.get('totalVat')}
+            />
+          </View>
+
+          <PeriodOfEntryRow
+            title={t('receipt:entryTime')}
+            subtitle={t('receipt:chooseOtherEntryTime')}
+            time={this.props.receiptEntryTime}
+            onPress={() => this.handleShowModal()}
+          />
+
+          <View
+            style={{ alignSelf: 'flex-end', marginRight: 16, marginTop: 16 }}
+          >
+            <CardRowText
+              text={t('receipt:sumText', {
+                value: (fullVat + fullDuty).toFixed(2),
+              })}
+              style={ownStyles.cardRowTextSum}
+            />
+          </View>
+        </View>
+        <TimePickerModal
+          modalVisible={this.state.modalVisible}
+          onHideModal={() => this.handleHideModal()}
+          onSelectTime={entryTime => this.handleSetReceiptEntryTime(entryTime)}
         />
+      </Card>
+    );
+  }
+}
 
-        <View style={{ alignSelf: 'flex-end', marginRight: 16, marginTop: 16 }}>
-          <CardRowText
-            text={t('receipt:sumText', {
-              value: (fullVat + fullDuty).toFixed(2),
-            })}
-            style={ownStyles.cardRowTextSum}
-          />
-        </View>
-      </View>
-    </Card>
-  );
-};
+const mapStateToProps = state => ({
+  receiptEntryTime: getReceiptEntryTime(state),
+});
 
-export const Overview = (translate([
-  'payment',
-  'receipt',
-  'mainCategories',
-  'categories',
-])(OverviewInner): ComponentType<OverviewProps>);
+const mapDispatchToProps = dispatch => ({
+  setReceiptEntryTime: (receiptEntryTime: string) =>
+    dispatch({ type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime }),
+});
+
+export const Overview = (connect(mapStateToProps, mapDispatchToProps)(
+  translate(['payment', 'receipt', 'mainCategories', 'categories'])(
+    OverviewInner
+  )
+): ComponentType<OverviewProps>);
