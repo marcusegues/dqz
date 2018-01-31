@@ -1,11 +1,31 @@
 // @flow
-
+import Immutable from 'immutable';
+import type { List } from 'immutable';
 // $FlowFixMe
 import { AsyncStorage } from 'react-native';
 import type { CurrencyObject } from '../model/currencies';
+import type { Receipt } from '../types/receiptTypes';
 import type { StoreType } from './storeTypes';
 import { currencyExample } from '../model/currencies';
 import type { Language } from '../i18n/types/locale';
+import type {
+  Amounts,
+  Basket,
+  People,
+} from '../model/types/basketPeopleAmountsTypes';
+import {
+  emptyBasket,
+  initAmounts,
+  initPeople,
+} from '../model/configurationApi';
+import type { MainCategories } from '../types/reducers/appReducer';
+import {
+  deserializeAmounts,
+  deserializeBasket,
+  deserializeMainCategories,
+  deserializePeople,
+  deserializeReceipts,
+} from './deserializers';
 
 export const storeItemAsyncStorage = async (
   key: StoreType,
@@ -34,17 +54,29 @@ export const fetchGenericDataAsyncStorage = async (
   return '';
 };
 
-const parser = (key: StoreType, fallback: any): any =>
+const parserGeneric = (
+  key: StoreType,
+  fallback: any,
+  deserializer: (serialized: string) => any
+): any =>
   fetchGenericDataAsyncStorage(key).then(value => {
     if (value.length) {
       try {
-        return JSON.parse(value);
+        return deserializer(JSON.parse(value));
       } catch (e) {
         // Error
       }
     }
     return fallback;
   });
+
+const parser = (key: StoreType, fallback: any): any =>
+  parserGeneric(key, fallback, x => x);
+
+export const fetchReceiptsAsyncStorage = async (
+  key: StoreType
+): Promise<List<Receipt>> =>
+  parserGeneric(key, Immutable.List(), deserializeReceipts);
 
 export const fetchCurrencyObjectsAsyncStorage = async (
   key: StoreType
@@ -57,3 +89,20 @@ export const fetchSettingsAcceptRateAsyncStorage = async (
 export const fetchSettingsHasLanguageAsyncStorage = async (
   key: StoreType
 ): Promise<Language> => parser(key, 'de');
+
+export const fetchBasketAsyncStorage = async (
+  key: StoreType
+): Promise<Basket> => parserGeneric(key, emptyBasket, deserializeBasket);
+
+export const fetchAmountsAsyncStorage = async (
+  key: StoreType
+): Promise<Amounts> => parserGeneric(key, initAmounts, deserializeAmounts);
+
+export const fetchPeopleAsyncStorage = async (
+  key: StoreType
+): Promise<People> => parserGeneric(key, initPeople, deserializePeople);
+
+export const fetchMainCategoriesAsyncStorage = async (
+  key: StoreType
+): Promise<MainCategories> =>
+  parserGeneric(key, Immutable.Set(), deserializeMainCategories);

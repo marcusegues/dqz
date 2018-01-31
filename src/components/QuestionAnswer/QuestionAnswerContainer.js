@@ -44,6 +44,16 @@ import {
 } from '../../analytics/analyticsApi';
 import { hasLargeAmount } from '../../model/utils';
 import { getTotalPeople } from '../../model/configurationApi';
+import {
+  fetchAmounts,
+  fetchBasket,
+  fetchMainCategories,
+  fetchPeople,
+  storeAmounts,
+  storeBasket,
+  storeMainCategories,
+  storePeople,
+} from '../../asyncStorage/storageApi';
 
 export type QuestionType =
   | 'peopleInput'
@@ -100,6 +110,7 @@ type QuestionAnswerContainerProps = {
   currencies: CurrencyObject,
   currencyDate: string,
   t: TFunction,
+  initABP: () => void,
 };
 
 class QuestionAnswerContainerInner extends React.Component<
@@ -132,6 +143,7 @@ class QuestionAnswerContainerInner extends React.Component<
 
   componentWillMount() {
     analyticsScreenMounted('QuestionAnswerContainer');
+    this.props.initABP();
   }
 
   componentDidMount() {
@@ -485,32 +497,66 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setPeople: (people: People) =>
+  setPeople: (people: People) => {
+    storePeople(people);
     dispatch({
       type: 'SET_PEOPLE',
       people,
-    }),
-  setMainCategories: (mainCategories: MainCategories) =>
+    });
+  },
+  setMainCategories: (mainCategories: MainCategories) => {
+    storeMainCategories(mainCategories);
     dispatch({
       type: 'SET_MAIN_CATEGORIES',
       mainCategories,
-    }),
+    });
+  },
   basketChangeQuantity: (category, quantity) =>
     dispatch({
       type: 'BASKET_ADD_QUANTITY',
       category,
       quantity,
     }),
-  setBasket: basket =>
+  setBasket: basket => {
+    storeBasket(basket);
     dispatch({
       type: 'SET_BASKET',
       basket,
-    }),
-  setAmounts: amounts =>
+    });
+  },
+  setAmounts: amounts => {
+    storeAmounts(amounts);
     dispatch({
       type: 'SET_AMOUNTS',
       amounts,
-    }),
+    });
+  },
+  initABP: () => {
+    fetchBasket().then(basket => {
+      dispatch({
+        type: 'SET_BASKET',
+        basket,
+      });
+    });
+    fetchPeople().then(people => {
+      dispatch({
+        type: 'SET_PEOPLE',
+        people,
+      });
+    });
+    fetchAmounts().then(amounts => {
+      dispatch({
+        type: 'SET_AMOUNTS',
+        amounts,
+      });
+    });
+    fetchMainCategories().then(mainCategories => {
+      dispatch({
+        type: 'SET_MAIN_CATEGORIES',
+        mainCategories,
+      });
+    });
+  },
 });
 
 export const QuestionAnswerContainer = (connect(

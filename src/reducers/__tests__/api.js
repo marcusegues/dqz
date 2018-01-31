@@ -19,6 +19,7 @@ import {
   getTotalFees,
   getVatReport,
   getDutyReport,
+  getReceiptId,
 } from '../index';
 import {
   sampleAmounts1,
@@ -55,6 +56,9 @@ describe('API', () => {
     expect(getMainCategories({ appState: initState }).toString()).toBe(
       Immutable.Set().toString()
     );
+  });
+  test('getReceiptId', () => {
+    expect(getReceiptId({ appState: initState }).toString()).toBe('');
   });
   test('getSettings', () => {
     expect(getSettings({ appState: initState }).toString()).toBe(

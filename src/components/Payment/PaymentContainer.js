@@ -22,22 +22,34 @@ import {
   getTotalDuty,
   getTotalVat,
   getPaymentData,
+  getPeople,
+  getCurrencies,
 } from '../../reducers';
 import type {
   Navigation,
   PaymentData,
   TFunction,
+  PaymentTransaction,
 } from '../../types/generalTypes';
 import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 import type {
   Amounts,
   Basket,
+  People,
 } from '../../model/types/basketPeopleAmountsTypes';
 import {
   analyticsCustom,
   analyticsInitPayment,
   analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
+
+import { totalAllAmounts } from '../../model/utils';
+import { MAX_DECLARED_CHF } from '../../constants/declaration';
+import type { CurrencyObject } from '../../model/currencies';
+import {
+  storeClearDeclaration,
+  storeReceipt,
+} from '../../asyncStorage/storageApi';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -58,17 +70,20 @@ type PaymentContainerProps = {
   navigation: Navigation,
   // dispatch to props
   setPaymentData: (paymentData: PaymentData) => void,
+  setReceiptId: (receiptId: string) => void,
 };
 
 type ReduxInject = {
   fees: number,
   amounts: Amounts,
+  currencies: CurrencyObject,
   basket: Basket,
   dutyReport: DutyReport,
   duty: number,
   vatReport: VatReport,
   vat: number,
   paymentData: PaymentData,
+  people: People,
 };
 
 class PaymentContainerInner extends React.Component<
@@ -113,19 +128,17 @@ class PaymentContainerInner extends React.Component<
           .initializePayment(100 * fees, 'CHF', uuidv1())
           .then(responseJson => {
             setPaymentData(
-              // $FlowFixMe
-              paymentData.merge({
+              paymentData
                 // $FlowFixMe
-                specVersion: responseJson.ResponseHeader.SpecVersion,
+                .set('specVersion', responseJson.ResponseHeader.SpecVersion)
                 // $FlowFixMe
-                requestId: responseJson.ResponseHeader.RequestId,
+                .set('requestId', responseJson.ResponseHeader.RequestId)
                 // $FlowFixMe
-                token: responseJson.Token,
+                .set('token', responseJson.Token)
                 // $FlowFixMe
-                tokenExpiration: responseJson.Expiration,
+                .set('tokenExpiration', responseJson.Expiration)
                 // $FlowFixMe
-                redirectUrl: responseJson.RedirectUrl,
-              })
+                .set('redirectUrl', responseJson.RedirectUrl)
             );
             this.setState({
               isLoadingRedirectData: false,
@@ -143,12 +156,21 @@ class PaymentContainerInner extends React.Component<
   }
 
   checkWebViewUrl(state) {
-    const { setPaymentData, paymentData } = this.props;
+    const {
+      setPaymentData,
+      paymentData,
+      amounts,
+      basket,
+      people,
+      currencies,
+      setReceiptId,
+    } = this.props;
     let stateChanged = false;
     let paymentStatus = '';
     switch (state.url) {
       case `${baseUrl}${redirectsUrlKeys.success}`:
         analyticsCustom('Successful payment');
+        storeClearDeclaration();
         stateChanged = true;
         paymentStatus = 'success';
         break;
@@ -168,12 +190,6 @@ class PaymentContainerInner extends React.Component<
     }
 
     if (stateChanged) {
-      setPaymentData(
-        // $FlowFixMe
-        paymentData.merge({
-          status: paymentStatus,
-        })
-      );
       this.setState(
         {
           redirectDataLoaded: false,
@@ -181,8 +197,59 @@ class PaymentContainerInner extends React.Component<
         },
         () => {
           if (paymentStatus === 'success') {
-            // TODO Yuri: somewhere here should be AsyncStore.save(receipt);
-            this.props.navigation.navigate('ReceiptAfterPayment');
+            this.saferpay
+              .assertPayment(
+                // $FlowFixMe
+                paymentData.get('token'),
+                // $FlowFixMe
+                paymentData.get('requestId')
+              )
+              .then(responseJson => {
+                const paymentTransaction: PaymentTransaction = {
+                  // $FlowFixMe
+                  status: responseJson.Transaction.Status,
+                  // $FlowFixMe
+                  id: responseJson.Transaction.Id,
+                  // $FlowFixMe
+                  date: responseJson.Transaction.Date,
+                  // $FlowFixMe
+                  amountValue: responseJson.Transaction.Amount.Value,
+                  // $FlowFixMe
+                  currencyCode: responseJson.Transaction.Amount.CurrencyCode,
+                  // $FlowFixMe
+                  paymentMethod: responseJson.PaymentMeans.Brand.PaymentMethod,
+                  // $FlowFixMe
+                  brandName: responseJson.PaymentMeans.Brand.Name,
+                  // $FlowFixMe
+                  cardNumber: responseJson.PaymentMeans.Card.MaskedNumber,
+                  // $FlowFixMe
+                  cardHolderName: responseJson.PaymentMeans.Card.HolderName,
+                  // $FlowFixMe
+                  ipAddress: responseJson.Payer.IpAddress,
+                  // $FlowFixMe
+                  ipLocation: responseJson.Payer.IpLocation,
+                };
+
+                const newPaymentData: PaymentData = paymentData
+                  .set('status', paymentStatus)
+                  .set('transaction', paymentTransaction);
+
+                setPaymentData(newPaymentData);
+                const receiptId = uuidv1();
+                setReceiptId(receiptId);
+                // $FlowFixMe
+                const receipt: Receipt = {
+                  receiptId,
+                  amounts,
+                  people,
+                  basket,
+                  currencies,
+                  paymentData: newPaymentData,
+                };
+                return storeReceipt(receipt);
+              })
+              .then(this.props.navigation.navigate('ReceiptAfterPayment'))
+              .catch(error => console.log('Error is', error));
           }
         }
       );
@@ -190,7 +257,16 @@ class PaymentContainerInner extends React.Component<
   }
 
   render() {
-    const { basket, t, dutyReport, vatReport, fees, paymentData } = this.props;
+    const {
+      basket,
+      t,
+      dutyReport,
+      vatReport,
+      fees,
+      paymentData,
+      currencies,
+      amounts,
+    } = this.props;
     return (
       <View
         style={{
@@ -228,7 +304,9 @@ class PaymentContainerInner extends React.Component<
         <RedButton
           onPress={() => this.initializePayment()}
           text={t('toPayment')}
-          confirmationDisabled={fees < 1}
+          confirmationDisabled={
+            fees < 1 || totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF
+          }
         />
         {this.state.redirectDataLoaded ? (
           <View style={{ position: 'absolute', top: 0 }}>
@@ -249,6 +327,11 @@ const mapDispatchToProps = dispatch => ({
       type: 'SET_PAYMENT_DATA',
       paymentData,
     }),
+  setReceiptId: (receiptId: string) =>
+    dispatch({
+      type: 'SET_RECEIPT_ID',
+      receiptId,
+    }),
 });
 
 const mapStateToProps = state => ({
@@ -259,6 +342,8 @@ const mapStateToProps = state => ({
   vatReport: getVatReport(state),
   amounts: getAmounts(state),
   basket: getBasket(state),
+  people: getPeople(state),
+  currencies: getCurrencies(state),
   paymentData: getPaymentData(state),
 });
 

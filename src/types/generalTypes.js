@@ -39,6 +39,10 @@ export type PaymentTransaction = {
   currencyCode: string,
   cardNumber: string,
   cardHolderName: string,
+  paymentMethod: string,
+  brandName: string,
+  ipAddress: string,
+  ipLocation: string,
 };
 
 /**
@@ -82,5 +86,9 @@ export const makePaymentDataRecord: RecordFactory<
     currencyCode: '',
     cardNumber: '',
     cardHolderName: '',
+    paymentMethod: '',
+    brandName: '',
+    ipAddress: '',
+    ipLocation: '',
   },
 });
