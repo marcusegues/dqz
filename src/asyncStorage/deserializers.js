@@ -46,7 +46,7 @@ export const deserializeReceipts = (serialized: any): any => {
     amounts: deserializeAmounts(d.amounts),
     people: deserializePeople(d.people),
     basket: deserializeBasket(d.basket),
-    currencyObject: d.currencyObject,
+    currencies: d.currencies,
     paymentData: d.paymentData,
   }));
 };
