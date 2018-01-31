@@ -5,7 +5,7 @@ import { TouchableWithoutFeedback, View } from 'react-native';
 import { Row } from '../../../components/Rows/Row';
 import { CardRowText } from '../../../components/QuestionAnswer/cards/subcomponents/CardRowText';
 import { CardRowSubText } from '../../../components/QuestionAnswer/cards/subcomponents/CardRowSubText';
-import { GreySquare } from './GreySquare';
+import { InformationRowIcon } from './InformationRowIcon';
 import { RightChevronIcon } from '../../../components/General Components/RightChevronIcon';
 
 const ownStyles = {
@@ -25,20 +25,20 @@ const ownStyles = {
 type InformationRowProps = {
   mainText: string,
   subText: string,
-  number: string,
+  source: string,
   rowOnPress: () => void,
 };
 
 export const InformationRow = ({
   mainText,
   subText,
-  number,
+  source,
   rowOnPress,
 }: InformationRowProps) => (
   <Row>
     <TouchableWithoutFeedback onPress={rowOnPress}>
       <View style={ownStyles.container}>
-        <GreySquare number={number} />
+        <InformationRowIcon source={source} />
         <View style={ownStyles.textContainer}>
           <CardRowText text={mainText} style={{ paddingBottom: 3 }} />
           <CardRowSubText text={subText} />

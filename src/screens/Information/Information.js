@@ -30,7 +30,7 @@ class InformationInner extends React.Component<{
         {informationData.map(i => (
           <InformationRow
             key={i.id}
-            number={i.number}
+            source={i.source}
             mainText={t(i.dataMainText)}
             subText={t(i.dataSubText)}
             rowOnPress={() => navigation.navigate('UsefulInfoScreenTemplate')}
