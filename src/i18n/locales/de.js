@@ -152,6 +152,8 @@ export const de: Locale = {
     allReceiptsOlderReceipts: 'Ältere Quittungen:',
     allReceiptsSumInFranks: 'CHF {{value}}',
     allReceiptsDate: 'vom {{value}}',
+    entryTime: 'Zeitraum der Einreise',
+    chooseOtherEntryTime: 'Anderen Zeitraum wählen',
   },
   information: {
     informationTitle: 'Wissenswertes',

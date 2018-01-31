@@ -19,6 +19,7 @@ import { VatRow } from './subcomponents/VatRow';
 import { moderateScale, verticalScale } from '../../styles/Scaling';
 import type { TFunction } from '../../types/generalTypes';
 import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
+import { PeriodOfEntryRow } from './subcomponents/PeriodOfEntryRow';
 
 type OverviewProps = {
   dutyReport: DutyReport,
@@ -84,6 +85,14 @@ const OverviewInner = ({
             vat={vatReport.get('totalVat')}
           />
         </View>
+
+        <PeriodOfEntryRow
+          title={t('receipt:entryTime')}
+          subtitle={t('receipt:chooseOtherEntryTime')}
+          time="Heute, 16:30 - 18:30 Uhr"
+          onPress={() => {}}
+        />
+
         <View style={{ alignSelf: 'flex-end', marginRight: 16, marginTop: 16 }}>
           <CardRowText
             text={t('receipt:sumText', {

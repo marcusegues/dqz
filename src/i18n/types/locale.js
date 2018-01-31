@@ -168,6 +168,8 @@ type ReceiptTranslations = {
   allReceiptsOlderReceipts: string,
   allReceiptsSumInFranks: string,
   allReceiptsDate: string,
+  entryTime: string,
+  chooseOtherEntryTime: string,
 };
 
 type AppInformationTranslations = {
