@@ -129,7 +129,7 @@ export const it: Locale = {
         sumText: 'Totale (CHF)',
     },
     receipt: {
-        dutyAndVat: 'Tributi doganali: {{duty}} | IVA: {{√at}},
+        dutyAndVat: 'Tributi doganali: {{duty}} | IVA: {{vat}}',
         paidOn: 'Pagamento effettuato in data {{date}} alle ore {{time}} con:',
         transactionId: 'ID della transazione (SIX): {{value}}',
         receiptValidUntilText: 'Il giustificativo è valido fino al:',
