@@ -3,7 +3,7 @@ import type { Locale } from '../types/locale';
 
 export const de: Locale = {
   categories: {
-    Meat: 'Fleisch & Fleischzub.',
+    Meat: 'Fleisch & Fleischzubereitungen',
     Butter: 'Butter & Rahm',
     Oils: 'Öle/Fette/Margarine',
     OtherFood: 'Sonstige Lebensmittel & alkoholfreie Getränke',
@@ -20,9 +20,9 @@ export const de: Locale = {
     Other: 'Sonstige Waren',
   },
   mainCategories: {
-    Meat: 'Fleisch & -zub.',
+    Meat: 'Fleisch & Fleischzubereitungen',
     Butter: 'Butter & Rahm',
-    Oil: 'Öle, Fette, Margarine',
+    Oil: 'Öle/Fette/Margarine',
     Alcohol: `Alkohol`,
     TobaccoProducts: 'Tabak',
     OtherGoods: 'Andere Waren',
@@ -31,7 +31,7 @@ export const de: Locale = {
     declareGoods: 'Waren anmelden',
     pleaseSelect: 'Bitte auswählen',
     receipts: 'Quittungen Schweizer Zoll',
-    guideline: 'Ihr Weg durch den Schweizer Zoll',
+    guideline: 'Einreise, was gilt es zu beachten?',
     information: 'Informationen zum Gebrauch der App',
     navbarFirst: 'Ihre Reise',
     navbarSecond: 'Bezahlung',
