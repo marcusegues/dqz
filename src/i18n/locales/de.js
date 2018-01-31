@@ -174,6 +174,9 @@ export const de: Locale = {
     allowancesFoodAlcoholTobacco: 'Freimengen: Lebensmittel, Alkohol und Tabak',
     allowancesFoodAlcoholTobaccoText:
       'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer gewissen Amount Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
+    prohibitions: 'Verbote und Beschränkungen',
+    prohibitionsSubText:
+      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
   },
   appInformation: {
     appInfoTitle: 'Über die App',
