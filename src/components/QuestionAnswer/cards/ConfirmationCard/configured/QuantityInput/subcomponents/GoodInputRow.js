@@ -64,8 +64,41 @@ const ownStyles = {
   },
 };
 
-const cigarette = require('../../../../../../../../assets/icons/cigarette_new.png');
-const meat = require('../../../../../../../../assets/icons/meat_new.png');
+const AlcHard = require('../../../../../../../../assets/icons/AlcHard.png');
+const AlcSoft = require('../../../../../../../../assets/icons/AlcSoft.png');
+const Butter = require('../../../../../../../../assets/icons/Butter.png');
+const Meat = require('../../../../../../../../assets/icons/Meat.png');
+const Oils = require('../../../../../../../../assets/icons/Oils.png');
+const OtherGoods = require('../../../../../../../../assets/icons/OtherGoods.png');
+const Tobacco = require('../../../../../../../../assets/icons/OtherTobacco.png');
+const Cigarettes = require('../../../../../../../../assets/icons/Tabak.png');
+
+const assets: { [Category | 'OtherGoods']: string } = {
+  AlcHard,
+  AlcSoft,
+  Butter,
+  Meat,
+  Oils,
+  OtherGoods,
+  Tobacco,
+  Cigarettes,
+};
+
+const getSource = (category: Category): string => {
+  const categoriesWithIcons = new Set([
+    'AlcHard',
+    'AlcSoft',
+    'Butter',
+    'Meat',
+    'Oils',
+    'Tobacco',
+    'Cigarettes',
+  ]);
+  if (categoriesWithIcons.has(category)) {
+    return assets[category];
+  }
+  return assets.OtherGoods;
+};
 
 type GoodInputRowProps = {
   onShowQuantityInputModal: () => void,
@@ -83,11 +116,7 @@ const GoodInputRowInner = ({
 }: GoodInputRowProps & { t: TFunction }) => (
   <Touchable onPress={onShowQuantityInputModal}>
     <View style={ownStyles.container}>
-      <CategoryIcon
-        source={
-          category === 'Cigarettes' || category === 'Tobacco' ? cigarette : meat
-        }
-      />
+      <CategoryIcon source={getSource(category)} />
       <View style={ownStyles.rowMainTextContainer}>
         <CardRowText text={t(`categories:${category}`)} />
         <CardRowSubText text={t(`mainCategories:${mainCategory}`)} />
