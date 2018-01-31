@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */ // TODO REMOVE
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';

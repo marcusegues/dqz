@@ -80,7 +80,6 @@ type ReduxInject = {
   vat: number,
   paymentData: PaymentData,
   people: People,
-  currencyObject: CurrencyObject,
 };
 
 class PaymentContainerInner extends React.Component<
@@ -159,7 +158,7 @@ class PaymentContainerInner extends React.Component<
       amounts,
       basket,
       people,
-      currencyObject,
+      currencies,
     } = this.props;
     let stateChanged = false;
     let paymentStatus = '';
@@ -238,7 +237,7 @@ class PaymentContainerInner extends React.Component<
                   amounts,
                   people,
                   basket,
-                  currencyObject,
+                  currencies,
                   paymentData: newPaymentData,
                 };
                 return storeReceipt(receipt);
@@ -333,7 +332,6 @@ const mapStateToProps = state => ({
   amounts: getAmounts(state),
   basket: getBasket(state),
   people: getPeople(state),
-  currencyObject: getCurrencies(state),
   currencies: getCurrencies(state),
   paymentData: getPaymentData(state),
 });
