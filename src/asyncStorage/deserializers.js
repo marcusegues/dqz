@@ -12,8 +12,6 @@ import type {
   People,
 } from '../model/types/basketPeopleAmountsTypes';
 
-// TODO try to get better types on the return values!
-
 export const deserializePeople = (serialized: any): People =>
   makePeopleRecord(serialized);
 
