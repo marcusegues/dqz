@@ -30,6 +30,7 @@ type OverviewProps = {
   basket: Basket,
   modalVisible: boolean,
   setReceiptEntryTime: (receiptEntryTime: string) => void,
+  receiptEntryTime: string,
 };
 
 type OverviewState = {
@@ -53,6 +54,10 @@ class OverviewInner extends React.Component<
   OverviewProps & { t: TFunction },
   OverviewState
 > {
+  static defaultProps = {
+    modalVisible: false,
+  };
+
   constructor(props) {
     super(props);
     this.state = {
