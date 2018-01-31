@@ -18,9 +18,13 @@ import {
   initAmounts,
   initPeople,
 } from '../model/configurationApi';
-import { makeAmountsOfCurrencyRecord } from '../model/types/basketPeopleAmountsTypes';
 import type { MainCategories } from '../types/reducers/appReducer';
-import { deserializePeople } from './deserializers';
+import {
+  deserializeAmounts,
+  deserializeBasket,
+  deserializeMainCategories,
+  deserializePeople,
+} from './deserializers';
 
 export const storeItemAsyncStorage = async (
   key: StoreType,
@@ -49,61 +53,6 @@ export const fetchGenericDataAsyncStorage = async (
   return '';
 };
 
-// TODO: write abstract parser that accepts any parser function in success case
-const parserImmutable = (key: StoreType, fallback: any): any =>
-  fetchGenericDataAsyncStorage(key).then(value => {
-    if (value.length) {
-      try {
-        return Immutable.fromJS(JSON.parse(value));
-      } catch (e) {
-        // Error
-      }
-    }
-    return fallback;
-  });
-
-const parserImmutableMainCategories = (key: StoreType, fallback: any): any =>
-  fetchGenericDataAsyncStorage(key).then(value => {
-    if (value.length) {
-      try {
-        return Immutable.Set(JSON.parse(value));
-      } catch (e) {
-        // Error
-      }
-    }
-    return fallback;
-  });
-
-const parserImmutableAmounts = (key: StoreType, fallback: any): any =>
-  fetchGenericDataAsyncStorage(key).then(value => {
-    if (value.length) {
-      try {
-        const amountsMap = Immutable.Map(JSON.parse(value));
-        return amountsMap.map(d =>
-          makeAmountsOfCurrencyRecord({
-            amounts: Immutable.List(d.amounts),
-            largeAmounts: Immutable.List(d.largeAmounts),
-          })
-        );
-      } catch (e) {
-        // Error
-      }
-    }
-    return fallback;
-  });
-
-const parser = (key: StoreType, fallback: any): any =>
-  fetchGenericDataAsyncStorage(key).then(value => {
-    if (value.length) {
-      try {
-        return JSON.parse(value);
-      } catch (e) {
-        // Error
-      }
-    }
-    return fallback;
-  });
-
 const parserGeneric = (
   key: StoreType,
   fallback: any,
@@ -119,6 +68,9 @@ const parserGeneric = (
     }
     return fallback;
   });
+
+const parser = (key: StoreType, fallback: any): any =>
+  parserGeneric(key, fallback, x => x);
 
 const parserImmutableReceipts = (key: StoreType, fallback: any): any =>
   fetchGenericDataAsyncStorage(key).then(value => {
@@ -150,11 +102,11 @@ export const fetchSettingsHasLanguageAsyncStorage = async (
 
 export const fetchBasketAsyncStorage = async (
   key: StoreType
-): Promise<Basket> => parserImmutable(key, emptyBasket);
+): Promise<Basket> => parserGeneric(key, emptyBasket, deserializeBasket);
 
 export const fetchAmountsAsyncStorage = async (
   key: StoreType
-): Promise<Amounts> => parserImmutableAmounts(key, initAmounts);
+): Promise<Amounts> => parserGeneric(key, initAmounts, deserializeAmounts);
 
 export const fetchPeopleAsyncStorage = async (
   key: StoreType
@@ -163,4 +115,4 @@ export const fetchPeopleAsyncStorage = async (
 export const fetchMainCategoriesAsyncStorage = async (
   key: StoreType
 ): Promise<MainCategories> =>
-  parserImmutableMainCategories(key, Immutable.Set());
+  parserGeneric(key, Immutable.Set(), deserializeMainCategories);
