@@ -1,5 +1,6 @@
 // @flow
 import Immutable from 'immutable';
+import type { List } from 'immutable';
 
 import {
   fetchAmountsAsyncStorage,
@@ -10,6 +11,7 @@ import {
   fetchSettingsAcceptRateAsyncStorage,
   fetchSettingsHasLanguageAsyncStorage,
   storeItemAsyncStorage,
+  fetchReceiptsAsyncStorage,
 } from './asyncStorage';
 import type { CurrencyObject } from '../model/currencies';
 import type { StoreType } from './storeTypes';
@@ -25,6 +27,7 @@ import {
   initAmounts,
   initPeople,
 } from '../model/configurationApi';
+import type { Receipt } from '../types/receiptTypes';
 
 /**
  * Stores item (stringified) under key - do NOT use directly!
@@ -34,6 +37,23 @@ import {
  */
 export const storeItem = async (key: StoreType, item: any): Promise<boolean> =>
   storeItemAsyncStorage(key, item);
+
+/**
+ * Store a receipt object
+ * @param receipt
+ * @returns {Promise<boolean>}
+ */
+export const storeReceipt = (receipt: Receipt) =>
+  fetchReceiptsAsyncStorage('Receipts').then(receipts => {
+    const t = receipts.push(receipt);
+    return storeItem('Receipts', t);
+  });
+
+/**
+ * Clear a receipt object
+ * @returns {Promise<boolean>}
+ */
+export const clearReceipt = () => storeItem('Receipts', Immutable.List());
 
 /**
  * Store a currency object
@@ -97,6 +117,25 @@ export const storeClearDeclaration = () => {
   storePeople(initPeople);
   storeAmounts(initAmounts);
 };
+
+/**
+ * Fetch receipts List
+ * @returns {Promise<List<Receipt>>}
+ */
+export const fetchReceipts = async (): Promise<List<Receipt>> =>
+  fetchReceiptsAsyncStorage('Receipts');
+
+/**
+ * Fetch a receipt object by receiptId
+ * @returns {Promise<Receipt>}
+ */
+export const fetchReceiptByrReceiptId = async (
+  receiptId: string
+): Promise<Receipt> =>
+  fetchReceiptsAsyncStorage('Receipts').then(receipts =>
+    receipts.find((receipt: Receipt) => receipt.receiptId === receiptId)
+  );
+
 /**
  * Fetch a currency object
  * @returns {Promise<CurrencyObject>}

@@ -7,4 +7,5 @@ export type StoreType =
   | 'Basket'
   | 'People'
   | 'MainCategories'
-  | 'Amounts';
+  | 'Amounts'
+  | 'Receipts';

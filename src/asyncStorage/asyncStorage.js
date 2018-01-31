@@ -1,8 +1,10 @@
 // @flow
 import Immutable from 'immutable';
+import type { List } from 'immutable';
 // $FlowFixMe
 import { AsyncStorage } from 'react-native';
 import type { CurrencyObject } from '../model/currencies';
+import type { Receipt } from '../types/receiptTypes';
 import type { StoreType } from './storeTypes';
 import { currencyExample } from '../model/currencies';
 import type { Language } from '../i18n/types/locale';
@@ -16,8 +18,14 @@ import {
   initAmounts,
   initPeople,
 } from '../model/configurationApi';
-import { makeAmountsOfCurrencyRecord } from '../model/types/basketPeopleAmountsTypes';
 import type { MainCategories } from '../types/reducers/appReducer';
+import {
+  deserializeAmounts,
+  deserializeBasket,
+  deserializeMainCategories,
+  deserializePeople,
+  deserializeReceipts,
+} from './deserializers';
 
 export const storeItemAsyncStorage = async (
   key: StoreType,
@@ -46,42 +54,15 @@ export const fetchGenericDataAsyncStorage = async (
   return '';
 };
 
-// TODO: write abstract parser that accepts any parser function in success case
-const parserImmutable = (key: StoreType, fallback: any): any =>
+const parserGeneric = (
+  key: StoreType,
+  fallback: any,
+  deserializer: (serialized: string) => any
+): any =>
   fetchGenericDataAsyncStorage(key).then(value => {
     if (value.length) {
       try {
-        return Immutable.fromJS(JSON.parse(value));
-      } catch (e) {
-        // Error
-      }
-    }
-    return fallback;
-  });
-
-const parserImmutableMainCategories = (key: StoreType, fallback: any): any =>
-  fetchGenericDataAsyncStorage(key).then(value => {
-    if (value.length) {
-      try {
-        return Immutable.Set(JSON.parse(value));
-      } catch (e) {
-        // Error
-      }
-    }
-    return fallback;
-  });
-
-const parserImmutableAmounts = (key: StoreType, fallback: any): any =>
-  fetchGenericDataAsyncStorage(key).then(value => {
-    if (value.length) {
-      try {
-        const amountsMap = Immutable.Map(JSON.parse(value));
-        return amountsMap.map(d =>
-          makeAmountsOfCurrencyRecord({
-            amounts: Immutable.List(d.amounts),
-            largeAmounts: Immutable.List(d.largeAmounts),
-          })
-        );
+        return deserializer(JSON.parse(value));
       } catch (e) {
         // Error
       }
@@ -90,16 +71,12 @@ const parserImmutableAmounts = (key: StoreType, fallback: any): any =>
   });
 
 const parser = (key: StoreType, fallback: any): any =>
-  fetchGenericDataAsyncStorage(key).then(value => {
-    if (value.length) {
-      try {
-        return JSON.parse(value);
-      } catch (e) {
-        // Error
-      }
-    }
-    return fallback;
-  });
+  parserGeneric(key, fallback, x => x);
+
+export const fetchReceiptsAsyncStorage = async (
+  key: StoreType
+): Promise<List<Receipt>> =>
+  parserGeneric(key, Immutable.List(), deserializeReceipts);
 
 export const fetchCurrencyObjectsAsyncStorage = async (
   key: StoreType
@@ -115,17 +92,17 @@ export const fetchSettingsHasLanguageAsyncStorage = async (
 
 export const fetchBasketAsyncStorage = async (
   key: StoreType
-): Promise<Basket> => parserImmutable(key, emptyBasket);
+): Promise<Basket> => parserGeneric(key, emptyBasket, deserializeBasket);
 
 export const fetchAmountsAsyncStorage = async (
   key: StoreType
-): Promise<Amounts> => parserImmutableAmounts(key, initAmounts);
+): Promise<Amounts> => parserGeneric(key, initAmounts, deserializeAmounts);
 
 export const fetchPeopleAsyncStorage = async (
   key: StoreType
-): Promise<People> => parserImmutable(key, initPeople);
+): Promise<People> => parserGeneric(key, initPeople, deserializePeople);
 
 export const fetchMainCategoriesAsyncStorage = async (
   key: StoreType
 ): Promise<MainCategories> =>
-  parserImmutableMainCategories(key, Immutable.Set());
+  parserGeneric(key, Immutable.Set(), deserializeMainCategories);

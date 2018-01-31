@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */ // TODO REMOVE
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
@@ -5,6 +6,7 @@ import type { ComponentType } from 'react';
 import { View, Text, CameraRoll } from 'react-native';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
+import { connect } from 'react-redux';
 // $FlowFixMe
 import { takeSnapshotAsync } from 'expo';
 import { translate } from 'react-i18next';
@@ -16,8 +18,14 @@ import { ReceiptSubText } from './subComponents/ReceiptSubText';
 import { ValidUntilBlock } from './subComponents/ValidUntilBlock';
 import { DutyRow } from '../Overview/subcomponents/DutyRow';
 import { VatRow } from '../Overview/subcomponents/VatRow';
-import type { TFunction } from '../../types/generalTypes';
+import type { PaymentData, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
+import { getPaymentData } from '../../reducers';
+import {
+  clearReceipt,
+  fetchReceiptByrReceiptId,
+  fetchReceipts,
+} from '../../asyncStorage/storageApi';
 
 const ownStyles = {
   topSumText: {
@@ -64,6 +72,7 @@ const ownStyles = {
 
 type ReceiptAfterPaymentScreenProps = {
   t: TFunction,
+  paymentData: PaymentData,
 };
 
 class ReceiptAfterPaymentInner extends React.Component<
@@ -85,7 +94,10 @@ class ReceiptAfterPaymentInner extends React.Component<
   }
 
   render() {
-    const { t } = this.props;
+    // TODO: Example how to get receipt by ReceiptId from Redux
+    // fetchReceiptByrReceiptId(receiptId).then(r => console.log(r));
+
+    const { t, paymentData } = this.props;
     return (
       <ScrollViewCard
         ref={ref => {
@@ -117,7 +129,11 @@ class ReceiptAfterPaymentInner extends React.Component<
             style={ownStyles.cardRowTextPaidOn}
           />
 
-          <ReceiptSubText text="Mastercard XXXX XXXX XXXX 1234" />
+          <ReceiptSubText
+            text={`${paymentData.transaction.brandName} ${
+              paymentData.transaction.cardNumber
+            }`}
+          />
           <ReceiptSubText text={t('transactionId', { value: '123-456-789' })} />
           <ValidUntilBlock>
             <CardRowText
@@ -160,9 +176,12 @@ class ReceiptAfterPaymentInner extends React.Component<
   }
 }
 
-export const ReceiptAfterPayment = (translate([
-  'receipt',
-  'payment',
-  'mainCategories',
-  'categories',
-])(ReceiptAfterPaymentInner): ComponentType<{}>);
+const mapStateToProps = state => ({
+  paymentData: getPaymentData(state),
+});
+
+export const ReceiptAfterPayment = (connect(mapStateToProps)(
+  translate(['receipt', 'payment', 'mainCategories', 'categories'])(
+    ReceiptAfterPaymentInner
+  )
+): ComponentType<{}>);

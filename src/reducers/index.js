@@ -144,3 +144,11 @@ export const getVatReport = (state: { appState: State }): VatReport =>
  */
 export const getPaymentData = (state: { appState: State }): PaymentData =>
   appApi.getPaymentData(state.appState);
+
+/**
+ * Gets the current receipt id (emptystring if not active)
+ * @param state
+ * @returns {string}
+ */
+export const getReceiptId = (state: { appState: State }): string =>
+  appApi.getReceiptId(state.appState);
