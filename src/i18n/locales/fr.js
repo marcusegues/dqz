@@ -138,6 +138,8 @@ export const fr: Locale = {
     allReceiptsOlderReceipts: '🈯',
     allReceiptsSumInFranks: '🈯',
     allReceiptsDate: '🈯',
+    entryTime: '🈯',
+    chooseOtherEntryTime: '🈯',
   },
   information: {
     informationTitle: '🈯',
