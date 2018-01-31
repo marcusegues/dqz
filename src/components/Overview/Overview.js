@@ -87,8 +87,8 @@ const OverviewInner = ({
         </View>
 
         <PeriodOfEntryRow
-          title="Zeitraum der Einreise:"
-          subtitle="Zeitraum der Einreise:"
+          title={t('receipt:entryTime')}
+          subtitle={t('receipt:chooseOtherEntryTime')}
           time="Heute, 16:30 - 18:30 Uhr"
           onPress={() => {}}
         />

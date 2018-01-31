@@ -148,6 +148,8 @@ export const en: Locale = {
     allReceiptsOlderReceipts: 'Older receipts:',
     allReceiptsSumInFranks: 'CHF {{value}}',
     allReceiptsDate: 'from {{value}}',
+    entryTime: 'Time of entry',
+    chooseOtherEntryTime: 'Choose new time of entry',
   },
   information: {
     informationTitle: 'Information',
