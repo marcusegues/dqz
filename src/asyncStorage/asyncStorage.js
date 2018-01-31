@@ -20,6 +20,7 @@ import {
 } from '../model/configurationApi';
 import { makeAmountsOfCurrencyRecord } from '../model/types/basketPeopleAmountsTypes';
 import type { MainCategories } from '../types/reducers/appReducer';
+import { deserializePeople } from './deserializers';
 
 export const storeItemAsyncStorage = async (
   key: StoreType,
@@ -103,6 +104,22 @@ const parser = (key: StoreType, fallback: any): any =>
     return fallback;
   });
 
+const parserGeneric = (
+  key: StoreType,
+  fallback: any,
+  deserializer: (serialized: string) => any
+): any =>
+  fetchGenericDataAsyncStorage(key).then(value => {
+    if (value.length) {
+      try {
+        return deserializer(JSON.parse(value));
+      } catch (e) {
+        // Error
+      }
+    }
+    return fallback;
+  });
+
 const parserImmutableReceipts = (key: StoreType, fallback: any): any =>
   fetchGenericDataAsyncStorage(key).then(value => {
     if (value.length) {
@@ -141,7 +158,7 @@ export const fetchAmountsAsyncStorage = async (
 
 export const fetchPeopleAsyncStorage = async (
   key: StoreType
-): Promise<People> => parserImmutable(key, initPeople);
+): Promise<People> => parserGeneric(key, initPeople, deserializePeople);
 
 export const fetchMainCategoriesAsyncStorage = async (
   key: StoreType
