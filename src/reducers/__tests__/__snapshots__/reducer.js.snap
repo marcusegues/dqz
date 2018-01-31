@@ -117,14 +117,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -245,14 +250,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -404,14 +414,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -567,14 +582,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -695,14 +715,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -815,14 +840,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -939,14 +969,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -1131,14 +1166,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -1249,14 +1289,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -1369,14 +1414,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -1487,14 +1537,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -1608,14 +1663,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -1726,14 +1786,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -1844,14 +1909,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -1962,14 +2032,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -2080,14 +2155,19 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;
 
@@ -2198,13 +2278,18 @@ Immutable.Record {
     "status": "not_started",
     "transaction": Object {
       "amountValue": "",
+      "brandName": "",
       "cardHolderName": "",
       "cardNumber": "",
       "currencyCode": "",
       "date": "",
       "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
       "status": "",
     },
   },
+  "receiptId": "",
 }
 `;

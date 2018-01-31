@@ -144,6 +144,11 @@ export const appState = (
       return state.set('paymentData', paymentData);
     }
 
+    case 'SET_RECEIPT_ID': {
+      const receiptId: string = action.receiptId;
+      return state.set('receiptId', receiptId);
+    }
+
     default: {
       return state;
     }
@@ -172,3 +177,5 @@ export const getCurrencyDate = (state: State): Date =>
 
 export const getPaymentData = (state: State): PaymentData =>
   state.get('paymentData');
+
+export const getReceiptId = (state: State): string => state.get('receiptId');
