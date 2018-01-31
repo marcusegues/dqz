@@ -19,7 +19,6 @@ import type { Category } from '../../../../../../../model/types/basketPeopleAmou
 import type { MainCategory } from '../../../../../../../types/reducers/appReducer';
 import { CategoriesInfo } from '../../../../../../../model/constants';
 import type { TFunction } from '../../../../../../../types/generalTypes';
-import { getMainCategory } from '../../../../../../../types/reducers/appReducer';
 
 const ownStyles = {
   container: {
