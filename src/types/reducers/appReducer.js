@@ -150,6 +150,7 @@ type StateObj = {
   currencyDate: Date,
   amounts: Amounts,
   paymentData: PaymentData,
+  receiptId: string,
 };
 
 export const getInitialState: RecordFactory<StateObj> = Immutable.Record({
@@ -163,6 +164,7 @@ export const getInitialState: RecordFactory<StateObj> = Immutable.Record({
   currencyDate: new Date('2000-01-01'),
   amounts: Immutable.Map(),
   paymentData: makePaymentDataRecord(),
+  receiptId: '',
 });
 
 export type State = RecordOf<StateObj>;

@@ -46,7 +46,10 @@ import {
 import { totalAllAmounts } from '../../model/utils';
 import { MAX_DECLARED_CHF } from '../../constants/declaration';
 import type { CurrencyObject } from '../../model/currencies';
-import { storeClearDeclaration, storeReceipt } from '../../asyncStorage/storageApi';
+import {
+  storeClearDeclaration,
+  storeReceipt,
+} from '../../asyncStorage/storageApi';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -67,6 +70,7 @@ type PaymentContainerProps = {
   navigation: Navigation,
   // dispatch to props
   setPaymentData: (paymentData: PaymentData) => void,
+  setReceiptId: (receiptId: string) => void,
 };
 
 type ReduxInject = {
@@ -159,6 +163,7 @@ class PaymentContainerInner extends React.Component<
       basket,
       people,
       currencies,
+      setReceiptId,
     } = this.props;
     let stateChanged = false;
     let paymentStatus = '';
@@ -230,7 +235,8 @@ class PaymentContainerInner extends React.Component<
                   .set('transaction', paymentTransaction);
 
                 setPaymentData(newPaymentData);
-                const receiptId = uuidv1(); // TODO: should be stored into redux store and get in ReceiptAfterPayment
+                const receiptId = uuidv1();
+                setReceiptId(receiptId);
                 // $FlowFixMe
                 const receipt: Receipt = {
                   receiptId,
@@ -320,6 +326,11 @@ const mapDispatchToProps = dispatch => ({
     dispatch({
       type: 'SET_PAYMENT_DATA',
       paymentData,
+    }),
+  setReceiptId: (receiptId: string) =>
+    dispatch({
+      type: 'SET_RECEIPT_ID',
+      receiptId,
     }),
 });
 
