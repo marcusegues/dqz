@@ -75,7 +75,6 @@ class OverviewInner extends React.Component<
   }
 
   render() {
-    console.log(this.props.receiptEntryTime);
     const { dutyReport, vatReport, basket, t } = this.props;
     const fullVat = vatReport.get('totalVat');
     const fullDuty = dutyReport.get('totalDuty');

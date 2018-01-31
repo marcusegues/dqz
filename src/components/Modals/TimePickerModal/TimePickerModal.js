@@ -28,7 +28,6 @@ import {
 import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
 import { ModalCloseText } from '../ModalCloseText';
 import { formatDate, formatFullDate } from '../../../model/utils';
-import { ConfirmationCard } from '../../QuestionAnswer/cards/ConfirmationCard/ConfirmationCard';
 
 const ownStyles = {
   container: {
