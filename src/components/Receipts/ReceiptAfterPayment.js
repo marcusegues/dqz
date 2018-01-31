@@ -20,10 +20,10 @@ import { DutyRow } from '../Overview/subcomponents/DutyRow';
 import { VatRow } from '../Overview/subcomponents/VatRow';
 import type { PaymentData, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
-import { getPaymentData } from '../../reducers';
+import { getPaymentData, getReceiptId } from '../../reducers';
 import {
   clearReceipt,
-  fetchReceiptByrReceiptId,
+  fetchReceiptByReceiptId,
   fetchReceipts,
 } from '../../asyncStorage/storageApi';
 
@@ -73,6 +73,7 @@ const ownStyles = {
 type ReceiptAfterPaymentScreenProps = {
   t: TFunction,
   paymentData: PaymentData,
+  receiptId: string,
 };
 
 class ReceiptAfterPaymentInner extends React.Component<
@@ -94,10 +95,14 @@ class ReceiptAfterPaymentInner extends React.Component<
   }
 
   render() {
+    const { t, paymentData, receiptId } = this.props;
     // TODO: Example how to get receipt by ReceiptId from Redux
-    // fetchReceiptByrReceiptId(receiptId).then(r => console.log(r));
-
-    const { t, paymentData } = this.props;
+    console.log(receiptId);
+    if (receiptId !== '') {
+      fetchReceiptByReceiptId(receiptId).then(r => console.log(r));
+    } else {
+      console.log('empty receiptId');
+    }
     return (
       <ScrollViewCard
         ref={ref => {
@@ -178,6 +183,7 @@ class ReceiptAfterPaymentInner extends React.Component<
 
 const mapStateToProps = state => ({
   paymentData: getPaymentData(state),
+  receiptId: getReceiptId(state),
 });
 
 export const ReceiptAfterPayment = (connect(mapStateToProps)(

@@ -129,7 +129,7 @@ export const fetchReceipts = async (): Promise<List<Receipt>> =>
  * Fetch a receipt object by receiptId
  * @returns {Promise<Receipt>}
  */
-export const fetchReceiptByrReceiptId = async (
+export const fetchReceiptByReceiptId = async (
   receiptId: string
 ): Promise<Receipt> =>
   fetchReceiptsAsyncStorage('Receipts').then(receipts =>
