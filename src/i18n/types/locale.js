@@ -148,6 +148,8 @@ type InformationTranslations = {
   entryByTrainSubText: string,
   allowancesFoodAlcoholTobacco: string,
   allowancesFoodAlcoholTobaccoText: string,
+  prohibitions: string,
+  prohibitionsSubText: string,
 };
 
 type ReceiptTranslations = {
