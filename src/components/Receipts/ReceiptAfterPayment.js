@@ -1,7 +1,8 @@
-/* eslint-disable no-unused-vars */ // TODO REMOVE
+/* eslint-disable no-unused-vars,no-console */ // TODO REMOVE
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
+import moment from 'moment';
 // $FlowFixMe
 import { View, Text, CameraRoll } from 'react-native';
 // $FlowFixMe
@@ -20,12 +21,17 @@ import { DutyRow } from '../Overview/subcomponents/DutyRow';
 import { VatRow } from '../Overview/subcomponents/VatRow';
 import type { PaymentData, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
-import { getPaymentData } from '../../reducers';
+import { getPaymentData, getReceiptId } from '../../reducers';
 import {
   clearReceipt,
-  fetchReceiptByrReceiptId,
+  fetchReceiptByReceiptId,
   fetchReceipts,
 } from '../../asyncStorage/storageApi';
+import type { Receipt } from '../../types/receiptTypes';
+import { calculateVat } from '../../model/vatCalculations';
+import { calculateDuty } from '../../model/dutyCalculations';
+import { getTotalQuantity } from '../../model/configurationApi';
+import { getMainCategory } from '../../types/reducers/appReducer';
 
 const ownStyles = {
   topSumText: {
@@ -70,16 +76,41 @@ const ownStyles = {
   },
 };
 
+type ReceiptAfterPaymentScreenState = {
+  receipt: Receipt,
+};
+
 type ReceiptAfterPaymentScreenProps = {
   t: TFunction,
   paymentData: PaymentData,
+  receiptId: string,
 };
 
 class ReceiptAfterPaymentInner extends React.Component<
-  ReceiptAfterPaymentScreenProps
+  ReceiptAfterPaymentScreenProps,
+  ReceiptAfterPaymentScreenState
 > {
+  constructor(props: ReceiptAfterPaymentScreenProps & { t: TFunction }) {
+    super(props);
+    this.state = {
+      // $FlowFixMe
+      receipt: {},
+    };
+  }
+
   componentWillMount() {
     analyticsScreenMounted('ReceiptAfterPayment');
+  }
+
+  componentDidMount() {
+    const { receiptId } = this.props;
+    if (receiptId !== '') {
+      fetchReceiptByReceiptId(receiptId).then(receipt => {
+        this.setState({ receipt });
+      });
+    } else {
+      console.log('empty receiptId');
+    }
   }
 
   image: any;
@@ -94,90 +125,129 @@ class ReceiptAfterPaymentInner extends React.Component<
   }
 
   render() {
-    // TODO: Example how to get receipt by ReceiptId from Redux
-    // fetchReceiptByrReceiptId(receiptId).then(r => console.log(r));
-
     const { t, paymentData } = this.props;
-    return (
-      <ScrollViewCard
-        ref={ref => {
-          this.image = ref;
-        }}
-      >
-        <Touchable
-          onPress={() => {
-            this.capture();
+
+    if (this.state.receipt && this.state.receipt.receiptId !== undefined) {
+      const { basket } = this.state.receipt;
+      const vatReport = calculateVat(
+        this.state.receipt.amounts,
+        this.state.receipt.people,
+        this.state.receipt.currencies
+      );
+      const dutyReport = calculateDuty(basket, this.state.receipt.people);
+      const fullVat = vatReport.get('totalVat');
+      const fullDuty = dutyReport.get('totalDuty');
+      const transactionDatetime = moment(
+        this.state.receipt.paymentData.transaction.date
+      );
+      return (
+        <ScrollViewCard
+          ref={ref => {
+            this.image = ref;
           }}
         >
-          <RedLogo />
-        </Touchable>
-        <Text style={ownStyles.topSumText}>CHF 56.50</Text>
-        <ReceiptSubText
-          text={t('dutyAndVat', {
-            duty: '56,50',
-            vat: '0,00',
-          })}
-          style={ownStyles.receiptSubTextDutyAndVat}
-        />
-
-        <View style={ownStyles.contentContainer}>
-          <CardRowText
-            text={t('paidOn', {
-              date: '20.12.2017',
-              time: '17:40',
+          <Touchable
+            onPress={() => {
+              this.capture();
+            }}
+          >
+            <RedLogo />
+          </Touchable>
+          <Text style={ownStyles.topSumText}>
+            CHF {(fullVat + fullDuty).toFixed(2)}
+          </Text>
+          <ReceiptSubText
+            text={t('dutyAndVat', {
+              duty: fullDuty.toFixed(2),
+              vat: fullVat.toFixed(2),
             })}
-            style={ownStyles.cardRowTextPaidOn}
+            style={ownStyles.receiptSubTextDutyAndVat}
           />
 
-          <ReceiptSubText
-            text={`${paymentData.transaction.brandName} ${
-              paymentData.transaction.cardNumber
-            }`}
-          />
-          <ReceiptSubText text={t('transactionId', { value: '123-456-789' })} />
-          <ValidUntilBlock>
+          <View style={ownStyles.contentContainer}>
             <CardRowText
-              text={t('receiptValidUntilText')}
-              style={ownStyles.cardRowText}
-            />
-            <CardRowText
-              text={t('receiptValidUntilTime', {
-                date: '20. Dezember 2017',
-                time: '19:40',
+              text={t('paidOn', {
+                date: transactionDatetime.format('DD.MM.YYYY'),
+                time: transactionDatetime.format('HH:mm'),
               })}
-              style={ownStyles.cardRowText}
+              style={ownStyles.cardRowTextPaidOn}
             />
-          </ValidUntilBlock>
-          <ReceiptSubText
-            text={t('payment:dutyColumn')}
-            style={ownStyles.receiptSubTextDuty}
-          />
 
-          <DutyRow mainCategory="Meat" category="Meat" quantity={2} duty={4} />
-          <DutyRow mainCategory="Meat" category="Meat" quantity={2} duty={4} />
+            <ReceiptSubText
+              text={`${this.state.receipt.paymentData.transaction.brandName} ${
+                this.state.receipt.paymentData.transaction.cardNumber
+              }`}
+            />
+            <ReceiptSubText
+              text={t('transactionId', {
+                value: this.state.receipt.paymentData.transaction.id,
+              })}
+            />
+            <ValidUntilBlock>
+              <CardRowText
+                text={t('receiptValidUntilText')}
+                style={ownStyles.cardRowText}
+              />
+              <CardRowText
+                text={t('receiptValidUntilTime', {
+                  date: '20. Dezember 2017',
+                  time: '19:40',
+                })}
+                style={ownStyles.cardRowText}
+              />
+            </ValidUntilBlock>
+            <ReceiptSubText
+              text={t('payment:dutyColumn')}
+              style={ownStyles.receiptSubTextDuty}
+            />
+            {dutyReport
+              .get('dutyByCategoryRaw')
+              .entrySeq()
+              .filter(entry => getTotalQuantity(basket, entry[0]) > 0)
+              .map(([category, dutyOfCategory], idx) => (
+                <DutyRow
+                  borderTop={idx === 0}
+                  key={category}
+                  mainCategory={getMainCategory(category)}
+                  category={category}
+                  quantity={getTotalQuantity(basket, category)}
+                  duty={dutyOfCategory}
+                />
+              ))}
 
-          <ReceiptSubText
-            text={t('vatColumn')}
-            style={ownStyles.receiptSubTextVat}
-          />
-          <VatRow quantity={205.59} vat={44} />
-
-          <CardRowText
-            text={t('sumText', { value: 56.5 })}
-            style={ownStyles.cardRowTextSum}
-          />
-          <ReceiptSubText
-            text={t('receiptStorageNotification')}
-            style={ownStyles.receiptSubTextNotification}
-          />
-        </View>
-      </ScrollViewCard>
+            <ReceiptSubText
+              text={t('vatColumn')}
+              style={ownStyles.receiptSubTextVat}
+            />
+            <VatRow
+              quantity={`~${vatReport.get('totalAmountsApprox')}`}
+              vat={vatReport.get('totalVat')}
+            />
+            <CardRowText
+              text={t('receipt:sumText', {
+                value: (fullVat + fullDuty).toFixed(2),
+              })}
+              style={ownStyles.cardRowTextSum}
+            />
+            <ReceiptSubText
+              text={t('receiptStorageNotification')}
+              style={ownStyles.receiptSubTextNotification}
+            />
+          </View>
+        </ScrollViewCard>
+      );
+    }
+    return (
+      <View>
+        <Text>loading...</Text>
+      </View>
     );
   }
 }
 
 const mapStateToProps = state => ({
   paymentData: getPaymentData(state),
+  receiptId: getReceiptId(state),
 });
 
 export const ReceiptAfterPayment = (connect(mapStateToProps)(
