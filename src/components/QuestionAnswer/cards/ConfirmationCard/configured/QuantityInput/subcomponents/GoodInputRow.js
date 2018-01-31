@@ -74,7 +74,7 @@ const OtherGoods = require('../../../../../../../../assets/icons/OtherGoods.png'
 const Tobacco = require('../../../../../../../../assets/icons/OtherTobacco.png');
 const Cigarettes = require('../../../../../../../../assets/icons/Tabak.png');
 
-const assets = {
+const assets: { [Category | 'OtherGoods']: string } = {
   AlcHard,
   AlcSoft,
   Butter,
@@ -86,26 +86,19 @@ const assets = {
 };
 
 const getSource = (category: Category): string => {
-  // There are no icons for subcategories of OtherGoods main category
-  if (getMainCategory(category) === 'OtherGoods') {
-    return assets.OtherGoods;
-    // the following if is a messy way around a flow error
-    // actually the if should not be necessary at all I believe
-  } else if (
-    category !== 'AnimalFeed' &&
-    category !== 'Books' &&
-    category !== 'Fertilizer' &&
-    category !== 'Flowers' &&
-    category !== 'Magazines' &&
-    category !== 'Meds' &&
-    category !== 'OtherFood' &&
-    category !== 'Other'
-  ) {
-    // For every other subcategory, there is an icon
+  const categoriesWithIcons = new Set([
+    'AlcHard',
+    'AlcSoft',
+    'Butter',
+    'Meat',
+    'Oils',
+    'Tobacco',
+    'Cigarettes',
+  ]);
+  if (categoriesWithIcons.has(category)) {
     return assets[category];
   }
-  // shouldn't we throw an error here?
-  return '';
+  return assets.OtherGoods;
 };
 
 type GoodInputRowProps = {
