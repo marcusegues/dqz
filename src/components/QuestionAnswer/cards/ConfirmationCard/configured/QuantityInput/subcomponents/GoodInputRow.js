@@ -19,6 +19,7 @@ import type { Category } from '../../../../../../../model/types/basketPeopleAmou
 import type { MainCategory } from '../../../../../../../types/reducers/appReducer';
 import { CategoriesInfo } from '../../../../../../../model/constants';
 import type { TFunction } from '../../../../../../../types/generalTypes';
+import { getMainCategory } from '../../../../../../../types/reducers/appReducer';
 
 const ownStyles = {
   container: {
@@ -64,8 +65,48 @@ const ownStyles = {
   },
 };
 
-const cigarette = require('../../../../../../../../assets/icons/cigarette_new.png');
-const meat = require('../../../../../../../../assets/icons/meat_new.png');
+const AlcHard = require('../../../../../../../../assets/icons/AlcHard.png');
+const AlcSoft = require('../../../../../../../../assets/icons/AlcSoft.png');
+const Butter = require('../../../../../../../../assets/icons/Butter.png');
+const Meat = require('../../../../../../../../assets/icons/Meat.png');
+const Oils = require('../../../../../../../../assets/icons/Oils.png');
+const OtherGoods = require('../../../../../../../../assets/icons/OtherGoods.png');
+const Tobacco = require('../../../../../../../../assets/icons/OtherTobacco.png');
+const Cigarettes = require('../../../../../../../../assets/icons/Tabak.png');
+
+const assets = {
+  AlcHard,
+  AlcSoft,
+  Butter,
+  Meat,
+  Oils,
+  OtherGoods,
+  Tobacco,
+  Cigarettes,
+};
+
+const getSource = (category: Category): string => {
+  // There are no icons for subcategories of OtherGoods main category
+  if (getMainCategory(category) === 'OtherGoods') {
+    return assets.OtherGoods;
+    // the following if is a messy way around a flow error
+    // actually the if should not be necessary at all I believe
+  } else if (
+    category !== 'AnimalFeed' &&
+    category !== 'Books' &&
+    category !== 'Fertilizer' &&
+    category !== 'Flowers' &&
+    category !== 'Magazines' &&
+    category !== 'Meds' &&
+    category !== 'OtherFood' &&
+    category !== 'Other'
+  ) {
+    // For every other subcategory, there is an icon
+    return assets[category];
+  }
+  // shouldn't we throw an error here?
+  return '';
+};
 
 type GoodInputRowProps = {
   onShowQuantityInputModal: () => void,
@@ -83,11 +124,7 @@ const GoodInputRowInner = ({
 }: GoodInputRowProps & { t: TFunction }) => (
   <Touchable onPress={onShowQuantityInputModal}>
     <View style={ownStyles.container}>
-      <CategoryIcon
-        source={
-          category === 'Cigarettes' || category === 'Tobacco' ? cigarette : meat
-        }
-      />
+      <CategoryIcon source={getSource(category)} />
       <View style={ownStyles.rowMainTextContainer}>
         <CardRowText text={t(`categories:${category}`)} />
         <CardRowSubText text={t(`mainCategories:${mainCategory}`)} />
