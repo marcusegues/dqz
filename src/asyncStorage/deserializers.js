@@ -38,3 +38,15 @@ export const deserializeAmounts = (serialized: any): Amounts => {
 
 export const deserializeMainCategories = (serialized: string): any =>
   Immutable.Set(serialized);
+
+export const deserializeReceipts = (serialized: any): any => {
+  const receiptsList = Immutable.List(serialized);
+  return receiptsList.map(d => ({
+    receiptId: d.receiptId,
+    amounts: deserializeAmounts(d.amounts),
+    people: deserializePeople(d.people),
+    basket: deserializeBasket(d.basket),
+    currencyObject: d.currencyObject,
+    paymentData: d.paymentData,
+  }));
+};

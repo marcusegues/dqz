@@ -24,6 +24,7 @@ import {
   deserializeBasket,
   deserializeMainCategories,
   deserializePeople,
+  deserializeReceipts,
 } from './deserializers';
 
 export const storeItemAsyncStorage = async (
@@ -72,21 +73,10 @@ const parserGeneric = (
 const parser = (key: StoreType, fallback: any): any =>
   parserGeneric(key, fallback, x => x);
 
-const parserImmutableReceipts = (key: StoreType, fallback: any): any =>
-  fetchGenericDataAsyncStorage(key).then(value => {
-    if (value.length) {
-      try {
-        return Immutable.List(JSON.parse(value));
-      } catch (e) {
-        // Error
-      }
-    }
-    return fallback;
-  });
-
 export const fetchReceiptsAsyncStorage = async (
   key: StoreType
-): Promise<List<Receipt>> => parserImmutableReceipts(key, Immutable.List());
+): Promise<List<Receipt>> =>
+  parserGeneric(key, Immutable.List(), deserializeReceipts);
 
 export const fetchCurrencyObjectsAsyncStorage = async (
   key: StoreType
