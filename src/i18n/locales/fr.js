@@ -74,8 +74,6 @@ export const fr: Locale = {
       amountInputAddItemLarge: 'Ajouter un bien',
     amountInputEnterValue: 'Saisissez la valeur sans la TVA étrangère (valeur nette).',
     currentTotalValue: '🈯',
-    amountInputLargeItemGreyBox: '🈯',
-    amountInputAddItemLarge: '🈯',
     lastExchangeRate: '🈯',
   },
     qaFlow: {
