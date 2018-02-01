@@ -8,12 +8,11 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { MenuTile } from './Subcomponents/MenuTile';
 import { mainMenuStyles } from './styles/MainMenuStyles';
 import { moderateScale } from '../../styles/Scaling';
-import { GREY } from '../../styles/colors';
 import { AppTitle } from '../../components/AppTitle/AppTitle';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 
 const switzerland = require('../../../assets/images/Swiss_Country.png');
-const greyLogo = require('../../../assets/images/grey_logo.png');
+const customs = require('../../../assets/images/customs.png');
 
 type MainMenuProps = {
   navigation: Navigation,
@@ -30,43 +29,48 @@ const MainMenuInner = ({ navigation, t }: MainMenuProps & { t: TFunction }) => (
     <View style={mainMenuStyles.bottomContainer}>
       <MenuTile
         onPress={() => navigation.navigate('QuestionAnswer')}
-        text={t('declareGoods').toUpperCase()}
+        text={t('declareGoods')}
       >
         <MaterialIcons
           name="add-shopping-cart"
-          size={moderateScale(47)}
-          color={GREY}
+          size={moderateScale(40)}
+          color="#757575"
         />
       </MenuTile>
 
       <MenuTile
-        text={t('guideline').toUpperCase()}
-        onPress={() => navigation.navigate('Information')}
+        icon="info"
+        text={t('information')}
+        onPress={() => navigation.navigate('LegalNoticeInfo')}
       >
-        <Image
-          source={greyLogo}
-          style={mainMenuStyles.greyLogo}
-          resizeMode="contain"
-        />
+        <MaterialIcons name="info" size={moderateScale(40)} color="#757575" />
       </MenuTile>
 
       <MenuTile
         icon="receipt"
-        text={t('receipts').toUpperCase()}
+        text={t('receipts')}
         onPress={() => navigation.navigate('AllReceipts')}
         style={{ alignSelf: 'center' }}
       >
         <View>
-          <MaterialIcons name="receipt" size={moderateScale(47)} color={GREY} />
+          <MaterialIcons
+            name="receipt"
+            size={moderateScale(40)}
+            color="#757575"
+          />
         </View>
       </MenuTile>
 
       <MenuTile
         icon="info"
-        text={t('information').toUpperCase()}
-        onPress={() => navigation.navigate('LegalNoticeInfo')}
+        text={t('guideline')}
+        onPress={() => navigation.navigate('Information')}
       >
-        <MaterialIcons name="info" size={moderateScale(47)} color={GREY} />
+        <Image
+          source={customs}
+          style={mainMenuStyles.greyLogo}
+          resizeMode="contain"
+        />
       </MenuTile>
     </View>
   </View>

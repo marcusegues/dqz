@@ -2,7 +2,6 @@
 // $FlowFixMe
 import { Platform, StyleSheet } from 'react-native';
 import { moderateScale } from '../../../styles/Scaling';
-import { MAIN_RED, WHITE } from '../../../styles/colors';
 
 export const mainMenuStyles: any = StyleSheet.create({
   mainContainer: {
@@ -35,7 +34,7 @@ export const mainMenuStyles: any = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   greyLogo: {
-    height: moderateScale(51),
+    height: moderateScale(40),
   },
   bottomContainer: {
     ...Platform.select({
@@ -50,21 +49,5 @@ export const mainMenuStyles: any = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'flex-end',
     alignContent: 'space-between',
-  },
-  redBadge: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 24,
-    height: 24,
-    backgroundColor: MAIN_RED,
-    borderRadius: 100,
-    position: 'absolute',
-    top: -10,
-    right: -7,
-  },
-  redBadgeText: {
-    color: WHITE,
-    fontSize: moderateScale(14),
-    fontFamily: 'roboto_regular',
   },
 });
