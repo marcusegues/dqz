@@ -3,7 +3,7 @@ import React from 'react';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { View, Text, Image } from 'react-native';
+import { View, Image } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { MenuTile } from './Subcomponents/MenuTile';
 import { mainMenuStyles } from './styles/MainMenuStyles';
