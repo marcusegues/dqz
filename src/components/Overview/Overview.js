@@ -8,9 +8,7 @@ import { translate } from 'react-i18next';
 import { View } from 'react-native';
 // $FlowFixMe
 import { CardHeader } from '../QuestionAnswer/cards/subcomponents/CardHeader';
-import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
 import type { Basket } from '../../model/types/basketPeopleAmountsTypes';
-import { verticalScale } from '../../styles/Scaling';
 import type { TFunction } from '../../types/generalTypes';
 import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 import { PeriodOfEntryRow } from './subcomponents/PeriodOfEntryRow';
@@ -19,6 +17,7 @@ import { VatList } from './subcomponents/VatList';
 import { ScrollViewCard } from '../General Components/ScrollViewCard';
 import { TimePickerModal } from '../Modals/TimePickerModal/TimePickerModal';
 import { getReceiptEntryTime } from '../../reducers';
+import { TotalOwedRow } from './subcomponents/TotalOwedRow';
 
 type OverviewProps = {
   dutyReport: DutyReport,
@@ -34,14 +33,6 @@ type ReduxInjectedProps = {
 
 type OverviewState = {
   modalVisible: boolean,
-};
-
-const ownStyles = {
-  cardRowTextSum: {
-    alignSelf: 'flex-end',
-    marginTop: verticalScale(15),
-    marginBottom: verticalScale(35),
-  },
 };
 
 class OverviewInner extends React.Component<
@@ -83,24 +74,14 @@ class OverviewInner extends React.Component<
         <CardHeader text={t('overViewTitle')} />
         <DutyList />
         <VatList />
+        <TotalOwedRow />
         <PeriodOfEntryRow
           title={t('receipt:entryTime')}
           subtitle={t('receipt:chooseOtherEntryTime')}
           time={this.props.receiptEntryTime}
           onPress={() => this.handleShowModal()}
         />
-        <View style={{ flex: 1, width: '100%' }}>
-          <View
-            style={{ alignSelf: 'flex-end', marginRight: 16, marginTop: 16 }}
-          >
-            <CardRowText
-              text={t('receipt:sumText', {
-                value: (fullVat + fullDuty).toFixed(2),
-              })}
-              style={ownStyles.cardRowTextSum}
-            />
-          </View>
-        </View>
+
         <TimePickerModal
           modalVisible={this.state.modalVisible}
           onHideModal={() => this.handleHideModal()}
