@@ -53,7 +53,7 @@ describe('Deserialization', () => {
       amounts: sampleAmounts1,
       people: initPeople,
       basket: sampleBasket1,
-      currencyObject: currencyExample,
+      currencies: currencyExample,
       paymentData: {},
     };
     const fakeList = Immutable.List([someFakeReceipt, someFakeReceipt]);
