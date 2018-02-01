@@ -28,7 +28,7 @@ import {
 } from '../PickerModal/pickerData';
 import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
 import { ModalCloseText } from '../ModalCloseText';
-import { formatDate, formatFullDate } from '../../../model/utils';
+import { formatDate } from '../../../model/utils';
 
 const ownStyles = {
   container: {
