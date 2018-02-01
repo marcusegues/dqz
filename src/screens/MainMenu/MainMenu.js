@@ -41,7 +41,7 @@ const MainMenuInner = ({ navigation, t }: MainMenuProps & { t: TFunction }) => (
       <MenuTile
         icon="info"
         text={t('information')}
-        onPress={() => navigation.navigate('UnderConstruction')}
+        onPress={() => navigation.navigate('LegalNoticeInfo')}
       >
         <MaterialIcons name="info" size={moderateScale(47)} color="#757575" />
       </MenuTile>
@@ -62,8 +62,9 @@ const MainMenuInner = ({ navigation, t }: MainMenuProps & { t: TFunction }) => (
       </MenuTile>
 
       <MenuTile
-        text={t('guideline')}
-        onPress={() => navigation.navigate('Information')}
+        icon="info"
+        text={t('information').toUpperCase()}
+        onPress={() => navigation.navigate('LegalNoticeInfo')}
       >
         <Image
           source={customs}
