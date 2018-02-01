@@ -65,18 +65,6 @@ class AllReceiptsInner extends React.Component<
     return (
       <ScrollViewCard>
         <CardHeader text={t('allReceiptsCurrentReceipt')} />
-        <AllReceiptsRow
-          sum={t('allReceiptsSumInFranks', { value: '75.00' })}
-          duty={t('dutyAndVat', {
-            duty: '65.00 ',
-            vat: '10.00',
-          })}
-          date={t('allReceiptsDate', { value: '09. Januar 2017' })}
-          rowOnPress={() => navigation.navigate('ReceiptAfterPayment')}
-        />
-        <View style={{ marginTop: verticalScale(30) }}>
-          <CardHeader text={t('allReceiptsOlderReceipts')} />
-        </View>
         {// $FlowFixMe
         this.state.receipts.map((receipt, index) => {
           const { basket } = receipt;
@@ -111,6 +99,9 @@ class AllReceiptsInner extends React.Component<
             />
           );
         })}
+        <View style={{ marginTop: verticalScale(30) }}>
+          <CardHeader text={t('allReceiptsOlderReceipts')} />
+        </View>
       </ScrollViewCard>
     );
   }
