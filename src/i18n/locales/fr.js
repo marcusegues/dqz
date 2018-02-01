@@ -45,8 +45,8 @@ export const fr: Locale = {
     buttonBack: 'Retour',
   },
   snackBar: {
-    limitExceeded: '🈯',
-    showBorder: '🈯',
+    limitExceeded: 'Valeur des biens pour l\'application dépassée. S\'il vous plaît signaler vos marchandises oralement au poste-frontière.',
+    showBorder: 'Afficher le passage frontalier',
   },
   onBoarding: {
     welcome: 'Bienvenue à',
@@ -78,8 +78,8 @@ export const fr: Locale = {
     amountInputAddItemLarge: 'Ajouter un bien',
     amountInputEnterValue:
       'Saisissez la valeur sans la TVA étrangère (valeur nette).',
-    currentTotalValue: '🈯',
-    lastExchangeRate: '🈯',
+    currentTotalValue: 'Valeur totale actuelle',
+    lastExchangeRate: 'Basé sur le dernier taux de change disponible, qui est mis à jour lors du paiement.',
   },
   qaFlow: {
     declareGoods: 'Déclarer des marchandises',
@@ -116,18 +116,18 @@ export const fr: Locale = {
     currencyPickerRate: 'Taux de change du:',
     currencyPickerInvalidInput: 'Saisie invalide/vide',
     currencyPickerNoOffsettingInput: "Aucun montant adéquat n'est disponible.",
-    currencyPickerTooSmallLargeAmount: 'Betrag zu gering',
+    currencyPickerTooSmallLargeAmount: 'Quantité trop faible',
     savedBasketDoYoWantToContinue:
       'Souhaitez-vous continuer avec le panier actuel ou recommencer avec un panier vide?',
     savedBasketTotalCost: 'Coût total: {{value}} francs',
     savedBasketNewShoppingCart: 'Nouveau panier',
     closeModalText: 'Schliessen',
-    timePickerTitle: 'Zeitraum der Einreise wählen',
-    timePickerSubTitle: 'Wann möchten Sie die Grenze überqueren?',
+    timePickerTitle: 'Choix de l\'heure du passage de la frontière',
+    timePickerSubTitle: 'Quand souhaitez-vous traverser la frontière?',
     timePickerRegistrationValidUntil:
-      'Bitte achten Sie darauf, innherhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist bis zum {{date}} um {{time}} Uhr gültig.',
-    timePickerTakeOverThePeriod: 'Zeitraum übernehmen',
-    timePickerTimePrefix: 'Uhr',
+      'Assurez-vous de passer la frontière dans le délai imparti de deux heures. La quittance douane est valable le {{date}} à {{time}}',
+    timePickerTakeOverThePeriod: 'Prendre en charge la période',
+    timePickerTimePrefix: 'Heure',
   },
   payment: {
     overViewTitle: "Vue d'ensemble de votre déclaration",
@@ -147,37 +147,37 @@ export const fr: Locale = {
     receiptStorageNotification:
       "La présente quittance sera conservée pendant un an. Vous pourrez la consulter à tout moment dans l'application durant ce laps de temps.",
     allReceiptsNavigationHeaderTitle: 'Quittances de la douane suisse',
-    allReceiptsCurrentReceipt: 'Aktuelle Quittung:',
-    allReceiptsOlderReceipts: 'Ältere Quittungen:',
+    allReceiptsCurrentReceipt: 'Reçu actuel:',
+    allReceiptsOlderReceipts: 'Anciennes recettes:',
     allReceiptsSumInFranks: 'CHF {{value}}',
     allReceiptsDate: 'à {{value}}',
-    entryTime: '',
-    chooseOtherEntryTime: '',
+    entryTime: 'Période d\'entrée',
+    chooseOtherEntryTime: 'Choisissez une autre période',
   },
   information: {
     informationTitle: 'Informations utiles',
     proceedinAtTheCustoms: 'Marche à suivre lors du passage à la douane',
     proceedinAtTheCustomsSubText:
-      'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
     travelDocuments: 'Documents de voyage',
     travelDocumentsSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
     haveGoodsWithMe: 'Je transporte des marchandises.',
     haveGoodsWithMeSubText:
-      'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
     haveAnimalsOrPlantsWithMe: 'Je transporte des animaux ou des plantes.',
-    haveAnimalsOrPlantsWithMeSubText: 'Weit hinten leben die Blindtexte.',
+    haveAnimalsOrPlantsWithMeSubText: 'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
     travelingWithVehicle: 'Je voyage avec un véhicule.',
-    travelingWithVehicleSubText: 'Weit hinten leben die Blindtexte.',
+    travelingWithVehicleSubText: 'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
     entryByTrain: 'Entrée en Suisse par voie ferroviaire',
     entryByTrainSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-    allowancesFoodAlcoholTobacco: 'Freimengen: Lebensmittel, Alkohol und Tabak',
+      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
+    allowancesFoodAlcoholTobacco: 'Allocations: nourriture, alcool et tabac',
     allowancesFoodAlcoholTobaccoText:
       'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer gewissen Amount Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
-    prohibitions: 'Verbote und Beschränkungen',
+    prohibitions: 'Interdictions et restrictions',
     prohibitionsSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
   },
   appInformation: {
     appInfoTitle: "Informations relatives à l'application",

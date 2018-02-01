@@ -45,8 +45,8 @@ export const it: Locale = {
     buttonBack: 'Indietro',
   },
   snackBar: {
-    limitExceeded: '🈯',
-    showBorder: '🈯',
+    limitExceeded: 'Il valore dei beni per l\'app è stato superato. Si prega di segnalare le vostre merci per via orale al valico di frontiera.',
+    showBorder: 'Mostra il valico di frontiera',
   },
   onBoarding: {
     welcome: 'Benvenuti a',
@@ -81,7 +81,7 @@ export const it: Locale = {
       ' Sulla base dell’ultimo corso del cambio disponibile, aggiornato al momento del pagamento.',
   },
   qaFlow: {
-    declareGoods: ' Dichiarare le merci',
+    declareGoods: 'Dichiarare le merci',
     toOverview: 'Tornare alla panoramica',
     adult: 'Adulti',
     adultInfo: 'Maggiori di 17 anni',
@@ -119,13 +119,13 @@ export const it: Locale = {
       'Continuare con il carrello attuale o ricominciare con uno vuoto?',
     savedBasketTotalCost: 'Importo complessivo: CHF {{value}}',
     savedBasketNewShoppingCart: 'Nuovo carrello',
-    closeModalText: 'Schliessen',
-    timePickerTitle: 'Zeitraum der Einreise wählen',
-    timePickerSubTitle: 'Wann möchten Sie die Grenze überqueren?',
+    closeModalText: 'Chiudere',
+    timePickerTitle: 'Scelta del passaggio in frontiera:',
+    timePickerSubTitle: 'Quando desidera attraversare la frontiera?',
     timePickerRegistrationValidUntil:
-      'Bitte achten Sie darauf, innherhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist bis zum {{date}} um {{time}} Uhr gültig.',
-    timePickerTakeOverThePeriod: 'Zeitraum übernehmen',
-    timePickerTimePrefix: 'Uhr',
+      'Si assicuri di attraversare la frontiera entro due ore. La quietanza doganale è valevole alle ore {{time}} del {{date}}.',
+    timePickerTakeOverThePeriod: 'Prendi il controllo del periodo',
+    timePickerTimePrefix: 'ora',
   },
   payment: {
     overViewTitle: ' Riepilogo della dichiarazione',
@@ -145,37 +145,37 @@ export const it: Locale = {
     receiptStorageNotification:
       'Il presente giustificativo rimane memorizzato per un anno. Durante questo periodo, può essere visualizzato in qualsiasi momento nell’app.',
     allReceiptsNavigationHeaderTitle: 'Giustificativi della dogana svizzera',
-    allReceiptsCurrentReceipt: 'Aktuelle Quittung:',
-    allReceiptsOlderReceipts: 'Ältere Quittungen:',
+    allReceiptsCurrentReceipt: 'Ricevuta corrente:',
+    allReceiptsOlderReceipts: 'Ricevute più vecchie:',
     allReceiptsSumInFranks: 'CHF {{value}}',
-    allReceiptsDate: 'vom {{value}}',
-    entryTime: '',
-    chooseOtherEntryTime: '',
+    allReceiptsDate: 'da {{value}}',
+    entryTime: 'Periodo di entrata',
+    chooseOtherEntryTime: 'Scegli un altro periodo',
   },
   information: {
     informationTitle: 'Informazioni utili',
     proceedinAtTheCustoms: 'Modo di procedere in dogana ',
     proceedinAtTheCustomsSubText:
-      'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
     travelDocuments: 'Documenti di viaggio',
     travelDocumentsSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
     haveGoodsWithMe: 'Trasporto merci',
     haveGoodsWithMeSubText:
-      'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
     haveAnimalsOrPlantsWithMe: 'Trasporto animali o piante',
-    haveAnimalsOrPlantsWithMeSubText: 'Weit hinten leben die Blindtexte.',
+    haveAnimalsOrPlantsWithMeSubText: 'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
     travelingWithVehicle: 'Sono in viaggio con un veicolo',
-    travelingWithVehicleSubText: 'Weit hinten leben die Blindtexte.',
+    travelingWithVehicleSubText: 'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
     entryByTrain: 'Entrata nel paese con il treno',
     entryByTrainSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-    allowancesFoodAlcoholTobacco: 'Freimengen: Lebensmittel, Alkohol und Tabak',
+      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
+    allowancesFoodAlcoholTobacco: 'Indennità: cibo, alcol e tabacco',
     allowancesFoodAlcoholTobaccoText:
       'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer gewissen Amount Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
-    prohibitions: 'Verbote und Beschränkungen',
+    prohibitions: 'Divieti e restrizioni',
     prohibitionsSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
   },
   appInformation: {
     appInfoTitle: 'Informazioni sull’app ',
@@ -198,7 +198,7 @@ export const it: Locale = {
       'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch\nhttp://www.ambrite.ch',
     disclaimerTitle: 'Clausola di non responsabilità (disclaimer)',
     disclaimerText:
-      'Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten. Damit das Layout nun nicht nackt im Raume steht und sich klein und leer vorkommt, springe ich ein: der Blindtext. Genau zu diesem Zwecke erschaffen, immer im Schatten meines großen Bruders »Lorem Ipsum«, freue ich mich jedes Mal, wenn Sie ein paar Zeilen lesen. Denn esse est percipi - Sein ist wahrgenommen werden. Und weil Sie nun schon die Güte haben, mich ein paar weitere Sätze lang zu begleiten, möchte ich diese Gelegenheit nutzen, Ihnen nicht nur als Lückenfüller zu dienen, sondern auf etwas hinzuweisen, das es ebenso verdient wahrgenommen zu werden: Webstandards nämlich.',
+      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
   },
     legalNoticeInformation: {
         navigationHeaderTitle: 'Informazioni importanti sull’utilizzo dell’app',
