@@ -45,6 +45,7 @@ type GeneralTranslations = {
   toPayment: string,
   buttonContinue: string,
   buttonBack: string,
+  note: string,
 };
 
 type SnackBarTranslations = {
@@ -88,6 +89,7 @@ type PaymentTranslations = {
   overViewTitle: string,
   dutyColumn: string,
   sumText: string,
+  entryInfo: string,
 };
 
 type QAFlowTranslations = {
