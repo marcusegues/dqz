@@ -43,6 +43,7 @@ export const it: Locale = {
     toPayment: 'Pagamento',
     buttonContinue: 'Avanti',
     buttonBack: 'Indietro',
+    note: '🈯',
   },
   snackBar: {
     limitExceeded: 'Il valore dei beni per l\'app è stato superato. Si prega di segnalare le vostre merci per via orale al valico di frontiera.',
@@ -131,6 +132,7 @@ export const it: Locale = {
     overViewTitle: ' Riepilogo della dichiarazione',
     dutyColumn: 'Tributi doganali in CHF',
     sumText: 'Totale (CHF)',
+    entryInfo: '🈯',
   },
   receipt: {
     dutyAndVat: 'Tributi doganali: {{duty}} | IVA: {{vat}}',
