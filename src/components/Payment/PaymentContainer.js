@@ -24,6 +24,7 @@ import {
   getPaymentData,
   getPeople,
   getCurrencies,
+  getReceiptEntryTime,
 } from '../../reducers';
 import type {
   Navigation,
@@ -43,7 +44,7 @@ import {
   analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
 
-import { totalAllAmounts } from '../../model/utils';
+import { totalAllAmounts, getConvertedLocalTimeToUTC } from '../../model/utils';
 import { MAX_DECLARED_CHF } from '../../constants/declaration';
 import type { CurrencyObject } from '../../model/currencies';
 import {
@@ -85,6 +86,7 @@ type ReduxInject = {
   paymentData: PaymentData,
   people: People,
   resetDeclaration: () => void,
+  receiptEntryTime: string,
 };
 
 class PaymentContainerInner extends React.Component<
@@ -166,6 +168,7 @@ class PaymentContainerInner extends React.Component<
       currencies,
       setReceiptId,
       resetDeclaration,
+      receiptEntryTime,
     } = this.props;
     let stateChanged = false;
     let paymentStatus = '';
@@ -240,9 +243,14 @@ class PaymentContainerInner extends React.Component<
                 setPaymentData(newPaymentData);
                 const receiptId = uuidv1();
                 setReceiptId(receiptId);
+                const newReceiptEntryTime =
+                  receiptEntryTime === ''
+                    ? getConvertedLocalTimeToUTC().format()
+                    : receiptEntryTime;
                 // $FlowFixMe
                 const receipt: Receipt = {
                   receiptId,
+                  receiptEntryTime: newReceiptEntryTime,
                   amounts,
                   people,
                   basket,
@@ -353,6 +361,7 @@ const mapStateToProps = state => ({
   people: getPeople(state),
   currencies: getCurrencies(state),
   paymentData: getPaymentData(state),
+  receiptEntryTime: getReceiptEntryTime(state),
 });
 
 export const PaymentContainer = (connect(mapStateToProps, mapDispatchToProps)(

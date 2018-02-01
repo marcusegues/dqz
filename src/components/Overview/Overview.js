@@ -2,6 +2,7 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -23,6 +24,7 @@ import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 import { PeriodOfEntryRow } from './subcomponents/PeriodOfEntryRow';
 import { TimePickerModal } from '../Modals/TimePickerModal/TimePickerModal';
 import { getReceiptEntryTime } from '../../reducers';
+import { getConvertedLocalTimeToUTC } from '../../model/utils';
 
 type OverviewProps = {
   dutyReport: DutyReport,
@@ -68,6 +70,12 @@ class OverviewInner extends React.Component<
     };
   }
 
+  componentDidMount() {
+    const { receiptEntryTime } = this.props;
+    if (receiptEntryTime === '')
+      this.props.setReceiptEntryTime(getConvertedLocalTimeToUTC());
+  }
+
   handleShowModal() {
     this.setState({ modalVisible: true });
   }
@@ -83,9 +91,15 @@ class OverviewInner extends React.Component<
   }
 
   render() {
-    const { dutyReport, vatReport, basket, t } = this.props;
+    const { dutyReport, vatReport, basket, t, receiptEntryTime } = this.props;
     const fullVat = vatReport.get('totalVat');
     const fullDuty = dutyReport.get('totalDuty');
+    const momentReceiptEntryTime =
+      receiptEntryTime !== ''
+        ? moment(receiptEntryTime) // receiptEntryTime = time in UTC
+            .utcOffset(+60) // set CH timezone, to display right date
+            .format('DD.MM.YYYY HH:mm')
+        : moment().format('DD.MM.YYYY HH:mm');
     return (
       <Card>
         <CardHeader text={t('overViewTitle')} />
@@ -129,7 +143,7 @@ class OverviewInner extends React.Component<
           <PeriodOfEntryRow
             title={t('receipt:entryTime')}
             subtitle={t('receipt:chooseOtherEntryTime')}
-            time={this.props.receiptEntryTime}
+            time={momentReceiptEntryTime}
             onPress={() => this.handleShowModal()}
           />
 

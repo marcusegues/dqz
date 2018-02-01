@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
+import moment from 'moment';
 // $FlowFixMe
 import {
   TouchableWithoutFeedback,
@@ -166,7 +167,14 @@ class TimePickerModalInner extends React.Component<
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
               onPress={() => {
-                onSelectTime(formatFullDate(date, hours, minutes));
+                onSelectTime(
+                  moment
+                    .utc(
+                      `${date} ${hours}:${minutes}+0100`,
+                      'DD-MM-YYYY HH:mmZ'
+                    )
+                    .format()
+                );
                 onHideModal();
               }}
               text={t('timePickerTakeOverThePeriod')}
