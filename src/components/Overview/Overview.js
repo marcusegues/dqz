@@ -18,6 +18,8 @@ import { ScrollViewCard } from '../General Components/ScrollViewCard';
 import { TimePickerModal } from '../Modals/TimePickerModal/TimePickerModal';
 import { getReceiptEntryTime } from '../../reducers';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
+import { CardHeaderSubText } from '../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
+import { InfoNote } from './subcomponents/InfoNote';
 
 type OverviewProps = {
   dutyReport: DutyReport,
@@ -81,7 +83,7 @@ class OverviewInner extends React.Component<
           time={this.props.receiptEntryTime}
           onPress={() => this.handleShowModal()}
         />
-
+        <InfoNote />
         <TimePickerModal
           modalVisible={this.state.modalVisible}
           onHideModal={() => this.handleHideModal()}

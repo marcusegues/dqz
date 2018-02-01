@@ -43,6 +43,7 @@ export const de: Locale = {
     toPayment: 'Zur Bezahlung',
     buttonContinue: 'Weiter',
     buttonBack: 'Zurück',
+    note: 'Hinweis',
   },
   snackBar: {
     limitExceeded:
@@ -134,6 +135,8 @@ export const de: Locale = {
     overViewTitle: 'Übersicht ihrer Anmeldung',
     dutyColumn: 'Zollabgabe in CHF',
     sumText: 'Summe (CHF)',
+    entryInfo:
+      'Sie können nur innerhalb des angegebenen Zeitraums mit den hier angemeldeten Waren die Grenze überqueren.',
   },
   receipt: {
     dutyAndVat: 'Zollabgabe: {{duty}}  |  Mehrwertsteuer: {{vat}}',

@@ -43,6 +43,7 @@ export const en: Locale = {
     toPayment: 'To payment',
     buttonContinue: 'Continue',
     buttonBack: 'Back',
+    note: 'Note',
   },
   snackBar: {
     limitExceeded:
@@ -130,6 +131,8 @@ export const en: Locale = {
     overViewTitle: 'Summary of your Declaration',
     dutyColumn: 'Customs Duty in CHF',
     sumText: 'Sum (CHF)',
+    entryInfo:
+      'You can only cross the border within the specified period with the goods registered here.',
   },
   receipt: {
     dutyAndVat: 'Customs duty: {{duty}}  |  vat: {{vat}}',

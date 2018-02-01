@@ -8,6 +8,7 @@ type RowProp = {
   borderTop?: boolean,
   borderBottomNone?: boolean,
   children: Children,
+  styles: Object,
 };
 
 const quantityRowContainerStyles = (borderTop, borderBottomNone) => ({
@@ -24,8 +25,15 @@ const quantityRowContainerStyles = (borderTop, borderBottomNone) => ({
   borderTopWidth: borderTop ? 1 : 0,
 });
 
-export const Row = ({ borderTop, borderBottomNone, children }: RowProp) => (
-  <View style={quantityRowContainerStyles(borderTop, borderBottomNone)}>
+export const Row = ({
+  borderTop,
+  borderBottomNone,
+  children,
+  styles,
+}: RowProp) => (
+  <View
+    style={[quantityRowContainerStyles(borderTop, borderBottomNone), styles]}
+  >
     {children}
   </View>
 );
@@ -33,4 +41,5 @@ export const Row = ({ borderTop, borderBottomNone, children }: RowProp) => (
 Row.defaultProps = {
   borderTop: false,
   borderBottomNone: false,
+  styles: {},
 };
