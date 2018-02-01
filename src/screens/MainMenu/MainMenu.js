@@ -58,9 +58,6 @@ const MainMenuInner = ({ navigation, t }: MainMenuProps & { t: TFunction }) => (
       >
         <View>
           <MaterialIcons name="receipt" size={moderateScale(47)} color={GREY} />
-          <View style={mainMenuStyles.redBadge}>
-            <Text style={mainMenuStyles.redBadgeText}>1</Text>
-          </View>
         </View>
       </MenuTile>
 
