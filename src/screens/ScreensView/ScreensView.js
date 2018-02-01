@@ -63,9 +63,9 @@ class ScreensViewInner extends React.Component<
       savedBasketModalVisible: !this.state.savedBasketModalVisible,
     });
   }
-  toggleTimePickerModalVisible() {
+  handleHideTimePickerModal() {
     this.setState({
-      timePickerModalVisible: !this.state.timePickerModalVisible,
+      timePickerModalVisible: false,
     });
   }
 
@@ -142,13 +142,8 @@ class ScreensViewInner extends React.Component<
         />
         <TimePickerModal
           modalVisible={this.state.timePickerModalVisible}
-          toggleModalVisible={() => this.toggleTimePickerModalVisible()}
-          currencyObject={this.props.currencyObject}
-          currencyDate="xy.zy.1234"
-          onHide={() => {}}
-          onAddAmount={() => {}}
-          amounts={initAmounts}
-          large={false}
+          onHideModal={() => this.handleHideTimePickerModal()}
+          onSelectTime={() => {}}
         />
         <SavedBasketModal
           modalVisible={this.state.savedBasketModalVisible}
