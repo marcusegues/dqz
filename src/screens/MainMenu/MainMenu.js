@@ -63,7 +63,7 @@ const MainMenuInner = ({ navigation, t }: MainMenuProps & { t: TFunction }) => (
 
       <MenuTile
         icon="info"
-        text={t('information').toUpperCase()}
+        text={t('information')}
         onPress={() => navigation.navigate('LegalNoticeInfo')}
       >
         <Image
