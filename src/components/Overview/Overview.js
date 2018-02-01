@@ -20,6 +20,8 @@ import { moderateScale, verticalScale } from '../../styles/Scaling';
 import type { TFunction } from '../../types/generalTypes';
 import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 import { PeriodOfEntryRow } from './subcomponents/PeriodOfEntryRow';
+import { RightAlignedHeader } from './subcomponents/RightAlignedHeader';
+import { DutyList } from './subcomponents/DutyList';
 
 type OverviewProps = {
   dutyReport: DutyReport,
@@ -32,11 +34,6 @@ const ownStyles = {
     alignSelf: 'flex-end',
     marginTop: verticalScale(15),
     marginBottom: verticalScale(35),
-  },
-  receiptSubTextVat: {
-    fontSize: moderateScale(12),
-    alignSelf: 'flex-end',
-    marginTop: verticalScale(25),
   },
 };
 
@@ -51,33 +48,9 @@ const OverviewInner = ({
   return (
     <Card>
       <CardHeader text={t('overViewTitle')} />
-      <View style={{ alignSelf: 'flex-end', marginRight: 16, marginBottom: 2 }}>
-        <CardRowSubText text={t('dutyColumn')} />
-      </View>
+      <DutyList />
       <View style={{ flex: 1, width: '100%' }}>
-        {dutyReport
-          .get('dutyByCategoryRaw')
-          .entrySeq()
-          .filter(entry => getTotalQuantity(basket, entry[0]) > 0)
-          .map(([category, dutyOfCategory], idx) => (
-            <DutyRow
-              borderTop={idx === 0}
-              key={category}
-              mainCategory={getMainCategory(category)}
-              category={category}
-              quantity={getTotalQuantity(basket, category)}
-              duty={dutyOfCategory}
-            />
-          ))}
-
-        <View
-          style={{ alignSelf: 'flex-end', marginRight: 16, marginBottom: 2 }}
-        >
-          <ReceiptSubText
-            text={t('receipt:vatColumn')}
-            style={ownStyles.receiptSubTextVat}
-          />
-        </View>
+        <RightAlignedHeader text={t('receipt:vatColumn')} />
 
         <View style={{ flex: 1, width: '100%' }}>
           <VatRow
