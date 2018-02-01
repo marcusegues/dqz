@@ -84,6 +84,7 @@ type ReduxInject = {
   vat: number,
   paymentData: PaymentData,
   people: People,
+  resetDeclaration: () => void,
 };
 
 class PaymentContainerInner extends React.Component<
@@ -164,6 +165,7 @@ class PaymentContainerInner extends React.Component<
       people,
       currencies,
       setReceiptId,
+      resetDeclaration,
     } = this.props;
     let stateChanged = false;
     let paymentStatus = '';
@@ -171,6 +173,7 @@ class PaymentContainerInner extends React.Component<
       case `${baseUrl}${redirectsUrlKeys.success}`:
         analyticsCustom('Successful payment');
         storeClearDeclaration();
+        resetDeclaration();
         stateChanged = true;
         paymentStatus = 'success';
         break;
@@ -333,6 +336,11 @@ const mapDispatchToProps = dispatch => ({
       type: 'SET_RECEIPT_ID',
       receiptId,
     }),
+  resetDeclaration: () => {
+    dispatch({
+      type: 'RESET_DECLARATION',
+    });
+  },
 });
 
 const mapStateToProps = state => ({

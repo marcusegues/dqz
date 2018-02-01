@@ -1,5 +1,6 @@
 /* eslint-disable prefer-destructuring */
 // @flow
+import Immutable from 'immutable';
 import {
   getInitialState,
   mainCategories,
@@ -110,6 +111,16 @@ export const appState = (
       const amounts: Amounts = state.get('amounts');
       const currency: Currency = action.currency;
       return state.set('amounts', modelApi.resetAmounts(amounts, currency));
+    }
+
+    case 'RESET_DECLARATION': {
+      const peopleReset = state.set('people', modelApi.initPeople);
+      const basketReset = peopleReset.set('basket', modelApi.emptyBasket);
+      const mainCategoriesReset = basketReset.setIn(
+        ['settings', 'mainCategories'],
+        Immutable.Set()
+      );
+      return mainCategoriesReset.set('amounts', modelApi.initAmounts);
     }
 
     case 'ADD_MAIN_CATEGORY': {
