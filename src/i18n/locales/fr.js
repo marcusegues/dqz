@@ -43,6 +43,7 @@ export const fr: Locale = {
     toPayment: 'Paiement',
     buttonContinue: 'Étape suivante',
     buttonBack: 'Retour',
+    note: '🈯',
   },
   snackBar: {
     limitExceeded: 'Valeur des biens pour l\'application dépassée. S\'il vous plaît signaler vos marchandises oralement au poste-frontière.',
@@ -133,6 +134,7 @@ export const fr: Locale = {
     overViewTitle: "Vue d'ensemble de votre déclaration",
     dutyColumn: 'Droits de douane en francs',
     sumText: 'Total (en francs)',
+    entryInfo: '🈯',
   },
   receipt: {
     dutyAndVat: 'Droits de douane: {{duty}} |  TVA: {{vat}}',

@@ -15,9 +15,7 @@ import { PaymentWebView } from './PaymentWebView';
 import { RedButton } from '../Buttons/RedButton';
 import {
   getBasket,
-  getDutyReport,
   getTotalFees,
-  getVatReport,
   getAmounts,
   getTotalDuty,
   getTotalVat,
@@ -31,7 +29,6 @@ import type {
   TFunction,
   PaymentTransaction,
 } from '../../types/generalTypes';
-import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 import type {
   Amounts,
   Basket,
@@ -78,9 +75,7 @@ type ReduxInject = {
   amounts: Amounts,
   currencies: CurrencyObject,
   basket: Basket,
-  dutyReport: DutyReport,
   duty: number,
-  vatReport: VatReport,
   vat: number,
   paymentData: PaymentData,
   people: People,
@@ -261,16 +256,7 @@ class PaymentContainerInner extends React.Component<
   }
 
   render() {
-    const {
-      basket,
-      t,
-      dutyReport,
-      vatReport,
-      fees,
-      paymentData,
-      currencies,
-      amounts,
-    } = this.props;
+    const { t, fees, paymentData, currencies, amounts } = this.props;
     return (
       <View
         style={{
@@ -298,11 +284,7 @@ class PaymentContainerInner extends React.Component<
             Payment failed({paymentData.status})
           </Text>
         ) : null}
-        <Overview
-          dutyReport={dutyReport}
-          vatReport={vatReport}
-          basket={basket}
-        />
+        <Overview />
 
         <RedButton
           onPress={() => this.initializePayment()}
@@ -344,10 +326,8 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => ({
   fees: getTotalFees(state),
-  dutyReport: getDutyReport(state),
   duty: getTotalDuty(state),
   vat: getTotalVat(state),
-  vatReport: getVatReport(state),
   amounts: getAmounts(state),
   basket: getBasket(state),
   people: getPeople(state),
