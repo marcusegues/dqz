@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
-import moment from 'moment';
+import { DateTime } from 'luxon';
 // $FlowFixMe
 import {
   TouchableWithoutFeedback,
@@ -168,12 +168,14 @@ class TimePickerModalInner extends React.Component<
             <RedButton
               onPress={() => {
                 onSelectTime(
-                  moment
-                    .utc(
-                      `${date} ${hours}:${minutes}+0100`,
-                      'DD-MM-YYYY HH:mmZ'
-                    )
-                    .format()
+                  DateTime.fromFormat(
+                    `${date} ${hours}:${minutes}`,
+                    'dd.MM.y HH:mm'
+                  )
+                    .setZone('Europe/Zurich', {
+                      keepLocalTime: true,
+                    })
+                    .toString()
                 );
                 onHideModal();
               }}

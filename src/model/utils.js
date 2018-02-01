@@ -1,5 +1,5 @@
 // @flow
-import moment from 'moment';
+import { DateTime } from 'luxon';
 import type { Amounts } from './types/basketPeopleAmountsTypes';
 import type { Currency, CurrencyObject } from './currencies';
 import { INDIVIDUALALLOWANCE } from './constants';
@@ -42,12 +42,12 @@ export const formatDate = (d: Date): string => {
   ].join('.');
 };
 
-// Convert localTime to Swiss UTC. LocalTime: 21:30 => 2018-02-01T20:30:00Z. Like you always are in swiss.
+// Convert localTime to Swiss returns DateTime object.
 // Used for receipt datePicker.
-export const getConvertedLocalTimeToUTC = () =>
-  moment
-    .utc(`${moment().format('DD.MM.YYYY HH:mm')}+0100`, 'DD-MM-YYYY HH:mmZ')
-    .format();
+export const getConvertedLocalTimeToSwiss = () =>
+  DateTime.local().setZone('Europe/Zurich', {
+    keepLocalTime: true,
+  });
 
 export const formatFullDate = (d: string, hours: string, minutes: string) =>
   `${d}/${hours}:${minutes}`;

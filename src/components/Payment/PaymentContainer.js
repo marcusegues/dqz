@@ -44,7 +44,10 @@ import {
   analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
 
-import { totalAllAmounts, getConvertedLocalTimeToUTC } from '../../model/utils';
+import {
+  totalAllAmounts,
+  getConvertedLocalTimeToSwiss,
+} from '../../model/utils';
 import { MAX_DECLARED_CHF } from '../../constants/declaration';
 import type { CurrencyObject } from '../../model/currencies';
 import {
@@ -245,7 +248,7 @@ class PaymentContainerInner extends React.Component<
                 setReceiptId(receiptId);
                 const newReceiptEntryTime =
                   receiptEntryTime === ''
-                    ? getConvertedLocalTimeToUTC().format()
+                    ? getConvertedLocalTimeToSwiss().toString()
                     : receiptEntryTime;
                 // $FlowFixMe
                 const receipt: Receipt = {

@@ -5,7 +5,7 @@ import { View } from 'react-native';
 import type { ComponentType } from 'react';
 import type { List } from 'immutable';
 import Immutable from 'immutable';
-import moment from 'moment';
+import { DateTime } from 'luxon';
 import { connect } from 'react-redux';
 // $FlowFixMe
 import { translate } from 'react-i18next';
@@ -62,6 +62,7 @@ class AllReceiptsInner extends React.Component<
 
   render() {
     const { t, navigation, setReceiptId } = this.props;
+
     return (
       <ScrollViewCard>
         <CardHeader text={t('allReceiptsCurrentReceipt')} />
@@ -79,6 +80,7 @@ class AllReceiptsInner extends React.Component<
         </View>
         {// $FlowFixMe
         this.state.receipts.map((receipt, index) => {
+          // console.log(receipt.receiptEntryTime);
           const { basket } = receipt;
           const vatReport = calculateVat(
             receipt.amounts,
@@ -88,7 +90,7 @@ class AllReceiptsInner extends React.Component<
           const dutyReport = calculateDuty(basket, receipt.people);
           const fullVat = vatReport.get('totalVat');
           const fullDuty = dutyReport.get('totalDuty');
-          const transactionDatetime = moment(
+          const transactionDatetime = DateTime.fromISO(
             receipt.paymentData.transaction.date
           );
           return (
@@ -102,7 +104,7 @@ class AllReceiptsInner extends React.Component<
                 vat: fullVat.toFixed(2),
               })}
               date={t('allReceiptsDate', {
-                value: transactionDatetime.format('DD.MM.YYYY'),
+                value: transactionDatetime.toFormat('dd.MM.y'),
               })}
               rowOnPress={() => {
                 setReceiptId(receipt.receiptId);
