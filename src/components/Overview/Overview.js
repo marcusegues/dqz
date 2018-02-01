@@ -28,7 +28,10 @@ type OverviewProps = {
   dutyReport: DutyReport,
   vatReport: VatReport,
   basket: Basket,
-  modalVisible: boolean,
+  modalVisible?: boolean,
+};
+
+type ReduxInjectedProps = {
   setReceiptEntryTime: (receiptEntryTime: string) => void,
   receiptEntryTime: string,
 };
@@ -51,17 +54,17 @@ const ownStyles = {
 };
 
 class OverviewInner extends React.Component<
-  OverviewProps & { t: TFunction },
+  OverviewProps & { t: TFunction } & ReduxInjectedProps,
   OverviewState
 > {
   static defaultProps = {
     modalVisible: false,
   };
 
-  constructor(props) {
+  constructor(props: OverviewProps & ReduxInjectedProps & { t: TFunction }) {
     super(props);
     this.state = {
-      modalVisible: this.props.modalVisible,
+      modalVisible: props.modalVisible || false,
     };
   }
 
@@ -150,6 +153,10 @@ class OverviewInner extends React.Component<
     );
   }
 }
+
+OverviewInner.defaultProps = {
+  modalVisible: false,
+};
 
 const mapStateToProps = state => ({
   receiptEntryTime: getReceiptEntryTime(state),

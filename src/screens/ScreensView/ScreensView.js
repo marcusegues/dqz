@@ -143,6 +143,7 @@ class ScreensViewInner extends React.Component<
         <TimePickerModal
           modalVisible={this.state.timePickerModalVisible}
           onHideModal={() => this.handleHideTimePickerModal()}
+          onSelectTime={() => {}}
         />
         <SavedBasketModal
           modalVisible={this.state.savedBasketModalVisible}
