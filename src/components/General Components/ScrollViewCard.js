@@ -9,7 +9,6 @@ const ownStyles = {
   container: {
     flex: 1,
     width: '100%',
-    // width: '90%',
     alignSelf: 'center',
     marginBottom: 16,
   },

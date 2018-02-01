@@ -152,3 +152,11 @@ export const getPaymentData = (state: { appState: State }): PaymentData =>
  */
 export const getReceiptId = (state: { appState: State }): string =>
   appApi.getReceiptId(state.appState);
+
+/**
+ * Gets the current receipt entry time (empty string if not set yet)
+ * @param state
+ * @returns {string}
+ */
+export const getReceiptEntryTime = (state: { appState: State }): string =>
+  appApi.getReceiptEntryTime(state.appState);

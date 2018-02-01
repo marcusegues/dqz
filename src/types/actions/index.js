@@ -87,4 +87,6 @@ export type Action =
       type: 'SET_PAYMENT_DATA',
       paymentData: PaymentData,
     }
-  | { type: 'SET_RECEIPT_ID', receiptId: string };
+  | { type: 'RESET_DECLARATION' }
+  | { type: 'SET_RECEIPT_ID', receiptId: string }
+  | { type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime: string };
