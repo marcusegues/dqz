@@ -61,6 +61,7 @@ class CurrencyPickerModalInner extends React.Component<
     const { currency, amount } = this.state;
     const { onAddAmount, onHide } = this.props;
     onAddAmount(currency, amount);
+    this.setState({ amount: 0 });
     onHide();
   }
 

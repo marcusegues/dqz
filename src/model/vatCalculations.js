@@ -49,6 +49,10 @@ export const calculateVat = (
   people: People,
   currencyObject: CurrencyObject
 ): VatReport => {
+  if (!currencyObject) {
+    // TODO DAZIT-220, proper implementation on corrupted async entries
+    return makeVatReportRecord({ totalVat: -1 });
+  }
   const sumsPerCurrency: Array<totalPerCurrency> = currenciesArray.map(c =>
     getCHFperCurrency(amounts, c, currencyObject)
   );

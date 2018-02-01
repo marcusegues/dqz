@@ -75,7 +75,7 @@ class TimePickerModalInner extends React.Component<
   }
 
   render() {
-    const { t, modalVisible, onHideModal } = this.props;
+    const { t, modalVisible, onHideModal, onSelectTime } = this.props;
     const { date, hours, minutes } = this.state;
     return (
       <AppModal
@@ -166,14 +166,8 @@ class TimePickerModalInner extends React.Component<
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
               onPress={() => {
-                this.props.onSelectTime(
-                  formatFullDate(
-                    this.state.date,
-                    this.state.hours,
-                    this.state.minutes
-                  )
-                );
-                this.props.onHideModal();
+                onSelectTime(formatFullDate(date, hours, minutes));
+                onHideModal();
               }}
               text={t('timePickerTakeOverThePeriod')}
             />
