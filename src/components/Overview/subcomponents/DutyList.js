@@ -17,19 +17,31 @@ class DutyListInner extends React.Component {
       .filter(entry => getTotalQuantity(basket, entry[0]) > 0)
       .map(([category, dutyOfCategory], idx) => ({
         key: category,
+        component: (
+          <DutyRow
+            borderTop={idx === 0}
+            key={category}
+            mainCategory={getMainCategory(category)}
+            category={category}
+            quantity={getTotalQuantity(basket, category)}
+            duty={dutyOfCategory}
+          />
+        ),
       }));
-    console.log(flatListData.toJS());
     return (
-      <View style={{ flex: 1, width: '100%', alignItems: 'center' }}>
+      <View
+        style={{
+          flex: 1,
+          width: '100%',
+          alignItems: 'center',
+          marginBottom: 24,
+        }}
+      >
         <RightAlignedHeader text={t('payment:dutyColumn')} />
         <FlatList
           style={{ width: '100%' }}
-          data={flatListData}
-          renderItem={({ item }) => (
-            <View style={{ height: 20 }}>
-              <Text>{'Hello'}</Text>
-            </View>
-          )}
+          data={flatListData.toJS()}
+          renderItem={({ item }) => item.component}
         />
       </View>
     );

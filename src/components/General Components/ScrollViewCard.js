@@ -2,8 +2,8 @@
 import React from 'react';
 // $FlowFixMe
 import { View, ScrollView } from 'react-native';
-import { globalStyles } from '../../../styles/globalStyles';
-import type { Children } from '../../../types/generalTypes';
+import { globalStyles } from '../../styles/globalStyles';
+import type { Children } from '../../types/generalTypes';
 
 const ownStyles = {
   container: {
