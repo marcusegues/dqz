@@ -202,4 +202,65 @@ export const de: Locale = {
     disclaimerText:
       'Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten. Damit das Layout nun nicht nackt im Raume steht und sich klein und leer vorkommt, springe ich ein: der Blindtext. Genau zu diesem Zwecke erschaffen, immer im Schatten meines großen Bruders »Lorem Ipsum«, freue ich mich jedes Mal, wenn Sie ein paar Zeilen lesen. Denn esse est percipi - Sein ist wahrgenommen werden. Und weil Sie nun schon die Güte haben, mich ein paar weitere Sätze lang zu begleiten, möchte ich diese Gelegenheit nutzen, Ihnen nicht nur als Lückenfüller zu dienen, sondern auf etwas hinzuweisen, das es ebenso verdient wahrgenommen zu werden: Webstandards nämlich.',
   },
+  legalNoticeInformation: {
+    navigationHeaderTitle: 'Informationen zum Gebrauch',
+    conditions: 'Rahmenbedingungen',
+    importantSoon: 'Wichtiges in Kürze',
+    importantSoonText:
+      'Sie dürfen die App für die gleiche Person bzw. die gleichen Personen nur einmal täglich (Kalendertag) einsetzen.\n' +
+      'Sie dürfen die App nur für Waren benützen, die Sie zu Ihrem privaten Gebrauch oder zum Verschenken einführen. \n' +
+      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 %; auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher). \n' +
+      'Es ist nur Kreditkartenzahlung (Visa, Mastercard) möglich (ohne Rückerstattungsmöglichkeit). Nach der Bezahlung der Abgaben sind die Waren verzollt.\n' +
+      'Die Verzollung muss vor dem Grenzübertritt oder spätestens bei der Grenzübergangsstelle erfolgen. Sie ist aber frühestens 48 Stunden vor dem Grenzübertritt möglich.\n' +
+      'Nach der Verzollung dürfen Sie auch folgende Grenzübergänge benutzen:\n' +
+      'Grenzübergangsstellen, bei denen kein Personal des Zolls anwesend ist;\n' +
+      'den grünen Durchgang in Flughäfen.\n' +
+      'Die Quittung des Zolls ist dem Personal des Schweizer Zolls auf Verlangen vorzuweisen. Das Zollpersonal fotografiert die Quittung bei Bedarf.\n',
+    howToDeclareYourGoods: 'So verzollen Sie ihre Waren:',
+    howToDeclareYourGoodsText:
+      'Melden Sie sämtliche mitgeführten Waren (ausgenommen persönliche Gebrauchsgegenstände und Reiseproviant) an. Die zustehenden Freimengen und die Wertfreigrenze werden während der Verzollung automatisch abgezogen.\n' +
+      'Geben Sie den Wert in der Fremdwährung gemäss Zahlungsbeleg ein. Der Wert wird mit dem Devisenkurs (Verkauf) des Vortages (letzter Arbeitstag) umgerechnet.\n' +
+      'Legen Sie ein Zeitfenster von zwei Stunden für Ihren Grenzübertritt fest. Die Quittung ist nur während dieses Zeitfensters gültig. Können Sie den gewählten Zeitraum nicht einhalten, müssen Sie sich bei einem durch das Personal des Schweizer Zolls besetzten Grenzübergang melden und erklären, warum Sie nicht innerhalb der Gültigkeitsfrist einreisen konnten. Ohne glaubhafte Begründung werden die Abgaben erneut erhoben.\n' +
+      'Gilt die Verzollung für Sie und Mitreisende oder für eine andere Person, müssen Sie mit diesen Personen gemeinsam einreisen.\n' +
+      'Vor der Bezahlung können Sie Ihre Anmeldung jederzeit korrigieren. Nach der Bezahlung sind in der App keine Korrekturen mehr möglich. Nach dem Bezahlen zusätzlich gekaufte ausländische Waren müssen Sie bei einem durch das Personal des Schweizer Zolls besetzten Grenzübergang anmelden.\n' +
+      'Die erhaltene Quittung des Schweizer Zolls müssen Sie mindestens ein Jahr aufbewahren. Die Quittung können Sie auch als Bild speichern.\n' +
+      'Ist die Verzollung mit der App nicht möglich (z. B. keine Internetverbindung oder Bezahlung mit Kreditkarte nicht möglich) müssen Sie die Waren bei einem durch das Personal des Schweizer Zolls besetzten Grenzübergang oder via Anmeldebox anmelden.\n' +
+      'Folgende Waren müssen Sie in jedem Fall bei einem durch das Personal des Schweizer Zolls besetzten Grenzübergang anmelden.\n' +
+      'Waren, die Beschränkungen oder Verboten unterliegen und die zeugnis- oder bewilligungspflichtig sind (z. B. Waffen, lebende Tiere und Artenschutzwaren); Waren für den privaten Gebrauch oder zum Verschenken mit einem Gesamtwert von CHF 20 000.00 oder mehr;\n' +
+      'Waren, die Sie nicht zu Ihrem privaten Gebrauch oder zum Verschenken einführen (z. B. Waren, die für den Handel bestimmt sind);\n' +
+      'Fahrzeuge, Reparaturen an Fahrzeugen und Treibstoffe;\n' +
+      'Übersiedlungs-, Ausstattungs- (Heirat) und Erbschaftsgut;\n' +
+      'Waren, die nur vorübergehend in die Schweiz eingeführt werden;\n' +
+      'Waren, die für den Transit durch die Schweiz bestimmt sind.\n' +
+      'Waren, die ausgeführt werden, können nicht mit der App angemeldet werden. Informationen zum steuerfreien Einkauf in der Schweiz (Tax free) finden Sie hier.\n',
+    legal: 'Rechtliches',
+    usage: 'Benutzung',
+    legalText:
+      'Die Verzollung mit der App ist verbindlich (Artikel 33 Zollgesetz, SR 631.0). Sie machen sich strafbar, wenn Sie verbotene, bewilligungs- oder abgabenpflichtige Waren nicht oder falsch anmelden.\n' +
+      'Diejenige Person, die die Quittung bei der Zollkontrolle vorweist, ist für die korrekte Verzollung der mitgeführten Waren verantwortlich. Sie übernimmt auch die strafrechtliche Verantwortung, wenn nicht oder falsch angemeldete Ware entdeckt werden.\n' +
+      'Stellen Sie bei der Verwendung der App sicher, dass\n' +
+      'Sie während des Zahlungsvorgangs eine Internetverbindung haben, um die Verzollung abschliessen zu können.\n' +
+      'Sie eine gültige Quittung für die Waren haben, die Sie einführen.\n' +
+      'Sie die Quittung bei Kontrollen anlässlich des Grenzübertritts auf Ihrem mobilen Endgerät anzeigen können.\n' +
+      'Bitte beachten Sie, dass während der Gültigkeitsfrist der Quittung ein Bild der Quittung, welches via WhatsApp, iMessage, SMS oder E-Mail an Drittpersonen weitergeleitet wird, nicht als Quittung akzeptiert wird.\n',
+    privacyAndLiability: 'Datenschutz und Haftung',
+    dataProtection: 'Datenschutz',
+    dataProtectionText:
+      'Gestützt auf Artikel 13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz vor Missbrauch ihrer persönlichen Daten. Die Bundesbehörden halten diese Bestimmungen ein. Persönliche Daten werden streng vertraulich behandelt und weder an Dritte verkauft noch weiter gegeben.\n' +
+      'In enger Zusammenarbeit mit unseren Hosting-Providern bemühen wir uns, die Datenbanken so gut wie möglich vor fremden Zugriffen, Verlusten, Miss-brauch oder vor Fälschung zu schützen.\n' +
+      'Beim Zugriff auf unsere Webseiten werden folgende Daten in Logfiles gespeichert: IP-Adresse, Datum, Uhrzeit, Browser-Anfrage und allg. übertragene Informationen zum Betriebssystem resp. Browser.\n' +
+      'Diese Nutzungsdaten bilden die Basis für statistische, anonyme Auswertungen, so dass Trends erkennbar sind, anhand derer die Bundesbehörden ihr Angebot entsprechend verbessern können. Gemäss Bundesgesetz betreffend die Überwachung des Post- und Fernmeldeverkehrs (BÜPF) besteht eine gesetzliche Aufbewahrungspflicht für Verbindungsdaten der letzten sechs Monate.\n' +
+      'Bei der freiwilligen Kontaktaufnahme wird Ihre Email-Adresse in eine separate Datenbank aufgenommen, welche nicht mit den anonymen Logfiles verknüpft wird. Sie haben jederzeit die Möglichkeit, Ihre Registrierung wieder rückgängig zu machen.\n' +
+      'Die Bundesbehörden behalten sich ausdrücklich vor, jederzeit Inhalte ohne Ankündigung ganz oder teilweise zu ändern, zu löschen oder zeitweise nicht zu veröffentlichen.\n' +
+      'Haftungsansprüche gegen die Bundesbehörden wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nicht-nutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen.\n',
+    referencesAndLinks: 'Verweise und Links',
+    referencesAndLinksText:
+      'Verweise und Links auf Webseiten Dritter liegen ausserhalb des Verantwortungsbereichs der Bundesbehörden. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin. Die Bundesbehörden erklären ausdrücklich, dass sie keinerlei Einfluss auf die Gestaltung, den Inhalt und die Angebote der verknüpften Seiten haben. Informationen und Dienstleistungen von verknüpften Webseiten liegen vollumfänglich in der Verantwortung des jeweiligen Dritten.\n' +
+      'Es wird jegliche Verantwortung für solche Webseiten abgelehnt.\n',
+    copyright: 'Copyright',
+    copyrightText:
+      'Copyright, Bundesbehörden der Schweizerischen Eidgenossenschaft, 2007.\n' +
+      'Die auf den Websites der Bundesbehörden enthaltenen Informationen werden der Öffentlichkeit zugänglich gemacht. Durch das Herunterladen oder Kopieren von Inhalten, Bildern, Fotos oder anderen Dateien werden keinerlei Rechte bezüglich der Inhalte übertragen.\n' +
+      'Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf den Websites der Bundesbehörden gehören ausschliesslich diesen oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.\n',
+  },
 };

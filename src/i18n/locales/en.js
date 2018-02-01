@@ -198,4 +198,21 @@ export const en: Locale = {
     disclaimerText:
       'The same old lyre everywhere. The layout is finished, the text is slow in coming. So that the layout does not stand naked in the room and looks small and empty, I jump in: the blind text. Created exactly for this purpose, always in the shadow of my big brother "Lorem Ipsum," I rejoice every time you read a few lines. Because eating est percipi - being is to be perceived. And because you\'re kind enough to accompany me for a few more sentences, I\'d like to take this opportunity to serve you not just as a filler, but to point out something that deserves to be recognized as well: web standards.',
   },
+  legalNoticeInformation: {
+    navigationHeaderTitle: '',
+    conditions: '',
+    importantSoon: '',
+    importantSoonText: '',
+    howToDeclareYourGoods: '',
+    howToDeclareYourGoodsText: '',
+    legal: '',
+    legalText: '',
+    privacyAndLiability: '',
+    dataProtection: '',
+    dataProtectionText: '',
+    referencesAndLinks: '',
+    referencesAndLinksText: '',
+    copyright: '',
+    copyrightText: '',
+  },
 };
