@@ -299,7 +299,6 @@ class PaymentContainerInner extends React.Component<
           dutyReport={dutyReport}
           vatReport={vatReport}
           basket={basket}
-          initializePayment={() => this.initializePayment()}
         />
 
         <RedButton
