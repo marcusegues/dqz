@@ -41,6 +41,9 @@ export const formatDate = (d: Date): string => {
   ].join('.');
 };
 
+export const formatFullDate = (d: string, hours: string, minutes: string) =>
+  `${d}/${hours}:${minutes}`;
+
 export type FlatAmount = {
   currency: Currency,
   amount: number,

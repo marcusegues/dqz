@@ -149,6 +149,11 @@ export const appState = (
       return state.set('receiptId', receiptId);
     }
 
+    case 'SET_RECEIPT_ENTRY_TIME': {
+      const receiptEntryTime: string = action.receiptEntryTime;
+      return state.set('receiptEntryTime', receiptEntryTime);
+    }
+
     default: {
       return state;
     }
@@ -179,3 +184,6 @@ export const getPaymentData = (state: State): PaymentData =>
   state.get('paymentData');
 
 export const getReceiptId = (state: State): string => state.get('receiptId');
+
+export const getReceiptEntryTime = (state: State): string =>
+  state.get('receiptEntryTime');
