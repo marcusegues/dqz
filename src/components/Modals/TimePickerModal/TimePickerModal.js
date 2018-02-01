@@ -27,7 +27,7 @@ import {
 } from '../PickerModal/pickerData';
 import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
 import { ModalCloseText } from '../ModalCloseText';
-import { formatDate } from '../../../model/utils';
+import { formatDate, formatFullDate } from '../../../model/utils';
 
 const ownStyles = {
   container: {
@@ -50,7 +50,8 @@ type PickerState = {
 
 type TimePickerModalProps = {
   modalVisible: boolean,
-  toggleModalVisible: () => void,
+  onHideModal: () => void,
+  onSelectTime: (selectedFullDate: string) => void,
 };
 
 const now = new Date();
@@ -59,6 +60,11 @@ class TimePickerModalInner extends React.Component<
   TimePickerModalProps & { t: TFunction },
   PickerState
 > {
+  static defaultProps = {
+    onSelectTime: () => {},
+    onHideModal: () => {},
+  };
+
   constructor() {
     super();
     this.state = {
@@ -69,9 +75,8 @@ class TimePickerModalInner extends React.Component<
   }
 
   render() {
-    const { t, modalVisible, toggleModalVisible } = this.props;
+    const { t, modalVisible, onHideModal, onSelectTime } = this.props;
     const { date, hours, minutes } = this.state;
-
     return (
       <AppModal
         modalVisible={modalVisible}
@@ -161,16 +166,14 @@ class TimePickerModalInner extends React.Component<
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
               onPress={() => {
-                Keyboard.dismiss();
+                onSelectTime(formatFullDate(date, hours, minutes));
+                onHideModal();
               }}
               text={t('timePickerTakeOverThePeriod')}
             />
           </View>
         </PickerCard>
-        <ModalCloseText
-          onModalHide={toggleModalVisible}
-          text={t('closeModalText')}
-        />
+        <ModalCloseText onModalHide={onHideModal} text={t('closeModalText')} />
       </AppModal>
     );
   }

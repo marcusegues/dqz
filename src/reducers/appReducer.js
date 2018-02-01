@@ -1,5 +1,6 @@
 /* eslint-disable prefer-destructuring */
 // @flow
+import Immutable from 'immutable';
 import {
   getInitialState,
   mainCategories,
@@ -112,6 +113,16 @@ export const appState = (
       return state.set('amounts', modelApi.resetAmounts(amounts, currency));
     }
 
+    case 'RESET_DECLARATION': {
+      const peopleReset = state.set('people', modelApi.initPeople);
+      const basketReset = peopleReset.set('basket', modelApi.emptyBasket);
+      const mainCategoriesReset = basketReset.setIn(
+        ['settings', 'mainCategories'],
+        Immutable.Set()
+      );
+      return mainCategoriesReset.set('amounts', modelApi.initAmounts);
+    }
+
     case 'ADD_MAIN_CATEGORY': {
       const mainCategory: MainCategory = action.mainCategory;
       const mainCategoriesAnswer = state.getIn(
@@ -149,6 +160,11 @@ export const appState = (
       return state.set('receiptId', receiptId);
     }
 
+    case 'SET_RECEIPT_ENTRY_TIME': {
+      const receiptEntryTime: string = action.receiptEntryTime;
+      return state.set('receiptEntryTime', receiptEntryTime);
+    }
+
     default: {
       return state;
     }
@@ -179,3 +195,6 @@ export const getPaymentData = (state: State): PaymentData =>
   state.get('paymentData');
 
 export const getReceiptId = (state: State): string => state.get('receiptId');
+
+export const getReceiptEntryTime = (state: State): string =>
+  state.get('receiptEntryTime');
