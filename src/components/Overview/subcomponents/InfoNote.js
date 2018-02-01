@@ -1,20 +1,22 @@
+// @flow
 import React from 'react';
+import type { ComponentType } from 'react';
+import { translate } from 'react-i18next';
+// $FlowFixMe
 import { View } from 'react-native';
 import { ReceiptSubText } from '../../Receipts/subComponents/ReceiptSubText';
 import { Row } from '../../Rows/Row';
-import { translate } from 'react-i18next';
+import type { TFunction } from '../../../types/generalTypes';
 
-const InfoNoteInner = ({ text, t }) => {
-  return (
-    <Row styles={{ justifyContent: 'flexStart' }}>
-      <View style={{ flexDirection: 'column' }}>
-        <ReceiptSubText text={t('general:note')} />
-        <ReceiptSubText text={t('payment:entryInfo')} />
-      </View>
-    </Row>
-  );
-};
+const InfoNoteInner = ({ t }: { t: TFunction }) => (
+  <Row styles={{ justifyContent: 'flexStart' }}>
+    <View style={{ flexDirection: 'column' }}>
+      <ReceiptSubText text={t('general:note')} />
+      <ReceiptSubText text={t('payment:entryInfo')} />
+    </View>
+  </Row>
+);
 
 export const InfoNote = (translate(['general', 'payment'])(
   InfoNoteInner
-): ComponentType<OnBoardingProps>);
+): ComponentType<{}>);

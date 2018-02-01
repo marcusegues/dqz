@@ -8,7 +8,7 @@ type RowProp = {
   borderTop?: boolean,
   borderBottomNone?: boolean,
   children: Children,
-  styles: Object,
+  styles?: Object,
 };
 
 const quantityRowContainerStyles = (borderTop, borderBottomNone) => ({

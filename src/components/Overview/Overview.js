@@ -5,12 +5,8 @@ import { connect } from 'react-redux';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { View } from 'react-native';
-// $FlowFixMe
 import { CardHeader } from '../QuestionAnswer/cards/subcomponents/CardHeader';
-import type { Basket } from '../../model/types/basketPeopleAmountsTypes';
 import type { TFunction } from '../../types/generalTypes';
-import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 import { PeriodOfEntryRow } from './subcomponents/PeriodOfEntryRow';
 import { DutyList } from './subcomponents/DutyList';
 import { VatList } from './subcomponents/VatList';
@@ -18,13 +14,9 @@ import { ScrollViewCard } from '../General Components/ScrollViewCard';
 import { TimePickerModal } from '../Modals/TimePickerModal/TimePickerModal';
 import { getReceiptEntryTime } from '../../reducers';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
-import { CardHeaderSubText } from '../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
 import { InfoNote } from './subcomponents/InfoNote';
 
 type OverviewProps = {
-  dutyReport: DutyReport,
-  vatReport: VatReport,
-  basket: Basket,
   modalVisible?: boolean,
 };
 
@@ -67,10 +59,7 @@ class OverviewInner extends React.Component<
   }
 
   render() {
-    const { dutyReport, vatReport, t } = this.props;
-    const fullVat = vatReport.get('totalVat');
-    const fullDuty = dutyReport.get('totalDuty');
-
+    const { t, receiptEntryTime } = this.props;
     return (
       <ScrollViewCard>
         <CardHeader text={t('overViewTitle')} />
@@ -80,7 +69,7 @@ class OverviewInner extends React.Component<
         <PeriodOfEntryRow
           title={t('receipt:entryTime')}
           subtitle={t('receipt:chooseOtherEntryTime')}
-          time={this.props.receiptEntryTime}
+          time={receiptEntryTime}
           onPress={() => this.handleShowModal()}
         />
         <InfoNote />
