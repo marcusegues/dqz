@@ -246,9 +246,10 @@ class PaymentContainerInner extends React.Component<
                   currencies,
                   paymentData: newPaymentData,
                 };
-                return storeReceipt(receipt);
+                return storeReceipt(receipt).then(() =>
+                  this.props.navigation.navigate('ReceiptAfterPayment')
+                );
               })
-              .then(this.props.navigation.navigate('ReceiptAfterPayment'))
               .catch(error => console.log('Error is', error));
           }
         }
