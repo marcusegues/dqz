@@ -188,6 +188,24 @@ type AppInformationTranslations = {
   disclaimerText: string,
 };
 
+type LegalNoticeInformationTranslations = {
+  navigationHeaderTitle: string,
+  conditions: string,
+  importantSoon: string,
+  importantSoonText: string,
+  howToDeclareYourGoods: string,
+  howToDeclareYourGoodsText: string,
+  legal: string,
+  legalText: string,
+  privacyAndLiability: string,
+  dataProtection: string,
+  dataProtectionText: string,
+  referencesAndLinks: string,
+  referencesAndLinksText: string,
+  copyright: string,
+  copyrightText: string,
+};
+
 /**
  * The Locale type defines all the namespaces that we use in the translation
  * The namespaces are formed by the individual strings, respectively.
@@ -208,4 +226,5 @@ export type Locale = {
   receipt: ReceiptTranslations,
   information: InformationTranslations,
   appInformation: AppInformationTranslations,
+  legalNoticeInformation: LegalNoticeInformationTranslations,
 };

@@ -25,6 +25,7 @@ import { OnBoardingTaxScreen } from '../screens/OnBoarding/OnBoardingTaxScreen';
 import { ReceiptAfterPayment } from '../components/Receipts/ReceiptAfterPayment';
 import { AllReceipts } from '../components/Receipts/AllReceipts';
 import { AppInfo } from '../screens/AppInfo/AppInfo';
+import { LegalNoticeInfo } from '../screens/LegalNoticeInfo/LegalNoticeInfo';
 import { HomeIcon } from '../components/Headers/subcomponents/HomeIcon';
 import { DownloadIcon } from '../components/Headers/subcomponents/DownloadIcon';
 import { Information } from '../screens/Information/Information';
@@ -159,6 +160,17 @@ export const stackNavigatorScreens = {
   },
   AppInfo: {
     screen: AppInfo,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  LegalNoticeInfo: {
+    screen: LegalNoticeInfo,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: (
         <BackArrow
