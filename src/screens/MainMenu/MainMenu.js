@@ -33,7 +33,7 @@ const MainMenuInner = ({ navigation, t }: MainMenuProps & { t: TFunction }) => (
       >
         <MaterialIcons
           name="add-shopping-cart"
-          size={moderateScale(47)}
+          size={moderateScale(40)}
           color="#757575"
         />
       </MenuTile>
@@ -43,7 +43,7 @@ const MainMenuInner = ({ navigation, t }: MainMenuProps & { t: TFunction }) => (
         text={t('information')}
         onPress={() => navigation.navigate('LegalNoticeInfo')}
       >
-        <MaterialIcons name="info" size={moderateScale(47)} color="#757575" />
+        <MaterialIcons name="info" size={moderateScale(40)} color="#757575" />
       </MenuTile>
 
       <MenuTile
@@ -55,7 +55,7 @@ const MainMenuInner = ({ navigation, t }: MainMenuProps & { t: TFunction }) => (
         <View>
           <MaterialIcons
             name="receipt"
-            size={moderateScale(47)}
+            size={moderateScale(40)}
             color="#757575"
           />
         </View>
@@ -63,8 +63,8 @@ const MainMenuInner = ({ navigation, t }: MainMenuProps & { t: TFunction }) => (
 
       <MenuTile
         icon="info"
-        text={t('information')}
-        onPress={() => navigation.navigate('LegalNoticeInfo')}
+        text={t('guideline')}
+        onPress={() => navigation.navigate('Information')}
       >
         <Image
           source={customs}

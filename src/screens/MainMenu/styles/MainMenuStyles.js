@@ -34,7 +34,7 @@ export const mainMenuStyles: any = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   greyLogo: {
-    height: moderateScale(51),
+    height: moderateScale(40),
   },
   bottomContainer: {
     ...Platform.select({

@@ -26,5 +26,6 @@ export const menuTileStyle: any = StyleSheet.create({
     fontFamily: 'roboto_medium',
     textAlign: 'center',
     marginTop: verticalScale(10),
+    paddingHorizontal: scale(10),
   },
 });
