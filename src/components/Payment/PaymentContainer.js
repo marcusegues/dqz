@@ -270,6 +270,7 @@ class PaymentContainerInner extends React.Component<
   render() {
     const { showModal } = this.state;
     const {
+      navigation,
       basket,
       t,
       dutyReport,
@@ -329,6 +330,11 @@ class PaymentContainerInner extends React.Component<
         ) : null}
         <LegalNoticeModal
           modalVisible={showModal}
+          navigation={navigation}
+          onPressLegal={() => {
+            this.setState({ showModal: false });
+            navigation.navigate('LegalNoticeInfo');
+          }}
           toggleModalVisible={() => {
             this.setState({ showModal: false });
           }}

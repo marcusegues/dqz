@@ -164,6 +164,8 @@ class ScreensViewInner extends React.Component<
         <LegalNoticeModal
           modalVisible={this.state.legalNoticeModalVisible}
           toggleModalVisible={() => this.toggleLegalNoticeModalVisible()}
+          onPressLegal={() => {}}
+          onConfirm={() => {}}
         />
       </View>
     );

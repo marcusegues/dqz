@@ -2,8 +2,9 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
+import Touchable from 'react-native-platform-touchable';
+// $FlowFixMe
 import {
-  TouchableWithoutFeedback,
   View,
   Keyboard,
   // $FlowFixMe
@@ -27,6 +28,7 @@ type LegalNoticeModalProps = {
   modalVisible: boolean,
   onConfirm: () => void,
   toggleModalVisible: () => void,
+  onPressLegal: () => void,
 };
 
 class LegalNoticeModalInner extends React.Component<
@@ -39,9 +41,15 @@ class LegalNoticeModalInner extends React.Component<
       checked: false,
     };
   }
+
   render() {
     const { checked } = this.state;
-    const { onConfirm, modalVisible, toggleModalVisible } = this.props;
+    const {
+      onConfirm,
+      onPressLegal,
+      modalVisible,
+      toggleModalVisible,
+    } = this.props;
     return (
       <AppModal
         modalVisible={modalVisible}
@@ -63,7 +71,11 @@ class LegalNoticeModalInner extends React.Component<
             }}
           />
 
-          <TouchableWithoutFeedback>
+          <Touchable
+            onPress={() => {
+              onPressLegal();
+            }}
+          >
             <CardHeaderSubText
               text="ALLGEIME GESCHÄFTBEDINGUNGEN"
               style={{
@@ -73,7 +85,7 @@ class LegalNoticeModalInner extends React.Component<
                 color: '#757575',
               }}
             />
-          </TouchableWithoutFeedback>
+          </Touchable>
 
           <View
             style={{
