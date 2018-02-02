@@ -50,6 +50,7 @@ import {
   storeClearDeclaration,
   storeReceipt,
 } from '../../asyncStorage/storageApi';
+import { LegalNoticeModal } from '../Modals/LegalNoticeModal/LegalNoticeModal';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -64,6 +65,7 @@ type PaymentContainerState = {
   redirectUrl: ?string,
   paymentToken: ?string,
   paymentStatus: ?string,
+  showModal: boolean,
 };
 
 type PaymentContainerProps = {
@@ -99,6 +101,7 @@ class PaymentContainerInner extends React.Component<
       redirectUrl: null,
       paymentToken: null,
       paymentStatus: null,
+      showModal: false,
     };
   }
 
@@ -111,6 +114,10 @@ class PaymentContainerInner extends React.Component<
   }
 
   saferpay: Saferpay;
+
+  proceedToPayment() {
+    this.setState({ showModal: true });
+  }
 
   initializePayment() {
     const {
@@ -261,6 +268,7 @@ class PaymentContainerInner extends React.Component<
   }
 
   render() {
+    const { showModal } = this.state;
     const {
       basket,
       t,
@@ -305,7 +313,7 @@ class PaymentContainerInner extends React.Component<
         />
 
         <RedButton
-          onPress={() => this.initializePayment()}
+          onPress={() => this.proceedToPayment()}
           text={t('toPayment')}
           confirmationDisabled={
             fees < 1 || totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF
@@ -319,6 +327,12 @@ class PaymentContainerInner extends React.Component<
             />
           </View>
         ) : null}
+        <LegalNoticeModal
+          modalVisible={showModal}
+          toggleModalVisible={() => {
+            this.setState({ showModal: false });
+          }}
+        />
       </View>
     );
   }
