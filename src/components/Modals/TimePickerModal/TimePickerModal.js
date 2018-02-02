@@ -171,7 +171,7 @@ class TimePickerModalInner extends React.Component<
             style={ownStyles.validUntilText}
             text={t(['timePickerRegistrationValidUntil'], {
               date: entryTimePlus.toFormat('dd.MM.y'),
-              time: entryTimePlus.toFormat('HH:ss'),
+              time: entryTimePlus.toFormat('HH:mm'),
             })}
           />
 
