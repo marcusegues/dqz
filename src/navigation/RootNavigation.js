@@ -35,7 +35,7 @@ import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
 import { UsefulInfoScreenTemplate } from '../screens/Information/subComponents/UsefulInfoScreenTemplate';
 import { SnackBarsContainer } from '../components/SnackBars/SnackBarsContainer';
 
-type NavigationObject = { navigation: Navigation };
+export type NavigationObject = { navigation: Navigation };
 
 export const stackNavigatorScreens = {
   Screens: {
