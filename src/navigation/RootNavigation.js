@@ -18,7 +18,7 @@ import { InfoIcon } from '../components/Headers/subcomponents/InfoIcon';
 import { MainMenuHeaderRight } from '../components/Headers/subcomponents/MainMenuHeaderRight';
 import { MainMenu } from '../screens/MainMenu/MainMenu';
 import { PaymentContainer } from '../components/Payment/PaymentContainer';
-import { UnderConstruction } from './underConstruction';
+import { UnderConstruction } from './UnderConstruction';
 import { QuestionAnswerContainer } from '../components/QuestionAnswer/QuestionAnswerContainer';
 import { GoodQuantityListModal } from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { OnBoardingTaxScreen } from '../screens/OnBoarding/OnBoardingTaxScreen';
@@ -106,9 +106,6 @@ export const stackNavigatorScreens = {
 
   UnderConstruction: {
     screen: UnderConstruction,
-    navigationOptions: () => ({
-      headerTitle: <HeaderTitle text="In Bearbeitung" />,
-    }),
   },
   Information: {
     screen: Information,

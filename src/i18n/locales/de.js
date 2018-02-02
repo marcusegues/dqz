@@ -44,6 +44,7 @@ export const de: Locale = {
     buttonContinue: 'Weiter',
     buttonBack: 'Zurück',
     note: 'Hinweis',
+    underConstruction: 'In Bearbeitung',
   },
   snackBar: {
     limitExceeded:
