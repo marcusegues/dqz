@@ -12,6 +12,7 @@ import type { CurrencyObject } from '../model/currencies';
  */
 export type Receipt = {
   receiptId: string,
+  receiptEntryTime: string,
   amounts: Amounts,
   people: People,
   basket: Basket,

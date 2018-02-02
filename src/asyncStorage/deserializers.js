@@ -43,6 +43,7 @@ export const deserializeReceipts = (serialized: any): any => {
   const receiptsList = Immutable.List(serialized);
   return receiptsList.map(d => ({
     receiptId: d.receiptId,
+    receiptEntryTime: d.receiptEntryTime,
     amounts: deserializeAmounts(d.amounts),
     people: deserializePeople(d.people),
     basket: deserializeBasket(d.basket),
