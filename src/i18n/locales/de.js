@@ -195,7 +195,7 @@ export const de: Locale = {
     reachability: 'Erreichbarkeit:',
     workingHours: 'Montag – Freitag, 8.00 – 11.30 und 13.30 bis 17.00',
     generalCustomsDirectorate:
-      'Oberzolldirektion\nMonbijoustrasse 40\n' +
+      'Eidgenössische Zollverwaltung\nMonbijoustrasse 40\n' +
       '3003 Bern\n' +
       'http://www.ezv.admin.ch',
     designAndDevelopment: 'Design & Entwicklung',
