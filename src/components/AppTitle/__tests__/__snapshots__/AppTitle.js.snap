@@ -43,7 +43,7 @@ exports[`AppTitle renders according to snapshot 1`] = `
         }
       }
     >
-      CLARA
+      Zoll-App
     </Text>
   </View>
 </View>
