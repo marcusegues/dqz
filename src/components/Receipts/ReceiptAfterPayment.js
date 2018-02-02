@@ -2,7 +2,7 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
-import moment from 'moment';
+import { DateTime } from 'luxon';
 // $FlowFixMe
 import { View, Text, CameraRoll } from 'react-native';
 // $FlowFixMe
@@ -137,9 +137,14 @@ class ReceiptAfterPaymentInner extends React.Component<
       const dutyReport = calculateDuty(basket, this.state.receipt.people);
       const fullVat = vatReport.get('totalVat');
       const fullDuty = dutyReport.get('totalDuty');
-      const transactionDatetime = moment(
+      const transactionDatetime = DateTime.fromISO(
         this.state.receipt.paymentData.transaction.date
       );
+      // TODO: @Christian need to set locale from APP
+      const receiptEntryTimePlus = DateTime.fromISO(
+        this.state.receipt.receiptEntryTime,
+        { locale: 'de' }
+      ).plus({ hours: 2 });
       return (
         <ScrollViewCard
           ref={ref => {
@@ -167,8 +172,8 @@ class ReceiptAfterPaymentInner extends React.Component<
           <View style={ownStyles.contentContainer}>
             <CardRowText
               text={t('paidOn', {
-                date: transactionDatetime.format('DD.MM.YYYY'),
-                time: transactionDatetime.format('HH:mm'),
+                date: transactionDatetime.toFormat('dd.MM.y'),
+                time: transactionDatetime.toFormat('HH:mm'),
               })}
               style={ownStyles.cardRowTextPaidOn}
             />
@@ -190,8 +195,8 @@ class ReceiptAfterPaymentInner extends React.Component<
               />
               <CardRowText
                 text={t('receiptValidUntilTime', {
-                  date: '20. Dezember 2017',
-                  time: '19:40',
+                  date: receiptEntryTimePlus.toLocaleString(DateTime.DATE_FULL),
+                  time: receiptEntryTimePlus.toFormat('HH:mm'),
                 })}
                 style={ownStyles.cardRowText}
               />
