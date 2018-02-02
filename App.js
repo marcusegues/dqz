@@ -83,6 +83,7 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/images/logo_with_text.png'),
         require('./assets/images/ambrite_logo.png'),
         require('./assets/images/infoImage.png'),
+        require('./assets/images/customs.png'),
 
         require('./assets/icons/mwst.png'),
         require('./assets/icons/mainCategories.png'),
