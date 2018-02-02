@@ -13,11 +13,7 @@ import { languages } from '../../i18n';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import type { Language } from '../../i18n/types/locale';
 import { analyticsLanguageChanged } from '../../analytics/analyticsApi';
-import {
-  fetchSettingsAcceptRate,
-  fetchSettingsHasLanguage,
-  storeSettingsHasLanguage,
-} from '../../asyncStorage/storageApi';
+import { storeSettingsHasLanguage } from '../../asyncStorage/storageApi';
 
 type OnBoardingState = {
   systemLanguage: Language,
@@ -42,30 +38,11 @@ class OnBoardingInner extends React.Component<
   }
 
   componentWillMount() {
-    this.checkLanguages();
     this.setNextScreen();
   }
 
   setNextScreen() {
-    fetchSettingsAcceptRate().then(b =>
-      this.setState({ nextScreen: b ? 'MainMenu' : 'OnBoardingTaxScreen' })
-    );
-  }
-
-  checkLanguages() {
-    const { i18n, navigation } = this.props;
-    fetchSettingsHasLanguage().then(lang => {
-      if (lang) {
-        i18n.changeLanguage(lang);
-        fetchSettingsAcceptRate().then(bb => {
-          if (bb) {
-            navigation.navigate('MainMenu');
-          } else {
-            navigation.navigate('OnBoardingTaxScreen');
-          }
-        });
-      }
-    });
+    this.setState({ nextScreen: 'OnBoardingTaxScreen' });
   }
 
   changeLanguage(language: Language) {
