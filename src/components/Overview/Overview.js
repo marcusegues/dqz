@@ -95,7 +95,11 @@ class OverviewInner extends React.Component<
         <PeriodOfEntryRow
           title={t('receipt:entryTime')}
           subtitle={t('receipt:chooseOtherEntryTime')}
-          time={momentReceiptEntryTime.toFormat('dd.MM.y HH:mm')}
+          time={`${momentReceiptEntryTime.toFormat(
+            'dd.MM.y HH:mm'
+          )} - ${momentReceiptEntryTime
+            .plus({ hours: 2 })
+            .toFormat('dd.MM.y HH:mm')}`}
           onPress={() => this.handleShowModal()}
         />
         <InfoNote />
