@@ -43,7 +43,7 @@ export const fr: Locale = {
     toPayment: 'Paiement',
     buttonContinue: 'Étape suivante',
     buttonBack: 'Retour',
-    note: '🈯',
+    note: 'Allusion',
   },
   snackBar: {
     limitExceeded:
@@ -136,7 +136,7 @@ export const fr: Locale = {
     overViewTitle: "Vue d'ensemble de votre déclaration",
     dutyColumn: 'Droits de douane en francs',
     sumText: 'Total (en francs)',
-    entryInfo: '🈯',
+    entryInfo: 'Vous ne pouvez traverser la frontière que dans la période spécifiée avec les marchandises enregistrées ici.',
   },
   receipt: {
     dutyAndVat: 'Droits de douane: {{duty}} |  TVA: {{vat}}',
@@ -198,7 +198,7 @@ export const fr: Locale = {
     reachability: 'Joignabilité:',
     workingHours: 'Lundi – Vendredi, 8.00 – 11.30 et 13.30 a 17.00',
     generalCustomsDirectorate:
-      'Oberzolldirektion\nMonbijoustrasse 40\n' +
+      'Administration fédérale des douanes AFD\nMonbijoustrasse 40\n' +
       '3003 Bern\n' +
       'http://www.ezv.admin.ch',
     designAndDevelopment: 'Conception et développement',
