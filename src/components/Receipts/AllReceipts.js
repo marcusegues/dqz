@@ -82,7 +82,8 @@ class AllReceiptsInner extends React.Component<
         const fullVat = vatReport.get('totalVat');
         const fullDuty = dutyReport.get('totalDuty');
         const receiptEntryTimePlus = DateTime.fromISO(
-          receipt.receiptEntryTime
+          receipt.receiptEntryTime,
+          { zone: 'Europe/Zurich' }
         ).plus({ hours: 2 });
         const localSwissTime = getConvertedLocalTimeToSwiss();
 
