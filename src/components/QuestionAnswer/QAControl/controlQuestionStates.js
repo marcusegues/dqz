@@ -56,7 +56,6 @@ export const setQuestionStates = (
   let largeAmountsState: QuestionState = showLargeAmountsQuestion(qaState)
     ? 'collapsed'
     : 'hidden';
-
   switch (justAnswered) {
     case 'peopleInput': {
       if (direction === 'back') {
@@ -70,6 +69,10 @@ export const setQuestionStates = (
     }
     case 'mainCategories': {
       peopleInputState = backNav(direction);
+      if (mainCategories.size === 1 && mainCategories.has('OtherGoods')) {
+        amountsState = fwdNav(direction);
+        break;
+      }
       if (mainCategories.size) {
         quantityInputState = fwdNav(direction);
       }

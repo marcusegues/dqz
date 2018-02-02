@@ -32,16 +32,43 @@ const stateWithMainCategories = {
   basket: emptyBasket,
   people: initPeople,
   amounts: initAmounts,
-  settings: makeSettingsRecord().set('mainCategories', Immutable.Set('Foo')),
+  settings: makeSettingsRecord().set(
+    'mainCategories',
+    Immutable.Set(['Meat', 'Butter'])
+  ),
   questionStates: {
     peopleInput: 'collapsed',
     mainCategories: 'collapsed',
     quantityInput: 'collapsed',
+    amounts: 'collapsed',
   },
   questionFlag: {
     peopleInput: 'complete',
     mainCategories: 'incomplete',
     quantityInput: 'incomplete',
+    amounts: 'incomplete',
+  },
+};
+
+const stateWithSingleOtherGoodsMainCategory = {
+  basket: emptyBasket,
+  people: initPeople,
+  amounts: initAmounts,
+  settings: makeSettingsRecord().set(
+    'mainCategories',
+    Immutable.Set(['OtherGoods'])
+  ),
+  questionStates: {
+    peopleInput: 'collapsed',
+    mainCategories: 'collapsed',
+    quantityInput: 'collapsed',
+    amounts: 'collapsed',
+  },
+  questionFlag: {
+    peopleInput: 'complete',
+    mainCategories: 'incomplete',
+    quantityInput: 'incomplete',
+    amounts: 'incomplete',
   },
 };
 
@@ -110,7 +137,7 @@ describe('Test qa control flow', () => {
     expect(spy).toBeCalled();
   });
 
-  test('after main categories FORWARD', () => {
+  test('after main categories (multiple main categories) FORWARD', () => {
     const newState = setQuestionStates(
       'mainCategories',
       'forward',
@@ -120,6 +147,20 @@ describe('Test qa control flow', () => {
     expect(newState.peopleInput).toBe('collapsed');
     expect(newState.mainCategories).toBe('collapsed');
     expect(newState.quantityInput).toBe('expanded');
+    expect(newState.amounts).toBe('collapsed');
+  });
+
+  test('after main categories (single OtherGoods main category) FORWARD', () => {
+    const newState = setQuestionStates(
+      'mainCategories',
+      'forward',
+      {},
+      stateWithSingleOtherGoodsMainCategory
+    ).questionStates;
+    expect(newState.peopleInput).toBe('collapsed');
+    expect(newState.mainCategories).toBe('collapsed');
+    expect(newState.quantityInput).toBe('collapsed');
+    expect(newState.amounts).toBe('expanded');
   });
 
   test('after main categories BACK', () => {
