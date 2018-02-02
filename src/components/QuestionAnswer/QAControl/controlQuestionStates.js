@@ -70,6 +70,7 @@ export const setQuestionStates = (
     case 'mainCategories': {
       peopleInputState = backNav(direction);
       if (mainCategories.size === 1 && mainCategories.has('OtherGoods')) {
+        quantityInputState = 'hidden';
         amountsState = fwdNav(direction);
         break;
       }
