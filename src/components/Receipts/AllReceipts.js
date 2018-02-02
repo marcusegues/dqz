@@ -20,6 +20,7 @@ import type { Receipt } from '../../types/receiptTypes';
 import { fetchReceipts } from '../../asyncStorage/storageApi';
 import { calculateDuty } from '../../model/dutyCalculations';
 import { calculateVat } from '../../model/vatCalculations';
+import { getConvertedLocalTimeToSwiss } from '../../model/utils';
 
 type AllReceiptsState = {
   receipts: List<Receipt>,
@@ -60,59 +61,80 @@ class AllReceiptsInner extends React.Component<
     });
   }
 
-  render() {
+  prepareReceiptsObject() {
     const { t, navigation, setReceiptId } = this.props;
+
+    const sortDateTimeAsc = (a, b) =>
+      DateTime.fromISO(a.receiptEntryTime) >
+      DateTime.fromISO(b.receiptEntryTime)
+        ? 1
+        : -1;
+
+    return this.state.receipts.sort(sortDateTimeAsc).reduce(
+      (receipts, receipt) => {
+        const { basket } = receipt;
+        const vatReport = calculateVat(
+          receipt.amounts,
+          receipt.people,
+          receipt.currencies
+        );
+        const dutyReport = calculateDuty(basket, receipt.people);
+        const fullVat = vatReport.get('totalVat');
+        const fullDuty = dutyReport.get('totalDuty');
+        const receiptEntryTimePlus = DateTime.fromISO(
+          receipt.receiptEntryTime
+        ).plus({ hours: 2 });
+        const localSwissTime = getConvertedLocalTimeToSwiss();
+
+        const receiptView = (
+          <AllReceiptsRow
+            key={`receipt-row-${receipt.receiptId}`}
+            sum={t('allReceiptsSumInFranks', {
+              value: (fullVat + fullDuty).toFixed(2),
+            })}
+            duty={t('dutyAndVat', {
+              duty: fullDuty.toFixed(2),
+              vat: fullVat.toFixed(2),
+            })}
+            date={t('allReceiptsDate', {
+              value: receiptEntryTimePlus.toFormat('dd.MM.y HH:mm:ss'),
+            })}
+            rowOnPress={() => {
+              setReceiptId(receipt.receiptId);
+              navigation.navigate('ReceiptAfterPayment');
+            }}
+          />
+        );
+        if (receiptEntryTimePlus > localSwissTime) {
+          // $FlowFixMe
+          receipts.actualReceipts.push(receiptView);
+        } else {
+          // $FlowFixMe
+          receipts.oldReceipts.push(receiptView);
+        }
+        return receipts;
+      },
+      { actualReceipts: [], oldReceipts: [] }
+    );
+  }
+
+  render() {
+    const { t } = this.props;
+
+    // $FlowFixMe
+    const sortedReceipts: {
+      actualReceipts: Array<any>,
+      oldReceipts: Array<any>,
+    } = this.prepareReceiptsObject();
 
     return (
       <ScrollViewCard>
         <CardHeader text={t('allReceiptsCurrentReceipt')} />
-        <AllReceiptsRow
-          sum={t('allReceiptsSumInFranks', { value: '75.00' })}
-          duty={t('dutyAndVat', {
-            duty: '65.00 ',
-            vat: '10.00',
-          })}
-          date={t('allReceiptsDate', { value: '09. Januar 2017' })}
-          rowOnPress={() => navigation.navigate('ReceiptAfterPayment')}
-        />
+        {sortedReceipts.actualReceipts}
         <View style={{ marginTop: verticalScale(30) }}>
           <CardHeader text={t('allReceiptsOlderReceipts')} />
         </View>
-        {// $FlowFixMe
-        this.state.receipts.map((receipt, index) => {
-          // console.log(receipt.receiptEntryTime);
-          const { basket } = receipt;
-          const vatReport = calculateVat(
-            receipt.amounts,
-            receipt.people,
-            receipt.currencies
-          );
-          const dutyReport = calculateDuty(basket, receipt.people);
-          const fullVat = vatReport.get('totalVat');
-          const fullDuty = dutyReport.get('totalDuty');
-          const transactionDatetime = DateTime.fromISO(
-            receipt.paymentData.transaction.date
-          );
-          return (
-            <AllReceiptsRow
-              key={`receipt-row-${index + fullVat}`}
-              sum={t('allReceiptsSumInFranks', {
-                value: (fullVat + fullDuty).toFixed(2),
-              })}
-              duty={t('dutyAndVat', {
-                duty: fullDuty.toFixed(2),
-                vat: fullVat.toFixed(2),
-              })}
-              date={t('allReceiptsDate', {
-                value: transactionDatetime.toFormat('dd.MM.y'),
-              })}
-              rowOnPress={() => {
-                setReceiptId(receipt.receiptId);
-                navigation.navigate('ReceiptAfterPayment');
-              }}
-            />
-          );
-        })}
+        {sortedReceipts.oldReceipts}
       </ScrollViewCard>
     );
   }
