@@ -43,7 +43,7 @@ export const it: Locale = {
     toPayment: 'Pagamento',
     buttonContinue: 'Avanti',
     buttonBack: 'Indietro',
-    note: '🈯',
+      note: 'Suggerimento',
   },
   snackBar: {
     limitExceeded:
@@ -80,7 +80,7 @@ export const it: Locale = {
       'Inserire il valore senza IVA estera (valore netto).',
     currentTotalValue: ' Valore complessivo attuale:',
     lastExchangeRate:
-      ' Sulla base dell’ultimo corso del cambio disponibile, aggiornato al momento del pagamento.',
+      'Sulla base dell’ultimo corso del cambio disponibile, aggiornato al momento del pagamento.',
   },
   qaFlow: {
     declareGoods: 'Dichiarare le merci',
@@ -133,7 +133,7 @@ export const it: Locale = {
     overViewTitle: ' Riepilogo della dichiarazione',
     dutyColumn: 'Tributi doganali in CHF',
     sumText: 'Totale (CHF)',
-    entryInfo: '🈯',
+    entryInfo: 'Puoi attraversare il confine solo entro il periodo specificato con i beni registrati qui.',
   },
   receipt: {
     dutyAndVat: 'Tributi doganali: {{duty}} | IVA: {{vat}}',
@@ -195,7 +195,7 @@ export const it: Locale = {
     reachability: 'Reperibilità:',
     workingHours: 'Montag – Freitag, 8.00 – 11.30 und 13.30 bis 17.00',
     generalCustomsDirectorate:
-      'Oberzolldirektion\nMonbijoustrasse 40\n' +
+      'Amministrazione federale delle dogane AFD\nMonbijoustrasse 40\n' +
       '3003 Bern\n' +
       'http://www.ezv.admin.ch',
     designAndDevelopment: 'Design e sviluppo',
