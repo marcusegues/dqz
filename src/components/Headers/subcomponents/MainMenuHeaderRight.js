@@ -6,9 +6,11 @@ import { ReceiptNotificationBadge } from './ReceiptNotificationBadge';
 import { OptionsGearIcon } from './OptionsGearIcon';
 import { mainMenuHeaderRightStyle } from '../styles/MainMenuHeaderRight';
 
-export const MainMenuHeaderRight = () => (
+import type { NavigationObject } from '../../../navigation/RootNavigation';
+
+export const MainMenuHeaderRight = ({ navigation }: NavigationObject) => (
   <View style={mainMenuHeaderRightStyle.container}>
-    <ReceiptNotificationBadge />
+    <ReceiptNotificationBadge navigation={navigation} />
     <OptionsGearIcon />
   </View>
 );

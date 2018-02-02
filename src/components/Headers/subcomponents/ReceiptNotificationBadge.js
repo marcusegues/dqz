@@ -11,15 +11,24 @@ import { moderateScale } from '../../../styles/Scaling';
 import { receiptNotificationBadgeStyle } from '../styles/ReceiptNotificationBadge';
 import { getTotalFees } from '../../../reducers';
 import { MAIN_RED } from '../../../styles/colors';
+import type { Navigation } from '../../../types/generalTypes';
 
 type ReceiptNotificationBadgeProps = {
   fees: number,
+  navigation: Navigation,
 };
 
 const ReceiptNotificationBadgeInner = ({
   fees,
+  navigation,
 }: ReceiptNotificationBadgeProps) => (
-  <Touchable onPress={() => {}}>
+  <Touchable
+    onPress={() => {
+      if (fees) {
+        navigation.navigate('Payment');
+      }
+    }}
+  >
     <View
       style={[
         receiptNotificationBadgeStyle.container,
