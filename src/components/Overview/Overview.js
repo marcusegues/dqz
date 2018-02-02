@@ -7,7 +7,7 @@ import { DateTime } from 'luxon';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { CardHeader } from '../QuestionAnswer/cards/subcomponents/CardHeader';
-import type { TFunction } from '../../types/generalTypes';
+import type { Navigation, TFunction } from '../../types/generalTypes';
 import { PeriodOfEntryRow } from './subcomponents/PeriodOfEntryRow';
 import { DutyList } from './subcomponents/DutyList';
 import { VatList } from './subcomponents/VatList';
@@ -17,9 +17,13 @@ import { getReceiptEntryTime } from '../../reducers';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
 import { InfoNote } from './subcomponents/InfoNote';
 import { getConvertedLocalTimeToSwiss } from '../../model/utils';
+import { BackAndContinueButtons } from '../Buttons/BackAndContinueButtons';
 
 type OverviewProps = {
   modalVisible?: boolean,
+  onProceedToPayment?: () => void,
+  paymentDisabled?: boolean,
+  navigation: Navigation,
 };
 
 type ReduxInjectedProps = {
@@ -37,6 +41,8 @@ class OverviewInner extends React.Component<
 > {
   static defaultProps = {
     modalVisible: false,
+    onProceedToPayment: () => {},
+    paymentDisabled: true,
   };
 
   constructor(props: OverviewProps & ReduxInjectedProps & { t: TFunction }) {
@@ -67,7 +73,13 @@ class OverviewInner extends React.Component<
   }
 
   render() {
-    const { t, receiptEntryTime } = this.props;
+    const {
+      t,
+      receiptEntryTime,
+      onProceedToPayment,
+      navigation,
+      paymentDisabled,
+    } = this.props;
     const momentReceiptEntryTime =
       receiptEntryTime !== ''
         ? DateTime.fromISO(receiptEntryTime, {
@@ -87,6 +99,12 @@ class OverviewInner extends React.Component<
           onPress={() => this.handleShowModal()}
         />
         <InfoNote />
+        <BackAndContinueButtons
+          onPressBack={() => navigation.goBack()}
+          onPressContinue={() => onProceedToPayment && onProceedToPayment()}
+          textContinue={t('general:toPayment')}
+          continueDisabled={paymentDisabled}
+        />
         <TimePickerModal
           modalVisible={this.state.modalVisible}
           onHideModal={() => this.handleHideModal()}
@@ -107,7 +125,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export const Overview = (connect(mapStateToProps, mapDispatchToProps)(
-  translate(['payment', 'receipt', 'mainCategories', 'categories'])(
+  translate(['payment', 'receipt', 'mainCategories', 'categories', 'general'])(
     OverviewInner
   )
 ): ComponentType<OverviewProps>);
