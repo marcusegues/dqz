@@ -2,6 +2,7 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 import { connect } from 'react-redux';
+import { DateTime } from 'luxon';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -15,6 +16,7 @@ import { TimePickerModal } from '../Modals/TimePickerModal/TimePickerModal';
 import { getReceiptEntryTime } from '../../reducers';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
 import { InfoNote } from './subcomponents/InfoNote';
+import { getConvertedLocalTimeToSwiss } from '../../model/utils';
 
 type OverviewProps = {
   modalVisible?: boolean,
@@ -44,6 +46,12 @@ class OverviewInner extends React.Component<
     };
   }
 
+  componentDidMount() {
+    const { receiptEntryTime } = this.props;
+    if (receiptEntryTime === '')
+      this.props.setReceiptEntryTime(getConvertedLocalTimeToSwiss().toString());
+  }
+
   handleShowModal() {
     this.setState({ modalVisible: true });
   }
@@ -60,6 +68,12 @@ class OverviewInner extends React.Component<
 
   render() {
     const { t, receiptEntryTime } = this.props;
+    const momentReceiptEntryTime =
+      receiptEntryTime !== ''
+        ? DateTime.fromISO(receiptEntryTime, {
+            zone: 'Europe/Zurich',
+          }).toFormat('dd.MM.y HH:mm')
+        : getConvertedLocalTimeToSwiss().toFormat('dd.MM.y HH:mm');
     return (
       <ScrollViewCard>
         <CardHeader text={t('overViewTitle')} />
@@ -69,7 +83,7 @@ class OverviewInner extends React.Component<
         <PeriodOfEntryRow
           title={t('receipt:entryTime')}
           subtitle={t('receipt:chooseOtherEntryTime')}
-          time={receiptEntryTime}
+          time={momentReceiptEntryTime}
           onPress={() => this.handleShowModal()}
         />
         <InfoNote />

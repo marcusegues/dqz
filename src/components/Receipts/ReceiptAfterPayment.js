@@ -143,7 +143,7 @@ class ReceiptAfterPaymentInner extends React.Component<
       // TODO: @Christian need to set locale from APP
       const receiptEntryTimePlus = DateTime.fromISO(
         this.state.receipt.receiptEntryTime,
-        { locale: 'de' }
+        { zone: 'Europe/Zurich', locale: 'de' }
       ).plus({ hours: 2 });
       return (
         <ScrollViewCard
