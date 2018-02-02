@@ -40,7 +40,7 @@ export const AppTitle = () => (
   <View style={ownStyles.appTitleContainer}>
     <Image source={img} style={ownStyles.logo} resizeMode="contain" />
     <View style={ownStyles.titleWrapper}>
-      <Text style={ownStyles.appTitle}>CLARA</Text>
+      <Text style={ownStyles.appTitle}>Zoll-App</Text>
     </View>
   </View>
 );

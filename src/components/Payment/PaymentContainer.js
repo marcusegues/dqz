@@ -15,9 +15,7 @@ import { PaymentWebView } from './PaymentWebView';
 import { RedButton } from '../Buttons/RedButton';
 import {
   getBasket,
-  getDutyReport,
   getTotalFees,
-  getVatReport,
   getAmounts,
   getTotalDuty,
   getTotalVat,
@@ -32,7 +30,6 @@ import type {
   TFunction,
   PaymentTransaction,
 } from '../../types/generalTypes';
-import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
 import type {
   Amounts,
   Basket,
@@ -54,6 +51,7 @@ import {
   storeClearDeclaration,
   storeReceipt,
 } from '../../asyncStorage/storageApi';
+import { LegalNoticeModal } from '../Modals/LegalNoticeModal/LegalNoticeModal';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -68,6 +66,7 @@ type PaymentContainerState = {
   redirectUrl: ?string,
   paymentToken: ?string,
   paymentStatus: ?string,
+  showModal: boolean,
 };
 
 type PaymentContainerProps = {
@@ -82,9 +81,7 @@ type ReduxInject = {
   amounts: Amounts,
   currencies: CurrencyObject,
   basket: Basket,
-  dutyReport: DutyReport,
   duty: number,
-  vatReport: VatReport,
   vat: number,
   paymentData: PaymentData,
   people: People,
@@ -104,6 +101,7 @@ class PaymentContainerInner extends React.Component<
       redirectUrl: null,
       paymentToken: null,
       paymentStatus: null,
+      showModal: false,
     };
   }
 
@@ -116,6 +114,10 @@ class PaymentContainerInner extends React.Component<
   }
 
   saferpay: Saferpay;
+
+  proceedToPayment() {
+    this.setState({ showModal: true });
+  }
 
   initializePayment() {
     const {
@@ -272,11 +274,10 @@ class PaymentContainerInner extends React.Component<
   }
 
   render() {
+    const { showModal } = this.state;
     const {
-      basket,
+      navigation,
       t,
-      dutyReport,
-      vatReport,
       fees,
       paymentData,
       currencies,
@@ -309,14 +310,10 @@ class PaymentContainerInner extends React.Component<
             Payment failed({paymentData.status})
           </Text>
         ) : null}
-        <Overview
-          dutyReport={dutyReport}
-          vatReport={vatReport}
-          basket={basket}
-        />
+        <Overview />
 
         <RedButton
-          onPress={() => this.initializePayment()}
+          onPress={() => this.proceedToPayment()}
           text={t('toPayment')}
           confirmationDisabled={
             fees < 1 || totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF
@@ -330,6 +327,21 @@ class PaymentContainerInner extends React.Component<
             />
           </View>
         ) : null}
+        <LegalNoticeModal
+          modalVisible={showModal}
+          navigation={navigation}
+          onPressLegal={() => {
+            this.setState({ showModal: false });
+            navigation.navigate('LegalNoticeInfo');
+          }}
+          toggleModalVisible={() => {
+            this.setState({ showModal: false });
+          }}
+          onConfirm={() => {
+            this.setState({ showModal: false });
+            this.initializePayment();
+          }}
+        />
       </View>
     );
   }
@@ -355,10 +367,8 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => ({
   fees: getTotalFees(state),
-  dutyReport: getDutyReport(state),
   duty: getTotalDuty(state),
   vat: getTotalVat(state),
-  vatReport: getVatReport(state),
   amounts: getAmounts(state),
   basket: getBasket(state),
   people: getPeople(state),

@@ -2,7 +2,7 @@
 // $FlowFixMe
 import { StyleSheet } from 'react-native';
 import { scale, verticalScale, moderateScale } from '../../../styles/Scaling';
-import { BLACK, WHITE } from '../../../styles/colors';
+import { WHITE } from '../../../styles/colors';
 
 export const menuTileStyle: any = StyleSheet.create({
   container: {
@@ -20,11 +20,12 @@ export const menuTileStyle: any = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: moderateScale(12),
+    fontSize: moderateScale(14),
     lineHeight: verticalScale(17),
-    color: BLACK,
+    color: '#1a1a1a',
     fontFamily: 'roboto_medium',
     textAlign: 'center',
     marginTop: verticalScale(10),
+    paddingHorizontal: scale(10),
   },
 });
