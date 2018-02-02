@@ -332,6 +332,10 @@ class PaymentContainerInner extends React.Component<
           toggleModalVisible={() => {
             this.setState({ showModal: false });
           }}
+          onConfirm={() => {
+            this.setState({ showModal: false });
+            this.initializePayment();
+          }}
         />
       </View>
     );

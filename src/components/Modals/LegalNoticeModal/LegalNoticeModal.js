@@ -25,6 +25,7 @@ type LegalNoticeModalState = {
 };
 type LegalNoticeModalProps = {
   modalVisible: boolean,
+  onConfirm: () => void,
   toggleModalVisible: () => void,
 };
 
@@ -40,7 +41,7 @@ class LegalNoticeModalInner extends React.Component<
   }
   render() {
     const { checked } = this.state;
-    const { modalVisible, toggleModalVisible } = this.props;
+    const { onConfirm, modalVisible, toggleModalVisible } = this.props;
     return (
       <AppModal
         modalVisible={modalVisible}
@@ -84,7 +85,7 @@ class LegalNoticeModalInner extends React.Component<
           >
             <SquareCheckBox
               checked={checked}
-              onPress={() => console.log('booom')}
+              onPress={() => this.setState({ checked: !checked })}
             />
             <CardHeaderSubText
               style={{
@@ -99,7 +100,9 @@ class LegalNoticeModalInner extends React.Component<
             <RedButton
               onPress={() => {
                 Keyboard.dismiss();
+                onConfirm();
               }}
+              confirmationDisabled={!checked}
               text="BESTÄTIGEN"
             />
           </View>
