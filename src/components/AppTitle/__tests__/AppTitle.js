@@ -9,8 +9,8 @@ describe('AppTitle', () => {
     const component = renderer.create(<AppTitle />).toJSON();
     expect(component).toMatchSnapshot();
   });
-  test('and it says CLARA', () => {
+  test('and it says Zoll-App', () => {
     const component = shallow(<AppTitle />);
-    expect(component.containsMatchingElement(<Text>CLARA</Text>)).toBe(true);
+    expect(component.containsMatchingElement(<Text>Zoll-App</Text>)).toBe(true);
   });
 });
