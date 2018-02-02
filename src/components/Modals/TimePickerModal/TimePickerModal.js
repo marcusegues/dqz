@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
+import { DateTime } from 'luxon';
 // $FlowFixMe
 import {
   TouchableWithoutFeedback,
@@ -27,7 +28,7 @@ import {
 } from '../PickerModal/pickerData';
 import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
 import { ModalCloseText } from '../ModalCloseText';
-import { formatDate, formatFullDate } from '../../../model/utils';
+import { formatDate } from '../../../model/utils';
 
 const ownStyles = {
   container: {
@@ -166,7 +167,16 @@ class TimePickerModalInner extends React.Component<
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
               onPress={() => {
-                onSelectTime(formatFullDate(date, hours, minutes));
+                onSelectTime(
+                  DateTime.fromFormat(
+                    `${date} ${hours}:${minutes}`,
+                    'dd.MM.y HH:mm'
+                  )
+                    .setZone('Europe/Zurich', {
+                      keepLocalTime: true,
+                    })
+                    .toString()
+                );
                 onHideModal();
               }}
               text={t('timePickerTakeOverThePeriod')}

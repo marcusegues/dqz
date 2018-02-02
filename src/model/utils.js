@@ -1,4 +1,5 @@
 // @flow
+import { DateTime } from 'luxon';
 import type { Amounts } from './types/basketPeopleAmountsTypes';
 import type { Currency, CurrencyObject } from './currencies';
 import { INDIVIDUALALLOWANCE } from './constants';
@@ -40,6 +41,13 @@ export const formatDate = (d: Date): string => {
     d.getFullYear(),
   ].join('.');
 };
+
+// Convert localTime to Swiss returns DateTime object.
+// Used for receipt datePicker.
+export const getConvertedLocalTimeToSwiss = () =>
+  DateTime.local().setZone('Europe/Zurich', {
+    keepLocalTime: true,
+  });
 
 export const formatFullDate = (d: string, hours: string, minutes: string) =>
   `${d}/${hours}:${minutes}`;
