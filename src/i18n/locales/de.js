@@ -128,7 +128,7 @@ export const de: Locale = {
     timePickerTitle: 'Zeitraum der Einreise wählen',
     timePickerSubTitle: 'Wann möchten Sie die Grenze überqueren?',
     timePickerRegistrationValidUntil:
-      'Bitte achten Sie darauf, innherhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist bis zum {{date}} um {{time}} Uhr gültig.',
+      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist bis zum {{date}} um {{time}} Uhr gültig.',
     timePickerTakeOverThePeriod: 'Zeitraum übernehmen',
     timePickerTimePrefix: 'Uhr',
   },
