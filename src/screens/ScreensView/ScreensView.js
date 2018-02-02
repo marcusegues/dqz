@@ -13,6 +13,7 @@ import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/Saved
 import type { Navigation } from '../../types/generalTypes';
 import type { CurrencyObject } from '../../model/currencies';
 import { initAmounts } from '../../model/configurationApi';
+import { LegalNoticeModal } from '../../components/Modals/LegalNoticeModal/LegalNoticeModal';
 
 type ScreensViewProps = {
   navigation: Navigation,
@@ -24,6 +25,7 @@ type ScreensViewState = {
   currencyPickerModalVisible: boolean,
   savedBasketModalVisible: boolean,
   timePickerModalVisible: boolean,
+  legalNoticeModalVisible: boolean,
 };
 
 class ScreensViewInner extends React.Component<
@@ -40,6 +42,7 @@ class ScreensViewInner extends React.Component<
       currencyPickerModalVisible: false,
       savedBasketModalVisible: false,
       timePickerModalVisible: false,
+      legalNoticeModalVisible: false,
     };
   }
 
@@ -68,6 +71,11 @@ class ScreensViewInner extends React.Component<
       timePickerModalVisible: false,
     });
   }
+  toggleLegalNoticeModalVisible() {
+    this.setState({
+      legalNoticeModalVisible: !this.state.legalNoticeModalVisible,
+    });
+  }
 
   render() {
     return (
@@ -85,6 +93,7 @@ class ScreensViewInner extends React.Component<
             { key: `Information` },
             { key: `savedBasketModal` },
             { key: `timePickerModal` },
+            { key: `legalNoticeModal` },
           ]}
           renderItem={({ item }) => (
             <Text
@@ -109,6 +118,9 @@ class ScreensViewInner extends React.Component<
                   return;
                 } else if (item.key === `timePickerModal`) {
                   this.setState({ timePickerModalVisible: true });
+                  return;
+                } else if (item.key === `legalNoticeModal`) {
+                  this.setState({ legalNoticeModalVisible: true });
                   return;
                 }
                 this.props.navigation.navigate(item.key);
@@ -148,6 +160,12 @@ class ScreensViewInner extends React.Component<
         <SavedBasketModal
           modalVisible={this.state.savedBasketModalVisible}
           toggleModalVisible={() => this.toggleSavedBasketModalVisible()}
+        />
+        <LegalNoticeModal
+          modalVisible={this.state.legalNoticeModalVisible}
+          toggleModalVisible={() => this.toggleLegalNoticeModalVisible()}
+          onPressLegal={() => {}}
+          onConfirm={() => {}}
         />
       </View>
     );
