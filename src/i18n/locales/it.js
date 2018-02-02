@@ -43,7 +43,8 @@ export const it: Locale = {
     toPayment: 'Pagamento',
     buttonContinue: 'Avanti',
     buttonBack: 'Indietro',
-      note: 'Suggerimento',
+    note: 'Suggerimento',
+    underConstruction: 'In corso',
   },
   snackBar: {
     limitExceeded:
@@ -133,7 +134,8 @@ export const it: Locale = {
     overViewTitle: ' Riepilogo della dichiarazione',
     dutyColumn: 'Tributi doganali in CHF',
     sumText: 'Totale (CHF)',
-    entryInfo: 'Puoi attraversare il confine solo entro il periodo specificato con i beni registrati qui.',
+    entryInfo:
+      'Puoi attraversare il confine solo entro il periodo specificato con i beni registrati qui.',
   },
   receipt: {
     dutyAndVat: 'Tributi doganali: {{duty}} | IVA: {{vat}}',

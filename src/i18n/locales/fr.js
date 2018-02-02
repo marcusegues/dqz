@@ -44,6 +44,7 @@ export const fr: Locale = {
     buttonContinue: 'Étape suivante',
     buttonBack: 'Retour',
     note: 'Allusion',
+    underConstruction: 'En cours',
   },
   snackBar: {
     limitExceeded:
@@ -136,7 +137,8 @@ export const fr: Locale = {
     overViewTitle: "Vue d'ensemble de votre déclaration",
     dutyColumn: 'Droits de douane en francs',
     sumText: 'Total (en francs)',
-    entryInfo: 'Vous ne pouvez traverser la frontière que dans la période spécifiée avec les marchandises enregistrées ici.',
+    entryInfo:
+      'Vous ne pouvez traverser la frontière que dans la période spécifiée avec les marchandises enregistrées ici.',
   },
   receipt: {
     dutyAndVat: 'Droits de douane: {{duty}} |  TVA: {{vat}}',
