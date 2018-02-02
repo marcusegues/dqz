@@ -39,12 +39,17 @@ type PickerModalProps = {
   category: Category,
   toggleModalVisible: () => void,
   modalVisible: boolean,
+  onlyStandardInput?: boolean,
 };
 
 class PickerModalInner extends React.Component<
   PickerModalProps & { t: TFunction },
   PickerState
 > {
+  static defaultProps = {
+    onlyStandardInput: false,
+  };
+
   state = {
     selected: 'standardInput' || 'customInput',
     standardInput: {
@@ -93,6 +98,7 @@ class PickerModalInner extends React.Component<
       category,
       toggleModalVisible,
       modalVisible,
+      onlyStandardInput,
     } = this.props;
     const standardInput = selected === 'standardInput';
     const customInput = selected === 'customInput';
@@ -119,15 +125,17 @@ class PickerModalInner extends React.Component<
               }
               text={t('standardCategoryPicker').toUpperCase()}
             />
-            <ModalTab
-              activeTab={customInput}
-              onPress={() =>
-                this.setState({
-                  selected: 'customInput',
-                })
-              }
-              text={t('individualCategoryPicker').toUpperCase()}
-            />
+            {onlyStandardInput ? null : (
+              <ModalTab
+                activeTab={customInput}
+                onPress={() =>
+                  this.setState({
+                    selected: 'customInput',
+                  })
+                }
+                text={t('individualCategoryPicker').toUpperCase()}
+              />
+            )}
           </View>
 
           {standardInput ? (

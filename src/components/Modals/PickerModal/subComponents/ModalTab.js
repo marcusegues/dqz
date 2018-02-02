@@ -17,7 +17,7 @@ const touchableTextStyles = {
 
 const ownStyles = {
   topTouchable: {
-    flex: 0.5,
+    flex: 1,
   },
   touchableActive: {
     ...touchableStyles,
