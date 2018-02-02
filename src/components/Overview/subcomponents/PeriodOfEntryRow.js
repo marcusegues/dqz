@@ -5,6 +5,7 @@ import { TouchableWithoutFeedback, View } from 'react-native';
 import { Row } from '../../../components/Rows/Row';
 import { CardRowText } from '../../../components/QuestionAnswer/cards/subcomponents/CardRowText';
 import { CardRowSubText } from '../../../components/QuestionAnswer/cards/subcomponents/CardRowSubText';
+import * as colors from '../../../styles/colors';
 
 const ownStyles = {
   container: {
@@ -38,11 +39,11 @@ export const PeriodOfEntryRow = ({
           <CardRowText text={title} style={{ paddingBottom: 3 }} />
           <CardRowSubText
             text={time}
-            style={{ color: '#9b9b9b', fontFamily: 'roboto_light' }}
+            style={{ color: '#757575', fontFamily: 'roboto_light' }}
           />
           <CardRowSubText
             text={subtitle.toUpperCase()}
-            style={{ color: '#757575', marginTop: 5 }}
+            style={{ color: colors.MAIN_RED, marginTop: 5 }}
           />
         </View>
       </View>
