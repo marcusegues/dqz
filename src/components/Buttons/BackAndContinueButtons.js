@@ -25,28 +25,35 @@ const ownStyles = {
 type BackAndContinueButtonsProps = {
   onPressBack: () => void,
   onPressContinue: () => void,
-  confirmationDisabled?: boolean,
+  textBack?: string,
+  textContinue?: string,
+  backDisabled?: boolean,
+  continueDisabled?: boolean,
 };
 
 const BackAndContinueButtonsInner = ({
   onPressBack,
   onPressContinue,
-  confirmationDisabled = false,
+  textBack,
+  textContinue,
+  backDisabled = false,
+  continueDisabled = false,
   t,
 }: BackAndContinueButtonsProps & { t: TFunction }) => (
   <View style={ownStyles.redButtonContainerWrapper}>
     <View style={ownStyles.redButtonWrapper}>
       <RedButton
         onPress={() => onPressBack()}
-        text={t('buttonBack')}
+        text={textBack || t('buttonBack')}
         buttonStyle={{ backgroundColor: GREY }}
+        confirmationDisabled={backDisabled}
       />
     </View>
     <View style={ownStyles.redButtonWrapper}>
       <RedButton
-        confirmationDisabled={confirmationDisabled}
         onPress={() => onPressContinue()}
-        text={t('buttonContinue')}
+        text={textContinue || t('buttonContinue')}
+        confirmationDisabled={continueDisabled}
       />
     </View>
   </View>

@@ -10,7 +10,6 @@ const ownStyles = {
     flex: 1,
     width: '100%',
     alignSelf: 'center',
-    marginBottom: 16,
   },
   scrollView: {
     width: '100%',

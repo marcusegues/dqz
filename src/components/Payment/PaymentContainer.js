@@ -4,7 +4,6 @@ import React from 'react';
 import uuidv1 from 'uuid/v1';
 import type { ComponentType } from 'react';
 // $FlowFixMe
-import { translate } from 'react-i18next';
 import { connect } from 'react-redux';
 // $FlowFixMe
 import { View, Text } from 'react-native';
@@ -12,7 +11,6 @@ import { Overview } from '../Overview/Overview';
 import Saferpay from '../../../saferpay';
 import { NavBar } from '../NavBar/NavBar';
 import { PaymentWebView } from './PaymentWebView';
-import { RedButton } from '../Buttons/RedButton';
 import {
   getBasket,
   getTotalFees,
@@ -26,7 +24,6 @@ import {
 import type {
   Navigation,
   PaymentData,
-  TFunction,
   PaymentTransaction,
 } from '../../types/generalTypes';
 import type {
@@ -85,10 +82,10 @@ type ReduxInject = {
 };
 
 class PaymentContainerInner extends React.Component<
-  PaymentContainerProps & ReduxInject & { t: TFunction },
+  PaymentContainerProps & ReduxInject,
   PaymentContainerState
 > {
-  constructor(props: PaymentContainerProps & ReduxInject & { t: TFunction }) {
+  constructor(props: PaymentContainerProps & ReduxInject) {
     super(props);
     this.state = {
       isLoadingRedirectData: false,
@@ -264,14 +261,7 @@ class PaymentContainerInner extends React.Component<
 
   render() {
     const { showModal } = this.state;
-    const {
-      navigation,
-      t,
-      fees,
-      paymentData,
-      currencies,
-      amounts,
-    } = this.props;
+    const { navigation, fees, paymentData, currencies, amounts } = this.props;
     return (
       <View
         style={{
@@ -299,15 +289,14 @@ class PaymentContainerInner extends React.Component<
             Payment failed({paymentData.status})
           </Text>
         ) : null}
-        <Overview />
-
-        <RedButton
-          onPress={() => this.proceedToPayment()}
-          text={t('toPayment')}
-          confirmationDisabled={
+        <Overview
+          onProceedToPayment={() => this.proceedToPayment()}
+          paymentDisabled={
             fees < 1 || totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF
           }
+          navigation={navigation}
         />
+
         {this.state.redirectDataLoaded ? (
           <View style={{ position: 'absolute', top: 0 }}>
             <PaymentWebView
@@ -366,5 +355,5 @@ const mapStateToProps = state => ({
 });
 
 export const PaymentContainer = (connect(mapStateToProps, mapDispatchToProps)(
-  translate(['general'])(PaymentContainerInner)
+  PaymentContainerInner
 ): ComponentType<PaymentContainerProps>);
