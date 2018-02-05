@@ -46,6 +46,7 @@ type GeneralTranslations = {
   buttonContinue: string,
   buttonBack: string,
   note: string,
+  underConstruction: string,
 };
 
 type SnackBarTranslations = {

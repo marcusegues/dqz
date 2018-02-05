@@ -14,6 +14,7 @@ import type { Navigation } from '../../types/generalTypes';
 import type { CurrencyObject } from '../../model/currencies';
 import { initAmounts } from '../../model/configurationApi';
 import { LegalNoticeModal } from '../../components/Modals/LegalNoticeModal/LegalNoticeModal';
+import { getConvertedLocalTimeToSwiss } from '../../model/utils';
 
 type ScreensViewProps = {
   navigation: Navigation,
@@ -153,6 +154,7 @@ class ScreensViewInner extends React.Component<
           large={false}
         />
         <TimePickerModal
+          currentEntryTime={getConvertedLocalTimeToSwiss().toString()}
           modalVisible={this.state.timePickerModalVisible}
           onHideModal={() => this.handleHideTimePickerModal()}
           onSelectTime={() => {}}
