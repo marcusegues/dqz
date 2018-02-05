@@ -309,7 +309,7 @@ class QuestionAnswerContainerInner extends React.Component<
                           ),
                         })
                       );
-                      this.updateQA('mainCategories', 'update', {});
+                      this.updateQA('mainCategories', 'update');
                     });
                   },
                   mainCategories: newCategories,
