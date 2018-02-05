@@ -42,9 +42,7 @@ const backNav = (direction: DirectionType): QuestionState =>
 
 const singleOtherGoodsMainCategory = (
   mainCategories: MainCategories
-): boolean => {
-  return mainCategories.size === 1 && mainCategories.has('OtherGoods');
-};
+): boolean => mainCategories.size === 1 && mainCategories.has('OtherGoods');
 
 export const setQuestionStates = (
   justAnswered: QuestionType,
