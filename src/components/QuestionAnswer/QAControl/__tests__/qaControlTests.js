@@ -172,7 +172,7 @@ describe('Test qa control flow', () => {
     expect(newState.amounts).toBe('collapsed');
   });
 
-  test('after main categories (only OtherGoods) FORWARD', () => {
+  test('after main categories (single OtherGoods main category) FORWARD', () => {
     const newState = setQuestionStates(
       'mainCategories',
       'forward',

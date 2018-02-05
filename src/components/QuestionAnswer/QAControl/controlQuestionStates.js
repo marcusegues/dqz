@@ -40,6 +40,12 @@ const fwdNav = (direction: DirectionType): QuestionState =>
 const backNav = (direction: DirectionType): QuestionState =>
   direction === 'back' ? 'expanded' : 'collapsed';
 
+const singleOtherGoodsMainCategory = (
+  mainCategories: MainCategories
+): boolean => {
+  return mainCategories.size === 1 && mainCategories.has('OtherGoods');
+};
+
 export const setQuestionStates = (
   justAnswered: QuestionType,
   direction: DirectionType,
@@ -70,13 +76,13 @@ export const setQuestionStates = (
     case 'mainCategories': {
       if (direction === 'update') {
         mainCategoriesState = 'expanded';
-        if (mainCategories.size === 1 && mainCategories.has('OtherGoods')) {
+        if (singleOtherGoodsMainCategory(mainCategories)) {
           quantityInputState = 'hidden';
         }
         break;
       }
       peopleInputState = backNav(direction);
-      if (mainCategories.size === 1 && mainCategories.has('OtherGoods')) {
+      if (singleOtherGoodsMainCategory(mainCategories)) {
         quantityInputState = 'hidden';
         amountsState = fwdNav(direction);
         break;
@@ -92,7 +98,7 @@ export const setQuestionStates = (
       break;
     }
     case 'amounts': {
-      if (mainCategories.size === 1 && mainCategories.has('OtherGoods')) {
+      if (singleOtherGoodsMainCategory(mainCategories)) {
         mainCategoriesState = backNav(direction);
         quantityInputState = 'hidden';
       } else {
