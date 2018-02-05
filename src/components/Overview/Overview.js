@@ -84,8 +84,8 @@ class OverviewInner extends React.Component<
       receiptEntryTime !== ''
         ? DateTime.fromISO(receiptEntryTime, {
             zone: 'Europe/Zurich',
-          }).toFormat('dd.MM.y HH:mm')
-        : getConvertedLocalTimeToSwiss().toFormat('dd.MM.y HH:mm');
+          })
+        : getConvertedLocalTimeToSwiss();
     return (
       <ScrollViewCard>
         <CardHeader text={t('overViewTitle')} />
@@ -95,7 +95,11 @@ class OverviewInner extends React.Component<
         <PeriodOfEntryRow
           title={t('receipt:entryTime')}
           subtitle={t('receipt:chooseOtherEntryTime')}
-          time={momentReceiptEntryTime}
+          time={`${momentReceiptEntryTime.toFormat(
+            'dd.MM.y HH:mm'
+          )} - ${momentReceiptEntryTime
+            .plus({ hours: 2 })
+            .toFormat('dd.MM.y HH:mm')}`}
           onPress={() => this.handleShowModal()}
         />
         <InfoNote />
@@ -106,6 +110,7 @@ class OverviewInner extends React.Component<
           continueDisabled={paymentDisabled}
         />
         <TimePickerModal
+          currentEntryTime={momentReceiptEntryTime.toString()}
           modalVisible={this.state.modalVisible}
           onHideModal={() => this.handleHideModal()}
           onSelectTime={entryTime => this.handleSetReceiptEntryTime(entryTime)}

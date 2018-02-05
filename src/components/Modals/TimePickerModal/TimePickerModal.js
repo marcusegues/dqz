@@ -28,7 +28,7 @@ import {
 } from '../PickerModal/pickerData';
 import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
 import { ModalCloseText } from '../ModalCloseText';
-import { formatDate } from '../../../model/utils';
+import { roundMinutes } from '../../../model/utils';
 
 const ownStyles = {
   container: {
@@ -53,9 +53,8 @@ type TimePickerModalProps = {
   modalVisible: boolean,
   onHideModal: () => void,
   onSelectTime: (selectedFullDate: string) => void,
+  currentEntryTime: string,
 };
-
-const now = new Date();
 
 class TimePickerModalInner extends React.Component<
   TimePickerModalProps & { t: TFunction },
@@ -66,18 +65,30 @@ class TimePickerModalInner extends React.Component<
     onHideModal: () => {},
   };
 
-  constructor() {
+  constructor(props) {
+    const { currentEntryTime } = props;
+    const currentEntryTimeObj = DateTime.fromISO(currentEntryTime, {
+      zone: 'Europe/Zurich',
+    });
     super();
     this.state = {
-      date: `${formatDate(now)}`,
-      hours: '00',
-      minutes: '00',
+      date: currentEntryTimeObj.toFormat('dd.MM.y'),
+      hours: currentEntryTimeObj.toFormat('HH'),
+      minutes: currentEntryTimeObj.toFormat('mm'),
     };
   }
 
   render() {
     const { t, modalVisible, onHideModal, onSelectTime } = this.props;
     const { date, hours, minutes } = this.state;
+    const entryTimePlus = DateTime.fromFormat(
+      `${date} ${hours}:${minutes}`,
+      'dd.MM.y HH:mm'
+    )
+      .setZone('Europe/Zurich', {
+        keepLocalTime: true,
+      })
+      .plus({ hours: 2 });
     return (
       <AppModal
         modalVisible={modalVisible}
@@ -136,7 +147,7 @@ class TimePickerModalInner extends React.Component<
               <PickerValueSeparator separator=":" />
 
               <PickerComponent
-                selectedValue={minutes}
+                selectedValue={roundMinutes(parseInt(minutes, 10))}
                 onValueChange={itemValue =>
                   this.setState({
                     minutes: itemValue,
@@ -159,8 +170,8 @@ class TimePickerModalInner extends React.Component<
           <CardHeaderSubText
             style={ownStyles.validUntilText}
             text={t(['timePickerRegistrationValidUntil'], {
-              date: `${date}`,
-              time: `${hours}:${minutes}`,
+              date: entryTimePlus.toFormat('dd.MM.y'),
+              time: entryTimePlus.toFormat('HH:mm'),
             })}
           />
 

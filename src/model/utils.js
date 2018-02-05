@@ -49,6 +49,9 @@ export const getConvertedLocalTimeToSwiss = () =>
     keepLocalTime: true,
   });
 
+export const roundMinutes = (minutes: number): string =>
+  `${5 * Math.floor(minutes / 5)}`;
+
 export const formatFullDate = (d: string, hours: string, minutes: string) =>
   `${d}/${hours}:${minutes}`;
 
