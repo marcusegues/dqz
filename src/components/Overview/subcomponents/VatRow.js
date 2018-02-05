@@ -2,7 +2,7 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
-import { OverviewRow } from './OverviewRow';
+import { OverviewRow } from '../../Rows/configured/OverviewRow/OverviewRow';
 import type { TFunction } from '../../../types/generalTypes';
 
 type VatRowProps = {

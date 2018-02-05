@@ -154,8 +154,6 @@ export const en: Locale = {
     allReceiptsDate: 'from {{value}}',
     entryTime: 'Time of entry',
     chooseOtherEntryTime: 'Choose new time of entry',
-    overviewRegistered: 'Registered:',
-    overviewDutyFree: 'Duty Free:',
   },
   information: {
     informationTitle: 'Information',
@@ -266,5 +264,9 @@ export const en: Locale = {
       'Copyright, federal authorities of the Swiss Confederation, 2007.\n' +
       'The information contained on the websites of the federal authorities is made publicly accessible. Downloading or copying content, illustrations, photos or any other data does not entail any transfer of rights concerning the content.\n' +
       'Copyright and all other rights to content, illustrations, photos or other data on the websites of the federal authorities belong exclusively to the federal authorities or to any specifically named right holders. The reproduction of any components requires the prior written consent of the copyright holder.\n',
+  },
+  overview: {
+    declared: 'Declared:',
+    dutyFree: 'Duty Free:',
   },
 };

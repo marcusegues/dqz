@@ -173,8 +173,6 @@ type ReceiptTranslations = {
   allReceiptsDate: string,
   entryTime: string,
   chooseOtherEntryTime: string,
-  overviewRegistered: string,
-  overviewDutyFree: string,
 };
 
 type AppInformationTranslations = {
@@ -211,6 +209,11 @@ type LegalNoticeInformationTranslations = {
   copyrightText: string,
 };
 
+type OverviewTranslations = {
+  declared: string,
+  dutyFree: string,
+};
+
 /**
  * The Locale type defines all the namespaces that we use in the translation
  * The namespaces are formed by the individual strings, respectively.
@@ -232,4 +235,5 @@ export type Locale = {
   information: InformationTranslations,
   appInformation: AppInformationTranslations,
   legalNoticeInformation: LegalNoticeInformationTranslations,
+  overview: OverviewTranslations,
 };

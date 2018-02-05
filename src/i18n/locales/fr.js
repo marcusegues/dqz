@@ -159,8 +159,6 @@ export const fr: Locale = {
     allReceiptsDate: 'à {{value}}',
     entryTime: "Période d'entrée",
     chooseOtherEntryTime: 'Choisissez une autre période',
-    overviewRegistered: '⚠️',
-    overviewDutyFree: '⚠️',
   },
   information: {
     informationTitle: 'Informations utiles',
@@ -277,5 +275,9 @@ export const fr: Locale = {
       "Droits d'auteur: autorités de la Confédération suisse, 2007.\n" +
       "Les informations que recèlent les sites Web des autorités fédérales sont mises à la disposition du public. Le téléchargement ou la copie de textes, d'illustrations, de photographies ou d'autres données n'entraîne aucun transfert de droits sur les contenus.\n" +
       "Les droits d'auteur et tous les autres droits liés aux textes, illustrations, photographies et autres données placés sur les sites Web des autorités fédérales sont leur propriété exclusive ou celle des détenteurs expressément cités. Toute reproduction est subordonnée à l'autorisation écrite préalable du détenteur des droits.\n",
+  },
+  overview: {
+    declared: '⚠️',
+    dutyFree: '⚠️',
   },
 };

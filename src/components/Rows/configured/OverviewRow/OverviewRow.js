@@ -4,12 +4,12 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { translate } from 'react-i18next';
 import type { ComponentType } from 'react';
-import { CardRowSubText } from '../../QuestionAnswer/cards/subcomponents/CardRowSubText';
-import { QuantityIcon } from '../../General Components/QuantityIcon';
-import { CardRowText } from '../../QuestionAnswer/cards/subcomponents/CardRowText';
-import { Row } from '../../Rows/Row';
-import { AllowanceIcon } from './AllowanceIcon';
-import type { TFunction } from '../../../types/generalTypes';
+import { CardRowSubText } from '../../../QuestionAnswer/cards/subcomponents/CardRowSubText';
+import { QuantityIcon } from '../../../General Components/QuantityIcon';
+import { CardRowText } from '../../../QuestionAnswer/cards/subcomponents/CardRowText';
+import { Row } from '../../Row';
+import { AllowanceIcon } from '../../../Overview/subcomponents/AllowanceIcon';
+import type { TFunction } from '../../../../types/generalTypes';
 
 type OverviewRowProps = {
   title: string,
@@ -17,9 +17,9 @@ type OverviewRowProps = {
   quantity: number | string,
   result: string,
   borderTop?: boolean,
-  allowance?: boolean,
   unit: string,
   t: TFunction,
+  children: any,
 };
 
 const OverviewRowInner = ({
@@ -29,8 +29,8 @@ const OverviewRowInner = ({
   result,
   unit,
   borderTop,
-  allowance,
   t,
+  children,
 }: OverviewRowProps) => (
   <Row borderTop={borderTop}>
     <View
@@ -43,11 +43,7 @@ const OverviewRowInner = ({
     >
       <CardRowText text={title} />
       <CardRowSubText text={subtitle} />
-      {allowance ? (
-        <AllowanceIcon text={t('overviewDutyFree')} quantity={5} unit={unit} />
-      ) : (
-        <Text />
-      )}
+      {children}
     </View>
     <QuantityIcon quantity={quantity} unit={unit} />
     <View style={{ marginLeft: 30 }}>
@@ -58,7 +54,6 @@ const OverviewRowInner = ({
 
 OverviewRowInner.defaultProps = {
   borderTop: false,
-  allowance: false,
 };
 
 export const OverviewRow = (translate(['receipt'])(
