@@ -158,6 +158,8 @@ export const de: Locale = {
     allReceiptsDate: 'vom {{value}}',
     entryTime: 'Zeitraum der Einreise',
     chooseOtherEntryTime: 'Anderen Zeitraum wählen',
+    overviewRegistered: 'Angemeldet:',
+    overviewDutyFree: 'Zollfrei:',
   },
   information: {
     informationTitle: 'Wissenswertes',

@@ -156,6 +156,8 @@ export const it: Locale = {
     allReceiptsDate: 'da {{value}}',
     entryTime: 'Periodo di entrata',
     chooseOtherEntryTime: 'Scegli un altro periodo',
+    overviewRegistered: '⚠️',
+    overviewDutyFree: '⚠️',
   },
   information: {
     informationTitle: 'Informazioni utili',

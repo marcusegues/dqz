@@ -173,6 +173,8 @@ type ReceiptTranslations = {
   allReceiptsDate: string,
   entryTime: string,
   chooseOtherEntryTime: string,
+  overviewRegistered: string,
+  overviewDutyFree: string,
 };
 
 type AppInformationTranslations = {

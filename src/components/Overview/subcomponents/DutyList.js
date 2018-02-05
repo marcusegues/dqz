@@ -34,6 +34,7 @@ const DutyListInner = ({
       key: category,
       component: (
         <DutyRow
+          allowance
           borderTop={idx === 0}
           key={category}
           mainCategory={getMainCategory(category)}

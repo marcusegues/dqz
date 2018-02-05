@@ -154,6 +154,8 @@ export const en: Locale = {
     allReceiptsDate: 'from {{value}}',
     entryTime: 'Time of entry',
     chooseOtherEntryTime: 'Choose new time of entry',
+    overviewRegistered: 'Registered:',
+    overviewDutyFree: 'Duty Free:',
   },
   information: {
     informationTitle: 'Information',
