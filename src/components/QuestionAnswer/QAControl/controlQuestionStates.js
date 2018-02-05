@@ -68,6 +68,13 @@ export const setQuestionStates = (
       break;
     }
     case 'mainCategories': {
+      if (direction === 'update') {
+        mainCategoriesState = 'expanded';
+        if (mainCategories.size === 1 && mainCategories.has('OtherGoods')) {
+          quantityInputState = 'hidden';
+        }
+        break;
+      }
       peopleInputState = backNav(direction);
       if (mainCategories.size === 1 && mainCategories.has('OtherGoods')) {
         quantityInputState = 'hidden';
@@ -85,7 +92,13 @@ export const setQuestionStates = (
       break;
     }
     case 'amounts': {
-      quantityInputState = backNav(direction);
+      if (mainCategories.size === 1 && mainCategories.has('OtherGoods')) {
+        mainCategoriesState = backNav(direction);
+        quantityInputState = 'hidden';
+      } else {
+        quantityInputState = backNav(direction);
+      }
+
       if (showLargeAmountsQuestion(qaState)) {
         largeAmountsState = fwdNav(direction);
       } else {
