@@ -159,6 +159,18 @@ describe('Test qa control flow', () => {
     expect(spy).toBeCalled();
   });
 
+  test('after main categories BACK', () => {
+    const newState = setQuestionStates(
+      'mainCategories',
+      'back',
+      {},
+      stateWithMainCategories
+    ).questionStates;
+    expect(newState.peopleInput).toBe('expanded');
+    expect(newState.mainCategories).toBe('collapsed');
+    expect(newState.quantityInput).toBe('collapsed');
+  });
+
   test('after main categories (multiple main categories) FORWARD', () => {
     const newState = setQuestionStates(
       'mainCategories',
