@@ -5,11 +5,14 @@ import {
   setQuestionStates,
 } from '../controlQuestionStates';
 import {
+  addAdult,
+  addAmount,
   emptyBasket,
   initAmounts,
   initPeople,
 } from '../../../../model/configurationApi';
 import { makeSettingsRecord } from '../../../../types/reducers/appReducer';
+import { currencyExample } from '../../../../model/currencies';
 
 const blankState = {
   basket: emptyBasket,
@@ -63,12 +66,39 @@ const stateWithSingleOtherGoodsMainCategory = {
     mainCategories: 'collapsed',
     quantityInput: 'collapsed',
     amounts: 'collapsed',
+    largeAmounts: 'collapsed',
   },
   questionFlag: {
     peopleInput: 'complete',
     mainCategories: 'incomplete',
     quantityInput: 'incomplete',
     amounts: 'incomplete',
+    largeAmounts: 'incomplete',
+  },
+};
+
+const stateWithSingleOtherGoodsMainCategoryAndHasLargeAmount = {
+  basket: emptyBasket,
+  people: addAdult(initPeople),
+  amounts: addAmount(initAmounts, 'CHF', 1000),
+  currencies: currencyExample,
+  settings: makeSettingsRecord().set(
+    'mainCategories',
+    Immutable.Set(['OtherGoods'])
+  ),
+  questionStates: {
+    peopleInput: 'collapsed',
+    mainCategories: 'collapsed',
+    quantityInput: 'collapsed',
+    amounts: 'collapsed',
+    largeAmounts: 'collapsed',
+  },
+  questionFlag: {
+    peopleInput: 'complete',
+    mainCategories: 'incomplete',
+    quantityInput: 'incomplete',
+    amounts: 'incomplete',
+    largeAmounts: 'incomplete',
   },
 };
 
@@ -245,6 +275,20 @@ describe('Test qa control flow', () => {
     expect(newState.peopleInput).toBe('collapsed');
     expect(newState.mainCategories).toBe('expanded');
     expect(newState.quantityInput).toBe('collapsed');
+  });
+
+  test('after large amounts input (single OtherGoods main category) BACK', () => {
+    const newState = setQuestionStates(
+      'largeAmounts',
+      'back',
+      {},
+      stateWithSingleOtherGoodsMainCategoryAndHasLargeAmount
+    ).questionStates;
+    expect(newState.peopleInput).toBe('collapsed');
+    expect(newState.mainCategories).toBe('collapsed');
+    expect(newState.quantityInput).toBe('hidden');
+    expect(newState.amounts).toBe('expanded');
+    expect(newState.largeAmounts).toBe('collapsed');
   });
 
   // TODO add amount input navigation (back/forth) in presence of large amounts or not

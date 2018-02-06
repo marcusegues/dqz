@@ -66,6 +66,9 @@ export const setQuestionStates = (
       if (direction === 'back') {
         navigation.goBack();
       }
+      if (singleOtherGoodsMainCategory(mainCategories)) {
+        quantityInputState = 'hidden';
+      }
       mainCategoriesState = fwdNav(direction);
       if (!mainCategories.size) {
         quantityInputState = 'hidden';
@@ -115,6 +118,9 @@ export const setQuestionStates = (
       break;
     }
     case 'largeAmounts': {
+      if (singleOtherGoodsMainCategory(mainCategories)) {
+        quantityInputState = 'hidden';
+      }
       amountsState = backNav(direction);
       if (direction === 'forward') {
         navigation.navigate('Payment');
