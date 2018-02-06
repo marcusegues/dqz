@@ -141,7 +141,7 @@ export const en: Locale = {
     transactionId: 'Transaction-ID (SIX): {{value}}',
     receiptValidUntilText: 'This receipt is valid until:',
     receiptValidUntilTime: '{{date}} | {{time}}:',
-    sumText: 'Sum: {{value}}',
+    sumText: 'Sum: CHF {{value}}',
     vatColumn: 'VAT in CHF:',
     amountsTitle: 'Total of all goods',
     amountsSubtitle: 'Sum of all receipts',

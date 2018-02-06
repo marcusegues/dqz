@@ -145,7 +145,7 @@ export const de: Locale = {
     transactionId: 'Transaktions-ID (SIX): {{value}}',
     receiptValidUntilText: 'Diese Quittung ist gültig bis:',
     receiptValidUntilTime: '{{date}}  |  {{time}} Uhr',
-    sumText: 'Summe (CHF): {{value}}',
+    sumText: 'Summe: CHF {{value}}',
     vatColumn: 'Mehrwertsteuer in CHF:',
     amountsTitle: 'Gesamtwert der Waren',
     amountsSubtitle: 'Summe aller Kaufbelege',
