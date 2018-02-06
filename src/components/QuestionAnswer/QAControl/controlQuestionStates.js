@@ -11,6 +11,10 @@ import { hasLargeAmount } from '../../../model/utils';
 import type { Navigation } from '../../../types/generalTypes';
 import type { MainCategories } from '../../../types/reducers/appReducer';
 
+const singleOtherGoodsMainCategory = (
+  mainCategories: MainCategories
+): boolean => mainCategories.size === 1 && mainCategories.has('OtherGoods');
+
 const showLargeAmountsQuestion = (qaState: QAStateEnriched) => {
   const { people, amounts } = qaState;
   return (
@@ -41,10 +45,6 @@ const fwdNav = (direction: DirectionType): QuestionState =>
 
 const backNav = (direction: DirectionType): QuestionState =>
   direction === 'back' ? 'expanded' : 'collapsed';
-
-const singleOtherGoodsMainCategory = (
-  mainCategories: MainCategories
-): boolean => mainCategories.size === 1 && mainCategories.has('OtherGoods');
 
 export const setQuestionStates = (
   justAnswered: QuestionType,
