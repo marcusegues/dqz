@@ -1,6 +1,7 @@
 // @flow
 import { combineReducers } from 'redux';
 import * as appApi from './appReducer';
+import { connectivity } from './connectivity';
 import { formatDate } from '../model/utils';
 import type {
   Amounts,
@@ -22,7 +23,10 @@ import type { PaymentData } from '../types/generalTypes';
  * Combines reducers (currently just one)
  * @type {Reducer<any>}
  */
-export const root = combineReducers({ appState: appApi.appState });
+export const root = combineReducers({
+  appState: appApi.appState,
+  connectivity,
+});
 
 /**
  * Gets basket in application state

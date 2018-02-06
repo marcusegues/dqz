@@ -2,13 +2,21 @@
 /* eslint-disable global-require */
 /* global window, fetch */
 import React from 'react';
+import type { ComponentType } from 'react';
 import { I18nextProvider } from 'react-i18next';
 // $FlowFixMe
-import { Platform, StatusBar, StyleSheet, View, AppState } from 'react-native';
+import {
+  Platform,
+  StatusBar,
+  StyleSheet,
+  View,
+  AppState,
+  NetInfo,
+} from 'react-native';
 // $FlowFixMe
 import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 
 import { i18nImplementation } from './src/i18n';
 import { RootNavigator } from './src/navigation/RootNavigation';
@@ -19,6 +27,7 @@ import {
   analyticsCustom,
 } from './src/analytics/analyticsApi';
 import { initAmplitude } from './src/analytics/amplitude';
+import type { ConnectivityType } from './src/types/connectivity';
 
 const store = configureStore();
 window.myStore = store;
@@ -35,11 +44,14 @@ const styles = StyleSheet.create({
 });
 
 type AppProps = {};
+type ReduxInject = {
+  setConnectivity: (connectionInfo: ConnectivityType) => void,
+};
 type AppStateT = { isLoadingComplete: boolean };
 
 export type ExpoAppState = 'active' | 'inactive' | 'background';
 
-export default class App extends React.Component<AppProps, AppStateT> {
+class App extends React.Component<AppProps & ReduxInject, AppStateT> {
   state = {
     isLoadingComplete: false,
   };
@@ -53,6 +65,11 @@ export default class App extends React.Component<AppProps, AppStateT> {
       this.handleAppStateChange(next)
     );
     initAmplitude();
+    NetInfo.addEventListener('connectionChange', this.handleConnectivityChange);
+  }
+
+  handleConnectivityChange(connectionInfo: ConnectivityType) {
+    this.props.setConnectivity(connectionInfo);
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -164,3 +181,19 @@ export default class App extends React.Component<AppProps, AppStateT> {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => {
+  setConnectivity: (connectionInfo: ConnectivityType) =>
+    dispatch({ type: 'SET_CONNECTIVITY', connectionInfo });
+};
+
+// const ConnectedApp = (connect(null, mapDispatchToProps)(
+//   App
+// ): ComponentType<{}>);
+
+function connectWithStore(store, WrappedComponent, ...args) {
+  var ConnectedWrappedComponent = connect(...args)(WrappedComponent);
+  return <ConnectedWrappedComponent store={store} />;
+}
+
+export default connectWithStore(store, App, [null, mapDispatchToProps]);
