@@ -11,7 +11,7 @@ import {
   moderateScale,
   verticalScale,
 } from '../../../../../../../styles/Scaling';
-import { QuantityIcon } from '../../../../../../General Components/QuantityIcon';
+import { QuantityIcon } from '../../../../../../General Components/GreyBox/configured/QuantityIcon';
 import { CategoryIcon } from './subcomponents/CategoryIcon';
 import { CardRowText } from '../../../../subcomponents/CardRowText';
 import { CardRowSubText } from '../../../../subcomponents/CardRowSubText';

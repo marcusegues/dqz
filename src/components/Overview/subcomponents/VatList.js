@@ -20,8 +20,9 @@ const VatListInner = ({ vatReport, t }: VatListProps & { t: TFunction }) => (
     <RightAlignedHeader text={t('receipt:vatColumn')} />
     <View style={{ flex: 1, width: '100%' }}>
       <VatRow
-        quantity={`~${vatReport.get('totalAmountsApprox')}`}
+        amount={`~${vatReport.get('totalAmountsApprox')}`}
         vat={vatReport.get('totalVat')}
+        borderTop
       />
     </View>
   </View>

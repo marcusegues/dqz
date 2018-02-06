@@ -7,6 +7,7 @@ import { OverviewRow } from '../OverviewRow';
 import { CategoriesInfo } from '../../../../../model/constants';
 import type { TFunction } from '../../../../../types/generalTypes';
 import { AllowanceIcon } from '../../../../Overview/subcomponents/AllowanceIcon';
+import { QuantityIcon } from '../../../../General Components/GreyBox/configured/QuantityIcon';
 
 type DutyRowProps = {
   category: Category,
@@ -21,21 +22,28 @@ const DutyRowInner = ({
   duty,
   borderTop = false,
   t,
-}: DutyRowProps & { t: TFunction }) => (
-  <OverviewRow
-    title={t(`categories:${category}`)}
-    subtitle={`${t('overview:declared')} ${quantity} ${CategoriesInfo.getIn(
-      [category, 'unit'],
-      ''
-    )}`}
-    quantity={quantity}
-    result={duty.toFixed(2)}
-    unit={CategoriesInfo.getIn([category, 'unit'], '')}
-    borderTop={borderTop}
-  >
-    <AllowanceIcon text={t('overviewDutyFree')} quantity={5} unit={unit} />
-  </OverviewRow>
-);
+}: DutyRowProps & { t: TFunction }) => {
+  const unit = CategoriesInfo.getIn([category, 'unit'], '');
+  return (
+    <OverviewRow
+      title={t(`categories:${category}`)}
+      subtitle={`${t('overview:declared')} ${quantity} ${unit}`}
+      result={duty.toFixed(2)}
+      borderTop={borderTop}
+    >
+      {{
+        lowerIcon: (
+          <AllowanceIcon
+            text={t('overview:dutyFree')}
+            quantity={5}
+            unit={unit}
+          />
+        ),
+        midComponent: <QuantityIcon quantity={quantity} unit={unit} />,
+      }}
+    </OverviewRow>
+  );
+};
 
 export const DutyRow = (translate(['categories', 'overview'])(
   DutyRowInner
