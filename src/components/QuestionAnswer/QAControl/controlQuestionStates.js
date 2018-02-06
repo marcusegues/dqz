@@ -29,7 +29,8 @@ export const setInitStates = (qaState: QAStateEnriched): QAStateEnriched => {
   return setQuestionState(qaState, {
     peopleInput: main.size ? 'collapsed' : 'expanded',
     mainCategories: main.size ? 'collapsed' : 'hidden',
-    quantityInput: main.size ? 'collapsed' : 'hidden',
+    quantityInput:
+      main.size && !singleOtherGoodsMainCategory(main) ? 'collapsed' : 'hidden',
     amounts: main.size ? 'collapsed' : 'hidden',
     largeAmounts: showLargeAmountsQuestion(qaState) ? 'collapsed' : 'hidden',
   });

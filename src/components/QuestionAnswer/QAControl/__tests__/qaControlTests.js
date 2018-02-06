@@ -139,6 +139,27 @@ describe('Test qa control flow', () => {
     expect(newState.quantityInput).toBe('collapsed');
   });
 
+  test('init states from state with single OtherGoods main category', () => {
+    const newState = setInitStates(stateWithSingleOtherGoodsMainCategory)
+      .questionStates;
+    expect(newState.peopleInput).toBe('collapsed');
+    expect(newState.mainCategories).toBe('collapsed');
+    expect(newState.quantityInput).toBe('hidden');
+    expect(newState.amounts).toBe('collapsed');
+    expect(newState.largeAmounts).toBe('hidden');
+  });
+
+  test('init states from state with single OtherGoods main category and has large amount', () => {
+    const newState = setInitStates(
+      stateWithSingleOtherGoodsMainCategoryAndHasLargeAmount
+    ).questionStates;
+    expect(newState.peopleInput).toBe('collapsed');
+    expect(newState.mainCategories).toBe('collapsed');
+    expect(newState.quantityInput).toBe('hidden');
+    expect(newState.amounts).toBe('collapsed');
+    expect(newState.largeAmounts).toBe('collapsed');
+  });
+
   test('after people input FORWARD on blank state', () => {
     const newState = setQuestionStates('peopleInput', 'forward', {}, blankState)
       .questionStates;
