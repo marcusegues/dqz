@@ -1,15 +1,10 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { View, Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
+import { GreyBox } from '../GreyBox';
 
 const ownStyles = StyleSheet.create({
-  quantityContainer: {
-    paddingHorizontal: 8,
-    paddingVertical: 2,
-    backgroundColor: '#E0E0E1',
-    borderRadius: 3,
-  },
   quantityText: {
     color: 'black',
     fontSize: 14,
@@ -23,7 +18,7 @@ type QuantityIconProps = {
 };
 
 export const QuantityIcon = ({ quantity, unit }: QuantityIconProps) => (
-  <View style={ownStyles.quantityContainer}>
+  <GreyBox>
     <Text style={ownStyles.quantityText}>{`${quantity} ${unit}`}</Text>
-  </View>
+  </GreyBox>
 );

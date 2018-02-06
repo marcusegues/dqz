@@ -145,7 +145,7 @@ export const de: Locale = {
     transactionId: 'Transaktions-ID (SIX): {{value}}',
     receiptValidUntilText: 'Diese Quittung ist gültig bis:',
     receiptValidUntilTime: '{{date}}  |  {{time}} Uhr',
-    sumText: 'Summe (CHF): {{value}}',
+    sumText: 'Summe: CHF {{value}}',
     vatColumn: 'Mehrwertsteuer in CHF:',
     amountsTitle: 'Gesamtwert der Waren',
     amountsSubtitle: 'Summe aller Kaufbelege',
@@ -266,5 +266,9 @@ export const de: Locale = {
       'Copyright, Bundesbehörden der Schweizerischen Eidgenossenschaft, 2007.\n' +
       'Die auf den Websites der Bundesbehörden enthaltenen Informationen werden der Öffentlichkeit zugänglich gemacht. Durch das Herunterladen oder Kopieren von Inhalten, Bildern, Fotos oder anderen Dateien werden keinerlei Rechte bezüglich der Inhalte übertragen.\n' +
       'Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf den Websites der Bundesbehörden gehören ausschliesslich diesen oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.\n',
+  },
+  overview: {
+    declared: 'Angemeldet',
+    dutyFree: 'Zollfrei',
   },
 };

@@ -6,7 +6,7 @@ import type { ComponentType } from 'react';
 import { View } from 'react-native';
 import { CardHeaderText } from '../../../QuestionAnswer/cards/subcomponents/CardHeaderText';
 import { CardHeaderSubText } from '../../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
-import { QuantityIcon } from '../../../General Components/QuantityIcon';
+import { QuantityIcon } from '../../../General Components/GreyBox/configured/QuantityIcon';
 import { verticalScale } from '../../../../styles/Scaling';
 import { CategoriesInfo } from '../../../../model/constants';
 import type { MainCategory } from '../../../../types/reducers/appReducer';

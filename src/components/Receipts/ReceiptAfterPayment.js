@@ -17,7 +17,7 @@ import { moderateScale, scale, verticalScale } from '../../styles/Scaling';
 import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
 import { ReceiptSubText } from './subComponents/ReceiptSubText';
 import { ValidUntilBlock } from './subComponents/ValidUntilBlock';
-import { DutyRow } from '../Overview/subcomponents/DutyRow';
+import { DutyRow } from '../Rows/configured/OverviewRow/configured/DutyRow';
 import { VatRow } from '../Overview/subcomponents/VatRow';
 import type { PaymentData, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
@@ -225,7 +225,7 @@ class ReceiptAfterPaymentInner extends React.Component<
               style={ownStyles.receiptSubTextVat}
             />
             <VatRow
-              quantity={`~${vatReport.get('totalAmountsApprox')}`}
+              amount={`~${vatReport.get('totalAmountsApprox')}`}
               vat={vatReport.get('totalVat')}
             />
             <CardRowText

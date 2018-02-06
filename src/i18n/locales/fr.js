@@ -276,4 +276,8 @@ export const fr: Locale = {
       "Les informations que recèlent les sites Web des autorités fédérales sont mises à la disposition du public. Le téléchargement ou la copie de textes, d'illustrations, de photographies ou d'autres données n'entraîne aucun transfert de droits sur les contenus.\n" +
       "Les droits d'auteur et tous les autres droits liés aux textes, illustrations, photographies et autres données placés sur les sites Web des autorités fédérales sont leur propriété exclusive ou celle des détenteurs expressément cités. Toute reproduction est subordonnée à l'autorisation écrite préalable du détenteur des droits.\n",
   },
+  overview: {
+    declared: '⚠️',
+    dutyFree: '⚠️',
+  },
 };

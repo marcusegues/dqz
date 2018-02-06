@@ -209,6 +209,11 @@ type LegalNoticeInformationTranslations = {
   copyrightText: string,
 };
 
+type OverviewTranslations = {
+  declared: string,
+  dutyFree: string,
+};
+
 /**
  * The Locale type defines all the namespaces that we use in the translation
  * The namespaces are formed by the individual strings, respectively.
@@ -230,4 +235,5 @@ export type Locale = {
   information: InformationTranslations,
   appInformation: AppInformationTranslations,
   legalNoticeInformation: LegalNoticeInformationTranslations,
+  overview: OverviewTranslations,
 };
