@@ -83,7 +83,7 @@ export type QAStateEnriched = {
   currencyDate: string,
 };
 
-export type DirectionType = 'forward' | 'back';
+export type DirectionType = 'forward' | 'back' | 'update';
 
 export type CardProps = {
   qaState: QAStateEnriched,
@@ -100,7 +100,7 @@ type QuestionAnswerContainerProps = {
   setAmounts: (amounts: Amounts) => void,
   setPeople: (people: People) => void,
   setBasket: (basket: Basket) => void,
-  setMainCategories: (mainCategories: MainCategories) => void,
+  setMainCategories: (mainCategories: MainCategories) => Promise<any>,
   // state to props
   settings: Settings,
   basket: Basket,
@@ -297,18 +297,20 @@ class QuestionAnswerContainerInner extends React.Component<
                     mainCategories: updatedCategories,
                     basket: updatedBasket,
                   }) => {
-                    setMainCategories(updatedCategories);
-                    analyticsMainCategoriesChanged(updatedCategories);
-                    setBasket(updatedBasket);
-                    this.updateFlagsOptimistically(
-                      'mainCategories',
-                      Object.assign({}, qaStateEnriched, {
-                        settings: settings.set(
-                          'mainCategories',
-                          updatedCategories
-                        ),
-                      })
-                    );
+                    setMainCategories(updatedCategories).then(() => {
+                      analyticsMainCategoriesChanged(updatedCategories);
+                      setBasket(updatedBasket);
+                      this.updateFlagsOptimistically(
+                        'mainCategories',
+                        Object.assign({}, qaStateEnriched, {
+                          settings: settings.set(
+                            'mainCategories',
+                            updatedCategories
+                          ),
+                        })
+                      );
+                      this.updateQA('mainCategories', 'update');
+                    });
                   },
                   mainCategories: newCategories,
                 },
@@ -504,13 +506,15 @@ const mapDispatchToProps = dispatch => ({
       people,
     });
   },
-  setMainCategories: (mainCategories: MainCategories) => {
-    storeMainCategories(mainCategories);
-    dispatch({
-      type: 'SET_MAIN_CATEGORIES',
-      mainCategories,
-    });
-  },
+  setMainCategories: (mainCategories: MainCategories): Promise<any> =>
+    new Promise(resolve => {
+      storeMainCategories(mainCategories);
+      dispatch({
+        type: 'SET_MAIN_CATEGORIES',
+        mainCategories,
+      });
+      resolve();
+    }),
   basketChangeQuantity: (category, quantity) =>
     dispatch({
       type: 'BASKET_ADD_QUANTITY',
