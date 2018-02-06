@@ -21,7 +21,6 @@ const quantityRowContainerStyles = (borderTop, borderBottomNone) => ({
   borderColor: '#E0E0E1',
   paddingVertical: 8,
   paddingHorizontal: 12,
-  marginHorizontal: 4,
   borderTopWidth: borderTop ? 1 : 0,
 });
 

@@ -2,17 +2,18 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
-import { OverviewRow } from './OverviewRow';
+import { OverviewRow } from '../../Rows/configured/OverviewRow/OverviewRow';
 import type { TFunction } from '../../../types/generalTypes';
+import { AmountIcon } from '../../General Components/GreyBox/configured/AmountIcon';
 
 type VatRowProps = {
-  quantity: number | string,
+  amount: number | string,
   vat: number,
   borderTop?: boolean,
 };
 
 const VatRowInner = ({
-  quantity,
+  amount,
   vat,
   borderTop = false,
   t,
@@ -20,11 +21,11 @@ const VatRowInner = ({
   <OverviewRow
     title={t('amountsTitle')}
     subtitle={t('amountsSubtitle')}
-    quantity={quantity}
     result={(+vat).toFixed(2)}
-    unit="CHF"
     borderTop={borderTop}
-  />
+  >
+    {{ midComponent: <AmountIcon amount={amount} currency="CHF" /> }}
+  </OverviewRow>
 );
 
 export const VatRow = (translate(['receipt'])(VatRowInner): ComponentType<

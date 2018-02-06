@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View, FlatList } from 'react-native';
-import { DutyRow } from './DutyRow';
+import { DutyRow } from '../../Rows/configured/OverviewRow/configured/DutyRow';
 import { getTotalQuantity } from '../../../model/configurationApi';
 import { getMainCategory } from '../../../types/reducers/appReducer';
 import { RightAlignedHeader } from './RightAlignedHeader';
