@@ -225,7 +225,7 @@ class ReceiptAfterPaymentInner extends React.Component<
               style={ownStyles.receiptSubTextVat}
             />
             <VatRow
-              quantity={`~${vatReport.get('totalAmountsApprox')}`}
+              amount={`~${vatReport.get('totalAmountsApprox')}`}
               vat={vatReport.get('totalVat')}
             />
             <CardRowText
