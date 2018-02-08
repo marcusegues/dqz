@@ -110,14 +110,10 @@ class SnackBarsContainerInner extends React.Component<
     ];
 
     // determine which element in flatListData is the last one that has visibility === 'visible'
-    const reverseIndex = flatListData
-      .slice()
-      .reverse()
-      .findIndex(el => el.visibility === 'visible');
-    const bottomMostVisibleSnackBarIndex =
-      reverseIndex !== -1
-        ? flatListData.length - 1 - reverseIndex
-        : reverseIndex;
+    const bottomMostVisibleSnackBarIndex = flatListData.reduce(
+      (acc, val, idx) => (val.visibility === 'visible' ? idx : acc),
+      -1
+    );
     return (
       <View style={ownStyles.snackBar}>
         <FlatList
