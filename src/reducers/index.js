@@ -164,7 +164,7 @@ export const getReceiptEntryTime = (state: AppState): string =>
   appApi.getReceiptEntryTime(state.appState);
 
 /**
- * Gets the current receipt id (emptystring if not active)
+ * Gets the current connectivity status
  * @param state
  * @returns {string}
  */
