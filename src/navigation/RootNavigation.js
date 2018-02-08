@@ -1,11 +1,13 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
+import { connect } from 'react-redux';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { StackNavigator } from 'react-navigation';
 // $FlowFixMe
-import { View } from 'react-native';
+import { View, NetInfo } from 'react-native';
 import { i18nImplementation } from '../i18n';
 import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
 import { ScreensView } from '../screens/ScreensView/ScreensView';
@@ -34,6 +36,7 @@ import type { Navigation } from '../types/generalTypes';
 import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
 import { UsefulInfoScreenTemplate } from '../screens/Information/subComponents/UsefulInfoScreenTemplate';
 import { SnackBarsContainer } from '../components/SnackBars/SnackBarsContainer';
+import type { ConnectivityType } from '../types/connectivity';
 
 export type NavigationObject = { navigation: Navigation };
 
@@ -190,23 +193,50 @@ const RootStackNavigator = StackNavigator(
   stackNavigatorConfig
 );
 
-const WrappedRootStackNavigator = () => (
-  <View
-    style={{
-      flexDirection: 'column',
-      width: '100%',
-      flex: 1,
-      justifyContent: 'space-between',
-    }}
-  >
-    <RootStackNavigator screenProps={{ t: i18nImplementation.getFixedT() }} />
-    <SnackBarsContainer />
-  </View>
-);
+type ReduxInject = {
+  setConnectivity: (connectionInfo: ConnectivityType) => void,
+};
 
-const ReloadAppOnLanguageChange = translate(null, {
-  bindI18n: 'languageChanged',
-  bindStore: false,
-})(WrappedRootStackNavigator);
+class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
+  componentDidMount() {
+    NetInfo.addEventListener('connectionChange', connectionInfo =>
+      this.handleConnectivityChange(connectionInfo)
+    );
+  }
+
+  handleConnectivityChange(connectionInfo: ConnectivityType) {
+    this.props.setConnectivity(connectionInfo);
+  }
+
+  render() {
+    return (
+      <View
+        style={{
+          flexDirection: 'column',
+          width: '100%',
+          flex: 1,
+          justifyContent: 'space-between',
+        }}
+      >
+        <RootStackNavigator
+          screenProps={{ t: i18nImplementation.getFixedT() }}
+        />
+        <SnackBarsContainer />
+      </View>
+    );
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  setConnectivity: (connectionInfo: ConnectivityType) =>
+    dispatch({ type: 'SET_CONNECTIVITY', connectionInfo }),
+});
+
+const ReloadAppOnLanguageChange = (connect(null, mapDispatchToProps)(
+  translate(null, {
+    bindI18n: 'languageChanged',
+    bindStore: false,
+  })(WrappedRootStackNavigator)
+): ComponentType<{}>);
 
 export const RootNavigator = () => <ReloadAppOnLanguageChange />;

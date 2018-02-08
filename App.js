@@ -5,14 +5,7 @@ import React from 'react';
 import type { ComponentType } from 'react';
 import { I18nextProvider } from 'react-i18next';
 // $FlowFixMe
-import {
-  Platform,
-  StatusBar,
-  StyleSheet,
-  View,
-  AppState,
-  NetInfo,
-} from 'react-native';
+import { Platform, StatusBar, StyleSheet, View, AppState } from 'react-native';
 // $FlowFixMe
 import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
@@ -30,7 +23,6 @@ import { initAmplitude } from './src/analytics/amplitude';
 import type { ConnectivityType } from './src/types/connectivity';
 
 const store = configureStore();
-window.myStore = store;
 
 const styles = StyleSheet.create({
   container: {
@@ -44,14 +36,12 @@ const styles = StyleSheet.create({
 });
 
 type AppProps = {};
-type ReduxInject = {
-  setConnectivity: (connectionInfo: ConnectivityType) => void,
-};
+
 type AppStateT = { isLoadingComplete: boolean };
 
 export type ExpoAppState = 'active' | 'inactive' | 'background';
 
-class AppInner extends React.Component<AppProps & ReduxInject, AppStateT> {
+export default class App extends React.Component<AppProps, AppStateT> {
   state = {
     isLoadingComplete: false,
   };
@@ -65,14 +55,6 @@ class AppInner extends React.Component<AppProps & ReduxInject, AppStateT> {
       this.handleAppStateChange(next)
     );
     initAmplitude();
-    NetInfo.addEventListener('connectionChange', connectionInfo =>
-      this.handleConnectivityChange(connectionInfo)
-    );
-  }
-
-  handleConnectivityChange(connectionInfo: ConnectivityType) {
-    console.log('CONNECTION CHANGE', connectionInfo);
-    this.props.setConnectivity(connectionInfo);
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -175,25 +157,12 @@ class AppInner extends React.Component<AppProps & ReduxInject, AppStateT> {
       <View style={styles.container} store={store}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
         {Platform.OS === 'android' && <View style={styles.statusBarUnderlay} />}
-        <RootNavigator />
+        <Provider store={store}>
+          <I18nextProvider i18n={i18nImplementation}>
+            <RootNavigator />
+          </I18nextProvider>
+        </Provider>
       </View>
     );
   }
 }
-
-const mapDispatchToProps = dispatch => ({
-  setConnectivity: (connectionInfo: ConnectivityType) =>
-    dispatch({ type: 'SET_CONNECTIVITY', connectionInfo }),
-});
-
-const ConnectedApp = (connect(null, mapDispatchToProps)(
-  AppInner
-): ComponentType<{}>);
-
-export default () => (
-  <Provider store={store}>
-    <I18nextProvider i18n={i18nImplementation}>
-      <ConnectedApp />
-    </I18nextProvider>
-  </Provider>
-);
