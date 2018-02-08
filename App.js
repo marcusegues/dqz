@@ -65,10 +65,13 @@ class AppInner extends React.Component<AppProps & ReduxInject, AppStateT> {
       this.handleAppStateChange(next)
     );
     initAmplitude();
-    NetInfo.addEventListener('connectionChange', this.handleConnectivityChange);
+    NetInfo.addEventListener('connectionChange', connectionInfo =>
+      this.handleConnectivityChange(connectionInfo)
+    );
   }
 
   handleConnectivityChange(connectionInfo: ConnectivityType) {
+    console.log('CONNECTION CHANGE', connectionInfo);
     this.props.setConnectivity(connectionInfo);
   }
 
@@ -178,21 +181,19 @@ class AppInner extends React.Component<AppProps & ReduxInject, AppStateT> {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => ({
   setConnectivity: (connectionInfo: ConnectivityType) =>
-    dispatch({ type: 'SET_CONNECTIVITY', connectionInfo });
-};
+    dispatch({ type: 'SET_CONNECTIVITY', connectionInfo }),
+});
 
 const ConnectedApp = (connect(null, mapDispatchToProps)(
   AppInner
 ): ComponentType<{}>);
 
-export default (App = () => {
-  return (
-    <Provider store={store}>
-      <I18nextProvider i18n={i18nImplementation}>
-        <ConnectedApp />
-      </I18nextProvider>
-    </Provider>
-  );
-});
+export default () => (
+  <Provider store={store}>
+    <I18nextProvider i18n={i18nImplementation}>
+      <ConnectedApp />
+    </I18nextProvider>
+  </Provider>
+);
