@@ -14,6 +14,71 @@ const initStateEnriched = {
   connectivity: initConnectivity,
 };
 
+const snackBarStateWithWifiConnectivity = {
+  snackBarState: {
+    limitExceeded: 'hidden',
+    offline: 'hidden',
+  },
+  amounts: initAmounts,
+  currencies: currencyExample,
+  connectivity: {
+    type: 'wifi',
+    effectiveType: 'unknown',
+  },
+};
+
+const snackBarStateWithCelularConnectivity = {
+  snackBarState: {
+    limitExceeded: 'hidden',
+    offline: 'hidden',
+  },
+  amounts: initAmounts,
+  currencies: currencyExample,
+  connectivity: {
+    type: 'celular',
+    effectiveType: 'unknown',
+  },
+};
+
+const snackBarStateWithBluetoothConnectivity = {
+  snackBarState: {
+    limitExceeded: 'hidden',
+    offline: 'hidden',
+  },
+  amounts: initAmounts,
+  currencies: currencyExample,
+  connectivity: {
+    type: 'bluetooth',
+    effectiveType: 'unknown',
+  },
+};
+
+const snackBarStateWithEthernetConnectivity = {
+  snackBarState: {
+    limitExceeded: 'hidden',
+    offline: 'hidden',
+  },
+  amounts: initAmounts,
+  currencies: currencyExample,
+  connectivity: {
+    type: 'ethernet',
+    effectiveType: 'unknown',
+  },
+};
+
+const snackBarStateWithWimaxConnectivity = {
+  snackBarState: {
+    limitExceeded: 'hidden',
+    offline: 'hidden',
+  },
+  amounts: initAmounts,
+  currencies: currencyExample,
+  connectivity: {
+    type: 'wimax',
+    effectiveType: 'unknown',
+  },
+};
+
 describe('Test snack bar control flow', () => {
   test('init state (value of zero) keeps limitExceeded hidden ', () => {
     expect(
@@ -65,4 +130,47 @@ describe('Test snack bar control flow', () => {
       updateSnackBarVisibilities(newState).snackBarVisibilities.limitExceeded
     ).toBe('hidden');
   });
+
+  test('snack bar state with connectivity type none shows offline snackbar', () => {
+    expect(
+      updateSnackBarVisibilities(initStateEnriched).snackBarVisibilities.offline
+    ).toBe('visible');
+  });
+
+  test('snack bar state with connectivity type wifi does not show offline snackbar', () => {
+    expect(
+      updateSnackBarVisibilities(snackBarStateWithWifiConnectivity)
+        .snackBarVisibilities.offline
+    ).toBe('hidden');
+  });
+
+  test('snack bar state with connectivity type celular does not show offline snackbar', () => {
+    expect(
+      updateSnackBarVisibilities(snackBarStateWithCelularConnectivity)
+        .snackBarVisibilities.offline
+    ).toBe('hidden');
+  });
+
+  test('snack bar state with connectivity type bluetooth does not show offline snackbar', () => {
+    expect(
+      updateSnackBarVisibilities(snackBarStateWithBluetoothConnectivity)
+        .snackBarVisibilities.offline
+    ).toBe('hidden');
+  });
+
+  test('snack bar state with connectivity type ethernet does not show offline snackbar', () => {
+    expect(
+      updateSnackBarVisibilities(snackBarStateWithEthernetConnectivity)
+        .snackBarVisibilities.offline
+    ).toBe('hidden');
+  });
+
+  test('snack bar state with connectivity type wimax does not show offline snackbar', () => {
+    expect(
+      updateSnackBarVisibilities(snackBarStateWithWimaxConnectivity)
+        .snackBarVisibilities.offline
+    ).toBe('hidden');
+  });
+
+  // TODO: ADD TEST FOR UNKNOWN CONNECTION TYPE
 });
