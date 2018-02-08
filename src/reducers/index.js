@@ -2,18 +2,13 @@
 import { combineReducers } from 'redux';
 import * as appApi from './appReducer';
 import * as connectivityApi from './connectivity';
-import { connectivity } from './connectivity';
 import { formatDate } from '../model/utils';
 import type {
   Amounts,
   Basket,
   People,
 } from '../model/types/basketPeopleAmountsTypes';
-import type {
-  MainCategories,
-  Settings,
-  State,
-} from '../types/reducers/appReducer';
+import type { MainCategories, Settings } from '../types/reducers/appReducer';
 import type { CurrencyObject } from '../model/currencies';
 import { calculateVat } from '../model/vatCalculations';
 import { calculateDuty } from '../model/dutyCalculations';
@@ -28,7 +23,7 @@ import type { AppState } from '../types/reducers';
  */
 export const root: AppState = combineReducers({
   appState: appApi.appState,
-  connectivity,
+  connectivity: connectivityApi.connectivity,
 });
 
 /**

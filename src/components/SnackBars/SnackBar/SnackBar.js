@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { View, StyleSheet, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import { SNACKBAR_GREY, WHITE } from '../../../styles/colors';
 import type { SnackBarVisibility } from '../SnackBarsContainer';
 

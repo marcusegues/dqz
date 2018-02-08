@@ -205,7 +205,6 @@ class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
   }
 
   handleConnectivityChange(connectionInfo: ConnectivityType) {
-    console.log('CONNECTION CHANGE', connectionInfo);
     this.props.setConnectivity(connectionInfo);
   }
 

@@ -43,6 +43,7 @@ type ReduxInject = {
   amounts: Amounts,
   // eslint-disable-next-line react/no-unused-prop-types
   currencies: CurrencyObject,
+  // eslint-disable-next-line react/no-unused-prop-types
   connectivity: ConnectivityType,
 };
 
@@ -97,19 +98,20 @@ class SnackBarsContainerInner extends React.Component<
     const { snackBarVisibilities } = this.state;
     const flatListData = [
       {
-        id: 0,
         key: 'limitExceeded',
         visibility: snackBarVisibilities.limitExceeded,
         component: LimitExceededSnackBar,
       },
       {
-        id: 1,
         key: 'offline',
         visibility: snackBarVisibilities.offline,
         component: OfflineSnackBar,
       },
     ];
+
+    // determine which element in flatListData is the last one that has visibility === 'visible'
     const reverseIndex = flatListData
+      .slice()
       .reverse()
       .findIndex(el => el.visibility === 'visible');
     const bottomMostVisibleSnackBarIndex =
@@ -121,12 +123,10 @@ class SnackBarsContainerInner extends React.Component<
         <FlatList
           style={{ width: '100%' }}
           data={flatListData}
-          renderItem={({ item }) => {
-            return React.createElement(item.component, {
+          renderItem={({ item, index }) => React.createElement(item.component, {
               visibility: item.visibility,
-              bottomMost: item.id === bottomMostVisibleSnackBarIndex,
-            });
-          }}
+              bottomMost: index === bottomMostVisibleSnackBarIndex,
+            })}
         />
       </View>
     );
