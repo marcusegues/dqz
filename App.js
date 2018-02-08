@@ -21,7 +21,6 @@ import {
 import { initAmplitude } from './src/analytics/amplitude';
 
 const store = configureStore();
-window.myStore = store;
 
 const styles = StyleSheet.create({
   container: {
