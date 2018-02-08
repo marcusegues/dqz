@@ -123,10 +123,12 @@ class SnackBarsContainerInner extends React.Component<
         <FlatList
           style={{ width: '100%' }}
           data={flatListData}
-          renderItem={({ item, index }) => React.createElement(item.component, {
+          renderItem={({ item, index }) =>
+            React.createElement(item.component, {
               visibility: item.visibility,
               bottomMost: index === bottomMostVisibleSnackBarIndex,
-            })}
+            })
+          }
         />
       </View>
     );
