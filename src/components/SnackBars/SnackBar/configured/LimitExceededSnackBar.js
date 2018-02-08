@@ -8,13 +8,19 @@ import type { TFunction } from '../../../../types/generalTypes';
 
 type LimitExceededSnackBarProps = {
   visibility: SnackBarVisibility,
+  bottomMost: boolean,
 };
 
 const LimitExceededSnackBarInner = ({
   visibility,
   t,
+  bottomMost,
 }: LimitExceededSnackBarProps & { t: TFunction }) => (
-  <SnackBar text={t('limitExceeded')} visibility={visibility} />
+  <SnackBar
+    text={t('limitExceeded')}
+    visibility={visibility}
+    bottomMost={bottomMost}
+  />
 );
 
 export const LimitExceededSnackBar = (translate(['snackBar'])(

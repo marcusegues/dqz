@@ -97,26 +97,36 @@ class SnackBarsContainerInner extends React.Component<
     const { snackBarVisibilities } = this.state;
     const flatListData = [
       {
+        id: 0,
         key: 'limitExceeded',
-        component: (
-          <LimitExceededSnackBar
-            visibility={snackBarVisibilities.limitExceeded}
-          />
-        ),
+        visibility: snackBarVisibilities.limitExceeded,
+        component: LimitExceededSnackBar,
       },
       {
+        id: 1,
         key: 'offline',
-        component: (
-          <OfflineSnackBar visibility={snackBarVisibilities.offline} />
-        ),
+        visibility: snackBarVisibilities.offline,
+        component: OfflineSnackBar,
       },
     ];
+    const reverseIndex = flatListData
+      .reverse()
+      .findIndex(el => el.visibility === 'visible');
+    const bottomMostVisibleSnackBarIndex =
+      reverseIndex !== -1
+        ? flatListData.length - 1 - reverseIndex
+        : reverseIndex;
     return (
       <View style={ownStyles.snackBar}>
         <FlatList
           style={{ width: '100%' }}
           data={flatListData}
-          renderItem={({ item }) => item.component}
+          renderItem={({ item }) => {
+            return React.createElement(item.component, {
+              visibility: item.visibility,
+              bottomMost: item.id === bottomMostVisibleSnackBarIndex,
+            });
+          }}
         />
       </View>
     );

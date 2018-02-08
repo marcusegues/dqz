@@ -8,13 +8,19 @@ import type { TFunction } from '../../../../types/generalTypes';
 
 type OfflineSnackBarProps = {
   visibility: SnackBarVisibility,
+  bottomMost: boolean,
 };
 
 const OfflineSnackBarInner = ({
   visibility,
   t,
+  bottomMost,
 }: OfflineSnackBarProps & { t: TFunction }) => (
-  <SnackBar text={t('offline')} visibility={visibility} />
+  <SnackBar
+    text={t('offline')}
+    visibility={visibility}
+    bottomMost={bottomMost}
+  />
 );
 
 export const OfflineSnackBar = (translate(['snackBar'])(
