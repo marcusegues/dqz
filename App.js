@@ -2,14 +2,13 @@
 /* eslint-disable global-require */
 /* global window, fetch */
 import React from 'react';
-import type { ComponentType } from 'react';
 import { I18nextProvider } from 'react-i18next';
 // $FlowFixMe
 import { Platform, StatusBar, StyleSheet, View, AppState } from 'react-native';
 // $FlowFixMe
 import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
-import { Provider, connect } from 'react-redux';
+import { Provider } from 'react-redux';
 
 import { i18nImplementation } from './src/i18n';
 import { RootNavigator } from './src/navigation/RootNavigation';
@@ -20,7 +19,6 @@ import {
   analyticsCustom,
 } from './src/analytics/analyticsApi';
 import { initAmplitude } from './src/analytics/amplitude';
-import type { ConnectivityType } from './src/types/connectivity';
 
 const store = configureStore();
 
@@ -36,7 +34,6 @@ const styles = StyleSheet.create({
 });
 
 type AppProps = {};
-
 type AppStateT = { isLoadingComplete: boolean };
 
 export type ExpoAppState = 'active' | 'inactive' | 'background';
