@@ -51,7 +51,7 @@ type AppStateT = { isLoadingComplete: boolean };
 
 export type ExpoAppState = 'active' | 'inactive' | 'background';
 
-class App extends React.Component<AppProps & ReduxInject, AppStateT> {
+class AppInner extends React.Component<AppProps & ReduxInject, AppStateT> {
   state = {
     isLoadingComplete: false,
   };
@@ -172,11 +172,7 @@ class App extends React.Component<AppProps & ReduxInject, AppStateT> {
       <View style={styles.container} store={store}>
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
         {Platform.OS === 'android' && <View style={styles.statusBarUnderlay} />}
-        <Provider store={store}>
-          <I18nextProvider i18n={i18nImplementation}>
-            <RootNavigator />
-          </I18nextProvider>
-        </Provider>
+        <RootNavigator />
       </View>
     );
   }
@@ -187,13 +183,16 @@ const mapDispatchToProps = dispatch => {
     dispatch({ type: 'SET_CONNECTIVITY', connectionInfo });
 };
 
-// const ConnectedApp = (connect(null, mapDispatchToProps)(
-//   App
-// ): ComponentType<{}>);
+const ConnectedApp = (connect(null, mapDispatchToProps)(
+  AppInner
+): ComponentType<{}>);
 
-function connectWithStore(store, WrappedComponent, ...args) {
-  var ConnectedWrappedComponent = connect(...args)(WrappedComponent);
-  return <ConnectedWrappedComponent store={store} />;
-}
-
-export default connectWithStore(store, App, [null, mapDispatchToProps]);
+export default (App = () => {
+  return (
+    <Provider store={store}>
+      <I18nextProvider i18n={i18nImplementation}>
+        <ConnectedApp />
+      </I18nextProvider>
+    </Provider>
+  );
+});
