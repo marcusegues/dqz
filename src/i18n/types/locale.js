@@ -51,6 +51,7 @@ type GeneralTranslations = {
 
 type SnackBarTranslations = {
   limitExceeded: string,
+  offline: string,
   showBorder: string,
 };
 

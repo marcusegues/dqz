@@ -2,13 +2,16 @@ import { currencyExample } from '../../../../model/currencies';
 import { addAmount, initAmounts } from '../../../../model/configurationApi';
 import { updateSnackBarVisibilities } from '../controlSnackBarStates';
 import { MAX_DECLARED_CHF } from '../../../../constants/declaration';
+import { initConnectivity } from '../../../../types/connectivity';
 
 const initStateEnriched = {
   snackBarState: {
     limitExceeded: 'hidden',
+    offline: 'hidden',
   },
   amounts: initAmounts,
   currencies: currencyExample,
+  connectivity: initConnectivity,
 };
 
 describe('Test snack bar control flow', () => {

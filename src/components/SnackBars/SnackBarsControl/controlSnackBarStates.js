@@ -13,5 +13,10 @@ export const updateSnackBarVisibilities = (
       MAX_DECLARED_CHF
         ? 'visible'
         : 'hidden',
+    offline:
+      snackBarState.connectivity.type === 'none' ||
+      snackBarState.connectivity.type === 'unknown'
+        ? 'visible'
+        : 'hidden',
   },
 });

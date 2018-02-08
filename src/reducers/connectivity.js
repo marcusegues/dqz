@@ -16,3 +16,5 @@ export const connectivity = (
     }
   }
 };
+
+export const getConnectivity = (state: ConnectivityState) => state.connectivity;

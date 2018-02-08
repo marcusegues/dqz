@@ -5,10 +5,13 @@ import { connect } from 'react-redux';
 // $FlowFixMe
 import { View, StyleSheet, FlatList } from 'react-native';
 import { LimitExceededSnackBar } from './SnackBar/configured/LimitExceededSnackBar';
-import { getAmounts, getCurrencies } from '../../reducers';
+import { getAmounts, getConnectivity, getCurrencies } from '../../reducers';
 import type { Amounts } from '../../model/types/basketPeopleAmountsTypes';
 import { updateSnackBarVisibilities } from './SnackBarsControl/controlSnackBarStates';
 import type { CurrencyObject } from '../../model/currencies';
+import type { ConnectivityType } from '../../types/connectivity';
+import { OfflineSnackBar } from './SnackBar/configured/OfflineSnackBar';
+import type { AppState } from '../../types/reducers';
 
 const ownStyles = StyleSheet.create({
   snackBar: {
@@ -18,7 +21,7 @@ const ownStyles = StyleSheet.create({
   },
 });
 
-type SnackBarType = 'limitExceeded';
+type SnackBarType = 'limitExceeded' | 'offline';
 
 export type SnackBarVisibility = 'hidden' | 'visible';
 
@@ -32,17 +35,19 @@ export type SnackBarStateEnriched = {
   snackBarVisibilities: SnackBarStatesObjectType,
   amounts: Amounts,
   currencies: CurrencyObject,
+  connectivity: ConnectivityType,
 };
 
-type SnackBarContainerProps = {
+type ReduxInject = {
   // eslint-disable-next-line react/no-unused-prop-types
   amounts: Amounts,
   // eslint-disable-next-line react/no-unused-prop-types
   currencies: CurrencyObject,
+  connectivity: ConnectivityType,
 };
 
 class SnackBarsContainerInner extends React.Component<
-  SnackBarContainerProps,
+  ReduxInject,
   SnackBarState
 > {
   constructor(props) {
@@ -50,6 +55,7 @@ class SnackBarsContainerInner extends React.Component<
     this.state = {
       snackBarVisibilities: {
         limitExceeded: 'hidden',
+        offline: 'hidden',
       },
     };
   }
@@ -62,13 +68,14 @@ class SnackBarsContainerInner extends React.Component<
     this.updateState(nextProps);
   }
 
-  enrichState(props: SnackBarContainerProps): SnackBarStateEnriched {
+  enrichState(props: ReduxInject): SnackBarStateEnriched {
     const { snackBarVisibilities } = this.state;
-    const { amounts, currencies } = props;
+    const { amounts, currencies, connectivity } = props;
     return {
       snackBarVisibilities,
       amounts,
       currencies,
+      connectivity,
     };
   }
 
@@ -79,7 +86,7 @@ class SnackBarsContainerInner extends React.Component<
     };
   }
 
-  updateState(props: SnackBarContainerProps): void {
+  updateState(props: ReduxInject): void {
     const newState: SnackBarStateEnriched = updateSnackBarVisibilities(
       this.enrichState(props)
     );
@@ -97,6 +104,12 @@ class SnackBarsContainerInner extends React.Component<
           />
         ),
       },
+      {
+        key: 'offline',
+        component: (
+          <OfflineSnackBar visibility={snackBarVisibilities.offline} />
+        ),
+      },
     ];
     return (
       <View style={ownStyles.snackBar}>
@@ -110,9 +123,10 @@ class SnackBarsContainerInner extends React.Component<
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: AppState) => ({
   amounts: getAmounts(state),
   currencies: getCurrencies(state),
+  connectivity: getConnectivity(state),
 });
 
 export const SnackBarsContainer = (connect(mapStateToProps, null)(
