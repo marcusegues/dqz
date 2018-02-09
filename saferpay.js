@@ -33,8 +33,8 @@ export default class Saferpay {
     const requestJson = {
       RequestHeader: {
         SpecVersion: '1.8',
-        CustomerId: '253992', // prod
-        // CustomerId: '242565', // test
+        // CustomerId: '253992', // prod
+        CustomerId: '242565', // test
         RequestId: requestId,
         RetryIndicator: 0,
         ClientInfo: {
@@ -42,8 +42,8 @@ export default class Saferpay {
           OsInfo: 'ubuntu 16',
         },
       },
-      TerminalId: '17923391', // prod
-      // TerminalId: '17875435', // test
+      // TerminalId: '17923391', // prod
+      TerminalId: '17875435', // test
       Payment: {
         Amount: {
           Value: amountValue,
@@ -65,13 +65,14 @@ export default class Saferpay {
     // console.log(requestJson);
     return (
       // prod
-      fetch('https://www.saferpay.com/api/Payment/v1/PaymentPage/Initialize', {
-        // fetch('https://test.saferpay.com/api/Payment/v1/PaymentPage/Initialize', { // test
+      // fetch('https://www.saferpay.com/api/Payment/v1/PaymentPage/Initialize', {
+      fetch('https://test.saferpay.com/api/Payment/v1/PaymentPage/Initialize', {
+        // test
         headers: {
           'Content-Type': 'application/json',
+          // 'Basic QVBJXzI1Mzk5Ml8xMjY4MTQxMzpoJHRhNHVxZWJBWnU0QWhlOQ==', // prod
           Authorization:
-            'Basic QVBJXzI1Mzk5Ml8xMjY4MTQxMzpoJHRhNHVxZWJBWnU0QWhlOQ==', // prod
-          // 'Basic QVBJXzI0MjU2NV83MTYyMjc0MTpIMzM0cHF3ZXF3MXF3ZUh1WkF0UiE=', // test
+            'Basic QVBJXzI0MjU2NV83MTYyMjc0MTpIMzM0cHF3ZXF3MXF3ZUh1WkF0UiE=', // test
         },
         method: 'POST',
         body: JSON.stringify(requestJson),
@@ -95,8 +96,8 @@ export default class Saferpay {
     const requestJson = {
       RequestHeader: {
         SpecVersion: '1.8',
-        CustomerId: '253992', // prod
-        // CustomerId: '242565', // test
+        // CustomerId: '253992', // prod
+        CustomerId: '242565', // test
         RequestId: requestId,
         RetryIndicator: 0,
       },
@@ -105,13 +106,14 @@ export default class Saferpay {
 
     return (
       // prod
-      fetch('https://www.saferpay.com/api/Payment/v1/PaymentPage/Assert', {
-        // fetch('https://test.saferpay.com/api/Payment/v1/PaymentPage/Assert', { // test
+      // fetch('https://www.saferpay.com/api/Payment/v1/PaymentPage/Assert', {
+      fetch('https://test.saferpay.com/api/Payment/v1/PaymentPage/Assert', {
+        // test
         headers: {
           'Content-Type': 'application/json',
+          // 'Basic QVBJXzI1Mzk5Ml8xMjY4MTQxMzpoJHRhNHVxZWJBWnU0QWhlOQ==', // prod
           Authorization:
-            'Basic QVBJXzI1Mzk5Ml8xMjY4MTQxMzpoJHRhNHVxZWJBWnU0QWhlOQ==', // prod
-          // 'Basic QVBJXzI0MjU2NV83MTYyMjc0MTpIMzM0cHF3ZXF3MXF3ZUh1WkF0UiE=', // test
+            'Basic QVBJXzI0MjU2NV83MTYyMjc0MTpIMzM0cHF3ZXF3MXF3ZUh1WkF0UiE=', // test
         },
         method: 'POST',
         body: JSON.stringify(requestJson),
