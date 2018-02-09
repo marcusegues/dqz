@@ -17,6 +17,25 @@ import { makeDutyReportRecord } from './types/calculationTypes';
 import { rounding } from './utils';
 import { getTotalQuantity } from './configurationApi';
 
+export const getAdultsOnly = (category: Category): boolean =>
+  CategoriesRates.getIn([category, 'adultsOnly'], false);
+
+export const getPeopleCount = (people: People, adultsOnly: boolean) =>
+  people.get('adults', 0) + +!adultsOnly * people.get('minors', 0);
+
+export const getAllowanceRaw = (category: Category, people: People): number => {
+  const adultsOnly: boolean = getAdultsOnly(category);
+  const peopleCount: number =
+    people.get('adults', 0) + +!adultsOnly * people.get('minors', 0);
+  let allowanceRaw: number = CategoriesRates.getIn(
+    [category, 'dutyAllowance'],
+    0
+  );
+
+  allowanceRaw *= peopleCount;
+  return allowanceRaw;
+};
+
 export const calculateDuty = (basket: Basket, people: People): DutyReport => {
   let total = 0;
   const reportByCategory: ImmutableMapType<
@@ -25,25 +44,20 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
   > = Immutable.Map().withMutations(r => {
     categoriesArray.forEach(c => {
       const quantityRaw: number = getTotalQuantity(basket, c);
-      const adultsOnly: boolean = CategoriesRates.getIn(
-        [c, 'adultsOnly'],
-        false
-      );
-      const peopleCount: number =
-        people.get('adults', 0) + +!adultsOnly * people.get('minors', 0);
-
-      let allowanceRaw: number = CategoriesRates.getIn([c, 'dutyAllowance'], 0);
+      const adultsOnly: boolean = getAdultsOnly(c);
+      const peopleCount: number = getPeopleCount(people, adultsOnly);
       const dutyDependency: ?Category = CategoriesRates.getIn(
         [c, 'dutyAllowanceDependency'],
         null
       );
-      allowanceRaw *= peopleCount;
+      const allowanceRaw = getAllowanceRaw(c, people);
+      let allowanceNet = allowanceRaw;
       if (dutyDependency) {
-        allowanceRaw -= getTotalQuantity(basket, dutyDependency);
-        allowanceRaw = Math.max(0, allowanceRaw);
+        allowanceNet -= getTotalQuantity(basket, dutyDependency);
+        allowanceNet = Math.max(0, allowanceNet);
       }
 
-      const quantity: number = quantityRaw - allowanceRaw;
+      const quantity: number = quantityRaw - allowanceNet;
 
       let allowanceRunningTotal: number = 0;
       const duty: ImmutableListType<DutyBracket> = CategoriesRates.getIn(
