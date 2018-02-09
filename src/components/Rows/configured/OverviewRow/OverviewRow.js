@@ -23,27 +23,27 @@ const OverviewRowInner = ({
   borderTop,
   children,
 }: OverviewRowProps) => (
-    <Row borderTop={borderTop}>
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          paddingRight: 5,
-        }}
-      >
-        <CardRowText text={title} />
-        <CardRowSubText text={subtitle} />
-        {children && children.lowerIcon}
-      </View>
-      <View>{children && children.midComponent}</View>
-      <View
-        style={{ width: 70, flexDirection: 'row', justifyContent: 'flex-end' }}
-      >
-        <CardRowText text={result} />
-      </View>
-    </Row>
-  );
+  <Row borderTop={borderTop}>
+    <View
+      style={{
+        flex: 1,
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        paddingRight: 5,
+      }}
+    >
+      <CardRowText text={title} />
+      <CardRowSubText text={subtitle} />
+      {children && children.lowerIcon}
+    </View>
+    <View>{children && children.midComponent}</View>
+    <View
+      style={{ width: 70, flexDirection: 'row', justifyContent: 'flex-end' }}
+    >
+      <CardRowText text={result} />
+    </View>
+  </Row>
+);
 
 OverviewRowInner.defaultProps = {
   borderTop: false,

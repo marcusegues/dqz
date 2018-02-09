@@ -8,7 +8,7 @@ type ConnectivityStateObj = {
   connectivity: ConnectivityType,
 };
 
-export const getInitialState: RecordFactory<
+export const getInitialConnectivityState: RecordFactory<
   ConnectivityStateObj
 > = Immutable.Record({
   connectivity: initConnectivity,
