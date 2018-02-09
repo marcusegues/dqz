@@ -4,14 +4,15 @@ import type { ComponentType } from 'react';
 import { connect } from 'react-redux';
 // $FlowFixMe
 import { View, StyleSheet, FlatList } from 'react-native';
-import { LimitExceededSnackBar } from './SnackBar/configured/LimitExceededSnackBar';
 import { getAmounts, getConnectivity, getCurrencies } from '../../reducers';
 import type { Amounts } from '../../model/types/basketPeopleAmountsTypes';
 import { updateSnackBarVisibilities } from './SnackBarsControl/controlSnackBarStates';
 import type { CurrencyObject } from '../../model/currencies';
 import type { ConnectivityType } from '../../types/connectivity';
-import { OfflineSnackBar } from './SnackBar/configured/OfflineSnackBar';
 import type { AppState } from '../../types/reducers';
+import { SnackBar } from './SnackBar/SnackBar';
+import type { TFunction } from '../../types/generalTypes';
+import { translate } from 'react-i18next';
 
 const ownStyles = StyleSheet.create({
   snackBar: {
@@ -48,7 +49,7 @@ type ReduxInject = {
 };
 
 class SnackBarsContainerInner extends React.Component<
-  ReduxInject,
+  ReduxInject & { t: TFunction },
   SnackBarState
 > {
   constructor(props) {
@@ -96,16 +97,19 @@ class SnackBarsContainerInner extends React.Component<
 
   render() {
     const { snackBarVisibilities } = this.state;
+    const { t } = this.props;
     const flatListData = [
       {
         key: 'limitExceeded',
+        text: t('limitExceeded'),
         visibility: snackBarVisibilities.limitExceeded,
-        component: LimitExceededSnackBar,
+        component: SnackBar,
       },
       {
         key: 'offline',
+        text: t('offline'),
         visibility: snackBarVisibilities.offline,
-        component: OfflineSnackBar,
+        component: SnackBar,
       },
     ];
 
@@ -121,6 +125,7 @@ class SnackBarsContainerInner extends React.Component<
           data={flatListData}
           renderItem={({ item, index }) =>
             React.createElement(item.component, {
+              text: item.text,
               visibility: item.visibility,
               bottomMost: index === bottomMostVisibleSnackBarIndex,
             })
@@ -138,5 +143,5 @@ const mapStateToProps = (state: AppState) => ({
 });
 
 export const SnackBarsContainer = (connect(mapStateToProps, null)(
-  SnackBarsContainerInner
+  translate(['snackBar'])(SnackBarsContainerInner)
 ): ComponentType<{}>);
