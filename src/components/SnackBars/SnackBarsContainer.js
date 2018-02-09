@@ -2,6 +2,7 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 import { connect } from 'react-redux';
+import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View, StyleSheet, FlatList } from 'react-native';
 import { getAmounts, getConnectivity, getCurrencies } from '../../reducers';
@@ -12,7 +13,6 @@ import type { ConnectivityType } from '../../types/connectivity';
 import type { AppState } from '../../types/reducers';
 import { SnackBar } from './SnackBar/SnackBar';
 import type { TFunction } from '../../types/generalTypes';
-import { translate } from 'react-i18next';
 
 const ownStyles = StyleSheet.create({
   snackBar: {
