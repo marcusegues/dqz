@@ -25,8 +25,7 @@ export const getPeopleCount = (people: People, adultsOnly: boolean) =>
 
 export const getAllowanceRaw = (category: Category, people: People): number => {
   const adultsOnly: boolean = getAdultsOnly(category);
-  const peopleCount: number =
-    people.get('adults', 0) + +!adultsOnly * people.get('minors', 0);
+  const peopleCount: number = getPeopleCount(people, adultsOnly);
   let allowanceRaw: number = CategoriesRates.getIn(
     [category, 'dutyAllowance'],
     0
@@ -50,14 +49,13 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
         [c, 'dutyAllowanceDependency'],
         null
       );
-      const allowanceRaw = getAllowanceRaw(c, people);
-      let allowanceNet = allowanceRaw;
+      let allowance = getAllowanceRaw(c, people);
       if (dutyDependency) {
-        allowanceNet -= getTotalQuantity(basket, dutyDependency);
-        allowanceNet = Math.max(0, allowanceNet);
+        allowance -= getTotalQuantity(basket, dutyDependency);
+        allowance = Math.max(0, allowance);
       }
 
-      const quantity: number = quantityRaw - allowanceNet;
+      const quantity: number = quantityRaw - allowance;
 
       let allowanceRunningTotal: number = 0;
       const duty: ImmutableListType<DutyBracket> = CategoriesRates.getIn(
