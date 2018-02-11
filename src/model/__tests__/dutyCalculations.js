@@ -60,6 +60,42 @@ describe('Duty calculation helpers', () => {
     expect(getAllowanceRaw('Fertilizer', initPeople)).toBe(Infinity);
     expect(getAllowanceRaw('Other', initPeople)).toBe(Infinity);
   });
+
+  test('getAllowanceRaw obtains correct dutyAllowance property for each category - 3 adults', () => {
+    const threeAdults = setPeople(initPeople, 3, 0);
+    expect(getAllowanceRaw('Meat', threeAdults)).toBe(3);
+    expect(getAllowanceRaw('Butter', threeAdults)).toBe(3);
+    expect(getAllowanceRaw('Oils', threeAdults)).toBe(15);
+    expect(getAllowanceRaw('OtherFood', threeAdults)).toBe(Infinity);
+    expect(getAllowanceRaw('AlcSoft', threeAdults)).toBe(15);
+    expect(getAllowanceRaw('AlcHard', threeAdults)).toBe(3);
+    expect(getAllowanceRaw('Cigarettes', threeAdults)).toBe(750);
+    expect(getAllowanceRaw('Tobacco', threeAdults)).toBe(750);
+    expect(getAllowanceRaw('Books', threeAdults)).toBe(Infinity);
+    expect(getAllowanceRaw('Magazines', threeAdults)).toBe(Infinity);
+    expect(getAllowanceRaw('Flowers', threeAdults)).toBe(Infinity);
+    expect(getAllowanceRaw('AnimalFeed', threeAdults)).toBe(Infinity);
+    expect(getAllowanceRaw('Fertilizer', threeAdults)).toBe(Infinity);
+    expect(getAllowanceRaw('Other', threeAdults)).toBe(Infinity);
+  });
+
+  test('getAllowanceRaw obtains correct dutyAllowance property for each category - 1 adult, 1 minors', () => {
+    const oneAdultOneMinor = setPeople(initPeople, 1, 1);
+    expect(getAllowanceRaw('Meat', oneAdultOneMinor)).toBe(2);
+    expect(getAllowanceRaw('Butter', oneAdultOneMinor)).toBe(2);
+    expect(getAllowanceRaw('Oils', oneAdultOneMinor)).toBe(10);
+    expect(getAllowanceRaw('OtherFood', oneAdultOneMinor)).toBe(Infinity);
+    expect(getAllowanceRaw('AlcSoft', oneAdultOneMinor)).toBe(5);
+    expect(getAllowanceRaw('AlcHard', oneAdultOneMinor)).toBe(1);
+    expect(getAllowanceRaw('Cigarettes', oneAdultOneMinor)).toBe(250);
+    expect(getAllowanceRaw('Tobacco', oneAdultOneMinor)).toBe(250);
+    expect(getAllowanceRaw('Books', oneAdultOneMinor)).toBe(Infinity);
+    expect(getAllowanceRaw('Magazines', oneAdultOneMinor)).toBe(Infinity);
+    expect(getAllowanceRaw('Flowers', oneAdultOneMinor)).toBe(Infinity);
+    expect(getAllowanceRaw('AnimalFeed', oneAdultOneMinor)).toBe(Infinity);
+    expect(getAllowanceRaw('Fertilizer', oneAdultOneMinor)).toBe(Infinity);
+    expect(getAllowanceRaw('Other', oneAdultOneMinor)).toBe(Infinity);
+  });
 });
 
 describe('Duty Calculations', () => {
