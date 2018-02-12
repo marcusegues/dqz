@@ -23,6 +23,7 @@ const VatListInner = ({ vatReport, t }: VatListProps & { t: TFunction }) => (
         amount={`~${vatReport.get('totalAmountsApprox')}`}
         vat={vatReport.get('totalVat')}
         borderTop
+        borderBottom
       />
     </View>
   </View>

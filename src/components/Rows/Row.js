@@ -4,20 +4,20 @@ import React from 'react';
 import { View } from 'react-native';
 import type { Children } from '../../types/generalTypes';
 
-type RowProp = {
+type RowProps = {
   borderTop?: boolean,
-  borderBottomNone?: boolean,
+  borderBottom?: boolean,
   children: Children,
   styles?: Object,
 };
 
-const quantityRowContainerStyles = (borderTop, borderBottomNone) => ({
+export const rowContainerStyles = (
+  borderTop?: boolean,
+  borderBottom?: boolean
+) => ({
   width: '95%',
   alignSelf: 'center',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'space-around',
-  borderBottomWidth: borderBottomNone ? 0 : 1,
+  borderBottomWidth: borderBottom ? 1 : 0,
   borderColor: '#E0E0E1',
   paddingVertical: 8,
   paddingHorizontal: 12,
@@ -26,19 +26,17 @@ const quantityRowContainerStyles = (borderTop, borderBottomNone) => ({
 
 export const Row = ({
   borderTop,
-  borderBottomNone,
+  borderBottom,
   children,
   styles,
-}: RowProp) => (
-  <View
-    style={[quantityRowContainerStyles(borderTop, borderBottomNone), styles]}
-  >
+}: RowProps) => (
+  <View style={[rowContainerStyles(borderTop, borderBottom), styles]}>
     {children}
   </View>
 );
 
 Row.defaultProps = {
   borderTop: false,
-  borderBottomNone: false,
+  borderBottom: true,
   styles: {},
 };

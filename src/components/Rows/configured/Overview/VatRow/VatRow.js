@@ -1,38 +1,35 @@
 // @flow
-import React from 'react';
-import type { ComponentType } from 'react';
-import { translate } from 'react-i18next';
-import { OverviewRow } from '../../OverviewRow/OverviewRow';
-import type { TFunction } from '../../../../../types/generalTypes';
-import { AmountIcon } from '../../../../General Components/GreyBox/configured/AmountIcon';
-import { OverviewInfo } from '../subcomponents/OverviewInfo';
-import { Row } from '../../../Row';
-import { TotalOwed } from '../subcomponents/TotalOwed';
-import { AllowanceIcon } from '../DutyRow/subcomponents/AllowanceIcon';
+import React from "react";
+import type { ComponentType } from "react";
+import { View } from "react-native";
+import { translate } from "react-i18next";
+import { CollapsibleRow } from "../../../CollapsibleRow";
+import { VatOverview } from "./subcomponents/VatOverview";
+import { VatAmountList } from "./subcomponents/VatAmountList";
+import { rowContainerStyles } from "../../../Row";
 
 type VatRowProps = {
   amount: number | string,
   vat: number,
-  borderTop?: boolean,
+  borderTop?: boolean
 };
 
-const VatRowInner = ({
-  amount,
-  vat,
-  borderTop = false,
-  t,
-}: VatRowProps & { t: TFunction }) => {
-  return (
-    <Row borderTop={borderTop}>
-      <OverviewInfo title={t('amountsTitle')} subtitle={t('amountsSubtitle')}>
-        <AllowanceIcon text={t('overview:dutyFree')} quantity={5} unit={'kg'} />
-      </OverviewInfo>
-      <AmountIcon amount={amount} currency="CHF" />
-      <TotalOwed result={(+vat).toFixed(2)} />
-    </Row>
-  );
-};
+class VatRowInner extends React.Component<any, any> {
+  constructor(props) {
+    super(props);
+  }
 
-export const VatRow = (translate(['receipt'])(VatRowInner): ComponentType<
+  render() {
+    const { amount, vat, borderTop, t } = this.props;
+    return (
+      <CollapsibleRow borderTop={borderTop}>
+          <VatOverview amount={amount} vat={vat} />
+          <VatAmountList />
+      </CollapsibleRow>
+    );
+  }
+}
+
+export const VatRow = (translate(["receipt"])(VatRowInner): ComponentType<
   VatRowProps
 >);

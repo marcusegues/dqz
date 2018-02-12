@@ -3,6 +3,8 @@ import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
 import { translate } from 'react-i18next';
+// $FlowFixMe
+import { View } from 'react-native';
 import type { Category } from '../../../../../model/types/basketPeopleAmountsTypes';
 import { CategoriesInfo } from '../../../../../model/constants';
 import type { TFunction } from '../../../../../types/generalTypes';
@@ -11,6 +13,7 @@ import { QuantityIcon } from '../../../../General Components/GreyBox/configured/
 import { OverviewInfo } from '../subcomponents/OverviewInfo';
 import { Row } from '../../../Row';
 import { TotalOwed } from '../subcomponents/TotalOwed';
+import { rowContentStyles } from '../../../styles/rowStyles';
 
 type DutyRowProps = {
   category: Category,
@@ -30,14 +33,20 @@ const DutyRowInner = ({
 
   return (
     <Row borderTop={borderTop}>
-      <OverviewInfo
-        title={t(`categories:${category}`)}
-        subtitle={`${t('overview:declared')} ${quantity} ${unit}`}
-      >
-        <AllowanceIcon text={t('overview:dutyFree')} quantity={5} unit={unit} />
-      </OverviewInfo>
-      <QuantityIcon quantity={quantity} unit={unit} />
-      <TotalOwed result={duty.toFixed(2)} />
+      <View style={[rowContentStyles.rowContent]}>
+        <OverviewInfo
+          title={t(`categories:${category}`)}
+          subtitle={`${t('overview:declared')} ${quantity} ${unit}`}
+        >
+          <AllowanceIcon
+            text={t('overview:dutyFree')}
+            quantity={5}
+            unit={unit}
+          />
+        </OverviewInfo>
+        <QuantityIcon quantity={quantity} unit={unit} />
+        <TotalOwed result={duty.toFixed(2)} />
+      </View>
     </Row>
   );
 };
