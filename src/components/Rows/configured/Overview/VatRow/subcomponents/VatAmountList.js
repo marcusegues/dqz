@@ -8,6 +8,7 @@ class VatAmountListInner extends React.Component {
   render() {
     return (
       <Row
+        borderBottom={false}
         onLayout={event => {
           console.log('Set max height', event.nativeEvent.layout.height);
           this.props.setContentHeight(event.nativeEvent.layout.height);

@@ -16,7 +16,7 @@ class VatRowInner extends React.Component<any, any> {
   render() {
     const { amount, vat, t } = this.props;
     return (
-      <Collapsible>
+      <Collapsible borderBottom>
         <VatOverview amount={amount} vat={vat} />
         <VatAmountList />
       </Collapsible>

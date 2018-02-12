@@ -8,6 +8,7 @@ import { collapsibleRowStyles, rowContainerStyles } from './styles/rowStyles';
 type RowProps = {
   borderTop?: boolean,
   borderBottom?: boolean,
+  fullWidth?: boolean,
   onLayout?: any => void,
   children: Children,
   styles?: Object,
@@ -16,12 +17,16 @@ type RowProps = {
 export const Row = ({
   borderTop,
   borderBottom,
+  fullWidth,
   onLayout = () => {},
   children,
   styles,
 }: RowProps) => (
   <View
-    style={[rowContainerStyles(borderTop, borderBottom), styles]}
+    style={[
+      rowContainerStyles(borderTop, borderBottom, fullWidth ? '100%' : '95%'),
+      styles,
+    ]}
     onLayout={event => onLayout(event)}
   >
     {children}
@@ -31,5 +36,6 @@ export const Row = ({
 Row.defaultProps = {
   borderTop: false,
   borderBottom: true,
+  fullWidth: false,
   styles: {},
 };

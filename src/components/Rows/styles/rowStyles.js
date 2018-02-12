@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+export const ROW_BORDER_WIDTH = 1;
+
 export const rowContainerStyles = (
   borderTop?: boolean,
   borderBottom?: boolean,
@@ -29,11 +31,11 @@ export const rowStyles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   borderBottom: {
-    borderBottomWidth: 1,
+    borderBottomWidth: ROW_BORDER_WIDTH,
     borderColor: '#E0E0E1',
   },
   borderTop: {
-    borderTopWidth: 1,
+    borderTopWidth: ROW_BORDER_WIDTH,
     borderColor: '#E0E0E1',
   },
 });

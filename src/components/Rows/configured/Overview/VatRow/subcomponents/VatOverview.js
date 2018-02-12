@@ -18,6 +18,7 @@ class VatOverviewInner extends React.Component {
       <Row
         borderTop
         borderBottom={false}
+        fullWidth
         onLayout={event => {
           console.log('Set min height', event.nativeEvent.layout.height);
           this.props.setMainHeight(event.nativeEvent.layout.height);
