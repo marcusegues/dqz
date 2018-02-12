@@ -69,6 +69,9 @@ export const en: Locale = {
   },
   quantityInput: {
     quantityInput: 'Enter quantity',
+    recordedOn: 'recorded on {{value}}',
+    addQuantities: 'Add quantities',
+    enterQuantities: 'Enter the quantities of all {{value}} here',
   },
   amountInput: {
     amountInput: 'Please enter here the value of all transported goods.',

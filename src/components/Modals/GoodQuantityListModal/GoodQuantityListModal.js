@@ -1,12 +1,10 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import Touchable from 'react-native-platform-touchable';
-// $FlowFixMe
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import { translate } from 'react-i18next';
+import type { ComponentType } from 'react';
 import { v4 } from 'uuid';
-import { Entypo } from '@expo/vector-icons';
-import { ModalCard } from '../ModalCard';
 import { AppModal } from '../AppModal';
 import { QuantityInfo } from './subcomponents/QuantityInfo';
 import {
@@ -18,11 +16,56 @@ import type {
   Basket,
   Category,
 } from '../../../model/types/basketPeopleAmountsTypes';
+
 import { QuantityRow } from './subcomponents/QuantityRow';
-import { MAIN_RED } from '../../../styles/colors';
-import { moderateScale } from '../../../styles/Scaling';
+import { scale, verticalScale } from '../../../styles/Scaling';
 import { BackArrow } from '../../Headers/subcomponents/BackArrow';
 import { PickerModal } from '../PickerModal/PickerModal';
+import { RedButton } from '../../Buttons/RedButton';
+import type { TFunction } from '../../../types/generalTypes';
+
+import { GoodQuantityGreyField } from './subcomponents/GoodQuantityGreyField';
+import { CategoryIcon } from '../../QuestionAnswer/cards/ConfirmationCard/configured/QuantityInput/subcomponents/subcomponents/CategoryIcon';
+import { ScrollViewCard } from '../../General Components/ScrollViewCard';
+import { RedPlusIcon } from './subcomponents/RedPlusIcon';
+import { getSource } from '../../QuestionAnswer/cards/ConfirmationCard/configured/QuantityInput/subcomponents/GoodInputRow';
+
+const ownStyles = {
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  backArrowContainer: {
+    flexDirection: 'row',
+    alignSelf: 'flex-start',
+    marginLeft: 12,
+    marginTop: 12,
+  },
+  topContainer: {
+    width: '95%',
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    paddingRight: scale(40),
+    alignSelf: 'center',
+  },
+  icon: {
+    height: '100%',
+    width: '100%',
+    alignSelf: 'center',
+    marginTop: verticalScale(16),
+  },
+  redPlus: {
+    alignItems: 'center',
+  },
+  redButton: {
+    width: '95%',
+    marginBottom: verticalScale(16),
+    alignSelf: 'center',
+  },
+};
 
 export type GoodQuantityListModalProps = {
   onHide: () => void,
@@ -35,8 +78,8 @@ type GoodQuantityListModalState = {
   pickerModalVisible: boolean,
 };
 
-export class GoodQuantityListModal extends React.Component<
-  GoodQuantityListModalProps,
+class GoodQuantityListModalInner extends React.Component<
+  GoodQuantityListModalProps & { t: TFunction },
   GoodQuantityListModalState
 > {
   constructor() {
@@ -70,6 +113,7 @@ export class GoodQuantityListModal extends React.Component<
       modalVisible,
       modalCategory,
       modalMainCategory,
+      t,
     } = this.props;
     if (!modalCategory || !modalMainCategory) {
       return null;
@@ -78,55 +122,63 @@ export class GoodQuantityListModal extends React.Component<
     const totalQuantity = modalCategory
       ? getTotalQuantity(basket, modalCategory)
       : 0;
+
+    const category = getSource(modalCategory);
+
     return (
       <AppModal
         modalVisible={modalVisible}
         animationIn="slideInUp"
         animationOut="slideOutDown"
       >
-        <ModalCard>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignSelf: 'flex-start',
-              marginLeft: 12,
-              marginTop: 12,
-            }}
-          >
-            <BackArrow onPress={onHide} />
-            <Text />
+        <ScrollViewCard>
+          <View style={ownStyles.container}>
+            <View style={ownStyles.backArrowContainer}>
+              <BackArrow onPress={onHide} />
+            </View>
+            <View style={ownStyles.topContainer}>
+              <CategoryIcon source={category} style={ownStyles.icon} />
+              <QuantityInfo
+                category={modalCategory}
+                totalQuantity={totalQuantity}
+              />
+            </View>
+            {quantities.map((q, idx) => (
+              <QuantityRow
+                borderTop={idx === 0}
+                key={v4()}
+                quantity={q}
+                category={modalCategory}
+                onDelete={() => {
+                  if (modalCategory) {
+                    onDeleteQuantity(modalCategory, idx);
+                  }
+                }}
+              />
+            ))}
+            {quantities.size === 0 ? (
+              <GoodQuantityGreyField
+                topText={t('quantityInput:enterQuantities', {
+                  value: t(`categories:${modalCategory}`),
+                })}
+                plusIconText={t('quantityInput:addQuantities')}
+                onPress={() => this.togglePickerVisible()}
+              />
+            ) : (
+              <View style={ownStyles.redPlus}>
+                <RedPlusIcon onPress={() => this.togglePickerVisible()} />
+              </View>
+            )}
           </View>
-          <QuantityInfo
-            mainCategory={modalMainCategory}
-            category={modalCategory}
-            totalQuantity={totalQuantity}
-          />
-          {quantities.map((q, idx) => (
-            <QuantityRow
-              borderTop={idx === 0}
-              key={v4()}
-              quantity={q}
-              category={modalCategory}
-              onDelete={() => {
-                if (modalCategory) {
-                  onDeleteQuantity(modalCategory, idx);
-                }
-              }}
+
+          <View style={ownStyles.redButton}>
+            <RedButton
+              onPress={() => {}}
+              text={t('general:confirm')}
+              confirmationDisabled={quantities.size === 0}
             />
-          ))}
-          <Touchable
-            style={{ marginTop: 16 }}
-            onPress={() => {
-              this.togglePickerVisible();
-            }}
-          >
-            <Entypo
-              name="circle-with-plus"
-              size={moderateScale(28)}
-              color={MAIN_RED}
-            />
-          </Touchable>
-        </ModalCard>
+          </View>
+        </ScrollViewCard>
         <PickerModal
           modalVisible={pickerModalVisible}
           toggleModalVisible={() => this.togglePickerVisible()}
@@ -138,3 +190,11 @@ export class GoodQuantityListModal extends React.Component<
     );
   }
 }
+export const GoodQuantityListModal = (translate([
+  'modal',
+  'general',
+  'amountInput',
+  'quantityInput',
+  'mainCategories',
+  'categories',
+])(GoodQuantityListModalInner): ComponentType<GoodQuantityListModalProps>);

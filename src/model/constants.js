@@ -194,7 +194,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
   [
     'Meat',
     makeCategoryInfoRecord({
-      name: 'Fleisch und Fleischzub.',
+      name: 'Fleisch und Fleischzub',
       unit: 'kg',
       icon: 'meat',
     }),

@@ -70,6 +70,9 @@ export const de: Locale = {
   },
   quantityInput: {
     quantityInput: 'Mengeneingabe',
+    recordedOn: 'erfasst am {{value}}',
+    addQuantities: 'Mengen hinzufügen',
+    enterQuantities: 'Erfassen Sie hier die Mengen aller {{value}}',
   },
   amountInput: {
     amountInput:

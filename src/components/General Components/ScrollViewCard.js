@@ -12,6 +12,7 @@ const ownStyles = {
     alignSelf: 'center',
   },
   scrollView: {
+    flex: 1,
     width: '100%',
     borderColor: '#E0E0E1',
     backgroundColor: '#fff',
