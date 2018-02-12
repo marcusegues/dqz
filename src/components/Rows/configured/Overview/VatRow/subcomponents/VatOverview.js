@@ -10,6 +10,7 @@ import Touchable from 'react-native-platform-touchable';
 import { Row } from '../../../../Row';
 import { rowStyles } from '../../../../styles/rowStyles';
 import { VatAmountList } from './VatAmountList';
+import { DetailsIcon } from './DetailsIcon';
 
 class VatOverviewInner extends React.Component {
   render() {
@@ -29,16 +30,13 @@ class VatOverviewInner extends React.Component {
             title={t('amountsTitle')}
             subtitle={t('amountsSubtitle')}
           >
-            <AllowanceIcon text={t('amountsTitle')} quantity={5} unit={'kg'} />
+            <Touchable onPress={() => this.props.animate()}>
+              <DetailsIcon expanded={this.props.expanded} />
+            </Touchable>
           </OverviewInfo>
           <AmountIcon amount={amount} currency="CHF" />
           <TotalOwed result={(+vat).toFixed(2)} />
         </View>
-        <Touchable title="attempt" onPress={() => this.props.animate()}>
-          <View>
-            <Text>{'Hello'}</Text>
-          </View>
-        </Touchable>
       </Row>
     );
   }

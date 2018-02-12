@@ -11,7 +11,6 @@ type RowProps = {
   borderBottom?: boolean,
   fullWidth?: boolean,
   children?: Children,
-  styles?: Object,
 };
 
 type CollapsibleState = {
@@ -27,7 +26,6 @@ class Collapsible extends React.Component<RowProps, CollapsibleState> {
     borderBottom: true,
     fullWidth: false,
     children: [],
-    styles: {},
   };
   constructor(props: RowProps) {
     super(props);
@@ -40,7 +38,9 @@ class Collapsible extends React.Component<RowProps, CollapsibleState> {
   }
 
   setMainHeight(height: number) {
-    const borderHeight = this.props.borderBottom ? ROW_BORDER_WIDTH : 0;
+    const borderHeight =
+      (this.props.borderBottom ? ROW_BORDER_WIDTH : 0) +
+      (this.props.borderTop ? ROW_BORDER_WIDTH : 0);
     this.setState({ mainHeight: height + borderHeight }, () =>
       this.state.animation.setValue(height + borderHeight)
     );
@@ -69,7 +69,7 @@ class Collapsible extends React.Component<RowProps, CollapsibleState> {
   }
 
   render() {
-    const { children, borderBottom, fullWidth } = this.props;
+    const { children, borderBottom, borderTop, fullWidth } = this.props;
     return (
       <Animated.View
         style={[
@@ -81,6 +81,7 @@ class Collapsible extends React.Component<RowProps, CollapsibleState> {
             alignSelf: 'center',
           },
           borderBottom ? rowStyles.borderBottom : {},
+          borderTop ? rowStyles.borderTop : {},
         ]}
       >
         {children &&
@@ -100,7 +101,6 @@ class Collapsible extends React.Component<RowProps, CollapsibleState> {
 Collapsible.defaultProps = {
   borderTop: false,
   borderBottom: true,
-  styles: {},
 };
 
 export { Collapsible };
