@@ -1,35 +1,29 @@
 // @flow
-import React from "react";
-import type { ComponentType } from "react";
-import { View } from "react-native";
-import { translate } from "react-i18next";
-import { CollapsibleRow } from "../../../CollapsibleRow";
-import { VatOverview } from "./subcomponents/VatOverview";
-import { VatAmountList } from "./subcomponents/VatAmountList";
-import { rowContainerStyles } from "../../../Row";
+import React from 'react';
+import type { ComponentType } from 'react';
+import { translate } from 'react-i18next';
+import { Collapsible } from '../../../Collapsible';
+import { VatOverview } from './subcomponents/VatOverview';
+import { VatAmountList } from './subcomponents/VatAmountList';
 
 type VatRowProps = {
   amount: number | string,
   vat: number,
-  borderTop?: boolean
+  borderTop?: boolean,
 };
 
 class VatRowInner extends React.Component<any, any> {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
-    const { amount, vat, borderTop, t } = this.props;
+    const { amount, vat, t } = this.props;
     return (
-      <CollapsibleRow borderTop={borderTop}>
-          <VatOverview amount={amount} vat={vat} />
-          <VatAmountList />
-      </CollapsibleRow>
+      <Collapsible>
+        <VatOverview amount={amount} vat={vat} />
+        <VatAmountList />
+      </Collapsible>
     );
   }
 }
 
-export const VatRow = (translate(["receipt"])(VatRowInner): ComponentType<
+export const VatRow = (translate(['receipt'])(VatRowInner): ComponentType<
   VatRowProps
 >);

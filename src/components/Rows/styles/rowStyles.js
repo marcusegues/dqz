@@ -2,11 +2,12 @@ import { StyleSheet } from 'react-native';
 
 export const rowContainerStyles = (
   borderTop?: boolean,
-  borderBottom?: boolean
+  borderBottom?: boolean,
+  width?: string
 ) => ({
-  width: '95%',
+  width: width ? width : '95%',
   alignSelf: 'center',
-  flexDirection: 'row',
+  flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'space-around',
   borderBottomWidth: borderBottom ? 1 : 0,
@@ -16,10 +17,23 @@ export const rowContainerStyles = (
   borderTopWidth: borderTop ? 1 : 0,
 });
 
-export const rowContentStyles = StyleSheet.create({
+export const collapsibleRowStyles = (
+  borderTop?: boolean,
+  borderBottom?: boolean
+) => rowContainerStyles(borderTop, borderBottom, '100%');
+
+export const rowStyles = StyleSheet.create({
   rowContent: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
+  },
+  borderBottom: {
+    borderBottomWidth: 1,
+    borderColor: '#E0E0E1',
+  },
+  borderTop: {
+    borderTopWidth: 1,
+    borderColor: '#E0E0E1',
   },
 });

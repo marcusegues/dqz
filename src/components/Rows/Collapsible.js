@@ -1,31 +1,31 @@
 // @flow
-import React from "react";
-import type { ComponentType } from "react";
+import React from 'react';
+import type { ComponentType } from 'react';
 // $FlowFixMe
-import { Animated } from "react-native";
-import type { Children } from "../../types/generalTypes";
-import { rowContainerStyles } from "./Row";
+import { Animated } from 'react-native';
+import type { Children } from '../../types/generalTypes';
+import { rowStyles } from './styles/rowStyles';
 
 type RowProps = {
   borderTop?: boolean,
   borderBottom?: boolean,
   children?: Children,
-  styles?: Object
+  styles?: Object,
 };
 
-type CollapsibleRowState = {
+type CollapsibleState = {
   expanded: boolean,
   mainHeight: number,
   contentHeight: number,
-  animation: any
+  animation: any,
 };
 
-class CollapsibleRow extends React.Component<RowProps, CollapsibleRowState> {
+class Collapsible extends React.Component<RowProps, CollapsibleState> {
   static defaultProps = {
     borderTop: false,
     borderBottom: true,
     children: [],
-    styles: {}
+    styles: {},
   };
   constructor(props: RowProps) {
     super(props);
@@ -33,45 +33,51 @@ class CollapsibleRow extends React.Component<RowProps, CollapsibleRowState> {
       expanded: false,
       mainHeight: 0,
       contentHeight: 0,
-      animation: new Animated.Value()
+      animation: new Animated.Value(),
     };
   }
 
-  setMainHeight(height) {
-    this.setState({ mainHeight: height + 18 }, () =>
-      this.state.animation.setValue(height + 18)
+  setMainHeight(height: number) {
+    this.setState({ mainHeight: height + 1 }, () =>
+      this.state.animation.setValue(height + 1)
     );
   }
 
-  setContentHeight(height) {
+  setContentHeight(height: number) {
     this.setState({ contentHeight: height });
   }
 
   animate() {
-    let initialHeight = this.state.expanded
+    const initialHeight = this.state.expanded
         ? this.state.contentHeight + this.state.mainHeight
         : this.state.mainHeight,
       finalHeight = this.state.expanded
         ? this.state.mainHeight
         : this.state.contentHeight + this.state.mainHeight;
     this.setState({
-      expanded: !this.state.expanded
+      expanded: !this.state.expanded,
     });
     this.state.animation.setValue(initialHeight);
     Animated.spring(this.state.animation, {
       toValue: finalHeight,
       speed: 20,
-      bounciness: 2
+      bounciness: 2,
     }).start();
   }
 
   render() {
-    const { borderTop, borderBottom, children } = this.props;
+    const { children, styles } = this.props;
     return (
       <Animated.View
         style={[
-          rowContainerStyles(borderTop, borderBottom),
-          { flex: 1, height: this.state.animation, overflow: "hidden" },
+          {
+            flex: 1,
+            height: this.state.animation,
+            overflow: 'hidden',
+            borderColor: '#E0E0E1',
+            borderBottomWidth: 1,
+          },
+          styles,
         ]}
       >
         {children &&
@@ -80,7 +86,7 @@ class CollapsibleRow extends React.Component<RowProps, CollapsibleRowState> {
               setMainHeight: height => this.setMainHeight(height),
               setContentHeight: height => this.setContentHeight(height),
               animate: () => this.animate(),
-              expanded: this.state.expanded
+              expanded: this.state.expanded,
             })
           )}
       </Animated.View>
@@ -88,10 +94,10 @@ class CollapsibleRow extends React.Component<RowProps, CollapsibleRowState> {
   }
 }
 
-CollapsibleRow.defaultProps = {
+Collapsible.defaultProps = {
   borderTop: false,
   borderBottom: true,
-  styles: {}
+  styles: {},
 };
 
-export { CollapsibleRow };
+export { Collapsible };

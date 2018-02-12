@@ -13,7 +13,7 @@ import { QuantityIcon } from '../../../../General Components/GreyBox/configured/
 import { OverviewInfo } from '../subcomponents/OverviewInfo';
 import { Row } from '../../../Row';
 import { TotalOwed } from '../subcomponents/TotalOwed';
-import { rowContentStyles } from '../../../styles/rowStyles';
+import { rowStyles } from '../../../styles/rowStyles';
 
 type DutyRowProps = {
   category: Category,
@@ -33,7 +33,7 @@ const DutyRowInner = ({
 
   return (
     <Row borderTop={borderTop}>
-      <View style={[rowContentStyles.rowContent]}>
+      <View style={[rowStyles.rowContent]}>
         <OverviewInfo
           title={t(`categories:${category}`)}
           subtitle={`${t('overview:declared')} ${quantity} ${unit}`}

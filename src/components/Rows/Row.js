@@ -3,34 +3,27 @@ import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import type { Children } from '../../types/generalTypes';
+import { collapsibleRowStyles, rowContainerStyles } from './styles/rowStyles';
 
 type RowProps = {
   borderTop?: boolean,
   borderBottom?: boolean,
+  onLayout?: any => void,
   children: Children,
   styles?: Object,
 };
 
-export const rowContainerStyles = (
-  borderTop?: boolean,
-  borderBottom?: boolean
-) => ({
-  width: '95%',
-  alignSelf: 'center',
-  borderBottomWidth: borderBottom ? 1 : 0,
-  borderColor: '#E0E0E1',
-  paddingVertical: 8,
-  paddingHorizontal: 12,
-  borderTopWidth: borderTop ? 1 : 0,
-});
-
 export const Row = ({
   borderTop,
   borderBottom,
+  onLayout = () => {},
   children,
   styles,
 }: RowProps) => (
-  <View style={[rowContainerStyles(borderTop, borderBottom), styles]}>
+  <View
+    style={[rowContainerStyles(borderTop, borderBottom), styles]}
+    onLayout={event => onLayout(event)}
+  >
     {children}
   </View>
 );
