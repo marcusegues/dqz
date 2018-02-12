@@ -49,6 +49,7 @@ export const fr: Locale = {
   snackBar: {
     limitExceeded:
       "Valeur des biens pour l'application dépassée. S'il vous plaît signaler vos marchandises oralement au poste-frontière.",
+    offline: '⚠️',
     showBorder: 'Afficher le passage frontalier',
   },
   onBoarding: {

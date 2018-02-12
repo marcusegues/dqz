@@ -1,11 +1,11 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { View, StyleSheet, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import { SNACKBAR_GREY, WHITE } from '../../../styles/colors';
 import type { SnackBarVisibility } from '../SnackBarsContainer';
 
-const ownStyles = StyleSheet.create({
+const snackBarStyles = bottomMost => ({
   snackBar: {
     flex: 1,
     flexDirection: 'column',
@@ -14,6 +14,7 @@ const ownStyles = StyleSheet.create({
     width: '100%',
     paddingHorizontal: 16,
     paddingVertical: 16,
+    marginBottom: bottomMost ? 0 : 2,
   },
   snackBarText: {
     color: WHITE,
@@ -25,14 +26,18 @@ const ownStyles = StyleSheet.create({
 export const SnackBar = ({
   text,
   visibility,
+  bottomMost = false,
 }: {
   text: string,
   visibility: SnackBarVisibility,
-}) =>
-  visibility === 'hidden' ? (
+  bottomMost: boolean,
+}) => {
+  const ownStyles = snackBarStyles(bottomMost);
+  return visibility === 'hidden' ? (
     <View />
   ) : (
-    <View style={ownStyles.snackBar}>
-      <Text style={ownStyles.snackBarText}>{text}</Text>
+    <View style={[ownStyles.snackBar]}>
+      <Text style={[ownStyles.snackBarText]}>{text}</Text>
     </View>
   );
+};

@@ -1,31 +1,29 @@
 // @flow
 import { combineReducers } from 'redux';
 import * as appApi from './appReducer';
-import { connectivity } from './connectivity';
+import * as connectivityApi from './connectivity';
 import { formatDate } from '../model/utils';
 import type {
   Amounts,
   Basket,
   People,
 } from '../model/types/basketPeopleAmountsTypes';
-import type {
-  MainCategories,
-  Settings,
-  State,
-} from '../types/reducers/appReducer';
+import type { MainCategories, Settings } from '../types/reducers/appReducer';
 import type { CurrencyObject } from '../model/currencies';
 import { calculateVat } from '../model/vatCalculations';
 import { calculateDuty } from '../model/dutyCalculations';
 import type { DutyReport, VatReport } from '../model/types/calculationTypes';
 import type { PaymentData } from '../types/generalTypes';
+import type { ConnectivityType } from '../types/connectivity';
+import type { AppState } from '../types/reducers';
 
 /**
  * Combines reducers (currently just one)
  * @type {Reducer<any>}
  */
-export const root = combineReducers({
+export const root: AppState = combineReducers({
   appState: appApi.appState,
-  connectivity,
+  connectivity: connectivityApi.connectivity,
 });
 
 /**
@@ -33,7 +31,7 @@ export const root = combineReducers({
  * @param state
  * @returns {Basket}
  */
-export const getBasket = (state: { appState: State }): Basket =>
+export const getBasket = (state: AppState): Basket =>
   appApi.getBasket(state.appState);
 
 /**
@@ -41,7 +39,7 @@ export const getBasket = (state: { appState: State }): Basket =>
  * @param state
  * @returns {People}
  */
-export const getPeople = (state: { appState: State }): People =>
+export const getPeople = (state: AppState): People =>
   appApi.getPeople(state.appState);
 
 /**
@@ -49,7 +47,7 @@ export const getPeople = (state: { appState: State }): People =>
  * @param state
  * @returns {Amounts}
  */
-export const getAmounts = (state: { appState: State }): Amounts =>
+export const getAmounts = (state: AppState): Amounts =>
   appApi.getAmounts(state.appState);
 
 /**
@@ -57,7 +55,7 @@ export const getAmounts = (state: { appState: State }): Amounts =>
  * @param state
  * @returns {MainCategories}
  */
-export const getMainCategories = (state: { appState: State }): MainCategories =>
+export const getMainCategories = (state: AppState): MainCategories =>
   appApi.getMainCategories(state.appState);
 
 /**
@@ -65,7 +63,7 @@ export const getMainCategories = (state: { appState: State }): MainCategories =>
  * @param state
  * @returns {Settings}
  */
-export const getSettings = (state: { appState: State }): Settings =>
+export const getSettings = (state: AppState): Settings =>
   appApi.getSettings(state.appState);
 
 /**
@@ -73,7 +71,7 @@ export const getSettings = (state: { appState: State }): Settings =>
  * @param state
  * @returns {CurrencyObject}
  */
-export const getCurrencies = (state: { appState: State }): CurrencyObject =>
+export const getCurrencies = (state: AppState): CurrencyObject =>
   appApi.getCurrenciesObject(state.appState);
 
 /**
@@ -81,7 +79,7 @@ export const getCurrencies = (state: { appState: State }): CurrencyObject =>
  * @param state
  * @returns {boolean}
  */
-export const getCurrencyState = (state: { appState: State }): boolean =>
+export const getCurrencyState = (state: AppState): boolean =>
   appApi.getCurrencyState(state.appState);
 
 /**
@@ -89,14 +87,14 @@ export const getCurrencyState = (state: { appState: State }): boolean =>
  * @param state
  * @returns {string}
  */
-export const getFormattedCurrencyDate = (state: { appState: State }): string =>
+export const getFormattedCurrencyDate = (state: AppState): string =>
   formatDate(appApi.getCurrencyDate(state.appState));
 
 /**
  * Gets the total vat in application state
  * @param state
  */
-export const getTotalVat = (state: { appState: State }): number =>
+export const getTotalVat = (state: AppState): number =>
   calculateVat(
     state.appState.amounts,
     state.appState.people,
@@ -107,7 +105,7 @@ export const getTotalVat = (state: { appState: State }): number =>
  * Gets the total duty in application state
  * @param state
  */
-export const getTotalDuty = (state: { appState: State }): number =>
+export const getTotalDuty = (state: AppState): number =>
   calculateDuty(state.appState.basket, state.appState.people).get(
     'totalDuty',
     0
@@ -118,7 +116,7 @@ export const getTotalDuty = (state: { appState: State }): number =>
  * @param state
  * @returns {number}
  */
-export const getTotalFees = (state: { appState: State }): number =>
+export const getTotalFees = (state: AppState): number =>
   getTotalVat(state) + getTotalDuty(state);
 
 /**
@@ -126,7 +124,7 @@ export const getTotalFees = (state: { appState: State }): number =>
  * @param state
  * @returns {DutyReport}
  */
-export const getDutyReport = (state: { appState: State }): DutyReport =>
+export const getDutyReport = (state: AppState): DutyReport =>
   calculateDuty(state.appState.basket, state.appState.people);
 
 /**
@@ -134,7 +132,7 @@ export const getDutyReport = (state: { appState: State }): DutyReport =>
  * @param state
  * @returns {VatReport}
  */
-export const getVatReport = (state: { appState: State }): VatReport =>
+export const getVatReport = (state: AppState): VatReport =>
   calculateVat(
     state.appState.amounts,
     state.appState.people,
@@ -146,7 +144,7 @@ export const getVatReport = (state: { appState: State }): VatReport =>
  * @param state
  * @returns {PaymentData}
  */
-export const getPaymentData = (state: { appState: State }): PaymentData =>
+export const getPaymentData = (state: AppState): PaymentData =>
   appApi.getPaymentData(state.appState);
 
 /**
@@ -154,7 +152,7 @@ export const getPaymentData = (state: { appState: State }): PaymentData =>
  * @param state
  * @returns {string}
  */
-export const getReceiptId = (state: { appState: State }): string =>
+export const getReceiptId = (state: AppState): string =>
   appApi.getReceiptId(state.appState);
 
 /**
@@ -162,5 +160,13 @@ export const getReceiptId = (state: { appState: State }): string =>
  * @param state
  * @returns {string}
  */
-export const getReceiptEntryTime = (state: { appState: State }): string =>
+export const getReceiptEntryTime = (state: AppState): string =>
   appApi.getReceiptEntryTime(state.appState);
+
+/**
+ * Gets the current connectivity status
+ * @param state
+ * @returns {string}
+ */
+export const getConnectivity = (state: AppState): ConnectivityType =>
+  connectivityApi.getConnectivity(state.connectivity);
