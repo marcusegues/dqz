@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View } from 'react-native';
-import { VatRow } from './VatRow';
+import { VatRow } from '../../Rows/configured/Overview/VatRow/VatRow';
 import { RightAlignedHeader } from './RightAlignedHeader';
 import { getVatReport } from '../../../reducers';
 import type { TFunction } from '../../../types/generalTypes';
