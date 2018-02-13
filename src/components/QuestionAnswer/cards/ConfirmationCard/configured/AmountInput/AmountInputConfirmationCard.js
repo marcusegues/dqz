@@ -13,7 +13,7 @@ import { ConfirmationCard } from '../../ConfirmationCard';
 import type { DirectionType } from '../../../../QuestionAnswerContainer';
 import { CardRowText } from '../../../subcomponents/CardRowText';
 import { scale, verticalScale } from '../../../../../../styles/Scaling';
-import { AmountInputLabel } from './subcomponents/AmountInputLabel';
+import { AmountIcon } from '../../../../../General Components/GreyBox/configured/AmountIcon';
 
 const ownStyles = {
   currentTotalValueContainer: {
@@ -81,7 +81,7 @@ const AmountInputConfirmationCardInner = ({
               text={t('currentTotalValue')}
               style={ownStyles.currentTotalValueText}
             />
-            <AmountInputLabel quantity={totalAmounts} />
+            <AmountIcon amount={totalAmounts} currency={'CHF'} />
           </View>
 
           <CardHeaderSubText

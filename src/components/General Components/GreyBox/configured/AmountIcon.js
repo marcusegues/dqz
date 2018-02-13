@@ -13,12 +13,14 @@ const ownStyles = StyleSheet.create({
 });
 
 type AmountIconProps = {
-  amount: number | string,
+  amount: number,
   currency: string,
 };
 
 export const AmountIcon = ({ amount, currency }: AmountIconProps) => (
   <GreyBox>
-    <Text style={ownStyles.quantityText}>{`${currency} ${amount}`}</Text>
+    <Text style={ownStyles.quantityText}>{`${currency} ${amount.toFixed(
+      2
+    )}`}</Text>
   </GreyBox>
 );
