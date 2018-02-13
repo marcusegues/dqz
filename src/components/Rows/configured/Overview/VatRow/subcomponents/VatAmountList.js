@@ -7,10 +7,12 @@ import { translate } from 'react-i18next';
 import { Row } from '../../../../Row';
 
 type VatAmountListProps = {
-  setContentHeight: (height: number) => void,
+  setContentHeight?: (height: number) => void,
 };
 
-const VatAmountListInner = ({ setContentHeight }: VatAmountListProps) => (
+const VatAmountListInner = ({
+  setContentHeight = () => {},
+}: VatAmountListProps) => (
   <Row
     borderBottom={false}
     onLayout={event => {
@@ -20,6 +22,10 @@ const VatAmountListInner = ({ setContentHeight }: VatAmountListProps) => (
     <Text>List of amounts</Text>
   </Row>
 );
+
+VatAmountListInner.defaultProps = {
+  setContentHeight: () => {},
+};
 
 export const VatAmountList = (translate(['receipt'])(
   VatAmountListInner
