@@ -3,7 +3,7 @@ import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import type { Children } from '../../types/generalTypes';
-import { collapsibleRowStyles, rowContainerStyles } from './styles/rowStyles';
+import { rowContainerStyles } from './styles/rowStyles';
 
 type RowProps = {
   borderTop?: boolean,
@@ -37,5 +37,6 @@ Row.defaultProps = {
   borderTop: false,
   borderBottom: true,
   fullWidth: false,
+  onLayout: () => {},
   styles: {},
 };

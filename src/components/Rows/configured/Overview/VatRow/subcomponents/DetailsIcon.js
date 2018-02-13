@@ -1,9 +1,9 @@
 // @flow
 import React from 'react';
+import { Entypo } from '@expo/vector-icons';
 // $FlowFixMe
 import { View, Text, StyleSheet } from 'react-native';
 import { moderateScale } from '../../../../../../styles/Scaling';
-import { Entypo } from '@expo/vector-icons';
 
 const ownStyles = StyleSheet.create({
   container: {
@@ -39,6 +39,6 @@ export const DetailsIcon = ({ expanded }: DetailsIconProps) => (
         />
       )}
     </View>
-    <Text style={ownStyles.quantityText}>{'DETAILS'}</Text>
+    <Text style={ownStyles.quantityText}>DETAILS</Text>
   </View>
 );

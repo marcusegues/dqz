@@ -1,3 +1,5 @@
+// @flow
+// $FlowFixMe
 import { StyleSheet } from 'react-native';
 
 export const ROW_BORDER_WIDTH = 1;
@@ -7,7 +9,7 @@ export const rowContainerStyles = (
   borderBottom?: boolean,
   width?: string
 ) => ({
-  width: width ? width : '95%',
+  width: width || '95%',
   alignSelf: 'center',
   flexDirection: 'column',
   alignItems: 'center',

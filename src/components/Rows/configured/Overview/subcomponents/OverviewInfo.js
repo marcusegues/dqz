@@ -15,8 +15,7 @@ export const OverviewInfo = ({
   title,
   subtitle,
   children,
-}: OverviewInfoProps) => {
-  return (
+}: OverviewInfoProps) => (
     <View
       style={{
         flex: 1,
@@ -30,4 +29,3 @@ export const OverviewInfo = ({
       {children}
     </View>
   );
-};

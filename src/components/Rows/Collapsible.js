@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import type { ComponentType } from 'react';
 // $FlowFixMe
 import { Animated } from 'react-native';
 import type { Children } from '../../types/generalTypes';
@@ -52,11 +51,11 @@ class Collapsible extends React.Component<RowProps, CollapsibleState> {
 
   animate() {
     const initialHeight = this.state.expanded
-        ? this.state.contentHeight + this.state.mainHeight
-        : this.state.mainHeight,
-      finalHeight = this.state.expanded
-        ? this.state.mainHeight
-        : this.state.contentHeight + this.state.mainHeight;
+      ? this.state.contentHeight + this.state.mainHeight
+      : this.state.mainHeight;
+    const finalHeight = this.state.expanded
+      ? this.state.mainHeight
+      : this.state.contentHeight + this.state.mainHeight;
     this.setState({
       expanded: !this.state.expanded,
     });

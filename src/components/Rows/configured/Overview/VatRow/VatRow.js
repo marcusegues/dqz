@@ -9,20 +9,14 @@ import { VatAmountList } from './subcomponents/VatAmountList';
 type VatRowProps = {
   amount: number | string,
   vat: number,
-  borderTop?: boolean,
 };
 
-class VatRowInner extends React.Component<any, any> {
-  render() {
-    const { amount, vat, t } = this.props;
-    return (
-      <Collapsible borderBottom>
-        <VatOverview amount={amount} vat={vat} />
-        <VatAmountList />
-      </Collapsible>
-    );
-  }
-}
+const VatRowInner = ({ amount, vat }) => (
+  <Collapsible borderBottom>
+    <VatOverview amount={amount} vat={vat} />
+    <VatAmountList />
+  </Collapsible>
+);
 
 export const VatRow = (translate(['receipt'])(VatRowInner): ComponentType<
   VatRowProps
