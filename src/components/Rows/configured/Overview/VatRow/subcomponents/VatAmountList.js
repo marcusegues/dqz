@@ -2,26 +2,41 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
-import { Text } from 'react-native';
+import { View } from 'react-native';
 import { translate } from 'react-i18next';
-import { Row } from '../../../../Row';
+import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
+import {
+  flatAllAmounts,
+  flatLargeAmounts,
+} from '../../../../../../model/utils';
+import { VatAmountListRowItem } from './VatAmountListRowItem';
 
 type VatAmountListProps = {
+  large: boolean,
+  amounts: Amounts,
   setContentHeight?: (height: number) => void,
 };
 
 const VatAmountListInner = ({
   setContentHeight = () => {},
-}: VatAmountListProps) => (
-  <Row
-    borderBottom={false}
-    onLayout={event => {
-      setContentHeight(event.nativeEvent.layout.height);
-    }}
-  >
-    <Text>List of amounts</Text>
-  </Row>
-);
+  large,
+  amounts,
+}: VatAmountListProps) => {
+  const relevantAmounts = large
+    ? flatLargeAmounts(amounts)
+    : flatAllAmounts(amounts);
+  return (
+    <View
+      onLayout={event => {
+        setContentHeight(event.nativeEvent.layout.height);
+      }}
+    >
+      {relevantAmounts.map(a => (
+        <VatAmountListRowItem key={a.id} flatAmount={a} fullWidth />
+      ))}
+    </View>
+  );
+};
 
 VatAmountListInner.defaultProps = {
   setContentHeight: () => {},

@@ -26,13 +26,15 @@ type AmountRowProps = {
   borderTop: boolean,
 };
 
+type ReduxInject = { currencyObject: CurrencyObject };
+
 const AmountRowInner = ({
   amount,
   onDelete,
   currency,
   currencyObject,
   borderTop,
-}: AmountRowProps & { currencyObject: CurrencyObject }) => (
+}: AmountRowProps & ReduxInject) => (
   <Row borderTop={borderTop}>
     <View style={rowStyles.rowContent}>
       <View style={{ flex: 1 }}>

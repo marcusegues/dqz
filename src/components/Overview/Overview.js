@@ -90,7 +90,7 @@ class OverviewInner extends React.Component<
       <ScrollViewCard>
         <CardHeader text={t('overViewTitle')} />
         <DutyList />
-        <VatList />
+        <VatList large={false} />
         <TotalOwedRow />
         <PeriodOfEntryRow
           title={t('receipt:entryTime')}

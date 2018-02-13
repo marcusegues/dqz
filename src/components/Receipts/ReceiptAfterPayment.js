@@ -32,6 +32,7 @@ import { calculateVat } from '../../model/vatCalculations';
 import { calculateDuty } from '../../model/dutyCalculations';
 import { getTotalQuantity } from '../../model/configurationApi';
 import { getMainCategory } from '../../types/reducers/appReducer';
+import { VatList } from '../Overview/subcomponents/VatList';
 
 const ownStyles = {
   topSumText: {
@@ -223,10 +224,6 @@ class ReceiptAfterPaymentInner extends React.Component<
             <ReceiptSubText
               text={t('vatColumn')}
               style={ownStyles.receiptSubTextVat}
-            />
-            <VatRow
-              amount={`~${vatReport.get('totalAmountsApprox')}`}
-              vat={vatReport.get('totalVat')}
             />
             <CardRowText
               text={t('receipt:sumText', {
