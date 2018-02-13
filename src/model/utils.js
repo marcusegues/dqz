@@ -62,7 +62,7 @@ export type FlatAmount = {
   id: string,
 };
 
-export const flatAmounts = (amounts: Amounts): Array<FlatAmount> => {
+export const flatAllAmounts = (amounts: Amounts): Array<FlatAmount> => {
   const result: Array<FlatAmount> = [];
   amounts.forEach((v, k) => {
     v.amounts.map(amt =>
@@ -75,17 +75,17 @@ export const flatAmounts = (amounts: Amounts): Array<FlatAmount> => {
   return result;
 };
 
-export const flatAllAmounts = (amounts: Amounts): Array<FlatAmount> =>
-  flatAmounts(amounts).filter(a => !a.large);
+export const flatNormalAmounts = (amounts: Amounts): Array<FlatAmount> =>
+  flatAllAmounts(amounts).filter(a => !a.large);
 
 export const flatLargeAmounts = (amounts: Amounts): Array<FlatAmount> =>
-  flatAmounts(amounts).filter(a => a.large);
+  flatAllAmounts(amounts).filter(a => a.large);
 
 export const hasLargeAmount = (
   amounts: Amounts,
   currencyObject: CurrencyObject
 ): boolean =>
-  flatAllAmounts(amounts).reduce(
+  flatNormalAmounts(amounts).reduce(
     (a, v) => Math.max(a, v.amount * currencyObject[v.currency]),
     0
   ) > INDIVIDUALALLOWANCE;
@@ -95,7 +95,7 @@ export const hasOffsettingAmount = (
   amount: number,
   currency: Currency
 ): boolean => {
-  const totalsOfCurrency = flatAllAmounts(amounts)
+  const totalsOfCurrency = flatNormalAmounts(amounts)
     .filter(a => a.currency === currency)
     .reduce((a, v) => v.amount + a, 0);
   const largePerCurrency = flatLargeAmounts(amounts)
@@ -108,6 +108,22 @@ export const totalAllAmounts = (
   amounts: Amounts,
   currencyObject: CurrencyObject
 ): number => {
-  const flat = flatAmounts(amounts);
+  const flat = flatAllAmounts(amounts);
+  return flat.reduce((a, v) => a + v.amount * currencyObject[v.currency], 0);
+};
+
+export const totalNormalAmounts = (
+  amounts: Amounts,
+  currencyObject: CurrencyObject
+): number => {
+  const flat = flatNormalAmounts(amounts);
+  return flat.reduce((a, v) => a + v.amount * currencyObject[v.currency], 0);
+};
+
+export const totalLargeAmounts = (
+  amounts: Amounts,
+  currencyObject: CurrencyObject
+): number => {
+  const flat = flatLargeAmounts(amounts);
   return flat.reduce((a, v) => a + v.amount * currencyObject[v.currency], 0);
 };

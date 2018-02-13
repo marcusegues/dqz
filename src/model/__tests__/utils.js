@@ -3,9 +3,9 @@
 // NOTE: rounding is tested in roudingTest.js
 
 import {
-  flatAmounts,
-  flatLargeAmounts,
   flatAllAmounts,
+  flatLargeAmounts,
+  flatNormalAmounts,
   formatDate,
 } from '../utils';
 import { sampleAmounts1 } from './fullBasketsAndAmounts';
@@ -19,16 +19,16 @@ describe('formatDate works as expected', () => {
 });
 
 describe('Flat amounts does what it should', () => {
-  test('flatAmounts', () => {
-    const noIds = flatAmounts(sampleAmounts1).map(a => {
+  test('flatAllAmounts', () => {
+    const noIds = flatAllAmounts(sampleAmounts1).map(a => {
       a.id = 'x';
       return a;
     });
     expect(noIds).toMatchSnapshot();
   });
 
-  test('flatAllAmounts', () => {
-    const noIds = flatAllAmounts(sampleAmounts1).map(a => {
+  test('flatNormalAmounts', () => {
+    const noIds = flatNormalAmounts(sampleAmounts1).map(a => {
       a.id = 'x';
       return a;
     });
