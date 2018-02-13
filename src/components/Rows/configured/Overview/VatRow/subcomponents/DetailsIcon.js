@@ -1,10 +1,12 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
+import { translate } from 'react-i18next';
 import { Entypo } from '@expo/vector-icons';
 // $FlowFixMe
 import { View, Text, StyleSheet } from 'react-native';
 import { moderateScale } from '../../../../../../styles/Scaling';
-import { translate } from 'react-i18next';
+
 import type { TFunction } from '../../../../../../types/generalTypes';
 
 const ownStyles = StyleSheet.create({
