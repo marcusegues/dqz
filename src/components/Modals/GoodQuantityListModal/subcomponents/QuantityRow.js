@@ -11,6 +11,7 @@ import { GREY } from '../../../../styles/colors';
 import { CategoriesInfo } from '../../../../model/constants';
 import { Row } from '../../../Rows/Row';
 import type { Category } from '../../../../model/types/basketPeopleAmountsTypes';
+import { rowStyles } from '../../../Rows/styles/rowStyles';
 
 type QuantityRowProps = {
   quantity: number,
@@ -26,14 +27,16 @@ export const QuantityRow = ({
   borderTop,
 }: QuantityRowProps) => (
   <Row borderTop={borderTop}>
-    <View style={{ flex: 1 }}>
-      <CardRowText
-        text={`${quantity} ${CategoriesInfo.getIn([category, 'unit'], '')}`}
-      />
+    <View style={rowStyles.rowContent}>
+      <View style={{ flex: 1 }}>
+        <CardRowText
+          text={`${quantity} ${CategoriesInfo.getIn([category, 'unit'], '')}`}
+        />
+      </View>
+      <Touchable onPress={onDelete}>
+        <MaterialIcons name="cancel" size={moderateScale(28)} color={GREY} />
+      </Touchable>
     </View>
-    <Touchable onPress={onDelete}>
-      <MaterialIcons name="cancel" size={moderateScale(28)} color={GREY} />
-    </Touchable>
   </Row>
 );
 

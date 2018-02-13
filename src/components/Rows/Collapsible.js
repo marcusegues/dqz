@@ -97,9 +97,4 @@ class Collapsible extends React.Component<RowProps, CollapsibleState> {
   }
 }
 
-Collapsible.defaultProps = {
-  borderTop: false,
-  borderBottom: true,
-};
-
 export { Collapsible };

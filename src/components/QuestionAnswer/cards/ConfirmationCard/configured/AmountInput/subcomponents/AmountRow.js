@@ -23,6 +23,7 @@ type AmountRowProps = {
   amount: number,
   onDelete: () => void,
   currency: Currency,
+  borderTop: boolean,
 };
 
 const AmountRowInner = ({
@@ -30,8 +31,9 @@ const AmountRowInner = ({
   onDelete,
   currency,
   currencyObject,
+  borderTop,
 }: AmountRowProps & { currencyObject: CurrencyObject }) => (
-  <Row borderTop>
+  <Row borderTop={borderTop}>
     <View style={rowStyles.rowContent}>
       <View style={{ flex: 1 }}>
         <CardRowText text={`${currency} ${amount}`} />
