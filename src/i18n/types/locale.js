@@ -213,6 +213,7 @@ type LegalNoticeInformationTranslations = {
 type OverviewTranslations = {
   declared: string,
   dutyFree: string,
+  details: string,
 };
 
 /**

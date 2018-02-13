@@ -280,5 +280,6 @@ export const it: Locale = {
   overview: {
     declared: '⚠️',
     dutyFree: '⚠️',
+    details: '⚠️',
   },
 };

@@ -271,5 +271,6 @@ export const de: Locale = {
   overview: {
     declared: 'Angemeldet',
     dutyFree: 'Zollfrei',
+    details: 'Einzelheiten',
   },
 };

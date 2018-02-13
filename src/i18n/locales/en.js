@@ -269,5 +269,6 @@ export const en: Locale = {
   overview: {
     declared: 'Declared:',
     dutyFree: 'Duty Free:',
+    details: 'Details',
   },
 };

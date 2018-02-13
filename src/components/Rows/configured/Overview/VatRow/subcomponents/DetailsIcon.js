@@ -4,6 +4,8 @@ import { Entypo } from '@expo/vector-icons';
 // $FlowFixMe
 import { View, Text, StyleSheet } from 'react-native';
 import { moderateScale } from '../../../../../../styles/Scaling';
+import { translate } from 'react-i18next';
+import type { TFunction } from '../../../../../../types/generalTypes';
 
 const ownStyles = StyleSheet.create({
   container: {
@@ -22,7 +24,10 @@ type DetailsIconProps = {
   expanded: boolean,
 };
 
-export const DetailsIcon = ({ expanded }: DetailsIconProps) => (
+export const DetailsIconInner = ({
+  expanded,
+  t,
+}: DetailsIconProps & { t: TFunction }) => (
   <View style={ownStyles.container}>
     <View style={{ marginLeft: -5 }}>
       {expanded ? (
@@ -39,6 +44,10 @@ export const DetailsIcon = ({ expanded }: DetailsIconProps) => (
         />
       )}
     </View>
-    <Text style={ownStyles.quantityText}>DETAILS</Text>
+    <Text style={ownStyles.quantityText}>{t('details').toUpperCase()}</Text>
   </View>
 );
+
+export const DetailsIcon = (translate(['overview'])(
+  DetailsIconInner
+): ComponentType<DetailsIconProps>);
