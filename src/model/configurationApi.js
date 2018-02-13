@@ -18,7 +18,7 @@ import {
   makePeopleRecord,
 } from './types/basketPeopleAmountsTypes';
 import type { Currency } from './currencies';
-import { flatAmounts } from './utils';
+import { flatAllAmounts } from './utils';
 import type { FlatAmount } from './utils';
 
 const emptyItem: CategoryBasketItem = makeCategoryBasketItemRecord();
@@ -182,7 +182,7 @@ export const resetAmounts = (amounts: Amounts, currency: Currency): Amounts =>
  * @returns {Amounts}
  */
 export const deleteAmount = (amounts: Amounts, id: string): Amounts => {
-  const flat = flatAmounts(amounts);
+  const flat = flatAllAmounts(amounts);
   const element: ?FlatAmount = flat.find(a => a.id === id);
   if (!element) {
     return amounts;
@@ -201,7 +201,7 @@ export const deleteAmount = (amounts: Amounts, id: string): Amounts => {
  * @returns The amount (type FlatAmount) or undefined
  */
 export const getAmount = (amounts: Amounts, id: string): FlatAmount => {
-  const flat = flatAmounts(amounts);
+  const flat = flatAllAmounts(amounts);
   const el = flat.find(a => a.id === id);
   if (el) {
     return el;
