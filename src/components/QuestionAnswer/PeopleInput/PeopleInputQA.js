@@ -18,7 +18,6 @@ export const PeopleInputQA = (props: CardProps) => {
     analyticsQACardOpenend('PeopleInput');
     const { onAnswer, onUpdate, qaState } = props;
     const { people } = qaState;
-
     return (
       <PeopleInputConfirmationCard
         people={people}
