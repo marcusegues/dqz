@@ -6,7 +6,7 @@ import { translate } from 'react-i18next';
 import { View } from 'react-native';
 import { Row } from '../../Rows/Row';
 import type { TFunction } from '../../../types/generalTypes';
-import { ReceiptSubText } from '../../Receipts/subComponents/ReceiptSubText';
+import { ReceiptSubText } from '../../Receipts/subcomponents/ReceiptSubText';
 
 const InfoNoteInner = ({ t }: { t: TFunction }) => (
   <Row styles={{ justifyContent: 'flex-start' }}>
