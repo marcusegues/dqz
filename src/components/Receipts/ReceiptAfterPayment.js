@@ -25,10 +25,10 @@ import { VatList } from '../Overview/subcomponents/VatList';
 import { Row } from '../Rows/Row';
 import { TotalOwedRow } from '../Overview/subcomponents/TotalOwedRow';
 import { ScrollViewCard } from '../General Components/ScrollViewCard';
-import { ReceiptSubText } from './subComponents/ReceiptSubText';
-import { RedLogo } from './subComponents/RedLogo';
-import { ValidUntilBlock } from './subComponents/ValidUntilBlock';
-import { ReceiptInfoNote } from './subComponents/ReceiptInfoNote';
+import { ReceiptSubText } from './subcomponents/ReceiptSubText';
+import { RedLogo } from './subcomponents/RedLogo';
+import { ValidUntilBlock } from './subcomponents/ValidUntilBlock';
+import { ReceiptInfoNote } from './subcomponents/ReceiptInfoNote';
 
 const ownStyles = {
   topSumText: {
