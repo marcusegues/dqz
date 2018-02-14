@@ -49,7 +49,7 @@ export const fr: Locale = {
   snackBar: {
     limitExceeded:
       "Valeur des biens pour l'application dépassée. S'il vous plaît signaler vos marchandises oralement au poste-frontière.",
-    offline: '⚠️',
+    offline: 'Vous êtes hors ligne S\'il vous plaît vérifier votre connexion.',
     showBorder: 'Afficher le passage frontalier',
   },
   onBoarding: {
@@ -69,10 +69,10 @@ export const fr: Locale = {
     mainCategoriesQuestion: 'Quelles marchandises souhaitez-vous déclarer?',
   },
   quantityInput: {
-    quantityInput: '⚠️',
-    recordedOn: '⚠️',
-    addQuantities: '⚠️',
-    enterQuantities: '⚠️',
+    quantityInput: 'Entrée de quantité',
+    recordedOn: 'enregistré sur',
+    addQuantities: 'Ajouter des quantités',
+    enterQuantities: 'Entrez les quantités de tous {{value}} ici',
   },
   amountInput: {
     amountInput:
@@ -154,8 +154,8 @@ export const fr: Locale = {
     vatColumn: 'TVA en francs:',
     normalAmountsTitle: 'Valeur totale des marchandises:',
     normalAmountsSubtitle: 'Montant total de tous les tickets de caisse',
-    largeAmountsTitle: '⚠️',
-    largeAmountsSubtitle: '⚠️',
+    largeAmountsTitle: 'Objets individuels',
+    largeAmountsSubtitle: 'd\'une valeur de plus de 300 CHF',
     receiptStorageNotification:
       "La présente quittance sera conservée pendant un an. Vous pourrez la consulter à tout moment dans l'application durant ce laps de temps.",
     allReceiptsNavigationHeaderTitle: 'Quittances de la douane suisse',
@@ -283,8 +283,16 @@ export const fr: Locale = {
       "Les droits d'auteur et tous les autres droits liés aux textes, illustrations, photographies et autres données placés sur les sites Web des autorités fédérales sont leur propriété exclusive ou celle des détenteurs expressément cités. Toute reproduction est subordonnée à l'autorisation écrite préalable du détenteur des droits.\n",
   },
   overview: {
-    declared: '⚠️',
-    dutyFree: '⚠️',
-    details: '⚠️',
+    declared: 'inscrit',
+    dutyFree: 'en franchise',
+    details: 'détails',
+  },
+  legalNoticeModal: {
+    importantNote: 'Note importante',
+    vatRateInfo:
+      "S'il vous plaît prendre en compte qu'aucun remboursement est possible en utilisant cette application. Les marchandises déclarées sont dédouanées au taux de TVA uniforme de 7,7%. Plus d'informations peuvent être trouvées ici:",
+    termsOfService: 'Termes et Conditions',
+    acceptance: "J'accepte les termes et conditions que j'ai lus et compris.",
+    confirm: 'Confirmer',
   },
 };
