@@ -3,7 +3,6 @@ import React from 'react';
 // $FlowFixMe
 import { Text, View } from 'react-native';
 import { moderateScale } from '../../../../styles/Scaling';
-import { DARK_GREY } from '../../../../styles/colors';
 
 const ownStyles = {
   pickerUnitColumn: {
@@ -13,9 +12,9 @@ const ownStyles = {
     alignSelf: 'center',
   },
   pickerUnitColumnText: {
-    fontFamily: 'roboto_regular',
+    fontFamily: 'roboto_medium',
     fontSize: moderateScale(14),
-    color: DARK_GREY,
+    color: '#1A1A1A',
   },
 };
 

@@ -131,6 +131,7 @@ export const en: Locale = {
       'Please be sure to enter with this registration within two hours. This registration is valid until {{date}} at {{time}}.',
     timePickerTakeOverThePeriod: 'Take over the period',
     timePickerTimePrefix: '',
+    quantityOfMeat: 'quantity of meat',
   },
   payment: {
     overViewTitle: 'Summary of your Declaration',

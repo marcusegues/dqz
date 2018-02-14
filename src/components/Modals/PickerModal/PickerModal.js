@@ -2,7 +2,7 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
-import { View, Picker, TextInput } from 'react-native';
+import { View, Picker, TextInput, Text } from 'react-native';
 import { translate } from 'react-i18next';
 import { AppModal } from '../AppModal';
 import { RedButton } from '../../Buttons/RedButton';
@@ -71,7 +71,6 @@ class PickerModalInner extends React.Component<
       wholePart: '1',
       decimalPart: '00',
     },
-    text: '',
   };
 
   standardTotalAmount(): number {
@@ -116,6 +115,26 @@ class PickerModalInner extends React.Component<
     return wholePart + decimalPart / 100;
   }
 
+  categorySubtextTitle() {
+    const { t } = this.props;
+    const categoryName = CategoriesInfo.getIn(
+      [this.props.category, 'name'],
+      ''
+    );
+    switch (categoryName) {
+      case 'Fleisch und Fleischzub': {
+        return t('quantityOfMeat');
+        // return 'Fleischmenge';
+      }
+      case 'Andere Tabakfabrikate': {
+        return 'Tabakmenge';
+      }
+      default: {
+        return '';
+      }
+    }
+  }
+
   render() {
     const { selected } = this.state;
     const {
@@ -130,6 +149,7 @@ class PickerModalInner extends React.Component<
     const customInput = selected === 'customInput';
     const unit = CategoriesInfo.getIn([category, 'unit'], '');
     const categoryName = CategoriesInfo.getIn([category, 'name'], '');
+    const meat = categoryName === 'Fleisch und Fleischzub';
 
     const currentAmount: number = standardInput
       ? this.standardTotalAmount()
@@ -158,28 +178,16 @@ class PickerModalInner extends React.Component<
               >
                 <CardHeaderText text="Menge eingeben" />
               </View>
-              <CardHeaderSubText text="Erfassen Sie Tabakmenge, die Sie mit sich führen:" />
               <CardHeaderSubText
-                text={
-                  categoryName === 'Fleisch und Fleischzub' ? 'True' : 'false'
-                }
+                text={`Erfassen Sie die ${this.categorySubtextTitle()}, die Sie mit sich führen:`}
+                // text={`Erfassen Sie die ${categoryName}, die Sie mit sich führen:`}
               />
-              {onlyStandardInput &&
-              categoryName === 'Fleisch und Fleischzub' ? (
-                <View
-                  style={{
-                    // flex: 1,
-                    width: '100%',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
+              {/*<CardHeaderSubText text="Erfassen Sie die Fleischmenge, die Sie mit sich führen:" />*/}
+              {onlyStandardInput && meat ? (
+                <View style={pickerModalStyle.textInputContainer}>
                   <TextInput
                     keyboardType="numeric"
-                    // style={currencyPickerModal.textInput}
-                    // onChangeText={value => this.setState({ amount: +value })}
-                    maxLenght="8"
+                    maxLenght={5}
                     underlineColorAndroid="transparent"
                     blurOnSubmit
                     style={pickerModalStyle.textInput}
@@ -194,7 +202,14 @@ class PickerModalInner extends React.Component<
                     }
                     value={this.state.numberInput.wholePart}
                   />
+                  <PickerValueSeparator separator="," />
                   <TextInput
+                    keyboardType="numeric"
+                    // style={currencyPickerModal.textInput}
+                    // onChangeText={value => this.setState({ amount: +value })}
+                    maxLength={2}
+                    underlineColorAndroid="transparent"
+                    blurOnSubmit
                     style={pickerModalStyle.textInput}
                     onChangeText={itemValue =>
                       this.setState({
@@ -207,18 +222,15 @@ class PickerModalInner extends React.Component<
                     }
                     value={this.state.numberInput.decimalPart}
                   />
+                  <PickerUnitColumn unit={unit} style={{ flex: 0.3 }} />
                 </View>
               ) : (
-                <View
-                  style={{
-                    // flex: 1,
-                    width: '100%',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                  }}
-                >
+                <View style={pickerModalStyle.textInputContainer}>
                   <TextInput
+                    keyboardType="numeric"
+                    maxLength={5}
+                    underlineColorAndroid="transparent"
+                    blurOnSubmit
                     style={[
                       pickerModalStyle.textInput,
                       { alignSelf: 'center' },
@@ -307,7 +319,9 @@ class PickerModalInner extends React.Component<
 
               <PickerUnitColumn unit={unit} />
             </View>
-          ) : null}
+          ) : (
+            <View />
+          )}
 
           {customInput && !onlyStandardInput ? (
             <View style={pickerModalStyle.pickerContainer}>
@@ -352,7 +366,9 @@ class PickerModalInner extends React.Component<
               </PickerComponent>
               <PickerUnitColumn unit={unit} />
             </View>
-          ) : null}
+          ) : (
+            <View />
+          )}
 
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
@@ -360,8 +376,8 @@ class PickerModalInner extends React.Component<
               // onPress={() => confirmAction(currentAmount)}
               text={t(['confirmPicker'], {
                 // value: `${inputCurrentAmount.toFixed(2)} ${unit}`,
-                value: `${amount.toFixed(2)} ${unit}`,
-                // value: `${currentAmount.toFixed(2)} ${unit}`,
+                value: `${amount} ${unit}`,
+                // value: `${amount.toFixed(2)} ${unit}`,
               })}
             />
           </View>
