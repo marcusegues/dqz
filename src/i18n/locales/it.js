@@ -152,7 +152,7 @@ export const it: Locale = {
     normalAmountsTitle: 'Valore complessivo delle merci',
     normalAmountsSubtitle: 'Totale di tutte le ricevute d’acquisto',
     largeAmountsTitle: 'Oggetti individuali',
-    largeAmountsSubtitle: '⚠️',
+    largeAmountsSubtitle: 'vale oltre CHF 300',
     receiptStorageNotification:
       'Il presente giustificativo rimane memorizzato per un anno. Durante questo periodo, può essere visualizzato in qualsiasi momento nell’app.',
     allReceiptsNavigationHeaderTitle: 'Giustificativi della dogana svizzera',
