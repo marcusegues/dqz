@@ -284,4 +284,12 @@ export const fr: Locale = {
     declared: '⚠️',
     dutyFree: '⚠️',
   },
+  legalNoticeModal: {
+    importantNote: 'Note importante',
+    vatRateInfo:
+      "S'il vous plaît prendre en compte qu'aucun remboursement est possible en utilisant cette application. Les marchandises déclarées sont dédouanées au taux de TVA uniforme de 7,7%. Plus d'informations peuvent être trouvées ici:",
+    termsOfService: 'Termes et Conditions',
+    acceptance: "J'accepte les termes et conditions que j'ai lus et compris.",
+    confirm: 'Confirmer',
+  },
 };

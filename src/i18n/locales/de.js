@@ -275,4 +275,13 @@ export const de: Locale = {
     declared: 'Angemeldet',
     dutyFree: 'Zollfrei',
   },
+  legalNoticeModal: {
+    importantNote: 'Wichtiger Hinweis',
+    vatRateInfo:
+      'Bitte berücksichtigen Sie, dass bei der Benutzung dieser App keine Rückerstattung möglich ist. Deklarierte Waren werden mit dem einheitlichen Mehrwertsteuersatz von 7.7% verzollt. Weitere Informationen finden Sie hier:',
+    termsOfService: 'Allgeime Gescäftbedingungen',
+    acceptance:
+      'Hiermit akzeptiere ich die Allgemeinen Geschäftsbedingungen, die ich gelesen und verstanden habe.',
+    confirm: 'Bestätigen',
+  },
 };

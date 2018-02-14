@@ -284,4 +284,12 @@ export const it: Locale = {
     declared: '⚠️',
     dutyFree: '⚠️',
   },
+  legalNoticeModal: {
+    importantNote: 'Nota importante',
+    vatRateInfo:
+      "Si prega di tener conto che nessun rimborso è possibile quando si utilizza questa applicazione. Le merci dichiarate sono liquidate all'aliquota IVA uniforme del 7,7%. Ulteriori informazioni possono essere trovate qui:",
+    termsOfService: 'Termini e condizioni',
+    acceptance: 'Accetto i termini e le condizioni che ho letto e compreso.',
+    confirm: 'Confermare',
+  },
 };
