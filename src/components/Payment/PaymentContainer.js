@@ -130,7 +130,13 @@ class PaymentContainerInner extends React.Component<
     if (fees > 0) {
       this.setState({ isLoadingRedirectData: true }, () => {
         this.saferpay
-          .initializePayment(100 * fees, 'CHF', uuidv1())
+          .initializePayment(
+            100 * fees,
+            'CHF',
+            uuidv1(),
+            'Order',
+            `0.4.1-${uuidv1()}` // TODO: remove and put some logic into OrderNR
+          )
           .then(responseJson => {
             setPaymentData(
               paymentData
