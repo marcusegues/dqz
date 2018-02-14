@@ -69,7 +69,10 @@ export const fr: Locale = {
     mainCategoriesQuestion: 'Quelles marchandises souhaitez-vous déclarer?',
   },
   quantityInput: {
-    quantityInput: 'Saisie des quantités',
+    quantityInput: '⚠️',
+    recordedOn: '⚠️',
+    addQuantities: '⚠️',
+    enterQuantities: '⚠️',
   },
   amountInput: {
     amountInput:
