@@ -151,8 +151,10 @@ export const de: Locale = {
     receiptValidUntilTime: '{{date}}  |  {{time}} Uhr',
     sumText: 'Summe: CHF {{value}}',
     vatColumn: 'Mehrwertsteuer in CHF:',
-    amountsTitle: 'Gesamtwert der Waren',
-    amountsSubtitle: 'Summe aller Kaufbelege',
+    normalAmountsTitle: 'Gesamtwert der Waren',
+    normalAmountsSubtitle: 'Summe aller Kaufbelege',
+    largeAmountsTitle: 'Einzelne Gegenstände',
+    largeAmountsSubtitle: 'im Wert von über CHF 300',
     receiptStorageNotification:
       'Diese Quittung wird ein Jahr lang gespeichert. Solange können Sie die Quittung jederzeit in der App aufrufen.',
     allReceiptsNavigationHeaderTitle: 'Quittungen Schweizer Zoll',
@@ -274,6 +276,7 @@ export const de: Locale = {
   overview: {
     declared: 'Angemeldet',
     dutyFree: 'Zollfrei',
+    details: 'Einzelheiten',
   },
   legalNoticeModal: {
     importantNote: 'Wichtiger Hinweis',

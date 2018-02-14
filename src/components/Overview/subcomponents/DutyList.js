@@ -1,31 +1,36 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
-import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View, FlatList } from 'react-native';
-import { DutyRow } from '../../Rows/configured/OverviewRow/configured/DutyRow';
+import { DutyRow } from '../../Rows/configured/Overview/DutyRow/DutyRow';
 import { getTotalQuantity } from '../../../model/configurationApi';
 import { getMainCategory } from '../../../types/reducers/appReducer';
 import { RightAlignedHeader } from './RightAlignedHeader';
-import { getBasket, getDutyReport } from '../../../reducers';
-import type { DutyReport } from '../../../model/types/calculationTypes';
-import type { Basket } from '../../../model/types/basketPeopleAmountsTypes';
+import type {
+  Basket,
+  People,
+} from '../../../model/types/basketPeopleAmountsTypes';
 import type { TFunction } from '../../../types/generalTypes';
+import {
+  calculateDuty,
+  getAllowanceRaw,
+} from '../../../model/dutyCalculations';
 
-type ReduxInjectProps = {
-  dutyReport: DutyReport,
+type DutyListProps = {
   basket: Basket,
+  people: People,
 };
 
 const DutyListInner = ({
-  dutyReport,
   basket,
+  people,
   t,
-}: ReduxInjectProps & {
+}: DutyListProps & {
   t: TFunction,
 }) => {
+  const dutyReport = calculateDuty(basket, people);
   const flatListData = dutyReport
     .get('dutyByCategoryRaw')
     .entrySeq()
@@ -38,6 +43,7 @@ const DutyListInner = ({
           key={category}
           mainCategory={getMainCategory(category)}
           category={category}
+          allowanceRaw={getAllowanceRaw(category, people)}
           quantity={getTotalQuantity(basket, category)}
           duty={dutyOfCategory}
         />
@@ -62,11 +68,6 @@ const DutyListInner = ({
   );
 };
 
-const mapStateToProps = state => ({
-  dutyReport: getDutyReport(state),
-  basket: getBasket(state),
-});
-
-export const DutyList = (connect(mapStateToProps, null)(
-  translate(['payment'])(DutyListInner)
+export const DutyList = (translate(['payment'])(
+  DutyListInner
 ): ComponentType<{}>);

@@ -152,8 +152,10 @@ export const fr: Locale = {
     receiptValidUntilTime: '{{date}}  |  {{time}} h',
     sumText: 'Total (en francs): {{value}}',
     vatColumn: 'TVA en francs:',
-    amountsTitle: 'Valeur totale des marchandises:',
-    amountsSubtitle: 'Montant total de tous les tickets de caisse',
+    normalAmountsTitle: 'Valeur totale des marchandises:',
+    normalAmountsSubtitle: 'Montant total de tous les tickets de caisse',
+    largeAmountsTitle: '⚠️',
+    largeAmountsSubtitle: '⚠️',
     receiptStorageNotification:
       "La présente quittance sera conservée pendant un an. Vous pourrez la consulter à tout moment dans l'application durant ce laps de temps.",
     allReceiptsNavigationHeaderTitle: 'Quittances de la douane suisse',
@@ -283,6 +285,7 @@ export const fr: Locale = {
   overview: {
     declared: '⚠️',
     dutyFree: '⚠️',
+    details: '⚠️',
   },
   legalNoticeModal: {
     importantNote: 'Note importante',

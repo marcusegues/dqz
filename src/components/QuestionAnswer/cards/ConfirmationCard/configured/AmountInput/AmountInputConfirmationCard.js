@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
+import { connect } from 'react-redux';
 // $FlowFixMe
 import { Text, View } from 'react-native';
 import { translate } from 'react-i18next';
@@ -13,7 +14,13 @@ import { ConfirmationCard } from '../../ConfirmationCard';
 import type { DirectionType } from '../../../../QuestionAnswerContainer';
 import { CardRowText } from '../../../subcomponents/CardRowText';
 import { scale, verticalScale } from '../../../../../../styles/Scaling';
-import { AmountInputLabel } from './subcomponents/AmountInputLabel';
+import { AmountIcon } from '../../../../../General Components/GreyBox/configured/AmountIcon';
+import {
+  totalLargeAmounts,
+  totalNormalAmounts,
+} from '../../../../../../model/utils';
+import type { CurrencyObject } from '../../../../../../model/currencies';
+import { getCurrencies } from '../../../../../../reducers';
 
 const ownStyles = {
   currentTotalValueContainer: {
@@ -47,7 +54,10 @@ type AmountInputConfirmationCardProps = {
   onDeleteAmount: string => void,
   large: boolean,
   onAnswer: DirectionType => void,
-  totalAmounts: number,
+};
+
+type ReduxInject = {
+  currencies: CurrencyObject,
 };
 
 const AmountInputConfirmationCardInner = ({
@@ -57,14 +67,18 @@ const AmountInputConfirmationCardInner = ({
   large,
   onAnswer,
   onDeleteAmount,
-  totalAmounts,
-}: AmountInputConfirmationCardProps & { t: TFunction }) => {
+  currencies,
+}: AmountInputConfirmationCardProps & ReduxInject & { t: TFunction }) => {
   let title: string = t('amountInput');
   if (large) {
     title = t('amountInputLargeItem', {
       value: INDIVIDUALALLOWANCE,
     });
   }
+
+  const totalAmount = large
+    ? totalLargeAmounts(amounts, currencies)
+    : totalNormalAmounts(amounts, currencies);
 
   return (
     <ConfirmationCard
@@ -81,7 +95,7 @@ const AmountInputConfirmationCardInner = ({
               text={t('currentTotalValue')}
               style={ownStyles.currentTotalValueText}
             />
-            <AmountInputLabel quantity={totalAmounts} />
+            <AmountIcon amount={totalAmount} currency="CHF" />
           </View>
 
           <CardHeaderSubText
@@ -103,6 +117,10 @@ const AmountInputConfirmationCardInner = ({
   );
 };
 
-export const AmountInputConfirmationCard = (translate(['amountInput'])(
-  AmountInputConfirmationCardInner
+const mapStateToProps = state => ({
+  currencies: getCurrencies(state),
+});
+
+export const AmountInputConfirmationCard = (connect(mapStateToProps, null)(
+  translate(['amountInput'])(AmountInputConfirmationCardInner)
 ): ComponentType<AmountInputConfirmationCardProps>);

@@ -21,7 +21,6 @@ import {
   analyticsQACardOpenend,
 } from '../../../analytics/analyticsApi';
 import type { FlatAmount } from '../../../model/utils';
-import { totalAllAmounts } from '../../../model/utils';
 
 export type AmountInputState = {
   modalVisible: boolean,
@@ -56,7 +55,6 @@ export class AmountInputQA extends React.Component<
           onShowAmountInputModal={() => this.handleShowModal()}
           onAnswer={onAnswer}
           amounts={amounts}
-          totalAmounts={totalAllAmounts(amounts, currencies)}
           onDeleteAmount={(id: string) => {
             this.handleDeleteAmount(id);
           }}

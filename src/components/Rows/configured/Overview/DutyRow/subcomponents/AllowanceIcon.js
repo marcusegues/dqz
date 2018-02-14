@@ -2,7 +2,7 @@
 import React from 'react';
 // $FlowFixMe
 import { View, Text, StyleSheet } from 'react-native';
-import { moderateScale } from '../../../styles/Scaling';
+import { moderateScale } from '../../../../../../styles/Scaling';
 
 const ownStyles = StyleSheet.create({
   quantityContainer: {

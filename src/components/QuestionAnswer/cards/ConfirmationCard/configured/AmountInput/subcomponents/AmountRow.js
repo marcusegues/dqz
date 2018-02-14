@@ -17,29 +17,36 @@ import type {
 } from '../../../../../../../model/currencies';
 import { CardRowSubText } from '../../../../subcomponents/CardRowSubText';
 import { getCurrencies } from '../../../../../../../reducers';
+import { rowStyles } from '../../../../../../Rows/styles/rowStyles';
 
 type AmountRowProps = {
   amount: number,
   onDelete: () => void,
   currency: Currency,
+  borderTop: boolean,
 };
+
+type ReduxInject = { currencyObject: CurrencyObject };
 
 const AmountRowInner = ({
   amount,
   onDelete,
   currency,
   currencyObject,
-}: AmountRowProps & { currencyObject: CurrencyObject }) => (
-  <Row borderTop>
-    <View style={{ flex: 1 }}>
-      <CardRowText text={`${currency} ${amount}`} />
-      <CardRowSubText
-        text={`~CHF ${(currencyObject[currency] * amount).toFixed(2)}`}
-      />
+  borderTop,
+}: AmountRowProps & ReduxInject) => (
+  <Row borderTop={borderTop}>
+    <View style={rowStyles.rowContent}>
+      <View style={{ flex: 1 }}>
+        <CardRowText text={`${currency} ${amount}`} />
+        <CardRowSubText
+          text={`~CHF ${(currencyObject[currency] * amount).toFixed(2)}`}
+        />
+      </View>
+      <Touchable onPress={onDelete}>
+        <MaterialIcons name="cancel" size={moderateScale(28)} color={GREY} />
+      </Touchable>
     </View>
-    <Touchable onPress={onDelete}>
-      <MaterialIcons name="cancel" size={moderateScale(28)} color={GREY} />
-    </Touchable>
   </Row>
 );
 
