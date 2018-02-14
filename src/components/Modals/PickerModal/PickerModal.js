@@ -187,7 +187,8 @@ class PickerModalInner extends React.Component<
                       this.setState({
                         numberInput: {
                           ...this.state.numberInput,
-                          wholePart: +itemValue,
+                          wholePart: itemValue,
+                          // wholePart: +itemValue,
                         },
                       })
                     }
@@ -199,7 +200,8 @@ class PickerModalInner extends React.Component<
                       this.setState({
                         numberInput: {
                           ...this.state.numberInput,
-                          decimalPart: +itemValue,
+                          decimalPart: itemValue,
+                          // decimalPart: +itemValue,
                         },
                       })
                     }
@@ -207,18 +209,33 @@ class PickerModalInner extends React.Component<
                   />
                 </View>
               ) : (
-                <TextInput
-                  style={pickerModalStyle.textInput}
-                  onChangeText={itemValue =>
-                    this.setState({
-                      numberInput: {
-                        ...this.state.numberInput,
-                        wholePart: +itemValue,
-                      },
-                    })
-                  }
-                  value={this.state.numberInput.wholePart}
-                />
+                <View
+                  style={{
+                    // flex: 1,
+                    width: '100%',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  <TextInput
+                    style={[
+                      pickerModalStyle.textInput,
+                      { alignSelf: 'center' },
+                    ]}
+                    onChangeText={itemValue =>
+                      this.setState({
+                        numberInput: {
+                          ...this.state.numberInput,
+                          wholePart: itemValue,
+                          // wholePart: +itemValue,
+                        },
+                      })
+                    }
+                    value={this.state.numberInput.wholePart}
+                  />
+                  <PickerUnitColumn unit={unit} style={{ flex: 0.3 }} />
+                </View>
               )}
             </View>
           ) : (

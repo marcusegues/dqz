@@ -21,10 +21,15 @@ const ownStyles = {
 
 type PickerUnitColumnProps = {
   unit: string,
+  style?: {},
 };
 
-export const PickerUnitColumn = ({ unit }: PickerUnitColumnProps) => (
-  <View style={ownStyles.pickerUnitColumn}>
+export const PickerUnitColumn = ({ unit, style }: PickerUnitColumnProps) => (
+  <View style={[ownStyles.pickerUnitColumn, { ...style }]}>
     <Text style={ownStyles.pickerUnitColumnText}>{unit}</Text>
   </View>
 );
+
+PickerUnitColumn.defaultProps = {
+  style: {},
+};
