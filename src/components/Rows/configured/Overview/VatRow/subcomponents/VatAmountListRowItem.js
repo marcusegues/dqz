@@ -35,7 +35,7 @@ const VatAmountListRowItemInner = ({
     <Row
       borderTop={borderTop}
       borderBottom={borderBottom}
-      fullWidth={fullWidth}
+      width={fullWidth ? '100%' : '95%'}
     >
       <View style={rowStyles.rowContent}>
         <View style={{ flex: 1 }}>

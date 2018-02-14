@@ -59,7 +59,7 @@ const VatOverviewInner = ({
     <Row
       borderTop
       borderBottom={false}
-      fullWidth
+      width="100%"
       onLayout={event => {
         setMainHeight(event.nativeEvent.layout.height);
       }}

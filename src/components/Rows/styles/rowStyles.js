@@ -30,7 +30,6 @@ export const rowStyles = StyleSheet.create({
   rowContent: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-around',
   },
   borderBottom: {
     borderBottomWidth: ROW_BORDER_WIDTH,

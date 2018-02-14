@@ -11,12 +11,12 @@ import { connect } from 'react-redux';
 // $FlowFixMe
 import { takeSnapshotAsync } from 'expo';
 import { translate } from 'react-i18next';
-import { ScrollViewCard } from './subComponents/ScrollViewCard';
-import { RedLogo } from './subComponents/Logo';
+import { ScrollViewCard } from './subcomponents/ScrollViewCard';
+import { RedLogo } from './subcomponents/Logo';
 import { moderateScale, scale, verticalScale } from '../../styles/Scaling';
 import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
-import { ReceiptSubText } from './subComponents/ReceiptSubText';
-import { ValidUntilBlock } from './subComponents/ValidUntilBlock';
+import { ReceiptSubText } from './subcomponents/ReceiptSubText';
+import { ValidUntilBlock } from './subcomponents/ValidUntilBlock';
 import { DutyRow } from '../Rows/configured/Overview/DutyRow/DutyRow';
 import { VatRow } from '../Rows/configured/Overview/VatRow/VatRow';
 import type { PaymentData, TFunction } from '../../types/generalTypes';
@@ -33,6 +33,8 @@ import { calculateDuty, getAllowanceRaw } from '../../model/dutyCalculations';
 import { getTotalQuantity } from '../../model/configurationApi';
 import { getMainCategory } from '../../types/reducers/appReducer';
 import { VatList } from '../Overview/subcomponents/VatList';
+import { Row } from '../Rows/Row';
+import { rowStyles } from '../Rows/styles/rowStyles';
 
 const ownStyles = {
   topSumText: {
@@ -68,9 +70,7 @@ const ownStyles = {
     alignSelf: 'flex-end',
     marginTop: verticalScale(25),
   },
-  receiptSubTextDutyAndVat: {
-    alignSelf: 'center',
-  },
+
   receiptSubTextNotification: {
     paddingBottom: verticalScale(15),
     lineHeight: 18,
@@ -159,18 +159,23 @@ class ReceiptAfterPaymentInner extends React.Component<
           >
             <RedLogo />
           </Touchable>
-          <Text style={ownStyles.topSumText}>
-            CHF {(fullVat + fullDuty).toFixed(2)}
-          </Text>
-          <ReceiptSubText
-            text={t('dutyAndVat', {
-              duty: fullDuty.toFixed(2),
-              vat: fullVat.toFixed(2),
-            })}
-            style={ownStyles.receiptSubTextDutyAndVat}
-          />
+          <Row width="90%">
+            <Text style={ownStyles.topSumText}>
+              CHF {(fullVat + fullDuty).toFixed(2)}
+            </Text>
+            <ReceiptSubText
+              text={t('dutyAndVat', {
+                duty: fullDuty.toFixed(2),
+                vat: fullVat.toFixed(2),
+              })}
+            />
+          </Row>
 
-          <View style={ownStyles.contentContainer}>
+          <Row
+            width="90%"
+            borderBottom={false}
+            styles={{ alignItems: 'flex-start', paddingHorizontal: 0 }}
+          >
             <CardRowText
               text={t('paidOn', {
                 date: transactionDatetime.toFormat('dd.MM.y'),
@@ -206,6 +211,9 @@ class ReceiptAfterPaymentInner extends React.Component<
               text={t('payment:dutyColumn')}
               style={ownStyles.receiptSubTextDuty}
             />
+          </Row>
+
+          <View style={ownStyles.contentContainer}>
             {dutyReport
               .get('dutyByCategoryRaw')
               .entrySeq()
@@ -213,6 +221,7 @@ class ReceiptAfterPaymentInner extends React.Component<
               .map(([category, dutyOfCategory], idx) => (
                 <DutyRow
                   borderTop={idx === 0}
+                  width="100%"
                   key={category}
                   mainCategory={getMainCategory(category)}
                   allowanceRaw={getAllowanceRaw(

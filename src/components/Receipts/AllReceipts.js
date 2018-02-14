@@ -9,11 +9,11 @@ import { DateTime } from 'luxon';
 import { connect } from 'react-redux';
 // $FlowFixMe
 import { translate } from 'react-i18next';
-import { ScrollViewCard } from './subComponents/ScrollViewCard';
+import { ScrollViewCard } from './subcomponents/ScrollViewCard';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { CardHeader } from '../QuestionAnswer/cards/subcomponents/CardHeader';
-import { AllReceiptsRow } from './subComponents/AllReceiptsRow';
+import { AllReceiptsRow } from './subcomponents/AllReceiptsRow';
 import { HeaderTitle } from '../Headers/subcomponents/HeaderTitle';
 import { verticalScale } from '../../styles/Scaling';
 import type { Receipt } from '../../types/receiptTypes';

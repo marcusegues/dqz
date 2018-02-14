@@ -4,7 +4,7 @@ import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View } from 'react-native';
-import { ReceiptSubText } from '../../Receipts/subComponents/ReceiptSubText';
+import { ReceiptSubText } from '../../Receipts/subcomponents/ReceiptSubText';
 import { Row } from '../../Rows/Row';
 import type { TFunction } from '../../../types/generalTypes';
 
