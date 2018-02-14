@@ -9,7 +9,6 @@ import { DateTime } from 'luxon';
 import { connect } from 'react-redux';
 // $FlowFixMe
 import { translate } from 'react-i18next';
-import { ScrollViewCard } from '../subcomponents/ScrollViewCard';
 import type { Navigation, TFunction } from '../../../types/generalTypes';
 import { analyticsScreenMounted } from '../../../analytics/analyticsApi';
 import { CardHeader } from '../../QuestionAnswer/cards/subcomponents/CardHeader';
@@ -21,6 +20,7 @@ import { fetchReceipts } from '../../../asyncStorage/storageApi';
 import { calculateDuty } from '../../../model/dutyCalculations';
 import { calculateVat } from '../../../model/vatCalculations';
 import { getConvertedLocalTimeToSwiss } from '../../../model/utils';
+import { ScrollViewCard } from '../../General Components/ScrollViewCard';
 
 type AllReceiptsState = {
   receipts: List<Receipt>,

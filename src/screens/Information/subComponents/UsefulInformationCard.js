@@ -4,7 +4,7 @@ import React from 'react';
 import { View } from 'react-native';
 import type { Children } from '../../../types/generalTypes';
 import { CardHeader } from '../../../components/QuestionAnswer/cards/subcomponents/CardHeader';
-import { ScrollViewCard } from '../../../components/Receipts/subcomponents/ScrollViewCard';
+import { ScrollViewCard } from '../../../components/General Components/ScrollViewCard';
 
 const ownStyles = {
   container: {

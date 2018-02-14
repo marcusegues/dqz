@@ -291,4 +291,9 @@ export const de: Locale = {
       'Hiermit akzeptiere ich die Allgemeinen Geschäftsbedingungen, die ich gelesen und verstanden habe.',
     confirm: 'Bestätigen',
   },
+  furtherInformationModal: {
+    furtherInformation: 'Weitere Informationen:',
+    acceptance:
+      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 %; auch für Waren angewendet wird, die eigentlich dem redu-zierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
+  },
 };
