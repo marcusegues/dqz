@@ -169,8 +169,10 @@ type ReceiptTranslations = {
   receiptValidUntilTime: string,
   sumText: string,
   vatColumn: string,
-  amountsTitle: string,
-  amountsSubtitle: string,
+  normalAmountsTitle: string,
+  normalAmountsSubtitle: string,
+  largeAmountsTitle: string,
+  largeAmountsSubtitle: string,
   receiptStorageNotification: string,
   allReceiptsNavigationHeaderTitle: string,
   allReceiptsCurrentReceipt: string,
@@ -218,6 +220,7 @@ type LegalNoticeInformationTranslations = {
 type OverviewTranslations = {
   declared: string,
   dutyFree: string,
+  details: string,
 };
 
 /**

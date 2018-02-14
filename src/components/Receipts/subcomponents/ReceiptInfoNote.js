@@ -8,15 +8,19 @@ import { ReceiptSubText } from '../../Receipts/subcomponents/ReceiptSubText';
 import { Row } from '../../Rows/Row';
 import type { TFunction } from '../../../types/generalTypes';
 
-const InfoNoteInner = ({ t }: { t: TFunction }) => (
-  <Row styles={{ justifyContent: 'flex-start' }}>
+const ReceiptInfoNoteInner = ({ t }: { t: TFunction }) => (
+  <Row
+    width="100%"
+    borderBottom={false}
+    styles={{ justifyContent: 'flex-start' }}
+  >
     <View style={{ flexDirection: 'column' }}>
       <ReceiptSubText text={t('general:note')} />
-      <ReceiptSubText text={t('payment:entryInfo')} />
+      <ReceiptSubText text={t('receipt:receiptStorageNotification')} />
     </View>
   </Row>
 );
 
-export const InfoNote = (translate(['general', 'payment'])(
-  InfoNoteInner
+export const ReceiptInfoNote = (translate(['general', 'receipt'])(
+  ReceiptInfoNoteInner
 ): ComponentType<{}>);

@@ -151,8 +151,10 @@ export const it: Locale = {
     receiptValidUntilTime: '{{date}}  |  {{time}} Orario',
     sumText: 'Totale (CHF): {{value}}',
     vatColumn: 'IVA in CHF:',
-    amountsTitle: 'Valore complessivo delle merci',
-    amountsSubtitle: 'Totale di tutte le ricevute d’acquisto',
+    normalAmountsTitle: 'Valore complessivo delle merci',
+    normalAmountsSubtitle: 'Totale di tutte le ricevute d’acquisto',
+    largeAmountsTitle: '⚠️',
+    largeAmountsSubtitle: '⚠️',
     receiptStorageNotification:
       'Il presente giustificativo rimane memorizzato per un anno. Durante questo periodo, può essere visualizzato in qualsiasi momento nell’app.',
     allReceiptsNavigationHeaderTitle: 'Giustificativi della dogana svizzera',
@@ -285,5 +287,6 @@ export const it: Locale = {
   overview: {
     declared: '⚠️',
     dutyFree: '⚠️',
+    details: '⚠️',
   },
 };

@@ -139,8 +139,9 @@ const AmountInputInner = ({
           </View>
         )}
         <View style={ownStyles.addedItemContainer}>
-          {relevantAmounts.map(a => (
+          {relevantAmounts.map((a, idx) => (
             <AmountRow
+              borderTop={idx === 0}
               key={a.id}
               amount={a.amount}
               currency={a.currency}
