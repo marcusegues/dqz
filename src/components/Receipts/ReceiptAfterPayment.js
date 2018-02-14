@@ -11,12 +11,8 @@ import { connect } from 'react-redux';
 // $FlowFixMe
 import { takeSnapshotAsync } from 'expo';
 import { translate } from 'react-i18next';
-import { ScrollViewCard } from './subcomponents/ScrollViewCard';
-import { RedLogo } from './subcomponents/RedLogo';
 import { moderateScale, verticalScale } from '../../styles/Scaling';
 import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
-import { ReceiptSubText } from './subcomponents/ReceiptSubText';
-import { ValidUntilBlock } from './subcomponents/ValidUntilBlock';
 import type { PaymentData, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { getPaymentData, getReceiptId } from '../../reducers';
@@ -28,6 +24,10 @@ import { DutyList } from '../Overview/subcomponents/DutyList';
 import { VatList } from '../Overview/subcomponents/VatList';
 import { Row } from '../Rows/Row';
 import { TotalOwedRow } from '../Overview/subcomponents/TotalOwedRow';
+import { ScrollViewCard } from '../General Components/ScrollViewCard';
+import { ReceiptSubText } from './subcomponents/ReceiptSubText';
+import { RedLogo } from './subcomponents/RedLogo';
+import { ValidUntilBlock } from './subcomponents/ValidUntilBlock';
 import { ReceiptInfoNote } from './subcomponents/ReceiptInfoNote';
 
 const ownStyles = {

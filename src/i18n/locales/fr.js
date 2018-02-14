@@ -49,7 +49,7 @@ export const fr: Locale = {
   snackBar: {
     limitExceeded:
       "Valeur des biens pour l'application dépassée. S'il vous plaît signaler vos marchandises oralement au poste-frontière.",
-    offline: 'Vous êtes hors ligne S\'il vous plaît vérifier votre connexion.',
+    offline: "Vous êtes hors ligne S'il vous plaît vérifier votre connexion.",
     showBorder: 'Afficher le passage frontalier',
   },
   onBoarding: {
@@ -159,7 +159,7 @@ export const fr: Locale = {
     normalAmountsTitle: 'Valeur totale des marchandises:',
     normalAmountsSubtitle: 'Montant total de tous les tickets de caisse',
     largeAmountsTitle: 'Objets individuels',
-    largeAmountsSubtitle: 'd\'une valeur de plus de 300 CHF',
+    largeAmountsSubtitle: "d'une valeur de plus de 300 CHF",
     receiptStorageNotification:
       "La présente quittance sera conservée pendant un an. Vous pourrez la consulter à tout moment dans l'application durant ce laps de temps.",
     allReceiptsNavigationHeaderTitle: 'Quittances de la douane suisse',
@@ -298,5 +298,10 @@ export const fr: Locale = {
     termsOfService: 'Termes et Conditions',
     acceptance: "J'accepte les termes et conditions que j'ai lus et compris.",
     confirm: 'Confirmer',
+  },
+  furtherInformationModal: {
+    furtherInformation: "Plus d'informations:",
+    acceptance:
+      "En utilisant l'application, vous acceptez que le taux de TVA est de 7,7%; est également appliqué aux biens effectivement soumis au taux d'imposition réduit (aliments, aliments pour animaux, médicaments et livres).",
   },
 };

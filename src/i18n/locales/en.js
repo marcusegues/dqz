@@ -287,4 +287,9 @@ export const en: Locale = {
       'I hereby accept the terms and conditions that I have read and understood.',
     confirm: 'Confirm',
   },
+  furtherInformationModal: {
+    furtherInformation: 'Further Information:',
+    acceptance:
+      'By using the app, you accept that the VAT rate is 7.7%; is also applied to goods that are actually subject to the reduced tax rate (food, animal feed, medicines and books).',
+  },
 };

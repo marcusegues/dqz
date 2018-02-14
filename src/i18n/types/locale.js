@@ -230,6 +230,10 @@ type LegalNoticeModalTranslations = {
   acceptance: string,
   confirm: string,
 };
+type FurtherInformationModalTranslations = {
+  furtherInformation: string,
+  acceptance: string,
+};
 
 /**
  * The Locale type defines all the namespaces that we use in the translation
@@ -254,4 +258,5 @@ export type Locale = {
   legalNoticeInformation: LegalNoticeInformationTranslations,
   overview: OverviewTranslations,
   legalNoticeModal: LegalNoticeModalTranslations,
+  furtherInformationModal: FurtherInformationModalTranslations,
 };

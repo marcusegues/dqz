@@ -54,22 +54,38 @@ ShallowWrapper {
             text=""
           />
         </View>,
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#DC0018",
-              "fontFamily": "roboto_medium",
-              "fontSize": 22,
-            }
-          }
+        <TouchableOpacity
+          activeOpacity={0.2}
+          onPress={[Function]}
         >
-          
-        </Text>,
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#DC0018",
+                "fontFamily": "roboto_medium",
+                "fontSize": 22,
+              }
+            }
+          >
+            
+          </Text>
+        </TouchableOpacity>,
         <DoneButton
           onPress={[Function]}
+        />,
+        <Unknown
+          modalVisible={false}
+          navigation={
+            Object {
+              "navigate": [Function],
+            }
+          }
+          onConfirm={[Function]}
+          onPressLegal={[Function]}
+          toggleModalVisible={[Function]}
         />,
       ],
     },
@@ -159,18 +175,43 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "accessible": true,
-          "allowFontScaling": true,
-          "children": "",
-          "ellipsizeMode": "tail",
-          "style": Object {
-            "color": "#DC0018",
-            "fontFamily": "roboto_medium",
-            "fontSize": 22,
-          },
+          "activeOpacity": 0.2,
+          "children": <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#DC0018",
+                "fontFamily": "roboto_medium",
+                "fontSize": 22,
+              }
+            }
+          >
+            
+          </Text>,
+          "onPress": [Function],
         },
         "ref": null,
-        "rendered": "",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "accessible": true,
+            "allowFontScaling": true,
+            "children": "",
+            "ellipsizeMode": "tail",
+            "style": Object {
+              "color": "#DC0018",
+              "fontFamily": "roboto_medium",
+              "fontSize": 22,
+            },
+          },
+          "ref": null,
+          "rendered": "",
+          "type": [Function],
+        },
         "type": [Function],
       },
       Object {
@@ -179,6 +220,23 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "onPress": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "modalVisible": false,
+          "navigation": Object {
+            "navigate": [Function],
+          },
+          "onConfirm": [Function],
+          "onPressLegal": [Function],
+          "toggleModalVisible": [Function],
         },
         "ref": null,
         "rendered": null,
@@ -223,22 +281,38 @@ ShallowWrapper {
               text=""
             />
           </View>,
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "color": "#DC0018",
-                "fontFamily": "roboto_medium",
-                "fontSize": 22,
-              }
-            }
+          <TouchableOpacity
+            activeOpacity={0.2}
+            onPress={[Function]}
           >
-            
-          </Text>,
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#DC0018",
+                  "fontFamily": "roboto_medium",
+                  "fontSize": 22,
+                }
+              }
+            >
+              
+            </Text>
+          </TouchableOpacity>,
           <DoneButton
             onPress={[Function]}
+          />,
+          <Unknown
+            modalVisible={false}
+            navigation={
+              Object {
+                "navigate": [Function],
+              }
+            }
+            onConfirm={[Function]}
+            onPressLegal={[Function]}
+            toggleModalVisible={[Function]}
           />,
         ],
       },
@@ -328,18 +402,43 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "accessible": true,
-            "allowFontScaling": true,
-            "children": "",
-            "ellipsizeMode": "tail",
-            "style": Object {
-              "color": "#DC0018",
-              "fontFamily": "roboto_medium",
-              "fontSize": 22,
-            },
+            "activeOpacity": 0.2,
+            "children": <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#DC0018",
+                  "fontFamily": "roboto_medium",
+                  "fontSize": 22,
+                }
+              }
+            >
+              
+            </Text>,
+            "onPress": [Function],
           },
           "ref": null,
-          "rendered": "",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "accessible": true,
+              "allowFontScaling": true,
+              "children": "",
+              "ellipsizeMode": "tail",
+              "style": Object {
+                "color": "#DC0018",
+                "fontFamily": "roboto_medium",
+                "fontSize": 22,
+              },
+            },
+            "ref": null,
+            "rendered": "",
+            "type": [Function],
+          },
           "type": [Function],
         },
         Object {
@@ -348,6 +447,23 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "onPress": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "modalVisible": false,
+            "navigation": Object {
+              "navigate": [Function],
+            },
+            "onConfirm": [Function],
+            "onPressLegal": [Function],
+            "toggleModalVisible": [Function],
           },
           "ref": null,
           "rendered": null,

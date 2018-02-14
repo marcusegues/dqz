@@ -297,4 +297,9 @@ export const it: Locale = {
     acceptance: 'Accetto i termini e le condizioni che ho letto e compreso.',
     confirm: 'Confermare',
   },
+  furtherInformationModal: {
+    furtherInformation: 'Ulteriori informazioni:',
+    acceptance:
+      "Utilizzando l'app, accetti che l'aliquota IVA sia pari al 7,7%; si applica anche alle merci che sono effettivamente soggette all'aliquota ridotta (alimenti, mangimi, medicinali e libri).",
+  },
 };
