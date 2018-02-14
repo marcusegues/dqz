@@ -1,6 +1,5 @@
 // @flow
 /* global fetch */
-
 import type { Currency } from './src/model/currencies';
 
 type RedirectsUrlKeys = {
@@ -9,9 +8,12 @@ type RedirectsUrlKeys = {
   abort: string,
 };
 
+declare var __DEV__: boolean;
+
 export default class Saferpay {
   baseUrl: string;
   redirectsUrlKeys: RedirectsUrlKeys;
+  saferpayConfig: any; // TODO: create Flow type object for saferpayConfig
 
   constructor(
     baseUrl: string = 'http://ambrite.ch',
@@ -19,67 +21,113 @@ export default class Saferpay {
       success: `/success`,
       fail: `/fail`,
       abort: `/abort`,
-    }
+    },
+    saferpayConfig: any // TODO: need change to type Object
   ) {
     this.baseUrl = baseUrl;
     this.redirectsUrlKeys = redirectsUrlKeys;
+
+    // saferPay production config
+    this.saferpayConfig = {
+      specVersion: '1.8',
+      customerId: '253992',
+      terminalId: '17923391',
+      baseURL: 'https://www.saferpay.com/api',
+      requestURLs: {
+        paymentPageInitialize: '/Payment/v1/PaymentPage/Initialize',
+        PaymentPageAssert: '/Payment/v1/PaymentPage/Assert',
+      },
+      authorization:
+        'Basic QVBJXzI1Mzk5Ml8xMjY4MTQxMzpoJHRhNHVxZWJBWnU0QWhlOQ==',
+    };
+
+    // saferPay dev config
+    if (__DEV__) {
+      this.saferpayConfig = Object.assign(this.saferpayConfig, {
+        customerId: '242565',
+        terminalId: '17875435',
+        baseURL: 'https://test.saferpay.com/api',
+        authorization:
+          'Basic QVBJXzI0MjU2NV83MTYyMjc0MTpIMzM0cHF3ZXF3MXF3ZUh1WkF0UiE=',
+      });
+    }
+
+    this.saferpayConfig = Object.assign(this.saferpayConfig, saferpayConfig);
   }
 
+  // OrderId
+  // recommended, string
+  // Unambiguous order identifier defined by the merchant/ shop. This identifier might be used as reference later on.
+  // Id[1..80]
+  // Example: c52ad18472354511ab2c33b59e796901
+
+  // Description
+  // mandatory, string
+  // A human readable description provided by the merchant that will be displayed in Payment Page.
+  // Utf8[1..1000]
+  // Example: Description of payment
+
+  /**
+   * @param amountValue
+   * @param currency
+   * @param requestId
+   * @param description
+   * @param orderId recommended, string
+   * @param languageCode recommended, string
+   * @returns {Promise<any>}
+   */
   initializePayment(
     amountValue: number,
     currency: Currency,
-    requestId: string
+    requestId: string,
+    description: string,
+    orderId: string,
+    languageCode: string = 'de-CH'
   ) {
     const requestJson = {
       RequestHeader: {
-        SpecVersion: '1.8',
-        // CustomerId: '253992', // prod
-        CustomerId: '242565', // test
+        SpecVersion: this.saferpayConfig.specVersion,
+        CustomerId: this.saferpayConfig.customerId,
         RequestId: requestId,
         RetryIndicator: 0,
-        ClientInfo: {
-          ShopInfo: 'My Shop',
-          OsInfo: 'ubuntu 16',
-        },
       },
-      // TerminalId: '17923391', // prod
-      TerminalId: '17875435', // test
+      TerminalId: this.saferpayConfig.terminalId,
       Payment: {
         Amount: {
           Value: amountValue,
           CurrencyCode: currency,
         },
-        OrderId: 2,
-        Description: 'Test Order #2',
+        OrderId: orderId,
+        Description: description,
       },
       Payer: {
         // IpAddress: '192.168.178.1', // user ip
-        LanguageCode: 'de-CH',
+        LanguageCode: languageCode,
       },
       ReturnUrls: {
-        Success: `${this.baseUrl}${this.redirectsUrlKeys.success}`,
-        Fail: `${this.baseUrl}${this.redirectsUrlKeys.fail}`,
-        Abort: `${this.baseUrl}${this.redirectsUrlKeys.abort}`,
+        Success: this.baseUrl + this.redirectsUrlKeys.success,
+        Fail: this.baseUrl + this.redirectsUrlKeys.fail,
+        Abort: this.baseUrl + this.redirectsUrlKeys.abort,
       },
     };
-    // console.log(requestJson);
+
     return (
-      // prod
-      // fetch('https://www.saferpay.com/api/Payment/v1/PaymentPage/Initialize', {
-      fetch('https://test.saferpay.com/api/Payment/v1/PaymentPage/Initialize', {
-        // test
-        headers: {
-          'Content-Type': 'application/json',
-          // 'Basic QVBJXzI1Mzk5Ml8xMjY4MTQxMzpoJHRhNHVxZWJBWnU0QWhlOQ==', // prod
-          Authorization:
-            'Basic QVBJXzI0MjU2NV83MTYyMjc0MTpIMzM0cHF3ZXF3MXF3ZUh1WkF0UiE=', // test
-        },
-        method: 'POST',
-        body: JSON.stringify(requestJson),
-      })
+      fetch(
+        this.saferpayConfig.baseURL +
+          this.saferpayConfig.requestURLs.paymentPageInitialize,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: this.saferpayConfig.authorization,
+          },
+          method: 'POST',
+          body: JSON.stringify(requestJson),
+        }
+      )
         // need to check response status
         .then(response => response.json())
         .catch(error => {
+          // TODO: add logger/amplitude
           console.error(error);
         })
     );
@@ -95,9 +143,8 @@ export default class Saferpay {
   assertPayment(token: string, requestId: string) {
     const requestJson = {
       RequestHeader: {
-        SpecVersion: '1.8',
-        // CustomerId: '253992', // prod
-        CustomerId: '242565', // test
+        SpecVersion: this.saferpayConfig.specVersion,
+        CustomerId: this.saferpayConfig.customerId,
         RequestId: requestId,
         RetryIndicator: 0,
       },
@@ -105,22 +152,22 @@ export default class Saferpay {
     };
 
     return (
-      // prod
-      // fetch('https://www.saferpay.com/api/Payment/v1/PaymentPage/Assert', {
-      fetch('https://test.saferpay.com/api/Payment/v1/PaymentPage/Assert', {
-        // test
-        headers: {
-          'Content-Type': 'application/json',
-          // 'Basic QVBJXzI1Mzk5Ml8xMjY4MTQxMzpoJHRhNHVxZWJBWnU0QWhlOQ==', // prod
-          Authorization:
-            'Basic QVBJXzI0MjU2NV83MTYyMjc0MTpIMzM0cHF3ZXF3MXF3ZUh1WkF0UiE=', // test
-        },
-        method: 'POST',
-        body: JSON.stringify(requestJson),
-      })
+      fetch(
+        this.saferpayConfig.baseURL +
+          this.saferpayConfig.requestURLs.PaymentPageAssert,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: this.saferpayConfig.authorization,
+          },
+          method: 'POST',
+          body: JSON.stringify(requestJson),
+        }
+      )
         // need to check response status
         .then(response => response.json())
         .catch(error => {
+          // TODO: add logger/amplitude
           console.error(error);
         })
     );
