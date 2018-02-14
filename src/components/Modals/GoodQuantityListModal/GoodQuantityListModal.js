@@ -26,7 +26,6 @@ import type { TFunction } from '../../../types/generalTypes';
 
 import { GoodQuantityGreyField } from './subcomponents/GoodQuantityGreyField';
 import { CategoryIcon } from '../../QuestionAnswer/cards/ConfirmationCard/configured/QuantityInput/subcomponents/subcomponents/CategoryIcon';
-import { ScrollViewCard } from '../../General Components/ScrollViewCard';
 import { RedPlusIcon } from './subcomponents/RedPlusIcon';
 import { getSource } from '../../QuestionAnswer/cards/ConfirmationCard/configured/QuantityInput/subcomponents/GoodInputRow';
 import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
