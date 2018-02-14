@@ -7,8 +7,8 @@ export const de: Locale = {
     Butter: 'Butter & Rahm',
     Oils: 'Öle/Fette/Margarine',
     OtherFood: 'Sonstige Lebensmittel & alkoholfreie Getränke',
-    AlcSoft: 'Alkoholgehalt 0.5% bis 18% Vol.',
-    AlcHard: 'Alkoholgehalt über 18% Vol.',
+    AlcSoft: 'Alkoholische Getränke bis 18% Vol.',
+    AlcHard: 'Alkoholische Getränke über 18% Vol.',
     Cigarettes: 'Zigaretten & Zigarren',
     Tobacco: 'Andere Tabakfabrikate',
     Meds: 'Medikamente',
@@ -280,7 +280,7 @@ export const de: Locale = {
   overview: {
     declared: 'Angemeldet',
     dutyFree: 'Zollfrei',
-    details: 'Einzelheiten',
+    details: 'Details',
   },
   legalNoticeModal: {
     importantNote: 'Wichtiger Hinweis',
