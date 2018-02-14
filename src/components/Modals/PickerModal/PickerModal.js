@@ -129,7 +129,6 @@ class PickerModalInner extends React.Component<
     const standardInput = selected === 'standardInput';
     const customInput = selected === 'customInput';
     const unit = CategoriesInfo.getIn([category, 'unit'], '');
-
     const categoryName = CategoriesInfo.getIn([category, 'name'], '');
 
     const currentAmount: number = standardInput
@@ -137,6 +136,10 @@ class PickerModalInner extends React.Component<
       : this.customTotalAmount();
 
     const inputCurrentAmount: number = this.numberInputTotalAmount();
+
+    const amount: number = onlyStandardInput
+      ? inputCurrentAmount
+      : currentAmount;
 
     return (
       <AppModal
@@ -163,26 +166,40 @@ class PickerModalInner extends React.Component<
               />
               {onlyStandardInput &&
               categoryName === 'Fleisch und Fleischzub' ? (
-                <View>
+                <View
+                  style={{
+                    // flex: 1,
+                    width: '100%',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
                   <TextInput
-                    style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+                    keyboardType="numeric"
+                    // style={currencyPickerModal.textInput}
+                    // onChangeText={value => this.setState({ amount: +value })}
+                    maxLenght="8"
+                    underlineColorAndroid="transparent"
+                    blurOnSubmit
+                    style={pickerModalStyle.textInput}
                     onChangeText={itemValue =>
                       this.setState({
                         numberInput: {
                           ...this.state.numberInput,
-                          wholePart: itemValue,
+                          wholePart: +itemValue,
                         },
                       })
                     }
                     value={this.state.numberInput.wholePart}
                   />
                   <TextInput
-                    style={{ height: 40, borderColor: 'gray' }}
+                    style={pickerModalStyle.textInput}
                     onChangeText={itemValue =>
                       this.setState({
                         numberInput: {
                           ...this.state.numberInput,
-                          decimalPart: itemValue,
+                          decimalPart: +itemValue,
                         },
                       })
                     }
@@ -191,12 +208,12 @@ class PickerModalInner extends React.Component<
                 </View>
               ) : (
                 <TextInput
-                  style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
+                  style={pickerModalStyle.textInput}
                   onChangeText={itemValue =>
                     this.setState({
                       numberInput: {
                         ...this.state.numberInput,
-                        wholePart: itemValue,
+                        wholePart: +itemValue,
                       },
                     })
                   }
@@ -322,9 +339,12 @@ class PickerModalInner extends React.Component<
 
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
-              onPress={() => confirmAction(currentAmount)}
+              onPress={() => confirmAction(amount)}
+              // onPress={() => confirmAction(currentAmount)}
               text={t(['confirmPicker'], {
-                value: `${currentAmount.toFixed(2)} ${unit}`,
+                // value: `${inputCurrentAmount.toFixed(2)} ${unit}`,
+                value: `${amount.toFixed(2)} ${unit}`,
+                // value: `${currentAmount.toFixed(2)} ${unit}`,
               })}
             />
           </View>
