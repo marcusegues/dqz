@@ -2,7 +2,7 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
-import { View, Picker } from 'react-native';
+import { View, Picker, TextInput } from 'react-native';
 import { translate } from 'react-i18next';
 import { AppModal } from '../AppModal';
 import { RedButton } from '../../Buttons/RedButton';
@@ -21,6 +21,9 @@ import { PickerUnitColumn } from './subComponents/PickerUnitColumn';
 import type { TFunction } from '../../../types/generalTypes';
 import type { Category } from '../../../model/types/basketPeopleAmountsTypes';
 import { ModalCloseText } from '../ModalCloseText';
+import { CardHeaderText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderText';
+import { CardHeaderSubText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
+import { moderateScale, verticalScale } from '../../../styles/Scaling';
 
 type PickerState = {
   selected: 'standardInput' | 'customInput',
@@ -31,6 +34,10 @@ type PickerState = {
   customInput: {
     units: string,
     decimalUnits: string,
+  },
+  numberInput: {
+    wholePart: string,
+    decimalPart: string,
   },
 };
 
@@ -59,6 +66,10 @@ class PickerModalInner extends React.Component<
     customInput: {
       units: '1',
       decimalUnits: '00',
+    },
+    numberInput: {
+      wholePart: '1',
+      decimalPart: '00',
     },
   };
 
@@ -90,6 +101,39 @@ class PickerModalInner extends React.Component<
     return units + decimalUnits / 100;
   }
 
+  numberInputTotalAmount(): number {
+    const {
+      wholePart: wholePartString,
+      decimalPart: decimalPartString,
+    } = this.state.numberInput;
+
+    const wholePart = +wholePartString;
+    const decimalPart = +decimalPartString;
+    if (wholePart < 0 || decimalPart < 0) {
+      return 0;
+    }
+    return wholePart + decimalPart / 100;
+  }
+
+  categorySubtextTitle() {
+    const { t } = this.props;
+    const categoryName = CategoriesInfo.getIn(
+      [this.props.category, 'name'],
+      ''
+    );
+    switch (categoryName) {
+      case 'Fleisch und Fleischzub': {
+        return t('recordTheAmountOfMeat');
+      }
+      case 'Andere Tabakfabrikate': {
+        return t('recordTheAmountOfTobacco');
+      }
+      default: {
+        return '';
+      }
+    }
+  }
+
   render() {
     const { selected } = this.state;
     const {
@@ -103,10 +147,18 @@ class PickerModalInner extends React.Component<
     const standardInput = selected === 'standardInput';
     const customInput = selected === 'customInput';
     const unit = CategoriesInfo.getIn([category, 'unit'], '');
+    const categoryName = CategoriesInfo.getIn([category, 'name'], '');
+    const meat = categoryName === 'Fleisch und Fleischzub';
 
     const currentAmount: number = standardInput
       ? this.standardTotalAmount()
       : this.customTotalAmount();
+
+    const inputCurrentAmount: number = this.numberInputTotalAmount();
+
+    const amount: number = onlyStandardInput
+      ? inputCurrentAmount
+      : currentAmount;
 
     return (
       <AppModal
@@ -115,17 +167,91 @@ class PickerModalInner extends React.Component<
         animationOut="slideOutLeft"
       >
         <PickerCard style={{ width: '95%' }}>
-          <View style={pickerModalStyle.topTouchableContainer}>
-            <ModalTab
-              activeTab={standardInput}
-              onPress={() =>
-                this.setState({
-                  selected: 'standardInput',
-                })
-              }
-              text={t('standardCategoryPicker').toUpperCase()}
-            />
-            {onlyStandardInput ? null : (
+          {onlyStandardInput ? (
+            <View>
+              <View
+                style={{
+                  marginTop: verticalScale(16),
+                  marginLeft: moderateScale(16),
+                }}
+              >
+                <CardHeaderText text="Menge eingeben" />
+              </View>
+              <CardHeaderSubText text={this.categorySubtextTitle()} />
+              {onlyStandardInput && meat ? (
+                <View style={pickerModalStyle.textInputContainer}>
+                  <TextInput
+                    keyboardType="numeric"
+                    maxLenght={5}
+                    underlineColorAndroid="transparent"
+                    blurOnSubmit
+                    style={pickerModalStyle.textInput}
+                    onChangeText={itemValue =>
+                      this.setState({
+                        numberInput: {
+                          ...this.state.numberInput,
+                          wholePart: itemValue,
+                        },
+                      })
+                    }
+                    value={this.state.numberInput.wholePart}
+                  />
+                  <PickerValueSeparator separator="," />
+                  <TextInput
+                    keyboardType="numeric"
+                    maxLength={2}
+                    underlineColorAndroid="transparent"
+                    blurOnSubmit
+                    style={pickerModalStyle.textInput}
+                    onChangeText={itemValue =>
+                      this.setState({
+                        numberInput: {
+                          ...this.state.numberInput,
+                          decimalPart: itemValue,
+                        },
+                      })
+                    }
+                    value={this.state.numberInput.decimalPart}
+                  />
+                  <PickerUnitColumn unit={unit} style={{ flex: 0.3 }} />
+                </View>
+              ) : (
+                <View style={pickerModalStyle.textInputContainer}>
+                  <TextInput
+                    keyboardType="numeric"
+                    maxLength={5}
+                    underlineColorAndroid="transparent"
+                    blurOnSubmit
+                    style={[
+                      pickerModalStyle.textInput,
+                      { alignSelf: 'center' },
+                    ]}
+                    onChangeText={itemValue =>
+                      this.setState({
+                        numberInput: {
+                          ...this.state.numberInput,
+                          wholePart: itemValue,
+                        },
+                      })
+                    }
+                    value={this.state.numberInput.wholePart}
+                  />
+                  <PickerUnitColumn unit={unit} style={{ flex: 0.3 }} />
+                </View>
+              )}
+            </View>
+          ) : (
+            <View style={pickerModalStyle.topTouchableContainer}>
+              <ModalTab
+                activeTab={standardInput}
+                onPress={() =>
+                  this.setState({
+                    selected: 'standardInput',
+                  })
+                }
+                text={t('standardCategoryPicker').toUpperCase()}
+              />
+
               <ModalTab
                 activeTab={customInput}
                 onPress={() =>
@@ -135,10 +261,10 @@ class PickerModalInner extends React.Component<
                 }
                 text={t('individualCategoryPicker').toUpperCase()}
               />
-            )}
-          </View>
+            </View>
+          )}
 
-          {standardInput ? (
+          {standardInput && !onlyStandardInput ? (
             <View style={pickerModalStyle.pickerContainer}>
               <PickerComponent
                 selectedValue={this.state.standardInput.number}
@@ -184,6 +310,10 @@ class PickerModalInner extends React.Component<
               <PickerUnitColumn unit={unit} />
             </View>
           ) : (
+            <View />
+          )}
+
+          {customInput && !onlyStandardInput ? (
             <View style={pickerModalStyle.pickerContainer}>
               <PickerComponent
                 selectedValue={this.state.customInput.units}
@@ -226,13 +356,15 @@ class PickerModalInner extends React.Component<
               </PickerComponent>
               <PickerUnitColumn unit={unit} />
             </View>
+          ) : (
+            <View />
           )}
 
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
-              onPress={() => confirmAction(currentAmount)}
+              onPress={() => confirmAction(amount)}
               text={t(['confirmPicker'], {
-                value: `${currentAmount.toFixed(2)} ${unit}`,
+                value: `${amount} ${unit}`,
               })}
             />
           </View>

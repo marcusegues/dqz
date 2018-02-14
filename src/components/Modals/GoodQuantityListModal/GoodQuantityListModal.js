@@ -35,6 +35,7 @@ const ownStyles = {
     flex: 1,
     width: '100%',
     marginVertical: moderateScale(20),
+    paddingBottom: 0,
   },
   container: {
     flex: 1,
@@ -195,7 +196,9 @@ class GoodQuantityListModalInner extends React.Component<
           toggleModalVisible={() => this.togglePickerVisible()}
           confirmAction={amount => this.confirmPicker(amount)}
           category={modalCategory}
-          onlyStandardInput={modalCategory === 'Cigarettes'}
+          onlyStandardInput={
+            modalCategory === 'Tobacco' || modalCategory === 'Meat'
+          }
         />
       </AppModal>
     );

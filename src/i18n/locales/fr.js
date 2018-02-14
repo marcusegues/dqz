@@ -136,6 +136,10 @@ export const fr: Locale = {
       'Assurez-vous de passer la frontière dans le délai imparti de deux heures. La quittance douane est valable le {{date}} à {{time}}',
     timePickerTakeOverThePeriod: 'Prendre en charge la période',
     timePickerTimePrefix: 'Heure',
+    recordTheAmountOfMeat:
+      'Notez la quantité de viande que vous transportez avec vous:',
+    recordTheAmountOfTobacco:
+      'Notez la quantité de tabac que vous transportez:',
   },
   payment: {
     overViewTitle: "Vue d'ensemble de votre déclaration",
