@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { translate } from 'react-i18next';
 import type { ComponentType } from 'react';
 import { v4 } from 'uuid';
@@ -18,7 +18,7 @@ import type {
 } from '../../../model/types/basketPeopleAmountsTypes';
 
 import { QuantityRow } from './subcomponents/QuantityRow';
-import { scale, verticalScale } from '../../../styles/Scaling';
+import { moderateScale, scale, verticalScale } from '../../../styles/Scaling';
 import { BackArrow } from '../../Headers/subcomponents/BackArrow';
 import { PickerModal } from '../PickerModal/PickerModal';
 import { RedButton } from '../../Buttons/RedButton';
@@ -36,6 +36,7 @@ const ownStyles = {
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
+    // height: '100%',
   },
   backArrowContainer: {
     flexDirection: 'row',
@@ -59,6 +60,7 @@ const ownStyles = {
   },
   redPlus: {
     alignItems: 'center',
+    marginTop: moderateScale(16),
   },
   redButton: {
     width: '95%',
@@ -143,19 +145,24 @@ class GoodQuantityListModalInner extends React.Component<
                 totalQuantity={totalQuantity}
               />
             </View>
-            {quantities.map((q, idx) => (
-              <QuantityRow
-                borderTop={idx === 0}
-                key={v4()}
-                quantity={q}
-                category={modalCategory}
-                onDelete={() => {
-                  if (modalCategory) {
-                    onDeleteQuantity(modalCategory, idx);
-                  }
-                }}
-              />
-            ))}
+            {quantities.size > 0 ? (
+              <ScrollView style={{ width: '100%' }}>
+                {quantities.map((q, idx) => (
+                  <QuantityRow
+                    borderTop={idx === 0}
+                    key={v4()}
+                    quantity={q}
+                    category={modalCategory}
+                    onDelete={() => {
+                      if (modalCategory) {
+                        onDeleteQuantity(modalCategory, idx);
+                      }
+                    }}
+                  />
+                ))}
+              </ScrollView>
+            ) : null}
+
             {quantities.size === 0 ? (
               <GoodQuantityGreyField
                 topText={t('quantityInput:enterQuantities', {
