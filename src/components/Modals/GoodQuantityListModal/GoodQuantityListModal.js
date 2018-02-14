@@ -34,6 +34,7 @@ const ownStyles = {
   pickerCard: {
     flex: 1,
     width: '100%',
+    marginVertical: moderateScale(20),
   },
   container: {
     flex: 1,
