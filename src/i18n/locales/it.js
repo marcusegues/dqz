@@ -68,7 +68,10 @@ export const it: Locale = {
     mainCategoriesQuestion: 'Quali merci si desidera dichiarare?',
   },
   quantityInput: {
-    quantityInput: 'Inserimento delle quantità',
+    quantityInput: '⚠️',
+    recordedOn: '⚠️',
+    addQuantities: '⚠️',
+    enterQuantities: '⚠️',
   },
   amountInput: {
     amountInput: 'Inserire qui il valore complessivo delle merci trasportate.',

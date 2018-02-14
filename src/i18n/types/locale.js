@@ -74,6 +74,9 @@ type MainCategoriesInputTranslations = {
 
 type QuantityInputTranslations = {
   quantityInput: string,
+  recordedOn: string,
+  addQuantities: string,
+  enterQuantities: string,
 };
 
 type AmountInputTranslations = {

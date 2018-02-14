@@ -5,22 +5,18 @@ import type { ComponentType } from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import { CardHeaderText } from '../../../QuestionAnswer/cards/subcomponents/CardHeaderText';
-import { CardHeaderSubText } from '../../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
 import { QuantityIcon } from '../../../General Components/GreyBox/configured/QuantityIcon';
 import { verticalScale } from '../../../../styles/Scaling';
 import { CategoriesInfo } from '../../../../model/constants';
-import type { MainCategory } from '../../../../types/reducers/appReducer';
 import type { Category } from '../../../../model/types/basketPeopleAmountsTypes';
 import type { TFunction } from '../../../../types/generalTypes';
 
 type QuantityInfoProps = {
-  mainCategory: MainCategory,
   category: Category,
   totalQuantity: number,
 };
 
 const QuantityInfoInner = ({
-  mainCategory,
   category,
   totalQuantity,
   t,
@@ -34,7 +30,6 @@ const QuantityInfoInner = ({
     }}
   >
     <CardHeaderText text={t(`categories:${category}`)} />
-    <CardHeaderSubText text={t(`mainCategories:${mainCategory}`)} />
     <View style={{ marginTop: 10 }}>
       <QuantityIcon
         quantity={totalQuantity}

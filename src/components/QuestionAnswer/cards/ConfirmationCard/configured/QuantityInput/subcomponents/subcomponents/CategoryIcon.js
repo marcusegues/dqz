@@ -18,10 +18,19 @@ const ownStyles = StyleSheet.create({
 
 type CategoryIconProps = {
   source: string,
+  style?: {},
 };
 
-export const CategoryIcon = ({ source }: CategoryIconProps) => (
+export const CategoryIcon = ({ source, style }: CategoryIconProps) => (
   <View style={ownStyles.categoryIcon}>
-    <Image source={source} style={ownStyles.image} resizeMode="contain" />
+    <Image
+      source={source}
+      style={[ownStyles.image, { ...style }]}
+      resizeMode="contain"
+    />
   </View>
 );
+
+CategoryIcon.defaultProps = {
+  style: {},
+};
