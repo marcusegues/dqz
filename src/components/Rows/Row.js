@@ -8,7 +8,7 @@ import { rowContainerStyles } from './styles/rowStyles';
 type RowProps = {
   borderTop?: boolean,
   borderBottom?: boolean,
-  width: string,
+  width?: string,
   onLayout?: any => void,
   children: Children,
   styles?: Object,
@@ -24,7 +24,7 @@ export const Row = ({
 }: RowProps) => (
   <View
     style={[
-      rowContainerStyles(borderTop, borderBottom, width ? width : '95%'),
+      rowContainerStyles(borderTop, borderBottom, width || '95%'),
       styles,
     ]}
     onLayout={event => onLayout(event)}

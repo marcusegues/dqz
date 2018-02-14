@@ -25,7 +25,7 @@ import { QuestionAnswerContainer } from '../components/QuestionAnswer/QuestionAn
 import { GoodQuantityListModal } from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { OnBoardingTaxScreen } from '../screens/OnBoarding/OnBoardingTaxScreen';
 import { ReceiptAfterPayment } from '../components/Receipts/ReceiptAfterPayment';
-import { AllReceipts } from '../components/Receipts/AllReceipts';
+import { AllReceipts } from '../components/Receipts/AllReceipts/AllReceipts';
 import { AppInfo } from '../screens/AppInfo/AppInfo';
 import { LegalNoticeInfo } from '../screens/LegalNoticeInfo/LegalNoticeInfo';
 import { HomeIcon } from '../components/Headers/subcomponents/HomeIcon';

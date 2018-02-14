@@ -13,11 +13,23 @@ import { DutyList } from './subcomponents/DutyList';
 import { VatList } from './subcomponents/VatList';
 import { ScrollViewCard } from '../General Components/ScrollViewCard';
 import { TimePickerModal } from '../Modals/TimePickerModal/TimePickerModal';
-import { getReceiptEntryTime } from '../../reducers';
+import {
+  getAmounts,
+  getBasket,
+  getCurrencies,
+  getPeople,
+  getReceiptEntryTime,
+} from '../../reducers';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
 import { InfoNote } from './subcomponents/InfoNote';
 import { getConvertedLocalTimeToSwiss } from '../../model/utils';
 import { BackAndContinueButtons } from '../Buttons/BackAndContinueButtons';
+import type {
+  Amounts,
+  Basket,
+  People,
+} from '../../model/types/basketPeopleAmountsTypes';
+import type { CurrencyObject } from '../../model/currencies';
 
 type OverviewProps = {
   modalVisible?: boolean,
@@ -27,6 +39,10 @@ type OverviewProps = {
 };
 
 type ReduxInjectedProps = {
+  basket: Basket,
+  people: People,
+  amounts: Amounts,
+  currencies: CurrencyObject,
   setReceiptEntryTime: (receiptEntryTime: string) => void,
   receiptEntryTime: string,
 };
@@ -79,6 +95,10 @@ class OverviewInner extends React.Component<
       onProceedToPayment,
       navigation,
       paymentDisabled,
+      basket,
+      people,
+      amounts,
+      currencies,
     } = this.props;
     const momentReceiptEntryTime =
       receiptEntryTime !== ''
@@ -89,10 +109,27 @@ class OverviewInner extends React.Component<
     return (
       <ScrollViewCard>
         <CardHeader text={t('overViewTitle')} />
-        <DutyList />
-        <VatList large={false} />
-        <VatList large headerRight={false} />
-        <TotalOwedRow />
+        <DutyList basket={basket} people={people} />
+        <VatList
+          large={false}
+          people={people}
+          amounts={amounts}
+          currencies={currencies}
+        />
+        <VatList
+          large
+          borderTop={false}
+          people={people}
+          amounts={amounts}
+          currencies={currencies}
+          headerRight={false}
+        />
+        <TotalOwedRow
+          basket={basket}
+          people={people}
+          currencies={currencies}
+          amounts={amounts}
+        />
         <PeriodOfEntryRow
           title={t('receipt:entryTime')}
           subtitle={t('receipt:chooseOtherEntryTime')}
@@ -122,6 +159,10 @@ class OverviewInner extends React.Component<
 }
 
 const mapStateToProps = state => ({
+  basket: getBasket(state),
+  people: getPeople(state),
+  amounts: getAmounts(state),
+  currencies: getCurrencies(state),
   receiptEntryTime: getReceiptEntryTime(state),
 });
 

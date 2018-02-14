@@ -12,29 +12,23 @@ import { connect } from 'react-redux';
 import { takeSnapshotAsync } from 'expo';
 import { translate } from 'react-i18next';
 import { ScrollViewCard } from './subcomponents/ScrollViewCard';
-import { RedLogo } from './subcomponents/Logo';
-import { moderateScale, scale, verticalScale } from '../../styles/Scaling';
+import { RedLogo } from './subcomponents/RedLogo';
+import { moderateScale, verticalScale } from '../../styles/Scaling';
 import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
 import { ReceiptSubText } from './subcomponents/ReceiptSubText';
 import { ValidUntilBlock } from './subcomponents/ValidUntilBlock';
-import { DutyRow } from '../Rows/configured/Overview/DutyRow/DutyRow';
-import { VatRow } from '../Rows/configured/Overview/VatRow/VatRow';
 import type { PaymentData, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { getPaymentData, getReceiptId } from '../../reducers';
-import {
-  clearReceipt,
-  fetchReceiptByReceiptId,
-  fetchReceipts,
-} from '../../asyncStorage/storageApi';
+import { fetchReceiptByReceiptId } from '../../asyncStorage/storageApi';
 import type { Receipt } from '../../types/receiptTypes';
 import { calculateVat } from '../../model/vatCalculations';
-import { calculateDuty, getAllowanceRaw } from '../../model/dutyCalculations';
-import { getTotalQuantity } from '../../model/configurationApi';
-import { getMainCategory } from '../../types/reducers/appReducer';
+import { calculateDuty } from '../../model/dutyCalculations';
+import { DutyList } from '../Overview/subcomponents/DutyList';
 import { VatList } from '../Overview/subcomponents/VatList';
 import { Row } from '../Rows/Row';
-import { rowStyles } from '../Rows/styles/rowStyles';
+import { TotalOwedRow } from '../Overview/subcomponents/TotalOwedRow';
+import { ReceiptInfoNote } from './subcomponents/ReceiptInfoNote';
 
 const ownStyles = {
   topSumText: {
@@ -42,12 +36,6 @@ const ownStyles = {
     fontSize: moderateScale(28),
     textAlign: 'center',
     marginTop: verticalScale(10),
-  },
-  contentContainer: {
-    borderTopWidth: 1,
-    borderTopColor: '#E0E0E1',
-    marginHorizontal: scale(16),
-    marginTop: verticalScale(15),
   },
   receiptSubTextDuty: {
     fontSize: moderateScale(12),
@@ -57,23 +45,8 @@ const ownStyles = {
     color: '#fff',
     fontFamily: 'roboto_regular',
   },
-  cardRowTextSum: {
-    alignSelf: 'flex-end',
-    marginTop: verticalScale(15),
-    marginBottom: verticalScale(35),
-  },
   cardRowTextPaidOn: {
     marginVertical: verticalScale(15),
-  },
-  receiptSubTextVat: {
-    fontSize: moderateScale(12),
-    alignSelf: 'flex-end',
-    marginTop: verticalScale(25),
-  },
-
-  receiptSubTextNotification: {
-    paddingBottom: verticalScale(15),
-    lineHeight: 18,
   },
 };
 
@@ -129,13 +102,9 @@ class ReceiptAfterPaymentInner extends React.Component<
     const { t, paymentData } = this.props;
 
     if (this.state.receipt && this.state.receipt.receiptId !== undefined) {
-      const { basket } = this.state.receipt;
-      const vatReport = calculateVat(
-        this.state.receipt.amounts,
-        this.state.receipt.people,
-        this.state.receipt.currencies
-      );
-      const dutyReport = calculateDuty(basket, this.state.receipt.people);
+      const { basket, people, amounts, currencies } = this.state.receipt;
+      const vatReport = calculateVat(amounts, people, currencies);
+      const dutyReport = calculateDuty(basket, people);
       const fullVat = vatReport.get('totalVat');
       const fullDuty = dutyReport.get('totalDuty');
       const transactionDatetime = DateTime.fromISO(
@@ -207,48 +176,32 @@ class ReceiptAfterPaymentInner extends React.Component<
                 style={ownStyles.cardRowText}
               />
             </ValidUntilBlock>
-            <ReceiptSubText
-              text={t('payment:dutyColumn')}
-              style={ownStyles.receiptSubTextDuty}
-            />
           </Row>
 
-          <View style={ownStyles.contentContainer}>
-            {dutyReport
-              .get('dutyByCategoryRaw')
-              .entrySeq()
-              .filter(entry => getTotalQuantity(basket, entry[0]) > 0)
-              .map(([category, dutyOfCategory], idx) => (
-                <DutyRow
-                  borderTop={idx === 0}
-                  width="100%"
-                  key={category}
-                  mainCategory={getMainCategory(category)}
-                  allowanceRaw={getAllowanceRaw(
-                    category,
-                    this.state.receipt.people
-                  )}
-                  category={category}
-                  quantity={getTotalQuantity(basket, category)}
-                  duty={dutyOfCategory}
-                />
-              ))}
+          <DutyList basket={basket} people={people} />
+          <VatList
+            large={false}
+            people={people}
+            amounts={amounts}
+            currencies={currencies}
+          />
+          <VatList
+            large
+            borderTop={false}
+            people={people}
+            amounts={amounts}
+            currencies={currencies}
+            headerRight={false}
+          />
 
-            <ReceiptSubText
-              text={t('vatColumn')}
-              style={ownStyles.receiptSubTextVat}
-            />
-            <CardRowText
-              text={t('receipt:sumText', {
-                value: (fullVat + fullDuty).toFixed(2),
-              })}
-              style={ownStyles.cardRowTextSum}
-            />
-            <ReceiptSubText
-              text={t('receiptStorageNotification')}
-              style={ownStyles.receiptSubTextNotification}
-            />
-          </View>
+          <TotalOwedRow
+            basket={basket}
+            people={people}
+            currencies={currencies}
+            amounts={amounts}
+          />
+
+          <ReceiptInfoNote />
         </ScrollViewCard>
       );
     }

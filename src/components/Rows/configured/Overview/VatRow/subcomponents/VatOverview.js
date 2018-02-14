@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import { connect } from 'react-redux';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 import type { ComponentType } from 'react';
@@ -18,18 +17,14 @@ import {
   totalLargeAmounts,
   totalNormalAmounts,
 } from '../../../../../../model/utils';
-import { getCurrencies } from '../../../../../../reducers/index';
 import type { CurrencyObject } from '../../../../../../model/currencies';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 
 type VatOverviewProps = {
   large: boolean,
   amounts: Amounts,
-  vat: number,
-};
-
-type ReduxInject = {
   currencies: CurrencyObject,
+  vat: number,
 };
 
 type CollapsibleInjected = {
@@ -47,7 +42,7 @@ const VatOverviewInner = ({
   setMainHeight,
   animate,
   expanded,
-}: VatOverviewProps & CollapsibleInjected & ReduxInject & { t: TFunction }) => {
+}: VatOverviewProps & CollapsibleInjected & { t: TFunction }) => {
   const totalAmount = large
     ? totalLargeAmounts(amounts, currencies)
     : totalNormalAmounts(amounts, currencies);
@@ -57,7 +52,7 @@ const VatOverviewInner = ({
     : t('normalAmountsSubtitle');
   return (
     <Row
-      borderTop
+      borderTop={false}
       borderBottom={false}
       width="100%"
       onLayout={event => {
@@ -77,10 +72,6 @@ const VatOverviewInner = ({
   );
 };
 
-const mapStateToProps = state => ({
-  currencies: getCurrencies(state),
-});
-
-export const VatOverview = (connect(mapStateToProps, null)(
-  translate(['receipt'])(VatOverviewInner)
+export const VatOverview = (translate(['receipt'])(
+  VatOverviewInner
 ): ComponentType<VatOverviewProps>);
