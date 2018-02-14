@@ -10,6 +10,7 @@ const ownStyles = {
     flex: 1,
     backgroundColor: '#757575',
     alignItems: 'center',
+    width: '100%',
     paddingVertical: verticalScale(5),
     marginVertical: verticalScale(15),
   },

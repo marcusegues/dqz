@@ -8,13 +8,12 @@ import { translate } from 'react-i18next';
 import type { ComponentType } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 import { CardRowText } from '../../../QuestionAnswer/cards/subcomponents/CardRowText';
-import { moderateScale, verticalScale } from '../../../../styles/Scaling';
+import { moderateScale } from '../../../../styles/Scaling';
 import { GREY } from '../../../../styles/colors';
 import { CategoriesInfo } from '../../../../model/constants';
 import { Row } from '../../../Rows/Row';
 import type { Category } from '../../../../model/types/basketPeopleAmountsTypes';
-import { CardRowSubText } from '../../../QuestionAnswer/cards/subcomponents/CardRowSubText';
-import type { TFunction } from '../../../../types/generalTypes';
+import { rowStyles } from '../../../Rows/styles/rowStyles';
 
 type QuantityRowInnerProps = {
   quantity: number,
@@ -27,21 +26,25 @@ const QuantityRowInner = ({
   quantity,
   onDelete,
   category,
-  borderTop,
-  t,
-}: QuantityRowInnerProps & { t: TFunction, borderTop: false }) => (
+  borderTop = false,
+}: QuantityRowInnerProps) => (
   <Row borderTop={borderTop}>
-    <View style={{ flex: 1, paddingVertical: verticalScale(10) }}>
-      <CardRowText
-        text={`${quantity} ${CategoriesInfo.getIn([category, 'unit'], '')}`}
-      />
-      <CardRowSubText text={t('recordedOn', { value: '08.12.2017' })} />
+    <View style={rowStyles.rowContent}>
+      <View style={{ flex: 1 }}>
+        <CardRowText
+          text={`${quantity} ${CategoriesInfo.getIn([category, 'unit'], '')}`}
+        />
+      </View>
+      <Touchable onPress={onDelete}>
+        <MaterialIcons name="cancel" size={moderateScale(28)} color={GREY} />
+      </Touchable>
     </View>
-    <Touchable onPress={onDelete}>
-      <MaterialIcons name="cancel" size={moderateScale(28)} color={GREY} />
-    </Touchable>
   </Row>
 );
+
+QuantityRowInner.defaultProps = {
+  borderTop: false,
+};
 
 export const QuantityRow = (translate(['quantityInput'])(
   QuantityRowInner

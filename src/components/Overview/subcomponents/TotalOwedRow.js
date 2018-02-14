@@ -1,19 +1,22 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
-import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View } from 'react-native';
 
-import { getDutyReport, getVatReport } from '../../../reducers';
 import { CardRowText } from '../../QuestionAnswer/cards/subcomponents/CardRowText';
 import { verticalScale } from '../../../styles/Scaling';
 import type { TFunction } from '../../../types/generalTypes';
+
 import type {
-  DutyReport,
-  VatReport,
-} from '../../../model/types/calculationTypes';
+  Amounts,
+  Basket,
+  People,
+} from '../../../model/types/basketPeopleAmountsTypes';
+import type { CurrencyObject } from '../../../model/currencies';
+import { calculateVat } from '../../../model/vatCalculations';
+import { calculateDuty } from '../../../model/dutyCalculations';
 
 const ownStyles = {
   cardRowTextSum: {
@@ -24,17 +27,21 @@ const ownStyles = {
 };
 
 type TotalOwedProps = {
-  dutyReport: DutyReport,
-  vatReport: VatReport,
+  basket: Basket,
+  people: People,
+  currencies: CurrencyObject,
+  amounts: Amounts,
 };
 
 const TotalOwedRowInner = ({
-  dutyReport,
-  vatReport,
+  basket,
+  people,
+  currencies,
+  amounts,
   t,
 }: TotalOwedProps & { t: TFunction }) => {
-  const fullVat = vatReport.get('totalVat');
-  const fullDuty = dutyReport.get('totalDuty');
+  const fullVat = calculateVat(amounts, people, currencies).get('totalVat');
+  const fullDuty = calculateDuty(basket, people).get('totalDuty');
 
   return (
     <View style={{ alignSelf: 'flex-end', marginRight: 16, marginTop: 8 }}>
@@ -48,11 +55,6 @@ const TotalOwedRowInner = ({
   );
 };
 
-const mapStateToProps = state => ({
-  dutyReport: getDutyReport(state),
-  vatReport: getVatReport(state),
-});
-
-export const TotalOwedRow = (connect(mapStateToProps, null)(
-  translate(['receipt'])(TotalOwedRowInner)
+export const TotalOwedRow = (translate(['receipt'])(
+  TotalOwedRowInner
 ): ComponentType<{}>);
