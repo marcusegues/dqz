@@ -4,6 +4,8 @@ import React from 'react';
 import Touchable from 'react-native-platform-touchable';
 // $FlowFixMe
 import { View } from 'react-native';
+import { translate } from 'react-i18next';
+import type { ComponentType } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
 import { CardRowText } from '../../../QuestionAnswer/cards/subcomponents/CardRowText';
 import { moderateScale } from '../../../../styles/Scaling';
@@ -12,20 +14,22 @@ import { CategoriesInfo } from '../../../../model/constants';
 import { Row } from '../../../Rows/Row';
 import type { Category } from '../../../../model/types/basketPeopleAmountsTypes';
 import { rowStyles } from '../../../Rows/styles/rowStyles';
+import type { TFunction } from '../../../../types/generalTypes';
 
-type QuantityRowProps = {
+type QuantityRowInnerProps = {
   quantity: number,
   onDelete: () => void,
   category: Category,
   borderTop?: boolean,
 };
 
-export const QuantityRow = ({
+const QuantityRowInner = ({
   quantity,
   onDelete,
   category,
   borderTop,
-}: QuantityRowProps) => (
+  t,
+}: QuantityRowInnerProps & { t: TFunction, borderTop: false }) => (
   <Row borderTop={borderTop}>
     <View style={rowStyles.rowContent}>
       <View style={{ flex: 1 }}>
@@ -40,6 +44,6 @@ export const QuantityRow = ({
   </Row>
 );
 
-QuantityRow.defaultProps = {
-  borderTop: false,
-};
+export const QuantityRow = (translate(['quantityInput'])(
+  QuantityRowInner
+): ComponentType<QuantityRowInnerProps>);

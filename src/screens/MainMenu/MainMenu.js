@@ -3,7 +3,7 @@ import React from 'react';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { View, Image } from 'react-native';
+import { View, Image, SafeAreaView } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { MenuTile } from './Subcomponents/MenuTile';
 import { mainMenuStyles } from './styles/MainMenuStyles';
@@ -26,7 +26,7 @@ const MainMenuInner = ({ navigation, t }: MainMenuProps & { t: TFunction }) => (
         <AppTitle />
       </View>
     </View>
-    <View style={mainMenuStyles.bottomContainer}>
+    <SafeAreaView style={mainMenuStyles.bottomContainer}>
       <MenuTile
         onPress={() => navigation.navigate('QuestionAnswer')}
         text={t('declareGoods')}
@@ -72,7 +72,7 @@ const MainMenuInner = ({ navigation, t }: MainMenuProps & { t: TFunction }) => (
           resizeMode="contain"
         />
       </MenuTile>
-    </View>
+    </SafeAreaView>
   </View>
 );
 

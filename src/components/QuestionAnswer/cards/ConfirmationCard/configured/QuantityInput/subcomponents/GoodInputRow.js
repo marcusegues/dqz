@@ -84,7 +84,7 @@ const assets: { [Category | 'OtherGoods']: string } = {
   Cigarettes,
 };
 
-const getSource = (category: Category): string => {
+export const getSource = (category: Category): string => {
   const categoriesWithIcons = new Set([
     'AlcHard',
     'AlcSoft',
