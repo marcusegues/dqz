@@ -5,10 +5,7 @@ import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View } from 'react-native';
-import type {
-  Category,
-  People,
-} from '../../../../../model/types/basketPeopleAmountsTypes';
+import type { Category } from '../../../../../model/types/basketPeopleAmountsTypes';
 import { CategoriesInfo } from '../../../../../model/constants';
 import type { TFunction } from '../../../../../types/generalTypes';
 import { AllowanceIcon } from './subcomponents/AllowanceIcon';
@@ -17,7 +14,6 @@ import { OverviewInfo } from '../subcomponents/OverviewInfo';
 import { Row } from '../../../Row';
 import { TotalOwed } from '../subcomponents/TotalOwed';
 import { rowStyles } from '../../../styles/rowStyles';
-import { getAllowanceRaw } from '../../../../../model/dutyCalculations';
 
 type DutyRowProps = {
   category: Category,

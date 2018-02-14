@@ -29,7 +29,7 @@ import {
 } from '../../asyncStorage/storageApi';
 import type { Receipt } from '../../types/receiptTypes';
 import { calculateVat } from '../../model/vatCalculations';
-import { calculateDuty } from '../../model/dutyCalculations';
+import { calculateDuty, getAllowanceRaw } from '../../model/dutyCalculations';
 import { getTotalQuantity } from '../../model/configurationApi';
 import { getMainCategory } from '../../types/reducers/appReducer';
 import { VatList } from '../Overview/subcomponents/VatList';
@@ -215,6 +215,10 @@ class ReceiptAfterPaymentInner extends React.Component<
                   borderTop={idx === 0}
                   key={category}
                   mainCategory={getMainCategory(category)}
+                  allowanceRaw={getAllowanceRaw(
+                    category,
+                    this.state.receipt.people
+                  )}
                   category={category}
                   quantity={getTotalQuantity(basket, category)}
                   duty={dutyOfCategory}

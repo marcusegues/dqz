@@ -36,8 +36,7 @@ const DutyListInner = ({
     .get('dutyByCategoryRaw')
     .entrySeq()
     .filter(entry => getTotalQuantity(basket, entry[0]) > 0)
-    .map(([category, dutyOfCategory], idx) => {
-      return {
+    .map(([category, dutyOfCategory], idx) => ({
         key: category,
         component: (
           <DutyRow
@@ -50,8 +49,7 @@ const DutyListInner = ({
             duty={dutyOfCategory}
           />
         ),
-      };
-    });
+      }));
   return (
     <View
       style={{
