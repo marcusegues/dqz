@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { View, ScrollView } from 'react-native';
+import { ScrollView, SafeAreaView } from 'react-native';
 import { globalStyles } from '../../styles/globalStyles';
 import type { Children } from '../../types/generalTypes';
 
@@ -29,13 +29,13 @@ type ScrollViewCardProps = {
 export class ScrollViewCard extends React.Component<ScrollViewCardProps> {
   render() {
     return (
-      <View style={ownStyles.container}>
+      <SafeAreaView style={ownStyles.container}>
         <ScrollView
           contentContainerStyle={[ownStyles.scrollView, globalStyles.boxShadow]}
         >
           {this.props.children}
         </ScrollView>
-      </View>
+      </SafeAreaView>
     );
   }
 }

@@ -173,7 +173,7 @@ class GoodQuantityListModalInner extends React.Component<
 
           <View style={ownStyles.redButton}>
             <RedButton
-              onPress={() => {}}
+              onPress={onHide}
               text={t('general:confirm')}
               confirmationDisabled={quantities.size === 0}
             />
