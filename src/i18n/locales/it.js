@@ -49,7 +49,7 @@ export const it: Locale = {
   snackBar: {
     limitExceeded:
       "Il valore dei beni per l'app è stato superato. Si prega di segnalare le vostre merci per via orale al valico di frontiera.",
-    offline: '⚠️',
+    offline: 'Sei offline. Si prega di verificare la connessione.',
     showBorder: 'Mostra il valico di frontiera',
   },
   onBoarding: {
@@ -68,10 +68,10 @@ export const it: Locale = {
     mainCategoriesQuestion: 'Quali merci si desidera dichiarare?',
   },
   quantityInput: {
-    quantityInput: '⚠️',
-    recordedOn: '⚠️',
-    addQuantities: '⚠️',
-    enterQuantities: '⚠️',
+    quantityInput: 'Ingresso quantità',
+    recordedOn: 'registrato su {{value}}',
+    addQuantities: 'Aggiungi quantità',
+    enterQuantities: 'Inserisci le quantità di tutti {{value}} qui',
   },
   amountInput: {
     amountInput: 'Inserire qui il valore complessivo delle merci trasportate.',
@@ -151,7 +151,7 @@ export const it: Locale = {
     vatColumn: 'IVA in CHF:',
     normalAmountsTitle: 'Valore complessivo delle merci',
     normalAmountsSubtitle: 'Totale di tutte le ricevute d’acquisto',
-    largeAmountsTitle: '⚠️',
+    largeAmountsTitle: 'Oggetti individuali',
     largeAmountsSubtitle: '⚠️',
     receiptStorageNotification:
       'Il presente giustificativo rimane memorizzato per un anno. Durante questo periodo, può essere visualizzato in qualsiasi momento nell’app.',
@@ -283,9 +283,9 @@ export const it: Locale = {
       'I diritti d’autore e tutti gli altri diritti riguardanti contenuti, immagini, fotografie o altri dati pubblicati sul sito web delle autorità federali sono di proprietà esclusiva di quest’ultime o, eventualmente, del titolare dei diritti debitamente citato. La riproduzione di qualsiasi elemento è permessa previo consenso scritto del titolare dei diritti d’autore.\n',
   },
   overview: {
-    declared: '⚠️',
-    dutyFree: '⚠️',
-    details: '⚠️',
+    declared: 'Dichiarato',
+    dutyFree: 'duty-free',
+    details: 'Dettagli',
   },
   legalNoticeModal: {
     importantNote: 'Nota importante',
