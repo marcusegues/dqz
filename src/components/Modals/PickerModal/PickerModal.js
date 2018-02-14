@@ -2,7 +2,7 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
-import { View, Picker, TextInput, Text } from 'react-native';
+import { View, Picker, TextInput } from 'react-native';
 import { translate } from 'react-i18next';
 import { AppModal } from '../AppModal';
 import { RedButton } from '../../Buttons/RedButton';
@@ -123,11 +123,10 @@ class PickerModalInner extends React.Component<
     );
     switch (categoryName) {
       case 'Fleisch und Fleischzub': {
-        return t('quantityOfMeat');
-        // return 'Fleischmenge';
+        return t('recordTheAmountOfMeat');
       }
       case 'Andere Tabakfabrikate': {
-        return 'Tabakmenge';
+        return t('recordTheAmountOfTobacco');
       }
       default: {
         return '';
@@ -178,11 +177,7 @@ class PickerModalInner extends React.Component<
               >
                 <CardHeaderText text="Menge eingeben" />
               </View>
-              <CardHeaderSubText
-                text={`Erfassen Sie die ${this.categorySubtextTitle()}, die Sie mit sich führen:`}
-                // text={`Erfassen Sie die ${categoryName}, die Sie mit sich führen:`}
-              />
-              {/*<CardHeaderSubText text="Erfassen Sie die Fleischmenge, die Sie mit sich führen:" />*/}
+              <CardHeaderSubText text={this.categorySubtextTitle()} />
               {onlyStandardInput && meat ? (
                 <View style={pickerModalStyle.textInputContainer}>
                   <TextInput
@@ -196,7 +191,6 @@ class PickerModalInner extends React.Component<
                         numberInput: {
                           ...this.state.numberInput,
                           wholePart: itemValue,
-                          // wholePart: +itemValue,
                         },
                       })
                     }
@@ -205,8 +199,6 @@ class PickerModalInner extends React.Component<
                   <PickerValueSeparator separator="," />
                   <TextInput
                     keyboardType="numeric"
-                    // style={currencyPickerModal.textInput}
-                    // onChangeText={value => this.setState({ amount: +value })}
                     maxLength={2}
                     underlineColorAndroid="transparent"
                     blurOnSubmit
@@ -216,7 +208,6 @@ class PickerModalInner extends React.Component<
                         numberInput: {
                           ...this.state.numberInput,
                           decimalPart: itemValue,
-                          // decimalPart: +itemValue,
                         },
                       })
                     }
@@ -240,7 +231,6 @@ class PickerModalInner extends React.Component<
                         numberInput: {
                           ...this.state.numberInput,
                           wholePart: itemValue,
-                          // wholePart: +itemValue,
                         },
                       })
                     }
@@ -373,11 +363,8 @@ class PickerModalInner extends React.Component<
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
               onPress={() => confirmAction(amount)}
-              // onPress={() => confirmAction(currentAmount)}
               text={t(['confirmPicker'], {
-                // value: `${inputCurrentAmount.toFixed(2)} ${unit}`,
                 value: `${amount} ${unit}`,
-                // value: `${amount.toFixed(2)} ${unit}`,
               })}
             />
           </View>

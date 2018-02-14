@@ -137,7 +137,8 @@ type ModalTranslations = {
   timePickerTakeOverThePeriod: string,
   closeModalText: string,
   timePickerTimePrefix: string,
-  quantityOfMeat: string,
+  recordTheAmountOfMeat: string,
+  recordTheAmountOfTobacco: string,
 };
 
 type InformationTranslations = {

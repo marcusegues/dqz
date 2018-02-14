@@ -135,8 +135,10 @@ export const de: Locale = {
       'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist bis zum {{date}} um {{time}} Uhr gültig.',
     timePickerTakeOverThePeriod: 'Zeitraum übernehmen',
     timePickerTimePrefix: 'Uhr',
-    OfMeat: 'Fleischmenge',
-    quantityOfTobacco: 'Tabakmenge',
+    recordTheAmountOfMeat:
+      'Erfassen Sie die Fleischmenge, die Sie mit sich führen:',
+    recordTheAmountOfTobacco:
+      'Erfassen Sie Tabakmenge, die Sie mit sich führen:',
   },
   payment: {
     overViewTitle: 'Übersicht ihrer Anmeldung',

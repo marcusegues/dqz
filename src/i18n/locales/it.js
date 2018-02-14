@@ -133,6 +133,8 @@ export const it: Locale = {
       'Si assicuri di attraversare la frontiera entro due ore. La quietanza doganale è valevole alle ore {{time}} del {{date}}.',
     timePickerTakeOverThePeriod: 'Prendi il controllo del periodo',
     timePickerTimePrefix: 'ora',
+    recordTheAmountOfMeat: 'Registra la quantità di carne che porti con te:',
+    recordTheAmountOfTobacco: 'Registra la quantità di tabacco che porti:',
   },
   payment: {
     overViewTitle: ' Riepilogo della dichiarazione',
