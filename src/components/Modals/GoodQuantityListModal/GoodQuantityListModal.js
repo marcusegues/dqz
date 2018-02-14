@@ -29,14 +29,18 @@ import { CategoryIcon } from '../../QuestionAnswer/cards/ConfirmationCard/config
 import { ScrollViewCard } from '../../General Components/ScrollViewCard';
 import { RedPlusIcon } from './subcomponents/RedPlusIcon';
 import { getSource } from '../../QuestionAnswer/cards/ConfirmationCard/configured/QuantityInput/subcomponents/GoodInputRow';
+import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
 
 const ownStyles = {
+  pickerCard: {
+    flex: 1,
+    width: '100%',
+  },
   container: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    // height: '100%',
   },
   backArrowContainer: {
     flexDirection: 'row',
@@ -133,7 +137,7 @@ class GoodQuantityListModalInner extends React.Component<
         animationIn="slideInUp"
         animationOut="slideOutDown"
       >
-        <ScrollViewCard>
+        <PickerCard style={ownStyles.pickerCard}>
           <View style={ownStyles.container}>
             <View style={ownStyles.backArrowContainer}>
               <BackArrow onPress={onHide} />
@@ -185,7 +189,7 @@ class GoodQuantityListModalInner extends React.Component<
               confirmationDisabled={quantities.size === 0}
             />
           </View>
-        </ScrollViewCard>
+        </PickerCard>
         <PickerModal
           modalVisible={pickerModalVisible}
           toggleModalVisible={() => this.togglePickerVisible()}
