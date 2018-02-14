@@ -6,8 +6,8 @@ import { View } from 'react-native';
 import { translate } from 'react-i18next';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import {
-  flatAllAmounts,
   flatLargeAmounts,
+  flatNormalAmounts,
 } from '../../../../../../model/utils';
 import { VatAmountListRowItem } from './VatAmountListRowItem';
 
@@ -24,7 +24,7 @@ const VatAmountListInner = ({
 }: VatAmountListProps) => {
   const relevantAmounts = large
     ? flatLargeAmounts(amounts)
-    : flatAllAmounts(amounts);
+    : flatNormalAmounts(amounts);
   return (
     <View
       onLayout={event => {

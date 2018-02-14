@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
-import { translate } from 'react-i18next';
 import { Collapsible } from '../../../Collapsible';
 import { VatOverview } from './subcomponents/VatOverview';
 import { VatAmountList } from './subcomponents/VatAmountList';
@@ -10,17 +9,14 @@ import type { Amounts } from '../../../../../model/types/basketPeopleAmountsType
 type VatRowProps = {
   large: boolean,
   amounts: Amounts,
-  amount: number | string,
   vat: number,
 };
 
-const VatRowInner = ({ amounts, amount, vat, large }) => (
+const VatRowInner = ({ amounts, vat, large }) => (
   <Collapsible borderBottom>
-    <VatOverview amount={amount} vat={vat} />
+    <VatOverview amounts={amounts} large={large} vat={vat} />
     <VatAmountList amounts={amounts} large={large} />
   </Collapsible>
 );
 
-export const VatRow = (translate(['receipt'])(VatRowInner): ComponentType<
-  VatRowProps
->);
+export const VatRow = (VatRowInner: ComponentType<VatRowProps>);

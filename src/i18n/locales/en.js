@@ -144,8 +144,10 @@ export const en: Locale = {
     receiptValidUntilTime: '{{date}} | {{time}}:',
     sumText: 'Sum: CHF {{value}}',
     vatColumn: 'VAT in CHF:',
-    amountsTitle: 'Total of all goods',
-    amountsSubtitle: 'Sum of all receipts',
+    normalAmountsTitle: 'Total of all goods',
+    normalAmountsSubtitle: 'Sum of all receipts',
+    largeAmountsTitle: 'Single goods',
+    largeAmountsSubtitle: 'Value over CHF 300',
     receiptStorageNotification:
       'This receipt is stored for a year. As long as you can call the receipt at any time in the app.',
     allReceiptsNavigationHeaderTitle: 'Swiss Customs Receipts',

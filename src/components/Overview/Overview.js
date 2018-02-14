@@ -91,7 +91,7 @@ class OverviewInner extends React.Component<
         <CardHeader text={t('overViewTitle')} />
         <DutyList />
         <VatList large={false} />
-        <VatList large={true} />
+        <VatList large headerRight={false} />
         <TotalOwedRow />
         <PeriodOfEntryRow
           title={t('receipt:entryTime')}

@@ -16,6 +16,7 @@ type VatListProps = {
   large: boolean,
   amounts: Amounts,
   vatReport: VatReport,
+  headerRight?: boolean,
 };
 
 const VatListInner = ({
@@ -23,14 +24,14 @@ const VatListInner = ({
   amounts,
   large,
   t,
+  headerRight = true,
 }: VatListProps & { t: TFunction }) => (
   <View style={{ flex: 1, width: '100%', alignItems: 'center' }}>
-    <RightAlignedHeader text={t('receipt:vatColumn')} />
+    {headerRight ? <RightAlignedHeader text={t('receipt:vatColumn')} /> : null}
     <View style={{ flex: 1, width: '100%' }}>
       <VatRow
         large={large}
         amounts={amounts}
-        amount={`~${vatReport.get('totalAmountsApprox')}`}
         vat={vatReport.get('totalVat')}
         borderTop
         borderBottom
