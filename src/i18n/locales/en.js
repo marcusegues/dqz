@@ -278,4 +278,13 @@ export const en: Locale = {
     dutyFree: 'Duty Free:',
     details: 'Details',
   },
+  legalNoticeModal: {
+    importantNote: 'Important Note',
+    vatRateInfo:
+      'Please take into account that no refund is possible when using this app. Declared goods are cleared at the uniform VAT rate of 7.7%. More information can be found here:',
+    termsOfService: 'Terms of Service',
+    acceptance:
+      'I hereby accept the terms and conditions that I have read and understood.',
+    confirm: 'Confirm',
+  },
 };

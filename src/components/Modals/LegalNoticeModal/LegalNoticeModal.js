@@ -20,6 +20,33 @@ import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
 import { scale, verticalScale } from '../../../styles/Scaling';
 import { ModalCloseText } from '../ModalCloseText';
 import { SquareCheckBox } from '../../CheckBox/SquareCheckBox';
+import type { TFunction } from '../../../types/generalTypes';
+
+const ownStyles = {
+  pickerCard: {
+    width: '100%',
+  },
+  vatRateInfo: {
+    color: '#757575',
+    lineHeight: 18,
+  },
+  termsOfService: {
+    marginTop: verticalScale(10),
+    marginBottom: verticalScale(20),
+    fontFamily: 'roboto_medium',
+    color: '#757575',
+  },
+  acceptanceContainer: {
+    marginHorizontal: scale(16),
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+  },
+  acceptanceText: {
+    color: '#4a4a4a',
+    paddingRight: scale(16),
+  },
+};
 
 type LegalNoticeModalState = {
   checked: boolean,
@@ -32,10 +59,10 @@ type LegalNoticeModalProps = {
 };
 
 class LegalNoticeModalInner extends React.Component<
-  LegalNoticeModalProps,
+  LegalNoticeModalProps & { t: TFunction },
   LegalNoticeModalState
 > {
-  constructor(props: LegalNoticeModalProps) {
+  constructor(props: LegalNoticeModalProps & { t: TFunction }) {
     super(props);
     this.state = {
       checked: false,
@@ -49,6 +76,7 @@ class LegalNoticeModalInner extends React.Component<
       onPressLegal,
       modalVisible,
       toggleModalVisible,
+      t,
     } = this.props;
     return (
       <AppModal
@@ -56,19 +84,12 @@ class LegalNoticeModalInner extends React.Component<
         animationIn="slideInUp"
         animationOut="slideOutDown"
       >
-        <PickerCard
-          style={{
-            width: '100%',
-          }}
-        >
-          <CardHeader text="Wichtiger Hinweis:" />
+        <PickerCard style={ownStyles.pickerCard}>
+          <CardHeader text={t('importantNote')} />
 
           <CardHeaderSubText
-            text="Bitte berücksichtigen Sie, dass bei der Benutzung dieser App keine Rückerstattung möglich ist. Deklarierte Waren werden mit dem einheitlichen Mehrwertsteuersatz von 7.7% verzollt. Weitere Informationen finden Sie hier:"
-            style={{
-              color: '#757575',
-              lineHeight: 18,
-            }}
+            text={t('vatRateInfo')}
+            style={ownStyles.vatRateInfo}
           />
 
           <Touchable
@@ -77,34 +98,19 @@ class LegalNoticeModalInner extends React.Component<
             }}
           >
             <CardHeaderSubText
-              text="ALLGEIME GESCHÄFTBEDINGUNGEN"
-              style={{
-                marginTop: verticalScale(10),
-                marginBottom: verticalScale(20),
-                fontFamily: 'roboto_medium',
-                color: '#757575',
-              }}
+              text={t('termsOfService').toUpperCase()}
+              style={ownStyles.termsOfService}
             />
           </Touchable>
 
-          <View
-            style={{
-              marginHorizontal: scale(16),
-              flexDirection: 'row',
-              justifyContent: 'flex-start',
-              alignItems: 'flex-start',
-            }}
-          >
+          <View style={ownStyles.acceptanceContainer}>
             <SquareCheckBox
               checked={checked}
               onPress={() => this.setState({ checked: !checked })}
             />
             <CardHeaderSubText
-              style={{
-                color: '#4a4a4a',
-                paddingRight: scale(16),
-              }}
-              text="Hiermit akzeptiere ich die Allgemeinen Geschäftsbedingungen, die ich gelesen und verstanden habe."
+              style={ownStyles.acceptanceText}
+              text={t('acceptance')}
             />
           </View>
 
@@ -115,7 +121,7 @@ class LegalNoticeModalInner extends React.Component<
                 onConfirm();
               }}
               confirmationDisabled={!checked}
-              text="BESTÄTIGEN"
+              text={t('confirm').toUpperCase()}
             />
           </View>
         </PickerCard>
@@ -125,6 +131,6 @@ class LegalNoticeModalInner extends React.Component<
   }
 }
 
-export const LegalNoticeModal = (translate(['modal'])(
+export const LegalNoticeModal = (translate(['legalNoticeModal'])(
   LegalNoticeModalInner
 ): ComponentType<LegalNoticeModalProps>);
