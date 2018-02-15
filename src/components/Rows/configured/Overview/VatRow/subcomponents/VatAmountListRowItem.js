@@ -3,15 +3,15 @@ import React from 'react';
 import type { ComponentType } from 'react';
 import { connect } from 'react-redux';
 // $FlowFixMe
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import type { FlatAmount } from '../../../../../../model/utils';
 import { rowStyles } from '../../../../styles/rowStyles';
-import { CardRowText } from '../../../../../QuestionAnswer/cards/subcomponents/CardRowText';
 import { Row } from '../../../../Row';
 import { CardRowSubText } from '../../../../../QuestionAnswer/cards/subcomponents/CardRowSubText';
 import { getCurrencies } from '../../../../../../reducers';
 import type { CurrencyObject } from '../../../../../../model/currencies';
 import { currencyPicker } from '../../../../../Modals/CurrencyPickerModal/currencyPickerData';
+import { FlagAndCurrencyAmount } from '../../../../../General Components/FlagAndCurrencyAmount';
 
 type VatAmountListRowItemProps = {
   flatAmount: FlatAmount,
@@ -43,10 +43,11 @@ const VatAmountListRowItemInner = ({
       width={fullWidth ? '100%' : '95%'}
     >
       <View style={rowStyles.rowContent}>
-        <View style={rowStyles.content}>
-          <Text style={rowStyles.flag}>{flag}</Text>
-          <CardRowText text={`${currency} ${amount}`} />
-        </View>
+        <FlagAndCurrencyAmount
+          flag={flag}
+          currency={currency}
+          amount={amount}
+        />
         <View style={{ flex: 1 }}>
           <CardRowSubText
             text={`~CHF ${(currencyObject[currency] * amount).toFixed(2)}`}
