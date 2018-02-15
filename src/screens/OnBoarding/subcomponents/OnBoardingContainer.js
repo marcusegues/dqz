@@ -32,17 +32,21 @@ const ownStyles = {
 };
 
 type OnBoardingContainerProps = {
+  welcomeText?: boolean,
   children: Children,
 };
 
 const OnBoardingContainerInner = ({
   t,
   children,
+  welcomeText = true,
 }: OnBoardingContainerProps & { t: TFunction }) => (
   <View style={ownStyles.container}>
     <View style={ownStyles.contentContainer}>
       <View>
-        <Text style={ownStyles.welcomeTitle}>{t('onBoarding:welcome')}</Text>
+        <Text style={ownStyles.welcomeTitle}>
+          {welcomeText ? t('onBoarding:welcome') : null}
+        </Text>
         <AppTitle />
       </View>
       {children}
