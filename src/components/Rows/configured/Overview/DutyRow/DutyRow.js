@@ -46,7 +46,10 @@ const DutyRowInner = ({
             unit={unit}
           />
         </OverviewInfo>
-        <QuantityIcon quantity={quantity.toFixed(2)} unit={unit} />
+        <QuantityIcon
+          quantity={Math.max(0, quantity - allowanceRaw).toFixed(2)}
+          unit={unit}
+        />
         <TotalOwed result={duty.toFixed(2)} />
       </View>
     </Row>
