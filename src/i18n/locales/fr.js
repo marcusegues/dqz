@@ -56,7 +56,7 @@ export const fr: Locale = {
     welcome: 'Bienvenue à',
     onBoardingMessage:
       'Nous avons défini votre langue en nous basant sur vos paramètres actuels.',
-    currentLanguageMessage: 'La tua lingua attualmente selezionata è',
+    currentLanguageMessage: 'Votre langue actuellement sélectionnée est',
     selectLanguage: 'Sélectionnez une autre langue',
     confirmationVat: 'Je confirme accepter le taux unique de TVA de',
     confirmationVat2: 'pour le dédouanement des marchandises.',
