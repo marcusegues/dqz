@@ -18,6 +18,7 @@ import type {
 import { CardRowSubText } from '../../../../subcomponents/CardRowSubText';
 import { getCurrencies } from '../../../../../../../reducers';
 import { rowStyles } from '../../../../../../Rows/styles/rowStyles';
+import { CurrencyFlag } from '../../../../../../General Components/CurrencyFlag';
 
 type AmountRowProps = {
   amount: number,
@@ -37,11 +38,14 @@ const AmountRowInner = ({
 }: AmountRowProps & ReduxInject) => (
   <Row borderTop={borderTop}>
     <View style={rowStyles.rowContent}>
-      <View style={{ flex: 1 }}>
-        <CardRowText text={`${currency} ${amount}`} />
-        <CardRowSubText
-          text={`~CHF ${(currencyObject[currency] * amount).toFixed(2)}`}
-        />
+      <View style={[rowStyles.rowContent, { flex: 1 }]}>
+        <CurrencyFlag currency={currency} />
+        <View style={{ marginLeft: 16 }}>
+          <CardRowText text={`${currency} ${amount}`} />
+          <CardRowSubText
+            text={`~CHF ${(currencyObject[currency] * amount).toFixed(2)}`}
+          />
+        </View>
       </View>
       <Touchable onPress={onDelete}>
         <MaterialIcons name="cancel" size={moderateScale(28)} color={GREY} />

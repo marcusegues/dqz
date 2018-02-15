@@ -10,8 +10,7 @@ import { Row } from '../../../../Row';
 import { CardRowSubText } from '../../../../../QuestionAnswer/cards/subcomponents/CardRowSubText';
 import { getCurrencies } from '../../../../../../reducers';
 import type { CurrencyObject } from '../../../../../../model/currencies';
-import { currencyPicker } from '../../../../../Modals/CurrencyPickerModal/currencyPickerData';
-import { FlagAndCurrencyAmount } from '../../../../../General Components/FlagAndCurrencyAmount';
+import { CurrencyFlagAndAmount } from '../../../../../General Components/CurrencyFlagAndAmount';
 
 type VatAmountListRowItemProps = {
   flatAmount: FlatAmount,
@@ -32,9 +31,6 @@ const VatAmountListRowItemInner = ({
   currencyObject,
 }: VatAmountListRowItemProps & ReduxInject) => {
   const { currency, amount } = flatAmount;
-  const flag = currencyPicker
-    .filter(c => c.value === currency)
-    .map(c => c.flag);
 
   return (
     <Row
@@ -43,11 +39,7 @@ const VatAmountListRowItemInner = ({
       width={fullWidth ? '100%' : '95%'}
     >
       <View style={rowStyles.rowContent}>
-        <FlagAndCurrencyAmount
-          flag={flag}
-          currency={currency}
-          amount={amount}
-        />
+        <CurrencyFlagAndAmount currency={currency} amount={amount} />
         <View style={{ flex: 1 }}>
           <CardRowSubText
             text={`~CHF ${(currencyObject[currency] * amount).toFixed(2)}`}

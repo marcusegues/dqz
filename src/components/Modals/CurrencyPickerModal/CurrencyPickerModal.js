@@ -136,18 +136,17 @@ class CurrencyPickerModalInner extends React.Component<
                 }}
                 style={{ flex: 0.6 }}
               >
-                {currencyPicker
-                  .filter(c => currenciesArray.indexOf(c.value) > -1)
+                {Object.keys(currencyPicker)
+                  .filter(c => currenciesArray.indexOf(c) > -1)
                   .sort(
                     (a, b) =>
-                      currenciesArray.indexOf(a.value) -
-                      currenciesArray.indexOf(b.value)
+                      currenciesArray.indexOf(a) - currenciesArray.indexOf(b)
                   )
-                  .map(i => (
+                  .map(c => (
                     <Picker.Item
-                      key={i.label}
-                      label={i.label}
-                      value={i.value}
+                      key={c}
+                      label={`${currencyPicker[c]} ${c}`}
+                      value={c}
                     />
                   ))}
               </PickerComponent>
