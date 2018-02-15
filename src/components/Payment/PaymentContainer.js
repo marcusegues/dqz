@@ -42,7 +42,10 @@ import {
   totalAllAmounts,
   getConvertedLocalTimeToSwiss,
 } from '../../model/utils';
-import { MAX_DECLARED_CHF } from '../../constants/declaration';
+import {
+  MIN_DECLARED_CHF,
+  MAX_DECLARED_CHF,
+} from '../../constants/declaration';
 import type { CurrencyObject } from '../../model/currencies';
 import {
   storeClearDeclaration,
@@ -309,7 +312,8 @@ class PaymentContainerInner extends React.Component<
         <Overview
           onProceedToPayment={() => this.proceedToPayment()}
           paymentDisabled={
-            fees < 1 || totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF
+            fees < MIN_DECLARED_CHF ||
+            totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF
           }
           navigation={navigation}
         />
