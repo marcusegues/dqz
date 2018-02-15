@@ -32,7 +32,10 @@ const QuantityRowInner = ({
     <View style={rowStyles.rowContent}>
       <View style={{ flex: 1 }}>
         <CardRowText
-          text={`${quantity} ${CategoriesInfo.getIn([category, 'unit'], '')}`}
+          text={`${quantity.toFixed(2)} ${CategoriesInfo.getIn(
+            [category, 'unit'],
+            ''
+          )}`}
         />
       </View>
       <Touchable onPress={onDelete}>

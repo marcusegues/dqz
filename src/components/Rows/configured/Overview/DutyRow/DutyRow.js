@@ -38,7 +38,7 @@ const DutyRowInner = ({
       <View style={[rowStyles.rowContent]}>
         <OverviewInfo
           title={t(`categories:${category}`)}
-          subtitle={`${t('overview:declared')} ${quantity} ${unit}`}
+          subtitle={`${t('overview:declared')} ${quantity.toFixed(2)} ${unit}`}
         >
           <AllowanceIcon
             text={t('overview:dutyFree')}
@@ -46,7 +46,10 @@ const DutyRowInner = ({
             unit={unit}
           />
         </OverviewInfo>
-        <QuantityIcon quantity={quantity} unit={unit} />
+        <QuantityIcon
+          quantity={Math.max(0, quantity - allowanceRaw).toFixed(2)}
+          unit={unit}
+        />
         <TotalOwed result={duty.toFixed(2)} />
       </View>
     </Row>
