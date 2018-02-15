@@ -5,7 +5,7 @@
     "slug": "dazit",
     "privacy": "unlisted",
     "sdkVersion": "23.0.0",
-    "version": "0.2.1",
+    "version": "0.5.1",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
     "icon": "./assets/icons/store-icon-1024.png",
@@ -21,12 +21,12 @@
     },
     "ios": {
       "bundleIdentifier": "com.ambrite.dazit",
-      "buildNumber": "0.2.1",
+      "buildNumber": "0.5.1",
       "supportsTablet": true
     },
     "android": {
       "package": "com.ambrite.dazit",
-      "versionCode": 1
+      "versionCode": 4
     }
   }
 }
