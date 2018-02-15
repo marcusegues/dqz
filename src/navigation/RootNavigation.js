@@ -93,13 +93,20 @@ export const stackNavigatorScreens = {
     navigationOptions: ({
       navigationOptions,
       navigation,
+      screenProps,
     }: {
       navigationOptions: any,
       navigation: Navigation,
+      screenProps: any,
     }) => ({
       ...navigationOptions,
       headerLeft: <InfoIcon navigation={navigation} />,
-      headerRight: <MainMenuHeaderRight navigation={navigation} />,
+      headerRight: (
+        <MainMenuHeaderRight
+          navigation={navigation}
+          language={screenProps.language}
+        />
+      ),
       headerStyle: {
         ...navigationOptions.headerStyle,
         elevation: 0,
@@ -219,7 +226,11 @@ class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
         }}
       >
         <RootStackNavigator
-          screenProps={{ t: i18nImplementation.getFixedT() }}
+          screenProps={{
+            t: i18nImplementation.getFixedT(),
+            language: i18nImplementation.language,
+            changeLanguage: i18nImplementation.changeLanguage,
+          }}
         />
         <SnackBarsContainer />
       </View>
