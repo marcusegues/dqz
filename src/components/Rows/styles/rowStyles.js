@@ -1,6 +1,7 @@
 // @flow
 // $FlowFixMe
 import { StyleSheet } from 'react-native';
+import { scale } from '../../../styles/Scaling';
 
 export const ROW_BORDER_WIDTH = 1;
 
@@ -38,5 +39,12 @@ export const rowStyles = StyleSheet.create({
   borderTop: {
     borderTopWidth: ROW_BORDER_WIDTH,
     borderColor: '#E0E0E1',
+  },
+  content: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  flag: {
+    marginRight: scale(5),
   },
 });

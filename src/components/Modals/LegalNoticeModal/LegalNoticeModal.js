@@ -125,7 +125,7 @@ class LegalNoticeModalInner extends React.Component<
             />
           </View>
         </PickerCard>
-        <ModalCloseText onModalHide={toggleModalVisible} text="Abbrechen" />
+        <ModalCloseText onModalHide={toggleModalVisible} text={t('abort')} />
       </AppModal>
     );
   }

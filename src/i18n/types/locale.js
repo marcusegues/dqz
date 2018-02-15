@@ -229,6 +229,7 @@ type LegalNoticeModalTranslations = {
   termsOfService: string,
   acceptance: string,
   confirm: string,
+  abort: string,
 };
 type FurtherInformationModalTranslations = {
   furtherInformation: string,

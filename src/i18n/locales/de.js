@@ -290,6 +290,7 @@ export const de: Locale = {
     acceptance:
       'Hiermit akzeptiere ich die Allgemeinen Geschäftsbedingungen, die ich gelesen und verstanden habe.',
     confirm: 'Bestätigen',
+    abort: 'Abbrechen',
   },
   furtherInformationModal: {
     furtherInformation: 'Weitere Informationen:',

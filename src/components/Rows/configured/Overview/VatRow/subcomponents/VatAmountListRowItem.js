@@ -3,7 +3,7 @@ import React from 'react';
 import type { ComponentType } from 'react';
 import { connect } from 'react-redux';
 // $FlowFixMe
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 import type { FlatAmount } from '../../../../../../model/utils';
 import { rowStyles } from '../../../../styles/rowStyles';
 import { CardRowText } from '../../../../../QuestionAnswer/cards/subcomponents/CardRowText';
@@ -11,6 +11,7 @@ import { Row } from '../../../../Row';
 import { CardRowSubText } from '../../../../../QuestionAnswer/cards/subcomponents/CardRowSubText';
 import { getCurrencies } from '../../../../../../reducers';
 import type { CurrencyObject } from '../../../../../../model/currencies';
+import { currencyPicker } from '../../../../../Modals/CurrencyPickerModal/currencyPickerData';
 
 type VatAmountListRowItemProps = {
   flatAmount: FlatAmount,
@@ -31,6 +32,10 @@ const VatAmountListRowItemInner = ({
   currencyObject,
 }: VatAmountListRowItemProps & ReduxInject) => {
   const { currency, amount } = flatAmount;
+  const flag = currencyPicker
+    .filter(c => c.value === currency)
+    .map(c => c.flag);
+
   return (
     <Row
       borderTop={borderTop}
@@ -38,7 +43,8 @@ const VatAmountListRowItemInner = ({
       width={fullWidth ? '100%' : '95%'}
     >
       <View style={rowStyles.rowContent}>
-        <View style={{ flex: 1 }}>
+        <View style={rowStyles.content}>
+          <Text style={rowStyles.flag}>{flag}</Text>
           <CardRowText text={`${currency} ${amount}`} />
         </View>
         <View style={{ flex: 1 }}>
