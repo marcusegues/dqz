@@ -52,27 +52,29 @@ export const QuantityInput = ({
   basket,
   mainCategories,
 }: QuantityInputProps) => {
-  const components = mainCategories.map(mainCategory => {
-    const categories = getSubCategories(mainCategory);
-    const subcomponents = categories.map(category => (
-      <GoodInputRow
-        onShowQuantityInputModal={() => {
-          onShowQuantityInputModal(category, mainCategory);
-        }}
-        key={category}
-        category={category}
-        totalQuantity={getTotalQuantity(basket, category)}
-        basket={basket}
-        mainCategory={mainCategory}
-      />
-    ));
+  const components = mainCategories
+    .filter(mainCategory => mainCategory !== 'OtherGoods')
+    .map(mainCategory => {
+      const categories = getSubCategories(mainCategory);
+      const subcomponents = categories.map(category => (
+        <GoodInputRow
+          onShowQuantityInputModal={() => {
+            onShowQuantityInputModal(category, mainCategory);
+          }}
+          key={category}
+          category={category}
+          totalQuantity={getTotalQuantity(basket, category)}
+          basket={basket}
+          mainCategory={mainCategory}
+        />
+      ));
 
-    return (
-      <View style={ownStyles.subcomponentsContainer} key={mainCategory}>
-        {subcomponents}
-      </View>
-    );
-  });
+      return (
+        <View style={ownStyles.subcomponentsContainer} key={mainCategory}>
+          {subcomponents}
+        </View>
+      );
+    });
 
   return (
     <View

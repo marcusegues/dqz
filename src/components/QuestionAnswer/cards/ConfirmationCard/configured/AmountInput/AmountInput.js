@@ -8,7 +8,7 @@ import Entypo from '@expo/vector-icons/Entypo';
 
 import {
   flatLargeAmounts,
-  flatAllAmounts,
+  flatNormalAmounts,
 } from '../../../../../../model/utils';
 import { AmountRow } from './subcomponents/AmountRow';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
@@ -103,7 +103,7 @@ const AmountInputInner = ({
 }: AmountInputProps & { t: TFunction }) => {
   const relevantAmounts = large
     ? flatLargeAmounts(amounts)
-    : flatAllAmounts(amounts);
+    : flatNormalAmounts(amounts);
   return (
     <View style={ownStyles.mainContainer}>
       <ScrollView contentContainerStyle={ownStyles.scrollView}>
@@ -139,8 +139,9 @@ const AmountInputInner = ({
           </View>
         )}
         <View style={ownStyles.addedItemContainer}>
-          {relevantAmounts.map(a => (
+          {relevantAmounts.map((a, idx) => (
             <AmountRow
+              borderTop={idx === 0}
               key={a.id}
               amount={a.amount}
               currency={a.currency}

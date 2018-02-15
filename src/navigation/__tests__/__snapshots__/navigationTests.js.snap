@@ -2,9 +2,11 @@
 
 exports[`StackNavigation has all screens 1`] = `
 Array [
+  "AllReceipts",
   "AppInfo",
   "GoodQuantityListModal",
   "Information",
+  "LegalNoticeInfo",
   "MainMenu",
   "OnBoarding",
   "OnBoardingTaxScreen",
@@ -13,5 +15,6 @@ Array [
   "ReceiptAfterPayment",
   "Screens",
   "UnderConstruction",
+  "UsefulInfoScreenTemplate",
 ]
 `;

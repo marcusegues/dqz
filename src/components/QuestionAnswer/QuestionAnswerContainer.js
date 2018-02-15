@@ -44,6 +44,16 @@ import {
 } from '../../analytics/analyticsApi';
 import { hasLargeAmount } from '../../model/utils';
 import { getTotalPeople } from '../../model/configurationApi';
+import {
+  fetchAmounts,
+  fetchBasket,
+  fetchMainCategories,
+  fetchPeople,
+  storeAmounts,
+  storeBasket,
+  storeMainCategories,
+  storePeople,
+} from '../../asyncStorage/storageApi';
 
 export type QuestionType =
   | 'peopleInput'
@@ -73,7 +83,7 @@ export type QAStateEnriched = {
   currencyDate: string,
 };
 
-export type DirectionType = 'forward' | 'back';
+export type DirectionType = 'forward' | 'back' | 'update';
 
 export type CardProps = {
   qaState: QAStateEnriched,
@@ -90,7 +100,7 @@ type QuestionAnswerContainerProps = {
   setAmounts: (amounts: Amounts) => void,
   setPeople: (people: People) => void,
   setBasket: (basket: Basket) => void,
-  setMainCategories: (mainCategories: MainCategories) => void,
+  setMainCategories: (mainCategories: MainCategories) => Promise<any>,
   // state to props
   settings: Settings,
   basket: Basket,
@@ -100,6 +110,7 @@ type QuestionAnswerContainerProps = {
   currencies: CurrencyObject,
   currencyDate: string,
   t: TFunction,
+  initABP: () => void,
 };
 
 class QuestionAnswerContainerInner extends React.Component<
@@ -132,6 +143,7 @@ class QuestionAnswerContainerInner extends React.Component<
 
   componentWillMount() {
     analyticsScreenMounted('QuestionAnswerContainer');
+    this.props.initABP();
   }
 
   componentDidMount() {
@@ -285,18 +297,20 @@ class QuestionAnswerContainerInner extends React.Component<
                     mainCategories: updatedCategories,
                     basket: updatedBasket,
                   }) => {
-                    setMainCategories(updatedCategories);
-                    analyticsMainCategoriesChanged(updatedCategories);
-                    setBasket(updatedBasket);
-                    this.updateFlagsOptimistically(
-                      'mainCategories',
-                      Object.assign({}, qaStateEnriched, {
-                        settings: settings.set(
-                          'mainCategories',
-                          updatedCategories
-                        ),
-                      })
-                    );
+                    setMainCategories(updatedCategories).then(() => {
+                      analyticsMainCategoriesChanged(updatedCategories);
+                      setBasket(updatedBasket);
+                      this.updateFlagsOptimistically(
+                        'mainCategories',
+                        Object.assign({}, qaStateEnriched, {
+                          settings: settings.set(
+                            'mainCategories',
+                            updatedCategories
+                          ),
+                        })
+                      );
+                      this.updateQA('mainCategories', 'update');
+                    });
                   },
                   mainCategories: newCategories,
                 },
@@ -448,8 +462,6 @@ class QuestionAnswerContainerInner extends React.Component<
         style={{
           flex: 1,
           height: '100%',
-          marginHorizontal: 16,
-          marginBottom: 16,
           flexDirection: 'column',
           alignItems: 'center',
         }}
@@ -460,6 +472,8 @@ class QuestionAnswerContainerInner extends React.Component<
             width: '100%',
             flexDirection: 'column',
             alignItems: 'center',
+            paddingHorizontal: 16,
+            paddingBottom: 16,
           }}
         >
           <NavBar step={1} />
@@ -485,15 +499,21 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setPeople: (people: People) =>
+  setPeople: (people: People) => {
+    storePeople(people);
     dispatch({
       type: 'SET_PEOPLE',
       people,
-    }),
-  setMainCategories: (mainCategories: MainCategories) =>
-    dispatch({
-      type: 'SET_MAIN_CATEGORIES',
-      mainCategories,
+    });
+  },
+  setMainCategories: (mainCategories: MainCategories): Promise<any> =>
+    new Promise(resolve => {
+      storeMainCategories(mainCategories);
+      dispatch({
+        type: 'SET_MAIN_CATEGORIES',
+        mainCategories,
+      });
+      resolve();
     }),
   basketChangeQuantity: (category, quantity) =>
     dispatch({
@@ -501,16 +521,46 @@ const mapDispatchToProps = dispatch => ({
       category,
       quantity,
     }),
-  setBasket: basket =>
+  setBasket: basket => {
+    storeBasket(basket);
     dispatch({
       type: 'SET_BASKET',
       basket,
-    }),
-  setAmounts: amounts =>
+    });
+  },
+  setAmounts: amounts => {
+    storeAmounts(amounts);
     dispatch({
       type: 'SET_AMOUNTS',
       amounts,
-    }),
+    });
+  },
+  initABP: () => {
+    fetchBasket().then(basket => {
+      dispatch({
+        type: 'SET_BASKET',
+        basket,
+      });
+    });
+    fetchPeople().then(people => {
+      dispatch({
+        type: 'SET_PEOPLE',
+        people,
+      });
+    });
+    fetchAmounts().then(amounts => {
+      dispatch({
+        type: 'SET_AMOUNTS',
+        amounts,
+      });
+    });
+    fetchMainCategories().then(mainCategories => {
+      dispatch({
+        type: 'SET_MAIN_CATEGORIES',
+        mainCategories,
+      });
+    });
+  },
 });
 
 export const QuestionAnswerContainer = (connect(

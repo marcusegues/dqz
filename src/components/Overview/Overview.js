@@ -1,105 +1,178 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
+import { connect } from 'react-redux';
+import { DateTime } from 'luxon';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { View } from 'react-native';
-// $FlowFixMe
-import { Card } from '../QuestionAnswer/cards/Card';
 import { CardHeader } from '../QuestionAnswer/cards/subcomponents/CardHeader';
-import { getTotalQuantity } from '../../model/configurationApi';
-import { DutyRow } from './subcomponents/DutyRow';
-import { CardRowSubText } from '../QuestionAnswer/cards/subcomponents/CardRowSubText';
-import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
-import { getMainCategory } from '../../types/reducers/appReducer';
-import type { Basket } from '../../model/types/basketPeopleAmountsTypes';
-import { ReceiptSubText } from '../Receipts/subComponents/ReceiptSubText';
-import { VatRow } from './subcomponents/VatRow';
-import { moderateScale, verticalScale } from '../../styles/Scaling';
-import type { TFunction } from '../../types/generalTypes';
-import type { DutyReport, VatReport } from '../../model/types/calculationTypes';
+import type { Navigation, TFunction } from '../../types/generalTypes';
+import { PeriodOfEntryRow } from './subcomponents/PeriodOfEntryRow';
+import { DutyList } from './subcomponents/DutyList';
+import { VatList } from './subcomponents/VatList';
+import { ScrollViewCard } from '../General Components/ScrollViewCard';
+import { TimePickerModal } from '../Modals/TimePickerModal/TimePickerModal';
+import {
+  getAmounts,
+  getBasket,
+  getCurrencies,
+  getPeople,
+  getReceiptEntryTime,
+} from '../../reducers';
+import { TotalOwedRow } from './subcomponents/TotalOwedRow';
+import { InfoNote } from './subcomponents/InfoNote';
+import { getConvertedLocalTimeToSwiss } from '../../model/utils';
+import { BackAndContinueButtons } from '../Buttons/BackAndContinueButtons';
+import type {
+  Amounts,
+  Basket,
+  People,
+} from '../../model/types/basketPeopleAmountsTypes';
+import type { CurrencyObject } from '../../model/currencies';
 
 type OverviewProps = {
-  dutyReport: DutyReport,
-  vatReport: VatReport,
+  modalVisible?: boolean,
+  onProceedToPayment?: () => void,
+  paymentDisabled?: boolean,
+  navigation: Navigation,
+};
+
+type ReduxInjectedProps = {
   basket: Basket,
+  people: People,
+  amounts: Amounts,
+  currencies: CurrencyObject,
+  setReceiptEntryTime: (receiptEntryTime: string) => void,
+  receiptEntryTime: string,
 };
 
-const ownStyles = {
-  cardRowTextSum: {
-    alignSelf: 'flex-end',
-    marginTop: verticalScale(15),
-    marginBottom: verticalScale(35),
-  },
-  receiptSubTextVat: {
-    fontSize: moderateScale(12),
-    alignSelf: 'flex-end',
-    marginTop: verticalScale(25),
-  },
+type OverviewState = {
+  modalVisible: boolean,
 };
 
-const OverviewInner = ({
-  dutyReport,
-  vatReport,
-  basket,
-  t,
-}: OverviewProps & { t: TFunction }) => {
-  const fullVat = vatReport.get('totalVat');
-  const fullDuty = dutyReport.get('totalDuty');
-  return (
-    <Card>
-      <CardHeader text={t('overViewTitle')} />
-      <View style={{ alignSelf: 'flex-end', marginRight: 16, marginBottom: 2 }}>
-        <CardRowSubText text={t('dutyColumn')} />
-      </View>
-      <View style={{ flex: 1, width: '100%' }}>
-        {dutyReport
-          .get('dutyByCategoryRaw')
-          .entrySeq()
-          .filter(entry => getTotalQuantity(basket, entry[0]) > 0)
-          .map(([category, dutyOfCategory], idx) => (
-            <DutyRow
-              borderTop={idx === 0}
-              key={category}
-              mainCategory={getMainCategory(category)}
-              category={category}
-              quantity={getTotalQuantity(basket, category)}
-              duty={dutyOfCategory}
-            />
-          ))}
+class OverviewInner extends React.Component<
+  OverviewProps & { t: TFunction } & ReduxInjectedProps,
+  OverviewState
+> {
+  static defaultProps = {
+    modalVisible: false,
+    onProceedToPayment: () => {},
+    paymentDisabled: true,
+  };
 
-        <View
-          style={{ alignSelf: 'flex-end', marginRight: 16, marginBottom: 2 }}
-        >
-          <ReceiptSubText
-            text={t('receipt:vatColumn')}
-            style={ownStyles.receiptSubTextVat}
-          />
-        </View>
+  constructor(props: OverviewProps & ReduxInjectedProps & { t: TFunction }) {
+    super(props);
+    this.state = {
+      modalVisible: props.modalVisible || false,
+    };
+  }
 
-        <View style={{ flex: 1, width: '100%' }}>
-          <VatRow
-            quantity={`~${vatReport.get('totalAmountsApprox')}`}
-            vat={vatReport.get('totalVat')}
-          />
-        </View>
-        <View style={{ alignSelf: 'flex-end', marginRight: 16, marginTop: 16 }}>
-          <CardRowText
-            text={t('receipt:sumText', {
-              value: (fullVat + fullDuty).toFixed(2),
-            })}
-            style={ownStyles.cardRowTextSum}
-          />
-        </View>
-      </View>
-    </Card>
-  );
-};
+  componentDidMount() {
+    const { receiptEntryTime } = this.props;
+    if (receiptEntryTime === '')
+      this.props.setReceiptEntryTime(getConvertedLocalTimeToSwiss().toString());
+  }
 
-export const Overview = (translate([
-  'payment',
-  'receipt',
-  'mainCategories',
-  'categories',
-])(OverviewInner): ComponentType<OverviewProps>);
+  handleShowModal() {
+    this.setState({ modalVisible: true });
+  }
+
+  handleHideModal() {
+    this.setState({
+      modalVisible: false,
+    });
+  }
+
+  handleSetReceiptEntryTime(entryTime: string) {
+    this.props.setReceiptEntryTime(entryTime);
+  }
+
+  render() {
+    const {
+      t,
+      receiptEntryTime,
+      onProceedToPayment,
+      navigation,
+      paymentDisabled,
+      basket,
+      people,
+      amounts,
+      currencies,
+    } = this.props;
+    const momentReceiptEntryTime =
+      receiptEntryTime !== ''
+        ? DateTime.fromISO(receiptEntryTime, {
+            zone: 'Europe/Zurich',
+          })
+        : getConvertedLocalTimeToSwiss();
+    return (
+      <ScrollViewCard>
+        <CardHeader text={t('overViewTitle')} />
+        <DutyList basket={basket} people={people} />
+        <VatList
+          large={false}
+          people={people}
+          amounts={amounts}
+          currencies={currencies}
+        />
+        <VatList
+          large
+          borderTop={false}
+          people={people}
+          amounts={amounts}
+          currencies={currencies}
+          headerRight={false}
+        />
+        <TotalOwedRow
+          basket={basket}
+          people={people}
+          currencies={currencies}
+          amounts={amounts}
+        />
+        <PeriodOfEntryRow
+          title={t('receipt:entryTime')}
+          subtitle={t('receipt:chooseOtherEntryTime')}
+          time={`${momentReceiptEntryTime.toFormat(
+            'dd.MM.y HH:mm'
+          )} - ${momentReceiptEntryTime
+            .plus({ hours: 2 })
+            .toFormat('dd.MM.y HH:mm')}`}
+          onPress={() => this.handleShowModal()}
+        />
+        <InfoNote />
+        <BackAndContinueButtons
+          onPressBack={() => navigation.goBack()}
+          onPressContinue={() => onProceedToPayment && onProceedToPayment()}
+          textContinue={t('general:toPayment')}
+          continueDisabled={paymentDisabled}
+        />
+        <TimePickerModal
+          currentEntryTime={momentReceiptEntryTime.toString()}
+          modalVisible={this.state.modalVisible}
+          onHideModal={() => this.handleHideModal()}
+          onSelectTime={entryTime => this.handleSetReceiptEntryTime(entryTime)}
+        />
+      </ScrollViewCard>
+    );
+  }
+}
+
+const mapStateToProps = state => ({
+  basket: getBasket(state),
+  people: getPeople(state),
+  amounts: getAmounts(state),
+  currencies: getCurrencies(state),
+  receiptEntryTime: getReceiptEntryTime(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+  setReceiptEntryTime: (receiptEntryTime: string) =>
+    dispatch({ type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime }),
+});
+
+export const Overview = (connect(mapStateToProps, mapDispatchToProps)(
+  translate(['payment', 'receipt', 'mainCategories', 'categories', 'general'])(
+    OverviewInner
+  )
+): ComponentType<OverviewProps>);

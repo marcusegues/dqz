@@ -3,30 +3,40 @@ import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import type { Children } from '../../types/generalTypes';
+import { rowContainerStyles } from './styles/rowStyles';
 
-type RowProp = {
+type RowProps = {
   borderTop?: boolean,
+  borderBottom?: boolean,
+  width?: string,
+  onLayout?: any => void,
   children: Children,
+  styles?: Object,
 };
 
-const quantityRowContainerStyles = borderTop => ({
-  width: '95%',
-  alignSelf: 'center',
-  flexDirection: 'row',
-  alignItems: 'center',
-  justifyContent: 'space-around',
-  borderBottomWidth: 1,
-  borderColor: '#E0E0E1',
-  paddingVertical: 8,
-  paddingHorizontal: 12,
-  marginHorizontal: 4,
-  borderTopWidth: borderTop ? 1 : 0,
-});
-
-export const Row = ({ borderTop, children }: RowProp) => (
-  <View style={quantityRowContainerStyles(borderTop)}>{children}</View>
+export const Row = ({
+  borderTop,
+  borderBottom,
+  width,
+  onLayout = () => {},
+  children,
+  styles,
+}: RowProps) => (
+  <View
+    style={[
+      rowContainerStyles(borderTop, borderBottom, width || '95%'),
+      styles,
+    ]}
+    onLayout={event => onLayout(event)}
+  >
+    {children}
+  </View>
 );
 
 Row.defaultProps = {
   borderTop: false,
+  borderBottom: true,
+  width: '95%',
+  onLayout: () => {},
+  styles: {},
 };

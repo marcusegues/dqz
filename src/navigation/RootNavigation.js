@@ -1,9 +1,13 @@
 // @flow
 import React from 'react';
+import type { ComponentType } from 'react';
+import { connect } from 'react-redux';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { StackNavigator } from 'react-navigation';
+// $FlowFixMe
+import { View, NetInfo } from 'react-native';
 import { i18nImplementation } from '../i18n';
 import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
 import { ScreensView } from '../screens/ScreensView/ScreensView';
@@ -16,20 +20,25 @@ import { InfoIcon } from '../components/Headers/subcomponents/InfoIcon';
 import { MainMenuHeaderRight } from '../components/Headers/subcomponents/MainMenuHeaderRight';
 import { MainMenu } from '../screens/MainMenu/MainMenu';
 import { PaymentContainer } from '../components/Payment/PaymentContainer';
-import { UnderConstruction } from './underConstruction';
+import { UnderConstruction } from './UnderConstruction';
 import { QuestionAnswerContainer } from '../components/QuestionAnswer/QuestionAnswerContainer';
 import { GoodQuantityListModal } from '../components/Modals/GoodQuantityListModal/GoodQuantityListModal';
 import { OnBoardingTaxScreen } from '../screens/OnBoarding/OnBoardingTaxScreen';
 import { ReceiptAfterPayment } from '../components/Receipts/ReceiptAfterPayment';
+import { AllReceipts } from '../components/Receipts/AllReceipts/AllReceipts';
 import { AppInfo } from '../screens/AppInfo/AppInfo';
+import { LegalNoticeInfo } from '../screens/LegalNoticeInfo/LegalNoticeInfo';
 import { HomeIcon } from '../components/Headers/subcomponents/HomeIcon';
 import { DownloadIcon } from '../components/Headers/subcomponents/DownloadIcon';
 import { Information } from '../screens/Information/Information';
 import { SearchIcon } from '../components/Headers/subcomponents/SearchIcon';
 import type { Navigation } from '../types/generalTypes';
 import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
+import { UsefulInfoScreenTemplate } from '../screens/Information/subComponents/UsefulInfoScreenTemplate';
+import { SnackBarsContainer } from '../components/SnackBars/SnackBarsContainer';
+import type { ConnectivityType } from '../types/connectivity';
 
-type NavigationObject = { navigation: Navigation };
+export type NavigationObject = { navigation: Navigation };
 
 export const stackNavigatorScreens = {
   Screens: {
@@ -84,13 +93,20 @@ export const stackNavigatorScreens = {
     navigationOptions: ({
       navigationOptions,
       navigation,
+      screenProps,
     }: {
       navigationOptions: any,
       navigation: Navigation,
+      screenProps: any,
     }) => ({
       ...navigationOptions,
       headerLeft: <InfoIcon navigation={navigation} />,
-      headerRight: <MainMenuHeaderRight navigation={navigation} />,
+      headerRight: (
+        <MainMenuHeaderRight
+          navigation={navigation}
+          language={screenProps.language}
+        />
+      ),
       headerStyle: {
         ...navigationOptions.headerStyle,
         elevation: 0,
@@ -100,15 +116,24 @@ export const stackNavigatorScreens = {
 
   UnderConstruction: {
     screen: UnderConstruction,
-    navigationOptions: () => ({
-      headerTitle: <HeaderTitle text="In Bearbeitung" />,
-    }),
   },
   Information: {
     screen: Information,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: <HomeIcon navigation={navigation} />,
       headerRight: <SearchIcon navigation={navigation} />,
+    }),
+  },
+  UsefulInfoScreenTemplate: {
+    screen: UsefulInfoScreenTemplate,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+      headerTitle: <HeaderTitle text="Wissenswertes" />,
     }),
   },
   ReceiptAfterPayment: {
@@ -119,8 +144,40 @@ export const stackNavigatorScreens = {
       headerRight: <DownloadIcon navigation={navigation} />,
     }),
   },
+  AllReceipts: {
+    screen: AllReceipts,
+    navigationOptions: ({
+      navigationOptions,
+      navigation,
+    }: {
+      navigationOptions: any,
+      navigation: Navigation,
+    }) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+      headerStyle: {
+        ...navigationOptions.headerStyle,
+        paddingRight: 0,
+      },
+    }),
+  },
   AppInfo: {
     screen: AppInfo,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  LegalNoticeInfo: {
+    screen: LegalNoticeInfo,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: (
         <BackArrow
@@ -143,13 +200,54 @@ const RootStackNavigator = StackNavigator(
   stackNavigatorConfig
 );
 
-const WrappedRootStackNavigator = () => (
-  <RootStackNavigator screenProps={{ t: i18nImplementation.getFixedT() }} />
-);
+type ReduxInject = {
+  setConnectivity: (connectionInfo: ConnectivityType) => void,
+};
 
-const ReloadAppOnLanguageChange = translate(null, {
-  bindI18n: 'languageChanged',
-  bindStore: false,
-})(WrappedRootStackNavigator);
+class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
+  componentDidMount() {
+    NetInfo.addEventListener('connectionChange', connectionInfo =>
+      this.handleConnectivityChange(connectionInfo)
+    );
+  }
+
+  handleConnectivityChange(connectionInfo: ConnectivityType) {
+    this.props.setConnectivity(connectionInfo);
+  }
+
+  render() {
+    return (
+      <View
+        style={{
+          flexDirection: 'column',
+          width: '100%',
+          flex: 1,
+          justifyContent: 'space-between',
+        }}
+      >
+        <RootStackNavigator
+          screenProps={{
+            t: i18nImplementation.getFixedT(),
+            language: i18nImplementation.language,
+            changeLanguage: i18nImplementation.changeLanguage,
+          }}
+        />
+        <SnackBarsContainer />
+      </View>
+    );
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  setConnectivity: (connectionInfo: ConnectivityType) =>
+    dispatch({ type: 'SET_CONNECTIVITY', connectionInfo }),
+});
+
+const ReloadAppOnLanguageChange = (connect(null, mapDispatchToProps)(
+  translate(null, {
+    bindI18n: 'languageChanged',
+    bindStore: false,
+  })(WrappedRootStackNavigator)
+): ComponentType<{}>);
 
 export const RootNavigator = () => <ReloadAppOnLanguageChange />;

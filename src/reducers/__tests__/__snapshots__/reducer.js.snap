@@ -108,6 +108,29 @@ Immutable.Record {
       "largeAmounts": Immutable.List [],
     },
   },
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -219,6 +242,29 @@ Immutable.Record {
       ],
     },
   },
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -361,6 +407,29 @@ Immutable.Record {
       ],
     },
   },
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -507,6 +576,29 @@ Immutable.Record {
       ],
     },
   },
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -618,6 +710,29 @@ Immutable.Record {
       "largeAmounts": Immutable.List [],
     },
   },
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -721,6 +836,29 @@ Immutable.Record {
   "validCurrencies": false,
   "currencyDate": 2000-01-01T00:00:00.000Z,
   "amounts": Immutable.Map {},
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -828,6 +966,29 @@ Immutable.Record {
   "validCurrencies": false,
   "currencyDate": 2000-01-01T00:00:00.000Z,
   "amounts": Immutable.Map {},
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1003,6 +1164,29 @@ Immutable.Record {
   "validCurrencies": true,
   "currencyDate": "",
   "amounts": Immutable.Map {},
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1104,6 +1288,29 @@ Immutable.Record {
   "validCurrencies": false,
   "currencyDate": 2000-01-01T00:00:00.000Z,
   "amounts": Immutable.Map {},
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1207,6 +1414,29 @@ Immutable.Record {
   "validCurrencies": false,
   "currencyDate": 2000-01-01T00:00:00.000Z,
   "amounts": Immutable.Map {},
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1308,6 +1538,29 @@ Immutable.Record {
   "validCurrencies": false,
   "currencyDate": 2000-01-01T00:00:00.000Z,
   "amounts": Immutable.Map {},
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1412,6 +1665,29 @@ Immutable.Record {
   "validCurrencies": false,
   "currencyDate": 2000-01-01T00:00:00.000Z,
   "amounts": Immutable.Map {},
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1513,6 +1789,29 @@ Immutable.Record {
   "validCurrencies": false,
   "currencyDate": 2000-01-01T00:00:00.000Z,
   "amounts": Immutable.Map {},
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1614,6 +1913,29 @@ Immutable.Record {
   "validCurrencies": false,
   "currencyDate": 2000-01-01T00:00:00.000Z,
   "amounts": Immutable.Map {},
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1715,6 +2037,29 @@ Immutable.Record {
   "validCurrencies": false,
   "currencyDate": 2000-01-01T00:00:00.000Z,
   "amounts": Immutable.Map {},
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1816,6 +2161,29 @@ Immutable.Record {
   "validCurrencies": false,
   "currencyDate": 2000-01-01T00:00:00.000Z,
   "amounts": Immutable.Map {},
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1917,5 +2285,28 @@ Immutable.Record {
   "validCurrencies": false,
   "currencyDate": 2000-01-01T00:00:00.000Z,
   "amounts": Immutable.Map {},
+  "paymentData": Immutable.Record {
+    "specVersion": "",
+    "requestId": "",
+    "token": "",
+    "tokenExpiration": "",
+    "redirectUrl": "",
+    "status": "not_started",
+    "transaction": Object {
+      "amountValue": "",
+      "brandName": "",
+      "cardHolderName": "",
+      "cardNumber": "",
+      "currencyCode": "",
+      "date": "",
+      "id": "",
+      "ipAddress": "",
+      "ipLocation": "",
+      "paymentMethod": "",
+      "status": "",
+    },
+  },
+  "receiptId": "",
+  "receiptEntryTime": "",
 }
 `;

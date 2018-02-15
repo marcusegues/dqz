@@ -21,7 +21,6 @@ import {
 import { initAmplitude } from './src/analytics/amplitude';
 
 const store = configureStore();
-window.myStore = store;
 
 const styles = StyleSheet.create({
   container: {
@@ -82,14 +81,36 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/images/kreuz.png'),
         require('./assets/images/logo_with_text.png'),
         require('./assets/images/ambrite_logo.png'),
+        require('./assets/images/infoImage.png'),
+        require('./assets/images/customs.png'),
 
         require('./assets/icons/mwst.png'),
         require('./assets/icons/mainCategories.png'),
         require('./assets/icons/travellers.png'),
         require('./assets/icons/adult.png'),
         require('./assets/icons/kids.png'),
-        require('./assets/icons/cigarette_new.png'),
-        require('./assets/icons/meat_new.png'),
+
+        require('./assets/icons/AlcHard.png'),
+        require('./assets/icons/AlcSoft.png'),
+        require('./assets/icons/Butter.png'),
+        require('./assets/icons/Meat.png'),
+        require('./assets/icons/Oils.png'),
+        require('./assets/icons/OtherGoods.png'),
+        require('./assets/icons/OtherTobacco.png'),
+        require('./assets/icons/Tabak.png'),
+
+        require('./assets/icons/info/Above300.png'),
+        require('./assets/icons/info/Basket.png'),
+        require('./assets/icons/info/Below300.png'),
+        require('./assets/icons/info/Car.png'),
+        require('./assets/icons/info/CreditCard.png'),
+        require('./assets/icons/info/ID.png'),
+        require('./assets/icons/info/Meat.png'),
+        require('./assets/icons/info/Pets.png'),
+        require('./assets/icons/info/Railway.png'),
+        require('./assets/icons/info/Sign.png'),
+        require('./assets/icons/info/Suitcase.png'),
+        require('./assets/icons/info/Syringe.png'),
       ]),
       Font.loadAsync({
         open_sans_extra_bold: require('./assets/fonts/OpenSans-ExtraBold.ttf'),
@@ -115,7 +136,8 @@ export default class App extends React.Component<AppProps, AppStateT> {
         'http://www.pwebapps.ezv.admin.ch/apps/rates/rate/getxml?activeSearchType=yesterday'
       )
         .then(response => response.text())
-        .then(rawdata => parseCurrencyXML(rawdata, store)),
+        .then(rawdata => parseCurrencyXML(rawdata, store))
+        .catch(_ => parseCurrencyXML('invalid', store)),
     ]);
 
   render() {

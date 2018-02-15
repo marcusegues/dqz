@@ -2,20 +2,19 @@
 import React from 'react';
 // $FlowFixMe
 import { View, Text } from 'react-native';
-import { DARK_GREY } from '../../../../styles/colors';
 import { moderateScale } from '../../../../styles/Scaling';
 
 const ownStyles = {
   pickerDividerColumn: {
-    flex: 0.15,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
+    flex: 0.1,
   },
   pickerDividerColumnText: {
     fontFamily: 'roboto_regular',
     fontSize: moderateScale(16),
-    color: DARK_GREY,
+    color: '#1a1a1a',
   },
 };
 

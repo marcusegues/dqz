@@ -13,9 +13,19 @@ import { languages } from '../../i18n';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import type { Language } from '../../i18n/types/locale';
 import { analyticsLanguageChanged } from '../../analytics/analyticsApi';
+import {
+  fetchSettingsAcceptRate,
+  fetchSettingsHasLanguage,
+  storeSettingsHasLanguage,
+} from '../../asyncStorage/storageApi';
+import { KeyNotSet } from '../../asyncStorage/asyncStorage';
+
+type NextScreenType = 'OnBoardingTaxScreen' | 'MainMenu';
 
 type OnBoardingState = {
   systemLanguage: Language,
+  nextScreen: NextScreenType,
+  settingsHasLanguage: boolean,
 };
 
 type OnBoardingProps = {
@@ -29,20 +39,50 @@ class OnBoardingInner extends React.Component<
 > {
   constructor(props) {
     super(props);
-    this.state = { systemLanguage: this.props.i18n.language };
+    this.state = {
+      systemLanguage: this.props.i18n.language,
+      nextScreen: 'OnBoardingTaxScreen',
+      settingsHasLanguage: false,
+    };
   }
 
-  changeLanguage(language) {
+  componentWillMount() {
+    fetchSettingsAcceptRate().then(accepted => {
+      if (accepted) {
+        this.setNextScreen('MainMenu');
+      } else {
+        this.setNextScreen('OnBoardingTaxScreen');
+      }
+    });
+
+    fetchSettingsHasLanguage().then(language => {
+      if (language !== KeyNotSet) {
+        this.setState({ settingsHasLanguage: true });
+      }
+    });
+  }
+
+  setNextScreen(nextScreen: NextScreenType) {
+    this.setState({ nextScreen });
+  }
+
+  changeLanguage(language: Language) {
     this.props.i18n.changeLanguage(language);
     analyticsLanguageChanged(language);
   }
 
   render() {
     const { t, i18n, navigation } = this.props;
-    const { systemLanguage } = this.state;
+    const { systemLanguage, nextScreen, settingsHasLanguage } = this.state;
     return (
-      <OnBoardingContainer>
-        <OnBoardingParagraph text={t('onBoarding:onBoardingMessage')} />
+      <OnBoardingContainer welcomeText={!settingsHasLanguage}>
+        <OnBoardingParagraph
+          text={
+            settingsHasLanguage
+              ? t('onBoarding:currentLanguageMessage')
+              : t('onBoarding:onBoardingMessage')
+          }
+        />
         <LanguageButton
           size="large"
           selected={systemLanguage === i18n.language}
@@ -70,7 +110,10 @@ class OnBoardingInner extends React.Component<
           </View>
         </View>
         <DoneButton
-          onPress={() => navigation.navigate('OnBoardingTaxScreen')}
+          onPress={() => {
+            storeSettingsHasLanguage(i18n.language);
+            navigation.navigate(nextScreen);
+          }}
         />
       </OnBoardingContainer>
     );

@@ -7,11 +7,14 @@ import { NavBar } from '../../components/NavBar/NavBar';
 import { GoodInputModal } from '../../components/Modals/GoodInputModal/GoodInputModal';
 import { PickerModal } from '../../components/Modals/PickerModal/PickerModal';
 import { CurrencyPickerModal } from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
+import { TimePickerModal } from '../../components/Modals/TimePickerModal/TimePickerModal';
 import { getCurrencies, getFormattedCurrencyDate } from '../../reducers';
 import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import type { Navigation } from '../../types/generalTypes';
 import type { CurrencyObject } from '../../model/currencies';
 import { initAmounts } from '../../model/configurationApi';
+import { LegalNoticeModal } from '../../components/Modals/LegalNoticeModal/LegalNoticeModal';
+import { getConvertedLocalTimeToSwiss } from '../../model/utils';
 
 type ScreensViewProps = {
   navigation: Navigation,
@@ -22,6 +25,8 @@ type ScreensViewState = {
   pickerModalVisible: boolean,
   currencyPickerModalVisible: boolean,
   savedBasketModalVisible: boolean,
+  timePickerModalVisible: boolean,
+  legalNoticeModalVisible: boolean,
 };
 
 class ScreensViewInner extends React.Component<
@@ -37,6 +42,8 @@ class ScreensViewInner extends React.Component<
       pickerModalVisible: false,
       currencyPickerModalVisible: false,
       savedBasketModalVisible: false,
+      timePickerModalVisible: false,
+      legalNoticeModalVisible: false,
     };
   }
 
@@ -60,6 +67,16 @@ class ScreensViewInner extends React.Component<
       savedBasketModalVisible: !this.state.savedBasketModalVisible,
     });
   }
+  handleHideTimePickerModal() {
+    this.setState({
+      timePickerModalVisible: false,
+    });
+  }
+  toggleLegalNoticeModalVisible() {
+    this.setState({
+      legalNoticeModalVisible: !this.state.legalNoticeModalVisible,
+    });
+  }
 
   render() {
     return (
@@ -76,6 +93,8 @@ class ScreensViewInner extends React.Component<
             { key: `currencyPickerModal` },
             { key: `Information` },
             { key: `savedBasketModal` },
+            { key: `timePickerModal` },
+            { key: `legalNoticeModal` },
           ]}
           renderItem={({ item }) => (
             <Text
@@ -97,6 +116,12 @@ class ScreensViewInner extends React.Component<
                   return;
                 } else if (item.key === `savedBasketModal`) {
                   this.setState({ savedBasketModalVisible: true });
+                  return;
+                } else if (item.key === `timePickerModal`) {
+                  this.setState({ timePickerModalVisible: true });
+                  return;
+                } else if (item.key === `legalNoticeModal`) {
+                  this.setState({ legalNoticeModalVisible: true });
                   return;
                 }
                 this.props.navigation.navigate(item.key);
@@ -128,9 +153,21 @@ class ScreensViewInner extends React.Component<
           amounts={initAmounts}
           large={false}
         />
+        <TimePickerModal
+          currentEntryTime={getConvertedLocalTimeToSwiss().toString()}
+          modalVisible={this.state.timePickerModalVisible}
+          onHideModal={() => this.handleHideTimePickerModal()}
+          onSelectTime={() => {}}
+        />
         <SavedBasketModal
           modalVisible={this.state.savedBasketModalVisible}
           toggleModalVisible={() => this.toggleSavedBasketModalVisible()}
+        />
+        <LegalNoticeModal
+          modalVisible={this.state.legalNoticeModalVisible}
+          toggleModalVisible={() => this.toggleLegalNoticeModalVisible()}
+          onPressLegal={() => {}}
+          onConfirm={() => {}}
         />
       </View>
     );

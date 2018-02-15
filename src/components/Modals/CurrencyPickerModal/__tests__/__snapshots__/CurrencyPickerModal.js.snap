@@ -2,92 +2,681 @@
 
 exports[`Currency Picker renders according to snapshot 1`] = `
 <Modal
-  animationType="slide"
+  animationType="none"
   hardwareAccelerated={false}
+  onModalHide={[Function]}
   onRequestClose={[Function]}
-  style={
-    Object {
-      "backgroundColor": "red",
-    }
-  }
+  swipeThreshold={100}
   transparent={true}
-  visible={true}
+  visible={false}
 >
   <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
     style={
-      Array [
-        Object {
-          "alignSelf": "center",
-          "backgroundColor": "#FFF",
-          "borderRadius": 3,
-          "flexDirection": "column",
-          "justifyContent": "flex-start",
-          "paddingBottom": 16,
-          "top": "25%",
-          "width": "85%",
-        },
-        Object {
-          "elevation": 2,
-          "shadowColor": "#000",
-          "shadowOffset": Object {
-            "height": 1,
-            "width": 1,
-          },
-          "shadowOpacity": 0.25,
-          "shadowRadius": 2,
-        },
-        Object {
-          "top": "15%",
-        },
-      ]
+      Object {
+        "backgroundColor": "black",
+        "bottom": 0,
+        "height": 1334,
+        "left": 0,
+        "opacity": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "width": 750,
+      }
     }
+    testID={undefined}
+  />
+  <View
+    collapsable={undefined}
+    onModalHide={[Function]}
+    onRequestClose={[Function]}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "center",
+        "margin": 37.5,
+        "transform": Array [
+          Object {
+            "translateY": 0,
+          },
+        ],
+      }
+    }
+    swipeThreshold={100}
   >
     <View
       style={
-        Object {
-          "alignSelf": "flex-start",
-          "marginBottom": 31.388235294117646,
-          "marginHorizontal": 31.388235294117646,
-          "marginTop": 31.388235294117646,
-        }
+        Array [
+          Object {
+            "alignSelf": "center",
+            "backgroundColor": "#FFF",
+            "borderRadius": 3,
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "paddingBottom": 16,
+            "width": "85%",
+          },
+          Object {
+            "elevation": 2,
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 1,
+              "width": 1,
+            },
+            "shadowOpacity": 0.25,
+            "shadowRadius": 2,
+          },
+          Object {
+            "width": "100%",
+          },
+        ]
       }
     >
+      <View
+        style={
+          Object {
+            "alignSelf": "flex-start",
+            "marginBottom": 31.388235294117646,
+            "marginHorizontal": 31.388235294117646,
+            "marginTop": 31.388235294117646,
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#141414",
+              "fontFamily": "roboto_regular",
+              "fontSize": 24,
+              "lineHeight": 62.77647058823529,
+            }
+          }
+        >
+          
+        </Text>
+      </View>
       <Text
         accessible={true}
         allowFontScaling={true}
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#141414",
+            "color": "#9B9B9B",
             "fontFamily": "roboto_regular",
-            "fontSize": 24,
-            "lineHeight": 62.77647058823529,
+            "fontSize": 14,
+            "marginHorizontal": 31.388235294117646,
           }
         }
       >
         
       </Text>
-    </View>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#9B9B9B",
-          "fontFamily": "roboto_regular",
-          "fontSize": 14,
-          "marginHorizontal": 31.388235294117646,
+      <View
+        accessibilityComponentType={undefined}
+        accessibilityLabel={undefined}
+        accessibilityTraits={undefined}
+        accessible={false}
+        hitSlop={undefined}
+        nativeID={undefined}
+        onLayout={undefined}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "justifyContent": "center",
+          }
         }
-      }
-    >
-      
-    </Text>
+        testID={undefined}
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "flex": 0.25,
+              },
+              Object {
+                "flex": 0.6,
+              },
+            ]
+          }
+        >
+          <View
+            style={undefined}
+          >
+            <RCTPicker
+              items={
+                Array [
+                  Object {
+                    "label": "🇪🇺 EUR",
+                    "textColor": undefined,
+                    "value": "EUR",
+                  },
+                  Object {
+                    "label": "🇺🇸 USD",
+                    "textColor": undefined,
+                    "value": "USD",
+                  },
+                  Object {
+                    "label": "🇨🇭 CHF",
+                    "textColor": undefined,
+                    "value": "CHF",
+                  },
+                  Object {
+                    "label": "🇦🇪 AED",
+                    "textColor": undefined,
+                    "value": "AED",
+                  },
+                  Object {
+                    "label": "🇦🇱 ALL",
+                    "textColor": undefined,
+                    "value": "ALL",
+                  },
+                  Object {
+                    "label": "🇦🇷 ARS",
+                    "textColor": undefined,
+                    "value": "ARS",
+                  },
+                  Object {
+                    "label": "🇦🇺 AUD",
+                    "textColor": undefined,
+                    "value": "AUD",
+                  },
+                  Object {
+                    "label": "🇦🇿 AZN",
+                    "textColor": undefined,
+                    "value": "AZN",
+                  },
+                  Object {
+                    "label": "🇧🇦 BAM",
+                    "textColor": undefined,
+                    "value": "BAM",
+                  },
+                  Object {
+                    "label": "🇧🇩 BDT",
+                    "textColor": undefined,
+                    "value": "BDT",
+                  },
+                  Object {
+                    "label": "🇧🇬 BGN",
+                    "textColor": undefined,
+                    "value": "BGN",
+                  },
+                  Object {
+                    "label": "🇧🇭 BHD",
+                    "textColor": undefined,
+                    "value": "BHD",
+                  },
+                  Object {
+                    "label": "🇧🇷 BRL",
+                    "textColor": undefined,
+                    "value": "BRL",
+                  },
+                  Object {
+                    "label": "🇨🇦 CAD",
+                    "textColor": undefined,
+                    "value": "CAD",
+                  },
+                  Object {
+                    "label": "🇨🇱 CLP",
+                    "textColor": undefined,
+                    "value": "CLP",
+                  },
+                  Object {
+                    "label": "🇨🇳 CNY",
+                    "textColor": undefined,
+                    "value": "CNY",
+                  },
+                  Object {
+                    "label": "🇨🇴 COP",
+                    "textColor": undefined,
+                    "value": "COP",
+                  },
+                  Object {
+                    "label": "🇨🇷 CRC",
+                    "textColor": undefined,
+                    "value": "CRC",
+                  },
+                  Object {
+                    "label": "🇨🇿 CZK",
+                    "textColor": undefined,
+                    "value": "CZK",
+                  },
+                  Object {
+                    "label": "🇩🇰 DKK",
+                    "textColor": undefined,
+                    "value": "DKK",
+                  },
+                  Object {
+                    "label": "🇩🇴 DOP",
+                    "textColor": undefined,
+                    "value": "DOP",
+                  },
+                  Object {
+                    "label": "🇪🇬 EGP",
+                    "textColor": undefined,
+                    "value": "EGP",
+                  },
+                  Object {
+                    "label": "🇪🇹 ETB",
+                    "textColor": undefined,
+                    "value": "ETB",
+                  },
+                  Object {
+                    "label": "🇬🇧 GBP",
+                    "textColor": undefined,
+                    "value": "GBP",
+                  },
+                  Object {
+                    "label": "🇬🇹 GTQ",
+                    "textColor": undefined,
+                    "value": "GTQ",
+                  },
+                  Object {
+                    "label": "🇭🇰 HKD",
+                    "textColor": undefined,
+                    "value": "HKD",
+                  },
+                  Object {
+                    "label": "🇭🇳 HNL",
+                    "textColor": undefined,
+                    "value": "HNL",
+                  },
+                  Object {
+                    "label": "🇭🇷 HRK",
+                    "textColor": undefined,
+                    "value": "HRK",
+                  },
+                  Object {
+                    "label": "🇭🇺 HUF",
+                    "textColor": undefined,
+                    "value": "HUF",
+                  },
+                  Object {
+                    "label": "🇮🇩 IDR",
+                    "textColor": undefined,
+                    "value": "IDR",
+                  },
+                  Object {
+                    "label": "🇮🇱 ILS",
+                    "textColor": undefined,
+                    "value": "ILS",
+                  },
+                  Object {
+                    "label": "🇮🇳 INR",
+                    "textColor": undefined,
+                    "value": "INR",
+                  },
+                  Object {
+                    "label": "🇮🇸 ISK",
+                    "textColor": undefined,
+                    "value": "ISK",
+                  },
+                  Object {
+                    "label": "🇯🇵 JPY",
+                    "textColor": undefined,
+                    "value": "JPY",
+                  },
+                  Object {
+                    "label": "🇰🇪 KES",
+                    "textColor": undefined,
+                    "value": "KES",
+                  },
+                  Object {
+                    "label": "🇰🇭 KHR",
+                    "textColor": undefined,
+                    "value": "KHR",
+                  },
+                  Object {
+                    "label": "🇰🇷 KRW",
+                    "textColor": undefined,
+                    "value": "KRW",
+                  },
+                  Object {
+                    "label": "🇰🇼 KWD",
+                    "textColor": undefined,
+                    "value": "KWD",
+                  },
+                  Object {
+                    "label": "🇰🇾 KYD",
+                    "textColor": undefined,
+                    "value": "KYD",
+                  },
+                  Object {
+                    "label": "🇰🇿 KZT",
+                    "textColor": undefined,
+                    "value": "KZT",
+                  },
+                  Object {
+                    "label": "🇱🇧 LBP",
+                    "textColor": undefined,
+                    "value": "LBP",
+                  },
+                  Object {
+                    "label": "🇱🇰 LKR",
+                    "textColor": undefined,
+                    "value": "LKR",
+                  },
+                  Object {
+                    "label": "🇱🇾 LYD",
+                    "textColor": undefined,
+                    "value": "LYD",
+                  },
+                  Object {
+                    "label": "🇲🇦 MAD",
+                    "textColor": undefined,
+                    "value": "MAD",
+                  },
+                  Object {
+                    "label": "🇲🇺 MUR",
+                    "textColor": undefined,
+                    "value": "MUR",
+                  },
+                  Object {
+                    "label": "🇲🇽 MXN",
+                    "textColor": undefined,
+                    "value": "MXN",
+                  },
+                  Object {
+                    "label": "🇲🇾 MYR",
+                    "textColor": undefined,
+                    "value": "MYR",
+                  },
+                  Object {
+                    "label": "🇳🇬 NGN",
+                    "textColor": undefined,
+                    "value": "NGN",
+                  },
+                  Object {
+                    "label": "🇳🇴 NOK",
+                    "textColor": undefined,
+                    "value": "NOK",
+                  },
+                  Object {
+                    "label": "🇳🇿 NZD",
+                    "textColor": undefined,
+                    "value": "NZD",
+                  },
+                  Object {
+                    "label": "🇴🇲 OMR",
+                    "textColor": undefined,
+                    "value": "OMR",
+                  },
+                  Object {
+                    "label": "🇵🇦 PAB",
+                    "textColor": undefined,
+                    "value": "PAB",
+                  },
+                  Object {
+                    "label": "🇵🇪 PEN",
+                    "textColor": undefined,
+                    "value": "PEN",
+                  },
+                  Object {
+                    "label": "🇵🇭 PHP",
+                    "textColor": undefined,
+                    "value": "PHP",
+                  },
+                  Object {
+                    "label": "🇵🇭 PKR",
+                    "textColor": undefined,
+                    "value": "PKR",
+                  },
+                  Object {
+                    "label": "🇵🇱 PLN",
+                    "textColor": undefined,
+                    "value": "PLN",
+                  },
+                  Object {
+                    "label": "🇶🇦 QAR",
+                    "textColor": undefined,
+                    "value": "QAR",
+                  },
+                  Object {
+                    "label": "🇷🇴 RON",
+                    "textColor": undefined,
+                    "value": "RON",
+                  },
+                  Object {
+                    "label": "🇷🇸 RSD",
+                    "textColor": undefined,
+                    "value": "RSD",
+                  },
+                  Object {
+                    "label": "🇷🇺 RUB",
+                    "textColor": undefined,
+                    "value": "RUB",
+                  },
+                  Object {
+                    "label": "🇸🇦 SAR",
+                    "textColor": undefined,
+                    "value": "SAR",
+                  },
+                  Object {
+                    "label": "🇸🇪 SEK",
+                    "textColor": undefined,
+                    "value": "SEK",
+                  },
+                  Object {
+                    "label": "🇸🇬 SGD",
+                    "textColor": undefined,
+                    "value": "SGD",
+                  },
+                  Object {
+                    "label": "🇹🇭 THB",
+                    "textColor": undefined,
+                    "value": "THB",
+                  },
+                  Object {
+                    "label": "🇹🇳 TND",
+                    "textColor": undefined,
+                    "value": "TND",
+                  },
+                  Object {
+                    "label": "🇹🇷 TRY",
+                    "textColor": undefined,
+                    "value": "TRY",
+                  },
+                  Object {
+                    "label": "🇹🇼 TWD",
+                    "textColor": undefined,
+                    "value": "TWD",
+                  },
+                  Object {
+                    "label": "🇹🇿 TZS",
+                    "textColor": undefined,
+                    "value": "TZS",
+                  },
+                  Object {
+                    "label": "🇺🇦 UAH",
+                    "textColor": undefined,
+                    "value": "UAH",
+                  },
+                  Object {
+                    "label": "🇺🇾 UYU",
+                    "textColor": undefined,
+                    "value": "UYU",
+                  },
+                  Object {
+                    "label": "🇻🇪 VEF",
+                    "textColor": undefined,
+                    "value": "VEF",
+                  },
+                  Object {
+                    "label": "🇻🇳 VND",
+                    "textColor": undefined,
+                    "value": "VND",
+                  },
+                  Object {
+                    "label": "🇿🇦 ZAR",
+                    "textColor": undefined,
+                    "value": "ZAR",
+                  },
+                ]
+              }
+              onChange={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              selectedIndex={0}
+              style={
+                Array [
+                  Object {
+                    "height": 216,
+                  },
+                  Object {
+                    "fontFamily": "roboto_medium",
+                  },
+                ]
+              }
+            />
+          </View>
+        </View>
+        <TextInput
+          allowFontScaling={true}
+          blurOnSubmit={true}
+          keyboardType="numeric"
+          maxLenght="8"
+          onChangeText={[Function]}
+          style={
+            Object {
+              "borderBottomColor": "#9B9B9B",
+              "borderBottomWidth": 1,
+              "borderColor": "#A0A0A0",
+              "color": "#1a1a1a",
+              "fontFamily": "roboto_regular",
+              "fontSize": 37.714285714285715,
+              "height": 40,
+              "marginHorizontal": 20,
+              "textAlign": "center",
+              "width": 110,
+            }
+          }
+          underlineColorAndroid="transparent"
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "alignSelf": "center",
+            "justifyContent": "center",
+            "marginHorizontal": 17.142857142857142,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignContent": "center",
+              "alignSelf": "center",
+              "backgroundColor": "#DC0018",
+              "borderColor": "#ddd",
+              "borderRadius": 3,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "marginTop": 31.388235294117646,
+              "width": "95%",
+            }
+          }
+        >
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "lightgray",
+                "borderRadius": 3,
+                "flex": 1,
+                "opacity": 1,
+                "shadowColor": "black",
+                "shadowOffset": Object {
+                  "height": 1,
+                },
+                "shadowOpacity": 0.1,
+                "shadowRadius": 3,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "alignSelf": "center",
+                  "color": "#fff",
+                  "fontFamily": "roboto_medium",
+                  "fontSize": 22,
+                  "fontWeight": "500",
+                  "paddingVertical": 31.388235294117646,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#9B9B9B",
+            "fontFamily": "roboto_regular",
+            "fontSize": 14,
+            "marginHorizontal": 31.388235294117646,
+            "marginTop": 10,
+            "textAlign": "center",
+          }
+        }
+      >
+        CHF -- ( undefined)
+      </Text>
+    </View>
     <View
       accessibilityComponentType={undefined}
       accessibilityLabel={undefined}
       accessibilityTraits={undefined}
-      accessible={false}
+      accessible={true}
       hitSlop={undefined}
       nativeID={undefined}
       onLayout={undefined}
@@ -99,533 +688,29 @@ exports[`Currency Picker renders according to snapshot 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "justifyContent": "center",
+          "alignSelf": "center",
+          "bottom": 50.285714285714285,
+          "padding": 23.57142857142857,
+          "position": "absolute",
         }
       }
       testID={undefined}
     >
-      <View
-        style={
-          Array [
-            Object {
-              "flex": 0.25,
-            },
-            Object {
-              "flex": 0.5,
-            },
-          ]
-        }
-      >
-        <View
-          style={undefined}
-        >
-          <RCTPicker
-            items={
-              Array [
-                Object {
-                  "label": " 🇪🇺 EUR",
-                  "textColor": undefined,
-                  "value": "EUR",
-                },
-                Object {
-                  "label": " 🇺🇸 USD",
-                  "textColor": undefined,
-                  "value": "USD",
-                },
-                Object {
-                  "label": " 🇨🇭 CHF",
-                  "textColor": undefined,
-                  "value": "CHF",
-                },
-                Object {
-                  "label": " 🇦🇪 AED",
-                  "textColor": undefined,
-                  "value": "AED",
-                },
-                Object {
-                  "label": " 🇦🇱 ALL",
-                  "textColor": undefined,
-                  "value": "ALL",
-                },
-                Object {
-                  "label": " 🇦🇷 ARS",
-                  "textColor": undefined,
-                  "value": "ARS",
-                },
-                Object {
-                  "label": " 🇦🇺 AUD",
-                  "textColor": undefined,
-                  "value": "AUD",
-                },
-                Object {
-                  "label": " 🇦🇿 AZN",
-                  "textColor": undefined,
-                  "value": "AZN",
-                },
-                Object {
-                  "label": " 🇧🇦 BAM",
-                  "textColor": undefined,
-                  "value": "BAM",
-                },
-                Object {
-                  "label": " 🇧🇩 BDT",
-                  "textColor": undefined,
-                  "value": "BDT",
-                },
-                Object {
-                  "label": " 🇧🇬 BGN",
-                  "textColor": undefined,
-                  "value": "BGN",
-                },
-                Object {
-                  "label": " 🇧🇭 BHD",
-                  "textColor": undefined,
-                  "value": "BHD",
-                },
-                Object {
-                  "label": " 🇧🇷 BRL",
-                  "textColor": undefined,
-                  "value": "BRL",
-                },
-                Object {
-                  "label": " 🇨🇦 CAD",
-                  "textColor": undefined,
-                  "value": "CAD",
-                },
-                Object {
-                  "label": " 🇨🇱 CLP",
-                  "textColor": undefined,
-                  "value": "CLP",
-                },
-                Object {
-                  "label": " 🇨🇳 CNY",
-                  "textColor": undefined,
-                  "value": "CNY",
-                },
-                Object {
-                  "label": " 🇨🇴 COP",
-                  "textColor": undefined,
-                  "value": "COP",
-                },
-                Object {
-                  "label": " 🇨🇷 CRC",
-                  "textColor": undefined,
-                  "value": "CRC",
-                },
-                Object {
-                  "label": " 🇨🇿 CZK",
-                  "textColor": undefined,
-                  "value": "CZK",
-                },
-                Object {
-                  "label": " 🇩🇰 DKK",
-                  "textColor": undefined,
-                  "value": "DKK",
-                },
-                Object {
-                  "label": " 🇩🇴 DOP",
-                  "textColor": undefined,
-                  "value": "DOP",
-                },
-                Object {
-                  "label": " 🇪🇬 EGP",
-                  "textColor": undefined,
-                  "value": "EGP",
-                },
-                Object {
-                  "label": " 🇪🇹 ETB",
-                  "textColor": undefined,
-                  "value": "ETB",
-                },
-                Object {
-                  "label": " 🇬🇧 GBP",
-                  "textColor": undefined,
-                  "value": "GBP",
-                },
-                Object {
-                  "label": " 🇬🇹 GTQ",
-                  "textColor": undefined,
-                  "value": "GTQ",
-                },
-                Object {
-                  "label": " 🇭🇰 HKD",
-                  "textColor": undefined,
-                  "value": "HKD",
-                },
-                Object {
-                  "label": " 🇭🇳 HNL",
-                  "textColor": undefined,
-                  "value": "HNL",
-                },
-                Object {
-                  "label": " 🇭🇷 HRK",
-                  "textColor": undefined,
-                  "value": "HRK",
-                },
-                Object {
-                  "label": " 🇭🇺 HUF",
-                  "textColor": undefined,
-                  "value": "HUF",
-                },
-                Object {
-                  "label": " 🇮🇩 IDR",
-                  "textColor": undefined,
-                  "value": "IDR",
-                },
-                Object {
-                  "label": " 🇮🇱 ILS",
-                  "textColor": undefined,
-                  "value": "ILS",
-                },
-                Object {
-                  "label": " 🇮🇳 INR",
-                  "textColor": undefined,
-                  "value": "INR",
-                },
-                Object {
-                  "label": " 🇮🇸 ISK",
-                  "textColor": undefined,
-                  "value": "ISK",
-                },
-                Object {
-                  "label": " 🇯🇵 JPY",
-                  "textColor": undefined,
-                  "value": "JPY",
-                },
-                Object {
-                  "label": " 🇰🇪 KES",
-                  "textColor": undefined,
-                  "value": "KES",
-                },
-                Object {
-                  "label": " 🇰🇭 KHR",
-                  "textColor": undefined,
-                  "value": "KHR",
-                },
-                Object {
-                  "label": " 🇰🇷 KRW",
-                  "textColor": undefined,
-                  "value": "KRW",
-                },
-                Object {
-                  "label": " 🇰🇼 KWD",
-                  "textColor": undefined,
-                  "value": "KWD",
-                },
-                Object {
-                  "label": " 🇰🇾 KYD",
-                  "textColor": undefined,
-                  "value": "KYD",
-                },
-                Object {
-                  "label": " 🇰🇿 KZT",
-                  "textColor": undefined,
-                  "value": "KZT",
-                },
-                Object {
-                  "label": " 🇱🇧 LBP",
-                  "textColor": undefined,
-                  "value": "LBP",
-                },
-                Object {
-                  "label": " 🇱🇰 LKR",
-                  "textColor": undefined,
-                  "value": "LKR",
-                },
-                Object {
-                  "label": " 🇱🇾 LYD",
-                  "textColor": undefined,
-                  "value": "LYD",
-                },
-                Object {
-                  "label": " 🇲🇦 MAD",
-                  "textColor": undefined,
-                  "value": "MAD",
-                },
-                Object {
-                  "label": " 🇲🇺 MUR",
-                  "textColor": undefined,
-                  "value": "MUR",
-                },
-                Object {
-                  "label": " 🇲🇽 MXN",
-                  "textColor": undefined,
-                  "value": "MXN",
-                },
-                Object {
-                  "label": " 🇲🇾 MYR",
-                  "textColor": undefined,
-                  "value": "MYR",
-                },
-                Object {
-                  "label": " 🇳🇬 NGN",
-                  "textColor": undefined,
-                  "value": "NGN",
-                },
-                Object {
-                  "label": " 🇳🇴 NOK",
-                  "textColor": undefined,
-                  "value": "NOK",
-                },
-                Object {
-                  "label": " 🇳🇿 NZD",
-                  "textColor": undefined,
-                  "value": "NZD",
-                },
-                Object {
-                  "label": " 🇴🇲 OMR",
-                  "textColor": undefined,
-                  "value": "OMR",
-                },
-                Object {
-                  "label": " 🇵🇦 PAB",
-                  "textColor": undefined,
-                  "value": "PAB",
-                },
-                Object {
-                  "label": " 🇵🇪 PEN",
-                  "textColor": undefined,
-                  "value": "PEN",
-                },
-                Object {
-                  "label": " 🇵🇭 PHP",
-                  "textColor": undefined,
-                  "value": "PHP",
-                },
-                Object {
-                  "label": " 🇵🇰 PKR",
-                  "textColor": undefined,
-                  "value": "PKR",
-                },
-                Object {
-                  "label": " 🇵🇱 PLN",
-                  "textColor": undefined,
-                  "value": "PLN",
-                },
-                Object {
-                  "label": " 🇶🇦 QAR",
-                  "textColor": undefined,
-                  "value": "QAR",
-                },
-                Object {
-                  "label": " 🇷🇴 RON",
-                  "textColor": undefined,
-                  "value": "RON",
-                },
-                Object {
-                  "label": " 🇷🇸 RSD",
-                  "textColor": undefined,
-                  "value": "RSD",
-                },
-                Object {
-                  "label": " 🇷🇺 RUB",
-                  "textColor": undefined,
-                  "value": "RUB",
-                },
-                Object {
-                  "label": " 🇸🇦 SAR",
-                  "textColor": undefined,
-                  "value": "SAR",
-                },
-                Object {
-                  "label": " 🇸🇪 SEK",
-                  "textColor": undefined,
-                  "value": "SEK",
-                },
-                Object {
-                  "label": " 🇸🇬 SGD",
-                  "textColor": undefined,
-                  "value": "SGD",
-                },
-                Object {
-                  "label": " 🇹🇭 THB",
-                  "textColor": undefined,
-                  "value": "THB",
-                },
-                Object {
-                  "label": " 🇹🇳 TND",
-                  "textColor": undefined,
-                  "value": "TND",
-                },
-                Object {
-                  "label": " 🇹🇷 TRY",
-                  "textColor": undefined,
-                  "value": "TRY",
-                },
-                Object {
-                  "label": " 🇹🇼 TWD",
-                  "textColor": undefined,
-                  "value": "TWD",
-                },
-                Object {
-                  "label": " 🇹🇿 TZS",
-                  "textColor": undefined,
-                  "value": "TZS",
-                },
-                Object {
-                  "label": " 🇺🇦 UAH",
-                  "textColor": undefined,
-                  "value": "UAH",
-                },
-                Object {
-                  "label": " 🇺🇾 UYU",
-                  "textColor": undefined,
-                  "value": "UYU",
-                },
-                Object {
-                  "label": " 🇻🇪 VEF",
-                  "textColor": undefined,
-                  "value": "VEF",
-                },
-                Object {
-                  "label": " 🇻🇳 VND",
-                  "textColor": undefined,
-                  "value": "VND",
-                },
-                Object {
-                  "label": " 🇿🇦 ZAR",
-                  "textColor": undefined,
-                  "value": "ZAR",
-                },
-              ]
-            }
-            onChange={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            selectedIndex={0}
-            style={
-              Array [
-                Object {
-                  "height": 216,
-                },
-                Object {
-                  "fontFamily": "roboto_medium",
-                },
-              ]
-            }
-          />
-        </View>
-      </View>
-      <TextInput
+      <Text
+        accessible={true}
         allowFontScaling={true}
-        blurOnSubmit={true}
-        keyboardType="numeric"
-        maxLenght="8"
-        onChangeText={[Function]}
+        ellipsizeMode="tail"
         style={
           Object {
-            "borderBottomColor": "#9B9B9B",
-            "borderBottomWidth": 1,
-            "borderColor": "#A0A0A0",
-            "color": "#1a1a1a",
+            "color": "#fff",
             "fontFamily": "roboto_regular",
-            "fontSize": 37.714285714285715,
-            "height": 40,
-            "marginHorizontal": 20,
-            "textAlign": "center",
-            "width": 110,
-          }
-        }
-        underlineColorAndroid="transparent"
-      />
-    </View>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "alignSelf": "center",
-          "justifyContent": "center",
-          "marginHorizontal": 17.142857142857142,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "alignContent": "center",
-            "alignSelf": "center",
-            "backgroundColor": "#DC0018",
-            "borderColor": "#ddd",
-            "borderRadius": 3,
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "marginTop": 31.388235294117646,
-            "width": "95%",
+            "fontSize": 22,
           }
         }
       >
-        <View
-          accessibilityComponentType={undefined}
-          accessibilityLabel={undefined}
-          accessibilityTraits={undefined}
-          accessible={true}
-          collapsable={undefined}
-          hitSlop={undefined}
-          isTVSelectable={true}
-          nativeID={undefined}
-          onLayout={undefined}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          style={
-            Object {
-              "backgroundColor": "lightgray",
-              "borderRadius": 3,
-              "flex": 1,
-              "opacity": 1,
-              "shadowColor": "black",
-              "shadowOffset": Object {
-                "height": 1,
-              },
-              "shadowOpacity": 0.1,
-              "shadowRadius": 3,
-            }
-          }
-          testID={undefined}
-          tvParallaxProperties={undefined}
-        >
-          <Text
-            accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-            style={
-              Object {
-                "alignSelf": "center",
-                "color": "#fff",
-                "fontFamily": "roboto_medium",
-                "fontSize": 22,
-                "fontWeight": "500",
-                "paddingVertical": 31.388235294117646,
-              }
-            }
-          >
-            
-          </Text>
-        </View>
-      </View>
+        
+      </Text>
     </View>
-    <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-      style={
-        Object {
-          "color": "#9B9B9B",
-          "fontFamily": "roboto_regular",
-          "fontSize": 14,
-          "marginHorizontal": 31.388235294117646,
-          "marginTop": 10,
-          "textAlign": "center",
-        }
-      }
-    >
-      CHF -- ( undefined)
-    </Text>
   </View>
 </Modal>
 `;

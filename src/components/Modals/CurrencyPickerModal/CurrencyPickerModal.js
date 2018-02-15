@@ -27,6 +27,7 @@ import type { Currency, CurrencyObject } from '../../../model/currencies';
 import type { TFunction } from '../../../types/generalTypes';
 import type { Amounts } from '../../../model/types/basketPeopleAmountsTypes';
 import { hasOffsettingAmount } from '../../../model/utils';
+import { ModalCloseText } from '../ModalCloseText';
 
 type PickerState = {
   currency: Currency,
@@ -41,6 +42,7 @@ type CurrencyPickerModalProps = {
   onAddAmount: (currency: Currency, amount: number) => void,
   large: boolean,
   amounts: Amounts,
+  toggleModalVisible: () => void,
 };
 
 class CurrencyPickerModalInner extends React.Component<
@@ -59,6 +61,7 @@ class CurrencyPickerModalInner extends React.Component<
     const { currency, amount } = this.state;
     const { onAddAmount, onHide } = this.props;
     onAddAmount(currency, amount);
+    this.setState({ amount: 0 });
     onHide();
   }
 
@@ -70,6 +73,7 @@ class CurrencyPickerModalInner extends React.Component<
       modalVisible,
       large,
       amounts,
+      toggleModalVisible,
     } = this.props;
     const { amount, currency } = this.state;
 
@@ -80,6 +84,11 @@ class CurrencyPickerModalInner extends React.Component<
     });
     if (disabledRedButton) {
       redButtonText = t(['currencyPickerInvalidInput']);
+    }
+
+    if (large && currencyObject[currency] * amount < INDIVIDUALALLOWANCE) {
+      disabledRedButton = true;
+      redButtonText = t(['currencyPickerTooSmallLargeAmount']);
     }
 
     if (large && !hasOffsettingAmount(amounts, amount, currency)) {
@@ -98,8 +107,14 @@ class CurrencyPickerModalInner extends React.Component<
       });
     }
     return (
-      <AppModal modalVisible={modalVisible}>
-        <PickerCard style={{ top: '15%' }}>
+      <AppModal
+        modalVisible={modalVisible}
+        onSwipe={toggleModalVisible}
+        onRequestClose={toggleModalVisible}
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
+      >
+        <PickerCard style={{ width: '100%' }}>
           <CardHeader text={title} />
           <CardHeaderSubText text={t(['currencyPickerSubTitle'])} />
 
@@ -119,20 +134,19 @@ class CurrencyPickerModalInner extends React.Component<
                 itemStyle={{
                   fontFamily: 'roboto_medium',
                 }}
-                style={{ flex: 0.5 }}
+                style={{ flex: 0.6 }}
               >
-                {currencyPicker
-                  .filter(c => currenciesArray.indexOf(c.value) > -1)
+                {Object.keys(currencyPicker)
+                  .filter(c => currenciesArray.indexOf(c) > -1)
                   .sort(
                     (a, b) =>
-                      currenciesArray.indexOf(a.value) -
-                      currenciesArray.indexOf(b.value)
+                      currenciesArray.indexOf(a) - currenciesArray.indexOf(b)
                   )
-                  .map(i => (
+                  .map(c => (
                     <Picker.Item
-                      key={i.label}
-                      label={i.label}
-                      value={i.value}
+                      key={c}
+                      label={`${currencyPicker[c]} ${c}`}
+                      value={c}
                     />
                   ))}
               </PickerComponent>
@@ -166,6 +180,10 @@ class CurrencyPickerModalInner extends React.Component<
             text={subButtonText}
           />
         </PickerCard>
+        <ModalCloseText
+          onModalHide={toggleModalVisible}
+          text={t('closeModalText')}
+        />
       </AppModal>
     );
   }

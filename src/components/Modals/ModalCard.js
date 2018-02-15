@@ -14,7 +14,6 @@ export const ModalCard = ({ children }: ModalCardProps) => (
       flex: 1,
       flexDirection: 'column',
       alignItems: 'center',
-      marginHorizontal: 16,
       marginTop: verticalScale(32),
       marginBottom: verticalScale(16),
       backgroundColor: '#fff',

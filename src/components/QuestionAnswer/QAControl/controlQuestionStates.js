@@ -9,6 +9,11 @@ import type {
 import { getTotalPeople } from '../../../model/configurationApi';
 import { hasLargeAmount } from '../../../model/utils';
 import type { Navigation } from '../../../types/generalTypes';
+import type { MainCategories } from '../../../types/reducers/appReducer';
+
+const singleOtherGoodsMainCategory = (
+  mainCategories: MainCategories
+): boolean => mainCategories.size === 1 && mainCategories.has('OtherGoods');
 
 const showLargeAmountsQuestion = (qaState: QAStateEnriched) => {
   const { people, amounts } = qaState;
@@ -28,7 +33,8 @@ export const setInitStates = (qaState: QAStateEnriched): QAStateEnriched => {
   return setQuestionState(qaState, {
     peopleInput: main.size ? 'collapsed' : 'expanded',
     mainCategories: main.size ? 'collapsed' : 'hidden',
-    quantityInput: main.size ? 'collapsed' : 'hidden',
+    quantityInput:
+      main.size && !singleOtherGoodsMainCategory(main) ? 'collapsed' : 'hidden',
     amounts: main.size ? 'collapsed' : 'hidden',
     largeAmounts: showLargeAmountsQuestion(qaState) ? 'collapsed' : 'hidden',
   });
@@ -56,11 +62,13 @@ export const setQuestionStates = (
   let largeAmountsState: QuestionState = showLargeAmountsQuestion(qaState)
     ? 'collapsed'
     : 'hidden';
-
   switch (justAnswered) {
     case 'peopleInput': {
       if (direction === 'back') {
         navigation.goBack();
+      }
+      if (singleOtherGoodsMainCategory(mainCategories)) {
+        quantityInputState = 'hidden';
       }
       mainCategoriesState = fwdNav(direction);
       if (!mainCategories.size) {
@@ -69,7 +77,19 @@ export const setQuestionStates = (
       break;
     }
     case 'mainCategories': {
+      if (direction === 'update') {
+        mainCategoriesState = 'expanded';
+        if (singleOtherGoodsMainCategory(mainCategories)) {
+          quantityInputState = 'hidden';
+        }
+        break;
+      }
       peopleInputState = backNav(direction);
+      if (singleOtherGoodsMainCategory(mainCategories)) {
+        quantityInputState = 'hidden';
+        amountsState = fwdNav(direction);
+        break;
+      }
       if (mainCategories.size) {
         quantityInputState = fwdNav(direction);
       }
@@ -81,7 +101,13 @@ export const setQuestionStates = (
       break;
     }
     case 'amounts': {
-      quantityInputState = backNav(direction);
+      if (singleOtherGoodsMainCategory(mainCategories)) {
+        mainCategoriesState = backNav(direction);
+        quantityInputState = 'hidden';
+      } else {
+        quantityInputState = backNav(direction);
+      }
+
       if (showLargeAmountsQuestion(qaState)) {
         largeAmountsState = fwdNav(direction);
       } else {
@@ -93,6 +119,9 @@ export const setQuestionStates = (
       break;
     }
     case 'largeAmounts': {
+      if (singleOtherGoodsMainCategory(mainCategories)) {
+        quantityInputState = 'hidden';
+      }
       amountsState = backNav(direction);
       if (direction === 'forward') {
         navigation.navigate('Payment');

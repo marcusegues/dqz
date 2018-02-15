@@ -1,5 +1,6 @@
 /* eslint-disable prefer-destructuring */
 // @flow
+import Immutable from 'immutable';
 import {
   getInitialState,
   mainCategories,
@@ -20,6 +21,7 @@ import type {
 } from '../model/types/basketPeopleAmountsTypes';
 import * as modelApi from '../model/configurationApi';
 import type { Currency, CurrencyObject } from '../model/currencies';
+import type { PaymentData } from '../types/generalTypes';
 
 export const appState = (
   state: State = getInitialState(),
@@ -111,6 +113,16 @@ export const appState = (
       return state.set('amounts', modelApi.resetAmounts(amounts, currency));
     }
 
+    case 'RESET_DECLARATION': {
+      const peopleReset = state.set('people', modelApi.initPeople);
+      const basketReset = peopleReset.set('basket', modelApi.emptyBasket);
+      const mainCategoriesReset = basketReset.setIn(
+        ['settings', 'mainCategories'],
+        Immutable.Set()
+      );
+      return mainCategoriesReset.set('amounts', modelApi.initAmounts);
+    }
+
     case 'ADD_MAIN_CATEGORY': {
       const mainCategory: MainCategory = action.mainCategory;
       const mainCategoriesAnswer = state.getIn(
@@ -137,6 +149,22 @@ export const appState = (
       const mainCategoriesAnswer: MainCategories = action.mainCategories;
       return state.setIn(['settings', 'mainCategories'], mainCategoriesAnswer);
     }
+
+    case 'SET_PAYMENT_DATA': {
+      const paymentData: PaymentData = action.paymentData;
+      return state.set('paymentData', paymentData);
+    }
+
+    case 'SET_RECEIPT_ID': {
+      const receiptId: string = action.receiptId;
+      return state.set('receiptId', receiptId);
+    }
+
+    case 'SET_RECEIPT_ENTRY_TIME': {
+      const receiptEntryTime: string = action.receiptEntryTime;
+      return state.set('receiptEntryTime', receiptEntryTime);
+    }
+
     default: {
       return state;
     }
@@ -162,3 +190,11 @@ export const getCurrencyState = (state: State): boolean =>
 
 export const getCurrencyDate = (state: State): Date =>
   state.get('currencyDate');
+
+export const getPaymentData = (state: State): PaymentData =>
+  state.get('paymentData');
+
+export const getReceiptId = (state: State): string => state.get('receiptId');
+
+export const getReceiptEntryTime = (state: State): string =>
+  state.get('receiptEntryTime');

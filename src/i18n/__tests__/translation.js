@@ -42,7 +42,7 @@ describe('Translation works', () => {
   });
   test('italian', () => {
     init('it');
-    expect(i18n.t('onBoarding:welcome')).toBe('Benvenuto a');
+    expect(i18n.t('onBoarding:welcome')).toBe('Benvenuti a');
   });
   test('fallback', () => {
     init('xy');

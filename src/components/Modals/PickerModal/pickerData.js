@@ -1,6 +1,7 @@
 // @flow
 
 import type { Category } from '../../../model/types/basketPeopleAmountsTypes';
+import { formatDate } from '../../../model/utils';
 
 type PickerItem = {
   id: number,
@@ -27,6 +28,7 @@ const cigarettesAmountsPicker: Array<PickerItem> = pickerItemGenerator([
   '1',
   '10',
   '20',
+  '100',
   '200',
 ]);
 
@@ -77,4 +79,56 @@ export const pickerDecimalUnits = pickerItemGenerator([
   '70',
   '80',
   '90',
+]);
+
+export const pickerHours: Array<PickerItem> = pickerItemGenerator([
+  '00',
+  '01',
+  '02',
+  '03',
+  '04',
+  '05',
+  '06',
+  '07',
+  '08',
+  '09',
+  '10',
+  '10',
+  '11',
+  '12',
+  '13',
+  '14',
+  '15',
+  '16',
+  '17',
+  '18',
+  '19',
+  '20',
+  '21',
+  '22',
+  '23',
+]);
+
+export const pickerMinutes: Array<PickerItem> = pickerItemGenerator([
+  '00',
+  '05',
+  '10',
+  '15',
+  '20',
+  '25',
+  '30',
+  '35',
+  '40',
+  '45',
+  '50',
+  '55',
+]);
+
+const now = new Date();
+const oneDay = 86400000;
+
+export const pickerDates = pickerItemGenerator([
+  formatDate(now),
+  formatDate(new Date(now.getTime() + oneDay)),
+  formatDate(new Date(now.getTime() + oneDay + oneDay)),
 ]);

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { QuantityIcon } from '../QuantityIcon';
+import { QuantityIcon } from '../GreyBox/configured/QuantityIcon';
 
 describe('QuantityIcon', () => {
   test('renders according to snapshot', () => {

@@ -45,12 +45,21 @@ type GeneralTranslations = {
   toPayment: string,
   buttonContinue: string,
   buttonBack: string,
+  note: string,
+  underConstruction: string,
+};
+
+type SnackBarTranslations = {
+  limitExceeded: string,
+  offline: string,
+  showBorder: string,
 };
 
 type OnBoardingTranslations = {
   welcome: string,
   onBoardingMessage: string,
   selectLanguage: string,
+  currentLanguageMessage: string,
   confirmationVat: string,
   confirmationVat2: string,
   vatInformation: string,
@@ -66,6 +75,9 @@ type MainCategoriesInputTranslations = {
 
 type QuantityInputTranslations = {
   quantityInput: string,
+  recordedOn: string,
+  addQuantities: string,
+  enterQuantities: string,
 };
 
 type AmountInputTranslations = {
@@ -83,6 +95,7 @@ type PaymentTranslations = {
   overViewTitle: string,
   dutyColumn: string,
   sumText: string,
+  entryInfo: string,
 };
 
 type QAFlowTranslations = {
@@ -115,9 +128,18 @@ type ModalTranslations = {
   currencyPickerRate: string,
   currencyPickerInvalidInput: string,
   currencyPickerNoOffsettingInput: string,
+  currencyPickerTooSmallLargeAmount: string,
   savedBasketDoYoWantToContinue: string,
   savedBasketTotalCost: string,
   savedBasketNewShoppingCart: string,
+  timePickerTitle: string,
+  timePickerSubTitle: string,
+  timePickerRegistrationValidUntil: string,
+  timePickerTakeOverThePeriod: string,
+  closeModalText: string,
+  timePickerTimePrefix: string,
+  recordTheAmountOfMeat: string,
+  recordTheAmountOfTobacco: string,
 };
 
 type InformationTranslations = {
@@ -134,6 +156,10 @@ type InformationTranslations = {
   travelingWithVehicleSubText: string,
   entryByTrain: string,
   entryByTrainSubText: string,
+  allowancesFoodAlcoholTobacco: string,
+  allowancesFoodAlcoholTobaccoText: string,
+  prohibitions: string,
+  prohibitionsSubText: string,
 };
 
 type ReceiptTranslations = {
@@ -144,9 +170,18 @@ type ReceiptTranslations = {
   receiptValidUntilTime: string,
   sumText: string,
   vatColumn: string,
-  amountsTitle: string,
-  amountsSubtitle: string,
+  normalAmountsTitle: string,
+  normalAmountsSubtitle: string,
+  largeAmountsTitle: string,
+  largeAmountsSubtitle: string,
   receiptStorageNotification: string,
+  allReceiptsNavigationHeaderTitle: string,
+  allReceiptsCurrentReceipt: string,
+  allReceiptsOlderReceipts: string,
+  allReceiptsSumInFranks: string,
+  allReceiptsDate: string,
+  entryTime: string,
+  chooseOtherEntryTime: string,
 };
 
 type AppInformationTranslations = {
@@ -165,6 +200,43 @@ type AppInformationTranslations = {
   disclaimerText: string,
 };
 
+type LegalNoticeInformationTranslations = {
+  navigationHeaderTitle: string,
+  conditions: string,
+  importantSoon: string,
+  importantSoonText: string,
+  howToDeclareYourGoods: string,
+  howToDeclareYourGoodsText: string,
+  legal: string,
+  legalText: string,
+  privacyAndLiability: string,
+  dataProtection: string,
+  dataProtectionText: string,
+  referencesAndLinks: string,
+  referencesAndLinksText: string,
+  copyright: string,
+  copyrightText: string,
+};
+
+type OverviewTranslations = {
+  declared: string,
+  dutyFree: string,
+  details: string,
+};
+
+type LegalNoticeModalTranslations = {
+  importantNote: string,
+  vatRateInfo: string,
+  termsOfService: string,
+  acceptance: string,
+  confirm: string,
+  abort: string,
+};
+type FurtherInformationModalTranslations = {
+  furtherInformation: string,
+  acceptance: string,
+};
+
 /**
  * The Locale type defines all the namespaces that we use in the translation
  * The namespaces are formed by the individual strings, respectively.
@@ -174,6 +246,7 @@ export type Locale = {
   categories: CategoriesTranslations,
   onBoarding: OnBoardingTranslations,
   general: GeneralTranslations,
+  snackBar: SnackBarTranslations,
   peopleInput: PeopleInputTranslations,
   mainCategoriesInput: MainCategoriesInputTranslations,
   quantityInput: QuantityInputTranslations,
@@ -184,4 +257,8 @@ export type Locale = {
   receipt: ReceiptTranslations,
   information: InformationTranslations,
   appInformation: AppInformationTranslations,
+  legalNoticeInformation: LegalNoticeInformationTranslations,
+  overview: OverviewTranslations,
+  legalNoticeModal: LegalNoticeModalTranslations,
+  furtherInformationModal: FurtherInformationModalTranslations,
 };

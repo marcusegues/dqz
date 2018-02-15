@@ -38,7 +38,6 @@ const AdultInputRowInner = ({
     </View>
   </PeopleInputRow>
 );
-
 export const AdultInputRow = (translate(['qaFlow'])(
   AdultInputRowInner
 ): ComponentType<AdultInputRowProps>);

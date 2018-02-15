@@ -2,7 +2,7 @@
 import React from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import type { ComponentType } from 'react';
 import { OnBoardingContainer } from './subcomponents/OnBoardingContainer';
 import { OnBoardingParagraph } from './subcomponents/OnBoardingParagraph';
@@ -10,6 +10,8 @@ import { DoneButton } from './subcomponents/DoneButton';
 import { moderateScale } from '../../styles/Scaling';
 import { MAIN_RED } from '../../styles/colors';
 import type { Navigation, TFunction } from '../../types/generalTypes';
+import { storeSettingsAcceptRate } from '../../asyncStorage/storageApi';
+import { FurtherInformationModal } from '../../components/Modals/FurtherInformationModal/FurtherInformationModal';
 
 const ownStyles = {
   container: {
@@ -28,26 +30,69 @@ const ownStyles = {
   },
 };
 
+type OnBoardingTaxScreenState = {
+  showModal: boolean,
+};
+
 type OnBoardingTaxScreenProps = {
   navigation: Navigation,
 };
 
-const OnBoardingTaxScreenInner = ({
-  navigation,
-  t,
-}: OnBoardingTaxScreenProps & { t: TFunction }) => (
-  <OnBoardingContainer>
-    <View style={ownStyles.container}>
-      <OnBoardingParagraph text={t('confirmationVat')} />
-      <Text style={ownStyles.percents}>7.7%</Text>
-      <OnBoardingParagraph text={t('confirmationVat2')} />
-    </View>
-    <Text style={ownStyles.bottomText}>
-      {(t('vatInformation') || '').toUpperCase()}
-    </Text>
-    <DoneButton onPress={() => navigation.navigate('MainMenu')} />
-  </OnBoardingContainer>
-);
+class OnBoardingTaxScreenInner extends React.Component<
+  OnBoardingTaxScreenProps & { t: TFunction },
+  OnBoardingTaxScreenState
+> {
+  constructor(props: OnBoardingTaxScreenProps & { t: TFunction }) {
+    super(props);
+    this.state = {
+      showModal: false,
+    };
+  }
+
+  render() {
+    const { showModal } = this.state;
+    const { navigation, t } = this.props;
+
+    return (
+      <OnBoardingContainer>
+        <View style={ownStyles.container}>
+          <OnBoardingParagraph text={t('confirmationVat')} />
+          <Text style={ownStyles.percents}>7.7%</Text>
+          <OnBoardingParagraph text={t('confirmationVat2')} />
+        </View>
+        <TouchableOpacity
+          onPress={() => {
+            this.setState({ showModal: true });
+          }}
+        >
+          <Text style={ownStyles.bottomText}>
+            {(t('vatInformation') || '').toUpperCase()}
+          </Text>
+        </TouchableOpacity>
+        <DoneButton
+          onPress={() => {
+            storeSettingsAcceptRate(true);
+            navigation.navigate('MainMenu');
+          }}
+        />
+        <FurtherInformationModal
+          modalVisible={showModal}
+          navigation={navigation}
+          onPressLegal={() => {
+            this.setState({ showModal: false });
+            navigation.navigate('LegalNoticeInfo');
+          }}
+          toggleModalVisible={() => {
+            this.setState({ showModal: false });
+          }}
+          onConfirm={() => {
+            this.setState({ showModal: false });
+          }}
+        />
+      </OnBoardingContainer>
+    );
+  }
+}
 
 export const OnBoardingTaxScreen = (translate(['onBoarding'])(
   OnBoardingTaxScreenInner
