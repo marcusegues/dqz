@@ -299,6 +299,7 @@ export const fr: Locale = {
     termsOfService: 'Termes et Conditions',
     acceptance: "J'accepte les termes et conditions que j'ai lus et compris.",
     confirm: 'Confirmer',
+    abort: 'Abandonner',
   },
   furtherInformationModal: {
     furtherInformation: "Plus d'informations:",

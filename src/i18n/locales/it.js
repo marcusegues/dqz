@@ -297,6 +297,7 @@ export const it: Locale = {
     termsOfService: 'Termini e condizioni',
     acceptance: 'Accetto i termini e le condizioni che ho letto e compreso.',
     confirm: 'Confermare',
+    abort: 'Abortire',
   },
   furtherInformationModal: {
     furtherInformation: 'Ulteriori informazioni:',

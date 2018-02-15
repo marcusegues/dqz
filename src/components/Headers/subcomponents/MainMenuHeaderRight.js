@@ -18,8 +18,8 @@ export const MainMenuHeaderRight = ({
   navigation,
   language,
 }: MainMenuHeaderRightProps) => (
-    <View style={mainMenuHeaderRightStyle.container}>
-      <ReceiptNotificationBadge navigation={navigation} />
-      <LanguageSelect language={language} navigation={navigation} />
-    </View>
-  );
+  <View style={mainMenuHeaderRightStyle.container}>
+    <ReceiptNotificationBadge navigation={navigation} />
+    <LanguageSelect language={language} navigation={navigation} />
+  </View>
+);

@@ -287,6 +287,7 @@ export const en: Locale = {
     acceptance:
       'I hereby accept the terms and conditions that I have read and understood.',
     confirm: 'Confirm',
+    abort: 'Abort',
   },
   furtherInformationModal: {
     furtherInformation: 'Further Information:',

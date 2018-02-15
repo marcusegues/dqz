@@ -6,11 +6,11 @@ import { connect } from 'react-redux';
 import { View } from 'react-native';
 import type { FlatAmount } from '../../../../../../model/utils';
 import { rowStyles } from '../../../../styles/rowStyles';
-import { CardRowText } from '../../../../../QuestionAnswer/cards/subcomponents/CardRowText';
 import { Row } from '../../../../Row';
 import { CardRowSubText } from '../../../../../QuestionAnswer/cards/subcomponents/CardRowSubText';
 import { getCurrencies } from '../../../../../../reducers';
 import type { CurrencyObject } from '../../../../../../model/currencies';
+import { CurrencyFlagAndAmount } from '../../../../../General Components/CurrencyFlagAndAmount';
 
 type VatAmountListRowItemProps = {
   flatAmount: FlatAmount,
@@ -31,6 +31,7 @@ const VatAmountListRowItemInner = ({
   currencyObject,
 }: VatAmountListRowItemProps & ReduxInject) => {
   const { currency, amount } = flatAmount;
+
   return (
     <Row
       borderTop={borderTop}
@@ -38,9 +39,7 @@ const VatAmountListRowItemInner = ({
       width={fullWidth ? '100%' : '95%'}
     >
       <View style={rowStyles.rowContent}>
-        <View style={{ flex: 1 }}>
-          <CardRowText text={`${currency} ${amount}`} />
-        </View>
+        <CurrencyFlagAndAmount currency={currency} amount={amount} />
         <View style={{ flex: 1 }}>
           <CardRowSubText
             text={`~CHF ${(currencyObject[currency] * amount).toFixed(2)}`}
