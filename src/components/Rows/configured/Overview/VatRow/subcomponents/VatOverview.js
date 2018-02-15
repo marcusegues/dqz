@@ -66,7 +66,11 @@ const VatOverviewInner = ({
           </Touchable>
         </OverviewInfo>
         <AmountIcon amount={totalAmount} currency="CHF" />
-        <TotalOwed result={(+vat).toFixed(2)} />
+        {large ? (
+          <View style={{ width: 70 }} />
+        ) : (
+          <TotalOwed result={(+vat).toFixed(2)} />
+        )}
       </View>
     </Row>
   );
