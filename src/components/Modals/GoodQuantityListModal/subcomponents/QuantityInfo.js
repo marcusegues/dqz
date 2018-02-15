@@ -32,7 +32,7 @@ const QuantityInfoInner = ({
     <CardHeaderText text={t(`categories:${category}`)} />
     <View style={{ marginTop: 10 }}>
       <QuantityIcon
-        quantity={totalQuantity}
+        quantity={totalQuantity.toFixed(2)}
         unit={CategoriesInfo.getIn([category, 'unit'], '')}
       />
     </View>

@@ -59,6 +59,7 @@ type OnBoardingTranslations = {
   welcome: string,
   onBoardingMessage: string,
   selectLanguage: string,
+  currentLanguageMessage: string,
   confirmationVat: string,
   confirmationVat2: string,
   vatInformation: string,

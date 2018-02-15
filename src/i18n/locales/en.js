@@ -56,6 +56,7 @@ export const en: Locale = {
     welcome: 'Welcome to',
     onBoardingMessage:
       'We have set your language based on your current system settings.',
+    currentLanguageMessage: 'Your currently selected language is',
     selectLanguage: 'Select another language',
     confirmationVat: 'I hereby confirm that I accept the single VAT rate of',
     confirmationVat2: 'when declaring goods.',

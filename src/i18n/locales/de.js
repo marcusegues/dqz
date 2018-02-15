@@ -56,6 +56,7 @@ export const de: Locale = {
     welcome: 'Willkommen zu',
     onBoardingMessage:
       'Wir haben Ihre Sprache basierend auf Ihren aktuellen Systemeinstellungen festgelegt',
+    currentLanguageMessage: 'Ihre aktuell ausgewählte Sprache ist',
     selectLanguage: 'Wählen Sie eine andere Sprache',
     confirmationVat:
       'Hiermit bestätige ich, dass ich den einheitlichen Mehrwertsteuersatz von ',
