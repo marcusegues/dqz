@@ -4,18 +4,21 @@ import React from 'react';
 import { Text } from 'react-native';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { moderateScale } from '../../../styles/Scaling';
-import { GREY } from '../../../styles/colors';
 import type { Language } from '../../../i18n/types/locale';
 import type { Navigation } from '../../../types/generalTypes';
 
 type LanguageSelectProps = {
   language: Language,
+  navigation: Navigation,
 };
 
-export const LanguageSelect = ({ language }: LanguageSelectProps) => (
-  <Touchable onPress={() => {}}>
-    <Text>{language}</Text>
+export const LanguageSelect = ({
+  language,
+  navigation,
+}: LanguageSelectProps) => (
+  <Touchable onPress={() => navigation.navigate('OnBoarding')}>
+    <Text style={{ fontFamily: 'roboto_regular', color: '#757575' }}>
+      {language.toUpperCase()}
+    </Text>
   </Touchable>
 );

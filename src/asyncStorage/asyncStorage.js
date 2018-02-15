@@ -27,6 +27,9 @@ import {
   deserializeReceipts,
 } from './deserializers';
 
+export const KeyNotSet = 'KeyNotSet';
+export type KeyNotSetType = 'KeyNotSet';
+
 export const storeItemAsyncStorage = async (
   key: StoreType,
   item: any
@@ -88,7 +91,7 @@ export const fetchSettingsAcceptRateAsyncStorage = async (
 
 export const fetchSettingsHasLanguageAsyncStorage = async (
   key: StoreType
-): Promise<Language> => parser(key, 'de');
+): Promise<Language | KeyNotSetType> => parser(key, KeyNotSet);
 
 export const fetchBasketAsyncStorage = async (
   key: StoreType

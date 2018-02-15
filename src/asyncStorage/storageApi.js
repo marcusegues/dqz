@@ -28,6 +28,7 @@ import {
   initPeople,
 } from '../model/configurationApi';
 import type { Receipt } from '../types/receiptTypes';
+import type { KeyNotSetType } from './asyncStorage';
 
 /**
  * Stores item (stringified) under key - do NOT use directly!
@@ -154,8 +155,9 @@ export const fetchSettingsAcceptRate = async (): Promise<boolean> =>
  * Fetches the language-set flag
  * @returns {Promise<CurrencyObject>}
  */
-export const fetchSettingsHasLanguage = async (): Promise<Language> =>
-  fetchSettingsHasLanguageAsyncStorage('SettingsHasLanguage');
+export const fetchSettingsHasLanguage = async (): Promise<
+  Language | KeyNotSetType
+> => fetchSettingsHasLanguageAsyncStorage('SettingsHasLanguage');
 
 export const fetchBasket = async (): Promise<Basket> =>
   fetchBasketAsyncStorage('Basket');

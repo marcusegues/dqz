@@ -56,6 +56,7 @@ export const it: Locale = {
     welcome: 'Benvenuti a',
     onBoardingMessage:
       'La lingua è stata definita sulla base delle impostazioni attuali del sistema.',
+    currentLanguageMessage: '⚡️',
     selectLanguage: 'Selezionare un’altra lingua',
     confirmationVat: ' Confermo di accettare l’aliquota IVA unica di',
     confirmationVat2: 'all’atto dell’imposizione delle merci',
