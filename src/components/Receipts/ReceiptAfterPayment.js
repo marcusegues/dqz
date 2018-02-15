@@ -116,93 +116,106 @@ class ReceiptAfterPaymentInner extends React.Component<
         { zone: 'Europe/Zurich', locale: 'de' }
       ).plus({ hours: 2 });
       return (
-        <ScrollViewCard
-          ref={ref => {
-            this.image = ref;
+        <View
+          style={{
+            flex: 1,
+            height: '100%',
+            marginHorizontal: 16,
+            marginBottom: 16,
+            flexDirection: 'column',
+            alignItems: 'center',
           }}
         >
-          <Touchable
-            onPress={() => {
-              this.capture();
+          <ScrollViewCard
+            ref={ref => {
+              this.image = ref;
             }}
           >
-            <RedLogo />
-          </Touchable>
-          <Row width="90%">
-            <Text style={ownStyles.topSumText}>
-              CHF {(fullVat + fullDuty).toFixed(2)}
-            </Text>
-            <ReceiptSubText
-              text={t('dutyAndVat', {
-                duty: fullDuty.toFixed(2),
-                vat: fullVat.toFixed(2),
-              })}
-            />
-          </Row>
-
-          <Row
-            width="90%"
-            borderBottom={false}
-            styles={{ alignItems: 'flex-start', paddingHorizontal: 0 }}
-          >
-            <CardRowText
-              text={t('paidOn', {
-                date: transactionDatetime.toFormat('dd.MM.y'),
-                time: transactionDatetime.toFormat('HH:mm'),
-              })}
-              style={ownStyles.cardRowTextPaidOn}
-            />
-
-            <ReceiptSubText
-              text={`${this.state.receipt.paymentData.transaction.brandName} ${
-                this.state.receipt.paymentData.transaction.cardNumber
-              }`}
-            />
-            <ReceiptSubText
-              text={t('transactionId', {
-                value: this.state.receipt.paymentData.transaction.id,
-              })}
-            />
-            <ValidUntilBlock>
-              <CardRowText
-                text={t('receiptValidUntilText')}
-                style={ownStyles.cardRowText}
-              />
-              <CardRowText
-                text={t('receiptValidUntilTime', {
-                  date: receiptEntryTimePlus.toLocaleString(DateTime.DATE_FULL),
-                  time: receiptEntryTimePlus.toFormat('HH:mm'),
+            <Touchable
+              onPress={() => {
+                this.capture();
+              }}
+            >
+              <RedLogo />
+            </Touchable>
+            <Row width="90%">
+              <Text style={ownStyles.topSumText}>
+                CHF {(fullVat + fullDuty).toFixed(2)}
+              </Text>
+              <ReceiptSubText
+                text={t('dutyAndVat', {
+                  duty: fullDuty.toFixed(2),
+                  vat: fullVat.toFixed(2),
                 })}
-                style={ownStyles.cardRowText}
               />
-            </ValidUntilBlock>
-          </Row>
+            </Row>
 
-          <DutyList basket={basket} people={people} />
-          <VatList
-            large={false}
-            people={people}
-            amounts={amounts}
-            currencies={currencies}
-          />
-          <VatList
-            large
-            borderTop={false}
-            people={people}
-            amounts={amounts}
-            currencies={currencies}
-            headerRight={false}
-          />
+            <Row
+              width="90%"
+              borderBottom={false}
+              styles={{ alignItems: 'flex-start', paddingHorizontal: 0 }}
+            >
+              <CardRowText
+                text={t('paidOn', {
+                  date: transactionDatetime.toFormat('dd.MM.y'),
+                  time: transactionDatetime.toFormat('HH:mm'),
+                })}
+                style={ownStyles.cardRowTextPaidOn}
+              />
 
-          <TotalOwedRow
-            basket={basket}
-            people={people}
-            currencies={currencies}
-            amounts={amounts}
-          />
+              <ReceiptSubText
+                text={`${
+                  this.state.receipt.paymentData.transaction.brandName
+                } ${this.state.receipt.paymentData.transaction.cardNumber}`}
+              />
+              <ReceiptSubText
+                text={t('transactionId', {
+                  value: this.state.receipt.paymentData.transaction.id,
+                })}
+              />
+              <ValidUntilBlock>
+                <CardRowText
+                  text={t('receiptValidUntilText')}
+                  style={ownStyles.cardRowText}
+                />
+                <CardRowText
+                  text={t('receiptValidUntilTime', {
+                    date: receiptEntryTimePlus.toLocaleString(
+                      DateTime.DATE_FULL
+                    ),
+                    time: receiptEntryTimePlus.toFormat('HH:mm'),
+                  })}
+                  style={ownStyles.cardRowText}
+                />
+              </ValidUntilBlock>
+            </Row>
 
-          <ReceiptInfoNote />
-        </ScrollViewCard>
+            <DutyList basket={basket} people={people} />
+            <VatList
+              large={false}
+              people={people}
+              amounts={amounts}
+              currencies={currencies}
+            />
+            <VatList
+              large
+              borderTop={false}
+              people={people}
+              amounts={amounts}
+              currencies={currencies}
+              headerRight={false}
+            />
+
+            <TotalOwedRow
+              basket={basket}
+              people={people}
+              currencies={currencies}
+              amounts={amounts}
+            />
+
+            <ReceiptInfoNote />
+          </ScrollViewCard>
+        </View>
       );
     }
     return (
