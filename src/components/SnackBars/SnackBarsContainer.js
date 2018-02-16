@@ -90,15 +90,15 @@ class SnackBarsContainerInner extends React.Component<
   render() {
     const { snackBarVisibilities } = this.state;
     const { t } = this.props;
-    const flatListData = ['limitExceeded', 'offline'].map(key => ({
+    const snackBarData = ['limitExceeded', 'offline'].map(key => ({
       key,
       text: t(key),
       visibility: snackBarVisibilities[key],
       component: SnackBar,
     }));
 
-    // determine which element in flatListData is the last one that has visibility === 'visible'
-    const bottomMostVisibleSnackBarIndex = flatListData.reduce(
+    // determine which element in snackBarData is the last one that has visibility === 'visible'
+    const bottomMostVisibleSnackBarIndex = snackBarData.reduce(
       (acc, val, idx) => (val.visibility === 'visible' ? idx : acc),
       -1
     );
@@ -109,7 +109,7 @@ class SnackBarsContainerInner extends React.Component<
           width: '100%',
         }}
       >
-        {flatListData.map((item, index) =>
+        {snackBarData.map((item, index) =>
           React.createElement(item.component, {
             key: item.key,
             text: item.text,
