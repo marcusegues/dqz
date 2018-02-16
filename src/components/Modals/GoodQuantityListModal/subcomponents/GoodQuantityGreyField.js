@@ -4,7 +4,7 @@ import { translate } from 'react-i18next';
 import type { ComponentType } from 'react';
 // $FlowFixMe
 import { Text, View } from 'react-native';
-import { CardHeaderSubText } from '../../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
+import { CardHeaderSubText } from '../../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
 import { moderateScale, verticalScale } from '../../../../styles/Scaling';
 import { MAIN_RED } from '../../../../styles/colors';
 import { RedPlusIcon } from './RedPlusIcon';

@@ -2,7 +2,7 @@
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
-import { CardRowText } from '../../../../QuestionAnswer/cards/subcomponents/CardRowText';
+import { CardRowText } from '../../../../QuestionAnswer/Cards/subcomponents/CardRowText';
 
 type TotalOwedProps = {
   result: string,

@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 import type { Navigation, TFunction } from '../../../types/generalTypes';
 import { analyticsScreenMounted } from '../../../analytics/analyticsApi';
-import { CardHeader } from '../../QuestionAnswer/cards/subcomponents/CardHeader';
+import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader';
 import { AllReceiptsRow } from './subcomponents/AllReceiptsRow';
 import { HeaderTitle } from '../../Headers/subcomponents/HeaderTitle';
 import { verticalScale } from '../../../styles/Scaling';

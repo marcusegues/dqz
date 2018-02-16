@@ -1,36 +1,30 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Platform, View } from 'react-native';
-import { verticalScale } from '../../styles/Scaling';
+import { View } from 'react-native';
+import { globalStyles } from '../../styles/globalStyles';
+import type { Children } from '../../types/generalTypes';
 
-type ModalCardProps = {
-  children: any, // TODO (see list in GoodQuantityListModal)
+const ownStyles = {
+  modalContainer: {
+    paddingBottom: 16,
+    width: '85%',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    borderRadius: 3,
+    alignSelf: 'center',
+    backgroundColor: '#FFF',
+  },
 };
 
-export const ModalCard = ({ children }: ModalCardProps) => (
+type ModalCardProps = {
+  children: Children,
+  style: {},
+};
+
+export const ModalCard = ({ children, style }: ModalCardProps) => (
   <View
-    style={{
-      flex: 1,
-      flexDirection: 'column',
-      alignItems: 'center',
-      marginTop: verticalScale(32),
-      marginBottom: verticalScale(16),
-      backgroundColor: '#fff',
-      borderRadius: 2,
-      borderColor: '#ddd',
-      ...Platform.select({
-        ios: {
-          shadowColor: 'black',
-          shadowOffset: { height: 5, width: 2 },
-          shadowOpacity: 0.2,
-          shadowRadius: 3,
-        },
-        android: {
-          elevation: 6,
-        },
-      }),
-    }}
+    style={[ownStyles.modalContainer, globalStyles.boxShadow, { ...style }]}
   >
     {children}
   </View>

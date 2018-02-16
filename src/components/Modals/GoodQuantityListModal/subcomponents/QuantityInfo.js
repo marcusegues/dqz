@@ -4,7 +4,7 @@ import { translate } from 'react-i18next';
 import type { ComponentType } from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
-import { CardHeaderText } from '../../../QuestionAnswer/cards/subcomponents/CardHeaderText';
+import { CardHeaderText } from '../../../QuestionAnswer/Cards/subcomponents/CardHeaderText';
 import { QuantityIcon } from '../../../General Components/GreyBox/configured/QuantityIcon';
 import { verticalScale } from '../../../../styles/Scaling';
 import { CategoriesInfo } from '../../../../model/constants';

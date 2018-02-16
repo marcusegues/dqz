@@ -8,8 +8,8 @@ import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle'
 import type { TFunction } from '../../types/generalTypes';
 import { ModalTab } from '../../components/Modals/PickerModal/subComponents/ModalTab';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
-import { CardHeaderText } from '../../components/QuestionAnswer/cards/subcomponents/CardHeaderText';
-import { CardRowText } from '../../components/QuestionAnswer/cards/subcomponents/CardRowText';
+import { CardHeaderText } from '../../components/QuestionAnswer/Cards/subcomponents/CardHeaderText';
+import { CardRowText } from '../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { AppInfoSubText } from './subComponents/AppInfoSubText';
 import { ScrollViewCard } from '../Information/subComponents/ScrollViewCard';
 import { scale, verticalScale } from '../../styles/Scaling';

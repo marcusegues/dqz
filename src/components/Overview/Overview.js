@@ -6,7 +6,7 @@ import { DateTime } from 'luxon';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { CardHeader } from '../QuestionAnswer/cards/subcomponents/CardHeader';
+import { CardHeader } from '../QuestionAnswer/Cards/subcomponents/CardHeader';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { PeriodOfEntryRow } from './subcomponents/PeriodOfEntryRow';
 import { DutyList } from './subcomponents/DutyList';

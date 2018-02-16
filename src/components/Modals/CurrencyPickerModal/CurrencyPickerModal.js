@@ -15,10 +15,10 @@ import { translate } from 'react-i18next';
 import { AppModal } from '../AppModal';
 import { RedButton } from '../../Buttons/RedButton';
 import { pickerModalStyle } from '../styles/PickerModal';
-import { PickerCard } from './subComponents/PickerCard';
+import { ModalCard } from '../ModalCard';
 import { PickerComponent } from './subComponents/PickerComponent';
-import { CardHeader } from '../../QuestionAnswer/cards/subcomponents/CardHeader';
-import { CardHeaderSubText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
+import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader';
+import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
 import { currencyPicker } from './currencyPickerData';
 import { currencyPickerModal } from '../styles/CurrencyPickerModal';
 import { INDIVIDUALALLOWANCE } from '../../../model/constants';
@@ -114,7 +114,7 @@ class CurrencyPickerModalInner extends React.Component<
         animationIn="slideInLeft"
         animationOut="slideOutLeft"
       >
-        <PickerCard style={{ width: '100%' }}>
+        <ModalCard style={{ width: '100%' }}>
           <CardHeader text={title} />
           <CardHeaderSubText text={t(['currencyPickerSubTitle'])} />
 
@@ -179,7 +179,7 @@ class CurrencyPickerModalInner extends React.Component<
             }}
             text={subButtonText}
           />
-        </PickerCard>
+        </ModalCard>
         <ModalCloseText
           onModalHide={toggleModalVisible}
           text={t('closeModalText')}

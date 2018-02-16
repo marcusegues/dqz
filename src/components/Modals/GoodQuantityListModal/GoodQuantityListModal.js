@@ -25,10 +25,10 @@ import { RedButton } from '../../Buttons/RedButton';
 import type { TFunction } from '../../../types/generalTypes';
 
 import { GoodQuantityGreyField } from './subcomponents/GoodQuantityGreyField';
-import { CategoryIcon } from '../../QuestionAnswer/cards/ConfirmationCard/configured/QuantityInput/subcomponents/subcomponents/CategoryIcon';
+import { CategoryIcon } from '../../QuestionAnswer/Cards/ConfirmationCard/configured/QuantityInput/subcomponents/subcomponents/CategoryIcon';
 import { RedPlusIcon } from './subcomponents/RedPlusIcon';
-import { getSource } from '../../QuestionAnswer/cards/ConfirmationCard/configured/QuantityInput/subcomponents/GoodInputRow';
-import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
+import { getSource } from '../../QuestionAnswer/Cards/ConfirmationCard/configured/QuantityInput/subcomponents/GoodInputRow';
+import { ModalCard } from '../ModalCard';
 
 const ownStyles = {
   pickerCard: {
@@ -138,7 +138,7 @@ class GoodQuantityListModalInner extends React.Component<
         animationIn="slideInUp"
         animationOut="slideOutDown"
       >
-        <PickerCard style={ownStyles.pickerCard}>
+        <ModalCard style={ownStyles.pickerCard}>
           <View style={ownStyles.container}>
             <View style={ownStyles.backArrowContainer}>
               <BackArrow onPress={onHide} />
@@ -190,7 +190,7 @@ class GoodQuantityListModalInner extends React.Component<
               confirmationDisabled={quantities.size === 0}
             />
           </View>
-        </PickerCard>
+        </ModalCard>
         <PickerModal
           modalVisible={pickerModalVisible}
           toggleModalVisible={() => this.togglePickerVisible()}

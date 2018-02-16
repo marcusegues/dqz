@@ -3,8 +3,8 @@ import React from 'react';
 // $FlowFixMe
 import { TouchableWithoutFeedback, View } from 'react-native';
 import { Row } from '../../../Rows/Row';
-import { CardRowText } from '../../../QuestionAnswer/cards/subcomponents/CardRowText';
-import { CardRowSubText } from '../../../QuestionAnswer/cards/subcomponents/CardRowSubText';
+import { CardRowText } from '../../../QuestionAnswer/Cards/subcomponents/CardRowText';
+import { CardRowSubText } from '../../../QuestionAnswer/Cards/subcomponents/CardRowSubText';
 import { RightChevronIcon } from '../../../General Components/RightChevronIcon';
 
 const ownStyles = {

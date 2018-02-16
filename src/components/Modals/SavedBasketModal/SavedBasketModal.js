@@ -12,13 +12,13 @@ import {
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
 import { AppModal } from '../AppModal';
 import { RedButton } from '../../Buttons/RedButton';
-import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
-import { CardHeader } from '../../QuestionAnswer/cards/subcomponents/CardHeader';
-import { CardHeaderSubText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
+import { ModalCard } from '../ModalCard';
+import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader';
+import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
 import { moderateScale, scale, verticalScale } from '../../../styles/Scaling';
 import { Row } from '../../Rows/Row';
-import { CardRowText } from '../../QuestionAnswer/cards/subcomponents/CardRowText';
-import { CardRowSubText } from '../../QuestionAnswer/cards/subcomponents/CardRowSubText';
+import { CardRowText } from '../../QuestionAnswer/Cards/subcomponents/CardRowText';
+import { CardRowSubText } from '../../QuestionAnswer/Cards/subcomponents/CardRowSubText';
 import { GREY } from '../../../styles/colors';
 import { CloseIcon } from '../../General Components/CloseIcon';
 import type { TFunction } from '../../../types/generalTypes';
@@ -59,7 +59,7 @@ const SavedBasketModalInner = ({
     animationIn="bounceInLeft"
     animationOut="bounceOutLeft"
   >
-    <PickerCard style={{}}>
+    <ModalCard style={{}}>
       <CloseIcon onPress={() => {}} />
       <CardHeader
         text={t('declareGoods')}
@@ -101,7 +101,7 @@ const SavedBasketModalInner = ({
           onPress={() => {}}
         />
       </View>
-    </PickerCard>
+    </ModalCard>
     <ModalCloseText
       onModalHide={toggleModalVisible}
       text={t('modal:closeModalText')}

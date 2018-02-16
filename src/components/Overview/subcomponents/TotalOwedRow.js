@@ -5,7 +5,7 @@ import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View } from 'react-native';
 
-import { CardRowText } from '../../QuestionAnswer/cards/subcomponents/CardRowText';
+import { CardRowText } from '../../QuestionAnswer/Cards/subcomponents/CardRowText';
 import { verticalScale } from '../../../styles/Scaling';
 import type { TFunction } from '../../../types/generalTypes';
 
