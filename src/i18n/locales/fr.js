@@ -153,8 +153,13 @@ export const fr: Locale = {
     dutyAndVat: 'Droits de douane: {{duty}} |  TVA: {{vat}}',
     paidOn: 'Payé le {{date}} à {{time}} h avec:',
     transactionId: 'ID de transaction (SIX): {{value}}',
-    receiptValidUntilText: "La présente quittance est valable jusqu'à:",
-    receiptValidUntilTime: '{{date}}  |  {{time}} h',
+
+    receiptValidFrom: 'La présente quittance est valable à partir de:',
+    receiptValidFromDate:
+      '{{startDate}} | {{startTime}} à {{endDate}} | {{endTime}}',
+    receiptValidOn: 'La présente quittance est valable sur',
+    receiptValidOnDate: '{{date}} de {{startTime}} à {{endTime}}',
+
     sumText: 'Total (en francs): {{value}}',
     vatColumn: 'TVA en francs:',
     normalAmountsTitle: 'Valeur totale des marchandises:',
@@ -170,6 +175,7 @@ export const fr: Locale = {
     allReceiptsDate: 'à {{value}}',
     entryTime: "Période d'entrée",
     chooseOtherEntryTime: 'Choisissez une autre période',
+    until: "jusqu'à",
   },
   information: {
     informationTitle: 'Informations utiles',

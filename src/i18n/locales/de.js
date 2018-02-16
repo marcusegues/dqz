@@ -152,8 +152,11 @@ export const de: Locale = {
     dutyAndVat: 'Zollabgabe: {{duty}}  |  Mehrwertsteuer: {{vat}}',
     paidOn: 'Bezahlt am {{date}} um {{time}} Uhr mit:',
     transactionId: 'Transaktions-ID (SIX): {{value}}',
-    receiptValidUntilText: 'Diese Quittung ist gültig bis:',
-    receiptValidUntilTime: '{{date}}  |  {{time}} Uhr',
+    receiptValidFrom: 'Diese Quittung ist gültig am:',
+    receiptValidFromDate:
+      '{{startDate}} | {{startTime}} bis {{endDate}} | {{endTime}}',
+    receiptValidOn: 'Diese Quittung ist gültig am:',
+    receiptValidOnDate: '{{date}} von {{startTime}} bis {{endTime}}',
     sumText: 'Summe: CHF {{value}}',
     vatColumn: 'Mehrwertsteuer in CHF:',
     normalAmountsTitle: 'Gesamtwert der Waren',
@@ -169,6 +172,7 @@ export const de: Locale = {
     allReceiptsDate: 'vom {{value}}',
     entryTime: 'Zeitraum der Einreise',
     chooseOtherEntryTime: 'Anderen Zeitraum wählen',
+    until: 'bis',
   },
   information: {
     informationTitle: 'Wissenswertes',
