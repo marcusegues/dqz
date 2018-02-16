@@ -12,6 +12,7 @@ const ownStyles = {
     alignItems: 'center',
     width: '100%',
     paddingVertical: verticalScale(5),
+    paddingHorizontal: verticalScale(10),
     marginVertical: verticalScale(15),
   },
 };

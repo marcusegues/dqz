@@ -87,6 +87,53 @@ class ReceiptAfterPaymentInner extends React.Component<
     }
   }
 
+  getValidUntilBlockText() {
+    const { t, paymentData } = this.props;
+    const receiptEntryTime = DateTime.fromISO(
+      this.state.receipt.receiptEntryTime,
+      {
+        zone: 'Europe/Zurich',
+        locale: 'de',
+      }
+    );
+    const receiptEntryTimePlus = receiptEntryTime.plus({ hours: 2 });
+    if (receiptEntryTime.day === receiptEntryTimePlus.day) {
+      return [
+        <CardRowText
+          key="receiptValidOn"
+          text={t('receiptValidOn')}
+          style={ownStyles.cardRowText}
+        />,
+        <CardRowText
+          key="receiptValidOnDate"
+          text={`${t('receiptValidOnDate', {
+            date: receiptEntryTime.toLocaleString(DateTime.DATE_FULL),
+            startTime: receiptEntryTime.toFormat('HH:mm'),
+            endTime: receiptEntryTimePlus.toFormat('HH:mm'),
+          })}`}
+          style={ownStyles.cardRowText}
+        />,
+      ];
+    }
+    return [
+      <CardRowText
+        key="receiptValidFrom"
+        text={t('receiptValidFrom')}
+        style={ownStyles.cardRowText}
+      />,
+      <CardRowText
+        key="receiptValidFromDate"
+        text={`${t('receiptValidFromDate', {
+          startDate: receiptEntryTime.toLocaleString(DateTime.DATE_FULL),
+          startTime: receiptEntryTime.toFormat('HH:mm'),
+          endDate: receiptEntryTimePlus.toLocaleString(DateTime.DATE_FULL),
+          endTime: receiptEntryTimePlus.toFormat('HH:mm'),
+        })}`}
+        style={ownStyles.cardRowText}
+      />,
+    ];
+  }
+
   image: any;
 
   async capture() {
@@ -99,7 +146,7 @@ class ReceiptAfterPaymentInner extends React.Component<
   }
 
   render() {
-    const { t, paymentData } = this.props;
+    const { t } = this.props;
 
     if (this.state.receipt && this.state.receipt.receiptId !== undefined) {
       const { basket, people, amounts, currencies } = this.state.receipt;
@@ -111,10 +158,7 @@ class ReceiptAfterPaymentInner extends React.Component<
         this.state.receipt.paymentData.transaction.date
       );
       // TODO: @Christian need to set locale from APP
-      const receiptEntryTimePlus = DateTime.fromISO(
-        this.state.receipt.receiptEntryTime,
-        { zone: 'Europe/Zurich', locale: 'de' }
-      ).plus({ hours: 2 });
+
       return (
         <View
           style={{
@@ -173,21 +217,7 @@ class ReceiptAfterPaymentInner extends React.Component<
                   value: this.state.receipt.paymentData.transaction.id,
                 })}
               />
-              <ValidUntilBlock>
-                <CardRowText
-                  text={t('receiptValidUntilText')}
-                  style={ownStyles.cardRowText}
-                />
-                <CardRowText
-                  text={t('receiptValidUntilTime', {
-                    date: receiptEntryTimePlus.toLocaleString(
-                      DateTime.DATE_FULL
-                    ),
-                    time: receiptEntryTimePlus.toFormat('HH:mm'),
-                  })}
-                  style={ownStyles.cardRowText}
-                />
-              </ValidUntilBlock>
+              <ValidUntilBlock>{this.getValidUntilBlockText()}</ValidUntilBlock>
             </Row>
 
             <DutyList basket={basket} people={people} />
