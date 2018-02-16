@@ -7,7 +7,7 @@ import { View } from 'react-native';
 import { translate } from 'react-i18next';
 import type { ComponentType } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
-import { CardRowText } from '../../../QuestionAnswer/cards/subcomponents/CardRowText';
+import { CardRowText } from '../../../QuestionAnswer/Cards/subcomponents/CardRowText';
 import { moderateScale } from '../../../../styles/Scaling';
 import { GREY } from '../../../../styles/colors';
 import { CategoriesInfo } from '../../../../model/constants';

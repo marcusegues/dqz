@@ -2,7 +2,7 @@
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
-import { QuantityInputConfirmationCard } from '../cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
+import { QuantityInputConfirmationCard } from '../Cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
 import { GoodQuantityListModal } from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
 import type { MainCategory } from '../../../types/reducers/appReducer';
 import type {
@@ -10,7 +10,7 @@ import type {
   Category,
 } from '../../../model/types/basketPeopleAmountsTypes';
 import type { CardProps } from '../QuestionAnswerContainer';
-import { QuantityInputAnswerCard } from '../cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
+import { QuantityInputAnswerCard } from '../Cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
 import {
   addQuantity,
   deleteQuantity,

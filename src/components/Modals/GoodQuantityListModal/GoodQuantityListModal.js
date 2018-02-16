@@ -25,9 +25,9 @@ import { RedButton } from '../../Buttons/RedButton';
 import type { TFunction } from '../../../types/generalTypes';
 
 import { GoodQuantityGreyField } from './subcomponents/GoodQuantityGreyField';
-import { CategoryIcon } from '../../QuestionAnswer/cards/ConfirmationCard/configured/QuantityInput/subcomponents/subcomponents/CategoryIcon';
+import { CategoryIcon } from '../../QuestionAnswer/Cards/ConfirmationCard/configured/QuantityInput/subcomponents/subcomponents/CategoryIcon';
 import { RedPlusIcon } from './subcomponents/RedPlusIcon';
-import { getSource } from '../../QuestionAnswer/cards/ConfirmationCard/configured/QuantityInput/subcomponents/GoodInputRow';
+import { getSource } from '../../QuestionAnswer/Cards/ConfirmationCard/configured/QuantityInput/subcomponents/GoodInputRow';
 import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
 
 const ownStyles = {

@@ -2,7 +2,7 @@
 import React from 'react';
 // $FlowFixMe
 import { View, StyleSheet } from 'react-native';
-import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
+import { CardRowText } from '../QuestionAnswer/Cards/subcomponents/CardRowText';
 import { scale } from '../../styles/Scaling';
 import type { Currency } from '../../model/currencies';
 import { CurrencyFlag } from './CurrencyFlag';

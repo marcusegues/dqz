@@ -21,8 +21,8 @@ import { PickerUnitColumn } from './subComponents/PickerUnitColumn';
 import type { TFunction } from '../../../types/generalTypes';
 import type { Category } from '../../../model/types/basketPeopleAmountsTypes';
 import { ModalCloseText } from '../ModalCloseText';
-import { CardHeaderText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderText';
-import { CardHeaderSubText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
+import { CardHeaderText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderText';
+import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
 import { moderateScale, verticalScale } from '../../../styles/Scaling';
 
 type PickerState = {

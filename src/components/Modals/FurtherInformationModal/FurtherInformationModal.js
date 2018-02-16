@@ -4,8 +4,8 @@ import type { ComponentType } from 'react';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 import { AppModal } from '../AppModal';
-import { CardHeader } from '../../QuestionAnswer/cards/subcomponents/CardHeader';
-import { CardHeaderSubText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
+import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader';
+import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
 import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
 import { scale, verticalScale } from '../../../styles/Scaling';
 import { ModalCloseText } from '../ModalCloseText';

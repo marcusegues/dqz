@@ -11,10 +11,10 @@ import {
   getAmount,
 } from '../../../model/configurationApi';
 import { calculateVat } from '../../../model/vatCalculations';
-import { AmountInputAnswerCard } from '../cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
+import { AmountInputAnswerCard } from '../Cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
 import { CurrencyPickerModal } from '../../Modals/CurrencyPickerModal/CurrencyPickerModal';
 import type { Currency } from '../../../model/currencies';
-import { AmountInputConfirmationCard } from '../cards/ConfirmationCard/configured/AmountInput/AmountInputConfirmationCard';
+import { AmountInputConfirmationCard } from '../Cards/ConfirmationCard/configured/AmountInput/AmountInputConfirmationCard';
 import {
   analyticsAmountAdded,
   analyticsAmountDeleted,

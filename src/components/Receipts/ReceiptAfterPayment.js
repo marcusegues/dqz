@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import { takeSnapshotAsync } from 'expo';
 import { translate } from 'react-i18next';
 import { moderateScale, verticalScale } from '../../styles/Scaling';
-import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
+import { CardRowText } from '../QuestionAnswer/Cards/subcomponents/CardRowText';
 import type { PaymentData, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { getPaymentData, getReceiptId } from '../../reducers';

@@ -7,7 +7,7 @@ import { View } from 'react-native';
 import type { FlatAmount } from '../../../../../../model/utils';
 import { rowStyles } from '../../../../styles/rowStyles';
 import { Row } from '../../../../Row';
-import { CardRowSubText } from '../../../../../QuestionAnswer/cards/subcomponents/CardRowSubText';
+import { CardRowSubText } from '../../../../../QuestionAnswer/Cards/subcomponents/CardRowSubText';
 import { getCurrencies } from '../../../../../../reducers';
 import type { CurrencyObject } from '../../../../../../model/currencies';
 import { CurrencyFlagAndAmount } from '../../../../../General Components/CurrencyFlagAndAmount';
