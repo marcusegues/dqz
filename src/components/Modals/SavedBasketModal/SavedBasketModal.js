@@ -23,6 +23,7 @@ import { GREY } from '../../../styles/colors';
 import { CloseIcon } from '../../General Components/CloseIcon';
 import type { TFunction } from '../../../types/generalTypes';
 import { ModalCloseText } from '../ModalCloseText';
+import { rowStyles } from '../../Rows/styles/rowStyles';
 
 const ownStyles = StyleSheet.create({
   container: {
@@ -73,26 +74,28 @@ const SavedBasketModalInner = ({
       />
 
       <Row borderTop>
-        <TouchableWithoutFeedback onPress={() => {}}>
-          <View style={ownStyles.container}>
-            <MaterialIcons
-              name="shopping-cart"
-              size={moderateScale(40)}
-              color={GREY}
-            />
-            <View style={ownStyles.textContainer}>
-              <CardRowText text="21. November 2017" />
-              <CardRowSubText
-                text={t('modal:savedBasketTotalCost', { value: '6.00' })}
+        <View style={rowStyles.rowContent}>
+          <TouchableWithoutFeedback onPress={() => {}}>
+            <View style={ownStyles.container}>
+              <MaterialIcons
+                name="shopping-cart"
+                size={moderateScale(40)}
+                color={GREY}
+              />
+              <View style={ownStyles.textContainer}>
+                <CardRowText text="21. November 2017" />
+                <CardRowSubText
+                  text={t('modal:savedBasketTotalCost', { value: '6.00' })}
+                />
+              </View>
+              <Entypo
+                name="chevron-right"
+                size={moderateScale(25)}
+                color="#24253D"
               />
             </View>
-            <Entypo
-              name="chevron-right"
-              size={moderateScale(25)}
-              color="#24253D"
-            />
-          </View>
-        </TouchableWithoutFeedback>
+          </TouchableWithoutFeedback>
+        </View>
       </Row>
 
       <View style={ownStyles.redButtonWrapper}>
