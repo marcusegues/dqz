@@ -44,6 +44,10 @@ class MainMenuInner extends React.Component<
     this.setState({ modalVisible: true });
   }
 
+  setModalVisibleFalse() {
+    this.setState({ modalVisible: false });
+  }
+
   render() {
     const { navigation, t } = this.props;
     return (
@@ -107,7 +111,7 @@ class MainMenuInner extends React.Component<
         </SafeAreaView>
         <SavedBasketModal
           modalVisible={this.state.modalVisible}
-          toggleModalVisible={() => {}}
+          setModalVisibleFalse={() => this.setModalVisibleFalse()}
         />
       </View>
     );

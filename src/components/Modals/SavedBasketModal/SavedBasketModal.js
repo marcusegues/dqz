@@ -45,22 +45,22 @@ const ownStyles = StyleSheet.create({
 
 type SavedBasketModalProps = {
   modalVisible: boolean,
-  toggleModalVisible: () => void,
+  setModalVisibleFalse: () => void,
 };
 
 const SavedBasketModalInner = ({
-  toggleModalVisible,
   modalVisible,
+  setModalVisibleFalse,
   t,
 }: SavedBasketModalProps & { t: TFunction }) => (
   <AppModal
-    onRequestClose={toggleModalVisible}
+    onRequestClose={setModalVisibleFalse}
     modalVisible={modalVisible}
     animationIn="bounceInLeft"
     animationOut="bounceOutLeft"
   >
     <ModalCard style={{}}>
-      <CloseIcon onPress={() => {}} />
+      <CloseIcon onPress={setModalVisibleFalse} />
       <CardHeader
         text={t('declareGoods')}
         style={{
@@ -103,7 +103,7 @@ const SavedBasketModalInner = ({
       </View>
     </ModalCard>
     <ModalCloseText
-      onModalHide={toggleModalVisible}
+      onModalHide={setModalVisibleFalse}
       text={t('modal:closeModalText')}
     />
   </AppModal>
