@@ -166,8 +166,10 @@ type ReceiptTranslations = {
   dutyAndVat: string,
   paidOn: string,
   transactionId: string,
-  receiptValidUntilText: string,
-  receiptValidUntilTime: string,
+  receiptValidFrom: string,
+  receiptValidFromDate: string,
+  receiptValidOn: string,
+  receiptValidOnDate: string,
   sumText: string,
   vatColumn: string,
   normalAmountsTitle: string,
@@ -182,6 +184,7 @@ type ReceiptTranslations = {
   allReceiptsDate: string,
   entryTime: string,
   chooseOtherEntryTime: string,
+  until: string,
 };
 
 type AppInformationTranslations = {

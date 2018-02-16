@@ -146,8 +146,11 @@ export const en: Locale = {
     dutyAndVat: 'Customs duty: {{duty}}  |  vat: {{vat}}',
     paidOn: 'Paid on {{date}} at {{time}}:',
     transactionId: 'Transaction-ID (SIX): {{value}}',
-    receiptValidUntilText: 'This receipt is valid until:',
-    receiptValidUntilTime: '{{date}} | {{time}}:',
+    receiptValidFrom: 'This receipt is valid from:',
+    receiptValidFromDate:
+      '{{startDate}} | {{startTime}} to {{endDate}} | {{endTime}}',
+    receiptValidOn: 'This receipt is valid on',
+    receiptValidOnDate: '{{date}} from {{startTime}} to {{endTime}}',
     sumText: 'Sum: CHF {{value}}',
     vatColumn: 'VAT in CHF:',
     normalAmountsTitle: 'Total of all goods',
@@ -163,6 +166,7 @@ export const en: Locale = {
     allReceiptsDate: 'from {{value}}',
     entryTime: 'Time of entry',
     chooseOtherEntryTime: 'Choose new time of entry',
+    until: 'until',
   },
   information: {
     informationTitle: 'Information',
