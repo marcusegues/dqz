@@ -16,7 +16,7 @@ import { RedButton } from '../../Buttons/RedButton';
 import { pickerModalStyle } from '../styles/PickerModal';
 import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
-import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
+import { ModalCard } from '../ModalCard';
 import { scale, verticalScale } from '../../../styles/Scaling';
 import { ModalCloseText } from '../ModalCloseText';
 import { SquareCheckBox } from '../../CheckBox/SquareCheckBox';
@@ -84,7 +84,7 @@ class LegalNoticeModalInner extends React.Component<
         animationIn="slideInUp"
         animationOut="slideOutDown"
       >
-        <PickerCard style={ownStyles.pickerCard}>
+        <ModalCard style={ownStyles.pickerCard}>
           <CardHeader text={t('importantNote')} />
 
           <CardHeaderSubText
@@ -124,7 +124,7 @@ class LegalNoticeModalInner extends React.Component<
               text={t('confirm').toUpperCase()}
             />
           </View>
-        </PickerCard>
+        </ModalCard>
         <ModalCloseText onModalHide={toggleModalVisible} text={t('abort')} />
       </AppModal>
     );

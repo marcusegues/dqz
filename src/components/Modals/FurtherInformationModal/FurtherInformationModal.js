@@ -6,7 +6,7 @@ import { translate } from 'react-i18next';
 import { AppModal } from '../AppModal';
 import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
-import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
+import { ModalCard } from '../ModalCard';
 import { scale, verticalScale } from '../../../styles/Scaling';
 import { ModalCloseText } from '../ModalCloseText';
 import type { TFunction } from '../../../types/generalTypes';
@@ -51,14 +51,14 @@ export const FurtherInformationModalInner = ({
     animationIn="slideInUp"
     animationOut="slideOutDown"
   >
-    <PickerCard style={ownStyles.pickerCard}>
+    <ModalCard style={ownStyles.pickerCard}>
       <CardHeader text={t('furtherInformationModal:furtherInformation')} />
 
       <CardHeaderSubText
         text={t('furtherInformationModal:acceptance')}
         style={ownStyles.vatRateInfo}
       />
-    </PickerCard>
+    </ModalCard>
     <ModalCloseText
       onModalHide={toggleModalVisible}
       text={t('closeModalText')}

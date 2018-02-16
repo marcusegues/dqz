@@ -13,7 +13,7 @@ import {
 } from './pickerData';
 import { pickerModalStyle } from '../styles/PickerModal';
 import { CategoriesInfo } from '../../../model/constants';
-import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
+import { ModalCard } from '../ModalCard';
 import { ModalTab } from './subComponents/ModalTab';
 import { PickerComponent } from '../CurrencyPickerModal/subComponents/PickerComponent';
 import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
@@ -166,7 +166,7 @@ class PickerModalInner extends React.Component<
         animationIn="slideInLeft"
         animationOut="slideOutLeft"
       >
-        <PickerCard style={{ width: '95%' }}>
+        <ModalCard style={{ width: '95%' }}>
           {onlyStandardInput ? (
             <View>
               <View
@@ -368,7 +368,7 @@ class PickerModalInner extends React.Component<
               })}
             />
           </View>
-        </PickerCard>
+        </ModalCard>
         <ModalCloseText
           onModalHide={toggleModalVisible}
           text={t('closeModalText')}

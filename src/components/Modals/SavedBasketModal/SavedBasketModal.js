@@ -12,7 +12,7 @@ import {
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
 import { AppModal } from '../AppModal';
 import { RedButton } from '../../Buttons/RedButton';
-import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
+import { ModalCard } from '../ModalCard';
 import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
 import { moderateScale, scale, verticalScale } from '../../../styles/Scaling';
@@ -59,7 +59,7 @@ const SavedBasketModalInner = ({
     animationIn="bounceInLeft"
     animationOut="bounceOutLeft"
   >
-    <PickerCard style={{}}>
+    <ModalCard style={{}}>
       <CloseIcon onPress={() => {}} />
       <CardHeader
         text={t('declareGoods')}
@@ -101,7 +101,7 @@ const SavedBasketModalInner = ({
           onPress={() => {}}
         />
       </View>
-    </PickerCard>
+    </ModalCard>
     <ModalCloseText
       onModalHide={toggleModalVisible}
       text={t('modal:closeModalText')}

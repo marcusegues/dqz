@@ -18,7 +18,7 @@ import { pickerModalStyle } from '../styles/PickerModal';
 import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
 import type { TFunction } from '../../../types/generalTypes';
-import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
+import { ModalCard } from '../ModalCard';
 import { PickerComponent } from '../CurrencyPickerModal/subComponents/PickerComponent';
 import { moderateScale, verticalScale } from '../../../styles/Scaling';
 import {
@@ -95,7 +95,7 @@ class TimePickerModalInner extends React.Component<
         animationIn="slideInUp"
         animationOut="slideOutDown"
       >
-        <PickerCard
+        <ModalCard
           style={{
             width: '100%',
           }}
@@ -193,7 +193,7 @@ class TimePickerModalInner extends React.Component<
               text={t('timePickerTakeOverThePeriod')}
             />
           </View>
-        </PickerCard>
+        </ModalCard>
         <ModalCloseText onModalHide={onHideModal} text={t('closeModalText')} />
       </AppModal>
     );
