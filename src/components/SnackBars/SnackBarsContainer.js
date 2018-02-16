@@ -4,7 +4,7 @@ import type { ComponentType } from 'react';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { View, StyleSheet, FlatList } from 'react-native';
+import { View } from 'react-native';
 import { getAmounts, getConnectivity, getCurrencies } from '../../reducers';
 import type { Amounts } from '../../model/types/basketPeopleAmountsTypes';
 import { updateSnackBarVisibilities } from './SnackBarsControl/controlSnackBarStates';
@@ -13,14 +13,6 @@ import type { ConnectivityType } from '../../types/connectivity';
 import type { AppState } from '../../types/reducers';
 import { SnackBar } from './SnackBar/SnackBar';
 import type { TFunction } from '../../types/generalTypes';
-
-const ownStyles = StyleSheet.create({
-  snackBar: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    width: '100%',
-  },
-});
 
 type SnackBarType = 'limitExceeded' | 'offline';
 
@@ -98,31 +90,33 @@ class SnackBarsContainerInner extends React.Component<
   render() {
     const { snackBarVisibilities } = this.state;
     const { t } = this.props;
-    const flatListData = ['limitExceeded', 'offline'].map(key => ({
+    const snackBarData = ['limitExceeded', 'offline'].map(key => ({
       key,
       text: t(key),
       visibility: snackBarVisibilities[key],
       component: SnackBar,
     }));
 
-    // determine which element in flatListData is the last one that has visibility === 'visible'
-    const bottomMostVisibleSnackBarIndex = flatListData.reduce(
+    // determine which element in snackBarData is the last one that has visibility === 'visible'
+    const bottomMostVisibleSnackBarIndex = snackBarData.reduce(
       (acc, val, idx) => (val.visibility === 'visible' ? idx : acc),
       -1
     );
     return (
-      <View style={ownStyles.snackBar}>
-        <FlatList
-          style={{ width: '100%' }}
-          data={flatListData}
-          renderItem={({ item, index }) =>
-            React.createElement(item.component, {
-              text: item.text,
-              visibility: item.visibility,
-              bottomMost: index === bottomMostVisibleSnackBarIndex,
-            })
-          }
-        />
+      <View
+        style={{
+          flexDirection: 'column',
+          width: '100%',
+        }}
+      >
+        {snackBarData.map((item, index) =>
+          React.createElement(item.component, {
+            key: item.key,
+            text: item.text,
+            visibility: item.visibility,
+            bottomMost: index === bottomMostVisibleSnackBarIndex,
+          })
+        )}
       </View>
     );
   }
