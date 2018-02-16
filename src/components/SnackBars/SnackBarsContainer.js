@@ -4,7 +4,7 @@ import type { ComponentType } from 'react';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { View, StyleSheet, FlatList } from 'react-native';
+import { View } from 'react-native';
 import { getAmounts, getConnectivity, getCurrencies } from '../../reducers';
 import type { Amounts } from '../../model/types/basketPeopleAmountsTypes';
 import { updateSnackBarVisibilities } from './SnackBarsControl/controlSnackBarStates';
@@ -13,14 +13,6 @@ import type { ConnectivityType } from '../../types/connectivity';
 import type { AppState } from '../../types/reducers';
 import { SnackBar } from './SnackBar/SnackBar';
 import type { TFunction } from '../../types/generalTypes';
-
-const ownStyles = StyleSheet.create({
-  snackBar: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    width: '100%',
-  },
-});
 
 type SnackBarType = 'limitExceeded' | 'offline';
 
@@ -111,18 +103,20 @@ class SnackBarsContainerInner extends React.Component<
       -1
     );
     return (
-      <View style={ownStyles.snackBar}>
-        <FlatList
-          style={{ width: '100%' }}
-          data={flatListData}
-          renderItem={({ item, index }) =>
-            React.createElement(item.component, {
-              text: item.text,
-              visibility: item.visibility,
-              bottomMost: index === bottomMostVisibleSnackBarIndex,
-            })
-          }
-        />
+      <View
+        style={{
+          flexDirection: 'column',
+          width: '100%',
+        }}
+      >
+        {flatListData.map((item, index) =>
+          React.createElement(item.component, {
+            key: item.key,
+            text: item.text,
+            visibility: item.visibility,
+            bottomMost: index === bottomMostVisibleSnackBarIndex,
+          })
+        )}
       </View>
     );
   }

@@ -7,7 +7,7 @@ import type { SnackBarVisibility } from '../SnackBarsContainer';
 
 const snackBarStyles = bottomMost => ({
   snackBar: {
-    flex: 1,
+    flex: 0,
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: SNACKBAR_GREY,
