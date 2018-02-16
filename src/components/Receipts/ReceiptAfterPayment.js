@@ -146,7 +146,7 @@ class ReceiptAfterPaymentInner extends React.Component<
   }
 
   render() {
-    const { t, paymentData } = this.props;
+    const { t } = this.props;
 
     if (this.state.receipt && this.state.receipt.receiptId !== undefined) {
       const { basket, people, amounts, currencies } = this.state.receipt;
@@ -158,14 +158,6 @@ class ReceiptAfterPaymentInner extends React.Component<
         this.state.receipt.paymentData.transaction.date
       );
       // TODO: @Christian need to set locale from APP
-      const receiptEntryTime = DateTime.fromISO(
-        this.state.receipt.receiptEntryTime,
-        {
-          zone: 'Europe/Zurich',
-          locale: 'de',
-        }
-      );
-      const receiptEntryTimePlus = receiptEntryTime.plus({ hours: 2 });
 
       return (
         <View
