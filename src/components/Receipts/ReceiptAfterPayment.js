@@ -88,7 +88,7 @@ class ReceiptAfterPaymentInner extends React.Component<
   }
 
   getValidUntilBlockText() {
-    const { t } = this.props;
+    const { t, paymentData } = this.props;
     const receiptEntryTime = DateTime.fromISO(
       this.state.receipt.receiptEntryTime,
       {
