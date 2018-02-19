@@ -1,10 +1,11 @@
 /* eslint-disable prefer-destructuring */
 // @flow
-import Immutable from 'immutable';
+import Immutable, { merge } from 'immutable';
 import {
   getInitialState,
   mainCategories,
   EmptyMainCategories,
+  makeSettingsRecord,
 } from '../types/reducers/appReducer';
 import type {
   State,
@@ -22,12 +23,21 @@ import type {
 import * as modelApi from '../model/configurationApi';
 import type { Currency, CurrencyObject } from '../model/currencies';
 import type { PaymentData } from '../types/generalTypes';
+import { makePeopleRecord } from '../model/types/basketPeopleAmountsTypes';
 
 export const appState = (
   state: State = getInitialState(),
   action: Action
 ): State => {
   switch (action.type) {
+    case 'RESET_DECLARATION': {
+      return merge(state, {
+        basket: modelApi.emptyBasket,
+        people: makePeopleRecord(),
+        settings: makeSettingsRecord(),
+        amounts: Immutable.Map(),
+      });
+    }
     case 'UPDATE_CURRENCIES': {
       const currencyObject: CurrencyObject = action.currencyObject;
       const validCurrencies: boolean = action.validCurrencies;

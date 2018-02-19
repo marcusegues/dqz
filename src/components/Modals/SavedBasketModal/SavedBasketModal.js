@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -21,9 +22,10 @@ import { CardRowText } from '../../QuestionAnswer/Cards/subcomponents/CardRowTex
 import { CardRowSubText } from '../../QuestionAnswer/Cards/subcomponents/CardRowSubText';
 import { GREY } from '../../../styles/colors';
 import { CloseIcon } from '../../General Components/CloseIcon';
-import type { TFunction } from '../../../types/generalTypes';
+import type { Navigation, TFunction } from '../../../types/generalTypes';
 import { ModalCloseText } from '../ModalCloseText';
 import { rowStyles } from '../../Rows/styles/rowStyles';
+import { storeClearDeclaration } from '../../../asyncStorage/storageApi';
 
 const ownStyles = StyleSheet.create({
   container: {
@@ -47,71 +49,90 @@ const ownStyles = StyleSheet.create({
 type SavedBasketModalProps = {
   modalVisible: boolean,
   setModalVisibleFalse: () => void,
+  navigation: Navigation,
 };
 
-const SavedBasketModalInner = ({
-  modalVisible,
-  setModalVisibleFalse,
-  t,
-}: SavedBasketModalProps & { t: TFunction }) => (
-  <AppModal
-    onRequestClose={setModalVisibleFalse}
-    modalVisible={modalVisible}
-    animationIn="bounceInLeft"
-    animationOut="bounceOutLeft"
-  >
-    <ModalCard style={{}}>
-      <CloseIcon onPress={setModalVisibleFalse} />
-      <CardHeader
-        text={t('declareGoods')}
-        style={{
-          marginTop: 0,
-        }}
-      />
-      <CardHeaderSubText
-        text={t('modal:savedBasketDoYoWantToContinue')}
-        style={{ lineHeight: moderateScale(18), marginBottom: 30 }}
-      />
+type ReduxInject = {
+  resetDeclaration: () => void,
+};
 
-      <Row borderTop>
-        <View style={rowStyles.rowContent}>
-          <TouchableWithoutFeedback onPress={() => {}}>
-            <View style={ownStyles.container}>
-              <MaterialIcons
-                name="shopping-cart"
-                size={moderateScale(40)}
-                color={GREY}
-              />
-              <View style={ownStyles.textContainer}>
-                <CardRowText text="21. November 2017" />
-                <CardRowSubText
-                  text={t('modal:savedBasketTotalCost', { value: '6.00' })}
-                />
-              </View>
-              <Entypo
-                name="chevron-right"
-                size={moderateScale(25)}
-                color="#24253D"
-              />
+class SavedBasketModalInner extends React.Component<
+  SavedBasketModalProps & ReduxInject & { t: TFunction },
+  null
+> {
+  async storeClearDeclaration() {
+    await storeClearDeclaration();
+    this.props.resetDeclaration();
+    this.props.navigation.navigate('QuestionAnswer');
+  }
+
+  render() {
+    const { setModalVisibleFalse, modalVisible, t } = this.props;
+    return (
+      <AppModal
+        onRequestClose={setModalVisibleFalse}
+        modalVisible={modalVisible}
+        animationIn="bounceInLeft"
+        animationOut="bounceOutLeft"
+      >
+        <ModalCard style={{}}>
+          <CloseIcon onPress={setModalVisibleFalse} />
+          <CardHeader
+            text={t('declareGoods')}
+            style={{
+              marginTop: 0,
+            }}
+          />
+          <CardHeaderSubText
+            text={t('modal:savedBasketDoYoWantToContinue')}
+            style={{ lineHeight: moderateScale(18), marginBottom: 30 }}
+          />
+
+          <Row borderTop>
+            <View style={rowStyles.rowContent}>
+              <TouchableWithoutFeedback onPress={() => {}}>
+                <View style={ownStyles.container}>
+                  <MaterialIcons
+                    name="shopping-cart"
+                    size={moderateScale(40)}
+                    color={GREY}
+                  />
+                  <View style={ownStyles.textContainer}>
+                    <CardRowText text="21. November 2017" />
+                    <CardRowSubText
+                      text={t('modal:savedBasketTotalCost', { value: '6.00' })}
+                    />
+                  </View>
+                  <Entypo
+                    name="chevron-right"
+                    size={moderateScale(25)}
+                    color="#24253D"
+                  />
+                </View>
+              </TouchableWithoutFeedback>
             </View>
-          </TouchableWithoutFeedback>
-        </View>
-      </Row>
+          </Row>
 
-      <View style={ownStyles.redButtonWrapper}>
-        <RedButton
-          text={t('modal:savedBasketNewShoppingCart')}
-          onPress={() => {}}
+          <View style={ownStyles.redButtonWrapper}>
+            <RedButton
+              text={t('modal:savedBasketNewShoppingCart')}
+              onPress={() => this.storeClearDeclaration()}
+            />
+          </View>
+        </ModalCard>
+        <ModalCloseText
+          onModalHide={setModalVisibleFalse}
+          text={t('modal:closeModalText')}
         />
-      </View>
-    </ModalCard>
-    <ModalCloseText
-      onModalHide={setModalVisibleFalse}
-      text={t('modal:closeModalText')}
-    />
-  </AppModal>
-);
+      </AppModal>
+    );
+  }
+}
 
-export const SavedBasketModal = (translate(['general', 'modal'])(
-  SavedBasketModalInner
+const mapDispatchToProps = dispatch => ({
+  resetDeclaration: () => dispatch({ type: 'RESET_DECLARATION' }),
+});
+
+export const SavedBasketModal = (connect(null, mapDispatchToProps)(
+  translate(['general', 'modal'])(SavedBasketModalInner)
 ): ComponentType<SavedBasketModalProps>);

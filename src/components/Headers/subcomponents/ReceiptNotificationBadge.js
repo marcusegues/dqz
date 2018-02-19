@@ -27,7 +27,8 @@ const ReceiptNotificationBadgeInner = ({
       if (fees) {
         debugger;
         navigation.state.params.setModalVisibleTrue();
-        // navigation.navigate('Payment');
+      } else {
+        navigation.navigate('QuestionAnswer');
       }
     }}
   >
