@@ -1,6 +1,6 @@
 // @flow
-import { getInitialConnectivityState } from '../types/reducers/connectivityReducer';
-import type { ConnectivityState } from '../types/reducers/connectivityReducer';
+import { getInitialConnectivityState } from '../types/reducers/connectivity';
+import type { ConnectivityState } from '../types/reducers/connectivity';
 import type { ConnectivityAction } from '../types/actions/connectivity';
 
 export const connectivity = (

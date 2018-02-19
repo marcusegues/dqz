@@ -7,7 +7,7 @@ import Touchable from 'react-native-platform-touchable';
 // $FlowFixMe
 import { View, Text, FlatList, Dimensions, StyleSheet } from 'react-native';
 import { CheckBox } from '../../../../../CheckBox/CheckBox';
-import { mainCategories as mains } from '../../../../../../types/reducers/appReducer';
+import { mainCategories as mains } from '../../../../../../types/reducers/declaration';
 import {
   scale,
   verticalScale,
@@ -16,7 +16,7 @@ import {
 import type {
   MainCategories,
   MainCategory,
-} from '../../../../../../types/reducers/appReducer';
+} from '../../../../../../types/reducers/declaration';
 import type { TFunction } from '../../../../../../types/generalTypes';
 
 const { width } = Dimensions.get('window');

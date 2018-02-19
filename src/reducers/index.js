@@ -1,18 +1,19 @@
 // @flow
 import { combineReducers } from 'redux';
-import * as appApi from './appReducer';
+import * as declarationApi from './declaration';
 import * as connectivityApi from './connectivity';
+import * as currenciesApi from './currencies';
+import * as receiptsApi from './receipts';
 import { formatDate } from '../model/utils';
 import type {
   Amounts,
   Basket,
   People,
 } from '../model/types/basketPeopleAmountsTypes';
-import type { MainCategories, Settings } from '../types/reducers/appReducer';
+import type { MainCategories, Settings } from '../types/reducers/declaration';
 import type { CurrencyObject } from '../model/currencies';
 import { calculateVat } from '../model/vatCalculations';
 import { calculateDuty } from '../model/dutyCalculations';
-import type { DutyReport, VatReport } from '../model/types/calculationTypes';
 import type { PaymentData } from '../types/generalTypes';
 import type { ConnectivityType } from '../types/connectivity';
 import type { AppState } from '../types/reducers';
@@ -22,8 +23,10 @@ import type { AppState } from '../types/reducers';
  * @type {Reducer<any>}
  */
 export const root: AppState = combineReducers({
-  appState: appApi.appState,
+  declaration: declarationApi.declaration,
   connectivity: connectivityApi.connectivity,
+  currencies: currenciesApi.currencies,
+  receipts: receiptsApi.receipts,
 });
 
 /**
@@ -32,7 +35,7 @@ export const root: AppState = combineReducers({
  * @returns {Basket}
  */
 export const getBasket = (state: AppState): Basket =>
-  appApi.getBasket(state.appState);
+  declarationApi.getBasket(state.declaration);
 
 /**
  * Gets people in application state
@@ -40,7 +43,7 @@ export const getBasket = (state: AppState): Basket =>
  * @returns {People}
  */
 export const getPeople = (state: AppState): People =>
-  appApi.getPeople(state.appState);
+  declarationApi.getPeople(state.declaration);
 
 /**
  * Gets amounts in application state
@@ -48,7 +51,7 @@ export const getPeople = (state: AppState): People =>
  * @returns {Amounts}
  */
 export const getAmounts = (state: AppState): Amounts =>
-  appApi.getAmounts(state.appState);
+  declarationApi.getAmounts(state.declaration);
 
 /**
  * Gets main categories in application state
@@ -56,7 +59,7 @@ export const getAmounts = (state: AppState): Amounts =>
  * @returns {MainCategories}
  */
 export const getMainCategories = (state: AppState): MainCategories =>
-  appApi.getMainCategories(state.appState);
+  declarationApi.getMainCategories(state.declaration);
 
 /**
  * Gets settings in application state
@@ -64,7 +67,7 @@ export const getMainCategories = (state: AppState): MainCategories =>
  * @returns {Settings}
  */
 export const getSettings = (state: AppState): Settings =>
-  appApi.getSettings(state.appState);
+  declarationApi.getSettings(state.declaration);
 
 /**
  * Gets currencies in application state
@@ -72,7 +75,7 @@ export const getSettings = (state: AppState): Settings =>
  * @returns {CurrencyObject}
  */
 export const getCurrencies = (state: AppState): CurrencyObject =>
-  appApi.getCurrenciesObject(state.appState);
+  currenciesApi.getCurrenciesObject(state.currencies);
 
 /**
  * Gets currency state in application state
@@ -80,7 +83,7 @@ export const getCurrencies = (state: AppState): CurrencyObject =>
  * @returns {boolean}
  */
 export const getCurrencyState = (state: AppState): boolean =>
-  appApi.getCurrencyState(state.appState);
+  currenciesApi.getCurrencyState(state.currencies);
 
 /**
  * Gets the formatted currency date in application state
@@ -88,7 +91,7 @@ export const getCurrencyState = (state: AppState): boolean =>
  * @returns {string}
  */
 export const getFormattedCurrencyDate = (state: AppState): string =>
-  formatDate(appApi.getCurrencyDate(state.appState));
+  formatDate(currenciesApi.getCurrencyDate(state.currencies));
 
 /**
  * Gets the total vat in application state
@@ -96,9 +99,9 @@ export const getFormattedCurrencyDate = (state: AppState): string =>
  */
 export const getTotalVat = (state: AppState): number =>
   calculateVat(
-    state.appState.amounts,
-    state.appState.people,
-    state.appState.currencyObject
+    state.declaration.amounts,
+    state.declaration.people,
+    state.currencies.currencyObject
   ).get('totalVat', 0);
 
 /**
@@ -106,7 +109,7 @@ export const getTotalVat = (state: AppState): number =>
  * @param state
  */
 export const getTotalDuty = (state: AppState): number =>
-  calculateDuty(state.appState.basket, state.appState.people).get(
+  calculateDuty(state.declaration.basket, state.declaration.people).get(
     'totalDuty',
     0
   );
@@ -120,32 +123,12 @@ export const getTotalFees = (state: AppState): number =>
   getTotalVat(state) + getTotalDuty(state);
 
 /**
- * Gets the duty report in application state
- * @param state
- * @returns {DutyReport}
- */
-export const getDutyReport = (state: AppState): DutyReport =>
-  calculateDuty(state.appState.basket, state.appState.people);
-
-/**
- * Gets the vat report in application state
- * @param state
- * @returns {VatReport}
- */
-export const getVatReport = (state: AppState): VatReport =>
-  calculateVat(
-    state.appState.amounts,
-    state.appState.people,
-    state.appState.currencyObject
-  );
-
-/**
  * Gets current payment data
  * @param state
  * @returns {PaymentData}
  */
 export const getPaymentData = (state: AppState): PaymentData =>
-  appApi.getPaymentData(state.appState);
+  declarationApi.getPaymentData(state.declaration);
 
 /**
  * Gets the current receipt id (emptystring if not active)
@@ -153,7 +136,7 @@ export const getPaymentData = (state: AppState): PaymentData =>
  * @returns {string}
  */
 export const getReceiptId = (state: AppState): string =>
-  appApi.getReceiptId(state.appState);
+  receiptsApi.getReceiptId(state.receipts);
 
 /**
  * Gets the current receipt entry time (empty string if not set yet)
@@ -161,7 +144,7 @@ export const getReceiptId = (state: AppState): string =>
  * @returns {string}
  */
 export const getReceiptEntryTime = (state: AppState): string =>
-  appApi.getReceiptEntryTime(state.appState);
+  receiptsApi.getReceiptEntryTime(state.receipts);
 
 /**
  * Gets the current connectivity status

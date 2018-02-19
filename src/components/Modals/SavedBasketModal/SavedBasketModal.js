@@ -48,7 +48,7 @@ const ownStyles = StyleSheet.create({
 
 type SavedBasketModalProps = {
   modalVisible: boolean,
-  setModalVisibleFalse: () => void,
+  setModalVisibleFalse: () => any,
   navigation: Navigation,
 };
 

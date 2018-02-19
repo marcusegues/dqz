@@ -4,7 +4,7 @@ import type { ComponentType } from 'react';
 // $FlowFixMe
 import { View, Text } from 'react-native';
 import { translate } from 'react-i18next';
-import type { MainCategories } from '../../../../../types/reducers/appReducer';
+import type { MainCategories } from '../../../../../types/reducers/declaration';
 import type { TFunction } from '../../../../../types/generalTypes';
 
 type MainCategoriesInputInfoProps = {

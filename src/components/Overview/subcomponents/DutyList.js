@@ -6,7 +6,7 @@ import { translate } from 'react-i18next';
 import { View, FlatList } from 'react-native';
 import { DutyRow } from '../../Rows/configured/Overview/DutyRow/DutyRow';
 import { getTotalQuantity } from '../../../model/configurationApi';
-import { getMainCategory } from '../../../types/reducers/appReducer';
+import { getMainCategory } from '../../../types/reducers/declaration';
 import { RightAlignedHeader } from './RightAlignedHeader';
 import type {
   Basket,

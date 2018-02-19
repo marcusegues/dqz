@@ -6,17 +6,11 @@ import type {
   People,
   Amounts,
 } from '../../model/types/basketPeopleAmountsTypes';
-import type { MainCategory, MainCategories } from '../reducers/appReducer';
-import type { Currency, CurrencyObject } from '../../model/currencies';
+import type { MainCategory, MainCategories } from '../reducers/declaration';
+import type { Currency } from '../../model/currencies';
 import type { PaymentData } from '../../types/generalTypes';
 
-export type Action =
-  | {
-      type: 'UPDATE_CURRENCIES',
-      currencyObject: CurrencyObject,
-      validCurrencies: boolean,
-      currencyDate: Date,
-    }
+export type DeclarationAction =
   | {
       type: 'BASKET_ADD_QUANTITY',
       category: Category,
@@ -87,6 +81,4 @@ export type Action =
       type: 'SET_PAYMENT_DATA',
       paymentData: PaymentData,
     }
-  | { type: 'RESET_DECLARATION' }
-  | { type: 'SET_RECEIPT_ID', receiptId: string }
-  | { type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime: string };
+  | { type: 'RESET_DECLARATION' };
