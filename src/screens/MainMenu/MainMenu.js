@@ -41,7 +41,6 @@ class MainMenuInner extends React.Component<
   }
 
   setModalVisibleTrue() {
-    debugger;
     this.setState({ modalVisible: true });
   }
 
