@@ -2,13 +2,14 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
-import { ScrollViewCard } from './subComponents/ScrollViewCard';
+import { ScrollViewCard } from '../../components/General Components/ScrollViewCard';
 import { InformationRow } from './subComponents/InformationRow';
 import { informationImages } from './InformationData';
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { infoCategories } from './types/information';
+import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
 
 class InformationInner extends React.Component<{
   t: TFunction,
@@ -27,17 +28,19 @@ class InformationInner extends React.Component<{
   render() {
     const { t, navigation } = this.props;
     return (
-      <ScrollViewCard>
-        {infoCategories.map(cat => (
-          <InformationRow
-            key={cat}
-            source={informationImages[cat]}
-            mainText={t(`${cat}MainText`)}
-            subText={t(`${cat}SubText`)}
-            rowOnPress={() => navigation.navigate('UnderConstruction')}
-          />
-        ))}
-      </ScrollViewCard>
+      <MainContentContainer>
+        <ScrollViewCard>
+          {infoCategories.map(cat => (
+            <InformationRow
+              key={cat}
+              source={informationImages[cat]}
+              mainText={t(`${cat}MainText`)}
+              subText={t(`${cat}SubText`)}
+              rowOnPress={() => navigation.navigate('UnderConstruction')}
+            />
+          ))}
+        </ScrollViewCard>
+      </MainContentContainer>
     );
   }
 }

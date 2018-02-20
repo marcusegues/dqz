@@ -24,7 +24,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "function",
     "props": Object {
-      "children": Array [
+      "children": <ScrollViewCard>
         <View
           style={
             Object {
@@ -42,7 +42,7 @@ ShallowWrapper {
             onPress={[Function]}
             text=""
           />
-        </View>,
+        </View>
         <View
           style={
             Object {
@@ -111,271 +111,14 @@ ShallowWrapper {
             style={Object {}}
             text=""
           />
-        </View>,
-      ],
+        </View>
+      </ScrollViewCard>,
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            <ModalTab
-              activeTab={true}
-              onPress={[Function]}
-              text=""
-            />,
-            <ModalTab
-              activeTab={false}
-              onPress={[Function]}
-              text=""
-            />,
-          ],
-          "style": Object {
-            "flexDirection": "row",
-          },
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "activeTab": true,
-              "onPress": [Function],
-              "text": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "activeTab": false,
-              "onPress": [Function],
-              "text": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": Array [
-            <View
-              style={
-                Object {
-                  "marginBottom": 35.311764705882354,
-                  "marginTop": 19.61764705882353,
-                }
-              }
-            >
-              <CardHeaderText
-                text=""
-              />
-            </View>,
-            <Image
-              source={1}
-              style={
-                Object {
-                  "height": 60,
-                  "width": 240,
-                }
-              }
-            />,
-            <CardRowText
-              style={
-                Object {
-                  "color": "#1A1A1A",
-                  "marginTop": 49.04411764705882,
-                }
-              }
-              text=""
-            />,
-            <AppInfoSubText
-              style={Object {}}
-              text=""
-            />,
-            <CardRowText
-              style={
-                Object {
-                  "color": "#1A1A1A",
-                  "marginBottom": 19.61764705882353,
-                  "marginTop": 49.04411764705882,
-                }
-              }
-              text=""
-            />,
-            <AppInfoSubText
-              style={Object {}}
-              text=""
-            />,
-            <AppInfoSubText
-              style={
-                Object {
-                  "marginTop": 20,
-                }
-              }
-              text=""
-            />,
-            <AppInfoSubText
-              style={Object {}}
-              text=""
-            />,
-          ],
-          "style": Object {
-            "marginBottom": 31.388235294117646,
-            "paddingHorizontal": 34.285714285714285,
-          },
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "children": <CardHeaderText
-                text=""
-              />,
-              "style": Object {
-                "marginBottom": 35.311764705882354,
-                "marginTop": 19.61764705882353,
-              },
-            },
-            "ref": null,
-            "rendered": Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "text": "",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "source": 1,
-              "style": Object {
-                "height": 60,
-                "width": 240,
-              },
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "style": Object {
-                "color": "#1A1A1A",
-                "marginTop": 49.04411764705882,
-              },
-              "text": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "style": Object {},
-              "text": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "style": Object {
-                "color": "#1A1A1A",
-                "marginBottom": 19.61764705882353,
-                "marginTop": 49.04411764705882,
-              },
-              "text": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "style": Object {},
-              "text": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "style": Object {
-                "marginTop": 20,
-              },
-              "text": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "style": Object {},
-              "text": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-        ],
-        "type": [Function],
-      },
-    ],
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "function",
+      "nodeType": "class",
       "props": Object {
         "children": Array [
           <View
@@ -722,6 +465,459 @@ ShallowWrapper {
           "type": [Function],
         },
       ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": <ScrollViewCard>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <ModalTab
+              activeTab={true}
+              onPress={[Function]}
+              text=""
+            />
+            <ModalTab
+              activeTab={false}
+              onPress={[Function]}
+              text=""
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "marginBottom": 31.388235294117646,
+                "paddingHorizontal": 34.285714285714285,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "marginBottom": 35.311764705882354,
+                  "marginTop": 19.61764705882353,
+                }
+              }
+            >
+              <CardHeaderText
+                text=""
+              />
+            </View>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 60,
+                  "width": 240,
+                }
+              }
+            />
+            <CardRowText
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "marginTop": 49.04411764705882,
+                }
+              }
+              text=""
+            />
+            <AppInfoSubText
+              style={Object {}}
+              text=""
+            />
+            <CardRowText
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "marginBottom": 19.61764705882353,
+                  "marginTop": 49.04411764705882,
+                }
+              }
+              text=""
+            />
+            <AppInfoSubText
+              style={Object {}}
+              text=""
+            />
+            <AppInfoSubText
+              style={
+                Object {
+                  "marginTop": 20,
+                }
+              }
+              text=""
+            />
+            <AppInfoSubText
+              style={Object {}}
+              text=""
+            />
+          </View>
+        </ScrollViewCard>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <ModalTab
+                activeTab={true}
+                onPress={[Function]}
+                text=""
+              />
+              <ModalTab
+                activeTab={false}
+                onPress={[Function]}
+                text=""
+              />
+            </View>,
+            <View
+              style={
+                Object {
+                  "marginBottom": 31.388235294117646,
+                  "paddingHorizontal": 34.285714285714285,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "marginBottom": 35.311764705882354,
+                    "marginTop": 19.61764705882353,
+                  }
+                }
+              >
+                <CardHeaderText
+                  text=""
+                />
+              </View>
+              <Image
+                source={1}
+                style={
+                  Object {
+                    "height": 60,
+                    "width": 240,
+                  }
+                }
+              />
+              <CardRowText
+                style={
+                  Object {
+                    "color": "#1A1A1A",
+                    "marginTop": 49.04411764705882,
+                  }
+                }
+                text=""
+              />
+              <AppInfoSubText
+                style={Object {}}
+                text=""
+              />
+              <CardRowText
+                style={
+                  Object {
+                    "color": "#1A1A1A",
+                    "marginBottom": 19.61764705882353,
+                    "marginTop": 49.04411764705882,
+                  }
+                }
+                text=""
+              />
+              <AppInfoSubText
+                style={Object {}}
+                text=""
+              />
+              <AppInfoSubText
+                style={
+                  Object {
+                    "marginTop": 20,
+                  }
+                }
+                text=""
+              />
+              <AppInfoSubText
+                style={Object {}}
+                text=""
+              />
+            </View>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <ModalTab
+                  activeTab={true}
+                  onPress={[Function]}
+                  text=""
+                />,
+                <ModalTab
+                  activeTab={false}
+                  onPress={[Function]}
+                  text=""
+                />,
+              ],
+              "style": Object {
+                "flexDirection": "row",
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeTab": true,
+                  "onPress": [Function],
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeTab": false,
+                  "onPress": [Function],
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <View
+                  style={
+                    Object {
+                      "marginBottom": 35.311764705882354,
+                      "marginTop": 19.61764705882353,
+                    }
+                  }
+                >
+                  <CardHeaderText
+                    text=""
+                  />
+                </View>,
+                <Image
+                  source={1}
+                  style={
+                    Object {
+                      "height": 60,
+                      "width": 240,
+                    }
+                  }
+                />,
+                <CardRowText
+                  style={
+                    Object {
+                      "color": "#1A1A1A",
+                      "marginTop": 49.04411764705882,
+                    }
+                  }
+                  text=""
+                />,
+                <AppInfoSubText
+                  style={Object {}}
+                  text=""
+                />,
+                <CardRowText
+                  style={
+                    Object {
+                      "color": "#1A1A1A",
+                      "marginBottom": 19.61764705882353,
+                      "marginTop": 49.04411764705882,
+                    }
+                  }
+                  text=""
+                />,
+                <AppInfoSubText
+                  style={Object {}}
+                  text=""
+                />,
+                <AppInfoSubText
+                  style={
+                    Object {
+                      "marginTop": 20,
+                    }
+                  }
+                  text=""
+                />,
+                <AppInfoSubText
+                  style={Object {}}
+                  text=""
+                />,
+              ],
+              "style": Object {
+                "marginBottom": 31.388235294117646,
+                "paddingHorizontal": 34.285714285714285,
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <CardHeaderText
+                    text=""
+                  />,
+                  "style": Object {
+                    "marginBottom": 35.311764705882354,
+                    "marginTop": 19.61764705882353,
+                  },
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "text": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "source": 1,
+                  "style": Object {
+                    "height": 60,
+                    "width": 240,
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "style": Object {
+                    "color": "#1A1A1A",
+                    "marginTop": 49.04411764705882,
+                  },
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "style": Object {},
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "style": Object {
+                    "color": "#1A1A1A",
+                    "marginBottom": 19.61764705882353,
+                    "marginTop": 49.04411764705882,
+                  },
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "style": Object {},
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "style": Object {
+                    "marginTop": 20,
+                  },
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "style": Object {},
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
       "type": [Function],
     },
   ],
