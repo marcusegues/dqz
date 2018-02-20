@@ -22,6 +22,7 @@ import type {
 import * as modelApi from '../model/configurationApi';
 import type { Currency } from '../model/currencies';
 import type { PaymentData } from '../types/generalTypes';
+import type { ReceiptsState } from '../types/reducers/receipts';
 
 export const declaration = (
   state: DeclarationState = getInitialDeclarationState(),
@@ -142,6 +143,10 @@ export const declaration = (
       const paymentData: PaymentData = action.paymentData;
       return state.set('paymentData', paymentData);
     }
+    case 'SET_RECEIPT_ENTRY_TIME': {
+      const receiptEntryTime: string = action.receiptEntryTime;
+      return state.set('receiptEntryTime', receiptEntryTime);
+    }
     default: {
       return state;
     }
@@ -165,3 +170,6 @@ export const getSettings = (state: DeclarationState): Settings =>
 
 export const getPaymentData = (state: DeclarationState): PaymentData =>
   state.get('paymentData');
+
+export const getReceiptEntryTime = (state: DeclarationState): string =>
+  state.get('receiptEntryTime');

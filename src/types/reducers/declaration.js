@@ -140,6 +140,7 @@ type DeclarationStateObj = {
   settings: Settings,
   amounts: Amounts,
   paymentData: PaymentData,
+  receiptEntryTime: string,
 };
 
 export const getInitialDeclarationState: RecordFactory<
@@ -150,6 +151,7 @@ export const getInitialDeclarationState: RecordFactory<
   settings: makeSettingsRecord(),
   amounts: Immutable.Map(),
   paymentData: makePaymentDataRecord(),
+  receiptEntryTime: '',
 });
 
 export type DeclarationState = RecordOf<DeclarationStateObj>;

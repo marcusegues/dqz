@@ -15,10 +15,6 @@ export const receipts = (
       return state.set('receiptId', receiptId);
     }
 
-    case 'SET_RECEIPT_ENTRY_TIME': {
-      const receiptEntryTime: string = action.receiptEntryTime;
-      return state.set('receiptEntryTime', receiptEntryTime);
-    }
     default: {
       return state;
     }
@@ -27,6 +23,3 @@ export const receipts = (
 
 export const getReceiptId = (state: ReceiptsState): string =>
   state.get('receiptId');
-
-export const getReceiptEntryTime = (state: ReceiptsState): string =>
-  state.get('receiptEntryTime');

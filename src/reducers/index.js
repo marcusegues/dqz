@@ -131,20 +131,20 @@ export const getPaymentData = (state: AppState): PaymentData =>
   declarationApi.getPaymentData(state.declaration);
 
 /**
+ * Gets the current receipt entry time (empty string if not set yet)
+ * @param state
+ * @returns {string}
+ */
+export const getReceiptEntryTime = (state: AppState): string =>
+  declarationApi.getReceiptEntryTime(state.declaration);
+
+/**
  * Gets the current receipt id (emptystring if not active)
  * @param state
  * @returns {string}
  */
 export const getReceiptId = (state: AppState): string =>
   receiptsApi.getReceiptId(state.receipts);
-
-/**
- * Gets the current receipt entry time (empty string if not set yet)
- * @param state
- * @returns {string}
- */
-export const getReceiptEntryTime = (state: AppState): string =>
-  receiptsApi.getReceiptEntryTime(state.receipts);
 
 /**
  * Gets the current connectivity status
