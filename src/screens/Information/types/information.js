@@ -1,6 +1,4 @@
 // @flow
-import type { OrderedSet as ImmutableOrderedSetType } from 'immutable';
-import Immutable from 'immutable';
 
 // Level 1 Categories
 type InfoCategory =
@@ -31,42 +29,48 @@ type DeclarationSubCategory =
   | 'personalEffects'
   | 'foreignVat';
 
-type DeclarationSubCategories = ImmutableOrderedSetType<DeclarationSubCategory>;
+type DeclarationSubCategories = Array<DeclarationSubCategory>;
 
-export const declarationSubCategories: DeclarationSubCategories = Immutable.OrderedSet(
-  ['vatAllowance', 'dutyAllowance', 'personalEffects', 'foreignVat']
-);
+export const declarationSubCategories: DeclarationSubCategories = [
+  'vatAllowance',
+  'dutyAllowance',
+  'personalEffects',
+  'foreignVat',
+];
 
 type AnimalsAndPlantsSubCategory =
   | 'animals'
   | 'plants'
   | 'souvenirsAndSpeciesProtection';
 
-type AnimalsAndPlantsSubCategories = ImmutableOrderedSetType<
-  AnimalsAndPlantsSubCategory
->;
+type AnimalsAndPlantsSubCategories = Array<AnimalsAndPlantsSubCategory>;
 
-export const animalsAndPlantsSubCategories: AnimalsAndPlantsSubCategories = Immutable.OrderedSet(
-  ['animals', 'plants', 'souvenirsAndSpeciesProtection']
-);
+export const animalsAndPlantsSubCategories: AnimalsAndPlantsSubCategories = [
+  'animals',
+  'plants',
+  'souvenirsAndSpeciesProtection',
+];
 
 type VehiclesSubCategory = 'highwayVignette' | 'roadTax' | 'fuelAndRepairs';
 
-type VehiclesSubCategories = ImmutableOrderedSetType<VehiclesSubCategory>;
+type VehiclesSubCategories = Array<VehiclesSubCategory>;
 
-export const vehiclesSubCategories: VehiclesSubCategories = Immutable.OrderedSet(
-  ['highwayVignette', 'roadTax', 'fuelAndRepairs']
-);
+export const vehiclesSubCategories: VehiclesSubCategories = [
+  'highwayVignette',
+  'roadTax',
+  'fuelAndRepairs',
+];
 
 type ProhibitionsAndRestrictionsSubCategory = 'forgery' | 'cash';
 
-type ProhibitionsAndRestrictionsSubCategories = ImmutableOrderedSetType<
+type ProhibitionsAndRestrictionsSubCategories = Array<
   ProhibitionsAndRestrictionsSubCategory
 >;
 
-export const prohibitionsAndRestrictionsSubCategories: ProhibitionsAndRestrictionsSubCategories = Immutable.OrderedSet(
-  ['forgery', 'cash']
-);
+export const prohibitionsAndRestrictionsSubCategories: ProhibitionsAndRestrictionsSubCategories = [
+  'forgery',
+  'cash',
+];
 
 type InfoSubCategories =
   | DeclarationSubCategories
