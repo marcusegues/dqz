@@ -52,6 +52,7 @@ import {
   storeReceipt,
 } from '../../asyncStorage/storageApi';
 import { LegalNoticeModal } from '../Modals/LegalNoticeModal/LegalNoticeModal';
+import { MainContentContainer } from '../MainContentContainer/MainContentContainer';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -283,16 +284,7 @@ class PaymentContainerInner extends React.Component<
     const { showModal } = this.state;
     const { navigation, fees, paymentData, currencies, amounts } = this.props;
     return (
-      <View
-        style={{
-          flex: 1,
-          height: '100%',
-          marginHorizontal: 16,
-          marginBottom: 16,
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
+      <MainContentContainer>
         <NavBar step={2} />
         {this.state.paymentStatus === 'success' ? (
           <Text style={{ color: 'green' }}>
@@ -341,7 +333,7 @@ class PaymentContainerInner extends React.Component<
             this.initializePayment();
           }}
         />
-      </View>
+      </MainContentContainer>
     );
   }
 }
