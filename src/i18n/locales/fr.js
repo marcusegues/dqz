@@ -181,25 +181,24 @@ export const fr: Locale = {
     informationTitle: 'Informations utiles',
     customsProceduresMainText: 'Procédant à la douane',
     customsProceduresSubText:
-      'Au loin, loin des terres, du vocabulaire et des consonnes',
+      'En tant que particulier, vous devez entrer en Suisse ...',
     travelDocumentsMainText: 'Documents de voyage',
     travelDocumentsSubText:
-      'Au loin, loin des terres, du vocabulaire et des consonnes',
+      "Pour entrer en Suisse, les étrangers ont besoin d'un ...",
     declarationMainText: "J'ai des biens avec moi",
-    declarationSubText:
-      'Au loin, loin des terres, du vocabulaire et des consonnes',
+    declarationSubText: 'Marchandises pour votre usage privé ou en cadeau ...',
     animalsAndPlantsMainText: "J'ai des animaux ou des plantes avec moi",
     animalsAndPlantsSubText:
-      'Au loin, loin des terres, du vocabulaire et des consonnes',
+      'Pour les chiens, les chats, les autres animaux domestiques et les chevaux, vous trouverez ...',
     vehiclesMainText: 'Je voyage avec un véhicule',
     vehiclesSubText:
-      'Au loin, loin des terres, du vocabulaire et des consonnes',
+      "L'utilisation des autoroutes et des autoroutes avec des véhicules à moteur et des remorques ...",
     entryByTrainMainText: 'Entrée en train',
     entryByTrainSubText:
-      'Au loin, loin des terres, du vocabulaire et des consonnes',
+      'Si le personnel des douanes est présent dans le train, vous devez prendre toutes les marchandises ...',
     prohibitionsAndRestrictionsMainText: 'Interdictions et restrictions',
     prohibitionsAndRestrictionsSubText:
-      'Au loin, loin des terres, du vocabulaire et des consonnes',
+      "Il est interdit d'introduire des contrefaçons de marque et de design. Les douanes suisses ...",
   },
   appInformation: {
     appInfoTitle: "Informations relatives à l'application",

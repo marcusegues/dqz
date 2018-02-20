@@ -178,23 +178,25 @@ export const de: Locale = {
     informationTitle: 'Wissenswertes',
     customsProceduresMainText: 'Vorgehen am Zoll',
     customsProceduresSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien',
+      'Als Privatperson müssen Sie bei der Einreise in die Schweiz ...',
     travelDocumentsMainText: 'Reisedokumente',
     travelDocumentsSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien',
+      'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges ...',
     declarationMainText: 'Ich habe Waren dabei',
     declarationSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien',
+      'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
     animalsAndPlantsMainText: 'Ich habe Tiere oder Pflanzen dabei',
-    animalsAndPlantsSubText: 'Hinten, leben die Blindtexte.',
+    animalsAndPlantsSubText:
+      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die ...',
     vehiclesMainText: 'Ich bin mit einem Fahrzeug unterwegs',
-    vehiclesSubText: 'Hinten, leben die Blindtexte.',
+    vehiclesSubText:
+      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen und Anhängern ...',
     entryByTrainMainText: 'Einreise per Bahn',
     entryByTrainSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien',
+      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren ...',
     prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
     prohibitionsAndRestrictionsSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien',
+      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer Zoll ...',
   },
   appInformation: {
     appInfoTitle: 'Über die App',

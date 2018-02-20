@@ -177,25 +177,24 @@ export const it: Locale = {
   information: {
     informationTitle: 'Informazioni utili',
     customsProceduresMainText: 'Procedendo alla dogana',
-    customsProceduresSubText:
-      'Lontano, lontano dalle terre, vocabolario e consonanti',
+    customsProceduresSubText: 'Come privato devi entrare in Svizzera ...',
     travelDocumentsMainText: 'Documenti di viaggio',
     travelDocumentsSubText:
-      'Lontano, lontano dalle terre, vocabolario e consonanti',
+      'Per entrare in Svizzera i cittadini stranieri hanno bisogno di un valido ...',
     declarationMainText: 'Ho dei beni con me',
-    declarationSubText:
-      'Lontano, lontano dalle terre, vocabolario e consonanti',
+    declarationSubText: 'Meriti per uso personale o come regalo ...',
     animalsAndPlantsMainText: 'Ho animali o piante con me',
     animalsAndPlantsSubText:
-      'Lontano, lontano dalle terre, vocabolario e consonanti',
+      'Per cani, gatti, altri animali domestici e cavalli troverai il ...',
     vehiclesMainText: 'Sto viaggiando con un veicolo',
-    vehiclesSubText: 'Lontano, lontano dalle terre, vocabolario e consonanti',
+    vehiclesSubText:
+      "L'uso di autostrade e autostrade con veicoli a motore e rimorchi ...",
     entryByTrainMainText: 'Ingresso in treno',
     entryByTrainSubText:
-      'Lontano, lontano dalle terre, vocabolario e consonanti',
+      'Se il personale doganale è presente sul treno, è necessario prendere tutte le merci ...',
     prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
     prohibitionsAndRestrictionsSubText:
-      'Lontano, lontano dalle terre, vocabolario e consonanti',
+      'È vietato introdurre contraffazioni di marchi e design. Le usanze svizzere ...',
   },
   appInformation: {
     appInfoTitle: 'Informazioni sull’app ',

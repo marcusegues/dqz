@@ -172,23 +172,24 @@ export const en: Locale = {
     informationTitle: 'Information',
     customsProceduresMainText: 'Proceeding at the customs',
     customsProceduresSubText:
-      'Far back, far from the lands, vocabulary and consonants',
+      'As a private individual you have to enter Switzerland ...',
     travelDocumentsMainText: 'Travel documents',
     travelDocumentsSubText:
-      'Far back, far from the lands, vocabulary and consonants',
+      'To enter Switzerland foreign nationals need a valid ...',
     declarationMainText: 'I have goods with me',
-    declarationSubText:
-      'Far back, far from the lands, vocabulary and consonants',
+    declarationSubText: 'Goods you for your private use or as a gift ...',
     animalsAndPlantsMainText: 'I have animals or plants with me',
-    animalsAndPlantsSubText: 'Behind, the blind texts live',
+    animalsAndPlantsSubText:
+      'For dogs, cats, other pets and horses you will find the ...',
     vehiclesMainText: "I'm traveling with a vehicle",
-    vehiclesSubText: 'Behind, the blind texts live',
+    vehiclesSubText:
+      'The use of highways and motorways with motor vehicles and trailers ...',
     entryByTrainMainText: 'Entry by train',
     entryByTrainSubText:
-      'Far back, far from the lands, vocabulary and consonants',
+      'If customs personnel are present on the train, you must take all goods ...',
     prohibitionsAndRestrictionsMainText: 'Prohibitions and restrictions',
     prohibitionsAndRestrictionsSubText:
-      'Far back, far from the lands, vocabulary and consonants',
+      'It is forbidden to introduce trademark and design counterfeits. The Swiss customs ...',
   },
   appInformation: {
     appInfoTitle: 'About the app',
