@@ -177,7 +177,7 @@ export const en: Locale = {
     travelDocumentsSubText:
       'To enter Switzerland foreign nationals need a valid ...',
     declarationMainText: 'I have goods with me',
-    declarationSubText: 'Goods you for your private use or as a gift ...',
+    declarationSubText: 'Goods for your private use or as a gift ...',
     animalsAndPlantsMainText: 'I have animals or plants with me',
     animalsAndPlantsSubText:
       'For dogs, cats, other pets and horses you will find the ...',
