@@ -148,8 +148,13 @@ export const it: Locale = {
     dutyAndVat: 'Tributi doganali: {{duty}} | IVA: {{vat}}',
     paidOn: 'Pagamento effettuato in data {{date}} alle ore {{time}} con:',
     transactionId: 'ID della transazione (SIX): {{value}}',
-    receiptValidUntilText: 'Il giustificativo è valido fino al:',
-    receiptValidUntilTime: '{{date}}  |  {{time}} Orario',
+
+    receiptValidFrom: 'Il giustificativo è valido da:',
+    receiptValidFromDate:
+      '{{startDate}} | {{startTime}} fino al {{endDate}} | {{endTime}}',
+    receiptValidOn: 'Il giustificativo è valido su:',
+    receiptValidOnDate: '{{date}} dalle {{startTime}} alle {{endTime}}',
+
     sumText: 'Totale (CHF): {{value}}',
     vatColumn: 'IVA in CHF:',
     normalAmountsTitle: 'Valore complessivo delle merci',
@@ -167,6 +172,7 @@ export const it: Locale = {
     chooseOtherEntryTime: 'Scegli un altro periodo',
     overviewRegistered: '⚠️',
     overviewDutyFree: '⚠️',
+    until: 'fino a',
   },
   information: {
     informationTitle: 'Informazioni utili',
