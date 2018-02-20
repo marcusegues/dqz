@@ -13,6 +13,7 @@ import { CardRowText } from '../../components/QuestionAnswer/Cards/subcomponents
 import { AppInfoSubText } from './subComponents/AppInfoSubText';
 import { ScrollViewCard } from '../../components/General Components/ScrollViewCard';
 import { scale, verticalScale } from '../../styles/Scaling';
+import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
 
 const styles = {
   topTouchableContainer: {
