@@ -22,13 +22,32 @@ import type {
 import * as modelApi from '../model/configurationApi';
 import type { Currency } from '../model/currencies';
 import type { PaymentData } from '../types/generalTypes';
-import type { ReceiptsState } from '../types/reducers/receipts';
 
 export const declaration = (
   state: DeclarationState = getInitialDeclarationState(),
   action: DeclarationAction
 ): DeclarationState => {
+  debugger;
   switch (action.type) {
+    case 'RESET_DECLARATION': {
+      const peopleReset = state.set('people', modelApi.initPeople);
+      const basketReset = peopleReset.set('basket', modelApi.emptyBasket);
+      const mainCategoriesReset = basketReset.setIn(
+        ['settings', 'mainCategories'],
+        Immutable.Set()
+      );
+      return mainCategoriesReset.set('amounts', modelApi.initAmounts);
+    }
+    case 'SET_DECLARATION': {
+      const peopleReset = state.set('people', action.people);
+      const basketReset = peopleReset.set('basket', action.basket);
+
+      const mainCategoriesReset = basketReset.setIn(
+        ['settings', 'mainCategories'],
+        action.mainCategories
+      );
+      return mainCategoriesReset.set('amounts', action.amounts);
+    }
     case 'BASKET_ADD_QUANTITY': {
       const category: Category = action.category;
       const basket: Basket = state.get('basket');
@@ -102,15 +121,6 @@ export const declaration = (
       const amounts: Amounts = state.get('amounts');
       const currency: Currency = action.currency;
       return state.set('amounts', modelApi.resetAmounts(amounts, currency));
-    }
-    case 'RESET_DECLARATION': {
-      const peopleReset = state.set('people', modelApi.initPeople);
-      const basketReset = peopleReset.set('basket', modelApi.emptyBasket);
-      const mainCategoriesReset = basketReset.setIn(
-        ['settings', 'mainCategories'],
-        Immutable.Set()
-      );
-      return mainCategoriesReset.set('amounts', modelApi.initAmounts);
     }
 
     case 'ADD_MAIN_CATEGORY': {
