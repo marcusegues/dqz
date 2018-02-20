@@ -118,6 +118,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -239,6 +240,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -391,6 +393,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -547,6 +550,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -668,6 +672,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -781,6 +786,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -898,6 +904,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1009,6 +1016,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1122,6 +1130,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1233,6 +1242,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1347,6 +1357,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1458,6 +1469,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1569,6 +1581,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1680,6 +1693,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1791,6 +1805,7 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
 
@@ -1902,5 +1917,6 @@ Immutable.Record {
       "status": "",
     },
   },
+  "receiptEntryTime": "",
 }
 `;
