@@ -11,7 +11,7 @@ import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { CardHeaderText } from '../../components/QuestionAnswer/Cards/subcomponents/CardHeaderText';
 import { CardRowText } from '../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { AppInfoSubText } from './subComponents/AppInfoSubText';
-import { ScrollViewCard } from '../Information/subComponents/ScrollViewCard';
+import { ScrollViewCard } from '../../components/General Components/ScrollViewCard';
 import { scale, verticalScale } from '../../styles/Scaling';
 
 const styles = {
@@ -84,67 +84,69 @@ class AppInfoInner extends React.Component<{ t: TFunction }, AppInfoState> {
     const development = selected === 'development';
 
     return (
-      <ScrollViewCard>
-        <View style={styles.topTouchableContainer}>
-          <ModalTab
-            activeTab={imprint}
-            onPress={() =>
-              this.setState({
-                selected: 'imprint',
-              })
-            }
-            text={t('leftTabText').toUpperCase()}
-          />
-          <ModalTab
-            activeTab={development}
-            onPress={() =>
-              this.setState({
-                selected: 'development',
-              })
-            }
-            text={t('rightTabText').toUpperCase()}
-          />
-        </View>
-
-        {imprint ? (
-          <View style={styles.contentContainer}>
-            <View style={styles.cardHeader}>
-              <CardHeaderText text={t('publisher')} />
-            </View>
-            <Image source={logo} style={styles.logoWithText} />
-            <CardRowText
-              text={t('customsAdministrationAddressTitle')}
-              style={styles.customsAdministrationAddressTitle}
+      <MainContentContainer>
+        <ScrollViewCard>
+          <View style={styles.topTouchableContainer}>
+            <ModalTab
+              activeTab={imprint}
+              onPress={() =>
+                this.setState({
+                  selected: 'imprint',
+                })
+              }
+              text={t('leftTabText').toUpperCase()}
             />
-            <AppInfoSubText text={t('generalCustomsDirectorate')} />
-            <CardRowText text={t('contact')} style={styles.contactTitle} />
-            <AppInfoSubText text={t('customsInfoCenter')} />
-            <AppInfoSubText
-              text={t('reachability')}
-              style={styles.reachabilityText}
+            <ModalTab
+              activeTab={development}
+              onPress={() =>
+                this.setState({
+                  selected: 'development',
+                })
+              }
+              text={t('rightTabText').toUpperCase()}
             />
-            <AppInfoSubText text={t('workingHours')} />
           </View>
-        ) : (
-          <View style={styles.contentContainer}>
-            <View style={styles.cardHeader}>
-              <CardHeaderText text={t('designAndDevelopment')} />
+
+          {imprint ? (
+            <View style={styles.contentContainer}>
+              <View style={styles.cardHeader}>
+                <CardHeaderText text={t('publisher')} />
+              </View>
+              <Image source={logo} style={styles.logoWithText} />
+              <CardRowText
+                text={t('customsAdministrationAddressTitle')}
+                style={styles.customsAdministrationAddressTitle}
+              />
+              <AppInfoSubText text={t('generalCustomsDirectorate')} />
+              <CardRowText text={t('contact')} style={styles.contactTitle} />
+              <AppInfoSubText text={t('customsInfoCenter')} />
+              <AppInfoSubText
+                text={t('reachability')}
+                style={styles.reachabilityText}
+              />
+              <AppInfoSubText text={t('workingHours')} />
             </View>
+          ) : (
+            <View style={styles.contentContainer}>
+              <View style={styles.cardHeader}>
+                <CardHeaderText text={t('designAndDevelopment')} />
+              </View>
 
-            <Image source={ambriteLogo} style={styles.ambriteLogo} />
+              <Image source={ambriteLogo} style={styles.ambriteLogo} />
 
-            <AppInfoSubText
-              text={t('ambriteAddress')}
-              style={styles.ambriteAddress}
-            />
-            <CardRowText
-              text={t('disclaimerTitle')}
-              style={styles.disclaimerTitle}
-            />
-            <AppInfoSubText text={t('disclaimerText')} />
-          </View>
-        )}
-      </ScrollViewCard>
+              <AppInfoSubText
+                text={t('ambriteAddress')}
+                style={styles.ambriteAddress}
+              />
+              <CardRowText
+                text={t('disclaimerTitle')}
+                style={styles.disclaimerTitle}
+              />
+              <AppInfoSubText text={t('disclaimerText')} />
+            </View>
+          )}
+        </ScrollViewCard>
+      </MainContentContainer>
     );
   }
 }
