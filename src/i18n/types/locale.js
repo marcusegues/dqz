@@ -144,22 +144,6 @@ type ModalTranslations = {
 
 type InformationTranslations = {
   informationTitle: string,
-  proceedinAtTheCustoms: string,
-  proceedinAtTheCustomsSubText: string,
-  travelDocuments: string,
-  travelDocumentsSubText: string,
-  haveGoodsWithMe: string,
-  haveGoodsWithMeSubText: string,
-  haveAnimalsOrPlantsWithMe: string,
-  haveAnimalsOrPlantsWithMeSubText: string,
-  travelingWithVehicle: string,
-  travelingWithVehicleSubText: string,
-  entryByTrain: string,
-  entryByTrainSubText: string,
-  allowancesFoodAlcoholTobacco: string,
-  allowancesFoodAlcoholTobaccoText: string,
-  prohibitions: string,
-  prohibitionsSubText: string,
 };
 
 type ReceiptTranslations = {

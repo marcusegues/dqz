@@ -170,28 +170,6 @@ export const en: Locale = {
   },
   information: {
     informationTitle: 'Information',
-    proceedinAtTheCustoms: 'Proceeding at the customs',
-    proceedinAtTheCustomsSubText:
-      'Far behind, behind the word mountains, far from the lands of vocabulary and consonants live the blind texts.',
-    travelDocuments: 'Travel documents',
-    travelDocumentsSubText:
-      'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
-    haveGoodsWithMe: 'I have goods with me',
-    haveGoodsWithMeSubText:
-      'Far behind, behind the word mountains, far from the lands of vocabulary and consonants live the blind texts.',
-    haveAnimalsOrPlantsWithMe: 'I have animals or plants with me.',
-    haveAnimalsOrPlantsWithMeSubText: 'Far behind live the blind texts.',
-    travelingWithVehicle: "I'm traveling with a vehicle",
-    travelingWithVehicleSubText: 'Far behind live the blind texts.',
-    entryByTrain: 'Entry by train',
-    entryByTrainSubText:
-      'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
-    allowancesFoodAlcoholTobacco: 'Allowances: food, alcohol and tobacco',
-    allowancesFoodAlcoholTobaccoText:
-      'Introduce goods for your private use or as a gift these are duty-free. Exceptions are so-called sensitive goods,for you for agricultural or health-political reasons from one have to pay a certain amount of duty (see table below). The Allowances are per person per day.',
-    prohibitions: 'Prohibitions and Restrictions',
-    prohibitionsSubText:
-      'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
   },
   appInformation: {
     appInfoTitle: 'About the app',

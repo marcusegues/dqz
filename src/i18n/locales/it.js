@@ -176,30 +176,6 @@ export const it: Locale = {
   },
   information: {
     informationTitle: 'Informazioni utili',
-    proceedinAtTheCustoms: 'Modo di procedere in dogana ',
-    proceedinAtTheCustomsSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    travelDocuments: 'Documenti di viaggio',
-    travelDocumentsSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    haveGoodsWithMe: 'Trasporto merci',
-    haveGoodsWithMeSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    haveAnimalsOrPlantsWithMe: 'Trasporto animali o piante',
-    haveAnimalsOrPlantsWithMeSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    travelingWithVehicle: 'Sono in viaggio con un veicolo',
-    travelingWithVehicleSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    entryByTrain: 'Entrata nel paese con il treno',
-    entryByTrainSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    allowancesFoodAlcoholTobacco: 'Indennità: cibo, alcol e tabacco',
-    allowancesFoodAlcoholTobaccoText:
-      'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer gewissen Amount Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
-    prohibitions: 'Divieti e restrizioni',
-    prohibitionsSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
   },
   appInformation: {
     appInfoTitle: 'Informazioni sull’app ',

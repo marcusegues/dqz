@@ -179,30 +179,6 @@ export const fr: Locale = {
   },
   information: {
     informationTitle: 'Informations utiles',
-    proceedinAtTheCustoms: 'Marche à suivre lors du passage à la douane',
-    proceedinAtTheCustomsSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    travelDocuments: 'Documents de voyage',
-    travelDocumentsSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    haveGoodsWithMe: 'Je transporte des marchandises.',
-    haveGoodsWithMeSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    haveAnimalsOrPlantsWithMe: 'Je transporte des animaux ou des plantes.',
-    haveAnimalsOrPlantsWithMeSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    travelingWithVehicle: 'Je voyage avec un véhicule.',
-    travelingWithVehicleSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    entryByTrain: 'Entrée en Suisse par voie ferroviaire',
-    entryByTrainSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    allowancesFoodAlcoholTobacco: 'Allocations: nourriture, alcool et tabac',
-    allowancesFoodAlcoholTobaccoText:
-      'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer gewissen Amount Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
-    prohibitions: 'Interdictions et restrictions',
-    prohibitionsSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
   },
   appInformation: {
     appInfoTitle: "Informations relatives à l'application",
