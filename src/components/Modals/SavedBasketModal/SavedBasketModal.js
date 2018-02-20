@@ -22,10 +22,27 @@ import { CardRowText } from '../../QuestionAnswer/Cards/subcomponents/CardRowTex
 import { CardRowSubText } from '../../QuestionAnswer/Cards/subcomponents/CardRowSubText';
 import { GREY } from '../../../styles/colors';
 import { CloseIcon } from '../../General Components/CloseIcon';
-import type { Navigation, TFunction } from '../../../types/generalTypes';
+import type {
+  Navigation,
+  PaymentData,
+  TFunction,
+} from '../../../types/generalTypes';
 import { ModalCloseText } from '../ModalCloseText';
 import { rowStyles } from '../../Rows/styles/rowStyles';
-import { storeClearDeclaration } from '../../../asyncStorage/storageApi';
+import {
+  fetchAmounts,
+  fetchBasket,
+  fetchMainCategories,
+  fetchPaymentData,
+  fetchPeople,
+  storeClearDeclaration,
+} from '../../../asyncStorage/storageApi';
+import type {
+  Amounts,
+  Basket,
+  People,
+} from '../../../model/types/basketPeopleAmountsTypes';
+import type { MainCategories } from '../../../types/reducers/declaration';
 
 const ownStyles = StyleSheet.create({
   container: {
@@ -46,14 +63,22 @@ const ownStyles = StyleSheet.create({
   },
 });
 
+export type NavigateFromSavedBasket = 'QuestionAnswer' | 'doNotNavigate';
+
 type SavedBasketModalProps = {
   modalVisible: boolean,
-  setModalVisibleFalse: () => any,
-  navigation: Navigation,
+  setModalVisibleFalse: (navigateTo: NavigateFromSavedBasket) => any,
 };
 
 type ReduxInject = {
   resetDeclaration: () => void,
+  setDeclaration: ({
+    basket: Basket,
+    people: People,
+    amounts: Amounts,
+    mainCategories: MainCategories,
+    paymentData: PaymentData,
+  }) => void,
 };
 
 class SavedBasketModalInner extends React.Component<
@@ -61,9 +86,28 @@ class SavedBasketModalInner extends React.Component<
   null
 > {
   async storeClearDeclaration() {
+    const { setModalVisibleFalse, resetDeclaration } = this.props;
     await storeClearDeclaration();
-    this.props.resetDeclaration();
-    this.props.navigation.navigate('QuestionAnswer');
+    resetDeclaration();
+    setModalVisibleFalse('QuestionAnswer');
+  }
+
+  componentDidMount() {
+    Promise.all([
+      fetchBasket(),
+      fetchPeople(),
+      fetchAmounts(),
+      fetchMainCategories(),
+      fetchPaymentData(),
+    ]).then(data => {
+      this.props.setDeclaration({
+        basket: data[0],
+        people: data[1],
+        amounts: data[2],
+        mainCategories: data[3],
+        paymentData: data[4],
+      });
+    });
   }
 
   render() {
@@ -72,8 +116,8 @@ class SavedBasketModalInner extends React.Component<
       <AppModal
         onRequestClose={setModalVisibleFalse}
         modalVisible={modalVisible}
-        animationIn="bounceInLeft"
-        animationOut="bounceOutLeft"
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
       >
         <ModalCard style={{}}>
           <CloseIcon onPress={setModalVisibleFalse} />
@@ -131,6 +175,15 @@ class SavedBasketModalInner extends React.Component<
 
 const mapDispatchToProps = dispatch => ({
   resetDeclaration: () => dispatch({ type: 'RESET_DECLARATION' }),
+  setDeclaration: ({ basket, people, amounts, mainCategories, paymentData }) =>
+    dispatch({
+      type: 'SET_DECLARATION',
+      basket,
+      people,
+      amounts,
+      mainCategories,
+      paymentData,
+    }),
 });
 
 export const SavedBasketModal = (connect(null, mapDispatchToProps)(

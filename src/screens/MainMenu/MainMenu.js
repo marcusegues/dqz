@@ -11,6 +11,7 @@ import { moderateScale } from '../../styles/Scaling';
 import { AppTitle } from '../../components/AppTitle/AppTitle';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
+import type { NavigateFromSavedBasket } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 
 const switzerland = require('../../../assets/images/Swiss_Country.png');
 const customs = require('../../../assets/images/customs.png');
@@ -36,16 +37,22 @@ class MainMenuInner extends React.Component<
 
   componentWillMount() {
     this.props.navigation.setParams({
-      setModalVisibleTrue: this.setModalVisibleTrue.bind(this),
+      setSavedBasketModalVisibleTrue: this.setSavedBasketModalVisibleTrue.bind(
+        this
+      ),
     });
   }
 
-  setModalVisibleTrue() {
+  setSavedBasketModalVisibleTrue() {
     this.setState({ modalVisible: true });
   }
 
-  setModalVisibleFalse() {
-    this.setState({ modalVisible: false });
+  setSavedBasketModalVisibleFalse(navigateTo: NavigateFromSavedBasket) {
+    this.setState({ modalVisible: false }, () => {
+      if (navigateTo !== 'doNotNavigate') {
+        this.props.navigation.navigate(navigateTo);
+      }
+    });
   }
 
   render() {
@@ -111,8 +118,9 @@ class MainMenuInner extends React.Component<
         </SafeAreaView>
         <SavedBasketModal
           modalVisible={this.state.modalVisible}
-          setModalVisibleFalse={() => this.setModalVisibleFalse()}
-          navigation={navigation}
+          setModalVisibleFalse={navigateTo =>
+            this.setSavedBasketModalVisibleFalse(navigateTo)
+          }
         />
       </View>
     );

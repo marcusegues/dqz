@@ -25,7 +25,7 @@ const ReceiptNotificationBadgeInner = ({
   <Touchable
     onPress={() => {
       if (fees) {
-        navigation.state.params.setModalVisibleTrue();
+        navigation.state.params.setSavedBasketModalVisibleTrue();
       } else {
         navigation.navigate('QuestionAnswer');
       }
@@ -50,9 +50,11 @@ const ReceiptNotificationBadgeInner = ({
   </Touchable>
 );
 
-const mapStateToProps = state => ({
-  fees: getTotalFees(state),
-});
+const mapStateToProps = state => {
+  return {
+    fees: getTotalFees(state),
+  };
+};
 
 export const ReceiptNotificationBadge = (connect(mapStateToProps)(
   ReceiptNotificationBadgeInner

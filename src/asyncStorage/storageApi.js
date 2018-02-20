@@ -29,6 +29,7 @@ import {
 } from '../model/configurationApi';
 import type { Receipt } from '../types/receiptTypes';
 import type { KeyNotSetType } from './asyncStorage';
+import type { PaymentData } from '../types/generalTypes';
 
 /**
  * Stores item (stringified) under key - do NOT use directly!
@@ -112,6 +113,14 @@ export const storeMainCategories = (mainCategories: MainCategories) =>
 export const storePeople = (people: People) =>
   storeItem('People', people.toJS());
 
+/**
+ * Stores paymentData
+ * @param paymentData
+ * @returns {Promise<boolean>}
+ */
+export const storePaymentData = (paymentData: PaymentData) =>
+  storeItem('PaymentData', paymentData);
+
 export const storeClearDeclaration = () => {
   storeMainCategories(Immutable.Set());
   storeBasket(emptyBasket);
@@ -170,3 +179,6 @@ export const fetchPeople = async (): Promise<People> =>
 
 export const fetchMainCategories = async (): Promise<MainCategories> =>
   fetchMainCategoriesAsyncStorage('MainCategories');
+
+export const fetchPaymentData = async (): Promise<Basket> =>
+  fetchBasketAsyncStorage('PaymentData');

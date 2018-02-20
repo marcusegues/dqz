@@ -97,12 +97,14 @@ export const getFormattedCurrencyDate = (state: AppState): string =>
  * Gets the total vat in application state
  * @param state
  */
-export const getTotalVat = (state: AppState): number =>
-  calculateVat(
+export const getTotalVat = (state: AppState): number => {
+  const res = calculateVat(
     state.declaration.amounts,
     state.declaration.people,
     state.currencies.currencyObject
   ).get('totalVat', 0);
+  return res;
+};
 
 /**
  * Gets the total duty in application state
