@@ -179,30 +179,26 @@ export const fr: Locale = {
   },
   information: {
     informationTitle: 'Informations utiles',
-    proceedinAtTheCustoms: 'Marche à suivre lors du passage à la douane',
-    proceedinAtTheCustomsSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    travelDocuments: 'Documents de voyage',
+    customsProceduresMainText: 'Procédant à la douane',
+    customsProceduresSubText:
+      'En tant que particulier, vous devez entrer en Suisse ...',
+    travelDocumentsMainText: 'Documents de voyage',
     travelDocumentsSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    haveGoodsWithMe: 'Je transporte des marchandises.',
-    haveGoodsWithMeSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    haveAnimalsOrPlantsWithMe: 'Je transporte des animaux ou des plantes.',
-    haveAnimalsOrPlantsWithMeSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    travelingWithVehicle: 'Je voyage avec un véhicule.',
-    travelingWithVehicleSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    entryByTrain: 'Entrée en Suisse par voie ferroviaire',
+      "Pour entrer en Suisse, les étrangers ont besoin d'un ...",
+    declarationMainText: "J'ai des biens avec moi",
+    declarationSubText: 'Marchandises pour votre usage privé ou en cadeau ...',
+    animalsAndPlantsMainText: "J'ai des animaux ou des plantes avec moi",
+    animalsAndPlantsSubText:
+      'Pour les chiens, les chats, les autres animaux domestiques et les chevaux, vous trouverez ...',
+    vehiclesMainText: 'Je voyage avec un véhicule',
+    vehiclesSubText:
+      "L'utilisation des autoroutes et des autoroutes avec des véhicules à moteur et des remorques ...",
+    entryByTrainMainText: 'Entrée en train',
     entryByTrainSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    allowancesFoodAlcoholTobacco: 'Allocations: nourriture, alcool et tabac',
-    allowancesFoodAlcoholTobaccoText:
-      'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer gewissen Amount Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
-    prohibitions: 'Interdictions et restrictions',
-    prohibitionsSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
+      'Si le personnel des douanes est présent dans le train, vous devez prendre toutes les marchandises ...',
+    prohibitionsAndRestrictionsMainText: 'Interdictions et restrictions',
+    prohibitionsAndRestrictionsSubText:
+      "Il est interdit d'introduire des contrefaçons de marque et de design. Les douanes suisses ...",
   },
   appInformation: {
     appInfoTitle: "Informations relatives à l'application",

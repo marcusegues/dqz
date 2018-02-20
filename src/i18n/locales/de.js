@@ -176,28 +176,27 @@ export const de: Locale = {
   },
   information: {
     informationTitle: 'Wissenswertes',
-    proceedinAtTheCustoms: 'Vorgehen am Zoll',
-    proceedinAtTheCustomsSubText:
-      'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-    travelDocuments: 'Reisedokumente',
+    customsProceduresMainText: 'Vorgehen am Zoll',
+    customsProceduresSubText:
+      'Als Privatperson müssen Sie bei der Einreise in die Schweiz ...',
+    travelDocumentsMainText: 'Reisedokumente',
     travelDocumentsSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-    haveGoodsWithMe: 'Ich habe Waren dabei',
-    haveGoodsWithMeSubText:
-      'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-    haveAnimalsOrPlantsWithMe: 'Ich habe Tiere oder Pflanzen dabei',
-    haveAnimalsOrPlantsWithMeSubText: 'Weit hinten leben die Blindtexte.',
-    travelingWithVehicle: 'Ich bin mit einem Fahrzeug unterwegs',
-    travelingWithVehicleSubText: 'Weit hinten leben die Blindtexte.',
-    entryByTrain: 'Einreise per Bahn',
+      'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges ...',
+    declarationMainText: 'Ich habe Waren dabei',
+    declarationSubText:
+      'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
+    animalsAndPlantsMainText: 'Ich habe Tiere oder Pflanzen dabei',
+    animalsAndPlantsSubText:
+      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die ...',
+    vehiclesMainText: 'Ich bin mit einem Fahrzeug unterwegs',
+    vehiclesSubText:
+      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen und Anhängern ...',
+    entryByTrainMainText: 'Einreise per Bahn',
     entryByTrainSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-    allowancesFoodAlcoholTobacco: 'Freimengen: Lebensmittel, Alkohol und Tabak',
-    allowancesFoodAlcoholTobaccoText:
-      'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer gewissen Amount Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
-    prohibitions: 'Verbote und Beschränkungen',
-    prohibitionsSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren ...',
+    prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
+    prohibitionsAndRestrictionsSubText:
+      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer Zoll ...',
   },
   appInformation: {
     appInfoTitle: 'Über die App',

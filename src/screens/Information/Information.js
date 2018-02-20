@@ -4,10 +4,11 @@ import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import { ScrollViewCard } from '../../components/General Components/ScrollViewCard';
 import { InformationRow } from './subComponents/InformationRow';
-import { informationData } from './InformationData';
+import { informationImages } from './InformationData';
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
+import { infoCategories } from './types/information';
 import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
 
 class InformationInner extends React.Component<{
@@ -29,12 +30,12 @@ class InformationInner extends React.Component<{
     return (
       <MainContentContainer>
         <ScrollViewCard>
-          {informationData.map(i => (
+          {infoCategories.map(cat => (
             <InformationRow
-              key={i.id}
-              source={i.source}
-              mainText={t(i.dataMainText)}
-              subText={t(i.dataSubText)}
+              key={cat}
+              source={informationImages[cat]}
+              mainText={t(`${cat}MainText`)}
+              subText={t(`${cat}SubText`)}
               rowOnPress={() => navigation.navigate('UnderConstruction')}
             />
           ))}

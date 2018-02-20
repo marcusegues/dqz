@@ -11,16 +11,16 @@ type MainContentContainerProps = {
 export const MainContentContainer = ({
   children,
 }: MainContentContainerProps) => (
-    <View
-      style={{
-        flex: 1,
-        height: '100%',
-        marginHorizontal: 16,
-        marginBottom: 16,
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-    >
-      {children}
-    </View>
-  );
+  <View
+    style={{
+      flex: 1,
+      height: '100%',
+      marginHorizontal: 16,
+      marginBottom: 16,
+      flexDirection: 'column',
+      alignItems: 'center',
+    }}
+  >
+    {children}
+  </View>
+);
