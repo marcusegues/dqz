@@ -176,6 +176,25 @@ export const de: Locale = {
   },
   information: {
     informationTitle: 'Wissenswertes',
+    customsProceduresMainText: 'Vorgehen am Zoll',
+    customsProceduresSubText:
+      'Weit hinten, fern der Länder Vokalien und Konsonantien',
+    travelDocumentsMainText: 'Reisedokumente',
+    travelDocumentsSubText:
+      'Weit hinten, fern der Länder Vokalien und Konsonantien',
+    declarationMainText: 'Ich habe Waren dabei',
+    declarationSubText:
+      'Weit hinten, fern der Länder Vokalien und Konsonantien',
+    animalsAndPlantsMainText: 'Ich habe Tiere oder Pflanzen dabei',
+    animalsAndPlantsSubText: 'Hinten, leben die Blindtexte.',
+    vehiclesMainText: 'Ich bin mit einem Fahrzeug unterwegs',
+    vehiclesSubText: 'Hinten, leben die Blindtexte.',
+    entryByTrainMainText: 'Einreise per Bahn',
+    entryByTrainSubText:
+      'Weit hinten, fern der Länder Vokalien und Konsonantien',
+    prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
+    prohibitionsAndRestrictionsSubText:
+      'Weit hinten, fern der Länder Vokalien und Konsonantien',
   },
   appInformation: {
     appInfoTitle: 'Über die App',

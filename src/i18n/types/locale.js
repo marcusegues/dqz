@@ -144,6 +144,20 @@ type ModalTranslations = {
 
 type InformationTranslations = {
   informationTitle: string,
+  customsProceduresMainText: string,
+  customsProceduresSubText: string,
+  travelDocumentsMainText: string,
+  travelDocumentsSubText: string,
+  declarationMainText: string,
+  declarationSubText: string,
+  animalsAndPlantsMainText: string,
+  animalsAndPlantsSubText: string,
+  vehiclesMainText: string,
+  vehiclesSubText: string,
+  entryByTrainMainText: string,
+  entryByTrainSubText: string,
+  prohibitionsAndRestrictionsMainText: string,
+  prohibitionsAndRestrictionsSubText: string,
 };
 
 type ReceiptTranslations = {

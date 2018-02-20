@@ -179,6 +179,27 @@ export const fr: Locale = {
   },
   information: {
     informationTitle: 'Informations utiles',
+    customsProceduresMainText: 'Procédant à la douane',
+    customsProceduresSubText:
+      'Au loin, loin des terres, du vocabulaire et des consonnes',
+    travelDocumentsMainText: 'Documents de voyage',
+    travelDocumentsSubText:
+      'Au loin, loin des terres, du vocabulaire et des consonnes',
+    declarationMainText: "J'ai des biens avec moi",
+    declarationSubText:
+      'Au loin, loin des terres, du vocabulaire et des consonnes',
+    animalsAndPlantsMainText: "J'ai des animaux ou des plantes avec moi",
+    animalsAndPlantsSubText:
+      'Au loin, loin des terres, du vocabulaire et des consonnes',
+    vehiclesMainText: 'Je voyage avec un véhicule',
+    vehiclesSubText:
+      'Au loin, loin des terres, du vocabulaire et des consonnes',
+    entryByTrainMainText: 'Entrée en train',
+    entryByTrainSubText:
+      'Au loin, loin des terres, du vocabulaire et des consonnes',
+    prohibitionsAndRestrictionsMainText: 'Interdictions et restrictions',
+    prohibitionsAndRestrictionsSubText:
+      'Au loin, loin des terres, du vocabulaire et des consonnes',
   },
   appInformation: {
     appInfoTitle: "Informations relatives à l'application",

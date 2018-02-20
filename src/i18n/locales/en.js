@@ -170,6 +170,25 @@ export const en: Locale = {
   },
   information: {
     informationTitle: 'Information',
+    customsProceduresMainText: 'Proceeding at the customs',
+    customsProceduresSubText:
+      'Far back, far from the lands, vocabulary and consonants',
+    travelDocumentsMainText: 'Travel documents',
+    travelDocumentsSubText:
+      'Far back, far from the lands, vocabulary and consonants',
+    declarationMainText: 'I have goods with me',
+    declarationSubText:
+      'Far back, far from the lands, vocabulary and consonants',
+    animalsAndPlantsMainText: 'I have animals or plants with me',
+    animalsAndPlantsSubText: 'Behind, the blind texts live',
+    vehiclesMainText: "I'm traveling with a vehicle",
+    vehiclesSubText: 'Behind, the blind texts live',
+    entryByTrainMainText: 'Entry by train',
+    entryByTrainSubText:
+      'Far back, far from the lands, vocabulary and consonants',
+    prohibitionsAndRestrictionsMainText: 'Prohibitions and restrictions',
+    prohibitionsAndRestrictionsSubText:
+      'Far back, far from the lands, vocabulary and consonants',
   },
   appInformation: {
     appInfoTitle: 'About the app',

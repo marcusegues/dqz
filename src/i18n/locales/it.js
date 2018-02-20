@@ -176,6 +176,26 @@ export const it: Locale = {
   },
   information: {
     informationTitle: 'Informazioni utili',
+    customsProceduresMainText: 'Procedendo alla dogana',
+    customsProceduresSubText:
+      'Lontano, lontano dalle terre, vocabolario e consonanti',
+    travelDocumentsMainText: 'Documenti di viaggio',
+    travelDocumentsSubText:
+      'Lontano, lontano dalle terre, vocabolario e consonanti',
+    declarationMainText: 'Ho dei beni con me',
+    declarationSubText:
+      'Lontano, lontano dalle terre, vocabolario e consonanti',
+    animalsAndPlantsMainText: 'Ho animali o piante con me',
+    animalsAndPlantsSubText:
+      'Lontano, lontano dalle terre, vocabolario e consonanti',
+    vehiclesMainText: 'Sto viaggiando con un veicolo',
+    vehiclesSubText: 'Lontano, lontano dalle terre, vocabolario e consonanti',
+    entryByTrainMainText: 'Ingresso in treno',
+    entryByTrainSubText:
+      'Lontano, lontano dalle terre, vocabolario e consonanti',
+    prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
+    prohibitionsAndRestrictionsSubText:
+      'Lontano, lontano dalle terre, vocabolario e consonanti',
   },
   appInformation: {
     appInfoTitle: 'Informazioni sull’app ',

@@ -17,7 +17,7 @@ const Basket = require('../../../assets/icons/info/Basket.png');
 const Pets = require('../../../assets/icons/info/Pets.png');
 const Car = require('../../../assets/icons/info/Car.png');
 const Railway = require('../../../assets/icons/info/Railway.png');
-const Syringe = require('../../../assets/icons/info/Syringe.png');
+const Restricted = require('../../../assets/icons/info/Restricted.png');
 
 export const informationImages: InformationImagesType = {
   customsProcedures: Sign,
@@ -26,7 +26,7 @@ export const informationImages: InformationImagesType = {
   animalsAndPlants: Pets,
   vehicles: Car,
   entryByTrain: Railway,
-  prohibitionsAndRestrictions: Syringe,
+  prohibitionsAndRestrictions: Restricted,
 };
 
 export const informationSubCategories: InformationSubCategoriesType = {
