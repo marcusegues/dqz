@@ -7,7 +7,7 @@ import { MainCategoriesCheckList } from '../../children/MainCategoriesCheckList/
 import type {
   MainCategories,
   MainCategory,
-} from '../../../../../../types/reducers/appReducer';
+} from '../../../../../../types/reducers/declaration';
 import type { DirectionType } from '../../../../QuestionAnswerContainer';
 import type { TFunction } from '../../../../../../types/generalTypes';
 

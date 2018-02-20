@@ -14,6 +14,7 @@ export type Navigation = {
   goBack: (?string) => void,
   navigate: (route: string) => void,
   state: Object,
+  setParams: Object => void,
 };
 
 /**

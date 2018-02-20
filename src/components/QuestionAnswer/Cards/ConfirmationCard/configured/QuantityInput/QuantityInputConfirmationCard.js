@@ -11,7 +11,7 @@ import type {
 } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import type { DirectionType } from '../../../../QuestionAnswerContainer';
 import type { TFunction } from '../../../../../../types/generalTypes';
-import type { MainCategory } from '../../../../../../types/reducers/appReducer';
+import type { MainCategory } from '../../../../../../types/reducers/declaration';
 
 type QuantityInputConfirmationCardProps = {
   onShowQuantityInputModal: (

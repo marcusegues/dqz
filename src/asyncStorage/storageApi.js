@@ -21,7 +21,7 @@ import type {
   Basket,
   People,
 } from '../model/types/basketPeopleAmountsTypes';
-import type { MainCategories } from '../types/reducers/appReducer';
+import type { MainCategories } from '../types/reducers/declaration';
 import {
   emptyBasket,
   initAmounts,

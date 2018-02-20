@@ -17,14 +17,9 @@ import type {
   TobaccoProductsCategory,
   OtherGoodsCategory,
 } from '../../model/types/basketPeopleAmountsTypes';
-import type { VatReport, DutyReport } from '../../model/types/calculationTypes';
 import { emptyBasket } from '../../model/configurationApi';
 import { makePeopleRecord } from '../../model/types/basketPeopleAmountsTypes';
-import {
-  makeDutyReportRecord,
-  makeVatReportRecord,
-} from '../../model/types/calculationTypes';
-import type { CurrencyObject } from '../../model/currencies';
+
 import { makePaymentDataRecord } from '../generalTypes';
 import type { PaymentData } from '../generalTypes';
 
@@ -139,34 +134,24 @@ export const makeSettingsRecord: RecordFactory<
 
 export type Settings = RecordOf<SettingsContent>;
 
-type StateObj = {
+type DeclarationStateObj = {
   people: People,
   basket: Basket,
-  vatReport: VatReport,
-  dutyReport: DutyReport,
   settings: Settings,
-  currencyObject: CurrencyObject,
-  validCurrencies: boolean,
-  currencyDate: Date,
   amounts: Amounts,
   paymentData: PaymentData,
-  receiptId: string,
   receiptEntryTime: string,
 };
 
-export const getInitialState: RecordFactory<StateObj> = Immutable.Record({
+export const getInitialDeclarationState: RecordFactory<
+  DeclarationStateObj
+> = Immutable.Record({
   people: makePeopleRecord(),
   basket: emptyBasket,
-  vatReport: makeVatReportRecord(),
-  dutyReport: makeDutyReportRecord(),
   settings: makeSettingsRecord(),
-  currencyObject: {},
-  validCurrencies: false,
-  currencyDate: new Date('2000-01-01'),
   amounts: Immutable.Map(),
   paymentData: makePaymentDataRecord(),
-  receiptId: '',
   receiptEntryTime: '',
 });
 
-export type State = RecordOf<StateObj>;
+export type DeclarationState = RecordOf<DeclarationStateObj>;

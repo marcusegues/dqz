@@ -47,7 +47,7 @@ const ownStyles = disabled => ({
 
 type RedButtonProps = {
   text: string,
-  onPress: () => void,
+  onPress: () => any,
   confirmationDisabled?: boolean,
   buttonStyle?: {},
 };

@@ -9,7 +9,7 @@ import type {
 import { getTotalPeople } from '../../../model/configurationApi';
 import { hasLargeAmount } from '../../../model/utils';
 import type { Navigation } from '../../../types/generalTypes';
-import type { MainCategories } from '../../../types/reducers/appReducer';
+import type { MainCategories } from '../../../types/reducers/declaration';
 
 const singleOtherGoodsMainCategory = (
   mainCategories: MainCategories

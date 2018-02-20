@@ -4,7 +4,7 @@ import React from 'react';
 import { View } from 'react-native';
 import { QuantityInputConfirmationCard } from '../Cards/ConfirmationCard/configured/QuantityInput/QuantityInputConfirmationCard';
 import { GoodQuantityListModal } from '../../Modals/GoodQuantityListModal/GoodQuantityListModal';
-import type { MainCategory } from '../../../types/reducers/appReducer';
+import type { MainCategory } from '../../../types/reducers/declaration';
 import type {
   Basket,
   Category,

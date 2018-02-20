@@ -47,6 +47,11 @@ class ScreensViewInner extends React.Component<
     };
   }
 
+  setSavedBasketModalVisibleFalse() {
+    this.setState({
+      savedBasketModalVisible: false,
+    });
+  }
   toggleModalVisible() {
     this.setState({
       modalVisible: !this.state.modalVisible,
@@ -62,11 +67,7 @@ class ScreensViewInner extends React.Component<
       currencyPickerModalVisible: !this.state.currencyPickerModalVisible,
     });
   }
-  toggleSavedBasketModalVisible() {
-    this.setState({
-      savedBasketModalVisible: !this.state.savedBasketModalVisible,
-    });
-  }
+
   handleHideTimePickerModal() {
     this.setState({
       timePickerModalVisible: false,
@@ -161,7 +162,8 @@ class ScreensViewInner extends React.Component<
         />
         <SavedBasketModal
           modalVisible={this.state.savedBasketModalVisible}
-          toggleModalVisible={() => this.toggleSavedBasketModalVisible()}
+          setModalVisibleFalse={() => this.setSavedBasketModalVisibleFalse()}
+          navigation={this.props.navigation}
         />
         <LegalNoticeModal
           modalVisible={this.state.legalNoticeModalVisible}

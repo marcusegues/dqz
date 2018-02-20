@@ -11,7 +11,7 @@ import {
   initAmounts,
   initPeople,
 } from '../../../../model/configurationApi';
-import { makeSettingsRecord } from '../../../../types/reducers/appReducer';
+import { makeSettingsRecord } from '../../../../types/reducers/declaration';
 import { currencyExample } from '../../../../model/currencies';
 
 const blankState = {

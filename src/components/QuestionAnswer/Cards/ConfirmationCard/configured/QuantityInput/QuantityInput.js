@@ -10,8 +10,8 @@ import type {
   Basket,
   Category,
 } from '../../../../../../model/types/basketPeopleAmountsTypes';
-import type { MainCategory } from '../../../../../../types/reducers/appReducer';
-import { getSubCategories } from '../../../../../../types/reducers/appReducer';
+import type { MainCategory } from '../../../../../../types/reducers/declaration';
+import { getSubCategories } from '../../../../../../types/reducers/declaration';
 
 const ownStyles = {
   mainContainer: {
