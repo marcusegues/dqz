@@ -16,16 +16,16 @@ const VatAmountListInner = ({
   setContentHeight = () => {},
   flatAmounts,
 }: VatAmountListProps) => (
-    <View
-      onLayout={event => {
-        setContentHeight(event.nativeEvent.layout.height);
-      }}
-    >
-      {flatAmounts.map(a => (
-        <VatAmountListRowItem key={a.id} flatAmount={a} fullWidth />
-      ))}
-    </View>
-  );
+  <View
+    onLayout={event => {
+      setContentHeight(event.nativeEvent.layout.height);
+    }}
+  >
+    {flatAmounts.map(a => (
+      <VatAmountListRowItem key={a.id} flatAmount={a} fullWidth />
+    ))}
+  </View>
+);
 
 VatAmountListInner.defaultProps = {
   setContentHeight: () => {},

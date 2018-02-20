@@ -6,7 +6,8 @@ import type { QuestionFlag } from '../../../../QuestionAnswerContainer';
 
 const complete = require('../../../../../../../assets/images/complete.png');
 const incomplete = require('../../../../../../../assets/images/incomplete.png');
-const mainIcon = require('../../../../../../../assets/icons/travellers.png');
+const mainIcon = require('../../../../../../../assets/icons/zoll.png');
+// const mainIcon = require('../../../../../../../assets/icons/travellers.png');
 
 type QuantityInputAnswerCardProps = {
   onAnswerCardPress: () => void,
