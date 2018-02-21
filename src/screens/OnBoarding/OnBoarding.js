@@ -47,13 +47,14 @@ class OnBoardingInner extends React.Component<
   }
 
   componentWillMount() {
-    fetchSettingsAcceptRate().then(accepted => {
-      if (accepted) {
-        this.setNextScreen('MainMenu');
-      } else {
-        this.setNextScreen('OnBoardingTaxScreen');
-      }
-    });
+    // fetchSettingsAcceptRate().then(accepted => {
+    //   if (accepted) {
+    //     this.setNextScreen('MainMenu');
+    //   } else {
+    //     this.setNextScreen('OnBoardingTaxScreen');
+    //   }
+    // });
+    this.setNextScreen('OnBoardingTaxScreen');
 
     fetchSettingsHasLanguage().then(language => {
       if (language !== KeyNotSet) {
