@@ -232,7 +232,7 @@ export const fr: Locale = {
   },
   legalNoticeInformation: {
     navigationHeaderTitle:
-      "Informations importantes relatives à l'utilisation de l'application",
+      "Info importantes",
     conditions: 'Conditions-cadres',
     importantSoon: "L'essentiel en bref",
     importantSoonText:
