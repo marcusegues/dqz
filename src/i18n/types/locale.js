@@ -79,6 +79,7 @@ type QuantityInputTranslations = {
   recordedOn: string,
   addQuantities: string,
   enterQuantities: string,
+  enterQuantity: string,
 };
 
 type AmountInputTranslations = {
