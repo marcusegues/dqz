@@ -14,7 +14,6 @@ import type { Navigation, TFunction } from '../../types/generalTypes';
 import type { Language } from '../../i18n/types/locale';
 import { analyticsLanguageChanged } from '../../analytics/analyticsApi';
 import {
-  fetchSettingsAcceptRate,
   fetchSettingsHasLanguage,
   storeSettingsHasLanguage,
 } from '../../asyncStorage/storageApi';
