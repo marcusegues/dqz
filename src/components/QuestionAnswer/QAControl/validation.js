@@ -135,7 +135,10 @@ export const onUpdateFactory = (
             ac =>
               `${t(`categories:${ac.category}`)} (${t(
                 `categories:${ac.quantity}`
-              )} ${CategoriesInfo.getIn([ac.category, 'unit'], '')})`
+              )} ${t(
+                `units:${CategoriesInfo.getIn([ac.category, 'unit'], '')}`,
+                { count: ac.quantity }
+              )})`
           )
           .join(', ');
         const showAlert = () => {

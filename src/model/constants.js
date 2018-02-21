@@ -195,7 +195,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'Meat',
     makeCategoryInfoRecord({
       name: 'Fleisch und Fleischzub',
-      unit: 'kg',
+      unit: 'kilo',
       icon: 'meat',
     }),
   ],
@@ -203,7 +203,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'Butter',
     makeCategoryInfoRecord({
       name: 'Butter und Rahm',
-      unit: 'kg/Liter',
+      unit: 'kiloOrLiter',
       icon: 'butter',
     }),
   ],
@@ -211,7 +211,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'Oils',
     makeCategoryInfoRecord({
       name: 'Öle, Fette, Margarine zu Speisezwecken',
-      unit: 'kg/Liter',
+      unit: 'kiloOrLiter',
       icon: 'oil',
     }),
   ],
@@ -219,7 +219,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'OtherFood',
     makeCategoryInfoRecord({
       name: 'Sonstige Lebensmittel & Alkoholfreie Getranke',
-      unit: 'kg/Liter',
+      unit: 'kiloOrLiter',
       icon: 'oil',
     }),
   ],
@@ -227,7 +227,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'Other',
     makeCategoryInfoRecord({
       name: 'Sonstige Waren',
-      unit: '',
+      unit: 'noUnit',
       icon: 'oil',
     }),
   ],
@@ -235,7 +235,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'AlcSoft',
     makeCategoryInfoRecord({
       name: 'Alkoholische Getränke, Alkoholgehalt bis 18% Vol.',
-      unit: 'Liter',
+      unit: 'liter',
       icon: 'beer',
     }),
   ],
@@ -243,7 +243,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'AlcHard',
     makeCategoryInfoRecord({
       name: 'Alkoholische Getränke, Alkoholgehalt über 18% Vol.',
-      unit: 'Liter',
+      unit: 'liter',
       icon: 'vodka',
     }),
   ],
@@ -251,7 +251,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'Cigarettes',
     makeCategoryInfoRecord({
       name: 'Zigaretten/Zigarren',
-      unit: 'Stück',
+      unit: 'unit',
       icon: 'cigarette',
     }),
   ],
@@ -259,7 +259,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'Tobacco',
     makeCategoryInfoRecord({
       name: 'Andere Tabakfabrikate',
-      unit: 'Gramm',
+      unit: 'gram',
       icon: 'cigarette',
     }),
   ],
@@ -267,7 +267,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'Meds',
     makeCategoryInfoRecord({
       name: 'Medikamente',
-      unit: '',
+      unit: 'noUnit',
       icon: 'cigarette',
     }),
   ],
@@ -275,7 +275,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'Books',
     makeCategoryInfoRecord({
       name: 'Bücher',
-      unit: '',
+      unit: 'noUnit',
       icon: 'cigarette',
     }),
   ],
@@ -283,7 +283,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'Magazines',
     makeCategoryInfoRecord({
       name: 'Zeitschriften',
-      unit: '',
+      unit: 'noUnit',
       icon: 'cigarette',
     }),
   ],
@@ -291,7 +291,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'Flowers',
     makeCategoryInfoRecord({
       name: 'Schnittblumen & Pflanzen',
-      unit: '',
+      unit: 'noUnit',
       icon: 'cigarette',
     }),
   ],
@@ -299,7 +299,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'AnimalFeed',
     makeCategoryInfoRecord({
       name: 'Tierfutter',
-      unit: '',
+      unit: 'noUnit',
       icon: 'cigarette',
     }),
   ],
@@ -307,7 +307,7 @@ export const CategoriesInfo: CategoryInfoType = Immutable.Map([
     'Fertilizer',
     makeCategoryInfoRecord({
       name: 'Dünger',
-      unit: '',
+      unit: 'noUnit',
       icon: 'cigarette',
     }),
   ],

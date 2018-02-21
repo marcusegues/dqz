@@ -57,7 +57,7 @@ type TimePickerModalProps = {
 };
 
 class TimePickerModalInner extends React.Component<
-  TimePickerModalProps & { t: TFunction },
+  TimePickerModalProps & { t: TFunction, i18n: { language: string } },
   PickerState
 > {
   static defaultProps = {
@@ -79,7 +79,8 @@ class TimePickerModalInner extends React.Component<
   }
 
   render() {
-    const { t, modalVisible, onHideModal, onSelectTime } = this.props;
+    const { t, i18n, modalVisible, onHideModal, onSelectTime } = this.props;
+    const { language } = i18n;
     const { date, hours, minutes } = this.state;
     const entryTime = DateTime.fromFormat(
       `${date} ${hours}:${minutes}`,
@@ -170,8 +171,14 @@ class TimePickerModalInner extends React.Component<
               style={ownStyles.validUntilText}
               text={t(['timePickerRegistrationValidUntilSameDay'], {
                 date: entryTime.toFormat('dd.MM.y'),
-                startTime: entryTime.toFormat('HH:mm'),
-                endTime: entryTimePlus.toFormat('HH:mm'),
+                startTime:
+                  language === 'fr'
+                    ? entryTime.toFormat("HH'h'mm")
+                    : entryTime.toFormat('HH:mm'),
+                endTime:
+                  language === 'fr'
+                    ? entryTimePlus.toFormat("HH'h'mm")
+                    : entryTimePlus.toFormat('HH:mm'),
               })}
             />
           ) : (
@@ -179,9 +186,15 @@ class TimePickerModalInner extends React.Component<
               style={ownStyles.validUntilText}
               text={t(['timePickerRegistrationValidUntilDifferentDay'], {
                 startDate: entryTime.toFormat('dd.MM.y'),
-                startTime: entryTime.toFormat('HH:mm'),
+                startTime:
+                  language === 'fr'
+                    ? entryTime.toFormat(`HH${'h'}mm`)
+                    : entryTime.toFormat(`HH:mm`),
                 endDate: entryTimePlus.toFormat('dd.MM.y'),
-                endTime: entryTimePlus.toFormat('HH:mm'),
+                endTime:
+                  language === 'fr'
+                    ? entryTimePlus.toFormat(`HH${'h'}mm`)
+                    : entryTimePlus.toFormat(`HH:mm`),
               })}
             />
           )}

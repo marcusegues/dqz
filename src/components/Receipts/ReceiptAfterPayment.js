@@ -56,6 +56,7 @@ type ReceiptAfterPaymentScreenState = {
 
 type ReceiptAfterPaymentScreenProps = {
   t: TFunction,
+  i18n: { language: string },
   paymentData: PaymentData,
   receiptId: string,
 };
@@ -64,7 +65,12 @@ class ReceiptAfterPaymentInner extends React.Component<
   ReceiptAfterPaymentScreenProps,
   ReceiptAfterPaymentScreenState
 > {
-  constructor(props: ReceiptAfterPaymentScreenProps & { t: TFunction }) {
+  constructor(
+    props: ReceiptAfterPaymentScreenProps & {
+      t: TFunction,
+      i18n: { language: string },
+    }
+  ) {
     super(props);
     this.state = {
       // $FlowFixMe
@@ -88,7 +94,7 @@ class ReceiptAfterPaymentInner extends React.Component<
   }
 
   getValidUntilBlockText() {
-    const { t, paymentData } = this.props;
+    const { t, i18n, paymentData } = this.props;
     const receiptEntryTime = DateTime.fromISO(
       this.state.receipt.receiptEntryTime,
       {
@@ -108,8 +114,14 @@ class ReceiptAfterPaymentInner extends React.Component<
           key="receiptValidOnDate"
           text={`${t('receiptValidOnDate', {
             date: receiptEntryTime.toLocaleString(DateTime.DATE_FULL),
-            startTime: receiptEntryTime.toFormat('HH:mm'),
-            endTime: receiptEntryTimePlus.toFormat('HH:mm'),
+            startTime:
+              i18n.language === 'fr'
+                ? receiptEntryTime.toFormat("HH'h'mm")
+                : receiptEntryTime.toFormat('HH:mm'),
+            endTime:
+              i18n.language === 'fr'
+                ? receiptEntryTimePlus.toFormat("HH'h'mm")
+                : receiptEntryTimePlus.toFormat('HH:mm'),
           })}`}
           style={ownStyles.cardRowText}
         />,

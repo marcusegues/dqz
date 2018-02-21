@@ -352,4 +352,16 @@ export const fr: Locale = {
     acceptance:
       "En utilisant l'application, vous acceptez que le taux de TVA est de 7,7%; est également appliqué aux biens effectivement soumis au taux d'imposition réduit (aliments, aliments pour animaux, médicaments et livres).",
   },
+  units: {
+    kilo: 'kg',
+    kilo_plural: 'kgs',
+    kiloOrLiter: 'kg/litre',
+    kiloOrLiter_plural: 'kgs/litres',
+    liter: 'litre',
+    liter_plural: 'litres',
+    unit: 'unité',
+    unit_plural: 'unités',
+    gram: 'gramme',
+    gram_plural: 'grammes',
+  },
 };
