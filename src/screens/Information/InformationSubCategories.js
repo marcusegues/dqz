@@ -41,16 +41,17 @@ class InformationSubCategoriesInner extends React.Component<{
       <MainContentContainer>
         <ScrollViewCard>
           <Text>{JSON.stringify(infoCategory)}</Text>
+          <Text>{`\u2022 ${JSON.stringify(infoCategory)}`}</Text>
 
-          {infoCategory.map(cat => (
-            <InformationRow
-              key={cat}
-              source={informationImages[cat]}
-              mainText={t(`${cat}MainText`)}
-              subText={t(`${cat}SubText`)}
-              rowOnPress={() => navigation.navigate('UnderConstruction')}
-            />
-          ))}
+          {/*{infoCategory.map(cat => (*/}
+          {/*<InformationRow*/}
+          {/*key={cat}*/}
+          {/*source={informationImages[cat]}*/}
+          {/*mainText={t(`${cat}MainText`)}*/}
+          {/*subText={t(`${cat}SubText`)}*/}
+          {/*rowOnPress={() => navigation.navigate('UnderConstruction')}*/}
+          {/*/>*/}
+          {/*))}*/}
         </ScrollViewCard>
       </MainContentContainer>
     );
