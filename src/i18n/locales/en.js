@@ -68,12 +68,15 @@ export const en: Locale = {
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Which goods do you want to declare?',
+    mainCategoriesNotYetAnswered: 'Main categories: need to be answered',
   },
   quantityInput: {
     quantityInput: 'Enter quantity',
     recordedOn: 'recorded on {{value}}',
     addQuantities: 'Add quantities',
     enterQuantities: 'Enter the quantities of all {{value}} here',
+    enterQuantity: 'Enter quantity',
+    enterQuantitiesButter: 'Enter the quantities of all {{value}} here',
   },
   amountInput: {
     amountInput: 'Please enter here the value of all transported goods.',
@@ -128,8 +131,11 @@ export const en: Locale = {
     closeModalText: 'Close',
     timePickerTitle: 'Select the period of entry',
     timePickerSubTitle: 'When would you like to cross the border?',
-    timePickerRegistrationValidUntil:
-      'Please be sure to enter with this registration within two hours. This registration is valid until {{date}} at {{time}}.',
+
+    timePickerRegistrationValidUntilSameDay:
+      'Please be sure to enter with this registration within two hours. This registration is valid on {{date}} from {{startTime}} to {{endTime}}.',
+    timePickerRegistrationValidUntilDifferentDay:
+      'Please be sure to enter with this registration within two hours. This registration is valid from {{startDate}} at {{startTime}} to {{endDate}} at {{endTime}}.',
     timePickerTakeOverThePeriod: 'Take over the period',
     timePickerTimePrefix: '',
     recordTheAmountOfMeat: 'Record the amount of meat you carry with you:',
