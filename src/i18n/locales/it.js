@@ -67,6 +67,7 @@ export const it: Locale = {
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Quali merci si desidera dichiarare?',
+    mainCategoriesNotYetAnswered: 'Categoria merceologica: dati mancanti',
   },
   quantityInput: {
     quantityInput: 'Ingresso quantità',

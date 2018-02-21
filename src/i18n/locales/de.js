@@ -69,6 +69,8 @@ export const de: Locale = {
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Welche Waren möchten Sie anmelden?',
+    mainCategoriesNotYetAnswered:
+      'Warenkategorien - muss noch beantwortet werden',
   },
   quantityInput: {
     quantityInput: 'Mengeneingabe',

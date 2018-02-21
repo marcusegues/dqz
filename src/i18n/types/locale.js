@@ -71,6 +71,7 @@ type PeopleInputTranslations = {
 
 type MainCategoriesInputTranslations = {
   mainCategoriesQuestion: string,
+  mainCategoriesNotYetAnswered: string,
 };
 
 type QuantityInputTranslations = {
