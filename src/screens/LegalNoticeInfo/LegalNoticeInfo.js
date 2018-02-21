@@ -15,7 +15,6 @@ import { ScrollViewCard } from '../../components/General Components/ScrollViewCa
 import { scale, verticalScale } from '../../styles/Scaling';
 import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
 import { AppInfoSubText } from '../AppInfo/subComponents/AppInfoSubText';
-import { ownStyles } from '../../components/QuestionAnswer/Cards/ConfirmationCard/children/PeopleInputRow/configured/MinorInputRow';
 
 const styles = {
   topTouchableContainer: {
