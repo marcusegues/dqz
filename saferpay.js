@@ -111,26 +111,28 @@ export default class Saferpay {
       },
     };
 
-    return (
-      fetch(
-        this.saferpayConfig.baseURL +
-          this.saferpayConfig.requestURLs.paymentPageInitialize,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: this.saferpayConfig.authorization,
-          },
-          method: 'POST',
-          body: JSON.stringify(requestJson),
-        }
-      )
-        // need to check response status
-        .then(response => response.json())
-        .catch(error => {
-          // TODO: add logger/amplitude
-          console.error(error);
-        })
-    );
+    return fetch(
+      this.saferpayConfig.baseURL +
+        this.saferpayConfig.requestURLs.paymentPageInitialize,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: this.saferpayConfig.authorization,
+        },
+        method: 'POST',
+        body: JSON.stringify(requestJson),
+      }
+    )
+      .then(response => {
+        // Error Handling docs https://saferpay.github.io/jsonapi/#errorhandling
+        if (response.status === 200) return response.json();
+        return response.json().then(res => Promise.reject(res.ErrorDetail));
+      })
+      .catch(error => {
+        // TODO: add logger/amplitude
+        console.log('Saferpay initializePayment error: ', error);
+        return Promise.reject(error);
+      });
   }
   // With the PaymentPage Assert, the results of a transaction are requested.
   // The returned data may be stored on the merchant side.
@@ -151,25 +153,27 @@ export default class Saferpay {
       Token: token,
     };
 
-    return (
-      fetch(
-        this.saferpayConfig.baseURL +
-          this.saferpayConfig.requestURLs.PaymentPageAssert,
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: this.saferpayConfig.authorization,
-          },
-          method: 'POST',
-          body: JSON.stringify(requestJson),
-        }
-      )
-        // need to check response status
-        .then(response => response.json())
-        .catch(error => {
-          // TODO: add logger/amplitude
-          console.error(error);
-        })
-    );
+    return fetch(
+      this.saferpayConfig.baseURL +
+        this.saferpayConfig.requestURLs.PaymentPageAssert,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: this.saferpayConfig.authorization,
+        },
+        method: 'POST',
+        body: JSON.stringify(requestJson),
+      }
+    )
+      .then(response => {
+        // Error Handling docs https://saferpay.github.io/jsonapi/#errorhandling
+        if (response.status === 200) return response.json();
+        return response.json().then(res => Promise.reject(res.ErrorDetail));
+      })
+      .catch(error => {
+        // TODO: add logger/amplitude
+        console.log('Saferpay assertPayment error: ', error);
+        return Promise.reject(error);
+      });
   }
 }
