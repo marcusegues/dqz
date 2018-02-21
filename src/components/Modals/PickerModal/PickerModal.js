@@ -177,9 +177,7 @@ class PickerModalInner extends React.Component<
               >
                 <CardHeaderText text={t('quantityInput:enterQuantity')} />
               </View>
-              <View>
-                <CardHeaderSubText text={this.categorySubtextTitle()} />
-              </View>
+              <CardHeaderSubText text={this.categorySubtextTitle()} />
               {onlyStandardInput && meat ? (
                 <View style={pickerModalStyle.textInputContainer}>
                   <TextInput
