@@ -114,31 +114,27 @@ const GoodInputRowInner = ({
   mainCategory,
   t,
 }: GoodInputRowProps & { t: TFunction }) => (
-    <Touchable onPress={onShowQuantityInputModal}>
-      <View style={ownStyles.container}>
-        <CategoryIcon source={getSource(category)} />
-        <View style={ownStyles.rowMainTextContainer}>
-          <CardRowText text={t(`categories:${category}`)} />
-          <CardRowSubText text={t(`mainCategories:${mainCategory}`)} />
-          <View style={{ marginTop: 10 }}>
-            <QuantityIcon
-              quantity={totalQuantity.toFixed(2)}
-              unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
-                count: totalQuantity,
-              })}
-            />
-          </View>
-        </View>
-        <View style={ownStyles.chevronRight}>
-          <Entypo
-            name="chevron-right"
-            size={moderateScale(30)}
-            color="#24253D"
+  <Touchable onPress={onShowQuantityInputModal}>
+    <View style={ownStyles.container}>
+      <CategoryIcon source={getSource(category)} />
+      <View style={ownStyles.rowMainTextContainer}>
+        <CardRowText text={t(`categories:${category}`)} />
+        <CardRowSubText text={t(`mainCategories:${mainCategory}`)} />
+        <View style={{ marginTop: 10 }}>
+          <QuantityIcon
+            quantity={totalQuantity.toFixed(2)}
+            unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
+              count: totalQuantity,
+            })}
           />
         </View>
       </View>
-    </Touchable>
-  );
+      <View style={ownStyles.chevronRight}>
+        <Entypo name="chevron-right" size={moderateScale(30)} color="#24253D" />
+      </View>
+    </View>
+  </Touchable>
+);
 
 export const GoodInputRow = (translate([
   'mainCategories',
