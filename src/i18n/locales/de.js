@@ -228,7 +228,7 @@ export const de: Locale = {
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informationen zum Gebrauch der App',
-    conditions: 'Rahmenbedingungen',
+    conditions: 'Nutzungsbedingungen',
     importantSoon: 'Wichtiges in Kürze',
     importantSoonText:
       'Sie dürfen die App für die gleiche Person bzw. die gleichen Personen nur einmal täglich (Kalendertag) einsetzen.\n' +
