@@ -139,9 +139,9 @@ export const fr: Locale = {
     timePickerTitle: "Choix de l'heure du passage de la frontière",
     timePickerSubTitle: 'Quand souhaitez-vous traverser la frontière?',
     timePickerRegistrationValidUntilSameDay:
-      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{date}} von {{startTime}} bis zum {{endTime}} Uhr gültig.',
+      'La quittance douane est valable le {{date}} de {{startTime}} à {{endTime}}.',
     timePickerRegistrationValidUntilDifferentDay:
-      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{startDate}} von {{startTime}} bis {{endDate}} um {{endTime}} Uhr gültig.',
+      'La quittance douane est valable le {{date}} de {{startTime}} à {{endTime}}.',
     timePickerTakeOverThePeriod: 'Reprendre la période selectionnée',
     timePickerTimePrefix: 'Heure',
     recordTheAmountOfMeat:
@@ -220,7 +220,7 @@ export const fr: Locale = {
     reachability: 'Joignabilité:',
     workingHours: 'Lundi – Vendredi, 8.00 – 11.30 et 13.30 a 17.00',
     generalCustomsDirectorate:
-      'Administration fédérale des douanes AFD\nMonbijoustrasse 40\n' +
+      'Monbijoustrasse 40\n' +
       '3003 Bern\n' +
       'http://www.ezv.admin.ch',
     designAndDevelopment: 'Conception et développement',
