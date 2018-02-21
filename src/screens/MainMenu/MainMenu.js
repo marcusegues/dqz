@@ -100,7 +100,7 @@ class MainMenuInner extends React.Component<
           <MenuTile
             icon="info"
             text={t('guideline')}
-            onPress={() => navigation.navigate('Information')}
+            onPress={() => navigation.navigate('InformationMainCategories')}
           >
             <Image
               source={customs}

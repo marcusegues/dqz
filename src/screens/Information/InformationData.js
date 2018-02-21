@@ -40,8 +40,10 @@ export const informationSubCategories: InformationSubCategoriesType = {
 };
 
 export const informationNavigateTo = {
+  // customsProcedures: 'noSubCategories',
   customsProcedures: 'CustomsProcedures',
-  travelDocuments: 'noSubCategories',
+  travelDocuments: 'TravelDocuments',
+  // travelDocuments: 'noSubCategories',
   declaration: declarationSubCategories,
   animalsAndPlants: animalsAndPlantsSubCategories,
   vehicles: vehiclesSubCategories,

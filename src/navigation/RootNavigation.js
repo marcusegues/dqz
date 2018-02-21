@@ -30,7 +30,10 @@ import { AppInfo } from '../screens/AppInfo/AppInfo';
 import { LegalNoticeInfo } from '../screens/LegalNoticeInfo/LegalNoticeInfo';
 import { HomeIcon } from '../components/Headers/subcomponents/HomeIcon';
 import { DownloadIcon } from '../components/Headers/subcomponents/DownloadIcon';
-import { Information } from '../screens/Information/InformationMainCategories';
+import { InformationMainCategories } from '../screens/Information/InformationMainCategories';
+import { InformationSubCategories } from '../screens/Information/InformationSubCategories';
+import { CustomsProcedures } from '../screens/Information/InformationScreens/CustomsProcedures';
+import { TravelDocuments } from '../screens/Information/InformationScreens/TravelDocuments';
 import { SearchIcon } from '../components/Headers/subcomponents/SearchIcon';
 import type { Navigation } from '../types/generalTypes';
 import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
@@ -117,8 +120,29 @@ export const stackNavigatorScreens = {
   UnderConstruction: {
     screen: UnderConstruction,
   },
-  Information: {
-    screen: Information,
+  InformationMainCategories: {
+    screen: InformationMainCategories,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: <HomeIcon navigation={navigation} />,
+      headerRight: <SearchIcon navigation={navigation} />,
+    }),
+  },
+  InformationSubCategories: {
+    screen: InformationSubCategories,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: <HomeIcon navigation={navigation} />,
+      headerRight: <SearchIcon navigation={navigation} />,
+    }),
+  },
+  CustomsProcedures: {
+    screen: CustomsProcedures,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: <HomeIcon navigation={navigation} />,
+      headerRight: <SearchIcon navigation={navigation} />,
+    }),
+  },
+  TravelDocuments: {
+    screen: TravelDocuments,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: <HomeIcon navigation={navigation} />,
       headerRight: <SearchIcon navigation={navigation} />,

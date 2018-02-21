@@ -11,11 +11,11 @@ import {
 } from './InformationData';
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { Navigation, TFunction } from '../../types/generalTypes';
-import { analyticsScreenMounted } from '../../analytics/analyticsApi';
-import { infoCategories, InfoCategory } from './types/information';
+import { InfoCategory, InfoSubCategories } from './types/information';
 import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
+import { Text } from 'react-native';
 
-class InformationMainCategoriesInner extends React.Component<{
+class InformationSubCategoriesInner extends React.Component<{
   t: TFunction,
   navigation: Navigation,
 }> {
@@ -25,11 +25,6 @@ class InformationMainCategoriesInner extends React.Component<{
     ),
   });
 
-  componentWillMount() {
-    analyticsScreenMounted('Information');
-  }
-
-  // navigateTo(cat: informationCategories) {
   navigateTo(cat: InfoCategory) {
     const { navigate } = this.props.navigation;
     if (informationSubCategories[cat] === 'noSubCategories') {
@@ -41,16 +36,19 @@ class InformationMainCategoriesInner extends React.Component<{
 
   render() {
     const { t, navigation } = this.props;
+    const { infoCategory } = navigation.state.params;
     return (
       <MainContentContainer>
         <ScrollViewCard>
-          {infoCategories.map(cat => (
+          <Text>{JSON.stringify(infoCategory)}</Text>
+
+          {infoCategory.map(cat => (
             <InformationRow
               key={cat}
               source={informationImages[cat]}
               mainText={t(`${cat}MainText`)}
               subText={t(`${cat}SubText`)}
-              rowOnPress={() => this.navigateTo(cat)}
+              rowOnPress={() => navigation.navigate('UnderConstruction')}
             />
           ))}
         </ScrollViewCard>
@@ -59,6 +57,6 @@ class InformationMainCategoriesInner extends React.Component<{
   }
 }
 
-export const InformationMainCategories = (translate(['information'])(
-  InformationMainCategoriesInner
+export const InformationSubCategories = (translate(['information'])(
+  InformationSubCategoriesInner
 ): ComponentType<{}>);
