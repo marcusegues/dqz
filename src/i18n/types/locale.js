@@ -71,6 +71,7 @@ type PeopleInputTranslations = {
 
 type MainCategoriesInputTranslations = {
   mainCategoriesQuestion: string,
+  mainCategoriesNotYetAnswered: string,
 };
 
 type QuantityInputTranslations = {
@@ -78,6 +79,7 @@ type QuantityInputTranslations = {
   recordedOn: string,
   addQuantities: string,
   enterQuantities: string,
+  enterQuantity: string,
 };
 
 type AmountInputTranslations = {
@@ -134,7 +136,8 @@ type ModalTranslations = {
   savedBasketNewShoppingCart: string,
   timePickerTitle: string,
   timePickerSubTitle: string,
-  timePickerRegistrationValidUntil: string,
+  timePickerRegistrationValidUntilSameDay: string,
+  timePickerRegistrationValidUntilDifferentDay: string,
   timePickerTakeOverThePeriod: string,
   closeModalText: string,
   timePickerTimePrefix: string,

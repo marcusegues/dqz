@@ -68,12 +68,15 @@ export const fr: Locale = {
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Quelles marchandises souhaitez-vous déclarer?',
+    mainCategoriesNotYetAnswered:
+      'Catégorie de marchandises : données manquantes',
   },
   quantityInput: {
     quantityInput: 'Entrée de quantité',
     recordedOn: 'enregistré sur',
     addQuantities: 'Ajouter des quantités',
     enterQuantities: 'Entrez les quantités de tous {{value}} ici',
+    enterQuantity: 'Entrer la quantité',
     enterQuantitiesButter: 'Entrez les quantités de tous {{value}} ici',
   },
   amountInput: {
@@ -132,11 +135,13 @@ export const fr: Locale = {
       'Souhaitez-vous continuer avec le panier actuel ou recommencer avec un panier vide?',
     savedBasketTotalCost: 'Coût total: {{value}} francs',
     savedBasketNewShoppingCart: 'Nouveau panier',
-    closeModalText: 'Schliessen',
+    closeModalText: 'Fermer',
     timePickerTitle: "Choix de l'heure du passage de la frontière",
     timePickerSubTitle: 'Quand souhaitez-vous traverser la frontière?',
-    timePickerRegistrationValidUntil:
-      'La quittance douane est valable le {{date}} à {{time}}',
+    timePickerRegistrationValidUntilSameDay:
+      'La quittance douane est valable le {{date}} de {{startTime}} à {{endTime}}.',
+    timePickerRegistrationValidUntilDifferentDay:
+      'La quittance douane est valable le {{date}} de {{startTime}} à {{endTime}}.',
     timePickerTakeOverThePeriod: 'Reprendre la période selectionnée',
     timePickerTimePrefix: 'Heure',
     recordTheAmountOfMeat:
@@ -215,7 +220,7 @@ export const fr: Locale = {
     reachability: 'Joignabilité:',
     workingHours: 'Lundi – Vendredi, 8.00 – 11.30 et 13.30 a 17.00',
     generalCustomsDirectorate:
-      'Administration fédérale des douanes AFD\nMonbijoustrasse 40\n' +
+      'Monbijoustrasse 40\n' +
       '3003 Bern\n' +
       'http://www.ezv.admin.ch',
     designAndDevelopment: 'Conception et développement',
@@ -227,7 +232,7 @@ export const fr: Locale = {
   },
   legalNoticeInformation: {
     navigationHeaderTitle:
-      "Informations importantes relatives à l'utilisation de l'application",
+      "Info importantes",
     conditions: 'Conditions-cadres',
     importantSoon: "L'essentiel en bref",
     importantSoonText:
