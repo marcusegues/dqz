@@ -134,9 +134,9 @@ export const it: Locale = {
     timePickerTitle: 'Scelta del passaggio in frontiera:',
     timePickerSubTitle: 'Quando desidera attraversare la frontiera?',
     timePickerRegistrationValidUntilSameDay:
-      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{date}} von {{startTime}} bis zum {{endTime}} Uhr gültig.',
+      'Questa registrazione è valida per {{date}} da {{startTime}} a {{endTime}} in punto.',
     timePickerRegistrationValidUntilDifferentDay:
-      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{startDate}} von {{startTime}} bis {{endDate}} um {{endTime}} Uhr gültig.',
+      'Questo accesso è valido per {{startDate}} da {{startTime}} a {{endDate}} al {{endTime}} in punto.',
     timePickerTakeOverThePeriod: 'Prendi il controllo del periodo',
     timePickerTimePrefix: 'ora',
     recordTheAmountOfMeat: 'Registra la quantità di carne che porti con te:',
