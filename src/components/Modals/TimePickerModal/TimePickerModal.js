@@ -57,7 +57,7 @@ type TimePickerModalProps = {
 };
 
 class TimePickerModalInner extends React.Component<
-  TimePickerModalProps & { t: TFunction, i18n: any },
+  TimePickerModalProps & { t: TFunction, i18n: { language: string } },
   PickerState
 > {
   static defaultProps = {
