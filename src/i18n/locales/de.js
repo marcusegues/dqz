@@ -211,9 +211,7 @@ export const de: Locale = {
     reachability: 'Erreichbarkeit:',
     workingHours: 'Montag – Freitag, 8.00 – 11.30 und 13.30 bis 17.00',
     generalCustomsDirectorate:
-      'Monbijoustrasse 40\n' +
-      '3003 Bern\n' +
-      'http://www.ezv.admin.ch',
+      'Monbijoustrasse 40\n3003 Bern\nhttp://www.ezv.admin.ch',
     designAndDevelopment: 'Design & Entwicklung',
     ambriteAddress:
       'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch\nhttp://www.ambrite.ch',

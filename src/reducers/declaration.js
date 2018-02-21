@@ -27,7 +27,6 @@ export const declaration = (
   state: DeclarationState = getInitialDeclarationState(),
   action: DeclarationAction
 ): DeclarationState => {
-  debugger;
   switch (action.type) {
     case 'RESET_DECLARATION': {
       const peopleReset = state.set('people', modelApi.initPeople);

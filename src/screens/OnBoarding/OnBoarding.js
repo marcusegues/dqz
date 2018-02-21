@@ -75,7 +75,7 @@ class OnBoardingInner extends React.Component<
     const { t, i18n, navigation } = this.props;
     const { systemLanguage, nextScreen, settingsHasLanguage } = this.state;
     return (
-      <OnBoardingContainer welcomeText={!settingsHasLanguage}>
+      <OnBoardingContainer>
         <OnBoardingParagraph
           text={
             settingsHasLanguage
