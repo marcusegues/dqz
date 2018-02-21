@@ -188,12 +188,12 @@ class TimePickerModalInner extends React.Component<
                 startDate: entryTime.toFormat('dd.MM.y'),
                 startTime:
                   language === 'fr'
-                    ? entryTime.toFormat(`HH${'h'}mm`)
+                    ? entryTime.toFormat("HH'h'mm")
                     : entryTime.toFormat(`HH:mm`),
                 endDate: entryTimePlus.toFormat('dd.MM.y'),
                 endTime:
                   language === 'fr'
-                    ? entryTimePlus.toFormat(`HH${'h'}mm`)
+                    ? entryTimePlus.toFormat("HH'h'mm")
                     : entryTimePlus.toFormat(`HH:mm`),
               })}
             />
