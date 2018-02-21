@@ -76,6 +76,7 @@ export const fr: Locale = {
     recordedOn: 'enregistré sur',
     addQuantities: 'Ajouter des quantités',
     enterQuantities: 'Entrez les quantités de tous {{value}} ici',
+    enterQuantitiesButter: 'Entrez les quantités de tous {{value}} ici',
   },
   amountInput: {
     amountInput:
