@@ -14,6 +14,7 @@ import { CategoriesInfo } from '../../../../model/constants';
 import { Row } from '../../../Rows/Row';
 import type { Category } from '../../../../model/types/basketPeopleAmountsTypes';
 import { rowStyles } from '../../../Rows/styles/rowStyles';
+import type { TFunction } from '../../../../types/generalTypes';
 
 type QuantityRowInnerProps = {
   quantity: number,
@@ -23,18 +24,19 @@ type QuantityRowInnerProps = {
 };
 
 const QuantityRowInner = ({
+  t,
   quantity,
   onDelete,
   category,
   borderTop = false,
-}: QuantityRowInnerProps) => (
+}: QuantityRowInnerProps & { t: TFunction }) => (
   <Row borderTop={borderTop}>
     <View style={rowStyles.rowContent}>
       <View style={{ flex: 1 }}>
         <CardRowText
-          text={`${quantity.toFixed(2)} ${CategoriesInfo.getIn(
-            [category, 'unit'],
-            ''
+          text={`${quantity.toFixed(2)} ${t(
+            `units:${CategoriesInfo.getIn([category, 'unit'], '')}`,
+            { count: quantity }
           )}`}
         />
       </View>
@@ -45,10 +47,6 @@ const QuantityRowInner = ({
   </Row>
 );
 
-QuantityRowInner.defaultProps = {
-  borderTop: false,
-};
-
-export const QuantityRow = (translate(['quantityInput'])(
+export const QuantityRow = (translate(['units'])(
   QuantityRowInner
 ): ComponentType<QuantityRowInnerProps>);

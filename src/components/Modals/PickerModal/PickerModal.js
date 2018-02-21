@@ -146,7 +146,7 @@ class PickerModalInner extends React.Component<
     } = this.props;
     const standardInput = selected === 'standardInput';
     const customInput = selected === 'customInput';
-    const unit = CategoriesInfo.getIn([category, 'unit'], '');
+
     const categoryName = CategoriesInfo.getIn([category, 'name'], '');
     const meat = categoryName === 'Fleisch und Fleischzub';
 
@@ -159,6 +159,10 @@ class PickerModalInner extends React.Component<
     const amount: number = onlyStandardInput
       ? inputCurrentAmount
       : currentAmount;
+
+    const unit = t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
+      count: amount,
+    });
 
     return (
       <AppModal
@@ -378,6 +382,6 @@ class PickerModalInner extends React.Component<
   }
 }
 
-export const PickerModal = (translate(['modal', 'quantityInput'])(
+export const PickerModal = (translate(['modal', 'quantityInput', 'units'])(
   PickerModalInner
 ): ComponentType<PickerModalProps>);

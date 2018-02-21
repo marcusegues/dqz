@@ -303,4 +303,16 @@ export const en: Locale = {
     acceptance:
       'By using the app, you accept that the VAT rate is 7.7%; is also applied to goods that are actually subject to the reduced tax rate (food, animal feed, medicines and books).',
   },
+  units: {
+    kilo: 'kg',
+    kilo_plural: 'kgs',
+    kiloOrLiter: 'kg/liter',
+    kiloOrLiter_plural: 'kgs/liters',
+    liter: 'liter',
+    liter_plural: 'liters',
+    unit: 'unit',
+    unit_plural: 'units',
+    gram: 'gram',
+    gram_plural: 'grams',
+  },
 };
