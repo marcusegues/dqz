@@ -1,3 +1,4 @@
+/* global alert */
 /* eslint-disable react/no-unused-state,no-console */
 // @flow
 import React from 'react';
@@ -165,7 +166,9 @@ class PaymentContainerInner extends React.Component<
               paymentStatus: 'start',
             });
           })
-          .catch(error => console.log('Error is', error));
+          .catch(error => {
+            console.log('Saferpay error: ', error);
+          });
       });
     }
   }
@@ -273,7 +276,7 @@ class PaymentContainerInner extends React.Component<
                   this.props.navigation.navigate('ReceiptAfterPayment')
                 );
               })
-              .catch(error => console.log('Error is', error));
+              .catch(error => console.log('Saferpay error:', error));
           }
         }
       );
