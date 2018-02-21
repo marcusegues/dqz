@@ -78,7 +78,7 @@ export const de: Locale = {
   },
   amountInput: {
     amountInput:
-      'Bitte erfassen Sie hier den Wert sämtlicher mitgeführten Waren.',
+      'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Ware.',
     amountInputLargeItem:
       'Führen Sie einzelne Gegenstände mit einem Wert von über {{value}} Franken mit?',
     amountInputLargeItemGreyBox:
@@ -116,11 +116,11 @@ export const de: Locale = {
     confirmPicker: '{{value}} übernehmen',
     standardCategoryPicker: 'Standardmengen',
     individualCategoryPicker: 'Genaue Mengen',
-    currencyPickerTitle: 'Gegenstand erfassen',
+    currencyPickerTitle: 'Wert sämtlicher mitgeführter Waren erfassen',
     currencyPickerLargeAmountTitle:
-      'Gegenstand mit mehr als CHF {{value}} erfassen',
+      'Wert sämtlicher mitgeführter Waren mit mehr als CHF {{value}} erfassen',
     currencyPickerSubTitle:
-      'Erfassen Sie den Nettowert des Gegenstands in seiner Original-Währung: ',
+      'Erfassen Sie den Nettowert der Waren in der Original-Währung:',
     currencyPickerRate: 'Kurs vom',
     currencyPickerInvalidInput: 'Ungültige/leere Eingabe',
     currencyPickerNoOffsettingInput: 'Kein entsprechender Betrag',
@@ -142,7 +142,7 @@ export const de: Locale = {
       'Erfassen Sie Tabakmenge, die Sie mit sich führen:',
   },
   payment: {
-    overViewTitle: 'Übersicht ihrer Anmeldung',
+    overViewTitle: 'Übersicht Ihrer Anmeldung',
     dutyColumn: 'Zollabgabe in CHF',
     sumText: 'Summe (CHF)',
     entryInfo:
@@ -210,7 +210,7 @@ export const de: Locale = {
     reachability: 'Erreichbarkeit:',
     workingHours: 'Montag – Freitag, 8.00 – 11.30 und 13.30 bis 17.00',
     generalCustomsDirectorate:
-      'Eidgenössische Zollverwaltung\nMonbijoustrasse 40\n' +
+      'Monbijoustrasse 40\n' +
       '3003 Bern\n' +
       'http://www.ezv.admin.ch',
     designAndDevelopment: 'Design & Entwicklung',
@@ -299,6 +299,6 @@ export const de: Locale = {
   furtherInformationModal: {
     furtherInformation: 'Weitere Informationen:',
     acceptance:
-      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 %; auch für Waren angewendet wird, die eigentlich dem redu-zierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
+      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 %; auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
   },
 };
