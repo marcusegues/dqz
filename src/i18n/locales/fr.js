@@ -68,6 +68,8 @@ export const fr: Locale = {
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Quelles marchandises souhaitez-vous déclarer?',
+    mainCategoriesNotYetAnswered:
+      'Catégorie de marchandises : données manquantes',
   },
   quantityInput: {
     quantityInput: 'Entrée de quantité',

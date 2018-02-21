@@ -68,6 +68,7 @@ export const en: Locale = {
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Which goods do you want to declare?',
+    mainCategoriesNotYetAnswered: 'Main categories: need to be answered',
   },
   quantityInput: {
     quantityInput: 'Enter quantity',
