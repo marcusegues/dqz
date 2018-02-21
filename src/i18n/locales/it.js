@@ -73,6 +73,7 @@ export const it: Locale = {
     recordedOn: 'registrato su {{value}}',
     addQuantities: 'Aggiungi quantità',
     enterQuantities: 'Inserisci le quantità di tutti {{value}} qui',
+    enterQuantity: 'Inserisci la quantità',
   },
   amountInput: {
     amountInput: 'Inserire qui il valore complessivo delle merci trasportate.',

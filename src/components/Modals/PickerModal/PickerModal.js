@@ -175,9 +175,11 @@ class PickerModalInner extends React.Component<
                   marginLeft: moderateScale(16),
                 }}
               >
-                <CardHeaderText text="Menge eingeben" />
+                <CardHeaderText text={t('quantityInput:enterQuantity')} />
               </View>
-              <CardHeaderSubText text={this.categorySubtextTitle()} />
+              <View>
+                <CardHeaderSubText text={this.categorySubtextTitle()} />
+              </View>
               {onlyStandardInput && meat ? (
                 <View style={pickerModalStyle.textInputContainer}>
                   <TextInput
@@ -378,6 +380,6 @@ class PickerModalInner extends React.Component<
   }
 }
 
-export const PickerModal = (translate(['modal'])(
+export const PickerModal = (translate(['modal', 'quantityInput'])(
   PickerModalInner
 ): ComponentType<PickerModalProps>);
