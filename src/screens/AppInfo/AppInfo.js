@@ -10,10 +10,10 @@ import { ModalTab } from '../../components/Modals/PickerModal/subComponents/Moda
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { CardHeaderText } from '../../components/QuestionAnswer/Cards/subcomponents/CardHeaderText';
 import { CardRowText } from '../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
-import { AppInfoSubText } from './subComponents/AppInfoSubText';
 import { ScrollViewCard } from '../../components/General Components/ScrollViewCard';
 import { scale, verticalScale } from '../../styles/Scaling';
 import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
+import { AppInfoSubText } from './subComponents/AppInfoSubText';
 
 const styles = {
   topTouchableContainer: {
