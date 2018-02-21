@@ -227,7 +227,7 @@ export const en: Locale = {
       'You may use the app for the same person(s) only once a day (calendar day).',
     importantSoonText2:
       'You may use the app only for goods that you import for your personal use or as gifts.',
-    importantSoonTex3:
+    importantSoonText3:
       'By using the app, you accept that the VAT rate of 7.7% is applied; including for goods that are actually subject to the reduced tax rate (food, animal feed, medications and books).',
     importantSoonText4:
       'Only credit card payment (Visa, MasterCard) is possible (no refund option). The goods are cleared through customs after payment of the duties.',
