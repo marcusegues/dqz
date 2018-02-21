@@ -21,6 +21,7 @@ import { calculateDuty } from '../../../model/dutyCalculations';
 import { calculateVat } from '../../../model/vatCalculations';
 import { getConvertedLocalTimeToSwiss } from '../../../model/utils';
 import { ScrollViewCard } from '../../General Components/ScrollViewCard';
+import { MainContentContainer } from '../../MainContentContainer/MainContentContainer';
 
 type AllReceiptsState = {
   receipts: List<Receipt>,
@@ -133,14 +134,16 @@ class AllReceiptsInner extends React.Component<
     } = this.prepareReceiptsObject();
 
     return (
-      <ScrollViewCard>
-        <CardHeader text={t('allReceiptsCurrentReceipt')} />
-        {sortedReceipts.actualReceipts}
-        <View style={{ marginTop: verticalScale(30) }}>
-          <CardHeader text={t('allReceiptsOlderReceipts')} />
-        </View>
-        {sortedReceipts.oldReceipts}
-      </ScrollViewCard>
+      <MainContentContainer>
+        <ScrollViewCard>
+          <CardHeader text={t('allReceiptsCurrentReceipt')} />
+          {sortedReceipts.actualReceipts}
+          <View style={{ marginTop: verticalScale(30) }}>
+            <CardHeader text={t('allReceiptsOlderReceipts')} />
+          </View>
+          {sortedReceipts.oldReceipts}
+        </ScrollViewCard>
+      </MainContentContainer>
     );
   }
 }
