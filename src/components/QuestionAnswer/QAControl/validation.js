@@ -133,7 +133,7 @@ export const onUpdateFactory = (
         const problems = Array.from(affectedCategories)
           .map(
             ac =>
-              `${ac.category} (${t(
+              `${t(`categories:${ac.category}`)} (${t(
                 `categories:${ac.quantity}`
               )} ${CategoriesInfo.getIn([ac.category, 'unit'], '')})`
           )

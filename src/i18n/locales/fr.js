@@ -75,6 +75,7 @@ export const fr: Locale = {
     addQuantities: 'Ajouter des quantités',
     enterQuantities: 'Entrez les quantités de tous {{value}} ici',
     enterQuantity: 'Entrer la quantité',
+    enterQuantitiesButter: 'Entrez les quantités de tous {{value}} ici',
   },
   amountInput: {
     amountInput:
