@@ -21,6 +21,7 @@ export type Action =
       type: 'BASKET_ADD_QUANTITY',
       category: Category,
       quantity: number,
+      date: string,
     }
   | {
       type: 'SET_BASKET',

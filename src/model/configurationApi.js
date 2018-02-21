@@ -18,7 +18,7 @@ import {
   makePeopleRecord,
 } from './types/basketPeopleAmountsTypes';
 import type { Currency } from './currencies';
-import { flatAllAmounts } from './utils';
+import { flatAllAmounts, getConvertedLocalTimeToSwiss } from './utils';
 import type { FlatAmount } from './utils';
 
 const emptyItem: CategoryBasketItem = makeCategoryBasketItemRecord();
@@ -37,18 +37,20 @@ export const emptyBasket: Basket = Immutable.Map(
  * @param basket
  * @param category
  * @param quantity
+ * @param dateTime
  * @returns Basket
  */
 export const addQuantity = (
   basket: Basket,
   category: Category,
-  quantity: number
+  quantity: number,
+  dateTime: string = getConvertedLocalTimeToSwiss().toString()
 ): Basket => {
   if (quantity <= 0) {
     return basket;
   }
   return basket.updateIn([category, 'volume', 'quantities'], q =>
-    q.push(quantity)
+    q.push({ value: quantity, date: dateTime })
   );
 };
 
@@ -113,12 +115,12 @@ export const addQuantities = (
  * Gets all quantities for the basket's category
  * @param basket
  * @param category
- * @returns List of quantities (number)
+ * @returns List of quantities (object)
  */
 export const getQuantities = (
   basket: Basket,
   category: Category
-): ImmutableListType<number> =>
+): ImmutableListType<Object> =>
   basket.getIn([category, 'volume', 'quantities'], Immutable.List());
 
 /**
@@ -130,7 +132,7 @@ export const getQuantities = (
 export const getTotalQuantity = (basket: Basket, category: Category): number =>
   basket
     .getIn([category, 'volume', 'quantities'], Immutable.List())
-    .reduce((a, v) => a + v, 0);
+    .reduce((a, v) => a + (v.value > 0 ? v.value : 0), 0); // v.value check for Backward compatibility
 
 // AMOUNTS
 export const initAmounts: Amounts = Immutable.Map();

@@ -69,9 +69,18 @@ Immutable.Map {
   "Butter": Immutable.Record {
     "volume": Immutable.Record {
       "quantities": Immutable.List [
-        23,
-        23,
-        23,
+        Object {
+          "date": "2018-02-21T17:24:16.463+01:00",
+          "value": 23,
+        },
+        Object {
+          "date": "2018-02-21T17:24:16.463+01:00",
+          "value": 23,
+        },
+        Object {
+          "date": "2018-02-21T17:24:16.463+01:00",
+          "value": 23,
+        },
       ],
     },
   },
@@ -128,9 +137,18 @@ Immutable.Map {
   "Tobacco": Immutable.Record {
     "volume": Immutable.Record {
       "quantities": Immutable.List [
-        3219,
-        3219,
-        3219,
+        Object {
+          "date": "2018-02-21T17:24:16.463+01:00",
+          "value": 3219,
+        },
+        Object {
+          "date": "2018-02-21T17:24:16.463+01:00",
+          "value": 3219,
+        },
+        Object {
+          "date": "2018-02-21T17:24:16.463+01:00",
+          "value": 3219,
+        },
       ],
     },
   },
@@ -212,9 +230,18 @@ Immutable.Map {
   "Tobacco": Immutable.Record {
     "volume": Immutable.Record {
       "quantities": Immutable.List [
-        3219,
-        3219,
-        3219,
+        Object {
+          "date": "2018-02-21T17:24:16.463+01:00",
+          "value": 3219,
+        },
+        Object {
+          "date": "2018-02-21T17:24:16.463+01:00",
+          "value": 3219,
+        },
+        Object {
+          "date": "2018-02-21T17:24:16.463+01:00",
+          "value": 3219,
+        },
       ],
     },
   },

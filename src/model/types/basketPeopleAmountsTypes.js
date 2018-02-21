@@ -57,7 +57,7 @@ export type CategoryInfoType = ImmutableMapType<Category, CategoryInfo>;
 
 // CATEGORY VOLUME
 type CategoryVolumeContent = {
-  quantities: ImmutableListType<number>,
+  quantities: ImmutableListType<Object>,
 };
 export const makeCategoryVolumeRecord: RecordFactory<
   CategoryVolumeContent

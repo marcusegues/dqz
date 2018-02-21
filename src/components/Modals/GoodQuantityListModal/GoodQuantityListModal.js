@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { DateTime } from 'luxon';
 // $FlowFixMe
 import { ScrollView, View } from 'react-native';
 import { translate } from 'react-i18next';
@@ -156,7 +157,10 @@ class GoodQuantityListModalInner extends React.Component<
                   <QuantityRow
                     borderTop={idx === 0}
                     key={v4()}
-                    quantity={q}
+                    quantity={q.value}
+                    date={DateTime.fromISO(q.date, {
+                      zone: 'Europe/Zurich',
+                    }).toFormat('dd.MM.y HH:mm')}
                     category={modalCategory}
                     onDelete={() => {
                       if (modalCategory) {

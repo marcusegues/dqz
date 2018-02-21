@@ -97,12 +97,12 @@ export class QuantityInputQA extends React.Component<
 
   handleDeleteQuantity(category: Category, index: number) {
     const { basket } = this.props.qaState;
-
+    const quantity: { value: number, date: string } = getQuantities(
+      basket,
+      category
+    ).get(index, { value: 0, date: '' });
     const updatedBasket = deleteQuantity(basket, category, index);
-    analyticsQuantityDeleted(
-      category,
-      getQuantities(basket, category).get(index, 0)
-    );
+    analyticsQuantityDeleted(category, quantity.value);
     this.handleUpdate(updatedBasket);
   }
 

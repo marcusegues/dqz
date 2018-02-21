@@ -40,10 +40,16 @@ export const appState = (
 
     case 'BASKET_ADD_QUANTITY': {
       const category: Category = action.category;
+      const date: string = action.date;
       const basket: Basket = state.get('basket');
       return state.setIn(
         ['basket'],
-        modelApi.addQuantity(basket, category, action.quantity)
+        modelApi.addQuantity(
+          basket,
+          category,
+          action.quantity,
+          date.length > 0 ? date : undefined
+        )
       );
     }
     case 'SET_BASKET': {
