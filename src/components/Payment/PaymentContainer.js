@@ -1,4 +1,3 @@
-/* global alert */
 /* eslint-disable react/no-unused-state,no-console */
 // @flow
 import React from 'react';
