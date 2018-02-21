@@ -170,9 +170,15 @@ class GoodQuantityListModalInner extends React.Component<
 
             {quantities.size === 0 ? (
               <GoodQuantityGreyField
-                topText={t('quantityInput:enterQuantities', {
-                  value: t(`categories:${modalCategory}`),
-                })}
+                topText={
+                  modalCategory === 'Butter'
+                    ? t('quantityInput:enterQuantitiesButter', {
+                        value: t(`categories:${modalCategory}`),
+                      })
+                    : t('quantityInput:enterQuantities', {
+                        value: t(`categories:${modalCategory}`),
+                      })
+                }
                 plusIconText={t('quantityInput:addQuantities')}
                 onPress={() => this.togglePickerVisible()}
               />
