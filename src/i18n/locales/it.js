@@ -67,12 +67,15 @@ export const it: Locale = {
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Quali merci si desidera dichiarare?',
+    mainCategoriesNotYetAnswered: 'Categoria merceologica: dati mancanti',
   },
   quantityInput: {
     quantityInput: 'Ingresso quantità',
     recordedOn: 'registrato su {{value}}',
     addQuantities: 'Aggiungi quantità',
     enterQuantities: 'Inserisci le quantità di tutti {{value}} qui',
+    enterQuantity: 'Inserisci la quantità',
+    enterQuantitiesButter: 'Inserisci le quantità di tutti {{value}} qui',
   },
   amountInput: {
     amountInput: 'Inserire qui il valore complessivo delle merci trasportate.',
@@ -130,8 +133,10 @@ export const it: Locale = {
     closeModalText: 'Chiudere',
     timePickerTitle: 'Scelta del passaggio in frontiera:',
     timePickerSubTitle: 'Quando desidera attraversare la frontiera?',
-    timePickerRegistrationValidUntil:
-      'Si assicuri di attraversare la frontiera entro due ore. La quietanza doganale è valevole alle ore {{time}} del {{date}}.',
+    timePickerRegistrationValidUntilSameDay:
+      'Questa registrazione è valida per {{date}} da {{startTime}} a {{endTime}} in punto.',
+    timePickerRegistrationValidUntilDifferentDay:
+      'Questo accesso è valido per {{startDate}} da {{startTime}} a {{endDate}} al {{endTime}} in punto.',
     timePickerTakeOverThePeriod: 'Prendi il controllo del periodo',
     timePickerTimePrefix: 'ora',
     recordTheAmountOfMeat: 'Registra la quantità di carne che porti con te:',
@@ -176,30 +181,25 @@ export const it: Locale = {
   },
   information: {
     informationTitle: 'Informazioni utili',
-    proceedinAtTheCustoms: 'Modo di procedere in dogana ',
-    proceedinAtTheCustomsSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    travelDocuments: 'Documenti di viaggio',
+    customsProceduresMainText: 'Procedendo alla dogana',
+    customsProceduresSubText: 'Come privato devi entrare in Svizzera ...',
+    travelDocumentsMainText: 'Documenti di viaggio',
     travelDocumentsSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    haveGoodsWithMe: 'Trasporto merci',
-    haveGoodsWithMeSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    haveAnimalsOrPlantsWithMe: 'Trasporto animali o piante',
-    haveAnimalsOrPlantsWithMeSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    travelingWithVehicle: 'Sono in viaggio con un veicolo',
-    travelingWithVehicleSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    entryByTrain: 'Entrata nel paese con il treno',
+      'Per entrare in Svizzera i cittadini stranieri hanno bisogno di un valido ...',
+    declarationMainText: 'Ho dei beni con me',
+    declarationSubText: 'Meriti per uso personale o come regalo ...',
+    animalsAndPlantsMainText: 'Ho animali o piante con me',
+    animalsAndPlantsSubText:
+      'Per cani, gatti, altri animali domestici e cavalli troverai il ...',
+    vehiclesMainText: 'Sto viaggiando con un veicolo',
+    vehiclesSubText:
+      "L'uso di autostrade e autostrade con veicoli a motore e rimorchi ...",
+    entryByTrainMainText: 'Ingresso in treno',
     entryByTrainSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    allowancesFoodAlcoholTobacco: 'Indennità: cibo, alcol e tabacco',
-    allowancesFoodAlcoholTobaccoText:
-      'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer gewissen Amount Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
-    prohibitions: 'Divieti e restrizioni',
-    prohibitionsSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
+      'Se il personale doganale è presente sul treno, è necessario prendere tutte le merci ...',
+    prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
+    prohibitionsAndRestrictionsSubText:
+      'È vietato introdurre contraffazioni di marchi e design. Le usanze svizzere ...',
   },
   appInformation: {
     appInfoTitle: 'Informazioni sull’app ',

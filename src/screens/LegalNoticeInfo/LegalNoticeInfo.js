@@ -11,8 +11,9 @@ import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { CardHeaderText } from '../../components/QuestionAnswer/Cards/subcomponents/CardHeaderText';
 import { CardRowText } from '../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { AppInfoSubText } from '../AppInfo/subComponents/AppInfoSubText';
-import { ScrollViewCard } from '../Information/subComponents/ScrollViewCard';
+import { ScrollViewCard } from '../../components/General Components/ScrollViewCard';
 import { scale, verticalScale } from '../../styles/Scaling';
+import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
 
 const styles = {
   topTouchableContainer: {
@@ -63,73 +64,78 @@ class LegalNoticeInfoInner extends React.Component<
     const development = selected === 'legal';
 
     return (
-      <ScrollViewCard>
-        <View style={styles.topTouchableContainer}>
-          <ModalTab
-            activeTab={usage}
-            onPress={() =>
-              this.setState({
-                selected: 'usage',
-              })
-            }
-            text={t('usage').toUpperCase()}
-          />
-          <ModalTab
-            activeTab={development}
-            onPress={() =>
-              this.setState({
-                selected: 'legal',
-              })
-            }
-            text={t('legal').toUpperCase()}
-          />
-        </View>
-
-        {usage ? (
-          <View style={styles.contentContainer}>
-            <View style={styles.cardHeader}>
-              <CardHeaderText text={t('conditions')} />
-            </View>
-            <CardRowText
-              text={t('importantSoon')}
-              style={styles.disclaimerTitle}
+      <MainContentContainer>
+        <ScrollViewCard>
+          <View style={styles.topTouchableContainer}>
+            <ModalTab
+              activeTab={usage}
+              onPress={() =>
+                this.setState({
+                  selected: 'usage',
+                })
+              }
+              text={t('usage').toUpperCase()}
             />
-            <AppInfoSubText text={t('importantSoonText')} />
-
-            <CardRowText
-              text={t('howToDeclareYourGoods')}
-              style={styles.disclaimerTitle}
+            <ModalTab
+              activeTab={development}
+              onPress={() =>
+                this.setState({
+                  selected: 'legal',
+                })
+              }
+              text={t('legal').toUpperCase()}
             />
-
-            <AppInfoSubText text={t('howToDeclareYourGoodsText')} />
-
-            <CardRowText text={t('legal')} style={styles.disclaimerTitle} />
-
-            <AppInfoSubText text={t('legalText')} />
           </View>
-        ) : (
-          <View style={styles.contentContainer}>
-            <View style={styles.cardHeader}>
-              <CardHeaderText text={t('privacyAndLiability')} />
+
+          {usage ? (
+            <View style={styles.contentContainer}>
+              <View style={styles.cardHeader}>
+                <CardHeaderText text={t('conditions')} />
+              </View>
+              <CardRowText
+                text={t('importantSoon')}
+                style={styles.disclaimerTitle}
+              />
+              <AppInfoSubText text={t('importantSoonText')} />
+
+              <CardRowText
+                text={t('howToDeclareYourGoods')}
+                style={styles.disclaimerTitle}
+              />
+
+              <AppInfoSubText text={t('howToDeclareYourGoodsText')} />
+
+              <CardRowText text={t('legal')} style={styles.disclaimerTitle} />
+
+              <AppInfoSubText text={t('legalText')} />
             </View>
+          ) : (
+            <View style={styles.contentContainer}>
+              <View style={styles.cardHeader}>
+                <CardHeaderText text={t('privacyAndLiability')} />
+              </View>
 
-            <CardRowText
-              text={t('dataProtection')}
-              style={styles.disclaimerTitle}
-            />
-            <AppInfoSubText text={t('dataProtectionText')} />
+              <CardRowText
+                text={t('dataProtection')}
+                style={styles.disclaimerTitle}
+              />
+              <AppInfoSubText text={t('dataProtectionText')} />
 
-            <CardRowText
-              text={t('referencesAndLinks')}
-              style={styles.disclaimerTitle}
-            />
-            <AppInfoSubText text={t('referencesAndLinksText')} />
+              <CardRowText
+                text={t('referencesAndLinks')}
+                style={styles.disclaimerTitle}
+              />
+              <AppInfoSubText text={t('referencesAndLinksText')} />
 
-            <CardRowText text={t('copyright')} style={styles.disclaimerTitle} />
-            <AppInfoSubText text={t('copyrightText')} />
-          </View>
-        )}
-      </ScrollViewCard>
+              <CardRowText
+                text={t('copyright')}
+                style={styles.disclaimerTitle}
+              />
+              <AppInfoSubText text={t('copyrightText')} />
+            </View>
+          )}
+        </ScrollViewCard>
+      </MainContentContainer>
     );
   }
 }

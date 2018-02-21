@@ -2,17 +2,17 @@
 // @flow
 import Immutable from 'immutable';
 import {
-  getInitialState,
   mainCategories,
   EmptyMainCategories,
-} from '../types/reducers/appReducer';
+  getInitialDeclarationState,
+} from '../types/reducers/declaration';
 import type {
-  State,
   MainCategory,
   MainCategories,
   Settings,
-} from '../types/reducers/appReducer';
-import type { Action } from '../types/actions';
+  DeclarationState,
+} from '../types/reducers/declaration';
+import type { DeclarationAction } from '../types/actions/declaration';
 import type {
   Amounts,
   Basket,
@@ -20,24 +20,34 @@ import type {
   People,
 } from '../model/types/basketPeopleAmountsTypes';
 import * as modelApi from '../model/configurationApi';
-import type { Currency, CurrencyObject } from '../model/currencies';
+import type { Currency } from '../model/currencies';
 import type { PaymentData } from '../types/generalTypes';
 
-export const appState = (
-  state: State = getInitialState(),
-  action: Action
-): State => {
+export const declaration = (
+  state: DeclarationState = getInitialDeclarationState(),
+  action: DeclarationAction
+): DeclarationState => {
+  debugger;
   switch (action.type) {
-    case 'UPDATE_CURRENCIES': {
-      const currencyObject: CurrencyObject = action.currencyObject;
-      const validCurrencies: boolean = action.validCurrencies;
-      const currencyDate: Date = action.currencyDate;
-
-      const s1 = state.set('currencyObject', currencyObject);
-      const s2 = s1.set('currencyDate', currencyDate);
-      return s2.set('validCurrencies', validCurrencies);
+    case 'RESET_DECLARATION': {
+      const peopleReset = state.set('people', modelApi.initPeople);
+      const basketReset = peopleReset.set('basket', modelApi.emptyBasket);
+      const mainCategoriesReset = basketReset.setIn(
+        ['settings', 'mainCategories'],
+        Immutable.Set()
+      );
+      return mainCategoriesReset.set('amounts', modelApi.initAmounts);
     }
+    case 'SET_DECLARATION': {
+      const peopleReset = state.set('people', action.people);
+      const basketReset = peopleReset.set('basket', action.basket);
 
+      const mainCategoriesReset = basketReset.setIn(
+        ['settings', 'mainCategories'],
+        action.mainCategories
+      );
+      return mainCategoriesReset.set('amounts', action.amounts);
+    }
     case 'BASKET_ADD_QUANTITY': {
       const category: Category = action.category;
       const date: string = action.date;
@@ -119,16 +129,6 @@ export const appState = (
       return state.set('amounts', modelApi.resetAmounts(amounts, currency));
     }
 
-    case 'RESET_DECLARATION': {
-      const peopleReset = state.set('people', modelApi.initPeople);
-      const basketReset = peopleReset.set('basket', modelApi.emptyBasket);
-      const mainCategoriesReset = basketReset.setIn(
-        ['settings', 'mainCategories'],
-        Immutable.Set()
-      );
-      return mainCategoriesReset.set('amounts', modelApi.initAmounts);
-    }
-
     case 'ADD_MAIN_CATEGORY': {
       const mainCategory: MainCategory = action.mainCategory;
       const mainCategoriesAnswer = state.getIn(
@@ -155,52 +155,37 @@ export const appState = (
       const mainCategoriesAnswer: MainCategories = action.mainCategories;
       return state.setIn(['settings', 'mainCategories'], mainCategoriesAnswer);
     }
-
     case 'SET_PAYMENT_DATA': {
       const paymentData: PaymentData = action.paymentData;
       return state.set('paymentData', paymentData);
     }
-
-    case 'SET_RECEIPT_ID': {
-      const receiptId: string = action.receiptId;
-      return state.set('receiptId', receiptId);
-    }
-
     case 'SET_RECEIPT_ENTRY_TIME': {
       const receiptEntryTime: string = action.receiptEntryTime;
       return state.set('receiptEntryTime', receiptEntryTime);
     }
-
     default: {
       return state;
     }
   }
 };
 
-export const getBasket = (state: State): Basket => state.get('basket');
+export const getBasket = (state: DeclarationState): Basket =>
+  state.get('basket');
 
-export const getPeople = (state: State): People => state.get('people');
+export const getPeople = (state: DeclarationState): People =>
+  state.get('people');
 
-export const getAmounts = (state: State): Amounts => state.get('amounts');
+export const getAmounts = (state: DeclarationState): Amounts =>
+  state.get('amounts');
 
-export const getMainCategories = (state: State): MainCategories =>
+export const getMainCategories = (state: DeclarationState): MainCategories =>
   state.getIn(['settings', 'mainCategories'], mainCategories);
 
-export const getSettings = (state: State): Settings => state.get('settings');
+export const getSettings = (state: DeclarationState): Settings =>
+  state.get('settings');
 
-export const getCurrenciesObject = (state: State): CurrencyObject =>
-  state.get('currencyObject');
-
-export const getCurrencyState = (state: State): boolean =>
-  state.get('validCurrencies');
-
-export const getCurrencyDate = (state: State): Date =>
-  state.get('currencyDate');
-
-export const getPaymentData = (state: State): PaymentData =>
+export const getPaymentData = (state: DeclarationState): PaymentData =>
   state.get('paymentData');
 
-export const getReceiptId = (state: State): string => state.get('receiptId');
-
-export const getReceiptEntryTime = (state: State): string =>
+export const getReceiptEntryTime = (state: DeclarationState): string =>
   state.get('receiptEntryTime');

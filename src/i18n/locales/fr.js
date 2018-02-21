@@ -7,8 +7,8 @@ export const fr: Locale = {
     Butter: 'Beurre et crème',
     Oils: 'Huiles/graisses/margarine',
     OtherFood: 'Autres denrées alimentaires et boissons sans alcool',
-    AlcSoft: 'Teneur en alcool comprise entre 0,5 et 18 % du volume',
-    AlcHard: 'Teneur en alcool supérieure à 18 % du volume',
+    AlcSoft: 'Boissons alcoolisées comprise entre 0,5 et 18 % du volume',
+    AlcHard: 'Boissons alcoolisées supérieure à 18 % du volume',
     Cigarettes: 'Cigarettes et cigares',
     Tobacco: 'Autres tabacs manufacturés',
     Meds: 'Médicaments',
@@ -23,7 +23,7 @@ export const fr: Locale = {
     Meat: 'Viande et préparations de viande',
     Butter: 'Beurre et crème',
     Oil: 'Huiles/graisses/margarine',
-    Alcohol: 'Teneur en alcool',
+    Alcohol: 'Boissons alcoolisées',
     TobaccoProducts: 'Tabacs manufacturés',
     OtherGoods: 'Autres marchandises',
   },
@@ -31,7 +31,7 @@ export const fr: Locale = {
     declareGoods: 'Déclarer des marchandises',
     pleaseSelect: 'Veuillez sélectionner ce qui convient',
     receipts: 'Quittances de la douane suisse',
-    guideline: 'Votre passage à la douane suisse',
+    guideline: 'Entrée en Suisse, à quoi faut-il prêter attention',
     information: "Informations relatives à l'utilisation de l'application",
     navbarFirst: 'Votre voyage',
     navbarSecond: 'Paiement',
@@ -68,12 +68,16 @@ export const fr: Locale = {
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Quelles marchandises souhaitez-vous déclarer?',
+    mainCategoriesNotYetAnswered:
+      'Catégorie de marchandises : données manquantes',
   },
   quantityInput: {
     quantityInput: 'Entrée de quantité',
     recordedOn: 'enregistré sur',
     addQuantities: 'Ajouter des quantités',
     enterQuantities: 'Entrez les quantités de tous {{value}} ici',
+    enterQuantity: 'Entrer la quantité',
+    enterQuantitiesButter: 'Entrez les quantités de tous {{value}} ici',
   },
   amountInput: {
     amountInput:
@@ -94,7 +98,7 @@ export const fr: Locale = {
     declareGoods: 'Déclarer des marchandises',
     toOverview: "Retour à la vue d'ensemble",
     adult: 'Adultes',
-    adultInfo: 'Âge supérieur à 17 ans',
+    adultInfo: 'âge 17 ans et supérieur',
     adultCount: '{{value}} adulte',
     adultCount_plural: '{{value}} adultes',
     minor: 'Enfants et adolescents',
@@ -117,11 +121,12 @@ export const fr: Locale = {
     confirmPicker: 'Reprendre {{value}}',
     standardCategoryPicker: 'Quantités standard',
     individualCategoryPicker: 'Quantités exactes',
-    currencyPickerTitle: 'Saisir un bien',
+    currencyPickerTitle:
+      'Saisir la valeur de toutes les marchandises transportées',
     currencyPickerLargeAmountTitle:
       " Saisir un bien d'une valeur supérieure à {{value}} francs.",
     currencyPickerSubTitle:
-      "Saisissez la valeur nette du bien dans sa devise d'origine.",
+      'Veuillez saisir ici la valeur hors taxes de toutes les marchandises transportées dans leur devise d’origine.',
     currencyPickerRate: 'Taux de change du:',
     currencyPickerInvalidInput: 'Saisie invalide/vide',
     currencyPickerNoOffsettingInput: "Aucun montant adéquat n'est disponible.",
@@ -130,12 +135,14 @@ export const fr: Locale = {
       'Souhaitez-vous continuer avec le panier actuel ou recommencer avec un panier vide?',
     savedBasketTotalCost: 'Coût total: {{value}} francs',
     savedBasketNewShoppingCart: 'Nouveau panier',
-    closeModalText: 'Schliessen',
+    closeModalText: 'Fermer',
     timePickerTitle: "Choix de l'heure du passage de la frontière",
     timePickerSubTitle: 'Quand souhaitez-vous traverser la frontière?',
-    timePickerRegistrationValidUntil:
-      'Assurez-vous de passer la frontière dans le délai imparti de deux heures. La quittance douane est valable le {{date}} à {{time}}',
-    timePickerTakeOverThePeriod: 'Prendre en charge la période',
+    timePickerRegistrationValidUntilSameDay:
+      'La quittance douane est valable le {{date}} de {{startTime}} à {{endTime}}.',
+    timePickerRegistrationValidUntilDifferentDay:
+      'La quittance douane est valable le {{date}} de {{startTime}} à {{endTime}}.',
+    timePickerTakeOverThePeriod: 'Reprendre la période selectionnée',
     timePickerTimePrefix: 'Heure',
     recordTheAmountOfMeat:
       'Notez la quantité de viande que vous transportez avec vous:',
@@ -169,8 +176,8 @@ export const fr: Locale = {
     receiptStorageNotification:
       "La présente quittance sera conservée pendant un an. Vous pourrez la consulter à tout moment dans l'application durant ce laps de temps.",
     allReceiptsNavigationHeaderTitle: 'Quittances de la douane suisse',
-    allReceiptsCurrentReceipt: 'Reçu actuel:',
-    allReceiptsOlderReceipts: 'Anciennes recettes:',
+    allReceiptsCurrentReceipt: 'Quittance actuelle:',
+    allReceiptsOlderReceipts: 'Anciennes quittances:',
     allReceiptsSumInFranks: 'CHF {{value}}',
     allReceiptsDate: 'à {{value}}',
     entryTime: "Période d'entrée",
@@ -179,30 +186,26 @@ export const fr: Locale = {
   },
   information: {
     informationTitle: 'Informations utiles',
-    proceedinAtTheCustoms: 'Marche à suivre lors du passage à la douane',
-    proceedinAtTheCustomsSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    travelDocuments: 'Documents de voyage',
+    customsProceduresMainText: 'Procédant à la douane',
+    customsProceduresSubText:
+      'En tant que particulier, vous devez entrer en Suisse ...',
+    travelDocumentsMainText: 'Documents de voyage',
     travelDocumentsSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    haveGoodsWithMe: 'Je transporte des marchandises.',
-    haveGoodsWithMeSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    haveAnimalsOrPlantsWithMe: 'Je transporte des animaux ou des plantes.',
-    haveAnimalsOrPlantsWithMeSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    travelingWithVehicle: 'Je voyage avec un véhicule.',
-    travelingWithVehicleSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    entryByTrain: 'Entrée en Suisse par voie ferroviaire',
+      "Pour entrer en Suisse, les étrangers ont besoin d'un ...",
+    declarationMainText: "J'ai des biens avec moi",
+    declarationSubText: 'Marchandises pour votre usage privé ou en cadeau ...',
+    animalsAndPlantsMainText: "J'ai des animaux ou des plantes avec moi",
+    animalsAndPlantsSubText:
+      'Pour les chiens, les chats, les autres animaux domestiques et les chevaux, vous trouverez ...',
+    vehiclesMainText: 'Je voyage avec un véhicule',
+    vehiclesSubText:
+      "L'utilisation des autoroutes et des autoroutes avec des véhicules à moteur et des remorques ...",
+    entryByTrainMainText: 'Entrée en train',
     entryByTrainSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
-    allowancesFoodAlcoholTobacco: 'Allocations: nourriture, alcool et tabac',
-    allowancesFoodAlcoholTobaccoText:
-      'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer gewissen Amount Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
-    prohibitions: 'Interdictions et restrictions',
-    prohibitionsSubText:
-      'Loin derrière, derrière le mot montagnes, loin des terres du vocabulaire et des consonnes vivent les textes aveugles',
+      'Si le personnel des douanes est présent dans le train, vous devez prendre toutes les marchandises ...',
+    prohibitionsAndRestrictionsMainText: 'Interdictions et restrictions',
+    prohibitionsAndRestrictionsSubText:
+      "Il est interdit d'introduire des contrefaçons de marque et de design. Les douanes suisses ...",
   },
   appInformation: {
     appInfoTitle: "Informations relatives à l'application",
@@ -217,7 +220,7 @@ export const fr: Locale = {
     reachability: 'Joignabilité:',
     workingHours: 'Lundi – Vendredi, 8.00 – 11.30 et 13.30 a 17.00',
     generalCustomsDirectorate:
-      'Administration fédérale des douanes AFD\nMonbijoustrasse 40\n' +
+      'Monbijoustrasse 40\n' +
       '3003 Bern\n' +
       'http://www.ezv.admin.ch',
     designAndDevelopment: 'Conception et développement',

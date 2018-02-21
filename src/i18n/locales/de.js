@@ -69,16 +69,22 @@ export const de: Locale = {
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Welche Waren möchten Sie anmelden?',
+    mainCategoriesNotYetAnswered:
+      'Warenkategorien - muss noch beantwortet werden',
   },
   quantityInput: {
     quantityInput: 'Mengeneingabe',
     recordedOn: 'erfasst am {{value}}',
     addQuantities: 'Mengen hinzufügen',
     enterQuantities: 'Erfassen Sie hier die Mengen aller {{value}}',
+
+    enterQuantity: 'Menge eingeben',
+
+    enterQuantitiesButter: 'Erfassen Sie hier die Mengen von {{value}}',
   },
   amountInput: {
     amountInput:
-      'Bitte erfassen Sie hier den Wert sämtlicher mitgeführten Waren.',
+      'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Ware.',
     amountInputLargeItem:
       'Führen Sie einzelne Gegenstände mit einem Wert von über {{value}} Franken mit?',
     amountInputLargeItemGreyBox:
@@ -116,11 +122,11 @@ export const de: Locale = {
     confirmPicker: '{{value}} übernehmen',
     standardCategoryPicker: 'Standardmengen',
     individualCategoryPicker: 'Genaue Mengen',
-    currencyPickerTitle: 'Gegenstand erfassen',
+    currencyPickerTitle: 'Wert sämtlicher mitgeführter Waren erfassen',
     currencyPickerLargeAmountTitle:
-      'Gegenstand mit mehr als CHF {{value}} erfassen',
+      'Wert sämtlicher mitgeführter Waren mit mehr als CHF {{value}} erfassen',
     currencyPickerSubTitle:
-      'Erfassen Sie den Nettowert des Gegenstands in seiner Original-Währung: ',
+      'Erfassen Sie den Nettowert der Waren in der Original-Währung:',
     currencyPickerRate: 'Kurs vom',
     currencyPickerInvalidInput: 'Ungültige/leere Eingabe',
     currencyPickerNoOffsettingInput: 'Kein entsprechender Betrag',
@@ -132,8 +138,11 @@ export const de: Locale = {
     closeModalText: 'Schliessen',
     timePickerTitle: 'Zeitraum der Einreise wählen',
     timePickerSubTitle: 'Wann möchten Sie die Grenze überqueren?',
-    timePickerRegistrationValidUntil:
-      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist bis zum {{date}} um {{time}} Uhr gültig.',
+    timePickerRegistrationValidUntilSameDay:
+      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{date}} von {{startTime}} bis zum {{endTime}} Uhr gültig.',
+    timePickerRegistrationValidUntilDifferentDay:
+      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{startDate}} von {{startTime}} bis {{endDate}} um {{endTime}} Uhr gültig.',
+
     timePickerTakeOverThePeriod: 'Zeitraum übernehmen',
     timePickerTimePrefix: 'Uhr',
     recordTheAmountOfMeat:
@@ -142,7 +151,7 @@ export const de: Locale = {
       'Erfassen Sie Tabakmenge, die Sie mit sich führen:',
   },
   payment: {
-    overViewTitle: 'Übersicht ihrer Anmeldung',
+    overViewTitle: 'Übersicht Ihrer Anmeldung',
     dutyColumn: 'Zollabgabe in CHF',
     sumText: 'Summe (CHF)',
     entryInfo:
@@ -176,28 +185,27 @@ export const de: Locale = {
   },
   information: {
     informationTitle: 'Wissenswertes',
-    proceedinAtTheCustoms: 'Vorgehen am Zoll',
-    proceedinAtTheCustomsSubText:
-      'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-    travelDocuments: 'Reisedokumente',
+    customsProceduresMainText: 'Vorgehen am Zoll',
+    customsProceduresSubText:
+      'Als Privatperson müssen Sie bei der Einreise in die Schweiz ...',
+    travelDocumentsMainText: 'Reisedokumente',
     travelDocumentsSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-    haveGoodsWithMe: 'Ich habe Waren dabei',
-    haveGoodsWithMeSubText:
-      'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-    haveAnimalsOrPlantsWithMe: 'Ich habe Tiere oder Pflanzen dabei',
-    haveAnimalsOrPlantsWithMeSubText: 'Weit hinten leben die Blindtexte.',
-    travelingWithVehicle: 'Ich bin mit einem Fahrzeug unterwegs',
-    travelingWithVehicleSubText: 'Weit hinten leben die Blindtexte.',
-    entryByTrain: 'Einreise per Bahn',
+      'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges ...',
+    declarationMainText: 'Ich habe Waren dabei',
+    declarationSubText:
+      'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
+    animalsAndPlantsMainText: 'Ich habe Tiere oder Pflanzen dabei',
+    animalsAndPlantsSubText:
+      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die ...',
+    vehiclesMainText: 'Ich bin mit einem Fahrzeug unterwegs',
+    vehiclesSubText:
+      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen und Anhängern ...',
+    entryByTrainMainText: 'Einreise per Bahn',
     entryByTrainSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-    allowancesFoodAlcoholTobacco: 'Freimengen: Lebensmittel, Alkohol und Tabak',
-    allowancesFoodAlcoholTobaccoText:
-      'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer gewissen Amount Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
-    prohibitions: 'Verbote und Beschränkungen',
-    prohibitionsSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren ...',
+    prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
+    prohibitionsAndRestrictionsSubText:
+      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer Zoll ...',
   },
   appInformation: {
     appInfoTitle: 'Über die App',
@@ -210,10 +218,7 @@ export const de: Locale = {
       'Auskunftszentrale Zoll\n058 467 15 15\nzollauskunft@ezv.admin.ch',
     reachability: 'Erreichbarkeit:',
     workingHours: 'Montag – Freitag, 8.00 – 11.30 und 13.30 bis 17.00',
-    generalCustomsDirectorate:
-      'Eidgenössische Zollverwaltung\nMonbijoustrasse 40\n' +
-      '3003 Bern\n' +
-      'http://www.ezv.admin.ch',
+    generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern\nhttp://www.ezv.admin.ch`,
     designAndDevelopment: 'Design & Entwicklung',
     ambriteAddress:
       'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch\nhttp://www.ambrite.ch',
@@ -300,6 +305,6 @@ export const de: Locale = {
   furtherInformationModal: {
     furtherInformation: 'Weitere Informationen:',
     acceptance:
-      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 %; auch für Waren angewendet wird, die eigentlich dem redu-zierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
+      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 %; auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
   },
 };

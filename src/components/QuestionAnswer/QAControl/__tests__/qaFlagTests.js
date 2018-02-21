@@ -6,7 +6,7 @@ import {
   initPeople,
   subtractAdult,
 } from '../../../../model/configurationApi';
-import { makeSettingsRecord } from '../../../../types/reducers/appReducer';
+import { makeSettingsRecord } from '../../../../types/reducers/declaration';
 
 const blankState = {
   basket: emptyBasket,

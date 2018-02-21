@@ -71,6 +71,7 @@ type PeopleInputTranslations = {
 
 type MainCategoriesInputTranslations = {
   mainCategoriesQuestion: string,
+  mainCategoriesNotYetAnswered: string,
 };
 
 type QuantityInputTranslations = {
@@ -78,6 +79,7 @@ type QuantityInputTranslations = {
   recordedOn: string,
   addQuantities: string,
   enterQuantities: string,
+  enterQuantity: string,
 };
 
 type AmountInputTranslations = {
@@ -134,7 +136,8 @@ type ModalTranslations = {
   savedBasketNewShoppingCart: string,
   timePickerTitle: string,
   timePickerSubTitle: string,
-  timePickerRegistrationValidUntil: string,
+  timePickerRegistrationValidUntilSameDay: string,
+  timePickerRegistrationValidUntilDifferentDay: string,
   timePickerTakeOverThePeriod: string,
   closeModalText: string,
   timePickerTimePrefix: string,
@@ -144,22 +147,20 @@ type ModalTranslations = {
 
 type InformationTranslations = {
   informationTitle: string,
-  proceedinAtTheCustoms: string,
-  proceedinAtTheCustomsSubText: string,
-  travelDocuments: string,
+  customsProceduresMainText: string,
+  customsProceduresSubText: string,
+  travelDocumentsMainText: string,
   travelDocumentsSubText: string,
-  haveGoodsWithMe: string,
-  haveGoodsWithMeSubText: string,
-  haveAnimalsOrPlantsWithMe: string,
-  haveAnimalsOrPlantsWithMeSubText: string,
-  travelingWithVehicle: string,
-  travelingWithVehicleSubText: string,
-  entryByTrain: string,
+  declarationMainText: string,
+  declarationSubText: string,
+  animalsAndPlantsMainText: string,
+  animalsAndPlantsSubText: string,
+  vehiclesMainText: string,
+  vehiclesSubText: string,
+  entryByTrainMainText: string,
   entryByTrainSubText: string,
-  allowancesFoodAlcoholTobacco: string,
-  allowancesFoodAlcoholTobaccoText: string,
-  prohibitions: string,
-  prohibitionsSubText: string,
+  prohibitionsAndRestrictionsMainText: string,
+  prohibitionsAndRestrictionsSubText: string,
 };
 
 type ReceiptTranslations = {

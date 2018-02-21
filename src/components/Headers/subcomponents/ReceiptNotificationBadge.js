@@ -25,7 +25,9 @@ const ReceiptNotificationBadgeInner = ({
   <Touchable
     onPress={() => {
       if (fees) {
-        navigation.navigate('Payment');
+        navigation.state.params.setModalVisibleTrue();
+      } else {
+        navigation.navigate('QuestionAnswer');
       }
     }}
   >

@@ -9,7 +9,7 @@ import type {
   Category,
   People,
 } from '../model/types/basketPeopleAmountsTypes';
-import type { MainCategory } from '../types/reducers/appReducer';
+import type { MainCategory } from '../types/reducers/declaration';
 import type { Currency } from '../model/currencies';
 import type { ExpoAppState } from '../../App';
 
@@ -39,7 +39,7 @@ export const analyticsLanguageChanged = (language: string) =>
   sendEventToAmplitude({ type: 'LanguageChanged', language });
 
 /**
- * Log the event of a QA Card opened
+ * Log the event of a QA MainContentContainer opened
  * @param cardName
  */
 export const analyticsQACardOpenend = (cardName: string) =>

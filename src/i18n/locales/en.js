@@ -68,12 +68,15 @@ export const en: Locale = {
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Which goods do you want to declare?',
+    mainCategoriesNotYetAnswered: 'Main categories: need to be answered',
   },
   quantityInput: {
     quantityInput: 'Enter quantity',
     recordedOn: 'recorded on {{value}}',
     addQuantities: 'Add quantities',
     enterQuantities: 'Enter the quantities of all {{value}} here',
+    enterQuantity: 'Enter quantity',
+    enterQuantitiesButter: 'Enter the quantities of all {{value}} here',
   },
   amountInput: {
     amountInput: 'Please enter here the value of all transported goods.',
@@ -128,8 +131,11 @@ export const en: Locale = {
     closeModalText: 'Close',
     timePickerTitle: 'Select the period of entry',
     timePickerSubTitle: 'When would you like to cross the border?',
-    timePickerRegistrationValidUntil:
-      'Please be sure to enter with this registration within two hours. This registration is valid until {{date}} at {{time}}.',
+
+    timePickerRegistrationValidUntilSameDay:
+      'Please be sure to enter with this registration within two hours. This registration is valid on {{date}} from {{startTime}} to {{endTime}}.',
+    timePickerRegistrationValidUntilDifferentDay:
+      'Please be sure to enter with this registration within two hours. This registration is valid from {{startDate}} at {{startTime}} to {{endDate}} at {{endTime}}.',
     timePickerTakeOverThePeriod: 'Take over the period',
     timePickerTimePrefix: '',
     recordTheAmountOfMeat: 'Record the amount of meat you carry with you:',
@@ -170,28 +176,26 @@ export const en: Locale = {
   },
   information: {
     informationTitle: 'Information',
-    proceedinAtTheCustoms: 'Proceeding at the customs',
-    proceedinAtTheCustomsSubText:
-      'Far behind, behind the word mountains, far from the lands of vocabulary and consonants live the blind texts.',
-    travelDocuments: 'Travel documents',
+    customsProceduresMainText: 'Proceeding at the customs',
+    customsProceduresSubText:
+      'As a private individual you have to enter Switzerland ...',
+    travelDocumentsMainText: 'Travel documents',
     travelDocumentsSubText:
-      'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
-    haveGoodsWithMe: 'I have goods with me',
-    haveGoodsWithMeSubText:
-      'Far behind, behind the word mountains, far from the lands of vocabulary and consonants live the blind texts.',
-    haveAnimalsOrPlantsWithMe: 'I have animals or plants with me.',
-    haveAnimalsOrPlantsWithMeSubText: 'Far behind live the blind texts.',
-    travelingWithVehicle: "I'm traveling with a vehicle",
-    travelingWithVehicleSubText: 'Far behind live the blind texts.',
-    entryByTrain: 'Entry by train',
+      'To enter Switzerland foreign nationals need a valid ...',
+    declarationMainText: 'I have goods with me',
+    declarationSubText: 'Goods for your private use or as a gift ...',
+    animalsAndPlantsMainText: 'I have animals or plants with me',
+    animalsAndPlantsSubText:
+      'For dogs, cats, other pets and horses you will find the ...',
+    vehiclesMainText: "I'm traveling with a vehicle",
+    vehiclesSubText:
+      'The use of highways and motorways with motor vehicles and trailers ...',
+    entryByTrainMainText: 'Entry by train',
     entryByTrainSubText:
-      'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
-    allowancesFoodAlcoholTobacco: 'Allowances: food, alcohol and tobacco',
-    allowancesFoodAlcoholTobaccoText:
-      'Introduce goods for your private use or as a gift these are duty-free. Exceptions are so-called sensitive goods,for you for agricultural or health-political reasons from one have to pay a certain amount of duty (see table below). The Allowances are per person per day.',
-    prohibitions: 'Prohibitions and Restrictions',
-    prohibitionsSubText:
-      'Far behind, far from the lands of vocabulary and consonants live the blind texts.',
+      'If customs personnel are present on the train, you must take all goods ...',
+    prohibitionsAndRestrictionsMainText: 'Prohibitions and restrictions',
+    prohibitionsAndRestrictionsSubText:
+      'It is forbidden to introduce trademark and design counterfeits. The Swiss customs ...',
   },
   appInformation: {
     appInfoTitle: 'About the app',

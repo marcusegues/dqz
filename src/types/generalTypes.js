@@ -14,13 +14,14 @@ export type Navigation = {
   goBack: (?string) => void,
   navigate: (route: string) => void,
   state: Object,
+  setParams: Object => void,
 };
 
 /**
  * very generic type for children passed to a component
  * For more information, please consult: https://flow.org/en/docs/react/children/
  */
-export type Children = React.ChildrenArray<React.Element<any>>;
+export type Children = React.ChildrenArray<?React.Element<any>>;
 /**
  * Saferpay status of the transaction capture (PENDING is only used for paydirekt at the moment).
  * Possible values: PENDING, CAPTURED.

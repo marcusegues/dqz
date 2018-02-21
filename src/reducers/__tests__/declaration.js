@@ -1,19 +1,15 @@
 // @flow
 import Immutable from 'immutable';
-import { getInitialState } from '../../types/reducers/appReducer';
-import type { State } from '../../types/reducers/appReducer';
+import { getInitialDeclarationState } from '../../types/reducers/declaration';
+import type { DeclarationState } from '../../types/reducers/declaration';
 import {
-  appState,
+  declaration,
   getBasket,
-  getCurrenciesObject,
-  getCurrencyDate,
-  getCurrencyState,
   getMainCategories,
   getPeople,
   getSettings,
   getAmounts,
-} from '../appReducer';
-import { currencyExample } from '../../model/currencies';
+} from '../declaration';
 import {
   addAdult,
   addAmount,
@@ -33,7 +29,7 @@ jest.mock('uuid', () => ({
   v4: jest.fn(() => 1),
 }));
 
-const initState: State = getInitialState();
+const initDeclarationState: DeclarationState = getInitialDeclarationState();
 
 const sampleBasket1: Basket = emptyBasket.withMutations(basket => {
   basket = addQuantity(basket, 'Butter', 23, '2018-02-21T17:37:39.819+01:00');
@@ -63,31 +59,19 @@ const sampleAmounts1: Amounts = initAmounts.withMutations(amounts => {
   return amounts;
 });
 
-describe('Invalid Action...', () => {
+describe('Invalid DeclarationAction...', () => {
   test('...just returns state', () => {
     // $FlowFixMe - deliberately passing a bad action
-    expect(appState(initState, { type: 'foo' })).toBe(initState);
-  });
-});
-
-describe('Currencies...', () => {
-  test('UPDATE_CURRENCIES', () => {
-    expect(
-      appState(initState, {
-        type: 'UPDATE_CURRENCIES',
-        currencyObject: currencyExample,
-        validCurrencies: true,
-        currencyDate: new Date('2000/01/01'),
-        // $FlowFixMe - overriding the date
-      }).set('currencyDate', '')
-    ).toMatchSnapshot();
+    expect(declaration(initDeclarationState, { type: 'foo' })).toBe(
+      initDeclarationState
+    );
   });
 });
 
 describe('Basket...', () => {
   test('BASKET_ADD_QUANTITY', () => {
     expect(
-      appState(initState, {
+      declaration(initDeclarationState, {
         type: 'BASKET_ADD_QUANTITY',
         category: 'Meat',
         quantity: 123,
@@ -98,7 +82,7 @@ describe('Basket...', () => {
 
   test('SET_BASKET', () => {
     expect(
-      appState(initState, {
+      declaration(initDeclarationState, {
         type: 'SET_BASKET',
         basket: sampleBasket1,
       })
@@ -109,7 +93,7 @@ describe('Basket...', () => {
 describe('People...', () => {
   test('ADULTS_CHANGE_QUANTITY', () => {
     expect(
-      appState(initState, {
+      declaration(initDeclarationState, {
         type: 'ADULTS_CHANGE_QUANTITY',
         quantityChange: 55,
       })
@@ -117,7 +101,7 @@ describe('People...', () => {
   });
   test('MINORS_CHANGE_QUANTITY', () => {
     expect(
-      appState(initState, {
+      declaration(initDeclarationState, {
         type: 'MINORS_CHANGE_QUANTITY',
         quantityChange: 123,
       })
@@ -125,7 +109,7 @@ describe('People...', () => {
   });
   test('ADULTS_SET_QUANTITY', () => {
     expect(
-      appState(initState, {
+      declaration(initDeclarationState, {
         type: 'ADULTS_SET_QUANTITY',
         quantity: 55,
       })
@@ -133,7 +117,7 @@ describe('People...', () => {
   });
   test('MINORS_SET_QUANTITY', () => {
     expect(
-      appState(initState, {
+      declaration(initDeclarationState, {
         type: 'MINORS_SET_QUANTITY',
         quantity: 123,
       })
@@ -141,7 +125,7 @@ describe('People...', () => {
   });
   test('SET_PEOPLE', () => {
     expect(
-      appState(initState, {
+      declaration(initDeclarationState, {
         type: 'SET_PEOPLE',
         people: addAdult(addMinor(initPeople)),
       })
@@ -152,7 +136,7 @@ describe('People...', () => {
 describe('Amounts...', () => {
   test('SET_AMOUNTS', () => {
     expect(
-      appState(initState, {
+      declaration(initDeclarationState, {
         type: 'SET_AMOUNTS',
         amounts: addAmount(initAmounts, 'EUR', 123),
       })
@@ -160,7 +144,7 @@ describe('Amounts...', () => {
   });
   test('ADD_AMOUNT', () => {
     expect(
-      appState(initState, {
+      declaration(initDeclarationState, {
         type: 'ADD_AMOUNT',
         currency: 'EUR',
         amount: 123456,
@@ -169,7 +153,7 @@ describe('Amounts...', () => {
   });
   test('ADD_LARGE_AMOUNT', () => {
     expect(
-      appState(initState, {
+      declaration(initDeclarationState, {
         type: 'ADD_LARGE_AMOUNT',
         currency: 'EUR',
         largeAmount: 123456,
@@ -178,7 +162,7 @@ describe('Amounts...', () => {
   });
   test('RESET_AMOUNTS', () => {
     expect(
-      appState(initState.set('amounts', sampleAmounts1), {
+      declaration(initDeclarationState.set('amounts', sampleAmounts1), {
         type: 'RESET_AMOUNTS',
         currency: 'EUR',
       })
@@ -186,7 +170,7 @@ describe('Amounts...', () => {
   });
   test('RESET_LARGE_AMOUNTS', () => {
     expect(
-      appState(initState.set('amounts', sampleAmounts1), {
+      declaration(initDeclarationState.set('amounts', sampleAmounts1), {
         type: 'RESET_LARGE_AMOUNTS',
         currency: 'EUR',
       })
@@ -197,7 +181,7 @@ describe('Amounts...', () => {
 describe('Main Categories...', () => {
   test('ADD_MAIN_CATEGORY', () => {
     expect(
-      appState(initState, {
+      declaration(initDeclarationState, {
         type: 'ADD_MAIN_CATEGORY',
         mainCategory: 'Meat',
       })
@@ -205,7 +189,7 @@ describe('Main Categories...', () => {
   });
   test('REMOVE_MAIN_CATEGORY', () => {
     expect(
-      appState(initState, {
+      declaration(initDeclarationState, {
         type: 'REMOVE_MAIN_CATEGORY',
         mainCategory: 'Meat',
       })
@@ -213,8 +197,8 @@ describe('Main Categories...', () => {
   });
   test('ADD and REMOVE_MAIN_CATEGORY', () => {
     expect(
-      appState(
-        appState(initState, {
+      declaration(
+        declaration(initDeclarationState, {
           type: 'ADD_MAIN_CATEGORY',
           mainCategory: 'Meat',
         }),
@@ -227,7 +211,7 @@ describe('Main Categories...', () => {
   });
   test('SET_MAIN_CATEGORIES', () => {
     expect(
-      appState(initState, {
+      declaration(initDeclarationState, {
         type: 'SET_MAIN_CATEGORIES',
         mainCategories: Immutable.Set(['Meat', 'Alcohol']),
       })
@@ -237,31 +221,28 @@ describe('Main Categories...', () => {
 
 describe('API', () => {
   test('getBasket', () => {
-    expect(getBasket(initState)).toBe(initState.get('basket'));
+    expect(getBasket(initDeclarationState)).toBe(
+      initDeclarationState.get('basket')
+    );
   });
   test('getPeople', () => {
-    expect(getPeople(initState)).toBe(initState.get('people'));
+    expect(getPeople(initDeclarationState)).toBe(
+      initDeclarationState.get('people')
+    );
   });
   test('getAmounts', () => {
-    expect(getAmounts(initState)).toBe(initState.get('amounts'));
+    expect(getAmounts(initDeclarationState)).toBe(
+      initDeclarationState.get('amounts')
+    );
   });
   test('getMainCategories', () => {
-    expect(getMainCategories(initState)).toBe(
-      initState.getIn(['settings', 'mainCategories'])
+    expect(getMainCategories(initDeclarationState)).toBe(
+      initDeclarationState.getIn(['settings', 'mainCategories'])
     );
   });
   test('getSettings', () => {
-    expect(getSettings(initState)).toBe(initState.get('settings'));
-  });
-  test('getCurrenciesObject', () => {
-    expect(getCurrenciesObject(initState)).toBe(
-      initState.get('currencyObject')
+    expect(getSettings(initDeclarationState)).toBe(
+      initDeclarationState.get('settings')
     );
-  });
-  test('getCurrencyState', () => {
-    expect(getCurrencyState(initState)).toBe(initState.get('validCurrencies'));
-  });
-  test('getCurrencyDate', () => {
-    expect(getCurrencyDate(initState)).toBe(initState.get('currencyDate'));
   });
 });

@@ -4,7 +4,7 @@ import type { ComponentType } from 'react';
 // $FlowFixMe
 import { View, Text } from 'react-native';
 import { translate } from 'react-i18next';
-import type { MainCategories } from '../../../../../types/reducers/appReducer';
+import type { MainCategories } from '../../../../../types/reducers/declaration';
 import type { TFunction } from '../../../../../types/generalTypes';
 
 type MainCategoriesInputInfoProps = {
@@ -17,7 +17,9 @@ class MainCategoriesInputInfoInner extends React.Component<
   getText() {
     const { mainCategories, t } = this.props;
     if (mainCategories === 'notAnswered' || mainCategories.isEmpty()) {
-      return <Text>Warenkategorien - muss noch beantwortet werden</Text>;
+      return (
+        <Text>{t('mainCategoriesInput:mainCategoriesNotYetAnswered')}</Text>
+      );
     }
     return (
       <View>
@@ -36,5 +38,5 @@ class MainCategoriesInputInfoInner extends React.Component<
 
 export const MainCategoriesInputInfo = (translate([
   'mainCategories',
-  'general',
+  'mainCategoriesInput',
 ])(MainCategoriesInputInfoInner): ComponentType<MainCategoriesInputInfoProps>);

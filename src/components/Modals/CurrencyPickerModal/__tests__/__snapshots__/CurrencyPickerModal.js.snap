@@ -122,7 +122,7 @@ exports[`Currency Picker renders according to snapshot 1`] = `
             "color": "#9B9B9B",
             "fontFamily": "roboto_regular",
             "fontSize": 14,
-            "marginHorizontal": 31.388235294117646,
+            "paddingHorizontal": 31.388235294117646,
           }
         }
       >
@@ -663,8 +663,8 @@ exports[`Currency Picker renders according to snapshot 1`] = `
             "color": "#9B9B9B",
             "fontFamily": "roboto_regular",
             "fontSize": 14,
-            "marginHorizontal": 31.388235294117646,
             "marginTop": 10,
+            "paddingHorizontal": 31.388235294117646,
             "textAlign": "center",
           }
         }

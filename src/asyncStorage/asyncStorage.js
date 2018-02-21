@@ -18,7 +18,7 @@ import {
   initAmounts,
   initPeople,
 } from '../model/configurationApi';
-import type { MainCategories } from '../types/reducers/appReducer';
+import type { MainCategories } from '../types/reducers/declaration';
 import {
   deserializeAmounts,
   deserializeBasket,

@@ -1,19 +1,27 @@
 // @flow
 import type { RecordOf, RecordFactory } from 'immutable';
 import Immutable from 'immutable';
-import { getInitialState } from './appReducer';
-import { getInitialConnectivityState } from './connectivityReducer';
-import type { State } from './appReducer';
-import type { ConnectivityState } from './connectivityReducer';
+import { getInitialDeclarationState } from './declaration';
+import { getInitialConnectivityState } from './connectivity';
+import type { DeclarationState } from './declaration';
+import type { ConnectivityState } from './connectivity';
+import type { CurrenciesState } from './currencies';
+import type { ReceiptsState } from './receipts';
+import { getInitialReceiptsState } from './receipts';
+import { getInitialCurrenciesState } from './currencies';
 
 type AppStateObj = {
-  appState: State,
+  declaration: DeclarationState,
   connectivity: ConnectivityState,
+  currencies: CurrenciesState,
+  receipts: ReceiptsState,
 };
 
 export const getInitialAppState: RecordFactory<AppStateObj> = Immutable.Record({
-  appState: getInitialState(),
+  declaration: getInitialDeclarationState(),
   connectivity: getInitialConnectivityState(),
+  currencies: getInitialCurrenciesState(),
+  receipts: getInitialReceiptsState(),
 });
 
 export type AppState = RecordOf<AppStateObj>;
