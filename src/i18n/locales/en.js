@@ -77,6 +77,7 @@ export const en: Locale = {
     enterQuantities: 'Enter the quantities of all {{value}} here',
     enterQuantity: 'Enter quantity',
     enterQuantitiesButter: 'Enter the quantities of all {{value}} here',
+    enterQuantitiesAlcohol: 'Enter the quantities of all {{value}} here',
   },
   amountInput: {
     amountInput: 'Please enter here the value of all transported goods.',

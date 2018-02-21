@@ -81,6 +81,8 @@ export const de: Locale = {
     enterQuantity: 'Menge eingeben',
 
     enterQuantitiesButter: 'Erfassen Sie hier die Mengen von {{value}}',
+    enterQuantitiesAlcohol:
+      'Erfassen Sie hier die Mengen aller alkoholischen Getränke',
   },
   amountInput: {
     amountInput:
