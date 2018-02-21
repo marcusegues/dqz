@@ -241,6 +241,14 @@ type FurtherInformationModalTranslations = {
   acceptance: string,
 };
 
+type UnitsTranslations = {
+  kilo: string,
+  kiloOrLiter: string,
+  liter: string,
+  unit: string,
+  gram: string,
+};
+
 /**
  * The Locale type defines all the namespaces that we use in the translation
  * The namespaces are formed by the individual strings, respectively.
@@ -265,4 +273,5 @@ export type Locale = {
   overview: OverviewTranslations,
   legalNoticeModal: LegalNoticeModalTranslations,
   furtherInformationModal: FurtherInformationModalTranslations,
+  units: UnitsTranslations,
 };

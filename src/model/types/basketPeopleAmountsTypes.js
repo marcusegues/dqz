@@ -7,6 +7,7 @@ import type {
 } from 'immutable';
 import Immutable from 'immutable';
 import type { Currency } from '../currencies';
+import type { CategoryUnit } from './categoryUnit';
 
 /**
  * Declare the Main Categories
@@ -38,14 +39,14 @@ export type Category =
 // CATEGORY INFO
 type CategoryInfoContent = {
   name: string,
-  unit: string,
+  unit: CategoryUnit,
   icon: string,
 };
 export const makeCategoryInfoRecord: RecordFactory<
   CategoryInfoContent
 > = Immutable.Record({
   name: 'category',
-  unit: 'kg',
+  unit: 'kilo',
   icon: 'icon',
 });
 type CategoryInfo = RecordOf<CategoryInfoContent>;

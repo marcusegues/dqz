@@ -307,4 +307,16 @@ export const de: Locale = {
     acceptance:
       'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 %; auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
   },
+  units: {
+    kilo: 'kg',
+    kilo_plural: 'kgs',
+    kiloOrLiter: 'kg/Liter',
+    kiloOrLiter_plural: 'kgs/Liter',
+    liter: 'Liter',
+    liter_plural: 'Liter',
+    unit: 'Stück',
+    unit_plural: 'Stücke',
+    gram: 'Gramm',
+    gram_plural: 'Gramm',
+  },
 };

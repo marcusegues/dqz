@@ -219,10 +219,7 @@ export const fr: Locale = {
       'Centrale de renseignement de la douane\n058 467 15 15\nzollauskunft@ezv.admin.ch',
     reachability: 'Joignabilité:',
     workingHours: 'Lundi – Vendredi, 8.00 – 11.30 et 13.30 a 17.00',
-    generalCustomsDirectorate:
-      'Monbijoustrasse 40\n' +
-      '3003 Bern\n' +
-      'http://www.ezv.admin.ch',
+    generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern\nhttp://www.ezv.admin.ch`,
     designAndDevelopment: 'Conception et développement',
     ambriteAddress:
       'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch\nhttp://www.ambrite.ch',
@@ -231,8 +228,7 @@ export const fr: Locale = {
       'Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten. Damit das Layout nun nicht nackt im Raume steht und sich klein und leer vorkommt, springe ich ein: der Blindtext. Genau zu diesem Zwecke erschaffen, immer im Schatten meines großen Bruders »Lorem Ipsum«, freue ich mich jedes Mal, wenn Sie ein paar Zeilen lesen. Denn esse est percipi - Sein ist wahrgenommen werden. Und weil Sie nun schon die Güte haben, mich ein paar weitere Sätze lang zu begleiten, möchte ich diese Gelegenheit nutzen, Ihnen nicht nur als Lückenfüller zu dienen, sondern auf etwas hinzuweisen, das es ebenso verdient wahrgenommen zu werden: Webstandards nämlich.',
   },
   legalNoticeInformation: {
-    navigationHeaderTitle:
-      "Info importantes",
+    navigationHeaderTitle: 'Info importantes',
     conditions: 'Conditions-cadres',
     importantSoon: "L'essentiel en bref",
     importantSoonText:
@@ -314,5 +310,17 @@ export const fr: Locale = {
     furtherInformation: "Plus d'informations:",
     acceptance:
       "En utilisant l'application, vous acceptez que le taux de TVA est de 7,7%; est également appliqué aux biens effectivement soumis au taux d'imposition réduit (aliments, aliments pour animaux, médicaments et livres).",
+  },
+  units: {
+    kilo: 'kg',
+    kilo_plural: 'kgs',
+    kiloOrLiter: 'kg/litre',
+    kiloOrLiter_plural: 'kgs/litres',
+    liter: 'litre',
+    liter_plural: 'litres',
+    unit: 'unité',
+    unit_plural: 'unités',
+    gram: 'gramme',
+    gram_plural: 'grammes',
   },
 };
