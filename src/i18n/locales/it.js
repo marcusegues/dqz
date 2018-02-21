@@ -310,4 +310,16 @@ export const it: Locale = {
     acceptance:
       "Utilizzando l'app, accetti che l'aliquota IVA sia pari al 7,7%; si applica anche alle merci che sono effettivamente soggette all'aliquota ridotta (alimenti, mangimi, medicinali e libri).",
   },
+  units: {
+    kilo: 'kg',
+    kilo_plural: 'kgs',
+    kiloOrLiter: 'kg/litri',
+    kiloOrLiter_plural: 'kgs/litris',
+    liter: 'litri',
+    liter_plural: 'litris',
+    unit: 'unità',
+    unit_plural: 'unità',
+    gram: 'grammo',
+    gram_plural: 'grammi',
+  },
 };
