@@ -81,14 +81,13 @@ class TimePickerModalInner extends React.Component<
   render() {
     const { t, modalVisible, onHideModal, onSelectTime } = this.props;
     const { date, hours, minutes } = this.state;
-    const entryTimePlus = DateTime.fromFormat(
+    const entryTime = DateTime.fromFormat(
       `${date} ${hours}:${minutes}`,
       'dd.MM.y HH:mm'
-    )
-      .setZone('Europe/Zurich', {
-        keepLocalTime: true,
-      })
-      .plus({ hours: 2 });
+    ).setZone('Europe/Zurich', {
+      keepLocalTime: true,
+    });
+    const entryTimePlus = entryTime.plus({ hours: 2 });
     return (
       <AppModal
         modalVisible={modalVisible}
@@ -167,13 +166,26 @@ class TimePickerModalInner extends React.Component<
             </View>
           </TouchableWithoutFeedback>
 
-          <CardHeaderSubText
-            style={ownStyles.validUntilText}
-            text={t(['timePickerRegistrationValidUntil'], {
-              date: entryTimePlus.toFormat('dd.MM.y'),
-              time: entryTimePlus.toFormat('HH:mm'),
-            })}
-          />
+          {entryTime.day === entryTimePlus.day ? (
+            <CardHeaderSubText
+              style={ownStyles.validUntilText}
+              text={t(['timePickerRegistrationValidUntilSameDay'], {
+                date: entryTime.toFormat('dd.MM.y'),
+                startTime: entryTime.toFormat('HH:mm'),
+                endTime: entryTimePlus.toFormat('HH:mm'),
+              })}
+            />
+          ) : (
+            <CardHeaderSubText
+              style={ownStyles.validUntilText}
+              text={t(['timePickerRegistrationValidUntilDifferentDay'], {
+                startDate: entryTime.toFormat('dd.MM.y'),
+                startTime: entryTime.toFormat('HH:mm'),
+                endDate: entryTimePlus.toFormat('dd.MM.y'),
+                endTime: entryTimePlus.toFormat('HH:mm'),
+              })}
+            />
+          )}
 
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton

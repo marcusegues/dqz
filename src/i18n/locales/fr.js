@@ -120,11 +120,12 @@ export const fr: Locale = {
     confirmPicker: 'Reprendre {{value}}',
     standardCategoryPicker: 'Quantités standard',
     individualCategoryPicker: 'Quantités exactes',
-    currencyPickerTitle: 'Saisir la valeur de toutes les marchandises transportées',
+    currencyPickerTitle:
+      'Saisir la valeur de toutes les marchandises transportées',
     currencyPickerLargeAmountTitle:
       " Saisir un bien d'une valeur supérieure à {{value}} francs.",
     currencyPickerSubTitle:
-      "Veuillez saisir ici la valeur hors taxes de toutes les marchandises transportées dans leur devise d’origine.",
+      'Veuillez saisir ici la valeur hors taxes de toutes les marchandises transportées dans leur devise d’origine.',
     currencyPickerRate: 'Taux de change du:',
     currencyPickerInvalidInput: 'Saisie invalide/vide',
     currencyPickerNoOffsettingInput: "Aucun montant adéquat n'est disponible.",
@@ -133,11 +134,13 @@ export const fr: Locale = {
       'Souhaitez-vous continuer avec le panier actuel ou recommencer avec un panier vide?',
     savedBasketTotalCost: 'Coût total: {{value}} francs',
     savedBasketNewShoppingCart: 'Nouveau panier',
-    closeModalText: 'Schliessen',
+    closeModalText: 'Fermer',
     timePickerTitle: "Choix de l'heure du passage de la frontière",
     timePickerSubTitle: 'Quand souhaitez-vous traverser la frontière?',
-    timePickerRegistrationValidUntil:
-      'La quittance douane est valable le {{date}} à {{time}}',
+    timePickerRegistrationValidUntilSameDay:
+      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{date}} von {{startTime}} bis zum {{endTime}} Uhr gültig.',
+    timePickerRegistrationValidUntilDifferentDay:
+      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{startDate}} von {{startTime}} bis {{endDate}} um {{endTime}} Uhr gültig.',
     timePickerTakeOverThePeriod: 'Reprendre la période selectionnée',
     timePickerTimePrefix: 'Heure',
     recordTheAmountOfMeat:
