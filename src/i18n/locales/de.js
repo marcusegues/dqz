@@ -69,12 +69,17 @@ export const de: Locale = {
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Welche Waren möchten Sie anmelden?',
+    mainCategoriesNotYetAnswered:
+      'Warenkategorien - muss noch beantwortet werden',
   },
   quantityInput: {
     quantityInput: 'Mengeneingabe',
     recordedOn: 'erfasst am {{value}}',
     addQuantities: 'Mengen hinzufügen',
     enterQuantities: 'Erfassen Sie hier die Mengen aller {{value}}',
+
+    enterQuantity: 'Menge eingeben',
+
     enterQuantitiesButter: 'Erfassen Sie hier die Mengen von {{value}}',
   },
   amountInput: {
@@ -133,8 +138,11 @@ export const de: Locale = {
     closeModalText: 'Schliessen',
     timePickerTitle: 'Zeitraum der Einreise wählen',
     timePickerSubTitle: 'Wann möchten Sie die Grenze überqueren?',
-    timePickerRegistrationValidUntil:
-      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist bis zum {{date}} um {{time}} Uhr gültig.',
+    timePickerRegistrationValidUntilSameDay:
+      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{date}} von {{startTime}} bis zum {{endTime}} Uhr gültig.',
+    timePickerRegistrationValidUntilDifferentDay:
+      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{startDate}} von {{startTime}} bis {{endDate}} um {{endTime}} Uhr gültig.',
+
     timePickerTakeOverThePeriod: 'Zeitraum übernehmen',
     timePickerTimePrefix: 'Uhr',
     recordTheAmountOfMeat:
@@ -210,10 +218,7 @@ export const de: Locale = {
       'Auskunftszentrale Zoll\n058 467 15 15\nzollauskunft@ezv.admin.ch',
     reachability: 'Erreichbarkeit:',
     workingHours: 'Montag – Freitag, 8.00 – 11.30 und 13.30 bis 17.00',
-    generalCustomsDirectorate:
-      'Monbijoustrasse 40\n' +
-      '3003 Bern\n' +
-      'http://www.ezv.admin.ch',
+    generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern\nhttp://www.ezv.admin.ch`,
     designAndDevelopment: 'Design & Entwicklung',
     ambriteAddress:
       'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch\nhttp://www.ambrite.ch',

@@ -56,7 +56,7 @@ export const it: Locale = {
     welcome: 'Benvenuti a',
     onBoardingMessage:
       'La lingua è stata definita sulla base delle impostazioni attuali del sistema.',
-    currentLanguageMessage: 'La tua lingua attualmente selezionata è',
+    currentLanguageMessage: 'La tua lingua attualmente \n selezionata è',
     selectLanguage: 'Selezionare un’altra lingua',
     confirmationVat: ' Confermo di accettare l’aliquota IVA unica di',
     confirmationVat2: 'all’atto dell’imposizione delle merci',
@@ -67,12 +67,14 @@ export const it: Locale = {
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Quali merci si desidera dichiarare?',
+    mainCategoriesNotYetAnswered: 'Categoria merceologica: dati mancanti',
   },
   quantityInput: {
     quantityInput: 'Ingresso quantità',
     recordedOn: 'registrato su {{value}}',
     addQuantities: 'Aggiungi quantità',
     enterQuantities: 'Inserisci le quantità di tutti {{value}} qui',
+    enterQuantity: 'Inserisci la quantità',
     enterQuantitiesButter: 'Inserisci le quantità di tutti {{value}} qui',
   },
   amountInput: {
@@ -131,8 +133,10 @@ export const it: Locale = {
     closeModalText: 'Chiudere',
     timePickerTitle: 'Scelta del passaggio in frontiera:',
     timePickerSubTitle: 'Quando desidera attraversare la frontiera?',
-    timePickerRegistrationValidUntil:
-      'Si assicuri di attraversare la frontiera entro due ore. La quietanza doganale è valevole alle ore {{time}} del {{date}}.',
+    timePickerRegistrationValidUntilSameDay:
+      'Questa registrazione è valida per {{date}} da {{startTime}} a {{endTime}} in punto.',
+    timePickerRegistrationValidUntilDifferentDay:
+      'Questo accesso è valido per {{startDate}} da {{startTime}} a {{endDate}} al {{endTime}} in punto.',
     timePickerTakeOverThePeriod: 'Prendi il controllo del periodo',
     timePickerTimePrefix: 'ora',
     recordTheAmountOfMeat: 'Registra la quantità di carne che porti con te:',
