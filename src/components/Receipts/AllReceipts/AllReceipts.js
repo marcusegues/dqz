@@ -28,6 +28,7 @@ type AllReceiptsState = {
 
 type AllReceiptsProps = {
   t: TFunction,
+  i18n: { language: string },
   navigation: Navigation,
   setReceiptId: (receiptId: string) => void,
 };
@@ -62,7 +63,7 @@ class AllReceiptsInner extends React.Component<
   }
 
   prepareReceiptsObject() {
-    const { t, navigation, setReceiptId } = this.props;
+    const { t, i18n, navigation, setReceiptId } = this.props;
 
     const sortDateTimeAsc = (a, b) =>
       DateTime.fromISO(a.receiptEntryTime) >
@@ -98,7 +99,10 @@ class AllReceiptsInner extends React.Component<
               vat: fullVat.toFixed(2),
             })}
             date={t('allReceiptsDate', {
-              value: receiptEntryTimePlus.toFormat('dd.MM.y HH:mm:ss'),
+              value:
+                i18n.language === 'fr'
+                  ? receiptEntryTimePlus.toFormat("dd.MM.y HH'h'mm")
+                  : receiptEntryTimePlus.toFormat('dd.MM.y HH:mm'),
             })}
             rowOnPress={() => {
               setReceiptId(receipt.receiptId);
