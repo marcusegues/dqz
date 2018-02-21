@@ -131,8 +131,11 @@ export const en: Locale = {
     closeModalText: 'Close',
     timePickerTitle: 'Select the period of entry',
     timePickerSubTitle: 'When would you like to cross the border?',
-    timePickerRegistrationValidUntil:
-      'Please be sure to enter with this registration within two hours. This registration is valid until {{date}} at {{time}}.',
+
+    timePickerRegistrationValidUntilSameDay:
+      'Please be sure to enter with this registration within two hours. This registration is valid on {{date}} from {{startTime}} to {{endTime}}.',
+    timePickerRegistrationValidUntilDifferentDay:
+      'Please be sure to enter with this registration within two hours. This registration is valid from {{startDate}} at {{startTime}} to {{endDate}} at {{endTime}}.',
     timePickerTakeOverThePeriod: 'Take over the period',
     timePickerTimePrefix: '',
     recordTheAmountOfMeat: 'Record the amount of meat you carry with you:',

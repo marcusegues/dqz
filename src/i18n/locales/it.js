@@ -133,8 +133,10 @@ export const it: Locale = {
     closeModalText: 'Chiudere',
     timePickerTitle: 'Scelta del passaggio in frontiera:',
     timePickerSubTitle: 'Quando desidera attraversare la frontiera?',
-    timePickerRegistrationValidUntil:
-      'Si assicuri di attraversare la frontiera entro due ore. La quietanza doganale è valevole alle ore {{time}} del {{date}}.',
+    timePickerRegistrationValidUntilSameDay:
+      'Questa registrazione è valida per {{date}} da {{startTime}} a {{endTime}} in punto.',
+    timePickerRegistrationValidUntilDifferentDay:
+      'Questo accesso è valido per {{startDate}} da {{startTime}} a {{endDate}} al {{endTime}} in punto.',
     timePickerTakeOverThePeriod: 'Prendi il controllo del periodo',
     timePickerTimePrefix: 'ora',
     recordTheAmountOfMeat: 'Registra la quantità di carne che porti con te:',
