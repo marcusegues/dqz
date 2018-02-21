@@ -119,7 +119,7 @@ class TimePickerModalInner extends React.Component<
                 mode="dropdown"
                 prompt=""
                 itemStyle={{}}
-                style={{ flex: 0.5 }}
+                style={{ flex: 0.4 }}
               >
                 {pickerDates.map(i => (
                   <Picker.Item key={i.id} label={i.label} value={i.value} />
@@ -135,7 +135,6 @@ class TimePickerModalInner extends React.Component<
                 }
                 mode="dropdown"
                 prompt=""
-                itemStyle={{ textAlign: 'right' }}
                 style={{ flex: 0.15 }}
               >
                 {pickerHours.map(i => (
