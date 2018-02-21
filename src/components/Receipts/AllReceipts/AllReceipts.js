@@ -21,6 +21,7 @@ import { calculateDuty } from '../../../model/dutyCalculations';
 import { calculateVat } from '../../../model/vatCalculations';
 import { getConvertedLocalTimeToSwiss } from '../../../model/utils';
 import { ScrollViewCard } from '../../General Components/ScrollViewCard';
+import { MainContentContainer } from '../../MainContentContainer/MainContentContainer';
 
 type AllReceiptsState = {
   receipts: List<Receipt>,
@@ -28,6 +29,7 @@ type AllReceiptsState = {
 
 type AllReceiptsProps = {
   t: TFunction,
+  i18n: { language: string },
   navigation: Navigation,
   setReceiptId: (receiptId: string) => void,
 };
@@ -62,7 +64,7 @@ class AllReceiptsInner extends React.Component<
   }
 
   prepareReceiptsObject() {
-    const { t, navigation, setReceiptId } = this.props;
+    const { t, i18n, navigation, setReceiptId } = this.props;
 
     const sortDateTimeAsc = (a, b) =>
       DateTime.fromISO(a.receiptEntryTime) >
@@ -98,7 +100,10 @@ class AllReceiptsInner extends React.Component<
               vat: fullVat.toFixed(2),
             })}
             date={t('allReceiptsDate', {
-              value: receiptEntryTimePlus.toFormat('dd.MM.y HH:mm:ss'),
+              value:
+                i18n.language === 'fr'
+                  ? receiptEntryTimePlus.toFormat("dd.MM.y HH'h'mm")
+                  : receiptEntryTimePlus.toFormat('dd.MM.y HH:mm'),
             })}
             rowOnPress={() => {
               setReceiptId(receipt.receiptId);
@@ -129,14 +134,16 @@ class AllReceiptsInner extends React.Component<
     } = this.prepareReceiptsObject();
 
     return (
-      <ScrollViewCard>
-        <CardHeader text={t('allReceiptsCurrentReceipt')} />
-        {sortedReceipts.actualReceipts}
-        <View style={{ marginTop: verticalScale(30) }}>
-          <CardHeader text={t('allReceiptsOlderReceipts')} />
-        </View>
-        {sortedReceipts.oldReceipts}
-      </ScrollViewCard>
+      <MainContentContainer>
+        <ScrollViewCard>
+          <CardHeader text={t('allReceiptsCurrentReceipt')} />
+          {sortedReceipts.actualReceipts}
+          <View style={{ marginTop: verticalScale(30) }}>
+            <CardHeader text={t('allReceiptsOlderReceipts')} />
+          </View>
+          {sortedReceipts.oldReceipts}
+        </ScrollViewCard>
+      </MainContentContainer>
     );
   }
 }
