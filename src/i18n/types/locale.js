@@ -210,7 +210,7 @@ type LegalNoticeInformationTranslations = {
   importantSoon: string,
   importantSoonText1: string,
   importantSoonText2: string,
-  importantSoonTex3: string,
+  importantSoonText3: string,
   importantSoonText4: string,
   importantSoonText5: string,
   importantSoonText6: string,
