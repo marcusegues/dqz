@@ -81,6 +81,8 @@ export const de: Locale = {
     enterQuantity: 'Menge eingeben',
 
     enterQuantitiesButter: 'Erfassen Sie hier die Mengen von {{value}}',
+    enterQuantitiesAlcohol:
+      'Erfassen Sie hier die Mengen aller alkoholischen Getränke',
   },
   amountInput: {
     amountInput:
@@ -228,7 +230,7 @@ export const de: Locale = {
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informationen zum Gebrauch der App',
-    conditions: 'Rahmenbedingungen',
+    conditions: 'Nutzungsbedingungen',
     importantSoon: 'Wichtiges in Kürze',
     importantSoonText1:
       'Sie dürfen die App für die gleiche Person bzw. die gleichen Personen nur einmal täglich (Kalendertag) einsetzen.',

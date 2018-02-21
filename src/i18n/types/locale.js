@@ -80,6 +80,8 @@ type QuantityInputTranslations = {
   addQuantities: string,
   enterQuantities: string,
   enterQuantity: string,
+  enterQuantitiesButter: string,
+  enterQuantitiesAlcohol: string,
 };
 
 type AmountInputTranslations = {
