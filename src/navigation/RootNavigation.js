@@ -30,7 +30,7 @@ import { AppInfo } from '../screens/AppInfo/AppInfo';
 import { LegalNoticeInfo } from '../screens/LegalNoticeInfo/LegalNoticeInfo';
 import { HomeIcon } from '../components/Headers/subcomponents/HomeIcon';
 import { DownloadIcon } from '../components/Headers/subcomponents/DownloadIcon';
-import { Information } from '../screens/Information/Information';
+import { Information } from '../screens/Information/InformationMainCategories';
 import { SearchIcon } from '../components/Headers/subcomponents/SearchIcon';
 import type { Navigation } from '../types/generalTypes';
 import { BackArrow } from '../components/Headers/subcomponents/BackArrow';

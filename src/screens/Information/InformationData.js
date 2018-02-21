@@ -38,3 +38,13 @@ export const informationSubCategories: InformationSubCategoriesType = {
   entryByTrain: 'noSubCategories',
   prohibitionsAndRestrictions: prohibitionsAndRestrictionsSubCategories,
 };
+
+export const informationNavigateTo = {
+  customsProcedures: 'CustomsProcedures',
+  travelDocuments: 'noSubCategories',
+  declaration: declarationSubCategories,
+  animalsAndPlants: animalsAndPlantsSubCategories,
+  vehicles: vehiclesSubCategories,
+  entryByTrain: 'noSubCategories',
+  prohibitionsAndRestrictions: prohibitionsAndRestrictionsSubCategories,
+};
