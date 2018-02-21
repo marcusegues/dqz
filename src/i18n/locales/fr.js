@@ -140,9 +140,9 @@ export const fr: Locale = {
     timePickerTitle: "Choix de l'heure du passage de la frontière",
     timePickerSubTitle: 'Quand souhaitez-vous traverser la frontière?',
     timePickerRegistrationValidUntilSameDay:
-      'Please be sure to enter with this registration within two hours. This registration is valid on {{date}} from {{startTime}} to {{endTime}}.',
+      'La quittance douane est valable le {{date}} de {{startTime}} à {{endTime}}.',
     timePickerRegistrationValidUntilDifferentDay:
-      'Please be sure to enter with this registration within two hours. This registration is valid from {{startDate}} at {{startTime}} to {{endDate}} at {{endTime}}.',
+      'La quittance douane est valable le {{startDate}} de {{startTime}} à {{endDate}} à {{endTime}}.',
 
     timePickerTakeOverThePeriod: 'Reprendre la période selectionnée',
     timePickerTimePrefix: 'Heure',
