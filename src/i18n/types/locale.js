@@ -145,6 +145,7 @@ type ModalTranslations = {
   timePickerTimePrefix: string,
   recordTheAmountOfMeat: string,
   recordTheAmountOfTobacco: string,
+  savedBasket: string,
 };
 
 type InformationTranslations = {

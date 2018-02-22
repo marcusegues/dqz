@@ -142,6 +142,7 @@ export const it: Locale = {
     timePickerTimePrefix: 'ora',
     recordTheAmountOfMeat: 'Registra la quantità di carne che porti con te:',
     recordTheAmountOfTobacco: 'Registra la quantità di tabacco che porti:',
+    savedBasket: 'Carrello corrente',
   },
   payment: {
     overViewTitle: ' Riepilogo della dichiarazione',

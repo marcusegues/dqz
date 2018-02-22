@@ -24,6 +24,7 @@ import {
   deserializeBasket,
   deserializeMainCategories,
   deserializePeople,
+  deserializeReceiptEntryTime,
   deserializeReceipts,
 } from './deserializers';
 
@@ -109,3 +110,7 @@ export const fetchMainCategoriesAsyncStorage = async (
   key: StoreType
 ): Promise<MainCategories> =>
   parserGeneric(key, Immutable.Set(), deserializeMainCategories);
+
+export const fetchReceiptEntryTimeAsyncStorage = async (
+  key: StoreType
+): Promise<string> => parserGeneric(key, '', deserializeReceiptEntryTime);
