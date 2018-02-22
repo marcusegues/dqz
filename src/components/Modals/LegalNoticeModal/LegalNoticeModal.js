@@ -38,13 +38,13 @@ const ownStyles = {
   },
   acceptanceContainer: {
     marginHorizontal: scale(16),
-    flexDirection: 'row',
+    flex: 0,
+      flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
   },
   acceptanceText: {
     color: '#4a4a4a',
-    paddingRight: scale(16),
   },
 };
 
@@ -108,10 +108,12 @@ class LegalNoticeModalInner extends React.Component<
               checked={checked}
               onPress={() => this.setState({ checked: !checked })}
             />
+            <View style={{ flex: 1 }}>
             <CardHeaderSubText
               style={ownStyles.acceptanceText}
               text={t('acceptance')}
             />
+            </View>
           </View>
 
           <View style={pickerModalStyle.redButtonWrapper}>
