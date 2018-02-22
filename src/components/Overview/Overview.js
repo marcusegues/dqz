@@ -52,7 +52,10 @@ type OverviewState = {
 };
 
 class OverviewInner extends React.Component<
-  OverviewProps & { t: TFunction } & ReduxInjectedProps,
+  OverviewProps & {
+    t: TFunction,
+    i18n: { language: string },
+  } & ReduxInjectedProps,
   OverviewState
 > {
   static defaultProps = {
@@ -61,7 +64,10 @@ class OverviewInner extends React.Component<
     paymentDisabled: true,
   };
 
-  constructor(props: OverviewProps & ReduxInjectedProps & { t: TFunction }) {
+  constructor(
+    props: OverviewProps &
+      ReduxInjectedProps & { t: TFunction, i18n: { language: string } }
+  ) {
     super(props);
     this.state = {
       modalVisible: props.modalVisible || false,
@@ -86,6 +92,22 @@ class OverviewInner extends React.Component<
 
   handleSetReceiptEntryTime(entryTime: string) {
     this.props.setReceiptEntryTime(entryTime);
+  }
+
+  periodOfEntryTime(momentReceiptEntryTime) {
+    const { i18n } = this.props;
+    if (i18n.language === 'fr') {
+      return `${momentReceiptEntryTime.toFormat(
+        "dd.MM.y HH'h'mm"
+      )} - ${momentReceiptEntryTime
+        .plus({ hours: 2 })
+        .toFormat("dd.MM.y HH'h'mm")}`;
+    }
+    return `${momentReceiptEntryTime.toFormat(
+      'dd.MM.y HH:mm'
+    )} - ${momentReceiptEntryTime
+      .plus({ hours: 2 })
+      .toFormat('dd.MM.y HH:mm')}`;
   }
 
   render() {
@@ -133,11 +155,7 @@ class OverviewInner extends React.Component<
         <PeriodOfEntryRow
           title={t('receipt:entryTime')}
           subtitle={t('receipt:chooseOtherEntryTime')}
-          time={`${momentReceiptEntryTime.toFormat(
-            'dd.MM.y HH:mm'
-          )} - ${momentReceiptEntryTime
-            .plus({ hours: 2 })
-            .toFormat('dd.MM.y HH:mm')}`}
+          time={this.periodOfEntryTime(momentReceiptEntryTime)}
           onPress={() => this.handleShowModal()}
         />
         <InfoNote />

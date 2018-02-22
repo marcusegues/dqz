@@ -69,16 +69,24 @@ export const de: Locale = {
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Welche Waren möchten Sie anmelden?',
+    mainCategoriesNotYetAnswered:
+      'Warenkategorien - muss noch beantwortet werden',
   },
   quantityInput: {
     quantityInput: 'Mengeneingabe',
     recordedOn: 'erfasst am {{value}}',
     addQuantities: 'Mengen hinzufügen',
     enterQuantities: 'Erfassen Sie hier die Mengen aller {{value}}',
+
+    enterQuantity: 'Menge eingeben',
+
+    enterQuantitiesButter: 'Erfassen Sie hier die Mengen von {{value}}',
+    enterQuantitiesAlcohol:
+      'Erfassen Sie hier die Mengen aller alkoholischen Getränke',
   },
   amountInput: {
     amountInput:
-      'Bitte erfassen Sie hier den Wert sämtlicher mitgeführten Waren.',
+      'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Ware.',
     amountInputLargeItem:
       'Führen Sie einzelne Gegenstände mit einem Wert von über {{value}} Franken mit?',
     amountInputLargeItemGreyBox:
@@ -116,11 +124,11 @@ export const de: Locale = {
     confirmPicker: '{{value}} übernehmen',
     standardCategoryPicker: 'Standardmengen',
     individualCategoryPicker: 'Genaue Mengen',
-    currencyPickerTitle: 'Gegenstand erfassen',
+    currencyPickerTitle: 'Wert sämtlicher mitgeführter Waren erfassen',
     currencyPickerLargeAmountTitle:
-      'Gegenstand mit mehr als CHF {{value}} erfassen',
+      'Wert sämtlicher mitgeführter Waren mit mehr als CHF {{value}} erfassen',
     currencyPickerSubTitle:
-      'Erfassen Sie den Nettowert des Gegenstands in seiner Original-Währung: ',
+      'Erfassen Sie den Nettowert der Waren in der Original-Währung:',
     currencyPickerRate: 'Kurs vom',
     currencyPickerInvalidInput: 'Ungültige/leere Eingabe',
     currencyPickerNoOffsettingInput: 'Kein entsprechender Betrag',
@@ -132,8 +140,11 @@ export const de: Locale = {
     closeModalText: 'Schliessen',
     timePickerTitle: 'Zeitraum der Einreise wählen',
     timePickerSubTitle: 'Wann möchten Sie die Grenze überqueren?',
-    timePickerRegistrationValidUntil:
-      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist bis zum {{date}} um {{time}} Uhr gültig.',
+    timePickerRegistrationValidUntilSameDay:
+      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{date}} von {{startTime}} bis zum {{endTime}} Uhr gültig.',
+    timePickerRegistrationValidUntilDifferentDay:
+      'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{startDate}} von {{startTime}} bis {{endDate}} um {{endTime}} Uhr gültig.',
+
     timePickerTakeOverThePeriod: 'Zeitraum übernehmen',
     timePickerTimePrefix: 'Uhr',
     recordTheAmountOfMeat:
@@ -142,7 +153,7 @@ export const de: Locale = {
       'Erfassen Sie Tabakmenge, die Sie mit sich führen:',
   },
   payment: {
-    overViewTitle: 'Übersicht ihrer Anmeldung',
+    overViewTitle: 'Übersicht Ihrer Anmeldung',
     dutyColumn: 'Zollabgabe in CHF',
     sumText: 'Summe (CHF)',
     entryInfo:
@@ -176,28 +187,27 @@ export const de: Locale = {
   },
   information: {
     informationTitle: 'Wissenswertes',
-    proceedinAtTheCustoms: 'Vorgehen am Zoll',
-    proceedinAtTheCustomsSubText:
-      'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-    travelDocuments: 'Reisedokumente',
+    customsProceduresMainText: 'Vorgehen am Zoll',
+    customsProceduresSubText:
+      'Als Privatperson müssen Sie bei der Einreise in die Schweiz ...',
+    travelDocumentsMainText: 'Reisedokumente',
     travelDocumentsSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-    haveGoodsWithMe: 'Ich habe Waren dabei',
-    haveGoodsWithMeSubText:
-      'Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-    haveAnimalsOrPlantsWithMe: 'Ich habe Tiere oder Pflanzen dabei',
-    haveAnimalsOrPlantsWithMeSubText: 'Weit hinten leben die Blindtexte.',
-    travelingWithVehicle: 'Ich bin mit einem Fahrzeug unterwegs',
-    travelingWithVehicleSubText: 'Weit hinten leben die Blindtexte.',
-    entryByTrain: 'Einreise per Bahn',
+      'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges ...',
+    declarationMainText: 'Ich habe Waren dabei',
+    declarationSubText:
+      'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
+    animalsAndPlantsMainText: 'Ich habe Tiere oder Pflanzen dabei',
+    animalsAndPlantsSubText:
+      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die ...',
+    vehiclesMainText: 'Ich bin mit einem Fahrzeug unterwegs',
+    vehiclesSubText:
+      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen und Anhängern ...',
+    entryByTrainMainText: 'Einreise per Bahn',
     entryByTrainSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
-    allowancesFoodAlcoholTobacco: 'Freimengen: Lebensmittel, Alkohol und Tabak',
-    allowancesFoodAlcoholTobaccoText:
-      'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer gewissen Amount Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
-    prohibitions: 'Verbote und Beschränkungen',
-    prohibitionsSubText:
-      'Weit hinten, fern der Länder Vokalien und Konsonantien leben die Blindtexte.',
+      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren ...',
+    prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
+    prohibitionsAndRestrictionsSubText:
+      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer Zoll ...',
   },
   appInformation: {
     appInfoTitle: 'Über die App',
@@ -210,10 +220,7 @@ export const de: Locale = {
       'Auskunftszentrale Zoll\n058 467 15 15\nzollauskunft@ezv.admin.ch',
     reachability: 'Erreichbarkeit:',
     workingHours: 'Montag – Freitag, 8.00 – 11.30 und 13.30 bis 17.00',
-    generalCustomsDirectorate:
-      'Eidgenössische Zollverwaltung\nMonbijoustrasse 40\n' +
-      '3003 Bern\n' +
-      'http://www.ezv.admin.ch',
+    generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern\nhttp://www.ezv.admin.ch`,
     designAndDevelopment: 'Design & Entwicklung',
     ambriteAddress:
       'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch\nhttp://www.ambrite.ch',
@@ -223,64 +230,109 @@ export const de: Locale = {
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informationen zum Gebrauch der App',
-    conditions: 'Rahmenbedingungen',
+    conditions: 'Nutzungsbedingungen',
     importantSoon: 'Wichtiges in Kürze',
-    importantSoonText:
-      'Sie dürfen die App für die gleiche Person bzw. die gleichen Personen nur einmal täglich (Kalendertag) einsetzen.\n' +
-      'Sie dürfen die App nur für Waren benützen, die Sie zu Ihrem privaten Gebrauch oder zum Verschenken einführen. \n' +
-      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 %; auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher). \n' +
-      'Es ist nur Kreditkartenzahlung (Visa, Mastercard) möglich (ohne Rückerstattungsmöglichkeit). Nach der Bezahlung der Abgaben sind die Waren verzollt.\n' +
-      'Die Verzollung muss vor dem Grenzübertritt oder spätestens bei der Grenzübergangsstelle erfolgen. Sie ist aber frühestens 48 Stunden vor dem Grenzübertritt möglich.\n' +
-      'Nach der Verzollung dürfen Sie auch folgende Grenzübergänge benutzen:\n' +
-      'Grenzübergangsstellen, bei denen kein Personal des Zolls anwesend ist;\n' +
-      'den grünen Durchgang in Flughäfen.\n' +
-      'Die Quittung des Zolls ist dem Personal des Schweizer Zolls auf Verlangen vorzuweisen. Das Zollpersonal fotografiert die Quittung bei Bedarf.\n',
+    importantSoonText1:
+      'Sie dürfen die App für die gleiche Person bzw. die gleichen Personen nur einmal täglich (Kalendertag) einsetzen.',
+    importantSoonText2:
+      'Sie dürfen die App nur für Waren benützen, die Sie zu Ihrem privaten Gebrauch oder zum Verschenken einführen.',
+    importantSoonText3:
+      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 %; auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
+    importantSoonText4:
+      'Es ist nur Kreditkartenzahlung (Visa, Mastercard) möglich (ohne Rückerstattungsmöglichkeit). Nach der Bezahlung der Abgaben sind die Waren verzollt.',
+    importantSoonText5:
+      'Die Verzollung muss vor dem Grenzübertritt oder spätestens bei der Grenzübergangsstelle erfolgen. Sie ist aber frühestens 48 Stunden vor dem Grenzübertritt möglich.',
+    importantSoonText6:
+      'Nach der Verzollung dürfen Sie auch folgende Grenzübergänge benutzen:',
+    importantSoonText7:
+      'Grenzübergangsstellen, bei denen kein Personal des Zolls anwesend ist;',
+    importantSoonText8: 'den grünen Durchgang in Flughäfen.',
+    importantSoonText9:
+      'Die Quittung des Zolls ist dem Personal des Schweizer Zolls auf Verlangen vorzuweisen. Das Zollpersonal fotografiert die Quittung bei Bedarf.',
+
     howToDeclareYourGoods: 'So verzollen Sie ihre Waren:',
-    howToDeclareYourGoodsText:
-      'Melden Sie sämtliche mitgeführten Waren (ausgenommen persönliche Gebrauchsgegenstände und Reiseproviant) an. Die zustehenden Freimengen und die Wertfreigrenze werden während der Verzollung automatisch abgezogen.\n' +
-      'Geben Sie den Wert in der Fremdwährung gemäss Zahlungsbeleg ein. Der Wert wird mit dem Devisenkurs (Verkauf) des Vortages (letzter Arbeitstag) umgerechnet.\n' +
-      'Legen Sie ein Zeitfenster von zwei Stunden für Ihren Grenzübertritt fest. Die Quittung ist nur während dieses Zeitfensters gültig. Können Sie den gewählten Zeitraum nicht einhalten, müssen Sie sich bei einem durch das Personal des Schweizer Zolls besetzten Grenzübergang melden und erklären, warum Sie nicht innerhalb der Gültigkeitsfrist einreisen konnten. Ohne glaubhafte Begründung werden die Abgaben erneut erhoben.\n' +
-      'Gilt die Verzollung für Sie und Mitreisende oder für eine andere Person, müssen Sie mit diesen Personen gemeinsam einreisen.\n' +
-      'Vor der Bezahlung können Sie Ihre Anmeldung jederzeit korrigieren. Nach der Bezahlung sind in der App keine Korrekturen mehr möglich. Nach dem Bezahlen zusätzlich gekaufte ausländische Waren müssen Sie bei einem durch das Personal des Schweizer Zolls besetzten Grenzübergang anmelden.\n' +
-      'Die erhaltene Quittung des Schweizer Zolls müssen Sie mindestens ein Jahr aufbewahren. Die Quittung können Sie auch als Bild speichern.\n' +
-      'Ist die Verzollung mit der App nicht möglich (z. B. keine Internetverbindung oder Bezahlung mit Kreditkarte nicht möglich) müssen Sie die Waren bei einem durch das Personal des Schweizer Zolls besetzten Grenzübergang oder via Anmeldebox anmelden.\n' +
-      'Folgende Waren müssen Sie in jedem Fall bei einem durch das Personal des Schweizer Zolls besetzten Grenzübergang anmelden.\n' +
-      'Waren, die Beschränkungen oder Verboten unterliegen und die zeugnis- oder bewilligungspflichtig sind (z. B. Waffen, lebende Tiere und Artenschutzwaren); Waren für den privaten Gebrauch oder zum Verschenken mit einem Gesamtwert von CHF 20 000.00 oder mehr;\n' +
-      'Waren, die Sie nicht zu Ihrem privaten Gebrauch oder zum Verschenken einführen (z. B. Waren, die für den Handel bestimmt sind);\n' +
-      'Fahrzeuge, Reparaturen an Fahrzeugen und Treibstoffe;\n' +
-      'Übersiedlungs-, Ausstattungs- (Heirat) und Erbschaftsgut;\n' +
-      'Waren, die nur vorübergehend in die Schweiz eingeführt werden;\n' +
-      'Waren, die für den Transit durch die Schweiz bestimmt sind.\n' +
-      'Waren, die ausgeführt werden, können nicht mit der App angemeldet werden. Informationen zum steuerfreien Einkauf in der Schweiz (Tax free) finden Sie hier.\n',
+    howToDeclareYourGoodsText1:
+      'Melden Sie sämtliche mitgeführten Waren (ausgenommen persönliche Gebrauchsgegenstände und Reiseproviant) an. Die zustehenden Freimengen und die Wertfreigrenze werden während der Verzollung automatisch abgezogen.',
+    howToDeclareYourGoodsText2:
+      'Geben Sie den Wert in der Fremdwährung gemäss Zahlungsbeleg ein. Der Wert wird mit dem Devisenkurs (Verkauf) des Vortages (letzter Arbeitstag) umgerechnet.',
+    howToDeclareYourGoodsText3:
+      'Legen Sie ein Zeitfenster von zwei Stunden für Ihren Grenzübertritt fest. Die Quittung ist nur während dieses Zeitfensters gültig. Können Sie den gewählten Zeitraum nicht einhalten, müssen Sie sich bei einem durch das Personal des Schweizer Zolls besetzten Grenzübergang melden und erklären, warum Sie nicht innerhalb der Gültigkeitsfrist einreisen konnten. Ohne glaubhafte Begründung werden die Abgaben erneut erhoben.',
+    howToDeclareYourGoodsText4:
+      'Gilt die Verzollung für Sie und Mitreisende oder für eine andere Person, müssen Sie mit diesen Personen gemeinsam einreisen.',
+    howToDeclareYourGoodsText5:
+      'Vor der Bezahlung können Sie Ihre Anmeldung jederzeit korrigieren. Nach der Bezahlung sind in der App keine Korrekturen mehr möglich. Nach dem Bezahlen zusätzlich gekaufte ausländische Waren müssen Sie bei einem durch das Personal des Schweizer Zolls besetzten Grenzübergang anmelden.',
+    howToDeclareYourGoodsText6:
+      'Die erhaltene Quittung des Schweizer Zolls müssen Sie mindestens ein Jahr aufbewahren. Die Quittung können Sie auch als Bild speichern.',
+    howToDeclareYourGoodsText7:
+      'Ist die Verzollung mit der App nicht möglich (z. B. keine Internetverbindung oder Bezahlung mit Kreditkarte nicht möglich) müssen Sie die Waren bei einem durch das Personal des Schweizer Zolls besetzten Grenzübergang oder via Anmeldebox anmelden.',
+    howToDeclareYourGoodsText8:
+      'Folgende Waren müssen Sie in jedem Fall bei einem durch das Personal des Schweizer Zolls besetzten Grenzübergang anmelden.',
+    howToDeclareYourGoodsText9:
+      'Waren, die Beschränkungen oder Verboten unterliegen und die zeugnis- oder bewilligungspflichtig sind (z. B. Waffen, lebende Tiere und Artenschutzwaren);',
+    howToDeclareYourGoodsText10:
+      'Waren für den privaten Gebrauch oder zum Verschenken mit einem Gesamtwert von CHF 20 000.00 oder mehr;',
+    howToDeclareYourGoodsText11:
+      'Waren, die Sie nicht zu Ihrem privaten Gebrauch oder zum Verschenken einführen (z. B. Waren, die für den Handel bestimmt sind);',
+    howToDeclareYourGoodsText12:
+      'Fahrzeuge, Reparaturen an Fahrzeugen und Treibstoffe;',
+    howToDeclareYourGoodsText13:
+      'Übersiedlungs-, Ausstattungs- (Heirat) und Erbschaftsgut;',
+    howToDeclareYourGoodsText14:
+      'Waren, die nur vorübergehend in die Schweiz eingeführt werden;',
+    howToDeclareYourGoodsText15:
+      'Waren, die für den Transit durch die Schweiz bestimmt sind.',
+    howToDeclareYourGoodsText16:
+      'Waren, die ausgeführt werden, können nicht mit der App angemeldet werden. Informationen zum steuerfreien Einkauf in der Schweiz (Tax free) finden Sie hier.',
+
     legal: 'Rechtliches',
     usage: 'Benutzung',
-    legalText:
-      'Die Verzollung mit der App ist verbindlich (Artikel 33 Zollgesetz, SR 631.0). Sie machen sich strafbar, wenn Sie verbotene, bewilligungs- oder abgabenpflichtige Waren nicht oder falsch anmelden.\n' +
-      'Diejenige Person, die die Quittung bei der Zollkontrolle vorweist, ist für die korrekte Verzollung der mitgeführten Waren verantwortlich. Sie übernimmt auch die strafrechtliche Verantwortung, wenn nicht oder falsch angemeldete Ware entdeckt werden.\n' +
-      'Stellen Sie bei der Verwendung der App sicher, dass\n' +
-      'Sie während des Zahlungsvorgangs eine Internetverbindung haben, um die Verzollung abschliessen zu können.\n' +
-      'Sie eine gültige Quittung für die Waren haben, die Sie einführen.\n' +
-      'Sie die Quittung bei Kontrollen anlässlich des Grenzübertritts auf Ihrem mobilen Endgerät anzeigen können.\n' +
-      'Bitte beachten Sie, dass während der Gültigkeitsfrist der Quittung ein Bild der Quittung, welches via WhatsApp, iMessage, SMS oder E-Mail an Drittpersonen weitergeleitet wird, nicht als Quittung akzeptiert wird.\n',
+
+    legalText1:
+      'Die Verzollung mit der App ist verbindlich (Artikel 33 Zollgesetz, SR 631.0). Sie machen sich strafbar, wenn Sie verbotene, bewilligungs- oder abgabenpflichtige Waren nicht oder falsch anmelden.',
+    legalText2:
+      'Diejenige Person, die die Quittung bei der Zollkontrolle vorweist, ist für die korrekte Verzollung der mitgeführten Waren verantwortlich. Sie übernimmt auch die strafrechtliche Verantwortung, wenn nicht oder falsch angemeldete Ware entdeckt werden.',
+    legalText3: 'Stellen Sie bei der Verwendung der App sicher, dass',
+    legalText4:
+      'Sie während des Zahlungsvorgangs eine Internetverbindung haben, um die Verzollung abschliessen zu können.',
+    legalText5:
+      'Sie eine gültige Quittung für die Waren haben, die Sie einführen.',
+    legalText6:
+      'Sie die Quittung bei Kontrollen anlässlich des Grenzübertritts auf Ihrem mobilen Endgerät anzeigen können.',
+    legalText7:
+      'Bitte beachten Sie, dass während der Gültigkeitsfrist der Quittung ein Bild der Quittung, welches via WhatsApp, iMessage, SMS oder E-Mail an Drittpersonen weitergeleitet wird, nicht als Quittung akzeptiert wird.',
+
     privacyAndLiability: 'Datenschutz und Haftung',
     dataProtection: 'Datenschutz',
-    dataProtectionText:
-      'Gestützt auf Artikel 13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz vor Missbrauch ihrer persönlichen Daten. Die Bundesbehörden halten diese Bestimmungen ein. Persönliche Daten werden streng vertraulich behandelt und weder an Dritte verkauft noch weiter gegeben.\n' +
-      'In enger Zusammenarbeit mit unseren Hosting-Providern bemühen wir uns, die Datenbanken so gut wie möglich vor fremden Zugriffen, Verlusten, Miss-brauch oder vor Fälschung zu schützen.\n' +
-      'Beim Zugriff auf unsere Webseiten werden folgende Daten in Logfiles gespeichert: IP-Adresse, Datum, Uhrzeit, Browser-Anfrage und allg. übertragene Informationen zum Betriebssystem resp. Browser.\n' +
-      'Diese Nutzungsdaten bilden die Basis für statistische, anonyme Auswertungen, so dass Trends erkennbar sind, anhand derer die Bundesbehörden ihr Angebot entsprechend verbessern können. Gemäss Bundesgesetz betreffend die Überwachung des Post- und Fernmeldeverkehrs (BÜPF) besteht eine gesetzliche Aufbewahrungspflicht für Verbindungsdaten der letzten sechs Monate.\n' +
-      'Bei der freiwilligen Kontaktaufnahme wird Ihre Email-Adresse in eine separate Datenbank aufgenommen, welche nicht mit den anonymen Logfiles verknüpft wird. Sie haben jederzeit die Möglichkeit, Ihre Registrierung wieder rückgängig zu machen.\n' +
-      'Die Bundesbehörden behalten sich ausdrücklich vor, jederzeit Inhalte ohne Ankündigung ganz oder teilweise zu ändern, zu löschen oder zeitweise nicht zu veröffentlichen.\n' +
-      'Haftungsansprüche gegen die Bundesbehörden wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nicht-nutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen.\n',
+    dataProtectionText1:
+      'Gestützt auf Artikel 13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz vor Missbrauch ihrer persönlichen Daten. Die Bundesbehörden halten diese Bestimmungen ein. Persönliche Daten werden streng vertraulich behandelt und weder an Dritte verkauft noch weiter gegeben.',
+    dataProtectionText2:
+      'In enger Zusammenarbeit mit unseren Hosting-Providern bemühen wir uns, die Datenbanken so gut wie möglich vor fremden Zugriffen, Verlusten, Miss-brauch oder vor Fälschung zu schützen.',
+    dataProtectionText3:
+      'Beim Zugriff auf unsere Webseiten werden folgende Daten in Logfiles gespeichert: IP-Adresse, Datum, Uhrzeit, Browser-Anfrage und allg. übertragene Informationen zum Betriebssystem resp. Browser.',
+    dataProtectionText4:
+      'Diese Nutzungsdaten bilden die Basis für statistische, anonyme Auswertungen, so dass Trends erkennbar sind, anhand derer die Bundesbehörden ihr Angebot entsprechend verbessern können. Gemäss Bundesgesetz betreffend die Überwachung des Post- und Fernmeldeverkehrs (BÜPF) besteht eine gesetzliche Aufbewahrungspflicht für Verbindungsdaten der letzten sechs Monate.',
+    dataProtectionText5:
+      'Bei der freiwilligen Kontaktaufnahme wird Ihre Email-Adresse in eine separate Datenbank aufgenommen, welche nicht mit den anonymen Logfiles verknüpft wird. Sie haben jederzeit die Möglichkeit, Ihre Registrierung wieder rückgängig zu machen.',
+
+    liability: 'Haftung',
+    liabilityText1:
+      'Die Bundesbehörden behalten sich ausdrücklich vor, jederzeit Inhalte ohne Ankündigung ganz oder teilweise zu ändern, zu löschen oder zeitweise nicht zu veröffentlichen.',
+    liabilityText2:
+      'Haftungsansprüche gegen die Bundesbehörden wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nicht-nutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen.',
+
     referencesAndLinks: 'Verweise und Links',
-    referencesAndLinksText:
-      'Verweise und Links auf Webseiten Dritter liegen ausserhalb des Verantwortungsbereichs der Bundesbehörden. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin. Die Bundesbehörden erklären ausdrücklich, dass sie keinerlei Einfluss auf die Gestaltung, den Inhalt und die Angebote der verknüpften Seiten haben. Informationen und Dienstleistungen von verknüpften Webseiten liegen vollumfänglich in der Verantwortung des jeweiligen Dritten.\n' +
-      'Es wird jegliche Verantwortung für solche Webseiten abgelehnt.\n',
+    referencesAndLinksText1:
+      'Verweise und Links auf Webseiten Dritter liegen ausserhalb des Verantwortungsbereichs der Bundesbehörden. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin. Die Bundesbehörden erklären ausdrücklich, dass sie keinerlei Einfluss auf die Gestaltung, den Inhalt und die Angebote der verknüpften Seiten haben. Informationen und Dienstleistungen von verknüpften Webseiten liegen vollumfänglich in der Verantwortung des jeweiligen Dritten.',
+    referencesAndLinksText2:
+      'Es wird jegliche Verantwortung für solche Webseiten abgelehnt.',
+
     copyright: 'Copyright',
-    copyrightText:
-      'Copyright, Bundesbehörden der Schweizerischen Eidgenossenschaft, 2007.\n' +
-      'Die auf den Websites der Bundesbehörden enthaltenen Informationen werden der Öffentlichkeit zugänglich gemacht. Durch das Herunterladen oder Kopieren von Inhalten, Bildern, Fotos oder anderen Dateien werden keinerlei Rechte bezüglich der Inhalte übertragen.\n' +
-      'Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf den Websites der Bundesbehörden gehören ausschliesslich diesen oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.\n',
+    copyrightText1:
+      'Copyright, Bundesbehörden der Schweizerischen Eidgenossenschaft, 2007.',
+    copyrightText2:
+      'Die auf den Websites der Bundesbehörden enthaltenen Informationen werden der Öffentlichkeit zugänglich gemacht. Durch das Herunterladen oder Kopieren von Inhalten, Bildern, Fotos oder anderen Dateien werden keinerlei Rechte bezüglich der Inhalte übertragen.',
+    copyrightText3:
+      'Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf den Websites der Bundesbehörden gehören ausschliesslich diesen oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.',
   },
   overview: {
     declared: 'Angemeldet',
@@ -300,6 +352,18 @@ export const de: Locale = {
   furtherInformationModal: {
     furtherInformation: 'Weitere Informationen:',
     acceptance:
-      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 %; auch für Waren angewendet wird, die eigentlich dem redu-zierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
+      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 %; auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
+  },
+  units: {
+    kilo: 'kg',
+    kilo_plural: 'kgs',
+    kiloOrLiter: 'kg/Liter',
+    kiloOrLiter_plural: 'kgs/Liter',
+    liter: 'Liter',
+    liter_plural: 'Liter',
+    unit: 'Stück',
+    unit_plural: 'Stücke',
+    gram: 'Gramm',
+    gram_plural: 'Gramm',
   },
 };

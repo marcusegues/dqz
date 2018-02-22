@@ -14,7 +14,6 @@ import type { Navigation, TFunction } from '../../types/generalTypes';
 import type { Language } from '../../i18n/types/locale';
 import { analyticsLanguageChanged } from '../../analytics/analyticsApi';
 import {
-  fetchSettingsAcceptRate,
   fetchSettingsHasLanguage,
   storeSettingsHasLanguage,
 } from '../../asyncStorage/storageApi';
@@ -47,13 +46,14 @@ class OnBoardingInner extends React.Component<
   }
 
   componentWillMount() {
-    fetchSettingsAcceptRate().then(accepted => {
-      if (accepted) {
-        this.setNextScreen('MainMenu');
-      } else {
-        this.setNextScreen('OnBoardingTaxScreen');
-      }
-    });
+    // fetchSettingsAcceptRate().then(accepted => {
+    //   if (accepted) {
+    //     this.setNextScreen('MainMenu');
+    //   } else {
+    //     this.setNextScreen('OnBoardingTaxScreen');
+    //   }
+    // });
+    this.setNextScreen('OnBoardingTaxScreen');
 
     fetchSettingsHasLanguage().then(language => {
       if (language !== KeyNotSet) {
@@ -75,7 +75,7 @@ class OnBoardingInner extends React.Component<
     const { t, i18n, navigation } = this.props;
     const { systemLanguage, nextScreen, settingsHasLanguage } = this.state;
     return (
-      <OnBoardingContainer welcomeText={!settingsHasLanguage}>
+      <OnBoardingContainer>
         <OnBoardingParagraph
           text={
             settingsHasLanguage

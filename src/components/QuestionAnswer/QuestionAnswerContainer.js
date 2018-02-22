@@ -2,7 +2,7 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
-import { FlatList, View } from 'react-native';
+import { FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 
@@ -57,6 +57,7 @@ import {
   storeMainCategories,
   storePeople,
 } from '../../asyncStorage/storageApi';
+import { MainContentContainer } from '../MainContentContainer/MainContentContainer';
 
 export type QuestionType =
   | 'peopleInput'
@@ -461,32 +462,14 @@ class QuestionAnswerContainerInner extends React.Component<
     ];
 
     return (
-      <View
-        style={{
-          flex: 1,
-          height: '100%',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
-        <View
-          style={{
-            flex: 1,
-            width: '100%',
-            flexDirection: 'column',
-            alignItems: 'center',
-            paddingHorizontal: 16,
-            paddingBottom: 16,
-          }}
-        >
-          <NavBar step={1} />
-          <FlatList
-            style={{ width: '100%' }}
-            data={flatListData}
-            renderItem={({ item }) => item.component}
-          />
-        </View>
-      </View>
+      <MainContentContainer>
+        <NavBar step={1} />
+        <FlatList
+          style={{ width: '100%' }}
+          data={flatListData}
+          renderItem={({ item }) => item.component}
+        />
+      </MainContentContainer>
     );
   }
 }

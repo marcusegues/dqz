@@ -8,12 +8,12 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { MenuTile } from './Subcomponents/MenuTile';
 import { mainMenuStyles } from './styles/MainMenuStyles';
 import { moderateScale } from '../../styles/Scaling';
-import { AppTitle } from '../../components/AppTitle/AppTitle';
+import { AppLogo } from '../../components/AppLogo/AppLogo';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import type { NavigateFromSavedBasket } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 
-const switzerland = require('../../../assets/images/Swiss_Country.png');
+const switzerland = require('../../../assets/images/swissCountry.png');
 const customs = require('../../../assets/images/customs.png');
 
 type MainMenuState = {
@@ -62,7 +62,7 @@ class MainMenuInner extends React.Component<
         <View style={mainMenuStyles.topContainer}>
           <Image source={switzerland} style={mainMenuStyles.backgroundImage} />
           <View style={mainMenuStyles.logoAndTitleContainer}>
-            <AppTitle />
+            <AppLogo />
           </View>
         </View>
         <SafeAreaView style={mainMenuStyles.bottomContainer}>

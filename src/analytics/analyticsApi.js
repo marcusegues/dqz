@@ -39,7 +39,7 @@ export const analyticsLanguageChanged = (language: string) =>
   sendEventToAmplitude({ type: 'LanguageChanged', language });
 
 /**
- * Log the event of a QA Card opened
+ * Log the event of a QA MainContentContainer opened
  * @param cardName
  */
 export const analyticsQACardOpenend = (cardName: string) =>

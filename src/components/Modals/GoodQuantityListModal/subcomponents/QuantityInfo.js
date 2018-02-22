@@ -33,12 +33,16 @@ const QuantityInfoInner = ({
     <View style={{ marginTop: 10 }}>
       <QuantityIcon
         quantity={totalQuantity.toFixed(2)}
-        unit={CategoriesInfo.getIn([category, 'unit'], '')}
+        unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
+          count: totalQuantity,
+        })}
       />
     </View>
   </View>
 );
 
-export const QuantityInfo = (translate(['mainCategories', 'categories'])(
-  QuantityInfoInner
-): ComponentType<QuantityInfoProps>);
+export const QuantityInfo = (translate([
+  'mainCategories',
+  'categories',
+  'units',
+])(QuantityInfoInner): ComponentType<QuantityInfoProps>);
