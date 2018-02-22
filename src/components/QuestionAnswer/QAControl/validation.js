@@ -133,9 +133,12 @@ export const onUpdateFactory = (
         const problems = Array.from(affectedCategories)
           .map(
             ac =>
-              `${ac.category} (${t(
+              `${t(`categories:${ac.category}`)} (${t(
                 `categories:${ac.quantity}`
-              )} ${CategoriesInfo.getIn([ac.category, 'unit'], '')})`
+              )} ${t(
+                `units:${CategoriesInfo.getIn([ac.category, 'unit'], '')}`,
+                { count: ac.quantity }
+              )})`
           )
           .join(', ');
         const showAlert = () => {

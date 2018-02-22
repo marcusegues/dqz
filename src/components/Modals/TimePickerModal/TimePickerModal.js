@@ -57,7 +57,7 @@ type TimePickerModalProps = {
 };
 
 class TimePickerModalInner extends React.Component<
-  TimePickerModalProps & { t: TFunction },
+  TimePickerModalProps & { t: TFunction, i18n: { language: string } },
   PickerState
 > {
   static defaultProps = {
@@ -79,16 +79,16 @@ class TimePickerModalInner extends React.Component<
   }
 
   render() {
-    const { t, modalVisible, onHideModal, onSelectTime } = this.props;
+    const { t, i18n, modalVisible, onHideModal, onSelectTime } = this.props;
+    const { language } = i18n;
     const { date, hours, minutes } = this.state;
-    const entryTimePlus = DateTime.fromFormat(
+    const entryTime = DateTime.fromFormat(
       `${date} ${hours}:${minutes}`,
       'dd.MM.y HH:mm'
-    )
-      .setZone('Europe/Zurich', {
-        keepLocalTime: true,
-      })
-      .plus({ hours: 2 });
+    ).setZone('Europe/Zurich', {
+      keepLocalTime: true,
+    });
+    const entryTimePlus = entryTime.plus({ hours: 2 });
     return (
       <AppModal
         modalVisible={modalVisible}
@@ -120,7 +120,7 @@ class TimePickerModalInner extends React.Component<
                 mode="dropdown"
                 prompt=""
                 itemStyle={{}}
-                style={{ flex: 0.5 }}
+                style={{ flex: 0.4 }}
               >
                 {pickerDates.map(i => (
                   <Picker.Item key={i.id} label={i.label} value={i.value} />
@@ -136,7 +136,6 @@ class TimePickerModalInner extends React.Component<
                 }
                 mode="dropdown"
                 prompt=""
-                itemStyle={{ textAlign: 'right' }}
                 style={{ flex: 0.15 }}
               >
                 {pickerHours.map(i => (
@@ -167,13 +166,38 @@ class TimePickerModalInner extends React.Component<
             </View>
           </TouchableWithoutFeedback>
 
-          <CardHeaderSubText
-            style={ownStyles.validUntilText}
-            text={t(['timePickerRegistrationValidUntil'], {
-              date: entryTimePlus.toFormat('dd.MM.y'),
-              time: entryTimePlus.toFormat('HH:mm'),
-            })}
-          />
+          {entryTime.day === entryTimePlus.day ? (
+            <CardHeaderSubText
+              style={ownStyles.validUntilText}
+              text={t(['timePickerRegistrationValidUntilSameDay'], {
+                date: entryTime.toFormat('dd.MM.y'),
+                startTime:
+                  language === 'fr'
+                    ? entryTime.toFormat("HH'h'mm")
+                    : entryTime.toFormat('HH:mm'),
+                endTime:
+                  language === 'fr'
+                    ? entryTimePlus.toFormat("HH'h'mm")
+                    : entryTimePlus.toFormat('HH:mm'),
+              })}
+            />
+          ) : (
+            <CardHeaderSubText
+              style={ownStyles.validUntilText}
+              text={t(['timePickerRegistrationValidUntilDifferentDay'], {
+                startDate: entryTime.toFormat('dd.MM.y'),
+                startTime:
+                  language === 'fr'
+                    ? entryTime.toFormat("HH'h'mm")
+                    : entryTime.toFormat(`HH:mm`),
+                endDate: entryTimePlus.toFormat('dd.MM.y'),
+                endTime:
+                  language === 'fr'
+                    ? entryTimePlus.toFormat("HH'h'mm")
+                    : entryTimePlus.toFormat(`HH:mm`),
+              })}
+            />
+          )}
 
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
