@@ -8,4 +8,6 @@ export type StoreType =
   | 'People'
   | 'MainCategories'
   | 'Amounts'
+  | 'PaymentData'
+  | 'ReceiptEntryTime'
   | 'Receipts';

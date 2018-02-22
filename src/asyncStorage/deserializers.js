@@ -12,6 +12,8 @@ import type {
   People,
 } from '../model/types/basketPeopleAmountsTypes';
 
+export const deserializeReceiptEntryTime = (serialized: any): string => serialized;
+
 export const deserializePeople = (serialized: any): People =>
   makePeopleRecord(serialized);
 
