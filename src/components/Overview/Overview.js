@@ -22,7 +22,10 @@ import {
 } from '../../reducers';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
 import { InfoNote } from './subcomponents/InfoNote';
-import { getConvertedLocalTimeToSwiss } from '../../model/utils';
+import {
+  flatLargeAmounts,
+  getConvertedLocalTimeToSwiss,
+} from '../../model/utils';
 import { BackAndContinueButtons } from '../Buttons/BackAndContinueButtons';
 import type {
   Amounts,
@@ -139,14 +142,16 @@ class OverviewInner extends React.Component<
           amounts={amounts}
           currencies={currencies}
         />
-        <VatList
-          large
-          borderTop={false}
-          people={people}
-          amounts={amounts}
-          currencies={currencies}
-          headerRight={false}
-        />
+        {flatLargeAmounts(amounts).length ? (
+          <VatList
+            large
+            borderTop={false}
+            people={people}
+            amounts={amounts}
+            currencies={currencies}
+            headerRight={false}
+          />
+        ) : null}
         <TotalOwedRow
           basket={basket}
           people={people}
