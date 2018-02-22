@@ -343,9 +343,9 @@ export const de: Locale = {
     importantNote: 'Wichtiger Hinweis',
     vatRateInfo:
       'Bitte berücksichtigen Sie, dass bei der Benutzung dieser App keine Rückerstattung möglich ist. Deklarierte Waren werden mit dem einheitlichen Mehrwertsteuersatz von 7.7% verzollt. Weitere Informationen finden Sie hier:',
-    termsOfService: 'Allgemeine Geschäftsbedingungen',
+    termsOfService: 'Nutzungsbedingungen',
     acceptance:
-      'Hiermit akzeptiere ich die Allgemeinen Geschäftsbedingungen, die ich gelesen und verstanden habe.',
+      'Hiermit akzeptiere ich die Nutzungsbedingungen, die ich gelesen und verstanden habe.',
     confirm: 'Bestätigen',
     abort: 'Abbrechen',
   },
