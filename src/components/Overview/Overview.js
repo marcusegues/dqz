@@ -30,10 +30,7 @@ import type {
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { CurrencyObject } from '../../model/currencies';
-import {
-  storeBasket,
-  storeReceiptEntryTime,
-} from '../../asyncStorage/storageApi';
+import { storeReceiptEntryTime } from '../../asyncStorage/storageApi';
 
 type OverviewProps = {
   modalVisible?: boolean,
