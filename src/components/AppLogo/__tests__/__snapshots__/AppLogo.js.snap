@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppLogo renders according to snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+    }
+  }
+>
+  <Image
+    resizeMode="contain"
+    source={1}
+    style={
+      Object {
+        "height": 212.14285714285714,
+        "width": 303.2857142857143,
+      }
+    }
+  />
+</View>
+`;
