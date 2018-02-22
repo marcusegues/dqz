@@ -48,10 +48,6 @@ import {
 import { hasLargeAmount } from '../../model/utils';
 import { getTotalPeople } from '../../model/configurationApi';
 import {
-  fetchAmounts,
-  fetchBasket,
-  fetchMainCategories,
-  fetchPeople,
   storeAmounts,
   storeBasket,
   storeMainCategories,
@@ -114,7 +110,6 @@ type QuestionAnswerContainerProps = {
   currencies: CurrencyObject,
   currencyDate: string,
   t: TFunction,
-  initABP: () => void,
 };
 
 class QuestionAnswerContainerInner extends React.Component<
@@ -147,7 +142,6 @@ class QuestionAnswerContainerInner extends React.Component<
 
   componentWillMount() {
     analyticsScreenMounted('QuestionAnswerContainer');
-    this.props.initABP();
   }
 
   componentDidMount() {
@@ -519,32 +513,6 @@ const mapDispatchToProps = dispatch => ({
     dispatch({
       type: 'SET_AMOUNTS',
       amounts,
-    });
-  },
-  initABP: () => {
-    fetchBasket().then(basket => {
-      dispatch({
-        type: 'SET_BASKET',
-        basket,
-      });
-    });
-    fetchPeople().then(people => {
-      dispatch({
-        type: 'SET_PEOPLE',
-        people,
-      });
-    });
-    fetchAmounts().then(amounts => {
-      dispatch({
-        type: 'SET_AMOUNTS',
-        amounts,
-      });
-    });
-    fetchMainCategories().then(mainCategories => {
-      dispatch({
-        type: 'SET_MAIN_CATEGORIES',
-        mainCategories,
-      });
     });
   },
 });

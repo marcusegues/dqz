@@ -30,6 +30,10 @@ import type {
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { CurrencyObject } from '../../model/currencies';
+import {
+  storeBasket,
+  storeReceiptEntryTime,
+} from '../../asyncStorage/storageApi';
 
 type OverviewProps = {
   modalVisible?: boolean,
@@ -185,8 +189,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setReceiptEntryTime: (receiptEntryTime: string) =>
-    dispatch({ type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime }),
+  setReceiptEntryTime: (receiptEntryTime: string) => {
+    storeReceiptEntryTime(receiptEntryTime);
+    dispatch({ type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime });
+  },
 });
 
 export const Overview = (connect(mapStateToProps, mapDispatchToProps)(

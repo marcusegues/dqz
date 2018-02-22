@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -12,6 +13,13 @@ import { AppLogo } from '../../components/AppLogo/AppLogo';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import type { NavigateFromSavedBasket } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
+import {
+  fetchAmounts,
+  fetchBasket,
+  fetchMainCategories,
+  fetchPeople,
+  fetchReceiptEntryTime,
+} from '../../asyncStorage/storageApi';
 
 const switzerland = require('../../../assets/images/swissCountry.png');
 const customs = require('../../../assets/images/customs.png');
@@ -24,8 +32,12 @@ type MainMenuProps = {
   navigation: Navigation,
 };
 
+type ReduxInject = {
+  initABP: () => void,
+};
+
 class MainMenuInner extends React.Component<
-  MainMenuProps & { t: TFunction },
+  MainMenuProps & ReduxInject & { t: TFunction },
   MainMenuState
 > {
   constructor(props) {
@@ -36,11 +48,7 @@ class MainMenuInner extends React.Component<
   }
 
   componentWillMount() {
-    this.props.navigation.setParams({
-      setSavedBasketModalVisibleTrue: this.setSavedBasketModalVisibleTrue.bind(
-        this
-      ),
-    });
+    this.props.initABP();
   }
 
   setSavedBasketModalVisibleTrue() {
@@ -55,6 +63,10 @@ class MainMenuInner extends React.Component<
     });
   }
 
+  handleGoToDeclaration() {
+    this.setSavedBasketModalVisibleTrue();
+  }
+
   render() {
     const { navigation, t } = this.props;
     return (
@@ -67,7 +79,7 @@ class MainMenuInner extends React.Component<
         </View>
         <SafeAreaView style={mainMenuStyles.bottomContainer}>
           <MenuTile
-            onPress={() => navigation.navigate('QuestionAnswer')}
+            onPress={() => this.handleGoToDeclaration()}
             text={t('declareGoods')}
           >
             <MaterialIcons
@@ -118,7 +130,7 @@ class MainMenuInner extends React.Component<
         </SafeAreaView>
         <SavedBasketModal
           modalVisible={this.state.modalVisible}
-          setModalVisibleFalse={navigateTo =>
+          setModalVisibleFalse={(navigateTo: NavigateFromSavedBasket) =>
             this.setSavedBasketModalVisibleFalse(navigateTo)
           }
         />
@@ -127,6 +139,41 @@ class MainMenuInner extends React.Component<
   }
 }
 
-export const MainMenu = (translate(['general', 'mainMenu'])(
-  MainMenuInner
+const mapDispatchToProps = dispatch => ({
+  initABP: () => {
+    fetchBasket().then(basket => {
+      dispatch({
+        type: 'SET_BASKET',
+        basket,
+      });
+    });
+    fetchPeople().then(people => {
+      dispatch({
+        type: 'SET_PEOPLE',
+        people,
+      });
+    });
+    fetchAmounts().then(amounts => {
+      dispatch({
+        type: 'SET_AMOUNTS',
+        amounts,
+      });
+    });
+    fetchMainCategories().then(mainCategories => {
+      dispatch({
+        type: 'SET_MAIN_CATEGORIES',
+        mainCategories,
+      });
+    });
+    fetchReceiptEntryTime().then(receiptEntryTime => {
+      dispatch({
+        type: 'SET_RECEIPT_ENTRY_TIME',
+        receiptEntryTime,
+      });
+    });
+  },
+});
+
+export const MainMenu = (connect(null, mapDispatchToProps)(
+  translate(['general', 'mainMenu'])(MainMenuInner)
 ): ComponentType<MainMenuProps>);

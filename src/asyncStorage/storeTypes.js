@@ -9,4 +9,5 @@ export type StoreType =
   | 'MainCategories'
   | 'Amounts'
   | 'PaymentData'
+  | 'ReceiptEntryTime'
   | 'Receipts';

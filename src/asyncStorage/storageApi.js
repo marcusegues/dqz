@@ -12,6 +12,7 @@ import {
   fetchSettingsHasLanguageAsyncStorage,
   storeItemAsyncStorage,
   fetchReceiptsAsyncStorage,
+  fetchReceiptEntryTimeAsyncStorage,
 } from './asyncStorage';
 import type { CurrencyObject } from '../model/currencies';
 import type { StoreType } from './storeTypes';
@@ -121,6 +122,14 @@ export const storePeople = (people: People) =>
 export const storePaymentData = (paymentData: PaymentData) =>
   storeItem('PaymentData', paymentData);
 
+/**
+ * Stores receiptEntryTime
+ * @param receiptEntryTime
+ * @returns {Promise<boolean>}
+ */
+export const storeReceiptEntryTime = (receiptEntryTime: string) =>
+  storeItem('ReceiptEntryTime', receiptEntryTime);
+
 export const storeClearDeclaration = () => {
   storeMainCategories(Immutable.Set());
   storeBasket(emptyBasket);
@@ -180,5 +189,5 @@ export const fetchPeople = async (): Promise<People> =>
 export const fetchMainCategories = async (): Promise<MainCategories> =>
   fetchMainCategoriesAsyncStorage('MainCategories');
 
-export const fetchPaymentData = async (): Promise<Basket> =>
-  fetchBasketAsyncStorage('PaymentData');
+export const fetchReceiptEntryTime = async (): Promise<string> =>
+  fetchReceiptEntryTimeAsyncStorage('ReceiptEntryTime');
