@@ -208,6 +208,18 @@ export const fr: Locale = {
     prohibitionsAndRestrictionsMainText: 'Interdictions et restrictions',
     prohibitionsAndRestrictionsSubText:
       "Il est interdit d'introduire des contrefaçons de marque et de design. Les douanes suisses ...",
+
+    vatAllowanceMainText: 'Franchise-valeur de 300 francs',
+    vatAllowanceSubText:
+      'Les marchandises que vous importez pour votre usage privé ou pour ...',
+    dutyAllowanceMainText:
+      'Franchises quantitatives: denrées alimentaires, alcool et tabac',
+    dutyAllowanceSubText:
+      'Les marchandises que vous importez pour votre usage privé ou pour ...',
+    personalEffectsMainText: '',
+    personalEffectsSubText: '',
+    foreignVatMainText: '',
+    foreignVatSubText: '',
   },
   appInformation: {
     appInfoTitle: "Informations relatives à l'application",

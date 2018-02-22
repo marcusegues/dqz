@@ -102,8 +102,10 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/icons/Tabak.png'),
 
         require('./assets/icons/info/Above300.png'),
+        require('./assets/icons/info/AlcoCigarettesMeat.png'),
         require('./assets/icons/info/Basket.png'),
         require('./assets/icons/info/Below300.png'),
+        require('./assets/icons/info/BelowCHF300.png'),
         require('./assets/icons/info/Car.png'),
         require('./assets/icons/info/CreditCard.png'),
         require('./assets/icons/info/ID.png'),

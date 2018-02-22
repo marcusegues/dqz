@@ -163,6 +163,15 @@ type InformationTranslations = {
   entryByTrainSubText: string,
   prohibitionsAndRestrictionsMainText: string,
   prohibitionsAndRestrictionsSubText: string,
+
+  vatAllowanceMainText: string,
+  vatAllowanceSubText: string,
+  dutyAllowanceMainText: 'string',
+  dutyAllowanceSubText: 'string',
+  personalEffectsMainText: 'string',
+  personalEffectsSubText: 'string',
+  foreignVatMainText: 'string',
+  foreignVatSubText: 'string',
 };
 
 type ReceiptTranslations = {

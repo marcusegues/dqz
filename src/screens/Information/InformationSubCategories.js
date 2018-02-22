@@ -11,7 +11,15 @@ import {
 } from './InformationData';
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { Navigation, TFunction } from '../../types/generalTypes';
-import { InfoCategory, InfoSubCategories } from './types/information';
+import {
+  infoCategories,
+  animalsAndPlantsSubCategories,
+  vehiclesSubCategories,
+  declarationSubCategories,
+  InfoCategory,
+  InformationSubCategoriesType,
+} from './types/information';
+
 import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
 import { Text } from 'react-native';
 
@@ -25,33 +33,22 @@ class InformationSubCategoriesInner extends React.Component<{
     ),
   });
 
-  navigateTo(cat: InfoCategory) {
-    const { navigate } = this.props.navigation;
-    if (informationSubCategories[cat] === 'noSubCategories') {
-      navigate(informationNavigateTo[cat]);
-    } else {
-      navigate('InformationSubCategories', { infoCategory: cat });
-    }
-  }
-
   render() {
     const { t, navigation } = this.props;
     const { infoCategory } = navigation.state.params;
+
     return (
       <MainContentContainer>
         <ScrollViewCard>
-          <Text>{JSON.stringify(infoCategory)}</Text>
-          <Text>{`\u2022 ${JSON.stringify(infoCategory)}`}</Text>
-
-          {/*{infoCategory.map(cat => (*/}
-          {/*<InformationRow*/}
-          {/*key={cat}*/}
-          {/*source={informationImages[cat]}*/}
-          {/*mainText={t(`${cat}MainText`)}*/}
-          {/*subText={t(`${cat}SubText`)}*/}
-          {/*rowOnPress={() => navigation.navigate('UnderConstruction')}*/}
-          {/*/>*/}
-          {/*))}*/}
+          {informationSubCategories[infoCategory].map(cat => (
+            <InformationRow
+              key={cat}
+              source={informationImages[cat]}
+              mainText={t(`${cat}MainText`)}
+              subText={t(`${cat}SubText`)}
+              rowOnPress={() => navigation.navigate(informationNavigateTo[cat])}
+            />
+          ))}
         </ScrollViewCard>
       </MainContentContainer>
     );

@@ -197,6 +197,15 @@ export const en: Locale = {
     prohibitionsAndRestrictionsMainText: 'Prohibitions and restrictions',
     prohibitionsAndRestrictionsSubText:
       'It is forbidden to introduce trademark and design counterfeits. The Swiss customs ...',
+
+    vatAllowanceMainText: '',
+    vatAllowanceSubText: '',
+    dutyAllowanceMainText: '',
+    dutyAllowanceSubText: '',
+    personalEffectsMainText: '',
+    personalEffectsSubText: '',
+    foreignVatMainText: '',
+    foreignVatSubText: '',
   },
   appInformation: {
     appInfoTitle: 'About the app',

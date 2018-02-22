@@ -201,6 +201,15 @@ export const it: Locale = {
     prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
     prohibitionsAndRestrictionsSubText:
       'È vietato introdurre contraffazioni di marchi e design. Le usanze svizzere ...',
+
+    vatAllowanceMainText: '',
+    vatAllowanceSubText: '',
+    dutyAllowanceMainText: '',
+    dutyAllowanceSubText: '',
+    personalEffectsMainText: '',
+    personalEffectsSubText: '',
+    foreignVatMainText: '',
+    foreignVatSubText: '',
   },
   appInformation: {
     appInfoTitle: 'Informazioni sull’app ',

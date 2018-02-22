@@ -208,6 +208,19 @@ export const de: Locale = {
     prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
     prohibitionsAndRestrictionsSubText:
       'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer Zoll ...',
+
+    vatAllowanceMainText: 'Wertfreigrenze CHF 300',
+    vatAllowanceSubText:
+      'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
+    dutyAllowanceMainText: 'Freimengen: Lebensmittel, Alkohol und Tabak',
+    dutyAllowanceSubText: 'Führen Sie für Ihren privaten Gebrauch oder zum ...',
+    personalEffectsMainText:
+      'Persönliche Gebrauchsgegenstände und Reiseproviant',
+    personalEffectsSubText:
+      'Persönliche Gebrauchsgegenstände und Reiseproviant können ...',
+    foreignVatMainText: 'Rückerstattung der ausländischen Mehrwertsteuer',
+    foreignVatSubText:
+      'Die Schweizer Zollverwaltung kann Ihnen die ausländische ...',
   },
   appInformation: {
     appInfoTitle: 'Über die App',
