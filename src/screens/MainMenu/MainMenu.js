@@ -64,7 +64,8 @@ class MainMenuInner extends React.Component<
   }
 
   handleGoToDeclaration() {
-    this.setSavedBasketModalVisibleTrue();
+    this.props.navigation.navigate('QuestionAnswer');
+    // this.setSavedBasketModalVisibleTrue();
   }
 
   render() {
