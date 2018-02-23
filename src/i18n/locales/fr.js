@@ -235,6 +235,11 @@ export const fr: Locale = {
     travelDocumentsMainText: 'Documents de voyage',
     travelDocumentsSubText:
       "Pour entrer en Suisse, les étrangers ont besoin d'un ...",
+    travelDocumentsText1:
+      "Pour entrer en Suisse, les ressortissants étrangers ont besoin d'un document de voyage valable et reconnu par la Suisse. Dans certains cas, un visa est en outre nécessaire. Vous pouvez obtenir des informations sur les modalités d'entrée et de séjour en Suisse (prescriptions relatives aux documents de voyage et visas) sur le site Internet du Secrétariat d'État aux migrations:",
+    travelDocumentsText2:
+      "Pour connaître les prescriptions en matière de documents de voyage qui sont applicables à l'étranger, il faut s'adresser aux autorités étrangères correspondantes, via le lien de l'OMD:",
+
     declarationMainText: "J'ai des biens avec moi",
     declarationSubText: 'Marchandises pour votre usage privé ou en cadeau ...',
     animalsAndPlantsMainText: "J'ai des animaux ou des plantes avec moi",
@@ -253,6 +258,78 @@ export const fr: Locale = {
     vatAllowanceMainText: 'Franchise-valeur de 300 francs',
     vatAllowanceSubText:
       'Les marchandises que vous importez pour votre usage privé ou pour ...',
+    vatAllowanceText1:
+      "Les marchandises que vous importez pour votre usage privé ou pour en faire cadeau sont exemptées de la TVA jusqu'à une valeur de 300 francs. C'est la valeur de toutes les marchandises qui est déterminante, c'est-à-dire également celle des cadeaux reçus, des denrées alimentaires, des tabacs manufacturés, des boissons alcooliques, des animaux domestiques amenés depuis l'étranger et des travaux de réparation et d'entretien effectués à l'étranger sur votre propre véhicule.",
+    vatAllowanceText2:
+      "En revanche, la valeur des effets personnels, des provisions de voyage et du carburant destiné à votre véhicule n'est en l'occurrence pas prise en compte.",
+    vatAllowanceText3:
+      'La valeur après déduction de la TVA étrangère est déterminante, pour autant que cette dernière soit indiquée sur la quittance ou la facture. Les valeurs libellées en monnaie étrangère sont converties en francs suisses selon le taux de change (vente) de la veille.',
+    vatAllowanceText4:
+      "La franchise-valeur n'est accordée qu'une fois par jour à la même personne et à condition que celle-ci transporte les marchandises elle-même. La franchise-valeur vaut également pour les enfants.",
+    vatAllowanceText5:
+      'Que se passe-t-il si la valeur des marchandises dépasse 300 francs?',
+    vatAllowanceText6:
+      'Si vous transportez des marchandises qui dépassent la franchise-valeur de 300 francs, vous devrez payer la TVA sur la valeur totale de toutes les marchandises.',
+    vatAllowanceText7:
+      "Exemple: la valeur totale des marchandises s'élève à 800 francs. La franchise-valeur de 300 francs est dépassée. La TVA est donc calculée sur la base d'une valeur de 800 francs.",
+    vatAllowanceText8: "Autres exemples d'octroi de la franchise-valeur",
+    vatAllowanceText9: 'TVA',
+    vatAllowanceText10:
+      "La TVA est calculée sur la base de la valeur des marchandises. Le taux normal est de 7,7 %. Un taux réduit d'impôt de 2,5 % est appliqué à certaines marchandises (par ex. denrées alimentaires, boissons sans alcool, livres, revues ou médicaments). Le taux normal s'applique toujours en cas de dédouanement avec l'application «xxx».",
+    vatAllowanceText11:
+      "La présentation d'une quittance ou d'un autre justificatif de valeur (par ex. pour les marchandises acquises sur Internet) facilite le dédouanement. Si les indications de valeur font défaut ou si leur exactitude suscite des doutes, le bureau de douane peut estimer la valeur des marchandises.",
+    vatAllowanceText12: 'Déclaration en douane',
+    vatAllowanceText13:
+      "Lors de l'entrée en Suisse, vous devez déclarer verbalement au personnel douanier toutes les marchandises que vous transportez.",
+    vatAllowanceText14:
+      "Vous pouvez également déclarer les marchandises au moyen de l'application «xxxx» ou par écrit, par l'intermédiaire des boîtes à déclarations, aux passages frontières non occupés par du personnel douanier. Vous trouverez ici des informations à ce sujet. Veuillez noter qu'en cas de dépassement des franchises quantitatives pour les boissons alcooliques, les tabacs manufacturés et certaines denrées alimentaires, vous devrez payer des droits de douane dans tous les cas. Informations complémentaires",
+    vatAllowanceText15:
+      "Nous attirons en outre votre attention sur le fait que certaines marchandises (par ex. contrefaçons, armes, plantes, animaux, produits animaux, marchandises soumises aux dispositions sur la conservation des espèces) peuvent être interdites à l'importation ou soumises à des restrictions. Informations complémentaires",
+    vatAllowanceText16:
+      "Exemples d'octroi de la franchise-valeur Octroi de la franchise-valeur à des personnes seules",
+    vatAllowanceText17:
+      "Exemples d'octroi de la franchise-valeur\n" +
+      'Octroi de la franchise-valeur à des personnes seules',
+    vatAllowanceText18: 'Octroi de la franchise-valeur à plusieurs personnes',
+    vatAllowanceText19:
+      'Une personne peut remettre une déclaration en douane commune pour plusieurs personnes qui voyagent ensemble (par ex. familles, amis, connaissances). La personne qui effectue la déclaration assume la responsabilité de celle-ci. Elle doit donc payer les éventuelles redevances et assumer la responsabilité pénale si une procédure pénale doit être ouverte en raison de la découverte de marchandises non déclarées.',
+    vatAllowanceText20:
+      "Veuillez noter que si la valeur totale de toutes les marchandises transportées est supérieure à la somme des franchises-valeur accordées aux personnes qui voyagent ensemble, la personne qui effectue la déclaration n'a pas droit à la franchise-valeur.",
+    vatAllowanceText21:
+      "Les biens individuels d'une valeur dépassant 300 francs sont toujours soumis à la TVA, même s'ils sont transportés par plusieurs personnes.",
+    vatAllowanceText22: "Biens individuels d'une valeur dépassant 300 francs:",
+    vatAllowanceText23:
+      "Pour déterminer si l'on est en présence d'un bien d'une valeur individuelle supérieure à 300 francs ou de plusieurs biens d'une valeur inférieure à 300 francs, il faut tenir compte des principes suivants:",
+    vatAllowanceText24:
+      'pour les marchandises non montées ou non assemblées: \n' +
+      'une unité de vente = un bien;',
+    vatAllowanceText25:
+      'pour les marchandises montées ou assemblées: \n' +
+      'marchandises montées ou assemblées = un bien (même si les différents composants sont indiqués séparément sur la facture).',
+
+    vatAllowanceText26: 'Exemples:',
+    vatAllowanceText27:
+      "1.\tUne facture est établie comme suit pour l'achat d'un ordinateur:",
+    vatAllowanceText28: '1 ordinateur de bureau\t\tfr. 700',
+    vatAllowanceText29: '1 écran\t\t\t\t\tfr. 200',
+    vatAllowanceText30: '1 clavier\t\t\t\t\tfr. 20',
+    vatAllowanceText31: 'Total\tfr. 920',
+    vatAllowanceText32: '= 3 biens (trois unités de vente)',
+    vatAllowanceText33:
+      "2.\tUne facture est établie comme suit pour l'achat d'un ordinateur:",
+    vatAllowanceText34: '1 ordinateur',
+    vatAllowanceText35: 'ordinateur de bureau',
+    vatAllowanceText36: 'écran',
+    vatAllowanceText37: 'clavier',
+    vatAllowanceText38: 'Total\tfr. 920',
+    vatAllowanceText39: '= 1 bien (une unité de vente)',
+    vatAllowanceText40:
+      "3. Une facture est établie comme suit pour l'achat de lunettes:",
+    vatAllowanceText41: '2 verres\t\t2 pièces à fr. 200\t\tfr. 400',
+    vatAllowanceText42: '1 monture\t\t\t  fr. 300',
+    vatAllowanceText43: 'Total\tfr. 700',
+    vatAllowanceText44: '= 1 bien (un bien assemblé)',
+
     dutyAllowanceMainText:
       'Franchises quantitatives: denrées alimentaires, alcool et tabac',
     dutyAllowanceSubText:

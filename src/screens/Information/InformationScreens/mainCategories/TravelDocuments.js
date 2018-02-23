@@ -1,29 +1,41 @@
 // @flow
 import React from 'react';
-import { Text, View } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
+// $FlowFixMe
+import type { TFunction } from '../../../../types/generalTypes';
+import { verticalScale } from '../../../../styles/Scaling';
+import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
+import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 
-class TravelDocumentsInner extends React.Component<{
+type TravelDocumentsInnerProps = {
   t: TFunction,
-  navigation: Navigation,
-}> {
-  // static navigationOptions = ({ screenProps }) => ({
-  //   headerTitle: (
-  //     <HeaderTitle text={screenProps.t('information:informationTitle')} />
-  //   ),
-  // });
+};
 
-  render() {
-    const { t, navigation, infoCategory } = this.props;
-    return (
-      <View>
-        <Text>Travel Documents</Text>
-      </View>
-    );
-  }
-}
+const TravelDocumentsInner = ({ t }: TravelDocumentsInnerProps) => (
+  <SubCategoryContainer title={t('travelDocumentsMainText')}>
+    <AppInfoSubText
+      text={t('travelDocumentsText1')}
+      style={{ marginVertical: verticalScale(10) }}
+    />
+    <AppInfoSubText
+      text="www.sem.admin.ch"
+      style={{
+        textDecorationLine: 'underline',
+        textDecorationStyle: 'solid',
+      }}
+    />
+    <AppInfoSubText text={t('travelDocumentsText2')} />
+    <AppInfoSubText
+      text="www.wcoomd.org"
+      style={{
+        textDecorationLine: 'underline',
+        textDecorationStyle: 'solid',
+      }}
+    />
+  </SubCategoryContainer>
+);
 
 export const TravelDocuments = (translate(['information'])(
   TravelDocumentsInner
-): ComponentType<{}>);
+): ComponentType<TravelDocumentsInnerProps>);

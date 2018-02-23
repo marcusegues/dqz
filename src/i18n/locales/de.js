@@ -232,6 +232,12 @@ export const de: Locale = {
     travelDocumentsMainText: 'Reisedokumente',
     travelDocumentsSubText:
       'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges ...',
+    travelDocumentsText1:
+      'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges und von der Schweiz anerkanntes Reisepapier. In gewissen Fällen ist zudem ein Visum erforderlich.\n' +
+      'Über die Einreise in die Schweiz und den Aufenthalt (Vorschriften zu Reisedokumenten und Visa) gibt Ihnen die Website des Staatssekretariats für Migration Auskunft:',
+    travelDocumentsText2:
+      'Die Vorschriften zu den Reisepapieren im Ausland finden Sie bei den entsprechenden ausländischen Behörden, über den Link der Weltzollorganisation:',
+
     declarationMainText: 'Ich habe Waren dabei',
     declarationSubText:
       'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
@@ -251,6 +257,75 @@ export const de: Locale = {
     vatAllowanceMainText: 'Wertfreigrenze CHF 300',
     vatAllowanceSubText:
       'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
+    vatAllowanceText1:
+      'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken einführen, sind bis zu einem Wert von CHF 300 mehrwertsteuerfrei. Zu berücksichtigen ist der Wert aller Waren. Dies schliesst auch den Wert der erhaltenen Geschenke, Lebensmittel, Tabakfabrikate, alkoholischen Getränke, vom Ausland mitgebrachten Haustiere und im Ausland ausgeführten Reparatur- und Unterhaltsarbeiten am eigenen Fahrzeug mit ein.',
+    vatAllowanceText2:
+      'Nicht dazu gerechnet wird hingegen der Wert der persönlichen Gebrauchsgegenstände, des Reiseproviants und des Treibstoffs für Ihr Fahrzeug.',
+    vatAllowanceText3:
+      'Massgebend ist der Wert nach Abzug der ausländischen Mehrwertsteuer, sofern diese auf der Quittung/Rechnung ausgewiesen ist. Die Wertangaben in ausländischer Währung werden zum Devisenkurs (Verkauf) des Vortages in Schweizer Franken umgerechnet.',
+    vatAllowanceText4:
+      'Die Wertfreigrenze kann von der gleichen Person nur einmal täglich in Anspruch genommen werden. Sie wird nur gewährt, wenn Sie die Waren selber mitführen. Die Wertfreigrenze gilt auch für Kinder.',
+    vatAllowanceText5:
+      'Was passiert, wenn der Warenwert 300 Franken übersteigt?',
+    vatAllowanceText6:
+      'Führen Sie Waren mit, welche die Wertfreigrenze von CHF 300 übersteigen, müssen Sie die Mehrwertsteuer auf dem Gesamtwert aller Waren bezahlen.',
+    vatAllowanceText7:
+      'Beispiel: Der Gesamtwert beträgt 800 Franken. Die 300 Franken sind überschritten. Somit wird die Mehrwertsteuer auf 800 Franken berechnet.',
+    vatAllowanceText8: 'Weitere Beispiele zur Anwendung der Wertfreigrenze',
+    vatAllowanceText9: 'Mehrwertsteuer',
+    vatAllowanceText10:
+      'Die Mehrwertsteuer berechnet sich vom Warenwert. Der Normalsatz beträgt 7,7 %. Für gewisse Waren gilt ein reduzierter Steuersatz von 2,5 % (z. B. für Lebensmittel, alkoholfreie Getränke, Bücher, Zeitschriften oder Medikamente). Bei der Verzollung mit der App «xxx» gelangt immer der Normalsatz zur Anwendung.',
+    vatAllowanceText11:
+      'Das Vorweisen einer Quittung oder eines anderen Wertnachweises (z. B. bei Internetkäufen) erleichtert die Zollveranlagung. Fehlen Wertangaben oder wird die Richtigkeit dieser Angaben bezweifelt, kann die Zollstelle den Warenwert schätzen.',
+    vatAllowanceText12: 'Zollanmeldung',
+    vatAllowanceText13:
+      'Bei der Einreise müssen Sie alle mitgeführten Waren beim Zollpersonal mündlich anmelden.',
+    vatAllowanceText14:
+      'Sie können die Waren auch mit der App «xxxx» oder bei Grenzübergängen, die nicht durch Zollpersonal besetzt sind, schriftlich via Anmeldebox anmelden. Informationen dazu finden Sie hier',
+    vatAllowanceText15:
+      'Bitte beachten Sie: Werden die so genannten Freimengen von alkoholischen Getränken, Tabakfabrikaten und gewissen Lebensmitteln überschritten, müssen Sie in jedem Fall Zoll bezahlen. Mehr Informationen',
+    vatAllowanceText16:
+      'Bitte beachten Sie zudem, dass bestimmte Waren (z.B. Fälschungen, Waffen sowie gewisse Pflanzen, Tiere, Tierprodukte und Waren, die dem Artenschutz unterliegen) zur Einfuhr verboten sein können oder gewissen Beschränkungen unterliegen. Mehr Informationen',
+    vatAllowanceText17: 'Anwendung der Wertfreigrenze für Einzelpersonen',
+    vatAllowanceText18: 'Anwendung der Wertfreigrenze bei mehreren Personen',
+    vatAllowanceText19:
+      'Eine Person kann für mehrere Personen, die zusammen reisen (z.B. Familien, Freunde, Bekannte), eine gemeinsame Zollanmeldung abgeben. Die anmeldende Person übernimmt damit die Verantwortung für die Zollanmeldung. Sie muss somit allfällige Abgaben bezahlen und übernimmt auch die strafrechtliche Verantwortung, wenn nicht angemeldete Ware entdeckt und ein Strafverfahren eingeleitet werden muss.',
+    vatAllowanceText20:
+      'Bitte beachten Sie: Wenn der Gesamtwert aller mitgeführten Waren die addierten Wertfreigrenzen der Personen, die zusammen reisen, übersteigt, hat die anmeldende Person keinen Anspruch auf die Wertfreigrenze.',
+    vatAllowanceText21:
+      'Einzelne Gegenstände, die einen Wert von über 300 Franken haben, sind auch bei mehreren Personen immer mehrwertsteuerpflichtig.',
+    vatAllowanceText22: 'Einzelne Gegenstände über CHF 300',
+    vatAllowanceText23:
+      'Bei der Beurteilung, ob es sich um einen Gegenstand im Einzelwert von mehr als CHF 300 oder um mehrere Gegenstände unter CHF 300 handelt, gilt',
+    vatAllowanceText24:
+      'bei nicht montierten oder nicht zusammengesetzten Waren: \n' +
+      'eine Verkaufseinheit = ein Gegenstand',
+    vatAllowanceText25:
+      'bei montierten oder zusammengesetzten Waren: \n' +
+      'montierte oder zusammengesetzte Waren = ein Gegenstand (auch wenn die einzelnen Komponenten auf der Rechnung separat ausgewiesen sind)',
+    vatAllowanceText26: 'Beispiele:',
+    vatAllowanceText27:
+      '1.\tBeim Einkauf eines Computers lautet die Rechnung wie folgt:',
+    vatAllowanceText28: '1 Desktop PC\t\tCHF\t\t700',
+    vatAllowanceText29: '1 Bildschirm\t\tCHF\t\t200 ',
+    vatAllowanceText30: '1 Tastatur\t\tCHF\t\t20',
+    vatAllowanceText31: 'Total\tCHF 920',
+    vatAllowanceText32: '= 3 Gegenstände (drei Verkaufseinheiten)',
+    vatAllowanceText33:
+      '2.\tBeim Einkauf eines Computers lautet die Rechnung wie folgt:',
+    vatAllowanceText34: '1 Computer',
+    vatAllowanceText35: 'Desktop PC',
+    vatAllowanceText36: 'Bildschirm',
+    vatAllowanceText37: 'Tastatur',
+    vatAllowanceText38: 'Total\tCHF 920',
+    vatAllowanceText39: '= 1 Gegenstand (eine Verkaufseinheit)',
+    vatAllowanceText40:
+      '3.\tBeim Einkauf einer Brille lautet die Rechnung wie folgt:',
+    vatAllowanceText41: '2 Gläser\t\t2 Stk. à CHF 200\t\tCHF 400',
+    vatAllowanceText42: '1 Gestell\t\tCHF 300',
+    vatAllowanceText43: 'Total\t\tCHF 700',
+    vatAllowanceText44: '',
+
     dutyAllowanceMainText: 'Freimengen: Lebensmittel, Alkohol und Tabak',
     dutyAllowanceSubText: 'Führen Sie für Ihren privaten Gebrauch oder zum ...',
     personalEffectsMainText:
