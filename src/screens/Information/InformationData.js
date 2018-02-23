@@ -30,6 +30,8 @@ const HeavyVehicles = require('../../../assets/icons/info/HeavyVehicles.png');
 const Fuel = require('../../../assets/icons/info/Fuel.png');
 const Watches = require('../../../assets/icons/info/Watches.png');
 const Cash = require('../../../assets/icons/info/Cash.png');
+const Food = require('../../../assets/icons/info/Food.png');
+const AuthorisationRequirements = require('../../../assets/icons/info/AuthorisationRequirements.png');
 
 export const informationImages: InformationImagesType = {
   customsProcedures: Sign,
@@ -51,6 +53,8 @@ export const informationImages: InformationImagesType = {
   fuelAndRepairs: Fuel,
   forgery: Watches,
   cash: Cash,
+  food: Food,
+  authorisationRequirements: AuthorisationRequirements,
 };
 
 export const informationSubCategories: InformationSubCategoriesType = {
@@ -86,4 +90,6 @@ export const informationNavigateTo = {
   fuelAndRepairs: 'FuelAndRepairs',
   forgery: 'Forgery',
   cash: 'Cash',
+  food: 'Food',
+  authorisationRequirements: 'AuthorisationRequirements',
 };

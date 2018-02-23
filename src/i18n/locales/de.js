@@ -187,9 +187,48 @@ export const de: Locale = {
   },
   information: {
     informationTitle: 'Wissenswertes',
+    informationSubCategoryTitle: 'Ich habe Waren dabei:',
+
     customsProceduresMainText: 'Vorgehen am Zoll',
     customsProceduresSubText:
       'Als Privatperson müssen Sie bei der Einreise in die Schweiz ...',
+    customsProceduresText1:
+      'Als Privatperson müssen Sie bei der Einreise in die Schweiz alle mitgeführten Waren und Tiere unaufgefordert anmelden.',
+    customsProceduresText2:
+      'Führen Sie nur Waren mit, die abgabenfrei (mehrwertsteuer- und zollfrei) sind und keinen Beschränkungen und Verboten unterliegen, so können Sie die Grenze passieren, ohne etwas formell anzumelden. In diesem Fall können Sie auch:',
+    customsProceduresText3: 'in Flughäfen den grünen Durchgang wählen oder;',
+    customsProceduresText4:
+      'im Auto die grüne Sichtzollanmeldung beim Armaturenbrett anbringen;',
+    customsProceduresText5:
+      'Das Passieren des grünen Durchgangs oder das Anbringen einer Sichtzollanmeldung sind für Sie verbindlich. Das Personal des Schweizer Zolls kann ohne Befragung eine Kontrolle durchführen.',
+    customsProceduresText6:
+      'Nähere Informationen zu den abgabenfreien Waren finden Sie unter den folgenden Rubriken:',
+    customsProceduresText7: 'Wertfreigrenze CHF 300',
+    customsProceduresText8: 'Freimengen: Lebensmittel, Alkohol und Tabak',
+    customsProceduresText9:
+      'Persönliche Gebrauchsgegenstände und Reiseproviant',
+    customsProceduresText10:
+      'Mündliche Zollanmeldung oder Benutzen des roten Durchgangs in Flughäfen',
+    customsProceduresText11:
+      'Wenn der Grenzübergang durch Personal des Schweizer Zolls besetzt ist, melden Sie alle Waren mündlich und unaufgefordert an.Informationen zu den wichtigsten Grenzübergängen finden Sie unter der Rubrik Grenzübergänge.',
+    customsProceduresText12: 'Zollanmeldung mit der App QuickZoll',
+    customsProceduresText13:
+      'Sie können Ihre Waren mit der App QuickZoll der EZV anmelden. Die Waren müssen vor dem Grenzübertritt oder beim Grenzübergang mit der App verzollt werden. D.h. die Abgaben müssen bezahlt sein. Haben Sie die Abgaben mit der App bezahlt, dürfen Sie auch Grenzübergänge, bei denen kein Personal des Zolls anwesend ist, und in Flughäfen den grünen Durchgang benutzen.',
+    customsProceduresText14:
+      'Diese Form der Zollanmeldung ist nur für Waren zulässig, die für Ihren privaten Gebrauch oder zum Verschenken bestimmt sind. Sie dürfen keinen Beschränkungen oder Verboten unterliegen und nicht zeugnis- oder bewilligungspflichtig sein. ',
+    customsProceduresText15:
+      'Andere Waren müssen bei einem durch Personal des Schweizer Zolls besetzten Grenzübergang mündlich angemeldet werden.',
+    customsProceduresText16: 'Anmeldebox',
+    customsProceduresText17:
+      'An gewissen Grenzübergängen stehen Ihnen noch sogenannte Anmeldeboxen zur Verfügung, bei denen Sie Ihre Waren schriftlich anmelden können. Informationen dazu finden Sie unter www.ezv.admin.ch/Anmeldebox [Link: https://www.ezv.admin.ch/ezv/de/home/zollanmeldung/anmeldung-private/schriftliche-selbstanmeldung-mit-den-anmeldeboxen.html]',
+    customsProceduresText18:
+      'Diese Form der Zollanmeldung ist nur für Waren zulässig, die nicht für den Handel bestimmt sind. Sie dürfen keinen Beschränkungen oder Verboten unterliegen und weder zeugnis- noch bewilligungspflichtig sein.',
+    customsProceduresText19:
+      'Handelswaren müssen Sie bei einer dafür zuständigen Zollstelle anmelden.',
+    customsProceduresText20: 'Bitte beachten:',
+    customsProceduresText21:
+      'Die mündliche Anmeldung sowie die Anmeldung mit der App oder via Anmeldebox sind verbindlich. Wir nehmen Zollkontrollen auch im Landesinneren vor. Eine nachträgliche Zollanmeldung ist nicht möglich. Sie machen sich strafbar, wenn Sie verbotene, bewilligungs- oder abgabenpflichtige Waren nicht oder falsch anmelden.',
+
     travelDocumentsMainText: 'Reisedokumente',
     travelDocumentsSubText:
       'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges ...',
@@ -221,6 +260,38 @@ export const de: Locale = {
     foreignVatMainText: 'Rückerstattung der ausländischen Mehrwertsteuer',
     foreignVatSubText:
       'Die Schweizer Zollverwaltung kann Ihnen die ausländische ...',
+
+    animalsMainText: 'Tiere: Heimtiere, Hunde, Katzen und Pferde',
+    animalsSubText:
+      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden ...',
+    plantsMainText: 'Pflanzen',
+    plantsSubText:
+      'Die Einfuhr von folgenden Pflanzen ist verboten, da sie Träger von Schadorganismen ...',
+    souvenirsAndSpeciesProtectionMainText: 'Souvenirs und Artenschutz (CITES)',
+    souvenirsAndSpeciesProtectionSubText:
+      'Ein Gurt aus Elefantenleder, ein Traumfänger mit Vogelfedern ...',
+
+    highwayVignetteMainText: 'Autobahnvignette',
+    highwayVignetteSubText:
+      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen ...',
+    roadTaxMainText: 'Strassenverkehrsabgabe über 3,5 T (PSVA)',
+    roadTaxSubText:
+      'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 ...',
+    fuelAndRepairsMainText: 'Treibstoff und Reparaturen',
+    fuelAndRepairsSubText:
+      'Der Tankinhalt ist abgabenfrei. In einem Reservekanister können Sie zudem bis 25 Liter ...',
+
+    forgeryMainText: 'Fälschungen',
+    forgerySubText:
+      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer ...',
+    cashMainText: 'Barmittel',
+    cashSubText:
+      'Bei der Ein-, Durch- und Ausfuhr von Barmitteln (Bargeld, Wertpapieren u.a.) im ...',
+    foodMainText: 'Beschränkungen für Lebensmittel',
+    foodSubText: 'Aus EU-Staaten, Island und Norwegen können Waren ...',
+    authorisationRequirementsMainText: 'Bewilligungspflichtig / Beschränkungen',
+    authorisationRequirementsSubText:
+      'Die Einfuhr von bestimmten Waren ist beschränkt und nur unter ...',
   },
   appInformation: {
     appInfoTitle: 'Über die App',

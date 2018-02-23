@@ -2,7 +2,7 @@
 import React from 'react';
 // $FlowFixMe
 import { Text } from 'react-native';
-import { moderateScale } from '../../../styles/Scaling';
+import { moderateScale, verticalScale } from '../../../styles/Scaling';
 
 type AppInfoSubTextProps = {
   text: string,

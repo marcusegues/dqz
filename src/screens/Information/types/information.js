@@ -61,7 +61,11 @@ export const vehiclesSubCategories: VehiclesSubCategories = [
   'fuelAndRepairs',
 ];
 
-type ProhibitionsAndRestrictionsSubCategory = 'forgery' | 'cash';
+type ProhibitionsAndRestrictionsSubCategory =
+  | 'forgery'
+  | 'cash'
+  | 'food'
+  | 'authorisationRequirements';
 
 type ProhibitionsAndRestrictionsSubCategories = Array<
   ProhibitionsAndRestrictionsSubCategory
@@ -70,6 +74,8 @@ type ProhibitionsAndRestrictionsSubCategories = Array<
 export const prohibitionsAndRestrictionsSubCategories: ProhibitionsAndRestrictionsSubCategories = [
   'forgery',
   'cash',
+  'food',
+  'authorisationRequirements',
 ];
 
 type InfoSubCategories =

@@ -188,9 +188,50 @@ export const fr: Locale = {
   },
   information: {
     informationTitle: 'Informations utiles',
+    informationSubCategoryTitle: "J'ai des biens avec vous:",
+
     customsProceduresMainText: 'Procédant à la douane',
     customsProceduresSubText:
       'En tant que particulier, vous devez entrer en Suisse ...',
+    customsProceduresText1:
+      "En tant que particulier, vous devez déclarer spontanément, lors de l'entrée en Suisse, toutes les marchandises et tous les animaux que vous transportez.",
+    customsProceduresText2:
+      'Si vous ne transportez que des marchandises qui sont admises en franchise de redevances (TVA et droits de douane) et qui ne sont soumises à aucune restriction ni interdiction, vous pouvez franchir la frontière sans déclarer formellement quoi que ce soit. Dans un tel cas, vous pouvez:',
+    customsProceduresText3: 'emprunter la voie verte des aéroports ou;',
+    customsProceduresText4:
+      'apposer la déclaration à vue verte sur le tableau de bord de votre voiture.',
+    customsProceduresText5:
+      "L'utilisation de la voie verte ou l'apposition de la déclaration à vue verte sur le tableau de bord de votre voiture sont contraignantes. Le personnel de la douane suisse peut donc effectuer un contrôle sans autre interrogation.",
+    customsProceduresText6:
+      'Vous trouverez de plus amples informations concernant les marchandises admises en franchise de redevances dans les rubriques suivantes:',
+    customsProceduresText7: 'Franchise-valeur de 300 francs',
+    customsProceduresText8:
+      'Franchises quantitatives: denrées alimentaires, alcool et tabac',
+    customsProceduresText9: 'Effets personnels et provisions de voyage',
+    customsProceduresText10:
+      'Déclaration en douane verbale ou utilisation de la voie rouge des aéroports',
+    customsProceduresText11:
+      'Si le passage frontière est occupé par du personnel de la douane suisse, vous devez déclarer verbalement et spontanément toutes les marchandises. Des informations relatives aux principaux passages frontières sont disponibles dans la rubrique «Passages frontières».',
+    customsProceduresText12:
+      "Établissement de la déclaration en douane au moyen de l'application QuickZoll",
+    customsProceduresText13:
+      "Vous pouvez également déclarer vos marchandises au moyen de l'application QuickZoll de l'Administration fédérale des douanes (AFD). Les marchandises doivent être dédouanées avec l'application et les redevances payées avant le franchissement de la frontière ou au passage frontière. Si vous avez payé les redevances avec l'application, vous pouvez aussi emprunter des passages frontières non occupés par du personnel de la douane [OU: des passages frontières auprès desquels il est possible d'effectuer une déclaration écrite], ou la voie verte des aéroports.",
+    customsProceduresText14:
+      "Cette forme de déclaration en douane n'est admise que pour les marchandises destinées à votre usage privé ou à être offertes en cadeau. Les marchandises ne doivent être soumises à aucune restriction ni interdiction et ne doivent être assujetties à aucun certificat ni permis.",
+    customsProceduresText15:
+      "Les autres marchandises doivent être déclarées verbalement auprès d'un passage frontière occupé par du personnel de la douane suisse.",
+    customsProceduresText16:
+      'Déclaration en douane écrite (boîte à déclarations)',
+    customsProceduresText17:
+      "Des boîtes à déclarations vous permettant de déclarer vos marchandises par écrit sont encore disponibles à certains passages frontières. Vous trouverez des informations à ce sujet à l'adresse suivante: www.ezv.admin.ch/boîte à déclarations",
+    customsProceduresText18:
+      "Cette forme de déclaration en douane n'est admise que pour les marchandises qui ne sont pas destinées au commerce. Les marchandises ne doivent être soumises à aucune restriction ni interdiction et ne doivent être assujetties à aucun certificat ni permis.",
+    customsProceduresText19:
+      "Vous devez déclarer les marchandises commerciales auprès d'un bureau de douane compétent à cet égard.",
+    customsProceduresText20: 'Attention:',
+    customsProceduresText21:
+      "Qu'elle soit verbale, effectuée au moyen de l'application ou par l'intermédiaire d'une boîte à déclarations, la déclaration lie son auteur. Nous effectuons également des contrôles douaniers à l'intérieur du pays. Une déclaration en douane subséquente n'est pas possible. Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
+
     travelDocumentsMainText: 'Documents de voyage',
     travelDocumentsSubText:
       "Pour entrer en Suisse, les étrangers ont besoin d'un ...",
@@ -216,10 +257,34 @@ export const fr: Locale = {
       'Franchises quantitatives: denrées alimentaires, alcool et tabac',
     dutyAllowanceSubText:
       'Les marchandises que vous importez pour votre usage privé ou pour ...',
+
     personalEffectsMainText: '',
     personalEffectsSubText: '',
     foreignVatMainText: '',
     foreignVatSubText: '',
+
+    animalsMainText: '',
+    animalsSubText: '',
+    plantsMainText: '',
+    plantsSubText: '',
+    souvenirsAndSpeciesProtectionMainText: '',
+    souvenirsAndSpeciesProtectionSubText: '',
+
+    highwayVignetteMainText: '',
+    highwayVignetteSubText: '',
+    roadTaxMainText: '',
+    roadTaxSubText: '',
+    fuelAndRepairsMainText: '',
+    fuelAndRepairsSubText: '',
+
+    forgeryMainText: '',
+    forgerySubText: '',
+    cashMainText: '',
+    cashSubText: '',
+    foodMainText: '',
+    foodSubText: '',
+    authorisationRequirementsMainText: '',
+    authorisationRequirementsSubText: '',
   },
   appInformation: {
     appInfoTitle: "Informations relatives à l'application",

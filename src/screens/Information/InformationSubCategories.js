@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { View } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import { ScrollViewCard } from '../../components/General Components/ScrollViewCard';
@@ -11,17 +12,10 @@ import {
 } from './InformationData';
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { Navigation, TFunction } from '../../types/generalTypes';
-import {
-  infoCategories,
-  animalsAndPlantsSubCategories,
-  vehiclesSubCategories,
-  declarationSubCategories,
-  InfoCategory,
-  InformationSubCategoriesType,
-} from './types/information';
 
 import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
-import { Text } from 'react-native';
+import { CardHeaderText } from '../../components/QuestionAnswer/Cards/subcomponents/CardHeaderText';
+import { moderateScale } from '../../styles/Scaling';
 
 class InformationSubCategoriesInner extends React.Component<{
   t: TFunction,
@@ -40,9 +34,13 @@ class InformationSubCategoriesInner extends React.Component<{
     return (
       <MainContentContainer>
         <ScrollViewCard>
-          {informationSubCategories[infoCategory].map(cat => (
+          <View style={{ margin: moderateScale(16) }}>
+            <CardHeaderText text={t('informationSubCategoryTitle')} />
+          </View>
+          {informationSubCategories[infoCategory].map((cat, idx) => (
             <InformationRow
               key={cat}
+              borderTop={idx === 0}
               source={informationImages[cat]}
               mainText={t(`${cat}MainText`)}
               subText={t(`${cat}SubText`)}

@@ -52,6 +52,8 @@ import { RoadTax } from '../screens/Information/InformationScreens/subCategories
 import { FuelAndRepairs } from '../screens/Information/InformationScreens/subCategories/FuelAndRepairs';
 import { Forgery } from '../screens/Information/InformationScreens/subCategories/Forgery';
 import { Cash } from '../screens/Information/InformationScreens/subCategories/Cash';
+import { Food } from '../screens/Information/InformationScreens/subCategories/Food';
+import { AuthorisationRequirements } from '../screens/Information/InformationScreens/subCategories/AuthorisationRequirements';
 
 export type NavigationObject = { navigation: Navigation };
 
@@ -314,6 +316,28 @@ export const stackNavigatorScreens = {
       ),
     }),
   },
+  Food: {
+    screen: Food,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  AuthorisationRequirements: {
+    screen: AuthorisationRequirements,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
   UsefulInfoScreenTemplate: {
     screen: UsefulInfoScreenTemplate,
     navigationOptions: ({ navigation }: NavigationObject) => ({
@@ -382,7 +406,7 @@ export const stackNavigatorScreens = {
 export const stackNavigatorConfig = {
   navigationOptions: defaultNavigationOptions,
   cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-  initialRouteName: 'OnBoarding',
+  initialRouteName: 'InformationMainCategories',
 };
 
 const RootStackNavigator = StackNavigator(
