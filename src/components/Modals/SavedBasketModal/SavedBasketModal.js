@@ -22,10 +22,11 @@ import { CardRowText } from '../../QuestionAnswer/Cards/subcomponents/CardRowTex
 import { CardRowSubText } from '../../QuestionAnswer/Cards/subcomponents/CardRowSubText';
 import { GREY } from '../../../styles/colors';
 import { CloseIcon } from '../../General Components/CloseIcon';
-import type { Navigation, TFunction } from '../../../types/generalTypes';
+import type { TFunction } from '../../../types/generalTypes';
 import { ModalCloseText } from '../ModalCloseText';
 import { rowStyles } from '../../Rows/styles/rowStyles';
 import { storeClearDeclaration } from '../../../asyncStorage/storageApi';
+import { getTotalFees } from '../../../reducers';
 
 const ownStyles = StyleSheet.create({
   container: {
@@ -46,24 +47,27 @@ const ownStyles = StyleSheet.create({
   },
 });
 
+export type NavigateFromSavedBasket = 'QuestionAnswer' | 'doNotNavigate';
+
 type SavedBasketModalProps = {
   modalVisible: boolean,
-  setModalVisibleFalse: () => any,
-  navigation: Navigation,
+  setModalVisibleFalse: (navigateTo: NavigateFromSavedBasket) => any,
 };
 
 type ReduxInject = {
-  resetDeclaration: () => void,
+  resetReduxDeclaration: () => void,
+  totalFees: number,
 };
 
 class SavedBasketModalInner extends React.Component<
   SavedBasketModalProps & ReduxInject & { t: TFunction },
   null
 > {
-  async storeClearDeclaration() {
+  async resetDeclaration() {
+    const { setModalVisibleFalse, resetReduxDeclaration } = this.props;
     await storeClearDeclaration();
-    this.props.resetDeclaration();
-    this.props.navigation.navigate('QuestionAnswer');
+    resetReduxDeclaration();
+    setModalVisibleFalse('QuestionAnswer');
   }
 
   render() {
@@ -72,8 +76,8 @@ class SavedBasketModalInner extends React.Component<
       <AppModal
         onRequestClose={setModalVisibleFalse}
         modalVisible={modalVisible}
-        animationIn="bounceInLeft"
-        animationOut="bounceOutLeft"
+        animationIn="slideInUp"
+        animationOut="slideOutDown"
       >
         <ModalCard style={{}}>
           <CloseIcon onPress={setModalVisibleFalse} />
@@ -90,7 +94,11 @@ class SavedBasketModalInner extends React.Component<
 
           <Row borderTop>
             <View style={rowStyles.rowContent}>
-              <TouchableWithoutFeedback onPress={() => {}}>
+              <TouchableWithoutFeedback
+                onPress={() => {
+                  this.props.setModalVisibleFalse('QuestionAnswer');
+                }}
+              >
                 <View style={ownStyles.container}>
                   <MaterialIcons
                     name="shopping-cart"
@@ -98,9 +106,11 @@ class SavedBasketModalInner extends React.Component<
                     color={GREY}
                   />
                   <View style={ownStyles.textContainer}>
-                    <CardRowText text="21. November 2017" />
+                    <CardRowText text={t('modal:savedBasket')} />
                     <CardRowSubText
-                      text={t('modal:savedBasketTotalCost', { value: '6.00' })}
+                      text={t('modal:savedBasketTotalCost', {
+                        value: this.props.totalFees,
+                      })}
                     />
                   </View>
                   <Entypo
@@ -116,12 +126,12 @@ class SavedBasketModalInner extends React.Component<
           <View style={ownStyles.redButtonWrapper}>
             <RedButton
               text={t('modal:savedBasketNewShoppingCart')}
-              onPress={() => this.storeClearDeclaration()}
+              onPress={() => this.resetDeclaration()}
             />
           </View>
         </ModalCard>
         <ModalCloseText
-          onModalHide={setModalVisibleFalse}
+          onModalHide={() => setModalVisibleFalse('doNotNavigate')}
           text={t('modal:closeModalText')}
         />
       </AppModal>
@@ -129,10 +139,14 @@ class SavedBasketModalInner extends React.Component<
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  resetDeclaration: () => dispatch({ type: 'RESET_DECLARATION' }),
+const mapStateToProps = state => ({
+  totalFees: getTotalFees(state),
 });
 
-export const SavedBasketModal = (connect(null, mapDispatchToProps)(
+const mapDispatchToProps = dispatch => ({
+  resetReduxDeclaration: () => dispatch({ type: 'RESET_DECLARATION' }),
+});
+
+export const SavedBasketModal = (connect(mapStateToProps, mapDispatchToProps)(
   translate(['general', 'modal'])(SavedBasketModalInner)
 ): ComponentType<SavedBasketModalProps>);

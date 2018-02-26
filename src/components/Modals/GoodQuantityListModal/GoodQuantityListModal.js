@@ -97,10 +97,27 @@ class GoodQuantityListModalInner extends React.Component<
     };
   }
 
-  togglePickerVisible() {
-    this.setState({
-      pickerModalVisible: !this.state.pickerModalVisible,
-    });
+  getGreyFieldTopText(modalCategory) {
+    const { t } = this.props;
+
+    switch (modalCategory) {
+      case 'Butter': {
+        return t('quantityInput:enterQuantitiesButter', {
+          value: t(`categories:${modalCategory}`),
+        });
+      }
+      case 'AlcSoft':
+      case 'AlcHard': {
+        return t('quantityInput:enterQuantitiesAlcohol', {
+          value: t(`categories:${modalCategory}`),
+        });
+      }
+      default: {
+        return t('quantityInput:enterQuantities', {
+          value: t(`categories:${modalCategory}`),
+        });
+      }
+    }
   }
 
   confirmPicker(amount: number) {
@@ -110,6 +127,12 @@ class GoodQuantityListModalInner extends React.Component<
     if (modalCategory) {
       onAddQuantity(modalCategory, amount);
     }
+  }
+
+  togglePickerVisible() {
+    this.setState({
+      pickerModalVisible: !this.state.pickerModalVisible,
+    });
   }
 
   render() {
@@ -174,15 +197,7 @@ class GoodQuantityListModalInner extends React.Component<
 
             {quantities.size === 0 ? (
               <GoodQuantityGreyField
-                topText={
-                  modalCategory === 'Butter'
-                    ? t('quantityInput:enterQuantitiesButter', {
-                        value: t(`categories:${modalCategory}`),
-                      })
-                    : t('quantityInput:enterQuantities', {
-                        value: t(`categories:${modalCategory}`),
-                      })
-                }
+                topText={this.getGreyFieldTopText(modalCategory)}
                 plusIconText={t('quantityInput:addQuantities')}
                 onPress={() => this.togglePickerVisible()}
               />

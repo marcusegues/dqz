@@ -26,20 +26,20 @@ type QuantityRowInnerProps = {
 };
 
 const QuantityRowInner = ({
+  t,
   quantity,
   date,
   onDelete,
   category,
   borderTop = false,
-  t,
 }: QuantityRowInnerProps & { t: TFunction }) => (
   <Row borderTop={borderTop}>
     <View style={rowStyles.rowContent}>
       <View style={{ flex: 1 }}>
         <CardRowText
-          text={`${quantity.toFixed(2)} ${CategoriesInfo.getIn(
-            [category, 'unit'],
-            ''
+          text={`${quantity.toFixed(2)} ${t(
+            `units:${CategoriesInfo.getIn([category, 'unit'], '')}`,
+            { count: quantity }
           )}`}
         />
         <CardRowSubText text={t('recordedOn', { value: date })} />
@@ -51,6 +51,6 @@ const QuantityRowInner = ({
   </Row>
 );
 
-export const QuantityRow = (translate(['quantityInput'])(
+export const QuantityRow = (translate(['quantityInput', 'units'])(
   QuantityRowInner
 ): ComponentType<QuantityRowInnerProps>);

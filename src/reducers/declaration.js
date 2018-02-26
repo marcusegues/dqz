@@ -27,7 +27,6 @@ export const declaration = (
   state: DeclarationState = getInitialDeclarationState(),
   action: DeclarationAction
 ): DeclarationState => {
-  debugger;
   switch (action.type) {
     case 'RESET_DECLARATION': {
       const peopleReset = state.set('people', modelApi.initPeople);
@@ -37,16 +36,6 @@ export const declaration = (
         Immutable.Set()
       );
       return mainCategoriesReset.set('amounts', modelApi.initAmounts);
-    }
-    case 'SET_DECLARATION': {
-      const peopleReset = state.set('people', action.people);
-      const basketReset = peopleReset.set('basket', action.basket);
-
-      const mainCategoriesReset = basketReset.setIn(
-        ['settings', 'mainCategories'],
-        action.mainCategories
-      );
-      return mainCategoriesReset.set('amounts', action.amounts);
     }
     case 'BASKET_ADD_QUANTITY': {
       const category: Category = action.category;

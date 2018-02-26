@@ -123,7 +123,9 @@ const GoodInputRowInner = ({
         <View style={{ marginTop: 10 }}>
           <QuantityIcon
             quantity={totalQuantity.toFixed(2)}
-            unit={CategoriesInfo.getIn([category, 'unit'], '')}
+            unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
+              count: totalQuantity,
+            })}
           />
         </View>
       </View>
@@ -134,6 +136,8 @@ const GoodInputRowInner = ({
   </Touchable>
 );
 
-export const GoodInputRow = (translate(['mainCategories', 'categories'])(
-  GoodInputRowInner
-): ComponentType<GoodInputRowProps>);
+export const GoodInputRow = (translate([
+  'mainCategories',
+  'categories',
+  'units',
+])(GoodInputRowInner): ComponentType<GoodInputRowProps>);
