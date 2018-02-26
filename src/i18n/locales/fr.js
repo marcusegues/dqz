@@ -334,10 +334,85 @@ export const fr: Locale = {
       'Franchises quantitatives: denrées alimentaires, alcool et tabac',
     dutyAllowanceSubText:
       'Les marchandises que vous importez pour votre usage privé ou pour ...',
+    dutyAllowanceText1:
+      "Les marchandises que vous importez pour votre usage privé ou pour en faire cadeau sont admises en franchise de droits de douane. Font exception, pour des raisons de politique agricole ou de politique sanitaire, les marchandises dites sensibles pour lesquelles vous devez payer des droits de douane au-delà d'une certaine quantité (voir tableau ci-dessous). Les franchises quantitatives ne sont accordées qu'une fois par personne et par jour.",
+    dutyAllowanceText2:
+      'Attention: si la valeur totale des marchandises que vous transportez (y c. la valeur de toutes les denrées alimentaires) dépasse 300 francs, vous devrez payer la TVA dans tous les cas. Informations complémentaires',
+    dutyAllowanceText3:
+      "Veuillez noter en outre qu'il existe des restrictions supplémentaires pour certains produits animaux et végétaux.",
+    dutyAllowanceText4: 'Viande et préparations de viande',
+    dutyAllowanceText5:
+      "de toutes les espèces animales, à l'exception du gibier, des poissons, des crustacés, des mollusques et des autres invertébrés aquatiques. Appartiennent à cette catégorie:",
+    dutyAllowanceText6:
+      "toutes les parties comestibles du corps d'animaux (avec ou sans os);",
+    dutyAllowanceText7: 'les saucisses à base de viande ou de sang;',
+    dutyAllowanceText8: 'les autres produits à base de viande;',
+    dutyAllowanceText9:
+      'les préparations alimentaires contenant plus de 20 % en poids de saucisse, viande ou sang.',
+    dutyAllowanceText10:
+      "N'appartiennent pas à cette catégorie la moelle et les os à sauce ainsi que les aliments pour chiens et chats désignés comme aliments pour animaux sur les emballages pour la vente au détail.",
+    dutyAllowanceText11:
+      "L'importation de produits animaux en provenance de pays autres que les États membres de l'UE, l'Islande ou la Norvège est interdite.",
+    dutyAllowanceText12: 'Franchises quantitatives par personne et par jour:',
+    dutyAllowanceText13: '1 kg au total',
+    dutyAllowanceText14:
+      'Droits de douane pour les quantités excédentaires, en francs:',
+    dutyAllowanceText15: "jusqu'à 10 kg: 17.- par kg",
+    dutyAllowanceText16: 'plus de 10 kg: 23.- par kg',
+    dutyAllowanceText17: 'Beurre et crème',
+    dutyAllowanceText18:
+      "L'importation de produits animaux en provenance de pays autres que les États membres de l'UE, l'Islande ou la Norvège est interdite.",
+    dutyAllowanceText19: 'Franchises quantitatives par personne et par jour:',
+    dutyAllowanceText20: '1 kg/l au total',
+    dutyAllowanceText21:
+      'Droits de douane pour les quantités excédentaires, en francs:',
+    dutyAllowanceText22: '16.- par kg/l',
+    dutyAllowanceText23:
+      "Huiles, graisses et margarine pour l'alimentation humaine",
+    dutyAllowanceText24:
+      "L'importation de produits animaux en provenance de pays autres que les États membres de l'UE, l'Islande ou la Norvège est interdite.",
+    dutyAllowanceText25: 'Franchises quantitatives par personne et par jour:',
+    dutyAllowanceText26: '5 kg/l au total',
+    dutyAllowanceText27:
+      'Droits de douane pour les quantités excédentaires, en francs:',
+    dutyAllowanceText28: '2.- par kg/l',
+    dutyAllowanceText29: 'Boissons alcooliques',
+    dutyAllowanceText30:
+      'Franchises quantitatives par personne et par jour:\n' +
+      "(pour personnes âgées d'au moins 17 ans)",
+    dutyAllowanceText31:
+      "teneur en alcool n'excédant pas 18 % du volume: 5 l au total et",
+    dutyAllowanceText32:
+      'teneur en alcool excédant 18 % du volume: 1 l au total',
+    dutyAllowanceText33:
+      'Droits de douane pour les quantités excédentaires, en francs:',
+    dutyAllowanceText34:
+      "teneur en alcool n'excédant pas 18 % du volume: 2.- par l",
+    dutyAllowanceText35:
+      ' teneur en alcool excédant 18 % du volume: 15.- par l',
+    dutyAllowanceText36: 'Tabacs manufacturés',
+    dutyAllowanceText37:
+      'Franchises quantitatives par personne et par jour:\n' +
+      "(pour personnes âgées d'au moins 17 ans)",
+    dutyAllowanceText38: 'cigarettes/cigares: 250 pièces au total ou',
+    dutyAllowanceText39: 'autres tabacs manufacturés: 250 g au total ou',
+    dutyAllowanceText40: ' un assortiment proportionnel de ces produits',
+    dutyAllowanceText41:
+      'Droits de douane pour les quantités excédentaires, en francs:',
+    dutyAllowanceText42: 'cigarettes/cigares: 0.25 par pièce',
+    dutyAllowanceText43: 'autres tabacs manufacturés: 0.10 par g',
+    dutyAllowanceText44: 'Autres denrées alimentaires et marchandises',
+    dutyAllowanceText45:
+      "L'importation de produits animaux en provenance de pays autres que les États membres de l'UE, l'Islande ou la Norvège est interdite.\n" +
+      'En franchise de droits de douane',
+    dutyAllowanceText46:
+      "Marchandises commandées à l'étranger et livrées par la Poste ou un service de courrier rapide",
+    dutyAllowanceText47:
+      "D'autres dispositions sont applicables aux marchandises que vous commandez à l'étranger (par ex. sur Internet) et qui vous sont expédiées par la Poste ou par un service de courrier rapide. Informations complémentaires",
 
-    personalEffectsMainText: '',
+    personalEffectsMainText: 'Effets personnels et dispositions de voyage',
     personalEffectsSubText: '',
-    foreignVatMainText: '',
+    foreignVatMainText: 'Remboursement de la TVA étrangère',
     foreignVatSubText: '',
 
     animalsMainText: '',

@@ -3,11 +3,8 @@ import React from 'react';
 // $FlowFixMe
 import {
   Image,
-  Touchable,
-  TouchableHighlight,
   TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
+  // $FlowFixMe
 } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';

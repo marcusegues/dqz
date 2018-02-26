@@ -328,6 +328,72 @@ export const de: Locale = {
 
     dutyAllowanceMainText: 'Freimengen: Lebensmittel, Alkohol und Tabak',
     dutyAllowanceSubText: 'Führen Sie für Ihren privaten Gebrauch oder zum ...',
+    dutyAllowanceText1:
+      'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheitspolitischen Gründen ab einer gewissen Menge Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
+    dutyAllowanceText2:
+      'Bitte beachten Sie: Übersteigt der Gesamtwert Ihrer mitgeführten Waren (inkl. Wert aller Lebensmittel) 300 Franken, müssen Sie in jedem Fall die Mehrwertsteuer bezahlen. Mehr Informationen',
+    dutyAllowanceText3:
+      'Bitte beachten Sie zudem, dass für gewisse Tierprodukte sowie für bestimmte pflanzliche Erzeugnisse zusätzliche Beschränkungen bestehen.',
+    dutyAllowanceText4: 'Fleisch und Fleischzubereitungen',
+    dutyAllowanceText5:
+      'von allen Tierarten, mit Ausnahme von Wild, Fischen, Krebstieren, Weichtieren und anderen wirbellosen Wassertieren. Dazu gehören:',
+    dutyAllowanceText6:
+      'alle geniessbaren Tierkörperteile (mit oder ohne Knochen)',
+    dutyAllowanceText7: 'Würste aus Fleisch oder Blut',
+    dutyAllowanceText8: 'andere Fleischerzeugnisse',
+    dutyAllowanceText9:
+      'Lebensmittelzubereitungen mit einem Gehalt von mehr als 20 Gewichtsprozenten an Wurst, Fleisch oder Blut',
+    dutyAllowanceText10:
+      'Nicht dazu gehören Markbein und Saucen-Knochen, Hunde- und Katzenfutter in als Tierfutter gekennzeichneten Einzelverkaufspackungen.',
+    dutyAllowanceText11:
+      ' Die Einfuhr von Tierprodukten aus anderen als EU-Mitgliedstaaten, als Island und als Norwegen ist verboten.',
+    dutyAllowanceText12: 'Freimengen pro Person und pro Tag:',
+    dutyAllowanceText13: 'insgesamt 1 kg',
+    dutyAllowanceText14: 'Zollabgaben für Mehrmenge in CHF',
+    dutyAllowanceText15: 'bis 10 kg: 17.- je kg',
+    dutyAllowanceText16: 'mehr als 10 kg: 23.- je kg',
+    dutyAllowanceText17: 'Butter und Rahm',
+    dutyAllowanceText18:
+      'Die Einfuhr von Tierprodukten aus anderen als EU-Mitgliedstaaten, als Island und als Norwegen ist verboten.',
+    dutyAllowanceText19: 'Freimengen pro Person und pro Tag:',
+    dutyAllowanceText20: 'insgesamt 1 kg/Liter',
+    dutyAllowanceText21: 'Zollabgaben für Mehrmenge in CHF:',
+    dutyAllowanceText22: '16.- je kg/Liter',
+    dutyAllowanceText23: 'Öle, Fette, Margarine zu Speisezwecken',
+    dutyAllowanceText24:
+      'Die Einfuhr von Tierprodukten aus anderen als EU-Mitgliedstaaten, als Island und als Norwegen ist verboten.',
+    dutyAllowanceText25: 'Freimengen pro Person und pro Tag:',
+    dutyAllowanceText26: 'insgesamt 5 kg/Liter',
+    dutyAllowanceText27: 'Zollabgaben für Mehrmenge in CHF:',
+    dutyAllowanceText28: '2.- je kg/Liter',
+    dutyAllowanceText29: 'Alkoholische Getränke',
+    dutyAllowanceText30:
+      'Freimengen pro Person und pro Tag:\n' +
+      '(nur für Personen, die mindestens 17 Jahre alt sind)',
+    dutyAllowanceText31: 'Alkoholgehalt bis 18 % Vol.: insgesamt 5 Liter und',
+    dutyAllowanceText32: 'Alkoholgehalt über 18 % Vol.: insgesamt 1 Liter',
+    dutyAllowanceText33: 'Zollabgaben für Mehrmenge in CHF:',
+    dutyAllowanceText34: 'Alkoholgehalt bis 18 % Vol.: 2.- je Liter',
+    dutyAllowanceText35: 'Alkoholgehalt über 18 % Vol.: 15.- je Liter',
+    dutyAllowanceText36: 'Tabakfabrikate',
+    dutyAllowanceText37:
+      'Freimengen pro Person und pro Tag:\n' +
+      '(nur für Personen, die mindestens 17 Jahre alt sind)',
+    dutyAllowanceText38: 'Zigaretten/Zigarren: insgesamt 250 Stück oder',
+    dutyAllowanceText39: 'andere Tabakfabrikate: insgesamt 250 g',
+    dutyAllowanceText40: 'oder eine anteilmässige Auswahl dieser Erzeugnisse',
+    dutyAllowanceText41: 'Zollabgaben für Mehrmenge in CHF:',
+    dutyAllowanceText42: 'Zigaretten/Zigarren: 0.25 je Stück',
+    dutyAllowanceText43: 'andere Tabakfabrikate: 0.10 je Gramm',
+    dutyAllowanceText44: 'Andere Lebensmittel und andere Waren',
+    dutyAllowanceText45:
+      'Die Einfuhr von Tierprodukten aus anderen als EU-Mitgliedstaaten, als Island und als Norwegen ist verboten.\n' +
+      'Zollfrei',
+    dutyAllowanceText46:
+      'Im Ausland bestellt und per Post/Kurierdienst geliefert',
+    dutyAllowanceText47:
+      'Für Waren, die Sie im Ausland bestellen (z.B. im Internet) und die Ihnen per Post oder Kurierdienst zugestellt werden, gelten andere Bestimmungen. Mehr Informationen',
+
     personalEffectsMainText:
       'Persönliche Gebrauchsgegenstände und Reiseproviant',
     personalEffectsSubText:
