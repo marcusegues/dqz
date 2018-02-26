@@ -1,20 +1,12 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import {
-  Image,
-  TouchableOpacity,
-  // $FlowFixMe
-} from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import type { Navigation, TFunction } from '../../../../types/generalTypes';
-import {
-  moderateScale,
-  scale,
-  verticalScale,
-} from '../../../../styles/Scaling';
+import { verticalScale } from '../../../../styles/Scaling';
 import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { BulletText } from '../../../AppInfo/subComponents/BulletText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';

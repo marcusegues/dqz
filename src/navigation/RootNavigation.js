@@ -406,9 +406,9 @@ export const stackNavigatorScreens = {
 export const stackNavigatorConfig = {
   navigationOptions: defaultNavigationOptions,
   cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-  // initialRouteName: 'VatAllowance',
-  // initialRouteName: 'InformationMainCategories',
-  initialRouteName: 'OnBoarding',
+  // initialRouteName: 'Plants',
+  initialRouteName: 'InformationMainCategories',
+  // initialRouteName: 'OnBoarding',
 };
 
 const RootStackNavigator = StackNavigator(

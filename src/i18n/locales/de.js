@@ -398,16 +398,91 @@ export const de: Locale = {
       'Persönliche Gebrauchsgegenstände und Reiseproviant',
     personalEffectsSubText:
       'Persönliche Gebrauchsgegenstände und Reiseproviant können ...',
+    personalEffectsText1:
+      'Persönliche Gebrauchsgegenstände und Reiseproviant können Sie abgabenfrei einführen:',
+    personalEffectsText2: 'Persönliche Gebrauchsgegenstände',
+    personalEffectsText3: 'Darunter fallen Gebrauchsgegenstände, welche:',
+    personalEffectsText4:
+      'in der Schweiz wohnhafte Reisende bei der Ausreise mitgenommen haben.',
+    personalEffectsText5:
+      'im Ausland wohnhafte Reisende während des Aufenthaltes in der Schweiz benützen und wieder ausführen. Dazu gehören Kleider, Wäsche, Toilettenartikel, Sportgeräte, Foto-, Film- und Videokameras, Mobiltelefone, tragbare Computer, Musikinstrumente und sonstige Gebrauchsgegenstände persönlicher Natur.',
+    personalEffectsText6: 'Reiseproviant',
+    personalEffectsText7:
+      'Als Reiseproviant gelten genussfertige Nahrungsmittel und alkoholfreie Getränke für den Reisetag.',
+
     foreignVatMainText: 'Rückerstattung der ausländischen Mehrwertsteuer',
     foreignVatSubText:
       'Die Schweizer Zollverwaltung kann Ihnen die ausländische ...',
+    foreignVatMainText1:
+      'Die Schweizer Zollverwaltung kann Ihnen die ausländische MWST nicht zurückerstatten.',
+    foreignVatMainText2:
+      'Wenn Sie im Ausland gekaufte Waren persönlich in die Schweiz bringen, haben Sie häufig die Möglichkeit, sich die ausländische MWST durch den ausländischen Verkäufer oder ein Tax-Refund-Unternehmen erstatten zu lassen. Diese Serviceunternehmen haben nichts mit der eidgenössischen Zollverwaltung zu tun; sie arbeiten insbesondere nicht in unserem Auftrag.',
+    foreignVatMainText3:
+      'Für die Rückerstattung bestehen je nach Staat unterschiedliche Voraussetzungen. Allenfalls füllt der Verkäufer ein Rückerstattungsformular aus, auf dem die ausländische Zollbehörde den Export in die Schweiz bestätigt.',
+    foreignVatMainText4:
+      'Weitere Informationen zur Rückerstattung der ausländischen MWST können wir Ihnen nicht geben. Allenfalls erteilt Ihnen die entsprechende Zollbehörde Auskünfte. Die ausländischen Zollbehörden finden Sie unter folgendem Link der Weltzollorganisation:\n' +
+      'www.wcoomd.org',
+    foreignVatMainText5:
+      'Die schweizerische MWST ist auch zu bezahlen, wenn die ausländische MWST nicht zurückerstattet wird. Im Bereich der Mehrwertsteuern gibt es kein Doppelbesteuerungsabkommen.',
 
     animalsMainText: 'Tiere: Heimtiere, Hunde, Katzen und Pferde',
     animalsSubText:
       'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden ...',
+    animalsText1:
+      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die Informationen beim Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:',
+    animalsText2: 'Abgaben',
+    animalsText3:
+      'Wird die Wertfreigrenze von CHF 300 überschritten, müssen Sie für Tiere die MWST bezahlen. Detailliertere Informationen finden Sie unter:',
+    animalsText4: 'Wertfreigrenze CHF 300',
+
     plantsMainText: 'Pflanzen',
     plantsSubText:
       'Die Einfuhr von folgenden Pflanzen ist verboten, da sie Träger von Schadorganismen ...',
+    plantsText1:
+      '1. Verbotene Pflanzen und Pflanzenerzeugnisse\n' +
+      'Die Einfuhr von folgenden Pflanzen ist verboten, da sie Träger von Schadorganismen (Feuerbrand, Kastanienrindenkrebs, Virenerkrankungen, etc.) sein können:',
+    plantsText2: 'a) Einfuhr aus allen Ländern verboten',
+    plantsText3: 'Zwergmispel (Cotoneaster)',
+    plantsText4:
+      'Lorbeer-Glanzmispel - Photinia davidiana (sync. Stranvaesia davidiana)',
+    plantsText5:
+      'b) Einfuhr aus allen Staaten ausser EU-Staaten, Island und Norwegen verboten',
+    plantsText6: 'Apfelbaum (Malus)',
+    plantsText7: 'Birnenbaum (Pyrus)',
+    plantsText8: 'Bitterorangen (Poncirus)',
+    plantsText9: 'Eiche (Quercus)',
+    plantsText10: 'Eberesche, bzw. Vogelund Mehlbeere (Sorbus)',
+    plantsText11: 'Feuerdorn (Pyracantha)',
+    plantsText12: 'Kartoffeln und ähnliche Nachtschattengewächse (Solanacea)',
+    plantsText13: 'echte, essbare Kastanie (Castanea)',
+    plantsText14: 'Kumquats (Fortunella)',
+    plantsText15: 'Mispel (Mespilus)',
+    plantsText16: 'Nadelgehölze (Koniferen)',
+    plantsText17: 'Quittenbaum (Cydonia)',
+    plantsText18: 'Reben (Vitis)',
+    plantsText19: 'Rosen',
+    plantsText20:
+      'Steinobstbäume (Aprikose, Kirsche, Mandel, Pfirsich, Pflaume und Zwetschge) und alle Zierformen der Gattung Prunus',
+    plantsText21: 'Weissdorn (Crataegus) alle Arten und Sorten',
+    plantsText22: 'Wollmispel (Eriobotyra)',
+    plantsText23: 'Zier- und Scheinquitte (Chaenomeles)',
+    plantsText24: 'Zitrusgewächse (Citrus)',
+    plantsText25:
+      '2. Andere Pflanzen und Pflanzenerzeugnisse (auch Früchte und Gemüse)',
+    plantsText26:
+      'a) Einfuhr aus EU-Staaten, Norwegen und Island\n' +
+      'Sie können Pflanzen ohne Bewilligung einführen, sofern diese im Reiseverkehr und für den privaten Gebrauch eingeführt werden.',
+    plantsText27:
+      'b) Einfuhr aus allen Staaten ausser EU, Norwegen und Island\n' +
+      'Pflanzen (lebend oder als Pflanzenerzeugnisse) können einer Einfuhrbewilligungspflicht unterliegen.',
+    plantsText28:
+      'Wollen Sie aus diesen Staaten Pflanzen einführen, klären Sie vorgängig die Bestimmungen beim Bundesamt für Landwirtschaft ab:',
+    plantsText29:
+      'Ausnahme: pro Person können Schnittblumen und Blumensträusse bis max. 3 kg sowie Früchte und Gemüse (ausgenommen Kartoffeln) bis insgesamt 10 kg ohne Anwendung von Pflanzenschutzmassnahmen eingeführt werden.',
+    plantsText30: 'Abgaben',
+    plantsText31:
+      'Wird die Wertfreigrenze von CHF 300 überschritten, müssen Sie für Pflanzen die MWST bezahlen. Detaillierte Informationen finden Sie unter: Wertfreigrenze CHF 300',
+
     souvenirsAndSpeciesProtectionMainText: 'Souvenirs und Artenschutz (CITES)',
     souvenirsAndSpeciesProtectionSubText:
       'Ein Gurt aus Elefantenleder, ein Traumfänger mit Vogelfedern ...',

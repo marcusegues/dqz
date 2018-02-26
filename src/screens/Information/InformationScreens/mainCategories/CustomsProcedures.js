@@ -69,9 +69,7 @@ const CustomsProceduresInner = ({
       text={t('customsProceduresText16')}
       style={{ marginTop: verticalScale(20) }}
     />
-    {/*<TouchableOpacity onPress={() => Linking.openURL(url)}>*/}
     <AppInfoSubText text={t('customsProceduresText17')} />
-    {/*</TouchableOpacity>*/}
     <AppInfoSubText
       text={t('customsProceduresText18')}
       style={{ marginVertical: verticalScale(10) }}

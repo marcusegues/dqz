@@ -2,20 +2,22 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
-// $FlowFixMe
-import { View, Text } from 'react-native';
 import type { TFunction } from '../../../../types/generalTypes';
-
-const ownStyles = {};
+import { verticalScale } from '../../../../styles/Scaling';
+import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
+import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 
 type EntryByTrainInnerProps = {
   t: TFunction,
 };
 
 const EntryByTrainInner = ({ t }: EntryByTrainInnerProps) => (
-  <View>
-    <Text>EntryByTrain</Text>
-  </View>
+  <SubCategoryContainer title={t('entryByTrainMainText')}>
+    <AppInfoSubText
+      text="entryByTrain"
+      style={{ marginTop: verticalScale(10) }}
+    />
+  </SubCategoryContainer>
 );
 
 export const EntryByTrain = (translate(['information'])(

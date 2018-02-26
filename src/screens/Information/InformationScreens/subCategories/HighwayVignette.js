@@ -2,20 +2,22 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
-// $FlowFixMe
-import { View, Text } from 'react-native';
 import type { TFunction } from '../../../../types/generalTypes';
-
-const ownStyles = {};
+import { verticalScale } from '../../../../styles/Scaling';
+import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
+import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 
 type HighwayVignetteInnerProps = {
   t: TFunction,
 };
 
 const HighwayVignetteInner = ({ t }: HighwayVignetteInnerProps) => (
-  <View>
-    <Text>Highway Vignette</Text>
-  </View>
+  <SubCategoryContainer title={t('highwayVignetteMainText')}>
+    <AppInfoSubText
+      text="highwayVignette"
+      style={{ marginTop: verticalScale(10) }}
+    />
+  </SubCategoryContainer>
 );
 
 export const HighwayVignette = (translate(['information'])(

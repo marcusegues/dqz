@@ -29,7 +29,6 @@ class InformationMainCategoriesInner extends React.Component<{
     analyticsScreenMounted('Information');
   }
 
-  // navigateTo(cat: informationCategories) {
   navigateTo(cat: InfoCategory) {
     const { navigate } = this.props.navigation;
     if (informationSubCategories[cat] === 'noSubCategories') {
@@ -40,7 +39,7 @@ class InformationMainCategoriesInner extends React.Component<{
   }
 
   render() {
-    const { t, navigation } = this.props;
+    const { t } = this.props;
     return (
       <MainContentContainer>
         <ScrollViewCard>

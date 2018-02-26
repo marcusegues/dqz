@@ -2,11 +2,9 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
-// $FlowFixMe
-import { View, Text } from 'react-native';
 import type { TFunction } from '../../../../types/generalTypes';
-
-const ownStyles = {};
+import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
+import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 
 type SouvenirsAndSpeciesProtectionInnerProps = {
   t: TFunction,
@@ -15,9 +13,9 @@ type SouvenirsAndSpeciesProtectionInnerProps = {
 const SouvenirsAndSpeciesProtectionInner = ({
   t,
 }: SouvenirsAndSpeciesProtectionInnerProps) => (
-  <View>
-    <Text>Souvenirs And Species Protection</Text>
-  </View>
+  <SubCategoryContainer title={t('SouvenirsAndSpeciesProtection')}>
+    <AppInfoSubText text="SouvenirsAndSpeciesProtection" />
+  </SubCategoryContainer>
 );
 
 export const SouvenirsAndSpeciesProtection = (translate(['information'])(
