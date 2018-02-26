@@ -70,16 +70,16 @@ Immutable.Map {
     "volume": Immutable.Record {
       "quantities": Immutable.List [
         Object {
-          "date": "2018-02-21T17:24:16.463+01:00",
-          "value": 23,
+          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "number": 23,
         },
         Object {
-          "date": "2018-02-21T17:24:16.463+01:00",
-          "value": 23,
+          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "number": 23,
         },
         Object {
-          "date": "2018-02-21T17:24:16.463+01:00",
-          "value": 23,
+          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "number": 23,
         },
       ],
     },
@@ -138,16 +138,16 @@ Immutable.Map {
     "volume": Immutable.Record {
       "quantities": Immutable.List [
         Object {
-          "date": "2018-02-21T17:24:16.463+01:00",
-          "value": 3219,
+          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "number": 3219,
         },
         Object {
-          "date": "2018-02-21T17:24:16.463+01:00",
-          "value": 3219,
+          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "number": 3219,
         },
         Object {
-          "date": "2018-02-21T17:24:16.463+01:00",
-          "value": 3219,
+          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "number": 3219,
         },
       ],
     },
@@ -231,16 +231,16 @@ Immutable.Map {
     "volume": Immutable.Record {
       "quantities": Immutable.List [
         Object {
-          "date": "2018-02-21T17:24:16.463+01:00",
-          "value": 3219,
+          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "number": 3219,
         },
         Object {
-          "date": "2018-02-21T17:24:16.463+01:00",
-          "value": 3219,
+          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "number": 3219,
         },
         Object {
-          "date": "2018-02-21T17:24:16.463+01:00",
-          "value": 3219,
+          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "number": 3219,
         },
       ],
     },

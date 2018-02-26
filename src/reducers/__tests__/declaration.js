@@ -29,6 +29,14 @@ jest.mock('uuid', () => ({
   v4: jest.fn(() => 1),
 }));
 
+jest.mock('luxon', () => ({
+  DateTime: {
+    local: () => ({
+      setZone: () => new Date(2000, 1, 1),
+    }),
+  },
+}));
+
 const initDeclarationState: DeclarationState = getInitialDeclarationState();
 
 const sampleBasket1: Basket = emptyBasket.withMutations(basket => {
