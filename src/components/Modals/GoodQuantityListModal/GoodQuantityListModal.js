@@ -10,6 +10,8 @@ import { AppModal } from '../AppModal';
 import { QuantityInfo } from './subcomponents/QuantityInfo';
 import {
   getQuantities,
+  getQuantityDate,
+  getQuantityNumber,
   getTotalQuantity,
 } from '../../../model/configurationApi';
 import type { QuantityInputState } from '../../QuestionAnswer/QuantityInput/QuantityInputQA';
@@ -180,8 +182,8 @@ class GoodQuantityListModalInner extends React.Component<
                   <QuantityRow
                     borderTop={idx === 0}
                     key={v4()}
-                    quantity={q.value}
-                    date={DateTime.fromISO(q.date, {
+                    quantity={getQuantityNumber(q)}
+                    date={DateTime.fromISO(getQuantityDate(q), {
                       zone: 'Europe/Zurich',
                     }).toFormat('dd.MM.y HH:mm')}
                     category={modalCategory}

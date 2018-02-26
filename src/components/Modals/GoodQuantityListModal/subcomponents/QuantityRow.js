@@ -18,7 +18,7 @@ import { CardRowSubText } from '../../../QuestionAnswer/Cards/subcomponents/Card
 import type { TFunction } from '../../../../types/generalTypes';
 
 type QuantityRowInnerProps = {
-  quantity: Object,
+  quantity: number,
   date: String,
   onDelete: () => void,
   category: Category,

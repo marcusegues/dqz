@@ -32,14 +32,9 @@ jest.mock('uuid', () => ({
 const initDeclarationState: DeclarationState = getInitialDeclarationState();
 
 const sampleBasket1: Basket = emptyBasket.withMutations(basket => {
-  basket = addQuantity(basket, 'Butter', 23, '2018-02-21T17:37:39.819+01:00');
-  basket = addQuantity(basket, 'Meat', 111, '2018-02-21T17:37:39.819+01:00');
-  basket = addQuantity(
-    basket,
-    'Tobacco',
-    3219,
-    '2018-02-21T17:37:39.819+01:00'
-  );
+  basket = addQuantity(basket, 'Butter', 23);
+  basket = addQuantity(basket, 'Meat', 111);
+  basket = addQuantity(basket, 'Tobacco', 3219);
 
   return basket;
 });

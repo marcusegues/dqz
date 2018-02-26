@@ -10,6 +10,7 @@ import type {
   Category,
   CategoryBasketItem,
   People,
+  Quantity,
 } from './types/basketPeopleAmountsTypes';
 import { categoriesArray } from './constants';
 import {
@@ -37,20 +38,21 @@ export const emptyBasket: Basket = Immutable.Map(
  * @param basket
  * @param category
  * @param quantity
- * @param dateTime
  * @returns Basket
  */
 export const addQuantity = (
   basket: Basket,
   category: Category,
-  quantity: number,
-  dateTime: string = getConvertedLocalTimeToSwiss().toString()
+  quantity: number
 ): Basket => {
   if (quantity <= 0) {
     return basket;
   }
   return basket.updateIn([category, 'volume', 'quantities'], q =>
-    q.push({ value: quantity, date: dateTime })
+    q.push({
+      number: quantity,
+      date: getConvertedLocalTimeToSwiss().toString(),
+    })
   );
 };
 
@@ -124,6 +126,21 @@ export const getQuantities = (
   basket.getIn([category, 'volume', 'quantities'], Immutable.List());
 
 /**
+ * Helper to get the quantity number from a quantity
+ * @param quantity
+ * @returns {number}
+ */
+export const getQuantityNumber = (quantity: Quantity): number =>
+  quantity.number || 0;
+
+/**
+ * Helper to get the quantity date (string) from a quantity
+ * @param quantity
+ * @returns {*}
+ */
+export const getQuantityDate = (quantity: Quantity): string => quantity.date;
+
+/**
  * Gets the total quantity for the basket's category
  * @param basket
  * @param category
@@ -132,7 +149,7 @@ export const getQuantities = (
 export const getTotalQuantity = (basket: Basket, category: Category): number =>
   basket
     .getIn([category, 'volume', 'quantities'], Immutable.List())
-    .reduce((a, v) => a + (v.value > 0 ? v.value : 0), 0); // v.value check for Backward compatibility
+    .reduce((a, v) => a + getQuantityNumber(v), 0);
 
 // AMOUNTS
 export const initAmounts: Amounts = Immutable.Map();

@@ -51,6 +51,11 @@ export const makeCategoryInfoRecord: RecordFactory<
 });
 type CategoryInfo = RecordOf<CategoryInfoContent>;
 
+export type Quantity = {
+  number: number,
+  date: string,
+};
+
 /**
  * todo jsdoc
  */
@@ -58,7 +63,7 @@ export type CategoryInfoType = ImmutableMapType<Category, CategoryInfo>;
 
 // CATEGORY VOLUME
 type CategoryVolumeContent = {
-  quantities: ImmutableListType<Object>,
+  quantities: ImmutableListType<Quantity>,
 };
 export const makeCategoryVolumeRecord: RecordFactory<
   CategoryVolumeContent
