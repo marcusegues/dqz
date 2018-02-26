@@ -19,7 +19,7 @@ import type { TFunction } from '../../../../types/generalTypes';
 
 type QuantityRowInnerProps = {
   quantity: number,
-  date: String,
+  date: string,
   onDelete: () => void,
   category: Category,
   borderTop?: boolean,

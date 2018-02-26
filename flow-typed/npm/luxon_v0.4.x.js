@@ -287,7 +287,7 @@ declare module 'luxon' {
   |};
 
   declare type SetZoneOptions = {|
-    keepCalendarTime?: ?boolean,
+    keepLocalTime?: ?boolean,
   |};
 
   declare type DateTimeFieldsOptions = {|
