@@ -727,7 +727,7 @@ Immutable.Record {
       "volume": Immutable.Record {
         "quantities": Immutable.List [
           Object {
-            "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+            "date": "FakeDate",
             "number": 123,
           },
         ],
@@ -804,7 +804,7 @@ Immutable.Record {
       "volume": Immutable.Record {
         "quantities": Immutable.List [
           Object {
-            "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+            "date": "FakeDate",
             "number": 23,
           },
         ],
@@ -849,7 +849,7 @@ Immutable.Record {
       "volume": Immutable.Record {
         "quantities": Immutable.List [
           Object {
-            "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+            "date": "FakeDate",
             "number": 111,
           },
         ],
@@ -869,7 +869,7 @@ Immutable.Record {
       "volume": Immutable.Record {
         "quantities": Immutable.List [
           Object {
-            "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+            "date": "FakeDate",
             "number": 3219,
           },
         ],

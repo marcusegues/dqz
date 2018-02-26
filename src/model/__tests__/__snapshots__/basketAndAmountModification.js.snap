@@ -70,15 +70,15 @@ Immutable.Map {
     "volume": Immutable.Record {
       "quantities": Immutable.List [
         Object {
-          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "date": "FakeDate",
           "number": 23,
         },
         Object {
-          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "date": "FakeDate",
           "number": 23,
         },
         Object {
-          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "date": "FakeDate",
           "number": 23,
         },
       ],
@@ -138,15 +138,15 @@ Immutable.Map {
     "volume": Immutable.Record {
       "quantities": Immutable.List [
         Object {
-          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "date": "FakeDate",
           "number": 3219,
         },
         Object {
-          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "date": "FakeDate",
           "number": 3219,
         },
         Object {
-          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "date": "FakeDate",
           "number": 3219,
         },
       ],
@@ -231,15 +231,15 @@ Immutable.Map {
     "volume": Immutable.Record {
       "quantities": Immutable.List [
         Object {
-          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "date": "FakeDate",
           "number": 3219,
         },
         Object {
-          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "date": "FakeDate",
           "number": 3219,
         },
         Object {
-          "date": "Tue Feb 01 2000 00:00:00 GMT+0100 (CET)",
+          "date": "FakeDate",
           "number": 3219,
         },
       ],
