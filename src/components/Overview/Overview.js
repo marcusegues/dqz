@@ -126,7 +126,7 @@ class OverviewInner extends React.Component<
       amounts,
       currencies,
     } = this.props;
-    const momentReceiptEntryTime =
+    const momentReceiptEntryTime: DateTime =
       receiptEntryTime !== ''
         ? DateTime.fromISO(receiptEntryTime, {
             zone: 'Europe/Zurich',

@@ -14,10 +14,12 @@ import { CategoriesInfo } from '../../../../model/constants';
 import { Row } from '../../../Rows/Row';
 import type { Category } from '../../../../model/types/basketPeopleAmountsTypes';
 import { rowStyles } from '../../../Rows/styles/rowStyles';
+import { CardRowSubText } from '../../../QuestionAnswer/Cards/subcomponents/CardRowSubText';
 import type { TFunction } from '../../../../types/generalTypes';
 
 type QuantityRowInnerProps = {
   quantity: number,
+  date: string,
   onDelete: () => void,
   category: Category,
   borderTop?: boolean,
@@ -26,6 +28,7 @@ type QuantityRowInnerProps = {
 const QuantityRowInner = ({
   t,
   quantity,
+  date,
   onDelete,
   category,
   borderTop = false,
@@ -39,6 +42,7 @@ const QuantityRowInner = ({
             { count: quantity }
           )}`}
         />
+        <CardRowSubText text={t('recordedOn', { value: date })} />
       </View>
       <Touchable onPress={onDelete}>
         <MaterialIcons name="cancel" size={moderateScale(28)} color={GREY} />
@@ -47,6 +51,6 @@ const QuantityRowInner = ({
   </Row>
 );
 
-export const QuantityRow = (translate(['units'])(
+export const QuantityRow = (translate(['quantityInput', 'units'])(
   QuantityRowInner
 ): ComponentType<QuantityRowInnerProps>);

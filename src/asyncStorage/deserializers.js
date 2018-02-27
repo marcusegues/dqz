@@ -12,7 +12,8 @@ import type {
   People,
 } from '../model/types/basketPeopleAmountsTypes';
 
-export const deserializeReceiptEntryTime = (serialized: any): string => serialized;
+export const deserializeReceiptEntryTime = (serialized: any): string =>
+  serialized;
 
 export const deserializePeople = (serialized: any): People =>
   makePeopleRecord(serialized);
@@ -22,7 +23,12 @@ export const deserializeBasket = (serialized: any): Basket => {
   return basketMap.map(d =>
     makeCategoryBasketItemRecord({
       volume: makeCategoryVolumeRecord({
-        quantities: Immutable.List(d.volume.quantities),
+        quantities: Immutable.List(
+          d.volume.quantities.map(q => ({
+            number: q.number || q,
+            date: q.date,
+          }))
+        ),
       }),
     })
   );
