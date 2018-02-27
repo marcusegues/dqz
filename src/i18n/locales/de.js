@@ -188,12 +188,57 @@ export const de: Locale = {
   },
   information: {
     informationTitle: 'Wissenswertes',
+    informationSubCategoryTitle: 'Ich habe Waren dabei:',
+
     customsProceduresMainText: 'Vorgehen am Zoll',
     customsProceduresSubText:
       'Als Privatperson müssen Sie bei der Einreise in die Schweiz ...',
+    customsProceduresText1:
+      'Als Privatperson müssen Sie bei der Einreise in die Schweiz alle mitgeführten Waren und Tiere unaufgefordert anmelden.',
+    customsProceduresText2:
+      'Führen Sie nur Waren mit, die abgabenfrei (mehrwertsteuer- und zollfrei) sind und keinen Beschränkungen und Verboten unterliegen, so können Sie die Grenze passieren, ohne etwas formell anzumelden. In diesem Fall können Sie auch:',
+    customsProceduresText3: 'in Flughäfen den grünen Durchgang wählen oder;',
+    customsProceduresText4:
+      'im Auto die grüne Sichtzollanmeldung beim Armaturenbrett anbringen;',
+    customsProceduresText5:
+      'Das Passieren des grünen Durchgangs oder das Anbringen einer Sichtzollanmeldung sind für Sie verbindlich. Das Personal des Schweizer Zolls kann ohne Befragung eine Kontrolle durchführen.',
+    customsProceduresText6:
+      'Nähere Informationen zu den abgabenfreien Waren finden Sie unter den folgenden Rubriken:',
+    customsProceduresText7: 'Wertfreigrenze CHF 300',
+    customsProceduresText8: 'Freimengen: Lebensmittel, Alkohol und Tabak',
+    customsProceduresText9:
+      'Persönliche Gebrauchsgegenstände und Reiseproviant',
+    customsProceduresText10:
+      'Mündliche Zollanmeldung oder Benutzen des roten Durchgangs in Flughäfen',
+    customsProceduresText11:
+      'Wenn der Grenzübergang durch Personal des Schweizer Zolls besetzt ist, melden Sie alle Waren mündlich und unaufgefordert an.Informationen zu den wichtigsten Grenzübergängen finden Sie unter der Rubrik Grenzübergänge.',
+    customsProceduresText12: 'Zollanmeldung mit der App QuickZoll',
+    customsProceduresText13:
+      'Sie können Ihre Waren mit der App QuickZoll der EZV anmelden. Die Waren müssen vor dem Grenzübertritt oder beim Grenzübergang mit der App verzollt werden. D.h. die Abgaben müssen bezahlt sein. Haben Sie die Abgaben mit der App bezahlt, dürfen Sie auch Grenzübergänge, bei denen kein Personal des Zolls anwesend ist, und in Flughäfen den grünen Durchgang benutzen.',
+    customsProceduresText14:
+      'Diese Form der Zollanmeldung ist nur für Waren zulässig, die für Ihren privaten Gebrauch oder zum Verschenken bestimmt sind. Sie dürfen keinen Beschränkungen oder Verboten unterliegen und nicht zeugnis- oder bewilligungspflichtig sein. ',
+    customsProceduresText15:
+      'Andere Waren müssen bei einem durch Personal des Schweizer Zolls besetzten Grenzübergang mündlich angemeldet werden.',
+    customsProceduresText16: 'Anmeldebox',
+    customsProceduresText17:
+      'An gewissen Grenzübergängen stehen Ihnen noch sogenannte Anmeldeboxen zur Verfügung, bei denen Sie Ihre Waren schriftlich anmelden können. Informationen dazu finden Sie unter www.ezv.admin.ch/Anmeldebox [Link: https://www.ezv.admin.ch/ezv/de/home/zollanmeldung/anmeldung-private/schriftliche-selbstanmeldung-mit-den-anmeldeboxen.html]',
+    customsProceduresText18:
+      'Diese Form der Zollanmeldung ist nur für Waren zulässig, die nicht für den Handel bestimmt sind. Sie dürfen keinen Beschränkungen oder Verboten unterliegen und weder zeugnis- noch bewilligungspflichtig sein.',
+    customsProceduresText19:
+      'Handelswaren müssen Sie bei einer dafür zuständigen Zollstelle anmelden.',
+    customsProceduresText20: 'Bitte beachten:',
+    customsProceduresText21:
+      'Die mündliche Anmeldung sowie die Anmeldung mit der App oder via Anmeldebox sind verbindlich. Wir nehmen Zollkontrollen auch im Landesinneren vor. Eine nachträgliche Zollanmeldung ist nicht möglich. Sie machen sich strafbar, wenn Sie verbotene, bewilligungs- oder abgabenpflichtige Waren nicht oder falsch anmelden.',
+
     travelDocumentsMainText: 'Reisedokumente',
     travelDocumentsSubText:
       'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges ...',
+    travelDocumentsText1:
+      'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges und von der Schweiz anerkanntes Reisepapier. In gewissen Fällen ist zudem ein Visum erforderlich.\n' +
+      'Über die Einreise in die Schweiz und den Aufenthalt (Vorschriften zu Reisedokumenten und Visa) gibt Ihnen die Website des Staatssekretariats für Migration Auskunft:',
+    travelDocumentsText2:
+      'Die Vorschriften zu den Reisepapieren im Ausland finden Sie bei den entsprechenden ausländischen Behörden, über den Link der Weltzollorganisation:',
+
     declarationMainText: 'Ich habe Waren dabei',
     declarationSubText:
       'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
@@ -209,6 +254,261 @@ export const de: Locale = {
     prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
     prohibitionsAndRestrictionsSubText:
       'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer Zoll ...',
+
+    vatAllowanceMainText: 'Wertfreigrenze CHF 300',
+    vatAllowanceSubText:
+      'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
+    vatAllowanceText1:
+      'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken einführen, sind bis zu einem Wert von CHF 300 mehrwertsteuerfrei. Zu berücksichtigen ist der Wert aller Waren. Dies schliesst auch den Wert der erhaltenen Geschenke, Lebensmittel, Tabakfabrikate, alkoholischen Getränke, vom Ausland mitgebrachten Haustiere und im Ausland ausgeführten Reparatur- und Unterhaltsarbeiten am eigenen Fahrzeug mit ein.',
+    vatAllowanceText2:
+      'Nicht dazu gerechnet wird hingegen der Wert der persönlichen Gebrauchsgegenstände, des Reiseproviants und des Treibstoffs für Ihr Fahrzeug.',
+    vatAllowanceText3:
+      'Massgebend ist der Wert nach Abzug der ausländischen Mehrwertsteuer, sofern diese auf der Quittung/Rechnung ausgewiesen ist. Die Wertangaben in ausländischer Währung werden zum Devisenkurs (Verkauf) des Vortages in Schweizer Franken umgerechnet.',
+    vatAllowanceText4:
+      'Die Wertfreigrenze kann von der gleichen Person nur einmal täglich in Anspruch genommen werden. Sie wird nur gewährt, wenn Sie die Waren selber mitführen. Die Wertfreigrenze gilt auch für Kinder.',
+    vatAllowanceText5:
+      'Was passiert, wenn der Warenwert 300 Franken übersteigt?',
+    vatAllowanceText6:
+      'Führen Sie Waren mit, welche die Wertfreigrenze von CHF 300 übersteigen, müssen Sie die Mehrwertsteuer auf dem Gesamtwert aller Waren bezahlen.',
+    vatAllowanceText7:
+      'Beispiel: Der Gesamtwert beträgt 800 Franken. Die 300 Franken sind überschritten. Somit wird die Mehrwertsteuer auf 800 Franken berechnet.',
+    vatAllowanceText8: 'Weitere Beispiele zur Anwendung der Wertfreigrenze',
+    vatAllowanceText9: 'Mehrwertsteuer',
+    vatAllowanceText10:
+      'Die Mehrwertsteuer berechnet sich vom Warenwert. Der Normalsatz beträgt 7,7 %. Für gewisse Waren gilt ein reduzierter Steuersatz von 2,5 % (z. B. für Lebensmittel, alkoholfreie Getränke, Bücher, Zeitschriften oder Medikamente). Bei der Verzollung mit der App «xxx» gelangt immer der Normalsatz zur Anwendung.',
+    vatAllowanceText11:
+      'Das Vorweisen einer Quittung oder eines anderen Wertnachweises (z. B. bei Internetkäufen) erleichtert die Zollveranlagung. Fehlen Wertangaben oder wird die Richtigkeit dieser Angaben bezweifelt, kann die Zollstelle den Warenwert schätzen.',
+    vatAllowanceText12: 'Zollanmeldung',
+    vatAllowanceText13:
+      'Bei der Einreise müssen Sie alle mitgeführten Waren beim Zollpersonal mündlich anmelden.',
+    vatAllowanceText14:
+      'Sie können die Waren auch mit der App «xxxx» oder bei Grenzübergängen, die nicht durch Zollpersonal besetzt sind, schriftlich via Anmeldebox anmelden. Informationen dazu finden Sie hier',
+    vatAllowanceText15:
+      'Bitte beachten Sie: Werden die so genannten Freimengen von alkoholischen Getränken, Tabakfabrikaten und gewissen Lebensmitteln überschritten, müssen Sie in jedem Fall Zoll bezahlen. Mehr Informationen',
+    vatAllowanceText16:
+      'Bitte beachten Sie zudem, dass bestimmte Waren (z.B. Fälschungen, Waffen sowie gewisse Pflanzen, Tiere, Tierprodukte und Waren, die dem Artenschutz unterliegen) zur Einfuhr verboten sein können oder gewissen Beschränkungen unterliegen. Mehr Informationen',
+    vatAllowanceText17: 'Anwendung der Wertfreigrenze für Einzelpersonen',
+    vatAllowanceText18: 'Anwendung der Wertfreigrenze bei mehreren Personen',
+    vatAllowanceText19:
+      'Eine Person kann für mehrere Personen, die zusammen reisen (z.B. Familien, Freunde, Bekannte), eine gemeinsame Zollanmeldung abgeben. Die anmeldende Person übernimmt damit die Verantwortung für die Zollanmeldung. Sie muss somit allfällige Abgaben bezahlen und übernimmt auch die strafrechtliche Verantwortung, wenn nicht angemeldete Ware entdeckt und ein Strafverfahren eingeleitet werden muss.',
+    vatAllowanceText20:
+      'Bitte beachten Sie: Wenn der Gesamtwert aller mitgeführten Waren die addierten Wertfreigrenzen der Personen, die zusammen reisen, übersteigt, hat die anmeldende Person keinen Anspruch auf die Wertfreigrenze.',
+    vatAllowanceText21:
+      'Einzelne Gegenstände, die einen Wert von über 300 Franken haben, sind auch bei mehreren Personen immer mehrwertsteuerpflichtig.',
+    vatAllowanceText22: 'Einzelne Gegenstände über CHF 300',
+    vatAllowanceText23:
+      'Bei der Beurteilung, ob es sich um einen Gegenstand im Einzelwert von mehr als CHF 300 oder um mehrere Gegenstände unter CHF 300 handelt, gilt',
+    vatAllowanceText24:
+      'bei nicht montierten oder nicht zusammengesetzten Waren: \n' +
+      'eine Verkaufseinheit = ein Gegenstand',
+    vatAllowanceText25:
+      'bei montierten oder zusammengesetzten Waren: \n' +
+      'montierte oder zusammengesetzte Waren = ein Gegenstand (auch wenn die einzelnen Komponenten auf der Rechnung separat ausgewiesen sind)',
+    vatAllowanceText26: 'Beispiele:',
+    vatAllowanceText27:
+      '1.\tBeim Einkauf eines Computers lautet die Rechnung wie folgt:',
+    vatAllowanceText28: '1 Desktop PC\t\tCHF\t\t700',
+    vatAllowanceText29: '1 Bildschirm\t\tCHF\t\t200 ',
+    vatAllowanceText30: '1 Tastatur\t\tCHF\t\t20',
+    vatAllowanceText31: 'Total\tCHF 920',
+    vatAllowanceText32: '= 3 Gegenstände (drei Verkaufseinheiten)',
+    vatAllowanceText33:
+      '2.\tBeim Einkauf eines Computers lautet die Rechnung wie folgt:',
+    vatAllowanceText34: '1 Computer',
+    vatAllowanceText35: 'Desktop PC',
+    vatAllowanceText36: 'Bildschirm',
+    vatAllowanceText37: 'Tastatur',
+    vatAllowanceText38: 'Total\tCHF 920',
+    vatAllowanceText39: '= 1 Gegenstand (eine Verkaufseinheit)',
+    vatAllowanceText40:
+      '3.\tBeim Einkauf einer Brille lautet die Rechnung wie folgt:',
+    vatAllowanceText41: '2 Gläser\t\t2 Stk. à CHF 200\t\tCHF 400',
+    vatAllowanceText42: '1 Gestell\t\tCHF 300',
+    vatAllowanceText43: 'Total\t\tCHF 700',
+    vatAllowanceText44: '',
+
+    dutyAllowanceMainText: 'Freimengen: Lebensmittel, Alkohol und Tabak',
+    dutyAllowanceSubText: 'Führen Sie für Ihren privaten Gebrauch oder zum ...',
+    dutyAllowanceText1:
+      'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheitspolitischen Gründen ab einer gewissen Menge Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
+    dutyAllowanceText2:
+      'Bitte beachten Sie: Übersteigt der Gesamtwert Ihrer mitgeführten Waren (inkl. Wert aller Lebensmittel) 300 Franken, müssen Sie in jedem Fall die Mehrwertsteuer bezahlen. Mehr Informationen',
+    dutyAllowanceText3:
+      'Bitte beachten Sie zudem, dass für gewisse Tierprodukte sowie für bestimmte pflanzliche Erzeugnisse zusätzliche Beschränkungen bestehen.',
+    dutyAllowanceText4: 'Fleisch und Fleischzubereitungen',
+    dutyAllowanceText5:
+      'von allen Tierarten, mit Ausnahme von Wild, Fischen, Krebstieren, Weichtieren und anderen wirbellosen Wassertieren. Dazu gehören:',
+    dutyAllowanceText6:
+      'alle geniessbaren Tierkörperteile (mit oder ohne Knochen)',
+    dutyAllowanceText7: 'Würste aus Fleisch oder Blut',
+    dutyAllowanceText8: 'andere Fleischerzeugnisse',
+    dutyAllowanceText9:
+      'Lebensmittelzubereitungen mit einem Gehalt von mehr als 20 Gewichtsprozenten an Wurst, Fleisch oder Blut',
+    dutyAllowanceText10:
+      'Nicht dazu gehören Markbein und Saucen-Knochen, Hunde- und Katzenfutter in als Tierfutter gekennzeichneten Einzelverkaufspackungen.',
+    dutyAllowanceText11:
+      ' Die Einfuhr von Tierprodukten aus anderen als EU-Mitgliedstaaten, als Island und als Norwegen ist verboten.',
+    dutyAllowanceText12: 'Freimengen pro Person und pro Tag:',
+    dutyAllowanceText13: 'insgesamt 1 kg',
+    dutyAllowanceText14: 'Zollabgaben für Mehrmenge in CHF',
+    dutyAllowanceText15: 'bis 10 kg: 17.- je kg',
+    dutyAllowanceText16: 'mehr als 10 kg: 23.- je kg',
+    dutyAllowanceText17: 'Butter und Rahm',
+    dutyAllowanceText18:
+      'Die Einfuhr von Tierprodukten aus anderen als EU-Mitgliedstaaten, als Island und als Norwegen ist verboten.',
+    dutyAllowanceText19: 'Freimengen pro Person und pro Tag:',
+    dutyAllowanceText20: 'insgesamt 1 kg/Liter',
+    dutyAllowanceText21: 'Zollabgaben für Mehrmenge in CHF:',
+    dutyAllowanceText22: '16.- je kg/Liter',
+    dutyAllowanceText23: 'Öle, Fette, Margarine zu Speisezwecken',
+    dutyAllowanceText24:
+      'Die Einfuhr von Tierprodukten aus anderen als EU-Mitgliedstaaten, als Island und als Norwegen ist verboten.',
+    dutyAllowanceText25: 'Freimengen pro Person und pro Tag:',
+    dutyAllowanceText26: 'insgesamt 5 kg/Liter',
+    dutyAllowanceText27: 'Zollabgaben für Mehrmenge in CHF:',
+    dutyAllowanceText28: '2.- je kg/Liter',
+    dutyAllowanceText29: 'Alkoholische Getränke',
+    dutyAllowanceText30:
+      'Freimengen pro Person und pro Tag:\n' +
+      '(nur für Personen, die mindestens 17 Jahre alt sind)',
+    dutyAllowanceText31: 'Alkoholgehalt bis 18 % Vol.: insgesamt 5 Liter und',
+    dutyAllowanceText32: 'Alkoholgehalt über 18 % Vol.: insgesamt 1 Liter',
+    dutyAllowanceText33: 'Zollabgaben für Mehrmenge in CHF:',
+    dutyAllowanceText34: 'Alkoholgehalt bis 18 % Vol.: 2.- je Liter',
+    dutyAllowanceText35: 'Alkoholgehalt über 18 % Vol.: 15.- je Liter',
+    dutyAllowanceText36: 'Tabakfabrikate',
+    dutyAllowanceText37:
+      'Freimengen pro Person und pro Tag:\n' +
+      '(nur für Personen, die mindestens 17 Jahre alt sind)',
+    dutyAllowanceText38: 'Zigaretten/Zigarren: insgesamt 250 Stück oder',
+    dutyAllowanceText39: 'andere Tabakfabrikate: insgesamt 250 g',
+    dutyAllowanceText40: 'oder eine anteilmässige Auswahl dieser Erzeugnisse',
+    dutyAllowanceText41: 'Zollabgaben für Mehrmenge in CHF:',
+    dutyAllowanceText42: 'Zigaretten/Zigarren: 0.25 je Stück',
+    dutyAllowanceText43: 'andere Tabakfabrikate: 0.10 je Gramm',
+    dutyAllowanceText44: 'Andere Lebensmittel und andere Waren',
+    dutyAllowanceText45:
+      'Die Einfuhr von Tierprodukten aus anderen als EU-Mitgliedstaaten, als Island und als Norwegen ist verboten.\n' +
+      'Zollfrei',
+    dutyAllowanceText46:
+      'Im Ausland bestellt und per Post/Kurierdienst geliefert',
+    dutyAllowanceText47:
+      'Für Waren, die Sie im Ausland bestellen (z.B. im Internet) und die Ihnen per Post oder Kurierdienst zugestellt werden, gelten andere Bestimmungen. Mehr Informationen',
+
+    personalEffectsMainText:
+      'Persönliche Gebrauchsgegenstände und Reiseproviant',
+    personalEffectsSubText:
+      'Persönliche Gebrauchsgegenstände und Reiseproviant können ...',
+    personalEffectsText1:
+      'Persönliche Gebrauchsgegenstände und Reiseproviant können Sie abgabenfrei einführen:',
+    personalEffectsText2: 'Persönliche Gebrauchsgegenstände',
+    personalEffectsText3: 'Darunter fallen Gebrauchsgegenstände, welche:',
+    personalEffectsText4:
+      'in der Schweiz wohnhafte Reisende bei der Ausreise mitgenommen haben.',
+    personalEffectsText5:
+      'im Ausland wohnhafte Reisende während des Aufenthaltes in der Schweiz benützen und wieder ausführen. Dazu gehören Kleider, Wäsche, Toilettenartikel, Sportgeräte, Foto-, Film- und Videokameras, Mobiltelefone, tragbare Computer, Musikinstrumente und sonstige Gebrauchsgegenstände persönlicher Natur.',
+    personalEffectsText6: 'Reiseproviant',
+    personalEffectsText7:
+      'Als Reiseproviant gelten genussfertige Nahrungsmittel und alkoholfreie Getränke für den Reisetag.',
+
+    foreignVatMainText: 'Rückerstattung der ausländischen Mehrwertsteuer',
+    foreignVatSubText:
+      'Die Schweizer Zollverwaltung kann Ihnen die ausländische ...',
+    foreignVatMainText1:
+      'Die Schweizer Zollverwaltung kann Ihnen die ausländische MWST nicht zurückerstatten.',
+    foreignVatMainText2:
+      'Wenn Sie im Ausland gekaufte Waren persönlich in die Schweiz bringen, haben Sie häufig die Möglichkeit, sich die ausländische MWST durch den ausländischen Verkäufer oder ein Tax-Refund-Unternehmen erstatten zu lassen. Diese Serviceunternehmen haben nichts mit der eidgenössischen Zollverwaltung zu tun; sie arbeiten insbesondere nicht in unserem Auftrag.',
+    foreignVatMainText3:
+      'Für die Rückerstattung bestehen je nach Staat unterschiedliche Voraussetzungen. Allenfalls füllt der Verkäufer ein Rückerstattungsformular aus, auf dem die ausländische Zollbehörde den Export in die Schweiz bestätigt.',
+    foreignVatMainText4:
+      'Weitere Informationen zur Rückerstattung der ausländischen MWST können wir Ihnen nicht geben. Allenfalls erteilt Ihnen die entsprechende Zollbehörde Auskünfte. Die ausländischen Zollbehörden finden Sie unter folgendem Link der Weltzollorganisation:\n' +
+      'www.wcoomd.org',
+    foreignVatMainText5:
+      'Die schweizerische MWST ist auch zu bezahlen, wenn die ausländische MWST nicht zurückerstattet wird. Im Bereich der Mehrwertsteuern gibt es kein Doppelbesteuerungsabkommen.',
+
+    animalsMainText: 'Tiere: Heimtiere, Hunde, Katzen und Pferde',
+    animalsSubText:
+      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden ...',
+    animalsText1:
+      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die Informationen beim Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:',
+    animalsText2: 'Abgaben',
+    animalsText3:
+      'Wird die Wertfreigrenze von CHF 300 überschritten, müssen Sie für Tiere die MWST bezahlen. Detailliertere Informationen finden Sie unter:',
+    animalsText4: 'Wertfreigrenze CHF 300',
+
+    plantsMainText: 'Pflanzen',
+    plantsSubText:
+      'Die Einfuhr von folgenden Pflanzen ist verboten, da sie Träger von Schadorganismen ...',
+    plantsText1:
+      '1. Verbotene Pflanzen und Pflanzenerzeugnisse\n' +
+      'Die Einfuhr von folgenden Pflanzen ist verboten, da sie Träger von Schadorganismen (Feuerbrand, Kastanienrindenkrebs, Virenerkrankungen, etc.) sein können:',
+    plantsText2: 'a) Einfuhr aus allen Ländern verboten',
+    plantsText3: 'Zwergmispel (Cotoneaster)',
+    plantsText4:
+      'Lorbeer-Glanzmispel - Photinia davidiana (sync. Stranvaesia davidiana)',
+    plantsText5:
+      'b) Einfuhr aus allen Staaten ausser EU-Staaten, Island und Norwegen verboten',
+    plantsText6: 'Apfelbaum (Malus)',
+    plantsText7: 'Birnenbaum (Pyrus)',
+    plantsText8: 'Bitterorangen (Poncirus)',
+    plantsText9: 'Eiche (Quercus)',
+    plantsText10: 'Eberesche, bzw. Vogelund Mehlbeere (Sorbus)',
+    plantsText11: 'Feuerdorn (Pyracantha)',
+    plantsText12: 'Kartoffeln und ähnliche Nachtschattengewächse (Solanacea)',
+    plantsText13: 'echte, essbare Kastanie (Castanea)',
+    plantsText14: 'Kumquats (Fortunella)',
+    plantsText15: 'Mispel (Mespilus)',
+    plantsText16: 'Nadelgehölze (Koniferen)',
+    plantsText17: 'Quittenbaum (Cydonia)',
+    plantsText18: 'Reben (Vitis)',
+    plantsText19: 'Rosen',
+    plantsText20:
+      'Steinobstbäume (Aprikose, Kirsche, Mandel, Pfirsich, Pflaume und Zwetschge) und alle Zierformen der Gattung Prunus',
+    plantsText21: 'Weissdorn (Crataegus) alle Arten und Sorten',
+    plantsText22: 'Wollmispel (Eriobotyra)',
+    plantsText23: 'Zier- und Scheinquitte (Chaenomeles)',
+    plantsText24: 'Zitrusgewächse (Citrus)',
+    plantsText25:
+      '2. Andere Pflanzen und Pflanzenerzeugnisse (auch Früchte und Gemüse)',
+    plantsText26:
+      'a) Einfuhr aus EU-Staaten, Norwegen und Island\n' +
+      'Sie können Pflanzen ohne Bewilligung einführen, sofern diese im Reiseverkehr und für den privaten Gebrauch eingeführt werden.',
+    plantsText27:
+      'b) Einfuhr aus allen Staaten ausser EU, Norwegen und Island\n' +
+      'Pflanzen (lebend oder als Pflanzenerzeugnisse) können einer Einfuhrbewilligungspflicht unterliegen.',
+    plantsText28:
+      'Wollen Sie aus diesen Staaten Pflanzen einführen, klären Sie vorgängig die Bestimmungen beim Bundesamt für Landwirtschaft ab:',
+    plantsText29:
+      'Ausnahme: pro Person können Schnittblumen und Blumensträusse bis max. 3 kg sowie Früchte und Gemüse (ausgenommen Kartoffeln) bis insgesamt 10 kg ohne Anwendung von Pflanzenschutzmassnahmen eingeführt werden.',
+    plantsText30: 'Abgaben',
+    plantsText31:
+      'Wird die Wertfreigrenze von CHF 300 überschritten, müssen Sie für Pflanzen die MWST bezahlen. Detaillierte Informationen finden Sie unter: Wertfreigrenze CHF 300',
+
+    souvenirsAndSpeciesProtectionMainText: 'Souvenirs und Artenschutz (CITES)',
+    souvenirsAndSpeciesProtectionSubText:
+      'Ein Gurt aus Elefantenleder, ein Traumfänger mit Vogelfedern ...',
+
+    highwayVignetteMainText: 'Autobahnvignette',
+    highwayVignetteSubText:
+      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen ...',
+    roadTaxMainText: 'Strassenverkehrsabgabe über 3,5 T (PSVA)',
+    roadTaxSubText:
+      'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 ...',
+    fuelAndRepairsMainText: 'Treibstoff und Reparaturen',
+    fuelAndRepairsSubText:
+      'Der Tankinhalt ist abgabenfrei. In einem Reservekanister können Sie zudem bis 25 Liter ...',
+
+    forgeryMainText: 'Fälschungen',
+    forgerySubText:
+      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer ...',
+    cashMainText: 'Barmittel',
+    cashSubText:
+      'Bei der Ein-, Durch- und Ausfuhr von Barmitteln (Bargeld, Wertpapieren u.a.) im ...',
+    foodMainText: 'Beschränkungen für Lebensmittel',
+    foodSubText: 'Aus EU-Staaten, Island und Norwegen können Waren ...',
+    authorisationRequirementsMainText: 'Bewilligungspflichtig / Beschränkungen',
+    authorisationRequirementsSubText:
+      'Die Einfuhr von bestimmten Waren ist beschränkt und nur unter ...',
   },
   appInformation: {
     appInfoTitle: 'Über die App',
