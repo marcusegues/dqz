@@ -47,8 +47,8 @@ const ReceiptNotificationBadgeInner = ({
 );
 
 const mapStateToProps = state => ({
-    fees: getTotalFees(state),
-  });
+  fees: getTotalFees(state),
+});
 
 export const ReceiptNotificationBadge = (connect(mapStateToProps)(
   ReceiptNotificationBadgeInner
