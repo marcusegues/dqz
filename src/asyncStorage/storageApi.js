@@ -12,6 +12,7 @@ import {
   fetchSettingsHasLanguageAsyncStorage,
   storeItemAsyncStorage,
   fetchReceiptsAsyncStorage,
+  fetchReceiptEntryTimeAsyncStorage,
 } from './asyncStorage';
 import type { CurrencyObject } from '../model/currencies';
 import type { StoreType } from './storeTypes';
@@ -21,7 +22,7 @@ import type {
   Basket,
   People,
 } from '../model/types/basketPeopleAmountsTypes';
-import type { MainCategories } from '../types/reducers/appReducer';
+import type { MainCategories } from '../types/reducers/declaration';
 import {
   emptyBasket,
   initAmounts,
@@ -29,6 +30,7 @@ import {
 } from '../model/configurationApi';
 import type { Receipt } from '../types/receiptTypes';
 import type { KeyNotSetType } from './asyncStorage';
+import type { PaymentData } from '../types/generalTypes';
 
 /**
  * Stores item (stringified) under key - do NOT use directly!
@@ -112,6 +114,22 @@ export const storeMainCategories = (mainCategories: MainCategories) =>
 export const storePeople = (people: People) =>
   storeItem('People', people.toJS());
 
+/**
+ * Stores paymentData
+ * @param paymentData
+ * @returns {Promise<boolean>}
+ */
+export const storePaymentData = (paymentData: PaymentData) =>
+  storeItem('PaymentData', paymentData);
+
+/**
+ * Stores receiptEntryTime
+ * @param receiptEntryTime
+ * @returns {Promise<boolean>}
+ */
+export const storeReceiptEntryTime = (receiptEntryTime: string) =>
+  storeItem('ReceiptEntryTime', receiptEntryTime);
+
 export const storeClearDeclaration = () => {
   storeMainCategories(Immutable.Set());
   storeBasket(emptyBasket);
@@ -170,3 +188,6 @@ export const fetchPeople = async (): Promise<People> =>
 
 export const fetchMainCategories = async (): Promise<MainCategories> =>
   fetchMainCategoriesAsyncStorage('MainCategories');
+
+export const fetchReceiptEntryTime = async (): Promise<string> =>
+  fetchReceiptEntryTimeAsyncStorage('ReceiptEntryTime');

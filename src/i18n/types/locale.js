@@ -71,6 +71,7 @@ type PeopleInputTranslations = {
 
 type MainCategoriesInputTranslations = {
   mainCategoriesQuestion: string,
+  mainCategoriesNotYetAnswered: string,
 };
 
 type QuantityInputTranslations = {
@@ -78,6 +79,9 @@ type QuantityInputTranslations = {
   recordedOn: string,
   addQuantities: string,
   enterQuantities: string,
+  enterQuantity: string,
+  enterQuantitiesButter: string,
+  enterQuantitiesAlcohol: string,
 };
 
 type AmountInputTranslations = {
@@ -134,32 +138,32 @@ type ModalTranslations = {
   savedBasketNewShoppingCart: string,
   timePickerTitle: string,
   timePickerSubTitle: string,
-  timePickerRegistrationValidUntil: string,
+  timePickerRegistrationValidUntilSameDay: string,
+  timePickerRegistrationValidUntilDifferentDay: string,
   timePickerTakeOverThePeriod: string,
   closeModalText: string,
   timePickerTimePrefix: string,
   recordTheAmountOfMeat: string,
   recordTheAmountOfTobacco: string,
+  savedBasket: string,
 };
 
 type InformationTranslations = {
   informationTitle: string,
-  proceedinAtTheCustoms: string,
-  proceedinAtTheCustomsSubText: string,
-  travelDocuments: string,
+  customsProceduresMainText: string,
+  customsProceduresSubText: string,
+  travelDocumentsMainText: string,
   travelDocumentsSubText: string,
-  haveGoodsWithMe: string,
-  haveGoodsWithMeSubText: string,
-  haveAnimalsOrPlantsWithMe: string,
-  haveAnimalsOrPlantsWithMeSubText: string,
-  travelingWithVehicle: string,
-  travelingWithVehicleSubText: string,
-  entryByTrain: string,
+  declarationMainText: string,
+  declarationSubText: string,
+  animalsAndPlantsMainText: string,
+  animalsAndPlantsSubText: string,
+  vehiclesMainText: string,
+  vehiclesSubText: string,
+  entryByTrainMainText: string,
   entryByTrainSubText: string,
-  allowancesFoodAlcoholTobacco: string,
-  allowancesFoodAlcoholTobaccoText: string,
-  prohibitions: string,
-  prohibitionsSubText: string,
+  prohibitionsAndRestrictionsMainText: string,
+  prohibitionsAndRestrictionsSubText: string,
 };
 
 type ReceiptTranslations = {
@@ -207,18 +211,63 @@ type LegalNoticeInformationTranslations = {
   navigationHeaderTitle: string,
   conditions: string,
   importantSoon: string,
-  importantSoonText: string,
+  importantSoonText1: string,
+  importantSoonText2: string,
+  importantSoonText3: string,
+  importantSoonText4: string,
+  importantSoonText5: string,
+  importantSoonText6: string,
+  importantSoonText7: string,
+  importantSoonText8: string,
+  importantSoonText9: string,
+
   howToDeclareYourGoods: string,
-  howToDeclareYourGoodsText: string,
+  howToDeclareYourGoodsText1: string,
+  howToDeclareYourGoodsText2: string,
+  howToDeclareYourGoodsText3: string,
+  howToDeclareYourGoodsText4: string,
+  howToDeclareYourGoodsText5: string,
+  howToDeclareYourGoodsText6: string,
+  howToDeclareYourGoodsText7: string,
+  howToDeclareYourGoodsText8: string,
+  howToDeclareYourGoodsText9: string,
+  howToDeclareYourGoodsText10: string,
+  howToDeclareYourGoodsText11: string,
+  howToDeclareYourGoodsText12: string,
+  howToDeclareYourGoodsText13: string,
+  howToDeclareYourGoodsText14: string,
+  howToDeclareYourGoodsText15: string,
+  howToDeclareYourGoodsText16: string,
+
   legal: string,
-  legalText: string,
+  legalText1: string,
+  legalText2: string,
+  legalText3: string,
+  legalText4: string,
+  legalText5: string,
+  legalText6: string,
+  legalText7: string,
+
   privacyAndLiability: string,
   dataProtection: string,
-  dataProtectionText: string,
+  dataProtectionText1: string,
+  dataProtectionText2: string,
+  dataProtectionText3: string,
+  dataProtectionText4: string,
+  dataProtectionText5: string,
+
+  liability: string,
+  liabilityText1: string,
+  liabilityText2: string,
+
   referencesAndLinks: string,
-  referencesAndLinksText: string,
+  referencesAndLinksText1: string,
+  referencesAndLinksText2: string,
+
   copyright: string,
-  copyrightText: string,
+  copyrightText1: string,
+  copyrightText2: string,
+  copyrightText3: string,
 };
 
 type OverviewTranslations = {
@@ -238,6 +287,14 @@ type LegalNoticeModalTranslations = {
 type FurtherInformationModalTranslations = {
   furtherInformation: string,
   acceptance: string,
+};
+
+type UnitsTranslations = {
+  kilo: string,
+  kiloOrLiter: string,
+  liter: string,
+  unit: string,
+  gram: string,
 };
 
 /**
@@ -264,4 +321,5 @@ export type Locale = {
   overview: OverviewTranslations,
   legalNoticeModal: LegalNoticeModalTranslations,
   furtherInformationModal: FurtherInformationModalTranslations,
+  units: UnitsTranslations,
 };

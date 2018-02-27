@@ -56,7 +56,7 @@ export const it: Locale = {
     welcome: 'Benvenuti a',
     onBoardingMessage:
       'La lingua è stata definita sulla base delle impostazioni attuali del sistema.',
-    currentLanguageMessage: 'La tua lingua attualmente selezionata è',
+    currentLanguageMessage: 'La tua lingua attualmente \n selezionata è',
     selectLanguage: 'Selezionare un’altra lingua',
     confirmationVat: ' Confermo di accettare l’aliquota IVA unica di',
     confirmationVat2: 'all’atto dell’imposizione delle merci',
@@ -67,12 +67,16 @@ export const it: Locale = {
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Quali merci si desidera dichiarare?',
+    mainCategoriesNotYetAnswered: 'Categoria merceologica: dati mancanti',
   },
   quantityInput: {
     quantityInput: 'Ingresso quantità',
     recordedOn: 'registrato su {{value}}',
     addQuantities: 'Aggiungi quantità',
     enterQuantities: 'Inserisci le quantità di tutti {{value}} qui',
+    enterQuantity: 'Inserisci la quantità',
+    enterQuantitiesButter: 'Inserisci le quantità di tutti {{value}} qui',
+    enterQuantitiesAlcohol: 'Inserisci le quantità di tutti {{value}} qui',
   },
   amountInput: {
     amountInput: 'Inserire qui il valore complessivo delle merci trasportate.',
@@ -130,12 +134,15 @@ export const it: Locale = {
     closeModalText: 'Chiudere',
     timePickerTitle: 'Scelta del passaggio in frontiera:',
     timePickerSubTitle: 'Quando desidera attraversare la frontiera?',
-    timePickerRegistrationValidUntil:
-      'Si assicuri di attraversare la frontiera entro due ore. La quietanza doganale è valevole alle ore {{time}} del {{date}}.',
+    timePickerRegistrationValidUntilSameDay:
+      'Questa registrazione è valida per {{date}} da {{startTime}} a {{endTime}} in punto.',
+    timePickerRegistrationValidUntilDifferentDay:
+      'Questo accesso è valido per {{startDate}} da {{startTime}} a {{endDate}} al {{endTime}} in punto.',
     timePickerTakeOverThePeriod: 'Prendi il controllo del periodo',
     timePickerTimePrefix: 'ora',
     recordTheAmountOfMeat: 'Registra la quantità di carne che porti con te:',
     recordTheAmountOfTobacco: 'Registra la quantità di tabacco che porti:',
+    savedBasket: 'Carrello corrente',
   },
   payment: {
     overViewTitle: ' Riepilogo della dichiarazione',
@@ -176,30 +183,25 @@ export const it: Locale = {
   },
   information: {
     informationTitle: 'Informazioni utili',
-    proceedinAtTheCustoms: 'Modo di procedere in dogana ',
-    proceedinAtTheCustomsSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    travelDocuments: 'Documenti di viaggio',
+    customsProceduresMainText: 'Procedendo alla dogana',
+    customsProceduresSubText: 'Come privato devi entrare in Svizzera ...',
+    travelDocumentsMainText: 'Documenti di viaggio',
     travelDocumentsSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    haveGoodsWithMe: 'Trasporto merci',
-    haveGoodsWithMeSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    haveAnimalsOrPlantsWithMe: 'Trasporto animali o piante',
-    haveAnimalsOrPlantsWithMeSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    travelingWithVehicle: 'Sono in viaggio con un veicolo',
-    travelingWithVehicleSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    entryByTrain: 'Entrata nel paese con il treno',
+      'Per entrare in Svizzera i cittadini stranieri hanno bisogno di un valido ...',
+    declarationMainText: 'Ho dei beni con me',
+    declarationSubText: 'Meriti per uso personale o come regalo ...',
+    animalsAndPlantsMainText: 'Ho animali o piante con me',
+    animalsAndPlantsSubText:
+      'Per cani, gatti, altri animali domestici e cavalli troverai il ...',
+    vehiclesMainText: 'Sto viaggiando con un veicolo',
+    vehiclesSubText:
+      "L'uso di autostrade e autostrade con veicoli a motore e rimorchi ...",
+    entryByTrainMainText: 'Ingresso in treno',
     entryByTrainSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    allowancesFoodAlcoholTobacco: 'Indennità: cibo, alcol e tabacco',
-    allowancesFoodAlcoholTobaccoText:
-      'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheits-politischen Gründen ab einer gewissen Amount Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
-    prohibitions: 'Divieti e restrizioni',
-    prohibitionsSubText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
+      'Se il personale doganale è presente sul treno, è necessario prendere tutte le merci ...',
+    prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
+    prohibitionsAndRestrictionsSubText:
+      'È vietato introdurre contraffazioni di marchi e design. Le usanze svizzere ...',
   },
   appInformation: {
     appInfoTitle: 'Informazioni sull’app ',
@@ -228,68 +230,106 @@ export const it: Locale = {
     navigationHeaderTitle: 'Informazioni importanti sull’utilizzo dell’app',
     conditions: 'Condizioni quadro',
     importantSoon: 'L’essenziale in breve',
-    importantSoonText:
-      'L’app può essere impiegata per la stessa persona o persone solo una volta al giorno (giorno solare).\n' +
-      'L’app può essere utilizzata solo per merci importate per uso privato o come regali.\n' +
-      'L’utilizzo dell’app comporta l’accettazione della condizione che l’aliquota IVA del 7,7 % viene applicata anche alle merci in realtà soggette all’aliquota ridotta (derrate alimentari, alimenti per animali, medicamenti e libri).\n' +
-      'Il pagamento è possibile solo mediante carta di credito (Visa, Mastercard; senza possibilità di rimborso). Dopo il pagamento dei tributi le merci sono imposte.\n' +
-      'L’imposizione deve avvenire prima del passaggio del confine (al più presto 48 ore prima) o al più tardi al valico di confine.\n' +
-      'Dopo l’imposizione possono essere utilizzati anche i seguenti valichi di confine:\n' +
-      'valichi presso i quali è presente il personale doganale;\n' +
-      'il passaggio verde della dogana negli aeroporti.\n' +
-      'Il giustificativo rilasciato dalla dogana deve essere presentato al personale della dogana svizzera se richiesto. Il personale doganale fotografa il giustificativo se necessario.\n',
+    importantSoonText1:
+      'L’app può essere impiegata per la stessa persona o persone solo una volta al giorno (giorno solare).',
+    importantSoonText2:
+      'L’app può essere utilizzata solo per merci importate per uso privato o come regali.',
+    importantSoonText3:
+      'L’utilizzo dell’app comporta l’accettazione della condizione che l’aliquota IVA del 7,7 % viene applicata anche alle merci in realtà soggette all’aliquota ridotta (derrate alimentari, alimenti per animali, medicamenti e libri).',
+    importantSoonText4:
+      'Il pagamento è possibile solo mediante carta di credito (Visa, Mastercard; senza possibilità di rimborso). Dopo il pagamento dei tributi le merci sono imposte.',
+    importantSoonText5:
+      'L’imposizione deve avvenire prima del passaggio del confine (al più presto 48 ore prima) o al più tardi al valico di confine.',
+    importantSoonText6:
+      'Dopo l’imposizione possono essere utilizzati anche i seguenti valichi di confine:',
+    importantSoonText7:
+      'valichi presso i quali è presente il personale doganale;',
+    importantSoonText8: 'il passaggio verde della dogana negli aeroporti.',
+    importantSoonText9:
+      'Il giustificativo rilasciato dalla dogana deve essere presentato al personale della dogana svizzera se richiesto. Il personale doganale fotografa il giustificativo se necessario.',
 
     howToDeclareYourGoods: 'Come imporre le merci:',
-    howToDeclareYourGoodsText:
-      'Dichiarare tutte le merci trasportate (salvo gli oggetti d’uso personale e provviste da viaggio). Le quantità ammesse in franchigia e il limite di franchigia secondo il valore a cui si ha diritto vengono detratti automaticamente.\n' +
-      'Inserire il valore nella valuta estera in base alla ricevuta. Il valore viene determinato applicando il corso del cambio (vendita) del giorno precedente (ultimo giorno lavorativo).\n' +
-      'Stabilire un intervallo di tempo di due ore per il passaggio del confine. Il giustificativo è valido solo durante questo arco di tempo. Se non è possibile rispettarlo, occorre rivolgersi a un valico di confine in cui è presente il personale della dogana svizzera per spiegare il motivo per cui non è stato possibile varcare il confine nell’intervallo di tempo della validità. Senza motivazione credibile i tributi vengono riscossi una seconda volta.\n' +
-      'Se l’imposizione concerne se stessi e le persone con cui si viaggia oppure un’altra persona il passaggio del confine deve avvenire congiuntamente.\n' +
-      'Prima del pagamento la dichiarazione può essere corretta in qualsiasi momento, mentre dopo non è più possibile correggerla. Una volta effettuato il pagamento, le merci estere acquistate successivamente devono essere dichiarate presso un valico di confine occupato da personale doganale svizzero.\n' +
-      'Il giustificativo rilasciato dalla dogana svizzera va conservato almeno per un anno e può essere conservato anche sotto forma di immagine.\n' +
-      'Se l’imposizione con l’app non è possibile (p. es. connessione Internet mancante o pagamento con carta di credito non possibile), la merce va dichiarata presso un valico di confine occupato dal personale doganale svizzero oppure mediante cassetta delle dichiarazioni.\n' +
-      'È d’obbligo dichiarare le seguenti merci presso un valico di confine occupato dal personale doganale svizzero.\n' +
-      'Merci soggette a limitazioni o divieti e che soggiacciono all’obbligo di certificato o di autorizzazione (p. es. armi, animali vivi e merci protette); ulteriori informazioni.\n' +
-      'Merci destinate all’uso privato o da regalare aventi un valore complessivo di 20 000.00 franchi o superiore.\n' +
-      'Merci non importate per uso privato o come regali (p. es. merci destinate al commercio).\n' +
-      'Veicoli, riparazioni di veicoli e carburanti.\n' +
-      'Masserizie di trasloco, corredi nuziali e oggetti ereditati.\n' +
-      'Merci temporaneamente importate in Svizzera.\n' +
-      'Merci destinate al transito attraverso la Svizzera.\n' +
-      'Le merci esportate non possono essere dichiarate con l’app. Le informazioni sugli acquisti esenti da imposta in Svizzera (Tax free) sono disponibili qui.\n',
+    howToDeclareYourGoodsText1:
+      'Dichiarare tutte le merci trasportate (salvo gli oggetti d’uso personale e provviste da viaggio). Le quantità ammesse in franchigia e il limite di franchigia secondo il valore a cui si ha diritto vengono detratti automaticamente.',
+    howToDeclareYourGoodsText2:
+      'Inserire il valore nella valuta estera in base alla ricevuta. Il valore viene determinato applicando il corso del cambio (vendita) del giorno precedente (ultimo giorno lavorativo).',
+    howToDeclareYourGoodsText3:
+      'Stabilire un intervallo di tempo di due ore per il passaggio del confine. Il giustificativo è valido solo durante questo arco di tempo. Se non è possibile rispettarlo, occorre rivolgersi a un valico di confine in cui è presente il personale della dogana svizzera per spiegare il motivo per cui non è stato possibile varcare il confine nell’intervallo di tempo della validità. Senza motivazione credibile i tributi vengono riscossi una seconda volta.',
+    howToDeclareYourGoodsText4:
+      'Se l’imposizione concerne se stessi e le persone con cui si viaggia oppure un’altra persona il passaggio del confine deve avvenire congiuntamente.',
+    howToDeclareYourGoodsText5:
+      'Prima del pagamento la dichiarazione può essere corretta in qualsiasi momento, mentre dopo non è più possibile correggerla. Una volta effettuato il pagamento, le merci estere acquistate successivamente devono essere dichiarate presso un valico di confine occupato da personale doganale svizzero.',
+    howToDeclareYourGoodsText6:
+      'Il giustificativo rilasciato dalla dogana svizzera va conservato almeno per un anno e può essere conservato anche sotto forma di immagine.',
+    howToDeclareYourGoodsText7:
+      'Se l’imposizione con l’app non è possibile (p. es. connessione Internet mancante o pagamento con carta di credito non possibile), la merce va dichiarata presso un valico di confine occupato dal personale doganale svizzero oppure mediante cassetta delle dichiarazioni.',
+    howToDeclareYourGoodsText8:
+      'È d’obbligo dichiarare le seguenti merci presso un valico di confine occupato dal personale doganale svizzero.',
+    howToDeclareYourGoodsText9:
+      'Merci soggette a limitazioni o divieti e che soggiacciono all’obbligo di certificato o di autorizzazione (p. es. armi, animali vivi e merci protette); ulteriori informazioni.',
+    howToDeclareYourGoodsText10:
+      'Merci destinate all’uso privato o da regalare aventi un valore complessivo di 20 000.00 franchi o superiore.',
+    howToDeclareYourGoodsText11:
+      'Merci non importate per uso privato o come regali (p. es. merci destinate al commercio).',
+    howToDeclareYourGoodsText12:
+      'Veicoli, riparazioni di veicoli e carburanti.',
+    howToDeclareYourGoodsText13:
+      'Masserizie di trasloco, corredi nuziali e oggetti ereditati.',
+    howToDeclareYourGoodsText14: 'Merci temporaneamente importate in Svizzera.',
+    howToDeclareYourGoodsText15:
+      'Merci destinate al transito attraverso la Svizzera.',
+    howToDeclareYourGoodsText16:
+      'Le merci esportate non possono essere dichiarate con l’app. Le informazioni sugli acquisti esenti da imposta in Svizzera (Tax free) sono disponibili qui.',
 
     legal: 'Aspetti legali',
     usage: 'Uso',
-    legalText:
-      'L’imposizione con l’app è vincolante (art. 33 della legge del 18 marzo 2005 sulle dogane, RS 631.0). L’omessa oppure errata dichiarazione di merci vietate, soggette all’obbligo di autorizzazione o soggette al pagamento di tributi è dunque punibile.\n' +
-      'La persona che presenta il giustificativo al momento del controllo doganale è responsabile della corretta imposizione della merce che trasporta. Si assume anche la responsabilità penale qualora vengano scoperte merci non dichiarate o dichiarate erroneamente.\n' +
-      'Al momento dell’utilizzo dell’app accertarsi che:\n' +
-      'durante l’operazione di pagamento vi sia un collegamento a Internet affinché l’imposizione possa essere portata a termine;\n' +
-      'si disponga di un giustificativo valido per le merci importate;\n' +
-      'si sia in grado di presentare sul proprio terminale mobile il giustificativo al momento del controllo in occasione del passaggio del confine.\n' +
-      'Attenzione: durante il termine di validità del giustificativo, un’immagine dello stesso inoltrata a terzi tramite WhatsApp, iMessage, SMS o e-mail non è accettata come giustificativo.\n',
+    legalText1:
+      'L’imposizione con l’app è vincolante (art. 33 della legge del 18 marzo 2005 sulle dogane, RS 631.0). L’omessa oppure errata dichiarazione di merci vietate, soggette all’obbligo di autorizzazione o soggette al pagamento di tributi è dunque punibile.',
+    legalText2:
+      'La persona che presenta il giustificativo al momento del controllo doganale è responsabile della corretta imposizione della merce che trasporta. Si assume anche la responsabilità penale qualora vengano scoperte merci non dichiarate o dichiarate erroneamente.',
+    legalText3: 'Al momento dell’utilizzo dell’app accertarsi che:',
+    legalText4:
+      'durante l’operazione di pagamento vi sia un collegamento a Internet affinché l’imposizione possa essere portata a termine;',
+    legalText5:
+      'si disponga di un giustificativo valido per le merci importate;',
+    legalText6:
+      'si sia in grado di presentare sul proprio terminale mobile il giustificativo al momento del controllo in occasione del passaggio del confine.',
+    legalText7:
+      'Attenzione: durante il termine di validità del giustificativo, un’immagine dello stesso inoltrata a terzi tramite WhatsApp, iMessage, SMS o e-mail non è accettata come giustificativo.',
 
     privacyAndLiability: 'Protezione dei dati e responsabilità',
     dataProtection: 'Protezione dei dati',
-    dataProtectionText:
-      'Ai sensi dell’articolo 13 della Costituzione federale svizzera e delle disposizioni legali della Confederazione sulla protezione dei dati, ognuno ha diritto al rispetto della sua vita privata nonché d’essere protetto da un impiego abusivo dei suoi dati personali. Le autorità federali si attengono a queste disposizioni. I dati personali sono trattati in modo strettamente confidenziale e non vengono venduti né trasmessi a terzi.\n' +
-      'In stretta collaborazione con il nostro fornitore di hosting ci impegniamo ad adottare tutte le misure necessarie per proteggere le nostre banche dati da accessi non autorizzati, perdite, abusi o falsificazioni.\n' +
-      'Accedendo ai nostri siti vengono salvati in log file i seguenti dati: indirizzo IP, data, ora, richiesta del browser e le informazioni generali sul sistema operativo o sul browser che sono state trasmesse.\n' +
-      'I dati di navigazione formano la base per le valutazioni statistiche anonime che permettono di identificare tendenze, grazie alle quali le autorità federali possono migliorare la loro offerta. Secondo la legge federale del 6 ottobre 2000 sulla sorveglianza della corrispondenza postale e del traffico delle telecomunicazioni (LSCPT; RS 780.1) esiste un obbligo di conservazione legale per i dati di collegamento degli ultimi sei mesi.\n' +
-      'In caso di presa di contatto spontanea, l’indirizzo di posta elettronica viene salvato in una banca dati separata, non collegata con i log file anonimi. La propria registrazione può essere revocata in ogni momento.\n' +
-      'Le autorità federali si riservano espressamente il diritto di modificare o cancellare determinati contenuti, in parte o nella loro interezza, o di sospenderne temporaneamente la pubblicazione in qualsiasi momento e senza darne annuncio preventivo.\n' +
-      'Le autorità federali declinano ogni responsabilità per danni materiali o immateriali derivanti dall’accesso alle informazioni pubblicate, dal loro utilizzo o mancato utilizzo oppure riconducibili a un abuso del collegamento o a guasti tecnici.\n',
+    dataProtectionText1:
+      'Ai sensi dell’articolo 13 della Costituzione federale svizzera e delle disposizioni legali della Confederazione sulla protezione dei dati, ognuno ha diritto al rispetto della sua vita privata nonché d’essere protetto da un impiego abusivo dei suoi dati personali. Le autorità federali si attengono a queste disposizioni. I dati personali sono trattati in modo strettamente confidenziale e non vengono venduti né trasmessi a terzi.',
+
+    dataProtectionText2:
+      'In stretta collaborazione con il nostro fornitore di hosting ci impegniamo ad adottare tutte le misure necessarie per proteggere le nostre banche dati da accessi non autorizzati, perdite, abusi o falsificazioni.',
+    dataProtectionText3:
+      'Accedendo ai nostri siti vengono salvati in log file i seguenti dati: indirizzo IP, data, ora, richiesta del browser e le informazioni generali sul sistema operativo o sul browser che sono state trasmesse.',
+    dataProtectionText4:
+      'I dati di navigazione formano la base per le valutazioni statistiche anonime che permettono di identificare tendenze, grazie alle quali le autorità federali possono migliorare la loro offerta. Secondo la legge federale del 6 ottobre 2000 sulla sorveglianza della corrispondenza postale e del traffico delle telecomunicazioni (LSCPT; RS 780.1) esiste un obbligo di conservazione legale per i dati di collegamento degli ultimi sei mesi.',
+    dataProtectionText5:
+      'In caso di presa di contatto spontanea, l’indirizzo di posta elettronica viene salvato in una banca dati separata, non collegata con i log file anonimi. La propria registrazione può essere revocata in ogni momento. Le autorità federali si riservano espressamente il diritto di modificare o cancellare determinati contenuti, in parte o nella loro interezza, o di sospenderne temporaneamente la pubblicazione in qualsiasi momento e senza darne annuncio preventivo. Le autorità federali declinano ogni responsabilità per danni materiali o immateriali derivanti dall’accesso alle informazioni pubblicate, dal loro utilizzo o mancato utilizzo oppure riconducibili a un abuso del collegamento o a guasti tecnici.',
+
+    liability: 'Responsabilità',
+    liabilityText1:
+      'Le autorità federali si riservano espressamente il diritto di modificare, cancellare o non pubblicare temporaneamente i contenuti in toto o in parte in qualsiasi momento senza preavviso.',
+    liabilityText2:
+      "Sono escluse rivendicazioni di responsabilità nei confronti delle autorità federali per danni di natura materiale o immateriale derivanti dall'accesso o dall'uso o non uso delle informazioni pubblicate, in caso di uso improprio del collegamento o di errori tecnici.",
 
     referencesAndLinks: 'Riferimenti e link',
-    referencesAndLinksText:
-      'I riferimenti e i link che rimandano a siti web di terzi non rientrano negli ambiti di responsabilità delle autorità federali. L’utente si assume i rischi connessi all’accesso a questi siti e al loro utilizzo. Le autorità federali dichiarano espressamente di non avere alcuna influenza sull’impostazione, sui contenuti e sulle offerte dei siti web a cui rimanda. La responsabilità per le informazioni e i servizi offerti in tali siti web ricade esclusivamente sui relativi terzi.\n' +
-      'Si declina ogni responsabilità legata a tali siti web.\n',
+    referencesAndLinksText1:
+      'I riferimenti e i link che rimandano a siti web di terzi non rientrano negli ambiti di responsabilità delle autorità federali. L’utente si assume i rischi connessi all’accesso a questi siti e al loro utilizzo. Le autorità federali dichiarano espressamente di non avere alcuna influenza sull’impostazione, sui contenuti e sulle offerte dei siti web a cui rimanda. La responsabilità per le informazioni e i servizi offerti in tali siti web ricade esclusivamente sui relativi terzi.',
+    referencesAndLinksText2:
+      'Si declina ogni responsabilità legata a tali siti web.',
 
     copyright: 'Copyright',
-    copyrightText:
-      'Copyright, autorità federali della Confederazione Svizzera, 2007.\n' +
-      'Le informazioni contenute nel sito web delle autorità federali sono rese accessibili al pubblico. Scaricando o copiando contenuti, immagini, fotografie o altri dati non vengono trasferiti in alcun modo i relativi diritti.\n' +
-      'I diritti d’autore e tutti gli altri diritti riguardanti contenuti, immagini, fotografie o altri dati pubblicati sul sito web delle autorità federali sono di proprietà esclusiva di quest’ultime o, eventualmente, del titolare dei diritti debitamente citato. La riproduzione di qualsiasi elemento è permessa previo consenso scritto del titolare dei diritti d’autore.\n',
+    copyrightText1:
+      'Copyright, autorità federali della Confederazione Svizzera, 2007.',
+    copyrightText2:
+      'Le informazioni contenute nel sito web delle autorità federali sono rese accessibili al pubblico. Scaricando o copiando contenuti, immagini, fotografie o altri dati non vengono trasferiti in alcun modo i relativi diritti.',
+    copyrightText3:
+      'I diritti d’autore e tutti gli altri diritti riguardanti contenuti, immagini, fotografie o altri dati pubblicati sul sito web delle autorità federali sono di proprietà esclusiva di quest’ultime o, eventualmente, del titolare dei diritti debitamente citato. La riproduzione di qualsiasi elemento è permessa previo consenso scritto del titolare dei diritti d’autore.',
   },
   overview: {
     declared: 'Dichiarato',
@@ -309,5 +349,17 @@ export const it: Locale = {
     furtherInformation: 'Ulteriori informazioni:',
     acceptance:
       "Utilizzando l'app, accetti che l'aliquota IVA sia pari al 7,7%; si applica anche alle merci che sono effettivamente soggette all'aliquota ridotta (alimenti, mangimi, medicinali e libri).",
+  },
+  units: {
+    kilo: 'kg',
+    kilo_plural: 'kgs',
+    kiloOrLiter: 'kg/litro',
+    kiloOrLiter_plural: 'kgs/litri',
+    liter: 'litro',
+    liter_plural: 'litri',
+    unit: 'unità',
+    unit_plural: 'unità',
+    gram: 'grammo',
+    gram_plural: 'grammi',
   },
 };

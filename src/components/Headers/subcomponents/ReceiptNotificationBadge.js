@@ -24,9 +24,7 @@ const ReceiptNotificationBadgeInner = ({
 }: ReceiptNotificationBadgeProps) => (
   <Touchable
     onPress={() => {
-      if (fees) {
-        navigation.navigate('Payment');
-      }
+      navigation.navigate('Payment');
     }}
   >
     <View
@@ -49,8 +47,8 @@ const ReceiptNotificationBadgeInner = ({
 );
 
 const mapStateToProps = state => ({
-  fees: getTotalFees(state),
-});
+    fees: getTotalFees(state),
+  });
 
 export const ReceiptNotificationBadge = (connect(mapStateToProps)(
   ReceiptNotificationBadgeInner

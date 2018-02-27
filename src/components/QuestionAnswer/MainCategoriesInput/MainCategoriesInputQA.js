@@ -8,7 +8,7 @@ import type { CardProps } from '../QuestionAnswerContainer';
 import type {
   MainCategories,
   MainCategory,
-} from '../../../types/reducers/appReducer';
+} from '../../../types/reducers/declaration';
 import { analyticsQACardOpenend } from '../../../analytics/analyticsApi';
 
 export const MainCategoriesInputQA = (props: CardProps) => {

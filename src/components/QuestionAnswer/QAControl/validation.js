@@ -18,8 +18,8 @@ import { CategoriesInfo } from '../../../model/constants';
 import type {
   MainCategories,
   MainCategory,
-} from '../../../types/reducers/appReducer';
-import { getSubCategories } from '../../../types/reducers/appReducer';
+} from '../../../types/reducers/declaration';
+import { getSubCategories } from '../../../types/reducers/declaration';
 import type { TFunction } from '../../../types/generalTypes';
 
 type UpdateFunction<T> = (input: T) => void;
@@ -133,9 +133,12 @@ export const onUpdateFactory = (
         const problems = Array.from(affectedCategories)
           .map(
             ac =>
-              `${ac.category} (${t(
+              `${t(`categories:${ac.category}`)} (${t(
                 `categories:${ac.quantity}`
-              )} ${CategoriesInfo.getIn([ac.category, 'unit'], '')})`
+              )} ${t(
+                `units:${CategoriesInfo.getIn([ac.category, 'unit'], '')}`,
+                { count: ac.quantity }
+              )})`
           )
           .join(', ');
         const showAlert = () => {

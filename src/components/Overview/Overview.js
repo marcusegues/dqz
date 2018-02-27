@@ -22,7 +22,10 @@ import {
 } from '../../reducers';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
 import { InfoNote } from './subcomponents/InfoNote';
-import { getConvertedLocalTimeToSwiss } from '../../model/utils';
+import {
+  flatLargeAmounts,
+  getConvertedLocalTimeToSwiss,
+} from '../../model/utils';
 import { BackAndContinueButtons } from '../Buttons/BackAndContinueButtons';
 import type {
   Amounts,
@@ -30,6 +33,7 @@ import type {
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { CurrencyObject } from '../../model/currencies';
+import { storeReceiptEntryTime } from '../../asyncStorage/storageApi';
 
 type OverviewProps = {
   modalVisible?: boolean,
@@ -52,7 +56,10 @@ type OverviewState = {
 };
 
 class OverviewInner extends React.Component<
-  OverviewProps & { t: TFunction } & ReduxInjectedProps,
+  OverviewProps & {
+    t: TFunction,
+    i18n: { language: string },
+  } & ReduxInjectedProps,
   OverviewState
 > {
   static defaultProps = {
@@ -61,7 +68,10 @@ class OverviewInner extends React.Component<
     paymentDisabled: true,
   };
 
-  constructor(props: OverviewProps & ReduxInjectedProps & { t: TFunction }) {
+  constructor(
+    props: OverviewProps &
+      ReduxInjectedProps & { t: TFunction, i18n: { language: string } }
+  ) {
     super(props);
     this.state = {
       modalVisible: props.modalVisible || false,
@@ -86,6 +96,22 @@ class OverviewInner extends React.Component<
 
   handleSetReceiptEntryTime(entryTime: string) {
     this.props.setReceiptEntryTime(entryTime);
+  }
+
+  periodOfEntryTime(momentReceiptEntryTime) {
+    const { i18n } = this.props;
+    if (i18n.language === 'fr') {
+      return `${momentReceiptEntryTime.toFormat(
+        "dd.MM.y HH'h'mm"
+      )} - ${momentReceiptEntryTime
+        .plus({ hours: 2 })
+        .toFormat("dd.MM.y HH'h'mm")}`;
+    }
+    return `${momentReceiptEntryTime.toFormat(
+      'dd.MM.y HH:mm'
+    )} - ${momentReceiptEntryTime
+      .plus({ hours: 2 })
+      .toFormat('dd.MM.y HH:mm')}`;
   }
 
   render() {
@@ -116,14 +142,16 @@ class OverviewInner extends React.Component<
           amounts={amounts}
           currencies={currencies}
         />
-        <VatList
-          large
-          borderTop={false}
-          people={people}
-          amounts={amounts}
-          currencies={currencies}
-          headerRight={false}
-        />
+        {flatLargeAmounts(amounts).length ? (
+          <VatList
+            large
+            borderTop={false}
+            people={people}
+            amounts={amounts}
+            currencies={currencies}
+            headerRight={false}
+          />
+        ) : null}
         <TotalOwedRow
           basket={basket}
           people={people}
@@ -133,11 +161,7 @@ class OverviewInner extends React.Component<
         <PeriodOfEntryRow
           title={t('receipt:entryTime')}
           subtitle={t('receipt:chooseOtherEntryTime')}
-          time={`${momentReceiptEntryTime.toFormat(
-            'dd.MM.y HH:mm'
-          )} - ${momentReceiptEntryTime
-            .plus({ hours: 2 })
-            .toFormat('dd.MM.y HH:mm')}`}
+          time={this.periodOfEntryTime(momentReceiptEntryTime)}
           onPress={() => this.handleShowModal()}
         />
         <InfoNote />
@@ -167,8 +191,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setReceiptEntryTime: (receiptEntryTime: string) =>
-    dispatch({ type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime }),
+  setReceiptEntryTime: (receiptEntryTime: string) => {
+    storeReceiptEntryTime(receiptEntryTime);
+    dispatch({ type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime });
+  },
 });
 
 export const Overview = (connect(mapStateToProps, mapDispatchToProps)(

@@ -1,6 +1,6 @@
 // @flow
 import Immutable from 'immutable';
-import { makeSettingsRecord } from '../../types/reducers/appReducer';
+import { makeSettingsRecord } from '../../types/reducers/declaration';
 import { emptyBasket, initPeople } from '../../model/configurationApi';
 import {
   getBasket,
@@ -13,8 +13,6 @@ import {
   getTotalVat,
   getTotalDuty,
   getTotalFees,
-  getVatReport,
-  getDutyReport,
   getReceiptId,
 } from '../index';
 import {
@@ -31,8 +29,8 @@ jest.mock('uuid', () => ({
 const initState: AppState = getInitialAppState();
 
 const amountAndQuantityState = initState
-  .setIn(['appState', 'amounts'], sampleAmounts1)
-  .setIn(['appState', 'basket'], sampleBasket1);
+  .setIn(['declaration', 'amounts'], sampleAmounts1)
+  .setIn(['declaration', 'basket'], sampleBasket1);
 
 describe('API', () => {
   test('getBasket', () => {
@@ -71,11 +69,5 @@ describe('API', () => {
   });
   test('getTotalFees', () => {
     expect(getTotalFees(amountAndQuantityState)).toBe(3604.3);
-  });
-  test('getVatReport', () => {
-    expect(getVatReport(amountAndQuantityState)).toMatchSnapshot();
-  });
-  test('getDutyReport', () => {
-    expect(getDutyReport(amountAndQuantityState)).toMatchSnapshot();
   });
 });

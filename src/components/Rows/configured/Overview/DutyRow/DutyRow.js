@@ -31,7 +31,9 @@ const DutyRowInner = ({
   t,
   allowanceRaw,
 }: DutyRowProps & { t: TFunction }) => {
-  const unit = CategoriesInfo.getIn([category, 'unit'], '');
+  const unit = t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
+    count: quantity,
+  });
 
   return (
     <Row borderTop={borderTop}>
@@ -43,12 +45,16 @@ const DutyRowInner = ({
           <AllowanceIcon
             text={t('overview:dutyFree')}
             quantity={allowanceRaw}
-            unit={unit}
+            unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
+              count: allowanceRaw,
+            })}
           />
         </OverviewInfo>
         <QuantityIcon
           quantity={Math.max(0, quantity - allowanceRaw).toFixed(2)}
-          unit={unit}
+          unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
+            count: Math.max(0, quantity - allowanceRaw),
+          })}
         />
         <TotalOwed result={duty.toFixed(2)} />
       </View>
@@ -56,6 +62,6 @@ const DutyRowInner = ({
   );
 };
 
-export const DutyRow = (translate(['categories', 'overview'])(
+export const DutyRow = (translate(['categories', 'overview', 'units'])(
   DutyRowInner
 ): ComponentType<DutyRowProps>);

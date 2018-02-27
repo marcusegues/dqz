@@ -2,7 +2,7 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
-import { FlatList, View } from 'react-native';
+import { FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 
@@ -25,7 +25,10 @@ import type {
   Basket,
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
-import type { MainCategories, Settings } from '../../types/reducers/appReducer';
+import type {
+  MainCategories,
+  Settings,
+} from '../../types/reducers/declaration';
 import {
   collapseAllExistingExceptOne,
   setInitStates,
@@ -45,15 +48,12 @@ import {
 import { hasLargeAmount } from '../../model/utils';
 import { getTotalPeople } from '../../model/configurationApi';
 import {
-  fetchAmounts,
-  fetchBasket,
-  fetchMainCategories,
-  fetchPeople,
   storeAmounts,
   storeBasket,
   storeMainCategories,
   storePeople,
 } from '../../asyncStorage/storageApi';
+import { MainContentContainer } from '../MainContentContainer/MainContentContainer';
 
 export type QuestionType =
   | 'peopleInput'
@@ -110,7 +110,6 @@ type QuestionAnswerContainerProps = {
   currencies: CurrencyObject,
   currencyDate: string,
   t: TFunction,
-  initABP: () => void,
 };
 
 class QuestionAnswerContainerInner extends React.Component<
@@ -143,7 +142,6 @@ class QuestionAnswerContainerInner extends React.Component<
 
   componentWillMount() {
     analyticsScreenMounted('QuestionAnswerContainer');
-    this.props.initABP();
   }
 
   componentDidMount() {
@@ -458,32 +456,14 @@ class QuestionAnswerContainerInner extends React.Component<
     ];
 
     return (
-      <View
-        style={{
-          flex: 1,
-          height: '100%',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
-        <View
-          style={{
-            flex: 1,
-            width: '100%',
-            flexDirection: 'column',
-            alignItems: 'center',
-            paddingHorizontal: 16,
-            paddingBottom: 16,
-          }}
-        >
-          <NavBar step={1} />
-          <FlatList
-            style={{ width: '100%' }}
-            data={flatListData}
-            renderItem={({ item }) => item.component}
-          />
-        </View>
-      </View>
+      <MainContentContainer>
+        <NavBar step={1} />
+        <FlatList
+          style={{ width: '100%' }}
+          data={flatListData}
+          renderItem={({ item }) => item.component}
+        />
+      </MainContentContainer>
     );
   }
 }
@@ -533,32 +513,6 @@ const mapDispatchToProps = dispatch => ({
     dispatch({
       type: 'SET_AMOUNTS',
       amounts,
-    });
-  },
-  initABP: () => {
-    fetchBasket().then(basket => {
-      dispatch({
-        type: 'SET_BASKET',
-        basket,
-      });
-    });
-    fetchPeople().then(people => {
-      dispatch({
-        type: 'SET_PEOPLE',
-        people,
-      });
-    });
-    fetchAmounts().then(amounts => {
-      dispatch({
-        type: 'SET_AMOUNTS',
-        amounts,
-      });
-    });
-    fetchMainCategories().then(mainCategories => {
-      dispatch({
-        type: 'SET_MAIN_CATEGORIES',
-        mainCategories,
-      });
     });
   },
 });
