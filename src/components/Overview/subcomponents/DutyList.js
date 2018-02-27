@@ -63,6 +63,7 @@ const DutyListInner = ({
         style={{ width: '100%' }}
         data={flatListData.toJS()}
         renderItem={({ item }) => item.component}
+        removeClippedSubviews
       />
     </View>
   );

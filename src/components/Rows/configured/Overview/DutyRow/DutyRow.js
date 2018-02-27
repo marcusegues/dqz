@@ -1,10 +1,11 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
+import Swipeable from 'react-native-swipeable';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { View } from 'react-native';
+import { View, TouchableHighlight, Text } from 'react-native';
 import type { Category } from '../../../../../model/types/basketPeopleAmountsTypes';
 import { CategoriesInfo } from '../../../../../model/constants';
 import type { TFunction } from '../../../../../types/generalTypes';
@@ -23,6 +24,27 @@ type DutyRowProps = {
   allowanceRaw: number,
 };
 
+const leftContent = <Text>Pull to activate</Text>;
+
+const rightButtons = [
+  <TouchableHighlight
+    style={{
+      flex: 1,
+      backgroundColor: 'red',
+    }}
+  >
+    <Text>Button 1</Text>
+  </TouchableHighlight>,
+  <TouchableHighlight
+    style={{
+      flex: 1,
+      backgroundColor: 'green',
+    }}
+  >
+    <Text>Button 2</Text>
+  </TouchableHighlight>,
+];
+
 const DutyRowInner = ({
   category,
   quantity,
@@ -37,27 +59,36 @@ const DutyRowInner = ({
 
   return (
     <Row borderTop={borderTop}>
-      <View style={[rowStyles.rowContent]}>
-        <OverviewInfo
-          title={t(`categories:${category}`)}
-          subtitle={`${t('overview:declared')} ${quantity.toFixed(2)} ${unit}`}
-        >
-          <AllowanceIcon
-            text={t('overview:dutyFree')}
-            quantity={allowanceRaw}
+      <Swipeable
+        leftContent={leftContent}
+        rightButtons={rightButtons}
+        rightActionActivationDistance={200}
+        rightButtonWidth={90}
+      >
+        <View style={[rowStyles.rowContent]}>
+          <OverviewInfo
+            title={t(`categories:${category}`)}
+            subtitle={`${t('overview:declared')} ${quantity.toFixed(2)} ${
+              unit
+            }`}
+          >
+            <AllowanceIcon
+              text={t('overview:dutyFree')}
+              quantity={allowanceRaw}
+              unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
+                count: allowanceRaw,
+              })}
+            />
+          </OverviewInfo>
+          <QuantityIcon
+            quantity={Math.max(0, quantity - allowanceRaw).toFixed(2)}
             unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
-              count: allowanceRaw,
+              count: Math.max(0, quantity - allowanceRaw),
             })}
           />
-        </OverviewInfo>
-        <QuantityIcon
-          quantity={Math.max(0, quantity - allowanceRaw).toFixed(2)}
-          unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
-            count: Math.max(0, quantity - allowanceRaw),
-          })}
-        />
-        <TotalOwed result={duty.toFixed(2)} />
-      </View>
+          <TotalOwed result={duty.toFixed(2)} />
+        </View>
+      </Swipeable>
     </Row>
   );
 };

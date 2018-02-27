@@ -16,8 +16,6 @@ export const rowContainerStyles = (
   justifyContent: 'space-around',
   borderBottomWidth: borderBottom ? 1 : 0,
   borderColor: '#E0E0E1',
-  paddingVertical: 8,
-  paddingHorizontal: 12,
   borderTopWidth: borderTop ? 1 : 0,
 });
 
@@ -30,6 +28,8 @@ export const rowStyles = StyleSheet.create({
   rowContent: {
     flexDirection: 'row',
     alignItems: 'center',
+    paddingVertical: 8,
+    paddingHorizontal: 12,
   },
   borderBottom: {
     borderBottomWidth: ROW_BORDER_WIDTH,
