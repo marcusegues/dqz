@@ -1,7 +1,7 @@
 // @flow
 
 // Level 1 Categories
-type InfoCategory =
+export type InfoCategory =
   | 'customsProcedures'
   | 'travelDocuments'
   | 'declaration'
@@ -10,7 +10,15 @@ type InfoCategory =
   | 'entryByTrain'
   | 'prohibitionsAndRestrictions';
 
-type InfoCategoriesType = Array<InfoCategory>;
+type InfoCategoriesType = [
+  'customsProcedures',
+  'travelDocuments',
+  'declaration',
+  'animalsAndPlants',
+  'vehicles',
+  'entryByTrain',
+  'prohibitionsAndRestrictions',
+];
 
 export const infoCategories: InfoCategoriesType = [
   'customsProcedures',
@@ -29,7 +37,12 @@ type DeclarationSubCategory =
   | 'personalEffects'
   | 'foreignVat';
 
-type DeclarationSubCategories = Array<DeclarationSubCategory>;
+type DeclarationSubCategories = [
+  'vatAllowance',
+  'dutyAllowance',
+  'personalEffects',
+  'foreignVat',
+];
 
 export const declarationSubCategories: DeclarationSubCategories = [
   'vatAllowance',
@@ -43,7 +56,11 @@ type AnimalsAndPlantsSubCategory =
   | 'plants'
   | 'souvenirsAndSpeciesProtection';
 
-type AnimalsAndPlantsSubCategories = Array<AnimalsAndPlantsSubCategory>;
+type AnimalsAndPlantsSubCategories = [
+  'animals',
+  'plants',
+  'souvenirsAndSpeciesProtection',
+];
 
 export const animalsAndPlantsSubCategories: AnimalsAndPlantsSubCategories = [
   'animals',
@@ -53,7 +70,7 @@ export const animalsAndPlantsSubCategories: AnimalsAndPlantsSubCategories = [
 
 type VehiclesSubCategory = 'highwayVignette' | 'roadTax' | 'fuelAndRepairs';
 
-type VehiclesSubCategories = Array<VehiclesSubCategory>;
+type VehiclesSubCategories = ['highwayVignette', 'roadTax', 'fuelAndRepairs'];
 
 export const vehiclesSubCategories: VehiclesSubCategories = [
   'highwayVignette',
@@ -67,9 +84,12 @@ type ProhibitionsAndRestrictionsSubCategory =
   | 'food'
   | 'authorisationRequirements';
 
-type ProhibitionsAndRestrictionsSubCategories = Array<
-  ProhibitionsAndRestrictionsSubCategory
->;
+type ProhibitionsAndRestrictionsSubCategories = [
+  'forgery',
+  'cash',
+  'food',
+  'authorisationRequirements',
+];
 
 export const prohibitionsAndRestrictionsSubCategories: ProhibitionsAndRestrictionsSubCategories = [
   'forgery',
@@ -88,4 +108,15 @@ export type InformationSubCategoriesType = {
   [InfoCategory]: InfoSubCategories | 'noSubCategories',
 };
 
-export type InformationImagesType = { [InfoCategory]: string };
+type InfoCategoryExtended =
+  | InfoCategory
+  | ProhibitionsAndRestrictionsSubCategory
+  | VehiclesSubCategory
+  | DeclarationSubCategory
+  | AnimalsAndPlantsSubCategory;
+
+export type InformationImagesType = { [InfoCategoryExtended]: string };
+
+export type InformationNavigateToType = {
+  [InfoCategoryExtended]: InfoSubCategories | string,
+};

@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+// $FlowFixMe
 import { View } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
@@ -37,14 +38,19 @@ class InformationSubCategoriesInner extends React.Component<{
           <View style={{ margin: moderateScale(16) }}>
             <CardHeaderText text={t('informationSubCategoryTitle')} />
           </View>
-          {informationSubCategories[infoCategory].map((cat, idx) => (
+          {(informationSubCategories[infoCategory] !== 'noSubCategories'
+            ? informationSubCategories[infoCategory]
+            : []
+          ).map((cat, idx) => (
             <InformationRow
               key={cat}
               borderTop={idx === 0}
               source={informationImages[cat]}
               mainText={t(`${cat}MainText`)}
               subText={t(`${cat}SubText`)}
-              rowOnPress={() => navigation.navigate(informationNavigateTo[cat])}
+              rowOnPress={() =>
+                navigation.navigate(informationNavigateTo[cat].toString())
+              } // TODO: proper types. This toString should not be here.
             />
           ))}
         </ScrollViewCard>

@@ -12,7 +12,8 @@ import {
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
-import { infoCategories, InfoCategory } from './types/information';
+import { infoCategories } from './types/information';
+import type { InfoCategory } from './types/information';
 import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
 
 class InformationMainCategoriesInner extends React.Component<{
@@ -32,7 +33,7 @@ class InformationMainCategoriesInner extends React.Component<{
   navigateTo(cat: InfoCategory) {
     const { navigate } = this.props.navigation;
     if (informationSubCategories[cat] === 'noSubCategories') {
-      navigate(informationNavigateTo[cat]);
+      navigate(informationNavigateTo[cat].toString()); // TODO: proper types. This toString should not be here.
     } else {
       navigate('InformationSubCategories', { infoCategory: cat });
     }

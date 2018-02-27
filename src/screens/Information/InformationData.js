@@ -7,6 +7,7 @@ import {
 } from './types/information';
 import type {
   InformationImagesType,
+  InformationNavigateToType,
   InformationSubCategoriesType,
 } from './types/information';
 
@@ -66,15 +67,12 @@ export const informationSubCategories: InformationSubCategoriesType = {
   prohibitionsAndRestrictions: prohibitionsAndRestrictionsSubCategories,
 };
 
-export const informationNavigateTo = {
-  // customsProcedures: 'noSubCategories',
+export const informationNavigateTo: InformationNavigateToType = {
   customsProcedures: 'CustomsProcedures',
   travelDocuments: 'TravelDocuments',
-  // travelDocuments: 'noSubCategories',
   declaration: declarationSubCategories,
   animalsAndPlants: animalsAndPlantsSubCategories,
   vehicles: vehiclesSubCategories,
-  // entryByTrain: 'noSubCategories',
   entryByTrain: 'EntryByTrain',
   prohibitionsAndRestrictions: prohibitionsAndRestrictionsSubCategories,
   vatAllowance: 'VatAllowance',
