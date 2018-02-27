@@ -7,9 +7,10 @@ import { moderateScale, scale } from '../../../styles/Scaling';
 type BulletTextProps = {
   text: string,
   style?: Object,
+  onPress?: () => void,
 };
 
-export const BulletText = ({ text, style }: BulletTextProps) => (
+export const BulletText = ({ text, style, onPress }: BulletTextProps) => (
   <Text
     style={{
       color: '#1A1A1A',
@@ -19,6 +20,7 @@ export const BulletText = ({ text, style }: BulletTextProps) => (
       paddingLeft: scale(20),
       ...style,
     }}
+    onPress={onPress}
   >
     {`\u2022   ${text}`}
   </Text>
@@ -26,4 +28,5 @@ export const BulletText = ({ text, style }: BulletTextProps) => (
 
 BulletText.defaultProps = {
   style: {},
+  onPress: () => {},
 };

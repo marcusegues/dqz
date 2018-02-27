@@ -30,13 +30,30 @@ import { AppInfo } from '../screens/AppInfo/AppInfo';
 import { LegalNoticeInfo } from '../screens/LegalNoticeInfo/LegalNoticeInfo';
 import { HomeIcon } from '../components/Headers/subcomponents/HomeIcon';
 import { DownloadIcon } from '../components/Headers/subcomponents/DownloadIcon';
-import { Information } from '../screens/Information/Information';
-import { SearchIcon } from '../components/Headers/subcomponents/SearchIcon';
+import { InformationMainCategories } from '../screens/Information/InformationMainCategories';
+import { InformationSubCategories } from '../screens/Information/InformationSubCategories';
+import { CustomsProcedures } from '../screens/Information/InformationScreens/mainCategories/CustomsProcedures';
+import { TravelDocuments } from '../screens/Information/InformationScreens/mainCategories/TravelDocuments';
 import type { Navigation } from '../types/generalTypes';
 import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
 import { UsefulInfoScreenTemplate } from '../screens/Information/subComponents/UsefulInfoScreenTemplate';
 import { SnackBarsContainer } from '../components/SnackBars/SnackBarsContainer';
 import type { ConnectivityType } from '../types/connectivity';
+import { VatAllowance } from '../screens/Information/InformationScreens/mainCategories/VatAllowance';
+import { DutyAllowance } from '../screens/Information/InformationScreens/mainCategories/DutyAllowance';
+import { PersonalEffects } from '../screens/Information/InformationScreens/mainCategories/PersonalEffects';
+import { ForeignVat } from '../screens/Information/InformationScreens/mainCategories/ForeignVat';
+import { EntryByTrain } from '../screens/Information/InformationScreens/mainCategories/EntryByTrain';
+import { Animals } from '../screens/Information/InformationScreens/subCategories/Animals';
+import { Plants } from '../screens/Information/InformationScreens/subCategories/Plants';
+import { SouvenirsAndSpeciesProtection } from '../screens/Information/InformationScreens/subCategories/SouvenirsAndSpeciesProtection';
+import { HighwayVignette } from '../screens/Information/InformationScreens/subCategories/HighwayVignette';
+import { RoadTax } from '../screens/Information/InformationScreens/subCategories/RoadTax';
+import { FuelAndRepairs } from '../screens/Information/InformationScreens/subCategories/FuelAndRepairs';
+import { Forgery } from '../screens/Information/InformationScreens/subCategories/Forgery';
+import { Cash } from '../screens/Information/InformationScreens/subCategories/Cash';
+import { Food } from '../screens/Information/InformationScreens/subCategories/Food';
+import { AuthorisationRequirements } from '../screens/Information/InformationScreens/subCategories/AuthorisationRequirements';
 
 export type NavigationObject = { navigation: Navigation };
 
@@ -117,11 +134,208 @@ export const stackNavigatorScreens = {
   UnderConstruction: {
     screen: UnderConstruction,
   },
-  Information: {
-    screen: Information,
+  InformationMainCategories: {
+    screen: InformationMainCategories,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: <HomeIcon navigation={navigation} />,
-      headerRight: <SearchIcon navigation={navigation} />,
+    }),
+  },
+  InformationSubCategories: {
+    screen: InformationSubCategories,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  CustomsProcedures: {
+    screen: CustomsProcedures,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  VatAllowance: {
+    screen: VatAllowance,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  DutyAllowance: {
+    screen: DutyAllowance,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  PersonalEffects: {
+    screen: PersonalEffects,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  ForeignVat: {
+    screen: ForeignVat,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  TravelDocuments: {
+    screen: TravelDocuments,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  EntryByTrain: {
+    screen: EntryByTrain,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  Animals: {
+    screen: Animals,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  Plants: {
+    screen: Plants,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  SouvenirsAndSpeciesProtection: {
+    screen: SouvenirsAndSpeciesProtection,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  HighwayVignette: {
+    screen: HighwayVignette,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  RoadTax: {
+    screen: RoadTax,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  FuelAndRepairs: {
+    screen: FuelAndRepairs,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  Forgery: {
+    screen: Forgery,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  Cash: {
+    screen: Cash,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  Food: {
+    screen: Food,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
+    }),
+  },
+  AuthorisationRequirements: {
+    screen: AuthorisationRequirements,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: (
+        <BackArrow
+          navigation={navigation}
+          onPress={() => navigation.goBack()}
+        />
+      ),
     }),
   },
   UsefulInfoScreenTemplate: {
