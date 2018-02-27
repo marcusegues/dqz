@@ -141,6 +141,7 @@ export const en: Locale = {
     timePickerTimePrefix: '',
     recordTheAmountOfMeat: 'Record the amount of meat you carry with you:',
     recordTheAmountOfTobacco: 'Record the amount of tobacco you carry:',
+    savedBasket: 'Current basket',
   },
   payment: {
     overViewTitle: 'Summary of your Declaration',

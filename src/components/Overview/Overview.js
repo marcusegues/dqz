@@ -22,7 +22,10 @@ import {
 } from '../../reducers';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
 import { InfoNote } from './subcomponents/InfoNote';
-import { getConvertedLocalTimeToSwiss } from '../../model/utils';
+import {
+  flatLargeAmounts,
+  getConvertedLocalTimeToSwiss,
+} from '../../model/utils';
 import { BackAndContinueButtons } from '../Buttons/BackAndContinueButtons';
 import type {
   Amounts,
@@ -30,6 +33,7 @@ import type {
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { CurrencyObject } from '../../model/currencies';
+import { storeReceiptEntryTime } from '../../asyncStorage/storageApi';
 
 type OverviewProps = {
   modalVisible?: boolean,
@@ -138,14 +142,16 @@ class OverviewInner extends React.Component<
           amounts={amounts}
           currencies={currencies}
         />
-        <VatList
-          large
-          borderTop={false}
-          people={people}
-          amounts={amounts}
-          currencies={currencies}
-          headerRight={false}
-        />
+        {flatLargeAmounts(amounts).length ? (
+          <VatList
+            large
+            borderTop={false}
+            people={people}
+            amounts={amounts}
+            currencies={currencies}
+            headerRight={false}
+          />
+        ) : null}
         <TotalOwedRow
           basket={basket}
           people={people}
@@ -185,8 +191,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setReceiptEntryTime: (receiptEntryTime: string) =>
-    dispatch({ type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime }),
+  setReceiptEntryTime: (receiptEntryTime: string) => {
+    storeReceiptEntryTime(receiptEntryTime);
+    dispatch({ type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime });
+  },
 });
 
 export const Overview = (connect(mapStateToProps, mapDispatchToProps)(

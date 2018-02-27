@@ -150,6 +150,7 @@ export const fr: Locale = {
       'Notez la quantité de viande que vous transportez avec vous:',
     recordTheAmountOfTobacco:
       'Notez la quantité de tabac que vous transportez:',
+    savedBasket: 'Panier actuel',
   },
   payment: {
     overViewTitle: "Vue d'ensemble de votre déclaration",

@@ -82,12 +82,4 @@ export type DeclarationAction =
       paymentData: PaymentData,
     }
   | { type: 'RESET_DECLARATION' }
-  | {
-      type: 'SET_DECLARATION',
-      people: People,
-      basket: Basket,
-      amounts: Amounts,
-      mainCategories: MainCategories,
-      paymentData: PaymentData,
-    }
   | { type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime: string };
