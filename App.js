@@ -147,7 +147,7 @@ export default class App extends React.Component<AppProps, AppStateT> {
         exo_extraLight: require('./assets/fonts/Exo-ExtraLight.otf'),
 
         ...Ionicons.font,
-        ...Entypo.font,
+        ...Entypo.font,    // fixes major bug related to using onLayout on Views with Entypo icons as children
       }),
       fetch(
         'http://www.pwebapps.ezv.admin.ch/apps/rates/rate/getxml?activeSearchType=yesterday'
