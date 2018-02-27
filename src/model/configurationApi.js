@@ -122,7 +122,7 @@ export const addQuantities = (
 export const getQuantities = (
   basket: Basket,
   category: Category
-): ImmutableListType<Object> =>
+): ImmutableListType<Quantity> =>
   basket.getIn([category, 'volume', 'quantities'], Immutable.List());
 
 /**
