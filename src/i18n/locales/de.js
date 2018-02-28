@@ -485,24 +485,83 @@ export const de: Locale = {
     souvenirsAndSpeciesProtectionMainText: 'Souvenirs und Artenschutz (CITES)',
     souvenirsAndSpeciesProtectionSubText:
       'Ein Gurt aus Elefantenleder, ein Traumfänger mit Vogelfedern ...',
+    souvenirsAndSpeciesProtectionText1: 'Souvenirs',
+    souvenirsAndSpeciesProtectionText2:
+      'Ein Gurt aus Elefantenleder, ein Traumfänger mit Vogelfedern oder Räucherstäbchen aus Sandelholz - das Angebot an Souvenirs ist vielfältig. Vielen Gegenständen sieht man nicht an, dass sie aus geschützten Tieren oder Pflanzen (z. B. Tropenholz) hergestellt worden sind. Doch vieles darf gar nicht in die Schweiz eingeführt werden.\n' +
+      'Es lohnt sich, schon vor den Ferien abzuklären, welche Souvenirs geeignet sind und welche Sie besser am Ferienort zurücklassen.',
+    souvenirsAndSpeciesProtectionText3: 'Artenschutz Tiere',
+    souvenirsAndSpeciesProtectionText4:
+      'Die Einfuhr geschützter Tiere oder deren Erzeugnisse ist entweder ganz verboten oder bewilligungspflichtig (dazu gehören z.B. Schlangen, Echsen, Schildkröten, Papageien, Elfenbein, Schildpatt, diverse Pelzfelle).',
+    souvenirsAndSpeciesProtectionText5:
+      'Der CITES-Kontrollstelle ist bei der Einfuhr eine Ausfuhrbewilligung oder Wiederausfuhrbescheinigung vorzulegen, ausgestellt von der CITES-Behörde des Herkunftslandes.',
+    souvenirsAndSpeciesProtectionText6: 'Artenschutz Pflanzen',
+    souvenirsAndSpeciesProtectionText7:
+      'Die Einfuhr geschützter Pflanzen oder deren Erzeugnisse ist entweder ganz verboten oder bewilligungspflichtig (z.B. Orchideen, Kakteen, gewisse Hölzer und Medizinalpflanzen).',
+    souvenirsAndSpeciesProtectionText8:
+      'Auskünfte und Bewilligungen erteilt das Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:',
   },
 
   highwayVignette: {
     highwayVignetteMainText: 'Autobahnvignette',
     highwayVignetteSubText:
       'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen ...',
+    highwayVignetteText1:
+      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen und Anhängern bis je 3,5 Tonnen ist abgabepflichtig. Der Verkaufspreis der Vignette beträgt CHF 40.',
+    highwayVignetteText2: 'Verkaufsstellen',
+    highwayVignetteText3:
+      'In der Schweiz erhalten Sie die Vignette z. B. bei Poststellen oder Tankstellen.',
+    highwayVignetteText4:
+      'Bei den besetzten Grenzübergängen erhalten Sie die Vignette vom Zollpersonal. Sie können mit Kreditkarte oder bar (CHF, EUR, USD, GBP) bezahlen.',
+    highwayVignetteText5:
+      'Im Ausland ist die Vignette bei Automobilclubs, in Grenznähe zur Schweiz auch an Autobahntankstellen sowie Kiosken oder Trafiken (Österreich) erhältlich.',
+    highwayVignetteText6: 'Anbringen der Vignette',
+    highwayVignetteText7:
+      'Die Vignette ist nur gültig, wenn sie am Fahrzeug aufgeklebt ist:',
+    highwayVignetteText8:
+      'bei Motorwagen auf der Innenseite der Windschutzscheibe (nicht im Tönungsstreifen);',
+    highwayVignetteText9:
+      'bei Anhängern und Motorrädern an einem nicht auswechselbaren, leicht zugänglichen Teil.',
+    highwayVignetteText10:
+      'Lediglich mit Klebstreifen oder anders angebrachte Vignetten sind ungültig. Fahren Sie auf Autobahnen und Autostrassen ohne oder mit ungültiger Vignette werden Sie mit CHF 200 gebüsst. Zusätzlich müssen Sie eine Vignette kaufen und am Fahrzeug anbringen.',
   },
 
   roadTax: {
     roadTaxMainText: 'Strassenverkehrsabgabe über 3,5 T (PSVA)',
     roadTaxSubText:
       'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 ...',
+    roadTaxText1:
+      'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 Tonnen eine Schwerverkehrsabgabe erhoben. Für Busse, schwere Wohnmobile, schwere Personenwagen und deren Anhänger über 3,5 Tonnen wird die Abgabe pauschal pro Tag erhoben.',
+    roadTaxText2:
+      'Im Gegensatz zur Autobahnvignette für Personenwagen wird die Schwerverkehrsabgabe nicht nur auf den Autobahnen sondern auf dem gesamten Strassennetz fällig.',
+    roadTaxText3: 'Für LKWs und deren Anhänger siehe:',
+    roadTaxText4:
+      'Bitte beachten: PSVA-pflichtig ist das Fahrzeug auch, wenn es nur abgestellt ist und nicht bewegt wird (z. B. Wohnmobil auf Campingplatz).',
+    roadTaxText5: 'Bezahlung und Tarife',
+    roadTaxText6:
+      'Berechnungsgrundlage bilden das Gesamtgewicht bzw. die Anhängelast des Zugfahrzeugs gemäss Fahrzeugausweis und die Abgabeperiode.',
+    roadTaxText7: 'Es bestehen folgende Möglichkeiten, die PSVA zu entrichten:',
+    roadTaxText8: 'für 1 bis 30 aufeinander folgende Tage',
+    roadTaxText9: 'für 10 frei wählbare Tage innerhalb eines Jahres',
+    roadTaxText10: 'für 1 bis 11 aufeinander folgende Monate',
+    roadTaxText11: 'für 1 Jahr',
+    roadTaxText12:
+      'Die Tarife finden Sie im Formular 15.91. Sie erhalten das Formular bei den Zollstellen. Für ausländische Fahrzeuge erheben wir die Schwerverkehrsabgabe bei der Einreise beim Grenzübergang. Das gestempelte Formular gilt als Zahlungsnachweis. Verlängern Sie den Aufenthalt in der Schweiz, melden Sie sich bei einer Schweizer Zollstelle.',
+    roadTaxText13: 'Bitte beachten:',
+    roadTaxText14: 'Mindestabgabe pro Zahlungsnachweis: CHF 25.',
+    roadTaxText15: 'Monats- und Jahrestarife gemäss Formular 15.91.',
   },
 
   fuelAndRepairs: {
     fuelAndRepairsMainText: 'Treibstoff und Reparaturen',
     fuelAndRepairsSubText:
       'Der Tankinhalt ist abgabenfrei. In einem Reservekanister können Sie zudem bis 25 Liter ...',
+    fuelAndRepairsText1: 'Treibstoff für Fahrzeuge',
+    fuelAndRepairsText2:
+      'Der Tankinhalt ist abgabenfrei. In einem Reservekanister können Sie zudem bis 25 Liter Treibstoff abgabenfrei einführen. Jeder weitere Liter kostet CHF -.75 Zoll - zudem müssen Sie die Mehrwertsteuer auf den Wert des Treibstoffs bezahlen.',
+    fuelAndRepairsText3: 'Reparatur und Unterhaltskosten',
+    fuelAndRepairsText4:
+      'Wird die Wertfreigrenze von CHF 300 überschritten, müssen Sie für alle Reparatur- und Unterhaltskosten (Reparaturen an Fahrzeugen, elektronischen Geräten, Möbel, Schmuck usw.) MWST bezahlen.  Detailliertere Informationen finden Sie unter:',
+    fuelAndRepairsText5: 'Wertfreigrenze CHF 300',
   },
 
   forgery: {

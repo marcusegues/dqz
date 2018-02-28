@@ -352,21 +352,59 @@ type PlantsTranslations = {
 type SouvenirsAndSpeciesProtectionTranslations = {
   souvenirsAndSpeciesProtectionMainText: string,
   souvenirsAndSpeciesProtectionSubText: string,
+  souvenirsAndSpeciesProtectionText1: string,
+  souvenirsAndSpeciesProtectionText2: string,
+  souvenirsAndSpeciesProtectionText3: string,
+  souvenirsAndSpeciesProtectionText4: string,
+  souvenirsAndSpeciesProtectionText5: string,
+  souvenirsAndSpeciesProtectionText6: string,
+  souvenirsAndSpeciesProtectionText7: string,
+  souvenirsAndSpeciesProtectionText8: string,
 };
 
 type HighwayVignetteTranslations = {
   highwayVignetteMainText: string,
   highwayVignetteSubText: string,
+  highwayVignetteText1: string,
+  highwayVignetteText2: string,
+  highwayVignetteText3: string,
+  highwayVignetteText4: string,
+  highwayVignetteText5: string,
+  highwayVignetteText6: string,
+  highwayVignetteText7: string,
+  highwayVignetteText8: string,
+  highwayVignetteText9: string,
+  highwayVignetteText10: string,
 };
 
 type RoadTaxTranslations = {
   roadTaxMainText: string,
   roadTaxSubText: string,
+  roadTaxText1: string,
+  roadTaxText2: string,
+  roadTaxText3: string,
+  roadTaxText4: string,
+  roadTaxText5: string,
+  roadTaxText6: string,
+  roadTaxText7: string,
+  roadTaxText8: string,
+  roadTaxText9: string,
+  roadTaxText10: string,
+  roadTaxText11: string,
+  roadTaxText12: string,
+  roadTaxText13: string,
+  roadTaxText14: string,
+  roadTaxText15: string,
 };
 
 type FuelAndRepairsTranslations = {
   fuelAndRepairsMainText: string,
   fuelAndRepairsSubText: string,
+  fuelAndRepairsText1: string,
+  fuelAndRepairsText2: string,
+  fuelAndRepairsText3: string,
+  fuelAndRepairsText4: string,
+  fuelAndRepairsText5: string,
 };
 
 type ForgeryTranslations = {
