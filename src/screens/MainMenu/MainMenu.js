@@ -20,7 +20,7 @@ import {
   fetchPeople,
   fetchReceiptEntryTime,
 } from '../../asyncStorage/storageApi';
-import { isInitBasket } from '../../utils/declaration';
+import { isInitBasket } from '../../utils/declaration/declaration';
 import {
   getAmounts,
   getBasket,

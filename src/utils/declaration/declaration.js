@@ -4,11 +4,11 @@ import type {
   Amounts,
   Basket,
   People,
-} from '../model/types/basketPeopleAmountsTypes';
-import { emptyMainCategories } from '../types/reducers/declaration';
-import { makePeopleRecord } from '../model/types/basketPeopleAmountsTypes';
-import { emptyBasket } from '../model/configurationApi';
-import type { MainCategories } from '../types/reducers/declaration';
+} from '../../model/types/basketPeopleAmountsTypes';
+import { emptyMainCategories } from '../../types/reducers/declaration';
+import { makePeopleRecord } from '../../model/types/basketPeopleAmountsTypes';
+import { emptyBasket } from '../../model/configurationApi';
+import type { MainCategories } from '../../types/reducers/declaration';
 
 export const isInitBasket = (
   people: People,

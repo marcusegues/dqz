@@ -119,9 +119,7 @@ export const getTotalDuty = (state: AppState): number =>
  * @param state
  * @returns {number}
  */
-export const getTotalFees = (state: AppState): number => {
-  return getTotalVat(state) + getTotalDuty(state);
-};
+export const getTotalFees = (state: AppState): number => getTotalVat(state) + getTotalDuty(state);
 
 /**
  * Gets current payment data
