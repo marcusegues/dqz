@@ -1,10 +1,14 @@
 // @flow
 import React from 'react';
+// $FlowFixMe
+import { Text } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import type { TFunction } from '../../../../types/generalTypes';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
+import { verticalScale } from '../../../../styles/Scaling';
+import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 
 type SouvenirsAndSpeciesProtectionInnerProps = {
   t: TFunction,
@@ -13,11 +17,36 @@ type SouvenirsAndSpeciesProtectionInnerProps = {
 const SouvenirsAndSpeciesProtectionInner = ({
   t,
 }: SouvenirsAndSpeciesProtectionInnerProps) => (
-  <SubCategoryContainer title={t('SouvenirsAndSpeciesProtection')}>
-    <AppInfoSubText text="SouvenirsAndSpeciesProtection" />
+  <SubCategoryContainer title={t('souvenirsAndSpeciesProtectionMainText')}>
+    <CardRowText
+      text={t('souvenirsAndSpeciesProtectionText1')}
+      style={{ marginTop: verticalScale(10) }}
+    />
+    <AppInfoSubText text={t('souvenirsAndSpeciesProtectionText2')} />
+    <CardRowText
+      text={t('souvenirsAndSpeciesProtectionText3')}
+      style={{ marginTop: verticalScale(20) }}
+    />
+    <AppInfoSubText text={t('souvenirsAndSpeciesProtectionText4')} />
+    <AppInfoSubText
+      text={t('souvenirsAndSpeciesProtectionText5')}
+      style={{ marginTop: verticalScale(10) }}
+    />
+    <CardRowText
+      text={t('souvenirsAndSpeciesProtectionText6')}
+      style={{ marginTop: verticalScale(20) }}
+    />
+    <AppInfoSubText text={t('souvenirsAndSpeciesProtectionText7')} />
+    <AppInfoSubText
+      text={t('souvenirsAndSpeciesProtectionText8')}
+      style={{ marginTop: verticalScale(10) }}
+    />
+    <Text>www.blv.admin.ch</Text>
   </SubCategoryContainer>
 );
 
-export const SouvenirsAndSpeciesProtection = (translate(['information'])(
-  SouvenirsAndSpeciesProtectionInner
-): ComponentType<SouvenirsAndSpeciesProtectionInnerProps>);
+export const SouvenirsAndSpeciesProtection = (translate([
+  'souvenirsAndSpeciesProtection',
+])(SouvenirsAndSpeciesProtectionInner): ComponentType<
+  SouvenirsAndSpeciesProtectionInnerProps
+>);

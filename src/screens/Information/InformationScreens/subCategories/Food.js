@@ -17,6 +17,6 @@ const FoodInner = ({ t }: FoodInnerProps) => (
   </SubCategoryContainer>
 );
 
-export const Food = (translate(['information'])(FoodInner): ComponentType<
+export const Food = (translate(['food'])(FoodInner): ComponentType<
   FoodInnerProps
 >);

@@ -176,12 +176,10 @@ export const en: Locale = {
     chooseOtherEntryTime: 'Choose new time of entry',
     until: 'until',
   },
-  information: {
-    informationTitle: 'Information',
-    informationSubCategoryTitle: 'I have goods with me:',
-    customsProceduresMainText: 'Proceeding at the customs',
-    customsProceduresSubText:
-      'As a private individual you have to enter Switzerland ...',
+
+  customsProcedures: {
+    customsProceduresMainText: '',
+    customsProceduresSubText: '',
     customsProceduresText1: '',
     customsProceduresText2: '',
     customsProceduresText3: '',
@@ -203,28 +201,16 @@ export const en: Locale = {
     customsProceduresText19: '',
     customsProceduresText20: '',
     customsProceduresText21: '',
+  },
 
-    travelDocumentsMainText: 'Travel documents',
-    travelDocumentsSubText:
-      'To enter Switzerland foreign nationals need a valid ...',
+  travelDocuments: {
+    travelDocumentsMainText: '',
+    travelDocumentsSubText: '',
     travelDocumentsText1: '',
     travelDocumentsText2: '',
+  },
 
-    declarationMainText: 'I have goods with me',
-    declarationSubText: 'Goods for your private use or as a gift ...',
-    animalsAndPlantsMainText: 'I have animals or plants with me',
-    animalsAndPlantsSubText:
-      'For dogs, cats, other pets and horses you will find the ...',
-    vehiclesMainText: "I'm traveling with a vehicle",
-    vehiclesSubText:
-      'The use of highways and motorways with motor vehicles and trailers ...',
-    entryByTrainMainText: 'Entry by train',
-    entryByTrainSubText:
-      'If customs personnel are present on the train, you must take all goods ...',
-    prohibitionsAndRestrictionsMainText: 'Prohibitions and restrictions',
-    prohibitionsAndRestrictionsSubText:
-      'It is forbidden to introduce trademark and design counterfeits. The Swiss customs ...',
-
+  vatAllowance: {
     vatAllowanceMainText: '',
     vatAllowanceSubText: '',
     vatAllowanceText1: '',
@@ -271,7 +257,9 @@ export const en: Locale = {
     vatAllowanceText42: '',
     vatAllowanceText43: '',
     vatAllowanceText44: '',
+  },
 
+  dutyAllowance: {
     dutyAllowanceMainText: '',
     dutyAllowanceSubText: '',
     dutyAllowanceText1: '',
@@ -321,7 +309,9 @@ export const en: Locale = {
     dutyAllowanceText45: '',
     dutyAllowanceText46: '',
     dutyAllowanceText47: '',
+  },
 
+  personalEffects: {
     personalEffectsMainText: '',
     personalEffectsSubText: '',
     personalEffectsText1: '',
@@ -331,22 +321,28 @@ export const en: Locale = {
     personalEffectsText5: '',
     personalEffectsText6: '',
     personalEffectsText7: '',
+  },
 
+  foreignVat: {
     foreignVatMainText: '',
     foreignVatSubText: '',
-    foreignVatMainText1: '',
-    foreignVatMainText2: '',
-    foreignVatMainText3: '',
-    foreignVatMainText4: '',
-    foreignVatMainText5: '',
+    foreignVatText1: '',
+    foreignVatText2: '',
+    foreignVatText3: '',
+    foreignVatText4: '',
+    foreignVatText5: '',
+  },
 
+  animals: {
     animalsMainText: '',
     animalsSubText: '',
     animalsText1: '',
     animalsText2: '',
     animalsText3: '',
     animalsText4: '',
+  },
 
+  plants: {
     plantsMainText: '',
     plantsSubText: '',
     plantsText1: '',
@@ -380,6 +376,128 @@ export const en: Locale = {
     plantsText29: '',
     plantsText30: '',
     plantsText31: '',
+  },
+
+  souvenirsAndSpeciesProtection: {
+    souvenirsAndSpeciesProtectionMainText: '',
+    souvenirsAndSpeciesProtectionSubText: '',
+    souvenirsAndSpeciesProtectionText1: '',
+    souvenirsAndSpeciesProtectionText2: '',
+    souvenirsAndSpeciesProtectionText3: '',
+    souvenirsAndSpeciesProtectionText4: '',
+    souvenirsAndSpeciesProtectionText5: '',
+    souvenirsAndSpeciesProtectionText6: '',
+    souvenirsAndSpeciesProtectionText7: '',
+    souvenirsAndSpeciesProtectionText8: '',
+  },
+
+  highwayVignette: {
+    highwayVignetteMainText: '',
+    highwayVignetteSubText: '',
+    highwayVignetteText1: '',
+    highwayVignetteText2: '',
+    highwayVignetteText3: '',
+    highwayVignetteText4: '',
+    highwayVignetteText5: '',
+    highwayVignetteText6: '',
+    highwayVignetteText7: '',
+    highwayVignetteText8: '',
+    highwayVignetteText9: '',
+    highwayVignetteText10: '',
+  },
+
+  roadTax: {
+    roadTaxMainText: '',
+    roadTaxSubText: '',
+    roadTaxText1: '',
+    roadTaxText2: '',
+    roadTaxText3: '',
+    roadTaxText4: '',
+    roadTaxText5: '',
+    roadTaxText6: '',
+    roadTaxText7: '',
+    roadTaxText8: '',
+    roadTaxText9: '',
+    roadTaxText10: '',
+    roadTaxText11: '',
+    roadTaxText12: '',
+    roadTaxText13: '',
+    roadTaxText14: '',
+    roadTaxText15: '',
+  },
+
+  fuelAndRepairs: {
+    fuelAndRepairsMainText: '',
+    fuelAndRepairsSubText: '',
+    fuelAndRepairsText1: '',
+    fuelAndRepairsText2: '',
+    fuelAndRepairsText3: '',
+    fuelAndRepairsText4: '',
+    fuelAndRepairsText5: '',
+  },
+
+  forgery: {
+    forgeryMainText: '',
+    forgerySubText: '',
+  },
+
+  cash: {
+    cashMainText: '',
+    cashSubText: '',
+  },
+
+  food: {
+    foodMainText: '',
+    foodSubText: '',
+  },
+
+  authorisationRequirements: {
+    authorisationRequirementsMainText: '',
+    authorisationRequirementsSubText: '',
+  },
+
+  information: {
+    informationTitle: 'Information',
+    informationSubCategoryTitle: 'I have goods with me:',
+    customsProceduresMainText: 'Proceeding at the customs',
+    customsProceduresSubText:
+      'As a private individual you have to enter Switzerland ...',
+    travelDocumentsMainText: 'Travel documents',
+    travelDocumentsSubText:
+      'To enter Switzerland foreign nationals need a valid ...',
+
+    declarationMainText: 'I have goods with me',
+    declarationSubText: 'Goods for your private use or as a gift ...',
+    animalsAndPlantsMainText: 'I have animals or plants with me',
+    animalsAndPlantsSubText:
+      'For dogs, cats, other pets and horses you will find the ...',
+    vehiclesMainText: "I'm traveling with a vehicle",
+    vehiclesSubText:
+      'The use of highways and motorways with motor vehicles and trailers ...',
+    entryByTrainMainText: 'Entry by train',
+    entryByTrainSubText:
+      'If customs personnel are present on the train, you must take all goods ...',
+    prohibitionsAndRestrictionsMainText: 'Prohibitions and restrictions',
+    prohibitionsAndRestrictionsSubText:
+      'It is forbidden to introduce trademark and design counterfeits. The Swiss customs ...',
+
+    vatAllowanceMainText: '',
+    vatAllowanceSubText: '',
+
+    dutyAllowanceMainText: '',
+    dutyAllowanceSubText: '',
+
+    personalEffectsMainText: '',
+    personalEffectsSubText: '',
+
+    foreignVatMainText: '',
+    foreignVatSubText: '',
+
+    animalsMainText: '',
+    animalsSubText: '',
+
+    plantsMainText: '',
+    plantsSubText: '',
 
     souvenirsAndSpeciesProtectionMainText: '',
     souvenirsAndSpeciesProtectionSubText: '',

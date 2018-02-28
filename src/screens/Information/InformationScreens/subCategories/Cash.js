@@ -17,6 +17,6 @@ const CashInner = ({ t }: CashInnerProps) => (
   </SubCategoryContainer>
 );
 
-export const Cash = (translate(['information'])(CashInner): ComponentType<
+export const Cash = (translate(['cash'])(CashInner): ComponentType<
   CashInnerProps
 >);
