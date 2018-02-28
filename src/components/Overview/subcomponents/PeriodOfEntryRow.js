@@ -6,6 +6,7 @@ import { Row } from '../../../components/Rows/Row';
 import { CardRowText } from '../../QuestionAnswer/Cards/subcomponents/CardRowText';
 import { CardRowSubText } from '../../QuestionAnswer/Cards/subcomponents/CardRowSubText';
 import * as colors from '../../../styles/colors';
+import { rowStyles } from '../../Rows/styles/rowStyles';
 
 const ownStyles = {
   container: {
@@ -34,7 +35,7 @@ export const PeriodOfEntryRow = ({
 }: PeriodOfEntryRowProps) => (
   <Row borderTop>
     <TouchableWithoutFeedback onPress={onPress}>
-      <View style={ownStyles.container}>
+      <View style={[rowStyles.rowContent]}>
         <View style={ownStyles.textContainer}>
           <CardRowText text={title} style={{ paddingBottom: 3 }} />
           <CardRowSubText
