@@ -71,7 +71,9 @@ const MainCategoriesCheckListInner = ({
           >
             <View style={ownStyles.flatListRow}>
               <CheckBox checked={mainCategories.has(item.key)} />
-              <Text style={ownStyles.flatListText}>{t(item.key)}</Text>
+              <View style={{ flex: 1 }}>
+                <Text style={ownStyles.flatListText}>{t(item.key)}</Text>
+              </View>
             </View>
           </Touchable>
         )}
