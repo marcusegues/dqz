@@ -100,7 +100,7 @@ export const de: Locale = {
       'Basierend auf dem letzten verfügbaren Wechsel-kurs, welcher beim Bezahlen aktualisiert wird.',
   },
   qaFlow: {
-    declareGoods: 'Waren Deklarieren',
+    declareGoods: 'Waren anmelden',
     toOverview: 'Zur Übersicht',
     adult: 'Erwachsene',
     adultInfo: '17+ Jahre',
@@ -657,9 +657,9 @@ export const de: Locale = {
   },
   units: {
     kilo: 'kg',
-    kilo_plural: 'kgs',
+    kilo_plural: 'kg',
     kiloOrLiter: 'kg/Liter',
-    kiloOrLiter_plural: 'kgs/Liter',
+    kiloOrLiter_plural: 'kg/Liter',
     liter: 'Liter',
     liter_plural: 'Liter',
     unit: 'Stück',

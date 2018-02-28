@@ -7,7 +7,7 @@ import { I18nextProvider } from 'react-i18next';
 import { Platform, StatusBar, StyleSheet, View, AppState } from 'react-native';
 // $FlowFixMe
 import { AppLoading, Asset, Font } from 'expo';
-import { Ionicons, Entypo, MaterialIcons } from '@expo/vector-icons';
+import { Ionicons, Entypo } from '@expo/vector-icons';
 import { Provider } from 'react-redux';
 
 import { i18nImplementation } from './src/i18n';
@@ -88,6 +88,13 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/images/info/freeLimit.png'),
 
         require('./assets/icons/mwst.png'),
+        require('./assets/icons/iva.png'),
+        require('./assets/icons/tva.png'),
+        require('./assets/icons/vat.png'),
+        require('./assets/icons/zoll.png'),
+        require('./assets/icons/dogana.png'),
+        require('./assets/icons/duoane.png'),
+        require('./assets/icons/customs.png'),
         require('./assets/icons/mainCategories.png'),
         require('./assets/icons/travellers.png'),
         require('./assets/icons/adult.png'),
@@ -148,7 +155,6 @@ export default class App extends React.Component<AppProps, AppStateT> {
 
         ...Ionicons.font,
         ...Entypo.font, // fixes major bug related to using onLayout on Views with Entypo icons as children
-        ...MaterialIcons.font,
       }),
       fetch(
         'http://www.pwebapps.ezv.admin.ch/apps/rates/rate/getxml?activeSearchType=yesterday'
