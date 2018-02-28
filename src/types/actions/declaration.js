@@ -17,6 +17,10 @@ export type DeclarationAction =
       quantity: number,
     }
   | {
+      type: 'BASKET_RESET_CATEGORY_QUANTITIES',
+      category: Category,
+    }
+  | {
       type: 'SET_BASKET',
       basket: Basket,
     }

@@ -1,7 +1,9 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
 import type { ComponentType } from 'react';
 import Swipeable from 'react-native-swipeable';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -15,6 +17,9 @@ import { OverviewInfo } from '../subcomponents/OverviewInfo';
 import { Row } from '../../../Row';
 import { TotalOwed } from '../subcomponents/TotalOwed';
 import { rowStyles } from '../../../styles/rowStyles';
+import { storeBasket } from '../../../../../asyncStorage/storageApi';
+import { resetQuantities } from '../../../../../model/configurationApi';
+import { getBasket } from '../../../../../reducers';
 
 type DutyRowProps = {
   category: Category,
@@ -24,75 +29,107 @@ type DutyRowProps = {
   allowanceRaw: number,
 };
 
-const leftContent = <Text>Pull to activate</Text>;
-
-const rightButtons = [
-  <TouchableHighlight
-    style={{
-      flex: 1,
-      backgroundColor: 'red',
-    }}
-  >
-    <Text>Button 1</Text>
-  </TouchableHighlight>,
-  <TouchableHighlight
-    style={{
-      flex: 1,
-      backgroundColor: 'green',
-    }}
-  >
-    <Text>Button 2</Text>
-  </TouchableHighlight>,
-];
-
-const DutyRowInner = ({
-  category,
-  quantity,
-  duty,
-  borderTop = false,
-  t,
-  allowanceRaw,
-}: DutyRowProps & { t: TFunction }) => {
-  const unit = t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
-    count: quantity,
-  });
-
-  return (
-    <Row borderTop={borderTop}>
-      <Swipeable
-        leftContent={leftContent}
-        rightButtons={rightButtons}
-        rightActionActivationDistance={200}
-        rightButtonWidth={90}
-      >
-        <View style={[rowStyles.rowContent]}>
-          <OverviewInfo
-            title={t(`categories:${category}`)}
-            subtitle={`${t('overview:declared')} ${quantity.toFixed(2)} ${
-              unit
-            }`}
-          >
-            <AllowanceIcon
-              text={t('overview:dutyFree')}
-              quantity={allowanceRaw}
-              unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
-                count: allowanceRaw,
-              })}
-            />
-          </OverviewInfo>
-          <QuantityIcon
-            quantity={Math.max(0, quantity - allowanceRaw).toFixed(2)}
-            unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
-              count: Math.max(0, quantity - allowanceRaw),
-            })}
-          />
-          <TotalOwed result={duty.toFixed(2)} />
-        </View>
-      </Swipeable>
-    </Row>
-  );
+type ReduxInject = {
+  basketResetCategoryQuantities: () => void,
 };
 
-export const DutyRow = (translate(['categories', 'overview', 'units'])(
-  DutyRowInner
-): ComponentType<DutyRowProps>);
+class DutyRowInner extends React.Component<
+  DutyRowProps & ReduxInject & { t: TFunction }
+> {
+  getRightSwipeButtons() {
+    const { basketResetCategoryQuantities, category } = this.props;
+    return [
+      <TouchableHighlight
+        style={{
+          flex: 1,
+          backgroundColor: 'rgb(217,10,35)',
+          justifyContent: 'center',
+        }}
+        onPress={() => basketResetCategoryQuantities(category)}
+      >
+        <Ionicons
+          name="md-trash"
+          size={30}
+          style={{ color: 'white', paddingLeft: 35 }}
+        />
+      </TouchableHighlight>,
+    ];
+  }
+  render() {
+    const {
+      category,
+      quantity,
+      duty,
+      borderTop = false,
+      t,
+      allowanceRaw,
+    } = this.props;
+    const unit = t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
+      count: quantity,
+    });
+
+    return (
+      <Row borderTop={borderTop}>
+        <Swipeable
+          rightButtons={this.getRightSwipeButtons()}
+          rightButtonWidth={90}
+        >
+          <View style={[rowStyles.rowContent]}>
+            <OverviewInfo
+              title={t(`categories:${category}`)}
+              subtitle={`${t('overview:declared')} ${quantity.toFixed(2)} ${
+                unit
+              }`}
+            >
+              <AllowanceIcon
+                text={t('overview:dutyFree')}
+                quantity={allowanceRaw}
+                unit={t(
+                  `units:${CategoriesInfo.getIn([category, 'unit'], '')}`,
+                  {
+                    count: allowanceRaw,
+                  }
+                )}
+              />
+            </OverviewInfo>
+            <QuantityIcon
+              quantity={Math.max(0, quantity - allowanceRaw).toFixed(2)}
+              unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
+                count: Math.max(0, quantity - allowanceRaw),
+              })}
+            />
+            <TotalOwed result={duty.toFixed(2)} />
+          </View>
+        </Swipeable>
+      </Row>
+    );
+  }
+}
+
+const mapStateToProps = state => ({
+  basket: getBasket(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+  setBasket: basket => {
+    dispatch({ type: 'SET_BASKET', basket });
+  },
+});
+
+const mergeProps = (stateProps, dispatchProps) => ({
+  basketResetCategoryQuantities: category => {
+    const { basket } = stateProps;
+    const { setBasket } = dispatchProps;
+    const newBasket = resetQuantities(basket, category);
+    storeBasket(newBasket);
+    setBasket(newBasket);
+  },
+});
+
+export const DutyRow = (connect(
+  mapStateToProps,
+  mapDispatchToProps,
+  mergeProps
+)(translate(['categories', 'overview', 'units'])(DutyRowInner)): ComponentType<
+  DutyRowProps
+>);

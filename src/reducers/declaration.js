@@ -45,6 +45,15 @@ export const declaration = (
         modelApi.addQuantity(basket, category, action.quantity)
       );
     }
+
+    case 'BASKET_RESET_CATEGORY_QUANTITIES': {
+      const category: Category = action.category;
+      const basket: Basket = state.get('basket');
+      return state.setIn(
+        ['basket'],
+        modelApi.resetQuantities(basket, category)
+      );
+    }
     case 'SET_BASKET': {
       const basket: Basket = action.basket;
       return state.set('basket', basket);
