@@ -20,6 +20,6 @@ const EntryByTrainInner = ({ t }: EntryByTrainInnerProps) => (
   </SubCategoryContainer>
 );
 
-export const EntryByTrain = (translate(['information'])(
+export const EntryByTrain = (translate(['entryByTrain'])(
   EntryByTrainInner
 ): ComponentType<EntryByTrainInnerProps>);

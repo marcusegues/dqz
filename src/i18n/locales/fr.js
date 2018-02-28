@@ -187,10 +187,8 @@ export const fr: Locale = {
     chooseOtherEntryTime: 'Choisissez une autre période',
     until: "jusqu'à",
   },
-  information: {
-    informationTitle: 'Informations utiles',
-    informationSubCategoryTitle: "J'ai des biens avec vous:",
 
+  customsProcedures: {
     customsProceduresMainText: 'Procédant à la douane',
     customsProceduresSubText:
       'En tant que particulier, vous devez entrer en Suisse ...',
@@ -232,7 +230,9 @@ export const fr: Locale = {
     customsProceduresText20: 'Attention:',
     customsProceduresText21:
       "Qu'elle soit verbale, effectuée au moyen de l'application ou par l'intermédiaire d'une boîte à déclarations, la déclaration lie son auteur. Nous effectuons également des contrôles douaniers à l'intérieur du pays. Une déclaration en douane subséquente n'est pas possible. Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
+  },
 
+  travelDocuments: {
     travelDocumentsMainText: 'Documents de voyage',
     travelDocumentsSubText:
       "Pour entrer en Suisse, les étrangers ont besoin d'un ...",
@@ -240,22 +240,9 @@ export const fr: Locale = {
       "Pour entrer en Suisse, les ressortissants étrangers ont besoin d'un document de voyage valable et reconnu par la Suisse. Dans certains cas, un visa est en outre nécessaire. Vous pouvez obtenir des informations sur les modalités d'entrée et de séjour en Suisse (prescriptions relatives aux documents de voyage et visas) sur le site Internet du Secrétariat d'État aux migrations:",
     travelDocumentsText2:
       "Pour connaître les prescriptions en matière de documents de voyage qui sont applicables à l'étranger, il faut s'adresser aux autorités étrangères correspondantes, via le lien de l'OMD:",
+  },
 
-    declarationMainText: "J'ai des biens avec moi",
-    declarationSubText: 'Marchandises pour votre usage privé ou en cadeau ...',
-    animalsAndPlantsMainText: "J'ai des animaux ou des plantes avec moi",
-    animalsAndPlantsSubText:
-      'Pour les chiens, les chats, les autres animaux domestiques et les chevaux, vous trouverez ...',
-    vehiclesMainText: 'Je voyage avec un véhicule',
-    vehiclesSubText:
-      "L'utilisation des autoroutes et des autoroutes avec des véhicules à moteur et des remorques ...",
-    entryByTrainMainText: 'Entrée en train',
-    entryByTrainSubText:
-      'Si le personnel des douanes est présent dans le train, vous devez prendre toutes les marchandises ...',
-    prohibitionsAndRestrictionsMainText: 'Interdictions et restrictions',
-    prohibitionsAndRestrictionsSubText:
-      "Il est interdit d'introduire des contrefaçons de marque et de design. Les douanes suisses ...",
-
+  vatAllowance: {
     vatAllowanceMainText: 'Franchise-valeur de 300 francs',
     vatAllowanceSubText:
       'Les marchandises que vous importez pour votre usage privé ou pour ...',
@@ -307,7 +294,6 @@ export const fr: Locale = {
     vatAllowanceText25:
       'pour les marchandises montées ou assemblées: \n' +
       'marchandises montées ou assemblées = un bien (même si les différents composants sont indiqués séparément sur la facture).',
-
     vatAllowanceText26: 'Exemples:',
     vatAllowanceText27:
       "1.\tUne facture est établie comme suit pour l'achat d'un ordinateur:",
@@ -330,7 +316,9 @@ export const fr: Locale = {
     vatAllowanceText42: '1 monture\t\t\t  fr. 300',
     vatAllowanceText43: 'Total\tfr. 700',
     vatAllowanceText44: '= 1 bien (un bien assemblé)',
+  },
 
+  dutyAllowance: {
     dutyAllowanceMainText:
       'Franchises quantitatives: denrées alimentaires, alcool et tabac',
     dutyAllowanceSubText:
@@ -410,7 +398,9 @@ export const fr: Locale = {
       "Marchandises commandées à l'étranger et livrées par la Poste ou un service de courrier rapide",
     dutyAllowanceText47:
       "D'autres dispositions sont applicables aux marchandises que vous commandez à l'étranger (par ex. sur Internet) et qui vous sont expédiées par la Poste ou par un service de courrier rapide. Informations complémentaires",
+  },
 
+  personalEffects: {
     personalEffectsMainText: 'Effets personnels et dispositions de voyage',
     personalEffectsSubText: '',
     personalEffectsText1: '',
@@ -420,22 +410,28 @@ export const fr: Locale = {
     personalEffectsText5: '',
     personalEffectsText6: '',
     personalEffectsText7: '',
+  },
 
+  foreignVat: {
     foreignVatMainText: 'Remboursement de la TVA étrangère',
     foreignVatSubText: '',
-    foreignVatMainText1: '',
-    foreignVatMainText2: '',
-    foreignVatMainText3: '',
-    foreignVatMainText4: '',
-    foreignVatMainText5: '',
+    foreignVatText1: '',
+    foreignVatText2: '',
+    foreignVatText3: '',
+    foreignVatText4: '',
+    foreignVatText5: '',
+  },
 
+  animals: {
     animalsMainText: '',
     animalsSubText: '',
     animalsText1: '',
     animalsText2: '',
     animalsText3: '',
     animalsText4: '',
+  },
 
+  plants: {
     plantsMainText: '',
     plantsSubText: '',
     plantsText1: '',
@@ -469,6 +465,133 @@ export const fr: Locale = {
     plantsText29: '',
     plantsText30: '',
     plantsText31: '',
+  },
+
+  souvenirsAndSpeciesProtection: {
+    souvenirsAndSpeciesProtectionMainText: '',
+    souvenirsAndSpeciesProtectionSubText: '',
+    souvenirsAndSpeciesProtectionText1: '',
+    souvenirsAndSpeciesProtectionText2: '',
+    souvenirsAndSpeciesProtectionText3: '',
+    souvenirsAndSpeciesProtectionText4: '',
+    souvenirsAndSpeciesProtectionText5: '',
+    souvenirsAndSpeciesProtectionText6: '',
+    souvenirsAndSpeciesProtectionText7: '',
+    souvenirsAndSpeciesProtectionText8: '',
+  },
+
+  highwayVignette: {
+    highwayVignetteMainText: '',
+    highwayVignetteSubText: '',
+    highwayVignetteText1: '',
+    highwayVignetteText2: '',
+    highwayVignetteText3: '',
+    highwayVignetteText4: '',
+    highwayVignetteText5: '',
+    highwayVignetteText6: '',
+    highwayVignetteText7: '',
+    highwayVignetteText8: '',
+    highwayVignetteText9: '',
+    highwayVignetteText10: '',
+  },
+
+  roadTax: {
+    roadTaxMainText: '',
+    roadTaxSubText: '',
+    roadTaxText1: '',
+    roadTaxText2: '',
+    roadTaxText3: '',
+    roadTaxText4: '',
+    roadTaxText5: '',
+    roadTaxText6: '',
+    roadTaxText7: '',
+    roadTaxText8: '',
+    roadTaxText9: '',
+    roadTaxText10: '',
+    roadTaxText11: '',
+    roadTaxText12: '',
+    roadTaxText13: '',
+    roadTaxText14: '',
+    roadTaxText15: '',
+  },
+
+  fuelAndRepairs: {
+    fuelAndRepairsMainText: '',
+    fuelAndRepairsSubText: '',
+    fuelAndRepairsText1: '',
+    fuelAndRepairsText2: '',
+    fuelAndRepairsText3: '',
+    fuelAndRepairsText4: '',
+    fuelAndRepairsText5: '',
+  },
+
+  forgery: {
+    forgeryMainText: '',
+    forgerySubText: '',
+  },
+
+  cash: {
+    cashMainText: '',
+    cashSubText: '',
+  },
+
+  food: {
+    foodMainText: '',
+    foodSubText: '',
+  },
+
+  authorisationRequirements: {
+    authorisationRequirementsMainText: '',
+    authorisationRequirementsSubText: '',
+  },
+
+  information: {
+    informationTitle: 'Informations utiles',
+    informationSubCategoryTitle: "J'ai des biens avec vous:",
+
+    customsProceduresMainText: 'Procédant à la douane',
+    customsProceduresSubText:
+      'En tant que particulier, vous devez entrer en Suisse ...',
+
+    travelDocumentsMainText: 'Documents de voyage',
+    travelDocumentsSubText:
+      "Pour entrer en Suisse, les étrangers ont besoin d'un ...",
+
+    declarationMainText: "J'ai des biens avec moi",
+    declarationSubText: 'Marchandises pour votre usage privé ou en cadeau ...',
+    animalsAndPlantsMainText: "J'ai des animaux ou des plantes avec moi",
+    animalsAndPlantsSubText:
+      'Pour les chiens, les chats, les autres animaux domestiques et les chevaux, vous trouverez ...',
+    vehiclesMainText: 'Je voyage avec un véhicule',
+    vehiclesSubText:
+      "L'utilisation des autoroutes et des autoroutes avec des véhicules à moteur et des remorques ...",
+    entryByTrainMainText: 'Entrée en train',
+    entryByTrainSubText:
+      'Si le personnel des douanes est présent dans le train, vous devez prendre toutes les marchandises ...',
+    prohibitionsAndRestrictionsMainText: 'Interdictions et restrictions',
+    prohibitionsAndRestrictionsSubText:
+      "Il est interdit d'introduire des contrefaçons de marque et de design. Les douanes suisses ...",
+
+    vatAllowanceMainText: 'Franchise-valeur de 300 francs',
+    vatAllowanceSubText:
+      'Les marchandises que vous importez pour votre usage privé ou pour ...',
+
+    dutyAllowanceMainText:
+      'Franchises quantitatives: denrées alimentaires, alcool et tabac',
+    dutyAllowanceSubText:
+      'Les marchandises que vous importez pour votre usage privé ou pour ...',
+
+    personalEffectsMainText: 'Effets personnels et dispositions de voyage',
+    personalEffectsSubText: '',
+
+    foreignVatMainText: 'Remboursement de la TVA étrangère',
+    foreignVatSubText: '',
+
+    animalsMainText: '',
+    animalsSubText: '',
+
+    plantsMainText: '',
+    plantsSubText: '',
 
     souvenirsAndSpeciesProtectionMainText: '',
     souvenirsAndSpeciesProtectionSubText: '',

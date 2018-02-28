@@ -36,6 +36,6 @@ const TravelDocumentsInner = ({ t }: TravelDocumentsInnerProps) => (
   </SubCategoryContainer>
 );
 
-export const TravelDocuments = (translate(['information'])(
+export const TravelDocuments = (translate(['travelDocuments'])(
   TravelDocumentsInner
 ): ComponentType<TravelDocumentsInnerProps>);

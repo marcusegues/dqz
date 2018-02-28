@@ -143,210 +143,115 @@ export const stackNavigatorScreens = {
   InformationSubCategories: {
     screen: InformationSubCategories,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   CustomsProcedures: {
     screen: CustomsProcedures,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   VatAllowance: {
     screen: VatAllowance,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   DutyAllowance: {
     screen: DutyAllowance,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   PersonalEffects: {
     screen: PersonalEffects,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   ForeignVat: {
     screen: ForeignVat,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   TravelDocuments: {
     screen: TravelDocuments,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   EntryByTrain: {
     screen: EntryByTrain,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   Animals: {
     screen: Animals,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   Plants: {
     screen: Plants,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   SouvenirsAndSpeciesProtection: {
     screen: SouvenirsAndSpeciesProtection,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   HighwayVignette: {
     screen: HighwayVignette,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   RoadTax: {
     screen: RoadTax,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   FuelAndRepairs: {
     screen: FuelAndRepairs,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   Forgery: {
     screen: Forgery,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   Cash: {
     screen: Cash,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   Food: {
     screen: Food,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   AuthorisationRequirements: {
     screen: AuthorisationRequirements,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   UsefulInfoScreenTemplate: {
     screen: UsefulInfoScreenTemplate,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
       headerTitle: <HeaderTitle text="Wissenswertes" />,
     }),
   },
@@ -367,12 +272,7 @@ export const stackNavigatorScreens = {
       navigationOptions: any,
       navigation: Navigation,
     }) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
       headerStyle: {
         ...navigationOptions.headerStyle,
         paddingRight: 0,
@@ -382,23 +282,13 @@ export const stackNavigatorScreens = {
   AppInfo: {
     screen: AppInfo,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
   LegalNoticeInfo: {
     screen: LegalNoticeInfo,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
-      ),
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
   },
 };

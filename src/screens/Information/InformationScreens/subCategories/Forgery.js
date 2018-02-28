@@ -17,6 +17,6 @@ const ForgeryInner = ({ t }: ForgeryInnerProps) => (
   </SubCategoryContainer>
 );
 
-export const Forgery = (translate(['information'])(ForgeryInner): ComponentType<
+export const Forgery = (translate(['forgery'])(ForgeryInner): ComponentType<
   ForgeryInnerProps
 >);

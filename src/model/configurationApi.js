@@ -146,10 +146,8 @@ export const getQuantityDate = (quantity: Quantity): string => quantity.date;
  * @param category
  * @returns number
  */
-export const getTotalQuantity = (
-  basket: Basket,
-  category: Category
-): number => basket
+export const getTotalQuantity = (basket: Basket, category: Category): number =>
+  basket
     .getIn([category, 'volume', 'quantities'], Immutable.List())
     .reduce((a, v) => a + getQuantityNumber(v), 0);
 

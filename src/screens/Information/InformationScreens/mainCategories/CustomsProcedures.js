@@ -86,6 +86,6 @@ const CustomsProceduresInner = ({
   </SubCategoryContainer>
 );
 
-export const CustomsProcedures = (translate(['information'])(
+export const CustomsProcedures = (translate(['customsProcedures'])(
   CustomsProceduresInner
 ): ComponentType<CustomsProceduresInnerProps>);
