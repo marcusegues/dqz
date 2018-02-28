@@ -7,7 +7,7 @@ import { I18nextProvider } from 'react-i18next';
 import { Platform, StatusBar, StyleSheet, View, AppState } from 'react-native';
 // $FlowFixMe
 import { AppLoading, Asset, Font } from 'expo';
-import { Ionicons, Entypo } from '@expo/vector-icons';
+import { Ionicons, Entypo, MaterialIcons } from '@expo/vector-icons';
 import { Provider } from 'react-redux';
 
 import { i18nImplementation } from './src/i18n';
@@ -147,7 +147,8 @@ export default class App extends React.Component<AppProps, AppStateT> {
         exo_extraLight: require('./assets/fonts/Exo-ExtraLight.otf'),
 
         ...Ionicons.font,
-        ...Entypo.font,    // fixes major bug related to using onLayout on Views with Entypo icons as children
+        ...Entypo.font, // fixes major bug related to using onLayout on Views with Entypo icons as children
+        ...MaterialIcons.font,
       }),
       fetch(
         'http://www.pwebapps.ezv.admin.ch/apps/rates/rate/getxml?activeSearchType=yesterday'

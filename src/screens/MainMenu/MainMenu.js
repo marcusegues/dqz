@@ -20,6 +20,20 @@ import {
   fetchPeople,
   fetchReceiptEntryTime,
 } from '../../asyncStorage/storageApi';
+import { isInitBasket } from '../../utils/declaration';
+import {
+  getAmounts,
+  getBasket,
+  getMainCategories,
+  getPeople,
+  getReceiptEntryTime,
+} from '../../reducers';
+import type {
+  Amounts,
+  Basket,
+  People,
+} from '../../model/types/basketPeopleAmountsTypes';
+import type { MainCategories } from '../../types/reducers/declaration';
 
 const switzerland = require('../../../assets/images/swissCountry.png');
 const customs = require('../../../assets/images/customs.png');
@@ -34,6 +48,11 @@ type MainMenuProps = {
 
 type ReduxInject = {
   initABP: () => void,
+  people: People,
+  basket: Basket,
+  amounts: Amounts,
+  mainCategories: MainCategories,
+  receiptEntryTime: string,
 };
 
 class MainMenuInner extends React.Component<
@@ -64,8 +83,21 @@ class MainMenuInner extends React.Component<
   }
 
   handleGoToDeclaration() {
-    this.props.navigation.navigate('QuestionAnswer');
-    // this.setSavedBasketModalVisibleTrue();
+    const {
+      people,
+      basket,
+      mainCategories,
+      amounts,
+      receiptEntryTime,
+    } = this.props;
+
+    if (
+      isInitBasket(people, basket, mainCategories, amounts, receiptEntryTime)
+    ) {
+      this.props.navigation.navigate('QuestionAnswer');
+    } else {
+      this.setSavedBasketModalVisibleTrue();
+    }
   }
 
   render() {
@@ -140,6 +172,14 @@ class MainMenuInner extends React.Component<
   }
 }
 
+const mapStateToProps = state => ({
+  basket: getBasket(state),
+  people: getPeople(state),
+  amounts: getAmounts(state),
+  mainCategories: getMainCategories(state),
+  receiptEntryTime: getReceiptEntryTime(state),
+});
+
 const mapDispatchToProps = dispatch => ({
   initABP: () => {
     fetchBasket().then(basket => {
@@ -175,6 +215,6 @@ const mapDispatchToProps = dispatch => ({
   },
 });
 
-export const MainMenu = (connect(null, mapDispatchToProps)(
+export const MainMenu = (connect(mapStateToProps, mapDispatchToProps)(
   translate(['general', 'mainMenu'])(MainMenuInner)
 ): ComponentType<MainMenuProps>);
