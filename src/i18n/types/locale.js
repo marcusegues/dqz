@@ -148,9 +148,7 @@ type ModalTranslations = {
   savedBasket: string,
 };
 
-type InformationTranslations = {
-  informationTitle: string,
-  informationSubCategoryTitle: string,
+type CustomsProceduresTranslation = {
   customsProceduresMainText: string,
   customsProceduresSubText: string,
   customsProceduresText1: string,
@@ -174,23 +172,16 @@ type InformationTranslations = {
   customsProceduresText19: string,
   customsProceduresText20: string,
   customsProceduresText21: string,
+};
 
+type TravelDocumentsTranslations = {
   travelDocumentsMainText: string,
   travelDocumentsSubText: string,
   travelDocumentsText1: string,
   travelDocumentsText2: string,
+};
 
-  declarationMainText: string,
-  declarationSubText: string,
-  animalsAndPlantsMainText: string,
-  animalsAndPlantsSubText: string,
-  vehiclesMainText: string,
-  vehiclesSubText: string,
-  entryByTrainMainText: string,
-  entryByTrainSubText: string,
-  prohibitionsAndRestrictionsMainText: string,
-  prohibitionsAndRestrictionsSubText: string,
-
+type VatAllowanceTranslations = {
   vatAllowanceMainText: string,
   vatAllowanceSubText: string,
   vatAllowanceText1: string,
@@ -237,7 +228,9 @@ type InformationTranslations = {
   vatAllowanceText42: string,
   vatAllowanceText43: string,
   vatAllowanceText44: string,
+};
 
+type DutyAllowanceTranslations = {
   dutyAllowanceMainText: string,
   dutyAllowanceSubText: string,
   dutyAllowanceText1: string,
@@ -287,7 +280,19 @@ type InformationTranslations = {
   dutyAllowanceText45: string,
   dutyAllowanceText46: string,
   dutyAllowanceText47: string,
+};
 
+type ForeignVatTranslations = {
+  foreignVatMainText: string,
+  foreignVatSubText: string,
+  foreignVatText1: string,
+  foreignVatText2: string,
+  foreignVatText3: string,
+  foreignVatText4: string,
+  foreignVatText5: string,
+};
+
+type PersonalEffectsTranslations = {
   personalEffectsMainText: string,
   personalEffectsSubText: string,
   personalEffectsText1: string,
@@ -297,22 +302,18 @@ type InformationTranslations = {
   personalEffectsText5: string,
   personalEffectsText6: string,
   personalEffectsText7: string,
+};
 
-  foreignVatMainText: string,
-  foreignVatSubText: string,
-  foreignVatMainText1: string,
-  foreignVatMainText2: string,
-  foreignVatMainText3: string,
-  foreignVatMainText4: string,
-  foreignVatMainText5: string,
-
+type AnimalsTranslations = {
   animalsMainText: string,
   animalsSubText: string,
   animalsText1: string,
   animalsText2: string,
   animalsText3: string,
   animalsText4: string,
+};
 
+type PlantsTranslations = {
   plantsMainText: string,
   plantsSubText: string,
   plantsText1: string,
@@ -346,17 +347,110 @@ type InformationTranslations = {
   plantsText29: string,
   plantsText30: string,
   plantsText31: string,
+};
 
+type SouvenirsAndSpeciesProtectionTranslations = {
   souvenirsAndSpeciesProtectionMainText: string,
   souvenirsAndSpeciesProtectionSubText: string,
+  souvenirsAndSpeciesProtectionText1: string,
+  souvenirsAndSpeciesProtectionText2: string,
+  souvenirsAndSpeciesProtectionText3: string,
+  souvenirsAndSpeciesProtectionText4: string,
+  souvenirsAndSpeciesProtectionText5: string,
+  souvenirsAndSpeciesProtectionText6: string,
+  souvenirsAndSpeciesProtectionText7: string,
+  souvenirsAndSpeciesProtectionText8: string,
+};
 
+type HighwayVignetteTranslations = {
+  highwayVignetteMainText: string,
+  highwayVignetteSubText: string,
+  highwayVignetteText1: string,
+  highwayVignetteText2: string,
+  highwayVignetteText3: string,
+  highwayVignetteText4: string,
+  highwayVignetteText5: string,
+  highwayVignetteText6: string,
+  highwayVignetteText7: string,
+  highwayVignetteText8: string,
+  highwayVignetteText9: string,
+  highwayVignetteText10: string,
+};
+
+type RoadTaxTranslations = {
+  roadTaxMainText: string,
+  roadTaxSubText: string,
+  roadTaxText1: string,
+  roadTaxText2: string,
+  roadTaxText3: string,
+  roadTaxText4: string,
+  roadTaxText5: string,
+  roadTaxText6: string,
+  roadTaxText7: string,
+  roadTaxText8: string,
+  roadTaxText9: string,
+  roadTaxText10: string,
+  roadTaxText11: string,
+  roadTaxText12: string,
+  roadTaxText13: string,
+  roadTaxText14: string,
+  roadTaxText15: string,
+};
+
+type FuelAndRepairsTranslations = {
+  fuelAndRepairsMainText: string,
+  fuelAndRepairsSubText: string,
+  fuelAndRepairsText1: string,
+  fuelAndRepairsText2: string,
+  fuelAndRepairsText3: string,
+  fuelAndRepairsText4: string,
+  fuelAndRepairsText5: string,
+};
+
+type ForgeryTranslations = {
+  forgeryMainText: string,
+  forgerySubText: string,
+};
+
+type CashTranslations = {
+  cashMainText: string,
+  cashSubText: string,
+};
+
+type FoodTranslations = {
+  foodMainText: string,
+  foodSubText: string,
+};
+
+type AuthorisationRequirementsTranslations = {
+  authorisationRequirementsMainText: string,
+  authorisationRequirementsSubText: string,
+};
+
+type InformationTranslations = {
+  informationTitle: string,
+  informationSubCategoryTitle: string,
+  // Main Categories
+  customsProceduresMainText: string,
+  customsProceduresSubText: string,
+  travelDocumentsMainText: string,
+  travelDocumentsSubText: string,
+  declarationMainText: string,
+  declarationSubText: string,
+  animalsAndPlantsMainText: string,
+  animalsAndPlantsSubText: string,
+  vehiclesMainText: string,
+  vehiclesSubText: string,
+  entryByTrainMainText: string,
+  entryByTrainSubText: string,
+  prohibitionsAndRestrictionsMainText: string,
+  prohibitionsAndRestrictionsSubText: string,
   highwayVignetteMainText: string,
   highwayVignetteSubText: string,
   roadTaxMainText: string,
   roadTaxSubText: string,
   fuelAndRepairsMainText: string,
   fuelAndRepairsSubText: string,
-
   forgeryMainText: string,
   forgerySubText: string,
   cashMainText: string,
@@ -517,6 +611,22 @@ export type Locale = {
   payment: PaymentTranslations,
   receipt: ReceiptTranslations,
   information: InformationTranslations,
+  customsProcedures: CustomsProceduresTranslation,
+  travelDocuments: TravelDocumentsTranslations,
+  vatAllowance: VatAllowanceTranslations,
+  dutyAllowance: DutyAllowanceTranslations,
+  personalEffects: PersonalEffectsTranslations,
+  foreignVat: ForeignVatTranslations,
+  animals: AnimalsTranslations,
+  plants: PlantsTranslations,
+  souvenirsAndSpeciesProtection: SouvenirsAndSpeciesProtectionTranslations,
+  highwayVignette: HighwayVignetteTranslations,
+  roadTax: RoadTaxTranslations,
+  fuelAndRepairs: FuelAndRepairsTranslations,
+  forgery: ForgeryTranslations,
+  cash: CashTranslations,
+  food: FoodTranslations,
+  authorisationRequirements: AuthorisationRequirementsTranslations,
   appInformation: AppInformationTranslations,
   legalNoticeInformation: LegalNoticeInformationTranslations,
   overview: OverviewTranslations,

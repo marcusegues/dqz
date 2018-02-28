@@ -36,6 +36,6 @@ const PersonalEffectsInner = ({ t }: PersonalEffectsInnerProps) => (
   </SubCategoryContainer>
 );
 
-export const PersonalEffects = (translate(['information'])(
+export const PersonalEffects = (translate(['personalEffects'])(
   PersonalEffectsInner
 ): ComponentType<PersonalEffectsInnerProps>);

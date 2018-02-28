@@ -71,6 +71,6 @@ const PlantsInner = ({ t, navigation }: PlantsInnerProps) => (
   </SubCategoryContainer>
 );
 
-export const Plants = (translate(['information'])(PlantsInner): ComponentType<
+export const Plants = (translate(['plants'])(PlantsInner): ComponentType<
   PlantsInnerProps
 >);

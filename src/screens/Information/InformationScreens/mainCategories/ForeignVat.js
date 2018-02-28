@@ -15,28 +15,28 @@ type ForeignVatInnerProps = {
 const ForeignVatInner = ({ t }: ForeignVatInnerProps) => (
   <SubCategoryContainer title={t('foreignVatMainText')}>
     <AppInfoSubText
-      text={t('foreignVatMainText1')}
+      text={t('foreignVatText1')}
       style={{ marginTop: verticalScale(10) }}
     />
     <AppInfoSubText
-      text={t('foreignVatMainText2')}
+      text={t('foreignVatText2')}
       style={{ marginTop: verticalScale(10) }}
     />
     <AppInfoSubText
-      text={t('foreignVatMainText3')}
+      text={t('foreignVatText3')}
       style={{ marginTop: verticalScale(10) }}
     />
     <AppInfoSubText
-      text={t('foreignVatMainText4')}
+      text={t('foreignVatText4')}
       style={{ marginTop: verticalScale(10) }}
     />
     <AppInfoSubText
-      text={t('foreignVatMainText5')}
+      text={t('foreignVatText5')}
       style={{ marginTop: verticalScale(10) }}
     />
   </SubCategoryContainer>
 );
 
-export const ForeignVat = (translate(['information'])(
+export const ForeignVat = (translate(['foreignVat'])(
   ForeignVatInner
 ): ComponentType<ForeignVatInnerProps>);
