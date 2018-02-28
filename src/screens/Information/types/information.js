@@ -8,7 +8,8 @@ export type InfoCategory =
   | 'animalsAndPlants'
   | 'vehicles'
   | 'entryByTrain'
-  | 'prohibitionsAndRestrictions';
+  | 'prohibitionsAndRestrictions'
+  | 'purchasesOnlineOffline';
 
 type InfoCategoriesType = [
   'customsProcedures',
@@ -18,6 +19,7 @@ type InfoCategoriesType = [
   'vehicles',
   'entryByTrain',
   'prohibitionsAndRestrictions',
+  'purchasesOnlineOffline',
 ];
 
 export const infoCategories: InfoCategoriesType = [
@@ -28,6 +30,7 @@ export const infoCategories: InfoCategoriesType = [
   'vehicles',
   'entryByTrain',
   'prohibitionsAndRestrictions',
+  'purchasesOnlineOffline',
 ];
 
 // Level 2 (Sub)Categories
