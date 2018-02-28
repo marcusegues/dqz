@@ -31,6 +31,7 @@ import {
 import type { Receipt } from '../types/receiptTypes';
 import type { KeyNotSetType } from './asyncStorage';
 import type { PaymentData } from '../types/generalTypes';
+import { emptyReceiptEntryTime } from '../types/reducers/declaration';
 
 /**
  * Stores item (stringified) under key - do NOT use directly!
@@ -135,6 +136,7 @@ export const storeClearDeclaration = () => {
   storeBasket(emptyBasket);
   storePeople(initPeople);
   storeAmounts(initAmounts);
+  storeReceiptEntryTime(emptyReceiptEntryTime);
 };
 
 /**

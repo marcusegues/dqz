@@ -3,7 +3,7 @@
 import Immutable from 'immutable';
 import {
   mainCategories,
-  EmptyMainCategories,
+  emptyMainCategories,
   getInitialDeclarationState,
 } from '../types/reducers/declaration';
 import type {
@@ -35,7 +35,11 @@ export const declaration = (
         ['settings', 'mainCategories'],
         Immutable.Set()
       );
-      return mainCategoriesReset.set('amounts', modelApi.initAmounts);
+      const amountsReset = mainCategoriesReset.set(
+        'amounts',
+        modelApi.initAmounts
+      );
+      return amountsReset.set('receiptEntryTime', '');
     }
     case 'BASKET_ADD_QUANTITY': {
       const category: Category = action.category;
@@ -116,7 +120,7 @@ export const declaration = (
       const mainCategory: MainCategory = action.mainCategory;
       const mainCategoriesAnswer = state.getIn(
         ['settings', 'mainCategories'],
-        EmptyMainCategories
+        emptyMainCategories
       );
       return state.setIn(
         ['settings', 'mainCategories'],
@@ -127,7 +131,7 @@ export const declaration = (
       const mainCategory: MainCategory = action.mainCategory;
       const mainCategoriesAnswer = state.getIn(
         ['settings', 'mainCategories'],
-        EmptyMainCategories
+        emptyMainCategories
       );
       return state.setIn(
         ['settings', 'mainCategories'],
