@@ -10,6 +10,7 @@ import type { Language } from '../../../../../../i18n/types/locale';
 
 const complete = require('../../../../../../../assets/images/complete.png');
 const incomplete = require('../../../../../../../assets/images/incomplete.png');
+const vatIcon = require('../../../../../../../assets/icons/vat.png');
 
 type AmountInputAnswerCardProps = {
   onAnswerCardPress: () => void,
@@ -25,7 +26,7 @@ const AmountInputAnswerCardInner = ({
 }: AmountInputAnswerCardProps & { i18n: { language: Language } }) => (
   <AnswerCard
     onAnswerCardPress={onAnswerCardPress}
-    mainIcon={amountInputImages[i18n.language]}
+    mainIcon={amountInputImages[i18n.language] || vatIcon}
     flag={flag === 'complete' ? complete : incomplete}
   >
     <AmountInputInfo vat={vat} />

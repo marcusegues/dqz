@@ -10,6 +10,7 @@ import type { Language } from '../../../../../../i18n/types/locale';
 
 const complete = require('../../../../../../../assets/images/complete.png');
 const incomplete = require('../../../../../../../assets/images/incomplete.png');
+const customsIcon = require('../../../../../../../assets/icons/customs.png');
 
 type QualityInputAnswerCardProps = {
   onAnswerCardPress: () => void,
@@ -25,7 +26,7 @@ const QuantityInputAnswerCardInner = ({
 }: QualityInputAnswerCardProps & { i18n: { language: Language } }) => (
   <AnswerCard
     onAnswerCardPress={onAnswerCardPress}
-    mainIcon={quantityInputImages[i18n.language]}
+    mainIcon={quantityInputImages[i18n.language] || customsIcon}
     flag={flag === 'complete' ? complete : incomplete}
   >
     <QuantityInputInfo duty={duty} />

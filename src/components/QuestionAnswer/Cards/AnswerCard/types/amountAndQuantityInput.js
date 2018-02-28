@@ -1,5 +1,4 @@
 // @flow
-
 const Mwst = require('../../../../../../assets/icons/mwst.png');
 const Iva = require('../../../../../../assets/icons/iva.png');
 const Tva = require('../../../../../../assets/icons/tva.png');
