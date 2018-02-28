@@ -564,27 +564,127 @@ export const de: Locale = {
     fuelAndRepairsText5: 'Wertfreigrenze CHF 300',
   },
 
+  entryByTrain: {
+    entryByTrainMainText: 'Einreise per Bahn',
+    entryByTrainSubText:
+      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren ...',
+    entryByTrainText1:
+      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren unaufgefordert zur Zollbehandlung anmelden. Waren zu Ihrem privaten Gebrauch oder zum Verschenken können Sie auch vor dem Grenzübertritt mit der App «xxxx» verzollen. Diese Anmeldungen sind verbindlich.',
+    entryByTrainText2:
+      'Ist kein Zollpersonal anwesend und wollen Sie die Waren nicht mit der App QuickZoll verzollen, können Sie:',
+    entryByTrainText3:
+      'den Zug beim Grenzbahnhof verlassen und Ihre privaten Waren schriftlich anmelden (schriftliche Selbstanmeldung bei einer Anmeldebox) oder;',
+    entryByTrainText4:
+      'die Waren nachträglich, innerhalb von 7 Tagen, bei jeder Zollstelle während der Öffnungszeiten anmelden.',
+    entryByTrainText5:
+      'Bitte beachten Sie: In gewissen regionalen Zügen dürfen Sie nur Privatwaren mitführen;',
+    entryByTrainText6:
+      'die innerhalb der Freimengen oder der Wertfreigrenze von 300 Franken abgabenfrei sind oder;',
+    entryByTrainText7: 'die Sie mit der App QuickZoll verzollt haben.',
+    entryByTrainText8:
+      'In beiden Fällen dürfen die Waren keinen Beschränkungen und Verboten unterliegen sowie weder zeugnis- noch bewilligungspflichtig sein.',
+    entryByTrainText9:
+      'Achten Sie auf die entsprechende Beschriftung am Zug oder die Lautsprecherdurchsage!',
+  },
+
   forgery: {
     forgeryMainText: 'Fälschungen',
     forgerySubText:
       'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer ...',
+    forgeryText1:
+      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer Zoll ist verpflichtet, Fälschungen einzuziehen und zu vernichten. Es spielt keine Rolle, ob die Gegenstände neu oder gebraucht sind.',
+    forgeryText2: 'Schmuck und Uhren im Ausland kaufen',
+    forgeryText3:
+      'Seien Sie beim Kauf von Schmuck oder Uhren vorsichtig: Oft entpuppen sich vermeintliche Schnäppchen bei einer Kontrolle als mangelhaft oder sogar als Fälschungen.',
+    forgeryText4: 'Erkennen von gefälschtem Schmuck und gefälschten Uhren',
+    forgeryText5:
+      'Selbst ein teuer bezahltes Schmuckstück kann sich als Fälschung erweisen. Eine Angabe zum Feingehalt garantiert nicht, dass die Ware echt ist. Kaufen Sie Schmuck und Uhren nur in anerkannten Fachgeschäften.',
+    forgeryText6:
+      'Weitere Informationen zu Produktepiraterie und Markenfälschungen erhalten Sie bei der Schweizer Plattform gegen Fälschung und Piraterie STOP PIRACY:',
   },
 
   cash: {
     cashMainText: 'Barmittel',
     cashSubText:
       'Bei der Ein-, Durch- und Ausfuhr von Barmitteln (Bargeld, Wertpapieren u.a.) im ...',
+    cashText1:
+      "Bei der Ein-, Durch- und Ausfuhr von Barmitteln (Bargeld, Wertpapieren u.a.) im Wert von über CHF 10'000 muss auf Befragung hin Auskunft über die Herkunft, den Verwendungszweck und die wirtschaftlich berechtigte Person erteilt werden.",
+    cashText2:
+      ' Weitere Massnahmen zur Verbrechensbekämpfung bleiben vorbehalten.',
   },
 
   food: {
     foodMainText: 'Beschränkungen für Lebensmittel',
     foodSubText: 'Aus EU-Staaten, Island und Norwegen können Waren ...',
+    foodText1:
+      'Aus EU-Staaten, Island und Norwegen können Waren tierischer Herkunft zum privaten Gebrauch ohne Kontrolle durch den Grenztierarzt eingeführt werden. Die Waren dürfen nicht in den Verkauf gelangen.',
+    foodText2:
+      'Die Einfuhr von Waren tierischer Herkunft aus anderen Staaten ist grundsätzlich verboten.\n' +
+      'Ausnahmen für bestimmte Lebensmittel finden Sie auf der Internetseite des BLV:',
+    foodText3: 'Lebensmittel im privaten Reiseverkehr',
+    foodText4: 'Zusätzliche Beschränkungen für geschützte Tierarten',
+    foodText5:
+      'Die Einfuhr von Waren tierischer Herkunft  von geschützten Tierarten  ist aus allen Staaten verboten. Für Kaviar vom Stör besteht im Reiseverkehr eine Einfuhrtoleranz von 125 g pro Person und Tag.',
+    foodText6: 'Zollabgaben und Mehrwertsteuer',
+    foodText7:
+      'Wird die Wertfreigrenze von CHF 300 oder die Freimengen für bestimmte Lebensmittel überschritten, müssen Sie MWST und/oder Zoll bezahlen. Detailliertere Informationen finden Sie unter:',
+    foodText8: 'Wertfreigrenze CHF 300',
+    foodText9: 'Freimengen: Lebensmittel, Alkohol und Tabak',
   },
 
   authorisationRequirements: {
     authorisationRequirementsMainText: 'Bewilligungspflichtig / Beschränkungen',
     authorisationRequirementsSubText:
       'Die Einfuhr von bestimmten Waren ist beschränkt und nur unter ...',
+    authorisationRequirementsText1:
+      'Die Einfuhr von bestimmten Waren ist beschränkt und nur unter besonderen Voraussetzungen (z.B. mit vorheriger Bewilligung) möglich, bei einigen Produkten gelten sogar absolute Einfuhrverbote.',
+    authorisationRequirementsText2:
+      'Insbesondere folgende Waren unterliegen Beschränkungen (nicht abschliessend):',
+    authorisationRequirementsText3:
+      'Waffen (z.B. Feuerwaffen, Messer, Elektroschockgeräte, Tränengassprays, Schlagstöcke usw.)',
+    authorisationRequirementsText4: 'Radarwarngeräte',
+    authorisationRequirementsText5: 'Betäubungsmittel',
+    authorisationRequirementsText6:
+      'Medikamente über dem persönlichen Monatsbedarf',
+    authorisationRequirementsText7: 'Dopingmittel',
+    authorisationRequirementsText8: 'Waren, die Gewaltdarstellungen enthalten',
+    authorisationRequirementsText9:
+      'Waren, die verbotene pornographische Darstellungen enthalten',
+    authorisationRequirementsText10:
+      'Fälschungen von Marken und Designartikeln, Raubkopien',
+    authorisationRequirementsText11: 'Kulturgüter',
+  },
+
+  purchasesOnlineOffline: {
+    purchasesOnlineOfflineMainText:
+      'Interneteinkauf, Post- und Kuriersendungen',
+    purchasesOnlineOfflineSubText:
+      'Sendungen aus dem Ausland sind grundsätzlich zoll- und mehrwertsteuerpflichtig ...',
+    purchasesOnlineOfflineText1:
+      'Sendungen aus dem Ausland sind grundsätzlich zoll- und mehrwertsteuerpflichtig. Nachfolgend zeigen wir Ihnen, wie Sie eine grobe Berechnung der Kosten vornehmen können und was bei der Einfuhr zu beachten ist.',
+    purchasesOnlineOfflineText2:
+      'Bitte beachten Sie, dass eine definitive Berechnung nicht möglich ist, da uns die Kosten der Transporteure, z. B. der Post nicht im Voraus bekannt sind. Die Kosten werden in der Regel dem Empfänger zusammen mit den Zollabgaben und Steuern (z. B. Mehrwertsteuer) in Rechnung gestellt. Klären Sie diese beim entsprechenden Transportunternehmen ab.',
+    purchasesOnlineOfflineText3:
+      'Geschenksendungen von Privatpersonen im Ausland an Privatpersonen in der Schweiz sind bis zu einem Warenwert von CHF 100 abgabenfrei, ausgenommen sind jedoch Tabakfabrikate und alkoholische Getränke. Der Absender muss zwingend aussen auf dem Paket oder Brief einen entsprechenden Vermerk anbringen.',
+    purchasesOnlineOfflineText4: 'Berechnungsbeispiel – Steuerbarer Warenwert',
+    purchasesOnlineOfflineText5:
+      'Über einen deutschen Onlineshop haben Sie einen Handstaubsauger bestellt. Der Kaufpreis beträgt € 150.00 (Nettobetrag ohne ausländische MWST). Für den Versand in die Schweiz müssen Sie dem Onlineshop zusätzlich € 12.50 bezahlen. Gesamthaft entrichten Sie dem Onlineshop € 162.50.',
+    purchasesOnlineOfflineText6: 'Gesamtbetrag laut Rechnung Onlineshop',
+    purchasesOnlineOfflineText7: 'Betrag in CHF: 198.25',
+    purchasesOnlineOfflineText8:
+      'Bemerkungen: € 162.50 umgerechnet zu 1.22 in CHF.',
+    purchasesOnlineOfflineText9: 'Kosten der Post für die Zollanmeldung',
+    purchasesOnlineOfflineText10: 'Betrag in CHF: 17.95',
+    purchasesOnlineOfflineText11: 'Kosten der Post für das Öffnen der Sendung',
+    purchasesOnlineOfflineText12: 'Betrag in CHF: 13.00',
+    purchasesOnlineOfflineText13:
+      'Der Versender hat aussen auf dem Paket den Inhalt nicht ausreichend bezeichnet, weshalb die Post das Paket für die Verzollung öffnen musste.',
+    purchasesOnlineOfflineText14: 'Total steuerbarer Warenwert',
+    purchasesOnlineOfflineText15: 'Betrag in CHF: 229.00',
+    purchasesOnlineOfflineText16:
+      'Von diesem Betrag (ohne Rappen) berechnet sich die MWST.',
+    purchasesOnlineOfflineText17:
+      'Bitte beachten: Bei diesem Berechnungsbeispiel handelt es sich um eine allgemeine Berechnung von zollfreier Ware.',
   },
 
   information: {
@@ -631,6 +731,10 @@ export const de: Locale = {
     authorisationRequirementsMainText: 'Bewilligungspflichtig / Beschränkungen',
     authorisationRequirementsSubText:
       'Die Einfuhr von bestimmten Waren ist beschränkt und nur unter ...',
+    purchasesOnlineOfflineMainText:
+      'Interneteinkauf, Post- und Kuriersendungen',
+    purchasesOnlineOfflineSubText:
+      'Sendungen aus dem Ausland sind grundsätzlich zoll- und ...',
   },
   appInformation: {
     appInfoTitle: 'Über die App',

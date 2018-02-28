@@ -25,6 +25,7 @@ Array [
   "Payment",
   "PersonalEffects",
   "Plants",
+  "PurchasesOnlineOffline",
   "QuestionAnswer",
   "ReceiptAfterPayment",
   "RoadTax",

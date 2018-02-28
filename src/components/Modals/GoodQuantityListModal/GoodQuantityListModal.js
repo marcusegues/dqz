@@ -224,7 +224,9 @@ class GoodQuantityListModalInner extends React.Component<
           confirmAction={amount => this.confirmPicker(amount)}
           category={modalCategory}
           onlyStandardInput={
-            modalCategory === 'Tobacco' || modalCategory === 'Meat'
+            modalCategory === 'Tobacco' ||
+            modalCategory === 'Meat' ||
+            modalCategory === 'Butter'
           }
         />
       </AppModal>

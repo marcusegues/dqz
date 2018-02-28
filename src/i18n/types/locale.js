@@ -410,27 +410,90 @@ type FuelAndRepairsTranslations = {
 type ForgeryTranslations = {
   forgeryMainText: string,
   forgerySubText: string,
+  forgeryText1: string,
+  forgeryText2: string,
+  forgeryText3: string,
+  forgeryText4: string,
+  forgeryText5: string,
+  forgeryText6: string,
 };
 
 type CashTranslations = {
   cashMainText: string,
   cashSubText: string,
+  cashText1: string,
+  cashText2: string,
 };
 
 type FoodTranslations = {
   foodMainText: string,
   foodSubText: string,
+  foodText1: string,
+  foodText2: string,
+  foodText3: string,
+  foodText4: string,
+  foodText5: string,
+  foodText6: string,
+  foodText7: string,
+  foodText8: string,
+  foodText9: string,
 };
 
 type AuthorisationRequirementsTranslations = {
   authorisationRequirementsMainText: string,
   authorisationRequirementsSubText: string,
+  authorisationRequirementsText1: string,
+  authorisationRequirementsText2: string,
+  authorisationRequirementsText3: string,
+  authorisationRequirementsText4: string,
+  authorisationRequirementsText5: string,
+  authorisationRequirementsText6: string,
+  authorisationRequirementsText7: string,
+  authorisationRequirementsText8: string,
+  authorisationRequirementsText9: string,
+  authorisationRequirementsText10: string,
+  authorisationRequirementsText11: string,
+};
+
+type EntryByTrainTranslations = {
+  entryByTrainMainText: string,
+  entryByTrainSubText: string,
+  entryByTrainText1: string,
+  entryByTrainText2: string,
+  entryByTrainText3: string,
+  entryByTrainText4: string,
+  entryByTrainText5: string,
+  entryByTrainText6: string,
+  entryByTrainText7: string,
+  entryByTrainText8: string,
+  entryByTrainText9: string,
+};
+
+type PurchasesOnlineOfflineTranslations = {
+  purchasesOnlineOfflineMainText: string,
+  purchasesOnlineOfflineSubText: string,
+  purchasesOnlineOfflineText1: string,
+  purchasesOnlineOfflineText2: string,
+  purchasesOnlineOfflineText3: string,
+  purchasesOnlineOfflineText4: string,
+  purchasesOnlineOfflineText5: string,
+  purchasesOnlineOfflineText6: string,
+  purchasesOnlineOfflineText7: string,
+  purchasesOnlineOfflineText8: string,
+  purchasesOnlineOfflineText9: string,
+  purchasesOnlineOfflineText10: string,
+  purchasesOnlineOfflineText11: string,
+  purchasesOnlineOfflineText12: string,
+  purchasesOnlineOfflineText13: string,
+  purchasesOnlineOfflineText14: string,
+  purchasesOnlineOfflineText15: string,
+  purchasesOnlineOfflineText16: string,
+  purchasesOnlineOfflineText17: string,
 };
 
 type InformationTranslations = {
   informationTitle: string,
   informationSubCategoryTitle: string,
-  // Main Categories
   customsProceduresMainText: string,
   customsProceduresSubText: string,
   travelDocumentsMainText: string,
@@ -459,6 +522,8 @@ type InformationTranslations = {
   foodSubText: string,
   authorisationRequirementsMainText: string,
   authorisationRequirementsSubText: string,
+  purchasesOnlineOfflineMainText: string,
+  purchasesOnlineOfflineSubText: string,
 };
 
 type ReceiptTranslations = {
@@ -623,6 +688,7 @@ export type Locale = {
   highwayVignette: HighwayVignetteTranslations,
   roadTax: RoadTaxTranslations,
   fuelAndRepairs: FuelAndRepairsTranslations,
+  entryByTrain: EntryByTrainTranslations,
   forgery: ForgeryTranslations,
   cash: CashTranslations,
   food: FoodTranslations,
@@ -633,4 +699,5 @@ export type Locale = {
   legalNoticeModal: LegalNoticeModalTranslations,
   furtherInformationModal: FurtherInformationModalTranslations,
   units: UnitsTranslations,
+  purchasesOnlineOffline: PurchasesOnlineOfflineTranslations,
 };

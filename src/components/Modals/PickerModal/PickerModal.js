@@ -68,8 +68,8 @@ class PickerModalInner extends React.Component<
       decimalUnits: '00',
     },
     numberInput: {
-      wholePart: '1',
-      decimalPart: '00',
+      wholePart: '',
+      decimalPart: '',
     },
   };
 
