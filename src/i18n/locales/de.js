@@ -100,7 +100,7 @@ export const de: Locale = {
       'Basierend auf dem letzten verfügbaren Wechsel-kurs, welcher beim Bezahlen aktualisiert wird.',
   },
   qaFlow: {
-    declareGoods: 'Waren Deklarieren',
+    declareGoods: 'Waren anmelden',
     toOverview: 'Zur Übersicht',
     adult: 'Erwachsene',
     adultInfo: '17+ Jahre',
@@ -151,7 +151,7 @@ export const de: Locale = {
       'Erfassen Sie die Fleischmenge, die Sie mit sich führen:',
     recordTheAmountOfTobacco:
       'Erfassen Sie Tabakmenge, die Sie mit sich führen:',
-    savedBasket: 'Aktueller warenkorb',
+    savedBasket: 'Aktueller Warenkorb',
   },
   payment: {
     overViewTitle: 'Übersicht Ihrer Anmeldung',
@@ -657,9 +657,9 @@ export const de: Locale = {
   },
   units: {
     kilo: 'kg',
-    kilo_plural: 'kgs',
+    kilo_plural: 'kg',
     kiloOrLiter: 'kg/Liter',
-    kiloOrLiter_plural: 'kgs/Liter',
+    kiloOrLiter_plural: 'kg/Liter',
     liter: 'Liter',
     liter_plural: 'Liter',
     unit: 'Stück',

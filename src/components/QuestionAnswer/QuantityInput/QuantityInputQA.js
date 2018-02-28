@@ -8,6 +8,7 @@ import type { MainCategory } from '../../../types/reducers/declaration';
 import type {
   Basket,
   Category,
+  Quantity,
 } from '../../../model/types/basketPeopleAmountsTypes';
 import type { CardProps } from '../QuestionAnswerContainer';
 import { QuantityInputAnswerCard } from '../Cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
@@ -15,6 +16,7 @@ import {
   addQuantity,
   deleteQuantity,
   getQuantities,
+  getQuantityNumber,
 } from '../../../model/configurationApi';
 import { calculateDuty } from '../../../model/dutyCalculations';
 import {
@@ -97,12 +99,12 @@ export class QuantityInputQA extends React.Component<
 
   handleDeleteQuantity(category: Category, index: number) {
     const { basket } = this.props.qaState;
-
+    const quantity: Quantity = getQuantities(basket, category).get(index, {
+      number: 0,
+      date: '',
+    });
     const updatedBasket = deleteQuantity(basket, category, index);
-    analyticsQuantityDeleted(
-      category,
-      getQuantities(basket, category).get(index, 0)
-    );
+    analyticsQuantityDeleted(category, getQuantityNumber(quantity));
     this.handleUpdate(updatedBasket);
   }
 

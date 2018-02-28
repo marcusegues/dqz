@@ -1,13 +1,13 @@
 // @flow
 /* eslint-disable global-require */
-/* global window, fetch */
+/* global fetch */
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
 // $FlowFixMe
 import { Platform, StatusBar, StyleSheet, View, AppState } from 'react-native';
 // $FlowFixMe
 import { AppLoading, Asset, Font } from 'expo';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, Entypo } from '@expo/vector-icons';
 import { Provider } from 'react-redux';
 
 import { i18nImplementation } from './src/i18n';
@@ -88,6 +88,13 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/images/info/freeLimit.png'),
 
         require('./assets/icons/mwst.png'),
+        require('./assets/icons/iva.png'),
+        require('./assets/icons/tva.png'),
+        require('./assets/icons/vat.png'),
+        require('./assets/icons/zoll.png'),
+        require('./assets/icons/dogana.png'),
+        require('./assets/icons/duoane.png'),
+        require('./assets/icons/customs.png'),
         require('./assets/icons/mainCategories.png'),
         require('./assets/icons/travellers.png'),
         require('./assets/icons/adult.png'),
@@ -147,13 +154,14 @@ export default class App extends React.Component<AppProps, AppStateT> {
         exo_extraLight: require('./assets/fonts/Exo-ExtraLight.otf'),
 
         ...Ionicons.font,
+        ...Entypo.font, // fixes major bug related to using onLayout on Views with Entypo icons as children
       }),
       fetch(
         'http://www.pwebapps.ezv.admin.ch/apps/rates/rate/getxml?activeSearchType=yesterday'
       )
         .then(response => response.text())
         .then(rawdata => parseCurrencyXML(rawdata, store))
-        .catch(_ => parseCurrencyXML('invalid', store)),
+        .catch(() => parseCurrencyXML('invalid', store)),
     ]);
 
   render() {

@@ -26,10 +26,10 @@ export const AppModal = ({
     backdropOpacity={0.8}
     animationIn={animationIn}
     animationOut={animationOut}
-    animationInTiming={1000}
-    animationOutTiming={1000}
-    backdropTransitionInTiming={1000}
-    backdropTransitionOutTiming={1000}
+    animationInTiming={400}
+    animationOutTiming={400}
+    backdropTransitionInTiming={400}
+    backdropTransitionOutTiming={400}
   >
     {children}
   </Modal>
