@@ -13,7 +13,11 @@ type CashInnerProps = {
 
 const CashInner = ({ t }: CashInnerProps) => (
   <SubCategoryContainer title={t('cashMainText')}>
-    <AppInfoSubText text="cash" style={{ marginTop: verticalScale(10) }} />
+    <AppInfoSubText
+      text={t('cashText1')}
+      style={{ marginTop: verticalScale(10) }}
+    />
+    <AppInfoSubText text={t('cashText2')} />
   </SubCategoryContainer>
 );
 

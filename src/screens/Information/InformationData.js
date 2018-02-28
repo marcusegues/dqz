@@ -55,6 +55,7 @@ export const informationImages: InformationImagesType = {
   cash: Cash,
   food: Food,
   authorisationRequirements: AuthorisationRequirements,
+  purchasesOnlineOffline: Restricted,
 };
 
 export const informationSubCategories: InformationSubCategoriesType = {
@@ -65,6 +66,7 @@ export const informationSubCategories: InformationSubCategoriesType = {
   vehicles: vehiclesSubCategories,
   entryByTrain: 'noSubCategories',
   prohibitionsAndRestrictions: prohibitionsAndRestrictionsSubCategories,
+  purchasesOnlineOffline: 'noSubCategories',
 };
 
 export const informationNavigateTo: InformationNavigateToType = {
@@ -89,4 +91,5 @@ export const informationNavigateTo: InformationNavigateToType = {
   cash: 'Cash',
   food: 'Food',
   authorisationRequirements: 'AuthorisationRequirements',
+  purchasesOnlineOffline: 'PurchasesOnlineOffline',
 };
