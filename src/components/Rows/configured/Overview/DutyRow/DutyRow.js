@@ -76,13 +76,14 @@ class DutyRowInner extends React.Component<
         <Swipeable
           rightButtons={this.getRightSwipeButtons()}
           rightButtonWidth={90}
+          style={{ overflow: 'hidden' }}
         >
           <View style={[rowStyles.rowContent]}>
             <OverviewInfo
               title={t(`categories:${category}`)}
-              subtitle={`${t('overview:declared')} ${quantity.toFixed(2)} ${
-                unit
-              }`}
+              subtitle={`${t('overview:declared')} ${quantity.toFixed(
+                2
+              )} ${unit}`}
             >
               <AllowanceIcon
                 text={t('overview:dutyFree')}

@@ -54,6 +54,7 @@ import { Forgery } from '../screens/Information/InformationScreens/subCategories
 import { Cash } from '../screens/Information/InformationScreens/subCategories/Cash';
 import { Food } from '../screens/Information/InformationScreens/subCategories/Food';
 import { AuthorisationRequirements } from '../screens/Information/InformationScreens/subCategories/AuthorisationRequirements';
+import { PurchasesOnlineOffline } from '../screens/Information/InformationScreens/mainCategories/PurchasesOnlineOffline';
 
 export type NavigationObject = { navigation: Navigation };
 
@@ -82,6 +83,7 @@ export const stackNavigatorScreens = {
     screen: QuestionAnswerContainer,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: <HomeIcon navigation={navigation} />,
+      headerRight: <Logo />,
     }),
   },
   Payment: {
@@ -184,6 +186,12 @@ export const stackNavigatorScreens = {
   },
   EntryByTrain: {
     screen: EntryByTrain,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+    }),
+  },
+  PurchasesOnlineOffline: {
+    screen: PurchasesOnlineOffline,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
     }),
