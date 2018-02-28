@@ -726,7 +726,10 @@ Immutable.Record {
     "Meat": Immutable.Record {
       "volume": Immutable.Record {
         "quantities": Immutable.List [
-          123,
+          Object {
+            "date": "FakeDate",
+            "number": 123,
+          },
         ],
       },
     },
@@ -800,7 +803,10 @@ Immutable.Record {
     "Butter": Immutable.Record {
       "volume": Immutable.Record {
         "quantities": Immutable.List [
-          23,
+          Object {
+            "date": "FakeDate",
+            "number": 23,
+          },
         ],
       },
     },
@@ -842,7 +848,10 @@ Immutable.Record {
     "Meat": Immutable.Record {
       "volume": Immutable.Record {
         "quantities": Immutable.List [
-          111,
+          Object {
+            "date": "FakeDate",
+            "number": 111,
+          },
         ],
       },
     },
@@ -859,7 +868,10 @@ Immutable.Record {
     "Tobacco": Immutable.Record {
       "volume": Immutable.Record {
         "quantities": Immutable.List [
-          3219,
+          Object {
+            "date": "FakeDate",
+            "number": 3219,
+          },
         ],
       },
     },

@@ -29,6 +29,14 @@ jest.mock('uuid', () => ({
   v4: jest.fn(() => 1),
 }));
 
+jest.mock('luxon', () => ({
+  DateTime: {
+    local: () => ({
+      setZone: () => 'FakeDate',
+    }),
+  },
+}));
+
 const initDeclarationState: DeclarationState = getInitialDeclarationState();
 
 const sampleBasket1: Basket = emptyBasket.withMutations(basket => {
@@ -70,6 +78,7 @@ describe('Basket...', () => {
         type: 'BASKET_ADD_QUANTITY',
         category: 'Meat',
         quantity: 123,
+        date: '2018-02-21T17:41:40.394+01:00',
       })
     ).toMatchSnapshot();
   });

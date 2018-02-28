@@ -10,6 +10,7 @@ import type {
   Category,
   CategoryBasketItem,
   People,
+  Quantity,
 } from './types/basketPeopleAmountsTypes';
 import { categoriesArray } from './constants';
 import {
@@ -18,7 +19,7 @@ import {
   makePeopleRecord,
 } from './types/basketPeopleAmountsTypes';
 import type { Currency } from './currencies';
-import { flatAllAmounts } from './utils';
+import { flatAllAmounts, getConvertedLocalTimeToSwiss } from './utils';
 import type { FlatAmount } from './utils';
 
 const emptyItem: CategoryBasketItem = makeCategoryBasketItemRecord();
@@ -48,7 +49,10 @@ export const addQuantity = (
     return basket;
   }
   return basket.updateIn([category, 'volume', 'quantities'], q =>
-    q.push(quantity)
+    q.push({
+      number: quantity,
+      date: getConvertedLocalTimeToSwiss().toString(),
+    })
   );
 };
 
@@ -113,13 +117,28 @@ export const addQuantities = (
  * Gets all quantities for the basket's category
  * @param basket
  * @param category
- * @returns List of quantities (number)
+ * @returns List of quantities (object)
  */
 export const getQuantities = (
   basket: Basket,
   category: Category
-): ImmutableListType<number> =>
+): ImmutableListType<Quantity> =>
   basket.getIn([category, 'volume', 'quantities'], Immutable.List());
+
+/**
+ * Helper to get the quantity number from a quantity
+ * @param quantity
+ * @returns {number}
+ */
+export const getQuantityNumber = (quantity: Quantity): number =>
+  quantity.number || 0;
+
+/**
+ * Helper to get the quantity date (string) from a quantity
+ * @param quantity
+ * @returns {*}
+ */
+export const getQuantityDate = (quantity: Quantity): string => quantity.date;
 
 /**
  * Gets the total quantity for the basket's category
@@ -130,7 +149,7 @@ export const getQuantities = (
 export const getTotalQuantity = (basket: Basket, category: Category): number =>
   basket
     .getIn([category, 'volume', 'quantities'], Immutable.List())
-    .reduce((a, v) => a + v, 0);
+    .reduce((a, v) => a + getQuantityNumber(v), 0);
 
 // AMOUNTS
 export const initAmounts: Amounts = Immutable.Map();
