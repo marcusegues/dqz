@@ -66,11 +66,12 @@ class AllReceiptsInner extends React.Component<
   prepareReceiptsObject() {
     const { t, i18n, navigation, setReceiptId } = this.props;
 
-    const sortDateTimeAsc = (a, b) =>
-      DateTime.fromISO(a.receiptEntryTime) >
-      DateTime.fromISO(b.receiptEntryTime)
-        ? 1
-        : -1;
+    const sortDateTimeAsc = (a, b) => {
+      const aDT: DateTime = DateTime.fromISO(a.receiptEntryTime);
+      const bDT: DateTime = DateTime.fromISO(b.receiptEntryTime);
+      // $FlowFixMe
+      return aDT > bDT ? 1 : -1;
+    };
 
     return this.state.receipts.sort(sortDateTimeAsc).reduce(
       (receipts, receipt) => {
@@ -111,6 +112,7 @@ class AllReceiptsInner extends React.Component<
             }}
           />
         );
+        // $FlowFixMe
         if (receiptEntryTimePlus > localSwissTime) {
           // $FlowFixMe
           receipts.actualReceipts.push(receiptView);

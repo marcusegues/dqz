@@ -1,6 +1,6 @@
 // @flow
 /* eslint-disable global-require */
-/* global window, fetch */
+/* global fetch */
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
 // $FlowFixMe
@@ -154,7 +154,7 @@ export default class App extends React.Component<AppProps, AppStateT> {
       )
         .then(response => response.text())
         .then(rawdata => parseCurrencyXML(rawdata, store))
-        .catch(_ => parseCurrencyXML('invalid', store)),
+        .catch(() => parseCurrencyXML('invalid', store)),
     ]);
 
   render() {

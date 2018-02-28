@@ -39,7 +39,7 @@ const ownStyles = {
   acceptanceContainer: {
     marginHorizontal: scale(16),
     flex: 0,
-      flexDirection: 'row',
+    flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
   },
@@ -109,10 +109,10 @@ class LegalNoticeModalInner extends React.Component<
               onPress={() => this.setState({ checked: !checked })}
             />
             <View style={{ flex: 1 }}>
-            <CardHeaderSubText
-              style={ownStyles.acceptanceText}
-              text={t('acceptance')}
-            />
+              <CardHeaderSubText
+                style={ownStyles.acceptanceText}
+                text={t('acceptance')}
+              />
             </View>
           </View>
 
