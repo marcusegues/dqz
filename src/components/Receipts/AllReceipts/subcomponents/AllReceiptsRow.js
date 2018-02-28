@@ -6,6 +6,7 @@ import { Row } from '../../../Rows/Row';
 import { CardRowText } from '../../../QuestionAnswer/Cards/subcomponents/CardRowText';
 import { CardRowSubText } from '../../../QuestionAnswer/Cards/subcomponents/CardRowSubText';
 import { RightChevronIcon } from '../../../General Components/RightChevronIcon';
+import { rowStyles } from '../../../Rows/styles/rowStyles';
 
 const ownStyles = {
   container: {
@@ -24,6 +25,7 @@ type AllReceiptsRowProps = {
   duty: string,
   date: string,
   rowOnPress: () => void,
+  borderTop?: boolean,
 };
 
 export const AllReceiptsRow = ({
@@ -31,17 +33,24 @@ export const AllReceiptsRow = ({
   duty,
   date,
   rowOnPress,
+  borderTop,
 }: AllReceiptsRowProps) => (
-  <Row borderTop>
+  <Row borderTop={borderTop}>
     <TouchableWithoutFeedback onPress={rowOnPress}>
-      <View style={ownStyles.container}>
-        <View style={ownStyles.textContainer}>
-          <CardRowText text={sum} style={{ paddingBottom: 3 }} />
-          <CardRowSubText text={duty} />
-          <CardRowSubText text={date} style={{ color: '#1A1A1A' }} />
+      <View style={[rowStyles.rowContent]}>
+        <View style={ownStyles.container}>
+          <View style={ownStyles.textContainer}>
+            <CardRowText text={sum} style={{ paddingBottom: 3 }} />
+            <CardRowSubText text={duty} />
+            <CardRowSubText text={date} style={{ color: '#1A1A1A' }} />
+          </View>
+          <RightChevronIcon />
         </View>
-        <RightChevronIcon />
       </View>
     </TouchableWithoutFeedback>
   </Row>
 );
+
+AllReceiptsRow.defaultProps = {
+  borderTop: false,
+};

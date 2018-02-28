@@ -126,9 +126,9 @@ export const en: Locale = {
     currencyPickerNoOffsettingInput: 'No offsetting amount',
     currencyPickerTooSmallLargeAmount: 'Amount too small',
     savedBasketDoYoWantToContinue:
-      'Do you want to continue with an existing basket or start a new one',
+      'Do you want to continue with an existing basket or start a new one?',
     savedBasketTotalCost: 'Total cost: CHF {{value}}',
-    savedBasketNewShoppingCart: 'New Configuration',
+    savedBasketNewShoppingCart: 'New basket',
     closeModalText: 'Close',
     timePickerTitle: 'Select the period of entry',
     timePickerSubTitle: 'When would you like to cross the border?',

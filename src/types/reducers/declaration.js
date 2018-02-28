@@ -77,7 +77,7 @@ export const mainCategories: MainCategories = Immutable.Set([
   'OtherGoods',
 ]);
 
-export const EmptyMainCategories: MainCategories = Immutable.Set();
+export const emptyMainCategories = Immutable.Set();
 
 export const getMainCategory = (category: any): MainCategory => {
   if (meatCategories.has(category)) {
@@ -129,10 +129,12 @@ type SettingsContent = {
 export const makeSettingsRecord: RecordFactory<
   SettingsContent
 > = Immutable.Record({
-  mainCategories: EmptyMainCategories,
+  mainCategories: emptyMainCategories,
 });
 
 export type Settings = RecordOf<SettingsContent>;
+
+export const emptyReceiptEntryTime = '';
 
 type DeclarationStateObj = {
   people: People,
@@ -151,7 +153,7 @@ export const getInitialDeclarationState: RecordFactory<
   settings: makeSettingsRecord(),
   amounts: Immutable.Map(),
   paymentData: makePaymentDataRecord(),
-  receiptEntryTime: '',
+  receiptEntryTime: emptyReceiptEntryTime,
 });
 
 export type DeclarationState = RecordOf<DeclarationStateObj>;

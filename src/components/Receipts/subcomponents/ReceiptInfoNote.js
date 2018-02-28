@@ -7,6 +7,7 @@ import { View } from 'react-native';
 import { Row } from '../../Rows/Row';
 import type { TFunction } from '../../../types/generalTypes';
 import { ReceiptSubText } from './ReceiptSubText';
+import { rowStyles } from '../../Rows/styles/rowStyles';
 
 const ReceiptInfoNoteInner = ({ t }: { t: TFunction }) => (
   <Row
@@ -14,9 +15,11 @@ const ReceiptInfoNoteInner = ({ t }: { t: TFunction }) => (
     borderBottom={false}
     styles={{ justifyContent: 'flex-start' }}
   >
-    <View style={{ flexDirection: 'column' }}>
-      <ReceiptSubText text={t('general:note')} />
-      <ReceiptSubText text={t('receipt:receiptStorageNotification')} />
+    <View style={[rowStyles.rowContent]}>
+      <View style={{ flexDirection: 'column' }}>
+        <ReceiptSubText text={t('general:note')} />
+        <ReceiptSubText text={t('receipt:receiptStorageNotification')} />
+      </View>
     </View>
   </Row>
 );
