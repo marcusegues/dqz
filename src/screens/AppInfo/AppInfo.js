@@ -45,7 +45,8 @@ const styles = {
   },
   ambriteLogo: {
     width: 154,
-    height: 36,
+    height: 80,
+    resizeMode: 'contain',
   },
   ambriteAddress: {
     marginTop: verticalScale(15),
