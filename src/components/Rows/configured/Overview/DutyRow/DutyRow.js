@@ -76,6 +76,7 @@ class DutyRowInner extends React.Component<
         <Swipeable
           rightButtons={this.getRightSwipeButtons()}
           rightButtonWidth={90}
+          style={{ overflow: 'hidden' }}
         >
           <View style={[rowStyles.rowContent]}>
             <OverviewInfo
