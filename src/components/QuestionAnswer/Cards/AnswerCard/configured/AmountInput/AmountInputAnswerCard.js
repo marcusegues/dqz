@@ -15,7 +15,6 @@ type AmountInputAnswerCardProps = {
   onAnswerCardPress: () => void,
   flag: QuestionFlag,
   vat: number,
-  i18n: { language: Language },
 };
 
 const AmountInputAnswerCardInner = ({
@@ -23,7 +22,7 @@ const AmountInputAnswerCardInner = ({
   flag,
   vat,
   i18n,
-}: AmountInputAnswerCardProps) => (
+}: AmountInputAnswerCardProps & { i18n: { language: Language } }) => (
   <AnswerCard
     onAnswerCardPress={onAnswerCardPress}
     mainIcon={amountInputImages[i18n.language]}
@@ -35,4 +34,4 @@ const AmountInputAnswerCardInner = ({
 
 export const AmountInputAnswerCard = (translate([''])(
   AmountInputAnswerCardInner
-): ComponentType<{}>);
+): ComponentType<AmountInputAnswerCardProps>);

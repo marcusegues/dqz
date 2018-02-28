@@ -15,7 +15,6 @@ type QualityInputAnswerCardProps = {
   onAnswerCardPress: () => void,
   flag: QuestionFlag,
   duty: number,
-  i18n: { language: Language },
 };
 
 const QuantityInputAnswerCardInner = ({
@@ -23,7 +22,7 @@ const QuantityInputAnswerCardInner = ({
   flag,
   duty,
   i18n,
-}: QualityInputAnswerCardProps) => (
+}: QualityInputAnswerCardProps & { i18n: { language: Language } }) => (
   <AnswerCard
     onAnswerCardPress={onAnswerCardPress}
     mainIcon={quantityInputImages[i18n.language]}
@@ -35,4 +34,4 @@ const QuantityInputAnswerCardInner = ({
 
 export const QuantityInputAnswerCard = (translate([''])(
   QuantityInputAnswerCardInner
-): ComponentType<{}>);
+): ComponentType<QualityInputAnswerCardProps>);
