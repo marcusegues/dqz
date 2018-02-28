@@ -151,7 +151,7 @@ export const de: Locale = {
       'Erfassen Sie die Fleischmenge, die Sie mit sich führen:',
     recordTheAmountOfTobacco:
       'Erfassen Sie Tabakmenge, die Sie mit sich führen:',
-    savedBasket: 'Aktueller warenkorb',
+    savedBasket: 'Aktueller Warenkorb',
   },
   payment: {
     overViewTitle: 'Übersicht Ihrer Anmeldung',
