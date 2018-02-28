@@ -74,7 +74,7 @@ class AllReceiptsInner extends React.Component<
     };
 
     return this.state.receipts.sort(sortDateTimeAsc).reduce(
-      (receipts, receipt) => {
+      (receipts, receipt, idx) => {
         const { basket } = receipt;
         const vatReport = calculateVat(
           receipt.amounts,
@@ -110,6 +110,7 @@ class AllReceiptsInner extends React.Component<
               setReceiptId(receipt.receiptId);
               navigation.navigate('ReceiptAfterPayment');
             }}
+            borderTop={idx === 0}
           />
         );
         // $FlowFixMe
