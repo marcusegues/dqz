@@ -147,9 +147,6 @@ class PickerModalInner extends React.Component<
     const standardInput = selected === 'standardInput';
     const customInput = selected === 'customInput';
 
-    const categoryName = CategoriesInfo.getIn([category, 'name'], '');
-    const meat = categoryName === 'Fleisch und Fleischzub';
-
     const currentAmount: number = standardInput
       ? this.standardTotalAmount()
       : this.customTotalAmount();
@@ -182,67 +179,26 @@ class PickerModalInner extends React.Component<
                 <CardHeaderText text={t('quantityInput:enterQuantity')} />
               </View>
               <CardHeaderSubText text={this.categorySubtextTitle()} />
-              {onlyStandardInput && meat ? (
-                <View style={pickerModalStyle.textInputContainer}>
-                  <TextInput
-                    keyboardType="numeric"
-                    maxLenght={5}
-                    underlineColorAndroid="transparent"
-                    blurOnSubmit
-                    style={pickerModalStyle.textInput}
-                    onChangeText={itemValue =>
-                      this.setState({
-                        numberInput: {
-                          ...this.state.numberInput,
-                          wholePart: itemValue,
-                        },
-                      })
-                    }
-                    value={this.state.numberInput.wholePart}
-                  />
-                  <PickerValueSeparator separator="," />
-                  <TextInput
-                    keyboardType="numeric"
-                    maxLength={2}
-                    underlineColorAndroid="transparent"
-                    blurOnSubmit
-                    style={pickerModalStyle.textInput}
-                    onChangeText={itemValue =>
-                      this.setState({
-                        numberInput: {
-                          ...this.state.numberInput,
-                          decimalPart: itemValue,
-                        },
-                      })
-                    }
-                    value={this.state.numberInput.decimalPart}
-                  />
-                  <PickerUnitColumn unit={unit} style={{ flex: 0.3 }} />
-                </View>
-              ) : (
-                <View style={pickerModalStyle.textInputContainer}>
-                  <TextInput
-                    keyboardType="numeric"
-                    maxLength={5}
-                    underlineColorAndroid="transparent"
-                    blurOnSubmit
-                    style={[
-                      pickerModalStyle.textInput,
-                      { alignSelf: 'center' },
-                    ]}
-                    onChangeText={itemValue =>
-                      this.setState({
-                        numberInput: {
-                          ...this.state.numberInput,
-                          wholePart: itemValue,
-                        },
-                      })
-                    }
-                    value={this.state.numberInput.wholePart}
-                  />
-                  <PickerUnitColumn unit={unit} style={{ flex: 0.3 }} />
-                </View>
-              )}
+
+              <View style={pickerModalStyle.textInputContainer}>
+                <TextInput
+                  keyboardType="numeric"
+                  maxLength={5}
+                  underlineColorAndroid="transparent"
+                  blurOnSubmit
+                  style={[pickerModalStyle.textInput, { alignSelf: 'center' }]}
+                  onChangeText={itemValue =>
+                    this.setState({
+                      numberInput: {
+                        ...this.state.numberInput,
+                        wholePart: itemValue,
+                      },
+                    })
+                  }
+                  value={this.state.numberInput.wholePart}
+                />
+                <PickerUnitColumn unit={unit} style={{ flex: 0.3 }} />
+              </View>
             </View>
           ) : (
             <View style={pickerModalStyle.topTouchableContainer}>
