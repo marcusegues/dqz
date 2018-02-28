@@ -2,13 +2,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import type { ComponentType } from 'react';
+// $FlowFixMe
 import Swipeable from 'react-native-swipeable';
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { View, TouchableHighlight, Text } from 'react-native';
-import type { Category } from '../../../../../model/types/basketPeopleAmountsTypes';
+import { View, TouchableHighlight } from 'react-native';
+import type {
+  Basket,
+  Category,
+} from '../../../../../model/types/basketPeopleAmountsTypes';
 import { CategoriesInfo } from '../../../../../model/constants';
 import type { TFunction } from '../../../../../types/generalTypes';
 import { AllowanceIcon } from './subcomponents/AllowanceIcon';
@@ -30,7 +34,7 @@ type DutyRowProps = {
 };
 
 type ReduxInject = {
-  basketResetCategoryQuantities: () => void,
+  basketResetCategoryQuantities: (category: Category) => void,
 };
 
 class DutyRowInner extends React.Component<
@@ -67,7 +71,6 @@ class DutyRowInner extends React.Component<
     const unit = t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
       count: quantity,
     });
-
     return (
       <Row borderTop={borderTop}>
         <Swipeable
@@ -111,13 +114,14 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setBasket: basket => {
+  setBasket: (basket: Basket): void => {
     dispatch({ type: 'SET_BASKET', basket });
   },
 });
 
-const mergeProps = (stateProps, dispatchProps) => ({
-  basketResetCategoryQuantities: category => {
+const mergeProps = (stateProps, dispatchProps, ownProps) => ({
+  ...ownProps,
+  basketResetCategoryQuantities: (category: Category): void => {
     const { basket } = stateProps;
     const { setBasket } = dispatchProps;
     const newBasket = resetQuantities(basket, category);
