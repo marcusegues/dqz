@@ -88,6 +88,13 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/images/info/freeLimit.png'),
 
         require('./assets/icons/mwst.png'),
+        require('./assets/icons/iva.png'),
+        require('./assets/icons/tva.png'),
+        require('./assets/icons/vat.png'),
+        require('./assets/icons/zoll.png'),
+        require('./assets/icons/dogana.png'),
+        require('./assets/icons/duoane.png'),
+        require('./assets/icons/customs.png'),
         require('./assets/icons/mainCategories.png'),
         require('./assets/icons/travellers.png'),
         require('./assets/icons/adult.png'),
