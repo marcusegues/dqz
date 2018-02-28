@@ -50,8 +50,8 @@ export const AnswerCard = ({
       <Image
         source={mainIcon}
         style={{
-          width: 32,
-          height: 32,
+          width: 50,
+          height: 50,
         }}
       />
       <View style={{ flex: 0.7 }}>{children}</View>
