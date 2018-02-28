@@ -181,12 +181,10 @@ export const it: Locale = {
     overviewDutyFree: '⚠️',
     until: 'fino a',
   },
-  information: {
-    informationTitle: 'Informazioni utili',
-    informationSubCategoryTitle: 'Ho dei beni con voi:',
 
-    customsProceduresMainText: 'Procedendo alla dogana',
-    customsProceduresSubText: 'Come privato devi entrare in Svizzera ...',
+  customsProcedures: {
+    customsProceduresMainText: '',
+    customsProceduresSubText: '',
     customsProceduresText1: '',
     customsProceduresText2: '',
     customsProceduresText3: '',
@@ -208,28 +206,16 @@ export const it: Locale = {
     customsProceduresText19: '',
     customsProceduresText20: '',
     customsProceduresText21: '',
+  },
 
-    travelDocumentsMainText: 'Documenti di viaggio',
-    travelDocumentsSubText:
-      'Per entrare in Svizzera i cittadini stranieri hanno bisogno di un valido ...',
+  travelDocuments: {
+    travelDocumentsMainText: '',
+    travelDocumentsSubText: '',
     travelDocumentsText1: '',
     travelDocumentsText2: '',
+  },
 
-    declarationMainText: 'Ho dei beni con me',
-    declarationSubText: 'Meriti per uso personale o come regalo ...',
-    animalsAndPlantsMainText: 'Ho animali o piante con me',
-    animalsAndPlantsSubText:
-      'Per cani, gatti, altri animali domestici e cavalli troverai il ...',
-    vehiclesMainText: 'Sto viaggiando con un veicolo',
-    vehiclesSubText:
-      "L'uso di autostrade e autostrade con veicoli a motore e rimorchi ...",
-    entryByTrainMainText: 'Ingresso in treno',
-    entryByTrainSubText:
-      'Se il personale doganale è presente sul treno, è necessario prendere tutte le merci ...',
-    prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
-    prohibitionsAndRestrictionsSubText:
-      'È vietato introdurre contraffazioni di marchi e design. Le usanze svizzere ...',
-
+  vatAllowance: {
     vatAllowanceMainText: '',
     vatAllowanceSubText: '',
     vatAllowanceText1: '',
@@ -276,7 +262,9 @@ export const it: Locale = {
     vatAllowanceText42: '',
     vatAllowanceText43: '',
     vatAllowanceText44: '',
+  },
 
+  dutyAllowance: {
     dutyAllowanceMainText: '',
     dutyAllowanceSubText: '',
     dutyAllowanceText1: '',
@@ -326,7 +314,9 @@ export const it: Locale = {
     dutyAllowanceText45: '',
     dutyAllowanceText46: '',
     dutyAllowanceText47: '',
+  },
 
+  personalEffects: {
     personalEffectsMainText: '',
     personalEffectsSubText: '',
     personalEffectsText1: '',
@@ -336,22 +326,28 @@ export const it: Locale = {
     personalEffectsText5: '',
     personalEffectsText6: '',
     personalEffectsText7: '',
+  },
 
+  foreignVat: {
     foreignVatMainText: '',
     foreignVatSubText: '',
-    foreignVatMainText1: '',
-    foreignVatMainText2: '',
-    foreignVatMainText3: '',
-    foreignVatMainText4: '',
-    foreignVatMainText5: '',
+    foreignVatText1: '',
+    foreignVatText2: '',
+    foreignVatText3: '',
+    foreignVatText4: '',
+    foreignVatText5: '',
+  },
 
+  animals: {
     animalsMainText: '',
     animalsSubText: '',
     animalsText1: '',
     animalsText2: '',
     animalsText3: '',
     animalsText4: '',
+  },
 
+  plants: {
     plantsMainText: '',
     plantsSubText: '',
     plantsText1: '',
@@ -385,23 +381,117 @@ export const it: Locale = {
     plantsText29: '',
     plantsText30: '',
     plantsText31: '',
+  },
+
+  souvenirsAndSpeciesProtection: {
+    souvenirsAndSpeciesProtectionMainText: '',
+    souvenirsAndSpeciesProtectionSubText: '',
+  },
+
+  highwayVignette: {
+    highwayVignetteMainText: '',
+    highwayVignetteSubText: '',
+  },
+
+  roadTax: {
+    roadTaxMainText: '',
+    roadTaxSubText: '',
+  },
+
+  fuelAndRepairs: {
+    fuelAndRepairsMainText: '',
+    fuelAndRepairsSubText: '',
+  },
+
+  forgery: {
+    forgeryMainText: '',
+    forgerySubText: '',
+  },
+
+  cash: {
+    cashMainText: '',
+    cashSubText: '',
+  },
+
+  food: {
+    foodMainText: '',
+    foodSubText: '',
+  },
+
+  authorisationRequirements: {
+    authorisationRequirementsMainText: '',
+    authorisationRequirementsSubText: '',
+  },
+
+  information: {
+    informationTitle: 'Informazioni utili',
+    informationSubCategoryTitle: 'Ho dei beni con voi:',
+
+    customsProceduresMainText: 'Procedendo alla dogana',
+    customsProceduresSubText: 'Come privato devi entrare in Svizzera ...',
+
+    travelDocumentsMainText: 'Documenti di viaggio',
+    travelDocumentsSubText:
+      'Per entrare in Svizzera i cittadini stranieri hanno bisogno di un valido ...',
+
+    declarationMainText: 'Ho dei beni con me',
+    declarationSubText: 'Meriti per uso personale o come regalo ...',
+
+    animalsAndPlantsMainText: 'Ho animali o piante con me',
+    animalsAndPlantsSubText:
+      'Per cani, gatti, altri animali domestici e cavalli troverai il ...',
+
+    vehiclesMainText: 'Sto viaggiando con un veicolo',
+    vehiclesSubText:
+      "L'uso di autostrade e autostrade con veicoli a motore e rimorchi ...",
+
+    entryByTrainMainText: 'Ingresso in treno',
+    entryByTrainSubText:
+      'Se il personale doganale è presente sul treno, è necessario prendere tutte le merci ...',
+
+    prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
+    prohibitionsAndRestrictionsSubText:
+      'È vietato introdurre contraffazioni di marchi e design. Le usanze svizzere ...',
+
+    vatAllowanceMainText: '',
+    vatAllowanceSubText: '',
+
+    dutyAllowanceMainText: '',
+    dutyAllowanceSubText: '',
+
+    personalEffectsMainText: '',
+    personalEffectsSubText: '',
+
+    foreignVatMainText: '',
+    foreignVatSubText: '',
+
+    animalsMainText: '',
+    animalsSubText: '',
+
+    plantsMainText: '',
+    plantsSubText: '',
 
     souvenirsAndSpeciesProtectionMainText: '',
     souvenirsAndSpeciesProtectionSubText: '',
 
     highwayVignetteMainText: '',
     highwayVignetteSubText: '',
+
     roadTaxMainText: '',
     roadTaxSubText: '',
+
     fuelAndRepairsMainText: '',
     fuelAndRepairsSubText: '',
 
     forgeryMainText: '',
     forgerySubText: '',
+
     cashMainText: '',
     cashSubText: '',
+
     foodMainText: '',
     foodSubText: '',
+
     authorisationRequirementsMainText: '',
     authorisationRequirementsSubText: '',
   },

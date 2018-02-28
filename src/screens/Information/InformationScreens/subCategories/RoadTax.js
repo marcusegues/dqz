@@ -18,6 +18,6 @@ const RoadTaxInner = ({ t }: RoadTaxInnerProps) => (
   </SubCategoryContainer>
 );
 
-export const RoadTax = (translate(['information'])(RoadTaxInner): ComponentType<
+export const RoadTax = (translate(['roadTax'])(RoadTaxInner): ComponentType<
   RoadTaxInnerProps
 >);

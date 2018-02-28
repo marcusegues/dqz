@@ -20,6 +20,6 @@ const HighwayVignetteInner = ({ t }: HighwayVignetteInnerProps) => (
   </SubCategoryContainer>
 );
 
-export const HighwayVignette = (translate(['information'])(
+export const HighwayVignette = (translate(['highwayVignette'])(
   HighwayVignetteInner
 ): ComponentType<HighwayVignetteInnerProps>);

@@ -14,11 +14,16 @@ type AuthorisationRequirementsInnerProps = {
 const AuthorisationRequirementsInner = ({
   t,
 }: AuthorisationRequirementsInnerProps) => (
-  <SubCategoryContainer title={t('cashMainText')}>
-    <AppInfoSubText text="cash" style={{ marginTop: verticalScale(10) }} />
+  <SubCategoryContainer title={t('authorisationRequirementsMainText')}>
+    <AppInfoSubText
+      text="authorisationRequirements"
+      style={{ marginTop: verticalScale(10) }}
+    />
   </SubCategoryContainer>
 );
 
-export const AuthorisationRequirements = (translate(['information'])(
-  AuthorisationRequirementsInner
-): ComponentType<AuthorisationRequirementsInnerProps>);
+export const AuthorisationRequirements = (translate([
+  'authorisationRequirements',
+])(AuthorisationRequirementsInner): ComponentType<
+  AuthorisationRequirementsInnerProps
+>);

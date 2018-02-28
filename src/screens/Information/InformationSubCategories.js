@@ -46,8 +46,8 @@ class InformationSubCategoriesInner extends React.Component<{
               key={cat}
               borderTop={idx === 0}
               source={informationImages[cat]}
-              mainText={t(`${cat}MainText`)}
-              subText={t(`${cat}SubText`)}
+              mainText={t(`${cat}:${cat}MainText`)}
+              subText={t(`${cat}:${cat}SubText`)}
               rowOnPress={() =>
                 navigation.navigate(informationNavigateTo[cat].toString())
               } // TODO: proper types. This toString should not be here.

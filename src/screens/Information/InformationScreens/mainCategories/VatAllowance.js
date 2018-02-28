@@ -196,6 +196,6 @@ const VatAllowanceInner = ({ t, navigation }: VatAllowanceInnerProps) => (
   </SubCategoryContainer>
 );
 
-export const VatAllowance = (translate(['information'])(
+export const VatAllowance = (translate(['vatAllowance'])(
   VatAllowanceInner
 ): ComponentType<VatAllowanceInnerProps>);

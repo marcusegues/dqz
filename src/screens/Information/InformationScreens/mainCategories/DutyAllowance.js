@@ -138,6 +138,6 @@ const DutyAllowanceInner = ({ t, navigation }: DutyAllowanceInnerProps) => (
   </SubCategoryContainer>
 );
 
-export const DutyAllowance = (translate(['information'])(
+export const DutyAllowance = (translate(['dutyAllowance'])(
   DutyAllowanceInner
 ): ComponentType<DutyAllowanceInnerProps>);

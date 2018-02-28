@@ -20,6 +20,6 @@ const FuelAndRepairsInner = ({ t }: FuelAndRepairsInnerProps) => (
   </SubCategoryContainer>
 );
 
-export const FuelAndRepairs = (translate(['information'])(
+export const FuelAndRepairs = (translate(['fuelAndRepairs'])(
   FuelAndRepairsInner
 ): ComponentType<FuelAndRepairsInnerProps>);

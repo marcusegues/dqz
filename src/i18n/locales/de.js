@@ -186,10 +186,8 @@ export const de: Locale = {
     chooseOtherEntryTime: 'Anderen Zeitraum wählen',
     until: 'bis',
   },
-  information: {
-    informationTitle: 'Wissenswertes',
-    informationSubCategoryTitle: 'Ich habe Waren dabei:',
 
+  customsProcedures: {
     customsProceduresMainText: 'Vorgehen am Zoll',
     customsProceduresSubText:
       'Als Privatperson müssen Sie bei der Einreise in die Schweiz ...',
@@ -229,7 +227,9 @@ export const de: Locale = {
     customsProceduresText20: 'Bitte beachten:',
     customsProceduresText21:
       'Die mündliche Anmeldung sowie die Anmeldung mit der App oder via Anmeldebox sind verbindlich. Wir nehmen Zollkontrollen auch im Landesinneren vor. Eine nachträgliche Zollanmeldung ist nicht möglich. Sie machen sich strafbar, wenn Sie verbotene, bewilligungs- oder abgabenpflichtige Waren nicht oder falsch anmelden.',
+  },
 
+  travelDocuments: {
     travelDocumentsMainText: 'Reisedokumente',
     travelDocumentsSubText:
       'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges ...',
@@ -238,23 +238,9 @@ export const de: Locale = {
       'Über die Einreise in die Schweiz und den Aufenthalt (Vorschriften zu Reisedokumenten und Visa) gibt Ihnen die Website des Staatssekretariats für Migration Auskunft:',
     travelDocumentsText2:
       'Die Vorschriften zu den Reisepapieren im Ausland finden Sie bei den entsprechenden ausländischen Behörden, über den Link der Weltzollorganisation:',
+  },
 
-    declarationMainText: 'Ich habe Waren dabei',
-    declarationSubText:
-      'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
-    animalsAndPlantsMainText: 'Ich habe Tiere oder Pflanzen dabei',
-    animalsAndPlantsSubText:
-      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die ...',
-    vehiclesMainText: 'Ich bin mit einem Fahrzeug unterwegs',
-    vehiclesSubText:
-      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen und Anhängern ...',
-    entryByTrainMainText: 'Einreise per Bahn',
-    entryByTrainSubText:
-      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren ...',
-    prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
-    prohibitionsAndRestrictionsSubText:
-      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer Zoll ...',
-
+  vatAllowance: {
     vatAllowanceMainText: 'Wertfreigrenze CHF 300',
     vatAllowanceSubText:
       'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
@@ -326,7 +312,9 @@ export const de: Locale = {
     vatAllowanceText42: '1 Gestell\t\tCHF 300',
     vatAllowanceText43: 'Total\t\tCHF 700',
     vatAllowanceText44: '',
+  },
 
+  dutyAllowance: {
     dutyAllowanceMainText: 'Freimengen: Lebensmittel, Alkohol und Tabak',
     dutyAllowanceSubText: 'Führen Sie für Ihren privaten Gebrauch oder zum ...',
     dutyAllowanceText1:
@@ -394,7 +382,9 @@ export const de: Locale = {
       'Im Ausland bestellt und per Post/Kurierdienst geliefert',
     dutyAllowanceText47:
       'Für Waren, die Sie im Ausland bestellen (z.B. im Internet) und die Ihnen per Post oder Kurierdienst zugestellt werden, gelten andere Bestimmungen. Mehr Informationen',
+  },
 
+  personalEffects: {
     personalEffectsMainText:
       'Persönliche Gebrauchsgegenstände und Reiseproviant',
     personalEffectsSubText:
@@ -410,22 +400,26 @@ export const de: Locale = {
     personalEffectsText6: 'Reiseproviant',
     personalEffectsText7:
       'Als Reiseproviant gelten genussfertige Nahrungsmittel und alkoholfreie Getränke für den Reisetag.',
+  },
 
+  foreignVat: {
     foreignVatMainText: 'Rückerstattung der ausländischen Mehrwertsteuer',
     foreignVatSubText:
       'Die Schweizer Zollverwaltung kann Ihnen die ausländische ...',
-    foreignVatMainText1:
+    foreignVatText1:
       'Die Schweizer Zollverwaltung kann Ihnen die ausländische MWST nicht zurückerstatten.',
-    foreignVatMainText2:
+    foreignVatText2:
       'Wenn Sie im Ausland gekaufte Waren persönlich in die Schweiz bringen, haben Sie häufig die Möglichkeit, sich die ausländische MWST durch den ausländischen Verkäufer oder ein Tax-Refund-Unternehmen erstatten zu lassen. Diese Serviceunternehmen haben nichts mit der eidgenössischen Zollverwaltung zu tun; sie arbeiten insbesondere nicht in unserem Auftrag.',
-    foreignVatMainText3:
+    foreignVatText3:
       'Für die Rückerstattung bestehen je nach Staat unterschiedliche Voraussetzungen. Allenfalls füllt der Verkäufer ein Rückerstattungsformular aus, auf dem die ausländische Zollbehörde den Export in die Schweiz bestätigt.',
-    foreignVatMainText4:
+    foreignVatText4:
       'Weitere Informationen zur Rückerstattung der ausländischen MWST können wir Ihnen nicht geben. Allenfalls erteilt Ihnen die entsprechende Zollbehörde Auskünfte. Die ausländischen Zollbehörden finden Sie unter folgendem Link der Weltzollorganisation:\n' +
       'www.wcoomd.org',
-    foreignVatMainText5:
+    foreignVatText5:
       'Die schweizerische MWST ist auch zu bezahlen, wenn die ausländische MWST nicht zurückerstattet wird. Im Bereich der Mehrwertsteuern gibt es kein Doppelbesteuerungsabkommen.',
+  },
 
+  animals: {
     animalsMainText: 'Tiere: Heimtiere, Hunde, Katzen und Pferde',
     animalsSubText:
       'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden ...',
@@ -435,7 +429,9 @@ export const de: Locale = {
     animalsText3:
       'Wird die Wertfreigrenze von CHF 300 überschritten, müssen Sie für Tiere die MWST bezahlen. Detailliertere Informationen finden Sie unter:',
     animalsText4: 'Wertfreigrenze CHF 300',
+  },
 
+  plants: {
     plantsMainText: 'Pflanzen',
     plantsSubText:
       'Die Einfuhr von folgenden Pflanzen ist verboten, da sie Träger von Schadorganismen ...',
@@ -483,11 +479,79 @@ export const de: Locale = {
     plantsText30: 'Abgaben',
     plantsText31:
       'Wird die Wertfreigrenze von CHF 300 überschritten, müssen Sie für Pflanzen die MWST bezahlen. Detaillierte Informationen finden Sie unter: Wertfreigrenze CHF 300',
+  },
 
+  souvenirsAndSpeciesProtection: {
     souvenirsAndSpeciesProtectionMainText: 'Souvenirs und Artenschutz (CITES)',
     souvenirsAndSpeciesProtectionSubText:
       'Ein Gurt aus Elefantenleder, ein Traumfänger mit Vogelfedern ...',
+  },
 
+  highwayVignette: {
+    highwayVignetteMainText: 'Autobahnvignette',
+    highwayVignetteSubText:
+      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen ...',
+  },
+
+  roadTax: {
+    roadTaxMainText: 'Strassenverkehrsabgabe über 3,5 T (PSVA)',
+    roadTaxSubText:
+      'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 ...',
+  },
+
+  fuelAndRepairs: {
+    fuelAndRepairsMainText: 'Treibstoff und Reparaturen',
+    fuelAndRepairsSubText:
+      'Der Tankinhalt ist abgabenfrei. In einem Reservekanister können Sie zudem bis 25 Liter ...',
+  },
+
+  forgery: {
+    forgeryMainText: 'Fälschungen',
+    forgerySubText:
+      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer ...',
+  },
+
+  cash: {
+    cashMainText: 'Barmittel',
+    cashSubText:
+      'Bei der Ein-, Durch- und Ausfuhr von Barmitteln (Bargeld, Wertpapieren u.a.) im ...',
+  },
+
+  food: {
+    foodMainText: 'Beschränkungen für Lebensmittel',
+    foodSubText: 'Aus EU-Staaten, Island und Norwegen können Waren ...',
+  },
+
+  authorisationRequirements: {
+    authorisationRequirementsMainText: 'Bewilligungspflichtig / Beschränkungen',
+    authorisationRequirementsSubText:
+      'Die Einfuhr von bestimmten Waren ist beschränkt und nur unter ...',
+  },
+
+  information: {
+    informationTitle: 'Wissenswertes',
+    informationSubCategoryTitle: 'Ich habe Waren dabei:',
+    customsProceduresMainText: 'Vorgehen am Zoll',
+    customsProceduresSubText:
+      'Als Privatperson müssen Sie bei der Einreise in die Schweiz ...',
+    travelDocumentsMainText: 'Reisedokumente',
+    travelDocumentsSubText:
+      'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges ...',
+    declarationMainText: 'Ich habe Waren dabei',
+    declarationSubText:
+      'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
+    animalsAndPlantsMainText: 'Ich habe Tiere oder Pflanzen dabei',
+    animalsAndPlantsSubText:
+      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die ...',
+    vehiclesMainText: 'Ich bin mit einem Fahrzeug unterwegs',
+    vehiclesSubText:
+      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen und Anhängern ...',
+    entryByTrainMainText: 'Einreise per Bahn',
+    entryByTrainSubText:
+      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren ...',
+    prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
+    prohibitionsAndRestrictionsSubText:
+      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer Zoll ...',
     highwayVignetteMainText: 'Autobahnvignette',
     highwayVignetteSubText:
       'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen ...',
@@ -497,7 +561,6 @@ export const de: Locale = {
     fuelAndRepairsMainText: 'Treibstoff und Reparaturen',
     fuelAndRepairsSubText:
       'Der Tankinhalt ist abgabenfrei. In einem Reservekanister können Sie zudem bis 25 Liter ...',
-
     forgeryMainText: 'Fälschungen',
     forgerySubText:
       'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer ...',

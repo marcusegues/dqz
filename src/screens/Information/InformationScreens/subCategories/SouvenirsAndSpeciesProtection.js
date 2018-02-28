@@ -18,6 +18,8 @@ const SouvenirsAndSpeciesProtectionInner = ({
   </SubCategoryContainer>
 );
 
-export const SouvenirsAndSpeciesProtection = (translate(['information'])(
-  SouvenirsAndSpeciesProtectionInner
-): ComponentType<SouvenirsAndSpeciesProtectionInnerProps>);
+export const SouvenirsAndSpeciesProtection = (translate([
+  'souvenirsAndSpecies',
+])(SouvenirsAndSpeciesProtectionInner): ComponentType<
+  SouvenirsAndSpeciesProtectionInnerProps
+>);
