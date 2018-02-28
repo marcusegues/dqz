@@ -6,30 +6,32 @@ import { AnswerCard } from '../../AnswerCard';
 import { QuantityInputInfo } from '../../children/QuantityInputInfo';
 import type { QuestionFlag } from '../../../../QuestionAnswerContainer';
 import { quantityInputImages } from '../../types/amountAndQuantityInput';
+import type { Language } from '../../../../../../i18n/types/locale';
 
 const complete = require('../../../../../../../assets/images/complete.png');
 const incomplete = require('../../../../../../../assets/images/incomplete.png');
 
-class QuantityInputAnswerCardInner extends React.Component<{
+type QualityInputAnswerCardProps = {
   onAnswerCardPress: () => void,
   flag: QuestionFlag,
   duty: number,
-  i18n: Object,
-}> {
-  render() {
-    const { onAnswerCardPress, flag, duty, i18n } = this.props;
-    const { language } = i18n;
-    return (
-      <AnswerCard
-        onAnswerCardPress={onAnswerCardPress}
-        mainIcon={quantityInputImages[language]}
-        flag={flag === 'complete' ? complete : incomplete}
-      >
-        <QuantityInputInfo duty={duty} />
-      </AnswerCard>
-    );
-  }
-}
+  i18n: { language: Language },
+};
+
+const QuantityInputAnswerCardInner = ({
+  onAnswerCardPress,
+  flag,
+  duty,
+  i18n,
+}: QualityInputAnswerCardProps) => (
+  <AnswerCard
+    onAnswerCardPress={onAnswerCardPress}
+    mainIcon={quantityInputImages[i18n.language]}
+    flag={flag === 'complete' ? complete : incomplete}
+  >
+    <QuantityInputInfo duty={duty} />
+  </AnswerCard>
+);
 
 export const QuantityInputAnswerCard = (translate([''])(
   QuantityInputAnswerCardInner
