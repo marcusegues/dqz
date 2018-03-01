@@ -12,6 +12,7 @@ import {
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
 import { AppModal } from '../AppModal';
 import { RedButton } from '../../Buttons/RedButton';
+import { moderateScale } from '../../../styles/Scaling';
 
 const ownStyles = StyleSheet.create({
   modalContainer: {
@@ -151,7 +152,11 @@ export const GoodInputModal = ({
           onChangeText={() => {}}
         />
         <TouchableOpacity>
-          <Entypo name="circle-with-plus" size={30} color="#DC0018" />
+          <Entypo
+            name="circle-with-plus"
+            size={moderateScale(36)}
+            color="#DC0018"
+          />
         </TouchableOpacity>
         <Text style={ownStyles.inputRowRightText}>Liter</Text>
       </View>
