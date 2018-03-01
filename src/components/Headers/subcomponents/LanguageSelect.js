@@ -6,6 +6,7 @@ import { Text } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 import type { Language } from '../../../i18n/types/locale';
 import type { Navigation } from '../../../types/generalTypes';
+import { moderateScale } from '../../../styles/Scaling';
 
 type LanguageSelectProps = {
   language: Language,
@@ -17,7 +18,13 @@ export const LanguageSelect = ({
   navigation,
 }: LanguageSelectProps) => (
   <Touchable onPress={() => navigation.navigate('OnBoarding')}>
-    <Text style={{ fontFamily: 'roboto_regular', color: '#757575' }}>
+    <Text
+      style={{
+        fontFamily: 'roboto_regular',
+        color: '#757575',
+        fontSize: moderateScale(16),
+      }}
+    >
       {language.toUpperCase()}
     </Text>
   </Touchable>
