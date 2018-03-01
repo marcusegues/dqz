@@ -19,13 +19,13 @@ import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader'
 import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
 import type { TFunction } from '../../../types/generalTypes';
 import { ModalCard } from '../ModalCard';
-import { PickerComponent } from '../CurrencyPickerModal/subComponents/PickerComponent';
+import { PickerComponent } from '../../PickerComponent/PickerComponent';
 import { moderateScale, verticalScale } from '../../../styles/Scaling';
 import {
   pickerHours,
   pickerMinutes,
   pickerDates,
-} from '../PickerModal/pickerData';
+} from '../QuantityPickerModal/pickerData';
 import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
 import { ModalCloseText } from '../ModalCloseText';
 import { roundMinutes } from '../../../model/utils';

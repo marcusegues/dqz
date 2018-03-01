@@ -2,30 +2,25 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
-import { View, Picker, TextInput } from 'react-native';
+import { View, Picker } from 'react-native';
 import { translate } from 'react-i18next';
 import { AppModal } from '../AppModal';
 import { RedButton } from '../../Buttons/RedButton';
-import {
-  rangeItemsPicker,
-  pickerDecimalUnits,
-  amountsPicker,
-} from './pickerData';
+import { rangeItemsPicker, amountsPicker } from './pickerData';
 import { pickerModalStyle } from '../styles/PickerModal';
 import { CategoriesInfo } from '../../../model/constants';
 import { ModalCard } from '../ModalCard';
-import { ModalTab } from './subComponents/ModalTab';
-import { PickerComponent } from '../CurrencyPickerModal/subComponents/PickerComponent';
+import { PickerComponent } from '../../PickerComponent/PickerComponent';
 import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
 import { PickerUnitColumn } from './subComponents/PickerUnitColumn';
 import type { TFunction } from '../../../types/generalTypes';
 import type { Category } from '../../../model/types/basketPeopleAmountsTypes';
 import { ModalCloseText } from '../ModalCloseText';
-import { CardHeaderText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderText';
-import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
-import { moderateScale, verticalScale } from '../../../styles/Scaling';
+import { StandardAndCustomInputContent } from './subComponents/StandardAndCustomInputContent/StandardAndCustomInputContent';
 
-type PickerState = {
+import { StandardInputContent } from './subComponents/StandardInputContent/StandardInputContent';
+
+type QuantityPickerState = {
   selected: 'standardInput' | 'customInput',
   standardInput: {
     number: string,
@@ -41,7 +36,7 @@ type PickerState = {
   },
 };
 
-type PickerModalProps = {
+type QuantityPickerModalProps = {
   confirmAction: number => void,
   category: Category,
   toggleModalVisible: () => void,
@@ -49,16 +44,16 @@ type PickerModalProps = {
   onlyStandardInput?: boolean,
 };
 
-class PickerModalInner extends React.Component<
-  PickerModalProps & { t: TFunction },
-  PickerState
+class QuantityPickerModalInner extends React.Component<
+  QuantityPickerModalProps & { t: TFunction },
+  QuantityPickerState
 > {
   static defaultProps = {
     onlyStandardInput: false,
   };
 
   state = {
-    selected: 'standardInput' || 'customInput',
+    selected: 'standardInput',
     standardInput: {
       number: '1',
       amount: '1',
@@ -74,64 +69,21 @@ class PickerModalInner extends React.Component<
   };
 
   standardTotalAmount(): number {
-    const {
-      number: numberString,
-      amount: amountString,
-    } = this.state.standardInput;
+    const { number, amount } = this.state.standardInput;
 
-    const number = +numberString;
-    const amount = +amountString;
-    if (number < 0 || amount < 0) {
-      return 0;
-    }
-    return number * amount;
+    return Math.max(+number, 0) * Math.max(+amount, 0);
   }
 
   customTotalAmount(): number {
-    const {
-      units: unitsString,
-      decimalUnits: decimalUnitsString,
-    } = this.state.customInput;
+    const { units, decimalUnits } = this.state.customInput;
 
-    const units = +unitsString;
-    const decimalUnits = +decimalUnitsString;
-    if (units < 0 || decimalUnits < 0) {
-      return 0;
-    }
-    return units + decimalUnits / 100;
+    return Math.max(+units, 0) + Math.max(+decimalUnits, 0) / 100;
   }
 
   numberInputTotalAmount(): number {
-    const {
-      wholePart: wholePartString,
-      decimalPart: decimalPartString,
-    } = this.state.numberInput;
+    const { wholePart, decimalPart } = this.state.numberInput;
 
-    const wholePart = +wholePartString;
-    const decimalPart = +decimalPartString;
-    if (wholePart < 0 || decimalPart < 0) {
-      return 0;
-    }
-    return wholePart + decimalPart / 100;
-  }
-
-  categorySubtextTitle() {
-    const { t } = this.props;
-    const categoryName = CategoriesInfo.getIn(
-      [this.props.category, 'name'],
-      ''
-    );
-    switch (categoryName) {
-      case 'Fleisch und Fleischzub': {
-        return t('recordTheAmountOfMeat');
-      }
-      case 'Andere Tabakfabrikate': {
-        return t('recordTheAmountOfTobacco');
-      }
-      default: {
-        return '';
-      }
-    }
+    return Math.max(+wholePart, 0) + Math.max(+decimalPart, 0) / 100;
   }
 
   render() {
@@ -144,10 +96,10 @@ class PickerModalInner extends React.Component<
       modalVisible,
       onlyStandardInput,
     } = this.props;
-    const standardInput = selected === 'standardInput';
-    const customInput = selected === 'customInput';
+    const standardInputSelected = selected === 'standardInput';
+    const customInputSelected = selected === 'customInput';
 
-    const currentAmount: number = standardInput
+    const currentAmount: number = standardInputSelected
       ? this.standardTotalAmount()
       : this.customTotalAmount();
 
@@ -169,62 +121,24 @@ class PickerModalInner extends React.Component<
       >
         <ModalCard style={{ width: '95%' }}>
           {onlyStandardInput ? (
-            <View>
-              <View
-                style={{
-                  marginTop: verticalScale(16),
-                  marginLeft: moderateScale(16),
-                }}
-              >
-                <CardHeaderText text={t('quantityInput:enterQuantity')} />
-              </View>
-              <CardHeaderSubText text={this.categorySubtextTitle()} />
-
-              <View style={pickerModalStyle.textInputContainer}>
-                <TextInput
-                  keyboardType="numeric"
-                  maxLength={5}
-                  underlineColorAndroid="transparent"
-                  blurOnSubmit
-                  style={[pickerModalStyle.textInput, { alignSelf: 'center' }]}
-                  onChangeText={itemValue =>
-                    this.setState({
-                      numberInput: {
-                        ...this.state.numberInput,
-                        wholePart: itemValue,
-                      },
-                    })
-                  }
-                  value={this.state.numberInput.wholePart}
-                />
-                <PickerUnitColumn unit={unit} style={{ flex: 0.3 }} />
-              </View>
-            </View>
+            <StandardInputContent
+              onChangeText={itemValue =>
+                this.setState({
+                  numberInput: {
+                    ...this.state.numberInput,
+                    wholePart: itemValue,
+                  },
+                })
+              }
+              value={this.state.numberInput.wholePart}
+              category={category}
+              amount={amount}
+            />
           ) : (
-            <View style={pickerModalStyle.topTouchableContainer}>
-              <ModalTab
-                activeTab={standardInput}
-                onPress={() =>
-                  this.setState({
-                    selected: 'standardInput',
-                  })
-                }
-                text={t('standardCategoryPicker').toUpperCase()}
-              />
-
-              <ModalTab
-                activeTab={customInput}
-                onPress={() =>
-                  this.setState({
-                    selected: 'customInput',
-                  })
-                }
-                text={t('individualCategoryPicker').toUpperCase()}
-              />
-            </View>
+            <StandardAndCustomInputContent />
           )}
 
-          {standardInput && !onlyStandardInput ? (
+          {standardInputSelected && !onlyStandardInput ? (
             <View style={pickerModalStyle.pickerContainer}>
               <PickerComponent
                 selectedValue={this.state.standardInput.number}
@@ -273,7 +187,7 @@ class PickerModalInner extends React.Component<
             <View />
           )}
 
-          {customInput && !onlyStandardInput ? (
+          {customInputSelected && !onlyStandardInput ? (
             <View style={pickerModalStyle.pickerContainer}>
               <PickerComponent
                 selectedValue={this.state.customInput.units}
@@ -293,27 +207,6 @@ class PickerModalInner extends React.Component<
                 ))}
               </PickerComponent>
 
-              <PickerValueSeparator separator="," />
-
-              <PickerComponent
-                selectedValue={this.state.customInput.decimalUnits}
-                onValueChange={itemValue =>
-                  this.setState({
-                    customInput: {
-                      ...this.state.customInput,
-                      decimalUnits: itemValue,
-                    },
-                  })
-                }
-                style={{}}
-                mode="dropdown"
-                prompt="Choose value"
-                itemStyle={{}}
-              >
-                {pickerDecimalUnits.map(i => (
-                  <Picker.Item key={i.id} label={i.label} value={i.value} />
-                ))}
-              </PickerComponent>
               <PickerUnitColumn unit={unit} />
             </View>
           ) : (
@@ -338,6 +231,6 @@ class PickerModalInner extends React.Component<
   }
 }
 
-export const PickerModal = (translate(['modal', 'quantityInput', 'units'])(
-  PickerModalInner
-): ComponentType<PickerModalProps>);
+export const QuantityPickerModal = (translate(['modal', 'quantityInput', 'units'])(
+  QuantityPickerModalInner
+): ComponentType<QuantityPickerModalProps>);

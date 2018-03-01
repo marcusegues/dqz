@@ -82,6 +82,7 @@ type QuantityInputTranslations = {
   enterQuantity: string,
   enterQuantitiesButter: string,
   enterQuantitiesAlcohol: string,
+  standardInputSubText: string,
 };
 
 type AmountInputTranslations = {

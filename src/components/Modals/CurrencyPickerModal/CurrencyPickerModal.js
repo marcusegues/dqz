@@ -16,7 +16,7 @@ import { AppModal } from '../AppModal';
 import { RedButton } from '../../Buttons/RedButton';
 import { pickerModalStyle } from '../styles/PickerModal';
 import { ModalCard } from '../ModalCard';
-import { PickerComponent } from './subComponents/PickerComponent';
+import { PickerComponent } from '../../PickerComponent/PickerComponent';
 import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader';
 import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
 import { currencyPicker } from './currencyPickerData';
