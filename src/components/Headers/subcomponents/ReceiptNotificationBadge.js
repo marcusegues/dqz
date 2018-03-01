@@ -21,30 +21,31 @@ type ReceiptNotificationBadgeProps = {
 const ReceiptNotificationBadgeInner = ({
   fees,
   navigation,
-}: ReceiptNotificationBadgeProps) => (
-  <Touchable
-    onPress={() => {
-      navigation.navigate('Payment');
-    }}
-  >
-    <View
-      style={[
-        receiptNotificationBadgeStyle.container,
-        { backgroundColor: fees ? MAIN_RED : 'lightgray' },
-      ]}
+}: ReceiptNotificationBadgeProps) =>
+  fees ? (
+    <Touchable
+      onPress={() => {
+        navigation.navigate('Payment');
+      }}
     >
-      <MaterialIcons
-        name="shopping-cart"
-        size={moderateScale(17)}
-        color="white"
-        style={receiptNotificationBadgeStyle.receiptIcon}
-      />
-      <Text style={receiptNotificationBadgeStyle.amountText}>
-        CHF {fees.toFixed(2)}
-      </Text>
-    </View>
-  </Touchable>
-);
+      <View
+        style={[
+          receiptNotificationBadgeStyle.container,
+          { backgroundColor: fees ? MAIN_RED : 'lightgray' },
+        ]}
+      >
+        <MaterialIcons
+          name="shopping-cart"
+          size={moderateScale(17)}
+          color="white"
+          style={receiptNotificationBadgeStyle.receiptIcon}
+        />
+        <Text style={receiptNotificationBadgeStyle.amountText}>
+          CHF {fees.toFixed(2)}
+        </Text>
+      </View>
+    </Touchable>
+  ) : null;
 
 const mapStateToProps = state => ({
   fees: getTotalFees(state),
