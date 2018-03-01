@@ -25,7 +25,7 @@ import {
   pickerHours,
   pickerMinutes,
   pickerDates,
-} from '../QuantityPickerModal/pickerData';
+} from '../QuantityInputModal/pickerData';
 import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
 import { ModalCloseText } from '../ModalCloseText';
 import { roundMinutes } from '../../../model/utils';

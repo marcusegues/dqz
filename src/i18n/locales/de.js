@@ -83,6 +83,8 @@ export const de: Locale = {
     enterQuantitiesButter: 'Erfassen Sie hier die Mengen von {{value}}',
     enterQuantitiesAlcohol:
       'Erfassen Sie hier die Mengen aller alkoholischen Getränke',
+    standardInputSubText:
+      'Erfassen Sie die menge von {category}, die Sie mit sich führen:',
   },
   amountInput: {
     amountInput:
@@ -147,10 +149,7 @@ export const de: Locale = {
 
     timePickerTakeOverThePeriod: 'Zeitraum übernehmen',
     timePickerTimePrefix: 'Uhr',
-    recordTheAmountOfMeat:
-      'Erfassen Sie die Fleischmenge, die Sie mit sich führen:',
-    recordTheAmountOfTobacco:
-      'Erfassen Sie Tabakmenge, die Sie mit sich führen:',
+
     savedBasket: 'Aktueller Warenkorb',
   },
   payment: {

@@ -79,6 +79,7 @@ export const fr: Locale = {
     enterQuantity: 'Entrer la quantité',
     enterQuantitiesButter: 'Entrez les quantités de tous {{value}} ici',
     enterQuantitiesAlcohol: 'Entrez les quantités de tous {{value}} ici',
+    standardInputSubText: '⚡️',
   },
   amountInput: {
     amountInput:
@@ -146,10 +147,7 @@ export const fr: Locale = {
 
     timePickerTakeOverThePeriod: 'Reprendre la période selectionnée',
     timePickerTimePrefix: 'Heure',
-    recordTheAmountOfMeat:
-      'Notez la quantité de viande que vous transportez avec vous:',
-    recordTheAmountOfTobacco:
-      'Notez la quantité de tabac que vous transportez:',
+
     savedBasket: 'Panier actuel',
   },
   payment: {

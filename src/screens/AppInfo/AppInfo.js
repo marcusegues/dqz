@@ -6,7 +6,7 @@ import { translate } from 'react-i18next';
 import { Image, View } from 'react-native';
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { TFunction } from '../../types/generalTypes';
-import { ModalTab } from '../../components/Modals/QuantityPickerModal/subComponents/ModalTab';
+import { ModalTab } from '../../components/Modals/QuantityInputModal/subComponents/ModalTab';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { CardHeaderText } from '../../components/QuestionAnswer/Cards/subcomponents/CardHeaderText';
 import { CardRowText } from '../../components/QuestionAnswer/Cards/subcomponents/CardRowText';

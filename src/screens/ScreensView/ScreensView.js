@@ -4,7 +4,7 @@ import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { NavBar } from '../../components/NavBar/NavBar';
-import { QuantityPickerModal } from '../../components/Modals/QuantityPickerModal/QuantityPickerModal';
+import { QuantityInputModal } from '../../components/Modals/QuantityInputModal/QuantityInputModal';
 import { CurrencyPickerModal } from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
 import { TimePickerModal } from '../../components/Modals/TimePickerModal/TimePickerModal';
 import { getCurrencies, getFormattedCurrencyDate } from '../../reducers';
@@ -128,7 +128,7 @@ class ScreensViewInner extends React.Component<
           )}
         />
 
-        <QuantityPickerModal
+        <QuantityInputModal
           modalVisible={this.state.pickerModalVisible}
           toggleModalVisible={() => this.togglePickerVisible()}
           confirmAction={() => {}}

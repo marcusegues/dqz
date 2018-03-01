@@ -23,7 +23,7 @@ import type {
 import { QuantityRow } from './subcomponents/QuantityRow';
 import { moderateScale, scale, verticalScale } from '../../../styles/Scaling';
 import { BackArrow } from '../../Headers/subcomponents/BackArrow';
-import { QuantityPickerModal } from '../QuantityPickerModal/QuantityPickerModal';
+import { QuantityInputModal } from '../QuantityInputModal/QuantityInputModal';
 import { RedButton } from '../../Buttons/RedButton';
 import type { TFunction } from '../../../types/generalTypes';
 
@@ -218,7 +218,7 @@ class GoodQuantityListModalInner extends React.Component<
             />
           </View>
         </ModalCard>
-        <QuantityPickerModal
+        <QuantityInputModal
           modalVisible={pickerModalVisible}
           toggleModalVisible={() => this.togglePickerVisible()}
           confirmAction={amount => this.confirmPicker(amount)}

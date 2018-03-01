@@ -2,9 +2,17 @@
 import React from 'react';
 // $FlowFixMe
 import { TextInput } from 'react-native';
-import { pickerModalStyle } from '../../styles/PickerModal';
+import { pickerModalStyle } from '../Modals/styles/PickerModal';
 
-export const PickerTextInput = ({ onChangeText, value }) => {
+type TextInputWrapperProps = {
+  onChangeText: (text: string) => void,
+  value: string,
+};
+
+export const TextInputWrapper = ({
+  onChangeText,
+  value,
+}: TextInputWrapperProps) => {
   return (
     <TextInput
       keyboardType="numeric"
