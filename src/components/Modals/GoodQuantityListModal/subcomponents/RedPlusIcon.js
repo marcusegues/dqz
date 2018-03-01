@@ -12,6 +12,6 @@ type RedPlusIconProps = {
 
 export const RedPlusIcon = ({ onPress }: RedPlusIconProps) => (
   <TouchableOpacity onPress={onPress}>
-    <Entypo name="circle-with-plus" size={moderateScale(46)} color={MAIN_RED} />
+    <Entypo name="circle-with-plus" size={moderateScale(36)} color={MAIN_RED} />
   </TouchableOpacity>
 );
