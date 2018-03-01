@@ -173,7 +173,7 @@ export const en: Locale = {
     allReceiptsSumInFranks: 'CHF {{value}}',
     allReceiptsDate: 'from {{value}}',
     entryTime: 'Time of entry',
-    chooseOtherEntryTime: 'Choose new time of entry',
+    chooseOtherEntryTime: 'To adjust',
     until: 'until',
   },
 

@@ -183,7 +183,7 @@ export const de: Locale = {
     allReceiptsSumInFranks: 'CHF {{value}}',
     allReceiptsDate: 'vom {{value}}',
     entryTime: 'Zeitraum der Einreise',
-    chooseOtherEntryTime: 'Anderen Zeitraum wählen',
+    chooseOtherEntryTime: 'Anpassen',
     until: 'bis',
   },
 

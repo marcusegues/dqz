@@ -176,7 +176,7 @@ export const it: Locale = {
     allReceiptsSumInFranks: 'CHF {{value}}',
     allReceiptsDate: 'da {{value}}',
     entryTime: 'Periodo di entrata',
-    chooseOtherEntryTime: 'Scegli un altro periodo',
+    chooseOtherEntryTime: 'Regolare',
     overviewRegistered: '⚠️',
     overviewDutyFree: '⚠️',
     until: 'fino a',
