@@ -28,6 +28,7 @@ type InformationRowProps = {
   source: string,
   rowOnPress: () => void,
   borderTop?: boolean,
+  borderBottom?: boolean,
 };
 
 export const InformationRow = ({
@@ -36,8 +37,9 @@ export const InformationRow = ({
   source,
   rowOnPress,
   borderTop = false,
+  borderBottom = false,
 }: InformationRowProps) => (
-  <Row borderTop={borderTop}>
+  <Row borderTop={borderTop} borderBottom={borderBottom}>
     <TouchableWithoutFeedback onPress={rowOnPress}>
       <View style={ownStyles.container}>
         <InformationRowIcon source={source} />
@@ -53,4 +55,5 @@ export const InformationRow = ({
 
 InformationRow.defaultProps = {
   borderTop: false,
+  borderBottom: false,
 };
