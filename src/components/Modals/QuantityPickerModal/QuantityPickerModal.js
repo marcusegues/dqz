@@ -23,7 +23,7 @@ import { StandardInputContent } from './subComponents/StandardInputContent/Stand
 type QuantityPickerState = {
   selected: 'standardInput' | 'customInput',
   standardInput: {
-    number: string,
+    multiplier: string,
     amount: string,
   },
   customInput: {
@@ -55,7 +55,7 @@ class QuantityPickerModalInner extends React.Component<
   state = {
     selected: 'standardInput',
     standardInput: {
-      number: '1',
+      multiplier: '1',
       amount: '1',
     },
     customInput: {
@@ -141,12 +141,12 @@ class QuantityPickerModalInner extends React.Component<
           {standardInputSelected && !onlyStandardInput ? (
             <View style={pickerModalStyle.pickerContainer}>
               <PickerComponent
-                selectedValue={this.state.standardInput.number}
+                selectedValue={this.state.standardInput.multiplier}
                 onValueChange={itemValue =>
                   this.setState({
                     standardInput: {
                       ...this.state.standardInput,
-                      number: itemValue,
+                      multiplier: itemValue,
                     },
                   })
                 }
