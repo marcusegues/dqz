@@ -184,7 +184,7 @@ export const fr: Locale = {
     allReceiptsSumInFranks: 'CHF {{value}}',
     allReceiptsDate: 'à {{value}}',
     entryTime: "Période d'entrée",
-    chooseOtherEntryTime: 'Choisissez une autre période',
+    chooseOtherEntryTime: 'Régler',
     until: "jusqu'à",
   },
 
