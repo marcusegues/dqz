@@ -65,7 +65,6 @@ export const QuantityInput = ({
           category={category}
           totalQuantity={getTotalQuantity(basket, category)}
           basket={basket}
-          mainCategory={mainCategory}
         />
       ));
 

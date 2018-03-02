@@ -14,9 +14,7 @@ import {
 import { QuantityIcon } from '../../../../../../General Components/GreyBox/configured/QuantityIcon';
 import { CategoryIcon } from './subcomponents/CategoryIcon';
 import { CardRowText } from '../../../../subcomponents/CardRowText';
-import { CardRowSubText } from '../../../../subcomponents/CardRowSubText';
 import type { Category } from '../../../../../../../model/types/basketPeopleAmountsTypes';
-import type { MainCategory } from '../../../../../../../types/reducers/declaration';
 import { CategoriesInfo } from '../../../../../../../model/constants';
 import type { TFunction } from '../../../../../../../types/generalTypes';
 
@@ -26,6 +24,7 @@ const ownStyles = {
     width: '100%',
     borderTopWidth: 1,
     justifyContent: 'space-between',
+    alignItems: 'center',
 
     borderColor: '#E0E0E1',
     flexDirection: 'row',
@@ -104,14 +103,12 @@ type GoodInputRowProps = {
   onShowQuantityInputModal: () => void,
   category: Category,
   totalQuantity: number,
-  mainCategory: MainCategory,
 };
 
 const GoodInputRowInner = ({
   onShowQuantityInputModal,
   category,
   totalQuantity,
-  mainCategory,
   t,
 }: GoodInputRowProps & { t: TFunction }) => (
   <Touchable onPress={onShowQuantityInputModal}>
@@ -119,7 +116,6 @@ const GoodInputRowInner = ({
       <CategoryIcon source={getSource(category)} />
       <View style={ownStyles.rowMainTextContainer}>
         <CardRowText text={t(`categories:${category}`)} />
-        <CardRowSubText text={t(`mainCategories:${mainCategory}`)} />
         <View style={{ marginTop: 10 }}>
           <QuantityIcon
             quantity={totalQuantity.toFixed(2)}
