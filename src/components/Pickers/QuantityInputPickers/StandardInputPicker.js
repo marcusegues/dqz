@@ -2,12 +2,12 @@
 import React from 'react';
 // $FlowFixMe
 import { View, Picker } from 'react-native';
-import { amountsPicker, rangeItemsPicker } from '../../pickerData';
-import { pickerModalStyle } from '../../../styles/PickerModal';
-import { PickerComponent } from '../../../../PickerComponent/PickerComponent';
-import { PickerValueSeparator } from '../../../CurrencyPickerModal/subComponents/PickerValueSeparator';
-import { PickerUnitColumn } from '../PickerUnitColumn';
-import type { Category } from '../../../../../model/types/basketPeopleAmountsTypes';
+import { amountsPicker, rangeItemsPicker } from '../../Modals/QuantityInputModal/pickerData';
+import { pickerModalStyle } from '../../Modals/styles/PickerModal';
+import { PickerComponent } from '../PickerComponent';
+import { PickerValueSeparator } from '../../Modals/CurrencyPickerModal/subComponents/PickerValueSeparator';
+import { PickerUnitColumn } from '../../Modals/QuantityInputModal/subComponents/PickerUnitColumn';
+import type { Category } from '../../../model/types/basketPeopleAmountsTypes';
 
 type StandardInputPickerProps = {
   multiplier: string,

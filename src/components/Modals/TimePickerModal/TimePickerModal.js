@@ -19,7 +19,7 @@ import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader'
 import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
 import type { TFunction } from '../../../types/generalTypes';
 import { ModalCard } from '../ModalCard';
-import { PickerComponent } from '../../PickerComponent/PickerComponent';
+import { PickerComponent } from '../../Pickers/PickerComponent';
 import { moderateScale, verticalScale } from '../../../styles/Scaling';
 import {
   pickerHours,

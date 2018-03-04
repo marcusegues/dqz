@@ -12,7 +12,7 @@ const ownStyles = {
 
 type PickerComponentProps = {
   selectedValue: string,
-  onValueChange: () => void,
+  onValueChange: (text: string) => void,
   prompt: string,
   children: Children,
   itemStyle?: {},

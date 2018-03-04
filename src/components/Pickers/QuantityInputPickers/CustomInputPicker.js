@@ -2,27 +2,27 @@
 import React from 'react';
 // $FlowFixMe
 import { View, Picker } from 'react-native';
-import { rangeItemsPicker } from '../../pickerData';
-import { pickerModalStyle } from '../../../styles/PickerModal';
-import { PickerComponent } from '../../../../PickerComponent/PickerComponent';
-import { PickerUnitColumn } from '../PickerUnitColumn';
+import { rangeItemsPicker } from '../../Modals/QuantityInputModal/pickerData';
+import { pickerModalStyle } from '../../Modals/styles/PickerModal';
+import { PickerComponent } from '../PickerComponent';
+import { PickerUnitColumn } from '../../Modals/QuantityInputModal/subComponents/PickerUnitColumn';
 
 type CustomInputPickerProps = {
   wholePart: string,
   unit: string,
-  onWholePartValueChange: (text: string) => void,
+  onCustomWholePartValueChange: (text: string) => void,
 };
 
 export const CustomInputPicker = ({
   wholePart,
   unit,
-  onWholePartValueChange,
+  onCustomWholePartValueChange,
 }: CustomInputPickerProps) => {
   return (
     <View style={pickerModalStyle.pickerContainer}>
       <PickerComponent
         selectedValue={wholePart}
-        onValueChange={onWholePartValueChange}
+        onValueChange={onCustomWholePartValueChange}
         mode="dropdown"
         prompt=""
       >
