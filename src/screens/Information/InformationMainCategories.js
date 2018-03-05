@@ -44,13 +44,15 @@ class InformationMainCategoriesInner extends React.Component<{
     return (
       <MainContentContainer>
         <ScrollViewCard>
-          {infoCategories.map(cat => (
+          {infoCategories.map((cat, idx) => (
             <InformationRow
               key={cat}
               source={informationImages[cat]}
               mainText={t(`${cat}MainText`)}
               subText={t(`${cat}SubText`)}
               rowOnPress={() => this.navigateTo(cat)}
+              borderTop={idx === 1}
+              borderBottom={idx !== infoCategories.length - 1}
             />
           ))}
         </ScrollViewCard>

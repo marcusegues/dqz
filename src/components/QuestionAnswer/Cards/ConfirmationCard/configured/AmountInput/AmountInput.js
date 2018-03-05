@@ -2,9 +2,8 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
-import { View, ScrollView, TouchableOpacity, Text } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 import { translate } from 'react-i18next';
-import Entypo from '@expo/vector-icons/Entypo';
 
 import {
   flatLargeAmounts,
@@ -20,6 +19,7 @@ import {
   scale,
   verticalScale,
 } from '../../../../../../styles/Scaling';
+import { RedPlusIcon } from '../../../../../Modals/GoodQuantityListModal/subcomponents/RedPlusIcon';
 
 const ownStyles = {
   mainContainer: {
@@ -122,15 +122,7 @@ const AmountInputInner = ({
               }
               style={ownStyles.enterValueContainer}
             />
-
-            <TouchableOpacity onPress={() => onShowAmountInputModal()}>
-              <Entypo
-                name="circle-with-plus"
-                size={moderateScale(46)}
-                color={MAIN_RED}
-              />
-            </TouchableOpacity>
-
+            <RedPlusIcon onPress={() => onShowAmountInputModal()} />
             <Text style={ownStyles.addButtonText}>
               {large
                 ? t('amountInputAddItemLarge').toUpperCase()
@@ -152,13 +144,7 @@ const AmountInputInner = ({
         </View>
         {relevantAmounts.length ? (
           <View style={ownStyles.redPlusIconContainer}>
-            <TouchableOpacity onPress={() => onShowAmountInputModal()}>
-              <Entypo
-                name="circle-with-plus"
-                size={moderateScale(46)}
-                color={MAIN_RED}
-              />
-            </TouchableOpacity>
+            <RedPlusIcon onPress={() => onShowAmountInputModal()} />
           </View>
         ) : (
           <Text />

@@ -45,6 +45,9 @@ class InformationSubCategoriesInner extends React.Component<{
             <InformationRow
               key={cat}
               borderTop={idx === 0}
+              borderBottom={
+                idx !== informationSubCategories[infoCategory].length - 1
+              }
               source={informationImages[cat]}
               mainText={t(`${cat}:${cat}MainText`)}
               subText={t(`${cat}:${cat}SubText`)}

@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    paddingVertical: 10,
+    paddingVertical: 5,
     backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: '#ccc',
@@ -50,16 +50,16 @@ export const AnswerCard = ({
       <Image
         source={mainIcon}
         style={{
-          width: 50,
-          height: 50,
+          width: 60,
+          height: 60,
         }}
       />
       <View style={{ flex: 0.7 }}>{children}</View>
       <Image
         source={flag}
         style={{
-          width: 32,
-          height: 32,
+          width: 29,
+          height: 29,
         }}
       />
     </View>

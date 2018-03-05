@@ -266,7 +266,6 @@ export const stackNavigatorScreens = {
   ReceiptAfterPayment: {
     screen: ReceiptAfterPayment,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerTitle: <HeaderTitle text="Quittung Schweizer Zoll" />,
       headerLeft: <HomeIcon navigation={navigation} />,
       headerRight: <DownloadIcon navigation={navigation} />,
     }),

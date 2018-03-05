@@ -29,6 +29,7 @@ import { ReceiptSubText } from './subcomponents/ReceiptSubText';
 import { RedLogo } from './subcomponents/RedLogo';
 import { ValidUntilBlock } from './subcomponents/ValidUntilBlock';
 import { ReceiptInfoNote } from './subcomponents/ReceiptInfoNote';
+import { HeaderTitle } from '../Headers/subcomponents/HeaderTitle';
 
 const ownStyles = {
   topSumText: {
@@ -65,6 +66,13 @@ class ReceiptAfterPaymentInner extends React.Component<
   ReceiptAfterPaymentScreenProps,
   ReceiptAfterPaymentScreenState
 > {
+  static navigationOptions = ({ screenProps }) => ({
+    headerTitle: (
+      <HeaderTitle
+        text={screenProps.t('receipt:allReceiptsNavigationHeaderTitle')}
+      />
+    ),
+  });
   constructor(
     props: ReceiptAfterPaymentScreenProps & {
       t: TFunction,
