@@ -27,7 +27,14 @@ const FuelAndRepairsInner = ({ t, navigation }: FuelAndRepairsInnerProps) => (
       style={{ marginTop: verticalScale(20) }}
     />
     <AppInfoSubText text={t('fuelAndRepairsText4')} />
-    <TouchableOpacity onPress={() => navigation.navigate('VatAllowance')}>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'VatAllowance',
+        })
+      }
+    >
       <AppInfoSubText text={t('fuelAndRepairsText5')} />
     </TouchableOpacity>
   </SubCategoryContainer>

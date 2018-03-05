@@ -19,7 +19,7 @@ import {
   getCurrencies,
   getPeople,
   getReceiptEntryTime,
-} from '../../reducers';
+} from '../../reducers/selectors';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
 import { InfoNote } from './subcomponents/InfoNote';
 import {
@@ -166,7 +166,7 @@ class OverviewInner extends React.Component<
         />
         <InfoNote />
         <BackAndContinueButtons
-          onPressBack={() => navigation.goBack()}
+          onPressBack={() => navigation.dispatch({ type: 'GO_BACK' })}
           onPressContinue={() => onProceedToPayment && onProceedToPayment()}
           textContinue={t('general:toPayment')}
           continueDisabled={paymentDisabled}

@@ -8,7 +8,10 @@ import type { Navigation } from '../../../types/generalTypes';
 export const OptionsButton = ({ navigation }: { navigation: Navigation }) => (
   <Touchable
     onPress={() => {
-      navigation.navigate('UnderConstruction');
+      navigation.dispatch({
+        type: 'NAVIGATE',
+        screen: 'UnderConstruction',
+      });
     }}
   >
     <Ionicons name="ios-menu" size={30} />

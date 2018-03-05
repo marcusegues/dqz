@@ -15,7 +15,7 @@ import { moderateScale, verticalScale } from '../../styles/Scaling';
 import { CardRowText } from '../QuestionAnswer/Cards/subcomponents/CardRowText';
 import type { PaymentData, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
-import { getPaymentData, getReceiptId } from '../../reducers';
+import { getPaymentData, getReceiptId } from '../../reducers/selectors';
 import { fetchReceiptByReceiptId } from '../../asyncStorage/storageApi';
 import type { Receipt } from '../../types/receiptTypes';
 import { calculateVat } from '../../model/vatCalculations';

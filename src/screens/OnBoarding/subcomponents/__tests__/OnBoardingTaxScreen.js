@@ -11,12 +11,12 @@ describe('OnBoardingTaxScreen', () => {
   test('renders according to snapshot and DoneButton fires navigation', () => {
     const navMock = jest.fn();
     const component = shallow(
-      <OnBoardingTaxScreen navigation={{ navigate: navMock }} />
+      <OnBoardingTaxScreen navigation={{ dispatch: navMock }} />
     ).dive();
     expect(component).toMatchSnapshot();
     component.find('DoneButton').forEach(child => {
       child.simulate('press');
     });
-    expect(navMock).toBeCalledWith('MainMenu');
+    expect(navMock).toBeCalledWith({ screen: 'MainMenu', type: 'NAVIGATE' });
   });
 });

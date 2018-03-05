@@ -8,7 +8,7 @@ import type { FlatAmount } from '../../../../../../model/utils';
 import { rowStyles } from '../../../../styles/rowStyles';
 import { Row } from '../../../../Row';
 import { CardRowSubText } from '../../../../../QuestionAnswer/Cards/subcomponents/CardRowSubText';
-import { getCurrencies } from '../../../../../../reducers';
+import { getCurrencies } from '../../../../../../reducers/selectors';
 import type { CurrencyObject } from '../../../../../../model/currencies';
 import { CurrencyFlagAndAmount } from '../../../../../General Components/CurrencyFlagAndAmount';
 

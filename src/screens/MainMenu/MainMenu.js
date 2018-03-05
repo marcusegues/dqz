@@ -27,7 +27,7 @@ import {
   getMainCategories,
   getPeople,
   getReceiptEntryTime,
-} from '../../reducers';
+} from '../../reducers/selectors';
 import type {
   Amounts,
   Basket,
@@ -77,7 +77,10 @@ class MainMenuInner extends React.Component<
   setSavedBasketModalVisibleFalse(navigateTo: NavigateFromSavedBasket) {
     this.setState({ modalVisible: false }, () => {
       if (navigateTo !== 'doNotNavigate') {
-        this.props.navigation.navigate(navigateTo);
+        this.props.navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: navigateTo,
+        });
       }
     });
   }
@@ -94,7 +97,10 @@ class MainMenuInner extends React.Component<
     if (
       isInitBasket(people, basket, mainCategories, amounts, receiptEntryTime)
     ) {
-      this.props.navigation.navigate('QuestionAnswer');
+      this.props.navigation.dispatch({
+        type: 'NAVIGATE',
+        screen: 'QuestionAnswer',
+      });
     } else {
       this.setSavedBasketModalVisibleTrue();
     }
@@ -102,6 +108,7 @@ class MainMenuInner extends React.Component<
 
   render() {
     const { navigation, t } = this.props;
+
     return (
       <View style={mainMenuStyles.mainContainer}>
         <View style={mainMenuStyles.topContainer}>
@@ -125,7 +132,12 @@ class MainMenuInner extends React.Component<
           <MenuTile
             icon="info"
             text={t('information')}
-            onPress={() => navigation.navigate('LegalNoticeInfo')}
+            onPress={() =>
+              navigation.dispatch({
+                type: 'NAVIGATE',
+                screen: 'LegalNoticeInfo',
+              })
+            }
           >
             <MaterialIcons
               name="info"
@@ -137,7 +149,12 @@ class MainMenuInner extends React.Component<
           <MenuTile
             icon="receipt"
             text={t('receipts')}
-            onPress={() => navigation.navigate('AllReceipts')}
+            onPress={() =>
+              navigation.dispatch({
+                type: 'NAVIGATE',
+                screen: 'AllReceipts',
+              })
+            }
             style={{ alignSelf: 'center' }}
           >
             <View>
@@ -152,7 +169,12 @@ class MainMenuInner extends React.Component<
           <MenuTile
             icon="info"
             text={t('guideline')}
-            onPress={() => navigation.navigate('InformationMainCategories')}
+            onPress={() =>
+              navigation.dispatch({
+                type: 'NAVIGATE',
+                screen: 'InformationMainCategories',
+              })
+            }
           >
             <Image
               source={customs}

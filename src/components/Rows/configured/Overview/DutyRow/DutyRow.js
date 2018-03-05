@@ -23,7 +23,7 @@ import { TotalOwed } from '../subcomponents/TotalOwed';
 import { rowStyles } from '../../../styles/rowStyles';
 import { storeBasket } from '../../../../../asyncStorage/storageApi';
 import { resetQuantities } from '../../../../../model/configurationApi';
-import { getBasket } from '../../../../../reducers';
+import { getBasket } from '../../../../../reducers/selectors';
 
 type DutyRowProps = {
   category: Category,

@@ -108,7 +108,10 @@ class AllReceiptsInner extends React.Component<
             })}
             rowOnPress={() => {
               setReceiptId(receipt.receiptId);
-              navigation.navigate('ReceiptAfterPayment');
+              navigation.dispatch({
+                type: 'NAVIGATE',
+                screen: 'ReceiptAfterPayment',
+              });
             }}
             borderTop={idx === 0}
           />

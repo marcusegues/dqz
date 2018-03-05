@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { StackNavigator } from 'react-navigation';
+import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 // $FlowFixMe
 import { View, NetInfo } from 'react-native';
 import { i18nImplementation } from '../i18n';
@@ -144,121 +144,161 @@ export const stackNavigatorScreens = {
   InformationSubCategories: {
     screen: InformationSubCategories,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   CustomsProcedures: {
     screen: CustomsProcedures,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   VatAllowance: {
     screen: VatAllowance,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   DutyAllowance: {
     screen: DutyAllowance,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   PersonalEffects: {
     screen: PersonalEffects,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   ForeignVat: {
     screen: ForeignVat,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   TravelDocuments: {
     screen: TravelDocuments,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   EntryByTrain: {
     screen: EntryByTrain,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   PurchasesOnlineOffline: {
     screen: PurchasesOnlineOffline,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   Animals: {
     screen: Animals,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   Plants: {
     screen: Plants,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   SouvenirsAndSpeciesProtection: {
     screen: SouvenirsAndSpeciesProtection,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   HighwayVignette: {
     screen: HighwayVignette,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   RoadTax: {
     screen: RoadTax,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   FuelAndRepairs: {
     screen: FuelAndRepairs,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   Forgery: {
     screen: Forgery,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   Cash: {
     screen: Cash,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   Food: {
     screen: Food,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   AuthorisationRequirements: {
     screen: AuthorisationRequirements,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   UsefulInfoScreenTemplate: {
     screen: UsefulInfoScreenTemplate,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
       headerTitle: <HeaderTitle text="Wissenswertes" />,
     }),
   },
@@ -278,7 +318,9 @@ export const stackNavigatorScreens = {
       navigationOptions: any,
       navigation: Navigation,
     }) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
       headerStyle: {
         ...navigationOptions.headerStyle,
         paddingRight: 0,
@@ -288,13 +330,17 @@ export const stackNavigatorScreens = {
   AppInfo: {
     screen: AppInfo,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
   LegalNoticeInfo: {
     screen: LegalNoticeInfo,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+      headerLeft: (
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+      ),
     }),
   },
 };
@@ -305,13 +351,15 @@ export const stackNavigatorConfig = {
   initialRouteName: 'OnBoarding',
 };
 
-const RootStackNavigator = StackNavigator(
+export const RootStackNavigator = StackNavigator(
   stackNavigatorScreens,
   stackNavigatorConfig
 );
 
 type ReduxInject = {
   setConnectivity: (connectionInfo: ConnectivityType) => void,
+  dispatch: Function,
+  nav: Object,
 };
 
 class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
@@ -336,6 +384,10 @@ class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
         }}
       >
         <RootStackNavigator
+          navigation={addNavigationHelpers({
+            dispatch: this.props.dispatch,
+            state: this.props.nav,
+          })}
           screenProps={{
             t: i18nImplementation.getFixedT(),
             language: i18nImplementation.language,
@@ -348,12 +400,17 @@ class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
   }
 }
 
+const mapStateToProps = state => ({
+  nav: state.nav,
+});
+
 const mapDispatchToProps = dispatch => ({
+  dispatch,
   setConnectivity: (connectionInfo: ConnectivityType) =>
     dispatch({ type: 'SET_CONNECTIVITY', connectionInfo }),
 });
 
-const ReloadAppOnLanguageChange = (connect(null, mapDispatchToProps)(
+const ReloadAppOnLanguageChange = (connect(mapStateToProps, mapDispatchToProps)(
   translate(null, {
     bindI18n: 'languageChanged',
     bindStore: false,

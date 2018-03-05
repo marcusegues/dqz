@@ -12,7 +12,11 @@ type HomeIconProps = {
 };
 
 export const HomeIcon = ({ navigation }: HomeIconProps) => (
-  <Touchable onPress={() => navigation.navigate('MainMenu')}>
+  <Touchable
+    onPress={() =>
+      navigation.dispatch({ type: 'NAVIGATE', screen: 'MainMenu' })
+    }
+  >
     <Entypo name="home" size={moderateScale(27)} color={GREY} />
   </Touchable>
 );

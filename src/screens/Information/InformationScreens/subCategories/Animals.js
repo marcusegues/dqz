@@ -31,7 +31,14 @@ const AnimalsInner = ({ t, navigation }: AnimalsInnerProps) => (
       style={{ marginTop: verticalScale(20) }}
     />
     <AppInfoSubText text={t('animalsText3')} />
-    <TouchableOpacity onPress={() => navigation.navigate('VatAllowance')}>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'VatAllowance',
+        })
+      }
+    >
       <AppInfoSubText text={t('animalsText4')} />
     </TouchableOpacity>
   </SubCategoryContainer>

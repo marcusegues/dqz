@@ -72,7 +72,7 @@ class OnBoardingTaxScreenInner extends React.Component<
         <DoneButton
           onPress={() => {
             storeSettingsAcceptRate(true);
-            navigation.navigate('MainMenu');
+            navigation.dispatch({ type: 'NAVIGATE', screen: 'MainMenu' });
           }}
         />
         <FurtherInformationModal
@@ -80,7 +80,10 @@ class OnBoardingTaxScreenInner extends React.Component<
           navigation={navigation}
           onPressLegal={() => {
             this.setState({ showModal: false });
-            navigation.navigate('LegalNoticeInfo');
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'LegalNoticeInfo',
+            });
           }}
           toggleModalVisible={() => {
             this.setState({ showModal: false });

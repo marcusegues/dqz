@@ -74,6 +74,7 @@ class OnBoardingInner extends React.Component<
   render() {
     const { t, i18n, navigation } = this.props;
     const { systemLanguage, nextScreen, settingsHasLanguage } = this.state;
+
     return (
       <OnBoardingContainer>
         <OnBoardingParagraph
@@ -112,7 +113,7 @@ class OnBoardingInner extends React.Component<
         <DoneButton
           onPress={() => {
             storeSettingsHasLanguage(i18n.language);
-            navigation.navigate(nextScreen);
+            navigation.dispatch({ type: 'NAVIGATE', screen: nextScreen });
           }}
         />
       </OnBoardingContainer>

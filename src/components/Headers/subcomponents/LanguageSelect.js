@@ -17,7 +17,14 @@ export const LanguageSelect = ({
   language,
   navigation,
 }: LanguageSelectProps) => (
-  <Touchable onPress={() => navigation.navigate('OnBoarding')}>
+  <Touchable
+    onPress={() =>
+      navigation.dispatch({
+        type: 'NAVIGATE',
+        screen: 'OnBoarding',
+      })
+    }
+  >
     <Text
       style={{
         fontFamily: 'roboto_regular',

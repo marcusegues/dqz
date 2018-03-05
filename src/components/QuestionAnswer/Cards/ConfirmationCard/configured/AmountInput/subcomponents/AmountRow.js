@@ -16,7 +16,7 @@ import type {
   CurrencyObject,
 } from '../../../../../../../model/currencies';
 import { CardRowSubText } from '../../../../subcomponents/CardRowSubText';
-import { getCurrencies } from '../../../../../../../reducers';
+import { getCurrencies } from '../../../../../../../reducers/selectors';
 import { rowStyles } from '../../../../../../Rows/styles/rowStyles';
 import { CurrencyFlag } from '../../../../../../General Components/CurrencyFlag';
 

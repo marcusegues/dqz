@@ -52,7 +52,10 @@ class InformationSubCategoriesInner extends React.Component<{
               mainText={t(`${cat}:${cat}MainText`)}
               subText={t(`${cat}:${cat}SubText`)}
               rowOnPress={() =>
-                navigation.navigate(informationNavigateTo[cat].toString())
+                navigation.dispatch({
+                  type: 'NAVIGATE',
+                  screen: informationNavigateTo[cat].toString(),
+                })
               } // TODO: proper types. This toString should not be here.
             />
           ))}
