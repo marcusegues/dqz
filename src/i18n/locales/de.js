@@ -315,7 +315,7 @@ export const de: Locale = {
 
   dutyAllowance: {
     dutyAllowanceMainText: 'Freimengen: Lebensmittel, Alkohol und Tabak',
-    dutyAllowanceSubText: 'Führen Sie für Ihren privaten Gebrauch oder zum ...',
+    dutyAllowanceSubText: '',
     dutyAllowanceText1:
       'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheitspolitischen Gründen ab einer gewissen Menge Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
     dutyAllowanceText2:
@@ -334,7 +334,7 @@ export const de: Locale = {
     dutyAllowanceText10:
       'Nicht dazu gehören Markbein und Saucen-Knochen, Hunde- und Katzenfutter in als Tierfutter gekennzeichneten Einzelverkaufspackungen.',
     dutyAllowanceText11:
-      ' Die Einfuhr von Tierprodukten aus anderen als EU-Mitgliedstaaten, als Island und als Norwegen ist verboten.',
+      'Die Einfuhr von Tierprodukten aus anderen als EU-Mitgliedstaaten, als Island und als Norwegen ist verboten.',
     dutyAllowanceText12: 'Freimengen pro Person und pro Tag:',
     dutyAllowanceText13: 'insgesamt 1 kg',
     dutyAllowanceText14: 'Zollabgaben für Mehrmenge in CHF',
@@ -387,7 +387,7 @@ export const de: Locale = {
     personalEffectsMainText:
       'Persönliche Gebrauchsgegenstände und Reiseproviant',
     personalEffectsSubText:
-      'Persönliche Gebrauchsgegenstände und Reiseproviant können ...',
+      '',
     personalEffectsText1:
       'Persönliche Gebrauchsgegenstände und Reiseproviant können Sie abgabenfrei einführen:',
     personalEffectsText2: 'Persönliche Gebrauchsgegenstände',
@@ -404,7 +404,7 @@ export const de: Locale = {
   foreignVat: {
     foreignVatMainText: 'Rückerstattung der ausländischen Mehrwertsteuer',
     foreignVatSubText:
-      'Die Schweizer Zollverwaltung kann Ihnen die ausländische ...',
+      '',
     foreignVatText1:
       'Die Schweizer Zollverwaltung kann Ihnen die ausländische MWST nicht zurückerstatten.',
     foreignVatText2:
@@ -421,21 +421,22 @@ export const de: Locale = {
   animals: {
     animalsMainText: 'Tiere: Heimtiere, Hunde, Katzen und Pferde',
     animalsSubText:
-      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden ...',
+      '',
     animalsText1:
-      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die Informationen beim Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:',
+      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die Informationen beim Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:\n' +
+      'http://www.blv.admin.ch'
     animalsText2: 'Abgaben',
     animalsText3:
-      'Wird die Wertfreigrenze von CHF 300 überschritten, müssen Sie für Tiere die MWST bezahlen. Detailliertere Informationen finden Sie unter:',
+      'Wird die Wertfreigrenze von CHF 300 überschritten, müssen Sie für Tiere die MWST bezahlen. Detailliertere Informationen finden Sie unter:'
     animalsText4: 'Wertfreigrenze CHF 300',
   },
 
   plants: {
     plantsMainText: 'Pflanzen',
     plantsSubText:
-      'Die Einfuhr von folgenden Pflanzen ist verboten, da sie Träger von Schadorganismen ...',
+      '',
     plantsText1:
-      '1. Verbotene Pflanzen und Pflanzenerzeugnisse\n' +
+      '1.\tVerbotene Pflanzen und Pflanzenerzeugnisse\n' +
       'Die Einfuhr von folgenden Pflanzen ist verboten, da sie Träger von Schadorganismen (Feuerbrand, Kastanienrindenkrebs, Virenerkrankungen, etc.) sein können:',
     plantsText2: 'a) Einfuhr aus allen Ländern verboten',
     plantsText3: 'Zwergmispel (Cotoneaster)',
@@ -464,7 +465,7 @@ export const de: Locale = {
     plantsText23: 'Zier- und Scheinquitte (Chaenomeles)',
     plantsText24: 'Zitrusgewächse (Citrus)',
     plantsText25:
-      '2. Andere Pflanzen und Pflanzenerzeugnisse (auch Früchte und Gemüse)',
+      '2.\tAndere Pflanzen und Pflanzenerzeugnisse (auch Früchte und Gemüse)',
     plantsText26:
       'a) Einfuhr aus EU-Staaten, Norwegen und Island\n' +
       'Sie können Pflanzen ohne Bewilligung einführen, sofern diese im Reiseverkehr und für den privaten Gebrauch eingeführt werden.',
