@@ -27,5 +27,6 @@ export const menuTileStyle: any = StyleSheet.create({
     textAlign: 'center',
     marginTop: verticalScale(10),
     paddingHorizontal: scale(10),
+    paddingBottom: verticalScale(5),
   },
 });
