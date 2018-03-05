@@ -179,7 +179,6 @@ export const en: Locale = {
 
   customsProcedures: {
     customsProceduresMainText: '',
-    customsProceduresSubText: '',
     customsProceduresText1: '',
     customsProceduresText2: '',
     customsProceduresText3: '',
@@ -205,14 +204,12 @@ export const en: Locale = {
 
   travelDocuments: {
     travelDocumentsMainText: '',
-    travelDocumentsSubText: '',
     travelDocumentsText1: '',
     travelDocumentsText2: '',
   },
 
   vatAllowance: {
     vatAllowanceMainText: '',
-    vatAllowanceSubText: '',
     vatAllowanceText1: '',
     vatAllowanceText2: '',
     vatAllowanceText3: '',
@@ -261,7 +258,6 @@ export const en: Locale = {
 
   dutyAllowance: {
     dutyAllowanceMainText: '',
-    dutyAllowanceSubText: '',
     dutyAllowanceText1: '',
     dutyAllowanceText2: '',
     dutyAllowanceText3: '',
@@ -313,7 +309,6 @@ export const en: Locale = {
 
   personalEffects: {
     personalEffectsMainText: '',
-    personalEffectsSubText: '',
     personalEffectsText1: '',
     personalEffectsText2: '',
     personalEffectsText3: '',
@@ -325,7 +320,6 @@ export const en: Locale = {
 
   foreignVat: {
     foreignVatMainText: '',
-    foreignVatSubText: '',
     foreignVatText1: '',
     foreignVatText2: '',
     foreignVatText3: '',
@@ -335,7 +329,6 @@ export const en: Locale = {
 
   animals: {
     animalsMainText: '',
-    animalsSubText: '',
     animalsText1: '',
     animalsText2: '',
     animalsText3: '',
@@ -344,7 +337,6 @@ export const en: Locale = {
 
   plants: {
     plantsMainText: '',
-    plantsSubText: '',
     plantsText1: '',
     plantsText2: '',
     plantsText3: '',
@@ -380,7 +372,6 @@ export const en: Locale = {
 
   souvenirsAndSpeciesProtection: {
     souvenirsAndSpeciesProtectionMainText: '',
-    souvenirsAndSpeciesProtectionSubText: '',
     souvenirsAndSpeciesProtectionText1: '',
     souvenirsAndSpeciesProtectionText2: '',
     souvenirsAndSpeciesProtectionText3: '',
@@ -393,7 +384,6 @@ export const en: Locale = {
 
   highwayVignette: {
     highwayVignetteMainText: '',
-    highwayVignetteSubText: '',
     highwayVignetteText1: '',
     highwayVignetteText2: '',
     highwayVignetteText3: '',
@@ -408,7 +398,6 @@ export const en: Locale = {
 
   roadTax: {
     roadTaxMainText: '',
-    roadTaxSubText: '',
     roadTaxText1: '',
     roadTaxText2: '',
     roadTaxText3: '',
@@ -428,7 +417,6 @@ export const en: Locale = {
 
   fuelAndRepairs: {
     fuelAndRepairsMainText: '',
-    fuelAndRepairsSubText: '',
     fuelAndRepairsText1: '',
     fuelAndRepairsText2: '',
     fuelAndRepairsText3: '',
@@ -438,7 +426,6 @@ export const en: Locale = {
 
   entryByTrain: {
     entryByTrainMainText: '',
-    entryByTrainSubText: '',
     entryByTrainText1: '',
     entryByTrainText2: '',
     entryByTrainText3: '',
@@ -452,7 +439,6 @@ export const en: Locale = {
 
   forgery: {
     forgeryMainText: '',
-    forgerySubText: '',
     forgeryText1: '',
     forgeryText2: '',
     forgeryText3: '',
@@ -463,14 +449,12 @@ export const en: Locale = {
 
   cash: {
     cashMainText: '',
-    cashSubText: '',
     cashText1: '',
     cashText2: '',
   },
 
   food: {
     foodMainText: '',
-    foodSubText: '',
     foodText1: '',
     foodText2: '',
     foodText3: '',
@@ -484,7 +468,6 @@ export const en: Locale = {
 
   authorisationRequirements: {
     authorisationRequirementsMainText: '',
-    authorisationRequirementsSubText: '',
     authorisationRequirementsText1: '',
     authorisationRequirementsText2: '',
     authorisationRequirementsText3: '',
@@ -500,7 +483,6 @@ export const en: Locale = {
 
   purchasesOnlineOffline: {
     purchasesOnlineOfflineMainText: '',
-    purchasesOnlineOfflineSubText: '',
     purchasesOnlineOfflineText1: '',
     purchasesOnlineOfflineText2: '',
     purchasesOnlineOfflineText3: '',
@@ -524,65 +506,37 @@ export const en: Locale = {
     informationTitle: 'Information',
     informationSubCategoryTitle: 'I have goods with me:',
     customsProceduresMainText: 'Proceeding at the customs',
-    customsProceduresSubText:
-      'As a private individual you have to enter Switzerland ...',
     travelDocumentsMainText: 'Travel documents',
-    travelDocumentsSubText:
-      'To enter Switzerland foreign nationals need a valid ...',
 
     declarationMainText: 'I have goods with me',
-    declarationSubText: 'Goods for your private use or as a gift ...',
     animalsAndPlantsMainText: 'I have animals or plants with me',
-    animalsAndPlantsSubText:
-      'For dogs, cats, other pets and horses you will find the ...',
     vehiclesMainText: "I'm traveling with a vehicle",
-    vehiclesSubText:
-      'The use of highways and motorways with motor vehicles and trailers ...',
     entryByTrainMainText: 'Entry by train',
-    entryByTrainSubText:
-      'If customs personnel are present on the train, you must take all goods ...',
     prohibitionsAndRestrictionsMainText: 'Prohibitions and restrictions',
-    prohibitionsAndRestrictionsSubText:
-      'It is forbidden to introduce trademark and design counterfeits. The Swiss customs ...',
 
     vatAllowanceMainText: '',
-    vatAllowanceSubText: '',
 
     dutyAllowanceMainText: '',
-    dutyAllowanceSubText: '',
 
     personalEffectsMainText: '',
-    personalEffectsSubText: '',
 
     foreignVatMainText: '',
-    foreignVatSubText: '',
 
     animalsMainText: '',
-    animalsSubText: '',
 
     plantsMainText: '',
-    plantsSubText: '',
 
     souvenirsAndSpeciesProtectionMainText: '',
-    souvenirsAndSpeciesProtectionSubText: '',
 
     highwayVignetteMainText: '',
-    highwayVignetteSubText: '',
     roadTaxMainText: '',
-    roadTaxSubText: '',
     fuelAndRepairsMainText: '',
-    fuelAndRepairsSubText: '',
 
     forgeryMainText: '',
-    forgerySubText: '',
     cashMainText: '',
-    cashSubText: '',
     foodMainText: '',
-    foodSubText: '',
     authorisationRequirementsMainText: '',
-    authorisationRequirementsSubText: '',
     purchasesOnlineOfflineMainText: '',
-    purchasesOnlineOfflineSubText: '',
   },
   appInformation: {
     appInfoTitle: 'About the app',

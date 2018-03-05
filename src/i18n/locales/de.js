@@ -188,8 +188,6 @@ export const de: Locale = {
 
   customsProcedures: {
     customsProceduresMainText: 'Vorgehen am Zoll',
-    customsProceduresSubText:
-      'Als Privatperson müssen Sie bei der Einreise in die Schweiz ...',
     customsProceduresText1:
       'Als Privatperson müssen Sie bei der Einreise in die Schweiz alle mitgeführten Waren und Tiere unaufgefordert anmelden.',
     customsProceduresText2:
@@ -241,8 +239,6 @@ export const de: Locale = {
 
   vatAllowance: {
     vatAllowanceMainText: 'Wertfreigrenze CHF 300',
-    vatAllowanceSubText:
-      'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
     vatAllowanceText1:
       'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken einführen, sind bis zu einem Wert von CHF 300 mehrwertsteuerfrei. Zu berücksichtigen ist der Wert aller Waren. Dies schliesst auch den Wert der erhaltenen Geschenke, Lebensmittel, Tabakfabrikate, alkoholischen Getränke, vom Ausland mitgebrachten Haustiere und im Ausland ausgeführten Reparatur- und Unterhaltsarbeiten am eigenen Fahrzeug mit ein.',
     vatAllowanceText2:
@@ -315,7 +311,6 @@ export const de: Locale = {
 
   dutyAllowance: {
     dutyAllowanceMainText: 'Freimengen: Lebensmittel, Alkohol und Tabak',
-    dutyAllowanceSubText: 'Führen Sie für Ihren privaten Gebrauch oder zum ...',
     dutyAllowanceText1:
       'Führen Sie für Ihren privaten Gebrauch oder zum Verschenken Waren ein, sind diese zollfrei. Ausgenommen davon sind so genannte sensible Waren, für die Sie aus agrar- oder gesundheitspolitischen Gründen ab einer gewissen Menge Zoll bezahlen müssen (siehe nachstehende Tabelle). Die Freimengen gelten pro Person und pro Tag.',
     dutyAllowanceText2:
@@ -386,8 +381,6 @@ export const de: Locale = {
   personalEffects: {
     personalEffectsMainText:
       'Persönliche Gebrauchsgegenstände und Reiseproviant',
-    personalEffectsSubText:
-      'Persönliche Gebrauchsgegenstände und Reiseproviant können ...',
     personalEffectsText1:
       'Persönliche Gebrauchsgegenstände und Reiseproviant können Sie abgabenfrei einführen:',
     personalEffectsText2: 'Persönliche Gebrauchsgegenstände',
@@ -403,8 +396,6 @@ export const de: Locale = {
 
   foreignVat: {
     foreignVatMainText: 'Rückerstattung der ausländischen Mehrwertsteuer',
-    foreignVatSubText:
-      'Die Schweizer Zollverwaltung kann Ihnen die ausländische ...',
     foreignVatText1:
       'Die Schweizer Zollverwaltung kann Ihnen die ausländische MWST nicht zurückerstatten.',
     foreignVatText2:
@@ -420,8 +411,6 @@ export const de: Locale = {
 
   animals: {
     animalsMainText: 'Tiere: Heimtiere, Hunde, Katzen und Pferde',
-    animalsSubText:
-      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden ...',
     animalsText1:
       'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die Informationen beim Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:',
     animalsText2: 'Abgaben',
@@ -432,8 +421,6 @@ export const de: Locale = {
 
   plants: {
     plantsMainText: 'Pflanzen',
-    plantsSubText:
-      'Die Einfuhr von folgenden Pflanzen ist verboten, da sie Träger von Schadorganismen ...',
     plantsText1:
       '1. Verbotene Pflanzen und Pflanzenerzeugnisse\n' +
       'Die Einfuhr von folgenden Pflanzen ist verboten, da sie Träger von Schadorganismen (Feuerbrand, Kastanienrindenkrebs, Virenerkrankungen, etc.) sein können:',
@@ -482,8 +469,6 @@ export const de: Locale = {
 
   souvenirsAndSpeciesProtection: {
     souvenirsAndSpeciesProtectionMainText: 'Souvenirs und Artenschutz (CITES)',
-    souvenirsAndSpeciesProtectionSubText:
-      'Ein Gurt aus Elefantenleder, ein Traumfänger mit Vogelfedern ...',
     souvenirsAndSpeciesProtectionText1: 'Souvenirs',
     souvenirsAndSpeciesProtectionText2:
       'Ein Gurt aus Elefantenleder, ein Traumfänger mit Vogelfedern oder Räucherstäbchen aus Sandelholz - das Angebot an Souvenirs ist vielfältig. Vielen Gegenständen sieht man nicht an, dass sie aus geschützten Tieren oder Pflanzen (z. B. Tropenholz) hergestellt worden sind. Doch vieles darf gar nicht in die Schweiz eingeführt werden.\n' +
@@ -502,8 +487,6 @@ export const de: Locale = {
 
   highwayVignette: {
     highwayVignetteMainText: 'Autobahnvignette',
-    highwayVignetteSubText:
-      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen ...',
     highwayVignetteText1:
       'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen und Anhängern bis je 3,5 Tonnen ist abgabepflichtig. Der Verkaufspreis der Vignette beträgt CHF 40.',
     highwayVignetteText2: 'Verkaufsstellen',
@@ -526,8 +509,6 @@ export const de: Locale = {
 
   roadTax: {
     roadTaxMainText: 'Strassenverkehrsabgabe über 3,5 T (PSVA)',
-    roadTaxSubText:
-      'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 ...',
     roadTaxText1:
       'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 Tonnen eine Schwerverkehrsabgabe erhoben. Für Busse, schwere Wohnmobile, schwere Personenwagen und deren Anhänger über 3,5 Tonnen wird die Abgabe pauschal pro Tag erhoben.',
     roadTaxText2:
@@ -552,8 +533,6 @@ export const de: Locale = {
 
   fuelAndRepairs: {
     fuelAndRepairsMainText: 'Treibstoff und Reparaturen',
-    fuelAndRepairsSubText:
-      'Der Tankinhalt ist abgabenfrei. In einem Reservekanister können Sie zudem bis 25 Liter ...',
     fuelAndRepairsText1: 'Treibstoff für Fahrzeuge',
     fuelAndRepairsText2:
       'Der Tankinhalt ist abgabenfrei. In einem Reservekanister können Sie zudem bis 25 Liter Treibstoff abgabenfrei einführen. Jeder weitere Liter kostet CHF -.75 Zoll - zudem müssen Sie die Mehrwertsteuer auf den Wert des Treibstoffs bezahlen.',
@@ -565,8 +544,6 @@ export const de: Locale = {
 
   entryByTrain: {
     entryByTrainMainText: 'Einreise per Bahn',
-    entryByTrainSubText:
-      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren ...',
     entryByTrainText1:
       'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren unaufgefordert zur Zollbehandlung anmelden. Waren zu Ihrem privaten Gebrauch oder zum Verschenken können Sie auch vor dem Grenzübertritt mit der App «xxxx» verzollen. Diese Anmeldungen sind verbindlich.',
     entryByTrainText2:
@@ -588,8 +565,6 @@ export const de: Locale = {
 
   forgery: {
     forgeryMainText: 'Fälschungen',
-    forgerySubText:
-      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer ...',
     forgeryText1:
       'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer Zoll ist verpflichtet, Fälschungen einzuziehen und zu vernichten. Es spielt keine Rolle, ob die Gegenstände neu oder gebraucht sind.',
     forgeryText2: 'Schmuck und Uhren im Ausland kaufen',
@@ -604,8 +579,6 @@ export const de: Locale = {
 
   cash: {
     cashMainText: 'Barmittel',
-    cashSubText:
-      'Bei der Ein-, Durch- und Ausfuhr von Barmitteln (Bargeld, Wertpapieren u.a.) im ...',
     cashText1:
       "Bei der Ein-, Durch- und Ausfuhr von Barmitteln (Bargeld, Wertpapieren u.a.) im Wert von über CHF 10'000 muss auf Befragung hin Auskunft über die Herkunft, den Verwendungszweck und die wirtschaftlich berechtigte Person erteilt werden.",
     cashText2:
@@ -614,7 +587,6 @@ export const de: Locale = {
 
   food: {
     foodMainText: 'Beschränkungen für Lebensmittel',
-    foodSubText: 'Aus EU-Staaten, Island und Norwegen können Waren ...',
     foodText1:
       'Aus EU-Staaten, Island und Norwegen können Waren tierischer Herkunft zum privaten Gebrauch ohne Kontrolle durch den Grenztierarzt eingeführt werden. Die Waren dürfen nicht in den Verkauf gelangen.',
     foodText2:
@@ -633,8 +605,6 @@ export const de: Locale = {
 
   authorisationRequirements: {
     authorisationRequirementsMainText: 'Bewilligungspflichtig / Beschränkungen',
-    authorisationRequirementsSubText:
-      'Die Einfuhr von bestimmten Waren ist beschränkt und nur unter ...',
     authorisationRequirementsText1:
       'Die Einfuhr von bestimmten Waren ist beschränkt und nur unter besonderen Voraussetzungen (z.B. mit vorheriger Bewilligung) möglich, bei einigen Produkten gelten sogar absolute Einfuhrverbote.',
     authorisationRequirementsText2:
@@ -657,8 +627,6 @@ export const de: Locale = {
   purchasesOnlineOffline: {
     purchasesOnlineOfflineMainText:
       'Interneteinkauf, Post- und Kuriersendungen',
-    purchasesOnlineOfflineSubText:
-      'Sendungen aus dem Ausland sind grundsätzlich zoll- und mehrwertsteuerpflichtig ...',
     purchasesOnlineOfflineText1:
       'Sendungen aus dem Ausland sind grundsätzlich zoll- und mehrwertsteuerpflichtig. Nachfolgend zeigen wir Ihnen, wie Sie eine grobe Berechnung der Kosten vornehmen können und was bei der Einfuhr zu beachten ist.',
     purchasesOnlineOfflineText2:
@@ -690,50 +658,21 @@ export const de: Locale = {
     informationTitle: 'Wissenswertes',
     informationSubCategoryTitle: 'Ich habe Waren dabei:',
     customsProceduresMainText: 'Vorgehen am Zoll',
-    customsProceduresSubText:
-      'Als Privatperson müssen Sie bei der Einreise in die Schweiz ...',
     travelDocumentsMainText: 'Reisedokumente',
-    travelDocumentsSubText:
-      'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges ...',
     declarationMainText: 'Ich habe Waren dabei',
-    declarationSubText:
-      'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
     animalsAndPlantsMainText: 'Ich habe Tiere oder Pflanzen dabei',
-    animalsAndPlantsSubText:
-      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die ...',
     vehiclesMainText: 'Ich bin mit einem Fahrzeug unterwegs',
-    vehiclesSubText:
-      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen und Anhängern ...',
     entryByTrainMainText: 'Einreise per Bahn',
-    entryByTrainSubText:
-      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren ...',
     prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
-    prohibitionsAndRestrictionsSubText:
-      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer Zoll ...',
     highwayVignetteMainText: 'Autobahnvignette',
-    highwayVignetteSubText:
-      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen ...',
     roadTaxMainText: 'Strassenverkehrsabgabe über 3,5 T (PSVA)',
-    roadTaxSubText:
-      'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 ...',
     fuelAndRepairsMainText: 'Treibstoff und Reparaturen',
-    fuelAndRepairsSubText:
-      'Der Tankinhalt ist abgabenfrei. In einem Reservekanister können Sie zudem bis 25 Liter ...',
     forgeryMainText: 'Fälschungen',
-    forgerySubText:
-      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer ...',
     cashMainText: 'Barmittel',
-    cashSubText:
-      'Bei der Ein-, Durch- und Ausfuhr von Barmitteln (Bargeld, Wertpapieren u.a.) im ...',
     foodMainText: 'Beschränkungen für Lebensmittel',
-    foodSubText: 'Aus EU-Staaten, Island und Norwegen können Waren ...',
     authorisationRequirementsMainText: 'Bewilligungspflichtig / Beschränkungen',
-    authorisationRequirementsSubText:
-      'Die Einfuhr von bestimmten Waren ist beschränkt und nur unter ...',
     purchasesOnlineOfflineMainText:
       'Interneteinkauf, Post- und Kuriersendungen',
-    purchasesOnlineOfflineSubText:
-      'Sendungen aus dem Ausland sind grundsätzlich zoll- und ...',
   },
   appInformation: {
     appInfoTitle: 'Über die App',

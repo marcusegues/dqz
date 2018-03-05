@@ -4,7 +4,6 @@ import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import type { TFunction } from '../../../../types/generalTypes';
-import { verticalScale } from '../../../../styles/Scaling';
 import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 
@@ -14,10 +13,7 @@ type TravelDocumentsInnerProps = {
 
 const TravelDocumentsInner = ({ t }: TravelDocumentsInnerProps) => (
   <SubCategoryContainer title={t('travelDocumentsMainText')}>
-    <AppInfoSubText
-      text={t('travelDocumentsText1')}
-      style={{ marginVertical: verticalScale(10) }}
-    />
+    <AppInfoSubText text={t('travelDocumentsText1')} />
     <AppInfoSubText
       text="www.sem.admin.ch"
       style={{
