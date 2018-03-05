@@ -231,18 +231,18 @@ export const de: Locale = {
   travelDocuments: {
     travelDocumentsMainText: 'Reisedokumente',
     travelDocumentsSubText:
-      'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges ...',
+      '',
     travelDocumentsText1:
       'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges und von der Schweiz anerkanntes Reisepapier. In gewissen Fällen ist zudem ein Visum erforderlich.\n' +
-      'Über die Einreise in die Schweiz und den Aufenthalt (Vorschriften zu Reisedokumenten und Visa) gibt Ihnen die Website des Staatssekretariats für Migration Auskunft:',
+      'Über die Einreise in die Schweiz und den Aufenthalt (Vorschriften zu Reisedokumenten und Visa) gibt Ihnen die Website des Staatssekretariats für Migration Auskunft: www.sem.admin.ch ',
     travelDocumentsText2:
-      'Die Vorschriften zu den Reisepapieren im Ausland finden Sie bei den entsprechenden ausländischen Behörden, über den Link der Weltzollorganisation:',
+      'Die Vorschriften zu den Reisepapieren im Ausland finden Sie bei den entsprechenden ausländischen Behörden, über den Link der Weltzollorganisation: www.wcoomd.org ',
   },
 
   vatAllowance: {
     vatAllowanceMainText: 'Wertfreigrenze CHF 300',
     vatAllowanceSubText:
-      'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
+      '',
     vatAllowanceText1:
       'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken einführen, sind bis zu einem Wert von CHF 300 mehrwertsteuerfrei. Zu berücksichtigen ist der Wert aller Waren. Dies schliesst auch den Wert der erhaltenen Geschenke, Lebensmittel, Tabakfabrikate, alkoholischen Getränke, vom Ausland mitgebrachten Haustiere und im Ausland ausgeführten Reparatur- und Unterhaltsarbeiten am eigenen Fahrzeug mit ein.',
     vatAllowanceText2:
@@ -260,7 +260,7 @@ export const de: Locale = {
     vatAllowanceText8: 'Weitere Beispiele zur Anwendung der Wertfreigrenze',
     vatAllowanceText9: 'Mehrwertsteuer',
     vatAllowanceText10:
-      'Die Mehrwertsteuer berechnet sich vom Warenwert. Der Normalsatz beträgt 7,7 %. Für gewisse Waren gilt ein reduzierter Steuersatz von 2,5 % (z. B. für Lebensmittel, alkoholfreie Getränke, Bücher, Zeitschriften oder Medikamente). Bei der Verzollung mit der App QuickZoll gelangt immer der Normalsatz zur Anwendung.',
+      'Die Mehrwertsteuer berechnet sich vom Warenwert. Der Normalsatz beträgt 7,7 %. Für gewisse Waren gilt ein reduzierter Steuersatz von 2,5 % (z.B. für Lebensmittel, alkoholfreie Getränke, Bücher, Zeitschriften oder Medikamente). Bei der Verzollung mit der App QuickZoll gelangt immer der Normalsatz zur Anwendung.',
     vatAllowanceText11:
       'Das Vorweisen einer Quittung oder eines anderen Wertnachweises (z. B. bei Internetkäufen) erleichtert die Zollveranlagung. Fehlen Wertangaben oder wird die Richtigkeit dieser Angaben bezweifelt, kann die Zollstelle den Warenwert schätzen.',
     vatAllowanceText12: 'Zollanmeldung',
@@ -269,7 +269,7 @@ export const de: Locale = {
     vatAllowanceText14:
       'Sie können die Waren auch mit der App QuickZoll oder bei Grenzübergängen, die nicht durch Zollpersonal besetzt sind, schriftlich via Anmeldebox anmelden. Informationen dazu finden Sie hier',
     vatAllowanceText15:
-      'Bitte beachten Sie: Werden die so genannten Freimengen von alkoholischen Getränken, Tabakfabrikaten und gewissen Lebensmitteln überschritten, müssen Sie in jedem Fall Zoll bezahlen. Mehr Informationen',
+      'Bitte beachten Sie: Werden die so genannten Freimengen von alkoholischen Getränken, Tabakfabrikaten und gewissen Lebensmitteln überschritten, müssen Sie in jedem Fall Zoll bezahlen. Mehr Informationen.',
     vatAllowanceText16:
       'Bitte beachten Sie zudem, dass bestimmte Waren (z.B. Fälschungen, Waffen sowie gewisse Pflanzen, Tiere, Tierprodukte und Waren, die dem Artenschutz unterliegen) zur Einfuhr verboten sein können oder gewissen Beschränkungen unterliegen. Mehr Informationen',
     vatAllowanceText17: 'Anwendung der Wertfreigrenze für Einzelpersonen',
@@ -310,7 +310,7 @@ export const de: Locale = {
     vatAllowanceText41: '2 Gläser\t\t2 Stk. à CHF 200\t\tCHF 400',
     vatAllowanceText42: '1 Gestell\t\tCHF 300',
     vatAllowanceText43: 'Total\t\tCHF 700',
-    vatAllowanceText44: '',
+    vatAllowanceText44: '1 Gegenstand',
   },
 
   dutyAllowance: {
