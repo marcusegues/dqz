@@ -18,18 +18,18 @@ export const CustomInputPicker = ({
   unit,
   onCustomWholePartValueChange,
 }: CustomInputPickerProps) => (
-    <View style={pickerModalStyle.pickerContainer}>
-      <PickerComponent
-        selectedValue={wholePart}
-        onValueChange={onCustomWholePartValueChange}
-        mode="dropdown"
-        prompt=""
-      >
-        {rangeItemsPicker(1, 100, 1).map(i => (
-          <Picker.Item key={i.id} label={i.label} value={i.value} />
-        ))}
-      </PickerComponent>
+  <View style={pickerModalStyle.pickerContainer}>
+    <PickerComponent
+      selectedValue={wholePart}
+      onValueChange={onCustomWholePartValueChange}
+      mode="dropdown"
+      prompt=""
+    >
+      {rangeItemsPicker(1, 100, 1).map(i => (
+        <Picker.Item key={i.id} label={i.label} value={i.value} />
+      ))}
+    </PickerComponent>
 
-      <PickerUnitColumn unit={unit} />
-    </View>
-  );
+    <PickerUnitColumn unit={unit} />
+  </View>
+);
