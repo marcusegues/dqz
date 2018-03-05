@@ -228,8 +228,7 @@ export const de: Locale = {
 
   travelDocuments: {
     travelDocumentsMainText: 'Reisedokumente',
-    travelDocumentsSubText:
-      '',
+    travelDocumentsSubText: '',
     travelDocumentsText1:
       'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges und von der Schweiz anerkanntes Reisepapier. In gewissen Fällen ist zudem ein Visum erforderlich.\n' +
       'Über die Einreise in die Schweiz und den Aufenthalt (Vorschriften zu Reisedokumenten und Visa) gibt Ihnen die Website des Staatssekretariats für Migration Auskunft: www.sem.admin.ch ',
@@ -413,10 +412,10 @@ export const de: Locale = {
     animalsMainText: 'Tiere: Heimtiere, Hunde, Katzen und Pferde',
     animalsText1:
       'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die Informationen beim Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:\n' +
-      'http://www.blv.admin.ch'
+      'http://www.blv.admin.ch',
     animalsText2: 'Abgaben',
     animalsText3:
-      'Wird die Wertfreigrenze von CHF 300 überschritten, müssen Sie für Tiere die MWST bezahlen. Detailliertere Informationen finden Sie unter:'
+      'Wird die Wertfreigrenze von CHF 300 überschritten, müssen Sie für Tiere die MWST bezahlen. Detailliertere Informationen finden Sie unter:',
     animalsText4: 'Wertfreigrenze CHF 300',
   },
 
@@ -682,8 +681,7 @@ export const de: Locale = {
     publisher: 'Herausgeberin',
     customsAdministrationAddressTitle: 'Eidgenössische Zollverwaltung EZV',
     contact: 'Kontakt',
-    customsInfoCenter:
-      'Auskunftszentrale Zoll\n\nzollauskunft@ezv.admin.ch',
+    customsInfoCenter: 'Auskunftszentrale Zoll\n\nzollauskunft@ezv.admin.ch',
     reachability: 'Erreichbarkeit:',
     workingHours: 'Montag – Freitag, 8.00 – 11.30 und 13.30 bis 17.00',
     generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern\nhttp://www.ezv.admin.ch`,
