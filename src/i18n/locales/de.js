@@ -189,7 +189,7 @@ export const de: Locale = {
   customsProcedures: {
     customsProceduresMainText: 'Vorgehen am Zoll',
     customsProceduresSubText:
-      'Als Privatperson müssen Sie bei der Einreise in die Schweiz ...',
+      '',
     customsProceduresText1:
       'Als Privatperson müssen Sie bei der Einreise in die Schweiz alle mitgeführten Waren und Tiere unaufgefordert anmelden.',
     customsProceduresText2:
@@ -208,7 +208,7 @@ export const de: Locale = {
     customsProceduresText10:
       'Mündliche Zollanmeldung oder Benutzen des roten Durchgangs in Flughäfen',
     customsProceduresText11:
-      'Wenn der Grenzübergang durch Personal des Schweizer Zolls besetzt ist, melden Sie alle Waren mündlich und unaufgefordert an.Informationen zu den wichtigsten Grenzübergängen finden Sie unter der Rubrik Grenzübergänge.',
+      'Wenn der Grenzübergang durch Personal des Schweizer Zolls besetzt ist, melden Sie alle Waren mündlich und unaufgefordert an. Informationen zu den wichtigsten Grenzübergängen finden Sie unter der Rubrik Grenzübergänge.',
     customsProceduresText12: 'Zollanmeldung mit der App QuickZoll',
     customsProceduresText13:
       'Sie können Ihre Waren mit der App QuickZoll der EZV anmelden. Die Waren müssen vor dem Grenzübertritt oder beim Grenzübergang mit der App verzollt werden. D.h. die Abgaben müssen bezahlt sein. Haben Sie die Abgaben mit der App bezahlt, dürfen Sie auch Grenzübergänge, bei denen kein Personal des Zolls anwesend ist, und in Flughäfen den grünen Durchgang benutzen.',
