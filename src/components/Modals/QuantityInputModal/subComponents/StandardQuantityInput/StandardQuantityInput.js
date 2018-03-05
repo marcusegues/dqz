@@ -17,29 +17,26 @@ type StandardQuantityInputProps = {
   children: Children,
 };
 
-class StandardQuantityInputInner extends React.Component<
-  StandardQuantityInputProps & { t: TFunction }
-> {
-  render() {
-    const { category, children, t } = this.props;
-    return (
-      <View>
-        <View
-          style={{
-            marginTop: verticalScale(16),
-            marginLeft: moderateScale(16),
-          }}
-        >
-          <CardHeaderText text={t('quantityInput:enterQuantity')} />
-        </View>
-        <CardHeaderSubText
-          text={t('quantityInput:standardInputSubText', { category })}
-        />
-        {children}
+const StandardQuantityInputInner = ({
+  category,
+  children,
+  t,
+}: StandardQuantityInputProps & { t: TFunction }) => (
+    <View>
+      <View
+        style={{
+          marginTop: verticalScale(16),
+          marginLeft: moderateScale(16),
+        }}
+      >
+        <CardHeaderText text={t('quantityInput:enterQuantity')} />
       </View>
-    );
-  }
-}
+      <CardHeaderSubText
+        text={t('quantityInput:standardInputSubText', { category })}
+      />
+      {children}
+    </View>
+  );
 
 export const StandardQuantityInput = (translate(['quantityInput'])(
   StandardQuantityInputInner

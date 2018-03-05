@@ -17,8 +17,7 @@ export const CustomInputPicker = ({
   wholePart,
   unit,
   onCustomWholePartValueChange,
-}: CustomInputPickerProps) => {
-  return (
+}: CustomInputPickerProps) => (
     <View style={pickerModalStyle.pickerContainer}>
       <PickerComponent
         selectedValue={wholePart}
@@ -34,4 +33,3 @@ export const CustomInputPicker = ({
       <PickerUnitColumn unit={unit} />
     </View>
   );
-};

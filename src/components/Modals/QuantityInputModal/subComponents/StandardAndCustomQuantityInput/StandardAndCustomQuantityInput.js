@@ -11,8 +11,8 @@ import { ModalTab } from '../ModalTab';
 import type { SelectedInput } from '../../QuantityInputModal';
 
 type StandardAndCustomQuantityInputChildren = {
-  standardInputPicker: any, //React.Element<any>,
-  customInputPicker: any, //React.Element<any>
+  standardInputPicker: any, // React.Element<any>,
+  customInputPicker: any, // React.Element<any>
 };
 
 type StandardAndCustomQuantityInputProps = {
@@ -21,33 +21,31 @@ type StandardAndCustomQuantityInputProps = {
   children: StandardAndCustomQuantityInputChildren,
 };
 
-class StandardAndCustomQuantityInputInner extends React.Component<
-  StandardAndCustomQuantityInputProps & { t: TFunction }
-> {
-  render() {
-    const { selected, onTabSelect, children, t } = this.props;
-    return (
-      <View>
-        <View style={pickerModalStyle.topTouchableContainer}>
-          <ModalTab
-            activeTab={selected === 'standard'}
-            onPress={() => onTabSelect('standard')}
-            text={t('modal:standardCategoryPicker').toUpperCase()}
-          />
+const StandardAndCustomQuantityInputInner = ({
+  selected,
+  onTabSelect,
+  children,
+  t,
+}: StandardAndCustomQuantityInputProps & { t: TFunction }) => (
+    <View>
+      <View style={pickerModalStyle.topTouchableContainer}>
+        <ModalTab
+          activeTab={selected === 'standard'}
+          onPress={() => onTabSelect('standard')}
+          text={t('modal:standardCategoryPicker').toUpperCase()}
+        />
 
-          <ModalTab
-            activeTab={selected === 'custom'}
-            onPress={() => onTabSelect('custom')}
-            text={t('modal:individualCategoryPicker').toUpperCase()}
-          />
-        </View>
-        {selected === 'standard'
-          ? children.standardInputPicker
-          : children.customInputPicker}
+        <ModalTab
+          activeTab={selected === 'custom'}
+          onPress={() => onTabSelect('custom')}
+          text={t('modal:individualCategoryPicker').toUpperCase()}
+        />
       </View>
-    );
-  }
-}
+      {selected === 'standard'
+        ? children.standardInputPicker
+        : children.customInputPicker}
+    </View>
+  );
 
 export const StandardAndCustomQuantityInput = (translate(['modal'])(
   StandardAndCustomQuantityInputInner

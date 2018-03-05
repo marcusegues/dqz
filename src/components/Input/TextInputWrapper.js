@@ -12,8 +12,7 @@ type TextInputWrapperProps = {
 export const TextInputWrapper = ({
   onChangeText,
   value,
-}: TextInputWrapperProps) => {
-  return (
+}: TextInputWrapperProps) => (
     <TextInput
       keyboardType="numeric"
       maxLength={5}
@@ -24,4 +23,3 @@ export const TextInputWrapper = ({
       value={value}
     />
   );
-};

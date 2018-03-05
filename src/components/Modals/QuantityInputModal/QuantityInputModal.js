@@ -226,15 +226,21 @@ class QuantityInputModalInner extends React.Component<
     const {
       quantityInputMethod,
       standardInputMethod,
+      customInputMethod,
     } = this.getCategoryQuantityInputInfo();
     if (quantityInputMethod === 'standardInput') {
       return standardInputMethod === 'manual'
         ? this.numberTotalAmount()
         : this.standardTotalAmount();
     }
+    // eslint-disable-next-line no-nested-ternary
     return selected === 'standard'
-      ? this.standardTotalAmount()
-      : this.customTotalAmount();
+      ? standardInputMethod === 'manual'
+        ? this.numberTotalAmount()
+        : this.standardTotalAmount()
+      : customInputMethod === 'manual'
+        ? this.numberTotalAmount()
+        : this.customTotalAmount();
   }
 
   render() {

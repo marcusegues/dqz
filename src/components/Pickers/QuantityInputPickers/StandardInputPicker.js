@@ -25,8 +25,7 @@ export const StandardInputPicker = ({
   unit,
   onMultiplierValueChange,
   onAmountValueChange,
-}: StandardInputPickerProps) => {
-  return (
+}: StandardInputPickerProps) => (
     <View style={pickerModalStyle.pickerContainer}>
       <PickerComponent
         selectedValue={multiplier}
@@ -58,4 +57,3 @@ export const StandardInputPicker = ({
       <PickerUnitColumn unit={unit} />
     </View>
   );
-};
