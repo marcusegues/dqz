@@ -22,21 +22,21 @@ const StandardQuantityInputInner = ({
   children,
   t,
 }: StandardQuantityInputProps & { t: TFunction }) => (
-    <View>
-      <View
-        style={{
-          marginTop: verticalScale(16),
-          marginLeft: moderateScale(16),
-        }}
-      >
-        <CardHeaderText text={t('quantityInput:enterQuantity')} />
-      </View>
-      <CardHeaderSubText
-        text={t('quantityInput:standardInputSubText', { category })}
-      />
-      {children}
+  <View>
+    <View
+      style={{
+        marginTop: verticalScale(16),
+        marginLeft: moderateScale(16),
+      }}
+    >
+      <CardHeaderText text={t('quantityInput:enterQuantity')} />
     </View>
-  );
+    <CardHeaderSubText
+      text={t('quantityInput:standardInputSubText', { category })}
+    />
+    {children}
+  </View>
+);
 
 export const StandardQuantityInput = (translate(['quantityInput'])(
   StandardQuantityInputInner
