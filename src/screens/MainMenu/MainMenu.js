@@ -107,9 +107,8 @@ class MainMenuInner extends React.Component<
   }
 
   render() {
-    const { navigation, t, nav } = this.props;
-    console.log('Nav in MainMenu', nav);
-    console.log('Navigation in MainMenu', this.props.navigation);
+    const { navigation, t } = this.props;
+
     return (
       <View style={mainMenuStyles.mainContainer}>
         <View style={mainMenuStyles.topContainer}>
@@ -196,7 +195,6 @@ class MainMenuInner extends React.Component<
 }
 
 const mapStateToProps = state => ({
-  nav: state.nav,
   basket: getBasket(state),
   people: getPeople(state),
   amounts: getAmounts(state),

@@ -375,7 +375,6 @@ class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
   }
 
   render() {
-    console.log('Nav in RootNavigation', this.props.nav);
     return (
       <View
         style={{

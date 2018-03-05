@@ -1,10 +1,9 @@
-import { RootStackNavigator } from '../navigation/RootNavigation';
 import { NavigationActions } from 'react-navigation';
+import { RootStackNavigator } from '../navigation/RootNavigation';
 
 const initialState = RootStackNavigator.router.getStateForAction(
   RootStackNavigator.router.getActionForPathAndParams('OnBoarding')
 );
-console.log(initialState);
 export const navigation = (state = initialState, action) => {
   switch (action.type) {
     case 'NAVIGATE': {

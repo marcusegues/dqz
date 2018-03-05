@@ -123,7 +123,7 @@ class ScreensViewInner extends React.Component<
                   this.setState({ legalNoticeModalVisible: true });
                   return;
                 }
-                navigation.dispatch({
+                this.props.navigation.dispatch({
                   type: 'NAVIGATE',
                   screen: item.key,
                 });

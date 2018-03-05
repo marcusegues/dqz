@@ -64,7 +64,7 @@ class LegalNoticeInfoInner extends React.Component<
     const { selected } = this.state;
     const usage = selected === 'usage';
     const development = selected === 'legal';
-    console.log('Navigation in INFO', this.props.navigation);
+
     return (
       <MainContentContainer>
         <ScrollViewCard>

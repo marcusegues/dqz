@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import { connect } from 'react-redux';
 // $FlowFixMe
 import { View } from 'react-native';
 import type { ComponentType } from 'react';
@@ -63,10 +62,6 @@ class OnBoardingInner extends React.Component<
     });
   }
 
-  componentWillUnmount() {
-    console.log('UNMOUNTING OnBoarding');
-  }
-
   setNextScreen(nextScreen: NextScreenType) {
     this.setState({ nextScreen });
   }
@@ -77,10 +72,9 @@ class OnBoardingInner extends React.Component<
   }
 
   render() {
-    const { t, i18n, navigation, nav } = this.props;
+    const { t, i18n, navigation } = this.props;
     const { systemLanguage, nextScreen, settingsHasLanguage } = this.state;
-    console.log('Nav in OnBoarding', nav);
-    console.log('Navigation in OnBoarding', this.props.navigation);
+
     return (
       <OnBoardingContainer>
         <OnBoardingParagraph
@@ -127,10 +121,6 @@ class OnBoardingInner extends React.Component<
   }
 }
 
-const mapStateToProps = state => ({
-  nav: state.nav,
-});
-
-export const OnBoarding = (connect(mapStateToProps, null)(
-  translate(['general', 'onBoarding'])(OnBoardingInner)
+export const OnBoarding = (translate(['general', 'onBoarding'])(
+  OnBoardingInner
 ): ComponentType<OnBoardingProps>);

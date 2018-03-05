@@ -11,7 +11,6 @@ import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { BulletText } from '../../../AppInfo/subComponents/BulletText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
-import { informationNavigateTo } from '../../InformationData';
 
 type DutyAllowanceInnerProps = {
   t: TFunction,
