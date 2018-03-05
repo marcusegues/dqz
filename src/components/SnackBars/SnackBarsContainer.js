@@ -5,7 +5,11 @@ import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View } from 'react-native';
-import { getAmounts, getConnectivity, getCurrencies } from '../../reducers/selectors';
+import {
+  getAmounts,
+  getConnectivity,
+  getCurrencies,
+} from '../../reducers/selectors';
 import type { Amounts } from '../../model/types/basketPeopleAmountsTypes';
 import { updateSnackBarVisibilities } from './SnackBarsControl/controlSnackBarStates';
 import type { CurrencyObject } from '../../model/currencies';
@@ -13,6 +17,7 @@ import type { ConnectivityType } from '../../types/connectivity';
 import type { AppState } from '../../types/reducers';
 import { SnackBar } from './SnackBar/SnackBar';
 import type { TFunction } from '../../types/generalTypes';
+import type { NavState } from '../../types/reducers/nav';
 
 type SnackBarType = 'limitExceeded' | 'offline';
 
@@ -29,6 +34,7 @@ export type SnackBarStateEnriched = {
   amounts: Amounts,
   currencies: CurrencyObject,
   connectivity: ConnectivityType,
+  nav: NavState,
 };
 
 type ReduxInject = {
@@ -38,6 +44,7 @@ type ReduxInject = {
   currencies: CurrencyObject,
   // eslint-disable-next-line react/no-unused-prop-types
   connectivity: ConnectivityType,
+  nav: NavState,
 };
 
 class SnackBarsContainerInner extends React.Component<
@@ -64,12 +71,14 @@ class SnackBarsContainerInner extends React.Component<
 
   enrichState(props: ReduxInject): SnackBarStateEnriched {
     const { snackBarVisibilities } = this.state;
-    const { amounts, currencies, connectivity } = props;
+    const { amounts, currencies, connectivity, nav } = props;
+    debugger;
     return {
       snackBarVisibilities,
       amounts,
       currencies,
       connectivity,
+      nav,
     };
   }
 
@@ -123,6 +132,7 @@ class SnackBarsContainerInner extends React.Component<
 }
 
 const mapStateToProps = (state: AppState) => ({
+  nav: state.nav,
   amounts: getAmounts(state),
   currencies: getCurrencies(state),
   connectivity: getConnectivity(state),
