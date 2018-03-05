@@ -83,7 +83,6 @@ export const stackNavigatorScreens = {
     screen: QuestionAnswerContainer,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: <HomeIcon navigation={navigation} />,
-      headerRight: <Logo />,
     }),
   },
   Payment: {
