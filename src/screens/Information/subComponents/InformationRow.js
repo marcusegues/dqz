@@ -4,7 +4,6 @@ import React from 'react';
 import { TouchableWithoutFeedback, View } from 'react-native';
 import { Row } from '../../../components/Rows/Row';
 import { CardRowText } from '../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
-import { CardRowSubText } from '../../../components/QuestionAnswer/Cards/subcomponents/CardRowSubText';
 import { InformationRowIcon } from './InformationRowIcon';
 import { RightChevronIcon } from '../../../components/General Components/RightChevronIcon';
 

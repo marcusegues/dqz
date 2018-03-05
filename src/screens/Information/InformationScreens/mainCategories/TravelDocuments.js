@@ -4,7 +4,6 @@ import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import type { TFunction } from '../../../../types/generalTypes';
-import { verticalScale } from '../../../../styles/Scaling';
 import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 
