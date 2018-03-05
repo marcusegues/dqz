@@ -19,7 +19,7 @@ import {
   getCurrencies,
   getPeople,
   getReceiptEntryTime,
-} from '../../reducers';
+} from '../../reducers/selectors';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
 import { InfoNote } from './subcomponents/InfoNote';
 import {

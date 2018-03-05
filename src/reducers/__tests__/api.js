@@ -14,7 +14,7 @@ import {
   getTotalDuty,
   getTotalFees,
   getReceiptId,
-} from '../index';
+} from '../selectors';
 import {
   sampleAmounts1,
   sampleBasket1,

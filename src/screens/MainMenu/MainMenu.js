@@ -27,7 +27,7 @@ import {
   getMainCategories,
   getPeople,
   getReceiptEntryTime,
-} from '../../reducers';
+} from '../../reducers/selectors';
 import type {
   Amounts,
   Basket,

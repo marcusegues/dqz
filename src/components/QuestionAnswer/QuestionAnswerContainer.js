@@ -19,7 +19,7 @@ import {
   getMainCategories,
   getCurrencies,
   getFormattedCurrencyDate,
-} from '../../reducers';
+} from '../../reducers/selectors';
 import type {
   Amounts,
   Basket,

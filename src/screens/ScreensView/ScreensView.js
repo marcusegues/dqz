@@ -7,7 +7,7 @@ import { NavBar } from '../../components/NavBar/NavBar';
 import { QuantityInputModal } from '../../components/Modals/QuantityInputModal/QuantityInputModal';
 import { CurrencyPickerModal } from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
 import { TimePickerModal } from '../../components/Modals/TimePickerModal/TimePickerModal';
-import { getCurrencies, getFormattedCurrencyDate } from '../../reducers';
+import { getCurrencies, getFormattedCurrencyDate } from '../../reducers/selectors';
 import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import type { Navigation } from '../../types/generalTypes';
 import type { CurrencyObject } from '../../model/currencies';

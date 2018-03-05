@@ -26,7 +26,7 @@ import type { TFunction } from '../../../types/generalTypes';
 import { ModalCloseText } from '../ModalCloseText';
 import { rowStyles } from '../../Rows/styles/rowStyles';
 import { storeClearDeclaration } from '../../../asyncStorage/storageApi';
-import { getTotalFees } from '../../../reducers';
+import { getTotalFees } from '../../../reducers/selectors';
 
 const ownStyles = StyleSheet.create({
   container: {

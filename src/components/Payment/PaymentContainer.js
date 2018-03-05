@@ -21,7 +21,7 @@ import {
   getPeople,
   getCurrencies,
   getReceiptEntryTime,
-} from '../../reducers';
+} from '../../reducers/selectors';
 import type {
   Navigation,
   PaymentData,
