@@ -21,6 +21,7 @@ import {
   getPeople,
   getCurrencies,
   getReceiptEntryTime,
+  getConnectivity,
 } from '../../reducers/selectors';
 import type {
   Navigation,
@@ -53,6 +54,7 @@ import {
 } from '../../asyncStorage/storageApi';
 import { LegalNoticeModal } from '../Modals/LegalNoticeModal/LegalNoticeModal';
 import { MainContentContainer } from '../MainContentContainer/MainContentContainer';
+import type { ConnectivityType } from '../../types/connectivity';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -88,6 +90,7 @@ type ReduxInject = {
   people: People,
   resetDeclaration: () => void,
   receiptEntryTime: string,
+  connectivity: ConnectivityType,
 };
 
 class PaymentContainerInner extends React.Component<
@@ -287,7 +290,14 @@ class PaymentContainerInner extends React.Component<
 
   render() {
     const { showModal } = this.state;
-    const { navigation, fees, paymentData, currencies, amounts } = this.props;
+    const {
+      navigation,
+      fees,
+      paymentData,
+      currencies,
+      amounts,
+      connectivity,
+    } = this.props;
     return (
       <MainContentContainer>
         <NavBar step={2} />
@@ -310,7 +320,8 @@ class PaymentContainerInner extends React.Component<
           onProceedToPayment={() => this.proceedToPayment()}
           paymentDisabled={
             fees < MIN_DECLARED_CHF ||
-            totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF
+            totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF ||
+            (connectivity.type === 'none' || connectivity.type === 'unknown')
           }
           navigation={navigation}
         />
@@ -374,6 +385,7 @@ const mapStateToProps = state => ({
   currencies: getCurrencies(state),
   paymentData: getPaymentData(state),
   receiptEntryTime: getReceiptEntryTime(state),
+  connectivity: getConnectivity(state),
 });
 
 export const PaymentContainer = (connect(mapStateToProps, mapDispatchToProps)(
