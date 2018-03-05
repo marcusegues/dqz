@@ -10,7 +10,7 @@ import type { ReceiptsState } from './receipts';
 import { getInitialReceiptsState } from './receipts';
 import { getInitialCurrenciesState } from './currencies';
 import type { NavState } from './nav';
-import {getInitialNavState} from "./nav";
+import { getInitialNavState } from './nav';
 
 type AppStateObj = {
   declaration: DeclarationState,
