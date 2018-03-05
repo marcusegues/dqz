@@ -73,7 +73,6 @@ class SnackBarsContainerInner extends React.Component<
   enrichState(props: ReduxInject): SnackBarStateEnriched {
     const { snackBarVisibilities } = this.state;
     const { amounts, currencies, connectivity, nav } = props;
-    debugger;
     return {
       snackBarVisibilities,
       amounts,
