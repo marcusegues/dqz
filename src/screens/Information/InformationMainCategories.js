@@ -31,11 +31,18 @@ class InformationMainCategoriesInner extends React.Component<{
   }
 
   navigateTo(cat: InfoCategory) {
-    const { navigate } = this.props.navigation;
+    const { dispatch } = this.props.navigation;
     if (informationSubCategories[cat] === 'noSubCategories') {
-      navigate(informationNavigateTo[cat].toString()); // TODO: proper types. This toString should not be here.
+      dispatch({
+        type: 'NAVIGATE',
+        screen: informationNavigateTo[cat].toString(),
+      }); // TODO: proper types. This toString should not be here.
     } else {
-      navigate('InformationSubCategories', { infoCategory: cat });
+      dispatch({
+        type: 'NAVIGATE',
+        screen: 'InformationSubCategories',
+        params: { infoCategory: cat },
+      });
     }
   }
 
