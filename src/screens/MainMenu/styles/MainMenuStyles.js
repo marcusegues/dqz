@@ -32,7 +32,15 @@ export const mainMenuStyles: any = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: 'transparent',
-    marginTop: verticalScale(35),
+
+    ...Platform.select({
+      ios: {
+        marginTop: verticalScale(35),
+      },
+      android: {
+        marginTop: verticalScale(10),
+      },
+    }),
   },
   greyLogo: {
     height: moderateScale(40),
