@@ -448,16 +448,24 @@ export const it: Locale = {
   },
 
   entryByTrain: {
-    entryByTrainMainText: '',
-    entryByTrainText1: '',
-    entryByTrainText2: '',
-    entryByTrainText3: '',
-    entryByTrainText4: '',
-    entryByTrainText5: '',
-    entryByTrainText6: '',
-    entryByTrainText7: '',
-    entryByTrainText8: '',
-    entryByTrainText9: '',
+    entryByTrainMainText: 'Entrata in Svizzera con il treno',
+    entryByTrainText1:
+      'Se sul treno è presente personale doganale, le merci trasportate vanno dichiarate spontaneamente per il trattamento doganale. Merci destinate all’uso privato o da regalare possono essere imposte anche prima del passaggio del confine con la app «xxxx». Tali dichiarazioni sono vincolanti.',
+    entryByTrainText2:
+      'Se non è presente personale doganale e non si desidera imporre le merci con l’app «xxx» è possibile:',
+    entryByTrainText3:
+      'scendere dal treno alla stazione di confine e dichiarare per scritto (presso una cassetta delle dichiarazioni) le merci;',
+    entryByTrainText4:
+      'dichiarare le merci in un secondo tempo, entro 7 giorni, presso qualsiasi ufficio doganale durante gli orari d’apertura.',
+    entryByTrainText5:
+      'Su determinati treni regionali è possibile trasportare solo merci private:',
+    entryByTrainText6:
+      'che rientrano nelle quantità ammesse in franchigia o nel limite di franchigia secondo il valore di 300 franchi e che quindi sono esenti da tributi;',
+    entryByTrainText7: 'che sono state imposte con l’app «xxx».',
+    entryByTrainText8:
+      'In entrambi i casi le merci non devono essere soggette a limitazioni e divieti né all’obbligo di certificazione o di autorizzazione.',
+    entryByTrainText9:
+      'Si prega di prestare attenzione alle indicazioni sul treno o agli annunci!',
   },
 
   forgery: {
@@ -539,7 +547,7 @@ export const it: Locale = {
 
     vehiclesMainText: 'Sto viaggiando con un veicolo',
 
-    entryByTrainMainText: 'Ingresso in treno',
+    entryByTrainMainText: 'Entrata in Svizzera con il treno',
 
     prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
 
