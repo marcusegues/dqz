@@ -557,7 +557,7 @@ export const it: Locale = {
 
     entryByTrainMainText: 'Entrata in Svizzera con il treno',
 
-    prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
+    prohibitionsAndRestrictionsMainText: '',
 
     vatAllowanceMainText: '',
 
@@ -601,7 +601,7 @@ export const it: Locale = {
     customsInfoCenter:
       'Centrale d’informazione dell’AFD\n058 467 15 15\nzollauskunft@ezv.admin.ch',
     reachability: 'Reperibilità:',
-    workingHours: 'Montag – Freitag, 8.00 – 11.30 und 13.30 bis 17.00',
+    workingHours: 'Lunedi – Venerdi, 8.00 – 11.30 e 13.30 a 17.00',
     generalCustomsDirectorate:
       'Amministrazione federale delle dogane AFD\nMonbijoustrasse 40\n' +
       '3003 Bern\n' +
