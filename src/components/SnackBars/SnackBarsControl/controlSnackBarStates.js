@@ -7,7 +7,7 @@ import type { NavState } from '../../../types/reducers/nav';
 type SnackBarType = 'limitExceeded' | 'offline';
 
 const allowedScreensBySnackBar = {
-  limitExceeded: ['QuestionAnswer'],
+  limitExceeded: ['QuestionAnswer', 'Payment'],
   offline: ['Payment'],
 };
 

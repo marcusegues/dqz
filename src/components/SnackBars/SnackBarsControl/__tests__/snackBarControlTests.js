@@ -185,7 +185,7 @@ describe('Test snack bar control flow', () => {
 
     expect(
       updateSnackBarVisibilities(newState).snackBarVisibilities.limitExceeded
-    ).toBe('hidden');
+    ).toBe('visible');
   });
 
   test('adding value below declaration limit in MainMenu does not show limitExceeded', () => {
