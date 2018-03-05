@@ -55,7 +55,7 @@ const quantityInputTypeByCategory: QuantityInputTypeByCategoryType = {
   },
   Butter: {
     quantityInputMethod: 'standardInput',
-    standardInputMethod: 'picker',
+    standardInputMethod: 'manual',
     customInputMethod: 'none',
   },
   Oils: {

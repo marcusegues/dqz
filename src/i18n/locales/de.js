@@ -84,7 +84,7 @@ export const de: Locale = {
     enterQuantitiesAlcohol:
       'Erfassen Sie hier die Mengen aller alkoholischen Getränke',
     standardInputSubText:
-      'Erfassen Sie die menge von {category}, die Sie mit sich führen:',
+      'Erfassen Sie die menge von {{category}}, die Sie mit sich führen:',
   },
   amountInput: {
     amountInput:
