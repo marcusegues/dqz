@@ -1,10 +1,11 @@
 import { NavigationActions } from 'react-navigation';
 import { RootStackNavigator } from '../navigation/RootNavigation';
 
-const initialState = RootStackNavigator.router.getStateForAction(
+export const initialNavState = RootStackNavigator.router.getStateForAction(
   RootStackNavigator.router.getActionForPathAndParams('OnBoarding')
 );
-export const nav = (state = initialState, action) => {
+
+export const nav = (state = initialNavState, action) => {
   switch (action.type) {
     case 'NAVIGATE': {
       const navigationAction = NavigationActions.navigate({
