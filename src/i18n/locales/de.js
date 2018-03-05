@@ -498,13 +498,13 @@ export const de: Locale = {
     souvenirsAndSpeciesProtectionText7:
       'Die Einfuhr geschützter Pflanzen oder deren Erzeugnisse ist entweder ganz verboten oder bewilligungspflichtig (z.B. Orchideen, Kakteen, gewisse Hölzer und Medizinalpflanzen).',
     souvenirsAndSpeciesProtectionText8:
-      'Auskünfte und Bewilligungen erteilt das Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:',
+      'Auskünfte und Bewilligungen erteilt das Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV: www.blv.admin.ch',
   },
 
   highwayVignette: {
     highwayVignetteMainText: 'Autobahnvignette',
     highwayVignetteSubText:
-      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen ...',
+      '',
     highwayVignetteText1:
       'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen und Anhängern bis je 3,5 Tonnen ist abgabepflichtig. Der Verkaufspreis der Vignette beträgt CHF 40.',
     highwayVignetteText2: 'Verkaufsstellen',
@@ -533,7 +533,7 @@ export const de: Locale = {
       'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 Tonnen eine Schwerverkehrsabgabe erhoben. Für Busse, schwere Wohnmobile, schwere Personenwagen und deren Anhänger über 3,5 Tonnen wird die Abgabe pauschal pro Tag erhoben.',
     roadTaxText2:
       'Im Gegensatz zur Autobahnvignette für Personenwagen wird die Schwerverkehrsabgabe nicht nur auf den Autobahnen sondern auf dem gesamten Strassennetz fällig.',
-    roadTaxText3: 'Für LKWs und deren Anhänger siehe:',
+    roadTaxText3: 'Für LKWs und deren Anhänger siehe: www.lsva.ch',
     roadTaxText4:
       'Bitte beachten: PSVA-pflichtig ist das Fahrzeug auch, wenn es nur abgestellt ist und nicht bewegt wird (z. B. Wohnmobil auf Campingplatz).',
     roadTaxText5: 'Bezahlung und Tarife',
@@ -554,7 +554,7 @@ export const de: Locale = {
   fuelAndRepairs: {
     fuelAndRepairsMainText: 'Treibstoff und Reparaturen',
     fuelAndRepairsSubText:
-      'Der Tankinhalt ist abgabenfrei. In einem Reservekanister können Sie zudem bis 25 Liter ...',
+      '',
     fuelAndRepairsText1: 'Treibstoff für Fahrzeuge',
     fuelAndRepairsText2:
       'Der Tankinhalt ist abgabenfrei. In einem Reservekanister können Sie zudem bis 25 Liter Treibstoff abgabenfrei einführen. Jeder weitere Liter kostet CHF -.75 Zoll - zudem müssen Sie die Mehrwertsteuer auf den Wert des Treibstoffs bezahlen.',
@@ -567,7 +567,7 @@ export const de: Locale = {
   entryByTrain: {
     entryByTrainMainText: 'Einreise per Bahn',
     entryByTrainSubText:
-      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren ...',
+      '',
     entryByTrainText1:
       'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren unaufgefordert zur Zollbehandlung anmelden. Waren zu Ihrem privaten Gebrauch oder zum Verschenken können Sie auch vor dem Grenzübertritt mit der App QuickZoll verzollen. Diese Anmeldungen sind verbindlich.',
     entryByTrainText2:
@@ -590,7 +590,7 @@ export const de: Locale = {
   forgery: {
     forgeryMainText: 'Fälschungen',
     forgerySubText:
-      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer ...',
+      '',
     forgeryText1:
       'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer Zoll ist verpflichtet, Fälschungen einzuziehen und zu vernichten. Es spielt keine Rolle, ob die Gegenstände neu oder gebraucht sind.',
     forgeryText2: 'Schmuck und Uhren im Ausland kaufen',
@@ -600,13 +600,13 @@ export const de: Locale = {
     forgeryText5:
       'Selbst ein teuer bezahltes Schmuckstück kann sich als Fälschung erweisen. Eine Angabe zum Feingehalt garantiert nicht, dass die Ware echt ist. Kaufen Sie Schmuck und Uhren nur in anerkannten Fachgeschäften.',
     forgeryText6:
-      'Weitere Informationen zu Produktepiraterie und Markenfälschungen erhalten Sie bei der Schweizer Plattform gegen Fälschung und Piraterie STOP PIRACY:',
+      'Weitere Informationen zu Produktepiraterie und Markenfälschungen erhalten Sie bei der Schweizer Plattform gegen Fälschung und Piraterie STOP PIRACY: www.stop-piracy.ch',
   },
 
   cash: {
     cashMainText: 'Barmittel',
     cashSubText:
-      'Bei der Ein-, Durch- und Ausfuhr von Barmitteln (Bargeld, Wertpapieren u.a.) im ...',
+      '',
     cashText1:
       "Bei der Ein-, Durch- und Ausfuhr von Barmitteln (Bargeld, Wertpapieren u.a.) im Wert von über CHF 10'000 muss auf Befragung hin Auskunft über die Herkunft, den Verwendungszweck und die wirtschaftlich berechtigte Person erteilt werden.",
     cashText2:
@@ -615,7 +615,7 @@ export const de: Locale = {
 
   food: {
     foodMainText: 'Beschränkungen für Lebensmittel',
-    foodSubText: 'Aus EU-Staaten, Island und Norwegen können Waren ...',
+    foodSubText: '',
     foodText1:
       'Aus EU-Staaten, Island und Norwegen können Waren tierischer Herkunft zum privaten Gebrauch ohne Kontrolle durch den Grenztierarzt eingeführt werden. Die Waren dürfen nicht in den Verkauf gelangen.',
     foodText2:
@@ -635,7 +635,7 @@ export const de: Locale = {
   authorisationRequirements: {
     authorisationRequirementsMainText: 'Bewilligungspflichtig / Beschränkungen',
     authorisationRequirementsSubText:
-      'Die Einfuhr von bestimmten Waren ist beschränkt und nur unter ...',
+      '',
     authorisationRequirementsText1:
       'Die Einfuhr von bestimmten Waren ist beschränkt und nur unter besonderen Voraussetzungen (z.B. mit vorheriger Bewilligung) möglich, bei einigen Produkten gelten sogar absolute Einfuhrverbote.',
     authorisationRequirementsText2:
@@ -659,7 +659,7 @@ export const de: Locale = {
     purchasesOnlineOfflineMainText:
       'Interneteinkauf, Post- und Kuriersendungen',
     purchasesOnlineOfflineSubText:
-      'Sendungen aus dem Ausland sind grundsätzlich zoll- und mehrwertsteuerpflichtig ...',
+      '',
     purchasesOnlineOfflineText1:
       'Sendungen aus dem Ausland sind grundsätzlich zoll- und mehrwertsteuerpflichtig. Nachfolgend zeigen wir Ihnen, wie Sie eine grobe Berechnung der Kosten vornehmen können und was bei der Einfuhr zu beachten ist.',
     purchasesOnlineOfflineText2:
