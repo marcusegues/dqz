@@ -149,7 +149,6 @@ type ModalTranslations = {
 
 type CustomsProceduresTranslation = {
   customsProceduresMainText: string,
-  customsProceduresSubText: string,
   customsProceduresText1: string,
   customsProceduresText2: string,
   customsProceduresText3: string,
@@ -175,14 +174,12 @@ type CustomsProceduresTranslation = {
 
 type TravelDocumentsTranslations = {
   travelDocumentsMainText: string,
-  travelDocumentsSubText: string,
   travelDocumentsText1: string,
   travelDocumentsText2: string,
 };
 
 type VatAllowanceTranslations = {
   vatAllowanceMainText: string,
-  vatAllowanceSubText: string,
   vatAllowanceText1: string,
   vatAllowanceText2: string,
   vatAllowanceText3: string,
@@ -231,7 +228,6 @@ type VatAllowanceTranslations = {
 
 type DutyAllowanceTranslations = {
   dutyAllowanceMainText: string,
-  dutyAllowanceSubText: string,
   dutyAllowanceText1: string,
   dutyAllowanceText2: string,
   dutyAllowanceText3: string,
@@ -283,7 +279,6 @@ type DutyAllowanceTranslations = {
 
 type ForeignVatTranslations = {
   foreignVatMainText: string,
-  foreignVatSubText: string,
   foreignVatText1: string,
   foreignVatText2: string,
   foreignVatText3: string,
@@ -293,7 +288,6 @@ type ForeignVatTranslations = {
 
 type PersonalEffectsTranslations = {
   personalEffectsMainText: string,
-  personalEffectsSubText: string,
   personalEffectsText1: string,
   personalEffectsText2: string,
   personalEffectsText3: string,
@@ -305,7 +299,6 @@ type PersonalEffectsTranslations = {
 
 type AnimalsTranslations = {
   animalsMainText: string,
-  animalsSubText: string,
   animalsText1: string,
   animalsText2: string,
   animalsText3: string,
@@ -314,7 +307,6 @@ type AnimalsTranslations = {
 
 type PlantsTranslations = {
   plantsMainText: string,
-  plantsSubText: string,
   plantsText1: string,
   plantsText2: string,
   plantsText3: string,
@@ -350,7 +342,6 @@ type PlantsTranslations = {
 
 type SouvenirsAndSpeciesProtectionTranslations = {
   souvenirsAndSpeciesProtectionMainText: string,
-  souvenirsAndSpeciesProtectionSubText: string,
   souvenirsAndSpeciesProtectionText1: string,
   souvenirsAndSpeciesProtectionText2: string,
   souvenirsAndSpeciesProtectionText3: string,
@@ -363,7 +354,6 @@ type SouvenirsAndSpeciesProtectionTranslations = {
 
 type HighwayVignetteTranslations = {
   highwayVignetteMainText: string,
-  highwayVignetteSubText: string,
   highwayVignetteText1: string,
   highwayVignetteText2: string,
   highwayVignetteText3: string,
@@ -378,7 +368,6 @@ type HighwayVignetteTranslations = {
 
 type RoadTaxTranslations = {
   roadTaxMainText: string,
-  roadTaxSubText: string,
   roadTaxText1: string,
   roadTaxText2: string,
   roadTaxText3: string,
@@ -398,7 +387,6 @@ type RoadTaxTranslations = {
 
 type FuelAndRepairsTranslations = {
   fuelAndRepairsMainText: string,
-  fuelAndRepairsSubText: string,
   fuelAndRepairsText1: string,
   fuelAndRepairsText2: string,
   fuelAndRepairsText3: string,
@@ -408,7 +396,6 @@ type FuelAndRepairsTranslations = {
 
 type ForgeryTranslations = {
   forgeryMainText: string,
-  forgerySubText: string,
   forgeryText1: string,
   forgeryText2: string,
   forgeryText3: string,
@@ -419,14 +406,12 @@ type ForgeryTranslations = {
 
 type CashTranslations = {
   cashMainText: string,
-  cashSubText: string,
   cashText1: string,
   cashText2: string,
 };
 
 type FoodTranslations = {
   foodMainText: string,
-  foodSubText: string,
   foodText1: string,
   foodText2: string,
   foodText3: string,
@@ -440,7 +425,6 @@ type FoodTranslations = {
 
 type AuthorisationRequirementsTranslations = {
   authorisationRequirementsMainText: string,
-  authorisationRequirementsSubText: string,
   authorisationRequirementsText1: string,
   authorisationRequirementsText2: string,
   authorisationRequirementsText3: string,
@@ -456,7 +440,6 @@ type AuthorisationRequirementsTranslations = {
 
 type EntryByTrainTranslations = {
   entryByTrainMainText: string,
-  entryByTrainSubText: string,
   entryByTrainText1: string,
   entryByTrainText2: string,
   entryByTrainText3: string,
@@ -470,7 +453,6 @@ type EntryByTrainTranslations = {
 
 type PurchasesOnlineOfflineTranslations = {
   purchasesOnlineOfflineMainText: string,
-  purchasesOnlineOfflineSubText: string,
   purchasesOnlineOfflineText1: string,
   purchasesOnlineOfflineText2: string,
   purchasesOnlineOfflineText3: string,
@@ -494,35 +476,20 @@ type InformationTranslations = {
   informationTitle: string,
   informationSubCategoryTitle: string,
   customsProceduresMainText: string,
-  customsProceduresSubText: string,
   travelDocumentsMainText: string,
-  travelDocumentsSubText: string,
   declarationMainText: string,
-  declarationSubText: string,
   animalsAndPlantsMainText: string,
-  animalsAndPlantsSubText: string,
   vehiclesMainText: string,
-  vehiclesSubText: string,
   entryByTrainMainText: string,
-  entryByTrainSubText: string,
   prohibitionsAndRestrictionsMainText: string,
-  prohibitionsAndRestrictionsSubText: string,
   highwayVignetteMainText: string,
-  highwayVignetteSubText: string,
   roadTaxMainText: string,
-  roadTaxSubText: string,
   fuelAndRepairsMainText: string,
-  fuelAndRepairsSubText: string,
   forgeryMainText: string,
-  forgerySubText: string,
   cashMainText: string,
-  cashSubText: string,
   foodMainText: string,
-  foodSubText: string,
   authorisationRequirementsMainText: string,
-  authorisationRequirementsSubText: string,
   purchasesOnlineOfflineMainText: string,
-  purchasesOnlineOfflineSubText: string,
 };
 
 type ReceiptTranslations = {

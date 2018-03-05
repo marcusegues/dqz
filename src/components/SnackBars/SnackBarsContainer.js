@@ -5,7 +5,11 @@ import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View } from 'react-native';
-import { getAmounts, getConnectivity, getCurrencies } from '../../reducers/selectors';
+import {
+  getAmounts,
+  getConnectivity,
+  getCurrencies,
+} from '../../reducers/selectors';
 import type { Amounts } from '../../model/types/basketPeopleAmountsTypes';
 import { updateSnackBarVisibilities } from './SnackBarsControl/controlSnackBarStates';
 import type { CurrencyObject } from '../../model/currencies';

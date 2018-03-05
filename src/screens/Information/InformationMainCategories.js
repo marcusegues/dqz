@@ -31,11 +31,22 @@ class InformationMainCategoriesInner extends React.Component<{
   }
 
   navigateTo(cat: InfoCategory) {
-    const { navigate } = this.props.navigation;
+    // navigation.dispatch({ type: 'NAVIGATE', screen: nextScreen });
+    const { navigation } = this.props;
+    // const { navigate } = this.props.navigation;
     if (informationSubCategories[cat] === 'noSubCategories') {
-      navigate(informationNavigateTo[cat].toString()); // TODO: proper types. This toString should not be here.
+      navigation.dispatch({
+        type: 'NAVIGATE',
+        screen: informationNavigateTo[cat].toString(),
+      }); // TODO: proper types. This toString should not be here.
+      // navigate(informationNavigateTo[cat].toString()); // TODO: proper types. This toString should not be here.
     } else {
-      navigate('InformationSubCategories', { infoCategory: cat });
+      navigation.dispatch({
+        type: 'NAVIGATE',
+        screen: 'InformationSubCategories',
+        params: { infoCategory: cat },
+      });
+      // navigate('InformationSubCategories', { infoCategory: cat });
     }
   }
 
@@ -49,9 +60,8 @@ class InformationMainCategoriesInner extends React.Component<{
               key={cat}
               source={informationImages[cat]}
               mainText={t(`${cat}MainText`)}
-              subText={t(`${cat}SubText`)}
               rowOnPress={() => this.navigateTo(cat)}
-              borderTop={idx === 1}
+              // borderTop={idx === 0}
               borderBottom={idx !== infoCategories.length - 1}
             />
           ))}

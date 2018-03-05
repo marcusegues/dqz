@@ -14,10 +14,7 @@ type TravelDocumentsInnerProps = {
 
 const TravelDocumentsInner = ({ t }: TravelDocumentsInnerProps) => (
   <SubCategoryContainer title={t('travelDocumentsMainText')}>
-    <AppInfoSubText
-      text={t('travelDocumentsText1')}
-      style={{ marginVertical: verticalScale(10) }}
-    />
+    <AppInfoSubText text={t('travelDocumentsText1')} />
     <AppInfoSubText
       text="www.sem.admin.ch"
       style={{
