@@ -37,7 +37,7 @@ export const de: Locale = {
     navbarSecond: 'Bezahlung',
     navbarThird: 'Quittung',
     customsDuty: 'Zollabgabe',
-    customsVat: 'MWSt',
+    customsVat: 'MWST',
     goodCategories: 'Warenkategorien',
     confirm: 'Übernehmen',
     toPayment: 'Zur Bezahlung',
@@ -84,7 +84,7 @@ export const de: Locale = {
     enterQuantitiesAlcohol:
       'Erfassen Sie hier die Mengen aller alkoholischen Getränke',
     standardInputSubText:
-      'Erfassen Sie die menge von {{category}}, die Sie mit sich führen:',
+      'Erfassen Sie die Menge von {{category}}, die Sie mit sich führen:',
   },
   amountInput: {
     amountInput:
@@ -206,7 +206,7 @@ export const de: Locale = {
     customsProceduresText10:
       'Mündliche Zollanmeldung oder Benutzen des roten Durchgangs in Flughäfen',
     customsProceduresText11:
-      'Wenn der Grenzübergang durch Personal des Schweizer Zolls besetzt ist, melden Sie alle Waren mündlich und unaufgefordert an.Informationen zu den wichtigsten Grenzübergängen finden Sie unter der Rubrik Grenzübergänge.',
+      'Wenn der Grenzübergang durch Personal des Schweizer Zolls besetzt ist, melden Sie alle Waren mündlich und unaufgefordert an. Informationen zu den wichtigsten Grenzübergängen finden Sie unter der Rubrik Grenzübergänge.',
     customsProceduresText12: 'Zollanmeldung mit der App QuickZoll',
     customsProceduresText13:
       'Sie können Ihre Waren mit der App QuickZoll der EZV anmelden. Die Waren müssen vor dem Grenzübertritt oder beim Grenzübergang mit der App verzollt werden. D.h. die Abgaben müssen bezahlt sein. Haben Sie die Abgaben mit der App bezahlt, dürfen Sie auch Grenzübergänge, bei denen kein Personal des Zolls anwesend ist, und in Flughäfen den grünen Durchgang benutzen.',
@@ -228,13 +228,12 @@ export const de: Locale = {
 
   travelDocuments: {
     travelDocumentsMainText: 'Reisedokumente',
-    travelDocumentsSubText:
-      'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges ...',
+    travelDocumentsSubText: '',
     travelDocumentsText1:
       'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges und von der Schweiz anerkanntes Reisepapier. In gewissen Fällen ist zudem ein Visum erforderlich.\n' +
-      'Über die Einreise in die Schweiz und den Aufenthalt (Vorschriften zu Reisedokumenten und Visa) gibt Ihnen die Website des Staatssekretariats für Migration Auskunft:',
+      'Über die Einreise in die Schweiz und den Aufenthalt (Vorschriften zu Reisedokumenten und Visa) gibt Ihnen die Website des Staatssekretariats für Migration Auskunft: www.sem.admin.ch ',
     travelDocumentsText2:
-      'Die Vorschriften zu den Reisepapieren im Ausland finden Sie bei den entsprechenden ausländischen Behörden, über den Link der Weltzollorganisation:',
+      'Die Vorschriften zu den Reisepapieren im Ausland finden Sie bei den entsprechenden ausländischen Behörden, über den Link der Weltzollorganisation: www.wcoomd.org ',
   },
 
   vatAllowance: {
@@ -256,7 +255,7 @@ export const de: Locale = {
     vatAllowanceText8: 'Weitere Beispiele zur Anwendung der Wertfreigrenze',
     vatAllowanceText9: 'Mehrwertsteuer',
     vatAllowanceText10:
-      'Die Mehrwertsteuer berechnet sich vom Warenwert. Der Normalsatz beträgt 7,7 %. Für gewisse Waren gilt ein reduzierter Steuersatz von 2,5 % (z. B. für Lebensmittel, alkoholfreie Getränke, Bücher, Zeitschriften oder Medikamente). Bei der Verzollung mit der App «xxx» gelangt immer der Normalsatz zur Anwendung.',
+      'Die Mehrwertsteuer berechnet sich vom Warenwert. Der Normalsatz beträgt 7,7 %. Für gewisse Waren gilt ein reduzierter Steuersatz von 2,5 % (z.B. für Lebensmittel, alkoholfreie Getränke, Bücher, Zeitschriften oder Medikamente). Bei der Verzollung mit der App QuickZoll gelangt immer der Normalsatz zur Anwendung.',
     vatAllowanceText11:
       'Das Vorweisen einer Quittung oder eines anderen Wertnachweises (z. B. bei Internetkäufen) erleichtert die Zollveranlagung. Fehlen Wertangaben oder wird die Richtigkeit dieser Angaben bezweifelt, kann die Zollstelle den Warenwert schätzen.',
     vatAllowanceText12: 'Zollanmeldung',
@@ -265,7 +264,7 @@ export const de: Locale = {
     vatAllowanceText14:
       'Sie können die Waren auch mit der App QuickZoll oder bei Grenzübergängen, die nicht durch Zollpersonal besetzt sind, schriftlich via Anmeldebox anmelden. Informationen dazu finden Sie hier',
     vatAllowanceText15:
-      'Bitte beachten Sie: Werden die so genannten Freimengen von alkoholischen Getränken, Tabakfabrikaten und gewissen Lebensmitteln überschritten, müssen Sie in jedem Fall Zoll bezahlen. Mehr Informationen',
+      'Bitte beachten Sie: Werden die so genannten Freimengen von alkoholischen Getränken, Tabakfabrikaten und gewissen Lebensmitteln überschritten, müssen Sie in jedem Fall Zoll bezahlen. Mehr Informationen.',
     vatAllowanceText16:
       'Bitte beachten Sie zudem, dass bestimmte Waren (z.B. Fälschungen, Waffen sowie gewisse Pflanzen, Tiere, Tierprodukte und Waren, die dem Artenschutz unterliegen) zur Einfuhr verboten sein können oder gewissen Beschränkungen unterliegen. Mehr Informationen',
     vatAllowanceText17: 'Anwendung der Wertfreigrenze für Einzelpersonen',
@@ -306,7 +305,7 @@ export const de: Locale = {
     vatAllowanceText41: '2 Gläser\t\t2 Stk. à CHF 200\t\tCHF 400',
     vatAllowanceText42: '1 Gestell\t\tCHF 300',
     vatAllowanceText43: 'Total\t\tCHF 700',
-    vatAllowanceText44: '',
+    vatAllowanceText44: '1 Gegenstand',
   },
 
   dutyAllowance: {
@@ -329,7 +328,7 @@ export const de: Locale = {
     dutyAllowanceText10:
       'Nicht dazu gehören Markbein und Saucen-Knochen, Hunde- und Katzenfutter in als Tierfutter gekennzeichneten Einzelverkaufspackungen.',
     dutyAllowanceText11:
-      ' Die Einfuhr von Tierprodukten aus anderen als EU-Mitgliedstaaten, als Island und als Norwegen ist verboten.',
+      'Die Einfuhr von Tierprodukten aus anderen als EU-Mitgliedstaaten, als Island und als Norwegen ist verboten.',
     dutyAllowanceText12: 'Freimengen pro Person und pro Tag:',
     dutyAllowanceText13: 'insgesamt 1 kg',
     dutyAllowanceText14: 'Zollabgaben für Mehrmenge in CHF',
@@ -412,7 +411,8 @@ export const de: Locale = {
   animals: {
     animalsMainText: 'Tiere: Heimtiere, Hunde, Katzen und Pferde',
     animalsText1:
-      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die Informationen beim Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:',
+      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die Informationen beim Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:\n' +
+      'http://www.blv.admin.ch',
     animalsText2: 'Abgaben',
     animalsText3:
       'Wird die Wertfreigrenze von CHF 300 überschritten, müssen Sie für Tiere die MWST bezahlen. Detailliertere Informationen finden Sie unter:',
@@ -422,7 +422,7 @@ export const de: Locale = {
   plants: {
     plantsMainText: 'Pflanzen',
     plantsText1:
-      '1. Verbotene Pflanzen und Pflanzenerzeugnisse\n' +
+      '1.\tVerbotene Pflanzen und Pflanzenerzeugnisse\n' +
       'Die Einfuhr von folgenden Pflanzen ist verboten, da sie Träger von Schadorganismen (Feuerbrand, Kastanienrindenkrebs, Virenerkrankungen, etc.) sein können:',
     plantsText2: 'a) Einfuhr aus allen Ländern verboten',
     plantsText3: 'Zwergmispel (Cotoneaster)',
@@ -451,7 +451,7 @@ export const de: Locale = {
     plantsText23: 'Zier- und Scheinquitte (Chaenomeles)',
     plantsText24: 'Zitrusgewächse (Citrus)',
     plantsText25:
-      '2. Andere Pflanzen und Pflanzenerzeugnisse (auch Früchte und Gemüse)',
+      '2.\tAndere Pflanzen und Pflanzenerzeugnisse (auch Früchte und Gemüse)',
     plantsText26:
       'a) Einfuhr aus EU-Staaten, Norwegen und Island\n' +
       'Sie können Pflanzen ohne Bewilligung einführen, sofern diese im Reiseverkehr und für den privaten Gebrauch eingeführt werden.',
@@ -482,7 +482,7 @@ export const de: Locale = {
     souvenirsAndSpeciesProtectionText7:
       'Die Einfuhr geschützter Pflanzen oder deren Erzeugnisse ist entweder ganz verboten oder bewilligungspflichtig (z.B. Orchideen, Kakteen, gewisse Hölzer und Medizinalpflanzen).',
     souvenirsAndSpeciesProtectionText8:
-      'Auskünfte und Bewilligungen erteilt das Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:',
+      'Auskünfte und Bewilligungen erteilt das Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV: www.blv.admin.ch',
   },
 
   highwayVignette: {
@@ -513,7 +513,7 @@ export const de: Locale = {
       'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 Tonnen eine Schwerverkehrsabgabe erhoben. Für Busse, schwere Wohnmobile, schwere Personenwagen und deren Anhänger über 3,5 Tonnen wird die Abgabe pauschal pro Tag erhoben.',
     roadTaxText2:
       'Im Gegensatz zur Autobahnvignette für Personenwagen wird die Schwerverkehrsabgabe nicht nur auf den Autobahnen sondern auf dem gesamten Strassennetz fällig.',
-    roadTaxText3: 'Für LKWs und deren Anhänger siehe:',
+    roadTaxText3: 'Für LKWs und deren Anhänger siehe: www.lsva.ch',
     roadTaxText4:
       'Bitte beachten: PSVA-pflichtig ist das Fahrzeug auch, wenn es nur abgestellt ist und nicht bewegt wird (z. B. Wohnmobil auf Campingplatz).',
     roadTaxText5: 'Bezahlung und Tarife',
@@ -545,7 +545,7 @@ export const de: Locale = {
   entryByTrain: {
     entryByTrainMainText: 'Einreise per Bahn',
     entryByTrainText1:
-      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren unaufgefordert zur Zollbehandlung anmelden. Waren zu Ihrem privaten Gebrauch oder zum Verschenken können Sie auch vor dem Grenzübertritt mit der App «xxxx» verzollen. Diese Anmeldungen sind verbindlich.',
+      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren unaufgefordert zur Zollbehandlung anmelden. Waren zu Ihrem privaten Gebrauch oder zum Verschenken können Sie auch vor dem Grenzübertritt mit der App QuickZoll verzollen. Diese Anmeldungen sind verbindlich.',
     entryByTrainText2:
       'Ist kein Zollpersonal anwesend und wollen Sie die Waren nicht mit der App QuickZoll verzollen, können Sie:',
     entryByTrainText3:
@@ -574,7 +574,7 @@ export const de: Locale = {
     forgeryText5:
       'Selbst ein teuer bezahltes Schmuckstück kann sich als Fälschung erweisen. Eine Angabe zum Feingehalt garantiert nicht, dass die Ware echt ist. Kaufen Sie Schmuck und Uhren nur in anerkannten Fachgeschäften.',
     forgeryText6:
-      'Weitere Informationen zu Produktepiraterie und Markenfälschungen erhalten Sie bei der Schweizer Plattform gegen Fälschung und Piraterie STOP PIRACY:',
+      'Weitere Informationen zu Produktepiraterie und Markenfälschungen erhalten Sie bei der Schweizer Plattform gegen Fälschung und Piraterie STOP PIRACY: www.stop-piracy.ch',
   },
 
   cash: {
@@ -681,8 +681,7 @@ export const de: Locale = {
     publisher: 'Herausgeberin',
     customsAdministrationAddressTitle: 'Eidgenössische Zollverwaltung EZV',
     contact: 'Kontakt',
-    customsInfoCenter:
-      'Auskunftszentrale Zoll\n058 467 15 15\nzollauskunft@ezv.admin.ch',
+    customsInfoCenter: 'Auskunftszentrale Zoll\n\nzollauskunft@ezv.admin.ch',
     reachability: 'Erreichbarkeit:',
     workingHours: 'Montag – Freitag, 8.00 – 11.30 und 13.30 bis 17.00',
     generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern\nhttp://www.ezv.admin.ch`,
@@ -817,7 +816,7 @@ export const de: Locale = {
   furtherInformationModal: {
     furtherInformation: 'Weitere Informationen:',
     acceptance:
-      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 %; auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
+      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 % auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
   },
   units: {
     kilo: 'kg',
@@ -827,7 +826,7 @@ export const de: Locale = {
     liter: 'Liter',
     liter_plural: 'Liter',
     unit: 'Stück',
-    unit_plural: 'Stücke',
+    unit_plural: 'Stück',
     gram: 'Gramm',
     gram_plural: 'Gramm',
   },

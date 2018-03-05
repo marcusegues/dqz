@@ -599,7 +599,7 @@ export const it: Locale = {
       'Amministrazione federale delle dogane AFD',
     contact: 'Contatto',
     customsInfoCenter:
-      'Centrale d’informazione dell’AFD\n058 467 15 15\nzollauskunft@ezv.admin.ch',
+      'Centrale d’informazione dell’AFD\n\nzollauskunft@ezv.admin.ch',
     reachability: 'Reperibilità:',
     workingHours: 'Lunedi – Venerdi, 8.00 – 11.30 e 13.30 a 17.00',
     generalCustomsDirectorate:

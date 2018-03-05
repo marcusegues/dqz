@@ -31,9 +31,7 @@ jest.mock('uuid', () => ({
 
 jest.mock('luxon', () => ({
   DateTime: {
-    local: () => ({
-      setZone: () => 'FakeDate',
-    }),
+    local: () => 'FakeDate',
   },
 }));
 

@@ -67,9 +67,7 @@ class TimePickerModalInner extends React.Component<
 
   constructor(props) {
     const { currentEntryTime } = props;
-    const currentEntryTimeObj = DateTime.fromISO(currentEntryTime, {
-      zone: 'Europe/Zurich',
-    });
+    const currentEntryTimeObj = DateTime.fromISO(currentEntryTime);
     super();
     this.state = {
       date: currentEntryTimeObj.toFormat('dd.MM.y'),
@@ -85,9 +83,7 @@ class TimePickerModalInner extends React.Component<
     const entryTime = DateTime.fromFormat(
       `${date} ${hours}:${minutes}`,
       'dd.MM.y HH:mm'
-    ).setZone('Europe/Zurich', {
-      keepLocalTime: true,
-    });
+    );
     const entryTimePlus = entryTime.plus({ hours: 2 });
     return (
       <AppModal
@@ -206,11 +202,7 @@ class TimePickerModalInner extends React.Component<
                   DateTime.fromFormat(
                     `${date} ${hours}:${minutes}`,
                     'dd.MM.y HH:mm'
-                  )
-                    .setZone('Europe/Zurich', {
-                      keepLocalTime: true,
-                    })
-                    .toString()
+                  ).toString()
                 );
                 onHideModal();
               }}
