@@ -685,7 +685,7 @@ export const fr: Locale = {
       'Administration fédérale des douanes AFD',
     contact: 'Contact',
     customsInfoCenter:
-      'Centrale de renseignement de la douane\n058 467 15 15\nzollauskunft@ezv.admin.ch',
+      'Centrale de renseignement de la douane\n\nzollauskunft@ezv.admin.ch',
     reachability: 'Joignabilité:',
     workingHours: 'Lundi – Vendredi, 8.00 – 11.30 et 13.30 a 17.00',
     generalCustomsDirectorate:

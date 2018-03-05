@@ -691,49 +691,49 @@ export const de: Locale = {
     informationSubCategoryTitle: 'Ich habe Waren dabei:',
     customsProceduresMainText: 'Vorgehen am Zoll',
     customsProceduresSubText:
-      'Als Privatperson müssen Sie bei der Einreise in die Schweiz ...',
+      '',
     travelDocumentsMainText: 'Reisedokumente',
     travelDocumentsSubText:
-      'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges ...',
+      '',
     declarationMainText: 'Ich habe Waren dabei',
     declarationSubText:
-      'Waren, die Sie für Ihren privaten Gebrauch oder zum Verschenken ...',
+      '',
     animalsAndPlantsMainText: 'Ich habe Tiere oder Pflanzen dabei',
     animalsAndPlantsSubText:
-      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die ...',
+      '',
     vehiclesMainText: 'Ich bin mit einem Fahrzeug unterwegs',
     vehiclesSubText:
-      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen und Anhängern ...',
+      '',
     entryByTrainMainText: 'Einreise per Bahn',
     entryByTrainSubText:
-      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren ...',
+      '',
     prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
     prohibitionsAndRestrictionsSubText:
-      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer Zoll ...',
+      '',
     highwayVignetteMainText: 'Autobahnvignette',
     highwayVignetteSubText:
-      'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen ...',
+      '',
     roadTaxMainText: 'Strassenverkehrsabgabe über 3,5 T (PSVA)',
     roadTaxSubText:
-      'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 ...',
+      '',
     fuelAndRepairsMainText: 'Treibstoff und Reparaturen',
     fuelAndRepairsSubText:
-      'Der Tankinhalt ist abgabenfrei. In einem Reservekanister können Sie zudem bis 25 Liter ...',
+      '',
     forgeryMainText: 'Fälschungen',
     forgerySubText:
-      'Es ist verboten, Marken- und Designfälschungen einzuführen. Der Schweizer ...',
+      '',
     cashMainText: 'Barmittel',
     cashSubText:
-      'Bei der Ein-, Durch- und Ausfuhr von Barmitteln (Bargeld, Wertpapieren u.a.) im ...',
+      '',
     foodMainText: 'Beschränkungen für Lebensmittel',
-    foodSubText: 'Aus EU-Staaten, Island und Norwegen können Waren ...',
+    foodSubText: '',
     authorisationRequirementsMainText: 'Bewilligungspflichtig / Beschränkungen',
     authorisationRequirementsSubText:
-      'Die Einfuhr von bestimmten Waren ist beschränkt und nur unter ...',
+      '',
     purchasesOnlineOfflineMainText:
       'Interneteinkauf, Post- und Kuriersendungen',
     purchasesOnlineOfflineSubText:
-      'Sendungen aus dem Ausland sind grundsätzlich zoll- und ...',
+      '',
   },
   appInformation: {
     appInfoTitle: 'Über die App',
@@ -743,7 +743,7 @@ export const de: Locale = {
     customsAdministrationAddressTitle: 'Eidgenössische Zollverwaltung EZV',
     contact: 'Kontakt',
     customsInfoCenter:
-      'Auskunftszentrale Zoll\n058 467 15 15\nzollauskunft@ezv.admin.ch',
+      'Auskunftszentrale Zoll\n\nzollauskunft@ezv.admin.ch',
     reachability: 'Erreichbarkeit:',
     workingHours: 'Montag – Freitag, 8.00 – 11.30 und 13.30 bis 17.00',
     generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern\nhttp://www.ezv.admin.ch`,
