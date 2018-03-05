@@ -128,9 +128,7 @@ class OverviewInner extends React.Component<
     } = this.props;
     const momentReceiptEntryTime: DateTime =
       receiptEntryTime !== ''
-        ? DateTime.fromISO(receiptEntryTime, {
-            zone: 'Europe/Zurich',
-          })
+        ? DateTime.fromISO(receiptEntryTime)
         : getConvertedLocalTimeToSwiss();
     return (
       <ScrollViewCard>

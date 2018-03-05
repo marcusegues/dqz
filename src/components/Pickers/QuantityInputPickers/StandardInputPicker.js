@@ -2,7 +2,10 @@
 import React from 'react';
 // $FlowFixMe
 import { View, Picker } from 'react-native';
-import { amountsPicker, rangeItemsPicker } from '../../Modals/QuantityInputModal/pickerData';
+import {
+  amountsPicker,
+  rangeItemsPicker,
+} from '../../Modals/QuantityInputModal/pickerData';
 import { pickerModalStyle } from '../../Modals/styles/PickerModal';
 import { PickerComponent } from '../PickerComponent';
 import { PickerValueSeparator } from '../../Modals/CurrencyPickerModal/subComponents/PickerValueSeparator';
@@ -26,34 +29,34 @@ export const StandardInputPicker = ({
   onMultiplierValueChange,
   onAmountValueChange,
 }: StandardInputPickerProps) => (
-    <View style={pickerModalStyle.pickerContainer}>
-      <PickerComponent
-        selectedValue={multiplier}
-        onValueChange={onMultiplierValueChange}
-        mode="dropdown"
-        prompt=""
-        itemStyle={{}}
-      >
-        {rangeItemsPicker(1, 100, 1).map(i => (
-          <Picker.Item key={i.id} label={i.label} value={i.value} />
-        ))}
-      </PickerComponent>
+  <View style={pickerModalStyle.pickerContainer}>
+    <PickerComponent
+      selectedValue={multiplier}
+      onValueChange={onMultiplierValueChange}
+      mode="dropdown"
+      prompt=""
+      itemStyle={{}}
+    >
+      {rangeItemsPicker(1, 100, 1).map(i => (
+        <Picker.Item key={i.id} label={i.label} value={i.value} />
+      ))}
+    </PickerComponent>
 
-      <PickerValueSeparator separator="X" />
+    <PickerValueSeparator separator="X" />
 
-      <PickerComponent
-        selectedValue={amount}
-        onValueChange={onAmountValueChange}
-        style={{}}
-        mode="dropdown"
-        prompt=""
-        itemStyle={{}}
-      >
-        {amountsPicker(category).map(i => (
-          <Picker.Item key={i.id} label={i.label} value={i.value} />
-        ))}
-      </PickerComponent>
+    <PickerComponent
+      selectedValue={amount}
+      onValueChange={onAmountValueChange}
+      style={{}}
+      mode="dropdown"
+      prompt=""
+      itemStyle={{}}
+    >
+      {amountsPicker(category).map(i => (
+        <Picker.Item key={i.id} label={i.label} value={i.value} />
+      ))}
+    </PickerComponent>
 
-      <PickerUnitColumn unit={unit} />
-    </View>
-  );
+    <PickerUnitColumn unit={unit} />
+  </View>
+);

@@ -183,9 +183,9 @@ class GoodQuantityListModalInner extends React.Component<
                     borderTop={idx === 0}
                     key={v4()}
                     quantity={getQuantityNumber(q)}
-                    date={DateTime.fromISO(getQuantityDate(q), {
-                      zone: 'Europe/Zurich',
-                    }).toFormat('dd.MM.y HH:mm')}
+                    date={DateTime.fromISO(getQuantityDate(q)).toFormat(
+                      'dd.MM.y HH:mm'
+                    )}
                     category={modalCategory}
                     onDelete={() => {
                       if (modalCategory) {

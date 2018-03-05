@@ -25,11 +25,9 @@ const amountsWithNormalAmount = addAmount(initAmounts, 'CHF', 5000);
 
 const amountsWithLargeAmount = addLargeAmount(initAmounts, 'CHF', 500);
 
-const nonEmptyReceiptEntryTime = DateTime.local(2018, 1, 1, 8, 30)
-  .setZone('Europe/Zurich', {
-    keepLocalTime: true,
-  })
-  .toString();
+const nonEmptyReceiptEntryTime = DateTime.local(2018, 1, 1, 8, 30)({
+  keepLocalTime: true,
+}).toString();
 
 describe('isInitBasket', () => {
   test('init values of declaration returns true', () => {

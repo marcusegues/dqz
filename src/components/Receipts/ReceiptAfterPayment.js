@@ -106,7 +106,6 @@ class ReceiptAfterPaymentInner extends React.Component<
     const receiptEntryTime = DateTime.fromISO(
       this.state.receipt.receiptEntryTime,
       {
-        zone: 'Europe/Zurich',
         locale: 'de',
       }
     );

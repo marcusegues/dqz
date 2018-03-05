@@ -44,10 +44,7 @@ export const formatDate = (d: Date): string => {
 
 // Convert localTime to Swiss returns DateTime object.
 // Used for receipt datePicker.
-export const getConvertedLocalTimeToSwiss = (): DateTime =>
-  DateTime.local().setZone('Europe/Zurich', {
-    keepLocalTime: true,
-  });
+export const getConvertedLocalTimeToSwiss = (): DateTime => DateTime.local();
 
 export const roundMinutes = (minutes: number): string =>
   `${5 * Math.floor(minutes / 5)}`;

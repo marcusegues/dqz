@@ -17,8 +17,8 @@ export const ManualInputPicker = ({
   onChangeText,
   unit,
 }: ManualInputPickerProps) => (
-    <View style={pickerModalStyle.textInputContainer}>
-      <TextInputWrapper onChangeText={onChangeText} value={value} />
-      <PickerUnitColumn unit={unit} style={{ flex: 0.3 }} />
-    </View>
-  );
+  <View style={pickerModalStyle.textInputContainer}>
+    <TextInputWrapper onChangeText={onChangeText} value={value} />
+    <PickerUnitColumn unit={unit} style={{ flex: 0.3 }} />
+  </View>
+);
