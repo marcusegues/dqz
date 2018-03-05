@@ -17,6 +17,7 @@ import type { ConnectivityType } from '../../types/connectivity';
 import type { AppState } from '../../types/reducers';
 import { SnackBar } from './SnackBar/SnackBar';
 import type { TFunction } from '../../types/generalTypes';
+import type { NavState } from '../../types/reducers/nav';
 
 type SnackBarType = 'limitExceeded' | 'offline';
 
@@ -33,6 +34,7 @@ export type SnackBarStateEnriched = {
   amounts: Amounts,
   currencies: CurrencyObject,
   connectivity: ConnectivityType,
+  nav: NavState,
 };
 
 type ReduxInject = {
@@ -42,6 +44,8 @@ type ReduxInject = {
   currencies: CurrencyObject,
   // eslint-disable-next-line react/no-unused-prop-types
   connectivity: ConnectivityType,
+  // eslint-disable-next-line react/no-unused-prop-types
+  nav: NavState,
 };
 
 class SnackBarsContainerInner extends React.Component<
@@ -68,12 +72,13 @@ class SnackBarsContainerInner extends React.Component<
 
   enrichState(props: ReduxInject): SnackBarStateEnriched {
     const { snackBarVisibilities } = this.state;
-    const { amounts, currencies, connectivity } = props;
+    const { amounts, currencies, connectivity, nav } = props;
     return {
       snackBarVisibilities,
       amounts,
       currencies,
       connectivity,
+      nav,
     };
   }
 
@@ -127,6 +132,7 @@ class SnackBarsContainerInner extends React.Component<
 }
 
 const mapStateToProps = (state: AppState) => ({
+  nav: state.nav,
   amounts: getAmounts(state),
   currencies: getCurrencies(state),
   connectivity: getConnectivity(state),
