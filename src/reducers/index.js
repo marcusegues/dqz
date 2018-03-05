@@ -8,7 +8,7 @@ import * as navApi from './nav';
 import type { AppState } from '../types/reducers';
 
 /**
- * Combines reducers (currently just one)
+ * Combines reducers
  * @type {Reducer<any>}
  */
 export const root: AppState = combineReducers({
