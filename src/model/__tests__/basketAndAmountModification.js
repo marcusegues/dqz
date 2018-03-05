@@ -35,9 +35,7 @@ import { currenciesArray } from '../currencies';
 
 jest.mock('luxon', () => ({
   DateTime: {
-    local: () => ({
-      setZone: () => 'FakeDate',
-    }),
+    local: () => 'FakeDate',
   },
 }));
 
