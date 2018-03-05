@@ -50,7 +50,7 @@ type QuantityInputTypeByCategoryType = {
 const quantityInputTypeByCategory: QuantityInputTypeByCategoryType = {
   Meat: {
     quantityInputMethod: 'standardInput',
-    standardInputMethod: 'picker',
+    standardInputMethod: 'manual',
     customInputMethod: 'none',
   },
   Butter: {
