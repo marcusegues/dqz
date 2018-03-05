@@ -82,6 +82,7 @@ type QuantityInputTranslations = {
   enterQuantity: string,
   enterQuantitiesButter: string,
   enterQuantitiesAlcohol: string,
+  standardInputSubText: string,
 };
 
 type AmountInputTranslations = {
@@ -143,8 +144,6 @@ type ModalTranslations = {
   timePickerTakeOverThePeriod: string,
   closeModalText: string,
   timePickerTimePrefix: string,
-  recordTheAmountOfMeat: string,
-  recordTheAmountOfTobacco: string,
   savedBasket: string,
 };
 

@@ -78,6 +78,7 @@ export const en: Locale = {
     enterQuantity: 'Enter quantity',
     enterQuantitiesButter: 'Enter the quantities of all {{value}} here',
     enterQuantitiesAlcohol: 'Enter the quantities of all {{value}} here',
+    standardInputSubText: 'Record the amount of {category} you carry with you:',
   },
   amountInput: {
     amountInput: 'Please enter here the value of all transported goods.',
@@ -139,8 +140,7 @@ export const en: Locale = {
       'Please be sure to enter with this registration within two hours. This registration is valid from {{startDate}} at {{startTime}} to {{endDate}} at {{endTime}}.',
     timePickerTakeOverThePeriod: 'Take over the period',
     timePickerTimePrefix: '',
-    recordTheAmountOfMeat: 'Record the amount of meat you carry with you:',
-    recordTheAmountOfTobacco: 'Record the amount of tobacco you carry:',
+
     savedBasket: 'Current basket',
   },
   payment: {

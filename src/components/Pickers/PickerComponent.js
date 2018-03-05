@@ -2,7 +2,7 @@
 import React from 'react';
 // $FlowFixMe
 import { Picker, View } from 'react-native';
-import type { Children } from '../../../../types/generalTypes';
+import type { Children } from '../../types/generalTypes';
 
 const ownStyles = {
   pickerColumn: {
@@ -12,7 +12,7 @@ const ownStyles = {
 
 type PickerComponentProps = {
   selectedValue: string,
-  onValueChange: () => void,
+  onValueChange: (text: string) => void,
   prompt: string,
   children: Children,
   itemStyle?: {},
