@@ -13,13 +13,13 @@ export const TextInputWrapper = ({
   onChangeText,
   value,
 }: TextInputWrapperProps) => (
-    <TextInput
-      keyboardType="numeric"
-      maxLength={5}
-      underlineColorAndroid="transparent"
-      blurOnSubmit
-      style={[pickerModalStyle.textInput, { alignSelf: 'center' }]}
-      onChangeText={onChangeText}
-      value={value}
-    />
-  );
+  <TextInput
+    keyboardType="numeric"
+    maxLength={5}
+    underlineColorAndroid="transparent"
+    blurOnSubmit
+    style={[pickerModalStyle.textInput, { alignSelf: 'center' }]}
+    onChangeText={onChangeText}
+    value={value}
+  />
+);
