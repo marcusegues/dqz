@@ -7,7 +7,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <OnBoardingTaxScreenInner
     navigation={
       Object {
-        "navigate": [Function],
+        "dispatch": [Function],
       }
     }
     t={[Function]}
@@ -80,7 +80,7 @@ ShallowWrapper {
           modalVisible={false}
           navigation={
             Object {
-              "navigate": [Function],
+              "dispatch": [Function],
             }
           }
           onConfirm={[Function]}
@@ -232,7 +232,7 @@ ShallowWrapper {
         "props": Object {
           "modalVisible": false,
           "navigation": Object {
-            "navigate": [Function],
+            "dispatch": [Function],
           },
           "onConfirm": [Function],
           "onPressLegal": [Function],
@@ -307,7 +307,7 @@ ShallowWrapper {
             modalVisible={false}
             navigation={
               Object {
-                "navigate": [Function],
+                "dispatch": [Function],
               }
             }
             onConfirm={[Function]}
@@ -459,7 +459,7 @@ ShallowWrapper {
           "props": Object {
             "modalVisible": false,
             "navigation": Object {
-              "navigate": [Function],
+              "dispatch": [Function],
             },
             "onConfirm": [Function],
             "onPressLegal": [Function],

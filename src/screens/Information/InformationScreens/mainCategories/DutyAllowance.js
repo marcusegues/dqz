@@ -23,7 +23,14 @@ const DutyAllowanceInner = ({ t, navigation }: DutyAllowanceInnerProps) => (
       text={t('dutyAllowanceText1')}
       style={{ marginTop: verticalScale(10) }}
     />
-    <TouchableOpacity onPress={() => navigation.navigate('VatAllowance')}>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'VatAllowance',
+        })
+      }
+    >
       <AppInfoSubText
         text={t('dutyAllowanceText2')}
         style={{ marginTop: verticalScale(10) }}

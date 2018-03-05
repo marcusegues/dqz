@@ -112,7 +112,7 @@ export const setQuestionStates = (
         largeAmountsState = fwdNav(direction);
       } else {
         if (direction === 'forward') {
-          navigation.navigate('Payment');
+          navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
         }
         largeAmountsState = 'hidden';
       }
@@ -124,7 +124,7 @@ export const setQuestionStates = (
       }
       amountsState = backNav(direction);
       if (direction === 'forward') {
-        navigation.navigate('Payment');
+        navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
       }
       break;
     }

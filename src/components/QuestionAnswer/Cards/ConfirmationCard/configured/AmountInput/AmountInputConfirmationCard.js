@@ -20,7 +20,7 @@ import {
   totalNormalAmounts,
 } from '../../../../../../model/utils';
 import type { CurrencyObject } from '../../../../../../model/currencies';
-import { getCurrencies } from '../../../../../../reducers';
+import { getCurrencies } from '../../../../../../reducers/selectors';
 
 const ownStyles = {
   currentTotalValueContainer: {

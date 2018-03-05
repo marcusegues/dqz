@@ -78,7 +78,14 @@ const VatAllowanceInner = ({ t, navigation }: VatAllowanceInnerProps) => (
     <CardRowText text={t('vatAllowanceText12')} />
     <AppInfoSubText text={t('vatAllowanceText13')} />
 
-    <TouchableOpacity onPress={() => navigation.navigate('DutyAllowance')}>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'DutyAllowance',
+        })
+      }
+    >
       <AppInfoSubText
         text={t('vatAllowanceText14')}
         style={{ marginTop: verticalScale(10) }}

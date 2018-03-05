@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { MaterialIcons } from '@expo/vector-icons';
 import { moderateScale } from '../../../styles/Scaling';
 import { receiptNotificationBadgeStyle } from '../styles/ReceiptNotificationBadge';
-import { getTotalFees } from '../../../reducers';
+import { getTotalFees } from '../../../reducers/selectors';
 import { MAIN_RED } from '../../../styles/colors';
 import type { Navigation } from '../../../types/generalTypes';
 
@@ -25,7 +25,10 @@ const ReceiptNotificationBadgeInner = ({
   fees ? (
     <Touchable
       onPress={() => {
-        navigation.navigate('Payment');
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'Payment',
+        });
       }}
     >
       <View
