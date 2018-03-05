@@ -44,6 +44,7 @@ type ReduxInject = {
   currencies: CurrencyObject,
   // eslint-disable-next-line react/no-unused-prop-types
   connectivity: ConnectivityType,
+  // eslint-disable-next-line react/no-unused-prop-types
   nav: NavState,
 };
 
