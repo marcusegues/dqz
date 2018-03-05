@@ -8,13 +8,14 @@
     "version": "0.2.1",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
-    "icon": "./assets/icons/store-icon-1024.png",
+        "icon": "./assets/icons/store-icon-1024.png",
     "notification": {
       "icon": "./assets/icons/notification-icon.png",
       "color": "#000000"
     },
     "loading": {
-      "icon": "./assets/images/kreuz.png"
+      "icon": "./assets/images/quickZollLogo.png",
+      "backgroundColor": "#e6e6e6"
     },
     "packagerOpts": {
       "assetExts": ["ttf"]

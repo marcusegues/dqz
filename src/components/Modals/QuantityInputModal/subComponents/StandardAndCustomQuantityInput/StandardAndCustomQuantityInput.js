@@ -27,25 +27,25 @@ const StandardAndCustomQuantityInputInner = ({
   children,
   t,
 }: StandardAndCustomQuantityInputProps & { t: TFunction }) => (
-    <View>
-      <View style={pickerModalStyle.topTouchableContainer}>
-        <ModalTab
-          activeTab={selected === 'standard'}
-          onPress={() => onTabSelect('standard')}
-          text={t('modal:standardCategoryPicker').toUpperCase()}
-        />
+  <View>
+    <View style={pickerModalStyle.topTouchableContainer}>
+      <ModalTab
+        activeTab={selected === 'standard'}
+        onPress={() => onTabSelect('standard')}
+        text={t('modal:standardCategoryPicker').toUpperCase()}
+      />
 
-        <ModalTab
-          activeTab={selected === 'custom'}
-          onPress={() => onTabSelect('custom')}
-          text={t('modal:individualCategoryPicker').toUpperCase()}
-        />
-      </View>
-      {selected === 'standard'
-        ? children.standardInputPicker
-        : children.customInputPicker}
+      <ModalTab
+        activeTab={selected === 'custom'}
+        onPress={() => onTabSelect('custom')}
+        text={t('modal:individualCategoryPicker').toUpperCase()}
+      />
     </View>
-  );
+    {selected === 'standard'
+      ? children.standardInputPicker
+      : children.customInputPicker}
+  </View>
+);
 
 export const StandardAndCustomQuantityInput = (translate(['modal'])(
   StandardAndCustomQuantityInputInner
