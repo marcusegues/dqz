@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import { Text, TouchableOpacity, View } from 'react-native';
@@ -51,7 +52,9 @@ class OnBoardingTaxScreenInner extends React.Component<
 
   render() {
     const { showModal } = this.state;
-    const { navigation, t } = this.props;
+    const { navigation, t, nav } = this.props;
+    console.log('Nav in OnBoardingTax', nav);
+    console.log('Navigation in OnBoardingTax', this.props.navigation);
 
     return (
       <OnBoardingContainer>
@@ -72,7 +75,7 @@ class OnBoardingTaxScreenInner extends React.Component<
         <DoneButton
           onPress={() => {
             storeSettingsAcceptRate(true);
-            navigation.navigate('MainMenu');
+            navigation.dispatch({ type: 'NAVIGATE', screen: 'MainMenu' });
           }}
         />
         <FurtherInformationModal
@@ -80,7 +83,7 @@ class OnBoardingTaxScreenInner extends React.Component<
           navigation={navigation}
           onPressLegal={() => {
             this.setState({ showModal: false });
-            navigation.navigate('LegalNoticeInfo');
+            navigation.dispatch({ type: 'NAVIGATE', screen: 'LegalNoticeInfo'});
           }}
           toggleModalVisible={() => {
             this.setState({ showModal: false });
@@ -94,6 +97,10 @@ class OnBoardingTaxScreenInner extends React.Component<
   }
 }
 
-export const OnBoardingTaxScreen = (translate(['onBoarding'])(
-  OnBoardingTaxScreenInner
+const mapStateToProps = state => ({
+  nav: state.nav,
+});
+
+export const OnBoardingTaxScreen = (connect(mapStateToProps, null)(
+  translate(['onBoarding'])(OnBoardingTaxScreenInner)
 ): ComponentType<OnBoardingTaxScreenProps>);

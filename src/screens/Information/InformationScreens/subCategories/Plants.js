@@ -65,7 +65,14 @@ const PlantsInner = ({ t, navigation }: PlantsInnerProps) => (
     <AppInfoSubText text={t('plantsText29')} />
     <AppInfoSubText text={t('plantsText30')} />
 
-    <TouchableOpacity onPress={() => navigation.navigate('VatAllowance')}>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'VatAllowance',
+        })
+      }
+    >
       <AppInfoSubText text={t('plantsText31')} />
     </TouchableOpacity>
   </SubCategoryContainer>

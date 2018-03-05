@@ -25,7 +25,10 @@ const ReceiptNotificationBadgeInner = ({
   fees ? (
     <Touchable
       onPress={() => {
-        navigation.navigate('Payment');
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'Payment',
+        });
       }}
     >
       <View

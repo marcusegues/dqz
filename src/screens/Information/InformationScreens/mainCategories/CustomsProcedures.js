@@ -34,17 +34,32 @@ const CustomsProceduresInner = ({
     <AppInfoSubText text={t('customsProceduresText6')} />
     <BulletText
       text={t('customsProceduresText7')}
-      onPress={() => navigation.navigate('VatAllowance')}
+      onPress={() =>
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'VatAllowance',
+        })
+      }
       style={{ color: 'green' }}
     />
     <BulletText
       text={t('customsProceduresText8')}
-      onPress={() => navigation.navigate('DutyAllowance')}
+      onPress={() =>
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'DutyAllowance',
+        })
+      }
       style={{ color: 'green' }}
     />
     <BulletText
       text={t('customsProceduresText9')}
-      onPress={() => navigation.navigate('PersonalEffects')}
+      onPress={() =>
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'PersonalEffects',
+        })
+      }
       style={{ color: 'green' }}
     />
     <CardRowText

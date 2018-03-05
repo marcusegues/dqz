@@ -15,6 +15,7 @@ export type Navigation = {
   navigate: (route: string, params?: {}) => void,
   state: Object,
   setParams: Object => void,
+  dispatch: Function,
 };
 
 /**

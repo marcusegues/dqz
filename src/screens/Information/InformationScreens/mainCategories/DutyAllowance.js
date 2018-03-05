@@ -11,6 +11,7 @@ import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { BulletText } from '../../../AppInfo/subComponents/BulletText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
+import { informationNavigateTo } from '../../InformationData';
 
 type DutyAllowanceInnerProps = {
   t: TFunction,
@@ -23,7 +24,14 @@ const DutyAllowanceInner = ({ t, navigation }: DutyAllowanceInnerProps) => (
       text={t('dutyAllowanceText1')}
       style={{ marginTop: verticalScale(10) }}
     />
-    <TouchableOpacity onPress={() => navigation.navigate('VatAllowance')}>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'VatAllowance',
+        })
+      }
+    >
       <AppInfoSubText
         text={t('dutyAllowanceText2')}
         style={{ marginTop: verticalScale(10) }}

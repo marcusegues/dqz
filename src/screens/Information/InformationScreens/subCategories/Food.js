@@ -45,13 +45,27 @@ const FoodInner = ({ t, navigation }: FoodInnerProps) => (
       text={t('foodText7')}
       style={{ marginTop: verticalScale(10) }}
     />
-    <TouchableOpacity onPress={() => navigation.navigate('VatAllowance')}>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'VatAllowance',
+        })
+      }
+    >
       <AppInfoSubText
         text={t('foodText8')}
         style={{ marginTop: verticalScale(10) }}
       />
     </TouchableOpacity>
-    <TouchableOpacity onPress={() => navigation.navigate('DutyAllowance')}>
+    <TouchableOpacity
+      onPress={() =>
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'DutyAllowance',
+        })
+      }
+    >
       <AppInfoSubText
         text={t('foodText9')}
         style={{ marginTop: verticalScale(10) }}

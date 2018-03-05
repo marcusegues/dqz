@@ -272,7 +272,10 @@ class PaymentContainerInner extends React.Component<
                   paymentData: newPaymentData,
                 };
                 return storeReceipt(receipt).then(() =>
-                  this.props.navigation.navigate('ReceiptAfterPayment')
+                  this.props.navigation.dispatch({
+                    type: 'NAVIGATE',
+                    screen: 'ReceiptAfterPayment',
+                  })
                 );
               })
               .catch(error => console.log('Saferpay error:', error));
@@ -325,7 +328,10 @@ class PaymentContainerInner extends React.Component<
           navigation={navigation}
           onPressLegal={() => {
             this.setState({ showModal: false });
-            navigation.navigate('LegalNoticeInfo');
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'LegalNoticeInfo',
+            });
           }}
           toggleModalVisible={() => {
             this.setState({ showModal: false });

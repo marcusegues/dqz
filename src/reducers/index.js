@@ -16,5 +16,5 @@ export const root: AppState = combineReducers({
   connectivity: connectivityApi.connectivity,
   currencies: currenciesApi.currencies,
   receipts: receiptsApi.receipts,
-  navigation: navigationApi.navigation,
+  nav: navigationApi.navigation,
 });

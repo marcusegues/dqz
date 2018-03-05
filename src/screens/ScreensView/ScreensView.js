@@ -7,7 +7,10 @@ import { NavBar } from '../../components/NavBar/NavBar';
 import { QuantityInputModal } from '../../components/Modals/QuantityInputModal/QuantityInputModal';
 import { CurrencyPickerModal } from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
 import { TimePickerModal } from '../../components/Modals/TimePickerModal/TimePickerModal';
-import { getCurrencies, getFormattedCurrencyDate } from '../../reducers/selectors';
+import {
+  getCurrencies,
+  getFormattedCurrencyDate,
+} from '../../reducers/selectors';
 import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import type { Navigation } from '../../types/generalTypes';
 import type { CurrencyObject } from '../../model/currencies';
@@ -120,7 +123,10 @@ class ScreensViewInner extends React.Component<
                   this.setState({ legalNoticeModalVisible: true });
                   return;
                 }
-                this.props.navigation.navigate(item.key);
+                navigation.dispatch({
+                  type: 'NAVIGATE',
+                  screen: item.key,
+                });
               }}
             >
               {item.key}
