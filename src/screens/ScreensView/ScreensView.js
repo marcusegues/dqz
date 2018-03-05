@@ -4,8 +4,7 @@ import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { NavBar } from '../../components/NavBar/NavBar';
-import { GoodInputModal } from '../../components/Modals/GoodInputModal/GoodInputModal';
-import { PickerModal } from '../../components/Modals/PickerModal/PickerModal';
+import { QuantityInputModal } from '../../components/Modals/QuantityInputModal/QuantityInputModal';
 import { CurrencyPickerModal } from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
 import { TimePickerModal } from '../../components/Modals/TimePickerModal/TimePickerModal';
 import { getCurrencies, getFormattedCurrencyDate } from '../../reducers';
@@ -88,7 +87,6 @@ class ScreensViewInner extends React.Component<
             { key: `OnBoarding` },
             { key: `MainMenu` },
             { key: `QuestionAnswer` },
-            { key: `GoodQuantityListModal` },
             { key: `BasketInput` },
             { key: `pickerModal` },
             { key: `currencyPickerModal` },
@@ -106,10 +104,7 @@ class ScreensViewInner extends React.Component<
                 fontFamily: 'roboto_bold',
               }}
               onPress={() => {
-                if (item.key === `GoodQuantityListModal`) {
-                  this.setState({ modalVisible: true });
-                  return;
-                } else if (item.key === `pickerModal`) {
+                if (item.key === `pickerModal`) {
                   this.setState({ pickerModalVisible: true });
                   return;
                 } else if (item.key === `currencyPickerModal`) {
@@ -133,12 +128,7 @@ class ScreensViewInner extends React.Component<
           )}
         />
 
-        <GoodInputModal
-          onRequestClose={() => {}}
-          modalVisible={this.state.modalVisible}
-          toggleModalVisible={() => this.toggleModalVisible()}
-        />
-        <PickerModal
+        <QuantityInputModal
           modalVisible={this.state.pickerModalVisible}
           toggleModalVisible={() => this.togglePickerVisible()}
           confirmAction={() => {}}

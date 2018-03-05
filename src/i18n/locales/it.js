@@ -77,6 +77,7 @@ export const it: Locale = {
     enterQuantity: 'Inserisci la quantità',
     enterQuantitiesButter: 'Inserisci le quantità di tutti {{value}} qui',
     enterQuantitiesAlcohol: 'Inserisci le quantità di tutti {{value}} qui',
+    standardInputSubText: '⚡️',
   },
   amountInput: {
     amountInput: 'Inserire qui il valore complessivo delle merci trasportate.',
@@ -140,8 +141,6 @@ export const it: Locale = {
       'Questo accesso è valido per {{startDate}} da {{startTime}} a {{endDate}} al {{endTime}} in punto.',
     timePickerTakeOverThePeriod: 'Prendi il controllo del periodo',
     timePickerTimePrefix: 'ora',
-    recordTheAmountOfMeat: 'Registra la quantità di carne che porti con te:',
-    recordTheAmountOfTobacco: 'Registra la quantità di tabacco che porti:',
     savedBasket: 'Carrello corrente',
   },
   payment: {
