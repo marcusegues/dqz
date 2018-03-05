@@ -37,7 +37,7 @@ export const de: Locale = {
     navbarSecond: 'Bezahlung',
     navbarThird: 'Quittung',
     customsDuty: 'Zollabgabe',
-    customsVat: 'MWSt',
+    customsVat: 'MWST',
     goodCategories: 'Warenkategorien',
     confirm: 'Übernehmen',
     toPayment: 'Zur Bezahlung',
@@ -84,7 +84,7 @@ export const de: Locale = {
     enterQuantitiesAlcohol:
       'Erfassen Sie hier die Mengen aller alkoholischen Getränke',
     standardInputSubText:
-      'Erfassen Sie die menge von {{category}}, die Sie mit sich führen:',
+      'Erfassen Sie die Menge von {{category}}, die Sie mit sich führen:',
   },
   amountInput: {
     amountInput:
@@ -260,14 +260,14 @@ export const de: Locale = {
     vatAllowanceText8: 'Weitere Beispiele zur Anwendung der Wertfreigrenze',
     vatAllowanceText9: 'Mehrwertsteuer',
     vatAllowanceText10:
-      'Die Mehrwertsteuer berechnet sich vom Warenwert. Der Normalsatz beträgt 7,7 %. Für gewisse Waren gilt ein reduzierter Steuersatz von 2,5 % (z. B. für Lebensmittel, alkoholfreie Getränke, Bücher, Zeitschriften oder Medikamente). Bei der Verzollung mit der App «xxx» gelangt immer der Normalsatz zur Anwendung.',
+      'Die Mehrwertsteuer berechnet sich vom Warenwert. Der Normalsatz beträgt 7,7 %. Für gewisse Waren gilt ein reduzierter Steuersatz von 2,5 % (z. B. für Lebensmittel, alkoholfreie Getränke, Bücher, Zeitschriften oder Medikamente). Bei der Verzollung mit der App QuickZoll gelangt immer der Normalsatz zur Anwendung.',
     vatAllowanceText11:
       'Das Vorweisen einer Quittung oder eines anderen Wertnachweises (z. B. bei Internetkäufen) erleichtert die Zollveranlagung. Fehlen Wertangaben oder wird die Richtigkeit dieser Angaben bezweifelt, kann die Zollstelle den Warenwert schätzen.',
     vatAllowanceText12: 'Zollanmeldung',
     vatAllowanceText13:
       'Bei der Einreise müssen Sie alle mitgeführten Waren beim Zollpersonal mündlich anmelden.',
     vatAllowanceText14:
-      'Sie können die Waren auch mit der App «xxxx» oder bei Grenzübergängen, die nicht durch Zollpersonal besetzt sind, schriftlich via Anmeldebox anmelden. Informationen dazu finden Sie hier',
+      'Sie können die Waren auch mit der App QuickZoll oder bei Grenzübergängen, die nicht durch Zollpersonal besetzt sind, schriftlich via Anmeldebox anmelden. Informationen dazu finden Sie hier',
     vatAllowanceText15:
       'Bitte beachten Sie: Werden die so genannten Freimengen von alkoholischen Getränken, Tabakfabrikaten und gewissen Lebensmitteln überschritten, müssen Sie in jedem Fall Zoll bezahlen. Mehr Informationen',
     vatAllowanceText16:
@@ -568,7 +568,7 @@ export const de: Locale = {
     entryByTrainSubText:
       'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren ...',
     entryByTrainText1:
-      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren unaufgefordert zur Zollbehandlung anmelden. Waren zu Ihrem privaten Gebrauch oder zum Verschenken können Sie auch vor dem Grenzübertritt mit der App «xxxx» verzollen. Diese Anmeldungen sind verbindlich.',
+      'Ist im Zug Zollpersonal anwesend, müssen Sie alle mitgeführten Waren unaufgefordert zur Zollbehandlung anmelden. Waren zu Ihrem privaten Gebrauch oder zum Verschenken können Sie auch vor dem Grenzübertritt mit der App QuickZoll verzollen. Diese Anmeldungen sind verbindlich.',
     entryByTrainText2:
       'Ist kein Zollpersonal anwesend und wollen Sie die Waren nicht mit der App QuickZoll verzollen, können Sie:',
     entryByTrainText3:
@@ -878,7 +878,7 @@ export const de: Locale = {
   furtherInformationModal: {
     furtherInformation: 'Weitere Informationen:',
     acceptance:
-      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 %; auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
+      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 % auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
   },
   units: {
     kilo: 'kg',
@@ -888,7 +888,7 @@ export const de: Locale = {
     liter: 'Liter',
     liter_plural: 'Liter',
     unit: 'Stück',
-    unit_plural: 'Stücke',
+    unit_plural: 'Stück',
     gram: 'Gramm',
     gram_plural: 'Gramm',
   },
