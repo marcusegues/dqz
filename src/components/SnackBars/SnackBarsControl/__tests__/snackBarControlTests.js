@@ -290,7 +290,7 @@ describe('Test snack bar control flow', () => {
     expect(
       updateSnackBarVisibilities(initStateEnrichedMainMenu).snackBarVisibilities
         .offline
-    ).toBe('hidden' + '');
+    ).toBe('hidden');
   });
 
   test('snack bar state with connectivity type none in QuestionAnswer shows offline snackbar', () => {
