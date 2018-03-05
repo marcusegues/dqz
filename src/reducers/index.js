@@ -4,6 +4,7 @@ import * as declarationApi from './declaration';
 import * as connectivityApi from './connectivity';
 import * as currenciesApi from './currencies';
 import * as receiptsApi from './receipts';
+import * as navigationApi from './navigation';
 import type { AppState } from '../types/reducers';
 
 /**
@@ -15,4 +16,5 @@ export const root: AppState = combineReducers({
   connectivity: connectivityApi.connectivity,
   currencies: currenciesApi.currencies,
   receipts: receiptsApi.receipts,
+  navigation: navigationApi.navigation,
 });

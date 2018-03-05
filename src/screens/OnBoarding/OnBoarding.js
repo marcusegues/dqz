@@ -112,6 +112,7 @@ class OnBoardingInner extends React.Component<
         <DoneButton
           onPress={() => {
             storeSettingsHasLanguage(i18n.language);
+            debugger;
             navigation.navigate(nextScreen);
           }}
         />

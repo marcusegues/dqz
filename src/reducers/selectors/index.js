@@ -1,3 +1,4 @@
+// @flow
 import * as declarationApi from '../declaration';
 import * as currenciesApi from '../currencies';
 import * as receiptsApi from '../receipts';
@@ -5,6 +6,19 @@ import * as connectivityApi from '../connectivity';
 import { calculateDuty } from '../../model/dutyCalculations';
 import { formatDate } from '../../model/utils';
 import { calculateVat } from '../../model/vatCalculations';
+import type {
+  Amounts,
+  Basket,
+  People,
+} from '../../model/types/basketPeopleAmountsTypes';
+import type { AppState } from '../../types/reducers';
+import type {
+  MainCategories,
+  Settings,
+} from '../../types/reducers/declaration';
+import type { CurrencyObject } from '../../model/currencies';
+import type { PaymentData } from '../../types/generalTypes';
+import type { ConnectivityType } from '../../types/connectivity';
 
 /**
  * Gets basket in application state

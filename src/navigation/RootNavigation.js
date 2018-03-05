@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { StackNavigator } from 'react-navigation';
+import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 // $FlowFixMe
 import { View, NetInfo } from 'react-native';
 import { i18nImplementation } from '../i18n';
@@ -306,13 +306,15 @@ export const stackNavigatorConfig = {
   initialRouteName: 'OnBoarding',
 };
 
-const RootStackNavigator = StackNavigator(
+export const RootStackNavigator = StackNavigator(
   stackNavigatorScreens,
   stackNavigatorConfig
 );
 
 type ReduxInject = {
   setConnectivity: (connectionInfo: ConnectivityType) => void,
+  dispatch: Function,
+  navigation: Object,
 };
 
 class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
@@ -327,6 +329,7 @@ class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
   }
 
   render() {
+    debugger;
     return (
       <View
         style={{
@@ -337,6 +340,10 @@ class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
         }}
       >
         <RootStackNavigator
+          navigation={addNavigationHelpers({
+            dispatch: this.props.dispatch,
+            state: this.props.navigation,
+          })}
           screenProps={{
             t: i18nImplementation.getFixedT(),
             language: i18nImplementation.language,
@@ -349,12 +356,17 @@ class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
   }
 }
 
+const mapStateToProps = state => ({
+  navigation: state.navigation,
+});
+
 const mapDispatchToProps = dispatch => ({
+  dispatch,
   setConnectivity: (connectionInfo: ConnectivityType) =>
     dispatch({ type: 'SET_CONNECTIVITY', connectionInfo }),
 });
 
-const ReloadAppOnLanguageChange = (connect(null, mapDispatchToProps)(
+const ReloadAppOnLanguageChange = (connect(mapStateToProps, mapDispatchToProps)(
   translate(null, {
     bindI18n: 'languageChanged',
     bindStore: false,
