@@ -179,7 +179,6 @@ export const en: Locale = {
 
   customsProcedures: {
     customsProceduresMainText: 'Customs procedures',
-    customsProceduresSubText: '',
     customsProceduresText1: 'When entering Switzerland as a private individual, you must spontaneously declare all goods and animals that you are bringing with you.',
     customsProceduresText2: 'If you are only bringing goods which are exempt from customs duty and VAT and are not subject to any restrictions or bans, you may proceed across the border without declaring anything. In this case, you may also:',
     customsProceduresText3: 'select the green channel in airports; or',
@@ -205,14 +204,12 @@ export const en: Locale = {
 
   travelDocuments: {
     travelDocumentsMainText: 'Travel documents',
-    travelDocumentsSubText: '',
     travelDocumentsText1: 'To enter Switzerland, foreign citizens must be in possession of a valid travel document that is recognised by Switzerland. In certain cases, a visa is also required. Information on entering and staying in Switzerland (regulations on travel documents and visas) can be found on the website of the State Secretariat for Migration: www.sem.admin.ch',
     travelDocumentsText2: 'The provisions on travel documents abroad can be obtained from the relevant foreign authorities via the link to the World Customs Organization: www.wcoomd.org',
   },
 
   vatAllowance: {
     vatAllowanceMainText: 'Tax-free limit CHF 300',
-    vatAllowanceSubText: '',
     vatAllowanceText1: 'Goods that you import for your personal use or as gifts are VAT-free up to a value of CHF 300. The value of all goods has to be taken into account. This also includes the value of gifts received, foodstuffs, tobacco goods, alcoholic beverages, household pets brought from abroad and repairs and maintenance work performed abroad on your own vehicle.',
     vatAllowanceText2: 'However, it does not include the value of your personal effects, travel provisions and fuel for your vehicle.',
     vatAllowanceText3: 'The value after deduction of foreign value added tax is decisive, provided this is indicated on the receipt/invoice. Value details in foreign currencies are converted into Swiss francs at the preceding day\'s exchange rate (forex sell rate).',
@@ -263,7 +260,6 @@ export const en: Locale = {
 
   dutyAllowance: {
     dutyAllowanceMainText: 'Duty-free allowances: foodstuffs, alcohol and tobacco',
-    dutyAllowanceSubText: '',
     dutyAllowanceText1: 'Goods that you import for your personal use or as gifts are duty-free, except in the case of so-called sensitive goods, excess quantities of which are subject to customs duty for agricultural or health policy reasons (see table below). Duty-free allowances are applied per person per day.',
     dutyAllowanceText2: 'Please note: If the total value of the goods you have (including the value of all foodstuffs) exceeds CHF 300, you will have to pay VAT in any case. More information.',
     dutyAllowanceText3: 'Please also note that additional restrictions exist for certain animal products, as well as for certain plant products.',
@@ -318,7 +314,6 @@ export const en: Locale = {
 
   personalEffects: {
     personalEffectsMainText: 'Personal effects and travel provisions',
-    personalEffectsSubText: '',
     personalEffectsText1: 'You can import personal effects and travel provisions duty-free:',
     personalEffectsText2: 'Personal effects',
     personalEffectsText3: 'These include personal effects which:',
@@ -330,7 +325,6 @@ export const en: Locale = {
 
   foreignVat: {
     foreignVatMainText: 'Refund of foreign VAT',
-    foreignVatSubText: '',
     foreignVatText1: 'Switzerland\'s Customs Administration cannot refund foreign VAT to you.',
     foreignVatText2: 'If you are personally bringing goods purchased abroad to Switzerland, you often have the option of having the foreign VAT refunded by the foreign seller or a tax refund company. These service companies have nothing to do with the Federal Customs Administration; in particular, they do not operate on our behalf.',
     foreignVatText3: 'Different rules apply to VAT refunds in different countries. If need be, the seller completes a refund form, on which the foreign customs authority confirms exportation to Switzerland.',
@@ -341,7 +335,6 @@ export const en: Locale = {
 
   animals: {
     animalsMainText: 'Animals: pets, dogs, cats and horses',
-    animalsSubText: '',
     animalsText1: 'For dogs, cats, other pets and horses, you can obtain information from the Federal Food Safety and Veterinary Office FSVO:\n' +
     'http://www.blv.admin.ch',
     animalsText2: 'Duties',
@@ -351,7 +344,6 @@ export const en: Locale = {
 
   plants: {
     plantsMainText: 'Plants',
-    plantsSubText: '',
     plantsText1: '1.\tProhibited plants and plant products\n' +
     'The importation of the following plants is prohibited because they could be carriers of harmful organisms (fireblight, chestnut blight, viral diseases, etc.):'
     plantsText2: 'a) Importation from all countries prohibited',
@@ -390,7 +382,6 @@ export const en: Locale = {
 
   souvenirsAndSpeciesProtection: {
     souvenirsAndSpeciesProtectionMainText: 'Souvenirs and species protection (CITES)',
-    souvenirsAndSpeciesProtectionSubText: '',
     souvenirsAndSpeciesProtectionText1: 'Souvenirs',
     souvenirsAndSpeciesProtectionText2: 'Elephant leather belts, dream catchers with bird-feathers or sandalwood joss sticks – there are all sorts of souvenirs. People do not always realise that the items are made using protected animals or plants (e.g. tropical timber). Yet many things may not be brought into Switzerland at all. Even before going away, it is worth clarifying which souvenirs are suitable and which are best left behind at the holiday resort.',
     souvenirsAndSpeciesProtectionText3: 'Species protection – animals',
@@ -403,7 +394,6 @@ export const en: Locale = {
 
   highwayVignette: {
     highwayVignetteMainText: 'Motorway tax sticker',
-    highwayVignetteSubText: '',
     highwayVignetteText1: 'A charge is payable for using motor vehicles and trailers of up to 3.5 tonnes each on motorways. The price of the motorway tax sticker is CHF 40.',
     highwayVignetteText2: 'Points of sale',
     highwayVignetteText3: 'In Switzerland, the motorway tax sticker can be obtained at post offices and petrol stations, for example.',
@@ -418,7 +408,6 @@ export const en: Locale = {
 
   roadTax: {
     roadTaxMainText: 'Road traffic fees over 3.5T (lump-sum heavy vehicle charge, or PSVA)',
-    roadTaxSubText: '',
     roadTaxText1: 'In Switzerland, a heavy vehicle charge is levied for vehicles and trailers with a total weight of over 3.5 tonnes. The charge is levied as a daily lump sum for buses, heavy motorhomes, heavy passenger vehicles and their trailers over 3.5 tonnes.',
     roadTaxText2: 'Unlike the motorway tax sticker for passenger cars, the heavy vehicle charge is payable on the entire road network, and not only on motorways.',
     roadTaxText3: 'For heavy goods vehicles and their trailers, see: www.lsva.ch',
@@ -438,7 +427,6 @@ export const en: Locale = {
 
   fuelAndRepairs: {
     fuelAndRepairsMainText: 'Fuel and repairs',
-    fuelAndRepairsSubText: '',
     fuelAndRepairsText1: 'Fuel for vehicles',
     fuelAndRepairsText2: 'The contents of the fuel tank are tax and duty-free. In addition, you can import up to 25 litres of fuel tax and duty-free in a spare fuel container. You will have to pay CHF 0.75 customs duty for each additional litre, as well as VAT on the value of the fuel.',
     fuelAndRepairsText3: 'Repair and maintenance costs',
@@ -448,7 +436,6 @@ export const en: Locale = {
 
   entryByTrain: {
     entryByTrainMainText: 'Entry by train',
-    entryByTrainSubText: '',
     entryByTrainText1: 'If there are Customs agents on the train, all goods you are carrying must be spontaneously declared for customs clearance. You can clear goods intended for your personal use or as gifts with the app "xxx" before crossing the border. These declarations are binding.',
     entryByTrainText2: 'If no Customs staff are present and you do not want to use the app "xxx" for customs clearance, you can do the following:',
     entryByTrainText3: 'get off the train at the border train station and declare your personal goods in writing (written self-declaration at a declaration box); or',
@@ -462,7 +449,6 @@ export const en: Locale = {
 
   forgery: {
     forgeryMainText: 'Forgeries',
-    forgerySubText: '',
     forgeryText1: 'It is prohibited to import counterfeited brands and designs. Swiss Customs agents are obliged to confiscate and destroy fakes. It does not matter whether the items are new or used.',
     forgeryText2: 'Buying jewellery and watches abroad',
     forgeryText3: 'Be particularly careful when buying jewellery or watches abroad. Upon inspection, apparent bargains often turn out to be defective or even forgeries.',
@@ -473,14 +459,12 @@ export const en: Locale = {
 
   cash: {
     cashMainText: 'Liquid funds',
-    cashSubText: '',
     cashText1: 'In the case of the importation, transit and exportation of liquid funds (cash and securities, etc.) worth more than CHF 10,000, you must supply information upon request on the origin, the intended use and the beneficial owner.',
     cashText2: 'The right is reserved to take further measures to combat crime.',
   },
 
   food: {
     foodMainText: 'Restrictions for foodstuffs',
-    foodSubText: '',
     foodText1: 'Goods of animal origin for personal use may be imported from EU member states, Iceland and Norway without controls by a border vet. The goods may not be put on sale.',
     foodText2: 'The importation of goods of animal origin from other countries is generally prohibited.\n' +
     'Exceptions for certain foodstuffs can be found on the FSVO website:',
@@ -495,7 +479,6 @@ export const en: Locale = {
 
   authorisationRequirements: {
     authorisationRequirementsMainText: 'Authorisation requirement / restrictions',
-    authorisationRequirementsSubText: '',
     authorisationRequirementsText1: 'The importation of certain goods is restricted and is possible only under certain conditions (e.g. with prior authorisation), and even complete import bans are applicable in the case of some products.',
     authorisationRequirementsText2: 'The following goods in particular are subject to restrictions (non-exhaustive list):',
     authorisationRequirementsText3: 'Weapons (e.g. firearms, knives, stun guns, tear gas sprays, truncheons, etc.)',
@@ -511,7 +494,6 @@ export const en: Locale = {
 
   purchasesOnlineOffline: {
     purchasesOnlineOfflineMainText: 'Online shopping, postal and courier consignments',
-    purchasesOnlineOfflineSubText:'',
     purchasesOnlineOfflineText1: 'Consignments from abroad are generally subject to customs duty and value added tax (VAT). We show you below how you can roughly calculate the costs and what to consider when importing.',
     purchasesOnlineOfflineText2: 'Please note that a definitive calculation is not possible, as the costs of the transporter, e.g. Swiss Post, are not known in advance. The costs are generally billed to the recipient together with the customs duty and taxes (e.g. VAT). This should be clarified with the corresponding transporter.',
     purchasesOnlineOfflineText3: 'Gift items sent by private individuals abroad to private individuals in Switzerland are exempt from duties and tax up to a merchandise value of CHF 100, but not in the case of tobacco products and alcoholic beverages. The sender must label the outside of the parcel or letter accordingly.',
@@ -532,57 +514,28 @@ export const en: Locale = {
 
     purchasesOnlineOfflineText16: 'VAT is calculated based on this amount (rounded to the nearest franc).',
     purchasesOnlineOfflineText17: 'Please note: This sample calculation is a general calculation for duty-free goods.',
+
   },
 
   information: {
     informationTitle: 'Information',
     informationSubCategoryTitle: 'I have goods with me:',
     customsProceduresMainText: 'Proceeding at the customs',
-    customsProceduresSubText:
-      '',
     travelDocumentsMainText: 'Travel documents',
-    travelDocumentsSubText:
-      '',
-
     declarationMainText: 'I have goods with me',
-    declarationSubText: '',
     animalsAndPlantsMainText: 'I have animals or plants with me',
-    animalsAndPlantsSubText:
-      '',
     vehiclesMainText: "I'm traveling with a vehicle",
-    vehiclesSubText:
-      '',
     entryByTrainMainText: 'Entry by train',
-    entryByTrainSubText:
-      '',
     prohibitionsAndRestrictionsMainText: 'Prohibitions and restrictions',
-    prohibitionsAndRestrictionsSubText:
-      '',
       highwayVignetteMainText: 'Motorway tax sticker',
-      highwayVignetteSubText:
-          '',
       roadTaxMainText: 'Road traffic fees over 3.5T (lump-sum heavy vehicle charge, or PSVA)',
-      roadTaxSubText:
-          '',
       fuelAndRepairsMainText: 'Fuel and repairs',
-      fuelAndRepairsSubText:
-          '',
       forgeryMainText: 'Forgeries',
-      forgerySubText:
-          '',
       cashMainText: 'Liquid funds',
-      cashSubText:
-          '',
       foodMainText: 'Restrictions for foodstuffs',
-      foodSubText: '',
       authorisationRequirementsMainText: 'Authorisation requirement / restrictions,
-      authorisationRequirementsSubText:
-          '',
       purchasesOnlineOfflineMainText:
           'Online shopping, postal and courier consignments',
-      purchasesOnlineOfflineSubText:
-          '',
-
   },
   appInformation: {
     appInfoTitle: 'About the app',
