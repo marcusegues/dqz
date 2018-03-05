@@ -392,81 +392,82 @@ export const fr: Locale = {
 
   personalEffects: {
     personalEffectsMainText: 'Effets personnels et dispositions de voyage',
-    personalEffectsText1: '',
-    personalEffectsText2: '',
-    personalEffectsText3: '',
-    personalEffectsText4: '',
-    personalEffectsText5: '',
-    personalEffectsText6: '',
-    personalEffectsText7: '',
+    personalEffectsText1: 'Vous pouvez importer vos effets personnels et vos provisions de voyage en franchise de redevances:',
+    personalEffectsText2: 'Effets personnels ',
+    personalEffectsText3: 'Relèvent de cette catégorie les effets personnels que: ',
+    personalEffectsText4: 'des voyageurs domiciliés en Suisse ont emportés lors de leur sortie du pays;',
+    personalEffectsText5: 'des voyageurs domiciliés à l\'étranger utilisent pendant leur séjour en Suisse avant de les réexporter. Font partie des effets personnels les vêtements, la lingerie, les articles de toilette, le matériel de sport, les appareils photographiques, les caméras cinématographiques et vidéo, les téléphones et ordinateurs portables, les instruments de musique et autres objets d\'usage courant de nature personnelle.',
+    personalEffectsText6: 'Provisions de voyage ',
+    personalEffectsText7: 'Sont considérées comme des provisions de voyage les denrées alimentaires et boissons sans alcool, prêtes à la consommation, pour le jour du voyage.',
   },
 
   foreignVat: {
     foreignVatMainText: 'Remboursement de la TVA étrangère',
-    foreignVatText1: '',
-    foreignVatText2: '',
-    foreignVatText3: '',
-    foreignVatText4: '',
-    foreignVatText5: '',
+    foreignVatText1: 'L\'AFD ne peut pas vous rembourser la TVA étrangère. ',
+    foreignVatText2: 'Lorsque vous acheminez personnellement en Suisse des marchandises achetées à l\'étranger, vous avez souvent la possibilité de vous faire rembourser la TVA étrangère par le vendeur étranger ou une entreprise spécialisée dans le remboursement de l\'impôt (tax refund). Ces entreprises n\'ont aucun lien avec l\'AFD et ne travaillent pas pour notre compte.',
+    foreignVatText3: 'Pour le remboursement, les conditions sont différentes en fonction de l\'État concerné. Le cas échéant, le vendeur doit vous remettre un formulaire de remboursement rempli et l\'autorité douanière étrangère doit y attester l\'exportation en Suisse.',
+    foreignVatText4: 'Nous ne pouvons pas vous fournir de plus amples informations sur le remboursement de la TVA étrangère. Le cas échéant, veuillez vous adresser à l\'autorité douanière compétente pour obtenir les renseignements nécessaires. Vous trouverez les coordonnées des autorités douanières étrangères sur le site de l\'Organisation mondiale des douanes:  www.wcoomd.org. ',
+    foreignVatText5: 'La TVA suisse doit être payée même si la TVA étrangère n\'est pas remboursée. Il n\'existe aucune convention contre les doubles impositions en matière de TVA.',
   },
 
   animals: {
-    animalsMainText: '',
-    animalsText1: '',
-    animalsText2: '',
-    animalsText3: '',
-    animalsText4: '',
+    animalsMainText: 'Animaux: animaux domestiques, notamment chiens, chats et chevaux',
+    animalsText1: 'Vous trouverez les informations relatives à l\'importation d\'animaux domestiques, notamment de chiens, de chats et de chevaux, sur le site Internet de l\'Office fédéral de la sécurité alimentaire et des affaires vétérinaires (OSAV):  http://www.blv.admin.ch.',
+    animalsText2: 'Redevances',
+    animalsText3: 'Si la franchise-valeur de 300 francs est dépassée, vous devrez vous acquitter de la TVA pour les animaux transportés. Vous trouverez de plus amples informations à ce sujet dans la rubrique suivante:',
+    animalsText4: 'Franchise-valeur de 300 francs',
   },
 
   plants: {
-    plantsMainText: '',
-    plantsText1: '',
-    plantsText2: '',
-    plantsText3: '',
-    plantsText4: '',
-    plantsText5: '',
-    plantsText6: '',
-    plantsText7: '',
-    plantsText8: '',
-    plantsText9: '',
-    plantsText10: '',
-    plantsText11: '',
-    plantsText12: '',
-    plantsText13: '',
-    plantsText14: '',
-    plantsText15: '',
-    plantsText16: '',
-    plantsText17: '',
-    plantsText18: '',
-    plantsText19: '',
-    plantsText20: '',
-    plantsText21: '',
-    plantsText22: '',
-    plantsText23: '',
-    plantsText24: '',
-    plantsText25: '',
-    plantsText26: '',
-    plantsText27: '',
-    plantsText28: '',
-    plantsText29: '',
-    plantsText30: '',
-    plantsText31: '',
+    plantsMainText: 'Plantes',
+    plantsText1: '1.\tPlantes et produits végétaux interdits\n' +
+    ' L\'importation des plantes suivantes est interdite, car elles peuvent être porteuses d\'organismes nuisibles (feu bactérien, chancre de l\'écorce du châtaignier, affections virales, etc.):',
+    plantsText2: 'a) Importation interdite pour tous les pays de provenance ',
+    plantsText3: 'Cotonéaster ',
+    plantsText4: 'Photinia davidiana (synonyme Stranvaesia davidiana)',
+    plantsText5: 'b) Importation interdite pour tous les pays de provenance, à l\'exception des États de l\'UE, de l\'Islande et de la Norvège ',
+    plantsText6: 'Arbres fruitiers à noyau (abricotier, amandier, cerisier, pêcher, prunier) et toutes les formes ornementales du genre Prunus',
+    plantsText7: 'Arbres du genre Citrus (agrumes) ',
+    plantsText8: 'Aubépine (Crataegus) de toutes espèces et variétés',
+    plantsText9: 'Buisson ardent (Pyracantha) ',
+    plantsText10: 'Châtaignier à fruits comestibles (Castanea) ',
+    plantsText11: 'Chêne (Quercus) ',
+    plantsText12: 'Cognassier (Cydonia)',
+    plantsText13: 'Cognassier du Japon (Chaenomeles) ',
+    plantsText14: 'Conifères',
+    plantsText15: 'Kumquat (Fortunella) ',
+    plantsText16: 'Néflier (Mespilus) ',
+    plantsText17: 'Néflier du Japon (Eriobotrya) ',
+    plantsText18: 'Oranger amer ou bigaradier (Poncirus) ',
+    plantsText19: 'Poirier (Pyrus)',
+    plantsText20: 'Pomme de terre et solanacées similaires (Solanacea) ',
+    plantsText21: 'Pommier (Malus) ',
+    plantsText22: 'Rosier',
+    plantsText23: 'Sorbier, sorbier des oiseleurs, alisier blanc (Sorbus)',
+    plantsText24: 'Vigne (Vitis)',
+    plantsText25: '2.\tAutres plantes et produits végétaux (y compris fruits et légumes)',
+    plantsText26: 'a) Importation en provenance des États de l\'UE, de Norvège et d\'Islande  Vous pouvez importer des plantes sans permis pour autant que cela soit dans le trafic touristique et pour votre usage privé.',
+    plantsText27: 'b) Importation en provenance de pays autres que les États de l\'UE, la Norvège et l\'Islande  Les plantes (vivantes ou sous forme de produits végétaux) peuvent être assujetties à un permis d\'importation.',
+    plantsText28: 'Si vous souhaitez importer des plantes en provenance de tels pays, veuillez vous informer préalablement auprès de l\'Office fédéral de l\'agriculture au sujet des dispositions en vigueur: www.blw.admin.ch.',
+    plantsText29: 'Exception: par personne, on peut importer des fleurs coupées et des bouquets de fleurs jusqu\'à 3 kg au maximum ainsi que des fruits et légumes (hormis les pommes de terre) jusqu\'à 10 kg au total sans application de mesures phytosanitaires.',
+    plantsText30: 'Redevances',
+    plantsText31: 'Si la franchise-valeur de 300 francs est dépassée, vous devrez vous acquitter de la TVA pour les plantes transportées. Vous trouverez de plus amples informations à ce sujet dans la rubrique suivante: Franchise-valeur de 300 francs.',
   },
 
   souvenirsAndSpeciesProtection: {
-    souvenirsAndSpeciesProtectionMainText: '',
-    souvenirsAndSpeciesProtectionText1: '',
-    souvenirsAndSpeciesProtectionText2: '',
-    souvenirsAndSpeciesProtectionText3: '',
-    souvenirsAndSpeciesProtectionText4: '',
-    souvenirsAndSpeciesProtectionText5: '',
-    souvenirsAndSpeciesProtectionText6: '',
-    souvenirsAndSpeciesProtectionText7: '',
-    souvenirsAndSpeciesProtectionText8: '',
+    souvenirsAndSpeciesProtectionMainText: 'Souvenirs et conservation des espèces (CITES)',
+    souvenirsAndSpeciesProtectionText1: 'Souvenirs',
+    souvenirsAndSpeciesProtectionText2: 'Une ceinture en cuir d\'éléphant, un capteur de rêves orné de plumes d\'oiseau ou des bâtonnets d\'encens en bois de santal: la palette des souvenirs proposés est extrêmement large. Au premier coup d\'œil, il n\'apparaît pas que ces objets sont fabriqués à partir d\'espèces animales ou végétales protégées (par ex. bois tropical). Or beaucoup ne peuvent pas être importés en Suisse.  Avant de partir en vacances, il vaut la peine de se renseigner sur les souvenirs qu\'il est possible de rapporter et sur les objets qu\'il est préférable de laisser sur place.',
+    souvenirsAndSpeciesProtectionText3: 'Conservation des espèces animales ',
+    souvenirsAndSpeciesProtectionText4: 'L\'importation d\'animaux protégés ou de produits fabriqués à partir de ceux-ci est soit totalement interdite, soit soumise à autorisation (c\'est notamment le cas des serpents, des lézards, des tortues, des perroquets, de l\'ivoire, de l\'écaille de tortue et de diverses fourrures). ',
+    souvenirsAndSpeciesProtectionText5: 'Lors de l\'importation, il est nécessaire de présenter au poste de contrôle CITES une autorisation d\'exportation ou un certificat de réexportation établi par l\'autorité CITES du pays de provenance.',
+    souvenirsAndSpeciesProtectionText6: 'Conservation des espèces végétales',
+    souvenirsAndSpeciesProtectionText7: 'L\'importation de plantes protégées ou de produits fabriqués à partir de celles-ci est soit totalement interdite, soit soumise à autorisation (par ex. orchidées, cactées, certains bois et plantes médicinales). ',
+    souvenirsAndSpeciesProtectionText8: 'Pour obtenir les renseignements et les autorisations nécessaires, veuillez vous adresser à l\'OSAV:  www.blv.admin.ch. ',
   },
 
   highwayVignette: {
-    highwayVignetteMainText: '',
+    highwayVignetteMainText: 'Vignette autoroutière',
     highwayVignetteText1: '',
     highwayVignetteText2: '',
     highwayVignetteText3: '',
