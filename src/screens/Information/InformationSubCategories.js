@@ -50,7 +50,6 @@ class InformationSubCategoriesInner extends React.Component<{
               }
               source={informationImages[cat]}
               mainText={t(`${cat}:${cat}MainText`)}
-              subText={t(`${cat}:${cat}SubText`)}
               rowOnPress={() =>
                 navigation.dispatch({
                   type: 'NAVIGATE',

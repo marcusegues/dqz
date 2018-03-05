@@ -188,8 +188,6 @@ export const fr: Locale = {
 
   customsProcedures: {
     customsProceduresMainText: 'Procédant à la douane',
-    customsProceduresSubText:
-      'En tant que particulier, vous devez entrer en Suisse ...',
     customsProceduresText1:
       "En tant que particulier, vous devez déclarer spontanément, lors de l'entrée en Suisse, toutes les marchandises et tous les animaux que vous transportez.",
     customsProceduresText2:
@@ -232,8 +230,6 @@ export const fr: Locale = {
 
   travelDocuments: {
     travelDocumentsMainText: 'Documents de voyage',
-    travelDocumentsSubText:
-      "Pour entrer en Suisse, les étrangers ont besoin d'un ...",
     travelDocumentsText1:
       "Pour entrer en Suisse, les ressortissants étrangers ont besoin d'un document de voyage valable et reconnu par la Suisse. Dans certains cas, un visa est en outre nécessaire. Vous pouvez obtenir des informations sur les modalités d'entrée et de séjour en Suisse (prescriptions relatives aux documents de voyage et visas) sur le site Internet du Secrétariat d'État aux migrations:",
     travelDocumentsText2:
@@ -242,8 +238,6 @@ export const fr: Locale = {
 
   vatAllowance: {
     vatAllowanceMainText: 'Franchise-valeur de 300 francs',
-    vatAllowanceSubText:
-      'Les marchandises que vous importez pour votre usage privé ou pour ...',
     vatAllowanceText1:
       "Les marchandises que vous importez pour votre usage privé ou pour en faire cadeau sont exemptées de la TVA jusqu'à une valeur de 300 francs. C'est la valeur de toutes les marchandises qui est déterminante, c'est-à-dire également celle des cadeaux reçus, des denrées alimentaires, des tabacs manufacturés, des boissons alcooliques, des animaux domestiques amenés depuis l'étranger et des travaux de réparation et d'entretien effectués à l'étranger sur votre propre véhicule.",
     vatAllowanceText2:
@@ -319,8 +313,6 @@ export const fr: Locale = {
   dutyAllowance: {
     dutyAllowanceMainText:
       'Franchises quantitatives: denrées alimentaires, alcool et tabac',
-    dutyAllowanceSubText:
-      'Les marchandises que vous importez pour votre usage privé ou pour ...',
     dutyAllowanceText1:
       "Les marchandises que vous importez pour votre usage privé ou pour en faire cadeau sont admises en franchise de droits de douane. Font exception, pour des raisons de politique agricole ou de politique sanitaire, les marchandises dites sensibles pour lesquelles vous devez payer des droits de douane au-delà d'une certaine quantité (voir tableau ci-dessous). Les franchises quantitatives ne sont accordées qu'une fois par personne et par jour.",
     dutyAllowanceText2:
@@ -400,7 +392,6 @@ export const fr: Locale = {
 
   personalEffects: {
     personalEffectsMainText: 'Effets personnels et dispositions de voyage',
-    personalEffectsSubText: '',
     personalEffectsText1: '',
     personalEffectsText2: '',
     personalEffectsText3: '',
@@ -412,7 +403,6 @@ export const fr: Locale = {
 
   foreignVat: {
     foreignVatMainText: 'Remboursement de la TVA étrangère',
-    foreignVatSubText: '',
     foreignVatText1: '',
     foreignVatText2: '',
     foreignVatText3: '',
@@ -422,7 +412,6 @@ export const fr: Locale = {
 
   animals: {
     animalsMainText: '',
-    animalsSubText: '',
     animalsText1: '',
     animalsText2: '',
     animalsText3: '',
@@ -431,7 +420,6 @@ export const fr: Locale = {
 
   plants: {
     plantsMainText: '',
-    plantsSubText: '',
     plantsText1: '',
     plantsText2: '',
     plantsText3: '',
@@ -467,7 +455,6 @@ export const fr: Locale = {
 
   souvenirsAndSpeciesProtection: {
     souvenirsAndSpeciesProtectionMainText: '',
-    souvenirsAndSpeciesProtectionSubText: '',
     souvenirsAndSpeciesProtectionText1: '',
     souvenirsAndSpeciesProtectionText2: '',
     souvenirsAndSpeciesProtectionText3: '',
@@ -480,7 +467,6 @@ export const fr: Locale = {
 
   highwayVignette: {
     highwayVignetteMainText: '',
-    highwayVignetteSubText: '',
     highwayVignetteText1: '',
     highwayVignetteText2: '',
     highwayVignetteText3: '',
@@ -495,7 +481,6 @@ export const fr: Locale = {
 
   roadTax: {
     roadTaxMainText: '',
-    roadTaxSubText: '',
     roadTaxText1: '',
     roadTaxText2: '',
     roadTaxText3: '',
@@ -515,7 +500,6 @@ export const fr: Locale = {
 
   fuelAndRepairs: {
     fuelAndRepairsMainText: '',
-    fuelAndRepairsSubText: '',
     fuelAndRepairsText1: '',
     fuelAndRepairsText2: '',
     fuelAndRepairsText3: '',
@@ -525,7 +509,6 @@ export const fr: Locale = {
 
   entryByTrain: {
     entryByTrainMainText: '',
-    entryByTrainSubText: '',
     entryByTrainText1: '',
     entryByTrainText2: '',
     entryByTrainText3: '',
@@ -539,7 +522,6 @@ export const fr: Locale = {
 
   forgery: {
     forgeryMainText: '',
-    forgerySubText: '',
     forgeryText1: '',
     forgeryText2: '',
     forgeryText3: '',
@@ -550,14 +532,12 @@ export const fr: Locale = {
 
   cash: {
     cashMainText: '',
-    cashSubText: '',
     cashText1: '',
     cashText2: '',
   },
 
   food: {
     foodMainText: '',
-    foodSubText: '',
     foodText1: '',
     foodText2: '',
     foodText3: '',
@@ -571,7 +551,6 @@ export const fr: Locale = {
 
   authorisationRequirements: {
     authorisationRequirementsMainText: '',
-    authorisationRequirementsSubText: '',
     authorisationRequirementsText1: '',
     authorisationRequirementsText2: '',
     authorisationRequirementsText3: '',
@@ -587,7 +566,6 @@ export const fr: Locale = {
 
   purchasesOnlineOffline: {
     purchasesOnlineOfflineMainText: '',
-    purchasesOnlineOfflineSubText: '',
     purchasesOnlineOfflineText1: '',
     purchasesOnlineOfflineText2: '',
     purchasesOnlineOfflineText3: '',
@@ -612,69 +590,39 @@ export const fr: Locale = {
     informationSubCategoryTitle: "J'ai des biens avec vous:",
 
     customsProceduresMainText: 'Procédant à la douane',
-    customsProceduresSubText:
-      'En tant que particulier, vous devez entrer en Suisse ...',
 
     travelDocumentsMainText: 'Documents de voyage',
-    travelDocumentsSubText:
-      "Pour entrer en Suisse, les étrangers ont besoin d'un ...",
 
     declarationMainText: "J'ai des biens avec moi",
-    declarationSubText: 'Marchandises pour votre usage privé ou en cadeau ...',
     animalsAndPlantsMainText: "J'ai des animaux ou des plantes avec moi",
-    animalsAndPlantsSubText:
-      'Pour les chiens, les chats, les autres animaux domestiques et les chevaux, vous trouverez ...',
     vehiclesMainText: 'Je voyage avec un véhicule',
-    vehiclesSubText:
-      "L'utilisation des autoroutes et des autoroutes avec des véhicules à moteur et des remorques ...",
     entryByTrainMainText: 'Entrée en train',
-    entryByTrainSubText:
-      'Si le personnel des douanes est présent dans le train, vous devez prendre toutes les marchandises ...',
     prohibitionsAndRestrictionsMainText: 'Interdictions et restrictions',
-    prohibitionsAndRestrictionsSubText:
-      "Il est interdit d'introduire des contrefaçons de marque et de design. Les douanes suisses ...",
 
     vatAllowanceMainText: 'Franchise-valeur de 300 francs',
-    vatAllowanceSubText:
-      'Les marchandises que vous importez pour votre usage privé ou pour ...',
 
     dutyAllowanceMainText:
       'Franchises quantitatives: denrées alimentaires, alcool et tabac',
-    dutyAllowanceSubText:
-      'Les marchandises que vous importez pour votre usage privé ou pour ...',
 
     personalEffectsMainText: 'Effets personnels et dispositions de voyage',
-    personalEffectsSubText: '',
 
     foreignVatMainText: 'Remboursement de la TVA étrangère',
-    foreignVatSubText: '',
 
     animalsMainText: '',
-    animalsSubText: '',
 
     plantsMainText: '',
-    plantsSubText: '',
 
     souvenirsAndSpeciesProtectionMainText: '',
-    souvenirsAndSpeciesProtectionSubText: '',
 
     highwayVignetteMainText: '',
-    highwayVignetteSubText: '',
     roadTaxMainText: '',
-    roadTaxSubText: '',
     fuelAndRepairsMainText: '',
-    fuelAndRepairsSubText: '',
 
     forgeryMainText: '',
-    forgerySubText: '',
     cashMainText: '',
-    cashSubText: '',
     foodMainText: '',
-    foodSubText: '',
     authorisationRequirementsMainText: '',
-    authorisationRequirementsSubText: '',
     purchasesOnlineOfflineMainText: '',
-    purchasesOnlineOfflineSubText: '',
   },
   appInformation: {
     appInfoTitle: "Informations relatives à l'application",

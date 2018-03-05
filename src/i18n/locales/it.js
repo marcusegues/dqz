@@ -182,41 +182,57 @@ export const it: Locale = {
   },
 
   customsProcedures: {
-    customsProceduresMainText: '',
-    customsProceduresSubText: '',
-    customsProceduresText1: '',
-    customsProceduresText2: '',
-    customsProceduresText3: '',
-    customsProceduresText4: '',
-    customsProceduresText5: '',
-    customsProceduresText6: '',
-    customsProceduresText7: '',
-    customsProceduresText8: '',
-    customsProceduresText9: '',
-    customsProceduresText10: '',
-    customsProceduresText11: '',
-    customsProceduresText12: '',
-    customsProceduresText13: '',
-    customsProceduresText14: '',
-    customsProceduresText15: '',
-    customsProceduresText16: '',
-    customsProceduresText17: '',
-    customsProceduresText18: '',
-    customsProceduresText19: '',
-    customsProceduresText20: '',
-    customsProceduresText21: '',
+    customsProceduresMainText: 'Procedura in dogana',
+    customsProceduresText1:
+      'All’entrata in Svizzera i privati devono dichiarare spontaneamente tutte le merci e gli animali.',
+    customsProceduresText2:
+      'Se si trasportano merci esenti da tributi (IVA e dazio) e che non sono soggette a limitazioni e divieti, si può attraversare il confine senza dichiarazione formale. In tal caso è consentito anche:',
+    customsProceduresText3: 'scegliere il passaggio verde all’aeroporto;',
+    customsProceduresText4:
+      'collocare all’interno del parabrezza del veicolo la dichiarazione doganale verde a vista.',
+    customsProceduresText5:
+      'L’utilizzo del passaggio verde o l’apposizione di una dichiarazione doganale a vista è vincolante e il personale doganale può effettuare controlli senza porre domande.',
+    customsProceduresText6:
+      'Informazioni più dettagliate sulle merci esenti da tributi sono disponibili alle seguenti rubriche:',
+    customsProceduresText7:
+      '«Limite di franchigia secondo il valore di 300 franchi»',
+    customsProceduresText8:
+      '«Quantità ammesse in franchigia: derrate alimentari, alcol e tabacco»',
+    customsProceduresText9: '«Oggetti d’uso personale e provviste da viaggio»',
+    customsProceduresText10:
+      'Dichiarazione doganale verbale o scelta del passaggio rosso all’aeroporto',
+    customsProceduresText11:
+      'Se al valico di confine è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente.',
+    customsProceduresText12:
+      'Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
+    customsProceduresText13: 'Dichiarazione doganale con l’app QuickZoll',
+    customsProceduresText14:
+      'Le merci possono essere dichiarate anche con l’app QuickZoll dell’AFD. Le merci devono essere imposte con l’app prima del passaggio del confine oppure al valico di confine. Ciò significa che i tributi devono essere pagati. Se il pagamento avviene mediante app è consentito utilizzare anche i valichi di confine in cui il personale doganale non è presente [OPPURE: valichi di confine dove è possibile effettuare la dichiarazione scritta], e negli aeroporti il passaggio verde.',
+    customsProceduresText15:
+      'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.\nAltre merci devono essere dichiarate verbalmente presso un valico di confine in cui è presente il personale doganale svizzero.',
+    customsProceduresText16:
+      'Dichiarazione doganale scritta (cassetta delle dichiarazioni)',
+    customsProceduresText17:
+      'In alcuni valichi di confine sono anche a disposizione le cosiddette cassette delle dichiarazioni, dove è possibile dichiarare le proprie merci in forma scritta. Informazioni a riguardo sono disponibili su:\nwww.ezv.admin.ch/cassetta delle dichiarazioni',
+    customsProceduresText18:
+      'Questa forma di dichiarazione doganale è autorizzata solo per merci non destinate al commercio, non soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.',
+    customsProceduresText19:
+      'Le merci commerciali vanno dichiarate all’ufficio doganale di competenza.',
+    customsProceduresText20: 'Attenzione',
+    customsProceduresText21:
+      'La dichiarazione verbale nonché la dichiarazione con l’app o con la cassetta delle dichiarazioni è vincolante. I controlli doganali possono essere effettuati anche all’interno del Paese. Non è possibile effettuare la dichiarazione doganale a posteriori. L’omessa oppure errata dichiarazione di merci vietate, soggette all’obbligo di autorizzazione o soggette al pagamento di tributi è dunque punibile.',
   },
 
   travelDocuments: {
-    travelDocumentsMainText: '',
-    travelDocumentsSubText: '',
-    travelDocumentsText1: '',
-    travelDocumentsText2: '',
+    travelDocumentsMainText: 'Documenti di viaggio',
+    travelDocumentsText1:
+      'Per entrare in Svizzera i cittadini stranieri devono disporre di un documento di viaggio (passaporto o carta d’identità) valido e riconosciuto in Svizzera. In determinati casi è necessario anche un visto.Il sito della Segreteria di Stato della migrazione fornisce informazioni sull’entrata e sul soggiorno in Svizzera (documenti di viaggio e visti):',
+    travelDocumentsText2:
+      'Le prescrizioni relative a documenti di viaggio all’estero sono consultabili presso le relative autorità estere al link dell’Organizzazione mondiale delle dogane:',
   },
 
   vatAllowance: {
     vatAllowanceMainText: '',
-    vatAllowanceSubText: '',
     vatAllowanceText1: '',
     vatAllowanceText2: '',
     vatAllowanceText3: '',
@@ -265,7 +281,6 @@ export const it: Locale = {
 
   dutyAllowance: {
     dutyAllowanceMainText: '',
-    dutyAllowanceSubText: '',
     dutyAllowanceText1: '',
     dutyAllowanceText2: '',
     dutyAllowanceText3: '',
@@ -317,7 +332,6 @@ export const it: Locale = {
 
   personalEffects: {
     personalEffectsMainText: '',
-    personalEffectsSubText: '',
     personalEffectsText1: '',
     personalEffectsText2: '',
     personalEffectsText3: '',
@@ -329,7 +343,6 @@ export const it: Locale = {
 
   foreignVat: {
     foreignVatMainText: '',
-    foreignVatSubText: '',
     foreignVatText1: '',
     foreignVatText2: '',
     foreignVatText3: '',
@@ -339,7 +352,6 @@ export const it: Locale = {
 
   animals: {
     animalsMainText: '',
-    animalsSubText: '',
     animalsText1: '',
     animalsText2: '',
     animalsText3: '',
@@ -348,7 +360,6 @@ export const it: Locale = {
 
   plants: {
     plantsMainText: '',
-    plantsSubText: '',
     plantsText1: '',
     plantsText2: '',
     plantsText3: '',
@@ -384,7 +395,6 @@ export const it: Locale = {
 
   souvenirsAndSpeciesProtection: {
     souvenirsAndSpeciesProtectionMainText: '',
-    souvenirsAndSpeciesProtectionSubText: '',
     souvenirsAndSpeciesProtectionText1: '',
     souvenirsAndSpeciesProtectionText2: '',
     souvenirsAndSpeciesProtectionText3: '',
@@ -397,7 +407,6 @@ export const it: Locale = {
 
   highwayVignette: {
     highwayVignetteMainText: '',
-    highwayVignetteSubText: '',
     highwayVignetteText1: '',
     highwayVignetteText2: '',
     highwayVignetteText3: '',
@@ -412,7 +421,6 @@ export const it: Locale = {
 
   roadTax: {
     roadTaxMainText: '',
-    roadTaxSubText: '',
     roadTaxText1: '',
     roadTaxText2: '',
     roadTaxText3: '',
@@ -432,7 +440,6 @@ export const it: Locale = {
 
   fuelAndRepairs: {
     fuelAndRepairsMainText: '',
-    fuelAndRepairsSubText: '',
     fuelAndRepairsText1: '',
     fuelAndRepairsText2: '',
     fuelAndRepairsText3: '',
@@ -441,22 +448,28 @@ export const it: Locale = {
   },
 
   entryByTrain: {
-    entryByTrainMainText: '',
-    entryByTrainSubText: '',
-    entryByTrainText1: '',
-    entryByTrainText2: '',
-    entryByTrainText3: '',
-    entryByTrainText4: '',
-    entryByTrainText5: '',
-    entryByTrainText6: '',
-    entryByTrainText7: '',
-    entryByTrainText8: '',
-    entryByTrainText9: '',
+    entryByTrainMainText: 'Entrata in Svizzera con il treno',
+    entryByTrainText1:
+      'Se sul treno è presente personale doganale, le merci trasportate vanno dichiarate spontaneamente per il trattamento doganale. Merci destinate all’uso privato o da regalare possono essere imposte anche prima del passaggio del confine con la app «xxxx». Tali dichiarazioni sono vincolanti.',
+    entryByTrainText2:
+      'Se non è presente personale doganale e non si desidera imporre le merci con l’app «xxx» è possibile:',
+    entryByTrainText3:
+      'scendere dal treno alla stazione di confine e dichiarare per scritto (presso una cassetta delle dichiarazioni) le merci;',
+    entryByTrainText4:
+      'dichiarare le merci in un secondo tempo, entro 7 giorni, presso qualsiasi ufficio doganale durante gli orari d’apertura.',
+    entryByTrainText5:
+      'Su determinati treni regionali è possibile trasportare solo merci private:',
+    entryByTrainText6:
+      'che rientrano nelle quantità ammesse in franchigia o nel limite di franchigia secondo il valore di 300 franchi e che quindi sono esenti da tributi;',
+    entryByTrainText7: 'che sono state imposte con l’app «xxx».',
+    entryByTrainText8:
+      'In entrambi i casi le merci non devono essere soggette a limitazioni e divieti né all’obbligo di certificazione o di autorizzazione.',
+    entryByTrainText9:
+      'Si prega di prestare attenzione alle indicazioni sul treno o agli annunci!',
   },
 
   forgery: {
     forgeryMainText: '',
-    forgerySubText: '',
     forgeryText1: '',
     forgeryText2: '',
     forgeryText3: '',
@@ -467,14 +480,12 @@ export const it: Locale = {
 
   cash: {
     cashMainText: '',
-    cashSubText: '',
     cashText1: '',
     cashText2: '',
   },
 
   food: {
     foodMainText: '',
-    foodSubText: '',
     foodText1: '',
     foodText2: '',
     foodText3: '',
@@ -488,7 +499,6 @@ export const it: Locale = {
 
   authorisationRequirements: {
     authorisationRequirementsMainText: '',
-    authorisationRequirementsSubText: '',
     authorisationRequirementsText1: '',
     authorisationRequirementsText2: '',
     authorisationRequirementsText3: '',
@@ -504,7 +514,6 @@ export const it: Locale = {
 
   purchasesOnlineOffline: {
     purchasesOnlineOfflineMainText: '',
-    purchasesOnlineOfflineSubText: '',
     purchasesOnlineOfflineText1: '',
     purchasesOnlineOfflineText2: '',
     purchasesOnlineOfflineText3: '',
@@ -528,76 +537,49 @@ export const it: Locale = {
     informationTitle: 'Informazioni utili',
     informationSubCategoryTitle: 'Ho dei beni con voi:',
 
-    customsProceduresMainText: 'Procedendo alla dogana',
-    customsProceduresSubText: 'Come privato devi entrare in Svizzera ...',
+    customsProceduresMainText: 'Entrata in Svizzera',
 
     travelDocumentsMainText: 'Documenti di viaggio',
-    travelDocumentsSubText:
-      'Per entrare in Svizzera i cittadini stranieri hanno bisogno di un valido ...',
 
     declarationMainText: 'Ho dei beni con me',
-    declarationSubText: 'Meriti per uso personale o come regalo ...',
 
     animalsAndPlantsMainText: 'Ho animali o piante con me',
-    animalsAndPlantsSubText:
-      'Per cani, gatti, altri animali domestici e cavalli troverai il ...',
 
     vehiclesMainText: 'Sto viaggiando con un veicolo',
-    vehiclesSubText:
-      "L'uso di autostrade e autostrade con veicoli a motore e rimorchi ...",
 
-    entryByTrainMainText: 'Ingresso in treno',
-    entryByTrainSubText:
-      'Se il personale doganale è presente sul treno, è necessario prendere tutte le merci ...',
+    entryByTrainMainText: 'Entrata in Svizzera con il treno',
 
     prohibitionsAndRestrictionsMainText: 'Verbote und Beschränkungen',
-    prohibitionsAndRestrictionsSubText:
-      'È vietato introdurre contraffazioni di marchi e design. Le usanze svizzere ...',
 
     vatAllowanceMainText: '',
-    vatAllowanceSubText: '',
 
     dutyAllowanceMainText: '',
-    dutyAllowanceSubText: '',
 
     personalEffectsMainText: '',
-    personalEffectsSubText: '',
 
     foreignVatMainText: '',
-    foreignVatSubText: '',
 
     animalsMainText: '',
-    animalsSubText: '',
 
     plantsMainText: '',
-    plantsSubText: '',
 
     souvenirsAndSpeciesProtectionMainText: '',
-    souvenirsAndSpeciesProtectionSubText: '',
 
     highwayVignetteMainText: '',
-    highwayVignetteSubText: '',
 
     roadTaxMainText: '',
-    roadTaxSubText: '',
 
     fuelAndRepairsMainText: '',
-    fuelAndRepairsSubText: '',
 
     forgeryMainText: '',
-    forgerySubText: '',
 
     cashMainText: '',
-    cashSubText: '',
 
     foodMainText: '',
-    foodSubText: '',
 
     authorisationRequirementsMainText: '',
-    authorisationRequirementsSubText: '',
 
     purchasesOnlineOfflineMainText: '',
-    purchasesOnlineOfflineSubText: '',
   },
 
   appInformation: {
