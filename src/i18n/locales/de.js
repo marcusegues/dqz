@@ -580,9 +580,9 @@ export const de: Locale = {
   cash: {
     cashMainText: 'Barmittel',
     cashText1:
-      "Bei der Ein-, Durch- und Ausfuhr von Barmitteln (Bargeld, Wertpapieren u.a.) im Wert von über CHF 10'000 muss auf Befragung hin Auskunft über die Herkunft, den Verwendungszweck und die wirtschaftlich berechtigte Person erteilt werden.",
+      'Bei der Ein-, Durch- und Ausfuhr von Barmitteln (Bargeld, Wertpapieren u.a.) im Wert von über CHF 10\'000 muss auf Befragung hin Auskunft über die Herkunft, den Verwendungszweck und die wirtschaftlich berechtigte Person erteilt werden.',
     cashText2:
-      ' Weitere Massnahmen zur Verbrechensbekämpfung bleiben vorbehalten.',
+      'Weitere Massnahmen zur Verbrechensbekämpfung bleiben vorbehalten.',
   },
 
   food: {
