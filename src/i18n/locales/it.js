@@ -232,144 +232,205 @@ export const it: Locale = {
   },
 
   vatAllowance: {
-    vatAllowanceMainText: 'Limite di franchigia secondo il valore di 300 franchi',
-    vatAllowanceText1: 'Le merci importate per uso privato o come regali sono esenti da IVA fino a un valore di 300 franchi. Va tenuto conto del valore complessivo di tutte le merci, incluso quello dei regali ricevuti, delle derrate alimentari, dei tabacchi manufatti, delle bevande alcoliche, degli animali domestici nonché dei lavori di riparazione e di manutenzione fatti eseguire all’estero sul proprio veicolo.',
-    vatAllowanceText2: 'Non vi rientra invece il valore degli oggetti d’uso personale, delle provviste da viaggio e del carburante per il proprio veicolo.',
-    vatAllowanceText3: 'Determinante è il valore risultante dopo la detrazione dell’IVA estera, a condizione che questa sia indicata sulla ricevuta o fattura. Le indicazioni del valore in valuta estera sono convertite in franchi svizzeri al corso del cambio (vendita) del giorno precedente.',
-    vatAllowanceText4: 'Il limite di franchigia secondo il valore può essere applicato dalla stessa persona solo una volta al giorno. È concesso solo nel caso in cui le merci vengono effettivamente trasportate con sé. Il limite di franchigia secondo il valore vale anche per i bambini.',
-    vatAllowanceText5: 'Cosa succede se il valore della merce supera i 300 franchi?',
-    vatAllowanceText6: 'Se si trasportano merci che superano il limite di franchigia secondo il valore di 300 franchi, l’IVA è dovuta sul valore complessivo di tutta la merce',
-    vatAllowanceText7: 'Esempio: il valore complessivo è di 800 franchi. Il limite di franchigia di 300 franchi è superato, quindi l’IVA viene calcolata sull’importo di 800 franchi.',
-    vatAllowanceText8: 'Ulteriori esempi di applicazione del limite di franchigia secondo il valore.',
+    vatAllowanceMainText:
+      'Limite di franchigia secondo il valore di 300 franchi',
+    vatAllowanceText1:
+      'Le merci importate per uso privato o come regali sono esenti da IVA fino a un valore di 300 franchi. Va tenuto conto del valore complessivo di tutte le merci, incluso quello dei regali ricevuti, delle derrate alimentari, dei tabacchi manufatti, delle bevande alcoliche, degli animali domestici nonché dei lavori di riparazione e di manutenzione fatti eseguire all’estero sul proprio veicolo.',
+    vatAllowanceText2:
+      'Non vi rientra invece il valore degli oggetti d’uso personale, delle provviste da viaggio e del carburante per il proprio veicolo.',
+    vatAllowanceText3:
+      'Determinante è il valore risultante dopo la detrazione dell’IVA estera, a condizione che questa sia indicata sulla ricevuta o fattura. Le indicazioni del valore in valuta estera sono convertite in franchi svizzeri al corso del cambio (vendita) del giorno precedente.',
+    vatAllowanceText4:
+      'Il limite di franchigia secondo il valore può essere applicato dalla stessa persona solo una volta al giorno. È concesso solo nel caso in cui le merci vengono effettivamente trasportate con sé. Il limite di franchigia secondo il valore vale anche per i bambini.',
+    vatAllowanceText5:
+      'Cosa succede se il valore della merce supera i 300 franchi?',
+    vatAllowanceText6:
+      'Se si trasportano merci che superano il limite di franchigia secondo il valore di 300 franchi, l’IVA è dovuta sul valore complessivo di tutta la merce',
+    vatAllowanceText7:
+      'Esempio: il valore complessivo è di 800 franchi. Il limite di franchigia di 300 franchi è superato, quindi l’IVA viene calcolata sull’importo di 800 franchi.',
+    vatAllowanceText8:
+      'Ulteriori esempi di applicazione del limite di franchigia secondo il valore.',
     vatAllowanceText9: 'IVA',
-    vatAllowanceText10: 'L’IVA viene calcolata in base al valore della merce. L’aliquota normale è pari al 7,7 per cento. A determinate merci si applica l’aliquota ridotta del 2,5 per cento (p. es. derrate alimentari, bevande analcoliche, libri, riviste o medicamenti). L’imposizione con l’app «xxx» prevede sempre l’applicazione dell’aliquota normale.',
-    vatAllowanceText11: 'La presentazione di una fattura o di un altro giustificativo del valore (p. es. per acquisti in Internet) agevola la procedura d’imposizione doganale. Se mancano indicazioni relative al valore o vi sono dubbi sulla correttezza di questi dati, l’ufficio doganale può procedere alla stima del valore.',
+    vatAllowanceText10:
+      'L’IVA viene calcolata in base al valore della merce. L’aliquota normale è pari al 7,7 per cento. A determinate merci si applica l’aliquota ridotta del 2,5 per cento (p. es. derrate alimentari, bevande analcoliche, libri, riviste o medicamenti). L’imposizione con l’app «xxx» prevede sempre l’applicazione dell’aliquota normale.',
+    vatAllowanceText11:
+      'La presentazione di una fattura o di un altro giustificativo del valore (p. es. per acquisti in Internet) agevola la procedura d’imposizione doganale. Se mancano indicazioni relative al valore o vi sono dubbi sulla correttezza di questi dati, l’ufficio doganale può procedere alla stima del valore.',
     vatAllowanceText12: 'Dichiarazione doganale',
-    vatAllowanceText13: 'All’entrata in Svizzera tutte le merci trasportate devono essere dichiarate verbalmente al personale doganale.',
-    vatAllowanceText14: 'Le merci possono essere dichiarate anche con l’app QuickZoll o in forma scritta mediante la cassetta delle dichiarazioni presso i valichi di confine non occupati da personale doganale. Per informazioni a riguardo cliccare qui.',
-    vatAllowanceText15: 'Attenzione: Se la quantità ammessa in franchigia di bevande alcoliche, tabacchi manufatti e alcune derrate alimentari è superata, il dazio deve essere versato in ogni caso. Per maggiori informazioni.',
-    vatAllowanceText16: 'Attenzione: Determinate merci (p. es. contraffazioni, armi, nonché alcune piante, animali, prodotti animali e merci che soggiacciono alla protezione delle specie) sottostanno al divieto di importazione o a certe limitazioni. Per maggiori informazioni cliccare qui.',
-    vatAllowanceText17: 'Applicazione del limite di franchigia secondo il valore per persone che viaggiano individualmente',
-    vatAllowanceText18: 'Applicazione del limite di franchigia secondo il valore per persone che viaggiano in gruppo',
-      vatAllowanceText19: 'Una persona può presentare un’unica dichiarazione doganale per più persone che viaggiano in gruppo con lei (p. es. con familiari, parenti, amici o conoscenti). Il dichiarante si assume quindi la responsabilità della dichiarazione doganale e deve versare eventuali tributi nonché assumersi la responsabilità penale qualora vengano constatate merci non dichiarate e si rende necessario avviare una procedura penale.',
-    vatAllowanceText20: 'Attenzione: Se il valore complessivo di tutte le merci trasportate dai viaggiatori supera la somma dei limiti di franchigia secondo il valore delle persone che viaggiano in gruppo, il dichiarante non ha diritto al limite di franchigia secondo il valore.',
-    vatAllowanceText21: 'Singoli oggetti il cui valore supera i 300 franchi sono soggetti all’IVA anche per le persone che viaggiano in gruppo.',
+    vatAllowanceText13:
+      'All’entrata in Svizzera tutte le merci trasportate devono essere dichiarate verbalmente al personale doganale.',
+    vatAllowanceText14:
+      'Le merci possono essere dichiarate anche con l’app QuickZoll o in forma scritta mediante la cassetta delle dichiarazioni presso i valichi di confine non occupati da personale doganale. Per informazioni a riguardo cliccare qui.',
+    vatAllowanceText15:
+      'Attenzione: Se la quantità ammessa in franchigia di bevande alcoliche, tabacchi manufatti e alcune derrate alimentari è superata, il dazio deve essere versato in ogni caso. Per maggiori informazioni.',
+    vatAllowanceText16:
+      'Attenzione: Determinate merci (p. es. contraffazioni, armi, nonché alcune piante, animali, prodotti animali e merci che soggiacciono alla protezione delle specie) sottostanno al divieto di importazione o a certe limitazioni. Per maggiori informazioni cliccare qui.',
+    vatAllowanceText17:
+      'Applicazione del limite di franchigia secondo il valore per persone che viaggiano individualmente',
+    vatAllowanceText18:
+      'Applicazione del limite di franchigia secondo il valore per persone che viaggiano in gruppo',
+    vatAllowanceText19:
+      'Una persona può presentare un’unica dichiarazione doganale per più persone che viaggiano in gruppo con lei (p. es. con familiari, parenti, amici o conoscenti). Il dichiarante si assume quindi la responsabilità della dichiarazione doganale e deve versare eventuali tributi nonché assumersi la responsabilità penale qualora vengano constatate merci non dichiarate e si rende necessario avviare una procedura penale.',
+    vatAllowanceText20:
+      'Attenzione: Se il valore complessivo di tutte le merci trasportate dai viaggiatori supera la somma dei limiti di franchigia secondo il valore delle persone che viaggiano in gruppo, il dichiarante non ha diritto al limite di franchigia secondo il valore.',
+    vatAllowanceText21:
+      'Singoli oggetti il cui valore supera i 300 franchi sono soggetti all’IVA anche per le persone che viaggiano in gruppo.',
     vatAllowanceText22: 'Singoli oggetti di un valore superiore a 300 franchi',
-    vatAllowanceText23: 'Nel valutare se si tratta di un oggetto con un valore unitario superiore a 300 franchi o di più oggetti con un valore inferiore a 300 franchi, vale quanto segue:',
-    vatAllowanceText24: 'per merci non montate o non scomponibili:\n' +
+    vatAllowanceText23:
+      'Nel valutare se si tratta di un oggetto con un valore unitario superiore a 300 franchi o di più oggetti con un valore inferiore a 300 franchi, vale quanto segue:',
+    vatAllowanceText24:
+      'per merci non montate o non scomponibili:\n' +
       'un’unità di vendita = un oggetto',
-    vatAllowanceText25: 'per merci montate o scomponibili:\n' +
+    vatAllowanceText25:
+      'per merci montate o scomponibili:\n' +
       'merci montate o scomponibili = un oggetto (anche se i singoli componenti sono indicati separatamente sulla fattura)',
     vatAllowanceText26: 'Esempi',
-    vatAllowanceText27: '1.\tLa fattura d’acquisto per un computer è la seguente:',
-      vatAllowanceText28: '1 PC desktop\t\tCHF\t\t700',
-      vatAllowanceText29: '1 schiermo\t\tCHF\t\t200 ',
-      vatAllowanceText30: '1 tastiera\t\tCHF\t\t20',
-      vatAllowanceText31: 'Totale\tCHF 920',
+    vatAllowanceText27:
+      '1.\tLa fattura d’acquisto per un computer è la seguente:',
+    vatAllowanceText28: '1 PC desktop\t\tCHF\t\t700',
+    vatAllowanceText29: '1 schiermo\t\tCHF\t\t200 ',
+    vatAllowanceText30: '1 tastiera\t\tCHF\t\t20',
+    vatAllowanceText31: 'Totale\tCHF 920',
     vatAllowanceText32: '= 3 oggetti (tre unità di vendita)',
-    vatAllowanceText33: '2.\tLa fattura d’acquisto per un computer è la seguente:',
-      vatAllowanceText34: '1 Computer',
-      vatAllowanceText35: 'PC desktop',
-      vatAllowanceText36: 'schiermo',
-      vatAllowanceText37: 'tastiera',
-      vatAllowanceText38: 'Totale\tCHF 920',
+    vatAllowanceText33:
+      '2.\tLa fattura d’acquisto per un computer è la seguente:',
+    vatAllowanceText34: '1 Computer',
+    vatAllowanceText35: 'PC desktop',
+    vatAllowanceText36: 'schiermo',
+    vatAllowanceText37: 'tastiera',
+    vatAllowanceText38: 'Totale\tCHF 920',
     vatAllowanceText39: '= 1 oggetto (un’unità di vendita)',
-    vatAllowanceText40: '3.\tLa fattura d’acquisto per un paio di occhiali è la seguente:',
-      vatAllowanceText41: '2 lenti\t\t2 unità a CHF 200\t\tCHF 400',
-      vatAllowanceText42: '1 montatura\t\tCHF 300',
-      vatAllowanceText43: 'Totale\t\tCHF 700',
-      vatAllowanceText44: '= 1 oggetto (un oggetto scomponibile)',
+    vatAllowanceText40:
+      '3.\tLa fattura d’acquisto per un paio di occhiali è la seguente:',
+    vatAllowanceText41: '2 lenti\t\t2 unità a CHF 200\t\tCHF 400',
+    vatAllowanceText42: '1 montatura\t\tCHF 300',
+    vatAllowanceText43: 'Totale\t\tCHF 700',
+    vatAllowanceText44: '= 1 oggetto (un oggetto scomponibile)',
   },
 
   dutyAllowance: {
-    dutyAllowanceMainText: 'Quantità ammesse in franchigia: derrate alimentari, alcol e tabacco',
-    dutyAllowanceText1: 'Le merci importate per uso privato o come regali sono esenti da dazio. Costituiscono un’eccezione le cosiddette «merci sensibili» che, per motivi di politica agricola o sanitaria sono soggette a dazio a partire da una determinata quantità (vedi tabella sottostante). Le quantità ammesse in franchigia valgono per persona e al giorno.',
-    dutyAllowanceText2: 'Attenzione: Se il valore complessivo delle merci trasportate supera 300 franchi (compreso il valore di tutte le derrate alimentari), l’IVA è dovuta in ogni caso. Per maggiori informazioni cliccare qui.',
-    dutyAllowanceText3: 'Attenzione: Per determinati prodotti animali e alcuni prodotti vegetali esistono limitazioni supplementari.',
+    dutyAllowanceMainText:
+      'Quantità ammesse in franchigia: derrate alimentari, alcol e tabacco',
+    dutyAllowanceText1:
+      'Le merci importate per uso privato o come regali sono esenti da dazio. Costituiscono un’eccezione le cosiddette «merci sensibili» che, per motivi di politica agricola o sanitaria sono soggette a dazio a partire da una determinata quantità (vedi tabella sottostante). Le quantità ammesse in franchigia valgono per persona e al giorno.',
+    dutyAllowanceText2:
+      'Attenzione: Se il valore complessivo delle merci trasportate supera 300 franchi (compreso il valore di tutte le derrate alimentari), l’IVA è dovuta in ogni caso. Per maggiori informazioni cliccare qui.',
+    dutyAllowanceText3:
+      'Attenzione: Per determinati prodotti animali e alcuni prodotti vegetali esistono limitazioni supplementari.',
     dutyAllowanceText4: 'Carne e preparazioni di carne',
-    dutyAllowanceText5: 'Ad eccezione di selvaggina, pesci, crostacei, molluschi e altri invertebrati acquatici rientrano in questa categoria:',
-    dutyAllowanceText6: 'tutte le parti di animali idonee all’alimentazione umana (con o senza ossa);',
+    dutyAllowanceText5:
+      'Ad eccezione di selvaggina, pesci, crostacei, molluschi e altri invertebrati acquatici rientrano in questa categoria:',
+    dutyAllowanceText6:
+      'tutte le parti di animali idonee all’alimentazione umana (con o senza ossa);',
     dutyAllowanceText7: 'salsicce a base di carne o sangue;',
     dutyAllowanceText8: 'altri prodotti a base di carne;',
-    dutyAllowanceText9: 'preparazioni alimentari contenenti oltre il 20 per cento in peso di salsicce, carne o sangue.',
-    dutyAllowanceText10: 'Non rientrano in questa categoria il midollo e le ossa impiegate per produrre salse nonché gli alimenti per cani e gatti confezionati come tali in imballaggi per la vendita al minuto.',
-    dutyAllowanceText11: 'È vietata l’importazione di prodotti animali provenienti da Paesi diversi da Islanda, Norvegia o Stati membri dell’UE.',
-    dutyAllowanceText12: 'Quantità ammesse in franchigia (per persona e giorno):',
+    dutyAllowanceText9:
+      'preparazioni alimentari contenenti oltre il 20 per cento in peso di salsicce, carne o sangue.',
+    dutyAllowanceText10:
+      'Non rientrano in questa categoria il midollo e le ossa impiegate per produrre salse nonché gli alimenti per cani e gatti confezionati come tali in imballaggi per la vendita al minuto.',
+    dutyAllowanceText11:
+      'È vietata l’importazione di prodotti animali provenienti da Paesi diversi da Islanda, Norvegia o Stati membri dell’UE.',
+    dutyAllowanceText12:
+      'Quantità ammesse in franchigia (per persona e giorno):',
     dutyAllowanceText13: 'complessivamente 1 kg',
     dutyAllowanceText14: 'Tributi doganali per le quantità eccedenti (in CHF):',
     dutyAllowanceText15: 'fino a 10 kg: 17.- al kg',
     dutyAllowanceText16: 'oltre i 10 kg: 23.- al kg',
     dutyAllowanceText17: 'Burro e crema di latte',
-    dutyAllowanceText18: 'È vietata l’importazione di prodotti animali provenienti da Paesi diversi da Islanda, Norvegia o Stati membri dell’UE.',
-    dutyAllowanceText19: 'Quantità ammesse in franchigia (per persona e giorno):',
+    dutyAllowanceText18:
+      'È vietata l’importazione di prodotti animali provenienti da Paesi diversi da Islanda, Norvegia o Stati membri dell’UE.',
+    dutyAllowanceText19:
+      'Quantità ammesse in franchigia (per persona e giorno):',
     dutyAllowanceText20: 'complessivamente 1 kg/l',
     dutyAllowanceText21: 'Tributi doganali per le quantità eccedenti (in CHF):',
     dutyAllowanceText22: '16.- al kg/l',
     dutyAllowanceText23: 'Oli, grassi e margarina per l’alimentazione umana',
-    dutyAllowanceText24: 'È vietata l’importazione di prodotti animali provenienti da Paesi diversi da Islanda, Norvegia o Stati membri dell’UE.',
-    dutyAllowanceText25: 'Quantità ammesse in franchigia (per persona e giorno):',
+    dutyAllowanceText24:
+      'È vietata l’importazione di prodotti animali provenienti da Paesi diversi da Islanda, Norvegia o Stati membri dell’UE.',
+    dutyAllowanceText25:
+      'Quantità ammesse in franchigia (per persona e giorno):',
     dutyAllowanceText26: 'complessivamente 5 kg/l',
     dutyAllowanceText27: 'Tributi doganali per le quantità eccedenti (in CHF):',
     dutyAllowanceText28: '2.- al kg/l',
     dutyAllowanceText29: 'Bevande alcoliche',
-    dutyAllowanceText30: 'Quantità ammesse in franchigia (per persona e giorno):\n'+
-    '(età minima: 17 anni)',
+    dutyAllowanceText30:
+      'Quantità ammesse in franchigia (per persona e giorno):\n' +
+      '(età minima: 17 anni)',
     dutyAllowanceText31: 'con tenore alcolico fino a 18 % vol.: 5 litri',
     dutyAllowanceText32: 'con tenore alcolico superiore a 18 % vol.: 1 litro',
     dutyAllowanceText33: 'Tributi doganali per le quantità eccedenti (in CHF):',
     dutyAllowanceText34: 'con tenore alcolico fino a 18 % vol.: 2.- al litro',
-    dutyAllowanceText35: 'con tenore alcolico superiore a 18 % vol.: 15.- al litro',
+    dutyAllowanceText35:
+      'con tenore alcolico superiore a 18 % vol.: 15.- al litro',
     dutyAllowanceText36: 'Tabacchi manufatti',
-    dutyAllowanceText37: 'Quantità ammesse in franchigia (per persona e giorno):\n' +
-    '(età minima: 17 anni)',
+    dutyAllowanceText37:
+      'Quantità ammesse in franchigia (per persona e giorno):\n' +
+      '(età minima: 17 anni)',
     dutyAllowanceText38: 'sigarette/sigari: 250 pezzi o',
     dutyAllowanceText39: 'altri tabacchi manufatti : 250 g',
-    dutyAllowanceText40: 'oppure una scelta di questi prodotti in quantità proporzionate',
+    dutyAllowanceText40:
+      'oppure una scelta di questi prodotti in quantità proporzionate',
     dutyAllowanceText41: 'Tributi doganali per le quantità eccedenti (in CHF):',
     dutyAllowanceText42: 'sigarette/sigari: 0.25 al pezzo',
     dutyAllowanceText43: 'sigarette/sigari: 0.25 al pezzo',
     dutyAllowanceText44: 'Altre derrate alimentari o merci',
-    dutyAllowanceText45: 'È vietata l’importazione di prodotti animali provenienti da Paesi diversi da Islanda, Norvegia o Stati membri dell’UE. Esenti da dazio',
-    dutyAllowanceText46: 'Merci ordinate all’estero e recapitate per posta o corriere',
-    dutyAllowanceText47: 'Per le merci ordinate all’estero (p. es. in Internet) e recapitate per posta o corriere valgono altre disposizioni. Per ulteriori informazioni cliccare qui.',
+    dutyAllowanceText45:
+      'È vietata l’importazione di prodotti animali provenienti da Paesi diversi da Islanda, Norvegia o Stati membri dell’UE. Esenti da dazio',
+    dutyAllowanceText46:
+      'Merci ordinate all’estero e recapitate per posta o corriere',
+    dutyAllowanceText47:
+      'Per le merci ordinate all’estero (p. es. in Internet) e recapitate per posta o corriere valgono altre disposizioni. Per ulteriori informazioni cliccare qui.',
   },
 
   personalEffects: {
     personalEffectsMainText: 'Oggetti d’uso personale e provviste da viaggio',
-    personalEffectsText1: 'Gli oggetti d’uso personale e le provviste da viaggio possono essere importate in esenzione da tributi.',
+    personalEffectsText1:
+      'Gli oggetti d’uso personale e le provviste da viaggio possono essere importate in esenzione da tributi.',
     personalEffectsText2: 'Oggetti d’uso personale',
-    personalEffectsText3: 'Come tali si intendono gli oggetti d’uso personale che:',
-    personalEffectsText4: 'le persone domiciliate in Svizzera hanno portato con sé all’atto dell’uscita;',
-    personalEffectsText5: 'le persone domicialiate all’estero utilizzano durante il soggiorno in Svizzera e poi riesportano. Tra questi rientrano abiti, biancheria, articoli da toeletta, articoli sportivi, apparecchi fotografici, cineprese, videocamere, telefoni cellulari, computer portatili, strumenti musicali e altri oggetti personali d’uso corrente.',
+    personalEffectsText3:
+      'Come tali si intendono gli oggetti d’uso personale che:',
+    personalEffectsText4:
+      'le persone domiciliate in Svizzera hanno portato con sé all’atto dell’uscita;',
+    personalEffectsText5:
+      'le persone domicialiate all’estero utilizzano durante il soggiorno in Svizzera e poi riesportano. Tra questi rientrano abiti, biancheria, articoli da toeletta, articoli sportivi, apparecchi fotografici, cineprese, videocamere, telefoni cellulari, computer portatili, strumenti musicali e altri oggetti personali d’uso corrente.',
     personalEffectsText6: 'Provviste da viaggio',
-    personalEffectsText7: 'Come tali sono intese le derrate alimentari e le bevande analcoliche pronte per l’uso durante il viaggio.',
+    personalEffectsText7:
+      'Come tali sono intese le derrate alimentari e le bevande analcoliche pronte per l’uso durante il viaggio.',
   },
 
   foreignVat: {
     foreignVatMainText: 'Restituzione dell’IVA estera',
-    foreignVatText1: 'L’Amministrazione federale delle dogane non può restituire l’IVA estera.',
-    foreignVatText2: 'Durante il trasporto in Svizzera di merci acquistate all’estero e destinate all’uso privato, si ha spesso la possibilità di farsi restituire l’IVA estera dal venditore o da una società «Tax Refund». Queste società di servizio non hanno nulla a che vedere con l’Amministrazione federale delle dogane, in particolare non lavorano su nostro incarico.',
-    foreignVatText3: 'Per quanto riguarda la restituzione ogni Stato applica le proprie condizioni. Se del caso, il venditore compila un modulo di restiuzione sul quale l’autorità doganale estera conferma l’esportazione in Svizzera.',
-    foreignVatText4: 'Non siamo in grado di fornire ulteriori informazioni in merito alla restituzione dell’IVA estera. A tale proposito occorre rivolgersi alla rispettiva autorità doganale. Le autorità doganali estere sono reperibili al seguente link dell’Organizzazione mondiale delle dogane: www.wcoomd.org',
-    foreignVatText5: 'L’IVA svizzera è dovuta anche nel caso in cui quella estera non viene restituita. Nell’ambito dell’IVA non esiste una convenzione di doppia imposizione.',
+    foreignVatText1:
+      'L’Amministrazione federale delle dogane non può restituire l’IVA estera.',
+    foreignVatText2:
+      'Durante il trasporto in Svizzera di merci acquistate all’estero e destinate all’uso privato, si ha spesso la possibilità di farsi restituire l’IVA estera dal venditore o da una società «Tax Refund». Queste società di servizio non hanno nulla a che vedere con l’Amministrazione federale delle dogane, in particolare non lavorano su nostro incarico.',
+    foreignVatText3:
+      'Per quanto riguarda la restituzione ogni Stato applica le proprie condizioni. Se del caso, il venditore compila un modulo di restiuzione sul quale l’autorità doganale estera conferma l’esportazione in Svizzera.',
+    foreignVatText4:
+      'Non siamo in grado di fornire ulteriori informazioni in merito alla restituzione dell’IVA estera. A tale proposito occorre rivolgersi alla rispettiva autorità doganale. Le autorità doganali estere sono reperibili al seguente link dell’Organizzazione mondiale delle dogane: www.wcoomd.org',
+    foreignVatText5:
+      'L’IVA svizzera è dovuta anche nel caso in cui quella estera non viene restituita. Nell’ambito dell’IVA non esiste una convenzione di doppia imposizione.',
   },
 
   animals: {
     animalsMainText: 'Animali: animali da compagnia, cani, gatti e cavalli',
-    animalsText1: 'Ulteriori informazioni in merito a cani, gatti e altri animali da compagnia nonché ai cavalli sono disponibili presso l’Ufficio federale della sicurezza alimentare e di veterinaria (USAV): https://www.blv.admin.ch',
+    animalsText1:
+      'Ulteriori informazioni in merito a cani, gatti e altri animali da compagnia nonché ai cavalli sono disponibili presso l’Ufficio federale della sicurezza alimentare e di veterinaria (USAV): https://www.blv.admin.ch',
     animalsText2: 'Tributi',
-    animalsText3: 'Se si supera il limite di franchigia secondo il valore di 300 franchi, per gli animali è dovuta l’IVA. Per informazioni dettagliate consultare la rubrica:',
+    animalsText3:
+      'Se si supera il limite di franchigia secondo il valore di 300 franchi, per gli animali è dovuta l’IVA. Per informazioni dettagliate consultare la rubrica:',
     animalsText4: 'Limite di franchigia secondo il valore di 300 franchi',
   },
 
   plants: {
     plantsMainText: 'Piante',
-    plantsText1: '1.\tPiante e prodotti vegetali vietati\n' +
-    'Le piante qui di seguito possono essere vettori di organismi nocivi (fuoco batterico, cancro della corteccia del castagno, virosi ecc.), pertanto la loro importazione è vietata.',
-      plantsText2: 'a) Importazione vietata da tutti i Paesi',
-      plantsText3: 'Cotognastro (Cotoneaster)',
+    plantsText1:
+      '1.\tPiante e prodotti vegetali vietati\n' +
+      'Le piante qui di seguito possono essere vettori di organismi nocivi (fuoco batterico, cancro della corteccia del castagno, virosi ecc.), pertanto la loro importazione è vietata.',
+    plantsText2: 'a) Importazione vietata da tutti i Paesi',
+    plantsText3: 'Cotognastro (Cotoneaster)',
     plantsText4: 'Photinia davidiana (sin. Stranvaesia davidiana)',
-    plantsText5: 'b) È vietata l’importazione da Paesi diversi da Islanda, Norvegia o Stati membri dell’UE.',
+    plantsText5:
+      'b) È vietata l’importazione da Paesi diversi da Islanda, Norvegia o Stati membri dell’UE.',
     plantsText6: 'Agazzino (Pyracantha)',
     plantsText7: 'Agrumi (Citrus)',
     plantsText8: 'Arancio trifogliato (Poncirus)',
@@ -384,62 +445,89 @@ export const it: Locale = {
     plantsText17: 'Nesposolo del Giappone (Eriobotrya japonica)',
     plantsText18: 'Patate e solanacee (Solanacea)',
     plantsText19: 'Pero (Pyrus)',
-    plantsText20: 'Piante da frutta a nocciolo (albicocco, ciliegio, mandorlo, pesco e prugno) e tutte le forme decorative della specie Prunus',
+    plantsText20:
+      'Piante da frutta a nocciolo (albicocco, ciliegio, mandorlo, pesco e prugno) e tutte le forme decorative della specie Prunus',
     plantsText21: 'Quercia (Quercus)',
     plantsText22: 'Rose',
     plantsText23: 'Sorbo o sorbo degli uccellatori e farinaccio (Sorbus)',
     plantsText24: 'Viti (Vitis)',
-    plantsText25: '2.\tAltre piante e prodotti vegetali (comprese frutta e verdura)',
-    plantsText26: 'a) Importazione da Paesi diversi da Norvegia, Islanda o Stati membri dell’UE\n' +
+    plantsText25:
+      '2.\tAltre piante e prodotti vegetali (comprese frutta e verdura)',
+    plantsText26:
+      'a) Importazione da Paesi diversi da Norvegia, Islanda o Stati membri dell’UE\n' +
       'È consentito importare piante senza autorizzazione, a condizione che siano importate nel traffico turistico e per uso personale.',
-    plantsText27: 'b) Importazione da tutti gli Stati non membri dell’UE, da Norvegia e Islanda\n' +
+    plantsText27:
+      'b) Importazione da tutti gli Stati non membri dell’UE, da Norvegia e Islanda\n' +
       'Le piante (vive o come prodotti vegetali) possono essere soggette all’obbligo del permesso d’importazione.',
-    plantsText28: 'Per l’importazione di piante da questi Stati occorre informarsi sulle disposizioni vigenti presso l’Ufficio federale dell’agricoltura: www.blw.admin.ch',
-    plantsText29: 'Eccezione: Per persona possono essere importati fiori recisi e mazzi di fiori fino a un massimo di 3 chilogrammi nonché frutta e verdura (tranne le patate) fino a un massimo di 10 chilogrammi senza adozione di provvedimenti fitosanitari',
+    plantsText28:
+      'Per l’importazione di piante da questi Stati occorre informarsi sulle disposizioni vigenti presso l’Ufficio federale dell’agricoltura: www.blw.admin.ch',
+    plantsText29:
+      'Eccezione: Per persona possono essere importati fiori recisi e mazzi di fiori fino a un massimo di 3 chilogrammi nonché frutta e verdura (tranne le patate) fino a un massimo di 10 chilogrammi senza adozione di provvedimenti fitosanitari',
     plantsText30: 'Tributi',
-    plantsText31: 'Se si supera il limite di franchigia secondo il valore di 300 franchi, per le piante è dovuta l’IVA. Per informazioni dettagliate consultare la rubrica: Limite di franchigia secondo il valore di 300 franchi',
+    plantsText31:
+      'Se si supera il limite di franchigia secondo il valore di 300 franchi, per le piante è dovuta l’IVA. Per informazioni dettagliate consultare la rubrica: Limite di franchigia secondo il valore di 300 franchi',
   },
 
   souvenirsAndSpeciesProtection: {
-    souvenirsAndSpeciesProtectionMainText: 'Souvenir e conservazione delle specie (CITES)',
+    souvenirsAndSpeciesProtectionMainText:
+      'Souvenir e conservazione delle specie (CITES)',
     souvenirsAndSpeciesProtectionText1: 'Souvenir',
-    souvenirsAndSpeciesProtectionText2: 'Cinture in pelle d’elefante, acchiappasogni con piume di uccello o bastoncini d’incenso in legno di sandalo: la gamma di souvenir è varia. Nel caso di molti oggetti non è subito evidente che sono stati fabbricati con animali o piante protetti (p. es. legno tropicale). Molti oggetti non possono però essere importati in Svizzera. Si consiglia di informarsi già prima delle vacanze quali souvenir sono adeguati e quali invece è meglio lasciare nel luogo di vacanza.',
+    souvenirsAndSpeciesProtectionText2:
+      'Cinture in pelle d’elefante, acchiappasogni con piume di uccello o bastoncini d’incenso in legno di sandalo: la gamma di souvenir è varia. Nel caso di molti oggetti non è subito evidente che sono stati fabbricati con animali o piante protetti (p. es. legno tropicale). Molti oggetti non possono però essere importati in Svizzera. Si consiglia di informarsi già prima delle vacanze quali souvenir sono adeguati e quali invece è meglio lasciare nel luogo di vacanza.',
     souvenirsAndSpeciesProtectionText3: 'Animali protetti',
-    souvenirsAndSpeciesProtectionText4: 'L’importazione di animali protetti è vietata o soggetta ad autorizzazione (vi rientrano p. es. serpenti, lucertole, tartarughe, pappagalli, avorio, scaglie di tartaruga, varie pelli da pellicceria).',
-    souvenirsAndSpeciesProtectionText5: 'All’atto dell’importazione, al posto di controllo CITES deve essere presentata un’autorizzazione d’esportazione o un certificato di riesportazione rilasciati dall’autorità CITES del Paese di provenienza.',
+    souvenirsAndSpeciesProtectionText4:
+      'L’importazione di animali protetti è vietata o soggetta ad autorizzazione (vi rientrano p. es. serpenti, lucertole, tartarughe, pappagalli, avorio, scaglie di tartaruga, varie pelli da pellicceria).',
+    souvenirsAndSpeciesProtectionText5:
+      'All’atto dell’importazione, al posto di controllo CITES deve essere presentata un’autorizzazione d’esportazione o un certificato di riesportazione rilasciati dall’autorità CITES del Paese di provenienza.',
     souvenirsAndSpeciesProtectionText6: 'Piante protette',
-    souvenirsAndSpeciesProtectionText7: 'L’importazione di piante protette o di loro prodotti è vietata o soggetta ad autorizzazione (p. es. orchidee, cactus, determinati legni e piante medicinali).',
-    souvenirsAndSpeciesProtectionText8: 'Informazioni e autorizzazioni sono rilasciate dall’USAV: www.blv.admin.ch',
+    souvenirsAndSpeciesProtectionText7:
+      'L’importazione di piante protette o di loro prodotti è vietata o soggetta ad autorizzazione (p. es. orchidee, cactus, determinati legni e piante medicinali).',
+    souvenirsAndSpeciesProtectionText8:
+      'Informazioni e autorizzazioni sono rilasciate dall’USAV: www.blv.admin.ch',
   },
 
   highwayVignette: {
     highwayVignetteMainText: 'Contrassegno autostradale',
-    highwayVignetteText1: 'L’utilizzo di autostrade e semiautostrade con veicoli a motore e rimorchi fino a 3,5 tonnellate è soggetto al pagamento di una tassa. Il prezzo di vendita del contrassegno autostradale è di 40 franchi.',
+    highwayVignetteText1:
+      'L’utilizzo di autostrade e semiautostrade con veicoli a motore e rimorchi fino a 3,5 tonnellate è soggetto al pagamento di una tassa. Il prezzo di vendita del contrassegno autostradale è di 40 franchi.',
     highwayVignetteText2: 'Punti vendita',
-    highwayVignetteText3: 'In Svizzera il contrassegno autostradale è in vendita per esempio presso gli uffici postali o le stazioni di servizio.',
-    highwayVignetteText4: 'Nei valichi di confine occupati il contrassegno può essere acquistato con carta di credito o in contanti (CHF, EUR, USD, GBP) presso il personale doganale.',
-    highwayVignetteText5: 'All’estero il contrassegno autostradale è in vendita presso i club automobilistici e nelle vicinanze del confine svizzero anche presso le stazioni di servizio sulle autostrade, nei chioschi o presso i tabaccai (Austria).',
+    highwayVignetteText3:
+      'In Svizzera il contrassegno autostradale è in vendita per esempio presso gli uffici postali o le stazioni di servizio.',
+    highwayVignetteText4:
+      'Nei valichi di confine occupati il contrassegno può essere acquistato con carta di credito o in contanti (CHF, EUR, USD, GBP) presso il personale doganale.',
+    highwayVignetteText5:
+      'All’estero il contrassegno autostradale è in vendita presso i club automobilistici e nelle vicinanze del confine svizzero anche presso le stazioni di servizio sulle autostrade, nei chioschi o presso i tabaccai (Austria).',
     highwayVignetteText6: 'Fissazione del contrassegno autostradale',
-    highwayVignetteText7: 'Il contrassegno è valido solo se incollato sul veicolo come segue:',
-    highwayVignetteText8: 'negli autoveicoli sul lato interno del parabrezza (non nella fascia oscurante);',
-    highwayVignetteText9: 'per rimorchi e motoveicoli, su una parte non intercambiabile e facilmente accessibile.',
-    highwayVignetteText10: 'I contrassegni fissati solo con nastro adesivo o in altro modo non sono validi. Se sulle autostrade e le semiautostrade si circola senza contrassegno o con un contrassegno non valido viene inflitta una multa di 200 franchi. Inoltre deve essere acquistato un contrassegno e fissato al veicolo.',
+    highwayVignetteText7:
+      'Il contrassegno è valido solo se incollato sul veicolo come segue:',
+    highwayVignetteText8:
+      'negli autoveicoli sul lato interno del parabrezza (non nella fascia oscurante);',
+    highwayVignetteText9:
+      'per rimorchi e motoveicoli, su una parte non intercambiabile e facilmente accessibile.',
+    highwayVignetteText10:
+      'I contrassegni fissati solo con nastro adesivo o in altro modo non sono validi. Se sulle autostrade e le semiautostrade si circola senza contrassegno o con un contrassegno non valido viene inflitta una multa di 200 franchi. Inoltre deve essere acquistato un contrassegno e fissato al veicolo.',
   },
 
   roadTax: {
-    roadTaxMainText: 'Tassa sul traffico stradale per veicoli di peso superiore alle 3,5 t (TFTP)',
-    roadTaxText1: 'In Svizzera gli autoveicoli e i rimorchi con un peso totale eccedente le 3,5 tonnellate sono soggetti a una tassa sul traffico pesante. Per i pullman, i camper pesanti, le automobili pesanti e per i loro rimorchi eccedenti le 3,5 tonnellate, la tassa è forfetaria e riscossa al giorno.',
-    roadTaxText2: 'Contrariamente al contrassegno autostradale, la tassa sul traffico pesante è dovuta sull’intera rete stradale e non solo sulle autostrade.',
+    roadTaxMainText:
+      'Tassa sul traffico stradale per veicoli di peso superiore alle 3,5 t (TFTP)',
+    roadTaxText1:
+      'In Svizzera gli autoveicoli e i rimorchi con un peso totale eccedente le 3,5 tonnellate sono soggetti a una tassa sul traffico pesante. Per i pullman, i camper pesanti, le automobili pesanti e per i loro rimorchi eccedenti le 3,5 tonnellate, la tassa è forfetaria e riscossa al giorno.',
+    roadTaxText2:
+      'Contrariamente al contrassegno autostradale, la tassa sul traffico pesante è dovuta sull’intera rete stradale e non solo sulle autostrade.',
     roadTaxText3: 'Per gli autocarri e i loro rimorchi vedi: www.lsva.ch',
-    roadTaxText4: 'Attenzione: L’autoveicolo è soggetto alla TFTP anche se è spento e non viene spostato (p. es. camper in un campeggio).',
+    roadTaxText4:
+      'Attenzione: L’autoveicolo è soggetto alla TFTP anche se è spento e non viene spostato (p. es. camper in un campeggio).',
     roadTaxText5: 'Pagamento e tariffe',
-    roadTaxText6: 'Rappresentano la base di calcolo: il peso totale e il carico rimorchiabile del veicolo trattore come indicato nella licenza di circolazione nonché il periodo di tassazione.',
+    roadTaxText6:
+      'Rappresentano la base di calcolo: il peso totale e il carico rimorchiabile del veicolo trattore come indicato nella licenza di circolazione nonché il periodo di tassazione.',
     roadTaxText7: 'Vi sono diverse possibilità di versare la TFTP:',
     roadTaxText8: 'per 1 fino a 30 giorni consecutivi;',
     roadTaxText9: 'per 10 giorni a scelta durante un anno;',
     roadTaxText10: 'per 1 fino a 11 mesi consecutivi;',
     roadTaxText11: 'per 1 anno.',
-    roadTaxText12: 'Le tariffe figurano sul modulo 15.91 disponibile presso gli uffici doganali. Per gli autoveicoli esteri la tassa sul traffico pesante viene riscossa all’entrata presso il valico di confine. Il modulo munito di timbro funge da prova dell’avvenuto pagamento. Se si desidera prolungare il soggiorno in Svizzera occorre rivolgersi a un ufficio doganale svizzero.',
+    roadTaxText12:
+      'Le tariffe figurano sul modulo 15.91 disponibile presso gli uffici doganali. Per gli autoveicoli esteri la tassa sul traffico pesante viene riscossa all’entrata presso il valico di confine. Il modulo munito di timbro funge da prova dell’avvenuto pagamento. Se si desidera prolungare il soggiorno in Svizzera occorre rivolgersi a un ufficio doganale svizzero.',
     roadTaxText13: 'Attenzione',
     roadTaxText14: 'Tassa minima per prova del pagamento: 25 franchi.',
     roadTaxText15: 'Tariffe mensili e annuali secondo il modulo 15.91.',
@@ -448,10 +536,13 @@ export const it: Locale = {
   fuelAndRepairs: {
     fuelAndRepairsMainText: 'Carburante e riparazioni',
     fuelAndRepairsText1: 'Carburante per veicoli',
-    fuelAndRepairsText2: 'Il contenuto del serbatoio è esente da tributi. In bidoni di scorta possono essere importati esenti da tributi fino a 25 litri di carburante. Per ogni litro supplementare si applicano un dazio di 0.75 franchi nonché l’IVA sul valore del carburante.',
+    fuelAndRepairsText2:
+      'Il contenuto del serbatoio è esente da tributi. In bidoni di scorta possono essere importati esenti da tributi fino a 25 litri di carburante. Per ogni litro supplementare si applicano un dazio di 0.75 franchi nonché l’IVA sul valore del carburante.',
     fuelAndRepairsText3: 'Riparazione e costi di manutenzione',
-    fuelAndRepairsText4: 'Se il limite di franchigia secondo il valore di 300 franchi viene superato, l’IVA è dovuta per tutti i costi di riparazione e manutenzione (riparazioni di veicoli, apparecchi elettronici, mobili, gioielli ecc.). Per informazioni dettagliate consultare la rubrica:',
-    fuelAndRepairsText5: 'Limite di franchigia secondo il valore di 300 franchi',
+    fuelAndRepairsText4:
+      'Se il limite di franchigia secondo il valore di 300 franchi viene superato, l’IVA è dovuta per tutti i costi di riparazione e manutenzione (riparazioni di veicoli, apparecchi elettronici, mobili, gioielli ecc.). Per informazioni dettagliate consultare la rubrica:',
+    fuelAndRepairsText5:
+      'Limite di franchigia secondo il valore di 300 franchi',
   },
 
   entryByTrain: {
@@ -477,68 +568,97 @@ export const it: Locale = {
 
   forgery: {
     forgeryMainText: 'Contraffazioni',
-    forgeryText1: 'È vietata l’importazione di marchi e design contraffatti. La dogana svizzera è tenuta a sequestrare le contraffazioni e a provvedere alla loro distruzione. È irrilevante se gli oggetti sono nuovi o usati.',
+    forgeryText1:
+      'È vietata l’importazione di marchi e design contraffatti. La dogana svizzera è tenuta a sequestrare le contraffazioni e a provvedere alla loro distruzione. È irrilevante se gli oggetti sono nuovi o usati.',
     forgeryText2: 'Acquisto all’estero di gioielli e orologi',
-    forgeryText3: 'Chi acquista orologi o gioielli deve fare molta attenzione: spesso, in occasione di controlli, quello che sembrava essere un affare si rivela un oggetto difettoso o addirittura una contraffazione.',
+    forgeryText3:
+      'Chi acquista orologi o gioielli deve fare molta attenzione: spesso, in occasione di controlli, quello che sembrava essere un affare si rivela un oggetto difettoso o addirittura una contraffazione.',
     forgeryText4: 'Come riconoscere orologi e gioielli contraffatti',
-    forgeryText5: 'Anche un gioiello molto caro può essere contraffatto. Neanche l’indicazione del titolo ne garantisce l’autenticità. Si consiglia quindi di acquistare orologi e gioielli solo in negozi specializzati riconosciuti.',
-    forgeryText6: 'Ulteriori informazioni sulla pirateria dei prodotti e sullla contraffazione sono disponibili sulla Piattaforma svizzera di lotta alla contraffazione e alla pirateria STOP ALLA PIRATERIA: www.stop-piracy.ch',
+    forgeryText5:
+      'Anche un gioiello molto caro può essere contraffatto. Neanche l’indicazione del titolo ne garantisce l’autenticità. Si consiglia quindi di acquistare orologi e gioielli solo in negozi specializzati riconosciuti.',
+    forgeryText6:
+      'Ulteriori informazioni sulla pirateria dei prodotti e sullla contraffazione sono disponibili sulla Piattaforma svizzera di lotta alla contraffazione e alla pirateria STOP ALLA PIRATERIA: www.stop-piracy.ch',
   },
 
   cash: {
     cashMainText: 'Contanti (liquidità)',
-    cashText1: 'All’atto dell’importazione, dell’esportazione e del transito di liquidità (denaro contante, titoli di credito ecc.), per importi superiori a 10 000 franchi, se richiesto occorre fornire informazioni su provenienza, scopo d’impiego e avente economicamente diritto.',
-    cashText2: 'Sono fatti salvi ulteriori provvedimenti in materia di lotta alla criminalità.',
+    cashText1:
+      'All’atto dell’importazione, dell’esportazione e del transito di liquidità (denaro contante, titoli di credito ecc.), per importi superiori a 10 000 franchi, se richiesto occorre fornire informazioni su provenienza, scopo d’impiego e avente economicamente diritto.',
+    cashText2:
+      'Sono fatti salvi ulteriori provvedimenti in materia di lotta alla criminalità.',
   },
 
   food: {
     foodMainText: 'Limitazioni per derrate alimentari',
-    foodText1: 'Le merci di origine animale provenienti dagli Stati dell’UE, dall’Islanda e dalla Norvegia destinate all’uso privato possono essere importate senza il controllo da parte del veterinario di confine, ma non possono essere messe in vendita.',
-    foodText2: 'In linea di massima, l’importazione di merci di origine animale da altri Stati è vietata.\n' +
-        'Le eccezioni per determinati alimenti sono disponibili sul sito Internet dell’USAV:',
+    foodText1:
+      'Le merci di origine animale provenienti dagli Stati dell’UE, dall’Islanda e dalla Norvegia destinate all’uso privato possono essere importate senza il controllo da parte del veterinario di confine, ma non possono essere messe in vendita.',
+    foodText2:
+      'In linea di massima, l’importazione di merci di origine animale da altri Stati è vietata.\n' +
+      'Le eccezioni per determinati alimenti sono disponibili sul sito Internet dell’USAV:',
     foodText3: 'Importazione di alimenti nel traffico turistico',
     foodText4: 'Ulteriori limitazioni per le specie animali protette',
-    foodText5: 'L’importazione di prodotti animali appartenenti a specie animali protette è vietata da tutti gli Stati. Per il caviale di storione vige una tolleranza d’importazione di 125 grammi per persona al giorno.',
+    foodText5:
+      'L’importazione di prodotti animali appartenenti a specie animali protette è vietata da tutti gli Stati. Per il caviale di storione vige una tolleranza d’importazione di 125 grammi per persona al giorno.',
     foodText6: 'Tributi doganali e IVA',
-    foodText7: 'Se il limite di franchigia secondo il valore di 300 franchi o la quantità ammessa in franchigia per determinati alimenti viene superato, occorre versare l’IVA e/o il dazio. Per informazioni dettagliate consultare le rubriche:',
+    foodText7:
+      'Se il limite di franchigia secondo il valore di 300 franchi o la quantità ammessa in franchigia per determinati alimenti viene superato, occorre versare l’IVA e/o il dazio. Per informazioni dettagliate consultare le rubriche:',
     foodText8: 'Limite di franchigia secondo il valore di 300 franchi',
-    foodText9: 'Quantità ammesse in franchigia: derrate alimentari, alcol e tabacco',
+    foodText9:
+      'Quantità ammesse in franchigia: derrate alimentari, alcol e tabacco',
   },
 
   authorisationRequirements: {
-    authorisationRequirementsMainText: 'Merci soggette ad autorizzazione o limitazione',
-    authorisationRequirementsText1: 'L’importazione di alcune merci è limitata e possibile solo a determinate condizioni (p. es. previa autorizzazione); per alcuni prodotti vige addirittura il divieto assoluto d’importazione.',
-    authorisationRequirementsText2: 'In particolare sono soggette a limitazioni le seguenti merci (elenco non esaustivo):',
-    authorisationRequirementsText3: 'armi (armi da fuoco, coltelli, dispositivi che producono un elettrochoc, spray lacrimogeni, bastoni da combattimento ecc.);',
+    authorisationRequirementsMainText:
+      'Merci soggette ad autorizzazione o limitazione',
+    authorisationRequirementsText1:
+      'L’importazione di alcune merci è limitata e possibile solo a determinate condizioni (p. es. previa autorizzazione); per alcuni prodotti vige addirittura il divieto assoluto d’importazione.',
+    authorisationRequirementsText2:
+      'In particolare sono soggette a limitazioni le seguenti merci (elenco non esaustivo):',
+    authorisationRequirementsText3:
+      'armi (armi da fuoco, coltelli, dispositivi che producono un elettrochoc, spray lacrimogeni, bastoni da combattimento ecc.);',
     authorisationRequirementsText4: 'rivelatori di radar;',
     authorisationRequirementsText5: 'stupefacenti;',
-    authorisationRequirementsText6: 'medicamenti che superano il fabbisogno personale di un mese;',
+    authorisationRequirementsText6:
+      'medicamenti che superano il fabbisogno personale di un mese;',
     authorisationRequirementsText7: 'prodotti dopanti;',
     authorisationRequirementsText8: 'merci con rappresentazioni violente;',
-    authorisationRequirementsText9: 'merci con rappresentazioni pornografiche vietate;',
-    authorisationRequirementsText10: 'articoli di marca e di design contraffatti, copie pirata;',
+    authorisationRequirementsText9:
+      'merci con rappresentazioni pornografiche vietate;',
+    authorisationRequirementsText10:
+      'articoli di marca e di design contraffatti, copie pirata;',
     authorisationRequirementsText11: 'beni culturali.',
   },
 
   purchasesOnlineOffline: {
-    purchasesOnlineOfflineMainText: 'Acquisti in Internet, invii postali e di corriere',
-    purchasesOnlineOfflineText1: 'In linea di massima gli invii dall’estero sono soggetti a dazio e IVA. Qui di seguito un esempio di come eseguire un calcolo dei costi e di cosa bisogna tener conto al momento dell’importazione.',
-    purchasesOnlineOfflineText2: 'Un calcolo definitivo non è possibile in quanto non siamo a conoscenza a priori dei costi dei trasportatori, per esempio della posta. In genere i costi vengono fatturati al destinatario insieme ai tributi doganali e alle imposte (p. es. IVA). Si consiglia di informarsi presso la relativa impresa di trasporti.',
-    purchasesOnlineOfflineText3: 'Gli invii regalo spediti da privati all’estero a privati in Svizzera sono esenti da tributi fino a un valore di 100 franchi, ad eccezione dei tabacchi manufatti e delle bevande alcoliche. Il mittente deve obbligatoriamente apporre un’annotazione sul pacco o sulla lettera.',
-    purchasesOnlineOfflineText4: 'Esempi di calcolo – Valore imponibile della merce',
-    purchasesOnlineOfflineText5: 'In un negozio online tedesco è stato acquistato un aspirapolvere manuale. Il prezzo d’acquisto ammonta a 150.00 euro (importo netto senza IVA estera). Per l’invio in Svizzera occorre versare al negozio online altri 12.50 euro. Complessivamente il negozio online riceve quindi 162.50 euro.',
-    purchasesOnlineOfflineText6: 'Importo complessivo in base alla fattura del negozio online',
+    purchasesOnlineOfflineMainText:
+      'Acquisti in Internet, invii postali e di corriere',
+    purchasesOnlineOfflineText1:
+      'In linea di massima gli invii dall’estero sono soggetti a dazio e IVA. Qui di seguito un esempio di come eseguire un calcolo dei costi e di cosa bisogna tener conto al momento dell’importazione.',
+    purchasesOnlineOfflineText2:
+      'Un calcolo definitivo non è possibile in quanto non siamo a conoscenza a priori dei costi dei trasportatori, per esempio della posta. In genere i costi vengono fatturati al destinatario insieme ai tributi doganali e alle imposte (p. es. IVA). Si consiglia di informarsi presso la relativa impresa di trasporti.',
+    purchasesOnlineOfflineText3:
+      'Gli invii regalo spediti da privati all’estero a privati in Svizzera sono esenti da tributi fino a un valore di 100 franchi, ad eccezione dei tabacchi manufatti e delle bevande alcoliche. Il mittente deve obbligatoriamente apporre un’annotazione sul pacco o sulla lettera.',
+    purchasesOnlineOfflineText4:
+      'Esempi di calcolo – Valore imponibile della merce',
+    purchasesOnlineOfflineText5:
+      'In un negozio online tedesco è stato acquistato un aspirapolvere manuale. Il prezzo d’acquisto ammonta a 150.00 euro (importo netto senza IVA estera). Per l’invio in Svizzera occorre versare al negozio online altri 12.50 euro. Complessivamente il negozio online riceve quindi 162.50 euro.',
+    purchasesOnlineOfflineText6:
+      'Importo complessivo in base alla fattura del negozio online',
     purchasesOnlineOfflineText7: 'Importo in CHF: 198.25',
-    purchasesOnlineOfflineText8: 'Osservazioni: 162.50 euro convertiti in franchi alla valuta di cambio di 1.22.',
+    purchasesOnlineOfflineText8:
+      'Osservazioni: 162.50 euro convertiti in franchi alla valuta di cambio di 1.22.',
     purchasesOnlineOfflineText9: 'Spese postali per la dichiarazione',
     purchasesOnlineOfflineText10: 'Importo in CHF: 17.95',
     purchasesOnlineOfflineText11: 'Spese postali per l’apertura del pacco',
     purchasesOnlineOfflineText12: 'Importo in CHF: 13.00',
-    purchasesOnlineOfflineText13: 'La descrizione del contenuto apposta dal mittente all’esterno del pacco non era sufficiente, quindi la posta ha dovuto aprire il pacco per effetuare l’imposizione.',
+    purchasesOnlineOfflineText13:
+      'La descrizione del contenuto apposta dal mittente all’esterno del pacco non era sufficiente, quindi la posta ha dovuto aprire il pacco per effetuare l’imposizione.',
     purchasesOnlineOfflineText14: 'Valore imponibile complessivo della merce',
     purchasesOnlineOfflineText15: 'Importo in CHF: 229.00',
-    purchasesOnlineOfflineText16: 'L’IVA viene calcolata in base a questo importo (senza centesimi).',
-    purchasesOnlineOfflineText17: 'Attenzione: Il presente esempio mostra un calcolo standard di merce ammessa in franchigia di dazio.',
+    purchasesOnlineOfflineText16:
+      'L’IVA viene calcolata in base a questo importo (senza centesimi).',
+    purchasesOnlineOfflineText17:
+      'Attenzione: Il presente esempio mostra un calcolo standard di merce ammessa in franchigia di dazio.',
   },
 
   information: {
@@ -559,9 +679,11 @@ export const it: Locale = {
 
     prohibitionsAndRestrictionsMainText: 'Divieti e restrizioni',
 
-    vatAllowanceMainText: 'Limite di franchigia secondo il valore di 300 franchi',
+    vatAllowanceMainText:
+      'Limite di franchigia secondo il valore di 300 franchi',
 
-    dutyAllowanceMainText: 'Quantità ammesse in franchigia: derrate alimentari, alcol e tabacco',
+    dutyAllowanceMainText:
+      'Quantità ammesse in franchigia: derrate alimentari, alcol e tabacco',
 
     personalEffectsMainText: 'Oggetti d’uso personale e provviste da viaggio',
 
@@ -571,11 +693,13 @@ export const it: Locale = {
 
     plantsMainText: 'Piante',
 
-    souvenirsAndSpeciesProtectionMainText: 'Souvenir e conservazione delle specie (CITES)',
+    souvenirsAndSpeciesProtectionMainText:
+      'Souvenir e conservazione delle specie (CITES)',
 
     highwayVignetteMainText: 'Contrassegno autostradale',
 
-    roadTaxMainText: 'Tassa sul traffico stradale per veicoli di peso superiore alle 3,5 t (TFTP)',
+    roadTaxMainText:
+      'Tassa sul traffico stradale per veicoli di peso superiore alle 3,5 t (TFTP)',
 
     fuelAndRepairsMainText: 'Carburante e riparazioni',
 
@@ -585,9 +709,11 @@ export const it: Locale = {
 
     foodMainText: 'Limitazioni per derrate alimentari',
 
-    authorisationRequirementsMainText: 'Merci soggette ad autorizzazione o limitazione',
+    authorisationRequirementsMainText:
+      'Merci soggette ad autorizzazione o limitazione',
 
-    purchasesOnlineOfflineMainText: 'Acquisti in Internet, invii postali e di corriere',
+    purchasesOnlineOfflineMainText:
+      'Acquisti in Internet, invii postali e di corriere',
   },
 
   appInformation: {

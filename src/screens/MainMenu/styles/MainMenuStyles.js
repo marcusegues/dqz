@@ -51,7 +51,7 @@ export const mainMenuStyles: any = StyleSheet.create({
         flex: 0.58,
       },
       android: {
-        flex: 2,
+        flex: 1.7,
       },
     }),
     flexDirection: 'column',
