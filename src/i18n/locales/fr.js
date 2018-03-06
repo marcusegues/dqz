@@ -392,197 +392,286 @@ export const fr: Locale = {
 
   personalEffects: {
     personalEffectsMainText: 'Effets personnels et dispositions de voyage',
-    personalEffectsText1: '',
-    personalEffectsText2: '',
-    personalEffectsText3: '',
-    personalEffectsText4: '',
-    personalEffectsText5: '',
-    personalEffectsText6: '',
-    personalEffectsText7: '',
+    personalEffectsText1:
+      'Vous pouvez importer vos effets personnels et vos provisions de voyage en franchise de redevances:',
+    personalEffectsText2: 'Effets personnels',
+    personalEffectsText3:
+      'Relèvent de cette catégorie les effets personnels que:',
+    personalEffectsText4:
+      'des voyageurs domiciliés en Suisse ont emportés lors de leur sortie du pays;',
+    personalEffectsText5:
+      "des voyageurs domiciliés à l'étranger utilisent pendant leur séjour en Suisse avant de les réexporter. Font partie des effets personnels les vêtements, la lingerie, les articles de toilette, le matériel de sport, les appareils photographiques, les caméras cinématographiques et vidéo, les téléphones et ordinateurs portables, les instruments de musique et autres objets d'usage courant de nature personnelle.",
+    personalEffectsText6: 'Provisions de voyage',
+    personalEffectsText7:
+      'Sont considérées comme des provisions de voyage les denrées alimentaires et boissons sans alcool, prêtes à la consommation, pour le jour du voyage.',
   },
 
   foreignVat: {
     foreignVatMainText: 'Remboursement de la TVA étrangère',
-    foreignVatText1: '',
-    foreignVatText2: '',
-    foreignVatText3: '',
-    foreignVatText4: '',
-    foreignVatText5: '',
+    foreignVatText1: "L'AFD ne peut pas vous rembourser la TVA étrangère.",
+    foreignVatText2:
+      "Lorsque vous acheminez personnellement en Suisse des marchandises achetées à l'étranger, vous avez souvent la possibilité de vous faire rembourser la TVA étrangère par le vendeur étranger ou une entreprise spécialisée dans le remboursement de l'impôt (tax refund). Ces entreprises n'ont aucun lien avec l'AFD et ne travaillent pas pour notre compte.",
+    foreignVatText3:
+      "Pour le remboursement, les conditions sont différentes en fonction de l'État concerné. Le cas échéant, le vendeur doit vous remettre un formulaire de remboursement rempli et l'autorité douanière étrangère doit y attester l'exportation en Suisse.",
+    foreignVatText4:
+      "Nous ne pouvons pas vous fournir de plus amples informations sur le remboursement de la TVA étrangère. Le cas échéant, veuillez vous adresser à l'autorité douanière compétente pour obtenir les renseignements nécessaires. Vous trouverez les coordonnées des autorités douanières étrangères sur le site de l'Organisation mondiale des douanes: www.wcoomd.org.",
+    foreignVatText5:
+      "La TVA suisse doit être payée même si la TVA étrangère n'est pas remboursée. Il n'existe aucune convention contre les doubles impositions en matière de TVA.",
   },
 
   animals: {
-    animalsMainText: '',
-    animalsText1: '',
-    animalsText2: '',
-    animalsText3: '',
-    animalsText4: '',
+    animalsMainText:
+      'Animaux: animaux domestiques, notamment chiens, chats et chevaux',
+    animalsText1:
+      "Vous trouverez les informations relatives à l'importation d'animaux domestiques, notamment de chiens, de chats et de chevaux, sur le site Internet de l'Office fédéral de la sécurité alimentaire et des affaires vétérinaires (OSAV): http://www.blv.admin.ch.",
+    animalsText2: 'Redevances',
+    animalsText3:
+      'Si la franchise-valeur de 300 francs est dépassée, vous devrez vous acquitter de la TVA pour les animaux transportés. Vous trouverez de plus amples informations à ce sujet dans la rubrique suivante:',
+    animalsText4: 'Franchise-valeur de 300 francs',
   },
 
   plants: {
-    plantsMainText: '',
-    plantsText1: '',
-    plantsText2: '',
-    plantsText3: '',
-    plantsText4: '',
-    plantsText5: '',
-    plantsText6: '',
-    plantsText7: '',
-    plantsText8: '',
-    plantsText9: '',
-    plantsText10: '',
-    plantsText11: '',
-    plantsText12: '',
-    plantsText13: '',
-    plantsText14: '',
-    plantsText15: '',
-    plantsText16: '',
-    plantsText17: '',
-    plantsText18: '',
-    plantsText19: '',
-    plantsText20: '',
-    plantsText21: '',
-    plantsText22: '',
-    plantsText23: '',
-    plantsText24: '',
-    plantsText25: '',
-    plantsText26: '',
-    plantsText27: '',
-    plantsText28: '',
-    plantsText29: '',
-    plantsText30: '',
-    plantsText31: '',
+    plantsMainText: 'Plantes',
+    plantsText1:
+      '1.\tPlantes et produits végétaux interdits\n' +
+      "L'importation des plantes suivantes est interdite, car elles peuvent être porteuses d'organismes nuisibles (feu bactérien, chancre de l'écorce du châtaignier, affections virales, etc.):",
+    plantsText2: 'a) Importation interdite pour tous les pays de provenance',
+    plantsText3: 'Cotonéaster',
+    plantsText4: 'Photinia davidiana (synonyme Stranvaesia davidiana)',
+    plantsText5:
+      "b) Importation interdite pour tous les pays de provenance, à l'exception des États de l'UE, de l'Islande et de la Norvège",
+    plantsText6:
+      'Arbres fruitiers à noyau (abricotier, amandier, cerisier, pêcher, prunier) et toutes les formes ornementales du genre Prunus',
+    plantsText7: 'Arbres du genre Citrus (agrumes)',
+    plantsText8: 'Aubépine (Crataegus) de toutes espèces et variétés',
+    plantsText9: 'Buisson ardent (Pyracantha)',
+    plantsText10: 'Châtaignier à fruits comestibles (Castanea)',
+    plantsText11: 'Chêne (Quercus)',
+    plantsText12: 'Cognassier (Cydonia)',
+    plantsText13: 'Cognassier du Japon (Chaenomeles)',
+    plantsText14: 'Conifères',
+    plantsText15: 'Kumquat (Fortunella)',
+    plantsText16: 'Néflier (Mespilus)',
+    plantsText17: 'Néflier du Japon (Eriobotrya)',
+    plantsText18: 'Oranger amer ou bigaradier (Poncirus)',
+    plantsText19: 'Poirier (Pyrus)',
+    plantsText20: 'Pomme de terre et solanacées similaires (Solanacea)',
+    plantsText21: 'Pommier (Malus)',
+    plantsText22: 'Rosier',
+    plantsText23: 'Sorbier, sorbier des oiseleurs, alisier blanc (Sorbus)',
+    plantsText24: 'Vigne (Vitis)',
+    plantsText25:
+      '2.\tAutres plantes et produits végétaux (y compris fruits et légumes)',
+    plantsText26:
+      "a) Importation en provenance des États de l'UE, de Norvège et d'Islande Vous pouvez importer des plantes sans permis pour autant que cela soit dans le trafic touristique et pour votre usage privé.",
+    plantsText27:
+      "b) Importation en provenance de pays autres que les États de l'UE, la Norvège et l'Islande Les plantes (vivantes ou sous forme de produits végétaux) peuvent être assujetties à un permis d'importation.",
+    plantsText28:
+      "Si vous souhaitez importer des plantes en provenance de tels pays, veuillez vous informer préalablement auprès de l'Office fédéral de l'agriculture au sujet des dispositions en vigueur: www.blw.admin.ch.",
+    plantsText29:
+      "Exception: par personne, on peut importer des fleurs coupées et des bouquets de fleurs jusqu'à 3 kg au maximum ainsi que des fruits et légumes (hormis les pommes de terre) jusqu'à 10 kg au total sans application de mesures phytosanitaires.",
+    plantsText30: 'Redevances',
+    plantsText31:
+      'Si la franchise-valeur de 300 francs est dépassée, vous devrez vous acquitter de la TVA pour les plantes transportées. Vous trouverez de plus amples informations à ce sujet dans la rubrique suivante: Franchise-valeur de 300 francs.',
   },
 
   souvenirsAndSpeciesProtection: {
-    souvenirsAndSpeciesProtectionMainText: '',
-    souvenirsAndSpeciesProtectionText1: '',
-    souvenirsAndSpeciesProtectionText2: '',
-    souvenirsAndSpeciesProtectionText3: '',
-    souvenirsAndSpeciesProtectionText4: '',
-    souvenirsAndSpeciesProtectionText5: '',
-    souvenirsAndSpeciesProtectionText6: '',
-    souvenirsAndSpeciesProtectionText7: '',
-    souvenirsAndSpeciesProtectionText8: '',
+    souvenirsAndSpeciesProtectionMainText:
+      'Souvenirs et conservation des espèces (CITES)',
+    souvenirsAndSpeciesProtectionText1: 'Souvenirs',
+    souvenirsAndSpeciesProtectionText2:
+      "Une ceinture en cuir d'éléphant, un capteur de rêves orné de plumes d'oiseau ou des bâtonnets d'encens en bois de santal: la palette des souvenirs proposés est extrêmement large. Au premier coup d'œil, il n'apparaît pas que ces objets sont fabriqués à partir d'espèces animales ou végétales protégées (par ex. bois tropical). Or beaucoup ne peuvent pas être importés en Suisse. Avant de partir en vacances, il vaut la peine de se renseigner sur les souvenirs qu'il est possible de rapporter et sur les objets qu'il est préférable de laisser sur place.",
+    souvenirsAndSpeciesProtectionText3: 'Conservation des espèces animales',
+    souvenirsAndSpeciesProtectionText4:
+      "L'importation d'animaux protégés ou de produits fabriqués à partir de ceux-ci est soit totalement interdite, soit soumise à autorisation (c'est notamment le cas des serpents, des lézards, des tortues, des perroquets, de l'ivoire, de l'écaille de tortue et de diverses fourrures).",
+    souvenirsAndSpeciesProtectionText5:
+      "Lors de l'importation, il est nécessaire de présenter au poste de contrôle CITES une autorisation d'exportation ou un certificat de réexportation établi par l'autorité CITES du pays de provenance.",
+    souvenirsAndSpeciesProtectionText6: 'Conservation des espèces végétales',
+    souvenirsAndSpeciesProtectionText7:
+      "L'importation de plantes protégées ou de produits fabriqués à partir de celles-ci est soit totalement interdite, soit soumise à autorisation (par ex. orchidées, cactées, certains bois et plantes médicinales).",
+    souvenirsAndSpeciesProtectionText8:
+      "Pour obtenir les renseignements et les autorisations nécessaires, veuillez vous adresser à l'OSAV: www.blv.admin.ch. ",
   },
 
   highwayVignette: {
-    highwayVignetteMainText: '',
-    highwayVignetteText1: '',
-    highwayVignetteText2: '',
-    highwayVignetteText3: '',
-    highwayVignetteText4: '',
-    highwayVignetteText5: '',
-    highwayVignetteText6: '',
-    highwayVignetteText7: '',
-    highwayVignetteText8: '',
-    highwayVignetteText9: '',
-    highwayVignetteText10: '',
+    highwayVignetteMainText: 'Vignette autoroutière',
+    highwayVignetteText1:
+      "L'utilisation des autoroutes et semi-autoroutes avec des véhicules à moteur et des remorques n'excédant pas 3,5 tonnes chacun est soumise à une redevance. La vignette coûte 40 francs.",
+    highwayVignetteText2: 'Points de vente',
+    highwayVignetteText3:
+      'En Suisse, la vignette est disponible notamment dans les bureaux de poste et les stations-service.',
+    highwayVignetteText4:
+      "Aux passages frontières occupés, vous pouvez l'acheter auprès du personnel douanier. Vous avez la possibilité de payer soit par carte de crédit, soit en espèces (CHF, EUR, USD, GBP).",
+    highwayVignetteText5:
+      "À l'étranger, la vignette est vendue dans les clubs automobiles. À proximité de la frontière suisse, elle est également disponible dans les stations-service situées au bord des autoroutes, dans les kiosques et dans les boutiques Trafik (Autriche).",
+    highwayVignetteText6: 'Apposition de la vignette',
+    highwayVignetteText7:
+      "La vignette n'est valable que si elle est collée sur le véhicule:",
+    highwayVignetteText8:
+      'automobiles: sur la face interne du pare-brise (éviter le bandeau pare-soleil);',
+    highwayVignetteText9:
+      'remorques et motocycles: sur une partie non interchangeable aisément accessible.',
+    highwayVignetteText10:
+      "Les vignettes collées avec de simples rubans adhésifs ou d'autres moyens ne sont pas valables. Si vous circulez sur une autoroute ou une semi-autoroute sans vignette ou avec une vignette non valable, une amende de 200 francs vous sera infligée. De plus, vous devrez acheter une vignette et l'apposer sur votre véhicule.",
   },
 
   roadTax: {
-    roadTaxMainText: '',
-    roadTaxText1: '',
-    roadTaxText2: '',
-    roadTaxText3: '',
-    roadTaxText4: '',
-    roadTaxText5: '',
-    roadTaxText6: '',
-    roadTaxText7: '',
-    roadTaxText8: '',
-    roadTaxText9: '',
-    roadTaxText10: '',
-    roadTaxText11: '',
-    roadTaxText12: '',
-    roadTaxText13: '',
-    roadTaxText14: '',
-    roadTaxText15: '',
+    roadTaxMainText:
+      'Redevance sur le trafic routier applicable aux véhicules de plus de 3,5 tonnes (RPLF)',
+    roadTaxText1:
+      "En Suisse, les véhicules et les remorques affichant un poids total supérieur à 3,5 tonnes sont soumis à une redevance sur le trafic des poids lourds. Pour les bus, les voitures d'habitation lourdes, les voitures de tourisme lourdes et leurs remorques d'un poids de plus de 3,5 tonnes, la redevance est perçue de façon forfaitaire en fonction du nombre de jours passés en Suisse.",
+    roadTaxText2:
+      "Contrairement à la vignette autoroutière destinée aux voitures de tourisme, la redevance sur le trafic des poids lourds ne concerne pas uniquement les autoroutes, mais bien l'ensemble du réseau routier.",
+    roadTaxText3:
+      'Le lien suivant fournit des informations au sujet des camions et de leurs remorques: www.lsva.ch.',
+    roadTaxText4:
+      "Attention: le véhicule est également soumis à la redevance forfaitaire sur le trafic des poids lourds (RPLF) s'il est parqué et ne circule pas (par ex. une voiture d'habitation installée sur une place de camping).",
+    roadTaxText5: 'Paiement et tarifs',
+    roadTaxText6:
+      'La base de calcul est constituée du poids total ou du poids remorquable du véhicule tracteur figurant dans le permis de circulation et de la période fiscale.',
+    roadTaxText7: 'La RPLF peut être payée selon les modalités suivantes:',
+    roadTaxText8: 'pour 1 à 30 jours consécutifs;',
+    roadTaxText9:
+      "pour 10 jours pouvant être choisis librement sur une période d'une année;",
+    roadTaxText10: 'pour 1 à 11 mois consécutifs;',
+    roadTaxText11: 'pour une année.',
+    roadTaxText12:
+      "Vous trouverez les tarifs dans le formulaire 15.91. Ce formulaire est distribué par les bureaux de douane. Pour les véhicules étrangers, nous percevons la redevance sur le trafic des poids lourds au passage frontière, au moment de l'entrée sur le territoire suisse. Le formulaire timbré par le bureau de douane fait office de preuve de paiement. Si vous prolongez votre séjour en Suisse, vous devez vous présenter à un bureau de douane suisse.",
+    roadTaxText13: 'Attention:',
+    roadTaxText14: 'Redevance minimale par preuve de paiement: 25 francs.',
+    roadTaxText15:
+      'Tarifs mensuels et annuels mentionnés dans le formulaire 15.91.',
   },
 
   fuelAndRepairs: {
-    fuelAndRepairsMainText: '',
-    fuelAndRepairsText1: '',
-    fuelAndRepairsText2: '',
-    fuelAndRepairsText3: '',
-    fuelAndRepairsText4: '',
-    fuelAndRepairsText5: '',
+    fuelAndRepairsMainText: 'Carburant et réparation',
+    fuelAndRepairsText1: 'Carburant pour véhicules',
+    fuelAndRepairsText2:
+      "Le contenu du réservoir n'est pas soumis aux redevances. En outre, vous pouvez importer en franchise de redevances du carburant dans un jerrycan de réserve jusqu'à concurrence de 25 litres. Vous devrez payer 0 fr. 75 de droits de douane pour chaque litre supplémentaire ainsi que la TVA sur la valeur du carburant.",
+    fuelAndRepairsText3: "Frais de réparation et d'entretien",
+    fuelAndRepairsText4:
+      "Si la franchise-valeur de 300 francs est dépassée, vous devrez vous acquitter de la TVA pour tous les frais de réparation et d'entretien occasionnés (réparation de véhicules, d'appareils électroniques, de meubles, de bijoux, etc.). Vous trouverez de plus amples informations à ce sujet dans la rubrique suivante:",
+    fuelAndRepairsText5: 'Franchise-valeur de 300 francs',
   },
 
   entryByTrain: {
-    entryByTrainMainText: '',
-    entryByTrainText1: '',
-    entryByTrainText2: '',
-    entryByTrainText3: '',
-    entryByTrainText4: '',
-    entryByTrainText5: '',
-    entryByTrainText6: '',
-    entryByTrainText7: '',
-    entryByTrainText8: '',
-    entryByTrainText9: '',
+    entryByTrainMainText: 'Entrée en Suisse par voie ferroviaire',
+    entryByTrainText1:
+      "Si du personnel douanier se trouve dans le train, vous devez déclarer spontanément en vue du traitement douanier toutes les marchandises que vous transportez. Avant de franchir la frontière, vous pouvez également dédouaner au moyen de l'application QuickZoll les marchandises destinées à votre usage privé ou à être offertes en cadeau. Ces déclarations lient leur auteur.",
+    entryByTrainText2:
+      "Si aucun personnel douanier ne se trouve dans le train et si vous ne souhaitez pas dédouaner les marchandises avec l'application QuickZoll, vous pouvez",
+    entryByTrainText3:
+      "sortir du train à la gare frontière et déclarer par écrit vos marchandises privées (dépôt d'une autodéclaration écrite dans une boîte à déclarations), ou",
+    entryByTrainText4:
+      "déclarer vos marchandises a posteriori, dans un délai de 7 jours, auprès de n'importe quel bureau de douane, durant les heures d'ouverture de ce dernier.",
+    entryByTrainText5:
+      'Veuillez noter que, dans certains trains régionaux, vous pouvez transporter uniquement des marchandises privées:',
+    entryByTrainText6:
+      'qui ne sont soumises à aucune redevance dans le cadre des franchises quantitatives et de la franchise-valeur de 300 francs, ou',
+    entryByTrainText7: "que vous avez dédouanées avec l'application QuickZoll.",
+    entryByTrainText8:
+      'Dans les deux cas, les marchandises ne doivent être soumises à aucune restriction ni interdiction et ne doivent être assujetties à aucun certificat ni permis.',
+    entryByTrainText9:
+      'Veuillez prêter attention aux inscriptions ad hoc figurant sur le train ou aux annonces faites par haut-parleur.',
   },
 
   forgery: {
-    forgeryMainText: '',
-    forgeryText1: '',
-    forgeryText2: '',
-    forgeryText3: '',
-    forgeryText4: '',
-    forgeryText5: '',
-    forgeryText6: '',
+    forgeryMainText: 'Contrefaçons',
+    forgeryText1:
+      "Il est interdit d'importer des contrefaçons d'articles de marque et d'articles protégés par le droit des designs. La douane suisse est tenue de confisquer ces contrefaçons et de les détruire. Il importe peu que les biens en question soient neufs ou usagés",
+    forgeryText2: "Acheter des bijoux et des montres à l'étranger",
+    forgeryText3:
+      "Soyez prudent lorsque vous achetez des bijoux ou des montres: souvent, les contrôles révèlent que ce que l'on prenait pour une bonne affaire est en fait une marchandise de qualité médiocre ou même une contrefaçon.",
+    forgeryText4: 'Identifier les contrefaçons de bijoux et de montres',
+    forgeryText5:
+      "Même un bijou vendu à un prix élevé peut se révéler être une contrefaçon. Une indication de titre ne garantit pas que la marchandise est authentique. N'achetez des bijoux et des montres que dans des commerces spécialisés reconnus.",
+    forgeryText6:
+      "Vous trouverez davantage d'informations sur le piratage de produits et les contrefaçons d'articles de marque sur STOP PIRACY, la plateforme suisse de lutte contre la contrefaçon et la piraterie: www.stop-piracy.ch.",
   },
 
   cash: {
-    cashMainText: '',
-    cashText1: '',
-    cashText2: '',
+    cashMainText: 'Argent liquide',
+    cashText1:
+      "Lors de l'importation, du transit et de l'exportation d'argent liquide (espèces, papiers-valeurs, etc.) d'une valeur supérieure à 10 000 francs, vous devez fournir sur demande des renseignements au sujet de l'origine, de l'affectation prévue et de l'ayant droit économique de cet argent.",
+    cashText2:
+      "D'autres mesures de lutte contre la criminalité sont réservées.",
   },
 
   food: {
-    foodMainText: '',
-    foodText1: '',
-    foodText2: '',
-    foodText3: '',
-    foodText4: '',
-    foodText5: '',
-    foodText6: '',
-    foodText7: '',
-    foodText8: '',
-    foodText9: '',
+    foodMainText: 'Restrictions applicables aux denrées alimentaires',
+    foodText1:
+      "Les marchandises d'origine animale provenant des États de l'UE, d'Islande ou de Norvège et destinées à l'usage privé peuvent être importées sans contrôle par le vétérinaire de frontière. Il est interdit de les mettre en vente.",
+    foodText2:
+      "L'importation de marchandises d'origine animale en provenance d'autres États est en principe interdite.",
+    foodText3:
+      "Vous trouverez les exceptions prévues pour certaines denrées alimentaires sur le site Internet de l'OSAV: Denrées alimentaires dans le trafic voyageurs à titre privé.",
+    foodText4:
+      'Restrictions supplémentaires applicables aux espèces animales protégées',
+    foodText5:
+      "L'importation de marchandises d'origine animale produites à partir d'espèces animales protégées est interdite, quel que soit l'État de provenance. Dans le trafic touristique, il existe une tolérance d'importation de 125 g par jour et par personne pour le caviar d'esturgeon.",
+    foodText6: 'Droits de douane et TVA',
+    foodText7:
+      'Si la franchise-valeur de 300 francs ou les franchises quantitatives applicables à certaines denrées alimentaires sont dépassées, vous devrez payer la TVA et/ou les droits de douane correspondants. Vous trouverez de plus amples informations à ce sujet dans les rubriques suivantes:',
+    foodText8: 'Franchise-valeur de 300 francs',
+    foodText9:
+      'Franchises quantitatives: denrées alimentaires, alcool et tabac',
   },
 
   authorisationRequirements: {
-    authorisationRequirementsMainText: '',
-    authorisationRequirementsText1: '',
-    authorisationRequirementsText2: '',
-    authorisationRequirementsText3: '',
-    authorisationRequirementsText4: '',
-    authorisationRequirementsText5: '',
-    authorisationRequirementsText6: '',
-    authorisationRequirementsText7: '',
-    authorisationRequirementsText8: '',
-    authorisationRequirementsText9: '',
-    authorisationRequirementsText10: '',
-    authorisationRequirementsText11: '',
+    authorisationRequirementsMainText:
+      'Assujettissement à une autorisation / restrictions',
+    authorisationRequirementsText1:
+      "L'importation de certaines marchandises est soumise à des restrictions et n'est possible qu'à certaines conditions (par ex. moyennant une autorisation préalable). Certains produits sont même frappés d'une interdiction absolue d'importation.",
+    authorisationRequirementsText2:
+      'Les marchandises ci-après sont en particulier soumises à ces restrictions (liste non exhaustive):',
+    authorisationRequirementsText3:
+      'armes (par ex. armes à feu, couteaux, appareils à électrochocs, sprays lacrymogènes, matraques, etc.);',
+    authorisationRequirementsText4: 'détecteurs de radar;',
+    authorisationRequirementsText5: 'stupéfiants;',
+    authorisationRequirementsText6:
+      'médicaments en quantité supérieure au besoin mensuel; ',
+    authorisationRequirementsText7: 'produits de dopage;',
+    authorisationRequirementsText8:
+      "marchandises contenant des représentations d'actes de violence;",
+    authorisationRequirementsText9:
+      'marchandises contenant des scènes pornographiques interdites;',
+    authorisationRequirementsText10:
+      "contrefaçons d'articles de marque ou d'articles protégés par le droit des designs, copies pirates;",
+    authorisationRequirementsText11: 'biens culturels.',
   },
 
   purchasesOnlineOffline: {
-    purchasesOnlineOfflineMainText: '',
-    purchasesOnlineOfflineText1: '',
-    purchasesOnlineOfflineText2: '',
-    purchasesOnlineOfflineText3: '',
-    purchasesOnlineOfflineText4: '',
-    purchasesOnlineOfflineText5: '',
-    purchasesOnlineOfflineText6: '',
-    purchasesOnlineOfflineText7: '',
-    purchasesOnlineOfflineText8: '',
-    purchasesOnlineOfflineText9: '',
-    purchasesOnlineOfflineText10: '',
-    purchasesOnlineOfflineText11: '',
-    purchasesOnlineOfflineText12: '',
-    purchasesOnlineOfflineText13: '',
-    purchasesOnlineOfflineText14: '',
-    purchasesOnlineOfflineText15: '',
-    purchasesOnlineOfflineText16: '',
-    purchasesOnlineOfflineText17: '',
+    purchasesOnlineOfflineMainText:
+      'Achats effectués sur Internet, envois expédiés par poste ou par courrier rapide',
+    purchasesOnlineOfflineText1:
+      "Les envois en provenance de l'étranger sont en principe soumis aux droits de douane et à la TVA. Ci-après, nous vous indiquons comment vous pouvez estimer les frais engendrés et ce dont vous devez tenir compte à l'importation.",
+    purchasesOnlineOfflineText2:
+      "Veuillez noter qu'il n'est pas possible de faire un calcul définitif, car nous ne connaissons pas à l'avance les frais réclamés par les entreprises de transport (par ex. la Poste). En général, ceux-ci sont facturés au destinataire en même temps que les droits de douane et les autres impôts (par ex. TVA). Veuillez vous informer à ce sujet auprès de l'entreprise de transport concernée.",
+    purchasesOnlineOfflineText3:
+      "Les cadeaux envoyés par des particuliers domiciliés à l'étranger à des particuliers résidant en Suisse sont admis en franchise si leur valeur ne dépasse pas 100 francs. Cette règle ne s'applique toutefois pas aux tabacs manufacturés et aux boissons alcooliques. L'expéditeur doit obligatoirement apposer une mention appropriée sur la face extérieure du paquet ou de la lettre.",
+    purchasesOnlineOfflineText4:
+      'Exemple de calcul de la valeur imposable de la marchandise',
+    purchasesOnlineOfflineText5:
+      "Vous avez commandé un aspirateur à main sur une boutique en ligne allemande. Le prix d'achat est de 150 euros (montant net sans TVA étrangère). Pour l'expédition en Suisse, vous devez payer 12.50 euros en plus. Votre paiement total sur la boutique en ligne s'élève à 162.50 euros.",
+    purchasesOnlineOfflineText6:
+      'Montant total facturé par la boutique en ligne ',
+    purchasesOnlineOfflineText7: 'Montant en francs: 198.25',
+    purchasesOnlineOfflineText8:
+      'Remarque: 162.50 euros convertis en francs au taux de 1.22',
+    purchasesOnlineOfflineText9:
+      'Frais facturés par la Poste pour la déclaration en douane ',
+    purchasesOnlineOfflineText10: 'Montant en francs: 17.95',
+    purchasesOnlineOfflineText11:
+      "Frais facturés par la Poste pour l'ouverture de l'envoi",
+    purchasesOnlineOfflineText12: 'Montant en francs: 13.00',
+    purchasesOnlineOfflineText13:
+      "L'expéditeur n'a pas apposé sur la face extérieure du paquet une désignation suffisante du contenu, raison pour laquelle la Poste a dû ouvrir le paquet pour le dédouanement.",
+    purchasesOnlineOfflineText14: 'Valeur imposable totale de la marchandise',
+    purchasesOnlineOfflineText15: 'Montant en francs: 229.00',
+    purchasesOnlineOfflineText16:
+      'La TVA est calculée sur la base de ce montant (sans les centimes).',
+    purchasesOnlineOfflineText17:
+      'Veuillez noter que cet exemple présente un calcul général effectué pour des marchandises admises en franchise de droits de douane.',
   },
 
   information: {
@@ -594,9 +683,9 @@ export const fr: Locale = {
     travelDocumentsMainText: 'Documents de voyage',
 
     declarationMainText: "J'ai des biens avec moi",
-    animalsAndPlantsMainText: "J'ai des animaux ou des plantes avec moi",
+    animalsAndPlantsMainText: 'Je transporte des animaux ou des plantes',
     vehiclesMainText: 'Je voyage avec un véhicule',
-    entryByTrainMainText: 'Entrée en train',
+    entryByTrainMainText: 'Entrée en Suisse par voie ferroviaire',
     prohibitionsAndRestrictionsMainText: 'Interdictions et restrictions',
 
     vatAllowanceMainText: 'Franchise-valeur de 300 francs',
@@ -608,21 +697,25 @@ export const fr: Locale = {
 
     foreignVatMainText: 'Remboursement de la TVA étrangère',
 
-    animalsMainText: '',
+    animalsMainText: 'Animaux: animaux domestiques, chiens, chats et chevaux',
 
-    plantsMainText: '',
+    plantsMainText: 'Plantes',
 
-    souvenirsAndSpeciesProtectionMainText: '',
+    souvenirsAndSpeciesProtectionMainText:
+      'Souvenirs et protection des espèces (CITES)',
 
-    highwayVignetteMainText: '',
-    roadTaxMainText: '',
-    fuelAndRepairsMainText: '',
+    highwayVignetteMainText: 'Vignette autoroutière',
+    roadTaxMainText:
+      'Redevance sur le trafic routier applicable aux véhicules de plus de 3,5 tonnes (RPLF)',
+    fuelAndRepairsMainText: 'Carburant et réparation',
 
-    forgeryMainText: '',
-    cashMainText: '',
-    foodMainText: '',
-    authorisationRequirementsMainText: '',
-    purchasesOnlineOfflineMainText: '',
+    forgeryMainText: 'Contrefaçons',
+    cashMainText: 'Argent liquide',
+    foodMainText: 'Restrictions applicables aux denrées alimentaires',
+    authorisationRequirementsMainText:
+      'Assujettissement à une autorisation / restrictions',
+    purchasesOnlineOfflineMainText:
+      'chats effectués sur Internet, envois expédiés par poste ou par courrier rapide',
   },
   appInformation: {
     appInfoTitle: "Informations relatives à l'application",

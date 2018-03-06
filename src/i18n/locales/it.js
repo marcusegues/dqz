@@ -557,37 +557,37 @@ export const it: Locale = {
 
     entryByTrainMainText: 'Entrata in Svizzera con il treno',
 
-    prohibitionsAndRestrictionsMainText: '',
+    prohibitionsAndRestrictionsMainText: 'Divieti e restrizioni',
 
-    vatAllowanceMainText: '',
+    vatAllowanceMainText: 'Limite di franchigia secondo il valore di 300 franchi',
 
-    dutyAllowanceMainText: '',
+    dutyAllowanceMainText: 'Quantità ammesse in franchigia: derrate alimentari, alcol e tabacco',
 
-    personalEffectsMainText: '',
+    personalEffectsMainText: 'Oggetti d’uso personale e provviste da viaggio',
 
-    foreignVatMainText: '',
+    foreignVatMainText: 'Restituzione dell’IVA estera',
 
-    animalsMainText: '',
+    animalsMainText: 'Animali: animali da compagnia, cani, gatti e cavalli',
 
-    plantsMainText: '',
+    plantsMainText: 'Piante',
 
-    souvenirsAndSpeciesProtectionMainText: '',
+    souvenirsAndSpeciesProtectionMainText: 'Souvenir e conservazione delle specie (CITES)',
 
-    highwayVignetteMainText: '',
+    highwayVignetteMainText: 'Contrassegno autostradale',
 
-    roadTaxMainText: '',
+    roadTaxMainText: 'Tassa sul traffico stradale per veicoli di peso superiore alle 3,5 t (TFTP)',
 
-    fuelAndRepairsMainText: '',
+    fuelAndRepairsMainText: 'Carburante e riparazioni',
 
-    forgeryMainText: '',
+    forgeryMainText: 'Contraffazioni',
 
-    cashMainText: '',
+    cashMainText: 'Contanti (liquidità)',
 
-    foodMainText: '',
+    foodMainText: 'Limitazioni per derrate alimentari',
 
-    authorisationRequirementsMainText: '',
+    authorisationRequirementsMainText: 'Merci soggette ad autorizzazione o limitazione',
 
-    purchasesOnlineOfflineMainText: '',
+    purchasesOnlineOfflineMainText: 'Acquisti in Internet, invii postali e di corriere',
   },
 
   appInformation: {
