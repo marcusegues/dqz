@@ -393,8 +393,7 @@ export const fr: Locale = {
   personalEffects: {
     personalEffectsMainText: 'Effets personnels et dispositions de voyage',
       personalEffectsText2: 'Effets personnels',
-
-      personalEffectsText3: 'Relèvent de cette catégorie les effets personnels que: ',
+      personalEffectsText3: '',
     personalEffectsText4: 'des voyageurs domiciliés en Suisse ont emportés lors de leur sortie du pays;',
       personalEffectsText1: 'Vous pouvez importer vos effets personnels et vos provisions de voyage en franchise de redevances:',
     personalEffectsText5: 'des voyageurs domiciliés à l\'étranger utilisent pendant leur séjour en Suisse avant de les réexporter. Font partie des effets personnels les vêtements, la lingerie, les articles de toilette, le matériel de sport, les appareils photographiques, les caméras cinématographiques et vidéo, les téléphones et ordinateurs portables, les instruments de musique et autres objets d\'usage courant de nature personnelle.',
