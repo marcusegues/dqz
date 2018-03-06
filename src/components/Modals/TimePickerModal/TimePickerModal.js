@@ -8,6 +8,7 @@ import {
   View,
   Keyboard,
   Picker,
+  Platform,
   // $FlowFixMe
 } from 'react-native';
 
@@ -34,7 +35,7 @@ const ownStyles = {
   container: {
     width: '100%',
     alignSelf: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
   },
   validUntilText: {
     marginTop: verticalScale(10),
@@ -116,7 +117,11 @@ class TimePickerModalInner extends React.Component<
                 mode="dropdown"
                 prompt=""
                 itemStyle={{}}
-                style={{ flex: 0.4 }}
+                style={{
+                  flex: Platform.OS === 'ios' ? 0.4 : 0.45,
+
+                  paddingVertical: 10,
+                }}
               >
                 {pickerDates.map(i => (
                   <Picker.Item key={i.id} label={i.label} value={i.value} />
@@ -132,7 +137,10 @@ class TimePickerModalInner extends React.Component<
                 }
                 mode="dropdown"
                 prompt=""
-                style={{ flex: 0.15 }}
+                style={{
+                  flex: Platform.OS === 'ios' ? 0.15 : 0.25,
+                  paddingVertical: 10,
+                }}
               >
                 {pickerHours.map(i => (
                   <Picker.Item key={i.id} label={i.label} value={i.value} />
@@ -151,7 +159,10 @@ class TimePickerModalInner extends React.Component<
                 mode="dropdown"
                 prompt=""
                 itemStyle={{}}
-                style={{ flex: 0.15 }}
+                style={{
+                  flex: Platform.OS === 'ios' ? 0.15 : 0.25,
+                  paddingVertical: 10,
+                }}
               >
                 {pickerMinutes.map(i => (
                   <Picker.Item key={i.id} label={i.label} value={i.value} />
