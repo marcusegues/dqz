@@ -595,9 +595,9 @@ export const fr: Locale = {
     travelDocumentsMainText: 'Documents de voyage',
 
     declarationMainText: "J'ai des biens avec moi",
-    animalsAndPlantsMainText: "J'ai des animaux ou des plantes avec moi",
+    animalsAndPlantsMainText: "Je transporte des animaux ou des plantes",
     vehiclesMainText: 'Je voyage avec un véhicule',
-    entryByTrainMainText: 'Entrée en train',
+    entryByTrainMainText: 'Entrée en Suisse par voie ferroviaire',
     prohibitionsAndRestrictionsMainText: 'Interdictions et restrictions',
 
     vatAllowanceMainText: 'Franchise-valeur de 300 francs',
@@ -609,21 +609,21 @@ export const fr: Locale = {
 
     foreignVatMainText: 'Remboursement de la TVA étrangère',
 
-    animalsMainText: '',
+    animalsMainText: 'Animaux: animaux domestiques, chiens, chats et chevaux',
 
-    plantsMainText: '',
+    plantsMainText: 'Plantes',
 
-    souvenirsAndSpeciesProtectionMainText: '',
+    souvenirsAndSpeciesProtectionMainText: 'Souvenirs et protection des espèces (CITES)',
 
-    highwayVignetteMainText: '',
-    roadTaxMainText: '',
-    fuelAndRepairsMainText: '',
+    highwayVignetteMainText: 'Vignette autoroutière',
+    roadTaxMainText: 'Redevance sur le trafic routier applicable aux véhicules de plus de 3,5 tonnes (RPLF)',
+    fuelAndRepairsMainText: 'Carburant et réparation',
 
-    forgeryMainText: '',
-    cashMainText: '',
-    foodMainText: '',
-    authorisationRequirementsMainText: '',
-    purchasesOnlineOfflineMainText: '',
+    forgeryMainText: 'Contrefaçons',
+    cashMainText: 'Argent liquide',
+    foodMainText: 'Restrictions applicables aux denrées alimentaires',
+    authorisationRequirementsMainText: 'Assujettissement à une autorisation / restrictions',
+    purchasesOnlineOfflineMainText: 'chats effectués sur Internet, envois expédiés par poste ou par courrier rapide',
   },
   appInformation: {
     appInfoTitle: "Informations relatives à l'application",
