@@ -114,7 +114,7 @@ class MainMenuInner extends React.Component<
         <View style={mainMenuStyles.topContainer}>
           <Image source={switzerland} style={mainMenuStyles.backgroundImage} />
           <View style={mainMenuStyles.logoAndTitleContainer}>
-            <AppLogo />
+            <AppLogo withShadow />
           </View>
         </View>
         <SafeAreaView style={mainMenuStyles.bottomContainer}>

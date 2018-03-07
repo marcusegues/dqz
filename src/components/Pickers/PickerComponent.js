@@ -31,7 +31,7 @@ export const PickerComponent = ({
     <Picker
       selectedValue={selectedValue}
       onValueChange={onValueChange}
-      mode="dropdown"
+      mode="dialog"
       prompt={prompt}
       itemStyle={itemStyle}
     >
