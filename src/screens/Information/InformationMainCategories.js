@@ -57,7 +57,6 @@ class InformationMainCategoriesInner extends React.Component<{
               source={informationImages[cat]}
               mainText={t(`${cat}MainText`)}
               rowOnPress={() => this.navigateTo(cat)}
-              // borderTop={idx === 0}
               borderBottom={idx !== infoCategories.length - 1}
             />
           ))}

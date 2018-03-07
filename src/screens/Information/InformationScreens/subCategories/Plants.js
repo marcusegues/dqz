@@ -61,9 +61,16 @@ const PlantsInner = ({ t, navigation }: PlantsInnerProps) => (
     />
     <AppInfoSubText text={t('plantsText27')} />
     <AppInfoSubText text={t('plantsText28')} />
-    <Text>www.blw.admin.ch</Text>
-    <AppInfoSubText text={t('plantsText29')} />
-    <AppInfoSubText text={t('plantsText30')} />
+    <Text style={{ marginBottom: verticalScale(10) }}>www.blw.admin.ch</Text>
+    <AppInfoSubText
+      text={t('plantsText29')}
+      greyBox
+      style={{ paddingVertical: verticalScale(10) }}
+    />
+    <AppInfoSubText
+      text={t('plantsText30')}
+      style={{ marginTop: verticalScale(10) }}
+    />
 
     <TouchableOpacity
       onPress={() =>

@@ -43,7 +43,7 @@ export const de: Locale = {
     toPayment: 'Zur Bezahlung',
     buttonContinue: 'Weiter',
     buttonBack: 'Zurück',
-    note: 'Hinweis',
+    note: 'Hinweis:',
     underConstruction: 'In Bearbeitung',
   },
   snackBar: {
@@ -181,8 +181,8 @@ export const de: Locale = {
     allReceiptsOlderReceipts: 'Ältere Quittungen:',
     allReceiptsSumInFranks: 'CHF {{value}}',
     allReceiptsDate: 'vom {{value}}',
-    entryTime: 'Zeitraum der Einreise',
-    chooseOtherEntryTime: 'Anpassen',
+    entryTime: 'Zeitraum der Einreise:',
+    chooseOtherEntryTime: 'Ändern',
     until: 'bis',
   },
 

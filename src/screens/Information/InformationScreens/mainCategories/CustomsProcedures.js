@@ -89,14 +89,19 @@ const CustomsProceduresInner = ({
       text={t('customsProceduresText18')}
       style={{ marginVertical: verticalScale(10) }}
     />
-    <AppInfoSubText text={t('customsProceduresText19')} />
+    <AppInfoSubText
+      text={t('customsProceduresText19')}
+      style={{ marginBottom: verticalScale(10) }}
+    />
     <CardRowText
       text={t('customsProceduresText20')}
-      style={{ marginTop: verticalScale(20) }}
+      style={{ paddingTop: verticalScale(10) }}
+      greyBox
     />
     <AppInfoSubText
       text={t('customsProceduresText21')}
-      style={{ marginBottom: verticalScale(10) }}
+      style={{ marginBottom: verticalScale(10), paddingTop: 0 }}
+      greyBox
     />
   </SubCategoryContainer>
 );

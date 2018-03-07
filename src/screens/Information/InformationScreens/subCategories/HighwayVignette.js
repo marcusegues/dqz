@@ -38,8 +38,15 @@ const HighwayVignetteInner = ({ t }: HighwayVignetteInnerProps) => (
     />
     <AppInfoSubText text={t('highwayVignetteText7')} />
     <BulletText text={t('highwayVignetteText8')} />
-    <BulletText text={t('highwayVignetteText9')} />
-    <AppInfoSubText text={t('highwayVignetteText10')} />
+    <BulletText
+      text={t('highwayVignetteText9')}
+      style={{ marginBottom: verticalScale(10) }}
+    />
+    <AppInfoSubText
+      text={t('highwayVignetteText10')}
+      style={{ paddingVertical: verticalScale(10) }}
+      greyBox
+    />
   </SubCategoryContainer>
 );
 
