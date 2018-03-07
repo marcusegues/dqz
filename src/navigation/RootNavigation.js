@@ -55,6 +55,7 @@ import { Cash } from '../screens/Information/InformationScreens/subCategories/Ca
 import { Food } from '../screens/Information/InformationScreens/subCategories/Food';
 import { AuthorisationRequirements } from '../screens/Information/InformationScreens/subCategories/AuthorisationRequirements';
 import { PurchasesOnlineOffline } from '../screens/Information/InformationScreens/mainCategories/PurchasesOnlineOffline';
+import { addListener } from './reactNavigation';
 
 export type NavigationObject = { navigation: Navigation };
 
@@ -387,6 +388,7 @@ class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
           navigation={addNavigationHelpers({
             dispatch: this.props.dispatch,
             state: this.props.nav,
+            addListener,
           })}
           screenProps={{
             t: i18nImplementation.getFixedT(),
