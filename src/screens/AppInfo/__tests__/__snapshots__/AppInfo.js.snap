@@ -73,6 +73,7 @@ ShallowWrapper {
             }
           />
           <CardRowText
+            greyBox={false}
             style={
               Object {
                 "color": "#1A1A1A",
@@ -82,10 +83,12 @@ ShallowWrapper {
             text=""
           />
           <AppInfoSubText
+            greyBox={false}
             style={Object {}}
             text=""
           />
           <CardRowText
+            greyBox={false}
             style={
               Object {
                 "color": "#1A1A1A",
@@ -96,10 +99,12 @@ ShallowWrapper {
             text=""
           />
           <AppInfoSubText
+            greyBox={false}
             style={Object {}}
             text=""
           />
           <AppInfoSubText
+            greyBox={false}
             style={
               Object {
                 "marginTop": 20,
@@ -108,6 +113,7 @@ ShallowWrapper {
             text=""
           />
           <AppInfoSubText
+            greyBox={false}
             style={Object {}}
             text=""
           />
@@ -169,6 +175,7 @@ ShallowWrapper {
               }
             />
             <CardRowText
+              greyBox={false}
               style={
                 Object {
                   "color": "#1A1A1A",
@@ -178,10 +185,12 @@ ShallowWrapper {
               text=""
             />
             <AppInfoSubText
+              greyBox={false}
               style={Object {}}
               text=""
             />
             <CardRowText
+              greyBox={false}
               style={
                 Object {
                   "color": "#1A1A1A",
@@ -192,10 +201,12 @@ ShallowWrapper {
               text=""
             />
             <AppInfoSubText
+              greyBox={false}
               style={Object {}}
               text=""
             />
             <AppInfoSubText
+              greyBox={false}
               style={
                 Object {
                   "marginTop": 20,
@@ -204,6 +215,7 @@ ShallowWrapper {
               text=""
             />
             <AppInfoSubText
+              greyBox={false}
               style={Object {}}
               text=""
             />
@@ -292,6 +304,7 @@ ShallowWrapper {
                 }
               />,
               <CardRowText
+                greyBox={false}
                 style={
                   Object {
                     "color": "#1A1A1A",
@@ -301,10 +314,12 @@ ShallowWrapper {
                 text=""
               />,
               <AppInfoSubText
+                greyBox={false}
                 style={Object {}}
                 text=""
               />,
               <CardRowText
+                greyBox={false}
                 style={
                   Object {
                     "color": "#1A1A1A",
@@ -315,10 +330,12 @@ ShallowWrapper {
                 text=""
               />,
               <AppInfoSubText
+                greyBox={false}
                 style={Object {}}
                 text=""
               />,
               <AppInfoSubText
+                greyBox={false}
                 style={
                   Object {
                     "marginTop": 20,
@@ -327,6 +344,7 @@ ShallowWrapper {
                 text=""
               />,
               <AppInfoSubText
+                greyBox={false}
                 style={Object {}}
                 text=""
               />,
@@ -385,6 +403,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
+                "greyBox": false,
                 "style": Object {
                   "color": "#1A1A1A",
                   "marginTop": 49.04411764705882,
@@ -400,6 +419,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
+                "greyBox": false,
                 "style": Object {},
                 "text": "",
               },
@@ -412,6 +432,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
+                "greyBox": false,
                 "style": Object {
                   "color": "#1A1A1A",
                   "marginBottom": 19.61764705882353,
@@ -428,6 +449,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
+                "greyBox": false,
                 "style": Object {},
                 "text": "",
               },
@@ -440,6 +462,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
+                "greyBox": false,
                 "style": Object {
                   "marginTop": 20,
                 },
@@ -454,6 +477,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
+                "greyBox": false,
                 "style": Object {},
                 "text": "",
               },
@@ -524,6 +548,7 @@ ShallowWrapper {
               }
             />
             <CardRowText
+              greyBox={false}
               style={
                 Object {
                   "color": "#1A1A1A",
@@ -533,10 +558,12 @@ ShallowWrapper {
               text=""
             />
             <AppInfoSubText
+              greyBox={false}
               style={Object {}}
               text=""
             />
             <CardRowText
+              greyBox={false}
               style={
                 Object {
                   "color": "#1A1A1A",
@@ -547,10 +574,12 @@ ShallowWrapper {
               text=""
             />
             <AppInfoSubText
+              greyBox={false}
               style={Object {}}
               text=""
             />
             <AppInfoSubText
+              greyBox={false}
               style={
                 Object {
                   "marginTop": 20,
@@ -559,6 +588,7 @@ ShallowWrapper {
               text=""
             />
             <AppInfoSubText
+              greyBox={false}
               style={Object {}}
               text=""
             />
@@ -620,6 +650,7 @@ ShallowWrapper {
                 }
               />
               <CardRowText
+                greyBox={false}
                 style={
                   Object {
                     "color": "#1A1A1A",
@@ -629,10 +660,12 @@ ShallowWrapper {
                 text=""
               />
               <AppInfoSubText
+                greyBox={false}
                 style={Object {}}
                 text=""
               />
               <CardRowText
+                greyBox={false}
                 style={
                   Object {
                     "color": "#1A1A1A",
@@ -643,10 +676,12 @@ ShallowWrapper {
                 text=""
               />
               <AppInfoSubText
+                greyBox={false}
                 style={Object {}}
                 text=""
               />
               <AppInfoSubText
+                greyBox={false}
                 style={
                   Object {
                     "marginTop": 20,
@@ -655,6 +690,7 @@ ShallowWrapper {
                 text=""
               />
               <AppInfoSubText
+                greyBox={false}
                 style={Object {}}
                 text=""
               />
@@ -743,6 +779,7 @@ ShallowWrapper {
                   }
                 />,
                 <CardRowText
+                  greyBox={false}
                   style={
                     Object {
                       "color": "#1A1A1A",
@@ -752,10 +789,12 @@ ShallowWrapper {
                   text=""
                 />,
                 <AppInfoSubText
+                  greyBox={false}
                   style={Object {}}
                   text=""
                 />,
                 <CardRowText
+                  greyBox={false}
                   style={
                     Object {
                       "color": "#1A1A1A",
@@ -766,10 +805,12 @@ ShallowWrapper {
                   text=""
                 />,
                 <AppInfoSubText
+                  greyBox={false}
                   style={Object {}}
                   text=""
                 />,
                 <AppInfoSubText
+                  greyBox={false}
                   style={
                     Object {
                       "marginTop": 20,
@@ -778,6 +819,7 @@ ShallowWrapper {
                   text=""
                 />,
                 <AppInfoSubText
+                  greyBox={false}
                   style={Object {}}
                   text=""
                 />,
@@ -836,6 +878,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
+                  "greyBox": false,
                   "style": Object {
                     "color": "#1A1A1A",
                     "marginTop": 49.04411764705882,
@@ -851,6 +894,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
+                  "greyBox": false,
                   "style": Object {},
                   "text": "",
                 },
@@ -863,6 +907,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
+                  "greyBox": false,
                   "style": Object {
                     "color": "#1A1A1A",
                     "marginBottom": 19.61764705882353,
@@ -879,6 +924,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
+                  "greyBox": false,
                   "style": Object {},
                   "text": "",
                 },
@@ -891,6 +937,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
+                  "greyBox": false,
                   "style": Object {
                     "marginTop": 20,
                   },
@@ -905,6 +952,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
+                  "greyBox": false,
                   "style": Object {},
                   "text": "",
                 },

@@ -48,13 +48,17 @@ const VatAllowanceInner = ({ t, navigation }: VatAllowanceInnerProps) => (
     />
     <AppInfoSubText
       text={t('vatAllowanceText3')}
-      style={{ marginTop: verticalScale(10) }}
+      style={{ marginVertical: verticalScale(10) }}
     />
     <AppInfoSubText
       text={t('vatAllowanceText4')}
-      style={{ marginTop: verticalScale(10), marginBottom: verticalScale(20) }}
+      style={{ marginVertical: verticalScale(10) }}
+      greyBox
     />
-    <CardRowText text={t('vatAllowanceText5')} />
+    <CardRowText
+      text={t('vatAllowanceText5')}
+      style={{ marginTop: verticalScale(20) }}
+    />
     <AppInfoSubText text={t('vatAllowanceText6')} />
     <AppInfoSubText
       text={t('vatAllowanceText7')}
@@ -95,10 +99,12 @@ const VatAllowanceInner = ({ t, navigation }: VatAllowanceInnerProps) => (
     <AppInfoSubText
       text={t('vatAllowanceText15')}
       style={{ marginTop: verticalScale(10) }}
+      greyBox
     />
     <AppInfoSubText
       text={t('vatAllowanceText16')}
-      style={{ marginTop: verticalScale(10) }}
+      style={{ marginVertical: verticalScale(10) }}
+      greyBox
     />
     <CardRowText
       text={t('vatAllowanceText17')}
@@ -109,10 +115,14 @@ const VatAllowanceInner = ({ t, navigation }: VatAllowanceInnerProps) => (
       text={t('vatAllowanceText19')}
       style={{ marginBottom: verticalScale(10) }}
     />
-    <AppInfoSubText text={t('vatAllowanceText20')} />
+    <AppInfoSubText
+      text={t('vatAllowanceText20')}
+      greyBox
+      style={{ paddingVertical: verticalScale(10) }}
+    />
     <AppInfoSubText
       text={t('vatAllowanceText21')}
-      style={{ fontFamily: 'roboto_medium' }}
+      style={{ fontFamily: 'roboto_medium', marginTop: verticalScale(10) }}
     />
     <CardRowText
       text={t('vatAllowanceText22')}

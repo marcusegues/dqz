@@ -30,10 +30,11 @@ const RoadTaxInner = ({ t }: RoadTaxInnerProps) => (
       text={t('roadTaxText3')}
       style={{ marginTop: verticalScale(10) }}
     />
-    <Text>www.lsva.ch</Text>
+    <Text style={{ marginBottom: verticalScale(10) }}>www.lsva.ch</Text>
     <AppInfoSubText
       text={t('roadTaxText4')}
-      style={{ marginTop: verticalScale(10) }}
+      style={{ paddingVertical: verticalScale(10) }}
+      greyBox
     />
     <CardRowText
       text={t('roadTaxText5')}
@@ -49,13 +50,21 @@ const RoadTaxInner = ({ t }: RoadTaxInnerProps) => (
     <BulletText text={t('roadTaxText9')} />
     <BulletText text={t('roadTaxText10')} />
     <BulletText text={t('roadTaxText11')} />
-    <AppInfoSubText text={t('roadTaxText12')} />
+    <AppInfoSubText
+      text={t('roadTaxText12')}
+      style={{ marginBottom: verticalScale(10) }}
+    />
     <AppInfoSubText
       text={t('roadTaxText13')}
-      style={{ marginTop: verticalScale(10) }}
+      style={{ paddingTop: verticalScale(10) }}
+      greyBox
     />
-    <AppInfoSubText text={t('roadTaxText14')} />
-    <AppInfoSubText text={t('roadTaxText15')} />
+    <AppInfoSubText text={t('roadTaxText14')} greyBox />
+    <AppInfoSubText
+      text={t('roadTaxText15')}
+      style={{ paddingBottom: verticalScale(10) }}
+      greyBox
+    />
   </SubCategoryContainer>
 );
 
