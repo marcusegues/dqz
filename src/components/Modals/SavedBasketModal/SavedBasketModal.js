@@ -109,7 +109,7 @@ class SavedBasketModalInner extends React.Component<
                     <CardRowText text={t('modal:savedBasket')} />
                     <CardRowSubText
                       text={t('modal:savedBasketTotalCost', {
-                        value: this.props.totalFees,
+                        value: this.props.totalFees.toFixed(2),
                       })}
                     />
                   </View>
