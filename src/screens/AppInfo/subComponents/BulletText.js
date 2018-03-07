@@ -3,6 +3,8 @@ import React from 'react';
 // $FlowFixMe
 import { Image, Text, View } from 'react-native';
 import { moderateScale, scale, verticalScale } from '../../../styles/Scaling';
+import {MAIN_BLACK} from "../../../styles/colors";
+import {type as types} from "../../../styles/fonts";
 
 const square = require('../../../../assets/images/redSquare.png');
 
@@ -29,9 +31,9 @@ export const BulletText = ({ text, style, onPress }: BulletTextProps) => (
     />
     <Text
       style={{
-        color: '#1A1A1A',
+        color: MAIN_BLACK,
         fontWeight: '300',
-        fontFamily: 'roboto_light',
+        fontFamily: types.light,
         lineHeight: moderateScale(21),
         paddingLeft: scale(4),
         ...style,
