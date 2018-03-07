@@ -202,15 +202,14 @@ export const it: Locale = {
     customsProceduresText10:
       'Dichiarazione doganale verbale o scelta del passaggio rosso all’aeroporto',
     customsProceduresText11:
-      'Se al valico di confine è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente.',
-    customsProceduresText12:
-      'Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
-    customsProceduresText13: 'Dichiarazione doganale con l’app QuickZoll',
-    customsProceduresText14:
+      'Se al valico di confine è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente. Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
+    customsProceduresText12: 'Dichiarazione doganale con l’app QuickZoll',
+    customsProceduresText13:
       'Le merci possono essere dichiarate anche con l’app QuickZoll dell’AFD. Le merci devono essere imposte con l’app prima del passaggio del confine oppure al valico di confine. Ciò significa che i tributi devono essere pagati. Se il pagamento avviene mediante app è consentito utilizzare anche i valichi di confine in cui il personale doganale non è presente [OPPURE: valichi di confine dove è possibile effettuare la dichiarazione scritta], e negli aeroporti il passaggio verde.',
-    customsProceduresText15:
-      'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.\nAltre merci devono essere dichiarate verbalmente presso un valico di confine in cui è presente il personale doganale svizzero.',
-    customsProceduresText16:
+    customsProceduresText14:
+      'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.',
+      customsProceduresText15: 'Altre merci devono essere dichiarate presso un valico di confine in cui è presente il personale doganale svizzero.',
+      customsProceduresText16:
       'Dichiarazione doganale scritta (cassetta delle dichiarazioni)',
     customsProceduresText17:
       'In alcuni valichi di confine sono anche a disposizione le cosiddette cassette delle dichiarazioni, dove è possibile dichiarare le proprie merci in forma scritta. Informazioni a riguardo sono disponibili su:\nwww.ezv.admin.ch/cassetta delle dichiarazioni',
@@ -663,21 +662,21 @@ export const it: Locale = {
 
   information: {
     informationTitle: 'Informazioni utili',
-    informationSubCategoryTitle: 'Ho dei beni con voi:',
+    informationSubCategoryTitle: 'Trasporto merce',
 
-    customsProceduresMainText: 'Entrata in Svizzera',
+    customsProceduresMainText: 'Procedura in dogana',
 
     travelDocumentsMainText: 'Documenti di viaggio',
 
-    declarationMainText: 'Ho dei beni con me',
+    declarationMainText: 'Trasporto merce',
 
-    animalsAndPlantsMainText: 'Ho animali o piante con me',
+    animalsAndPlantsMainText: 'Trasporto animali o piante',
 
-    vehiclesMainText: 'Sto viaggiando con un veicolo',
+    vehiclesMainText: 'Viaggo in macchina',
 
     entryByTrainMainText: 'Entrata in Svizzera con il treno',
 
-    prohibitionsAndRestrictionsMainText: 'Divieti e restrizioni',
+    prohibitionsAndRestrictionsMainText: 'Divieti e limitazioni',
 
     vatAllowanceMainText:
       'Limite di franchigia secondo il valore di 300 franchi',

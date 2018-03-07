@@ -187,7 +187,7 @@ export const fr: Locale = {
   },
 
   customsProcedures: {
-    customsProceduresMainText: 'Procédant à la douane',
+    customsProceduresMainText: 'Marche à suivre lors du passage à la douane',
     customsProceduresText1:
       "En tant que particulier, vous devez déclarer spontanément, lors de l'entrée en Suisse, toutes les marchandises et tous les animaux que vous transportez.",
     customsProceduresText2:
@@ -214,7 +214,7 @@ export const fr: Locale = {
     customsProceduresText14:
       "Cette forme de déclaration en douane n'est admise que pour les marchandises destinées à votre usage privé ou à être offertes en cadeau. Les marchandises ne doivent être soumises à aucune restriction ni interdiction et ne doivent être assujetties à aucun certificat ni permis.",
     customsProceduresText15:
-      "Les autres marchandises doivent être déclarées verbalement auprès d'un passage frontière occupé par du personnel de la douane suisse.",
+      "Les autres marchandises doivent être déclarées auprès d'un passage frontière occupé par du personnel de la douane suisse.",
     customsProceduresText16:
       'Déclaration en douane écrite (boîte à déclarations)',
     customsProceduresText17:
@@ -676,13 +676,13 @@ export const fr: Locale = {
 
   information: {
     informationTitle: 'Informations utiles',
-    informationSubCategoryTitle: "J'ai des biens avec vous:",
+    informationSubCategoryTitle: "Je transporte des marchandises",
 
-    customsProceduresMainText: 'Procédant à la douane',
+    customsProceduresMainText: 'Marche à suivre lors du passage à la douane',
 
     travelDocumentsMainText: 'Documents de voyage',
 
-    declarationMainText: "J'ai des biens avec moi",
+    declarationMainText: "Je transporte des marchandises",
     animalsAndPlantsMainText: 'Je transporte des animaux ou des plantes',
     vehiclesMainText: 'Je voyage avec un véhicule',
     entryByTrainMainText: 'Entrée en Suisse par voie ferroviaire',
@@ -715,7 +715,7 @@ export const fr: Locale = {
     authorisationRequirementsMainText:
       'Assujettissement à une autorisation / restrictions',
     purchasesOnlineOfflineMainText:
-      'chats effectués sur Internet, envois expédiés par poste ou par courrier rapide',
+      'Achats effectués sur Internet, envois expédiés par poste ou par courrier rapide',
   },
   appInformation: {
     appInfoTitle: "Informations relatives à l'application",

@@ -213,7 +213,7 @@ export const de: Locale = {
     customsProceduresText14:
       'Diese Form der Zollanmeldung ist nur für Waren zulässig, die für Ihren privaten Gebrauch oder zum Verschenken bestimmt sind. Sie dürfen keinen Beschränkungen oder Verboten unterliegen und nicht zeugnis- oder bewilligungspflichtig sein. ',
     customsProceduresText15:
-      'Andere Waren müssen bei einem durch Personal des Schweizer Zolls besetzten Grenzübergang mündlich angemeldet werden.',
+      'Andere Waren müssen bei einem durch Personal des Schweizer Zolls besetzten Grenzübergang angemeldet werden.',
     customsProceduresText16: 'Anmeldebox',
     customsProceduresText17:
       'An gewissen Grenzübergängen stehen Ihnen noch sogenannte Anmeldeboxen zur Verfügung, bei denen Sie Ihre Waren schriftlich anmelden können. Informationen dazu finden Sie unter www.ezv.admin.ch/Anmeldebox [Link: https://www.ezv.admin.ch/ezv/de/home/zollanmeldung/anmeldung-private/schriftliche-selbstanmeldung-mit-den-anmeldeboxen.html]',

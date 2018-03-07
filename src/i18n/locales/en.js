@@ -204,7 +204,7 @@ export const en: Locale = {
     customsProceduresText14:
       'This form of customs declaration is permitted only for goods intended for your personal use or as gifts. They must not be subject to any restrictions or bans and must not require a certificate or authorisation.',
     customsProceduresText15:
-      'Other goods must be declared verbally at a border crossing manned by Swiss Customs staff.',
+      'Other goods must be declared at a border crossing manned by Swiss Customs staff.',
     customsProceduresText16: 'Written customs declaration (declaration box)',
     customsProceduresText17:
       'At certain border crossings, so-called declaration boxes are still available for you to declare your goods in writing. Information on these can be found at www.ezv.admin.ch/Anmeldebox.',
@@ -661,9 +661,9 @@ export const en: Locale = {
     travelDocumentsMainText: 'Travel documents',
     declarationMainText: 'I have goods with me',
     animalsAndPlantsMainText: 'I have animals or plants with me',
-    vehiclesMainText: "I'm traveling with a vehicle",
+    vehiclesMainText: "I am driving a vehicle",
     entryByTrainMainText: 'Entry by train',
-    prohibitionsAndRestrictionsMainText: 'Prohibitions and restrictions',
+    prohibitionsAndRestrictionsMainText: 'Bans and restrictions',
     highwayVignetteMainText: 'Motorway tax sticker',
     roadTaxMainText:
       'Road traffic fees over 3.5T (lump-sum heavy vehicle charge, or PSVA)',
