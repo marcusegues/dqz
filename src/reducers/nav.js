@@ -1,5 +1,9 @@
 import { NavigationActions } from 'react-navigation';
 import { RootStackNavigator } from '../navigation/RootNavigation';
+import {
+  createReactNavigationReduxMiddleware,
+  createReduxBoundAddListener,
+} from 'react-navigation-redux-helpers';
 
 export const initialNavState = RootStackNavigator.router.getStateForAction(
   RootStackNavigator.router.getActionForPathAndParams('OnBoarding')
@@ -33,3 +37,10 @@ export const nav = (state = initialNavState, action) => {
     }
   }
 };
+
+export const navMiddleware = createReactNavigationReduxMiddleware(
+  'root',
+  state => state.nav
+);
+
+export const addListener = createReduxBoundAddListener('root');
