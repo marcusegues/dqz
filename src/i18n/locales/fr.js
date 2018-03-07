@@ -255,16 +255,16 @@ export const fr: Locale = {
     vatAllowanceText8: "Autres exemples d'octroi de la franchise-valeur",
     vatAllowanceText9: 'TVA',
     vatAllowanceText10:
-      "La TVA est calculée sur la base de la valeur des marchandises. Le taux normal est de 7,7 %. Un taux réduit d'impôt de 2,5 % est appliqué à certaines marchandises (par ex. denrées alimentaires, boissons sans alcool, livres, revues ou médicaments). Le taux normal s'applique toujours en cas de dédouanement avec l'application «xxx».",
+      "La TVA est calculée sur la base de la valeur des marchandises. Le taux normal est de 7,7 %. Un taux réduit d'impôt de 2,5 % est appliqué à certaines marchandises (par ex. denrées alimentaires, boissons sans alcool, livres, revues ou médicaments). Le taux normal s'applique toujours en cas de dédouanement avec l'application QuickZoll.",
     vatAllowanceText11:
       "La présentation d'une quittance ou d'un autre justificatif de valeur (par ex. pour les marchandises acquises sur Internet) facilite le dédouanement. Si les indications de valeur font défaut ou si leur exactitude suscite des doutes, le bureau de douane peut estimer la valeur des marchandises.",
     vatAllowanceText12: 'Déclaration en douane',
     vatAllowanceText13:
       "Lors de l'entrée en Suisse, vous devez déclarer verbalement au personnel douanier toutes les marchandises que vous transportez.",
     vatAllowanceText14:
-      "Vous pouvez également déclarer les marchandises au moyen de l'application «xxxx» ou par écrit, par l'intermédiaire des boîtes à déclarations, aux passages frontières non occupés par du personnel douanier. Vous trouverez ici des informations à ce sujet. Veuillez noter qu'en cas de dépassement des franchises quantitatives pour les boissons alcooliques, les tabacs manufacturés et certaines denrées alimentaires, vous devrez payer des droits de douane dans tous les cas. Informations complémentaires",
+      "Vous pouvez également déclarer les marchandises au moyen de l'application QuickZoll ou par écrit, par l'intermédiaire des boîtes à déclarations, aux passages frontières non occupés par du personnel douanier. Vous trouverez ici des informations à ce sujet. Veuillez noter qu'en cas de dépassement des franchises quantitatives pour les boissons alcooliques, les tabacs manufacturés et certaines denrées alimentaires, vous devrez payer des droits de douane dans tous les cas. Informations complémentaires",
     vatAllowanceText15:
-      "Nous attirons en outre votre attention sur le fait que certaines marchandises (par ex. contrefaçons, armes, plantes, animaux, produits animaux, marchandises soumises aux dispositions sur la conservation des espèces) peuvent être interdites à l'importation ou soumises à des restrictions. Informations complémentaires",
+      "Nous attirons en outre votre attention sur le fait que certaines marchandises (par ex. contrefaçons, armes, plantes, animaux, produits animaux, marchandises soumises aux dispositions sur la conservation des espèces) peuvent être interdites à l'importation ou soumises à des restrictions.",
     vatAllowanceText16:
       "Exemples d'octroi de la franchise-valeur Octroi de la franchise-valeur à des personnes seules",
     vatAllowanceText17:

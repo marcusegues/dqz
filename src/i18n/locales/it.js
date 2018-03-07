@@ -251,7 +251,7 @@ export const it: Locale = {
       'Ulteriori esempi di applicazione del limite di franchigia secondo il valore.',
     vatAllowanceText9: 'IVA',
     vatAllowanceText10:
-      'L’IVA viene calcolata in base al valore della merce. L’aliquota normale è pari al 7,7 per cento. A determinate merci si applica l’aliquota ridotta del 2,5 per cento (p. es. derrate alimentari, bevande analcoliche, libri, riviste o medicamenti). L’imposizione con l’app «xxx» prevede sempre l’applicazione dell’aliquota normale.',
+      'L’IVA viene calcolata in base al valore della merce. L’aliquota normale è pari al 7,7 per cento. A determinate merci si applica l’aliquota ridotta del 2,5 per cento (p. es. derrate alimentari, bevande analcoliche, libri, riviste o medicamenti). L’imposizione con l’app QuickZoll prevede sempre l’applicazione dell’aliquota normale.',
     vatAllowanceText11:
       'La presentazione di una fattura o di un altro giustificativo del valore (p. es. per acquisti in Internet) agevola la procedura d’imposizione doganale. Se mancano indicazioni relative al valore o vi sono dubbi sulla correttezza di questi dati, l’ufficio doganale può procedere alla stima del valore.',
     vatAllowanceText12: 'Dichiarazione doganale',
@@ -260,7 +260,7 @@ export const it: Locale = {
     vatAllowanceText14:
       'Le merci possono essere dichiarate anche con l’app QuickZoll o in forma scritta mediante la cassetta delle dichiarazioni presso i valichi di confine non occupati da personale doganale. Per informazioni a riguardo cliccare qui.',
     vatAllowanceText15:
-      'Attenzione: Se la quantità ammessa in franchigia di bevande alcoliche, tabacchi manufatti e alcune derrate alimentari è superata, il dazio deve essere versato in ogni caso. Per maggiori informazioni.',
+      'Attenzione: Se la quantità ammessa in franchigia di bevande alcoliche, tabacchi manufatti e alcune derrate alimentari è superata, il dazio deve essere versato in ogni caso.',
     vatAllowanceText16:
       'Attenzione: Determinate merci (p. es. contraffazioni, armi, nonché alcune piante, animali, prodotti animali e merci che soggiacciono alla protezione delle specie) sottostanno al divieto di importazione o a certe limitazioni. Per maggiori informazioni cliccare qui.',
     vatAllowanceText17:
@@ -549,7 +549,7 @@ export const it: Locale = {
     entryByTrainText1:
       'Se sul treno è presente personale doganale, le merci trasportate vanno dichiarate spontaneamente per il trattamento doganale. Merci destinate all’uso privato o da regalare possono essere imposte anche prima del passaggio del confine con la app QuickZoll. Tali dichiarazioni sono vincolanti.',
     entryByTrainText2:
-      'Se non è presente personale doganale e non si desidera imporre le merci con l’app «xxx» è possibile:',
+      'Se non è presente personale doganale e non si desidera imporre le merci con l’app QuickZoll è possibile:',
     entryByTrainText3:
       'scendere dal treno alla stazione di confine e dichiarare per scritto (presso una cassetta delle dichiarazioni) le merci;',
     entryByTrainText4:
