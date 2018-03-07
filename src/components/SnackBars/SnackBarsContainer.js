@@ -82,14 +82,14 @@ class SnackBarsContainerInner extends React.Component<
 
   enrichState(props: ReduxInject): SnackBarStateEnriched {
     const { snackBarVisibilities } = this.state;
-    const { amounts, currencies, connectivity, nav, paymentStatus } = props;
+    const { amounts, currencies, connectivity, nav, paymentData } = props;
     return {
       snackBarVisibilities,
       amounts,
       currencies,
       connectivity,
       nav,
-      paymentStatus,
+      paymentStatus: paymentData.status,
     };
   }
 
@@ -109,20 +109,7 @@ class SnackBarsContainerInner extends React.Component<
 
   render() {
     const { snackBarVisibilities } = this.state;
-    const { t } = this.props;
-
-    const snackBarData = [
-      'limitExceeded',
-      'offline',
-      'paymentAborted',
-      'paymentFailed',
-    ].map(key => ({
-      key,
-      text: t(key),
-      rightText: rightTexts.has(key) ? t(`${key}RightText`) : null,
-      visibility: snackBarVisibilities[key],
-      component: SnackBar,
-    }));
+    const { t, paymentData, setPaymentData } = this.props;
 
     const snackBarData = [
       {
@@ -141,7 +128,8 @@ class SnackBarsContainerInner extends React.Component<
         key: 'paymentAborted',
         text: t('paymentAborted'),
         rightText: t('paymentAbortedRightText'),
-          onRightTextPress: () => this.props.setPaymentData(paymentData.set('status', 'notStarted'))
+        onRightTextPress: () =>
+          setPaymentData(paymentData.set('status', 'notStarted')),
         visibility: snackBarVisibilities.paymentAborted,
         component: SnackBar,
       },
@@ -149,6 +137,8 @@ class SnackBarsContainerInner extends React.Component<
         key: 'paymentFailed',
         text: t('paymentFailed'),
         rightText: t('paymentFailedRightText'),
+        onRightTextPress: () =>
+          setPaymentData(paymentData.set('status', 'notStarted')),
         visibility: snackBarVisibilities.paymentFailed,
         component: SnackBar,
       },
@@ -182,7 +172,7 @@ class SnackBarsContainerInner extends React.Component<
 
 const mapStateToProps = (state: AppState) => ({
   nav: state.nav,
-  paymentStatus: state.declaration.paymentData.status,
+  paymentData: state.declaration.paymentData,
   amounts: getAmounts(state),
   currencies: getCurrencies(state),
   connectivity: getConnectivity(state),
