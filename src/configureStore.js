@@ -1,4 +1,5 @@
 // @flow
+import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import {
   createReactNavigationReduxMiddleware,
   createReduxBoundAddListener,
@@ -16,4 +17,7 @@ const navMiddleware = createReactNavigationReduxMiddleware(
 export const addListener = createReduxBoundAddListener('navigation');
 
 export const configureStore = () =>
-  createStore(root, applyMiddleware(navMiddleware, thunkMiddleware));
+  createStore(
+    root,
+    composeWithDevTools(applyMiddleware(navMiddleware, thunkMiddleware))
+  );

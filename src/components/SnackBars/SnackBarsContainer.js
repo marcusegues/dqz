@@ -16,10 +16,9 @@ import type { CurrencyObject } from '../../model/currencies';
 import type { ConnectivityType } from '../../types/connectivity';
 import type { AppState } from '../../types/reducers';
 import { SnackBar } from './SnackBar/SnackBar';
-import type { TFunction } from '../../types/generalTypes';
+import type { PaymentStatus, TFunction } from '../../types/generalTypes';
 import type { NavState } from '../../types/reducers/nav';
-
-type SnackBarType = 'limitExceeded' | 'offline';
+import type { SnackBarType } from './SnackBarsControl/controlSnackBarStates';
 
 export type SnackBarVisibility = 'hidden' | 'visible';
 
@@ -35,6 +34,7 @@ export type SnackBarStateEnriched = {
   currencies: CurrencyObject,
   connectivity: ConnectivityType,
   nav: NavState,
+  paymentStatus: PaymentStatus,
 };
 
 type ReduxInject = {
@@ -46,6 +46,8 @@ type ReduxInject = {
   connectivity: ConnectivityType,
   // eslint-disable-next-line react/no-unused-prop-types
   nav: NavState,
+  // eslint-disable-next-line react/no-unused-prop-types
+  paymentStatus: PaymentStatus,
 };
 
 class SnackBarsContainerInner extends React.Component<
@@ -58,6 +60,8 @@ class SnackBarsContainerInner extends React.Component<
       snackBarVisibilities: {
         limitExceeded: 'hidden',
         offline: 'hidden',
+        paymentAborted: 'hidden',
+        paymentFailed: 'hidden',
       },
     };
   }
@@ -72,13 +76,14 @@ class SnackBarsContainerInner extends React.Component<
 
   enrichState(props: ReduxInject): SnackBarStateEnriched {
     const { snackBarVisibilities } = this.state;
-    const { amounts, currencies, connectivity, nav } = props;
+    const { amounts, currencies, connectivity, nav, paymentStatus } = props;
     return {
       snackBarVisibilities,
       amounts,
       currencies,
       connectivity,
       nav,
+      paymentStatus,
     };
   }
 
@@ -99,7 +104,12 @@ class SnackBarsContainerInner extends React.Component<
   render() {
     const { snackBarVisibilities } = this.state;
     const { t } = this.props;
-    const snackBarData = ['limitExceeded', 'offline'].map(key => ({
+    const snackBarData = [
+      'limitExceeded',
+      'offline',
+      'paymentAborted',
+      'paymentFailed',
+    ].map(key => ({
       key,
       text: t(key),
       visibility: snackBarVisibilities[key],
@@ -133,6 +143,7 @@ class SnackBarsContainerInner extends React.Component<
 
 const mapStateToProps = (state: AppState) => ({
   nav: state.nav,
+  paymentStatus: state.declaration.paymentData.status,
   amounts: getAmounts(state),
   currencies: getCurrencies(state),
   connectivity: getConnectivity(state),
