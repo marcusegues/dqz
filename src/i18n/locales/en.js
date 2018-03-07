@@ -350,6 +350,7 @@ export const en: Locale = {
       'alcohol content by volume of up to 18%: CHF 2 per litre',
     dutyAllowanceText35:
       'alcohol content by volume of more than 18%: CHF 15 per litre',
+      dutyAllowanceText35a: 'Beverages with an alcohol content by volume of not more than 0.5% are not considered as alcoholic beverages.',
     dutyAllowanceText36: 'Tobacco products',
     dutyAllowanceText37:
       'Duty-free allowances per person per day:\n' +
@@ -656,7 +657,7 @@ export const en: Locale = {
 
   information: {
     informationTitle: 'Information',
-    informationSubCategoryTitle: 'I have goods with me:',
+    informationSubCategoryTitle: 'I have animals or plants with me',
     customsProceduresMainText: 'Proceeding at the customs',
     travelDocumentsMainText: 'Travel documents',
     declarationMainText: 'I have goods with me',

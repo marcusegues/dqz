@@ -360,6 +360,7 @@ export const it: Locale = {
     dutyAllowanceText34: 'con tenore alcolico fino a 18 % vol.: 2.- al litro',
     dutyAllowanceText35:
       'con tenore alcolico superiore a 18 % vol.: 15.- al litro',
+      dutyAllowanceText35a: 'Bevande con un tenore alcolico fino a 0.5 % vol. non sono considerate bevande alcoliche.',
     dutyAllowanceText36: 'Tabacchi manufatti',
     dutyAllowanceText37:
       'Quantità ammesse in franchigia (per persona e giorno):\n' +
@@ -662,7 +663,7 @@ export const it: Locale = {
 
   information: {
     informationTitle: 'Informazioni utili',
-    informationSubCategoryTitle: 'Trasporto merce',
+    informationSubCategoryTitle: 'Ho animali o piante con me',
 
     customsProceduresMainText: 'Procedura in dogana',
 

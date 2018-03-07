@@ -357,6 +357,7 @@ export const de: Locale = {
     dutyAllowanceText33: 'Zollabgaben für Mehrmenge in CHF:',
     dutyAllowanceText34: 'Alkoholgehalt bis 18 % Vol.: 2.- je Liter',
     dutyAllowanceText35: 'Alkoholgehalt über 18 % Vol.: 15.- je Liter',
+    dutyAllowanceText35a: 'Getränke mit einem Alkoholgehalt bis 0,5 % Vol. gelten nicht als alkoholische Getränke.'
     dutyAllowanceText36: 'Tabakfabrikate',
     dutyAllowanceText37:
       'Freimengen pro Person und pro Tag:\n' +
@@ -656,7 +657,7 @@ export const de: Locale = {
 
   information: {
     informationTitle: 'Wissenswertes',
-    informationSubCategoryTitle: 'Ich habe Waren dabei:',
+    informationSubCategoryTitle: 'Ich habe Tiere oder Pflanzen dabei',
     customsProceduresMainText: 'Vorgehen am Zoll',
     travelDocumentsMainText: 'Reisedokumente',
     declarationMainText: 'Ich habe Waren dabei',
