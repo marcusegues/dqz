@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Image, Text, View } from 'react-native';
+import { Image, View } from 'react-native';
 import { CardRowText } from '../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { Row } from '../../../components/Rows/Row';
 import { AmountIcon } from '../../../components/General Components/GreyBox/configured/AmountIcon';

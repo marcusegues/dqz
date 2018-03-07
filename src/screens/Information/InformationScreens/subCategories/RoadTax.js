@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Image, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -12,9 +12,7 @@ import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { BulletText } from '../../../AppInfo/subComponents/BulletText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { CardHeaderText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardHeaderText';
-import { Row } from '../../../../components/Rows/Row';
 import { RightAlignedHeader } from '../../../../components/Overview/subcomponents/RightAlignedHeader';
-import { AmountIcon } from '../../../../components/General Components/GreyBox/configured/AmountIcon';
 import { RoadTaxRow } from '../../subComponents/RoadTaxRow';
 
 const bus = require('../../../../../assets/images/info/bus.png');
