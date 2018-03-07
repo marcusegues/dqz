@@ -8,7 +8,7 @@ import type { SnackBarVisibility } from '../SnackBarsContainer';
 const snackBarStyles = bottomMost => ({
   snackBar: {
     flex: 0,
-    flexDirection: 'column',
+    flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: SNACKBAR_GREY,
     width: '100%',
@@ -25,10 +25,12 @@ const snackBarStyles = bottomMost => ({
 
 export const SnackBar = ({
   text,
+  rightText,
   visibility,
   bottomMost = false,
 }: {
   text: string,
+  rightText?: ?string,
   visibility: SnackBarVisibility,
   bottomMost: boolean,
 }) => {
@@ -37,7 +39,14 @@ export const SnackBar = ({
     <View />
   ) : (
     <View style={[ownStyles.snackBar]}>
-      <Text style={[ownStyles.snackBarText]}>{text}</Text>
+      <Text style={[ownStyles.snackBarText, { flex: 1 }]}>{text}</Text>
+      {rightText ? (
+        <Text style={[ownStyles.snackBarText]}>{rightText}</Text>
+      ) : null}
     </View>
   );
+};
+
+SnackBar.defaultProps = {
+  rightText: null,
 };

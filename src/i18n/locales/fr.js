@@ -52,6 +52,8 @@ export const fr: Locale = {
     offline: "Vous êtes hors ligne S'il vous plaît vérifier votre connexion.",
     paymentAborted: 'Paiement annulé',
     paymentFailed: 'Paiement échoué',
+    paymentAbortedRightText: 'OK',
+    paymentFailedRightText: 'OK',
     showBorder: 'Afficher le passage frontalier',
   },
   onBoarding: {

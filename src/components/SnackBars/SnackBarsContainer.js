@@ -16,7 +16,11 @@ import type { CurrencyObject } from '../../model/currencies';
 import type { ConnectivityType } from '../../types/connectivity';
 import type { AppState } from '../../types/reducers';
 import { SnackBar } from './SnackBar/SnackBar';
-import type { PaymentStatus, TFunction } from '../../types/generalTypes';
+import type {
+  PaymentData,
+  PaymentStatus,
+  TFunction,
+} from '../../types/generalTypes';
 import type { NavState } from '../../types/reducers/nav';
 import type { SnackBarType } from './SnackBarsControl/controlSnackBarStates';
 
@@ -49,6 +53,8 @@ type ReduxInject = {
   // eslint-disable-next-line react/no-unused-prop-types
   paymentStatus: PaymentStatus,
 };
+
+const rightTexts = new Set(['paymentAborted', 'paymentFailed']);
 
 class SnackBarsContainerInner extends React.Component<
   ReduxInject & { t: TFunction },
@@ -104,6 +110,7 @@ class SnackBarsContainerInner extends React.Component<
   render() {
     const { snackBarVisibilities } = this.state;
     const { t } = this.props;
+
     const snackBarData = [
       'limitExceeded',
       'offline',
@@ -112,9 +119,40 @@ class SnackBarsContainerInner extends React.Component<
     ].map(key => ({
       key,
       text: t(key),
+      rightText: rightTexts.has(key) ? t(`${key}RightText`) : null,
       visibility: snackBarVisibilities[key],
       component: SnackBar,
     }));
+
+    const snackBarData = [
+      {
+        key: 'limitExceeded',
+        text: t('limitExceeded'),
+        visibility: snackBarVisibilities.limitExceeded,
+        component: SnackBar,
+      },
+      {
+        key: 'offline',
+        text: t('offline'),
+        visibility: snackBarVisibilities.offline,
+        component: SnackBar,
+      },
+      {
+        key: 'paymentAborted',
+        text: t('paymentAborted'),
+        rightText: t('paymentAbortedRightText'),
+          onRightTextPress: () => this.props.setPaymentData(paymentData.set('status', 'notStarted'))
+        visibility: snackBarVisibilities.paymentAborted,
+        component: SnackBar,
+      },
+      {
+        key: 'paymentFailed',
+        text: t('paymentFailed'),
+        rightText: t('paymentFailedRightText'),
+        visibility: snackBarVisibilities.paymentFailed,
+        component: SnackBar,
+      },
+    ];
 
     // determine which element in snackBarData is the last one that has visibility === 'visible'
     const bottomMostVisibleSnackBarIndex = snackBarData.reduce(
@@ -131,8 +169,9 @@ class SnackBarsContainerInner extends React.Component<
         {snackBarData.map((item, index) =>
           React.createElement(item.component, {
             key: item.key,
-            text: item.text,
-            visibility: item.visibility,
+            text: t(item.key),
+            rightText: item.rightText ? t(`${item.key}RightText`) : null,
+            visibility: snackBarVisibilities[item.key],
             bottomMost: index === bottomMostVisibleSnackBarIndex,
           })
         )}
@@ -149,6 +188,15 @@ const mapStateToProps = (state: AppState) => ({
   connectivity: getConnectivity(state),
 });
 
-export const SnackBarsContainer = (connect(mapStateToProps, null)(
+const mapDispatchToProps = dispatch => ({
+  setPaymentData: paymentData => {
+    dispatch({
+      type: 'SET_PAYMENT_DATA',
+      paymentData,
+    });
+  },
+});
+
+export const SnackBarsContainer = (connect(mapStateToProps, mapDispatchToProps)(
   translate(['snackBar'])(SnackBarsContainerInner)
 ): ComponentType<{}>);

@@ -52,6 +52,8 @@ export const de: Locale = {
     offline: 'Sie sind offline. Bitte überprufen Sie Ihre Verbindung.',
     paymentAborted: 'Zahlung storniert',
     paymentFailed: 'Zahlung fehlgeschlagen',
+    paymentAbortedRightText: 'OK',
+    paymentFailedRightText: 'OK',
     showBorder: 'Grenzübergang anzeigen',
   },
   onBoarding: {

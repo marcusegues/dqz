@@ -52,6 +52,8 @@ export const en: Locale = {
     offline: 'You are offline. Please check your connection.',
     paymentAborted: 'Payment canceled.',
     paymentFailed: 'Payment failed',
+    paymentAbortedRightText: 'OK',
+    paymentFailedRightText: 'OK',
     showBorder: 'Show border crossing',
   },
   onBoarding: {

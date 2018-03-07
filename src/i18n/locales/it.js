@@ -52,6 +52,8 @@ export const it: Locale = {
     offline: 'Sei offline. Si prega di verificare la connessione.',
     paymentAborted: 'Paiement annulé',
     paymentFailed: 'Pagamento annullato',
+    paymentAbortedRightText: 'OK',
+    paymentFailedRightText: 'OK',
     showBorder: 'Mostra il valico di frontiera',
   },
   onBoarding: {

@@ -54,6 +54,8 @@ type SnackBarTranslations = {
   offline: string,
   paymentAborted: string,
   paymentFailed: string,
+  paymentAbortedRightText: string,
+  paymentFailedRightText: string,
   showBorder: string,
 };
 
