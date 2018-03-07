@@ -65,7 +65,7 @@ export const setQuestionStates = (
   switch (justAnswered) {
     case 'peopleInput': {
       if (direction === 'back') {
-        navigation.goBack();
+        navigation.dispatch({ type: 'GO_BACK' });
       }
       if (singleOtherGoodsMainCategory(mainCategories)) {
         quantityInputState = 'hidden';

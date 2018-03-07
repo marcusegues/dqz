@@ -55,7 +55,7 @@ import { Cash } from '../screens/Information/InformationScreens/subCategories/Ca
 import { Food } from '../screens/Information/InformationScreens/subCategories/Food';
 import { AuthorisationRequirements } from '../screens/Information/InformationScreens/subCategories/AuthorisationRequirements';
 import { PurchasesOnlineOffline } from '../screens/Information/InformationScreens/mainCategories/PurchasesOnlineOffline';
-import { addListener } from '../reducers/nav';
+import { addListener } from './reactNavigation';
 
 export type NavigationObject = { navigation: Navigation };
 
