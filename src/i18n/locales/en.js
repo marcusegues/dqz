@@ -7,8 +7,8 @@ export const en: Locale = {
     Butter: 'Butter and cream',
     Oils: 'Oils/fats/margarine',
     OtherFood: 'Other food and non-alcoholic beverages',
-    AlcSoft: 'Alcohol content of 0.5% to 18% AB',
-    AlcHard: 'Alcohol content of more than 18% ABV',
+    AlcSoft: 'Alcoholic beverages of up to 18% vol.',
+    AlcHard: 'Alcoholic beverages of more than 18% vol.',
     Cigarettes: 'Cigarettes and cigars',
     Tobacco: 'Other tobacco products',
     Meds: 'Medications',
@@ -23,7 +23,7 @@ export const en: Locale = {
     Meat: 'Meat and meat products',
     Butter: 'Butter and cream',
     Oil: 'Oils/fats/margarine',
-    Alcohol: `Alcohol`,
+    Alcohol: 'Alcoholic beverages',
     TobaccoProducts: 'Tobacco Products',
     OtherGoods: 'Other Goods',
   },
@@ -84,9 +84,9 @@ export const en: Locale = {
   amountInput: {
     amountInput: 'Please enter here the value of all transported goods.',
     amountInputLargeItem:
-      'Are you carrying individual items with a value of over CHF {{value}}?',
+      'Capture individual items worth more than {{value}} francs.',
     amountInputLargeItemGreyBox:
-      'Please enter here each item which is worth more than CHF 300.00.',
+      'Again, capture every item that is worth more than CHF 300.00.',
     amountInputAddItem: 'Add value',
     amountInputAddItemLarge: 'Add item',
     amountInputEnterValue: 'Enter the value without foreign VAT (net value).',
