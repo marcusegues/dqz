@@ -7,7 +7,7 @@ import { translate } from 'react-i18next';
 // $FlowFixMe
 import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 // $FlowFixMe
-import { View, NetInfo } from 'react-native';
+import { View } from 'react-native';
 import { i18nImplementation } from '../i18n';
 import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
 import { ScreensView } from '../screens/ScreensView/ScreensView';
@@ -38,7 +38,6 @@ import type { Navigation } from '../types/generalTypes';
 import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
 import { UsefulInfoScreenTemplate } from '../screens/Information/subComponents/UsefulInfoScreenTemplate';
 import { SnackBarsContainer } from '../components/SnackBars/SnackBarsContainer';
-import type { ConnectivityType } from '../types/connectivity';
 import { VatAllowance } from '../screens/Information/InformationScreens/mainCategories/VatAllowance';
 import { DutyAllowance } from '../screens/Information/InformationScreens/mainCategories/DutyAllowance';
 import { PersonalEffects } from '../screens/Information/InformationScreens/mainCategories/PersonalEffects';
@@ -55,6 +54,7 @@ import { Cash } from '../screens/Information/InformationScreens/subCategories/Ca
 import { Food } from '../screens/Information/InformationScreens/subCategories/Food';
 import { AuthorisationRequirements } from '../screens/Information/InformationScreens/subCategories/AuthorisationRequirements';
 import { PurchasesOnlineOffline } from '../screens/Information/InformationScreens/mainCategories/PurchasesOnlineOffline';
+import { addListener } from './reactNavigation';
 
 export type NavigationObject = { navigation: Navigation };
 
@@ -357,22 +357,12 @@ export const RootStackNavigator = StackNavigator(
 );
 
 type ReduxInject = {
-  setConnectivity: (connectionInfo: ConnectivityType) => void,
   dispatch: Function,
   nav: Object,
 };
 
+// eslint-disable-next-line react/prefer-stateless-function
 class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
-  componentDidMount() {
-    NetInfo.addEventListener('connectionChange', connectionInfo =>
-      this.handleConnectivityChange(connectionInfo)
-    );
-  }
-
-  handleConnectivityChange(connectionInfo: ConnectivityType) {
-    this.props.setConnectivity(connectionInfo);
-  }
-
   render() {
     return (
       <View
@@ -387,6 +377,7 @@ class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
           navigation={addNavigationHelpers({
             dispatch: this.props.dispatch,
             state: this.props.nav,
+            addListener,
           })}
           screenProps={{
             t: i18nImplementation.getFixedT(),
@@ -406,8 +397,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   dispatch,
-  setConnectivity: (connectionInfo: ConnectivityType) =>
-    dispatch({ type: 'SET_CONNECTIVITY', connectionInfo }),
 });
 
 const ReloadAppOnLanguageChange = (connect(mapStateToProps, mapDispatchToProps)(

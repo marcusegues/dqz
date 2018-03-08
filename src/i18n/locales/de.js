@@ -213,7 +213,7 @@ export const de: Locale = {
     customsProceduresText14:
       'Diese Form der Zollanmeldung ist nur für Waren zulässig, die für Ihren privaten Gebrauch oder zum Verschenken bestimmt sind. Sie dürfen keinen Beschränkungen oder Verboten unterliegen und nicht zeugnis- oder bewilligungspflichtig sein. ',
     customsProceduresText15:
-      'Andere Waren müssen bei einem durch Personal des Schweizer Zolls besetzten Grenzübergang mündlich angemeldet werden.',
+      'Andere Waren müssen bei einem durch Personal des Schweizer Zolls besetzten Grenzübergang angemeldet werden.',
     customsProceduresText16: 'Anmeldebox',
     customsProceduresText17:
       'An gewissen Grenzübergängen stehen Ihnen noch sogenannte Anmeldeboxen zur Verfügung, bei denen Sie Ihre Waren schriftlich anmelden können. Informationen dazu finden Sie unter www.ezv.admin.ch/Anmeldebox [Link: https://www.ezv.admin.ch/ezv/de/home/zollanmeldung/anmeldung-private/schriftliche-selbstanmeldung-mit-den-anmeldeboxen.html]',
@@ -264,7 +264,7 @@ export const de: Locale = {
     vatAllowanceText14:
       'Sie können die Waren auch mit der App QuickZoll oder bei Grenzübergängen, die nicht durch Zollpersonal besetzt sind, schriftlich via Anmeldebox anmelden. Informationen dazu finden Sie hier',
     vatAllowanceText15:
-      'Bitte beachten Sie: Werden die so genannten Freimengen von alkoholischen Getränken, Tabakfabrikaten und gewissen Lebensmitteln überschritten, müssen Sie in jedem Fall Zoll bezahlen. Mehr Informationen.',
+      'Bitte beachten Sie: Werden die so genannten Freimengen von alkoholischen Getränken, Tabakfabrikaten und gewissen Lebensmitteln überschritten, müssen Sie in jedem Fall Zoll bezahlen.',
     vatAllowanceText16:
       'Bitte beachten Sie zudem, dass bestimmte Waren (z.B. Fälschungen, Waffen sowie gewisse Pflanzen, Tiere, Tierprodukte und Waren, die dem Artenschutz unterliegen) zur Einfuhr verboten sein können oder gewissen Beschränkungen unterliegen. Mehr Informationen',
     vatAllowanceText17: 'Anwendung der Wertfreigrenze für Einzelpersonen',
@@ -357,6 +357,7 @@ export const de: Locale = {
     dutyAllowanceText33: 'Zollabgaben für Mehrmenge in CHF:',
     dutyAllowanceText34: 'Alkoholgehalt bis 18 % Vol.: 2.- je Liter',
     dutyAllowanceText35: 'Alkoholgehalt über 18 % Vol.: 15.- je Liter',
+    dutyAllowanceText35a: 'Getränke mit einem Alkoholgehalt bis 0,5 % Vol. gelten nicht als alkoholische Getränke.',
     dutyAllowanceText36: 'Tabakfabrikate',
     dutyAllowanceText37:
       'Freimengen pro Person und pro Tag:\n' +
@@ -656,7 +657,7 @@ export const de: Locale = {
 
   information: {
     informationTitle: 'Wissenswertes',
-    informationSubCategoryTitle: 'Ich habe Waren dabei:',
+    informationSubCategoryTitle: 'Ich habe Tiere oder Pflanzen dabei',
     customsProceduresMainText: 'Vorgehen am Zoll',
     travelDocumentsMainText: 'Reisedokumente',
     declarationMainText: 'Ich habe Waren dabei',
