@@ -327,7 +327,7 @@ class PaymentContainerInner extends React.Component<
         />
 
         {this.state.redirectDataLoaded ? (
-          <View style={{ position: 'absolute', top: 0 }}>
+          <View style={{ position: 'absolute', top: 0, bottom: 0 }}>
             <PaymentWebView
               source={{ uri: this.state.redirectUrl }}
               onNavigationStateChange={e => this.checkWebViewUrl(e)}
