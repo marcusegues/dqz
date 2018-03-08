@@ -369,7 +369,8 @@ export const fr: Locale = {
       "teneur en alcool n'excédant pas 18 % du volume: 2.- par l",
     dutyAllowanceText35:
       ' teneur en alcool excédant 18 % du volume: 15.- par l',
-    dutyAllowanceText35a: 'Les boissons dont la teneur en alcool n\'excède pas 0,5 % vol ne sont pas réputées boissons alcooliques.',
+    dutyAllowanceText35a:
+      "Les boissons dont la teneur en alcool n'excède pas 0,5 % vol ne sont pas réputées boissons alcooliques.",
     dutyAllowanceText36: 'Tabacs manufacturés',
     dutyAllowanceText37:
       'Franchises quantitatives par personne et par jour:\n' +
@@ -683,7 +684,7 @@ export const fr: Locale = {
 
     travelDocumentsMainText: 'Documents de voyage',
 
-    declarationMainText: "Je transporte des marchandises",
+    declarationMainText: 'Je transporte des marchandises',
     animalsAndPlantsMainText: 'Je transporte des animaux ou des plantes',
     vehiclesMainText: 'Je voyage avec un véhicule',
     entryByTrainMainText: 'Entrée en Suisse par voie ferroviaire',
