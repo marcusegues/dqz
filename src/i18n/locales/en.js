@@ -526,6 +526,16 @@ export const en: Locale = {
     roadTaxText14: 'Minimum charge per proof of payment: CHF 25.',
     roadTaxText15:
       'Monthly and annual rates in accordance with form number 15.91.',
+    roadTaxCategory1: '',
+    roadTaxCategory2: '',
+    roadTaxCategory3: '',
+    roadTaxCategory4: '',
+    roadTaxCategory5: '',
+    costPerDay: '',
+    commonRates: '',
+    vehicleTariffs: '',
+    per100kgTrailerLoad: '',
+    till: '',
   },
 
   fuelAndRepairs: {

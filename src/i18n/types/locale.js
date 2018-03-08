@@ -384,6 +384,16 @@ type RoadTaxTranslations = {
   roadTaxText13: string,
   roadTaxText14: string,
   roadTaxText15: string,
+  roadTaxCategory1: string,
+  roadTaxCategory2: string,
+  roadTaxCategory3: string,
+  roadTaxCategory4: string,
+  roadTaxCategory5: string,
+  costPerDay: string,
+  commonRates: string,
+  vehicleTariffs: string,
+  per100kgTrailerLoad: string,
+  till: string,
 };
 
 type FuelAndRepairsTranslations = {

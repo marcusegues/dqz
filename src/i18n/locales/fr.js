@@ -543,6 +543,16 @@ export const fr: Locale = {
     roadTaxText14: 'Redevance minimale par preuve de paiement: 25 francs.',
     roadTaxText15:
       'Tarifs mensuels et annuels mentionnés dans le formulaire 15.91.',
+    roadTaxCategory1: '',
+    roadTaxCategory2: '',
+    roadTaxCategory3: '',
+    roadTaxCategory4: '',
+    roadTaxCategory5: '',
+    costPerDay: '',
+    commonRates: '',
+    vehicleTariffs: '',
+    per100kgTrailerLoad: '',
+    till: '',
   },
 
   fuelAndRepairs: {

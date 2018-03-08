@@ -533,6 +533,16 @@ export const it: Locale = {
     roadTaxText13: 'Attenzione',
     roadTaxText14: 'Tassa minima per prova del pagamento: 25 franchi.',
     roadTaxText15: 'Tariffe mensili e annuali secondo il modulo 15.91.',
+    roadTaxCategory1: '',
+    roadTaxCategory2: '',
+    roadTaxCategory3: '',
+    roadTaxCategory4: '',
+    roadTaxCategory5: '',
+    costPerDay: '',
+    commonRates: '',
+    vehicleTariffs: '',
+    per100kgTrailerLoad: '',
+    till: '',
   },
 
   fuelAndRepairs: {
