@@ -7,8 +7,8 @@ export const en: Locale = {
     Butter: 'Butter and cream',
     Oils: 'Oils/fats/margarine',
     OtherFood: 'Other food and non-alcoholic beverages',
-    AlcSoft: 'Alcohol content of 0.5% to 18% AB',
-    AlcHard: 'Alcohol content of more than 18% ABV',
+    AlcSoft: 'Alcoholic beverages of up to 18% vol.',
+    AlcHard: 'Alcoholic beverages of more than 18% vol.',
     Cigarettes: 'Cigarettes and cigars',
     Tobacco: 'Other tobacco products',
     Meds: 'Medications',
@@ -23,7 +23,7 @@ export const en: Locale = {
     Meat: 'Meat and meat products',
     Butter: 'Butter and cream',
     Oil: 'Oils/fats/margarine',
-    Alcohol: `Alcohol`,
+    Alcohol: 'Alcoholic beverages',
     TobaccoProducts: 'Tobacco Products',
     OtherGoods: 'Other Goods',
   },
@@ -78,14 +78,15 @@ export const en: Locale = {
     enterQuantity: 'Enter quantity',
     enterQuantitiesButter: 'Enter the quantities of all {{value}} here',
     enterQuantitiesAlcohol: 'Enter the quantities of all {{value}} here',
-    standardInputSubText: 'Record the amount of {category} you carry with you:',
+    standardInputSubText:
+      'Record the amount of {{category}} you carry with you:',
   },
   amountInput: {
     amountInput: 'Please enter here the value of all transported goods.',
     amountInputLargeItem:
-      'Are you carrying individual items with a value of over CHF {{value}}?',
+      'Capture individual items worth more than {{value}} francs.',
     amountInputLargeItemGreyBox:
-      'Please enter here each item which is worth more than CHF 300.00.',
+      'Again, capture every item that is worth more than CHF 300.00.',
     amountInputAddItem: 'Add value',
     amountInputAddItemLarge: 'Add item',
     amountInputEnterValue: 'Enter the value without foreign VAT (net value).',
@@ -200,7 +201,7 @@ export const en: Locale = {
       'If the border crossing is manned by Swiss Customs staff, all goods must be declared verbally without you being solicited to do so. Information on the main border crossings can be found in the border crossings section.',
     customsProceduresText12: 'Customs declaration with the app QuickZoll',
     customsProceduresText13:
-      'You can also declare your goods with the FCA\'s app QuickZoll. The goods must be cleared through customs with the app before crossing the border or when doing so. In other words, duties must be paid. If you paid the duties with the app, you may also use border crossings where no Customs staff are present and the green channel in airports.',
+      "You can also declare your goods with the FCA's app QuickZoll. The goods must be cleared through customs with the app before crossing the border or when doing so. In other words, duties must be paid. If you paid the duties with the app, you may also use border crossings where no Customs staff are present and the green channel in airports.",
     customsProceduresText14:
       'This form of customs declaration is permitted only for goods intended for your personal use or as gifts. They must not be subject to any restrictions or bans and must not require a certificate or authorisation.',
     customsProceduresText15:
@@ -350,7 +351,8 @@ export const en: Locale = {
       'alcohol content by volume of up to 18%: CHF 2 per litre',
     dutyAllowanceText35:
       'alcohol content by volume of more than 18%: CHF 15 per litre',
-      dutyAllowanceText35a: 'Beverages with an alcohol content by volume of not more than 0.5% are not considered as alcoholic beverages.',
+    dutyAllowanceText35a:
+      'Beverages with an alcohol content by volume of not more than 0.5% are not considered as alcoholic beverages.',
     dutyAllowanceText36: 'Tobacco products',
     dutyAllowanceText37:
       'Duty-free allowances per person per day:\n' +
@@ -524,6 +526,17 @@ export const en: Locale = {
     roadTaxText14: 'Minimum charge per proof of payment: CHF 25.',
     roadTaxText15:
       'Monthly and annual rates in accordance with form number 15.91.',
+    roadTaxCategory1: 'Company cars, coaches and articulated buses',
+    roadTaxCategory2: 'Motor caravan or camper',
+    roadTaxCategory3: 'caravan',
+    roadTaxCategory4: 'Heavy passenger cars',
+    roadTaxCategory5:
+      'Trailers of over 3.5 tonnes pulled by the above vehicles or light motor vehicles',
+    costPerDay: 'Cost per day:',
+    commonRates: 'The most common rates',
+    vehicleTariffs: 'For the following vehicles these tariffs apply:',
+    per100kgTrailerLoad: 'per 100 kg trailer load',
+    till: 'up to',
   },
 
   fuelAndRepairs: {
@@ -662,7 +675,7 @@ export const en: Locale = {
     travelDocumentsMainText: 'Travel documents',
     declarationMainText: 'I have goods with me',
     animalsAndPlantsMainText: 'I have animals or plants with me',
-    vehiclesMainText: "I am driving a vehicle",
+    vehiclesMainText: 'I am driving a vehicle',
     entryByTrainMainText: 'Entry by train',
     prohibitionsAndRestrictionsMainText: 'Bans and restrictions',
     highwayVignetteMainText: 'Motorway tax sticker',

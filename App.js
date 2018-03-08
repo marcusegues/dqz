@@ -3,8 +3,19 @@
 /* global fetch */
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
+
+import {
+  Platform,
+  StatusBar,
+  StyleSheet,
+  View,
+  AppState,
+  NetInfo,
+  // $FlowFixMe
+} from 'react-native';
 // $FlowFixMe
-import { Platform, StatusBar, StyleSheet, View, AppState } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
+
 // $FlowFixMe
 import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons, Entypo } from '@expo/vector-icons';
@@ -19,6 +30,7 @@ import {
   analyticsCustom,
 } from './src/analytics/analyticsApi';
 import { initAmplitude } from './src/analytics/amplitude';
+import type { ConnectivityType } from './src/types/connectivity';
 
 const store = configureStore();
 
@@ -32,6 +44,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.2)',
   },
 });
+
+if (Platform.OS === 'android') {
+  SafeAreaView.setStatusBarHeight(0);
+}
 
 type AppProps = {};
 type AppStateT = { isLoadingComplete: boolean };
@@ -51,7 +67,14 @@ export default class App extends React.Component<AppProps, AppStateT> {
     AppState.addEventListener('change', next =>
       this.handleAppStateChange(next)
     );
+    NetInfo.addEventListener('connectionChange', connectionInfo =>
+      this.handleConnectivityChange(connectionInfo)
+    );
     initAmplitude();
+  }
+
+  handleConnectivityChange(connectionInfo: ConnectivityType) {
+    store.dispatch({ type: 'SET_CONNECTIVITY', connectionInfo });
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -87,6 +110,11 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/images/customs.png'),
         require('./assets/images/info/freeLimit.png'),
         require('./assets/images/redSquare.png'),
+        require('./assets/images/info/bus.png'),
+        require('./assets/images/info/camper.png'),
+        require('./assets/images/info/pendant.png'),
+        require('./assets/images/info/trailer.png'),
+        require('./assets/images/info/van.png'),
 
         require('./assets/icons/mwst.png'),
         require('./assets/icons/iva.png'),
@@ -135,6 +163,7 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/icons/info/Cash.png'),
         require('./assets/icons/info/Food.png'),
         require('./assets/icons/info/AuthorisationRequirements.png'),
+        require('./assets/icons/info/InternetShoppingAndMail.png'),
       ]),
       Font.loadAsync({
         open_sans_extra_bold: require('./assets/fonts/OpenSans-ExtraBold.ttf'),

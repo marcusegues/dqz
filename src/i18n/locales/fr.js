@@ -7,8 +7,8 @@ export const fr: Locale = {
     Butter: 'Beurre et crème',
     Oils: 'Huiles/graisses/margarine',
     OtherFood: 'Autres denrées alimentaires et boissons sans alcool',
-    AlcSoft: 'Boissons alcoolisées comprise entre 0,5 et 18 % du volume',
-    AlcHard: 'Boissons alcoolisées supérieure à 18 % du volume',
+    AlcSoft: 'Boissons alcoolisées jusqu\'à 18% vol.',
+    AlcHard: 'Boissons alcoolisées de plus de 18% vol.',
     Cigarettes: 'Cigarettes et cigares',
     Tobacco: 'Autres tabacs manufacturés',
     Meds: 'Médicaments',
@@ -87,7 +87,7 @@ export const fr: Locale = {
     amountInputLargeItem:
       "Transportez-vous des biens individuels d'une valeur supérieure à {{value}} francs? ",
     amountInputLargeItemGreyBox:
-      "Saisissez ici chaque bien d'une valeur supérieure à 300 francs.",
+      "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300.00.",
     amountInputAddItem: 'Ajouter la valeur',
     amountInputAddItemLarge: 'Ajouter un bien',
     amountInputEnterValue:
@@ -369,7 +369,8 @@ export const fr: Locale = {
       "teneur en alcool n'excédant pas 18 % du volume: 2.- par l",
     dutyAllowanceText35:
       ' teneur en alcool excédant 18 % du volume: 15.- par l',
-    dutyAllowanceText35a: 'Les boissons dont la teneur en alcool n\'excède pas 0,5 % vol ne sont pas réputées boissons alcooliques.',
+    dutyAllowanceText35a:
+      "Les boissons dont la teneur en alcool n'excède pas 0,5 % vol ne sont pas réputées boissons alcooliques.",
     dutyAllowanceText36: 'Tabacs manufacturés',
     dutyAllowanceText37:
       'Franchises quantitatives par personne et par jour:\n' +
@@ -542,6 +543,17 @@ export const fr: Locale = {
     roadTaxText14: 'Redevance minimale par preuve de paiement: 25 francs.',
     roadTaxText15:
       'Tarifs mensuels et annuels mentionnés dans le formulaire 15.91.',
+    roadTaxCategory1: "Voitures d'entreprise, autocars et autobus articulés",
+    roadTaxCategory2: 'Motor caravane ou camping-car',
+    roadTaxCategory3: 'caravane',
+    roadTaxCategory4: 'Voitures de tourisme lourdes',
+    roadTaxCategory5:
+      'Remorques de plus de 3,5 tonnes tirées par les véhicules ci-dessus ou les véhicules automobiles légers',
+    costPerDay: 'Coût par jour:',
+    commonRates: 'Les taux les plus courants',
+    vehicleTariffs: "Pour les véhicules suivants, ces tarifs s'appliquent:",
+    per100kgTrailerLoad: 'par 100 kg de charge de remorque',
+    till: 'à',
   },
 
   fuelAndRepairs: {
@@ -683,7 +695,7 @@ export const fr: Locale = {
 
     travelDocumentsMainText: 'Documents de voyage',
 
-    declarationMainText: "Je transporte des marchandises",
+    declarationMainText: 'Je transporte des marchandises',
     animalsAndPlantsMainText: 'Je transporte des animaux ou des plantes',
     vehiclesMainText: 'Je voyage avec un véhicule',
     entryByTrainMainText: 'Entrée en Suisse par voie ferroviaire',

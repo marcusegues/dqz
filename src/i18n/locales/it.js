@@ -7,8 +7,8 @@ export const it: Locale = {
     Butter: 'Burro e panna',
     Oils: 'Oli, grassi e margarina',
     OtherFood: 'Altre derrate alimentari e bevande non alcoliche',
-    AlcSoft: 'Tenore alcolico 0,5 %–18 % vol.',
-    AlcHard: 'Tenore alcolico superiore al 18 % vol.',
+    AlcSoft: 'Bevande alcoliche fino al 18% vol.',
+    AlcHard: 'Bevande alcoliche oltre il 18% vol.',
     Cigarettes: 'Sigarette e sigari',
     Tobacco: 'Altri tabacchi manufatti',
     Meds: 'Medicamenti',
@@ -23,7 +23,7 @@ export const it: Locale = {
     Meat: 'Carne e preparazioni di carne',
     Butter: 'Burro e panna',
     Oil: 'Oli, grassi e margarina',
-    Alcohol: 'Tenore alcolico',
+    Alcohol: 'Bevande alcoliche',
     TobaccoProducts: 'Tabacchi manufatti',
     OtherGoods: 'Altre merci',
   },
@@ -82,9 +82,9 @@ export const it: Locale = {
   amountInput: {
     amountInput: 'Inserire qui il valore complessivo delle merci trasportate.',
     amountInputLargeItem:
-      'Vengono trasportati singoli oggetti con valore superiore a {{value}} franchi?',
+      'Cattura i singoli oggetti con chi ha oltre {{value}} franchi.',
     amountInputLargeItemGreyBox:
-      'Inserire qui tutti gli oggetti con valore superiore a 300 franchi.',
+      'Ancora una volta, cattura ogni oggetto che vale più di CHF 300.00.',
     amountInputAddItem: 'Aggiungere valore',
     amountInputAddItemLarge: 'Aggiungere oggetto',
     amountInputEnterValue:
@@ -176,8 +176,6 @@ export const it: Locale = {
     allReceiptsDate: 'da {{value}}',
     entryTime: 'Periodo di entrata:',
     chooseOtherEntryTime: 'Regolare',
-    overviewRegistered: '⚠️',
-    overviewDutyFree: '⚠️',
     until: 'fino a',
   },
 
@@ -208,8 +206,9 @@ export const it: Locale = {
       'Le merci possono essere dichiarate anche con l’app QuickZoll dell’AFD. Le merci devono essere imposte con l’app prima del passaggio del confine oppure al valico di confine. Ciò significa che i tributi devono essere pagati. Se il pagamento avviene mediante app è consentito utilizzare anche i valichi di confine in cui il personale doganale non è presente [OPPURE: valichi di confine dove è possibile effettuare la dichiarazione scritta], e negli aeroporti il passaggio verde.',
     customsProceduresText14:
       'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.',
-      customsProceduresText15: 'Altre merci devono essere dichiarate presso un valico di confine in cui è presente il personale doganale svizzero.',
-      customsProceduresText16:
+    customsProceduresText15:
+      'Altre merci devono essere dichiarate presso un valico di confine in cui è presente il personale doganale svizzero.',
+    customsProceduresText16:
       'Dichiarazione doganale scritta (cassetta delle dichiarazioni)',
     customsProceduresText17:
       'In alcuni valichi di confine sono anche a disposizione le cosiddette cassette delle dichiarazioni, dove è possibile dichiarare le proprie merci in forma scritta. Informazioni a riguardo sono disponibili su:\nwww.ezv.admin.ch/cassetta delle dichiarazioni',
@@ -360,7 +359,8 @@ export const it: Locale = {
     dutyAllowanceText34: 'con tenore alcolico fino a 18 % vol.: 2.- al litro',
     dutyAllowanceText35:
       'con tenore alcolico superiore a 18 % vol.: 15.- al litro',
-      dutyAllowanceText35a: 'Bevande con un tenore alcolico fino a 0.5 % vol. non sono considerate bevande alcoliche.',
+    dutyAllowanceText35a:
+      'Bevande con un tenore alcolico fino a 0.5 % vol. non sono considerate bevande alcoliche.',
     dutyAllowanceText36: 'Tabacchi manufatti',
     dutyAllowanceText37:
       'Quantità ammesse in franchigia (per persona e giorno):\n' +
@@ -531,6 +531,17 @@ export const it: Locale = {
     roadTaxText13: 'Attenzione',
     roadTaxText14: 'Tassa minima per prova del pagamento: 25 franchi.',
     roadTaxText15: 'Tariffe mensili e annuali secondo il modulo 15.91.',
+    roadTaxCategory1: 'Auto aziendali, pullman e autobus articolati',
+    roadTaxCategory2: 'Vivere automobile o camper',
+    roadTaxCategory3: 'carovana',
+    roadTaxCategory4: 'Autovetture pesanti',
+    roadTaxCategory5:
+      'Rimorchi di oltre 3,5 tonnellate trainati dai veicoli di cui sopra o veicoli a motore leggero',
+    costPerDay: 'Costo al giorno:',
+    commonRates: 'Le tariffe più comuni',
+    vehicleTariffs: 'Per i seguenti veicoli si applicano le seguenti tariffe:',
+    per100kgTrailerLoad: 'Carico del rimorchio ogni 100 kg',
+    till: 'a',
   },
 
   fuelAndRepairs: {
