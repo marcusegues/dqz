@@ -3,6 +3,7 @@
 import { parseString } from 'react-native-xml2js';
 import {
   fetchCurrencyObject,
+  // eslint-disable-next-line no-unused-vars
   storeCurrencyObject,
 } from '../asyncStorage/storageApi';
 

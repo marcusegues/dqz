@@ -38,7 +38,6 @@ import type { Navigation } from '../types/generalTypes';
 import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
 import { UsefulInfoScreenTemplate } from '../screens/Information/subComponents/UsefulInfoScreenTemplate';
 import { SnackBarsContainer } from '../components/SnackBars/SnackBarsContainer';
-import type { ConnectivityType } from '../types/connectivity';
 import { VatAllowance } from '../screens/Information/InformationScreens/mainCategories/VatAllowance';
 import { DutyAllowance } from '../screens/Information/InformationScreens/mainCategories/DutyAllowance';
 import { PersonalEffects } from '../screens/Information/InformationScreens/mainCategories/PersonalEffects';
@@ -358,11 +357,11 @@ export const RootStackNavigator = StackNavigator(
 );
 
 type ReduxInject = {
-  setConnectivity: (connectionInfo: ConnectivityType) => void,
   dispatch: Function,
   nav: Object,
 };
 
+// eslint-disable-next-line react/prefer-stateless-function
 class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
   render() {
     return (
@@ -398,8 +397,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   dispatch,
-  setConnectivity: (connectionInfo: ConnectivityType) =>
-    dispatch({ type: 'SET_CONNECTIVITY', connectionInfo }),
 });
 
 const ReloadAppOnLanguageChange = (connect(mapStateToProps, mapDispatchToProps)(
