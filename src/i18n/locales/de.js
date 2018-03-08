@@ -90,9 +90,9 @@ export const de: Locale = {
     amountInput:
       'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Ware.',
     amountInputLargeItem:
-      'Führen Sie einzelne Gegenstände mit einem Wert von über {{value}} Franken mit?',
+      'Capturez des objets individuels d\'une valeur de plus de {{value}} Francs.',
     amountInputLargeItemGreyBox:
-      'Erfassen Sie hier jeden Gegenstand, der mehr als CHF 300.00 wert ist.',
+      'Erfassen Sie hier nochmals jeden Gegenstand, der mehr als CHF 300.00 wert ist.',
     amountInputAddItem: 'Wert hinzufügen',
     amountInputAddItemLarge: 'Gegenstand hinzufügen',
     amountInputEnterValue:

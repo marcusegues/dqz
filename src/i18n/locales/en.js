@@ -84,9 +84,9 @@ export const en: Locale = {
   amountInput: {
     amountInput: 'Please enter here the value of all transported goods.',
     amountInputLargeItem:
-      'Are you carrying individual items with a value of over CHF {{value}}?',
+      'Capture individual items worth more than {{value}} francs.',
     amountInputLargeItemGreyBox:
-      'Please enter here each item which is worth more than CHF 300.00.',
+      'Again, capture every item that is worth more than CHF 300.00.',
     amountInputAddItem: 'Add value',
     amountInputAddItemLarge: 'Add item',
     amountInputEnterValue: 'Enter the value without foreign VAT (net value).',

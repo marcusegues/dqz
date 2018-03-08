@@ -7,7 +7,7 @@ export const fr: Locale = {
     Butter: 'Beurre et crème',
     Oils: 'Huiles/graisses/margarine',
     OtherFood: 'Autres denrées alimentaires et boissons sans alcool',
-    AlcSoft: '•Boissons alcoolisées jusqu\'à 18% vol.',
+    AlcSoft: 'Boissons alcoolisées jusqu\'à 18% vol.',
     AlcHard: 'Boissons alcoolisées de plus de 18% vol.',
     Cigarettes: 'Cigarettes et cigares',
     Tobacco: 'Autres tabacs manufacturés',
@@ -87,7 +87,7 @@ export const fr: Locale = {
     amountInputLargeItem:
       "Transportez-vous des biens individuels d'une valeur supérieure à {{value}} francs? ",
     amountInputLargeItemGreyBox:
-      "Saisissez ici chaque bien d'une valeur supérieure à 300 francs.",
+      "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300.00.",
     amountInputAddItem: 'Ajouter la valeur',
     amountInputAddItemLarge: 'Ajouter un bien',
     amountInputEnterValue:

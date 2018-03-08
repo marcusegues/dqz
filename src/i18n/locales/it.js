@@ -82,9 +82,9 @@ export const it: Locale = {
   amountInput: {
     amountInput: 'Inserire qui il valore complessivo delle merci trasportate.',
     amountInputLargeItem:
-      'Vengono trasportati singoli oggetti con valore superiore a {{value}} franchi?',
+      'Cattura i singoli oggetti con chi ha oltre {{value}} franchi.',
     amountInputLargeItemGreyBox:
-      'Inserire qui tutti gli oggetti con valore superiore a 300 franchi.',
+      'Ancora una volta, cattura ogni oggetto che vale più di CHF 300.00.',
     amountInputAddItem: 'Aggiungere valore',
     amountInputAddItemLarge: 'Aggiungere oggetto',
     amountInputEnterValue:
