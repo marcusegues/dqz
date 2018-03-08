@@ -543,16 +543,17 @@ export const fr: Locale = {
     roadTaxText14: 'Redevance minimale par preuve de paiement: 25 francs.',
     roadTaxText15:
       'Tarifs mensuels et annuels mentionnés dans le formulaire 15.91.',
-    roadTaxCategory1: '',
-    roadTaxCategory2: '',
-    roadTaxCategory3: '',
-    roadTaxCategory4: '',
-    roadTaxCategory5: '',
-    costPerDay: '',
-    commonRates: '',
-    vehicleTariffs: '',
-    per100kgTrailerLoad: '',
-    till: '',
+    roadTaxCategory1: "Voitures d'entreprise, autocars et autobus articulés",
+    roadTaxCategory2: 'Motor caravane ou camping-car',
+    roadTaxCategory3: 'caravane',
+    roadTaxCategory4: 'Voitures de tourisme lourdes',
+    roadTaxCategory5:
+      'Remorques de plus de 3,5 tonnes tirées par les véhicules ci-dessus ou les véhicules automobiles légers',
+    costPerDay: 'Coût par jour:',
+    commonRates: 'Les taux les plus courants',
+    vehicleTariffs: "Pour les véhicules suivants, ces tarifs s'appliquent:",
+    per100kgTrailerLoad: 'par 100 kg de charge de remorque',
+    till: 'à',
   },
 
   fuelAndRepairs: {
