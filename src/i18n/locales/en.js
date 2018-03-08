@@ -199,13 +199,13 @@ export const en: Locale = {
       'Verbal customs declaration or use of the red channel in airports',
     customsProceduresText11:
       'If the border crossing is manned by Swiss Customs staff, all goods must be declared verbally without you being solicited to do so. Information on the main border crossings can be found in the border crossings section.',
-    customsProceduresText12: 'Customs declaration with the app "QuickZoll"',
+    customsProceduresText12: 'Customs declaration with the app QuickZoll',
     customsProceduresText13:
-      'You can also declare your goods with the FCA\'s app "QuickZoll". The goods must be cleared through customs with the app before crossing the border or when doing so. In other words, duties must be paid. If you paid the duties with the app, you may also use border crossings where no Customs staff are present and the green channel in airports.',
+      'You can also declare your goods with the FCA\'s app QuickZoll. The goods must be cleared through customs with the app before crossing the border or when doing so. In other words, duties must be paid. If you paid the duties with the app, you may also use border crossings where no Customs staff are present and the green channel in airports.',
     customsProceduresText14:
       'This form of customs declaration is permitted only for goods intended for your personal use or as gifts. They must not be subject to any restrictions or bans and must not require a certificate or authorisation.',
     customsProceduresText15:
-      'Other goods must be declared verbally at a border crossing manned by Swiss Customs staff.',
+      'Other goods must be declared at a border crossing manned by Swiss Customs staff.',
     customsProceduresText16: 'Written customs declaration (declaration box)',
     customsProceduresText17:
       'At certain border crossings, so-called declaration boxes are still available for you to declare your goods in writing. Information on these can be found at www.ezv.admin.ch/Anmeldebox.',
@@ -245,16 +245,16 @@ export const en: Locale = {
     vatAllowanceText8: 'Further examples of application of the tax-free limit',
     vatAllowanceText9: 'Value added tax',
     vatAllowanceText10:
-      'VAT is based on the value of the goods. The normal VAT rate is 7.7%. A reduced rate of 2.5% applies for certain goods (e.g. foodstuffs, non-alcoholic beverages, books, magazines and medications). The normal rate is always applied in the case of customs clearance with the app "QuickZoll".',
+      'VAT is based on the value of the goods. The normal VAT rate is 7.7%. A reduced rate of 2.5% applies for certain goods (e.g. foodstuffs, non-alcoholic beverages, books, magazines and medications). The normal rate is always applied in the case of customs clearance with the app QuickZoll.',
     vatAllowanceText11:
       'Producing a receipt or any other proof of value (e.g. in the case of online purchases) facilitates customs clearance. If value details are not provided or if there is doubt concerning the accuracy of this information, the value of the goods can be estimated by the customs office.',
     vatAllowanceText12: 'Customs declaration',
     vatAllowanceText13:
       'Upon entry into Switzerland, you must verbally declare all the goods you have to Customs staff.',
     vatAllowanceText14:
-      'You can also declare the goods using the app "QuickZoll" or in writing via the declaration box in the case of unmanned border crossings. You can find information about this here.',
+      'You can also declare the goods using the app QuickZoll or in writing via the declaration box in the case of unmanned border crossings. You can find information about this here.',
     vatAllowanceText15:
-      'Please note: If the so-called duty-free allowances for alcoholic beverages, tobacco products and certain foodstuffs are exceeded, you must pay customs duty in any case. More information.',
+      'Please note: If the so-called duty-free allowances for alcoholic beverages, tobacco products and certain foodstuffs are exceeded, you must pay customs duty in any case.',
     vatAllowanceText16:
       'Please also note that certain goods (e.g. counterfeits, weapons and certain plants, animals, animal products and goods subject to species protection) may also be subject to import bans or to specific restrictions. More information.',
     vatAllowanceText17: 'Application of the tax-free limit for individuals',
@@ -351,6 +351,7 @@ export const en: Locale = {
       'alcohol content by volume of up to 18%: CHF 2 per litre',
     dutyAllowanceText35:
       'alcohol content by volume of more than 18%: CHF 15 per litre',
+      dutyAllowanceText35a: 'Beverages with an alcohol content by volume of not more than 0.5% are not considered as alcoholic beverages.',
     dutyAllowanceText36: 'Tobacco products',
     dutyAllowanceText37:
       'Duty-free allowances per person per day:\n' +
@@ -540,9 +541,9 @@ export const en: Locale = {
   entryByTrain: {
     entryByTrainMainText: 'Entry by train',
     entryByTrainText1:
-      'If there are Customs agents on the train, all goods you are carrying must be spontaneously declared for customs clearance. You can clear goods intended for your personal use or as gifts with the app "xxx" before crossing the border. These declarations are binding.',
+      'If there are Customs agents on the train, all goods you are carrying must be spontaneously declared for customs clearance. You can clear goods intended for your personal use or as gifts with the app QuickZoll before crossing the border. These declarations are binding.',
     entryByTrainText2:
-      'If no Customs staff are present and you do not want to use the app "xxx" for customs clearance, you can do the following:',
+      'If no Customs staff are present and you do not want to use the app QuickZoll for customs clearance, you can do the following:',
     entryByTrainText3:
       'get off the train at the border train station and declare your personal goods in writing (written self-declaration at a declaration box); or',
     entryByTrainText4:
@@ -657,14 +658,14 @@ export const en: Locale = {
 
   information: {
     informationTitle: 'Information',
-    informationSubCategoryTitle: 'I have goods with me:',
+    informationSubCategoryTitle: 'I have animals or plants with me',
     customsProceduresMainText: 'Proceeding at the customs',
     travelDocumentsMainText: 'Travel documents',
     declarationMainText: 'I have goods with me',
     animalsAndPlantsMainText: 'I have animals or plants with me',
-    vehiclesMainText: "I'm traveling with a vehicle",
+    vehiclesMainText: "I am driving a vehicle",
     entryByTrainMainText: 'Entry by train',
-    prohibitionsAndRestrictionsMainText: 'Prohibitions and restrictions',
+    prohibitionsAndRestrictionsMainText: 'Bans and restrictions',
     highwayVignetteMainText: 'Motorway tax sticker',
     roadTaxMainText:
       'Road traffic fees over 3.5T (lump-sum heavy vehicle charge, or PSVA)',
