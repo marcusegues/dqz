@@ -13,7 +13,7 @@ import {
   NetInfo,
   // $FlowFixMe
 } from 'react-native';
-// $FlowFix
+// $FlowFixMe
 import { SafeAreaView } from 'react-navigation';
 
 // $FlowFixMe
