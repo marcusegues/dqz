@@ -241,7 +241,6 @@ export const parseCurrencyXML = (rawdata: any, store: any): void => {
   const currencyObject: CurrencyObject = { CHF: 1 };
   let validCurrencies: boolean = false;
   let currencyDate: Date = new Date('2000-01-01');
-
   parseString(rawdata, (e, r) => {
     if (!r) {
       // console.log('Error Case');
@@ -267,14 +266,14 @@ export const parseCurrencyXML = (rawdata: any, store: any): void => {
           const multiplier = +waehrung.replace(/ .*/, '');
           currencyObject[c.$.code.toUpperCase()] = kurs / multiplier;
         });
-      storeCurrencyObject(currencyObject).then(() => {
-        store.dispatch({
-          type: 'UPDATE_CURRENCIES',
-          currencyObject,
-          validCurrencies,
-          currencyDate,
-        });
+      // storeCurrencyObject(currencyObject).then(() => {
+      store.dispatch({
+        type: 'UPDATE_CURRENCIES',
+        currencyObject,
+        validCurrencies,
+        currencyDate,
       });
+      // });
     }
   });
 };

@@ -7,7 +7,7 @@ import { translate } from 'react-i18next';
 // $FlowFixMe
 import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 // $FlowFixMe
-import { View, NetInfo } from 'react-native';
+import { View } from 'react-native';
 import { i18nImplementation } from '../i18n';
 import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
 import { ScreensView } from '../screens/ScreensView/ScreensView';
@@ -364,16 +364,6 @@ type ReduxInject = {
 };
 
 class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
-  componentDidMount() {
-    NetInfo.addEventListener('connectionChange', connectionInfo =>
-      this.handleConnectivityChange(connectionInfo)
-    );
-  }
-
-  handleConnectivityChange(connectionInfo: ConnectivityType) {
-    this.props.setConnectivity(connectionInfo);
-  }
-
   render() {
     return (
       <View
