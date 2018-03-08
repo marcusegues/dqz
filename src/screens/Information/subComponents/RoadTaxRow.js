@@ -5,73 +5,69 @@ import { Image, View } from 'react-native';
 import { CardRowText } from '../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { Row } from '../../../components/Rows/Row';
 import { AmountIcon } from '../../../components/General Components/GreyBox/configured/AmountIcon';
-import { AppInfoSubText } from '../../AppInfo/subComponents/AppInfoSubText';
-import { scale } from '../../../styles/Scaling';
+import type { Children } from '../../../types/generalTypes';
+
+const ownStyles = pendant => ({
+  innerContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  amountInputContainer: {
+    flexDirection: pendant ? 'column' : 'row',
+    alignItems: 'flex-end',
+  },
+  categoryTitle: {
+    alignSelf: 'flex-start',
+    width: pendant ? '60%' : '62%',
+  },
+});
 
 type RoadTaxRowProps = {
   borderTop?: boolean,
-  // borderBottom?: boolean,
-  // width?: string,
-  // onLayout?: any => void,
-  // children: Children,
-  // styles?: Object,
+  borderBottom?: boolean,
+  children?: Children,
   source: string,
   imageStyle: {},
   title: string,
-  bus?: boolean,
+  amount: number,
+  pendant?: boolean,
 };
 
 export const RoadTaxRow = ({
   borderTop,
-  // borderBottom,
-  // width,
-  // onLayout = () => {},
-  // children,
-  // styles,
+  borderBottom,
   source,
   imageStyle,
   title,
-  bus,
+  pendant,
+  amount,
+  children,
 }: RoadTaxRowProps) => (
-  <Row width="100%" borderTop={borderTop} bus={bus}>
-    <View style={{ alignSelf: 'flex-start', width: '67%' }}>
+  <Row
+    width="100%"
+    borderTop={borderTop}
+    borderBottom={borderBottom}
+    styles={{ marginBottom: pendant ? 16 : 0 }}
+  >
+    <View style={ownStyles(pendant).categoryTitle}>
       <CardRowText text={title} style={{ marginVertical: 16 }} />
     </View>
-    <View
-      style={{
-        width: '100%',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 16,
-      }}
-    >
+    <View style={ownStyles().innerContainer}>
       <Image source={source} resizeMode="contain" style={imageStyle} />
-      <AmountIcon amount={2} currency="CHF" />
-      {bus ? (
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'flex-end',
-            alignItems: 'center',
-          }}
-        >
-          <AppInfoSubText text="bis" style={{ marginRight: scale(13) }} />
-          <AmountIcon amount={2} currency="CHF" />
-        </View>
-      ) : (
-        undefined
-        // <Text />
-      )}
+      <View style={ownStyles(pendant).amountInputContainer}>
+        <AmountIcon amount={amount} currency="CHF" />
+        {children}
+      </View>
     </View>
   </Row>
 );
 
 RoadTaxRow.defaultProps = {
   borderTop: false,
-  bus: false,
-  // borderBottom: true,
-  // width: '95%',
-  // onLayout: () => {},
-  // styles: {},
+  children: [],
+  pendant: false,
+  borderBottom: true,
 };

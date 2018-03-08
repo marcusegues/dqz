@@ -200,7 +200,7 @@ export const en: Locale = {
       'If the border crossing is manned by Swiss Customs staff, all goods must be declared verbally without you being solicited to do so. Information on the main border crossings can be found in the border crossings section.',
     customsProceduresText12: 'Customs declaration with the app QuickZoll',
     customsProceduresText13:
-      'You can also declare your goods with the FCA\'s app QuickZoll. The goods must be cleared through customs with the app before crossing the border or when doing so. In other words, duties must be paid. If you paid the duties with the app, you may also use border crossings where no Customs staff are present and the green channel in airports.',
+      "You can also declare your goods with the FCA's app QuickZoll. The goods must be cleared through customs with the app before crossing the border or when doing so. In other words, duties must be paid. If you paid the duties with the app, you may also use border crossings where no Customs staff are present and the green channel in airports.",
     customsProceduresText14:
       'This form of customs declaration is permitted only for goods intended for your personal use or as gifts. They must not be subject to any restrictions or bans and must not require a certificate or authorisation.',
     customsProceduresText15:
@@ -350,7 +350,8 @@ export const en: Locale = {
       'alcohol content by volume of up to 18%: CHF 2 per litre',
     dutyAllowanceText35:
       'alcohol content by volume of more than 18%: CHF 15 per litre',
-      dutyAllowanceText35a: 'Beverages with an alcohol content by volume of not more than 0.5% are not considered as alcoholic beverages.',
+    dutyAllowanceText35a:
+      'Beverages with an alcohol content by volume of not more than 0.5% are not considered as alcoholic beverages.',
     dutyAllowanceText36: 'Tobacco products',
     dutyAllowanceText37:
       'Duty-free allowances per person per day:\n' +
@@ -524,6 +525,16 @@ export const en: Locale = {
     roadTaxText14: 'Minimum charge per proof of payment: CHF 25.',
     roadTaxText15:
       'Monthly and annual rates in accordance with form number 15.91.',
+    roadTaxCategory1: '',
+    roadTaxCategory2: '',
+    roadTaxCategory3: '',
+    roadTaxCategory4: '',
+    roadTaxCategory5: '',
+    costPerDay: '',
+    commonRates: '',
+    vehicleTariffs: '',
+    per100kgTrailerLoad: '',
+    till: '',
   },
 
   fuelAndRepairs: {
@@ -662,7 +673,7 @@ export const en: Locale = {
     travelDocumentsMainText: 'Travel documents',
     declarationMainText: 'I have goods with me',
     animalsAndPlantsMainText: 'I have animals or plants with me',
-    vehiclesMainText: "I am driving a vehicle",
+    vehiclesMainText: 'I am driving a vehicle',
     entryByTrainMainText: 'Entry by train',
     prohibitionsAndRestrictionsMainText: 'Bans and restrictions',
     highwayVignetteMainText: 'Motorway tax sticker',
