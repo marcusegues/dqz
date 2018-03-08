@@ -208,8 +208,9 @@ export const it: Locale = {
       'Le merci possono essere dichiarate anche con l’app QuickZoll dell’AFD. Le merci devono essere imposte con l’app prima del passaggio del confine oppure al valico di confine. Ciò significa che i tributi devono essere pagati. Se il pagamento avviene mediante app è consentito utilizzare anche i valichi di confine in cui il personale doganale non è presente [OPPURE: valichi di confine dove è possibile effettuare la dichiarazione scritta], e negli aeroporti il passaggio verde.',
     customsProceduresText14:
       'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.',
-      customsProceduresText15: 'Altre merci devono essere dichiarate presso un valico di confine in cui è presente il personale doganale svizzero.',
-      customsProceduresText16:
+    customsProceduresText15:
+      'Altre merci devono essere dichiarate presso un valico di confine in cui è presente il personale doganale svizzero.',
+    customsProceduresText16:
       'Dichiarazione doganale scritta (cassetta delle dichiarazioni)',
     customsProceduresText17:
       'In alcuni valichi di confine sono anche a disposizione le cosiddette cassette delle dichiarazioni, dove è possibile dichiarare le proprie merci in forma scritta. Informazioni a riguardo sono disponibili su:\nwww.ezv.admin.ch/cassetta delle dichiarazioni',
@@ -360,7 +361,8 @@ export const it: Locale = {
     dutyAllowanceText34: 'con tenore alcolico fino a 18 % vol.: 2.- al litro',
     dutyAllowanceText35:
       'con tenore alcolico superiore a 18 % vol.: 15.- al litro',
-      dutyAllowanceText35a: 'Bevande con un tenore alcolico fino a 0.5 % vol. non sono considerate bevande alcoliche.',
+    dutyAllowanceText35a:
+      'Bevande con un tenore alcolico fino a 0.5 % vol. non sono considerate bevande alcoliche.',
     dutyAllowanceText36: 'Tabacchi manufatti',
     dutyAllowanceText37:
       'Quantità ammesse in franchigia (per persona e giorno):\n' +
@@ -531,6 +533,16 @@ export const it: Locale = {
     roadTaxText13: 'Attenzione',
     roadTaxText14: 'Tassa minima per prova del pagamento: 25 franchi.',
     roadTaxText15: 'Tariffe mensili e annuali secondo il modulo 15.91.',
+    roadTaxCategory1: '',
+    roadTaxCategory2: '',
+    roadTaxCategory3: '',
+    roadTaxCategory4: '',
+    roadTaxCategory5: '',
+    costPerDay: '',
+    commonRates: '',
+    vehicleTariffs: '',
+    per100kgTrailerLoad: '',
+    till: '',
   },
 
   fuelAndRepairs: {
