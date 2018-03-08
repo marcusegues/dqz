@@ -357,7 +357,8 @@ export const de: Locale = {
     dutyAllowanceText33: 'Zollabgaben für Mehrmenge in CHF:',
     dutyAllowanceText34: 'Alkoholgehalt bis 18 % Vol.: 2.- je Liter',
     dutyAllowanceText35: 'Alkoholgehalt über 18 % Vol.: 15.- je Liter',
-    dutyAllowanceText35a: 'Getränke mit einem Alkoholgehalt bis 0,5 % Vol. gelten nicht als alkoholische Getränke.',
+    dutyAllowanceText35a:
+      'Getränke mit einem Alkoholgehalt bis 0,5 % Vol. gelten nicht als alkoholische Getränke.',
     dutyAllowanceText36: 'Tabakfabrikate',
     dutyAllowanceText37:
       'Freimengen pro Person und pro Tag:\n' +
@@ -530,6 +531,17 @@ export const de: Locale = {
     roadTaxText13: 'Bitte beachten:',
     roadTaxText14: 'Mindestabgabe pro Zahlungsnachweis: CHF 25.',
     roadTaxText15: 'Monats- und Jahrestarife gemäss Formular 15.91.',
+    roadTaxCategory1: 'Gesellschaftswagen, Reisebusse und Gelenkbusse',
+    roadTaxCategory2: 'Wohnmotorwagen oder Wohnmobil',
+    roadTaxCategory3: 'Wohnanhänger',
+    roadTaxCategory4: 'Schwere Personenwagen',
+    roadTaxCategory5:
+      'Von obigen Fahrzeugen oder leichten Motorfahrzeugen gezogene Anhänger von über 3,5 Tonnen',
+    costPerDay: 'Kosten pro Tag:',
+    commonRates: 'Die häufigsten Tarife',
+    vehicleTariffs: 'Für die folgenden Fahrzeuge gelten diese Tarife:',
+    per100kgTrailerLoad: 'pro 100 kg Anhängelast',
+    till: 'bis',
   },
 
   fuelAndRepairs: {
