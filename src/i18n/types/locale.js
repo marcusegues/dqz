@@ -263,6 +263,7 @@ type DutyAllowanceTranslations = {
   dutyAllowanceText33: string,
   dutyAllowanceText34: string,
   dutyAllowanceText35: string,
+    dutyAllowanceText35a: string,
   dutyAllowanceText36: string,
   dutyAllowanceText37: string,
   dutyAllowanceText38: string,

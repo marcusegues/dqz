@@ -202,15 +202,14 @@ export const it: Locale = {
     customsProceduresText10:
       'Dichiarazione doganale verbale o scelta del passaggio rosso all’aeroporto',
     customsProceduresText11:
-      'Se al valico di confine è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente.',
-    customsProceduresText12:
-      'Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
-    customsProceduresText13: 'Dichiarazione doganale con l’app QuickZoll',
-    customsProceduresText14:
+      'Se al valico di confine è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente. Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
+    customsProceduresText12: 'Dichiarazione doganale con l’app QuickZoll',
+    customsProceduresText13:
       'Le merci possono essere dichiarate anche con l’app QuickZoll dell’AFD. Le merci devono essere imposte con l’app prima del passaggio del confine oppure al valico di confine. Ciò significa che i tributi devono essere pagati. Se il pagamento avviene mediante app è consentito utilizzare anche i valichi di confine in cui il personale doganale non è presente [OPPURE: valichi di confine dove è possibile effettuare la dichiarazione scritta], e negli aeroporti il passaggio verde.',
-    customsProceduresText15:
-      'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.\nAltre merci devono essere dichiarate verbalmente presso un valico di confine in cui è presente il personale doganale svizzero.',
-    customsProceduresText16:
+    customsProceduresText14:
+      'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.',
+      customsProceduresText15: 'Altre merci devono essere dichiarate presso un valico di confine in cui è presente il personale doganale svizzero.',
+      customsProceduresText16:
       'Dichiarazione doganale scritta (cassetta delle dichiarazioni)',
     customsProceduresText17:
       'In alcuni valichi di confine sono anche a disposizione le cosiddette cassette delle dichiarazioni, dove è possibile dichiarare le proprie merci in forma scritta. Informazioni a riguardo sono disponibili su:\nwww.ezv.admin.ch/cassetta delle dichiarazioni',
@@ -252,7 +251,7 @@ export const it: Locale = {
       'Ulteriori esempi di applicazione del limite di franchigia secondo il valore.',
     vatAllowanceText9: 'IVA',
     vatAllowanceText10:
-      'L’IVA viene calcolata in base al valore della merce. L’aliquota normale è pari al 7,7 per cento. A determinate merci si applica l’aliquota ridotta del 2,5 per cento (p. es. derrate alimentari, bevande analcoliche, libri, riviste o medicamenti). L’imposizione con l’app «xxx» prevede sempre l’applicazione dell’aliquota normale.',
+      'L’IVA viene calcolata in base al valore della merce. L’aliquota normale è pari al 7,7 per cento. A determinate merci si applica l’aliquota ridotta del 2,5 per cento (p. es. derrate alimentari, bevande analcoliche, libri, riviste o medicamenti). L’imposizione con l’app QuickZoll prevede sempre l’applicazione dell’aliquota normale.',
     vatAllowanceText11:
       'La presentazione di una fattura o di un altro giustificativo del valore (p. es. per acquisti in Internet) agevola la procedura d’imposizione doganale. Se mancano indicazioni relative al valore o vi sono dubbi sulla correttezza di questi dati, l’ufficio doganale può procedere alla stima del valore.',
     vatAllowanceText12: 'Dichiarazione doganale',
@@ -261,7 +260,7 @@ export const it: Locale = {
     vatAllowanceText14:
       'Le merci possono essere dichiarate anche con l’app QuickZoll o in forma scritta mediante la cassetta delle dichiarazioni presso i valichi di confine non occupati da personale doganale. Per informazioni a riguardo cliccare qui.',
     vatAllowanceText15:
-      'Attenzione: Se la quantità ammessa in franchigia di bevande alcoliche, tabacchi manufatti e alcune derrate alimentari è superata, il dazio deve essere versato in ogni caso. Per maggiori informazioni.',
+      'Attenzione: Se la quantità ammessa in franchigia di bevande alcoliche, tabacchi manufatti e alcune derrate alimentari è superata, il dazio deve essere versato in ogni caso.',
     vatAllowanceText16:
       'Attenzione: Determinate merci (p. es. contraffazioni, armi, nonché alcune piante, animali, prodotti animali e merci che soggiacciono alla protezione delle specie) sottostanno al divieto di importazione o a certe limitazioni. Per maggiori informazioni cliccare qui.',
     vatAllowanceText17:
@@ -361,6 +360,7 @@ export const it: Locale = {
     dutyAllowanceText34: 'con tenore alcolico fino a 18 % vol.: 2.- al litro',
     dutyAllowanceText35:
       'con tenore alcolico superiore a 18 % vol.: 15.- al litro',
+      dutyAllowanceText35a: 'Bevande con un tenore alcolico fino a 0.5 % vol. non sono considerate bevande alcoliche.',
     dutyAllowanceText36: 'Tabacchi manufatti',
     dutyAllowanceText37:
       'Quantità ammesse in franchigia (per persona e giorno):\n' +
@@ -550,7 +550,7 @@ export const it: Locale = {
     entryByTrainText1:
       'Se sul treno è presente personale doganale, le merci trasportate vanno dichiarate spontaneamente per il trattamento doganale. Merci destinate all’uso privato o da regalare possono essere imposte anche prima del passaggio del confine con la app QuickZoll. Tali dichiarazioni sono vincolanti.',
     entryByTrainText2:
-      'Se non è presente personale doganale e non si desidera imporre le merci con l’app «xxx» è possibile:',
+      'Se non è presente personale doganale e non si desidera imporre le merci con l’app QuickZoll è possibile:',
     entryByTrainText3:
       'scendere dal treno alla stazione di confine e dichiarare per scritto (presso una cassetta delle dichiarazioni) le merci;',
     entryByTrainText4:
@@ -663,21 +663,21 @@ export const it: Locale = {
 
   information: {
     informationTitle: 'Informazioni utili',
-    informationSubCategoryTitle: 'Ho dei beni con voi:',
+    informationSubCategoryTitle: 'Ho animali o piante con me',
 
-    customsProceduresMainText: 'Entrata in Svizzera',
+    customsProceduresMainText: 'Procedura in dogana',
 
     travelDocumentsMainText: 'Documenti di viaggio',
 
-    declarationMainText: 'Ho dei beni con me',
+    declarationMainText: 'Trasporto merce',
 
-    animalsAndPlantsMainText: 'Ho animali o piante con me',
+    animalsAndPlantsMainText: 'Trasporto animali o piante',
 
-    vehiclesMainText: 'Sto viaggiando con un veicolo',
+    vehiclesMainText: 'Viaggo in macchina',
 
     entryByTrainMainText: 'Entrata in Svizzera con il treno',
 
-    prohibitionsAndRestrictionsMainText: 'Divieti e restrizioni',
+    prohibitionsAndRestrictionsMainText: 'Divieti e limitazioni',
 
     vatAllowanceMainText:
       'Limite di franchigia secondo il valore di 300 franchi',
