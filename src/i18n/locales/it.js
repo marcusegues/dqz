@@ -531,17 +531,17 @@ export const it: Locale = {
     roadTaxText13: 'Attenzione',
     roadTaxText14: 'Tassa minima per prova del pagamento: 25 franchi.',
     roadTaxText15: 'Tariffe mensili e annuali secondo il modulo 15.91.',
-      roadTaxCategory1: 'Auto aziendali, pullman e autobus articolati',
-      roadTaxCategory2: 'Vivere automobile o camper',
-      roadTaxCategory3: 'carovana',
-      roadTaxCategory4: 'Autovetture pesanti',
-      roadTaxCategory5:
-          'Rimorchi di oltre 3,5 tonnellate trainati dai veicoli di cui sopra o veicoli a motore leggero',
-      costPerDay: 'Costo al giorno:',
-      commonRates: 'Le tariffe più comuni',
-      vehicleTariffs: 'Per i seguenti veicoli si applicano le seguenti tariffe:',
-      per100kgTrailerLoad: 'Carico del rimorchio ogni 100 kg',
-      till: 'a',
+    roadTaxCategory1: 'Auto aziendali, pullman e autobus articolati',
+    roadTaxCategory2: 'Vivere automobile o camper',
+    roadTaxCategory3: 'carovana',
+    roadTaxCategory4: 'Autovetture pesanti',
+    roadTaxCategory5:
+      'Rimorchi di oltre 3,5 tonnellate trainati dai veicoli di cui sopra o veicoli a motore leggero',
+    costPerDay: 'Costo al giorno:',
+    commonRates: 'Le tariffe più comuni',
+    vehicleTariffs: 'Per i seguenti veicoli si applicano le seguenti tariffe:',
+    per100kgTrailerLoad: 'Carico del rimorchio ogni 100 kg',
+    till: 'a',
   },
 
   fuelAndRepairs: {
