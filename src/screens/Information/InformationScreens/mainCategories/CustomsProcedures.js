@@ -1,5 +1,7 @@
 // @flow
 import React from 'react';
+// $FlowFixMe
+import { Linking, Text, View } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -9,6 +11,7 @@ import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { BulletText } from '../../../AppInfo/subComponents/BulletText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
+import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
 
 type CustomsProceduresInnerProps = {
   t: TFunction,
@@ -24,6 +27,7 @@ const CustomsProceduresInner = ({
       text={t('customsProceduresText1')}
       style={{ marginVertical: verticalScale(10) }}
     />
+
     <AppInfoSubText text={t('customsProceduresText2')} />
     <BulletText text={t('customsProceduresText3')} />
     <BulletText text={t('customsProceduresText4')} />
@@ -84,7 +88,13 @@ const CustomsProceduresInner = ({
       text={t('customsProceduresText16')}
       style={{ marginTop: verticalScale(20) }}
     />
+
     <AppInfoSubText text={t('customsProceduresText17')} />
+    <AppInfoLink
+      text="www.ezv.admin.ch/Anmeldebox"
+      onPress={() => Linking.openURL('www.ezv.admin.ch/Anmeldebox')}
+    />
+
     <AppInfoSubText
       text={t('customsProceduresText18')}
       style={{ marginVertical: verticalScale(10) }}
