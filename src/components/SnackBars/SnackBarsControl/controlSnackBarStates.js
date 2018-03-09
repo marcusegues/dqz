@@ -4,11 +4,17 @@ import { totalAllAmounts } from '../../../model/utils';
 import { MAX_DECLARED_CHF } from '../../../constants/declaration';
 import type { NavState } from '../../../types/reducers/nav';
 
-type SnackBarType = 'limitExceeded' | 'offline';
+export type SnackBarType =
+  | 'limitExceeded'
+  | 'offline'
+  | 'paymentAborted'
+  | 'paymentFailed';
 
 const allowedScreensBySnackBar = {
   limitExceeded: ['QuestionAnswer', 'Payment'],
   offline: ['Payment'],
+  paymentAborted: ['Payment'],
+  paymentFailed: ['Payment'],
 };
 
 export const isRouteAllowedForSnackBar = (
@@ -24,7 +30,13 @@ export const isRouteAllowedForSnackBar = (
 export const updateSnackBarVisibilities = (
   snackBarState: SnackBarStateEnriched
 ): SnackBarStateEnriched => {
-  const { nav, currencies, amounts, connectivity } = snackBarState;
+  const {
+    nav,
+    currencies,
+    amounts,
+    connectivity,
+    paymentStatus,
+  } = snackBarState;
   return {
     ...snackBarState,
     snackBarVisibilities: {
@@ -36,6 +48,16 @@ export const updateSnackBarVisibilities = (
       offline:
         isRouteAllowedForSnackBar('offline', nav) &&
         (connectivity.type === 'none' || connectivity.type === 'unknown')
+          ? 'visible'
+          : 'hidden',
+      paymentAborted:
+        isRouteAllowedForSnackBar('paymentAborted', nav) &&
+        paymentStatus === 'aborted'
+          ? 'visible'
+          : 'hidden',
+      paymentFailed:
+        isRouteAllowedForSnackBar('paymentFailed', nav) &&
+        paymentStatus === 'failed'
           ? 'visible'
           : 'hidden',
     },
