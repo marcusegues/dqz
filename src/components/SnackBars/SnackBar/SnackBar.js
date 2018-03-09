@@ -2,6 +2,8 @@
 import React from 'react';
 // $FlowFixMe
 import { View, Text } from 'react-native';
+// $FlowFixMe
+import Touchable from 'react-native-platform-touchable';
 import { SNACKBAR_GREY, WHITE } from '../../../styles/colors';
 import type { SnackBarVisibility } from '../SnackBarsContainer';
 
@@ -28,11 +30,13 @@ export const SnackBar = ({
   rightText,
   visibility,
   bottomMost = false,
+  onRightTextPress,
 }: {
   text: string,
   rightText?: ?string,
   visibility: SnackBarVisibility,
   bottomMost: boolean,
+  onRightTextPress?: ?Function,
 }) => {
   const ownStyles = snackBarStyles(bottomMost);
   return visibility === 'hidden' ? (
@@ -41,7 +45,9 @@ export const SnackBar = ({
     <View style={[ownStyles.snackBar]}>
       <Text style={[ownStyles.snackBarText, { flex: 1 }]}>{text}</Text>
       {rightText ? (
-        <Text style={[ownStyles.snackBarText]}>{rightText}</Text>
+        <Touchable onPress={onRightTextPress}>
+          <Text style={[ownStyles.snackBarText]}>{rightText}</Text>
+        </Touchable>
       ) : null}
     </View>
   );
@@ -49,4 +55,5 @@ export const SnackBar = ({
 
 SnackBar.defaultProps = {
   rightText: null,
+  onRightTextPress: () => {},
 };

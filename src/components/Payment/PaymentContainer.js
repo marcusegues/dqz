@@ -282,28 +282,26 @@ class PaymentContainerInner extends React.Component<
     }
   }
 
+  isPaymentDisabled() {
+    const { fees, connectivity, amounts, currencies, paymentData } = this.props;
+    return (
+      fees < MIN_DECLARED_CHF ||
+      totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF ||
+      (connectivity.type === 'none' || connectivity.type === 'unknown') ||
+      paymentData.status === 'aborted' ||
+      paymentData.status === 'failed'
+    );
+  }
+
   render() {
     const { showModal } = this.state;
-    const {
-      navigation,
-      fees,
-      paymentData,
-      currencies,
-      amounts,
-      connectivity,
-    } = this.props;
+    const { navigation, paymentData } = this.props;
     return (
       <MainContentContainer>
         <NavBar step={2} />
         <Overview
           onProceedToPayment={() => this.proceedToPayment()}
-          paymentDisabled={
-            fees < MIN_DECLARED_CHF ||
-            totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF ||
-            (connectivity.type === 'none' || connectivity.type === 'unknown') ||
-            paymentData.status === 'aborted' ||
-            paymentData.status === 'failed'
-          }
+          paymentDisabled={this.isPaymentDisabled()}
           navigation={navigation}
         />
 
@@ -339,15 +337,13 @@ class PaymentContainerInner extends React.Component<
 }
 
 const mapDispatchToProps = dispatch => ({
-  setPaymentData: (paymentData: PaymentData) => {
-    return new Promise(resolve => {
+  setPaymentData: (paymentData: PaymentData) => new Promise(resolve => {
       dispatch({
         type: 'SET_PAYMENT_DATA',
         paymentData,
       });
       resolve();
-    });
-  },
+    }),
   setReceiptId: (receiptId: string) =>
     dispatch({
       type: 'SET_RECEIPT_ID',

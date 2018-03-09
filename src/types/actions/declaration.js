@@ -82,6 +82,7 @@ export type DeclarationAction =
       type: 'RESET_AMOUNTS',
       currency: Currency,
     }
+  | { type: 'RESET_PAYMENT_DATA' }
   | {
       type: 'SET_PAYMENT_DATA',
       paymentData: PaymentData,

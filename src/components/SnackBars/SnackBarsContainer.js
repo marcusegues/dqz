@@ -51,10 +51,10 @@ type ReduxInject = {
   // eslint-disable-next-line react/no-unused-prop-types
   nav: NavState,
   // eslint-disable-next-line react/no-unused-prop-types
-  paymentStatus: PaymentStatus,
+  paymentData: PaymentData,
+  // eslint-disable-next-line react/no-unused-prop-types
+  resetPaymentData: () => void,
 };
-
-const rightTexts = new Set(['paymentAborted', 'paymentFailed']);
 
 class SnackBarsContainerInner extends React.Component<
   ReduxInject & { t: TFunction },
@@ -109,7 +109,7 @@ class SnackBarsContainerInner extends React.Component<
 
   render() {
     const { snackBarVisibilities } = this.state;
-    const { t, paymentData, setPaymentData } = this.props;
+    const { t, resetPaymentData } = this.props;
 
     const snackBarData = [
       {
@@ -128,8 +128,7 @@ class SnackBarsContainerInner extends React.Component<
         key: 'paymentAborted',
         text: t('paymentAborted'),
         rightText: t('paymentAbortedRightText'),
-        onRightTextPress: () =>
-          setPaymentData(paymentData.set('status', 'notStarted')),
+        onRightTextPress: () => resetPaymentData(),
         visibility: snackBarVisibilities.paymentAborted,
         component: SnackBar,
       },
@@ -137,8 +136,7 @@ class SnackBarsContainerInner extends React.Component<
         key: 'paymentFailed',
         text: t('paymentFailed'),
         rightText: t('paymentFailedRightText'),
-        onRightTextPress: () =>
-          setPaymentData(paymentData.set('status', 'notStarted')),
+        onRightTextPress: () => resetPaymentData(),
         visibility: snackBarVisibilities.paymentFailed,
         component: SnackBar,
       },
@@ -161,6 +159,9 @@ class SnackBarsContainerInner extends React.Component<
             key: item.key,
             text: t(item.key),
             rightText: item.rightText ? t(`${item.key}RightText`) : null,
+            onRightTextPress: item.onRightTextPress
+              ? item.onRightTextPress
+              : null,
             visibility: snackBarVisibilities[item.key],
             bottomMost: index === bottomMostVisibleSnackBarIndex,
           })
@@ -179,10 +180,9 @@ const mapStateToProps = (state: AppState) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setPaymentData: paymentData => {
+  resetPaymentData: () => {
     dispatch({
-      type: 'SET_PAYMENT_DATA',
-      paymentData,
+      type: 'RESET_PAYMENT_DATA',
     });
   },
 });
