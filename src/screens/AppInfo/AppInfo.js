@@ -3,7 +3,7 @@ import React from 'react';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { Image, View } from 'react-native';
+import { Image, Linking, View } from 'react-native';
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { TFunction } from '../../types/generalTypes';
 import { ModalTab } from '../../components/Modals/QuantityInputModal/subComponents/ModalTab';
@@ -14,6 +14,10 @@ import { ScrollViewCard } from '../../components/General Components/ScrollViewCa
 import { scale, verticalScale } from '../../styles/Scaling';
 import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
 import { AppInfoSubText } from './subComponents/AppInfoSubText';
+import { AppInfoLink } from './subComponents/AppInfoLink';
+import type { Language } from '../../i18n/types/locale';
+import { type } from '../../styles/fonts';
+import { MAIN_BLACK } from '../../styles/colors';
 
 const styles = {
   topTouchableContainer: {
@@ -31,16 +35,13 @@ const styles = {
     width: 240,
     height: 60,
   },
-  reachabilityText: {
-    marginTop: 20,
-  },
   contactTitle: {
-    color: '#1A1A1A',
-    marginTop: verticalScale(25),
-    marginBottom: verticalScale(10),
+    color: MAIN_BLACK,
+    marginTop: verticalScale(24),
+    marginBottom: verticalScale(16),
   },
   customsAdministrationAddressTitle: {
-    color: '#1A1A1A',
+    color: MAIN_BLACK,
     marginTop: verticalScale(25),
   },
   ambriteLogo: {
@@ -52,7 +53,7 @@ const styles = {
     marginTop: verticalScale(15),
   },
   disclaimerTitle: {
-    color: '#1A1A1A',
+    color: MAIN_BLACK,
     marginTop: verticalScale(25),
     marginBottom: verticalScale(10),
   },
@@ -65,7 +66,10 @@ type AppInfoState = {
 const logo = require('../../../assets/images/logo_with_text.png');
 const ambriteLogo = require('../../../assets/images/ambrite_logo.png');
 
-class AppInfoInner extends React.Component<{ t: TFunction }, AppInfoState> {
+class AppInfoInner extends React.Component<
+  { t: TFunction, i18n: { language: Language } },
+  AppInfoState
+> {
   static navigationOptions = ({ screenProps }) => ({
     headerTitle: (
       <HeaderTitle text={screenProps.t('appInformation:appInfoTitle')} />
@@ -80,7 +84,7 @@ class AppInfoInner extends React.Component<{ t: TFunction }, AppInfoState> {
   }
 
   render() {
-    const { t } = this.props;
+    const { t, i18n } = this.props;
     const { selected } = this.state;
     const imprint = selected === 'imprint';
     const development = selected === 'development';
@@ -123,10 +127,25 @@ class AppInfoInner extends React.Component<{ t: TFunction }, AppInfoState> {
               <CardRowText text={t('contact')} style={styles.contactTitle} />
               <AppInfoSubText text={t('customsInfoCenter')} />
               <AppInfoSubText
-                text={t('reachability')}
-                style={styles.reachabilityText}
+                text="http://www.zollauskunft.admin.ch"
+                style={{ marginBottom: verticalScale(16) }}
               />
-              <AppInfoSubText text={t('workingHours')} />
+
+              <AppInfoLink
+                text={t('toContactForm').toUpperCase()}
+                onPress={() =>
+                  Linking.openURL(
+                    `https://www.webapps.ezv.admin.ch/apps/contactForm/?lang=${
+                      i18n.language
+                    }`
+                  )
+                }
+                style={{
+                  color: '#757575',
+                  fontFamily: type.medium,
+                  textDecorationLine: 'none',
+                }}
+              />
             </View>
           ) : (
             <View style={styles.contentContainer}>

@@ -337,7 +337,8 @@ class PaymentContainerInner extends React.Component<
 }
 
 const mapDispatchToProps = dispatch => ({
-  setPaymentData: (paymentData: PaymentData) => new Promise(resolve => {
+  setPaymentData: (paymentData: PaymentData) =>
+    new Promise(resolve => {
       dispatch({
         type: 'SET_PAYMENT_DATA',
         paymentData,
