@@ -32,6 +32,7 @@ const Watches = require('../../../assets/icons/info/Watches.png');
 const Cash = require('../../../assets/icons/info/Cash.png');
 const Food = require('../../../assets/icons/info/Food.png');
 const AuthorisationRequirements = require('../../../assets/icons/info/AuthorisationRequirements.png');
+const InternetShoppingAndMail = require('../../../assets/icons/info/InternetShoppingAndMail.png');
 
 export const informationImages: InformationImagesType = {
   customsProcedures: Sign,
@@ -55,7 +56,7 @@ export const informationImages: InformationImagesType = {
   cash: Cash,
   food: Food,
   authorisationRequirements: AuthorisationRequirements,
-  purchasesOnlineOffline: Restricted,
+  purchasesOnlineOffline: InternetShoppingAndMail,
 };
 
 export const informationSubCategories: InformationSubCategoriesType = {
