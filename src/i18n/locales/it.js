@@ -7,8 +7,8 @@ export const it: Locale = {
     Butter: 'Burro e panna',
     Oils: 'Oli, grassi e margarina',
     OtherFood: 'Altre derrate alimentari e bevande non alcoliche',
-    AlcSoft: 'Tenore alcolico 0,5 %–18 % vol.',
-    AlcHard: 'Tenore alcolico superiore al 18 % vol.',
+    AlcSoft: 'Bevande alcoliche fino al 18% vol.',
+    AlcHard: 'Bevande alcoliche oltre il 18% vol.',
     Cigarettes: 'Sigarette e sigari',
     Tobacco: 'Altri tabacchi manufatti',
     Meds: 'Medicamenti',
@@ -23,7 +23,7 @@ export const it: Locale = {
     Meat: 'Carne e preparazioni di carne',
     Butter: 'Burro e panna',
     Oil: 'Oli, grassi e margarina',
-    Alcohol: 'Tenore alcolico',
+    Alcohol: 'Bevande alcoliche',
     TobaccoProducts: 'Tabacchi manufatti',
     OtherGoods: 'Altre merci',
   },
@@ -86,9 +86,9 @@ export const it: Locale = {
   amountInput: {
     amountInput: 'Inserire qui il valore complessivo delle merci trasportate.',
     amountInputLargeItem:
-      'Vengono trasportati singoli oggetti con valore superiore a {{value}} franchi?',
+      'Cattura i singoli oggetti con chi ha oltre {{value}} franchi.',
     amountInputLargeItemGreyBox:
-      'Inserire qui tutti gli oggetti con valore superiore a 300 franchi.',
+      'Ancora una volta, cattura ogni oggetto che vale più di CHF 300.00.',
     amountInputAddItem: 'Aggiungere valore',
     amountInputAddItemLarge: 'Aggiungere oggetto',
     amountInputEnterValue:
@@ -178,7 +178,7 @@ export const it: Locale = {
     allReceiptsOlderReceipts: 'Ricevute più vecchie:',
     allReceiptsSumInFranks: 'CHF {{value}}',
     allReceiptsDate: 'da {{value}}',
-    entryTime: 'Periodo di entrata',
+    entryTime: 'Periodo di entrata:',
     chooseOtherEntryTime: 'Regolare',
     overviewRegistered: '⚠️',
     overviewDutyFree: '⚠️',
@@ -256,7 +256,7 @@ export const it: Locale = {
       'Ulteriori esempi di applicazione del limite di franchigia secondo il valore.',
     vatAllowanceText9: 'IVA',
     vatAllowanceText10:
-      'L’IVA viene calcolata in base al valore della merce. L’aliquota normale è pari al 7,7 per cento. A determinate merci si applica l’aliquota ridotta del 2,5 per cento (p. es. derrate alimentari, bevande analcoliche, libri, riviste o medicamenti). L’imposizione con l’app «xxx» prevede sempre l’applicazione dell’aliquota normale.',
+      'L’IVA viene calcolata in base al valore della merce. L’aliquota normale è pari al 7,7 per cento. A determinate merci si applica l’aliquota ridotta del 2,5 per cento (p. es. derrate alimentari, bevande analcoliche, libri, riviste o medicamenti). L’imposizione con l’app QuickZoll prevede sempre l’applicazione dell’aliquota normale.',
     vatAllowanceText11:
       'La presentazione di una fattura o di un altro giustificativo del valore (p. es. per acquisti in Internet) agevola la procedura d’imposizione doganale. Se mancano indicazioni relative al valore o vi sono dubbi sulla correttezza di questi dati, l’ufficio doganale può procedere alla stima del valore.',
     vatAllowanceText12: 'Dichiarazione doganale',
@@ -265,7 +265,7 @@ export const it: Locale = {
     vatAllowanceText14:
       'Le merci possono essere dichiarate anche con l’app QuickZoll o in forma scritta mediante la cassetta delle dichiarazioni presso i valichi di confine non occupati da personale doganale. Per informazioni a riguardo cliccare qui.',
     vatAllowanceText15:
-      'Attenzione: Se la quantità ammessa in franchigia di bevande alcoliche, tabacchi manufatti e alcune derrate alimentari è superata, il dazio deve essere versato in ogni caso. Per maggiori informazioni.',
+      'Attenzione: Se la quantità ammessa in franchigia di bevande alcoliche, tabacchi manufatti e alcune derrate alimentari è superata, il dazio deve essere versato in ogni caso.',
     vatAllowanceText16:
       'Attenzione: Determinate merci (p. es. contraffazioni, armi, nonché alcune piante, animali, prodotti animali e merci che soggiacciono alla protezione delle specie) sottostanno al divieto di importazione o a certe limitazioni. Per maggiori informazioni cliccare qui.',
     vatAllowanceText17:
@@ -365,6 +365,8 @@ export const it: Locale = {
     dutyAllowanceText34: 'con tenore alcolico fino a 18 % vol.: 2.- al litro',
     dutyAllowanceText35:
       'con tenore alcolico superiore a 18 % vol.: 15.- al litro',
+    dutyAllowanceText35a:
+      'Bevande con un tenore alcolico fino a 0.5 % vol. non sono considerate bevande alcoliche.',
     dutyAllowanceText36: 'Tabacchi manufatti',
     dutyAllowanceText37:
       'Quantità ammesse in franchigia (per persona e giorno):\n' +
@@ -535,6 +537,17 @@ export const it: Locale = {
     roadTaxText13: 'Attenzione',
     roadTaxText14: 'Tassa minima per prova del pagamento: 25 franchi.',
     roadTaxText15: 'Tariffe mensili e annuali secondo il modulo 15.91.',
+    roadTaxCategory1: 'Auto aziendali, pullman e autobus articolati',
+    roadTaxCategory2: 'Vivere automobile o camper',
+    roadTaxCategory3: 'carovana',
+    roadTaxCategory4: 'Autovetture pesanti',
+    roadTaxCategory5:
+      'Rimorchi di oltre 3,5 tonnellate trainati dai veicoli di cui sopra o veicoli a motore leggero',
+    costPerDay: 'Costo al giorno:',
+    commonRates: 'Le tariffe più comuni',
+    vehicleTariffs: 'Per i seguenti veicoli si applicano le seguenti tariffe:',
+    per100kgTrailerLoad: 'Carico del rimorchio ogni 100 kg',
+    till: 'a',
   },
 
   fuelAndRepairs: {
@@ -554,7 +567,7 @@ export const it: Locale = {
     entryByTrainText1:
       'Se sul treno è presente personale doganale, le merci trasportate vanno dichiarate spontaneamente per il trattamento doganale. Merci destinate all’uso privato o da regalare possono essere imposte anche prima del passaggio del confine con la app QuickZoll. Tali dichiarazioni sono vincolanti.',
     entryByTrainText2:
-      'Se non è presente personale doganale e non si desidera imporre le merci con l’app «xxx» è possibile:',
+      'Se non è presente personale doganale e non si desidera imporre le merci con l’app QuickZoll è possibile:',
     entryByTrainText3:
       'scendere dal treno alla stazione di confine e dichiarare per scritto (presso una cassetta delle dichiarazioni) le merci;',
     entryByTrainText4:
@@ -667,21 +680,21 @@ export const it: Locale = {
 
   information: {
     informationTitle: 'Informazioni utili',
-    informationSubCategoryTitle: 'Ho dei beni con voi:',
+    informationSubCategoryTitle: 'Ho animali o piante con me',
 
-    customsProceduresMainText: 'Entrata in Svizzera',
+    customsProceduresMainText: 'Procedura in dogana',
 
     travelDocumentsMainText: 'Documenti di viaggio',
 
-    declarationMainText: 'Ho dei beni con me',
+    declarationMainText: 'Trasporto merce',
 
-    animalsAndPlantsMainText: 'Ho animali o piante con me',
+    animalsAndPlantsMainText: 'Trasporto animali o piante',
 
-    vehiclesMainText: 'Sto viaggiando con un veicolo',
+    vehiclesMainText: 'Viaggo in macchina',
 
     entryByTrainMainText: 'Entrata in Svizzera con il treno',
 
-    prohibitionsAndRestrictionsMainText: 'Divieti e restrizioni',
+    prohibitionsAndRestrictionsMainText: 'Divieti e limitazioni',
 
     vatAllowanceMainText:
       'Limite di franchigia secondo il valore di 300 franchi',

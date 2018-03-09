@@ -118,6 +118,7 @@ const DutyAllowanceInner = ({ t, navigation }: DutyAllowanceInnerProps) => (
       text={t('dutyAllowanceText35')}
       style={{ marginBottom: verticalScale(10) }}
     />
+    <AppInfoSubText text={t('dutyAllowanceText35a')} />
     <CardRowText
       text={t('dutyAllowanceText36')}
       style={{ marginTop: verticalScale(20) }}

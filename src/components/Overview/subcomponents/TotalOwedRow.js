@@ -21,8 +21,7 @@ import { calculateDuty } from '../../../model/dutyCalculations';
 const ownStyles = {
   cardRowTextSum: {
     alignSelf: 'flex-end',
-    marginTop: verticalScale(15),
-    marginBottom: verticalScale(35),
+    marginBottom: verticalScale(40),
   },
 };
 

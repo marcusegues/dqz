@@ -267,6 +267,7 @@ type DutyAllowanceTranslations = {
   dutyAllowanceText33: string,
   dutyAllowanceText34: string,
   dutyAllowanceText35: string,
+  dutyAllowanceText35a: string,
   dutyAllowanceText36: string,
   dutyAllowanceText37: string,
   dutyAllowanceText38: string,
@@ -387,6 +388,16 @@ type RoadTaxTranslations = {
   roadTaxText13: string,
   roadTaxText14: string,
   roadTaxText15: string,
+  roadTaxCategory1: string,
+  roadTaxCategory2: string,
+  roadTaxCategory3: string,
+  roadTaxCategory4: string,
+  roadTaxCategory5: string,
+  costPerDay: string,
+  commonRates: string,
+  vehicleTariffs: string,
+  per100kgTrailerLoad: string,
+  till: string,
 };
 
 type FuelAndRepairsTranslations = {

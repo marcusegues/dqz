@@ -7,8 +7,8 @@ export const fr: Locale = {
     Butter: 'Beurre et crème',
     Oils: 'Huiles/graisses/margarine',
     OtherFood: 'Autres denrées alimentaires et boissons sans alcool',
-    AlcSoft: 'Boissons alcoolisées comprise entre 0,5 et 18 % du volume',
-    AlcHard: 'Boissons alcoolisées supérieure à 18 % du volume',
+    AlcSoft: 'Boissons alcoolisées jusqu\'à 18% vol.',
+    AlcHard: 'Boissons alcoolisées de plus de 18% vol.',
     Cigarettes: 'Cigarettes et cigares',
     Tobacco: 'Autres tabacs manufacturés',
     Meds: 'Médicaments',
@@ -91,7 +91,7 @@ export const fr: Locale = {
     amountInputLargeItem:
       "Transportez-vous des biens individuels d'une valeur supérieure à {{value}} francs? ",
     amountInputLargeItemGreyBox:
-      "Saisissez ici chaque bien d'une valeur supérieure à 300 francs.",
+      "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300.00.",
     amountInputAddItem: 'Ajouter la valeur',
     amountInputAddItemLarge: 'Ajouter un bien',
     amountInputEnterValue:
@@ -185,13 +185,13 @@ export const fr: Locale = {
     allReceiptsOlderReceipts: 'Anciennes quittances:',
     allReceiptsSumInFranks: 'CHF {{value}}',
     allReceiptsDate: 'à {{value}}',
-    entryTime: "Période d'entrée",
+    entryTime: "Période d'entrée:",
     chooseOtherEntryTime: 'Régler',
     until: "jusqu'à",
   },
 
   customsProcedures: {
-    customsProceduresMainText: 'Procédant à la douane',
+    customsProceduresMainText: 'Marche à suivre lors du passage à la douane',
     customsProceduresText1:
       "En tant que particulier, vous devez déclarer spontanément, lors de l'entrée en Suisse, toutes les marchandises et tous les animaux que vous transportez.",
     customsProceduresText2:
@@ -218,7 +218,7 @@ export const fr: Locale = {
     customsProceduresText14:
       "Cette forme de déclaration en douane n'est admise que pour les marchandises destinées à votre usage privé ou à être offertes en cadeau. Les marchandises ne doivent être soumises à aucune restriction ni interdiction et ne doivent être assujetties à aucun certificat ni permis.",
     customsProceduresText15:
-      "Les autres marchandises doivent être déclarées verbalement auprès d'un passage frontière occupé par du personnel de la douane suisse.",
+      "Les autres marchandises doivent être déclarées auprès d'un passage frontière occupé par du personnel de la douane suisse.",
     customsProceduresText16:
       'Déclaration en douane écrite (boîte à déclarations)',
     customsProceduresText17:
@@ -259,16 +259,16 @@ export const fr: Locale = {
     vatAllowanceText8: "Autres exemples d'octroi de la franchise-valeur",
     vatAllowanceText9: 'TVA',
     vatAllowanceText10:
-      "La TVA est calculée sur la base de la valeur des marchandises. Le taux normal est de 7,7 %. Un taux réduit d'impôt de 2,5 % est appliqué à certaines marchandises (par ex. denrées alimentaires, boissons sans alcool, livres, revues ou médicaments). Le taux normal s'applique toujours en cas de dédouanement avec l'application «xxx».",
+      "La TVA est calculée sur la base de la valeur des marchandises. Le taux normal est de 7,7 %. Un taux réduit d'impôt de 2,5 % est appliqué à certaines marchandises (par ex. denrées alimentaires, boissons sans alcool, livres, revues ou médicaments). Le taux normal s'applique toujours en cas de dédouanement avec l'application QuickZoll.",
     vatAllowanceText11:
       "La présentation d'une quittance ou d'un autre justificatif de valeur (par ex. pour les marchandises acquises sur Internet) facilite le dédouanement. Si les indications de valeur font défaut ou si leur exactitude suscite des doutes, le bureau de douane peut estimer la valeur des marchandises.",
     vatAllowanceText12: 'Déclaration en douane',
     vatAllowanceText13:
       "Lors de l'entrée en Suisse, vous devez déclarer verbalement au personnel douanier toutes les marchandises que vous transportez.",
     vatAllowanceText14:
-      "Vous pouvez également déclarer les marchandises au moyen de l'application «xxxx» ou par écrit, par l'intermédiaire des boîtes à déclarations, aux passages frontières non occupés par du personnel douanier. Vous trouverez ici des informations à ce sujet. Veuillez noter qu'en cas de dépassement des franchises quantitatives pour les boissons alcooliques, les tabacs manufacturés et certaines denrées alimentaires, vous devrez payer des droits de douane dans tous les cas. Informations complémentaires",
+      "Vous pouvez également déclarer les marchandises au moyen de l'application QuickZoll ou par écrit, par l'intermédiaire des boîtes à déclarations, aux passages frontières non occupés par du personnel douanier. Vous trouverez ici des informations à ce sujet. Veuillez noter qu'en cas de dépassement des franchises quantitatives pour les boissons alcooliques, les tabacs manufacturés et certaines denrées alimentaires, vous devrez payer des droits de douane dans tous les cas. Informations complémentaires",
     vatAllowanceText15:
-      "Nous attirons en outre votre attention sur le fait que certaines marchandises (par ex. contrefaçons, armes, plantes, animaux, produits animaux, marchandises soumises aux dispositions sur la conservation des espèces) peuvent être interdites à l'importation ou soumises à des restrictions. Informations complémentaires",
+      "Nous attirons en outre votre attention sur le fait que certaines marchandises (par ex. contrefaçons, armes, plantes, animaux, produits animaux, marchandises soumises aux dispositions sur la conservation des espèces) peuvent être interdites à l'importation ou soumises à des restrictions.",
     vatAllowanceText16:
       "Exemples d'octroi de la franchise-valeur Octroi de la franchise-valeur à des personnes seules",
     vatAllowanceText17:
@@ -373,6 +373,8 @@ export const fr: Locale = {
       "teneur en alcool n'excédant pas 18 % du volume: 2.- par l",
     dutyAllowanceText35:
       ' teneur en alcool excédant 18 % du volume: 15.- par l',
+    dutyAllowanceText35a:
+      "Les boissons dont la teneur en alcool n'excède pas 0,5 % vol ne sont pas réputées boissons alcooliques.",
     dutyAllowanceText36: 'Tabacs manufacturés',
     dutyAllowanceText37:
       'Franchises quantitatives par personne et par jour:\n' +
@@ -545,6 +547,17 @@ export const fr: Locale = {
     roadTaxText14: 'Redevance minimale par preuve de paiement: 25 francs.',
     roadTaxText15:
       'Tarifs mensuels et annuels mentionnés dans le formulaire 15.91.',
+    roadTaxCategory1: "Voitures d'entreprise, autocars et autobus articulés",
+    roadTaxCategory2: 'Motor caravane ou camping-car',
+    roadTaxCategory3: 'caravane',
+    roadTaxCategory4: 'Voitures de tourisme lourdes',
+    roadTaxCategory5:
+      'Remorques de plus de 3,5 tonnes tirées par les véhicules ci-dessus ou les véhicules automobiles légers',
+    costPerDay: 'Coût par jour:',
+    commonRates: 'Les taux les plus courants',
+    vehicleTariffs: "Pour les véhicules suivants, ces tarifs s'appliquent:",
+    per100kgTrailerLoad: 'par 100 kg de charge de remorque',
+    till: 'à',
   },
 
   fuelAndRepairs: {
@@ -680,13 +693,13 @@ export const fr: Locale = {
 
   information: {
     informationTitle: 'Informations utiles',
-    informationSubCategoryTitle: "J'ai des biens avec vous:",
+    informationSubCategoryTitle: "J'ai des animaux ou des plantes avec moi",
 
-    customsProceduresMainText: 'Procédant à la douane',
+    customsProceduresMainText: 'Marche à suivre lors du passage à la douane',
 
     travelDocumentsMainText: 'Documents de voyage',
 
-    declarationMainText: "J'ai des biens avec moi",
+    declarationMainText: 'Je transporte des marchandises',
     animalsAndPlantsMainText: 'Je transporte des animaux ou des plantes',
     vehiclesMainText: 'Je voyage avec un véhicule',
     entryByTrainMainText: 'Entrée en Suisse par voie ferroviaire',
@@ -719,7 +732,7 @@ export const fr: Locale = {
     authorisationRequirementsMainText:
       'Assujettissement à une autorisation / restrictions',
     purchasesOnlineOfflineMainText:
-      'chats effectués sur Internet, envois expédiés par poste ou par courrier rapide',
+      'Achats effectués sur Internet, envois expédiés par poste ou par courrier rapide',
   },
   appInformation: {
     appInfoTitle: "Informations relatives à l'application",

@@ -1,27 +1,40 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { moderateScale } from '../../../../styles/Scaling';
+import { LIGHT_GREY } from '../../../../styles/colors';
+
+const ownStyles = {
+  greyContainer: {
+    backgroundColor: LIGHT_GREY,
+    paddingHorizontal: 16,
+    // paddingVertical: 10,
+  },
+};
 
 type CardRowTextProps = {
   text: string,
-  style?: {},
+  style?: Object,
+  greyBox?: boolean,
 };
 
-export const CardRowText = ({ text, style }: CardRowTextProps) => (
-  <Text
-    style={{
-      fontFamily: 'roboto_medium',
-      fontSize: moderateScale(14),
-      color: '#24253D',
-      ...style,
-    }}
-  >
-    {text}
-  </Text>
+export const CardRowText = ({ text, style, greyBox }: CardRowTextProps) => (
+  <View style={greyBox ? ownStyles.greyContainer : {}}>
+    <Text
+      style={{
+        fontFamily: 'roboto_medium',
+        fontSize: moderateScale(14),
+        color: '#24253D',
+        ...style,
+      }}
+    >
+      {text}
+    </Text>
+  </View>
 );
 
 CardRowText.defaultProps = {
   style: {},
+  greyBox: false,
 };
