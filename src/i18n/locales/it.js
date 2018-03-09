@@ -747,7 +747,6 @@ export const it: Locale = {
     customsInfoCenter:
       'Centrale d’informazione dell’AFD\n\nzollauskunft@ezv.admin.ch',
     reachability: 'Reperibilità:',
-    workingHours: 'Lunedi – Venerdi, 8.00 – 11.30 e 13.30 a 17.00',
     generalCustomsDirectorate:
       'Amministrazione federale delle dogane AFD\nMonbijoustrasse 40\n' +
       '3003 Bern\n' +
@@ -758,6 +757,7 @@ export const it: Locale = {
     disclaimerTitle: 'Clausola di non responsabilità (disclaimer)',
     disclaimerText:
       'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
+    toContactForm: '',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informazioni importanti sull’utilizzo dell’app',

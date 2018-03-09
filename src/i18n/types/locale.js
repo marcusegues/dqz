@@ -541,13 +541,12 @@ type AppInformationTranslations = {
   customsAdministrationAddressTitle: string,
   contact: string,
   customsInfoCenter: string,
-  reachability: string,
-  workingHours: string,
   generalCustomsDirectorate: string,
   designAndDevelopment: string,
   ambriteAddress: string,
   disclaimerTitle: string,
   disclaimerText: string,
+  toContactForm: string,
 };
 
 type LegalNoticeInformationTranslations = {

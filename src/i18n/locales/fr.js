@@ -745,10 +745,7 @@ export const fr: Locale = {
     customsAdministrationAddressTitle:
       'Administration fédérale des douanes AFD',
     contact: 'Contact',
-    customsInfoCenter:
-      'Centrale de renseignement de la douane\n\nzollauskunft@ezv.admin.ch',
-    reachability: 'Joignabilité:',
-    workingHours: 'Lundi – Vendredi, 8.00 – 11.30 et 13.30 a 17.00',
+    customsInfoCenter: 'Centrale de renseignement de la douane',
     generalCustomsDirectorate:
       'Monbijoustrasse 40\n3003 Bern\nhttp://www.ezv.admin.ch',
     designAndDevelopment: 'Conception et développement',
@@ -757,6 +754,7 @@ export const fr: Locale = {
     disclaimerTitle: 'Avis de non-responsabilité',
     disclaimerText:
       'Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten. Damit das Layout nun nicht nackt im Raume steht und sich klein und leer vorkommt, springe ich ein: der Blindtext. Genau zu diesem Zwecke erschaffen, immer im Schatten meines großen Bruders »Lorem Ipsum«, freue ich mich jedes Mal, wenn Sie ein paar Zeilen lesen. Denn esse est percipi - Sein ist wahrgenommen werden. Und weil Sie nun schon die Güte haben, mich ein paar weitere Sätze lang zu begleiten, möchte ich diese Gelegenheit nutzen, Ihnen nicht nur als Lückenfüller zu dienen, sondern auf etwas hinzuweisen, das es ebenso verdient wahrgenommen zu werden: Webstandards nämlich.',
+    toContactForm: '',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Info importantes',
