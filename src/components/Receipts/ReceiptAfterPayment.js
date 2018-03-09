@@ -214,6 +214,12 @@ class ReceiptAfterPaymentInner extends React.Component<
                   vat: fullVat.toFixed(2),
                 })}
               />
+              <ReceiptSubText
+                text={t('travellers', {
+                  adults: people.adults,
+                  minors: people.minors,
+                })}
+              />
             </Row>
 
             <Row
