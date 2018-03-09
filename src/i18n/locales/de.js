@@ -8,7 +8,7 @@ export const de: Locale = {
     Oils: 'Öle/Fette/Margarine',
     OtherFood: 'Sonstige Lebensmittel & alkoholfreie Getränke',
     AlcSoft: 'Alkoholische Getränke bis 18% Vol.',
-    AlcHard: 'Alkoholische Getränke über 18% Vol.',
+    AlcHard: 'Alkoholische Getränke von über 18% Vol.',
     Cigarettes: 'Zigaretten & Zigarren',
     Tobacco: 'Andere Tabakfabrikate',
     Meds: 'Medikamente',
@@ -23,7 +23,7 @@ export const de: Locale = {
     Meat: 'Fleisch & Fleischzubereitungen',
     Butter: 'Butter & Rahm',
     Oil: 'Öle/Fette/Margarine',
-    Alcohol: `Alkohol`,
+    Alcohol: `Alkoholische Getränke`,
     TobaccoProducts: 'Tabak',
     OtherGoods: 'Andere Waren',
   },
@@ -90,9 +90,9 @@ export const de: Locale = {
     amountInput:
       'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Ware.',
     amountInputLargeItem:
-      'Führen Sie einzelne Gegenstände mit einem Wert von über {{value}} Franken mit?',
+      'Capturez des objets individuels d\'une valeur de plus de {{value}} Francs.',
     amountInputLargeItemGreyBox:
-      'Erfassen Sie hier jeden Gegenstand, der mehr als CHF 300.00 wert ist.',
+      'Erfassen Sie hier nochmals jeden Gegenstand, der mehr als CHF 300.00 wert ist.',
     amountInputAddItem: 'Wert hinzufügen',
     amountInputAddItemLarge: 'Gegenstand hinzufügen',
     amountInputEnterValue:

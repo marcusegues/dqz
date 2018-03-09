@@ -7,8 +7,8 @@ export const it: Locale = {
     Butter: 'Burro e panna',
     Oils: 'Oli, grassi e margarina',
     OtherFood: 'Altre derrate alimentari e bevande non alcoliche',
-    AlcSoft: 'Tenore alcolico 0,5 %–18 % vol.',
-    AlcHard: 'Tenore alcolico superiore al 18 % vol.',
+    AlcSoft: 'Bevande alcoliche fino al 18% vol.',
+    AlcHard: 'Bevande alcoliche oltre il 18% vol.',
     Cigarettes: 'Sigarette e sigari',
     Tobacco: 'Altri tabacchi manufatti',
     Meds: 'Medicamenti',
@@ -23,7 +23,7 @@ export const it: Locale = {
     Meat: 'Carne e preparazioni di carne',
     Butter: 'Burro e panna',
     Oil: 'Oli, grassi e margarina',
-    Alcohol: 'Tenore alcolico',
+    Alcohol: 'Bevande alcoliche',
     TobaccoProducts: 'Tabacchi manufatti',
     OtherGoods: 'Altre merci',
   },
@@ -82,9 +82,9 @@ export const it: Locale = {
   amountInput: {
     amountInput: 'Inserire qui il valore complessivo delle merci trasportate.',
     amountInputLargeItem:
-      'Vengono trasportati singoli oggetti con valore superiore a {{value}} franchi?',
+      'Cattura i singoli oggetti con chi ha oltre {{value}} franchi.',
     amountInputLargeItemGreyBox:
-      'Inserire qui tutti gli oggetti con valore superiore a 300 franchi.',
+      'Ancora una volta, cattura ogni oggetto che vale più di CHF 300.00.',
     amountInputAddItem: 'Aggiungere valore',
     amountInputAddItemLarge: 'Aggiungere oggetto',
     amountInputEnterValue:
