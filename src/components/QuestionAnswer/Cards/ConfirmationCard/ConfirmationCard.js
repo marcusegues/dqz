@@ -36,6 +36,7 @@ type ConfirmationCardProps = {
   onAnswer: () => void,
   onBack: () => void,
   confirmationDisabled?: boolean,
+  onInfoIconPress?: ?() => void,
 };
 
 export const ConfirmationCard = ({
@@ -44,6 +45,7 @@ export const ConfirmationCard = ({
   onAnswer,
   onBack,
   confirmationDisabled,
+  onInfoIconPress,
 }: ConfirmationCardProps) => (
   <Card>
     <View style={{ flexDirection: 'row' }}>
@@ -51,7 +53,7 @@ export const ConfirmationCard = ({
         <CardHeader text={text} />
       </View>
       <View style={ownStyles.infoIcon}>
-        <BlueInfoIcon onPress={() => {}} />
+        <BlueInfoIcon onPress={onInfoIconPress} />
       </View>
     </View>
 
@@ -70,4 +72,5 @@ export const ConfirmationCard = ({
 
 ConfirmationCard.defaultProps = {
   confirmationDisabled: false,
+  onInfoIconPress: () => {},
 };

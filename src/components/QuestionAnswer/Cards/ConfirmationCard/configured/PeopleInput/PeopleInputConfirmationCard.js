@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import { ConfirmationCard } from '../../ConfirmationCard';
@@ -19,6 +20,10 @@ type PeopleInputConfirmationCardProps = {
   onAnswer: DirectionType => void,
 };
 
+type ReduxInject = {
+  dispatch: Function,
+};
+
 const PeopleInputConfirmationCardInner = ({
   people,
   onAddAdult,
@@ -27,12 +32,20 @@ const PeopleInputConfirmationCardInner = ({
   onSubtractMinor,
   onAnswer,
   t,
-}: PeopleInputConfirmationCardProps & { t: TFunction }) => (
+  dispatch,
+}: PeopleInputConfirmationCardProps & ReduxInject & { t: TFunction }) => (
   <ConfirmationCard
     text={t('peopleInputQuestion')}
     onAnswer={() => onAnswer('forward')}
     onBack={() => onAnswer('back')}
     confirmationDisabled={!getTotalPeople(people)}
+    onInfoIconPress={() =>
+      dispatch({
+        type: 'NAVIGATE',
+        screen: 'InformationSubCategories',
+        params: { infoCategory: 'declaration' },
+      })
+    }
   >
     <AdultInputRow
       people={people}
@@ -47,6 +60,10 @@ const PeopleInputConfirmationCardInner = ({
   </ConfirmationCard>
 );
 
-export const PeopleInputConfirmationCard = (translate(['peopleInput'])(
-  PeopleInputConfirmationCardInner
+const mapDispatchToProps = dispatch => ({
+  dispatch,
+});
+
+export const PeopleInputConfirmationCard = (connect(null, mapDispatchToProps)(
+  translate(['peopleInput'])(PeopleInputConfirmationCardInner)
 ): ComponentType<PeopleInputConfirmationCardProps>);

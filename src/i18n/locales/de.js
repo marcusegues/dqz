@@ -50,6 +50,10 @@ export const de: Locale = {
     limitExceeded:
       'Warenwert für die App überschritten. Bitte melden Sie Ihre Waren mündlich beim Grenzübergang an.',
     offline: 'Sie sind offline. Bitte überprufen Sie Ihre Verbindung.',
+    paymentAborted: 'Zahlung storniert',
+    paymentFailed: 'Zahlung fehlgeschlagen',
+    paymentAbortedRightText: 'OK',
+    paymentFailedRightText: 'OK',
     showBorder: 'Grenzübergang anzeigen',
   },
   onBoarding: {

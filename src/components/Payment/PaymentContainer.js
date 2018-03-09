@@ -6,7 +6,7 @@ import type { ComponentType } from 'react';
 // $FlowFixMe
 import { connect } from 'react-redux';
 // $FlowFixMe
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { Overview } from '../Overview/Overview';
 import Saferpay from '../../../saferpay';
 import { NavBar } from '../NavBar/NavBar';
@@ -26,6 +26,7 @@ import {
 import type {
   Navigation,
   PaymentData,
+  PaymentStatus,
   PaymentTransaction,
 } from '../../types/generalTypes';
 import type {
@@ -66,17 +67,11 @@ const redirectsUrlKeys = {
 type PaymentContainerState = {
   isLoadingRedirectData: boolean,
   redirectDataLoaded: boolean,
-  redirectUrl: ?string,
-  paymentToken: ?string,
-  paymentStatus: ?string,
   showModal: boolean,
 };
 
 type PaymentContainerProps = {
   navigation: Navigation,
-  // dispatch to props
-  setPaymentData: (paymentData: PaymentData) => void,
-  setReceiptId: (receiptId: string) => void,
 };
 
 type ReduxInject = {
@@ -91,6 +86,9 @@ type ReduxInject = {
   resetDeclaration: () => void,
   receiptEntryTime: string,
   connectivity: ConnectivityType,
+  // dispatch to props
+  setPaymentData: (paymentData: PaymentData) => Promise<void>,
+  setReceiptId: (receiptId: string) => void,
 };
 
 class PaymentContainerInner extends React.Component<
@@ -102,9 +100,6 @@ class PaymentContainerInner extends React.Component<
     this.state = {
       isLoadingRedirectData: false,
       redirectDataLoaded: false,
-      redirectUrl: null,
-      paymentToken: null,
-      paymentStatus: null,
       showModal: false,
     };
   }
@@ -157,15 +152,11 @@ class PaymentContainerInner extends React.Component<
                 .set('tokenExpiration', responseJson.Expiration)
                 // $FlowFixMe
                 .set('redirectUrl', responseJson.RedirectUrl)
+                .set('status', 'started')
             );
             this.setState({
               isLoadingRedirectData: false,
               redirectDataLoaded: true,
-              // $FlowFixMe
-              redirectUrl: responseJson.RedirectUrl,
-              // $FlowFixMe
-              paymentToken: responseJson.Token,
-              paymentStatus: 'start',
             });
           })
           .catch(error => {
@@ -188,7 +179,7 @@ class PaymentContainerInner extends React.Component<
       receiptEntryTime,
     } = this.props;
     let stateChanged = false;
-    let paymentStatus = '';
+    let paymentStatus: PaymentStatus = paymentData.status;
     switch (state.url) {
       case `${baseUrl}${redirectsUrlKeys.success}`:
         analyticsCustom('Successful payment');
@@ -200,12 +191,12 @@ class PaymentContainerInner extends React.Component<
       case `${baseUrl}${redirectsUrlKeys.fail}`:
         analyticsCustom('Failed payment');
         stateChanged = true;
-        paymentStatus = 'fail';
+        paymentStatus = 'failed';
         break;
       case `${baseUrl}${redirectsUrlKeys.abort}`:
         analyticsCustom('Aborted payment');
         stateChanged = true;
-        paymentStatus = 'abort';
+        paymentStatus = 'aborted';
         break;
       default:
         stateChanged = false;
@@ -216,120 +207,108 @@ class PaymentContainerInner extends React.Component<
       this.setState(
         {
           redirectDataLoaded: false,
-          paymentStatus,
         },
         () => {
-          if (paymentStatus === 'success') {
-            this.saferpay
-              .assertPayment(
-                // $FlowFixMe
-                paymentData.get('token'),
-                // $FlowFixMe
-                paymentData.get('requestId')
-              )
-              .then(responseJson => {
-                const paymentTransaction: PaymentTransaction = {
+          setPaymentData(paymentData.set('status', paymentStatus)).then(() => {
+            if (paymentStatus === 'success') {
+              this.saferpay
+                .assertPayment(
                   // $FlowFixMe
-                  status: responseJson.Transaction.Status,
+                  paymentData.get('token'),
                   // $FlowFixMe
-                  id: responseJson.Transaction.Id,
-                  // $FlowFixMe
-                  date: responseJson.Transaction.Date,
-                  // $FlowFixMe
-                  amountValue: responseJson.Transaction.Amount.Value,
-                  // $FlowFixMe
-                  currencyCode: responseJson.Transaction.Amount.CurrencyCode,
-                  // $FlowFixMe
-                  paymentMethod: responseJson.PaymentMeans.Brand.PaymentMethod,
-                  // $FlowFixMe
-                  brandName: responseJson.PaymentMeans.Brand.Name,
-                  // $FlowFixMe
-                  cardNumber: responseJson.PaymentMeans.Card.MaskedNumber,
-                  // $FlowFixMe
-                  cardHolderName: responseJson.PaymentMeans.Card.HolderName,
-                  // $FlowFixMe
-                  ipAddress: responseJson.Payer.IpAddress,
-                  // $FlowFixMe
-                  ipLocation: responseJson.Payer.IpLocation,
-                };
+                  paymentData.get('requestId')
+                )
+                .then(responseJson => {
+                  const paymentTransaction: PaymentTransaction = {
+                    // $FlowFixMe
+                    status: responseJson.Transaction.Status,
+                    // $FlowFixMe
+                    id: responseJson.Transaction.Id,
+                    // $FlowFixMe
+                    date: responseJson.Transaction.Date,
+                    // $FlowFixMe
+                    amountValue: responseJson.Transaction.Amount.Value,
+                    // $FlowFixMe
+                    currencyCode: responseJson.Transaction.Amount.CurrencyCode,
+                    // $FlowFixMe
+                    paymentMethod:
+                      responseJson.PaymentMeans.Brand.PaymentMethod,
+                    // $FlowFixMe
+                    brandName: responseJson.PaymentMeans.Brand.Name,
+                    // $FlowFixMe
+                    cardNumber: responseJson.PaymentMeans.Card.MaskedNumber,
+                    // $FlowFixMe
+                    cardHolderName: responseJson.PaymentMeans.Card.HolderName,
+                    // $FlowFixMe
+                    ipAddress: responseJson.Payer.IpAddress,
+                    // $FlowFixMe
+                    ipLocation: responseJson.Payer.IpLocation,
+                  };
 
-                const newPaymentData: PaymentData = paymentData
-                  .set('status', paymentStatus)
-                  .set('transaction', paymentTransaction);
+                  const newPaymentData: PaymentData = paymentData.set(
+                    'transaction',
+                    paymentTransaction
+                  );
 
-                setPaymentData(newPaymentData);
-                const receiptId = uuidv1();
-                setReceiptId(receiptId);
-                const newReceiptEntryTime =
-                  receiptEntryTime === ''
-                    ? getConvertedLocalTimeToSwiss().toString()
-                    : receiptEntryTime;
-                // $FlowFixMe
-                const receipt: Receipt = {
-                  receiptId,
-                  receiptEntryTime: newReceiptEntryTime,
-                  amounts,
-                  people,
-                  basket,
-                  currencies,
-                  paymentData: newPaymentData,
-                };
-                return storeReceipt(receipt).then(() =>
-                  this.props.navigation.dispatch({
-                    type: 'NAVIGATE',
-                    screen: 'ReceiptAfterPayment',
-                  })
-                );
-              })
-              .catch(error => console.log('Saferpay error:', error));
-          }
+                  setPaymentData(newPaymentData);
+                  const receiptId = uuidv1();
+                  setReceiptId(receiptId);
+                  const newReceiptEntryTime =
+                    receiptEntryTime === ''
+                      ? getConvertedLocalTimeToSwiss().toString()
+                      : receiptEntryTime;
+                  // $FlowFixMe
+                  const receipt: Receipt = {
+                    receiptId,
+                    receiptEntryTime: newReceiptEntryTime,
+                    amounts,
+                    people,
+                    basket,
+                    currencies,
+                    paymentData: newPaymentData,
+                  };
+                  return storeReceipt(receipt).then(() =>
+                    this.props.navigation.dispatch({
+                      type: 'NAVIGATE',
+                      screen: 'ReceiptAfterPayment',
+                    })
+                  );
+                })
+                .catch(error => console.log('Saferpay error:', error));
+            }
+          });
         }
       );
     }
   }
 
+  isPaymentDisabled() {
+    const { fees, connectivity, amounts, currencies, paymentData } = this.props;
+    return (
+      fees < MIN_DECLARED_CHF ||
+      totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF ||
+      (connectivity.type === 'none' || connectivity.type === 'unknown') ||
+      paymentData.status === 'aborted' ||
+      paymentData.status === 'failed'
+    );
+  }
+
   render() {
     const { showModal } = this.state;
-    const {
-      navigation,
-      fees,
-      paymentData,
-      currencies,
-      amounts,
-      connectivity,
-    } = this.props;
+    const { navigation, paymentData } = this.props;
     return (
       <MainContentContainer>
         <NavBar step={2} />
-        {this.state.paymentStatus === 'success' ? (
-          <Text style={{ color: 'green' }}>
-            Payment success({paymentData.status})
-          </Text>
-        ) : null}
-        {this.state.paymentStatus === 'abort' ? (
-          <Text style={{ color: 'red' }}>
-            Payment aborted({paymentData.status})
-          </Text>
-        ) : null}
-        {this.state.paymentStatus === 'fail' ? (
-          <Text style={{ color: 'red' }}>
-            Payment failed({paymentData.status})
-          </Text>
-        ) : null}
         <Overview
           onProceedToPayment={() => this.proceedToPayment()}
-          paymentDisabled={
-            fees < MIN_DECLARED_CHF ||
-            totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF ||
-            (connectivity.type === 'none' || connectivity.type === 'unknown')
-          }
+          paymentDisabled={this.isPaymentDisabled()}
           navigation={navigation}
         />
 
         {this.state.redirectDataLoaded ? (
           <View style={{ position: 'absolute', top: 0, bottom: 0 }}>
             <PaymentWebView
-              source={{ uri: this.state.redirectUrl }}
+              source={{ uri: paymentData.redirectUrl }}
               onNavigationStateChange={e => this.checkWebViewUrl(e)}
             />
           </View>
@@ -358,10 +337,12 @@ class PaymentContainerInner extends React.Component<
 }
 
 const mapDispatchToProps = dispatch => ({
-  setPaymentData: (paymentData: PaymentData) =>
-    dispatch({
-      type: 'SET_PAYMENT_DATA',
-      paymentData,
+  setPaymentData: (paymentData: PaymentData) => new Promise(resolve => {
+      dispatch({
+        type: 'SET_PAYMENT_DATA',
+        paymentData,
+      });
+      resolve();
     }),
   setReceiptId: (receiptId: string) =>
     dispatch({

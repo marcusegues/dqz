@@ -58,6 +58,7 @@ type AmountInputConfirmationCardProps = {
 
 type ReduxInject = {
   currencies: CurrencyObject,
+  dispatch: Function,
 };
 
 const AmountInputConfirmationCardInner = ({
@@ -68,6 +69,7 @@ const AmountInputConfirmationCardInner = ({
   onAnswer,
   onDeleteAmount,
   currencies,
+  dispatch,
 }: AmountInputConfirmationCardProps & ReduxInject & { t: TFunction }) => {
   let title: string = t('amountInput');
   if (large) {
@@ -85,6 +87,9 @@ const AmountInputConfirmationCardInner = ({
       text={title}
       onAnswer={() => onAnswer('forward')}
       onBack={() => onAnswer('back')}
+      onInfoIconPress={() =>
+        dispatch({ type: 'NAVIGATE', screen: 'VatAllowance' })
+      }
     >
       {large ? (
         <Text />
@@ -121,6 +126,13 @@ const mapStateToProps = state => ({
   currencies: getCurrencies(state),
 });
 
-export const AmountInputConfirmationCard = (connect(mapStateToProps, null)(
-  translate(['amountInput'])(AmountInputConfirmationCardInner)
-): ComponentType<AmountInputConfirmationCardProps>);
+const mapDispatchToProps = dispatch => ({
+  dispatch,
+});
+
+export const AmountInputConfirmationCard = (connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(translate(['amountInput'])(AmountInputConfirmationCardInner)): ComponentType<
+  AmountInputConfirmationCardProps
+>);

@@ -50,6 +50,10 @@ export const en: Locale = {
     limitExceeded:
       'Declaration value limit exceeded. Please report your goods at the border crossing',
     offline: 'You are offline. Please check your connection.',
+    paymentAborted: 'Payment canceled.',
+    paymentFailed: 'Payment failed',
+    paymentAbortedRightText: 'OK',
+    paymentFailedRightText: 'OK',
     showBorder: 'Show border crossing',
   },
   onBoarding: {
