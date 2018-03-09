@@ -50,6 +50,10 @@ export const fr: Locale = {
     limitExceeded:
       "Valeur des biens pour l'application dépassée. S'il vous plaît signaler vos marchandises oralement au poste-frontière.",
     offline: "Vous êtes hors ligne S'il vous plaît vérifier votre connexion.",
+    paymentAborted: 'Paiement annulé',
+    paymentFailed: 'Paiement échoué',
+    paymentAbortedRightText: 'OK',
+    paymentFailedRightText: 'OK',
     showBorder: 'Afficher le passage frontalier',
   },
   onBoarding: {

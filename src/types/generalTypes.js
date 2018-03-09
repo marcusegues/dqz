@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import Immutable from 'immutable';
-import type { RecordFactory } from 'immutable';
+import type { RecordFactory, RecordOf } from 'immutable';
 /**
  * Type for the the translation function as used in
  */
@@ -50,13 +50,18 @@ export type PaymentTransaction = {
 /**
  * Type for payment status. Status key getting from returnURL.
  */
-type PaymentStatus = 'not_started' | 'cancel' | 'fail' | 'succes';
+export type PaymentStatus =
+  | 'notStarted'
+  | 'started'
+  | 'aborted'
+  | 'failed'
+  | 'success';
 
 /**
  * Type for active saferpay payment. Response from PaymentPage Initialize.
  * https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize
  */
-export type PaymentData = {
+type PaymentDataType = {
   specVersion: string,
   requestId: string,
   token: string,
@@ -72,14 +77,14 @@ export type PaymentData = {
  * transaction: {status: string, id: string, date: string, amountValue: string, currencyCode: string, cardNumber: string, cardHolderName: string}}>}
  */
 export const makePaymentDataRecord: RecordFactory<
-  PaymentData
+  PaymentDataType
 > = Immutable.Record({
   specVersion: '',
   requestId: '',
   token: '',
   tokenExpiration: '',
   redirectUrl: '',
-  status: 'not_started',
+  status: 'notStarted',
   transaction: {
     status: '',
     id: '',
@@ -94,3 +99,5 @@ export const makePaymentDataRecord: RecordFactory<
     ipLocation: '',
   },
 });
+
+export type PaymentData = RecordOf<PaymentDataType>;

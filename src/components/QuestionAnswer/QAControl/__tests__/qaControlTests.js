@@ -170,7 +170,7 @@ describe('Test qa control flow', () => {
 
   test('after people input BACK on blank state', () => {
     const spy = jest.fn();
-    const mockNav = { goBack: spy };
+    const mockNav = { dispatch: spy };
     const newState = setQuestionStates(
       'peopleInput',
       'back',
@@ -197,7 +197,7 @@ describe('Test qa control flow', () => {
 
   test('after people input with main categories BACK already present', () => {
     const spy = jest.fn();
-    const mockNav = { goBack: spy };
+    const mockNav = { dispatch: spy };
     const newState = setQuestionStates(
       'peopleInput',
       'back',
