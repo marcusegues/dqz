@@ -55,6 +55,7 @@ import { Food } from '../screens/Information/InformationScreens/subCategories/Fo
 import { AuthorisationRequirements } from '../screens/Information/InformationScreens/subCategories/AuthorisationRequirements';
 import { PurchasesOnlineOffline } from '../screens/Information/InformationScreens/mainCategories/PurchasesOnlineOffline';
 import { addListener } from './reactNavigation';
+import { CartIcon } from '../components/Headers/subcomponents/CartIcon';
 
 export type NavigationObject = { navigation: Navigation };
 
@@ -145,151 +146,317 @@ export const stackNavigatorScreens = {
     screen: InformationSubCategories,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationMainCategories',
+            })
+          }
+        />
       ),
+      headerRight: <CartIcon navigation={navigation} />,
     }),
   },
   CustomsProcedures: {
     screen: CustomsProcedures,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationMainCategories',
+            })
+          }
+        />
       ),
     }),
   },
   VatAllowance: {
     screen: VatAllowance,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'declaration' },
+            })
+          }
+        />
       ),
     }),
   },
   DutyAllowance: {
     screen: DutyAllowance,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'declaration' },
+            })
+          }
+        />
       ),
     }),
   },
   PersonalEffects: {
     screen: PersonalEffects,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'declaration' },
+            })
+          }
+        />
       ),
     }),
   },
   ForeignVat: {
     screen: ForeignVat,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'declaration' },
+            })
+          }
+        />
       ),
     }),
   },
   TravelDocuments: {
     screen: TravelDocuments,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationMainCategories',
+            })
+          }
+        />
       ),
     }),
   },
   EntryByTrain: {
     screen: EntryByTrain,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationMainCategories',
+            })
+          }
+        />
       ),
     }),
   },
   PurchasesOnlineOffline: {
     screen: PurchasesOnlineOffline,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationMainCategories',
+            })
+          }
+        />
       ),
     }),
   },
   Animals: {
     screen: Animals,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'animalsAndPlants' },
+            })
+          }
+        />
       ),
     }),
   },
   Plants: {
     screen: Plants,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'animalsAndPlants' },
+            })
+          }
+        />
       ),
     }),
   },
   SouvenirsAndSpeciesProtection: {
     screen: SouvenirsAndSpeciesProtection,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'animalsAndPlants' },
+            })
+          }
+        />
       ),
     }),
   },
   HighwayVignette: {
     screen: HighwayVignette,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'vehicles' },
+            })
+          }
+        />
       ),
     }),
   },
   RoadTax: {
     screen: RoadTax,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'vehicles' },
+            })
+          }
+        />
       ),
     }),
   },
   FuelAndRepairs: {
     screen: FuelAndRepairs,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'vehicles' },
+            })
+          }
+        />
       ),
     }),
   },
   Forgery: {
     screen: Forgery,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'prohibitionsAndRestrictions' },
+            })
+          }
+        />
       ),
     }),
   },
   Cash: {
     screen: Cash,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'prohibitionsAndRestrictions' },
+            })
+          }
+        />
       ),
     }),
   },
   Food: {
     screen: Food,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'prohibitionsAndRestrictions' },
+            })
+          }
+        />
       ),
     }),
   },
   AuthorisationRequirements: {
     screen: AuthorisationRequirements,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'prohibitionsAndRestrictions' },
+            })
+          }
+        />
       ),
     }),
   },
