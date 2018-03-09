@@ -94,7 +94,7 @@ export const de: Locale = {
     amountInput:
       'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Ware.',
     amountInputLargeItem:
-      'Capturez des objets individuels d\'une valeur de plus de {{value}} Francs.',
+      "Capturez des objets individuels d'une valeur de plus de {{value}} Francs.",
     amountInputLargeItemGreyBox:
       'Erfassen Sie hier nochmals jeden Gegenstand, der mehr als CHF 300.00 wert ist.',
     amountInputAddItem: 'Wert hinzufügen',
@@ -165,6 +165,8 @@ export const de: Locale = {
   },
   receipt: {
     dutyAndVat: 'Zollabgabe: {{duty}}  |  Mehrwertsteuer: {{vat}}',
+    travellers:
+      'Reisende: {{adults}} Erwachsene, {{minors}} Kind(unter 17 Jahre)',
     paidOn: 'Bezahlt am {{date}} um {{time}} Uhr mit:',
     transactionId: 'Transaktions-ID (SIX): {{value}}',
     receiptValidFrom: 'Diese Quittung ist gültig am:',

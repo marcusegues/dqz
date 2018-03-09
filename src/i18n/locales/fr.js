@@ -7,7 +7,7 @@ export const fr: Locale = {
     Butter: 'Beurre et crème',
     Oils: 'Huiles/graisses/margarine',
     OtherFood: 'Autres denrées alimentaires et boissons sans alcool',
-    AlcSoft: 'Boissons alcoolisées jusqu\'à 18% vol.',
+    AlcSoft: "Boissons alcoolisées jusqu'à 18% vol.",
     AlcHard: 'Boissons alcoolisées de plus de 18% vol.',
     Cigarettes: 'Cigarettes et cigares',
     Tobacco: 'Autres tabacs manufacturés',
@@ -163,6 +163,8 @@ export const fr: Locale = {
   },
   receipt: {
     dutyAndVat: 'Droits de douane: {{duty}} |  TVA: {{vat}}',
+    travellers:
+      'Reisende: {{adults}} Erwachsene, {{minors}} Kind(unter 17 Jahre)',
     paidOn: 'Payé le {{date}} à {{time}} h avec:',
     transactionId: 'ID de transaction (SIX): {{value}}',
 

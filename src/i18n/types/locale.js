@@ -509,6 +509,7 @@ type InformationTranslations = {
 
 type ReceiptTranslations = {
   dutyAndVat: string,
+  travellers: string,
   paidOn: string,
   transactionId: string,
   receiptValidFrom: string,
