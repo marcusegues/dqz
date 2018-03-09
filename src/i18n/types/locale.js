@@ -174,6 +174,7 @@ type CustomsProceduresTranslation = {
   customsProceduresText19: string,
   customsProceduresText20: string,
   customsProceduresText21: string,
+  customsProceduresExtLink1: string,
 };
 
 type TravelDocumentsTranslations = {

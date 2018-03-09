@@ -94,7 +94,7 @@ export const de: Locale = {
     amountInput:
       'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Ware.',
     amountInputLargeItem:
-      'Capturez des objets individuels d\'une valeur de plus de {{value}} Francs.',
+      "Capturez des objets individuels d'une valeur de plus de {{value}} Francs.",
     amountInputLargeItemGreyBox:
       'Erfassen Sie hier nochmals jeden Gegenstand, der mehr als CHF 300.00 wert ist.',
     amountInputAddItem: 'Wert hinzufügen',
@@ -220,7 +220,7 @@ export const de: Locale = {
       'Andere Waren müssen bei einem durch Personal des Schweizer Zolls besetzten Grenzübergang angemeldet werden.',
     customsProceduresText16: 'Anmeldebox',
     customsProceduresText17:
-      'An gewissen Grenzübergängen stehen Ihnen noch sogenannte Anmeldeboxen zur Verfügung, bei denen Sie Ihre Waren schriftlich anmelden können. Informationen dazu finden Sie unter www.ezv.admin.ch/Anmeldebox [Link: https://www.ezv.admin.ch/ezv/de/home/zollanmeldung/anmeldung-private/schriftliche-selbstanmeldung-mit-den-anmeldeboxen.html]',
+      'An gewissen Grenzübergängen stehen Ihnen noch sogenannte Anmeldeboxen zur Verfügung, bei denen Sie Ihre Waren schriftlich anmelden können. Informationen dazu finden Sie unter',
     customsProceduresText18:
       'Diese Form der Zollanmeldung ist nur für Waren zulässig, die nicht für den Handel bestimmt sind. Sie dürfen keinen Beschränkungen oder Verboten unterliegen und weder zeugnis- noch bewilligungspflichtig sein.',
     customsProceduresText19:
@@ -228,6 +228,7 @@ export const de: Locale = {
     customsProceduresText20: 'Bitte beachten:',
     customsProceduresText21:
       'Die mündliche Anmeldung sowie die Anmeldung mit der App oder via Anmeldebox sind verbindlich. Wir nehmen Zollkontrollen auch im Landesinneren vor. Eine nachträgliche Zollanmeldung ist nicht möglich. Sie machen sich strafbar, wenn Sie verbotene, bewilligungs- oder abgabenpflichtige Waren nicht oder falsch anmelden.',
+    customsProceduresExtLink1: 'Anmeldebox',
   },
 
   travelDocuments: {
@@ -235,9 +236,9 @@ export const de: Locale = {
     travelDocumentsSubText: '',
     travelDocumentsText1:
       'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges und von der Schweiz anerkanntes Reisepapier. In gewissen Fällen ist zudem ein Visum erforderlich.\n' +
-      'Über die Einreise in die Schweiz und den Aufenthalt (Vorschriften zu Reisedokumenten und Visa) gibt Ihnen die Website des Staatssekretariats für Migration Auskunft: www.sem.admin.ch ',
+      'Über die Einreise in die Schweiz und den Aufenthalt (Vorschriften zu Reisedokumenten und Visa) gibt Ihnen die Website des Staatssekretariats für Migration Auskunft:',
     travelDocumentsText2:
-      'Die Vorschriften zu den Reisepapieren im Ausland finden Sie bei den entsprechenden ausländischen Behörden, über den Link der Weltzollorganisation: www.wcoomd.org ',
+      'Die Vorschriften zu den Reisepapieren im Ausland finden Sie bei den entsprechenden ausländischen Behörden, über den Link der Weltzollorganisation:',
   },
 
   vatAllowance: {
@@ -408,8 +409,7 @@ export const de: Locale = {
     foreignVatText3:
       'Für die Rückerstattung bestehen je nach Staat unterschiedliche Voraussetzungen. Allenfalls füllt der Verkäufer ein Rückerstattungsformular aus, auf dem die ausländische Zollbehörde den Export in die Schweiz bestätigt.',
     foreignVatText4:
-      'Weitere Informationen zur Rückerstattung der ausländischen MWST können wir Ihnen nicht geben. Allenfalls erteilt Ihnen die entsprechende Zollbehörde Auskünfte. Die ausländischen Zollbehörden finden Sie unter folgendem Link der Weltzollorganisation:\n' +
-      'www.wcoomd.org',
+      'Weitere Informationen zur Rückerstattung der ausländischen MWST können wir Ihnen nicht geben. Allenfalls erteilt Ihnen die entsprechende Zollbehörde Auskünfte. Die ausländischen Zollbehörden finden Sie unter folgendem Link der Weltzollorganisation:',
     foreignVatText5:
       'Die schweizerische MWST ist auch zu bezahlen, wenn die ausländische MWST nicht zurückerstattet wird. Im Bereich der Mehrwertsteuern gibt es kein Doppelbesteuerungsabkommen.',
   },
@@ -417,8 +417,7 @@ export const de: Locale = {
   animals: {
     animalsMainText: 'Tiere: Heimtiere, Hunde, Katzen und Pferde',
     animalsText1:
-      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die Informationen beim Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:\n' +
-      'http://www.blv.admin.ch',
+      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die Informationen beim Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:',
     animalsText2: 'Abgaben',
     animalsText3:
       'Wird die Wertfreigrenze von CHF 300 überschritten, müssen Sie für Tiere die MWST bezahlen. Detailliertere Informationen finden Sie unter:',
@@ -519,7 +518,7 @@ export const de: Locale = {
       'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 Tonnen eine Schwerverkehrsabgabe erhoben. Für Busse, schwere Wohnmobile, schwere Personenwagen und deren Anhänger über 3,5 Tonnen wird die Abgabe pauschal pro Tag erhoben.',
     roadTaxText2:
       'Im Gegensatz zur Autobahnvignette für Personenwagen wird die Schwerverkehrsabgabe nicht nur auf den Autobahnen sondern auf dem gesamten Strassennetz fällig.',
-    roadTaxText3: 'Für LKWs und deren Anhänger siehe: www.lsva.ch',
+    roadTaxText3: 'Für LKWs und deren Anhänger siehe:',
     roadTaxText4:
       'Bitte beachten: PSVA-pflichtig ist das Fahrzeug auch, wenn es nur abgestellt ist und nicht bewegt wird (z. B. Wohnmobil auf Campingplatz).',
     roadTaxText5: 'Bezahlung und Tarife',

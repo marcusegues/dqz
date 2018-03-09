@@ -41,7 +41,11 @@ const FuelAndRepairsInner = ({ t, navigation }: FuelAndRepairsInnerProps) => (
     >
       <AppInfoSubText
         text={t('fuelAndRepairsText5')}
-        style={{ paddingBottom: verticalScale(10) }}
+        style={{
+          paddingBottom: verticalScale(10),
+          textDecorationLine: 'underline',
+          textDecorationStyle: 'solid',
+        }}
         greyBox
       />
     </TouchableOpacity>

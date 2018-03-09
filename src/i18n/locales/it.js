@@ -225,6 +225,7 @@ export const it: Locale = {
     customsProceduresText20: 'Attenzione',
     customsProceduresText21:
       'La dichiarazione verbale nonché la dichiarazione con l’app o con la cassetta delle dichiarazioni è vincolante. I controlli doganali possono essere effettuati anche all’interno del Paese. Non è possibile effettuare la dichiarazione doganale a posteriori. L’omessa oppure errata dichiarazione di merci vietate, soggette all’obbligo di autorizzazione o soggette al pagamento di tributi è dunque punibile.',
+    customsProceduresExtLink1: '',
   },
 
   travelDocuments: {
