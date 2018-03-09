@@ -9,7 +9,6 @@ const ownStyles = {
   greyContainer: {
     backgroundColor: LIGHT_GREY,
     paddingHorizontal: 16,
-    // paddingVertical: 10,
   },
 };
 

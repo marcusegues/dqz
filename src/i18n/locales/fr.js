@@ -232,6 +232,7 @@ export const fr: Locale = {
     customsProceduresText20: 'Attention:',
     customsProceduresText21:
       "Qu'elle soit verbale, effectuée au moyen de l'application ou par l'intermédiaire d'une boîte à déclarations, la déclaration lie son auteur. Nous effectuons également des contrôles douaniers à l'intérieur du pays. Une déclaration en douane subséquente n'est pas possible. Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
+    customsProceduresExtLink1: 'boîte à déclarations',
   },
 
   travelDocuments: {
