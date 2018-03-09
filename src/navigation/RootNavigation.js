@@ -139,12 +139,14 @@ export const stackNavigatorScreens = {
   InformationMainCategories: {
     screen: InformationMainCategories,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: <HomeIcon navigation={navigation} />,
     }),
   },
   InformationSubCategories: {
     screen: InformationSubCategories,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
         <BackArrow
           onPress={() =>
@@ -155,7 +157,6 @@ export const stackNavigatorScreens = {
           }
         />
       ),
-      headerRight: <CartIcon navigation={navigation} />,
     }),
   },
   CustomsProcedures: {
