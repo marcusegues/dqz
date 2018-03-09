@@ -50,6 +50,10 @@ export const it: Locale = {
     limitExceeded:
       "Il valore dei beni per l'app è stato superato. Si prega di segnalare le vostre merci per via orale al valico di frontiera.",
     offline: 'Sei offline. Si prega di verificare la connessione.',
+    paymentAborted: 'Paiement annulé',
+    paymentFailed: 'Pagamento annullato',
+    paymentAbortedRightText: 'OK',
+    paymentFailedRightText: 'OK',
     showBorder: 'Mostra il valico di frontiera',
   },
   onBoarding: {
@@ -176,6 +180,8 @@ export const it: Locale = {
     allReceiptsDate: 'da {{value}}',
     entryTime: 'Periodo di entrata:',
     chooseOtherEntryTime: 'Regolare',
+    overviewRegistered: '⚠️',
+    overviewDutyFree: '⚠️',
     until: 'fino a',
   },
 
@@ -200,14 +206,14 @@ export const it: Locale = {
     customsProceduresText10:
       'Dichiarazione doganale verbale o scelta del passaggio rosso all’aeroporto',
     customsProceduresText11:
-      'Se al valico di confine è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente. Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
-    customsProceduresText12: 'Dichiarazione doganale con l’app QuickZoll',
-    customsProceduresText13:
-      'Le merci possono essere dichiarate anche con l’app QuickZoll dell’AFD. Le merci devono essere imposte con l’app prima del passaggio del confine oppure al valico di confine. Ciò significa che i tributi devono essere pagati. Se il pagamento avviene mediante app è consentito utilizzare anche i valichi di confine in cui il personale doganale non è presente [OPPURE: valichi di confine dove è possibile effettuare la dichiarazione scritta], e negli aeroporti il passaggio verde.',
+      'Se al valico di confine è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente.',
+    customsProceduresText12:
+      'Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
+    customsProceduresText13: 'Dichiarazione doganale con l’app QuickZoll',
     customsProceduresText14:
-      'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.',
+      'Le merci possono essere dichiarate anche con l’app QuickZoll dell’AFD. Le merci devono essere imposte con l’app prima del passaggio del confine oppure al valico di confine. Ciò significa che i tributi devono essere pagati. Se il pagamento avviene mediante app è consentito utilizzare anche i valichi di confine in cui il personale doganale non è presente [OPPURE: valichi di confine dove è possibile effettuare la dichiarazione scritta], e negli aeroporti il passaggio verde.',
     customsProceduresText15:
-      'Altre merci devono essere dichiarate presso un valico di confine in cui è presente il personale doganale svizzero.',
+      'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.\nAltre merci devono essere dichiarate verbalmente presso un valico di confine in cui è presente il personale doganale svizzero.',
     customsProceduresText16:
       'Dichiarazione doganale scritta (cassetta delle dichiarazioni)',
     customsProceduresText17:
@@ -219,6 +225,7 @@ export const it: Locale = {
     customsProceduresText20: 'Attenzione',
     customsProceduresText21:
       'La dichiarazione verbale nonché la dichiarazione con l’app o con la cassetta delle dichiarazioni è vincolante. I controlli doganali possono essere effettuati anche all’interno del Paese. Non è possibile effettuare la dichiarazione doganale a posteriori. L’omessa oppure errata dichiarazione di merci vietate, soggette all’obbligo di autorizzazione o soggette al pagamento di tributi è dunque punibile.',
+    customsProceduresExtLink1: '',
   },
 
   travelDocuments: {

@@ -7,7 +7,7 @@ export const fr: Locale = {
     Butter: 'Beurre et crème',
     Oils: 'Huiles/graisses/margarine',
     OtherFood: 'Autres denrées alimentaires et boissons sans alcool',
-    AlcSoft: 'Boissons alcoolisées jusqu\'à 18% vol.',
+    AlcSoft: "Boissons alcoolisées jusqu'à 18% vol.",
     AlcHard: 'Boissons alcoolisées de plus de 18% vol.',
     Cigarettes: 'Cigarettes et cigares',
     Tobacco: 'Autres tabacs manufacturés',
@@ -50,6 +50,10 @@ export const fr: Locale = {
     limitExceeded:
       "Valeur des biens pour l'application dépassée. S'il vous plaît signaler vos marchandises oralement au poste-frontière.",
     offline: "Vous êtes hors ligne S'il vous plaît vérifier votre connexion.",
+    paymentAborted: 'Paiement annulé',
+    paymentFailed: 'Paiement échoué',
+    paymentAbortedRightText: 'OK',
+    paymentFailedRightText: 'OK',
     showBorder: 'Afficher le passage frontalier',
   },
   onBoarding: {
@@ -226,6 +230,7 @@ export const fr: Locale = {
     customsProceduresText20: 'Attention:',
     customsProceduresText21:
       "Qu'elle soit verbale, effectuée au moyen de l'application ou par l'intermédiaire d'une boîte à déclarations, la déclaration lie son auteur. Nous effectuons également des contrôles douaniers à l'intérieur du pays. Une déclaration en douane subséquente n'est pas possible. Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
+    customsProceduresExtLink1: 'boîte à déclarations',
   },
 
   travelDocuments: {

@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Text, View } from 'react-native';
+import { Linking, View } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -15,6 +15,7 @@ import { CardHeaderText } from '../../../../components/QuestionAnswer/Cards/subc
 import { RightAlignedHeader } from '../../../../components/Overview/subcomponents/RightAlignedHeader';
 import { RoadTaxRow } from '../../subComponents/RoadTaxRow';
 import { AmountIcon } from '../../../../components/General Components/GreyBox/configured/AmountIcon';
+import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
 
 const bus = require('../../../../../assets/images/info/bus.png');
 const camper = require('../../../../../assets/images/info/camper.png');
@@ -69,7 +70,11 @@ const RoadTaxInner = ({ t }: RoadTaxInnerProps) => (
       text={t('roadTaxText3')}
       style={{ marginTop: verticalScale(10) }}
     />
-    <Text style={{ marginBottom: verticalScale(10) }}>www.lsva.ch</Text>
+    <AppInfoLink
+      text="www.lsva.ch"
+      onPress={() => Linking.openURL('http://www.lsva.ch')}
+      style={{ marginBottom: verticalScale(10) }}
+    />
     <AppInfoSubText
       text={t('roadTaxText4')}
       style={{ paddingVertical: verticalScale(10) }}

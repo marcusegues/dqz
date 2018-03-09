@@ -50,6 +50,10 @@ export const en: Locale = {
     limitExceeded:
       'Declaration value limit exceeded. Please report your goods at the border crossing',
     offline: 'You are offline. Please check your connection.',
+    paymentAborted: 'Payment canceled.',
+    paymentFailed: 'Payment failed',
+    paymentAbortedRightText: 'OK',
+    paymentFailedRightText: 'OK',
     showBorder: 'Show border crossing',
   },
   onBoarding: {
@@ -216,14 +220,15 @@ export const en: Locale = {
     customsProceduresText20: 'Please note:',
     customsProceduresText21:
       'Verbal declarations as well as declarations with the app or via a declaration box are binding. We also carry out customs inspections in Switzerland itself. It is not possible to make a customs declaration later on. You commit a criminal offence if you do not declare or falsely declare prohibited or dutiable goods or ones that require authorisation.',
+    customsProceduresExtLink1: '',
   },
 
   travelDocuments: {
     travelDocumentsMainText: 'Travel documents',
     travelDocumentsText1:
-      'To enter Switzerland, foreign citizens must be in possession of a valid travel document that is recognised by Switzerland. In certain cases, a visa is also required. Information on entering and staying in Switzerland (regulations on travel documents and visas) can be found on the website of the State Secretariat for Migration: www.sem.admin.ch',
+      'To enter Switzerland, foreign citizens must be in possession of a valid travel document that is recognised by Switzerland. In certain cases, a visa is also required. Information on entering and staying in Switzerland (regulations on travel documents and visas) can be found on the website of the State Secretariat for Migration:',
     travelDocumentsText2:
-      'The provisions on travel documents abroad can be obtained from the relevant foreign authorities via the link to the World Customs Organization: www.wcoomd.org',
+      'The provisions on travel documents abroad can be obtained from the relevant foreign authorities via the link to the World Customs Organization:',
   },
 
   vatAllowance: {

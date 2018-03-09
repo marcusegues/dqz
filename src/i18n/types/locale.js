@@ -52,6 +52,10 @@ type GeneralTranslations = {
 type SnackBarTranslations = {
   limitExceeded: string,
   offline: string,
+  paymentAborted: string,
+  paymentFailed: string,
+  paymentAbortedRightText: string,
+  paymentFailedRightText: string,
   showBorder: string,
 };
 
@@ -170,6 +174,7 @@ type CustomsProceduresTranslation = {
   customsProceduresText19: string,
   customsProceduresText20: string,
   customsProceduresText21: string,
+  customsProceduresExtLink1: string,
 };
 
 type TravelDocumentsTranslations = {

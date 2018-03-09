@@ -1,5 +1,7 @@
 // @flow
 import React from 'react';
+// $FlowFixMe
+import { Linking } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -9,6 +11,7 @@ import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { BulletText } from '../../../AppInfo/subComponents/BulletText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
+import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
 
 type CustomsProceduresInnerProps = {
   t: TFunction,
@@ -24,6 +27,7 @@ const CustomsProceduresInner = ({
       text={t('customsProceduresText1')}
       style={{ marginVertical: verticalScale(10) }}
     />
+
     <AppInfoSubText text={t('customsProceduresText2')} />
     <BulletText text={t('customsProceduresText3')} />
     <BulletText text={t('customsProceduresText4')} />
@@ -40,7 +44,10 @@ const CustomsProceduresInner = ({
           screen: 'VatAllowance',
         })
       }
-      style={{ color: 'green' }}
+      style={{
+        textDecorationLine: 'underline',
+        textDecorationStyle: 'solid',
+      }}
     />
     <BulletText
       text={t('customsProceduresText8')}
@@ -50,7 +57,10 @@ const CustomsProceduresInner = ({
           screen: 'DutyAllowance',
         })
       }
-      style={{ color: 'green' }}
+      style={{
+        textDecorationLine: 'underline',
+        textDecorationStyle: 'solid',
+      }}
     />
     <BulletText
       text={t('customsProceduresText9')}
@@ -60,7 +70,10 @@ const CustomsProceduresInner = ({
           screen: 'PersonalEffects',
         })
       }
-      style={{ color: 'green' }}
+      style={{
+        textDecorationLine: 'underline',
+        textDecorationStyle: 'solid',
+      }}
     />
     <CardRowText
       text={t('customsProceduresText10')}
@@ -85,6 +98,14 @@ const CustomsProceduresInner = ({
       style={{ marginTop: verticalScale(20) }}
     />
     <AppInfoSubText text={t('customsProceduresText17')} />
+    <AppInfoLink
+      text={`www.ezv.admin.ch/${t('customsProceduresExtLink1')}`}
+      onPress={() =>
+        Linking.openURL(
+          'https://www.ezv.admin.ch/ezv/de/home/zollanmeldung/anmeldung-private/schriftliche-selbstanmeldung-mit-den-anmeldeboxen.html'
+        )
+      }
+    />
     <AppInfoSubText
       text={t('customsProceduresText18')}
       style={{ marginVertical: verticalScale(10) }}
