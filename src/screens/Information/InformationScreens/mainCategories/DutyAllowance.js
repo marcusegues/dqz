@@ -21,7 +21,9 @@ const DutyAllowanceInner = ({ t, navigation }: DutyAllowanceInnerProps) => (
   <SubCategoryContainer title={t('dutyAllowanceMainText')}>
     <AppInfoSubText
       text={t('dutyAllowanceText1')}
-      style={{ marginTop: verticalScale(10) }}
+      style={{
+        marginTop: verticalScale(10),
+      }}
     />
     <TouchableOpacity
       onPress={() =>
@@ -33,7 +35,11 @@ const DutyAllowanceInner = ({ t, navigation }: DutyAllowanceInnerProps) => (
     >
       <AppInfoSubText
         text={t('dutyAllowanceText2')}
-        style={{ marginTop: verticalScale(10) }}
+        style={{
+          marginTop: verticalScale(10),
+          textDecorationLine: 'underline',
+          textDecorationStyle: 'solid',
+        }}
       />
     </TouchableOpacity>
     <AppInfoSubText

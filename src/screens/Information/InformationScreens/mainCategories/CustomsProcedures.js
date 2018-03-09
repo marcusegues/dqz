@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Linking, Text, View } from 'react-native';
+import { Linking } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -44,7 +44,10 @@ const CustomsProceduresInner = ({
           screen: 'VatAllowance',
         })
       }
-      style={{ color: 'green' }}
+      style={{
+        textDecorationLine: 'underline',
+        textDecorationStyle: 'solid',
+      }}
     />
     <BulletText
       text={t('customsProceduresText8')}
@@ -54,7 +57,10 @@ const CustomsProceduresInner = ({
           screen: 'DutyAllowance',
         })
       }
-      style={{ color: 'green' }}
+      style={{
+        textDecorationLine: 'underline',
+        textDecorationStyle: 'solid',
+      }}
     />
     <BulletText
       text={t('customsProceduresText9')}
@@ -64,7 +70,10 @@ const CustomsProceduresInner = ({
           screen: 'PersonalEffects',
         })
       }
-      style={{ color: 'green' }}
+      style={{
+        textDecorationLine: 'underline',
+        textDecorationStyle: 'solid',
+      }}
     />
     <CardRowText
       text={t('customsProceduresText10')}
@@ -88,13 +97,15 @@ const CustomsProceduresInner = ({
       text={t('customsProceduresText16')}
       style={{ marginTop: verticalScale(20) }}
     />
-
     <AppInfoSubText text={t('customsProceduresText17')} />
     <AppInfoLink
-      text="www.ezv.admin.ch/Anmeldebox"
-      onPress={() => Linking.openURL('www.ezv.admin.ch/Anmeldebox')}
+      text={`www.ezv.admin.ch/${t('customsProceduresExtLink1')}`}
+      onPress={() =>
+        Linking.openURL(
+          'https://www.ezv.admin.ch/ezv/de/home/zollanmeldung/anmeldung-private/schriftliche-selbstanmeldung-mit-den-anmeldeboxen.html'
+        )
+      }
     />
-
     <AppInfoSubText
       text={t('customsProceduresText18')}
       style={{ marginVertical: verticalScale(10) }}

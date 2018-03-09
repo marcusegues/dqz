@@ -55,7 +55,11 @@ const FoodInner = ({ t, navigation }: FoodInnerProps) => (
     >
       <AppInfoSubText
         text={t('foodText8')}
-        style={{ marginTop: verticalScale(10) }}
+        style={{
+          marginTop: verticalScale(10),
+          textDecorationLine: 'underline',
+          textDecorationStyle: 'solid',
+        }}
       />
     </TouchableOpacity>
     <TouchableOpacity
@@ -68,7 +72,11 @@ const FoodInner = ({ t, navigation }: FoodInnerProps) => (
     >
       <AppInfoSubText
         text={t('foodText9')}
-        style={{ marginTop: verticalScale(10) }}
+        style={{
+          marginTop: verticalScale(10),
+          textDecorationLine: 'underline',
+          textDecorationStyle: 'solid',
+        }}
       />
     </TouchableOpacity>
   </SubCategoryContainer>

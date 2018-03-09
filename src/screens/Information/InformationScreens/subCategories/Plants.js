@@ -80,7 +80,13 @@ const PlantsInner = ({ t, navigation }: PlantsInnerProps) => (
         })
       }
     >
-      <AppInfoSubText text={t('plantsText31')} />
+      <AppInfoSubText
+        text={t('plantsText31')}
+        style={{
+          textDecorationLine: 'underline',
+          textDecorationStyle: 'solid',
+        }}
+      />
     </TouchableOpacity>
   </SubCategoryContainer>
 );
