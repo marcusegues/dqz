@@ -164,7 +164,7 @@ export const fr: Locale = {
   receipt: {
     dutyAndVat: 'Droits de douane: {{duty}} |  TVA: {{vat}}',
     travellers:
-      'Reisende: {{adults}} Erwachsene, {{minors}} Kind(unter 17 Jahre)',
+      'Voyageurs: {{adults}} Adultes, {{minors}} Enfants/Adolescents (inférieur à 17 ans)',
     paidOn: 'Payé le {{date}} à {{time}} h avec:',
     transactionId: 'ID de transaction (SIX): {{value}}',
 
