@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Text } from 'react-native';
+import { Linking } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import type { TFunction } from '../../../../types/generalTypes';
@@ -9,6 +9,7 @@ import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { verticalScale } from '../../../../styles/Scaling';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
+import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
 
 type SouvenirsAndSpeciesProtectionInnerProps = {
   t: TFunction,
@@ -41,7 +42,10 @@ const SouvenirsAndSpeciesProtectionInner = ({
       text={t('souvenirsAndSpeciesProtectionText8')}
       style={{ marginTop: verticalScale(10) }}
     />
-    <Text>www.blv.admin.ch</Text>
+    <AppInfoLink
+      text="http://www.blv.admin.ch"
+      onPress={() => Linking.openURL('http://www.blv.admin.ch')}
+    />
   </SubCategoryContainer>
 );
 

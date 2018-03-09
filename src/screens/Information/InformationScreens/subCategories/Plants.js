@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Text, TouchableOpacity } from 'react-native';
+import { Linking, TouchableOpacity } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -10,6 +10,7 @@ import { scale, verticalScale } from '../../../../styles/Scaling';
 import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 import { BulletText } from '../../../AppInfo/subComponents/BulletText';
+import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
 
 type PlantsInnerProps = {
   t: TFunction,
@@ -61,11 +62,17 @@ const PlantsInner = ({ t, navigation }: PlantsInnerProps) => (
     />
     <AppInfoSubText text={t('plantsText27')} />
     <AppInfoSubText text={t('plantsText28')} />
-    <Text style={{ marginBottom: verticalScale(10) }}>www.blw.admin.ch</Text>
+    <AppInfoLink
+      text="www.blw.admin.ch"
+      onPress={() => Linking.openURL('https://www.blw.admin.ch')}
+      style={{ marginBottom: verticalScale(10) }}
+    />
     <AppInfoSubText
       text={t('plantsText29')}
       greyBox
-      style={{ paddingVertical: verticalScale(10) }}
+      style={{
+        paddingVertical: verticalScale(10),
+      }}
     />
     <AppInfoSubText
       text={t('plantsText30')}

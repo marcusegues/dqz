@@ -514,7 +514,7 @@ export const de: Locale = {
       'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 Tonnen eine Schwerverkehrsabgabe erhoben. Für Busse, schwere Wohnmobile, schwere Personenwagen und deren Anhänger über 3,5 Tonnen wird die Abgabe pauschal pro Tag erhoben.',
     roadTaxText2:
       'Im Gegensatz zur Autobahnvignette für Personenwagen wird die Schwerverkehrsabgabe nicht nur auf den Autobahnen sondern auf dem gesamten Strassennetz fällig.',
-    roadTaxText3: 'Für LKWs und deren Anhänger siehe: www.lsva.ch',
+    roadTaxText3: 'Für LKWs und deren Anhänger siehe:',
     roadTaxText4:
       'Bitte beachten: PSVA-pflichtig ist das Fahrzeug auch, wenn es nur abgestellt ist und nicht bewegt wird (z. B. Wohnmobil auf Campingplatz).',
     roadTaxText5: 'Bezahlung und Tarife',

@@ -4,6 +4,7 @@ import React from 'react';
 import { Text } from 'react-native';
 import { type, size } from '../../../styles/fonts';
 import { MAIN_BLACK } from '../../../styles/colors';
+import { verticalScale } from '../../../styles/Scaling';
 
 const ownStyles = {
   text: {
@@ -13,16 +14,22 @@ const ownStyles = {
     fontSize: size.medium,
     textDecorationLine: 'underline',
     textDecorationStyle: 'solid',
+    paddingVertical: verticalScale(2),
   },
 };
 
 type AppInfoLinkProps = {
   text: string,
   onPress: () => void,
+  style?: Object,
 };
 
-export const AppInfoLink = ({ text, onPress }: AppInfoLinkProps) => (
-  <Text onPress={onPress} style={ownStyles.text}>
+export const AppInfoLink = ({ text, onPress, style }: AppInfoLinkProps) => (
+  <Text onPress={onPress} style={[ownStyles.text, { ...style }]}>
     {text}
   </Text>
 );
+
+AppInfoLink.defaultProps = {
+  style: {},
+};
