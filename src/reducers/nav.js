@@ -6,30 +6,35 @@ export const initialNavState = RootStackNavigator.router.getStateForAction(
 );
 
 export const nav = (state = initialNavState, action) => {
+  let navigationAction;
   switch (action.type) {
     case 'NAVIGATE': {
-      const navigationAction = NavigationActions.navigate({
+      navigationAction = NavigationActions.navigate({
         routeName: action.screen,
         params: action.params,
       });
-      const nextState = RootStackNavigator.router.getStateForAction(
-        navigationAction,
-        state
-      );
-      return nextState;
+      break;
+    }
+    case 'SET_PARAMS': {
+      navigationAction = NavigationActions.setParams({
+        params: action.params,
+        key: action.key || state.routes[state.index].key,
+      });
+      break;
     }
     case 'GO_BACK': {
-      const navigationAction = NavigationActions.back({
+      navigationAction = NavigationActions.back({
         key: action.key || null,
       });
-      const nextState = RootStackNavigator.router.getStateForAction(
-        navigationAction,
-        state
-      );
-      return nextState;
+      break;
     }
     default: {
       return state;
     }
   }
+  const nextState = RootStackNavigator.router.getStateForAction(
+    navigationAction,
+    state
+  );
+  return nextState;
 };
