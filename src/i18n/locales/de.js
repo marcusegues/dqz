@@ -166,7 +166,7 @@ export const de: Locale = {
   receipt: {
     dutyAndVat: 'Zollabgabe: {{duty}}  |  Mehrwertsteuer: {{vat}}',
     travellers:
-      'Reisende: {{adults}} Erwachsene, {{minors}} Kind(unter 17 Jahre)',
+      'Reisende: {{adults}} Erwachsene, {{minors}} Kinder (unter 17 Jahre)',
     paidOn: 'Bezahlt am {{date}} um {{time}} Uhr mit:',
     transactionId: 'Transaktions-ID (SIX): {{value}}',
     receiptValidFrom: 'Diese Quittung ist gültig am:',
