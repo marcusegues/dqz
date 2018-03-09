@@ -473,9 +473,9 @@ export const stackNavigatorScreens = {
   ReceiptAfterPayment: {
     screen: ReceiptAfterPayment,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: <HomeIcon navigation={navigation} />,
-      headerRight: <DownloadIcon navigation={navigation} />,
-    }),
+        headerLeft: <HomeIcon navigation={navigation} />,
+        headerRight: <DownloadIcon navigation={navigation} />,
+      }),
   },
   AllReceipts: {
     screen: AllReceipts,
