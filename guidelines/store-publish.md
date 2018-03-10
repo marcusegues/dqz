@@ -45,11 +45,11 @@ This is necessary because during the build process your app will be republished 
 
 Build for Google Store(*We have backup with keystore*)
 ```javascript
-exp build:android --release-channel build-0.2.1
+exp build:android --release-channel build-0.6.3
 ```
 Build for Apple Store
 ```javascript
-exp build:ios --release-channel build-0.2.1
+exp build:ios --release-channel build-0.6.3
 ```
 IMPORTANT! **exp build** command include **exp publish** command and if **--release-channel** is ***empty*** exp will update **default** release channel.   
 *WARNING: Channel features are in beta.*
