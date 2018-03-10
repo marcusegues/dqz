@@ -11,7 +11,7 @@ npm install -g exp
 Increase version number.
 ```javascript
 {
-    "version": "0.2.1",
+    "version": "0.6.3",
 }
 ```
 
@@ -19,15 +19,15 @@ Increase version number.
 Important fields - must be changed *manually* upon release:
 ```javascript
 {
-    "sdkVersion": "23.0.0",
-    "version": "0.2.1",
+    "sdkVersion": "25.0.0",
+    "version": "0.6.3",
     
     "ios": {
-      "buildNumber": "0.2.1",
+      "buildNumber": "0.6.3",
     },
     
     "android": {
-      "versionCode": 1
+      "versionCode": 6
     }
 }
 ```
