@@ -49,7 +49,7 @@ export const it: Locale = {
   snackBar: {
     limitExceeded:
       "Il valore dei beni per l'app è stato superato. Si prega di segnalare le vostre merci per via orale al valico di frontiera.",
-    offline: 'Sei offline. Si prega di verificare la connessione.',
+    offline: 'Sei offline. Ad eccezione della funzione di pagamento, tuttavia, puoi utilizzare tutte le altre funzionalità dell\'app.',
     showBorder: 'Mostra il valico di frontiera',
   },
   onBoarding: {

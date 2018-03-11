@@ -49,7 +49,7 @@ export const de: Locale = {
   snackBar: {
     limitExceeded:
       'Warenwert für die App überschritten. Bitte melden Sie Ihre Waren mündlich beim Grenzübergang an.',
-    offline: 'Sie sind offline. Bitte überprufen Sie Ihre Verbindung.',
+    offline: 'Sie sind offline. Ausser der Bezahlfunktion können Sie jedoch alle anderen Funktionen der App benutzen.',
     showBorder: 'Grenzübergang anzeigen',
   },
   onBoarding: {
