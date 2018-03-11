@@ -93,7 +93,7 @@ export const en: Locale = {
       'Again, capture every item that is worth more than CHF 300.00.',
     amountInputAddItem: 'Add value',
     amountInputAddItemLarge: 'Add item',
-    amountInputEnterValue: 'Enter the value without foreign VAT (net value).',
+    amountInputEnterValue: 'Enter the value excluding foreign VAT (net value), including value of gifts received, food, tobacco products and alcoholic beverages.',
     currentTotalValue: 'Current total value:',
     lastExchangeRate:
       'Based on the last available exchange rate, which is updated when paying.',
@@ -161,10 +161,10 @@ export const en: Locale = {
       'Travellers: {{adults}} Adults, {{minors}} Kids/Teens (under 17 years)',
     paidOn: 'Paid on {{date}} at {{time}}:',
     transactionId: 'Transaction-ID (SIX): {{value}}',
-    receiptValidFrom: 'This receipt is valid from:',
+    receiptValidFrom: 'This receipt is valid for the border crossing from:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} to {{endDate}} | {{endTime}}',
-    receiptValidOn: 'This receipt is valid on',
+    receiptValidOn: 'This receipt is valid for the border crossing on',
     receiptValidOnDate: '{{date}} from {{startTime}} to {{endTime}}',
     sumText: 'Sum: CHF {{value}}',
     vatColumn: 'VAT in CHF:',
@@ -827,8 +827,12 @@ export const en: Locale = {
   legalNoticeModal: {
     importantNote: 'Important Note',
     vatRateInfo:
-      'Please take into account that no refund is possible when using this app. Declared goods are cleared at the uniform VAT rate of 7.7%. More information can be found here:',
-    termsOfService: 'Terms of Service',
+    'Please note that\n' +
+    '• you may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll;\n' +
+    '• declared goods are cleared using the single VAT rate of 7.7%;\n' +
+    '• duties paid with the app will not be refunded.\n' +
+    'Further information can be found here:',
+      termsOfService: 'Terms of Service',
     acceptance:
       'I hereby accept the terms and conditions that I have read and understood.',
     confirm: 'Confirm',

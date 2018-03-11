@@ -54,7 +54,7 @@ export const de: Locale = {
     paymentFailed: 'Zahlung fehlgeschlagen',
     paymentAbortedRightText: 'OK',
     paymentFailedRightText: 'OK',
-    showBorder: 'Grenzübergang anzeigen',
+    showBorder: 'Grenzübergänge anzeigen',
   },
   onBoarding: {
     welcome: 'Willkommen zu',
@@ -92,15 +92,15 @@ export const de: Locale = {
   },
   amountInput: {
     amountInput:
-      'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Ware.',
+      'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Waren.',
     amountInputLargeItem:
-      "Capturez des objets individuels d'une valeur de plus de {{value}} Francs.",
+      'Erfassen Sie einzelne Gegenstände mit einem Wert von über {{value}} Franken.',
     amountInputLargeItemGreyBox:
       'Erfassen Sie hier nochmals jeden Gegenstand, der mehr als CHF 300.00 wert ist.',
     amountInputAddItem: 'Wert hinzufügen',
     amountInputAddItemLarge: 'Gegenstand hinzufügen',
     amountInputEnterValue:
-      'Erfassen Sie den Wert ohne ausländische Mehrwertsteuer (Nettowert).',
+      'Erfassen Sie den Wert ohne ausländische Mehrwertsteuer (Nettowert), inkl. Wert der erhaltenen Geschenke, Lebensmittel, Tabakfabrikate und alkoholische Getränke.',
     currentTotalValue: 'Aktueller Gesamtwert:',
     lastExchangeRate:
       'Basierend auf dem letzten verfügbaren Wechsel-kurs, welcher beim Bezahlen aktualisiert wird.',
@@ -169,10 +169,10 @@ export const de: Locale = {
       'Reisende: {{adults}} Erwachsene, {{minors}} Kinder (unter 17 Jahre)',
     paidOn: 'Bezahlt am {{date}} um {{time}} Uhr mit:',
     transactionId: 'Transaktions-ID (SIX): {{value}}',
-    receiptValidFrom: 'Diese Quittung ist gültig am:',
+    receiptValidFrom: 'Diese Quittung ist gültig für den Grenzübertritt am:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} bis {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Diese Quittung ist gültig am:',
+    receiptValidOn: 'Diese Quittung ist gültig für den Grenzübertritt am:',
     receiptValidOnDate: '{{date}} von {{startTime}} bis {{endTime}}',
     sumText: 'Summe: CHF {{value}}',
     vatColumn: 'Mehrwertsteuer in CHF:',
@@ -823,8 +823,12 @@ export const de: Locale = {
   legalNoticeModal: {
     importantNote: 'Wichtiger Hinweis',
     vatRateInfo:
-      'Bitte berücksichtigen Sie, dass bei der Benutzung dieser App keine Rückerstattung möglich ist. Deklarierte Waren werden mit dem einheitlichen Mehrwertsteuersatz von 7.7% verzollt. Weitere Informationen finden Sie hier:',
-    termsOfService: 'Nutzungsbedingungen',
+    'Bitte beachten Sie, dass \n' +
+    '• Sie pro Kalendertag nur einmal mit Waren einreisen dürfen, die Sie mit QuickZoll verzollt haben;\n' +
+    '• Angemeldete Waren mit dem einheitlichen Mehrwertsteuersatz von 7,7 % verzollt werden;\n' +
+    '• Mit der App bezahlte Abgaben nicht zurückerstattet werden.\n' +
+    'Weitere Informationen finden Sie hier:',
+      termsOfService: 'Nutzungsbedingungen',
     acceptance:
       'Hiermit akzeptiere ich die Nutzungsbedingungen, die ich gelesen und verstanden habe.',
     confirm: 'Bestätigen',

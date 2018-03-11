@@ -92,7 +92,7 @@ export const it: Locale = {
     amountInputAddItem: 'Aggiungere valore',
     amountInputAddItemLarge: 'Aggiungere oggetto',
     amountInputEnterValue:
-      'Inserire il valore senza IVA estera (valore netto).',
+      'Inserire il valore senza IVA estera (valore netto), compreso il valore dei regali ricevuti, cibo, prodotti del tabacco e bevande alcoliche.',
     currentTotalValue: ' Valore complessivo attuale:',
     lastExchangeRate:
       'Sulla base dell’ultimo corso del cambio disponibile, aggiornato al momento del pagamento.',
@@ -161,10 +161,10 @@ export const it: Locale = {
     paidOn: 'Pagamento effettuato in data {{date}} alle ore {{time}} con:',
     transactionId: 'ID della transazione (SIX): {{value}}',
 
-    receiptValidFrom: 'Il giustificativo è valido da:',
+    receiptValidFrom: 'Il giustificativo è valido per il valico di frontiera da:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} fino al {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Il giustificativo è valido su:',
+    receiptValidOn: 'Il giustificativo è valido per il valico di frontiera su:',
     receiptValidOnDate: '{{date}} dalle {{startTime}} alle {{endTime}}',
 
     sumText: 'Totale (CHF): {{value}}',
@@ -870,10 +870,14 @@ export const it: Locale = {
     details: 'Dettagli',
   },
   legalNoticeModal: {
-    importantNote: 'Nota importante',
+    importantNote: 'Indicazione importante',
     vatRateInfo:
-      "Si prega di tener conto che nessun rimborso è possibile quando si utilizza questa applicazione. Le merci dichiarate sono liquidate all'aliquota IVA uniforme del 7,7%. Ulteriori informazioni possono essere trovate qui:",
-    termsOfService: 'Termini e condizioni',
+    'Si prega di tener conto che\n' +
+    '• al giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll;\n' +
+    '• le merci dichiarate vengono imposte all’aliquota IVA unica del 7,7 %;\n' +
+    '• i tributi pagati con l’app non vengono rimborsati.\n' +
+    'Ulteriori informazioni sono disponibili qui:',
+      termsOfService: 'Termini e condizioni',
     acceptance: 'Accetto i termini e le condizioni che ho letto e compreso.',
     confirm: 'Confermare',
     abort: 'Abortire',
