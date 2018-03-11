@@ -721,7 +721,7 @@ export const en: Locale = {
     importantSoonText2:
       'You may use the app only for goods that you import for your personal use or as gifts.',
     importantSoonText3:
-      'By using the app, you accept that the VAT rate of 7.7% is applied; including for goods that are actually subject to the reduced tax rate (food, animal feed, medications and books).',
+      'By using the QuickZoll app, you accept that the VAT rate of 7.7% is also applied to goods that are subject to the reduced tax rate (2.5%) (in particular food, animal feed, medicines and books). If you would like the reduced tax rate to be applied, you must declare the goods verbally at a manned border crossing.',
     importantSoonText4:
       'Only credit card payment (Visa, MasterCard) is possible (no refund option). The goods are cleared through customs after payment of the duties.',
     importantSoonText5:

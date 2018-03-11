@@ -760,7 +760,7 @@ export const fr: Locale = {
     importantSoonText2:
       "Vous ne pouvez utiliser l'application que pour les marchandises que vous importez pour votre usage privé ou pour en faire cadeau.",
     importantSoonText3:
-      "En utilisant l'application, vous acceptez que le taux de TVA de 7,7 % soit appliqué même aux marchandises qui sont en réalité soumises au taux réduit (denrées alimentaires, aliments pour animaux, médicaments et livres).",
+      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7% soit également appliqué aux marchandises qui sont soumises au taux réduit (2,5%), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé.",
     importantSoonText4:
       'Les redevances ne peuvent être payées que par carte de crédit (Visa, Mastercard) (sans possibilité de remboursement). Les marchandises sont dédouanées une fois que les redevances ont été payées.',
     importantSoonText5:
