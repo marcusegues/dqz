@@ -24,7 +24,7 @@ export const de: Locale = {
     Butter: 'Butter & Rahm',
     Oil: 'Öle/Fette/Margarine',
     Alcohol: `Alkoholische Getränke`,
-    TobaccoProducts: 'Tabak',
+    TobaccoProducts: 'Tabakfabrikate',
     OtherGoods: 'Andere Waren',
   },
   general: {
@@ -49,7 +49,7 @@ export const de: Locale = {
   snackBar: {
     limitExceeded:
       'Warenwert für die App überschritten. Bitte melden Sie Ihre Waren mündlich beim Grenzübergang an.',
-    offline: 'Sie sind offline. Bitte überprufen Sie Ihre Verbindung.',
+    offline: 'Sie sind offline. Ausser der Bezahlfunktion können Sie jedoch alle anderen Funktionen der App benutzen.',
     paymentAborted: 'Zahlung storniert',
     paymentFailed: 'Zahlung fehlgeschlagen',
     paymentAbortedRightText: 'OK',
@@ -718,7 +718,7 @@ export const de: Locale = {
     importantSoonText2:
       'Sie dürfen die App nur für Waren benützen, die Sie zu Ihrem privaten Gebrauch oder zum Verschenken einführen.',
     importantSoonText3:
-      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 %; auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
+      'Mit der Verwendung von QuickZoll akzeptieren Sie, dass der MWST Satz 7,7% auch für Waren angewendet wird, die dem reduzierten Steuersatz (2,5%) unterliegen (insbesondere Lebensmittel, Tierfutter, Medikamente und Bücher). Möchten Sie, dass der reduzierte Steuersatz angewendet wird, müssen Sie die Waren bei einem besetzten Grenzübergang mündlich anmelden.',
     importantSoonText4:
       'Es ist nur Kreditkartenzahlung (Visa, Mastercard) möglich (ohne Rückerstattungsmöglichkeit). Nach der Bezahlung der Abgaben sind die Waren verzollt.',
     importantSoonText5:
