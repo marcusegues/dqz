@@ -155,10 +155,10 @@ export const it: Locale = {
     paidOn: 'Pagamento effettuato in data {{date}} alle ore {{time}} con:',
     transactionId: 'ID della transazione (SIX): {{value}}',
 
-    receiptValidFrom: 'Il giustificativo è valido da:',
+    receiptValidFrom: 'Il giustificativo è valido per il valico di frontiera da:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} fino al {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Il giustificativo è valido su:',
+    receiptValidOn: 'Il giustificativo è valido per il valico di frontiera su:',
     receiptValidOnDate: '{{date}} dalle {{startTime}} alle {{endTime}}',
 
     sumText: 'Totale (CHF): {{value}}',

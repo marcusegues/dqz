@@ -162,10 +162,10 @@ export const fr: Locale = {
     paidOn: 'Payé le {{date}} à {{time}} h avec:',
     transactionId: 'ID de transaction (SIX): {{value}}',
 
-    receiptValidFrom: 'La présente quittance est valable à partir de:',
+    receiptValidFrom: 'La présente quittance est valable pour le passage frontalier à partir de:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} à {{endDate}} | {{endTime}}',
-    receiptValidOn: 'La présente quittance est valable sur',
+    receiptValidOn: 'La présente quittance est valable pour le passage frontalier sur',
     receiptValidOnDate: '{{date}} de {{startTime}} à {{endTime}}',
 
     sumText: 'Total (en francs): {{value}}',

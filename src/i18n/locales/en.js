@@ -155,10 +155,10 @@ export const en: Locale = {
     dutyAndVat: 'Customs duty: {{duty}}  |  vat: {{vat}}',
     paidOn: 'Paid on {{date}} at {{time}}:',
     transactionId: 'Transaction-ID (SIX): {{value}}',
-    receiptValidFrom: 'This receipt is valid from:',
+    receiptValidFrom: 'This receipt is valid for the border crossing from:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} to {{endDate}} | {{endTime}}',
-    receiptValidOn: 'This receipt is valid on',
+    receiptValidOn: 'This receipt is valid for the border crossing on',
     receiptValidOnDate: '{{date}} from {{startTime}} to {{endTime}}',
     sumText: 'Sum: CHF {{value}}',
     vatColumn: 'VAT in CHF:',
