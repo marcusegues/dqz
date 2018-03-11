@@ -24,7 +24,7 @@ export const de: Locale = {
     Butter: 'Butter & Rahm',
     Oil: 'Öle/Fette/Margarine',
     Alcohol: `Alkoholische Getränke`,
-    TobaccoProducts: 'Tabak',
+    TobaccoProducts: 'Tabakfabrikate',
     OtherGoods: 'Andere Waren',
   },
   general: {
