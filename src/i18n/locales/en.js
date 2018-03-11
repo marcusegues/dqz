@@ -49,7 +49,8 @@ export const en: Locale = {
   snackBar: {
     limitExceeded:
       'Declaration value limit exceeded. Please report your goods at the border crossing',
-    offline: 'You are offline. Except for the payment feature, you are able to use all other features of the app.',
+    offline:
+      'You are offline. Except for the payment feature, you are able to use all other features of the app.',
     paymentAborted: 'Payment canceled.',
     paymentFailed: 'Payment failed',
     paymentAbortedRightText: 'OK',
@@ -93,7 +94,8 @@ export const en: Locale = {
       'Again, capture every item that is worth more than CHF 300.00.',
     amountInputAddItem: 'Add value',
     amountInputAddItemLarge: 'Add item',
-    amountInputEnterValue: 'Enter the value excluding foreign VAT (net value), including value of gifts received, food, tobacco products and alcoholic beverages.',
+    amountInputEnterValue:
+      'Enter the value excluding foreign VAT (net value), including value of gifts received, food, tobacco products and alcoholic beverages.',
     currentTotalValue: 'Current total value:',
     lastExchangeRate:
       'Based on the last available exchange rate, which is updated when paying.',
@@ -827,12 +829,12 @@ export const en: Locale = {
   legalNoticeModal: {
     importantNote: 'Important Note',
     vatRateInfo:
-    'Please note that\n' +
-    '• you may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll;\n' +
-    '• declared goods are cleared using the single VAT rate of 7.7%;\n' +
-    '• duties paid with the app will not be refunded.\n' +
-    'Further information can be found here:',
-      termsOfService: 'Terms of Service',
+      'Please note that\n' +
+      '• you may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll;\n' +
+      '• declared goods are cleared using the single VAT rate of 7.7%;\n' +
+      '• duties paid with the app will not be refunded.\n' +
+      'Further information can be found here:',
+    termsOfService: 'Terms of Service',
     acceptance:
       'I hereby accept the terms and conditions that I have read and understood.',
     confirm: 'Confirm',
