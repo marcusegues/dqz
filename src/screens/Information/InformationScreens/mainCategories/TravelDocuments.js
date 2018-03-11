@@ -1,11 +1,14 @@
 // @flow
 import React from 'react';
+// $FlowFixMe
+import { Linking } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import type { TFunction } from '../../../../types/generalTypes';
 import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
+import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
 
 type TravelDocumentsInnerProps = {
   t: TFunction,
@@ -14,20 +17,15 @@ type TravelDocumentsInnerProps = {
 const TravelDocumentsInner = ({ t }: TravelDocumentsInnerProps) => (
   <SubCategoryContainer title={t('travelDocumentsMainText')}>
     <AppInfoSubText text={t('travelDocumentsText1')} />
-    <AppInfoSubText
+
+    <AppInfoLink
       text="www.sem.admin.ch"
-      style={{
-        textDecorationLine: 'underline',
-        textDecorationStyle: 'solid',
-      }}
+      onPress={() => Linking.openURL('http://www.sem.admin.ch')}
     />
     <AppInfoSubText text={t('travelDocumentsText2')} />
-    <AppInfoSubText
+    <AppInfoLink
       text="www.wcoomd.org"
-      style={{
-        textDecorationLine: 'underline',
-        textDecorationStyle: 'solid',
-      }}
+      onPress={() => Linking.openURL('http://www.wcoomd.org')}
     />
   </SubCategoryContainer>
 );

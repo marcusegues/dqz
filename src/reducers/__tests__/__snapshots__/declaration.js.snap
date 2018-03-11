@@ -103,7 +103,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -225,7 +225,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -378,7 +378,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -535,7 +535,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -657,7 +657,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -774,7 +774,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -901,7 +901,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -1013,7 +1013,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -1127,7 +1127,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -1239,7 +1239,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -1354,7 +1354,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -1466,7 +1466,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -1578,7 +1578,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -1690,7 +1690,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -1802,7 +1802,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",
@@ -1914,7 +1914,7 @@ Immutable.Record {
     "token": "",
     "tokenExpiration": "",
     "redirectUrl": "",
-    "status": "not_started",
+    "status": "notStarted",
     "transaction": Object {
       "amountValue": "",
       "brandName": "",

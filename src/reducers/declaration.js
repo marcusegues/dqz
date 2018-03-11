@@ -22,6 +22,7 @@ import type {
 import * as modelApi from '../model/configurationApi';
 import type { Currency } from '../model/currencies';
 import type { PaymentData } from '../types/generalTypes';
+import { makePaymentDataRecord } from '../types/generalTypes';
 
 export const declaration = (
   state: DeclarationState = getInitialDeclarationState(),
@@ -150,6 +151,9 @@ export const declaration = (
     case 'SET_MAIN_CATEGORIES': {
       const mainCategoriesAnswer: MainCategories = action.mainCategories;
       return state.setIn(['settings', 'mainCategories'], mainCategoriesAnswer);
+    }
+    case 'RESET_PAYMENT_DATA': {
+      return state.set('paymentData', makePaymentDataRecord());
     }
     case 'SET_PAYMENT_DATA': {
       const paymentData: PaymentData = action.paymentData;

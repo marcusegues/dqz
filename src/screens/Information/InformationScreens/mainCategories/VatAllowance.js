@@ -20,7 +20,7 @@ import { BulletText } from '../../../AppInfo/subComponents/BulletText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 
-const freeLimit = require('../../../../../assets/images/info/freeLimit.png');
+const diagram1 = require('../../../../../assets/images/info/vatAllowanceDiagram1.png');
 
 type VatAllowanceInnerProps = {
   t: TFunction,
@@ -28,12 +28,15 @@ type VatAllowanceInnerProps = {
 };
 
 const VatAllowanceInner = ({ t, navigation }: VatAllowanceInnerProps) => (
-  <SubCategoryContainer title={t('vatAllowanceMainText')}>
+  <SubCategoryContainer
+    title={t('vatAllowanceMainText')}
+    style={{ marginBottom: verticalScale(10) }}
+  >
     <Image
-      source={freeLimit}
+      source={diagram1}
       resizeMode="contain"
       style={{
-        width: moderateScale(322),
+        width: moderateScale(300),
         height: verticalScale(200),
         alignSelf: 'center',
       }}
@@ -64,15 +67,19 @@ const VatAllowanceInner = ({ t, navigation }: VatAllowanceInnerProps) => (
       text={t('vatAllowanceText7')}
       style={{ marginTop: verticalScale(10) }}
     />
+
     <TouchableOpacity onPress={() => {}}>
       <AppInfoSubText
         text={t('vatAllowanceText8')}
         style={{
           marginTop: verticalScale(10),
           marginBottom: verticalScale(20),
+          textDecorationLine: 'underline',
+          textDecorationStyle: 'solid',
         }}
       />
     </TouchableOpacity>
+
     <CardRowText text={t('vatAllowanceText9')} />
     <AppInfoSubText text={t('vatAllowanceText10')} />
     <AppInfoSubText
@@ -81,6 +88,10 @@ const VatAllowanceInner = ({ t, navigation }: VatAllowanceInnerProps) => (
     />
     <CardRowText text={t('vatAllowanceText12')} />
     <AppInfoSubText text={t('vatAllowanceText13')} />
+    <AppInfoSubText
+      text={t('vatAllowanceText14')}
+      style={{ marginTop: verticalScale(10) }}
+    />
 
     <TouchableOpacity
       onPress={() =>
@@ -91,16 +102,16 @@ const VatAllowanceInner = ({ t, navigation }: VatAllowanceInnerProps) => (
       }
     >
       <AppInfoSubText
-        text={t('vatAllowanceText14')}
-        style={{ marginTop: verticalScale(10) }}
+        text={t('vatAllowanceText15')}
+        style={{
+          marginTop: verticalScale(10),
+          textDecorationLine: 'underline',
+          textDecorationStyle: 'solid',
+        }}
+        greyBox
       />
     </TouchableOpacity>
 
-    <AppInfoSubText
-      text={t('vatAllowanceText15')}
-      style={{ marginTop: verticalScale(10) }}
-      greyBox
-    />
     <AppInfoSubText
       text={t('vatAllowanceText16')}
       style={{ marginVertical: verticalScale(10) }}

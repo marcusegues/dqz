@@ -52,6 +52,10 @@ type GeneralTranslations = {
 type SnackBarTranslations = {
   limitExceeded: string,
   offline: string,
+  paymentAborted: string,
+  paymentFailed: string,
+  paymentAbortedRightText: string,
+  paymentFailedRightText: string,
   showBorder: string,
 };
 
@@ -170,6 +174,7 @@ type CustomsProceduresTranslation = {
   customsProceduresText19: string,
   customsProceduresText20: string,
   customsProceduresText21: string,
+  customsProceduresExtLink1: string,
 };
 
 type TravelDocumentsTranslations = {
@@ -505,6 +510,7 @@ type InformationTranslations = {
 
 type ReceiptTranslations = {
   dutyAndVat: string,
+  travellers: string,
   paidOn: string,
   transactionId: string,
   receiptValidFrom: string,
@@ -535,13 +541,12 @@ type AppInformationTranslations = {
   customsAdministrationAddressTitle: string,
   contact: string,
   customsInfoCenter: string,
-  reachability: string,
-  workingHours: string,
   generalCustomsDirectorate: string,
   designAndDevelopment: string,
   ambriteAddress: string,
   disclaimerTitle: string,
   disclaimerText: string,
+  toContactForm: string,
 };
 
 type LegalNoticeInformationTranslations = {

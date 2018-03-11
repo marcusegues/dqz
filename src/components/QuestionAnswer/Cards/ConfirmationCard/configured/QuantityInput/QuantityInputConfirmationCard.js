@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 import type { Set as ImmutableSetType } from 'immutable';
 import type { ComponentType } from 'react';
@@ -23,17 +24,25 @@ type QuantityInputConfirmationCardProps = {
   mainCategories: ImmutableSetType<MainCategory>,
 };
 
+type ReduxInject = {
+  dispatch: Function,
+};
+
 const QuantityInputConfirmationCardInner = ({
   onShowQuantityInputModal,
   basket,
   onAnswer,
   mainCategories,
   t,
-}: QuantityInputConfirmationCardProps & { t: TFunction }) => (
+  dispatch,
+}: QuantityInputConfirmationCardProps & ReduxInject & { t: TFunction }) => (
   <ConfirmationCard
     text={t('quantityInput')}
     onAnswer={() => onAnswer('forward')}
     onBack={() => onAnswer('back')}
+    onInfoIconPress={() =>
+      dispatch({ type: 'NAVIGATE', screen: 'DutyAllowance' })
+    }
   >
     <QuantityInput
       onShowQuantityInputModal={onShowQuantityInputModal}
@@ -43,6 +52,10 @@ const QuantityInputConfirmationCardInner = ({
   </ConfirmationCard>
 );
 
-export const QuantityInputConfirmationCard = (translate(['quantityInput'])(
-  QuantityInputConfirmationCardInner
+const mapDispatchToProps = dispatch => ({
+  dispatch,
+});
+
+export const QuantityInputConfirmationCard = (connect(null, mapDispatchToProps)(
+  translate(['quantityInput'])(QuantityInputConfirmationCardInner)
 ): ComponentType<QuantityInputConfirmationCardProps>);
