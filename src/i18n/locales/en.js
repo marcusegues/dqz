@@ -822,8 +822,12 @@ export const en: Locale = {
   legalNoticeModal: {
     importantNote: 'Important Note',
     vatRateInfo:
-      'Please take into account that no refund is possible when using this app. Declared goods are cleared at the uniform VAT rate of 7.7%. More information can be found here:',
-    termsOfService: 'Terms of Service',
+    'Please note that\n' +
+    '• you may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll;\n' +
+    '• declared goods are cleared using the single VAT rate of 7.7%;\n' +
+    '• duties paid with the app will not be refunded.\n' +
+    'Further information can be found here:',
+      termsOfService: 'Terms of Service',
     acceptance:
       'I hereby accept the terms and conditions that I have read and understood.',
     confirm: 'Confirm',

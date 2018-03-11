@@ -862,10 +862,14 @@ export const fr: Locale = {
     details: 'détails',
   },
   legalNoticeModal: {
-    importantNote: 'Note importante',
+    importantNote: 'Remarque importante',
     vatRateInfo:
-      "S'il vous plaît prendre en compte qu'aucun remboursement est possible en utilisant cette application. Les marchandises déclarées sont dédouanées au taux de TVA uniforme de 7,7%. Plus d'informations peuvent être trouvées ici:",
-    termsOfService: 'Termes et Conditions',
+    'Veuillez noter que\n' +
+    '• vous ne pouvez entrer en Suisse qu\'une fois par jour civil avec des marchandises que vous avez dédouanées avec QuickZoll;\n'+
+    '• les marchandises déclarées sont dédouanées au taux uniforme de TVA de 7,7 %;\n' +
+    '• les redevances payées avec l\'application ne sont pas remboursées.\n' +
+    'Vous trouverez de plus amples informations ici:',
+      termsOfService: 'Termes et Conditions',
     acceptance: "J'accepte les termes et conditions que j'ai lus et compris.",
     confirm: 'Confirmer',
     abort: 'Abandonner',

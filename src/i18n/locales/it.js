@@ -861,10 +861,14 @@ export const it: Locale = {
     details: 'Dettagli',
   },
   legalNoticeModal: {
-    importantNote: 'Nota importante',
+    importantNote: 'Indicazione importante',
     vatRateInfo:
-      "Si prega di tener conto che nessun rimborso è possibile quando si utilizza questa applicazione. Le merci dichiarate sono liquidate all'aliquota IVA uniforme del 7,7%. Ulteriori informazioni possono essere trovate qui:",
-    termsOfService: 'Termini e condizioni',
+    'Si prega di tener conto che\n' +
+    '• al giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll;\n' +
+    '• le merci dichiarate vengono imposte all’aliquota IVA unica del 7,7 %;\n' +
+    '• i tributi pagati con l’app non vengono rimborsati.\n' +
+    'Ulteriori informazioni sono disponibili qui:',
+      termsOfService: 'Termini e condizioni',
     acceptance: 'Accetto i termini e le condizioni che ho letto e compreso.',
     confirm: 'Confermare',
     abort: 'Abortire',
