@@ -50,7 +50,7 @@ export const de: Locale = {
     limitExceeded:
       'Warenwert für die App überschritten. Bitte melden Sie Ihre Waren mündlich beim Grenzübergang an.',
     offline: 'Sie sind offline. Bitte überprufen Sie Ihre Verbindung.',
-    showBorder: 'Grenzübergang anzeigen',
+    showBorder: 'Grenzübergänge anzeigen',
   },
   onBoarding: {
     welcome: 'Willkommen zu',
@@ -88,15 +88,15 @@ export const de: Locale = {
   },
   amountInput: {
     amountInput:
-      'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Ware.',
+      'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Waren.',
     amountInputLargeItem:
-      'Capturez des objets individuels d\'une valeur de plus de {{value}} Francs.',
+      'Erfassen Sie einzelne Gegenstände mit einem Wert von über {{value}} Franken.',
     amountInputLargeItemGreyBox:
       'Erfassen Sie hier nochmals jeden Gegenstand, der mehr als CHF 300.00 wert ist.',
     amountInputAddItem: 'Wert hinzufügen',
     amountInputAddItemLarge: 'Gegenstand hinzufügen',
     amountInputEnterValue:
-      'Erfassen Sie den Wert ohne ausländische Mehrwertsteuer (Nettowert).',
+      'Erfassen Sie den Wert ohne ausländische Mehrwertsteuer (Nettowert), inkl. Wert der erhaltenen Geschenke, Lebensmittel, Tabakfabrikate und alkoholische Getränke.',
     currentTotalValue: 'Aktueller Gesamtwert:',
     lastExchangeRate:
       'Basierend auf dem letzten verfügbaren Wechsel-kurs, welcher beim Bezahlen aktualisiert wird.',
