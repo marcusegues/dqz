@@ -757,7 +757,7 @@ export const en: Locale = {
     howToDeclareYourGoodsText8:
       'You must declare the following goods at a border crossing manned by Swiss Customs staff in any case:',
     howToDeclareYourGoodsText9:
-      'goods which are subject to restrictions or bans and which require a certificate or authorisation (e.g. weapons, live animals and products governed by species protection); further information;',
+      'goods which are subject to restrictions or bans and which require a certificate or authorisation (e.g. weapons, live animals and products governed by species protection).',
     howToDeclareYourGoodsText10:
       'goods for private use or as gifts worth a total of CHF 20,000.00 or more;',
     howToDeclareYourGoodsText11:

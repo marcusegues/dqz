@@ -43,7 +43,7 @@ export const it: Locale = {
     toPayment: 'Pagamento',
     buttonContinue: 'Avanti',
     buttonBack: 'Indietro',
-    note: 'Suggerimento',
+    note: 'Suggerimento:',
     underConstruction: 'In corso',
   },
   snackBar: {
@@ -799,7 +799,7 @@ export const it: Locale = {
     howToDeclareYourGoodsText8:
       'È d’obbligo dichiarare le seguenti merci presso un valico di confine occupato dal personale doganale svizzero.',
     howToDeclareYourGoodsText9:
-      'Merci soggette a limitazioni o divieti e che soggiacciono all’obbligo di certificato o di autorizzazione (p. es. armi, animali vivi e merci protette); ulteriori informazioni.',
+      'Merci soggette a limitazioni o divieti e che soggiacciono all’obbligo di certificato o di autorizzazione (p. es. armi, animali vivi e merci protette).',
     howToDeclareYourGoodsText10:
       'Merci destinate all’uso privato o da regalare aventi un valore complessivo di 20 000.00 franchi o superiore.',
     howToDeclareYourGoodsText11:
