@@ -43,7 +43,7 @@ export const fr: Locale = {
     toPayment: 'Paiement',
     buttonContinue: 'Étape suivante',
     buttonBack: 'Retour',
-    note: 'Allusion',
+    note: 'Allusion:',
     underConstruction: 'En cours',
   },
   snackBar: {
@@ -73,23 +73,23 @@ export const fr: Locale = {
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Quelles marchandises souhaitez-vous déclarer?',
     mainCategoriesNotYetAnswered:
-      'Catégorie de marchandises : données manquantes',
+      'Catégorie de marchandises:données manquantes',
   },
   quantityInput: {
     quantityInput: 'Entrée de quantité',
     recordedOn: 'enregistré sur',
     addQuantities: 'Ajouter des quantités',
-    enterQuantities: 'Entrez les quantités de tous {{value}} ici',
+    enterQuantities: 'Entrez toutes les quantités de {{value}} ici.',
     enterQuantity: 'Entrer la quantité',
-    enterQuantitiesButter: 'Entrez les quantités de tous {{value}} ici',
-    enterQuantitiesAlcohol: 'Entrez les quantités de tous {{value}} ici',
+    enterQuantitiesButter: 'Entrez toutes les quantités de {{value}} ici.',
+    enterQuantitiesAlcohol: 'Entrez toutes les quantités de  {{value}} ici.',
     standardInputSubText: '⚡️',
   },
   amountInput: {
     amountInput:
       'Veuillez saisir ici la valeur de toutes les marchandises transportées.',
     amountInputLargeItem:
-      "Transportez-vous des biens individuels d'une valeur supérieure à {{value}} francs? ",
+      "Transportez-vous des biens individuels d'une valeur supérieure à {{value}} francs?",
     amountInputLargeItemGreyBox:
       "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300.00.",
     amountInputAddItem: 'Ajouter la valeur',
@@ -188,7 +188,7 @@ export const fr: Locale = {
     allReceiptsSumInFranks: 'CHF {{value}}',
     allReceiptsDate: 'à {{value}}',
     entryTime: "Période d'entrée:",
-    chooseOtherEntryTime: 'Régler',
+    chooseOtherEntryTime: 'modifier',
     until: "jusqu'à",
   },
 
@@ -216,7 +216,7 @@ export const fr: Locale = {
     customsProceduresText12:
       "Établissement de la déclaration en douane au moyen de l'application QuickZoll",
     customsProceduresText13:
-      "Vous pouvez également déclarer vos marchandises au moyen de l'application QuickZoll de l'Administration fédérale des douanes (AFD). Les marchandises doivent être dédouanées avec l'application et les redevances payées avant le franchissement de la frontière ou au passage frontière. Si vous avez payé les redevances avec l'application, vous pouvez aussi emprunter des passages frontières non occupés par du personnel de la douane [OU: des passages frontières auprès desquels il est possible d'effectuer une déclaration écrite], ou la voie verte des aéroports.",
+      "Vous pouvez également déclarer vos marchandises au moyen de l'application QuickZoll de l'Administration fédérale des douanes (AFD). Les marchandises doivent être dédouanées avec l'application et les redevances payées avant le franchissement de la frontière ou au passage frontière. Si vous avez payé les redevances avec l'application, vous pouvez aussi emprunter des passages frontières non occupés par du personnel de la douane ou des passages frontières auprès desquels il est possible d'effectuer une déclaration écrite ou la voie verte des aéroports.",
     customsProceduresText14:
       "Cette forme de déclaration en douane n'est admise que pour les marchandises destinées à votre usage privé ou à être offertes en cadeau. Les marchandises ne doivent être soumises à aucune restriction ni interdiction et ne doivent être assujetties à aucun certificat ni permis.",
     customsProceduresText15:
@@ -273,7 +273,7 @@ export const fr: Locale = {
     vatAllowanceText15:
       "Nous attirons en outre votre attention sur le fait que certaines marchandises (par ex. contrefaçons, armes, plantes, animaux, produits animaux, marchandises soumises aux dispositions sur la conservation des espèces) peuvent être interdites à l'importation ou soumises à des restrictions.",
     vatAllowanceText16:
-      "Exemples d'octroi de la franchise-valeur Octroi de la franchise-valeur à des personnes seules",
+      "",
     vatAllowanceText17:
       "Exemples d'octroi de la franchise-valeur\n" +
       'Octroi de la franchise-valeur à des personnes seules',
@@ -696,7 +696,7 @@ export const fr: Locale = {
 
   information: {
     informationTitle: 'Informations utiles',
-    informationSubCategoryTitle: "J'ai des animaux ou des plantes avec moi",
+    informationSubCategoryTitle: "Je transporte des animaux ou des plantes",
 
     customsProceduresMainText: 'Marche à suivre lors du passage à la douane',
 
@@ -757,7 +757,7 @@ export const fr: Locale = {
     toContactForm: '',
   },
   legalNoticeInformation: {
-    navigationHeaderTitle: 'Info importantes',
+    navigationHeaderTitle: 'Infos importantes',
     conditions: 'Conditions-cadres',
     importantSoon: "L'essentiel en bref",
     importantSoonText1:
@@ -796,7 +796,7 @@ export const fr: Locale = {
     howToDeclareYourGoodsText8:
       "Vous devez dans tous les cas déclarer les marchandises suivantes auprès d'un passage frontière occupé par du personnel douanier suisse:",
     howToDeclareYourGoodsText9:
-      'les marchandises soumises à des restrictions ou des interdictions et les marchandises assujetties à un certificat ou un permis (par ex. armes, animaux vivants et marchandises soumises aux dispositions sur la conservation des espèces); informations complémentaires;',
+      'les marchandises soumises à des restrictions ou des interdictions et les marchandises assujetties à un certificat ou un permis (par ex. armes, animaux vivants et marchandises soumises aux dispositions sur la conservation des espèces).',
     howToDeclareYourGoodsText10:
       "les marchandises d'une valeur totale supérieure ou égale à 20 000 francs qui sont destinées à l'usage privé ou à être offertes en cadeau;",
     howToDeclareYourGoodsText11:
@@ -813,7 +813,7 @@ export const fr: Locale = {
       "Les marchandises qui sont exportées ne peuvent pas être déclarées à l'aide de l'application. Vous trouverez ici des informations relatives aux achats effectués en Suisse en franchise de redevances (tax free).",
 
     legal: 'Informations juridiques',
-    usage: "L'usage",
+    usage: "Utilisation",
     legalText1:
       "Le dédouanement effectué avec l'application lie la personne assujettie à l'obligation de déclarer (art. 33 de la loi sur les douanes; RS 631.0). Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
     legalText2:
@@ -835,7 +835,7 @@ export const fr: Locale = {
     dataProtectionText2:
       'Nous nous efforçons, en collaboration étroite avec nos hébergeurs, de protéger au mieux possible nos banques de données des intrusions externes, des pertes, du mauvais usage et de la falsification.',
     dataProtectionText3:
-      'In enger Zusammenarbeit mit unseren Hosting-Providern bemühen wir uns, die Datenbanken so gut wie möglich vor fremden Zugriffen, Verlusten, Miss-brauch oder vor Fälschung zu schützen.',
+      'En étroite collaboration avec nos hébergeurs, nous nous efforçons, dans la mesure du possible, de protéger les bases de données contre tout accès non autorisé, perte, mauvaise utilisation ou contrefaçon.',
     dataProtectionText4:
       "En cas de prise de contact volontaire, votre adresse électronique est enregistrée dans une banque de données séparée, qui n'est pas reliée aux fichiers journaux anonymes. Vous avez à tout moment la possibilité d'annuler votre enregistrement.",
     dataProtectionText5:
@@ -862,7 +862,7 @@ export const fr: Locale = {
       "Les droits d'auteur et tous les autres droits liés aux textes, illustrations, photographies et autres données placés sur les sites Web des autorités fédérales sont leur propriété exclusive ou celle des détenteurs expressément cités. Toute reproduction est subordonnée à l'autorisation écrite préalable du détenteur des droits.",
   },
   overview: {
-    declared: 'inscrit',
+    declared: 'saisi',
     dutyFree: 'en franchise',
     details: 'détails',
   },
