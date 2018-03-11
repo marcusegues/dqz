@@ -50,6 +50,10 @@ export const it: Locale = {
     limitExceeded:
       "Il valore dei beni per l'app è stato superato. Si prega di segnalare le vostre merci per via orale al valico di frontiera.",
     offline: 'Sei offline. Ad eccezione della funzione di pagamento, tuttavia, puoi utilizzare tutte le altre funzionalità dell\'app.',
+    paymentAborted: 'Paiement annulé',
+    paymentFailed: 'Pagamento annullato',
+    paymentAbortedRightText: 'OK',
+    paymentFailedRightText: 'OK',
     showBorder: 'Mostra il valico di frontiera',
   },
   onBoarding: {
@@ -88,7 +92,7 @@ export const it: Locale = {
     amountInputAddItem: 'Aggiungere valore',
     amountInputAddItemLarge: 'Aggiungere oggetto',
     amountInputEnterValue:
-      'Inserire il valore senza IVA estera (valore netto).',
+      'Inserire il valore senza IVA estera (valore netto), compreso il valore dei regali ricevuti, cibo, prodotti del tabacco e bevande alcoliche.',
     currentTotalValue: ' Valore complessivo attuale:',
     lastExchangeRate:
       'Sulla base dell’ultimo corso del cambio disponibile, aggiornato al momento del pagamento.',
@@ -152,13 +156,15 @@ export const it: Locale = {
   },
   receipt: {
     dutyAndVat: 'Tributi doganali: {{duty}} | IVA: {{vat}}',
+    travellers:
+      'Viaggiatori: {{adults}} Adulti, {{minors}} Bambini e adolescenti (sotto i 17 anni)',
     paidOn: 'Pagamento effettuato in data {{date}} alle ore {{time}} con:',
     transactionId: 'ID della transazione (SIX): {{value}}',
 
-    receiptValidFrom: 'Il giustificativo è valido da:',
+    receiptValidFrom: 'Il giustificativo è valido per il valico di frontiera da:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} fino al {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Il giustificativo è valido su:',
+    receiptValidOn: 'Il giustificativo è valido per il valico di frontiera su:',
     receiptValidOnDate: '{{date}} dalle {{startTime}} alle {{endTime}}',
 
     sumText: 'Totale (CHF): {{value}}',
@@ -176,6 +182,8 @@ export const it: Locale = {
     allReceiptsDate: 'da {{value}}',
     entryTime: 'Periodo di entrata:',
     chooseOtherEntryTime: 'Regolare',
+    overviewRegistered: '⚠️',
+    overviewDutyFree: '⚠️',
     until: 'fino a',
   },
 
@@ -200,14 +208,14 @@ export const it: Locale = {
     customsProceduresText10:
       'Dichiarazione doganale verbale o scelta del passaggio rosso all’aeroporto',
     customsProceduresText11:
-      'Se al valico di confine è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente. Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
-    customsProceduresText12: 'Dichiarazione doganale con l’app QuickZoll',
-    customsProceduresText13:
-      'Le merci possono essere dichiarate anche con l’app QuickZoll dell’AFD. Le merci devono essere imposte con l’app prima del passaggio del confine oppure al valico di confine. Ciò significa che i tributi devono essere pagati. Se il pagamento avviene mediante app è consentito utilizzare anche i valichi di confine in cui il personale doganale non è presente [OPPURE: valichi di confine dove è possibile effettuare la dichiarazione scritta], e negli aeroporti il passaggio verde.',
+      'Se al valico di confine è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente.',
+    customsProceduresText12:
+      'Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
+    customsProceduresText13: 'Dichiarazione doganale con l’app QuickZoll',
     customsProceduresText14:
-      'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.',
+      'Le merci possono essere dichiarate anche con l’app QuickZoll dell’AFD. Le merci devono essere imposte con l’app prima del passaggio del confine oppure al valico di confine. Ciò significa che i tributi devono essere pagati. Se il pagamento avviene mediante app è consentito utilizzare anche i valichi di confine in cui il personale doganale non è presente [OPPURE: valichi di confine dove è possibile effettuare la dichiarazione scritta], e negli aeroporti il passaggio verde.',
     customsProceduresText15:
-      'Altre merci devono essere dichiarate presso un valico di confine in cui è presente il personale doganale svizzero.',
+      'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.\nAltre merci devono essere dichiarate verbalmente presso un valico di confine in cui è presente il personale doganale svizzero.',
     customsProceduresText16:
       'Dichiarazione doganale scritta (cassetta delle dichiarazioni)',
     customsProceduresText17:
@@ -219,6 +227,7 @@ export const it: Locale = {
     customsProceduresText20: 'Attenzione',
     customsProceduresText21:
       'La dichiarazione verbale nonché la dichiarazione con l’app o con la cassetta delle dichiarazioni è vincolante. I controlli doganali possono essere effettuati anche all’interno del Paese. Non è possibile effettuare la dichiarazione doganale a posteriori. L’omessa oppure errata dichiarazione di merci vietate, soggette all’obbligo di autorizzazione o soggette al pagamento di tributi è dunque punibile.',
+    customsProceduresExtLink1: '',
   },
 
   travelDocuments: {
@@ -738,7 +747,6 @@ export const it: Locale = {
     customsInfoCenter:
       'Centrale d’informazione dell’AFD\n\nzollauskunft@ezv.admin.ch',
     reachability: 'Reperibilità:',
-    workingHours: 'Lunedi – Venerdi, 8.00 – 11.30 e 13.30 a 17.00',
     generalCustomsDirectorate:
       'Amministrazione federale delle dogane AFD\nMonbijoustrasse 40\n' +
       '3003 Bern\n' +
@@ -749,6 +757,7 @@ export const it: Locale = {
     disclaimerTitle: 'Clausola di non responsabilità (disclaimer)',
     disclaimerText:
       'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
+    toContactForm: '',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informazioni importanti sull’utilizzo dell’app',
@@ -861,10 +870,14 @@ export const it: Locale = {
     details: 'Dettagli',
   },
   legalNoticeModal: {
-    importantNote: 'Nota importante',
+    importantNote: 'Indicazione importante',
     vatRateInfo:
-      "Si prega di tener conto che nessun rimborso è possibile quando si utilizza questa applicazione. Le merci dichiarate sono liquidate all'aliquota IVA uniforme del 7,7%. Ulteriori informazioni possono essere trovate qui:",
-    termsOfService: 'Termini e condizioni',
+    'Si prega di tener conto che\n' +
+    '• al giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll;\n' +
+    '• le merci dichiarate vengono imposte all’aliquota IVA unica del 7,7 %;\n' +
+    '• i tributi pagati con l’app non vengono rimborsati.\n' +
+    'Ulteriori informazioni sono disponibili qui:',
+      termsOfService: 'Termini e condizioni',
     acceptance: 'Accetto i termini e le condizioni che ho letto e compreso.',
     confirm: 'Confermare',
     abort: 'Abortire',

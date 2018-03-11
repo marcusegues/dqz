@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Text, TouchableOpacity } from 'react-native';
+import { Linking, TouchableOpacity } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -10,6 +10,7 @@ import { verticalScale } from '../../../../styles/Scaling';
 import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
+import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
 
 type AnimalsInnerProps = {
   t: TFunction,
@@ -22,9 +23,11 @@ const AnimalsInner = ({ t, navigation }: AnimalsInnerProps) => (
       text={t('animalsText1')}
       style={{ marginTop: verticalScale(10) }}
     />
-    <TouchableOpacity onPress={() => {}}>
-      <Text>http://www.blv.admin.ch</Text>
-    </TouchableOpacity>
+
+    <AppInfoLink
+      text="http://www.blv.admin.ch"
+      onPress={() => Linking.openURL('http://www.blv.admin.ch')}
+    />
 
     <CardRowText
       text={t('animalsText2')}
@@ -39,7 +42,13 @@ const AnimalsInner = ({ t, navigation }: AnimalsInnerProps) => (
         })
       }
     >
-      <AppInfoSubText text={t('animalsText4')} />
+      <AppInfoSubText
+        text={t('animalsText4')}
+        style={{
+          textDecorationLine: 'underline',
+          textDecorationStyle: 'solid',
+        }}
+      />
     </TouchableOpacity>
   </SubCategoryContainer>
 );

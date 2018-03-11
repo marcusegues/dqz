@@ -50,6 +50,10 @@ export const en: Locale = {
     limitExceeded:
       'Declaration value limit exceeded. Please report your goods at the border crossing',
     offline: 'You are offline. Except for the payment feature, you are able to use all other features of the app.',
+    paymentAborted: 'Payment canceled.',
+    paymentFailed: 'Payment failed',
+    paymentAbortedRightText: 'OK',
+    paymentFailedRightText: 'OK',
     showBorder: 'Show border crossing',
   },
   onBoarding: {
@@ -89,7 +93,7 @@ export const en: Locale = {
       'Again, capture every item that is worth more than CHF 300.00.',
     amountInputAddItem: 'Add value',
     amountInputAddItemLarge: 'Add item',
-    amountInputEnterValue: 'Enter the value without foreign VAT (net value).',
+    amountInputEnterValue: 'Enter the value excluding foreign VAT (net value), including value of gifts received, food, tobacco products and alcoholic beverages.',
     currentTotalValue: 'Current total value:',
     lastExchangeRate:
       'Based on the last available exchange rate, which is updated when paying.',
@@ -153,12 +157,14 @@ export const en: Locale = {
   },
   receipt: {
     dutyAndVat: 'Customs duty: {{duty}}  |  vat: {{vat}}',
+    travellers:
+      'Travellers: {{adults}} Adults, {{minors}} Kids/Teens (under 17 years)',
     paidOn: 'Paid on {{date}} at {{time}}:',
     transactionId: 'Transaction-ID (SIX): {{value}}',
-    receiptValidFrom: 'This receipt is valid from:',
+    receiptValidFrom: 'This receipt is valid for the border crossing from:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} to {{endDate}} | {{endTime}}',
-    receiptValidOn: 'This receipt is valid on',
+    receiptValidOn: 'This receipt is valid for the border crossing on',
     receiptValidOnDate: '{{date}} from {{startTime}} to {{endTime}}',
     sumText: 'Sum: CHF {{value}}',
     vatColumn: 'VAT in CHF:',
@@ -216,14 +222,15 @@ export const en: Locale = {
     customsProceduresText20: 'Please note:',
     customsProceduresText21:
       'Verbal declarations as well as declarations with the app or via a declaration box are binding. We also carry out customs inspections in Switzerland itself. It is not possible to make a customs declaration later on. You commit a criminal offence if you do not declare or falsely declare prohibited or dutiable goods or ones that require authorisation.',
+    customsProceduresExtLink1: '',
   },
 
   travelDocuments: {
     travelDocumentsMainText: 'Travel documents',
     travelDocumentsText1:
-      'To enter Switzerland, foreign citizens must be in possession of a valid travel document that is recognised by Switzerland. In certain cases, a visa is also required. Information on entering and staying in Switzerland (regulations on travel documents and visas) can be found on the website of the State Secretariat for Migration: www.sem.admin.ch',
+      'To enter Switzerland, foreign citizens must be in possession of a valid travel document that is recognised by Switzerland. In certain cases, a visa is also required. Information on entering and staying in Switzerland (regulations on travel documents and visas) can be found on the website of the State Secretariat for Migration:',
     travelDocumentsText2:
-      'The provisions on travel documents abroad can be obtained from the relevant foreign authorities via the link to the World Customs Organization: www.wcoomd.org',
+      'The provisions on travel documents abroad can be obtained from the relevant foreign authorities via the link to the World Customs Organization:',
   },
 
   vatAllowance: {
@@ -697,10 +704,7 @@ export const en: Locale = {
     publisher: 'Publisher',
     customsAdministrationAddressTitle: 'Federal Customs Administration',
     contact: 'Contact',
-    customsInfoCenter:
-      'Customs Information Center\n058 467 15 15\nzollauskunft@ezv.admin.ch',
-    reachability: 'Reachability:',
-    workingHours: 'Monday – Friday, 8.00 – 11.30 and 13.30 to 17.00',
+    customsInfoCenter: 'Customs Information Center\n058 467 15 15',
     generalCustomsDirectorate:
       'General Directorate of Customs\nMonbijoustrasse 40\n' +
       '3003 Bern\n' +
@@ -711,6 +715,7 @@ export const en: Locale = {
     disclaimerTitle: 'Disclaimer',
     disclaimerText:
       'The same old lyre everywhere. The layout is finished, the text is slow in coming. So that the layout does not stand naked in the room and looks small and empty, I jump in: the blind text. Created exactly for this purpose, always in the shadow of my big brother "Lorem Ipsum," I rejoice every time you read a few lines. Because eating est percipi - being is to be perceived. And because you\'re kind enough to accompany me for a few more sentences, I\'d like to take this opportunity to serve you not just as a filler, but to point out something that deserves to be recognized as well: web standards.',
+    toContactForm: 'To contact form',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Information about using the app',
@@ -822,8 +827,12 @@ export const en: Locale = {
   legalNoticeModal: {
     importantNote: 'Important Note',
     vatRateInfo:
-      'Please take into account that no refund is possible when using this app. Declared goods are cleared at the uniform VAT rate of 7.7%. More information can be found here:',
-    termsOfService: 'Terms of Service',
+    'Please note that\n' +
+    '• you may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll;\n' +
+    '• declared goods are cleared using the single VAT rate of 7.7%;\n' +
+    '• duties paid with the app will not be refunded.\n' +
+    'Further information can be found here:',
+      termsOfService: 'Terms of Service',
     acceptance:
       'I hereby accept the terms and conditions that I have read and understood.',
     confirm: 'Confirm',

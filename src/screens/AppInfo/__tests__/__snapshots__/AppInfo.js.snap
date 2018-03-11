@@ -92,8 +92,8 @@ ShallowWrapper {
             style={
               Object {
                 "color": "#1A1A1A",
-                "marginBottom": 19.61764705882353,
-                "marginTop": 49.04411764705882,
+                "marginBottom": 31.388235294117646,
+                "marginTop": 47.08235294117647,
               }
             }
             text=""
@@ -107,14 +107,20 @@ ShallowWrapper {
             greyBox={false}
             style={
               Object {
-                "marginTop": 20,
+                "marginBottom": 31.388235294117646,
               }
             }
-            text=""
+            text="http://www.zollauskunft.admin.ch"
           />
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
+          <AppInfoLink
+            onPress={[Function]}
+            style={
+              Object {
+                "color": "#757575",
+                "fontFamily": "roboto_medium",
+                "textDecorationLine": "none",
+              }
+            }
             text=""
           />
         </View>
@@ -194,8 +200,8 @@ ShallowWrapper {
               style={
                 Object {
                   "color": "#1A1A1A",
-                  "marginBottom": 19.61764705882353,
-                  "marginTop": 49.04411764705882,
+                  "marginBottom": 31.388235294117646,
+                  "marginTop": 47.08235294117647,
                 }
               }
               text=""
@@ -209,14 +215,20 @@ ShallowWrapper {
               greyBox={false}
               style={
                 Object {
-                  "marginTop": 20,
+                  "marginBottom": 31.388235294117646,
                 }
               }
-              text=""
+              text="http://www.zollauskunft.admin.ch"
             />
-            <AppInfoSubText
-              greyBox={false}
-              style={Object {}}
+            <AppInfoLink
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#757575",
+                  "fontFamily": "roboto_medium",
+                  "textDecorationLine": "none",
+                }
+              }
               text=""
             />
           </View>,
@@ -323,8 +335,8 @@ ShallowWrapper {
                 style={
                   Object {
                     "color": "#1A1A1A",
-                    "marginBottom": 19.61764705882353,
-                    "marginTop": 49.04411764705882,
+                    "marginBottom": 31.388235294117646,
+                    "marginTop": 47.08235294117647,
                   }
                 }
                 text=""
@@ -338,14 +350,20 @@ ShallowWrapper {
                 greyBox={false}
                 style={
                   Object {
-                    "marginTop": 20,
+                    "marginBottom": 31.388235294117646,
                   }
                 }
-                text=""
+                text="http://www.zollauskunft.admin.ch"
               />,
-              <AppInfoSubText
-                greyBox={false}
-                style={Object {}}
+              <AppInfoLink
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#757575",
+                    "fontFamily": "roboto_medium",
+                    "textDecorationLine": "none",
+                  }
+                }
                 text=""
               />,
             ],
@@ -435,8 +453,8 @@ ShallowWrapper {
                 "greyBox": false,
                 "style": Object {
                   "color": "#1A1A1A",
-                  "marginBottom": 19.61764705882353,
-                  "marginTop": 49.04411764705882,
+                  "marginBottom": 31.388235294117646,
+                  "marginTop": 47.08235294117647,
                 },
                 "text": "",
               },
@@ -464,9 +482,9 @@ ShallowWrapper {
               "props": Object {
                 "greyBox": false,
                 "style": Object {
-                  "marginTop": 20,
+                  "marginBottom": 31.388235294117646,
                 },
-                "text": "",
+                "text": "http://www.zollauskunft.admin.ch",
               },
               "ref": null,
               "rendered": null,
@@ -477,8 +495,12 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "greyBox": false,
-                "style": Object {},
+                "onPress": [Function],
+                "style": Object {
+                  "color": "#757575",
+                  "fontFamily": "roboto_medium",
+                  "textDecorationLine": "none",
+                },
                 "text": "",
               },
               "ref": null,
@@ -567,8 +589,8 @@ ShallowWrapper {
               style={
                 Object {
                   "color": "#1A1A1A",
-                  "marginBottom": 19.61764705882353,
-                  "marginTop": 49.04411764705882,
+                  "marginBottom": 31.388235294117646,
+                  "marginTop": 47.08235294117647,
                 }
               }
               text=""
@@ -582,14 +604,20 @@ ShallowWrapper {
               greyBox={false}
               style={
                 Object {
-                  "marginTop": 20,
+                  "marginBottom": 31.388235294117646,
                 }
               }
-              text=""
+              text="http://www.zollauskunft.admin.ch"
             />
-            <AppInfoSubText
-              greyBox={false}
-              style={Object {}}
+            <AppInfoLink
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#757575",
+                  "fontFamily": "roboto_medium",
+                  "textDecorationLine": "none",
+                }
+              }
               text=""
             />
           </View>
@@ -669,8 +697,8 @@ ShallowWrapper {
                 style={
                   Object {
                     "color": "#1A1A1A",
-                    "marginBottom": 19.61764705882353,
-                    "marginTop": 49.04411764705882,
+                    "marginBottom": 31.388235294117646,
+                    "marginTop": 47.08235294117647,
                   }
                 }
                 text=""
@@ -684,14 +712,20 @@ ShallowWrapper {
                 greyBox={false}
                 style={
                   Object {
-                    "marginTop": 20,
+                    "marginBottom": 31.388235294117646,
                   }
                 }
-                text=""
+                text="http://www.zollauskunft.admin.ch"
               />
-              <AppInfoSubText
-                greyBox={false}
-                style={Object {}}
+              <AppInfoLink
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#757575",
+                    "fontFamily": "roboto_medium",
+                    "textDecorationLine": "none",
+                  }
+                }
                 text=""
               />
             </View>,
@@ -798,8 +832,8 @@ ShallowWrapper {
                   style={
                     Object {
                       "color": "#1A1A1A",
-                      "marginBottom": 19.61764705882353,
-                      "marginTop": 49.04411764705882,
+                      "marginBottom": 31.388235294117646,
+                      "marginTop": 47.08235294117647,
                     }
                   }
                   text=""
@@ -813,14 +847,20 @@ ShallowWrapper {
                   greyBox={false}
                   style={
                     Object {
-                      "marginTop": 20,
+                      "marginBottom": 31.388235294117646,
                     }
                   }
-                  text=""
+                  text="http://www.zollauskunft.admin.ch"
                 />,
-                <AppInfoSubText
-                  greyBox={false}
-                  style={Object {}}
+                <AppInfoLink
+                  onPress={[Function]}
+                  style={
+                    Object {
+                      "color": "#757575",
+                      "fontFamily": "roboto_medium",
+                      "textDecorationLine": "none",
+                    }
+                  }
                   text=""
                 />,
               ],
@@ -910,8 +950,8 @@ ShallowWrapper {
                   "greyBox": false,
                   "style": Object {
                     "color": "#1A1A1A",
-                    "marginBottom": 19.61764705882353,
-                    "marginTop": 49.04411764705882,
+                    "marginBottom": 31.388235294117646,
+                    "marginTop": 47.08235294117647,
                   },
                   "text": "",
                 },
@@ -939,9 +979,9 @@ ShallowWrapper {
                 "props": Object {
                   "greyBox": false,
                   "style": Object {
-                    "marginTop": 20,
+                    "marginBottom": 31.388235294117646,
                   },
-                  "text": "",
+                  "text": "http://www.zollauskunft.admin.ch",
                 },
                 "ref": null,
                 "rendered": null,
@@ -952,8 +992,12 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "greyBox": false,
-                  "style": Object {},
+                  "onPress": [Function],
+                  "style": Object {
+                    "color": "#757575",
+                    "fontFamily": "roboto_medium",
+                    "textDecorationLine": "none",
+                  },
                   "text": "",
                 },
                 "ref": null,

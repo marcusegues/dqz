@@ -50,7 +50,12 @@ export const de: Locale = {
     limitExceeded:
       'Warenwert für die App überschritten. Bitte melden Sie Ihre Waren mündlich beim Grenzübergang an.',
     offline: 'Sie sind offline. Ausser der Bezahlfunktion können Sie jedoch alle anderen Funktionen der App benutzen.',
-    showBorder: 'Grenzübergang anzeigen',
+    offline: 'Sie sind offline. Bitte überprufen Sie Ihre Verbindung.',
+    paymentAborted: 'Zahlung storniert',
+    paymentFailed: 'Zahlung fehlgeschlagen',
+    paymentAbortedRightText: 'OK',
+    paymentFailedRightText: 'OK',
+    showBorder: 'Grenzübergänge anzeigen',
   },
   onBoarding: {
     welcome: 'Willkommen zu',
@@ -88,15 +93,15 @@ export const de: Locale = {
   },
   amountInput: {
     amountInput:
-      'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Ware.',
+      'Bitte erfassen Sie hier den Wert sämtlicher mitgeführter Waren.',
     amountInputLargeItem:
-      'Capturez des objets individuels d\'une valeur de plus de {{value}} Francs.',
+      'Erfassen Sie einzelne Gegenstände mit einem Wert von über {{value}} Franken.',
     amountInputLargeItemGreyBox:
       'Erfassen Sie hier nochmals jeden Gegenstand, der mehr als CHF 300.00 wert ist.',
     amountInputAddItem: 'Wert hinzufügen',
     amountInputAddItemLarge: 'Gegenstand hinzufügen',
     amountInputEnterValue:
-      'Erfassen Sie den Wert ohne ausländische Mehrwertsteuer (Nettowert).',
+      'Erfassen Sie den Wert ohne ausländische Mehrwertsteuer (Nettowert), inkl. Wert der erhaltenen Geschenke, Lebensmittel, Tabakfabrikate und alkoholische Getränke.',
     currentTotalValue: 'Aktueller Gesamtwert:',
     lastExchangeRate:
       'Basierend auf dem letzten verfügbaren Wechsel-kurs, welcher beim Bezahlen aktualisiert wird.',
@@ -161,12 +166,14 @@ export const de: Locale = {
   },
   receipt: {
     dutyAndVat: 'Zollabgabe: {{duty}}  |  Mehrwertsteuer: {{vat}}',
+    travellers:
+      'Reisende: {{adults}} Erwachsene, {{minors}} Kinder (unter 17 Jahre)',
     paidOn: 'Bezahlt am {{date}} um {{time}} Uhr mit:',
     transactionId: 'Transaktions-ID (SIX): {{value}}',
-    receiptValidFrom: 'Diese Quittung ist gültig am:',
+    receiptValidFrom: 'Diese Quittung ist gültig für den Grenzübertritt am:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} bis {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Diese Quittung ist gültig am:',
+    receiptValidOn: 'Diese Quittung ist gültig für den Grenzübertritt am:',
     receiptValidOnDate: '{{date}} von {{startTime}} bis {{endTime}}',
     sumText: 'Summe: CHF {{value}}',
     vatColumn: 'Mehrwertsteuer in CHF:',
@@ -216,7 +223,7 @@ export const de: Locale = {
       'Andere Waren müssen bei einem durch Personal des Schweizer Zolls besetzten Grenzübergang angemeldet werden.',
     customsProceduresText16: 'Anmeldebox',
     customsProceduresText17:
-      'An gewissen Grenzübergängen stehen Ihnen noch sogenannte Anmeldeboxen zur Verfügung, bei denen Sie Ihre Waren schriftlich anmelden können. Informationen dazu finden Sie unter www.ezv.admin.ch/Anmeldebox [Link: https://www.ezv.admin.ch/ezv/de/home/zollanmeldung/anmeldung-private/schriftliche-selbstanmeldung-mit-den-anmeldeboxen.html]',
+      'An gewissen Grenzübergängen stehen Ihnen noch sogenannte Anmeldeboxen zur Verfügung, bei denen Sie Ihre Waren schriftlich anmelden können. Informationen dazu finden Sie unter',
     customsProceduresText18:
       'Diese Form der Zollanmeldung ist nur für Waren zulässig, die nicht für den Handel bestimmt sind. Sie dürfen keinen Beschränkungen oder Verboten unterliegen und weder zeugnis- noch bewilligungspflichtig sein.',
     customsProceduresText19:
@@ -224,6 +231,7 @@ export const de: Locale = {
     customsProceduresText20: 'Bitte beachten:',
     customsProceduresText21:
       'Die mündliche Anmeldung sowie die Anmeldung mit der App oder via Anmeldebox sind verbindlich. Wir nehmen Zollkontrollen auch im Landesinneren vor. Eine nachträgliche Zollanmeldung ist nicht möglich. Sie machen sich strafbar, wenn Sie verbotene, bewilligungs- oder abgabenpflichtige Waren nicht oder falsch anmelden.',
+    customsProceduresExtLink1: 'Anmeldebox',
   },
 
   travelDocuments: {
@@ -231,9 +239,9 @@ export const de: Locale = {
     travelDocumentsSubText: '',
     travelDocumentsText1:
       'Zur Einreise in die Schweiz benötigen ausländische Staatsangehörige ein gültiges und von der Schweiz anerkanntes Reisepapier. In gewissen Fällen ist zudem ein Visum erforderlich.\n' +
-      'Über die Einreise in die Schweiz und den Aufenthalt (Vorschriften zu Reisedokumenten und Visa) gibt Ihnen die Website des Staatssekretariats für Migration Auskunft: www.sem.admin.ch ',
+      'Über die Einreise in die Schweiz und den Aufenthalt (Vorschriften zu Reisedokumenten und Visa) gibt Ihnen die Website des Staatssekretariats für Migration Auskunft:',
     travelDocumentsText2:
-      'Die Vorschriften zu den Reisepapieren im Ausland finden Sie bei den entsprechenden ausländischen Behörden, über den Link der Weltzollorganisation: www.wcoomd.org ',
+      'Die Vorschriften zu den Reisepapieren im Ausland finden Sie bei den entsprechenden ausländischen Behörden, über den Link der Weltzollorganisation:',
   },
 
   vatAllowance: {
@@ -404,8 +412,7 @@ export const de: Locale = {
     foreignVatText3:
       'Für die Rückerstattung bestehen je nach Staat unterschiedliche Voraussetzungen. Allenfalls füllt der Verkäufer ein Rückerstattungsformular aus, auf dem die ausländische Zollbehörde den Export in die Schweiz bestätigt.',
     foreignVatText4:
-      'Weitere Informationen zur Rückerstattung der ausländischen MWST können wir Ihnen nicht geben. Allenfalls erteilt Ihnen die entsprechende Zollbehörde Auskünfte. Die ausländischen Zollbehörden finden Sie unter folgendem Link der Weltzollorganisation:\n' +
-      'www.wcoomd.org',
+      'Weitere Informationen zur Rückerstattung der ausländischen MWST können wir Ihnen nicht geben. Allenfalls erteilt Ihnen die entsprechende Zollbehörde Auskünfte. Die ausländischen Zollbehörden finden Sie unter folgendem Link der Weltzollorganisation:',
     foreignVatText5:
       'Die schweizerische MWST ist auch zu bezahlen, wenn die ausländische MWST nicht zurückerstattet wird. Im Bereich der Mehrwertsteuern gibt es kein Doppelbesteuerungsabkommen.',
   },
@@ -413,8 +420,7 @@ export const de: Locale = {
   animals: {
     animalsMainText: 'Tiere: Heimtiere, Hunde, Katzen und Pferde',
     animalsText1:
-      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die Informationen beim Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:\n' +
-      'http://www.blv.admin.ch',
+      'Für Hunde, Katzen, weitere Heimtiere sowie Pferde finden Sie die Informationen beim Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:',
     animalsText2: 'Abgaben',
     animalsText3:
       'Wird die Wertfreigrenze von CHF 300 überschritten, müssen Sie für Tiere die MWST bezahlen. Detailliertere Informationen finden Sie unter:',
@@ -515,7 +521,7 @@ export const de: Locale = {
       'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 Tonnen eine Schwerverkehrsabgabe erhoben. Für Busse, schwere Wohnmobile, schwere Personenwagen und deren Anhänger über 3,5 Tonnen wird die Abgabe pauschal pro Tag erhoben.',
     roadTaxText2:
       'Im Gegensatz zur Autobahnvignette für Personenwagen wird die Schwerverkehrsabgabe nicht nur auf den Autobahnen sondern auf dem gesamten Strassennetz fällig.',
-    roadTaxText3: 'Für LKWs und deren Anhänger siehe: www.lsva.ch',
+    roadTaxText3: 'Für LKWs und deren Anhänger siehe:',
     roadTaxText4:
       'Bitte beachten: PSVA-pflichtig ist das Fahrzeug auch, wenn es nur abgestellt ist und nicht bewegt wird (z. B. Wohnmobil auf Campingplatz).',
     roadTaxText5: 'Bezahlung und Tarife',
@@ -694,9 +700,7 @@ export const de: Locale = {
     publisher: 'Herausgeberin',
     customsAdministrationAddressTitle: 'Eidgenössische Zollverwaltung EZV',
     contact: 'Kontakt',
-    customsInfoCenter: 'Auskunftszentrale Zoll\n\nzollauskunft@ezv.admin.ch',
-    reachability: 'Erreichbarkeit:',
-    workingHours: 'Montag – Freitag, 8.00 – 11.30 und 13.30 bis 17.00',
+    customsInfoCenter: 'Auskunftszentrale Zoll',
     generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern\nhttp://www.ezv.admin.ch`,
     designAndDevelopment: 'Design & Entwicklung',
     ambriteAddress:
@@ -704,6 +708,7 @@ export const de: Locale = {
     disclaimerTitle: 'Disclaimer',
     disclaimerText:
       'Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten. Damit das Layout nun nicht nackt im Raume steht und sich klein und leer vorkommt, springe ich ein: der Blindtext. Genau zu diesem Zwecke erschaffen, immer im Schatten meines großen Bruders »Lorem Ipsum«, freue ich mich jedes Mal, wenn Sie ein paar Zeilen lesen. Denn esse est percipi - Sein ist wahrgenommen werden. Und weil Sie nun schon die Güte haben, mich ein paar weitere Sätze lang zu begleiten, möchte ich diese Gelegenheit nutzen, Ihnen nicht nur als Lückenfüller zu dienen, sondern auf etwas hinzuweisen, das es ebenso verdient wahrgenommen zu werden: Webstandards nämlich.',
+    toContactForm: 'Zum Kontaktformular',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informationen zum Gebrauch der App',
@@ -819,8 +824,12 @@ export const de: Locale = {
   legalNoticeModal: {
     importantNote: 'Wichtiger Hinweis',
     vatRateInfo:
-      'Bitte berücksichtigen Sie, dass bei der Benutzung dieser App keine Rückerstattung möglich ist. Deklarierte Waren werden mit dem einheitlichen Mehrwertsteuersatz von 7.7% verzollt. Weitere Informationen finden Sie hier:',
-    termsOfService: 'Nutzungsbedingungen',
+    'Bitte beachten Sie, dass \n' +
+    '• Sie pro Kalendertag nur einmal mit Waren einreisen dürfen, die Sie mit QuickZoll verzollt haben;\n' +
+    '• Angemeldete Waren mit dem einheitlichen Mehrwertsteuersatz von 7,7 % verzollt werden;\n' +
+    '• Mit der App bezahlte Abgaben nicht zurückerstattet werden.\n' +
+    'Weitere Informationen finden Sie hier:',
+      termsOfService: 'Nutzungsbedingungen',
     acceptance:
       'Hiermit akzeptiere ich die Nutzungsbedingungen, die ich gelesen und verstanden habe.',
     confirm: 'Bestätigen',

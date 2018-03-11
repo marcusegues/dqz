@@ -7,7 +7,7 @@ export const fr: Locale = {
     Butter: 'Beurre et crème',
     Oils: 'Huiles/graisses/margarine',
     OtherFood: 'Autres denrées alimentaires et boissons sans alcool',
-    AlcSoft: 'Boissons alcoolisées jusqu\'à 18% vol.',
+    AlcSoft: "Boissons alcoolisées jusqu'à 18% vol.",
     AlcHard: 'Boissons alcoolisées de plus de 18% vol.',
     Cigarettes: 'Cigarettes et cigares',
     Tobacco: 'Autres tabacs manufacturés',
@@ -50,6 +50,10 @@ export const fr: Locale = {
     limitExceeded:
       "Valeur des biens pour l'application dépassée. S'il vous plaît signaler vos marchandises oralement au poste-frontière.",
     offline: "Vous êtes hors ligne. Sauf pour la fonction de paiement, cependant, vous pouvez utiliser toutes les autres fonctionnalités de l'application.",
+    paymentAborted: 'Paiement annulé',
+    paymentFailed: 'Paiement échoué',
+    paymentAbortedRightText: 'OK',
+    paymentFailedRightText: 'OK',
     showBorder: 'Afficher le passage frontalier',
   },
   onBoarding: {
@@ -91,7 +95,7 @@ export const fr: Locale = {
     amountInputAddItem: 'Ajouter la valeur',
     amountInputAddItemLarge: 'Ajouter un bien',
     amountInputEnterValue:
-      'Saisissez la valeur sans la TVA étrangère (valeur nette).',
+      'Saisissez la valeur sans la TVA étrangère (valeur nette), y compris la valeur des cadeaux reçus, la nourriture, les produits du tabac et les boissons alcoolisées.',
     currentTotalValue: 'Valeur totale actuelle',
     lastExchangeRate:
       'Basé sur le dernier taux de change disponible, qui est mis à jour lors du paiement.',
@@ -159,13 +163,15 @@ export const fr: Locale = {
   },
   receipt: {
     dutyAndVat: 'Droits de douane: {{duty}} |  TVA: {{vat}}',
+    travellers:
+      'Voyageurs: {{adults}} Adultes, {{minors}} Enfants/Adolescents (inférieur à 17 ans)',
     paidOn: 'Payé le {{date}} à {{time}} h avec:',
     transactionId: 'ID de transaction (SIX): {{value}}',
 
-    receiptValidFrom: 'La présente quittance est valable à partir de:',
+    receiptValidFrom: 'La présente quittance est valable pour le passage frontalier à partir de:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} à {{endDate}} | {{endTime}}',
-    receiptValidOn: 'La présente quittance est valable sur',
+    receiptValidOn: 'La présente quittance est valable pour le passage frontalier sur',
     receiptValidOnDate: '{{date}} de {{startTime}} à {{endTime}}',
 
     sumText: 'Total (en francs): {{value}}',
@@ -226,6 +232,7 @@ export const fr: Locale = {
     customsProceduresText20: 'Attention:',
     customsProceduresText21:
       "Qu'elle soit verbale, effectuée au moyen de l'application ou par l'intermédiaire d'une boîte à déclarations, la déclaration lie son auteur. Nous effectuons également des contrôles douaniers à l'intérieur du pays. Une déclaration en douane subséquente n'est pas possible. Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
+    customsProceduresExtLink1: 'boîte à déclarations',
   },
 
   travelDocuments: {
@@ -738,10 +745,7 @@ export const fr: Locale = {
     customsAdministrationAddressTitle:
       'Administration fédérale des douanes AFD',
     contact: 'Contact',
-    customsInfoCenter:
-      'Centrale de renseignement de la douane\n\nzollauskunft@ezv.admin.ch',
-    reachability: 'Joignabilité:',
-    workingHours: 'Lundi – Vendredi, 8.00 – 11.30 et 13.30 a 17.00',
+    customsInfoCenter: 'Centrale de renseignement de la douane',
     generalCustomsDirectorate:
       'Monbijoustrasse 40\n3003 Bern\nhttp://www.ezv.admin.ch',
     designAndDevelopment: 'Conception et développement',
@@ -750,6 +754,7 @@ export const fr: Locale = {
     disclaimerTitle: 'Avis de non-responsabilité',
     disclaimerText:
       'Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten. Damit das Layout nun nicht nackt im Raume steht und sich klein und leer vorkommt, springe ich ein: der Blindtext. Genau zu diesem Zwecke erschaffen, immer im Schatten meines großen Bruders »Lorem Ipsum«, freue ich mich jedes Mal, wenn Sie ein paar Zeilen lesen. Denn esse est percipi - Sein ist wahrgenommen werden. Und weil Sie nun schon die Güte haben, mich ein paar weitere Sätze lang zu begleiten, möchte ich diese Gelegenheit nutzen, Ihnen nicht nur als Lückenfüller zu dienen, sondern auf etwas hinzuweisen, das es ebenso verdient wahrgenommen zu werden: Webstandards nämlich.',
+    toContactForm: '',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Info importantes',
@@ -862,10 +867,14 @@ export const fr: Locale = {
     details: 'détails',
   },
   legalNoticeModal: {
-    importantNote: 'Note importante',
+    importantNote: 'Remarque importante',
     vatRateInfo:
-      "S'il vous plaît prendre en compte qu'aucun remboursement est possible en utilisant cette application. Les marchandises déclarées sont dédouanées au taux de TVA uniforme de 7,7%. Plus d'informations peuvent être trouvées ici:",
-    termsOfService: 'Termes et Conditions',
+    'Veuillez noter que\n' +
+    '• vous ne pouvez entrer en Suisse qu\'une fois par jour civil avec des marchandises que vous avez dédouanées avec QuickZoll;\n'+
+    '• les marchandises déclarées sont dédouanées au taux uniforme de TVA de 7,7 %;\n' +
+    '• les redevances payées avec l\'application ne sont pas remboursées.\n' +
+    'Vous trouverez de plus amples informations ici:',
+      termsOfService: 'Termes et Conditions',
     acceptance: "J'accepte les termes et conditions que j'ai lus et compris.",
     confirm: 'Confirmer',
     abort: 'Abandonner',

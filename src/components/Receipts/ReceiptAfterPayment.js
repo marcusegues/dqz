@@ -13,7 +13,11 @@ import { takeSnapshotAsync } from 'expo';
 import { translate } from 'react-i18next';
 import { moderateScale, verticalScale } from '../../styles/Scaling';
 import { CardRowText } from '../QuestionAnswer/Cards/subcomponents/CardRowText';
-import type { PaymentData, TFunction } from '../../types/generalTypes';
+import type {
+  Navigation,
+  PaymentData,
+  TFunction,
+} from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { getPaymentData, getReceiptId } from '../../reducers/selectors';
 import { fetchReceiptByReceiptId } from '../../asyncStorage/storageApi';
@@ -60,6 +64,7 @@ type ReceiptAfterPaymentScreenProps = {
   i18n: { language: string },
   paymentData: PaymentData,
   receiptId: string,
+  navigation: Navigation,
 };
 
 class ReceiptAfterPaymentInner extends React.Component<
@@ -92,6 +97,10 @@ class ReceiptAfterPaymentInner extends React.Component<
 
   componentDidMount() {
     const { receiptId } = this.props;
+    this.props.navigation.dispatch({
+      type: 'SET_PARAMS',
+      params: { onPress: () => this.capture() },
+    });
     if (receiptId !== '') {
       fetchReceiptByReceiptId(receiptId).then(receipt => {
         this.setState({ receipt });
@@ -194,13 +203,7 @@ class ReceiptAfterPaymentInner extends React.Component<
               this.image = ref;
             }}
           >
-            <Touchable
-              onPress={() => {
-                this.capture();
-              }}
-            >
-              <RedLogo />
-            </Touchable>
+            <RedLogo />
             <Row width="90%">
               <Text style={ownStyles.topSumText}>
                 CHF {(fullVat + fullDuty).toFixed(2)}
@@ -209,6 +212,12 @@ class ReceiptAfterPaymentInner extends React.Component<
                 text={t('dutyAndVat', {
                   duty: fullDuty.toFixed(2),
                   vat: fullVat.toFixed(2),
+                })}
+              />
+              <ReceiptSubText
+                text={t('travellers', {
+                  adults: people.adults,
+                  minors: people.minors,
                 })}
               />
             </Row>
