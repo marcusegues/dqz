@@ -399,6 +399,7 @@ export const fr: Locale = {
       "Marchandises commandées à l'étranger et livrées par la Poste ou un service de courrier rapide",
     dutyAllowanceText47:
       "D'autres dispositions sont applicables aux marchandises que vous commandez à l'étranger (par ex. sur Internet) et qui vous sont expédiées par la Poste ou par un service de courrier rapide. Informations complémentaires",
+    dutyAllowanceText48: 'More information',
   },
 
   personalEffects: {
@@ -425,7 +426,7 @@ export const fr: Locale = {
     foreignVatText3:
       "Pour le remboursement, les conditions sont différentes en fonction de l'État concerné. Le cas échéant, le vendeur doit vous remettre un formulaire de remboursement rempli et l'autorité douanière étrangère doit y attester l'exportation en Suisse.",
     foreignVatText4:
-      "Nous ne pouvons pas vous fournir de plus amples informations sur le remboursement de la TVA étrangère. Le cas échéant, veuillez vous adresser à l'autorité douanière compétente pour obtenir les renseignements nécessaires. Vous trouverez les coordonnées des autorités douanières étrangères sur le site de l'Organisation mondiale des douanes: www.wcoomd.org.",
+      "Nous ne pouvons pas vous fournir de plus amples informations sur le remboursement de la TVA étrangère. Le cas échéant, veuillez vous adresser à l'autorité douanière compétente pour obtenir les renseignements nécessaires. Vous trouverez les coordonnées des autorités douanières étrangères sur le site de l'Organisation mondiale des douanes:",
     foreignVatText5:
       "La TVA suisse doit être payée même si la TVA étrangère n'est pas remboursée. Il n'existe aucune convention contre les doubles impositions en matière de TVA.",
   },
@@ -434,7 +435,7 @@ export const fr: Locale = {
     animalsMainText:
       'Animaux: animaux domestiques, notamment chiens, chats et chevaux',
     animalsText1:
-      "Vous trouverez les informations relatives à l'importation d'animaux domestiques, notamment de chiens, de chats et de chevaux, sur le site Internet de l'Office fédéral de la sécurité alimentaire et des affaires vétérinaires (OSAV): http://www.blv.admin.ch.",
+      "Vous trouverez les informations relatives à l'importation d'animaux domestiques, notamment de chiens, de chats et de chevaux, sur le site Internet de l'Office fédéral de la sécurité alimentaire et des affaires vétérinaires (OSAV):",
     animalsText2: 'Redevances',
     animalsText3:
       'Si la franchise-valeur de 300 francs est dépassée, vous devrez vous acquitter de la TVA pour les animaux transportés. Vous trouverez de plus amples informations à ce sujet dans la rubrique suivante:',
@@ -534,7 +535,7 @@ export const fr: Locale = {
     roadTaxText2:
       "Contrairement à la vignette autoroutière destinée aux voitures de tourisme, la redevance sur le trafic des poids lourds ne concerne pas uniquement les autoroutes, mais bien l'ensemble du réseau routier.",
     roadTaxText3:
-      'Le lien suivant fournit des informations au sujet des camions et de leurs remorques: www.lsva.ch.',
+      'Le lien suivant fournit des informations au sujet des camions et de leurs remorques:',
     roadTaxText4:
       "Attention: le véhicule est également soumis à la redevance forfaitaire sur le trafic des poids lourds (RPLF) s'il est parqué et ne circule pas (par ex. une voiture d'habitation installée sur une place de camping).",
     roadTaxText5: 'Paiement et tarifs',
@@ -608,7 +609,7 @@ export const fr: Locale = {
     forgeryText5:
       "Même un bijou vendu à un prix élevé peut se révéler être une contrefaçon. Une indication de titre ne garantit pas que la marchandise est authentique. N'achetez des bijoux et des montres que dans des commerces spécialisés reconnus.",
     forgeryText6:
-      "Vous trouverez davantage d'informations sur le piratage de produits et les contrefaçons d'articles de marque sur STOP PIRACY, la plateforme suisse de lutte contre la contrefaçon et la piraterie: www.stop-piracy.ch.",
+      "Vous trouverez davantage d'informations sur le piratage de produits et les contrefaçons d'articles de marque sur STOP PIRACY, la plateforme suisse de lutte contre la contrefaçon et la piraterie:",
   },
 
   cash: {

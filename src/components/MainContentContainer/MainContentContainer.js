@@ -16,7 +16,6 @@ export const MainContentContainer = ({
       flex: 1,
       height: '100%',
       marginHorizontal: 16,
-      marginBottom: 16,
       flexDirection: 'column',
       alignItems: 'center',
     }}

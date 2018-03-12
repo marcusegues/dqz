@@ -390,6 +390,7 @@ export const it: Locale = {
       'Merci ordinate all’estero e recapitate per posta o corriere',
     dutyAllowanceText47:
       'Per le merci ordinate all’estero (p. es. in Internet) e recapitate per posta o corriere valgono altre disposizioni. Per ulteriori informazioni cliccare qui.',
+    dutyAllowanceText48: '',
   },
 
   personalEffects: {
@@ -417,7 +418,7 @@ export const it: Locale = {
     foreignVatText3:
       'Per quanto riguarda la restituzione ogni Stato applica le proprie condizioni. Se del caso, il venditore compila un modulo di restiuzione sul quale l’autorità doganale estera conferma l’esportazione in Svizzera.',
     foreignVatText4:
-      'Non siamo in grado di fornire ulteriori informazioni in merito alla restituzione dell’IVA estera. A tale proposito occorre rivolgersi alla rispettiva autorità doganale. Le autorità doganali estere sono reperibili al seguente link dell’Organizzazione mondiale delle dogane: www.wcoomd.org',
+      'Non siamo in grado di fornire ulteriori informazioni in merito alla restituzione dell’IVA estera. A tale proposito occorre rivolgersi alla rispettiva autorità doganale. Le autorità doganali estere sono reperibili al seguente link dell’Organizzazione mondiale delle dogane:',
     foreignVatText5:
       'L’IVA svizzera è dovuta anche nel caso in cui quella estera non viene restituita. Nell’ambito dell’IVA non esiste una convenzione di doppia imposizione.',
   },
@@ -425,7 +426,7 @@ export const it: Locale = {
   animals: {
     animalsMainText: 'Animali: animali da compagnia, cani, gatti e cavalli',
     animalsText1:
-      'Ulteriori informazioni in merito a cani, gatti e altri animali da compagnia nonché ai cavalli sono disponibili presso l’Ufficio federale della sicurezza alimentare e di veterinaria (USAV): https://www.blv.admin.ch',
+      'Ulteriori informazioni in merito a cani, gatti e altri animali da compagnia nonché ai cavalli sono disponibili presso l’Ufficio federale della sicurezza alimentare e di veterinaria (USAV):',
     animalsText2: 'Tributi',
     animalsText3:
       'Se si supera il limite di franchigia secondo il valore di 300 franchi, per gli animali è dovuta l’IVA. Per informazioni dettagliate consultare la rubrica:',
@@ -526,7 +527,7 @@ export const it: Locale = {
       'In Svizzera gli autoveicoli e i rimorchi con un peso totale eccedente le 3,5 tonnellate sono soggetti a una tassa sul traffico pesante. Per i pullman, i camper pesanti, le automobili pesanti e per i loro rimorchi eccedenti le 3,5 tonnellate, la tassa è forfetaria e riscossa al giorno.',
     roadTaxText2:
       'Contrariamente al contrassegno autostradale, la tassa sul traffico pesante è dovuta sull’intera rete stradale e non solo sulle autostrade.',
-    roadTaxText3: 'Per gli autocarri e i loro rimorchi vedi: www.lsva.ch',
+    roadTaxText3: 'Per gli autocarri e i loro rimorchi vedi:',
     roadTaxText4:
       'Attenzione: L’autoveicolo è soggetto alla TFTP anche se è spento e non viene spostato (p. es. camper in un campeggio).',
     roadTaxText5: 'Pagamento e tariffe',
@@ -599,7 +600,7 @@ export const it: Locale = {
     forgeryText5:
       'Anche un gioiello molto caro può essere contraffatto. Neanche l’indicazione del titolo ne garantisce l’autenticità. Si consiglia quindi di acquistare orologi e gioielli solo in negozi specializzati riconosciuti.',
     forgeryText6:
-      'Ulteriori informazioni sulla pirateria dei prodotti e sullla contraffazione sono disponibili sulla Piattaforma svizzera di lotta alla contraffazione e alla pirateria STOP ALLA PIRATERIA: www.stop-piracy.ch',
+      'Ulteriori informazioni sulla pirateria dei prodotti e sullla contraffazione sono disponibili sulla Piattaforma svizzera di lotta alla contraffazione e alla pirateria STOP ALLA PIRATERIA:',
   },
 
   cash: {

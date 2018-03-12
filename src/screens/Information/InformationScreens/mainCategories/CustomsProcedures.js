@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Linking } from 'react-native';
+import { Linking, TouchableOpacity } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
@@ -12,15 +12,18 @@ import { BulletText } from '../../../AppInfo/subComponents/BulletText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
+import type { Language } from '../../../../i18n/types/locale';
 
 type CustomsProceduresInnerProps = {
   t: TFunction,
   navigation: Navigation,
+  i18n: { language: Language },
 };
 
 const CustomsProceduresInner = ({
   t,
   navigation,
+  i18n,
 }: CustomsProceduresInnerProps) => (
   <SubCategoryContainer title={t('customsProceduresMainText')}>
     <AppInfoSubText
@@ -36,45 +39,57 @@ const CustomsProceduresInner = ({
       style={{ marginVertical: verticalScale(10) }}
     />
     <AppInfoSubText text={t('customsProceduresText6')} />
-    <BulletText
-      text={t('customsProceduresText7')}
+
+    <TouchableOpacity
       onPress={() =>
         navigation.dispatch({
           type: 'NAVIGATE',
           screen: 'VatAllowance',
         })
       }
-      style={{
-        textDecorationLine: 'underline',
-        textDecorationStyle: 'solid',
-      }}
-    />
-    <BulletText
-      text={t('customsProceduresText8')}
+    >
+      <BulletText
+        text={t('customsProceduresText7')}
+        style={{
+          textDecorationLine: 'underline',
+          textDecorationStyle: 'solid',
+        }}
+      />
+    </TouchableOpacity>
+
+    <TouchableOpacity
       onPress={() =>
         navigation.dispatch({
           type: 'NAVIGATE',
           screen: 'DutyAllowance',
         })
       }
-      style={{
-        textDecorationLine: 'underline',
-        textDecorationStyle: 'solid',
-      }}
-    />
-    <BulletText
-      text={t('customsProceduresText9')}
+    >
+      <BulletText
+        text={t('customsProceduresText8')}
+        style={{
+          textDecorationLine: 'underline',
+          textDecorationStyle: 'solid',
+        }}
+      />
+    </TouchableOpacity>
+
+    <TouchableOpacity
       onPress={() =>
         navigation.dispatch({
           type: 'NAVIGATE',
           screen: 'PersonalEffects',
         })
       }
-      style={{
-        textDecorationLine: 'underline',
-        textDecorationStyle: 'solid',
-      }}
-    />
+    >
+      <BulletText
+        text={t('customsProceduresText9')}
+        style={{
+          textDecorationLine: 'underline',
+          textDecorationStyle: 'solid',
+        }}
+      />
+    </TouchableOpacity>
     <CardRowText
       text={t('customsProceduresText10')}
       style={{ marginTop: verticalScale(20) }}
@@ -102,7 +117,9 @@ const CustomsProceduresInner = ({
       text={`www.ezv.admin.ch/${t('customsProceduresExtLink1')}`}
       onPress={() =>
         Linking.openURL(
-          'https://www.ezv.admin.ch/ezv/de/home/zollanmeldung/anmeldung-private/schriftliche-selbstanmeldung-mit-den-anmeldeboxen.html'
+          `https://www.ezv.admin.ch/ezv/${
+            i18n.language
+          }/home/zollanmeldung/anmeldung-private/schriftliche-selbstanmeldung-mit-den-anmeldeboxen.html`
         )
       }
     />

@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Text } from 'react-native';
+import { Linking } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import type { TFunction } from '../../../../types/generalTypes';
@@ -9,12 +9,15 @@ import { verticalScale } from '../../../../styles/Scaling';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
+import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
+import type { Language } from '../../../../i18n/types/locale';
 
 type ForgeryInnerProps = {
   t: TFunction,
+  i18n: { language: Language },
 };
 
-const ForgeryInner = ({ t }: ForgeryInnerProps) => (
+const ForgeryInner = ({ t, i18n }: ForgeryInnerProps) => (
   <SubCategoryContainer title={t('forgeryMainText')}>
     <AppInfoSubText
       text={t('forgeryText1')}
@@ -34,7 +37,16 @@ const ForgeryInner = ({ t }: ForgeryInnerProps) => (
       text={t('forgeryText6')}
       style={{ marginTop: verticalScale(10) }}
     />
-    <Text>www.stop-piracy.ch</Text>
+    <AppInfoLink
+      text="www.stop-piracy.ch"
+      onPress={() =>
+        Linking.openURL(
+          `http://www.stop-piracy.ch/?lang=${i18n.language}-${
+            i18n.language === 'en' ? 'US' : 'CH'
+          }`
+        )
+      }
+    />
   </SubCategoryContainer>
 );
 

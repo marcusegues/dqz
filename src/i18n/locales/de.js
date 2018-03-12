@@ -384,7 +384,8 @@ export const de: Locale = {
     dutyAllowanceText46:
       'Im Ausland bestellt und per Post/Kurierdienst geliefert',
     dutyAllowanceText47:
-      'Für Waren, die Sie im Ausland bestellen (z.B. im Internet) und die Ihnen per Post oder Kurierdienst zugestellt werden, gelten andere Bestimmungen. Mehr Informationen',
+      'Für Waren, die Sie im Ausland bestellen (z.B. im Internet) und die Ihnen per Post oder Kurierdienst zugestellt werden, gelten andere Bestimmungen.',
+    dutyAllowanceText48: 'Mehr Informationen',
   },
 
   personalEffects: {
@@ -593,7 +594,7 @@ export const de: Locale = {
     forgeryText5:
       'Selbst ein teuer bezahltes Schmuckstück kann sich als Fälschung erweisen. Eine Angabe zum Feingehalt garantiert nicht, dass die Ware echt ist. Kaufen Sie Schmuck und Uhren nur in anerkannten Fachgeschäften.',
     forgeryText6:
-      'Weitere Informationen zu Produktepiraterie und Markenfälschungen erhalten Sie bei der Schweizer Plattform gegen Fälschung und Piraterie STOP PIRACY: www.stop-piracy.ch',
+      'Weitere Informationen zu Produktepiraterie und Markenfälschungen erhalten Sie bei der Schweizer Plattform gegen Fälschung und Piraterie STOP PIRACY:',
   },
 
   cash: {

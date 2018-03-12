@@ -281,6 +281,7 @@ type DutyAllowanceTranslations = {
   dutyAllowanceText45: string,
   dutyAllowanceText46: string,
   dutyAllowanceText47: string,
+  dutyAllowanceText48: string,
 };
 
 type ForeignVatTranslations = {
