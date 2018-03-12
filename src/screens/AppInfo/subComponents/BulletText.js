@@ -27,7 +27,7 @@ export const BulletText = ({ text, style, onPress }: BulletTextProps) => (
     <Image
       source={square}
       resizeMode="center"
-      style={{ marginTop: verticalScale(4) }}
+      style={{ marginTop: verticalScale(8), height: moderateScale(8), width: moderateScale(8) }}
     />
     <Text
       style={{
