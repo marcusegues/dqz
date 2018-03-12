@@ -3,7 +3,7 @@
 defaults: &dazit_defaults
   working_directory: ~/project
   docker:
-    - image: circleci/node:7
+    - image: circleci/node:8
 
 version: 2
 jobs:
