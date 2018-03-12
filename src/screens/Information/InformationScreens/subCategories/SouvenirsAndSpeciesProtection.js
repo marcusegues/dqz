@@ -10,13 +10,16 @@ import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { verticalScale } from '../../../../styles/Scaling';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
+import type { Language } from '../../../../i18n/types/locale';
 
 type SouvenirsAndSpeciesProtectionInnerProps = {
   t: TFunction,
+  i18n: { language: Language },
 };
 
 const SouvenirsAndSpeciesProtectionInner = ({
   t,
+  i18n,
 }: SouvenirsAndSpeciesProtectionInnerProps) => (
   <SubCategoryContainer title={t('souvenirsAndSpeciesProtectionMainText')}>
     <CardRowText
@@ -44,7 +47,13 @@ const SouvenirsAndSpeciesProtectionInner = ({
     />
     <AppInfoLink
       text="http://www.blv.admin.ch"
-      onPress={() => Linking.openURL('http://www.blv.admin.ch')}
+      onPress={() =>
+        Linking.openURL(
+          `https://www.blv.admin.ch/blv/${
+            i18n.language
+          }/home/gebrauchsgegenstaende/reisen-mit-gebrauchsgegenstaenden/souvenirs.html`
+        )
+      }
     />
   </SubCategoryContainer>
 );

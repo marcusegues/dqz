@@ -535,7 +535,7 @@ export const fr: Locale = {
     roadTaxText2:
       "Contrairement à la vignette autoroutière destinée aux voitures de tourisme, la redevance sur le trafic des poids lourds ne concerne pas uniquement les autoroutes, mais bien l'ensemble du réseau routier.",
     roadTaxText3:
-      'Le lien suivant fournit des informations au sujet des camions et de leurs remorques: www.lsva.ch.',
+      'Le lien suivant fournit des informations au sujet des camions et de leurs remorques:',
     roadTaxText4:
       "Attention: le véhicule est également soumis à la redevance forfaitaire sur le trafic des poids lourds (RPLF) s'il est parqué et ne circule pas (par ex. une voiture d'habitation installée sur une place de camping).",
     roadTaxText5: 'Paiement et tarifs',
@@ -609,7 +609,7 @@ export const fr: Locale = {
     forgeryText5:
       "Même un bijou vendu à un prix élevé peut se révéler être une contrefaçon. Une indication de titre ne garantit pas que la marchandise est authentique. N'achetez des bijoux et des montres que dans des commerces spécialisés reconnus.",
     forgeryText6:
-      "Vous trouverez davantage d'informations sur le piratage de produits et les contrefaçons d'articles de marque sur STOP PIRACY, la plateforme suisse de lutte contre la contrefaçon et la piraterie: www.stop-piracy.ch.",
+      "Vous trouverez davantage d'informations sur le piratage de produits et les contrefaçons d'articles de marque sur STOP PIRACY, la plateforme suisse de lutte contre la contrefaçon et la piraterie:",
   },
 
   cash: {

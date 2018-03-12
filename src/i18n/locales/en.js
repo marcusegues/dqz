@@ -518,8 +518,7 @@ export const en: Locale = {
       'In Switzerland, a heavy vehicle charge is levied for vehicles and trailers with a total weight of over 3.5 tonnes. The charge is levied as a daily lump sum for buses, heavy motorhomes, heavy passenger vehicles and their trailers over 3.5 tonnes.',
     roadTaxText2:
       'Unlike the motorway tax sticker for passenger cars, the heavy vehicle charge is payable on the entire road network, and not only on motorways.',
-    roadTaxText3:
-      'For heavy goods vehicles and their trailers, see: www.lsva.ch',
+    roadTaxText3: 'For heavy goods vehicles and their trailers, see:',
     roadTaxText4:
       'Please note: The vehicle is subject to the lump-sum heavy vehicle charge even if it is only parked and not driven (e.g. motorhome on a campsite).',
     roadTaxText5: 'Payment and rates',
@@ -538,7 +537,7 @@ export const en: Locale = {
       'Monthly and annual rates in accordance with form number 15.91.',
     roadTaxCategory1: 'Company cars, coaches and articulated buses',
     roadTaxCategory2: 'Motor caravan or camper',
-    roadTaxCategory3: 'caravan',
+    roadTaxCategory3: 'Caravan',
     roadTaxCategory4: 'Heavy passenger cars',
     roadTaxCategory5:
       'Trailers of over 3.5 tonnes pulled by the above vehicles or light motor vehicles',
@@ -592,7 +591,7 @@ export const en: Locale = {
     forgeryText5:
       'Even an expensive piece of jewellery can prove to be a forgery. An indication of the fineness does not guarantee that the goods are genuine. Buy jewellery and watches only in authorised specialist shops.',
     forgeryText6:
-      'Further information on product piracy and counterfeits can be obtained from the Swiss Anti-Counterfeiting and Piracy Platform STOP PIRACY: www.stop-piracy.ch',
+      'Further information on product piracy and counterfeits can be obtained from the Swiss Anti-Counterfeiting and Piracy Platform STOP PIRACY:',
   },
 
   cash: {

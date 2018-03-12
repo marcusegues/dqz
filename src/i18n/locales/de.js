@@ -594,7 +594,7 @@ export const de: Locale = {
     forgeryText5:
       'Selbst ein teuer bezahltes Schmuckstück kann sich als Fälschung erweisen. Eine Angabe zum Feingehalt garantiert nicht, dass die Ware echt ist. Kaufen Sie Schmuck und Uhren nur in anerkannten Fachgeschäften.',
     forgeryText6:
-      'Weitere Informationen zu Produktepiraterie und Markenfälschungen erhalten Sie bei der Schweizer Plattform gegen Fälschung und Piraterie STOP PIRACY: www.stop-piracy.ch',
+      'Weitere Informationen zu Produktepiraterie und Markenfälschungen erhalten Sie bei der Schweizer Plattform gegen Fälschung und Piraterie STOP PIRACY:',
   },
 
   cash: {

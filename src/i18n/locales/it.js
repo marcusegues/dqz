@@ -527,7 +527,7 @@ export const it: Locale = {
       'In Svizzera gli autoveicoli e i rimorchi con un peso totale eccedente le 3,5 tonnellate sono soggetti a una tassa sul traffico pesante. Per i pullman, i camper pesanti, le automobili pesanti e per i loro rimorchi eccedenti le 3,5 tonnellate, la tassa è forfetaria e riscossa al giorno.',
     roadTaxText2:
       'Contrariamente al contrassegno autostradale, la tassa sul traffico pesante è dovuta sull’intera rete stradale e non solo sulle autostrade.',
-    roadTaxText3: 'Per gli autocarri e i loro rimorchi vedi: www.lsva.ch',
+    roadTaxText3: 'Per gli autocarri e i loro rimorchi vedi:',
     roadTaxText4:
       'Attenzione: L’autoveicolo è soggetto alla TFTP anche se è spento e non viene spostato (p. es. camper in un campeggio).',
     roadTaxText5: 'Pagamento e tariffe',
@@ -600,7 +600,7 @@ export const it: Locale = {
     forgeryText5:
       'Anche un gioiello molto caro può essere contraffatto. Neanche l’indicazione del titolo ne garantisce l’autenticità. Si consiglia quindi di acquistare orologi e gioielli solo in negozi specializzati riconosciuti.',
     forgeryText6:
-      'Ulteriori informazioni sulla pirateria dei prodotti e sullla contraffazione sono disponibili sulla Piattaforma svizzera di lotta alla contraffazione e alla pirateria STOP ALLA PIRATERIA: www.stop-piracy.ch',
+      'Ulteriori informazioni sulla pirateria dei prodotti e sullla contraffazione sono disponibili sulla Piattaforma svizzera di lotta alla contraffazione e alla pirateria STOP ALLA PIRATERIA:',
   },
 
   cash: {
