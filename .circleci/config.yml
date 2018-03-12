@@ -79,9 +79,9 @@ jobs:
       - run: npx exp login -u $EXP_USERNAME -p $EXP_PASSWORD
       - run: |
           if [[ $CIRCLE_TAG != "" ]]; then
-            exp publish --release-channel $CIRCLE_TAG
+            npx exp publish --release-channel $CIRCLE_TAG
           else
-            exp publish --release-channel $CIRCLE_BRANCH
+            npx exp publish --release-channel $CIRCLE_BRANCH
           fi
 
 workflows:
