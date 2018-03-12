@@ -75,8 +75,8 @@ jobs:
           path: ~/project/docs
           destination: docs
 
-      - run: sudo npm install -g exp
-      - run: exp login -u $EXP_USERNAME -p $EXP_PASSWORD
+      # - run: sudo npm install -g exp
+      - run: npx exp login -u $EXP_USERNAME -p $EXP_PASSWORD
       - run: |
           if [[ $CIRCLE_TAG != "" ]]; then
             exp publish --release-channel $CIRCLE_TAG
