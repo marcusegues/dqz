@@ -49,7 +49,8 @@ export const fr: Locale = {
   snackBar: {
     limitExceeded:
       "Valeur des biens pour l'application dépassée. S'il vous plaît signaler vos marchandises oralement au poste-frontière.",
-    offline: "Vous êtes hors ligne. Sauf pour la fonction de paiement, cependant, vous pouvez utiliser toutes les autres fonctionnalités de l'application.",
+    offline:
+      "Vous êtes hors ligne. Sauf pour la fonction de paiement, cependant, vous pouvez utiliser toutes les autres fonctionnalités de l'application.",
     paymentAborted: 'Paiement annulé',
     paymentFailed: 'Paiement échoué',
     paymentAbortedRightText: 'OK',
@@ -168,10 +169,12 @@ export const fr: Locale = {
     paidOn: 'Payé le {{date}} à {{time}} h avec:',
     transactionId: 'ID de transaction (SIX): {{value}}',
 
-    receiptValidFrom: 'La présente quittance est valable pour le passage frontalier à partir de:',
+    receiptValidFrom:
+      'La présente quittance est valable pour le passage frontalier à partir de:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} à {{endDate}} | {{endTime}}',
-    receiptValidOn: 'La présente quittance est valable pour le passage frontalier sur',
+    receiptValidOn:
+      'La présente quittance est valable pour le passage frontalier sur',
     receiptValidOnDate: '{{date}} de {{startTime}} à {{endTime}}',
 
     sumText: 'Total (en francs): {{value}}',
@@ -272,8 +275,7 @@ export const fr: Locale = {
       "Vous pouvez également déclarer les marchandises au moyen de l'application QuickZoll ou par écrit, par l'intermédiaire des boîtes à déclarations, aux passages frontières non occupés par du personnel douanier. Vous trouverez ici des informations à ce sujet. Veuillez noter qu'en cas de dépassement des franchises quantitatives pour les boissons alcooliques, les tabacs manufacturés et certaines denrées alimentaires, vous devrez payer des droits de douane dans tous les cas. Informations complémentaires",
     vatAllowanceText15:
       "Nous attirons en outre votre attention sur le fait que certaines marchandises (par ex. contrefaçons, armes, plantes, animaux, produits animaux, marchandises soumises aux dispositions sur la conservation des espèces) peuvent être interdites à l'importation ou soumises à des restrictions.",
-    vatAllowanceText16:
-      "",
+    vatAllowanceText16: '',
     vatAllowanceText17:
       "Exemples d'octroi de la franchise-valeur\n" +
       'Octroi de la franchise-valeur à des personnes seules',
@@ -397,6 +399,7 @@ export const fr: Locale = {
       "Marchandises commandées à l'étranger et livrées par la Poste ou un service de courrier rapide",
     dutyAllowanceText47:
       "D'autres dispositions sont applicables aux marchandises que vous commandez à l'étranger (par ex. sur Internet) et qui vous sont expédiées par la Poste ou par un service de courrier rapide. Informations complémentaires",
+    dutyAllowanceText48: 'More information',
   },
 
   personalEffects: {
@@ -696,7 +699,7 @@ export const fr: Locale = {
 
   information: {
     informationTitle: 'Informations utiles',
-    informationSubCategoryTitle: "Je transporte des animaux ou des plantes",
+    informationSubCategoryTitle: 'Je transporte des animaux ou des plantes',
 
     customsProceduresMainText: 'Marche à suivre lors du passage à la douane',
 
@@ -765,7 +768,7 @@ export const fr: Locale = {
     importantSoonText2:
       "Vous ne pouvez utiliser l'application que pour les marchandises que vous importez pour votre usage privé ou pour en faire cadeau.",
     importantSoonText3:
-      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7% soit également appliqué aux marchandises qui sont soumises au taux réduit (2,5%), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé.",
+      'En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7% soit également appliqué aux marchandises qui sont soumises au taux réduit (2,5%), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé.',
     importantSoonText4:
       'Les redevances ne peuvent être payées que par carte de crédit (Visa, Mastercard) (sans possibilité de remboursement). Les marchandises sont dédouanées une fois que les redevances ont été payées.',
     importantSoonText5:
@@ -813,7 +816,7 @@ export const fr: Locale = {
       "Les marchandises qui sont exportées ne peuvent pas être déclarées à l'aide de l'application. Vous trouverez ici des informations relatives aux achats effectués en Suisse en franchise de redevances (tax free).",
 
     legal: 'Informations juridiques',
-    usage: "Utilisation",
+    usage: 'Utilisation',
     legalText1:
       "Le dédouanement effectué avec l'application lie la personne assujettie à l'obligation de déclarer (art. 33 de la loi sur les douanes; RS 631.0). Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
     legalText2:
@@ -869,12 +872,12 @@ export const fr: Locale = {
   legalNoticeModal: {
     importantNote: 'Remarque importante',
     vatRateInfo:
-    'Veuillez noter que\n' +
-    '• vous ne pouvez entrer en Suisse qu\'une fois par jour civil avec des marchandises que vous avez dédouanées avec QuickZoll;\n'+
-    '• les marchandises déclarées sont dédouanées au taux uniforme de TVA de 7,7 %;\n' +
-    '• les redevances payées avec l\'application ne sont pas remboursées.\n' +
-    'Vous trouverez de plus amples informations ici:',
-      termsOfService: 'Termes et Conditions',
+      'Veuillez noter que\n' +
+      "• vous ne pouvez entrer en Suisse qu'une fois par jour civil avec des marchandises que vous avez dédouanées avec QuickZoll;\n" +
+      '• les marchandises déclarées sont dédouanées au taux uniforme de TVA de 7,7 %;\n' +
+      "• les redevances payées avec l'application ne sont pas remboursées.\n" +
+      'Vous trouverez de plus amples informations ici:',
+    termsOfService: 'Termes et Conditions',
     acceptance: "J'accepte les termes et conditions que j'ai lus et compris.",
     confirm: 'Confirmer',
     abort: 'Abandonner',
