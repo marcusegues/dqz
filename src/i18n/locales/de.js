@@ -49,7 +49,8 @@ export const de: Locale = {
   snackBar: {
     limitExceeded:
       'Warenwert für die App überschritten. Bitte melden Sie Ihre Waren mündlich beim Grenzübergang an.',
-    offline: 'Sie sind offline. Ausser der Bezahlfunktion können Sie jedoch alle anderen Funktionen der App benutzen.',
+    offline:
+      'Sie sind offline. Ausser der Bezahlfunktion können Sie jedoch alle anderen Funktionen der App benutzen.',
     paymentAborted: 'Zahlung storniert',
     paymentFailed: 'Zahlung fehlgeschlagen',
     paymentAbortedRightText: 'OK',
@@ -823,12 +824,12 @@ export const de: Locale = {
   legalNoticeModal: {
     importantNote: 'Wichtiger Hinweis',
     vatRateInfo:
-    'Bitte beachten Sie, dass \n' +
-    '• Sie pro Kalendertag nur einmal mit Waren einreisen dürfen, die Sie mit QuickZoll verzollt haben;\n' +
-    '• Angemeldete Waren mit dem einheitlichen Mehrwertsteuersatz von 7,7 % verzollt werden;\n' +
-    '• Mit der App bezahlte Abgaben nicht zurückerstattet werden.\n' +
-    'Weitere Informationen finden Sie hier:',
-      termsOfService: 'Nutzungsbedingungen',
+      'Bitte beachten Sie, dass \n' +
+      '• Sie pro Kalendertag nur einmal mit Waren einreisen dürfen, die Sie mit QuickZoll verzollt haben;\n' +
+      '• Angemeldete Waren mit dem einheitlichen Mehrwertsteuersatz von 7,7 % verzollt werden;\n' +
+      '• Mit der App bezahlte Abgaben nicht zurückerstattet werden.\n' +
+      'Weitere Informationen finden Sie hier:',
+    termsOfService: 'Nutzungsbedingungen',
     acceptance:
       'Hiermit akzeptiere ich die Nutzungsbedingungen, die ich gelesen und verstanden habe.',
     confirm: 'Bestätigen',

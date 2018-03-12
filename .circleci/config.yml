@@ -3,7 +3,7 @@
 defaults: &dazit_defaults
   working_directory: ~/project
   docker:
-    - image: circleci/node:7
+    - image: circleci/node:8
 
 version: 2
 jobs:
@@ -17,9 +17,9 @@ jobs:
 
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
+          - v25-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          - v25-dependencies-
 
       - run:
           name: Install!
@@ -33,7 +33,7 @@ jobs:
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: v25-dependencies-{{ checksum "package.json" }}
 
       - run:
           name: Lint!
@@ -76,7 +76,6 @@ jobs:
           destination: docs
 
       - run: sudo npm install -g exp
-      - run: export EXPO_DEBUG=true
       - run: exp login -u $EXP_USERNAME -p $EXP_PASSWORD
       - run: |
           if [[ $CIRCLE_TAG != "" ]]; then

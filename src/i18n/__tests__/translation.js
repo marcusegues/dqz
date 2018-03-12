@@ -8,7 +8,7 @@ const init = lng =>
   i18n.init({
     fallbackLng: 'de',
     lng,
-    debug: true,
+    debug: false,
     resources: {
       en,
       de,

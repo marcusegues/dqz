@@ -49,7 +49,8 @@ export const it: Locale = {
   snackBar: {
     limitExceeded:
       "Il valore dei beni per l'app è stato superato. Si prega di segnalare le vostre merci per via orale al valico di frontiera.",
-    offline: 'Sei offline. Ad eccezione della funzione di pagamento, tuttavia, puoi utilizzare tutte le altre funzionalità dell\'app.',
+    offline:
+      "Sei offline. Ad eccezione della funzione di pagamento, tuttavia, puoi utilizzare tutte le altre funzionalità dell'app.",
     paymentAborted: 'Paiement annulé',
     paymentFailed: 'Pagamento annullato',
     paymentAbortedRightText: 'OK',
@@ -161,7 +162,8 @@ export const it: Locale = {
     paidOn: 'Pagamento effettuato in data {{date}} alle ore {{time}} con:',
     transactionId: 'ID della transazione (SIX): {{value}}',
 
-    receiptValidFrom: 'Il giustificativo è valido per il valico di frontiera da:',
+    receiptValidFrom:
+      'Il giustificativo è valido per il valico di frontiera da:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} fino al {{endDate}} | {{endTime}}',
     receiptValidOn: 'Il giustificativo è valido per il valico di frontiera su:',
@@ -872,12 +874,12 @@ export const it: Locale = {
   legalNoticeModal: {
     importantNote: 'Indicazione importante',
     vatRateInfo:
-    'Si prega di tener conto che\n' +
-    '• al giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll;\n' +
-    '• le merci dichiarate vengono imposte all’aliquota IVA unica del 7,7 %;\n' +
-    '• i tributi pagati con l’app non vengono rimborsati.\n' +
-    'Ulteriori informazioni sono disponibili qui:',
-      termsOfService: 'Termini e condizioni',
+      'Si prega di tener conto che\n' +
+      '• al giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll;\n' +
+      '• le merci dichiarate vengono imposte all’aliquota IVA unica del 7,7 %;\n' +
+      '• i tributi pagati con l’app non vengono rimborsati.\n' +
+      'Ulteriori informazioni sono disponibili qui:',
+    termsOfService: 'Termini e condizioni',
     acceptance: 'Accetto i termini e le condizioni che ho letto e compreso.',
     confirm: 'Confermare',
     abort: 'Abortire',
