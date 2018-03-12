@@ -418,7 +418,7 @@ export const it: Locale = {
     foreignVatText3:
       'Per quanto riguarda la restituzione ogni Stato applica le proprie condizioni. Se del caso, il venditore compila un modulo di restiuzione sul quale l’autorità doganale estera conferma l’esportazione in Svizzera.',
     foreignVatText4:
-      'Non siamo in grado di fornire ulteriori informazioni in merito alla restituzione dell’IVA estera. A tale proposito occorre rivolgersi alla rispettiva autorità doganale. Le autorità doganali estere sono reperibili al seguente link dell’Organizzazione mondiale delle dogane: www.wcoomd.org',
+      'Non siamo in grado di fornire ulteriori informazioni in merito alla restituzione dell’IVA estera. A tale proposito occorre rivolgersi alla rispettiva autorità doganale. Le autorità doganali estere sono reperibili al seguente link dell’Organizzazione mondiale delle dogane:',
     foreignVatText5:
       'L’IVA svizzera è dovuta anche nel caso in cui quella estera non viene restituita. Nell’ambito dell’IVA non esiste una convenzione di doppia imposizione.',
   },
@@ -426,7 +426,7 @@ export const it: Locale = {
   animals: {
     animalsMainText: 'Animali: animali da compagnia, cani, gatti e cavalli',
     animalsText1:
-      'Ulteriori informazioni in merito a cani, gatti e altri animali da compagnia nonché ai cavalli sono disponibili presso l’Ufficio federale della sicurezza alimentare e di veterinaria (USAV): https://www.blv.admin.ch',
+      'Ulteriori informazioni in merito a cani, gatti e altri animali da compagnia nonché ai cavalli sono disponibili presso l’Ufficio federale della sicurezza alimentare e di veterinaria (USAV):',
     animalsText2: 'Tributi',
     animalsText3:
       'Se si supera il limite di franchigia secondo il valore di 300 franchi, per gli animali è dovuta l’IVA. Per informazioni dettagliate consultare la rubrica:',

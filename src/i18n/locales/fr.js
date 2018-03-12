@@ -426,7 +426,7 @@ export const fr: Locale = {
     foreignVatText3:
       "Pour le remboursement, les conditions sont différentes en fonction de l'État concerné. Le cas échéant, le vendeur doit vous remettre un formulaire de remboursement rempli et l'autorité douanière étrangère doit y attester l'exportation en Suisse.",
     foreignVatText4:
-      "Nous ne pouvons pas vous fournir de plus amples informations sur le remboursement de la TVA étrangère. Le cas échéant, veuillez vous adresser à l'autorité douanière compétente pour obtenir les renseignements nécessaires. Vous trouverez les coordonnées des autorités douanières étrangères sur le site de l'Organisation mondiale des douanes: www.wcoomd.org.",
+      "Nous ne pouvons pas vous fournir de plus amples informations sur le remboursement de la TVA étrangère. Le cas échéant, veuillez vous adresser à l'autorité douanière compétente pour obtenir les renseignements nécessaires. Vous trouverez les coordonnées des autorités douanières étrangères sur le site de l'Organisation mondiale des douanes:",
     foreignVatText5:
       "La TVA suisse doit être payée même si la TVA étrangère n'est pas remboursée. Il n'existe aucune convention contre les doubles impositions en matière de TVA.",
   },
@@ -435,7 +435,7 @@ export const fr: Locale = {
     animalsMainText:
       'Animaux: animaux domestiques, notamment chiens, chats et chevaux',
     animalsText1:
-      "Vous trouverez les informations relatives à l'importation d'animaux domestiques, notamment de chiens, de chats et de chevaux, sur le site Internet de l'Office fédéral de la sécurité alimentaire et des affaires vétérinaires (OSAV): http://www.blv.admin.ch.",
+      "Vous trouverez les informations relatives à l'importation d'animaux domestiques, notamment de chiens, de chats et de chevaux, sur le site Internet de l'Office fédéral de la sécurité alimentaire et des affaires vétérinaires (OSAV):",
     animalsText2: 'Redevances',
     animalsText3:
       'Si la franchise-valeur de 300 francs est dépassée, vous devrez vous acquitter de la TVA pour les animaux transportés. Vous trouverez de plus amples informations à ce sujet dans la rubrique suivante:',

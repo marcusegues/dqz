@@ -407,8 +407,7 @@ export const en: Locale = {
     foreignVatText3:
       'Different rules apply to VAT refunds in different countries. If need be, the seller completes a refund form, on which the foreign customs authority confirms exportation to Switzerland.',
     foreignVatText4:
-      'Unfortunately, we are unable to provide you with more detailed information concerning the refund of foreign VAT. If need be, the relevant foreign customs authority will be able to assist you. Foreign customs authorities can be found at the following link to the World Customs Organization:\n' +
-      'www.wcoomd.org',
+      'Unfortunately, we are unable to provide you with more detailed information concerning the refund of foreign VAT. If need be, the relevant foreign customs authority will be able to assist you. Foreign customs authorities can be found at the following link to the World Customs Organization:',
     foreignVatText5:
       'Swiss VAT must be paid even if foreign VAT is not refunded. There are no double taxation agreements in the area of value added tax.',
   },
@@ -416,8 +415,7 @@ export const en: Locale = {
   animals: {
     animalsMainText: 'Animals: pets, dogs, cats and horses',
     animalsText1:
-      'For dogs, cats, other pets and horses, you can obtain information from the Federal Food Safety and Veterinary Office FSVO:\n' +
-      'http://www.blv.admin.ch',
+      'For dogs, cats, other pets and horses, you can obtain information from the Federal Food Safety and Veterinary Office FSVO:',
     animalsText2: 'Duties',
     animalsText3:
       'If the tax-free limit of CHF 300 is exceeded, you have to pay VAT for animals. More detailed information can be found at:',
