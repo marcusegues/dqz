@@ -56,6 +56,7 @@ import { AuthorisationRequirements } from '../screens/Information/InformationScr
 import { PurchasesOnlineOffline } from '../screens/Information/InformationScreens/mainCategories/PurchasesOnlineOffline';
 import { addListener } from './reactNavigation';
 import { CartIcon } from '../components/Headers/subcomponents/CartIcon';
+import { UpdateTheApp } from '../screens/UpdateTheApp/UpdateTheApp';
 
 export type NavigationObject = { navigation: Navigation };
 
@@ -509,6 +510,12 @@ export const stackNavigatorScreens = {
       headerLeft: (
         <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
+    }),
+  },
+  UpdateTheApp: {
+    screen: UpdateTheApp,
+    navigationOptions: () => ({
+      header: null,
     }),
   },
 };

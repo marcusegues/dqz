@@ -852,6 +852,12 @@ export const de: Locale = {
     acceptance:
       'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 % auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
   },
+  updateTheApp: {
+    title: 'Neue Version verfügbar!',
+    subtitle:
+      'Bitte führen Sie eine Aktualisierung von QuickZoll durch. Die neue Version ist ab sofort im App Store erhältlich.',
+    buttonText: 'Zum App Store',
+  },
   units: {
     kilo: 'kg',
     kilo_plural: 'kg',

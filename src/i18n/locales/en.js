@@ -850,6 +850,12 @@ export const en: Locale = {
     acceptance:
       'By using the app, you accept that the VAT rate is 7.7%; is also applied to goods that are actually subject to the reduced tax rate (food, animal feed, medicines and books).',
   },
+  updateTheApp: {
+    title: 'New version available!',
+    subtitle:
+      'Please update QuickZoll. The new version is now available in the App Store.',
+    buttonText: 'To the App Store',
+  },
   units: {
     kilo: 'kg',
     kilo_plural: 'kgs',

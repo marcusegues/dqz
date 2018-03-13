@@ -114,6 +114,8 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/images/info/camper.png'),
         require('./assets/images/info/pendant.png'),
         require('./assets/images/info/trailer.png'),
+        require('./assets/images/updateTheAppTopImage.jpg'),
+        require('./assets/images/updateTheAppBottomIcon.png'),
         require('./assets/images/info/van.png'),
 
         require('./assets/icons/mwst.png'),

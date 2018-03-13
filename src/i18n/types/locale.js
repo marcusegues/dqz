@@ -639,6 +639,12 @@ type FurtherInformationModalTranslations = {
   acceptance: string,
 };
 
+type UpdateTheAppTranslations = {
+  title: string,
+  subtitle: string,
+  buttonText: string,
+};
+
 type UnitsTranslations = {
   kilo: string,
   kiloOrLiter: string,
@@ -690,4 +696,5 @@ export type Locale = {
   furtherInformationModal: FurtherInformationModalTranslations,
   units: UnitsTranslations,
   purchasesOnlineOffline: PurchasesOnlineOfflineTranslations,
+  updateTheApp: UpdateTheAppTranslations,
 };
