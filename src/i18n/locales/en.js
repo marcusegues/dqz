@@ -66,6 +66,7 @@ export const en: Locale = {
     confirmationVat: 'I hereby confirm that I accept the single VAT rate of',
     confirmationVat2: 'when declaring goods.',
     vatInformation: 'Further information',
+    skipThisStep: ' Skip this step',
   },
   peopleInput: {
     peopleInputQuestion:

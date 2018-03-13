@@ -18,6 +18,7 @@ import {
   storeSettingsHasLanguage,
 } from '../../asyncStorage/storageApi';
 import { KeyNotSet } from '../../asyncStorage/asyncStorage';
+import { SkipThisStep } from './subcomponents/SkipThisStep';
 
 type NextScreenType = 'OnBoardingTaxScreen' | 'MainMenu';
 
@@ -115,6 +116,13 @@ class OnBoardingInner extends React.Component<
             storeSettingsHasLanguage(i18n.language);
             navigation.dispatch({ type: 'NAVIGATE', screen: nextScreen });
           }}
+        />
+        <SkipThisStep
+          onPress={() => {
+            storeSettingsHasLanguage(i18n.language);
+            navigation.dispatch({ type: 'NAVIGATE', screen: nextScreen });
+          }}
+          text={t('onBoarding:skipThisStep')}
         />
       </OnBoardingContainer>
     );

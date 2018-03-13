@@ -67,6 +67,7 @@ type OnBoardingTranslations = {
   confirmationVat: string,
   confirmationVat2: string,
   vatInformation: string,
+  skipThisStep: string,
 };
 
 type PeopleInputTranslations = {

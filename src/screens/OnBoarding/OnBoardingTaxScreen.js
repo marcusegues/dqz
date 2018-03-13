@@ -12,6 +12,7 @@ import { MAIN_RED } from '../../styles/colors';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { storeSettingsAcceptRate } from '../../asyncStorage/storageApi';
 import { FurtherInformationModal } from '../../components/Modals/FurtherInformationModal/FurtherInformationModal';
+import { SkipThisStep } from './subcomponents/SkipThisStep';
 
 const ownStyles = {
   container: {
@@ -75,6 +76,14 @@ class OnBoardingTaxScreenInner extends React.Component<
             navigation.dispatch({ type: 'NAVIGATE', screen: 'MainMenu' });
           }}
         />
+        <SkipThisStep
+          onPress={() => {
+            storeSettingsAcceptRate(true);
+            navigation.dispatch({ type: 'NAVIGATE', screen: 'MainMenu' });
+          }}
+          text={t('skipThisStep')}
+        />
+
         <FurtherInformationModal
           modalVisible={showModal}
           navigation={navigation}
