@@ -15,7 +15,7 @@ export const TextInputWrapper = ({
 }: TextInputWrapperProps) => (
   <TextInput
     keyboardType="numeric"
-    maxLength={5}
+    maxLength={8}
     underlineColorAndroid="transparent"
     blurOnSubmit
     style={[pickerModalStyle.textInput, { alignSelf: 'center' }]}

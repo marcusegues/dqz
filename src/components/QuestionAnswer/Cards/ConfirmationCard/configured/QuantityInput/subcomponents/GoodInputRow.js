@@ -118,7 +118,7 @@ const GoodInputRowInner = ({
         <CardRowText text={t(`categories:${category}`)} />
         <View style={{ marginTop: 10 }}>
           <QuantityIcon
-            quantity={totalQuantity.toFixed(2)}
+            quantity={totalQuantity.toFixed(3)}
             unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
               count: totalQuantity,
             })}
