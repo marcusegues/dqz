@@ -37,7 +37,7 @@ const QuantityRowInner = ({
     <View style={rowStyles.rowContent}>
       <View style={{ flex: 1 }}>
         <CardRowText
-          text={`${quantity.toFixed(2)} ${t(
+          text={`${quantity.toFixed(3)} ${t(
             `units:${CategoriesInfo.getIn([category, 'unit'], '')}`,
             { count: quantity }
           )}`}
