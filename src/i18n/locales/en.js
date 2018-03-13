@@ -696,6 +696,7 @@ export const en: Locale = {
       'Authorisation requirement / restrictions',
     purchasesOnlineOfflineMainText:
       'Online shopping, postal and courier consignments',
+    borderCrossingsMainText: 'Border Crossings',
   },
   appInformation: {
     appInfoTitle: 'About the app',

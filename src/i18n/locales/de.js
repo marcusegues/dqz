@@ -693,6 +693,7 @@ export const de: Locale = {
     authorisationRequirementsMainText: 'Bewilligungspflichtig / Beschränkungen',
     purchasesOnlineOfflineMainText:
       'Interneteinkauf, Post- und Kuriersendungen',
+    borderCrossingsMainText: 'Grenzübergänge',
   },
   appInformation: {
     appInfoTitle: 'Über die App',

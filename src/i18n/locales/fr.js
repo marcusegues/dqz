@@ -700,38 +700,26 @@ export const fr: Locale = {
   information: {
     informationTitle: 'Informations utiles',
     informationSubCategoryTitle: 'Je transporte des animaux ou des plantes',
-
     customsProceduresMainText: 'Marche à suivre lors du passage à la douane',
-
     travelDocumentsMainText: 'Documents de voyage',
-
     declarationMainText: 'Je transporte des marchandises',
     animalsAndPlantsMainText: 'Je transporte des animaux ou des plantes',
     vehiclesMainText: 'Je voyage avec un véhicule',
     entryByTrainMainText: 'Entrée en Suisse par voie ferroviaire',
     prohibitionsAndRestrictionsMainText: 'Interdictions et restrictions',
-
     vatAllowanceMainText: 'Franchise-valeur de 300 francs',
-
     dutyAllowanceMainText:
       'Franchises quantitatives: denrées alimentaires, alcool et tabac',
-
     personalEffectsMainText: 'Effets personnels et dispositions de voyage',
-
     foreignVatMainText: 'Remboursement de la TVA étrangère',
-
     animalsMainText: 'Animaux: animaux domestiques, chiens, chats et chevaux',
-
     plantsMainText: 'Plantes',
-
     souvenirsAndSpeciesProtectionMainText:
       'Souvenirs et protection des espèces (CITES)',
-
     highwayVignetteMainText: 'Vignette autoroutière',
     roadTaxMainText:
       'Redevance sur le trafic routier applicable aux véhicules de plus de 3,5 tonnes (RPLF)',
     fuelAndRepairsMainText: 'Carburant et réparation',
-
     forgeryMainText: 'Contrefaçons',
     cashMainText: 'Argent liquide',
     foodMainText: 'Restrictions applicables aux denrées alimentaires',
@@ -739,6 +727,7 @@ export const fr: Locale = {
       'Assujettissement à une autorisation / restrictions',
     purchasesOnlineOfflineMainText:
       'Achats effectués sur Internet, envois expédiés par poste ou par courrier rapide',
+    borderCrossingsMainText: 'Passages frontaliers',
   },
   appInformation: {
     appInfoTitle: "Informations relatives à l'application",
