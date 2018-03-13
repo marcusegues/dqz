@@ -91,9 +91,8 @@ class CurrencyPickerModalInner extends React.Component<
       redButtonText = t(['currencyPickerTooSmallLargeAmount']);
     }
 
+    // eslint-disable-next-line no-empty
     if (large && !hasOffsettingAmount(amounts, amount, currency)) {
-      disabledRedButton = true;
-      redButtonText = t(['currencyPickerNoOffsettingInput']);
     }
 
     const subButtonText: string = `CHF ${

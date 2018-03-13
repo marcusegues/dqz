@@ -767,55 +767,62 @@ export const it: Locale = {
     conditions: 'Condizioni quadro',
     importantSoon: 'L’essenziale in breve',
     importantSoonText1:
-      'L’app può essere impiegata per la stessa persona o persone solo una volta al giorno (giorno solare).',
+      "L'app può essere utilizzata offline ad eccezione del modulo di pagamento.",
     importantSoonText2:
-      'L’app può essere utilizzata solo per merci importate per uso privato o come regali.',
+      ' Al giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll.',
     importantSoonText3:
-      'L’utilizzo di QuickZoll comporta l’accettazione della condizione che l’aliquota IVA del 7,7% viene applicata anche alle merci in realtà soggette all’aliquota ridotta del 2,5% (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l’applicazione dell’aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato.',
+      'QuickZoll può essere utilizzata solo per merci importate per uso privato o come regali.',
     importantSoonText4:
-      'Il pagamento è possibile solo mediante carta di credito (Visa, Mastercard; senza possibilità di rimborso). Dopo il pagamento dei tributi le merci sono imposte.',
+      "L'utilizzo di QuickZoll comporta l'accettazione della condizione che l'aliquota IVA del 7,7 % viene applicata anche alle merci in realtà soggette all'aliquota ridotta del 2,5 % (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l'applicazione dell'aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato dal personale dell'Amministrazione federale delle dogane (AFD).",
     importantSoonText5:
-      'L’imposizione deve avvenire prima del passaggio del confine (al più presto 48 ore prima) o al più tardi al valico di confine.',
+      'Il pagamento è possibile solo con carta di credito (Visa, Mastercard). Dopo il pagamento dei tributi le merci sono imposte.',
     importantSoonText6:
-      'Dopo l’imposizione possono essere utilizzati anche i seguenti valichi di confine:',
+      "L'imposizione deve avvenire al più presto 48 ore prima del passaggio del confine e al più tardi al valico di confine.",
     importantSoonText7:
-      'valichi presso i quali è presente il personale doganale;',
-    importantSoonText8: 'il passaggio verde della dogana negli aeroporti.',
+      "Dopo l'imposizione con QuickZoll possono essere utilizzati tutti i valichi di confine ufficiali, indipendentemente dal fatto se è presente personale dell'AFD o meno. Negli aeroporti invece può essere utilizzato il passaggio verde della dogana.",
+    importantSoonText8:
+      "Se richiesto, il giustificativo deve essere presentato al personale dell'AFD, che in caso di necessità lo fotografa.",
     importantSoonText9:
-      'Il giustificativo rilasciato dalla dogana deve essere presentato al personale della dogana svizzera se richiesto. Il personale doganale fotografa il giustificativo se necessario.',
+      'Non è necessario registrarsi. Non vengono rilevati dati.',
+    importantSoonBoldText1:
+      "I tributi pagati con l'app non vengono rimborsati.",
 
     howToDeclareYourGoods: 'Come imporre le merci:',
     howToDeclareYourGoodsText1:
-      'Dichiarare tutte le merci trasportate (salvo gli oggetti d’uso personale e provviste da viaggio). Le quantità ammesse in franchigia e il limite di franchigia secondo il valore a cui si ha diritto vengono detratti automaticamente.',
+      "Dichiarare tutte le merci trasportate (salvo gli oggetti d'uso personale e provviste da viaggio). Le quantità ammesse in franchigia e il limite di franchigia secondo il valore a cui si ha diritto vengono detratti automaticamente.",
     howToDeclareYourGoodsText2:
       'Inserire il valore nella valuta estera in base alla ricevuta. Il valore viene determinato applicando il corso del cambio (vendita) del giorno precedente (ultimo giorno lavorativo).',
     howToDeclareYourGoodsText3:
-      'Stabilire un intervallo di tempo di due ore per il passaggio del confine. Il giustificativo è valido solo durante questo arco di tempo. Se non è possibile rispettarlo, occorre rivolgersi a un valico di confine in cui è presente il personale della dogana svizzera per spiegare il motivo per cui non è stato possibile varcare il confine nell’intervallo di tempo della validità. Senza motivazione credibile i tributi vengono riscossi una seconda volta.',
+      "Stabilire un intervallo di tempo di due ore per il passaggio del confine. Il giustificativo è valido solo durante questo arco di tempo. Se non è possibile rispettarlo, occorre rivolgersi a un valico di confine in cui è presente il personale dell'AFD per spiegare il motivo per cui non è stato possibile varcare il confine nell'intervallo di tempo della validità. Senza motivazione credibile i tributi vengono riscossi una seconda volta.",
     howToDeclareYourGoodsText4:
-      'Se l’imposizione concerne se stessi e le persone con cui si viaggia oppure un’altra persona il passaggio del confine deve avvenire congiuntamente.',
+      'Se il giustificativo vale per più persone, queste devono passare il confine congiuntamente.',
     howToDeclareYourGoodsText5:
-      'Prima del pagamento la dichiarazione può essere corretta in qualsiasi momento, mentre dopo non è più possibile correggerla. Una volta effettuato il pagamento, le merci estere acquistate successivamente devono essere dichiarate presso un valico di confine occupato da personale doganale svizzero.',
+      "Prima del pagamento la dichiarazione può essere corretta in qualsiasi momento. Dopo aver effettuato il pagamento, in QuickZoll non è più possibile apportare modifiche. Una volta effettuato il pagamento, le merci estere acquistate successivamente devono essere dichiarate presso un valico di confine occupato da personale dell'AFD.",
     howToDeclareYourGoodsText6:
-      'Il giustificativo rilasciato dalla dogana svizzera va conservato almeno per un anno e può essere conservato anche sotto forma di immagine.',
+      "Affinché l'operazione di pagamento abbia buon esito è necessaria una connessione a Internet. Se l'imposizione con QuickZoll non è possibile (p. es. connessione Internet mancante o pagamento con carta di credito non possibile), la merce va dichiarata presso un valico di confine occupato dal personale dell'AFD oppure mediante cassetta delle dichiarazioni.",
     howToDeclareYourGoodsText7:
-      'Se l’imposizione con l’app non è possibile (p. es. connessione Internet mancante o pagamento con carta di credito non possibile), la merce va dichiarata presso un valico di confine occupato dal personale doganale svizzero oppure mediante cassetta delle dichiarazioni.',
-    howToDeclareYourGoodsText8:
-      'È d’obbligo dichiarare le seguenti merci presso un valico di confine occupato dal personale doganale svizzero.',
-    howToDeclareYourGoodsText9:
-      'Merci soggette a limitazioni o divieti e che soggiacciono all’obbligo di certificato o di autorizzazione (p. es. armi, animali vivi e merci protette).',
-    howToDeclareYourGoodsText10:
-      'Merci destinate all’uso privato o da regalare aventi un valore complessivo di 20 000.00 franchi o superiore.',
-    howToDeclareYourGoodsText11:
+      "Accertarsi che il giustificativo possa essere presentato sul dispositivo mobile in occasione di un eventuale controllo al valico di confine. Durante il termine di validità non si accetta come giustificativo un'immagine dello stesso inoltrata a terzi tramite WhatsApp, iMessage, SMS o e-mail. Il giustificativo ricevuto va conservato almeno per un anno.",
+
+    specialCases: 'Casi particolari',
+    specialCasesText1:
+      "Le seguenti merci non possono essere imposte con QuickZoll e devono obbligatoriamente essere dichiarate presso un valico di confine occupato dal personale dell'AFD.",
+    specialCasesText2:
+      "Merci soggette a limitazioni o divieti e che soggiacciono all'obbligo di certificato o di autorizzazione (p. es. armi, animali vivi e merci protette);",
+    specialCasesText3: 'ulteriori informazioni',
+    specialCasesText4:
+      "Merci destinate all'uso privato o da regalare aventi un valore complessivo di 20 000.00 franchi o superiore.",
+    specialCasesText5: "Merci da dichiarare all'aliquota ridotta.",
+    specialCasesText6:
       'Merci non importate per uso privato o come regali (p. es. merci destinate al commercio).',
-    howToDeclareYourGoodsText12:
-      'Veicoli, riparazioni di veicoli e carburanti.',
-    howToDeclareYourGoodsText13:
+    specialCasesText7: 'Veicoli, riparazioni di veicoli e carburanti.',
+    specialCasesText8:
       'Masserizie di trasloco, corredi nuziali e oggetti ereditati.',
-    howToDeclareYourGoodsText14: 'Merci temporaneamente importate in Svizzera.',
-    howToDeclareYourGoodsText15:
-      'Merci destinate al transito attraverso la Svizzera.',
-    howToDeclareYourGoodsText16:
-      'Le merci esportate non possono essere dichiarate con l’app. Le informazioni sugli acquisti esenti da imposta in Svizzera (Tax free) sono disponibili qui.',
+    specialCasesText9: 'Merci temporaneamente importate in Svizzera.',
+    specialCasesText10: 'Merci destinate al transito attraverso la Svizzera.',
+    specialCasesText11:
+      "Merci esportate dalla Svizzera e per le quali è necessaria un'attestazione d'esportazione",
+    specialCasesText12:
+      "(informazioni sulla restituzione dell'IVA e sugli acquisti esenti da imposta in Svizzera [Tax free] sono disponibili qui).",
 
     legal: 'Aspetti legali',
     usage: 'Uso',

@@ -721,56 +721,62 @@ export const en: Locale = {
     navigationHeaderTitle: 'Information about using the app',
     conditions: 'Framework Conditions',
     importantSoon: 'Brief summary',
-    importantSoonText1:
-      'You may use the app for the same person(s) only once a day (calendar day).',
+    importantSoonText1: 'The app can be used entirely offline until payment.',
     importantSoonText2:
-      'You may use the app only for goods that you import for your personal use or as gifts.',
+      'You may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll.',
     importantSoonText3:
-      'By using the QuickZoll app, you accept that the VAT rate of 7.7% is also applied to goods that are subject to the reduced tax rate (2.5%) (in particular food, animal feed, medicines and books). If you would like the reduced tax rate to be applied, you must declare the goods verbally at a manned border crossing.',
+      'You may use QuickZoll only for goods that you import for your personal use or as gifts.',
     importantSoonText4:
-      'Only credit card payment (Visa, MasterCard) is possible (no refund option). The goods are cleared through customs after payment of the duties.',
+      'By using QuickZoll, you accept that the VAT rate of 7.7% is applied including for goods that are subject to the reduced tax rate (2.5%, in particular food, animal feed, medications and books). If you would like the reduced tax rate to be applied, you must declare the goods verbally at a border crossing manned by Federal Customs Administration (FCA) staff.',
     importantSoonText5:
-      'Customs clearance must take place before crossing the border or at the latest at the border crossing point. However, this is only possible 48 hours before crossing the border at the earliest.',
+      'Payment is only possible using a credit card (Visa, MasterCard). The goods are cleared through customs after payment of the duties.',
     importantSoonText6:
-      'After customs clearance, you may also use the following border crossings:',
+      'Customs clearance is only possible 48 hours before crossing the border at the earliest and must take place at the latest at the border crossing point.',
     importantSoonText7:
-      'border crossing points where Customs staff are not present;',
-    importantSoonText8: 'the green channel at airports',
-    importantSoonText9:
-      'The Customs receipt must be presented to Swiss Customs staff upon request. Customs staff take a photo of the receipt if necessary.',
+      'After customs clearance with QuickZoll, you may enter Switzerland using any official border crossing, regardless of whether or not FCA staff are present. In airports, you may use the green channel at airports.',
+    importantSoonText8:
+      'The receipt must be presented to FCA staff upon request. The staff take a photo of the receipt if necessary.',
+    importantSoonText9: 'No registration is required. No data is collected.',
+    importantSoonBoldText1: 'Duties paid with the app will not be refunded.',
 
     howToDeclareYourGoods: 'How to clear your goods through customs:',
     howToDeclareYourGoodsText1:
-      'Declare all transported goods (except personal effects and travelling provisions).',
+      'Declare all transported goods (except personal effects and travelling provisions). The applicable duty-free allowances and the tax-free limit are automatically deducted during customs clearance.',
     howToDeclareYourGoodsText2:
-      'The applicable duty-free allowances and the tax-free limit are automatically deducted during customs clearance.',
-    howToDeclareYourGoodsText3:
       "Enter the value in the foreign currency according to the payment document. The value is converted using the preceding day's (last working day) exchange rate (forex sell rate).",
+    howToDeclareYourGoodsText3:
+      'Set a two-hour timeframe for your border crossing. The receipt is valid only during this timeframe. If you are unable to comply with the selected timeframe, you must report to a border crossing manned by FCA staff and explain why you were unable to enter during the validity period. Duties will be levied again without credible justification.',
     howToDeclareYourGoodsText4:
-      'Set a two-hour timeframe for your border crossing. The receipt is valid only during this timeframe. If you are unable to comply with the selected timeframe, you must report to a border crossing manned by Swiss Customs staff and explain why you were unable to enter during the validity period. Duties will be levied again without credible justification.',
+      'All persons to whom the receipt applies must enter together.',
     howToDeclareYourGoodsText5:
-      'If the customs clearance applies to you and fellow travellers or to another person, you must enter together with these persons.',
+      'You can correct your declaration at any time before paying. No further corrections are possible in QuickZoll after paying. After paying for additional foreign goods purchased, you must declare them at a border crossing manned by FCA staff.',
     howToDeclareYourGoodsText6:
-      'You can correct your declaration at any time before paying. No further corrections are possible in the app after paying. After paying for additional foreign goods purchased, you must declare them at a border crossing manned by Swiss Customs staff.',
+      'To successfully complete the payment process, an internet connection is required. If customs clearance with QuickZoll is not possible (e.g. no internet connection or payment by credit card is not possible), you must declare the goods at a border crossing manned by FCA staff or via a declaration box.',
     howToDeclareYourGoodsText7:
-      'The Swiss Customs receipt must be retained for at least one year. You can also save the receipt as an image.',
-    howToDeclareYourGoodsText8:
-      'You must declare the following goods at a border crossing manned by Swiss Customs staff in any case:',
-    howToDeclareYourGoodsText9:
-      'goods which are subject to restrictions or bans and which require a certificate or authorisation (e.g. weapons, live animals and products governed by species protection).',
-    howToDeclareYourGoodsText10:
-      'goods for private use or as gifts worth a total of CHF 20,000.00 or more;',
-    howToDeclareYourGoodsText11:
-      'goods that you are not importing for your personal use or as gifts (e.g. goods that are intended for trade);',
-    howToDeclareYourGoodsText12: 'vehicles, vehicle repairs and fuel;',
-    howToDeclareYourGoodsText13:
-      'household effects, wedding trousseaux and inherited property;',
-    howToDeclareYourGoodsText14:
-      'goods that are only temporarily imported into Switzerland;',
-    howToDeclareYourGoodsText15:
-      'goods intended for transit through Switzerland.',
-    howToDeclareYourGoodsText16:
-      'Goods that are exported cannot be declared with the app. Information on tax-free shopping in Switzerland can be found here.',
+      'Please make sure that you can display the receipt on your mobile device during controls when crossing the border. Please note that, during the validity period of the receipt, a picture of the receipt that is forwarded to third parties via WhatsApp, iMessage, SMS or email will not be accepted as a receipt. The receipt must be retained for at least one year.',
+
+    specialCases: 'Special cases',
+    specialCasesText1:
+      'The following goods cannot be cleared using QuickZoll. You must declare the goods at a border crossing manned by FCA staff in any case.',
+    specialCasesText2:
+      'Goods which are subject to restrictions or bans and which require a certificate or authorisation (e.g. weapons, live animals and products governed by species protection);',
+    specialCasesText3: 'further information',
+    specialCasesText4:
+      'Goods for private use or as gifts worth a total of CHF 20,000.00 or more;',
+    specialCasesText5:
+      'Goods that you wish to declare at the reduced VAT rate;',
+    specialCasesText6:
+      'Goods that you are not importing for your personal use or as gifts (e.g. goods that are intended for trade);',
+    specialCasesText7: 'Vehicles, vehicle repairs and fuel;',
+    specialCasesText8:
+      'Household effects, wedding trousseaux and inherited property;',
+    specialCasesText9:
+      'Goods that are only temporarily imported into Switzerland;',
+    specialCasesText10: 'Goods intended for transit through Switzerland.',
+    specialCasesText11:
+      'Goods that are being exported from Switzerland and for which you require export confirmation',
+    specialCasesText12:
+      '(information concerning the refund of Swiss VAT and tax-free shopping in Switzerland can be found here ).',
 
     legal: 'Legal aspects',
     usage: 'Usage',
