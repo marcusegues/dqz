@@ -85,6 +85,12 @@ export const sampleAmounts4: Amounts = initAmounts.withMutations(amounts => {
   return amounts;
 });
 
+export const sampleAmounts5: Amounts = initAmounts.withMutations(amounts => {
+  amounts = addAmount(amounts, 'EUR', 1000);
+  amounts = addLargeAmount(amounts, 'EUR', 5000);
+  return amounts;
+});
+
 export const sampleBasket5: Basket = addQuantity(
   emptyBasket,
   'Cigarettes',
