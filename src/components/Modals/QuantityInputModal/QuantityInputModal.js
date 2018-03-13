@@ -149,14 +149,15 @@ class QuantityInputModalInner extends React.Component<
       <ManualInputPicker
         value={this.state.numberInput.wholePart}
         unit={this.getUnit()}
-        onChangeText={text =>
+        onChangeText={(text: string): void => {
+          const textModified: string = text.replace(/,/g, '.');
           this.setState({
             numberInput: {
               ...this.state.numberInput,
-              wholePart: text,
+              wholePart: textModified,
             },
-          })
-        }
+          });
+        }}
       />
     );
   }

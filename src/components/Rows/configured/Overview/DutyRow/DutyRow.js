@@ -81,7 +81,7 @@ class DutyRowInner extends React.Component<
           <View style={[rowStyles.rowContent]}>
             <OverviewInfo
               title={t(`categories:${category}`)}
-              subtitle={`${t('overview:declared')} ${quantity.toFixed(2)} ${
+              subtitle={`${t('overview:declared')} ${quantity.toFixed(1)} ${
                 unit
               }`}
             >
@@ -97,7 +97,7 @@ class DutyRowInner extends React.Component<
               />
             </OverviewInfo>
             <QuantityIcon
-              quantity={Math.max(0, quantity - allowanceRaw).toFixed(2)}
+              quantity={Math.max(0, quantity - allowanceRaw).toFixed(1)}
               unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
                 count: Math.max(0, quantity - allowanceRaw),
               })}
