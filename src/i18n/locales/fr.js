@@ -66,6 +66,7 @@ export const fr: Locale = {
     confirmationVat: 'Je confirme accepter le taux unique de TVA de',
     confirmationVat2: 'pour le dédouanement des marchandises.',
     vatInformation: 'Informations complémentaires',
+    skipThisStep: 'Passer cette étape',
   },
   peopleInput: {
     peopleInputQuestion:

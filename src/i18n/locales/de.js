@@ -67,6 +67,7 @@ export const de: Locale = {
       'Hiermit bestätige ich, dass ich den einheitlichen Mehrwertsteuersatz von ',
     confirmationVat2: 'bei der Verzollung von Waren akzeptiere.',
     vatInformation: 'Weitere Informationen',
+    skipThisStep: 'Diesen Schritt überspringen',
   },
   peopleInput: {
     peopleInputQuestion:

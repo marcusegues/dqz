@@ -66,6 +66,7 @@ export const it: Locale = {
     confirmationVat: ' Confermo di accettare l’aliquota IVA unica di',
     confirmationVat2: 'all’atto dell’imposizione delle merci',
     vatInformation: 'Maggiori informazioni',
+    skipThisStep: 'Salta questo passaggio',
   },
   peopleInput: {
     peopleInputQuestion: 'L’imposizione concerne quanti viaggiatori?',
@@ -687,56 +688,35 @@ export const it: Locale = {
   information: {
     informationTitle: 'Informazioni utili',
     informationSubCategoryTitle: 'Ho animali o piante con me',
-
     customsProceduresMainText: 'Procedura in dogana',
-
     travelDocumentsMainText: 'Documenti di viaggio',
-
     declarationMainText: 'Trasporto merce',
-
     animalsAndPlantsMainText: 'Trasporto animali o piante',
-
     vehiclesMainText: 'Viaggo in macchina',
-
     entryByTrainMainText: 'Entrata in Svizzera con il treno',
-
     prohibitionsAndRestrictionsMainText: 'Divieti e limitazioni',
-
     vatAllowanceMainText:
       'Limite di franchigia secondo il valore di 300 franchi',
-
     dutyAllowanceMainText:
       'Quantità ammesse in franchigia: derrate alimentari, alcol e tabacco',
-
     personalEffectsMainText: 'Oggetti d’uso personale e provviste da viaggio',
-
     foreignVatMainText: 'Restituzione dell’IVA estera',
-
     animalsMainText: 'Animali: animali da compagnia, cani, gatti e cavalli',
-
     plantsMainText: 'Piante',
-
     souvenirsAndSpeciesProtectionMainText:
       'Souvenir e conservazione delle specie (CITES)',
-
     highwayVignetteMainText: 'Contrassegno autostradale',
-
     roadTaxMainText:
       'Tassa sul traffico stradale per veicoli di peso superiore alle 3,5 t (TFTP)',
-
     fuelAndRepairsMainText: 'Carburante e riparazioni',
-
     forgeryMainText: 'Contraffazioni',
-
     cashMainText: 'Contanti (liquidità)',
-
     foodMainText: 'Limitazioni per derrate alimentari',
-
     authorisationRequirementsMainText:
       'Merci soggette ad autorizzazione o limitazione',
-
     purchasesOnlineOfflineMainText:
       'Acquisti in Internet, invii postali e di corriere',
+    borderCrossingsMainText: 'valichi di frontiera',
   },
 
   appInformation: {
