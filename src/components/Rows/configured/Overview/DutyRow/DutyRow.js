@@ -31,6 +31,7 @@ type DutyRowProps = {
   duty: number,
   borderTop?: boolean,
   allowanceRaw: number,
+  swipeable?: boolean,
 };
 
 type ReduxInject = {
@@ -40,6 +41,11 @@ type ReduxInject = {
 class DutyRowInner extends React.Component<
   DutyRowProps & ReduxInject & { t: TFunction }
 > {
+  static defaultProps = {
+    borderTop: false,
+    swipeable: true,
+  };
+
   getRightSwipeButtons() {
     const { basketResetCategoryQuantities, category } = this.props;
     return [
@@ -59,54 +65,56 @@ class DutyRowInner extends React.Component<
       </TouchableHighlight>,
     ];
   }
-  render() {
-    const {
-      category,
-      quantity,
-      duty,
-      borderTop = false,
-      t,
-      allowanceRaw,
-    } = this.props;
+
+  rowInnerContent() {
+    const { t, quantity, category, allowanceRaw, duty } = this.props;
     const unit = t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
       count: quantity,
     });
     return (
-      <Row borderTop={borderTop}>
+      <View style={[rowStyles.rowContent]}>
+        <OverviewInfo
+          title={t(`categories:${category}`)}
+          subtitle={`${t('overview:declared')} ${quantity.toFixed(2)} ${unit}`}
+        >
+          <AllowanceIcon
+            text={t('overview:dutyFree')}
+            quantity={allowanceRaw}
+            unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
+              count: allowanceRaw,
+            })}
+          />
+        </OverviewInfo>
+        <QuantityIcon
+          quantity={Math.max(0, quantity - allowanceRaw).toFixed(2)}
+          unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
+            count: Math.max(0, quantity - allowanceRaw),
+          })}
+        />
+        <TotalOwed result={duty.toFixed(2)} />
+      </View>
+    );
+  }
+
+  rowContent() {
+    if (this.props.swipeable) {
+      return (
         <Swipeable
           rightButtons={this.getRightSwipeButtons()}
           rightButtonWidth={90}
           style={{ overflow: 'hidden' }}
         >
-          <View style={[rowStyles.rowContent]}>
-            <OverviewInfo
-              title={t(`categories:${category}`)}
-              subtitle={`${t('overview:declared')} ${quantity.toFixed(1)} ${
-                unit
-              }`}
-            >
-              <AllowanceIcon
-                text={t('overview:dutyFree')}
-                quantity={allowanceRaw}
-                unit={t(
-                  `units:${CategoriesInfo.getIn([category, 'unit'], '')}`,
-                  {
-                    count: allowanceRaw,
-                  }
-                )}
-              />
-            </OverviewInfo>
-            <QuantityIcon
-              quantity={Math.max(0, quantity - allowanceRaw).toFixed(1)}
-              unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
-                count: Math.max(0, quantity - allowanceRaw),
-              })}
-            />
-            <TotalOwed result={duty.toFixed(2)} />
-          </View>
+          {this.rowInnerContent()}
         </Swipeable>
-      </Row>
-    );
+      );
+    }
+    return this.rowInnerContent();
+  }
+
+  render() {
+    const { borderTop } = this.props;
+
+    return <Row borderTop={borderTop}>{this.rowContent()}</Row>;
   }
 }
 

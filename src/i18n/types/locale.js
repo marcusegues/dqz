@@ -508,6 +508,7 @@ type InformationTranslations = {
   foodMainText: string,
   authorisationRequirementsMainText: string,
   purchasesOnlineOfflineMainText: string,
+  borderCrossingsMainText: string,
 };
 
 type ReceiptTranslations = {

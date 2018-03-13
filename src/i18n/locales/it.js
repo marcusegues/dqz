@@ -718,7 +718,6 @@ export const it: Locale = {
       'Acquisti in Internet, invii postali e di corriere',
     borderCrossingsMainText: 'valichi di frontiera',
   },
-
   appInformation: {
     appInfoTitle: 'Informazioni sull’app ',
     leftTabText: 'Colofone',
