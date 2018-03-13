@@ -11,9 +11,16 @@ const square = require('../../../../assets/images/redSquare.png');
 type BulletTextProps = {
   text: string,
   style?: Object,
+  additionalText?: string,
+  additionalTextStyle?: Object,
 };
 
-export const BulletText = ({ text, style }: BulletTextProps) => (
+export const BulletText = ({
+  text,
+  style,
+  additionalText,
+  additionalTextStyle,
+}: BulletTextProps) => (
   <View
     style={{
       flexDirection: 'row',
@@ -43,10 +50,13 @@ export const BulletText = ({ text, style }: BulletTextProps) => (
       }}
     >
       {text}
+      <Text style={additionalTextStyle}> {additionalText}</Text>
     </Text>
   </View>
 );
 
 BulletText.defaultProps = {
   style: {},
+  additionalTextStyle: {},
+  additionalText: '',
 };
