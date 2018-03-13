@@ -112,11 +112,12 @@ export const fr: Locale = {
     minorInfo: 'âge inférieur à 17 ans',
     minorCount: '{{value}} enfant (âgé de moins de 17 ans)',
     minorCount_plural: '{{value}} enfants (âgés de moins de 17 ans)',
-    validateNoAdultsTitle: 'Aucun adulte',
-    validateNoAdultsSubtitle:
+    validateNoPeopleTitle: 'Doit être au moins une personne',
+    validateNoPeopleSubtitle:
       'Veuillez vérifier que les données fournies sont exactes.',
     validateGenericYes: 'Oui',
     validateGenericNo: 'Non',
+    validateGenericOk: 'Ok',
     validateMainCategoryRemoveTitle:
       'Êtes-vous sûr de vouloir supprimer cette catégorie principale?',
     validateMainCategoryRemoveSubtitle:

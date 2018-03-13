@@ -4,7 +4,7 @@ import { Alert } from 'react-native';
 
 import type { QAStateEnriched } from '../QuestionAnswerContainer';
 import {
-  getAdultPeople,
+  getTotalPeople,
   getTotalQuantity,
   resetQuantitiesMultipleCategories,
 } from '../../../model/configurationApi';
@@ -71,22 +71,16 @@ export const onUpdateFactory = (
 ): void => {
   switch (trigger.questionType) {
     case 'peopleInput': {
-      if (!getAdultPeople(trigger.people) && getAdultPeople(oldState.people)) {
-        const input: People = trigger.people;
-        const func: UpdateFunction<People> = trigger.onUpdate;
+      if (!getTotalPeople(trigger.people) && getTotalPeople(oldState.people)) {
         const showAlert = () => {
           Alert.alert(
-            t('qaFlow:validateNoAdultsTitle'),
-            t('qaFlow:validateNoAdultsSubtitle'),
+            t('qaFlow:validateNoPeopleTitle'),
+            t('qaFlow:validateNoPeopleSubtitle'),
             [
               {
-                text: t('qaFlow:validateGenericNo'),
+                text: t('qaFlow:validateGenericOk'),
                 onPress: () => {},
-                style: 'cancel',
-              },
-              {
-                text: t('qaFlow:validateGenericYes'),
-                onPress: () => func(input),
+                style: 'default',
               },
             ],
             { cancelable: true }
