@@ -24,7 +24,7 @@ const pendant = require('../../../../../assets/images/info/pendant.png');
 const trailer = require('../../../../../assets/images/info/trailer.png');
 const van = require('../../../../../assets/images/info/van.png');
 
-type LanguageCategory = 'de' | 'en' | 'it' | 'fr';
+export type LanguageCategory = 'de' | 'en' | 'it' | 'fr';
 
 type roadTaxLinksType = { [LanguageCategory]: string };
 
