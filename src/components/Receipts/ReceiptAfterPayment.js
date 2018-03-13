@@ -69,7 +69,7 @@ type ReceiptAfterPaymentScreenProps = {
 
 class ReceiptAfterPaymentInner extends React.Component<
   ReceiptAfterPaymentScreenProps,
-  ReceiptAfterPaymentScreenState
+  ReceiptAfterPaymentScreenState,
 > {
   static navigationOptions = ({ screenProps }) => ({
     headerTitle: (
@@ -82,7 +82,7 @@ class ReceiptAfterPaymentInner extends React.Component<
     props: ReceiptAfterPaymentScreenProps & {
       t: TFunction,
       i18n: { language: string },
-    }
+    },
   ) {
     super(props);
     this.state = {
@@ -115,8 +115,8 @@ class ReceiptAfterPaymentInner extends React.Component<
     const receiptEntryTime = DateTime.fromISO(
       this.state.receipt.receiptEntryTime,
       {
-        locale: 'de',
-      }
+        locale: i18n.language,
+      },
     );
     const receiptEntryTimePlus = receiptEntryTime.plus({ hours: 2 });
     if (receiptEntryTime.day === receiptEntryTimePlus.day) {
@@ -130,14 +130,12 @@ class ReceiptAfterPaymentInner extends React.Component<
           key="receiptValidOnDate"
           text={`${t('receiptValidOnDate', {
             date: receiptEntryTime.toLocaleString(DateTime.DATE_FULL),
-            startTime:
-              i18n.language === 'fr'
-                ? receiptEntryTime.toFormat("HH'h'mm")
-                : receiptEntryTime.toFormat('HH:mm'),
-            endTime:
-              i18n.language === 'fr'
-                ? receiptEntryTimePlus.toFormat("HH'h'mm")
-                : receiptEntryTimePlus.toFormat('HH:mm'),
+            startTime: receiptEntryTime.toFormat(
+              `HH${i18n.language === 'fr' ? "'h'" : ':'}mm`,
+            ),
+            endTime: receiptEntryTimePlus.toFormat(
+              `HH${i18n.language === 'fr' ? "'h'" : ':'}mm`,
+            ),
           })}`}
           style={ownStyles.cardRowText}
         />,
@@ -153,9 +151,13 @@ class ReceiptAfterPaymentInner extends React.Component<
         key="receiptValidFromDate"
         text={`${t('receiptValidFromDate', {
           startDate: receiptEntryTime.toLocaleString(DateTime.DATE_FULL),
-          startTime: receiptEntryTime.toFormat('HH:mm'),
+          startTime: receiptEntryTime.toFormat(
+            `HH${i18n.language === 'fr' ? "'h'" : ':'}mm`,
+          ),
           endDate: receiptEntryTimePlus.toLocaleString(DateTime.DATE_FULL),
-          endTime: receiptEntryTimePlus.toFormat('HH:mm'),
+          endTime: receiptEntryTimePlus.toFormat(
+            `HH${i18n.language === 'fr' ? "'h'" : ':'}mm`,
+          ),
         })}`}
         style={ownStyles.cardRowText}
       />,
@@ -183,9 +185,8 @@ class ReceiptAfterPaymentInner extends React.Component<
       const fullVat = vatReport.get('totalVat');
       const fullDuty = dutyReport.get('totalDuty');
       const transactionDatetime = DateTime.fromISO(
-        this.state.receipt.paymentData.transaction.date
+        this.state.receipt.paymentData.transaction.date,
       );
-      // TODO: @Christian need to set locale from APP
 
       return (
         <View
@@ -291,6 +292,6 @@ const mapStateToProps = state => ({
 
 export const ReceiptAfterPayment = (connect(mapStateToProps)(
   translate(['receipt', 'payment', 'mainCategories', 'categories'])(
-    ReceiptAfterPaymentInner
-  )
+    ReceiptAfterPaymentInner,
+  ),
 ): ComponentType<{}>);
