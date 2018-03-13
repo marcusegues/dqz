@@ -66,6 +66,7 @@ export const it: Locale = {
     confirmationVat: ' Confermo di accettare l’aliquota IVA unica di',
     confirmationVat2: 'all’atto dell’imposizione delle merci',
     vatInformation: 'Maggiori informazioni',
+    skipThisStep: 'Salta questo passaggio',
   },
   peopleInput: {
     peopleInputQuestion: 'L’imposizione concerne quanti viaggiatori?',
