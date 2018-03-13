@@ -33,6 +33,7 @@ const Cash = require('../../../assets/icons/info/Cash.png');
 const Food = require('../../../assets/icons/info/Food.png');
 const AuthorisationRequirements = require('../../../assets/icons/info/AuthorisationRequirements.png');
 const InternetShoppingAndMail = require('../../../assets/icons/info/InternetShoppingAndMail.png');
+const Turnpike = require('../../../assets/icons/info/Turnpike.png');
 
 export const informationImages: InformationImagesType = {
   customsProcedures: Sign,
@@ -57,6 +58,7 @@ export const informationImages: InformationImagesType = {
   food: Food,
   authorisationRequirements: AuthorisationRequirements,
   purchasesOnlineOffline: InternetShoppingAndMail,
+  borderCrossings: Turnpike,
 };
 
 export const informationSubCategories: InformationSubCategoriesType = {
@@ -68,6 +70,7 @@ export const informationSubCategories: InformationSubCategoriesType = {
   entryByTrain: 'noSubCategories',
   prohibitionsAndRestrictions: prohibitionsAndRestrictionsSubCategories,
   purchasesOnlineOffline: 'noSubCategories',
+  borderCrossings: 'noSubCategories',
 };
 
 export const informationNavigateTo: InformationNavigateToType = {

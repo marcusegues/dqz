@@ -164,6 +164,7 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/icons/info/Food.png'),
         require('./assets/icons/info/AuthorisationRequirements.png'),
         require('./assets/icons/info/InternetShoppingAndMail.png'),
+        require('./assets/icons/info/Turnpike.png'),
       ]),
       Font.loadAsync({
         open_sans_extra_bold: require('./assets/fonts/OpenSans-ExtraBold.ttf'),
