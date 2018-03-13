@@ -248,7 +248,7 @@ class ReceiptAfterPaymentInner extends React.Component<
               <ValidUntilBlock>{this.getValidUntilBlockText()}</ValidUntilBlock>
             </Row>
 
-            <DutyList basket={basket} people={people} />
+            <DutyList basket={basket} people={people} swipeable={false} />
             <VatList
               large={false}
               people={people}

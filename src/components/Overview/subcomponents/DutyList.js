@@ -18,12 +18,14 @@ import { calculateDuty, getAllowance } from '../../../model/dutyCalculations';
 type DutyListProps = {
   basket: Basket,
   people: People,
+  swipeable?: boolean,
 };
 
 const DutyListInner = ({
   basket,
   people,
   t,
+  swipeable,
 }: DutyListProps & {
   t: TFunction,
 }) => {
@@ -43,6 +45,7 @@ const DutyListInner = ({
           allowanceRaw={getAllowance(basket, category, people)}
           quantity={getTotalQuantity(basket, category)}
           duty={dutyOfCategory}
+          swipeable={swipeable}
         />
       ),
     }));
@@ -65,6 +68,6 @@ const DutyListInner = ({
   );
 };
 
-export const DutyList = (translate(['payment'])(
-  DutyListInner
-): ComponentType<{}>);
+export const DutyList = (translate(['payment'])(DutyListInner): ComponentType<
+  DutyListProps
+>);
