@@ -49,7 +49,8 @@ export const en: Locale = {
   snackBar: {
     limitExceeded:
       'Declaration value limit exceeded. Please report your goods at the border crossing',
-    offline: 'You are offline. Except for the payment feature, you are able to use all other features of the app.',
+    offline:
+      'You are offline. Except for the payment feature, you are able to use all other features of the app.',
     paymentAborted: 'Payment canceled.',
     paymentFailed: 'Payment failed',
     paymentAbortedRightText: 'OK',
@@ -93,7 +94,8 @@ export const en: Locale = {
       'Again, capture every item that is worth more than CHF 300.00.',
     amountInputAddItem: 'Add value',
     amountInputAddItemLarge: 'Add item',
-    amountInputEnterValue: 'Enter the value excluding foreign VAT (net value), including value of gifts received, food, tobacco products and alcoholic beverages.',
+    amountInputEnterValue:
+      'Enter the value excluding foreign VAT (net value), including value of gifts received, food, tobacco products and alcoholic beverages.',
     currentTotalValue: 'Current total value:',
     lastExchangeRate:
       'Based on the last available exchange rate, which is updated when paying.',
@@ -378,6 +380,7 @@ export const en: Locale = {
       'Items ordered abroad that are delivered by post or courier',
     dutyAllowanceText47:
       'Other provisions apply for goods that are ordered abroad (e.g. online) and are delivered by post or courier. More information.',
+    dutyAllowanceText48: 'More information',
   },
 
   personalEffects: {
@@ -404,8 +407,7 @@ export const en: Locale = {
     foreignVatText3:
       'Different rules apply to VAT refunds in different countries. If need be, the seller completes a refund form, on which the foreign customs authority confirms exportation to Switzerland.',
     foreignVatText4:
-      'Unfortunately, we are unable to provide you with more detailed information concerning the refund of foreign VAT. If need be, the relevant foreign customs authority will be able to assist you. Foreign customs authorities can be found at the following link to the World Customs Organization:\n' +
-      'www.wcoomd.org',
+      'Unfortunately, we are unable to provide you with more detailed information concerning the refund of foreign VAT. If need be, the relevant foreign customs authority will be able to assist you. Foreign customs authorities can be found at the following link to the World Customs Organization:',
     foreignVatText5:
       'Swiss VAT must be paid even if foreign VAT is not refunded. There are no double taxation agreements in the area of value added tax.',
   },
@@ -413,8 +415,7 @@ export const en: Locale = {
   animals: {
     animalsMainText: 'Animals: pets, dogs, cats and horses',
     animalsText1:
-      'For dogs, cats, other pets and horses, you can obtain information from the Federal Food Safety and Veterinary Office FSVO:\n' +
-      'http://www.blv.admin.ch',
+      'For dogs, cats, other pets and horses, you can obtain information from the Federal Food Safety and Veterinary Office FSVO:',
     animalsText2: 'Duties',
     animalsText3:
       'If the tax-free limit of CHF 300 is exceeded, you have to pay VAT for animals. More detailed information can be found at:',
@@ -515,8 +516,7 @@ export const en: Locale = {
       'In Switzerland, a heavy vehicle charge is levied for vehicles and trailers with a total weight of over 3.5 tonnes. The charge is levied as a daily lump sum for buses, heavy motorhomes, heavy passenger vehicles and their trailers over 3.5 tonnes.',
     roadTaxText2:
       'Unlike the motorway tax sticker for passenger cars, the heavy vehicle charge is payable on the entire road network, and not only on motorways.',
-    roadTaxText3:
-      'For heavy goods vehicles and their trailers, see: www.lsva.ch',
+    roadTaxText3: 'For heavy goods vehicles and their trailers, see:',
     roadTaxText4:
       'Please note: The vehicle is subject to the lump-sum heavy vehicle charge even if it is only parked and not driven (e.g. motorhome on a campsite).',
     roadTaxText5: 'Payment and rates',
@@ -535,7 +535,7 @@ export const en: Locale = {
       'Monthly and annual rates in accordance with form number 15.91.',
     roadTaxCategory1: 'Company cars, coaches and articulated buses',
     roadTaxCategory2: 'Motor caravan or camper',
-    roadTaxCategory3: 'caravan',
+    roadTaxCategory3: 'Caravan',
     roadTaxCategory4: 'Heavy passenger cars',
     roadTaxCategory5:
       'Trailers of over 3.5 tonnes pulled by the above vehicles or light motor vehicles',
@@ -589,7 +589,7 @@ export const en: Locale = {
     forgeryText5:
       'Even an expensive piece of jewellery can prove to be a forgery. An indication of the fineness does not guarantee that the goods are genuine. Buy jewellery and watches only in authorised specialist shops.',
     forgeryText6:
-      'Further information on product piracy and counterfeits can be obtained from the Swiss Anti-Counterfeiting and Piracy Platform STOP PIRACY: www.stop-piracy.ch',
+      'Further information on product piracy and counterfeits can be obtained from the Swiss Anti-Counterfeiting and Piracy Platform STOP PIRACY:',
   },
 
   cash: {
@@ -696,6 +696,7 @@ export const en: Locale = {
       'Authorisation requirement / restrictions',
     purchasesOnlineOfflineMainText:
       'Online shopping, postal and courier consignments',
+    borderCrossingsMainText: 'Border Crossings',
   },
   appInformation: {
     appInfoTitle: 'About the app',
@@ -721,56 +722,62 @@ export const en: Locale = {
     navigationHeaderTitle: 'Information about using the app',
     conditions: 'Framework Conditions',
     importantSoon: 'Brief summary',
-    importantSoonText1:
-      'You may use the app for the same person(s) only once a day (calendar day).',
+    importantSoonText1: 'The app can be used entirely offline until payment.',
     importantSoonText2:
-      'You may use the app only for goods that you import for your personal use or as gifts.',
+      'You may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll.',
     importantSoonText3:
-      'By using the QuickZoll app, you accept that the VAT rate of 7.7% is also applied to goods that are subject to the reduced tax rate (2.5%) (in particular food, animal feed, medicines and books). If you would like the reduced tax rate to be applied, you must declare the goods verbally at a manned border crossing.',
+      'You may use QuickZoll only for goods that you import for your personal use or as gifts.',
     importantSoonText4:
-      'Only credit card payment (Visa, MasterCard) is possible (no refund option). The goods are cleared through customs after payment of the duties.',
+      'By using QuickZoll, you accept that the VAT rate of 7.7% is applied including for goods that are subject to the reduced tax rate (2.5%, in particular food, animal feed, medications and books). If you would like the reduced tax rate to be applied, you must declare the goods verbally at a border crossing manned by Federal Customs Administration (FCA) staff.',
     importantSoonText5:
-      'Customs clearance must take place before crossing the border or at the latest at the border crossing point. However, this is only possible 48 hours before crossing the border at the earliest.',
+      'Payment is only possible using a credit card (Visa, MasterCard). The goods are cleared through customs after payment of the duties.',
     importantSoonText6:
-      'After customs clearance, you may also use the following border crossings:',
+      'Customs clearance is only possible 48 hours before crossing the border at the earliest and must take place at the latest at the border crossing point.',
     importantSoonText7:
-      'border crossing points where Customs staff are not present;',
-    importantSoonText8: 'the green channel at airports',
-    importantSoonText9:
-      'The Customs receipt must be presented to Swiss Customs staff upon request. Customs staff take a photo of the receipt if necessary.',
+      'After customs clearance with QuickZoll, you may enter Switzerland using any official border crossing, regardless of whether or not FCA staff are present. In airports, you may use the green channel at airports.',
+    importantSoonText8:
+      'The receipt must be presented to FCA staff upon request. The staff take a photo of the receipt if necessary.',
+    importantSoonText9: 'No registration is required. No data is collected.',
+    importantSoonBoldText1: 'Duties paid with the app will not be refunded.',
 
     howToDeclareYourGoods: 'How to clear your goods through customs:',
     howToDeclareYourGoodsText1:
-      'Declare all transported goods (except personal effects and travelling provisions).',
+      'Declare all transported goods (except personal effects and travelling provisions). The applicable duty-free allowances and the tax-free limit are automatically deducted during customs clearance.',
     howToDeclareYourGoodsText2:
-      'The applicable duty-free allowances and the tax-free limit are automatically deducted during customs clearance.',
-    howToDeclareYourGoodsText3:
       "Enter the value in the foreign currency according to the payment document. The value is converted using the preceding day's (last working day) exchange rate (forex sell rate).",
+    howToDeclareYourGoodsText3:
+      'Set a two-hour timeframe for your border crossing. The receipt is valid only during this timeframe. If you are unable to comply with the selected timeframe, you must report to a border crossing manned by FCA staff and explain why you were unable to enter during the validity period. Duties will be levied again without credible justification.',
     howToDeclareYourGoodsText4:
-      'Set a two-hour timeframe for your border crossing. The receipt is valid only during this timeframe. If you are unable to comply with the selected timeframe, you must report to a border crossing manned by Swiss Customs staff and explain why you were unable to enter during the validity period. Duties will be levied again without credible justification.',
+      'All persons to whom the receipt applies must enter together.',
     howToDeclareYourGoodsText5:
-      'If the customs clearance applies to you and fellow travellers or to another person, you must enter together with these persons.',
+      'You can correct your declaration at any time before paying. No further corrections are possible in QuickZoll after paying. After paying for additional foreign goods purchased, you must declare them at a border crossing manned by FCA staff.',
     howToDeclareYourGoodsText6:
-      'You can correct your declaration at any time before paying. No further corrections are possible in the app after paying. After paying for additional foreign goods purchased, you must declare them at a border crossing manned by Swiss Customs staff.',
+      'To successfully complete the payment process, an internet connection is required. If customs clearance with QuickZoll is not possible (e.g. no internet connection or payment by credit card is not possible), you must declare the goods at a border crossing manned by FCA staff or via a declaration box.',
     howToDeclareYourGoodsText7:
-      'The Swiss Customs receipt must be retained for at least one year. You can also save the receipt as an image.',
-    howToDeclareYourGoodsText8:
-      'You must declare the following goods at a border crossing manned by Swiss Customs staff in any case:',
-    howToDeclareYourGoodsText9:
-      'goods which are subject to restrictions or bans and which require a certificate or authorisation (e.g. weapons, live animals and products governed by species protection).',
-    howToDeclareYourGoodsText10:
-      'goods for private use or as gifts worth a total of CHF 20,000.00 or more;',
-    howToDeclareYourGoodsText11:
-      'goods that you are not importing for your personal use or as gifts (e.g. goods that are intended for trade);',
-    howToDeclareYourGoodsText12: 'vehicles, vehicle repairs and fuel;',
-    howToDeclareYourGoodsText13:
-      'household effects, wedding trousseaux and inherited property;',
-    howToDeclareYourGoodsText14:
-      'goods that are only temporarily imported into Switzerland;',
-    howToDeclareYourGoodsText15:
-      'goods intended for transit through Switzerland.',
-    howToDeclareYourGoodsText16:
-      'Goods that are exported cannot be declared with the app. Information on tax-free shopping in Switzerland can be found here.',
+      'Please make sure that you can display the receipt on your mobile device during controls when crossing the border. Please note that, during the validity period of the receipt, a picture of the receipt that is forwarded to third parties via WhatsApp, iMessage, SMS or email will not be accepted as a receipt. The receipt must be retained for at least one year.',
+
+    specialCases: 'Special cases',
+    specialCasesText1:
+      'The following goods cannot be cleared using QuickZoll. You must declare the goods at a border crossing manned by FCA staff in any case.',
+    specialCasesText2:
+      'Goods which are subject to restrictions or bans and which require a certificate or authorisation (e.g. weapons, live animals and products governed by species protection);',
+    specialCasesText3: 'further information',
+    specialCasesText4:
+      'Goods for private use or as gifts worth a total of CHF 20,000.00 or more;',
+    specialCasesText5:
+      'Goods that you wish to declare at the reduced VAT rate;',
+    specialCasesText6:
+      'Goods that you are not importing for your personal use or as gifts (e.g. goods that are intended for trade);',
+    specialCasesText7: 'Vehicles, vehicle repairs and fuel;',
+    specialCasesText8:
+      'Household effects, wedding trousseaux and inherited property;',
+    specialCasesText9:
+      'Goods that are only temporarily imported into Switzerland;',
+    specialCasesText10: 'Goods intended for transit through Switzerland.',
+    specialCasesText11:
+      'Goods that are being exported from Switzerland and for which you require export confirmation',
+    specialCasesText12:
+      '(information concerning the refund of Swiss VAT and tax-free shopping in Switzerland can be found here ).',
 
     legal: 'Legal aspects',
     usage: 'Usage',
@@ -827,12 +834,12 @@ export const en: Locale = {
   legalNoticeModal: {
     importantNote: 'Important Note',
     vatRateInfo:
-    'Please note that\n' +
-    '• you may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll;\n' +
-    '• declared goods are cleared using the single VAT rate of 7.7%;\n' +
-    '• duties paid with the app will not be refunded.\n' +
-    'Further information can be found here:',
-      termsOfService: 'Terms of Service',
+      'Please note that\n' +
+      '• you may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll;\n' +
+      '• declared goods are cleared using the single VAT rate of 7.7%;\n' +
+      '• duties paid with the app will not be refunded.\n' +
+      'Further information can be found here:',
+    termsOfService: 'Terms of Service',
     acceptance:
       'I hereby accept the terms and conditions that I have read and understood.',
     confirm: 'Confirm',

@@ -9,18 +9,24 @@ import type { TFunction } from '../../../../types/generalTypes';
 import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
+import type { Language } from '../../../../i18n/types/locale';
 
 type TravelDocumentsInnerProps = {
   t: TFunction,
+  i18n: { language: Language },
 };
 
-const TravelDocumentsInner = ({ t }: TravelDocumentsInnerProps) => (
+const TravelDocumentsInner = ({ t, i18n }: TravelDocumentsInnerProps) => (
   <SubCategoryContainer title={t('travelDocumentsMainText')}>
     <AppInfoSubText text={t('travelDocumentsText1')} />
 
     <AppInfoLink
       text="www.sem.admin.ch"
-      onPress={() => Linking.openURL('http://www.sem.admin.ch')}
+      onPress={() =>
+        Linking.openURL(
+          `https://www.sem.admin.ch/sem/${i18n.language}/home.html`
+        )
+      }
     />
     <AppInfoSubText text={t('travelDocumentsText2')} />
     <AppInfoLink

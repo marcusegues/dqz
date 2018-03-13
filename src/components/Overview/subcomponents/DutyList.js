@@ -13,10 +13,7 @@ import type {
   People,
 } from '../../../model/types/basketPeopleAmountsTypes';
 import type { TFunction } from '../../../types/generalTypes';
-import {
-  calculateDuty,
-  getAllowanceRaw,
-} from '../../../model/dutyCalculations';
+import { calculateDuty, getAllowance } from '../../../model/dutyCalculations';
 
 type DutyListProps = {
   basket: Basket,
@@ -45,7 +42,7 @@ const DutyListInner = ({
           key={category}
           mainCategory={getMainCategory(category)}
           category={category}
-          allowanceRaw={getAllowanceRaw(category, people)}
+          allowanceRaw={getAllowance(basket, category, people)}
           quantity={getTotalQuantity(basket, category)}
           duty={dutyOfCategory}
           swipeable={swipeable}

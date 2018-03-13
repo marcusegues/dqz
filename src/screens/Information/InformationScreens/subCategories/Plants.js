@@ -11,13 +11,15 @@ import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 import { BulletText } from '../../../AppInfo/subComponents/BulletText';
 import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
+import type { Language } from '../../../../i18n/types/locale';
 
 type PlantsInnerProps = {
   t: TFunction,
   navigation: Navigation,
+  i18n: { language: Language },
 };
 
-const PlantsInner = ({ t, navigation }: PlantsInnerProps) => (
+const PlantsInner = ({ t, navigation, i18n }: PlantsInnerProps) => (
   <SubCategoryContainer title={t('plantsMainText')}>
     <AppInfoSubText
       text={t('plantsText1')}
@@ -64,7 +66,11 @@ const PlantsInner = ({ t, navigation }: PlantsInnerProps) => (
     <AppInfoSubText text={t('plantsText28')} />
     <AppInfoLink
       text="www.blw.admin.ch"
-      onPress={() => Linking.openURL('https://www.blw.admin.ch')}
+      onPress={() =>
+        Linking.openURL(
+          `https://www.blw.admin.ch/blw/${i18n.language}/home.html`
+        )
+      }
       style={{ marginBottom: verticalScale(10) }}
     />
     <AppInfoSubText

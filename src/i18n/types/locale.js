@@ -281,6 +281,7 @@ type DutyAllowanceTranslations = {
   dutyAllowanceText45: string,
   dutyAllowanceText46: string,
   dutyAllowanceText47: string,
+  dutyAllowanceText48: string,
 };
 
 type ForeignVatTranslations = {
@@ -506,6 +507,7 @@ type InformationTranslations = {
   foodMainText: string,
   authorisationRequirementsMainText: string,
   purchasesOnlineOfflineMainText: string,
+  borderCrossingsMainText: string,
 };
 
 type ReceiptTranslations = {
@@ -562,6 +564,7 @@ type LegalNoticeInformationTranslations = {
   importantSoonText7: string,
   importantSoonText8: string,
   importantSoonText9: string,
+  importantSoonBoldText1: string,
 
   howToDeclareYourGoods: string,
   howToDeclareYourGoodsText1: string,
@@ -571,15 +574,6 @@ type LegalNoticeInformationTranslations = {
   howToDeclareYourGoodsText5: string,
   howToDeclareYourGoodsText6: string,
   howToDeclareYourGoodsText7: string,
-  howToDeclareYourGoodsText8: string,
-  howToDeclareYourGoodsText9: string,
-  howToDeclareYourGoodsText10: string,
-  howToDeclareYourGoodsText11: string,
-  howToDeclareYourGoodsText12: string,
-  howToDeclareYourGoodsText13: string,
-  howToDeclareYourGoodsText14: string,
-  howToDeclareYourGoodsText15: string,
-  howToDeclareYourGoodsText16: string,
 
   legal: string,
   legalText1: string,
@@ -589,6 +583,20 @@ type LegalNoticeInformationTranslations = {
   legalText5: string,
   legalText6: string,
   legalText7: string,
+
+  specialCases: string,
+  specialCasesText1: string,
+  specialCasesText2: string,
+  specialCasesText3: string,
+  specialCasesText4: string,
+  specialCasesText5: string,
+  specialCasesText6: string,
+  specialCasesText7: string,
+  specialCasesText8: string,
+  specialCasesText9: string,
+  specialCasesText10: string,
+  specialCasesText11: string,
+  specialCasesText12: string,
 
   privacyAndLiability: string,
   dataProtection: string,

@@ -49,7 +49,8 @@ export const it: Locale = {
   snackBar: {
     limitExceeded:
       "Il valore dei beni per l'app è stato superato. Si prega di segnalare le vostre merci per via orale al valico di frontiera.",
-    offline: 'Sei offline. Ad eccezione della funzione di pagamento, tuttavia, puoi utilizzare tutte le altre funzionalità dell\'app.',
+    offline:
+      "Sei offline. Ad eccezione della funzione di pagamento, tuttavia, puoi utilizzare tutte le altre funzionalità dell'app.",
     paymentAborted: 'Paiement annulé',
     paymentFailed: 'Pagamento annullato',
     paymentAbortedRightText: 'OK',
@@ -161,7 +162,8 @@ export const it: Locale = {
     paidOn: 'Pagamento effettuato in data {{date}} alle ore {{time}} con:',
     transactionId: 'ID della transazione (SIX): {{value}}',
 
-    receiptValidFrom: 'Il giustificativo è valido per il valico di frontiera da:',
+    receiptValidFrom:
+      'Il giustificativo è valido per il valico di frontiera da:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} fino al {{endDate}} | {{endTime}}',
     receiptValidOn: 'Il giustificativo è valido per il valico di frontiera su:',
@@ -388,6 +390,7 @@ export const it: Locale = {
       'Merci ordinate all’estero e recapitate per posta o corriere',
     dutyAllowanceText47:
       'Per le merci ordinate all’estero (p. es. in Internet) e recapitate per posta o corriere valgono altre disposizioni. Per ulteriori informazioni cliccare qui.',
+    dutyAllowanceText48: '',
   },
 
   personalEffects: {
@@ -415,7 +418,7 @@ export const it: Locale = {
     foreignVatText3:
       'Per quanto riguarda la restituzione ogni Stato applica le proprie condizioni. Se del caso, il venditore compila un modulo di restiuzione sul quale l’autorità doganale estera conferma l’esportazione in Svizzera.',
     foreignVatText4:
-      'Non siamo in grado di fornire ulteriori informazioni in merito alla restituzione dell’IVA estera. A tale proposito occorre rivolgersi alla rispettiva autorità doganale. Le autorità doganali estere sono reperibili al seguente link dell’Organizzazione mondiale delle dogane: www.wcoomd.org',
+      'Non siamo in grado di fornire ulteriori informazioni in merito alla restituzione dell’IVA estera. A tale proposito occorre rivolgersi alla rispettiva autorità doganale. Le autorità doganali estere sono reperibili al seguente link dell’Organizzazione mondiale delle dogane:',
     foreignVatText5:
       'L’IVA svizzera è dovuta anche nel caso in cui quella estera non viene restituita. Nell’ambito dell’IVA non esiste una convenzione di doppia imposizione.',
   },
@@ -423,7 +426,7 @@ export const it: Locale = {
   animals: {
     animalsMainText: 'Animali: animali da compagnia, cani, gatti e cavalli',
     animalsText1:
-      'Ulteriori informazioni in merito a cani, gatti e altri animali da compagnia nonché ai cavalli sono disponibili presso l’Ufficio federale della sicurezza alimentare e di veterinaria (USAV): https://www.blv.admin.ch',
+      'Ulteriori informazioni in merito a cani, gatti e altri animali da compagnia nonché ai cavalli sono disponibili presso l’Ufficio federale della sicurezza alimentare e di veterinaria (USAV):',
     animalsText2: 'Tributi',
     animalsText3:
       'Se si supera il limite di franchigia secondo il valore di 300 franchi, per gli animali è dovuta l’IVA. Per informazioni dettagliate consultare la rubrica:',
@@ -524,7 +527,7 @@ export const it: Locale = {
       'In Svizzera gli autoveicoli e i rimorchi con un peso totale eccedente le 3,5 tonnellate sono soggetti a una tassa sul traffico pesante. Per i pullman, i camper pesanti, le automobili pesanti e per i loro rimorchi eccedenti le 3,5 tonnellate, la tassa è forfetaria e riscossa al giorno.',
     roadTaxText2:
       'Contrariamente al contrassegno autostradale, la tassa sul traffico pesante è dovuta sull’intera rete stradale e non solo sulle autostrade.',
-    roadTaxText3: 'Per gli autocarri e i loro rimorchi vedi: www.lsva.ch',
+    roadTaxText3: 'Per gli autocarri e i loro rimorchi vedi:',
     roadTaxText4:
       'Attenzione: L’autoveicolo è soggetto alla TFTP anche se è spento e non viene spostato (p. es. camper in un campeggio).',
     roadTaxText5: 'Pagamento e tariffe',
@@ -597,7 +600,7 @@ export const it: Locale = {
     forgeryText5:
       'Anche un gioiello molto caro può essere contraffatto. Neanche l’indicazione del titolo ne garantisce l’autenticità. Si consiglia quindi di acquistare orologi e gioielli solo in negozi specializzati riconosciuti.',
     forgeryText6:
-      'Ulteriori informazioni sulla pirateria dei prodotti e sullla contraffazione sono disponibili sulla Piattaforma svizzera di lotta alla contraffazione e alla pirateria STOP ALLA PIRATERIA: www.stop-piracy.ch',
+      'Ulteriori informazioni sulla pirateria dei prodotti e sullla contraffazione sono disponibili sulla Piattaforma svizzera di lotta alla contraffazione e alla pirateria STOP ALLA PIRATERIA:',
   },
 
   cash: {
@@ -684,58 +687,36 @@ export const it: Locale = {
   information: {
     informationTitle: 'Informazioni utili',
     informationSubCategoryTitle: 'Ho animali o piante con me',
-
     customsProceduresMainText: 'Procedura in dogana',
-
     travelDocumentsMainText: 'Documenti di viaggio',
-
     declarationMainText: 'Trasporto merce',
-
     animalsAndPlantsMainText: 'Trasporto animali o piante',
-
     vehiclesMainText: 'Viaggo in macchina',
-
     entryByTrainMainText: 'Entrata in Svizzera con il treno',
-
     prohibitionsAndRestrictionsMainText: 'Divieti e limitazioni',
-
     vatAllowanceMainText:
       'Limite di franchigia secondo il valore di 300 franchi',
-
     dutyAllowanceMainText:
       'Quantità ammesse in franchigia: derrate alimentari, alcol e tabacco',
-
     personalEffectsMainText: 'Oggetti d’uso personale e provviste da viaggio',
-
     foreignVatMainText: 'Restituzione dell’IVA estera',
-
     animalsMainText: 'Animali: animali da compagnia, cani, gatti e cavalli',
-
     plantsMainText: 'Piante',
-
     souvenirsAndSpeciesProtectionMainText:
       'Souvenir e conservazione delle specie (CITES)',
-
     highwayVignetteMainText: 'Contrassegno autostradale',
-
     roadTaxMainText:
       'Tassa sul traffico stradale per veicoli di peso superiore alle 3,5 t (TFTP)',
-
     fuelAndRepairsMainText: 'Carburante e riparazioni',
-
     forgeryMainText: 'Contraffazioni',
-
     cashMainText: 'Contanti (liquidità)',
-
     foodMainText: 'Limitazioni per derrate alimentari',
-
     authorisationRequirementsMainText:
       'Merci soggette ad autorizzazione o limitazione',
-
     purchasesOnlineOfflineMainText:
       'Acquisti in Internet, invii postali e di corriere',
+    borderCrossingsMainText: 'valichi di frontiera',
   },
-
   appInformation: {
     appInfoTitle: 'Informazioni sull’app ',
     leftTabText: 'Colofone',
@@ -764,55 +745,62 @@ export const it: Locale = {
     conditions: 'Condizioni quadro',
     importantSoon: 'L’essenziale in breve',
     importantSoonText1:
-      'L’app può essere impiegata per la stessa persona o persone solo una volta al giorno (giorno solare).',
+      "L'app può essere utilizzata offline ad eccezione del modulo di pagamento.",
     importantSoonText2:
-      'L’app può essere utilizzata solo per merci importate per uso privato o come regali.',
+      ' Al giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll.',
     importantSoonText3:
-      'L’utilizzo di QuickZoll comporta l’accettazione della condizione che l’aliquota IVA del 7,7% viene applicata anche alle merci in realtà soggette all’aliquota ridotta del 2,5% (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l’applicazione dell’aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato.',
+      'QuickZoll può essere utilizzata solo per merci importate per uso privato o come regali.',
     importantSoonText4:
-      'Il pagamento è possibile solo mediante carta di credito (Visa, Mastercard; senza possibilità di rimborso). Dopo il pagamento dei tributi le merci sono imposte.',
+      "L'utilizzo di QuickZoll comporta l'accettazione della condizione che l'aliquota IVA del 7,7 % viene applicata anche alle merci in realtà soggette all'aliquota ridotta del 2,5 % (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l'applicazione dell'aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato dal personale dell'Amministrazione federale delle dogane (AFD).",
     importantSoonText5:
-      'L’imposizione deve avvenire prima del passaggio del confine (al più presto 48 ore prima) o al più tardi al valico di confine.',
+      'Il pagamento è possibile solo con carta di credito (Visa, Mastercard). Dopo il pagamento dei tributi le merci sono imposte.',
     importantSoonText6:
-      'Dopo l’imposizione possono essere utilizzati anche i seguenti valichi di confine:',
+      "L'imposizione deve avvenire al più presto 48 ore prima del passaggio del confine e al più tardi al valico di confine.",
     importantSoonText7:
-      'valichi presso i quali è presente il personale doganale;',
-    importantSoonText8: 'il passaggio verde della dogana negli aeroporti.',
+      "Dopo l'imposizione con QuickZoll possono essere utilizzati tutti i valichi di confine ufficiali, indipendentemente dal fatto se è presente personale dell'AFD o meno. Negli aeroporti invece può essere utilizzato il passaggio verde della dogana.",
+    importantSoonText8:
+      "Se richiesto, il giustificativo deve essere presentato al personale dell'AFD, che in caso di necessità lo fotografa.",
     importantSoonText9:
-      'Il giustificativo rilasciato dalla dogana deve essere presentato al personale della dogana svizzera se richiesto. Il personale doganale fotografa il giustificativo se necessario.',
+      'Non è necessario registrarsi. Non vengono rilevati dati.',
+    importantSoonBoldText1:
+      "I tributi pagati con l'app non vengono rimborsati.",
 
     howToDeclareYourGoods: 'Come imporre le merci:',
     howToDeclareYourGoodsText1:
-      'Dichiarare tutte le merci trasportate (salvo gli oggetti d’uso personale e provviste da viaggio). Le quantità ammesse in franchigia e il limite di franchigia secondo il valore a cui si ha diritto vengono detratti automaticamente.',
+      "Dichiarare tutte le merci trasportate (salvo gli oggetti d'uso personale e provviste da viaggio). Le quantità ammesse in franchigia e il limite di franchigia secondo il valore a cui si ha diritto vengono detratti automaticamente.",
     howToDeclareYourGoodsText2:
       'Inserire il valore nella valuta estera in base alla ricevuta. Il valore viene determinato applicando il corso del cambio (vendita) del giorno precedente (ultimo giorno lavorativo).',
     howToDeclareYourGoodsText3:
-      'Stabilire un intervallo di tempo di due ore per il passaggio del confine. Il giustificativo è valido solo durante questo arco di tempo. Se non è possibile rispettarlo, occorre rivolgersi a un valico di confine in cui è presente il personale della dogana svizzera per spiegare il motivo per cui non è stato possibile varcare il confine nell’intervallo di tempo della validità. Senza motivazione credibile i tributi vengono riscossi una seconda volta.',
+      "Stabilire un intervallo di tempo di due ore per il passaggio del confine. Il giustificativo è valido solo durante questo arco di tempo. Se non è possibile rispettarlo, occorre rivolgersi a un valico di confine in cui è presente il personale dell'AFD per spiegare il motivo per cui non è stato possibile varcare il confine nell'intervallo di tempo della validità. Senza motivazione credibile i tributi vengono riscossi una seconda volta.",
     howToDeclareYourGoodsText4:
-      'Se l’imposizione concerne se stessi e le persone con cui si viaggia oppure un’altra persona il passaggio del confine deve avvenire congiuntamente.',
+      'Se il giustificativo vale per più persone, queste devono passare il confine congiuntamente.',
     howToDeclareYourGoodsText5:
-      'Prima del pagamento la dichiarazione può essere corretta in qualsiasi momento, mentre dopo non è più possibile correggerla. Una volta effettuato il pagamento, le merci estere acquistate successivamente devono essere dichiarate presso un valico di confine occupato da personale doganale svizzero.',
+      "Prima del pagamento la dichiarazione può essere corretta in qualsiasi momento. Dopo aver effettuato il pagamento, in QuickZoll non è più possibile apportare modifiche. Una volta effettuato il pagamento, le merci estere acquistate successivamente devono essere dichiarate presso un valico di confine occupato da personale dell'AFD.",
     howToDeclareYourGoodsText6:
-      'Il giustificativo rilasciato dalla dogana svizzera va conservato almeno per un anno e può essere conservato anche sotto forma di immagine.',
+      "Affinché l'operazione di pagamento abbia buon esito è necessaria una connessione a Internet. Se l'imposizione con QuickZoll non è possibile (p. es. connessione Internet mancante o pagamento con carta di credito non possibile), la merce va dichiarata presso un valico di confine occupato dal personale dell'AFD oppure mediante cassetta delle dichiarazioni.",
     howToDeclareYourGoodsText7:
-      'Se l’imposizione con l’app non è possibile (p. es. connessione Internet mancante o pagamento con carta di credito non possibile), la merce va dichiarata presso un valico di confine occupato dal personale doganale svizzero oppure mediante cassetta delle dichiarazioni.',
-    howToDeclareYourGoodsText8:
-      'È d’obbligo dichiarare le seguenti merci presso un valico di confine occupato dal personale doganale svizzero.',
-    howToDeclareYourGoodsText9:
-      'Merci soggette a limitazioni o divieti e che soggiacciono all’obbligo di certificato o di autorizzazione (p. es. armi, animali vivi e merci protette).',
-    howToDeclareYourGoodsText10:
-      'Merci destinate all’uso privato o da regalare aventi un valore complessivo di 20 000.00 franchi o superiore.',
-    howToDeclareYourGoodsText11:
+      "Accertarsi che il giustificativo possa essere presentato sul dispositivo mobile in occasione di un eventuale controllo al valico di confine. Durante il termine di validità non si accetta come giustificativo un'immagine dello stesso inoltrata a terzi tramite WhatsApp, iMessage, SMS o e-mail. Il giustificativo ricevuto va conservato almeno per un anno.",
+
+    specialCases: 'Casi particolari',
+    specialCasesText1:
+      "Le seguenti merci non possono essere imposte con QuickZoll e devono obbligatoriamente essere dichiarate presso un valico di confine occupato dal personale dell'AFD.",
+    specialCasesText2:
+      "Merci soggette a limitazioni o divieti e che soggiacciono all'obbligo di certificato o di autorizzazione (p. es. armi, animali vivi e merci protette);",
+    specialCasesText3: 'ulteriori informazioni',
+    specialCasesText4:
+      "Merci destinate all'uso privato o da regalare aventi un valore complessivo di 20 000.00 franchi o superiore.",
+    specialCasesText5: "Merci da dichiarare all'aliquota ridotta.",
+    specialCasesText6:
       'Merci non importate per uso privato o come regali (p. es. merci destinate al commercio).',
-    howToDeclareYourGoodsText12:
-      'Veicoli, riparazioni di veicoli e carburanti.',
-    howToDeclareYourGoodsText13:
+    specialCasesText7: 'Veicoli, riparazioni di veicoli e carburanti.',
+    specialCasesText8:
       'Masserizie di trasloco, corredi nuziali e oggetti ereditati.',
-    howToDeclareYourGoodsText14: 'Merci temporaneamente importate in Svizzera.',
-    howToDeclareYourGoodsText15:
-      'Merci destinate al transito attraverso la Svizzera.',
-    howToDeclareYourGoodsText16:
-      'Le merci esportate non possono essere dichiarate con l’app. Le informazioni sugli acquisti esenti da imposta in Svizzera (Tax free) sono disponibili qui.',
+    specialCasesText9: 'Merci temporaneamente importate in Svizzera.',
+    specialCasesText10: 'Merci destinate al transito attraverso la Svizzera.',
+    specialCasesText11:
+      "Merci esportate dalla Svizzera e per le quali è necessaria un'attestazione d'esportazione",
+    specialCasesText12:
+      "(informazioni sulla restituzione dell'IVA e sugli acquisti esenti da imposta in Svizzera [Tax free] sono disponibili qui).",
 
     legal: 'Aspetti legali',
     usage: 'Uso',
@@ -872,12 +860,12 @@ export const it: Locale = {
   legalNoticeModal: {
     importantNote: 'Indicazione importante',
     vatRateInfo:
-    'Si prega di tener conto che\n' +
-    '• al giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll;\n' +
-    '• le merci dichiarate vengono imposte all’aliquota IVA unica del 7,7 %;\n' +
-    '• i tributi pagati con l’app non vengono rimborsati.\n' +
-    'Ulteriori informazioni sono disponibili qui:',
-      termsOfService: 'Termini e condizioni',
+      'Si prega di tener conto che\n' +
+      '• al giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll;\n' +
+      '• le merci dichiarate vengono imposte all’aliquota IVA unica del 7,7 %;\n' +
+      '• i tributi pagati con l’app non vengono rimborsati.\n' +
+      'Ulteriori informazioni sono disponibili qui:',
+    termsOfService: 'Termini e condizioni',
     acceptance: 'Accetto i termini e le condizioni che ho letto e compreso.',
     confirm: 'Confermare',
     abort: 'Abortire',

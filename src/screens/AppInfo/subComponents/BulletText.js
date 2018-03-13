@@ -3,18 +3,24 @@ import React from 'react';
 // $FlowFixMe
 import { Image, Text, View } from 'react-native';
 import { moderateScale, scale, verticalScale } from '../../../styles/Scaling';
-import {MAIN_BLACK} from "../../../styles/colors";
-import {type as types} from "../../../styles/fonts";
+import { MAIN_BLACK } from '../../../styles/colors';
+import { type } from '../../../styles/fonts';
 
 const square = require('../../../../assets/images/redSquare.png');
 
 type BulletTextProps = {
   text: string,
   style?: Object,
-  onPress?: () => void,
+  additionalText?: string,
+  additionalTextStyle?: Object,
 };
 
-export const BulletText = ({ text, style, onPress }: BulletTextProps) => (
+export const BulletText = ({
+  text,
+  style,
+  additionalText,
+  additionalTextStyle,
+}: BulletTextProps) => (
   <View
     style={{
       flexDirection: 'row',
@@ -27,25 +33,30 @@ export const BulletText = ({ text, style, onPress }: BulletTextProps) => (
     <Image
       source={square}
       resizeMode="center"
-      style={{ marginTop: verticalScale(8), height: moderateScale(8), width: moderateScale(8) }}
+      style={{
+        marginTop: verticalScale(8),
+        height: moderateScale(8),
+        width: moderateScale(8),
+      }}
     />
     <Text
       style={{
         color: MAIN_BLACK,
         fontWeight: '300',
-        fontFamily: types.light,
+        fontFamily: type.light,
         lineHeight: moderateScale(21),
         paddingLeft: scale(4),
         ...style,
       }}
-      onPress={onPress}
     >
       {text}
+      <Text style={additionalTextStyle}> {additionalText}</Text>
     </Text>
   </View>
 );
 
 BulletText.defaultProps = {
   style: {},
-  onPress: () => {},
+  additionalTextStyle: {},
+  additionalText: '',
 };

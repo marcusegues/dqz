@@ -147,8 +147,39 @@ const DutyAllowanceInner = ({ t, navigation }: DutyAllowanceInnerProps) => (
       text={t('dutyAllowanceText45')}
       style={{ marginBottom: verticalScale(20) }}
     />
-    <CardRowText text={t('dutyAllowanceText46')} />
+    <TouchableOpacity
+      onPress={() =>
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'PurchasesOnlineOffline',
+        })
+      }
+    >
+      <CardRowText
+        text={t('dutyAllowanceText46')}
+        style={{
+          textDecorationLine: 'underline',
+          textDecorationStyle: 'solid',
+        }}
+      />
+    </TouchableOpacity>
     <AppInfoSubText text={t('dutyAllowanceText47')} />
+    <TouchableOpacity
+      onPress={() =>
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'PurchasesOnlineOffline',
+        })
+      }
+    >
+      <AppInfoSubText
+        text={t('dutyAllowanceText48')}
+        style={{
+          textDecorationLine: 'underline',
+          textDecorationStyle: 'solid',
+        }}
+      />
+    </TouchableOpacity>
   </SubCategoryContainer>
 );
 

@@ -1,5 +1,7 @@
 // @flow
 import React from 'react';
+// $FlowFixMe
+import { Linking } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import { ScrollViewCard } from '../../components/General Components/ScrollViewCard';
@@ -15,10 +17,13 @@ import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { infoCategories } from './types/information';
 import type { InfoCategory } from './types/information';
 import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
+import type { LanguageCategory } from './InformationScreens/subCategories/RoadTax';
+import type { Language } from '../../i18n/types/locale';
 
 class InformationMainCategoriesInner extends React.Component<{
   t: TFunction,
   navigation: Navigation,
+  i18n: { language: Language },
 }> {
   static navigationOptions = ({ screenProps }) => ({
     headerTitle: (
@@ -46,6 +51,20 @@ class InformationMainCategoriesInner extends React.Component<{
     }
   }
 
+  linkTo = () => {
+    const { i18n } = this.props;
+    type borderCrossingsLinksType = { [LanguageCategory]: string };
+
+    const borderCrossingsLinks: borderCrossingsLinksType = {
+      de: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=1',
+      it: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=3',
+      fr: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=2',
+      en: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=4',
+    };
+
+    Linking.openURL(`${borderCrossingsLinks[i18n.language]}`);
+  };
+
   render() {
     const { t } = this.props;
     return (
@@ -56,7 +75,11 @@ class InformationMainCategoriesInner extends React.Component<{
               key={cat}
               source={informationImages[cat]}
               mainText={t(`${cat}MainText`)}
-              rowOnPress={() => this.navigateTo(cat)}
+              rowOnPress={
+                cat === 'borderCrossings'
+                  ? () => this.linkTo()
+                  : () => this.navigateTo(cat)
+              }
               borderBottom={idx !== infoCategories.length - 1}
             />
           ))}

@@ -11,13 +11,15 @@ import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
+import type { Language } from '../../../../i18n/types/locale';
 
 type AnimalsInnerProps = {
   t: TFunction,
   navigation: Navigation,
+  i18n: { language: Language },
 };
 
-const AnimalsInner = ({ t, navigation }: AnimalsInnerProps) => (
+const AnimalsInner = ({ t, navigation, i18n }: AnimalsInnerProps) => (
   <SubCategoryContainer title={t('animalsMainText')}>
     <AppInfoSubText
       text={t('animalsText1')}
@@ -26,7 +28,11 @@ const AnimalsInner = ({ t, navigation }: AnimalsInnerProps) => (
 
     <AppInfoLink
       text="http://www.blv.admin.ch"
-      onPress={() => Linking.openURL('http://www.blv.admin.ch')}
+      onPress={() =>
+        Linking.openURL(
+          `https://www.blv.admin.ch/blv/${i18n.language}/home.html`
+        )
+      }
     />
 
     <CardRowText

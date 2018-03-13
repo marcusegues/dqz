@@ -16,12 +16,28 @@ import { RightAlignedHeader } from '../../../../components/Overview/subcomponent
 import { RoadTaxRow } from '../../subComponents/RoadTaxRow';
 import { AmountIcon } from '../../../../components/General Components/GreyBox/configured/AmountIcon';
 import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
+import type { Language } from '../../../../i18n/types/locale';
 
 const bus = require('../../../../../assets/images/info/bus.png');
 const camper = require('../../../../../assets/images/info/camper.png');
 const pendant = require('../../../../../assets/images/info/pendant.png');
 const trailer = require('../../../../../assets/images/info/trailer.png');
 const van = require('../../../../../assets/images/info/van.png');
+
+export type LanguageCategory = 'de' | 'en' | 'it' | 'fr';
+
+type roadTaxLinksType = { [LanguageCategory]: string };
+
+const roadTaxLinks: roadTaxLinksType = {
+  de:
+    'https://www.ezv.admin.ch/ezv/de/home/information-firmen/transport--reisedokument--strassenabgaben/schwerverkehrsabgaben--lsva-und-psva-.html',
+  it:
+    'https://www.ezv.admin.ch/ezv/it/home/informazioni-per-ditte/trasporto--documenti-di-viaggio-e-tasse-sul-traffico-stradale/tasse-sul-traffico-pesante--ttpcp-e-tftp-.html',
+  fr:
+    'https://www.ezv.admin.ch/ezv/fr/home/infos-pour-entreprises/transport--document-de-voyage--redevances-routieres/redevances-sur-le-trafic-des-poids-lourds--rplp-et-rplf-.html',
+  en:
+    'https://www.ezv.admin.ch/ezv/en/home/information-companies/transport--travel-documents--road-taxes/heavy-vehicle-charges--performance-related-and-lump-sum-.html',
+};
 
 const ownStyles = {
   rightHeader: {
@@ -54,9 +70,10 @@ const ownStyles = {
 
 type RoadTaxInnerProps = {
   t: TFunction,
+  i18n: { language: Language },
 };
 
-const RoadTaxInner = ({ t }: RoadTaxInnerProps) => (
+const RoadTaxInner = ({ t, i18n }: RoadTaxInnerProps) => (
   <SubCategoryContainer title={t('roadTaxMainText')}>
     <AppInfoSubText
       text={t('roadTaxText1')}
@@ -72,7 +89,7 @@ const RoadTaxInner = ({ t }: RoadTaxInnerProps) => (
     />
     <AppInfoLink
       text="www.lsva.ch"
-      onPress={() => Linking.openURL('http://www.lsva.ch')}
+      onPress={() => Linking.openURL(`${roadTaxLinks[i18n.language]}`)}
       style={{ marginBottom: verticalScale(10) }}
     />
     <AppInfoSubText
