@@ -175,8 +175,8 @@ export const de: Locale = {
     receiptValidFrom: 'Diese Quittung ist gültig für den Grenzübertritt am:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} bis {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Diese Quittung ist gültig für den Grenzübertritt am:',
-    receiptValidOnDate: '{{date}} von {{startTime}} bis {{endTime}}',
+    receiptValidOn: 'Diese Quittung ist gültig am:',
+    receiptValidOnDate: '{{date}}, von {{startTime}} bis {{endTime}}',
     sumText: 'Summe: CHF {{value}}',
     vatColumn: 'Mehrwertsteuer in CHF:',
     normalAmountsTitle: 'Gesamtwert der Waren',
