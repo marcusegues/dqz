@@ -1,6 +1,6 @@
 // @flow
 
-import { stackNavigatorConfig, stackNavigatorScreens } from '../RootNavigation';
+import { stackNavigatorScreens } from '../RootNavigation';
 import { nav } from '../../reducers/nav';
 
 describe('StackNavigation', () => {
