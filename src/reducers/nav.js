@@ -2,7 +2,7 @@ import { NavigationActions } from 'react-navigation';
 import { RootStackNavigator } from '../navigation/RootNavigation';
 
 export const initialNavState = RootStackNavigator.router.getStateForAction(
-  RootStackNavigator.router.getActionForPathAndParams('OnBoarding')
+  RootStackNavigator.router.getActionForPathAndParams('MainMenu')
 );
 
 export const nav = (state = initialNavState, action) => {

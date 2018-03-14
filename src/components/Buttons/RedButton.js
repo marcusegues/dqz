@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import debounce from 'lodash/debounce';
 // $FlowFixMe
 import { Text, View, Platform } from 'react-native';
 // $FlowFixMe
@@ -52,26 +53,41 @@ type RedButtonProps = {
   buttonStyle?: {},
 };
 
-export const RedButton = ({
-  text,
-  onPress,
-  confirmationDisabled,
-  buttonStyle,
-}: RedButtonProps) => (
-  <View style={ownStyles(confirmationDisabled).bottomButtonContainer}>
-    <Touchable
-      onPress={() => onPress()}
-      style={[ownStyles(confirmationDisabled).touchable, { ...buttonStyle }]}
-      disabled={confirmationDisabled}
-    >
-      <Text style={ownStyles(confirmationDisabled).touchableText}>
-        {text.toUpperCase()}
-      </Text>
-    </Touchable>
-  </View>
-);
+export class RedButton extends React.Component<RedButtonProps> {
+  static defaultProps = {
+    confirmationDisabled: false,
+    buttonStyle: {},
+  };
 
-RedButton.defaultProps = {
-  confirmationDisabled: false,
-  buttonStyle: {},
-};
+  constructor(props: RedButtonProps) {
+    super(props);
+    // prevent that multiple clicks fire multiple calls of onPress
+    this.debounced = debounce(this.props.onPress, 100, {
+      leading: true,
+      trailing: false,
+    });
+  }
+
+  debounced: Function;
+
+  render() {
+    const { text, confirmationDisabled, buttonStyle } = this.props;
+
+    return (
+      <View style={ownStyles(confirmationDisabled).bottomButtonContainer}>
+        <Touchable
+          onPress={this.debounced}
+          style={[
+            ownStyles(confirmationDisabled).touchable,
+            { ...buttonStyle },
+          ]}
+          disabled={confirmationDisabled}
+        >
+          <Text style={ownStyles(confirmationDisabled).touchableText}>
+            {text.toUpperCase()}
+          </Text>
+        </Touchable>
+      </View>
+    );
+  }
+}
