@@ -127,6 +127,7 @@ type QAFlowTranslations = {
   validateMainCategoryRemoveTitle: string,
   validateMainCategoryRemoveSubtitle: string,
   validateMainCategoryRemoveYes: string,
+  itemsGreaterThan300CHF: string,
 };
 
 type ModalTranslations = {

@@ -121,6 +121,7 @@ export const it: Locale = {
       'Al momento determinate sottocategorie contengono delle quantità, ovvero: {{value}}',
     validateMainCategoryRemoveYes:
       'Sì, desidero eliminare le rispettive quantità.',
+    itemsGreaterThan300CHF: 'Articoli > 300 CHF',
   },
   modal: {
     confirmPicker: 'Riprendere {{value}}',
