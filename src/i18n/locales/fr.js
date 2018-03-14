@@ -887,6 +887,13 @@ export const fr: Locale = {
     acceptance:
       "En utilisant l'application, vous acceptez que le taux de TVA est de 7,7%; est également appliqué aux biens effectivement soumis au taux d'imposition réduit (aliments, aliments pour animaux, médicaments et livres).",
   },
+  updateTheApp: {
+    title: 'Nouvelle version disponible!',
+    subtitle:
+      "Veuillez mettre à jour QuickZoll. La nouvelle version est maintenant disponible dans l'App Store.",
+    buttonTextAndroid: 'Dans Play Market',
+    buttonTextIos: "Dans l'App Store",
+  },
   units: {
     kilo: 'kg',
     kilo_plural: 'kgs',
