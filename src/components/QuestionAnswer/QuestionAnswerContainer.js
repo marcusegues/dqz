@@ -480,9 +480,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setPeople: (people: People) => {
-    debugger;
     storePeople(people);
-    debugger;
     dispatch({
       type: 'SET_PEOPLE',
       people,
