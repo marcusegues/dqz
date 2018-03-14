@@ -1,10 +1,13 @@
 // @flow
 
-import { stackNavigatorConfig, stackNavigatorScreens } from '../RootNavigation';
+import { stackNavigatorScreens } from '../RootNavigation';
+import { nav } from '../../reducers/nav';
 
 describe('StackNavigation', () => {
   test('has OnBoarding as initial route', () => {
-    expect(stackNavigatorConfig.initialRouteName).toBe('OnBoarding');
+    expect(nav(undefined, { type: 'INIT' }).routes[0].routeName).toBe(
+      'OnBoarding'
+    );
   });
 
   test('has all screens', () => {
