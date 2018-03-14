@@ -160,7 +160,7 @@ export const it: Locale = {
   receipt: {
     dutyAndVat: 'Tributi doganali: {{duty}} | IVA: {{vat}}',
     travellers:
-      'Viaggiatori: {{adults}} Adulti, {{minors}} Bambini e adolescenti (sotto i 17 anni)',
+      'Viaggiatori: {{adults}} Adulti, {{minors}} Bambini (meno di 17 anni)',
     paidOn: 'Pagamento effettuato in data {{date}} alle ore {{time}} con:',
     transactionId: 'ID della transazione (SIX): {{value}}',
 
@@ -168,8 +168,8 @@ export const it: Locale = {
       'Il giustificativo è valido per il valico di frontiera da:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} fino al {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Il giustificativo è valido per il valico di frontiera su:',
-    receiptValidOnDate: '{{date}} dalle {{startTime}} alle {{endTime}}',
+    receiptValidOn: 'Ricevuta valida il:',
+    receiptValidOnDate: '{{date}} dalle ore {{startTime}} alle ore {{endTime}}',
 
     sumText: 'Totale (CHF): {{value}}',
     vatColumn: 'IVA in CHF:',

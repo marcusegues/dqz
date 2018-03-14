@@ -167,7 +167,7 @@ export const fr: Locale = {
   receipt: {
     dutyAndVat: 'Droits de douane: {{duty}} |  TVA: {{vat}}',
     travellers:
-      'Voyageurs: {{adults}} Adultes, {{minors}} Enfants/Adolescents (inférieur à 17 ans)',
+      'Voyageurs: {{adults}} Adultes, {{minors}} Enfants (moins de 17 ans)',
     paidOn: 'Payé le {{date}} à {{time}} h avec:',
     transactionId: 'ID de transaction (SIX): {{value}}',
 
@@ -175,8 +175,7 @@ export const fr: Locale = {
       'La présente quittance est valable pour le passage frontalier à partir de:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} à {{endDate}} | {{endTime}}',
-    receiptValidOn:
-      'La présente quittance est valable pour le passage frontalier sur',
+    receiptValidOn: 'Quittance valable le:',
     receiptValidOnDate: '{{date}} de {{startTime}} à {{endTime}}',
 
     sumText: 'Total (en francs): {{value}}',

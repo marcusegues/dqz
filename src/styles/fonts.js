@@ -9,6 +9,7 @@ export const type = {
 
 export const size = {
   header: 24,
+  large: 16,
   medium: 14,
   small: 12,
 };
