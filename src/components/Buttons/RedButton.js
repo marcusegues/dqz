@@ -62,7 +62,15 @@ export class RedButton extends React.Component<RedButtonProps> {
   constructor(props: RedButtonProps) {
     super(props);
     // prevent that multiple clicks fire multiple calls of onPress
-    this.debounced = debounce(this.props.onPress, 2000, {
+    this.debounceOnPress(props);
+  }
+
+  componentWillReceiveProps(nextProps: RedButtonProps) {
+    this.debounceOnPress(nextProps);
+  }
+
+  debounceOnPress(props: RedButtonProps) {
+    this.debounced = debounce(props.onPress, 2000, {
       leading: true,
       trailing: false,
     });

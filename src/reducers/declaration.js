@@ -87,6 +87,7 @@ export const declaration = (
       return state.set('people', modelApi.setMinorPeople(people, quantity));
     }
     case 'SET_PEOPLE': {
+      debugger;
       return state.set('people', action.people);
     }
 

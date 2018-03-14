@@ -93,7 +93,7 @@ class MainMenuInner extends React.Component<
       amounts,
       receiptEntryTime,
     } = this.props;
-
+    debugger;
     if (
       isInitBasket(people, basket, mainCategories, amounts, receiptEntryTime)
     ) {
