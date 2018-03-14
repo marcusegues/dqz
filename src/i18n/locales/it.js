@@ -66,6 +66,7 @@ export const it: Locale = {
     confirmationVat: ' Confermo di accettare l’aliquota IVA unica di',
     confirmationVat2: 'all’atto dell’imposizione delle merci',
     vatInformation: 'Maggiori informazioni',
+    skipThisStep: 'Salta questo passaggio',
   },
   peopleInput: {
     peopleInputQuestion: 'L’imposizione concerne quanti viaggiatori?',
@@ -109,10 +110,11 @@ export const it: Locale = {
     minorInfo: 'sotto i 17 anni',
     minorCount: '{{value}} bambino (sotto i 17 anni)',
     minorCount_plural: '{{value}} bambini (sotto i 17 anni)',
-    validateNoAdultsTitle: 'Nessun adulto',
-    validateNoAdultsSubtitle: 'Garantire la legittimità.',
+    validateNoPeopleTitle: 'Deve essere almeno una persona',
+    validateNoPeopleSubtitle: 'Garantire la legittimità.',
     validateGenericYes: 'Sì',
     validateGenericNo: 'No',
+    validateGenericOk: 'Ok',
     validateMainCategoryRemoveTitle:
       ' Confermare la cancellazione di questa categoria principale?',
     validateMainCategoryRemoveSubtitle:

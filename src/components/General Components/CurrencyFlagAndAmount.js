@@ -28,6 +28,6 @@ export const CurrencyFlagAndAmount = ({
     <View style={{ marginRight: scale(5) }}>
       <CurrencyFlag currency={currency} />
     </View>
-    <CardRowText text={`${currency} ${amount}`} />
+    <CardRowText text={`${currency} ${amount.toFixed(2)}`} />
   </View>
 );

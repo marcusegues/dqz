@@ -77,6 +77,10 @@ ShallowWrapper {
           onPress={[Function]}
         />,
         <Unknown
+          onPress={[Function]}
+          text=""
+        />,
+        <Unknown
           modalVisible={false}
           navigation={
             Object {
@@ -230,6 +234,18 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
+          "onPress": [Function],
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
           "modalVisible": false,
           "navigation": Object {
             "dispatch": [Function],
@@ -302,6 +318,10 @@ ShallowWrapper {
           </TouchableOpacity>,
           <DoneButton
             onPress={[Function]}
+          />,
+          <Unknown
+            onPress={[Function]}
+            text=""
           />,
           <Unknown
             modalVisible={false}
@@ -447,6 +467,18 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "onPress": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "onPress": [Function],
+            "text": "",
           },
           "ref": null,
           "rendered": null,

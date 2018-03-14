@@ -67,6 +67,7 @@ export const de: Locale = {
       'Hiermit bestätige ich, dass ich den einheitlichen Mehrwertsteuersatz von ',
     confirmationVat2: 'bei der Verzollung von Waren akzeptiere.',
     vatInformation: 'Weitere Informationen',
+    skipThisStep: 'Diesen Schritt überspringen',
   },
   peopleInput: {
     peopleInputQuestion:
@@ -117,10 +118,11 @@ export const de: Locale = {
     minorInfo: 'unter 17 Jahre',
     minorCount: '{{value}} Kind (unter 17 Jahre)',
     minorCount_plural: '{{value}} Kinder (unter 17 Jahre)',
-    validateNoAdultsTitle: 'Keine Erwachsene',
-    validateNoAdultsSubtitle: 'Bitte Rechtmässigkeit sicherstellen.',
+    validateNoPeopleTitle: 'Muss mindestens eine Person sein',
+    validateNoPeopleSubtitle: 'Bitte Rechtmässigkeit sicherstellen.',
     validateGenericYes: 'Ja',
     validateGenericNo: 'Nein',
+    validateGenericOk: 'Ok',
     validateMainCategoryRemoveTitle:
       'Sind Sie sicher, dass Sie diese Hauptkategorie entfernen möchten?',
     validateMainCategoryRemoveSubtitle:

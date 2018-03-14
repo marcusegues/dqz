@@ -66,6 +66,7 @@ export const en: Locale = {
     confirmationVat: 'I hereby confirm that I accept the single VAT rate of',
     confirmationVat2: 'when declaring goods.',
     vatInformation: 'Further information',
+    skipThisStep: ' Skip this step',
   },
   peopleInput: {
     peopleInputQuestion:
@@ -111,10 +112,11 @@ export const en: Locale = {
     minorInfo: 'under 17 years',
     minorCount: '{{value}} Minor (below 17)',
     minorCount_plural: '{{value}} Minors (below 17)',
-    validateNoAdultsTitle: 'No Adults',
-    validateNoAdultsSubtitle: 'Please ensure legitimacy.',
+    validateNoPeopleTitle: 'Must be at least one person.',
+    validateNoPeopleSubtitle: 'Please ensure legitimacy.',
     validateGenericYes: 'Yes',
     validateGenericNo: 'No',
+    validateGenericOk: 'Ok',
     validateMainCategoryRemoveTitle:
       'Are you sure you want to remove this main category?',
     validateMainCategoryRemoveSubtitle:

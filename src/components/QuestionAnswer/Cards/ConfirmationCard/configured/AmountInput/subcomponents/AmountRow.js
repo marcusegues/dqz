@@ -41,7 +41,7 @@ const AmountRowInner = ({
       <View style={[rowStyles.rowContent, { flex: 1 }]}>
         <CurrencyFlag currency={currency} />
         <View style={{ marginLeft: 16 }}>
-          <CardRowText text={`${currency} ${amount}`} />
+          <CardRowText text={`${currency} ${amount.toFixed(2)}`} />
           <CardRowSubText
             text={`~CHF ${(currencyObject[currency] * amount).toFixed(2)}`}
           />

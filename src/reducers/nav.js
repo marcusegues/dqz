@@ -10,6 +10,7 @@ export const nav = (state = initialNavState, action) => {
   switch (action.type) {
     case 'NAVIGATE': {
       navigationAction = NavigationActions.navigate({
+        key: action.key || action.screen,
         routeName: action.screen,
         params: action.params,
       });

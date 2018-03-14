@@ -67,6 +67,7 @@ type OnBoardingTranslations = {
   confirmationVat: string,
   confirmationVat2: string,
   vatInformation: string,
+  skipThisStep: string,
 };
 
 type PeopleInputTranslations = {
@@ -118,10 +119,11 @@ type QAFlowTranslations = {
   minorInfo: string,
   minorCount: string,
   minorCount_plural: string,
-  validateNoAdultsTitle: string,
-  validateNoAdultsSubtitle: string,
+  validateNoPeopleTitle: string,
+  validateNoPeopleSubtitle: string,
   validateGenericYes: string,
   validateGenericNo: string,
+  validateGenericOk: string,
   validateMainCategoryRemoveTitle: string,
   validateMainCategoryRemoveSubtitle: string,
   validateMainCategoryRemoveYes: string,
