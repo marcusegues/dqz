@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
+import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 import { ConfirmationCard } from '../../ConfirmationCard';
 import { MainCategoriesCheckList } from '../../children/MainCategoriesCheckList/MainCategoriesCheckList';
@@ -17,17 +18,30 @@ type MainCategoriesInputConfirmationCardProps = {
   onAnswer: DirectionType => void,
 };
 
+type ReduxInject = {
+  dispatch: Function,
+};
+
 const MainCategoriesInputConfirmationCardInner = ({
   mainCategories,
   onToggleMainCategory,
   onAnswer,
   t,
-}: MainCategoriesInputConfirmationCardProps & { t: TFunction }) => (
+  dispatch,
+}: MainCategoriesInputConfirmationCardProps &
+  ReduxInject & { t: TFunction }) => (
   <ConfirmationCard
     text={t('mainCategoriesQuestion')}
     onAnswer={() => onAnswer('forward')}
     onBack={() => onAnswer('back')}
     confirmationDisabled={!mainCategories.size}
+    onInfoIconPress={() =>
+      dispatch({
+        type: 'NAVIGATE',
+        screen: 'InformationSubCategories',
+        params: { infoCategory: 'declaration' },
+      })
+    }
   >
     <MainCategoriesCheckList
       mainCategories={mainCategories}
@@ -36,8 +50,13 @@ const MainCategoriesInputConfirmationCardInner = ({
   </ConfirmationCard>
 );
 
-export const MainCategoriesInputConfirmationCard = (translate([
-  'mainCategoriesInput',
-])(MainCategoriesInputConfirmationCardInner): ComponentType<
-  MainCategoriesInputConfirmationCardProps
->);
+const mapDispatchToProps = dispatch => ({
+  dispatch,
+});
+
+export const MainCategoriesInputConfirmationCard = (connect(
+  null,
+  mapDispatchToProps
+)(
+  translate(['mainCategoriesInput'])(MainCategoriesInputConfirmationCardInner)
+): ComponentType<MainCategoriesInputConfirmationCardProps>);
