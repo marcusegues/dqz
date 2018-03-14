@@ -191,11 +191,20 @@ export default class App extends React.Component<AppProps, AppStateT> {
         ...Entypo.font, // fixes major bug related to using onLayout on Views with Entypo icons as children
       }),
       fetch(
-        'http://www.pwebapps.ezv.admin.ch/apps/rates/rate/getxml?activeSearchType=yesterday'
+        'https://dazit1.ambrite.ch/getrates'
       )
         .then(response => response.text())
         .then(rawdata => parseCurrencyXML(rawdata, store))
-        .catch(() => parseCurrencyXML('invalid', store)),
+        .catch(()=>{
+          fetch(
+            'https://dazit2.ambrite.ch/getrates'
+          )
+            .then(response => response.text())
+            .then(rawdata => parseCurrencyXML(rawdata, store))
+            .catch(
+          () => parseCurrencyXML('invalid', store)
+        )}
+        ),
     ]);
 
   render() {
