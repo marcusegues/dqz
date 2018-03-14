@@ -48,6 +48,7 @@ const ownStyles = disabled => ({
 
 type RedButtonProps = {
   text: string,
+  // eslint-disable-next-line react/no-unused-prop-types
   onPress: () => any,
   confirmationDisabled?: boolean,
   buttonStyle?: {},
