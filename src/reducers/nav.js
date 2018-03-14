@@ -19,7 +19,7 @@ Navigation state has structure
 */
 
 export const initialNavState = RootStackNavigator.router.getStateForAction(
-  RootStackNavigator.router.getActionForPathAndParams('MainMenu')
+  RootStackNavigator.router.getActionForPathAndParams('OnBoarding')
 );
 
 export const nav = (state = initialNavState, action) => {
