@@ -644,7 +644,8 @@ type FurtherInformationModalTranslations = {
 type UpdateTheAppTranslations = {
   title: string,
   subtitle: string,
-  buttonText: string,
+  buttonTextAndroid: string,
+  buttonTextIos: string,
 };
 
 type UnitsTranslations = {

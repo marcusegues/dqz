@@ -2,7 +2,15 @@
 import React from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { Image, Text, View, Dimensions, SafeAreaView } from 'react-native';
+import {
+  Image,
+  Text,
+  View,
+  Dimensions,
+  SafeAreaView,
+  Platform,
+  // $FlowFixMe
+} from 'react-native';
 import type { ComponentType } from 'react';
 import type { TFunction } from '../../types/generalTypes';
 import { moderateScale, scale, verticalScale } from '../../styles/Scaling';
@@ -56,19 +64,25 @@ type UpdateTheAppInnerProps = {
   t: TFunction,
 };
 
-const UpdateTheAppInner = ({ t }: UpdateTheAppInnerProps) => (
-  <SafeAreaView style={ownStyles.container}>
-    <Image source={topImage} resizeMode="cover" style={ownStyles.topImage} />
-    <View style={ownStyles.textContainer}>
-      <Text style={[ownStyles.text, ownStyles.title]}>{t('title')}</Text>
-      <Text style={[ownStyles.text, ownStyles.subTitle]}>{t('subtitle')}</Text>
-    </View>
-    <Image source={bottomIcon} resizeMode="contain" style={ownStyles.icon} />
-    <View style={ownStyles.button}>
-      <RedButton text={t('buttonText')} onPress={() => {}} />
-    </View>
-  </SafeAreaView>
-);
+const UpdateTheAppInner = ({ t }: UpdateTheAppInnerProps) => {
+  const ios = Platform.OS === 'ios';
+  const buttonText = ios ? t('buttonTextIos') : t('buttonTextAndroid');
+  return (
+    <SafeAreaView style={ownStyles.container}>
+      <Image source={topImage} resizeMode="cover" style={ownStyles.topImage} />
+      <View style={ownStyles.textContainer}>
+        <Text style={[ownStyles.text, ownStyles.title]}>{t('title')}</Text>
+        <Text style={[ownStyles.text, ownStyles.subTitle]}>
+          {t('subtitle')}
+        </Text>
+      </View>
+      <Image source={bottomIcon} resizeMode="contain" style={ownStyles.icon} />
+      <View style={ownStyles.button}>
+        <RedButton text={buttonText} onPress={() => {}} />
+      </View>
+    </SafeAreaView>
+  );
+};
 
 export const UpdateTheApp = (translate(['updateTheApp'])(
   UpdateTheAppInner
