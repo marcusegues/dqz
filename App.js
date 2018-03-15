@@ -30,7 +30,9 @@ import {
   analyticsCustom,
 } from './src/analytics/analyticsApi';
 import { initAmplitude } from './src/analytics/amplitude';
+import { appShouldUpdate } from './src/utils/checkversion/checkversion';
 import type { ConnectivityType } from './src/types/connectivity';
+import { UpdateTheApp } from './src/screens/UpdateTheApp/UpdateTheApp';
 
 const store = configureStore();
 
@@ -50,13 +52,14 @@ if (Platform.OS === 'android') {
 }
 
 type AppProps = {};
-type AppStateT = { isLoadingComplete: boolean };
+type AppStateT = { isLoadingComplete: boolean, appHaveNewVersion: boolean };
 
 export type ExpoAppState = 'active' | 'inactive' | 'background';
 
 export default class App extends React.Component<AppProps, AppStateT> {
   state = {
     isLoadingComplete: false,
+    appHaveNewVersion: false,
   };
 
   componentWillMount() {
@@ -114,7 +117,18 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/images/info/camper.png'),
         require('./assets/images/info/pendant.png'),
         require('./assets/images/info/trailer.png'),
+        require('./assets/images/updateTheAppTopImage.jpg'),
+        require('./assets/images/updateTheAppBottomIcon.png'),
         require('./assets/images/info/van.png'),
+        require('./assets/icons/shoppingCartWithArrow.png'),
+        require('./assets/images/info/vatAllowanceInfographic1_DE.png'),
+        require('./assets/images/info/vatAllowanceInfographic1_EN.png'),
+        require('./assets/images/info/vatAllowanceInfographic1_IT.png'),
+        require('./assets/images/info/vatAllowanceInfographic1_FR.png'),
+        require('./assets/images/info/vatAllowanceInfographic2_DE.png'),
+        require('./assets/images/info/vatAllowanceInfographic2_EN.png'),
+        require('./assets/images/info/vatAllowanceInfographic2_IT.png'),
+        require('./assets/images/info/vatAllowanceInfographic2_FR.png'),
 
         require('./assets/icons/mwst.png'),
         require('./assets/icons/iva.png'),
@@ -128,6 +142,7 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/icons/travellers.png'),
         require('./assets/icons/adult.png'),
         require('./assets/icons/kids.png'),
+        require('./assets/icons/kids.png'),
 
         require('./assets/icons/AlcHard.png'),
         require('./assets/icons/AlcSoft.png'),
@@ -136,7 +151,6 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/icons/Oils.png'),
         require('./assets/icons/OtherGoods.png'),
         require('./assets/icons/OtherTobacco.png'),
-        require('./assets/icons/Tabak.png'),
 
         require('./assets/icons/info/Above300.png'),
         require('./assets/icons/info/AlcoCigarettesMeat.png'),
@@ -187,12 +201,35 @@ export default class App extends React.Component<AppProps, AppStateT> {
         ...Ionicons.font,
         ...Entypo.font, // fixes major bug related to using onLayout on Views with Entypo icons as children
       }),
-      fetch(
-        'http://www.pwebapps.ezv.admin.ch/apps/rates/rate/getxml?activeSearchType=yesterday'
-      )
+      fetch('https://dazit1.ambrite.ch/getrates')
         .then(response => response.text())
         .then(rawdata => parseCurrencyXML(rawdata, store))
-        .catch(() => parseCurrencyXML('invalid', store)),
+        .catch(() => {
+          fetch('https://dazit2.ambrite.ch/getrates')
+            .then(response => response.text())
+            .then(rawdata => parseCurrencyXML(rawdata, store))
+            .catch(() => parseCurrencyXML('invalid', store));
+        }),
+      fetch('https://dazit1.ambrite.ch/getversion')
+        .then(response => response.json())
+        .then(jsonData => {
+          if (appShouldUpdate(jsonData.version)) {
+            this.setState({ appHaveNewVersion: true });
+          }
+        })
+        .catch(() => {
+          fetch('https://dazit2.ambrite.ch/getversion')
+            .then(response => response.json())
+            .then(jsonData => {
+              if (appShouldUpdate(jsonData.version)) {
+                this.setState({ appHaveNewVersion: true });
+              }
+            })
+            .catch(e => {
+              // TODO: Add amplitude event for analytics
+              console.log(e);
+            });
+        }),
     ]);
 
   render() {
@@ -203,6 +240,21 @@ export default class App extends React.Component<AppProps, AppStateT> {
           onError={this.handleLoadingError}
           onFinish={this.handleFinishLoading}
         />
+      );
+    }
+    if (this.state.appHaveNewVersion) {
+      return (
+        <View style={styles.container} store={store}>
+          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+          {Platform.OS === 'android' && (
+            <View style={styles.statusBarUnderlay} />
+          )}
+          <Provider store={store}>
+            <I18nextProvider i18n={i18nImplementation}>
+              <UpdateTheApp t={i18nImplementation.getFixedT()} />
+            </I18nextProvider>
+          </Provider>
+        </View>
       );
     }
     return (

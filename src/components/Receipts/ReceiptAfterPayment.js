@@ -206,7 +206,7 @@ class ReceiptAfterPaymentInner extends React.Component<
             }}
           >
             <RedLogo />
-            <Row width="90%">
+            <Row>
               <Text style={ownStyles.topSumText}>
                 CHF {(fullVat + fullDuty).toFixed(2)}
               </Text>
@@ -221,6 +221,7 @@ class ReceiptAfterPaymentInner extends React.Component<
                   adults: people.adults,
                   minors: people.minors,
                 })}
+                style={{ paddingBottom: verticalScale(16) }}
               />
             </Row>
 

@@ -20,6 +20,7 @@ import {
   verticalScale,
 } from '../../../../../../styles/Scaling';
 import { RedPlusIcon } from '../../../../../Modals/GoodQuantityListModal/subcomponents/RedPlusIcon';
+import { type } from '../../../../../../styles/fonts';
 
 const ownStyles = {
   mainContainer: {
@@ -85,6 +86,14 @@ const ownStyles = {
     marginTop: verticalScale(5),
     marginBottom: verticalScale(30),
   },
+  enterValueText: {
+    fontFamily: type.light,
+    lineHeight: verticalScale(18),
+  },
+  enterValueBoldText: {
+    fontFamily: type.medium,
+    lineHeight: verticalScale(18),
+  },
 };
 
 type AmountInputProps = {
@@ -104,6 +113,20 @@ const AmountInputInner = ({
   const relevantAmounts = large
     ? flatLargeAmounts(amounts)
     : flatNormalAmounts(amounts);
+
+  const enterValueText = (
+    <Text>
+      <Text style={ownStyles.enterValueText}>
+        {t('amountInputEnterValueBeginning')}
+      </Text>
+      <Text style={ownStyles.enterValueBoldText}>
+        {t('amountInputEnterValueBoldText')}
+      </Text>
+      <Text style={ownStyles.enterValueText}>
+        {t('amountInputEnterValueEnd')}
+      </Text>
+    </Text>
+  );
   return (
     <View style={ownStyles.mainContainer}>
       <ScrollView contentContainerStyle={ownStyles.scrollView}>
@@ -115,11 +138,7 @@ const AmountInputInner = ({
         ) : (
           <View style={ownStyles.addButtonContainer}>
             <CardHeaderSubText
-              text={
-                large
-                  ? t('amountInputLargeItemGreyBox')
-                  : t('amountInputEnterValue')
-              }
+              text={large ? t('amountInputLargeItemGreyBox') : enterValueText}
               style={ownStyles.enterValueContainer}
             />
             <RedPlusIcon onPress={() => onShowAmountInputModal()} />

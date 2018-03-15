@@ -25,26 +25,33 @@ export const BulletText = ({
     style={{
       flexDirection: 'row',
       justifyContent: 'flex-start',
-      alignItems: 'flex-start',
+      alignItems: 'center',
       marginRight: scale(10),
       marginBottom: verticalScale(5),
     }}
   >
-    <Image
-      source={square}
-      resizeMode="center"
+    <View
       style={{
-        marginTop: verticalScale(8),
-        height: moderateScale(8),
-        width: moderateScale(8),
+        height: moderateScale(20),
+        alignSelf: 'flex-start',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
-    />
+    >
+      <Image
+        source={square}
+        resizeMode="center"
+        style={{
+          height: moderateScale(6),
+          width: moderateScale(6),
+        }}
+      />
+    </View>
     <Text
       style={{
         color: MAIN_BLACK,
-        fontWeight: '300',
         fontFamily: type.light,
-        lineHeight: moderateScale(21),
+        lineHeight: moderateScale(18),
         paddingLeft: scale(4),
         ...style,
       }}

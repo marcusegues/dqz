@@ -93,9 +93,11 @@ export const it: Locale = {
       'Ancora una volta, cattura ogni oggetto che vale più di CHF 300.00.',
     amountInputAddItem: 'Aggiungere valore',
     amountInputAddItemLarge: 'Aggiungere oggetto',
-    amountInputEnterValue:
-      'Inserire il valore senza IVA estera (valore netto), compreso il valore dei regali ricevuti, cibo, prodotti del tabacco e bevande alcoliche.',
-    currentTotalValue: ' Valore complessivo attuale:',
+    amountInputEnterValueBeginning: 'Inserire il valore',
+    amountInputEnterValueBoldText: 'senza IVA estera (valore netto)',
+    amountInputEnterValueEnd:
+      ', senza IVA estera (valore netto), compreso il valore dei regali ricevuti, cibo, prodotti del tabacco e bevande alcoliche.',
+    currentTotalValue: 'Valore complessivo attuale:',
     lastExchangeRate:
       'Sulla base dell’ultimo corso del cambio disponibile, aggiornato al momento del pagamento.',
   },
@@ -160,7 +162,7 @@ export const it: Locale = {
   receipt: {
     dutyAndVat: 'Tributi doganali: {{duty}} | IVA: {{vat}}',
     travellers:
-      'Viaggiatori: {{adults}} Adulti, {{minors}} Bambini e adolescenti (sotto i 17 anni)',
+      'Viaggiatori: {{adults}} Adulti, {{minors}} Bambini (meno di 17 anni)',
     paidOn: 'Pagamento effettuato in data {{date}} alle ore {{time}} con:',
     transactionId: 'ID della transazione (SIX): {{value}}',
 
@@ -168,8 +170,8 @@ export const it: Locale = {
       'Il giustificativo è valido per il valico di frontiera da:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} fino al {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Il giustificativo è valido per il valico di frontiera su:',
-    receiptValidOnDate: '{{date}} dalle {{startTime}} alle {{endTime}}',
+    receiptValidOn: 'Ricevuta valida il:',
+    receiptValidOnDate: '{{date}} dalle ore {{startTime}} alle ore {{endTime}}',
 
     sumText: 'Totale (CHF): {{value}}',
     vatColumn: 'IVA in CHF:',
@@ -876,6 +878,13 @@ export const it: Locale = {
     furtherInformation: 'Ulteriori informazioni:',
     acceptance:
       "Utilizzando l'app, accetti che l'aliquota IVA sia pari al 7,7%; si applica anche alle merci che sono effettivamente soggette all'aliquota ridotta (alimenti, mangimi, medicinali e libri).",
+  },
+  updateTheApp: {
+    title: 'Nuova versione disponibile!',
+    subtitle:
+      'Si prega di aggiornare QuickZoll. La nuova versione è ora disponibile su App Store.',
+    buttonTextAndroid: 'Al Play Market',
+    buttonTextIos: "All'App Store",
   },
   units: {
     kilo: 'kg',

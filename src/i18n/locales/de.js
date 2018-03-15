@@ -101,8 +101,11 @@ export const de: Locale = {
       'Erfassen Sie hier nochmals jeden Gegenstand, der mehr als CHF 300.00 wert ist.',
     amountInputAddItem: 'Wert hinzufügen',
     amountInputAddItemLarge: 'Gegenstand hinzufügen',
-    amountInputEnterValue:
-      'Erfassen Sie den Wert ohne ausländische Mehrwertsteuer (Nettowert), inkl. Wert der erhaltenen Geschenke, Lebensmittel, Tabakfabrikate und alkoholische Getränke.',
+    amountInputEnterValueBeginning: 'Erfassen Sie den Wert',
+    amountInputEnterValueBoldText:
+      ' ohne ausländische Mehrwertsteuer (Nettowert)',
+    amountInputEnterValueEnd:
+      ' inkl. Wert der erhaltenen Geschenke, Lebensmittel, Tabakfabrikate und alkoholische Getränke.',
     currentTotalValue: 'Aktueller Gesamtwert:',
     lastExchangeRate:
       'Basierend auf dem letzten verfügbaren Wechsel-kurs, welcher beim Bezahlen aktualisiert wird.',
@@ -175,8 +178,8 @@ export const de: Locale = {
     receiptValidFrom: 'Diese Quittung ist gültig für den Grenzübertritt am:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} bis {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Diese Quittung ist gültig für den Grenzübertritt am:',
-    receiptValidOnDate: '{{date}} von {{startTime}} bis {{endTime}}',
+    receiptValidOn: 'Diese Quittung ist gültig am:',
+    receiptValidOnDate: '{{date}}, von {{startTime}} bis {{endTime}}',
     sumText: 'Summe: CHF {{value}}',
     vatColumn: 'Mehrwertsteuer in CHF:',
     normalAmountsTitle: 'Gesamtwert der Waren',
@@ -853,6 +856,13 @@ export const de: Locale = {
     furtherInformation: 'Weitere Informationen:',
     acceptance:
       'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 % auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
+  },
+  updateTheApp: {
+    title: 'Neue Version verfügbar!',
+    subtitle:
+      'Bitte führen Sie eine Aktualisierung von QuickZoll durch. Die neue Version ist ab sofort im App Store erhältlich.',
+    buttonTextAndroid: 'Zum Play Market',
+    buttonTextIos: 'Zum App Store',
   },
   units: {
     kilo: 'kg',

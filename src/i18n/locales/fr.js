@@ -96,8 +96,10 @@ export const fr: Locale = {
       "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300.00.",
     amountInputAddItem: 'Ajouter la valeur',
     amountInputAddItemLarge: 'Ajouter un bien',
-    amountInputEnterValue:
-      'Saisissez la valeur sans la TVA étrangère (valeur nette), y compris la valeur des cadeaux reçus, la nourriture, les produits du tabac et les boissons alcoolisées.',
+    amountInputEnterValueBeginning: 'Saisissez la valeur',
+    amountInputEnterValueBoldText: 'sans la TVA étrangère (valeur nette)',
+    amountInputEnterValueEnd:
+      ', y compris la valeur des cadeaux reçus, la nourriture, les produits du tabac et les boissons alcoolisées.',
     currentTotalValue: 'Valeur totale actuelle',
     lastExchangeRate:
       'Basé sur le dernier taux de change disponible, qui est mis à jour lors du paiement.',
@@ -167,7 +169,7 @@ export const fr: Locale = {
   receipt: {
     dutyAndVat: 'Droits de douane: {{duty}} |  TVA: {{vat}}',
     travellers:
-      'Voyageurs: {{adults}} Adultes, {{minors}} Enfants/Adolescents (inférieur à 17 ans)',
+      'Voyageurs: {{adults}} Adultes, {{minors}} Enfants (moins de 17 ans)',
     paidOn: 'Payé le {{date}} à {{time}} h avec:',
     transactionId: 'ID de transaction (SIX): {{value}}',
 
@@ -175,8 +177,7 @@ export const fr: Locale = {
       'La présente quittance est valable pour le passage frontalier à partir de:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} à {{endDate}} | {{endTime}}',
-    receiptValidOn:
-      'La présente quittance est valable pour le passage frontalier sur',
+    receiptValidOn: 'Quittance valable le:',
     receiptValidOnDate: '{{date}} de {{startTime}} à {{endTime}}',
 
     sumText: 'Total (en francs): {{value}}',
@@ -886,6 +887,13 @@ export const fr: Locale = {
     furtherInformation: "Plus d'informations:",
     acceptance:
       "En utilisant l'application, vous acceptez que le taux de TVA est de 7,7%; est également appliqué aux biens effectivement soumis au taux d'imposition réduit (aliments, aliments pour animaux, médicaments et livres).",
+  },
+  updateTheApp: {
+    title: 'Nouvelle version disponible!',
+    subtitle:
+      "Veuillez mettre à jour QuickZoll. La nouvelle version est maintenant disponible dans l'App Store.",
+    buttonTextAndroid: 'Dans Play Market',
+    buttonTextIos: "Dans l'App Store",
   },
   units: {
     kilo: 'kg',
