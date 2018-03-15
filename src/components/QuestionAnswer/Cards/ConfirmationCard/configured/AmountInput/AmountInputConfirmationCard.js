@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 // $FlowFixMe
 import { Text, View } from 'react-native';
 import { translate } from 'react-i18next';
+import { MaterialIcons } from '@expo/vector-icons';
 import { AmountInput } from './AmountInput';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import { INDIVIDUALALLOWANCE } from '../../../../../../model/constants';
@@ -21,6 +22,7 @@ import {
 } from '../../../../../../model/utils';
 import type { CurrencyObject } from '../../../../../../model/currencies';
 import { getCurrencies } from '../../../../../../reducers/selectors';
+import { MAIN_RED } from '../../../../../../styles/colors';
 
 const ownStyles = {
   currentTotalValueContainer: {
@@ -30,6 +32,7 @@ const ownStyles = {
     flexDirection: 'row',
     alignSelf: 'flex-start',
     justifyContent: 'center',
+    alignItems: 'center',
     marginTop: verticalScale(5),
   },
   currentTotalValueText: {
@@ -82,6 +85,16 @@ const AmountInputConfirmationCardInner = ({
     ? totalLargeAmounts(amounts, currencies)
     : totalNormalAmounts(amounts, currencies);
 
+  let exclamationMark = null;
+  const above20000 = totalAmount > 20000;
+  if (above20000) {
+    exclamationMark = (
+      <View style={{ marginLeft: 5 }}>
+        <MaterialIcons name="error-outline" size={16} color={MAIN_RED} />
+      </View>
+    );
+  }
+
   return (
     <ConfirmationCard
       text={title}
@@ -101,6 +114,7 @@ const AmountInputConfirmationCardInner = ({
               style={ownStyles.currentTotalValueText}
             />
             <AmountIcon amount={totalAmount} currency="CHF" />
+            {exclamationMark}
           </View>
 
           <CardHeaderSubText
