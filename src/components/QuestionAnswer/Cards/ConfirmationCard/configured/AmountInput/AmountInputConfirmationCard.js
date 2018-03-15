@@ -14,7 +14,11 @@ import type { TFunction } from '../../../../../../types/generalTypes';
 import { ConfirmationCard } from '../../ConfirmationCard';
 import type { DirectionType } from '../../../../QuestionAnswerContainer';
 import { CardRowText } from '../../../subcomponents/CardRowText';
-import { scale, verticalScale } from '../../../../../../styles/Scaling';
+import {
+  moderateScale,
+  scale,
+  verticalScale,
+} from '../../../../../../styles/Scaling';
 import { AmountIcon } from '../../../../../General Components/GreyBox/configured/AmountIcon';
 import {
   totalLargeAmounts,
@@ -90,7 +94,11 @@ const AmountInputConfirmationCardInner = ({
   if (above20000) {
     exclamationMark = (
       <View style={{ marginLeft: 5 }}>
-        <MaterialIcons name="error-outline" size={16} color={MAIN_RED} />
+        <MaterialIcons
+          name="error-outline"
+          size={moderateScale(16)}
+          color={MAIN_RED}
+        />
       </View>
     );
   }
