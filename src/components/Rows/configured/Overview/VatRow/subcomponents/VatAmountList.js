@@ -10,11 +10,13 @@ import { VatAmountListRowItem } from './VatAmountListRowItem';
 type VatAmountListProps = {
   flatAmounts: Array<FlatAmount>,
   setContentHeight?: (height: number) => void,
+  swipeable?: boolean,
 };
 
 const VatAmountListInner = ({
   setContentHeight = () => {},
   flatAmounts,
+  swipeable,
 }: VatAmountListProps) => (
   <View
     onLayout={event => {
@@ -22,13 +24,19 @@ const VatAmountListInner = ({
     }}
   >
     {flatAmounts.map(a => (
-      <VatAmountListRowItem key={a.id} flatAmount={a} fullWidth />
+      <VatAmountListRowItem
+        key={a.id}
+        flatAmount={a}
+        swipeable={swipeable}
+        fullWidth
+      />
     ))}
   </View>
 );
 
 VatAmountListInner.defaultProps = {
   setContentHeight: () => {},
+  swipeable: false,
 };
 
 export const VatAmountList = (translate(['receipt'])(

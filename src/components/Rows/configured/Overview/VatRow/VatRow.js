@@ -20,6 +20,7 @@ type VatRowProps = {
   vat: number,
   borderTop: boolean,
   borderBottom: boolean,
+  swipeable: boolean,
 };
 
 const VatRowInner = ({
@@ -29,6 +30,7 @@ const VatRowInner = ({
   large,
   borderTop = false,
   borderBottom = true,
+  swipeable = false,
 }) => {
   const relevantAmounts = large
     ? flatLargeAmounts(amounts)
@@ -45,7 +47,7 @@ const VatRowInner = ({
         large={large}
         vat={vat}
       />
-      <VatAmountList flatAmounts={relevantAmounts} />
+      <VatAmountList flatAmounts={relevantAmounts} swipeable={swipeable} />
     </Collapsible>
   );
 };
