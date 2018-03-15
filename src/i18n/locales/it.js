@@ -93,9 +93,11 @@ export const it: Locale = {
       'Ancora una volta, cattura ogni oggetto che vale più di CHF 300.00.',
     amountInputAddItem: 'Aggiungere valore',
     amountInputAddItemLarge: 'Aggiungere oggetto',
-    amountInputEnterValue:
-      'Inserire il valore senza IVA estera (valore netto), compreso il valore dei regali ricevuti, cibo, prodotti del tabacco e bevande alcoliche.',
-    currentTotalValue: ' Valore complessivo attuale:',
+    amountInputEnterValueBeginning: 'Inserire il valore',
+    amountInputEnterValueBoldText: 'senza IVA estera (valore netto)',
+    amountInputEnterValueEnd:
+      ', senza IVA estera (valore netto), compreso il valore dei regali ricevuti, cibo, prodotti del tabacco e bevande alcoliche.',
+    currentTotalValue: 'Valore complessivo attuale:',
     lastExchangeRate:
       'Sulla base dell’ultimo corso del cambio disponibile, aggiornato al momento del pagamento.',
   },
