@@ -118,6 +118,14 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/images/updateTheAppBottomIcon.png'),
         require('./assets/images/info/van.png'),
         require('./assets/icons/shoppingCartWithArrow.png'),
+        require('./assets/images/info/vatAllowanceInfographic1_DE.png'),
+        require('./assets/images/info/vatAllowanceInfographic1_EN.png'),
+        require('./assets/images/info/vatAllowanceInfographic1_IT.png'),
+        require('./assets/images/info/vatAllowanceInfographic1_FR.png'),
+        require('./assets/images/info/vatAllowanceInfographic2_DE.png'),
+        require('./assets/images/info/vatAllowanceInfographic2_EN.png'),
+        require('./assets/images/info/vatAllowanceInfographic2_IT.png'),
+        require('./assets/images/info/vatAllowanceInfographic2_FR.png'),
 
         require('./assets/icons/mwst.png'),
         require('./assets/icons/iva.png'),
@@ -190,21 +198,15 @@ export default class App extends React.Component<AppProps, AppStateT> {
         ...Ionicons.font,
         ...Entypo.font, // fixes major bug related to using onLayout on Views with Entypo icons as children
       }),
-      fetch(
-        'https://dazit1.ambrite.ch/getrates'
-      )
+      fetch('https://dazit1.ambrite.ch/getrates')
         .then(response => response.text())
         .then(rawdata => parseCurrencyXML(rawdata, store))
-        .catch(()=>{
-          fetch(
-            'https://dazit2.ambrite.ch/getrates'
-          )
+        .catch(() => {
+          fetch('https://dazit2.ambrite.ch/getrates')
             .then(response => response.text())
             .then(rawdata => parseCurrencyXML(rawdata, store))
-            .catch(
-          () => parseCurrencyXML('invalid', store)
-        )}
-        ),
+            .catch(() => parseCurrencyXML('invalid', store));
+        }),
     ]);
 
   render() {
