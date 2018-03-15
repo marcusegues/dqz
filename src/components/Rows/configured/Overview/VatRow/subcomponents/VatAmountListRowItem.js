@@ -20,11 +20,11 @@ type VatAmountListRowItemProps = {
   borderTop?: boolean,
   borderBottom?: boolean,
   swipeable?: boolean,
+  onDelete: () => void,
 };
 
 type ReduxInject = {
   currencyObject: CurrencyObject,
-  onDeleteAmount: (id: string) => void,
 };
 
 const VatAmountListRowItemInner = ({
@@ -33,7 +33,7 @@ const VatAmountListRowItemInner = ({
   borderTop = false,
   borderBottom = false,
   swipeable = false,
-  onDeleteAmount,
+  onDelete,
   currencyObject,
 }: VatAmountListRowItemProps & ReduxInject) => {
   const { currency, amount } = flatAmount;
@@ -55,7 +55,7 @@ const VatAmountListRowItemInner = ({
       flatAmount.amount,
       flatAmount.large
     );
-    onDeleteAmount(flatAmount.id);
+    onDelete();
   };
 
   const rowContent = swipeable ? (
@@ -81,11 +81,6 @@ const mapStateToProps = state => ({
   currencyObject: getCurrencies(state),
 });
 
-const mapDispatchToProps = dispatch => ({
-  onDeleteAmount: id => dispatch({ type: 'DELETE_AMOUNT', id }),
-});
-
-export const VatAmountListRowItem = (connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(VatAmountListRowItemInner): ComponentType<VatAmountListRowItemProps>);
+export const VatAmountListRowItem = (connect(mapStateToProps, null)(
+  VatAmountListRowItemInner
+): ComponentType<VatAmountListRowItemProps>);

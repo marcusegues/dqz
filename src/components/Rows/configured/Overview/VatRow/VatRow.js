@@ -47,7 +47,7 @@ const VatRowInner = ({
         large={large}
         vat={vat}
       />
-      <VatAmountList flatAmounts={relevantAmounts} swipeable={swipeable} />
+      <VatAmountList amounts={amounts} large={large} swipeable={swipeable} />
     </Collapsible>
   );
 };
