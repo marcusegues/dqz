@@ -84,7 +84,6 @@ const VatAllowanceInner = ({ t, navigation, i18n }: VatAllowanceInnerProps) => {
         <AppInfoSubText
           text={t('vatAllowanceText8')}
           style={{
-            marginTop: verticalScale(10),
             marginBottom: verticalScale(20),
             textDecorationLine: 'underline',
             textDecorationStyle: 'solid',
@@ -147,7 +146,7 @@ const VatAllowanceInner = ({ t, navigation, i18n }: VatAllowanceInnerProps) => {
       />
       <CardRowText
         text={t('vatAllowanceText18')}
-        style={{ marginTop: verticalScale(20) }}
+        style={{ marginVertical: verticalScale(20) }}
       />
       <Image
         source={moreTravelersDiagram || moreTravelersDiagramDe}
