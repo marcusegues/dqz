@@ -4,7 +4,7 @@ import type { ComponentType } from 'react';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { Linking, View } from 'react-native';
+import { Linking, Text, View } from 'react-native';
 import {
   getAmounts,
   getConnectivity,
@@ -24,6 +24,8 @@ import type {
 import type { NavState } from '../../types/reducers/nav';
 import type { SnackBarType } from './SnackBarsControl/controlSnackBarStates';
 import type { Language } from '../../i18n/types/locale';
+// import { borderCrossingsLinks } from '../../screens/Information/types/information';
+import type { LanguageCategory } from '../../screens/Information/InformationScreens/subCategories/RoadTax';
 import { borderCrossingsLinks } from '../../screens/Information/types/information';
 
 export type SnackBarVisibility = 'hidden' | 'visible';
@@ -95,6 +97,26 @@ class SnackBarsContainerInner extends React.Component<
     };
   }
 
+  // linkTo = () => {
+  //   const { i18n } = this.props;
+  //   Linking.openURL(`${borderCrossingsLinks[i18n.language]}`);
+  // };
+
+  linkToBorderCrossings = () => {
+    type borderCrossingsLinksType = { [LanguageCategory]: string };
+
+    const borderCrossingsLinks: borderCrossingsLinksType = {
+      de: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=1',
+      it: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=3',
+      fr: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=2',
+      en: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=4',
+    };
+    const { i18n } = this.props;
+
+    Linking.openURL(`${borderCrossingsLinks[i18n.language]}`);
+    // Linking.openURL(`${borderCrossingsLinks[i18n.language]}`);
+  };
+
   // eslint-disable-next-line class-methods-use-this
   simplifyState(enrichedState: SnackBarStateEnriched): SnackBarState {
     return {
@@ -109,14 +131,9 @@ class SnackBarsContainerInner extends React.Component<
     this.setState(this.simplifyState(newState));
   }
 
-  linkToBorderCrossings = () => {
-    const { i18n } = this.props;
-    Linking.openURL(`${borderCrossingsLinks[i18n.language]}`);
-  };
-
   render() {
     const { snackBarVisibilities } = this.state;
-    const { t, resetPaymentData } = this.props;
+    const { t, resetPaymentData, i18n } = this.props;
 
     const snackBarData = [
       {
@@ -125,7 +142,11 @@ class SnackBarsContainerInner extends React.Component<
         visibility: snackBarVisibilities.limitExceeded,
         component: SnackBar,
         rightText: t('limitExceededRightText'),
-        onRightTextPress: this.linkToBorderCrossings,
+        onRightTextPress: () =>
+          Linking.openURL('http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=1'),
+        // Linking.openURL(`${borderCrossingsLinks[i18n.language]}`),
+        // Linking.openURL('http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=1'),
+        // onRightTextPress: this.linkToBorderCrossings,
       },
       {
         key: 'offline',
