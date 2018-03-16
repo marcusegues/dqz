@@ -125,6 +125,7 @@ export const en: Locale = {
     validateMainCategoryRemoveSubtitle:
       'Currently, some subcategories contain quantities: {{value}}',
     validateMainCategoryRemoveYes: 'Yes, remove resp. quantities',
+    itemsGreaterThan300CHF: 'Items > CHF 300',
   },
   modal: {
     confirmPicker: 'Confirm {{value}}',
@@ -860,7 +861,7 @@ export const en: Locale = {
     subtitle:
       'Please update QuickZoll. The new version is now available in the App Store.',
     buttonText: 'To the App Store',
-    buttonTextAndroid: 'To the Play Market',
+    buttonTextAndroid: 'To the Play Store',
     buttonTextIos: 'To the App Store',
   },
   units: {

@@ -79,7 +79,7 @@ class SavedBasketModalInner extends React.Component<
         animationIn="slideInUp"
         animationOut="slideOutDown"
       >
-        <ModalCard style={{}}>
+        <ModalCard style={{ width: '95%' }}>
           <CloseIcon onPress={setModalVisibleFalse} />
           <CardHeader
             text={t('declareGoods')}
