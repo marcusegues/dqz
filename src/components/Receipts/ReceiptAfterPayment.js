@@ -34,6 +34,7 @@ import { RedLogo } from './subcomponents/RedLogo';
 import { ValidUntilBlock } from './subcomponents/ValidUntilBlock';
 import { ReceiptInfoNote } from './subcomponents/ReceiptInfoNote';
 import { HeaderTitle } from '../Headers/subcomponents/HeaderTitle';
+import { flatLargeAmounts } from '../../model/utils';
 
 const ownStyles = {
   topSumText: {
@@ -257,15 +258,16 @@ class ReceiptAfterPaymentInner extends React.Component<
               amounts={amounts}
               currencies={currencies}
             />
-            <VatList
-              large
-              borderTop={false}
-              people={people}
-              amounts={amounts}
-              currencies={currencies}
-              headerRight={false}
-            />
-
+            {flatLargeAmounts(amounts).length ? (
+              <VatList
+                large
+                borderTop={false}
+                people={people}
+                amounts={amounts}
+                currencies={currencies}
+                headerRight={false}
+              />
+            ) : null}
             <TotalOwedRow
               basket={basket}
               people={people}

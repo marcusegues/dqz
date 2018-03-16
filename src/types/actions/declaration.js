@@ -25,6 +25,7 @@ export type DeclarationAction =
       type: 'SET_BASKET',
       basket: Basket,
     }
+  | { type: 'DELETE_AMOUNT', id: string }
   | {
       type: 'ADD_AMOUNT',
       currency: Currency,
