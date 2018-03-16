@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
+import debounce from 'lodash/debounce';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 import { AppModal } from '../AppModal';
@@ -128,7 +129,24 @@ class QuantityInputModalInner extends React.Component<
     standardInputType: 'picker',
   };
 
+  constructor(props) {
+    super(props);
+    this.debouncedOnConfirmationAction = debounce(
+      this.onConfirmAction.bind(this),
+      1000,
+      {
+        leading: true,
+        trailing: false,
+      }
+    );
+  }
+
   state = initialState;
+
+  onConfirmAction() {
+    this.props.confirmAction(this.currentAmount());
+    this.resetInputs();
+  }
 
   getCustomInputPicker() {
     return (
@@ -211,10 +229,6 @@ class QuantityInputModalInner extends React.Component<
     );
   }
 
-  resetInputs() {
-    this.setState(initialState);
-  }
-
   getUnit() {
     const { category, t } = this.props;
     const currentAmount = this.currentAmount();
@@ -226,6 +240,10 @@ class QuantityInputModalInner extends React.Component<
 
   getCategoryQuantityInputInfo() {
     return quantityInputTypeByCategory[this.props.category];
+  }
+
+  resetInputs() {
+    this.setState(initialState);
   }
 
   standardTotalAmount(): number {
@@ -268,15 +286,11 @@ class QuantityInputModalInner extends React.Component<
         : this.customTotalAmount();
   }
 
+  debouncedOnConfirmationAction: any;
+
   render() {
     const { selected } = this.state;
-    const {
-      t,
-      confirmAction,
-      category,
-      toggleModalVisible,
-      modalVisible,
-    } = this.props;
+    const { t, category, toggleModalVisible, modalVisible } = this.props;
 
     const currentAmount = this.currentAmount();
 
@@ -318,10 +332,7 @@ class QuantityInputModalInner extends React.Component<
             </StandardAndCustomQuantityInput>
           )}
           <QuantityInputModalFooter
-            onPress={() => {
-              confirmAction(currentAmount);
-              // this.resetInputs();
-            }}
+            onPress={this.debouncedOnConfirmationAction}
             text={t(['modal:confirmPicker'], {
               value: `${currentAmount} ${unit}`,
             })}
