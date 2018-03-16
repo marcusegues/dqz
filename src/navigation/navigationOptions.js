@@ -19,4 +19,5 @@ export const defaultNavigationOptions = ({
     paddingRight: 16,
     paddingLeft: 16,
   },
+  gesturesEnabled: false,
 });
