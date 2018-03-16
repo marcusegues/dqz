@@ -34,7 +34,7 @@ const DutyAllowanceInner = ({
         resizeMode="contain"
         style={{
           width: moderateScale(300),
-          height: verticalScale(190),
+          height: moderateScale(190),
           alignSelf: 'center',
         }}
       />

@@ -15,6 +15,11 @@ const dutyAllowanceDiagramFR = require('../../../../assets/images/info/dutyAllow
 const dutyAllowanceDiagramEN = require('../../../../assets/images/info/dutyAllowanceDiagram_EN.png');
 const dutyAllowanceDiagramIT = require('../../../../assets/images/info/dutyAllowanceDiagram_IT.png');
 
+const vatAllowanceOver300DiagramIT = require('../../../../assets/images/info/vatAllowanceOver300Diagram_IT.png');
+const vatAllowanceOver300DiagramEN = require('../../../../assets/images/info/vatAllowanceOver300Diagram_EN.png');
+const vatAllowanceOver300DiagramFR = require('../../../../assets/images/info/vatAllowanceOver300Diagram_FR.png');
+const diagram1 = require('../../../../assets/images/info/vatAllowanceDiagram1.png');
+
 type vatAllowanceImagesType = { [LanguageCategory]: string };
 
 export const vatAllowanceOneTravelerImages: vatAllowanceImagesType = {
@@ -36,4 +41,11 @@ export const dutyAllowanceDiagrams: vatAllowanceImagesType = {
   it: dutyAllowanceDiagramIT,
   fr: dutyAllowanceDiagramFR,
   en: dutyAllowanceDiagramEN,
+};
+
+export const vatAllowanceOver300Diagrams: vatAllowanceImagesType = {
+  de: diagram1, // to be replaced later
+  it: vatAllowanceOver300DiagramIT,
+  fr: vatAllowanceOver300DiagramFR,
+  en: vatAllowanceOver300DiagramEN,
 };
