@@ -10,6 +10,11 @@ const moreTravelersEN = require('../../../../assets/images/info/vatAllowanceInfo
 const moreTravelersIT = require('../../../../assets/images/info/vatAllowanceInfographic2_IT.png');
 const moreTravelersFR = require('../../../../assets/images/info/vatAllowanceInfographic2_FR.png');
 
+const dutyAllowanceDiagramDE = require('../../../../assets/images/info/dutyAllowanceDiagram_DE.png');
+const dutyAllowanceDiagramFR = require('../../../../assets/images/info/dutyAllowanceDiagram_FR.png');
+const dutyAllowanceDiagramEN = require('../../../../assets/images/info/dutyAllowanceDiagram_EN.png');
+const dutyAllowanceDiagramIT = require('../../../../assets/images/info/dutyAllowanceDiagram_IT.png');
+
 type vatAllowanceImagesType = { [LanguageCategory]: string };
 
 export const vatAllowanceOneTravelerImages: vatAllowanceImagesType = {
@@ -24,4 +29,11 @@ export const vatAllowanceMoreTravelersImages: vatAllowanceImagesType = {
   it: moreTravelersIT,
   fr: moreTravelersFR,
   en: moreTravelersEN,
+};
+
+export const dutyAllowanceDiagrams: vatAllowanceImagesType = {
+  de: dutyAllowanceDiagramDE,
+  it: dutyAllowanceDiagramIT,
+  fr: dutyAllowanceDiagramFR,
+  en: dutyAllowanceDiagramEN,
 };
