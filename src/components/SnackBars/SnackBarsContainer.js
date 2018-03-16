@@ -4,7 +4,7 @@ import type { ComponentType } from 'react';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { View } from 'react-native';
+import { Linking, View } from 'react-native';
 import {
   getAmounts,
   getConnectivity,
@@ -23,6 +23,8 @@ import type {
 } from '../../types/generalTypes';
 import type { NavState } from '../../types/reducers/nav';
 import type { SnackBarType } from './SnackBarsControl/controlSnackBarStates';
+import type { Language } from '../../i18n/types/locale';
+import { borderCrossingsLinks } from '../../screens/Information/types/information';
 
 export type SnackBarVisibility = 'hidden' | 'visible';
 
@@ -57,7 +59,7 @@ type ReduxInject = {
 };
 
 class SnackBarsContainerInner extends React.Component<
-  ReduxInject & { t: TFunction },
+  ReduxInject & { t: TFunction, i18n: { language: Language } },
   SnackBarState
 > {
   constructor(props) {
@@ -107,6 +109,11 @@ class SnackBarsContainerInner extends React.Component<
     this.setState(this.simplifyState(newState));
   }
 
+  linkToBorderCrossings = () => {
+    const { i18n } = this.props;
+    Linking.openURL(`${borderCrossingsLinks[i18n.language]}`);
+  };
+
   render() {
     const { snackBarVisibilities } = this.state;
     const { t, resetPaymentData } = this.props;
@@ -117,6 +124,8 @@ class SnackBarsContainerInner extends React.Component<
         text: t('limitExceeded'),
         visibility: snackBarVisibilities.limitExceeded,
         component: SnackBar,
+        rightText: t('limitExceededRightText'),
+        onRightTextPress: this.linkToBorderCrossings,
       },
       {
         key: 'offline',
@@ -158,12 +167,15 @@ class SnackBarsContainerInner extends React.Component<
           React.createElement(item.component, {
             key: item.key,
             text: t(item.key),
-            rightText: item.rightText ? t(`${item.key}RightText`) : null,
+            rightText: item.rightText
+              ? t(`${item.key}RightText`).toUpperCase()
+              : null,
             onRightTextPress: item.onRightTextPress
               ? item.onRightTextPress
               : null,
             visibility: snackBarVisibilities[item.key],
             bottomMost: index === bottomMostVisibleSnackBarIndex,
+            borderCrossings: item.key === 'limitExceeded',
           })
         )}
       </View>
