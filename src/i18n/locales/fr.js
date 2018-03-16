@@ -43,12 +43,13 @@ export const fr: Locale = {
     toPayment: 'Paiement',
     buttonContinue: 'Étape suivante',
     buttonBack: 'Retour',
-    note: 'Allusion:',
+    note: 'Remarque importante:',
     underConstruction: 'En cours',
   },
   snackBar: {
     limitExceeded:
       "Valeur des biens pour l'application dépassée. S'il vous plaît signaler vos marchandises oralement au poste-frontière.",
+    limitExceededRightText: 'Afficher les passages frontaliers',
     offline:
       "Vous êtes hors ligne. Sauf pour la fonction de paiement, cependant, vous pouvez utiliser toutes les autres fonctionnalités de l'application.",
     paymentAborted: 'Paiement annulé',
@@ -78,13 +79,13 @@ export const fr: Locale = {
       'Catégorie de marchandises:données manquantes',
   },
   quantityInput: {
-    quantityInput: 'Entrée de quantité',
+    quantityInput: 'Saisie de quantité',
     recordedOn: 'enregistré sur',
     addQuantities: 'Ajouter des quantités',
-    enterQuantities: 'Entrez toutes les quantités de {{value}} ici.',
+    enterQuantities: 'Saisissez toutes les quantités de {{value}} ici.',
     enterQuantity: 'Entrer la quantité',
-    enterQuantitiesButter: 'Entrez toutes les quantités de {{value}} ici.',
-    enterQuantitiesAlcohol: 'Entrez toutes les quantités de  {{value}} ici.',
+    enterQuantitiesButter: 'Saisissez toutes les quantités de {{value}} ici.',
+    enterQuantitiesAlcohol: 'Saisissez toutes les quantités de {{value}} ici.',
     standardInputSubText: '⚡️',
   },
   amountInput: {
@@ -96,8 +97,10 @@ export const fr: Locale = {
       "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300.00.",
     amountInputAddItem: 'Ajouter la valeur',
     amountInputAddItemLarge: 'Ajouter un bien',
-    amountInputEnterValue:
-      'Saisissez la valeur sans la TVA étrangère (valeur nette), y compris la valeur des cadeaux reçus, la nourriture, les produits du tabac et les boissons alcoolisées.',
+    amountInputEnterValueBeginning: 'Saisissez la valeur',
+    amountInputEnterValueBoldText: 'sans la TVA étrangère (valeur nette)',
+    amountInputEnterValueEnd:
+      ', y compris la valeur des cadeaux reçus, la nourriture, les produits du tabac et les boissons alcoolisées.',
     currentTotalValue: 'Valeur totale actuelle',
     lastExchangeRate:
       'Basé sur le dernier taux de change disponible, qui est mis à jour lors du paiement.',
@@ -168,16 +171,15 @@ export const fr: Locale = {
   receipt: {
     dutyAndVat: 'Droits de douane: {{duty}} |  TVA: {{vat}}',
     travellers:
-      'Voyageurs: {{adults}} Adultes, {{minors}} Enfants/Adolescents (inférieur à 17 ans)',
+      'Voyageurs: {{adults}} Adultes, {{minors}} Enfants (moins de 17 ans)',
     paidOn: 'Payé le {{date}} à {{time}} h avec:',
     transactionId: 'ID de transaction (SIX): {{value}}',
 
     receiptValidFrom:
-      'La présente quittance est valable pour le passage frontalier à partir de:',
+      'La présente quittance est valable pour un passage de la frontière suisse à partir de:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} à {{endDate}} | {{endTime}}',
-    receiptValidOn:
-      'La présente quittance est valable pour le passage frontalier sur',
+    receiptValidOn: 'Quittance valable le:',
     receiptValidOnDate: '{{date}} de {{startTime}} à {{endTime}}',
 
     sumText: 'Total (en francs): {{value}}',
@@ -762,7 +764,7 @@ export const fr: Locale = {
     importantSoonText3:
       'Vous ne pouvez utiliser QuickZoll que pour les marchandises que vous importez pour votre usage privé ou pour en faire cadeau.',
     importantSoonText4:
-      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7 % soit également appli-qué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé par du personnel de l'Administration fédé-rale des douanes (AFD).",
+      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7% soit également appli-qué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé par du personnel de l'Administration fédé-rale des douanes (AFD).",
     importantSoonText5:
       'Les redevances ne peuvent être payées que par carte de crédit (Visa, Mastercard). Les marchandises sont dédouanées une fois que les redevances ont été payées.',
     importantSoonText6:
@@ -875,7 +877,7 @@ export const fr: Locale = {
     vatRateInfo:
       'Veuillez noter que\n' +
       "• vous ne pouvez entrer en Suisse qu'une fois par jour civil avec des marchandises que vous avez dédouanées avec QuickZoll;\n" +
-      '• les marchandises déclarées sont dédouanées au taux uniforme de TVA de 7,7 %;\n' +
+      '• les marchandises déclarées sont dédouanées au taux unique de TVA de 7,7 %;\n' +
       "• les redevances payées avec l'application ne sont pas remboursées.\n" +
       'Vous trouverez de plus amples informations ici:',
     termsOfService: 'Termes et Conditions',
@@ -886,13 +888,20 @@ export const fr: Locale = {
   furtherInformationModal: {
     furtherInformation: "Plus d'informations:",
     acceptance:
-      "En utilisant l'application, vous acceptez que le taux de TVA est de 7,7%; est également appliqué aux biens effectivement soumis au taux d'imposition réduit (aliments, aliments pour animaux, médicaments et livres).",
+      "En utilisant l'application, vous acceptez que le taux de TVA de 7,7% est également appliqué aux biens soumis au taux d'imposition réduit (aliments, aliments pour animaux, médicaments et livres).",
+  },
+  updateTheApp: {
+    title: 'Nouvelle version disponible!',
+    subtitle:
+      "Veuillez mettre à jour QuickZoll. La nouvelle version est maintenant disponible dans l'App Store.",
+    buttonTextAndroid: 'Dans Play Market',
+    buttonTextIos: "Dans l'App Store",
   },
   units: {
     kilo: 'kg',
-    kilo_plural: 'kgs',
+    kilo_plural: 'kg',
     kiloOrLiter: 'kg/litre',
-    kiloOrLiter_plural: 'kgs/litres',
+    kiloOrLiter_plural: 'kg/litres',
     liter: 'litre',
     liter_plural: 'litres',
     unit: 'unité',

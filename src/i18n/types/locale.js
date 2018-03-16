@@ -51,6 +51,7 @@ type GeneralTranslations = {
 
 type SnackBarTranslations = {
   limitExceeded: string,
+  limitExceededRightText: string,
   offline: string,
   paymentAborted: string,
   paymentFailed: string,
@@ -94,7 +95,9 @@ type AmountInputTranslations = {
   amountInput: string,
   amountInputLargeItem: string,
   amountInputAddItem: string,
-  amountInputEnterValue: string,
+  amountInputEnterValueBeginning: string,
+  amountInputEnterValueBoldText: string,
+  amountInputEnterValueEnd: string,
   amountInputLargeItemGreyBox: string,
   amountInputAddItemLarge: string,
   currentTotalValue: string,
@@ -642,6 +645,13 @@ type FurtherInformationModalTranslations = {
   acceptance: string,
 };
 
+type UpdateTheAppTranslations = {
+  title: string,
+  subtitle: string,
+  buttonTextAndroid: string,
+  buttonTextIos: string,
+};
+
 type UnitsTranslations = {
   kilo: string,
   kiloOrLiter: string,
@@ -693,4 +703,5 @@ export type Locale = {
   furtherInformationModal: FurtherInformationModalTranslations,
   units: UnitsTranslations,
   purchasesOnlineOffline: PurchasesOnlineOfflineTranslations,
+  updateTheApp: UpdateTheAppTranslations,
 };

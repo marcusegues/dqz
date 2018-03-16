@@ -47,6 +47,7 @@ const ownStyles = disabled => ({
 
 type RedButtonProps = {
   text: string,
+  // eslint-disable-next-line react/no-unused-prop-types
   onPress: () => any,
   confirmationDisabled?: boolean,
   buttonStyle?: {},
@@ -58,18 +59,18 @@ export const RedButton = ({
   confirmationDisabled,
   buttonStyle,
 }: RedButtonProps) => (
-  <View style={ownStyles(confirmationDisabled).bottomButtonContainer}>
-    <Touchable
-      onPress={() => onPress()}
-      style={[ownStyles(confirmationDisabled).touchable, { ...buttonStyle }]}
-      disabled={confirmationDisabled}
-    >
-      <Text style={ownStyles(confirmationDisabled).touchableText}>
-        {text.toUpperCase()}
-      </Text>
-    </Touchable>
-  </View>
-);
+    <View style={ownStyles(confirmationDisabled).bottomButtonContainer}>
+      <Touchable
+        onPress={onPress}
+        style={[ownStyles(confirmationDisabled).touchable, { ...buttonStyle }]}
+        disabled={confirmationDisabled}
+      >
+        <Text style={ownStyles(confirmationDisabled).touchableText}>
+          {text.toUpperCase()}
+        </Text>
+      </Touchable>
+    </View>
+  );
 
 RedButton.defaultProps = {
   confirmationDisabled: false,

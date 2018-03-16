@@ -49,6 +49,7 @@ export const en: Locale = {
   snackBar: {
     limitExceeded:
       'Declaration value limit exceeded. Please report your goods at the border crossing',
+    limitExceededRightText: 'Show border crossing',
     offline:
       'You are offline. Except for the payment feature, you are able to use all other features of the app.',
     paymentAborted: 'Payment canceled.',
@@ -95,8 +96,10 @@ export const en: Locale = {
       'Again, capture every item that is worth more than CHF 300.00.',
     amountInputAddItem: 'Add value',
     amountInputAddItemLarge: 'Add item',
-    amountInputEnterValue:
-      'Enter the value excluding foreign VAT (net value), including value of gifts received, food, tobacco products and alcoholic beverages.',
+    amountInputEnterValueBeginning: 'Enter the value, ',
+    amountInputEnterValueBoldText: 'excluding foreign VAT (net value)',
+    amountInputEnterValueEnd:
+      ' including value of gifts received, food, tobacco products and alcoholic beverages.',
     currentTotalValue: 'Current total value:',
     lastExchangeRate:
       'Based on the last available exchange rate, which is updated when paying.',
@@ -852,6 +855,14 @@ export const en: Locale = {
     furtherInformation: 'Further Information:',
     acceptance:
       'By using the app, you accept that the VAT rate is 7.7%; is also applied to goods that are actually subject to the reduced tax rate (food, animal feed, medicines and books).',
+  },
+  updateTheApp: {
+    title: 'New version available!',
+    subtitle:
+      'Please update QuickZoll. The new version is now available in the App Store.',
+    buttonText: 'To the App Store',
+    buttonTextAndroid: 'To the Play Store',
+    buttonTextIos: 'To the App Store',
   },
   units: {
     kilo: 'kg',

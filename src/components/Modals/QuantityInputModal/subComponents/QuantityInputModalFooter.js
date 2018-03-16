@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+
 // $FlowFixMe
 import { View } from 'react-native';
 import { RedButton } from '../../../Buttons/RedButton';

@@ -3,12 +3,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import type { ComponentType } from 'react';
 // $FlowFixMe
-import Swipeable from 'react-native-swipeable';
-import { Ionicons } from '@expo/vector-icons';
-// $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { View, TouchableHighlight } from 'react-native';
+import { View } from 'react-native';
 import type {
   Basket,
   Category,
@@ -24,6 +21,8 @@ import { rowStyles } from '../../../styles/rowStyles';
 import { storeBasket } from '../../../../../asyncStorage/storageApi';
 import { resetQuantities } from '../../../../../model/configurationApi';
 import { getBasket } from '../../../../../reducers/selectors';
+import { SwipeToDelete } from '../../../../General Components/SwipeableContent/configured/SwipeToDelete';
+import {formatQuantity} from "../../../../../utils/declaration/declaration";
 
 type DutyRowProps = {
   category: Category,
@@ -46,26 +45,6 @@ class DutyRowInner extends React.Component<
     swipeable: true,
   };
 
-  getRightSwipeButtons() {
-    const { basketResetCategoryQuantities, category } = this.props;
-    return [
-      <TouchableHighlight
-        style={{
-          flex: 1,
-          backgroundColor: 'rgb(217,10,35)',
-          justifyContent: 'center',
-        }}
-        onPress={() => basketResetCategoryQuantities(category)}
-      >
-        <Ionicons
-          name="md-trash"
-          size={30}
-          style={{ color: 'white', paddingLeft: 35 }}
-        />
-      </TouchableHighlight>,
-    ];
-  }
-
   rowInnerContent() {
     const { t, quantity, category, allowanceRaw, duty } = this.props;
     const unit = t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
@@ -86,7 +65,10 @@ class DutyRowInner extends React.Component<
           />
         </OverviewInfo>
         <QuantityIcon
-          quantity={Math.max(0, quantity - allowanceRaw).toFixed(2)}
+          quantity={formatQuantity(
+            category,
+            Math.max(0, quantity - allowanceRaw)
+          )}
           unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
             count: Math.max(0, quantity - allowanceRaw),
           })}
@@ -97,15 +79,14 @@ class DutyRowInner extends React.Component<
   }
 
   rowContent() {
+    const { category, basketResetCategoryQuantities } = this.props;
     if (this.props.swipeable) {
       return (
-        <Swipeable
-          rightButtons={this.getRightSwipeButtons()}
-          rightButtonWidth={90}
-          style={{ overflow: 'hidden' }}
+        <SwipeToDelete
+          onPressDelete={() => basketResetCategoryQuantities(category)}
         >
           {this.rowInnerContent()}
-        </Swipeable>
+        </SwipeToDelete>
       );
     }
     return this.rowInnerContent();

@@ -6,7 +6,7 @@ import { GREY } from '../../../../styles/colors';
 import { verticalScale } from '../../../../styles/Scaling';
 
 type CardHeaderSubTextProps = {
-  text: string,
+  text: string | Object,
   style?: Object,
 };
 
@@ -14,7 +14,7 @@ export const CardHeaderSubText = ({ text, style }: CardHeaderSubTextProps) => (
   <Text
     style={{
       fontFamily: 'roboto_regular',
-      fontSize: 14, // Should we use scaling here? They're breaking the design.
+      fontSize: 14,
       color: GREY,
       paddingHorizontal: verticalScale(16),
       ...style,

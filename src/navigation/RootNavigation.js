@@ -56,6 +56,7 @@ import { AuthorisationRequirements } from '../screens/Information/InformationScr
 import { PurchasesOnlineOffline } from '../screens/Information/InformationScreens/mainCategories/PurchasesOnlineOffline';
 import { addListener } from './reactNavigation';
 import { CartIcon } from '../components/Headers/subcomponents/CartIcon';
+import { UpdateTheApp } from '../screens/UpdateTheApp/UpdateTheApp';
 
 export type NavigationObject = { navigation: Navigation };
 
@@ -511,12 +512,17 @@ export const stackNavigatorScreens = {
       ),
     }),
   },
+  UpdateTheApp: {
+    screen: UpdateTheApp,
+    navigationOptions: () => ({
+      header: null,
+    }),
+  },
 };
 
 export const stackNavigatorConfig = {
   navigationOptions: defaultNavigationOptions,
   cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-  initialRouteName: 'OnBoarding',
 };
 
 export const RootStackNavigator = StackNavigator(

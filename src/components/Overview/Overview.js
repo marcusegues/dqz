@@ -139,6 +139,7 @@ class OverviewInner extends React.Component<
           people={people}
           amounts={amounts}
           currencies={currencies}
+          swipeable
         />
         {flatLargeAmounts(amounts).length ? (
           <VatList
@@ -148,6 +149,7 @@ class OverviewInner extends React.Component<
             amounts={amounts}
             currencies={currencies}
             headerRight={false}
+            swipeable
           />
         ) : null}
         <TotalOwedRow
