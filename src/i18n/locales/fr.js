@@ -49,6 +49,7 @@ export const fr: Locale = {
   snackBar: {
     limitExceeded:
       "Valeur des biens pour l'application dépassée. S'il vous plaît signaler vos marchandises oralement au poste-frontière.",
+    limitExceededRightText: 'Afficher les passages frontaliers',
     offline:
       "Vous êtes hors ligne. Sauf pour la fonction de paiement, cependant, vous pouvez utiliser toutes les autres fonctionnalités de l'application.",
     paymentAborted: 'Paiement annulé',

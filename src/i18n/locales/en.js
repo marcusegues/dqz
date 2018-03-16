@@ -49,6 +49,7 @@ export const en: Locale = {
   snackBar: {
     limitExceeded:
       'Declaration value limit exceeded. Please report your goods at the border crossing',
+    limitExceededRightText: 'Show border crossing',
     offline:
       'You are offline. Except for the payment feature, you are able to use all other features of the app.',
     paymentAborted: 'Payment canceled.',
