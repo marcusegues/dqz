@@ -9,14 +9,14 @@ type DecimalPlaces = 0 | 1 | 2 | 3;
 
 type DisplayedQuantityDecimalPlacesType = { [Category]: DecimalPlaces };
 export const displayedQuantityDecimalPlaces: DisplayedQuantityDecimalPlacesType = {
-  Meat: 2,
-  Butter: 2,
-  Oils: 2,
+  Meat: 3,
+  Butter: 3,
+  Oils: 3,
   OtherFood: 2,
-  AlcSoft: 2,
-  AlcHard: 2,
+  AlcSoft: 3,
+  AlcHard: 3,
   Cigarettes: 0,
-  Tobacco: 2,
+  Tobacco: 0,
   Meds: 0,
   Books: 0,
   Magazines: 0,
