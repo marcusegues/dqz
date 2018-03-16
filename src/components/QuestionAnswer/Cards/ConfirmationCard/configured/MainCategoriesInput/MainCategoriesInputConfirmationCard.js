@@ -16,6 +16,7 @@ type MainCategoriesInputConfirmationCardProps = {
   mainCategories: MainCategories,
   onToggleMainCategory: (mainCategory: MainCategory) => void,
   onAnswer: DirectionType => void,
+  onConfirmationCardTitlePress: () => void,
 };
 
 type ReduxInject = {
@@ -26,12 +27,14 @@ const MainCategoriesInputConfirmationCardInner = ({
   mainCategories,
   onToggleMainCategory,
   onAnswer,
+  onConfirmationCardTitlePress,
   t,
   dispatch,
 }: MainCategoriesInputConfirmationCardProps &
   ReduxInject & { t: TFunction }) => (
   <ConfirmationCard
     text={t('mainCategoriesQuestion')}
+    onConfirmationCardTitlePress={onConfirmationCardTitlePress}
     onAnswer={() => onAnswer('forward')}
     onBack={() => onAnswer('back')}
     confirmationDisabled={!mainCategories.size}

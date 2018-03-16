@@ -1,6 +1,8 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
+import Touchable from 'react-native-platform-touchable';
+// $FlowFixMe
 import { View } from 'react-native';
 import { Card } from '../Card';
 import { CardHeader } from '../subcomponents/CardHeader';
@@ -36,6 +38,7 @@ type ConfirmationCardProps = {
   onAnswer: () => void,
   onBack: () => void,
   confirmationDisabled?: boolean,
+  onConfirmationCardTitlePress: () => void,
   onInfoIconPress?: ?() => void,
 };
 
@@ -45,13 +48,17 @@ export const ConfirmationCard = ({
   onAnswer,
   onBack,
   confirmationDisabled,
+  onConfirmationCardTitlePress,
   onInfoIconPress,
 }: ConfirmationCardProps) => (
   <Card>
     <View style={{ flexDirection: 'row' }}>
-      <View style={ownStyles.cardHeaderContainer}>
+      <Touchable
+        onPress={onConfirmationCardTitlePress}
+        style={ownStyles.cardHeaderContainer}
+      >
         <CardHeader text={text} />
-      </View>
+      </Touchable>
       <View style={ownStyles.infoIcon}>
         <BlueInfoIcon onPress={onInfoIconPress} />
       </View>

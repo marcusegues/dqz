@@ -18,6 +18,7 @@ type PeopleInputConfirmationCardProps = {
   onAddMinor: () => void,
   onSubtractMinor: () => void,
   onAnswer: DirectionType => void,
+  onConfirmationCardTitlePress: () => void,
 };
 
 type ReduxInject = {
@@ -31,6 +32,7 @@ const PeopleInputConfirmationCardInner = ({
   onAddMinor,
   onSubtractMinor,
   onAnswer,
+  onConfirmationCardTitlePress,
   t,
   dispatch,
 }: PeopleInputConfirmationCardProps & ReduxInject & { t: TFunction }) => (
@@ -39,6 +41,7 @@ const PeopleInputConfirmationCardInner = ({
     onAnswer={() => onAnswer('forward')}
     onBack={() => onAnswer('back')}
     confirmationDisabled={!getTotalPeople(people)}
+    onConfirmationCardTitlePress={onConfirmationCardTitlePress}
     onInfoIconPress={() =>
       dispatch({
         type: 'NAVIGATE',
