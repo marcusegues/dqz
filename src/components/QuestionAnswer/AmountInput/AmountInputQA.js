@@ -40,7 +40,12 @@ export class AmountInputQA extends React.Component<
   }
 
   getQuestionComponent() {
-    const { onAnswer, qaState, large } = this.props;
+    const {
+      onAnswer,
+      qaState,
+      large,
+      onConfirmationCardTitlePress,
+    } = this.props;
     if (large) {
       analyticsQACardOpenend('AmountInput (large items)');
     } else {
@@ -54,6 +59,7 @@ export class AmountInputQA extends React.Component<
           large={large}
           onShowAmountInputModal={() => this.handleShowModal()}
           onAnswer={onAnswer}
+          onConfirmationCardTitlePress={onConfirmationCardTitlePress}
           amounts={amounts}
           onDeleteAmount={(id: string) => {
             this.handleDeleteAmount(id);

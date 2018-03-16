@@ -31,6 +31,7 @@ import type {
 } from '../../types/reducers/declaration';
 import {
   collapseAllExistingExceptOne,
+  collapseQuestion,
   setInitStates,
   setQuestionStates,
 } from './QAControl/controlQuestionStates';
@@ -87,6 +88,7 @@ export type DirectionType = 'forward' | 'back' | 'update';
 
 export type CardProps = {
   qaState: QAStateEnriched,
+  onConfirmationCardTitlePress: () => void,
   onAnswerCardPress: () => void,
   questionState: QuestionState,
   questionFlag: QuestionFlag,
@@ -211,6 +213,12 @@ class QuestionAnswerContainerInner extends React.Component<
     this.setState(this.simplifyState(updateFlags));
   }
 
+  collapseQuestion(question: QuestionType, qaStateEnriched: QAStateEnriched) {
+    this.setState(
+      this.simplifyState(collapseQuestion(question, qaStateEnriched))
+    );
+  }
+
   render() {
     const { questionStates, questionFlag } = this.state;
     const {
@@ -241,6 +249,9 @@ class QuestionAnswerContainerInner extends React.Component<
                 )
               );
             }}
+            onConfirmationCardTitlePress={() =>
+              this.collapseQuestion('peopleInput', qaStateEnriched)
+            }
             questionState={questionStates.peopleInput}
             questionFlag={questionFlag.peopleInput}
             onUpdate={newPeople =>
@@ -275,6 +286,9 @@ class QuestionAnswerContainerInner extends React.Component<
         component: (
           <MainCategoriesInputQA
             qaState={qaStateEnriched}
+            onConfirmationCardTitlePress={() =>
+              this.collapseQuestion('mainCategories', qaStateEnriched)
+            }
             onAnswerCardPress={() => {
               this.setState(
                 this.simplifyState(
@@ -328,6 +342,9 @@ class QuestionAnswerContainerInner extends React.Component<
         component: (
           <QuantityInputQA
             qaState={qaStateEnriched}
+            onConfirmationCardTitlePress={() =>
+              this.collapseQuestion('quantityInput', qaStateEnriched)
+            }
             onAnswerCardPress={() => {
               this.setState(
                 this.simplifyState(
@@ -370,6 +387,9 @@ class QuestionAnswerContainerInner extends React.Component<
           <AmountInputQA
             large={false}
             qaState={qaStateEnriched}
+            onConfirmationCardTitlePress={() => {
+              this.collapseQuestion('amounts', qaStateEnriched);
+            }}
             onAnswerCardPress={() => {
               this.setState(
                 this.simplifyState(
@@ -418,6 +438,9 @@ class QuestionAnswerContainerInner extends React.Component<
           <AmountInputQA
             large
             qaState={qaStateEnriched}
+            onConfirmationCardTitlePress={() =>
+              this.collapseQuestion('largeAmounts', qaStateEnriched)
+            }
             onAnswerCardPress={() => {
               this.setState(
                 this.simplifyState(
