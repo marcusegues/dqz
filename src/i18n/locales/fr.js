@@ -128,6 +128,7 @@ export const fr: Locale = {
       'Les quantités suivantes figurent actuellement dans certaines sous-catégories: {{value}}.',
     validateMainCategoryRemoveYes:
       "Oui, j'aimerais supprimer les quantités en question.",
+    itemsGreaterThan300CHF: 'Articles > 300 CHF',
   },
   modal: {
     confirmPicker: 'Reprendre {{value}}',
