@@ -12,6 +12,7 @@ import { rowStyles } from '../../../Rows/styles/rowStyles';
 import { CardRowSubText } from '../../../QuestionAnswer/Cards/subcomponents/CardRowSubText';
 import type { TFunction } from '../../../../types/generalTypes';
 import { SwipeToDelete } from '../../../General Components/SwipeableContent/configured/SwipeToDelete';
+import {formatQuantity} from "../../../../utils/declaration/declaration";
 
 type QuantityRowInnerProps = {
   quantity: number,
@@ -35,10 +36,9 @@ const QuantityRowInner = ({
         <View style={rowStyles.rowContent}>
           <View style={{ flex: 1 }}>
             <CardRowText
-              text={`${quantity.toFixed(3)} ${t(
-                `units:${CategoriesInfo.getIn([category, 'unit'], '')}`,
-                { count: quantity }
-              )}`}
+              text={`${formatQuantity(category, quantity)} ${t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
+                count: quantity,
+              })}`}
             />
             <CardRowSubText text={t('recordedOn', { value: date })} />
           </View>

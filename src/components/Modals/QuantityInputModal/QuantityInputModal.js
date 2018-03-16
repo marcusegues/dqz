@@ -17,6 +17,7 @@ import { CategoriesInfo } from '../../../model/constants';
 import { StandardInputPicker } from '../../Pickers/QuantityInputPickers/StandardInputPicker';
 import { CustomInputPicker } from '../../Pickers/QuantityInputPickers/CustomInputPicker';
 import { ManualInputPicker } from '../../Pickers/QuantityInputPickers/ManualInputPicker';
+import { displayedQuantityDecimalPlaces } from '../../../constants/declaration';
 
 export type StandardQuantityInputType = {
   multiplier: string,
@@ -101,6 +102,22 @@ type QuantityInputModalProps = {
   modalVisible: boolean,
 };
 
+const initialState = {
+  selected: 'standard',
+  standardInput: {
+    multiplier: '1',
+    amount: '1',
+  },
+  customInput: {
+    wholePart: '1',
+    decimalPart: '00',
+  },
+  numberInput: {
+    wholePart: '',
+    decimalPart: '',
+  },
+};
+
 class QuantityInputModalInner extends React.Component<
   QuantityInputModalProps & { t: TFunction },
   QuantityInputState
@@ -111,21 +128,7 @@ class QuantityInputModalInner extends React.Component<
     standardInputType: 'picker',
   };
 
-  state = {
-    selected: 'standard',
-    standardInput: {
-      multiplier: '1',
-      amount: '1',
-    },
-    customInput: {
-      wholePart: '1',
-      decimalPart: '00',
-    },
-    numberInput: {
-      wholePart: '',
-      decimalPart: '',
-    },
-  };
+  state = initialState;
 
   getCustomInputPicker() {
     return (
@@ -144,20 +147,37 @@ class QuantityInputModalInner extends React.Component<
     );
   }
 
-  getManualInputPicker() {
+  getManualInputPicker(category: Category) {
+    const onChangeText = (text: string): void => {
+      if (displayedQuantityDecimalPlaces[category] === 0) {
+        if (/\D/.test(text)) {
+          return;
+        }
+      }
+      // convert comma to period
+      const textModified: string = text.replace(/,/g, '.');
+      // if more than one period, return
+      if (textModified.indexOf('.') !== textModified.lastIndexOf('.')) {
+        return;
+      }
+      // return on any input that is not numeric or a period
+      if (/[^0-9.]/.test(textModified)) {
+        return;
+      }
+
+      this.setState({
+        numberInput: {
+          ...this.state.numberInput,
+          wholePart: textModified,
+        },
+      });
+    };
+
     return (
       <ManualInputPicker
         value={this.state.numberInput.wholePart}
         unit={this.getUnit()}
-        onChangeText={(text: string): void => {
-          const textModified: string = text.replace(/,/g, '.');
-          this.setState({
-            numberInput: {
-              ...this.state.numberInput,
-              wholePart: textModified,
-            },
-          });
-        }}
+        onChangeText={onChangeText}
       />
     );
   }
@@ -189,6 +209,10 @@ class QuantityInputModalInner extends React.Component<
         }
       />
     );
+  }
+
+  resetInputs() {
+    this.setState(initialState);
   }
 
   getUnit() {
@@ -271,7 +295,7 @@ class QuantityInputModalInner extends React.Component<
           {categoryQuantityInputInfo.quantityInputMethod === 'standardInput' ? (
             <StandardQuantityInput category={category}>
               {categoryQuantityInputInfo.standardInputMethod === 'manual'
-                ? this.getManualInputPicker()
+                ? this.getManualInputPicker(category)
                 : this.getStandardInputPicker()}
             </StandardQuantityInput>
           ) : (
@@ -284,17 +308,20 @@ class QuantityInputModalInner extends React.Component<
               {{
                 standardInputPicker:
                   categoryQuantityInputInfo.standardInputMethod === 'manual'
-                    ? this.getManualInputPicker()
+                    ? this.getManualInputPicker(category)
                     : this.getStandardInputPicker(),
                 customInputPicker:
                   categoryQuantityInputInfo.customInputMethod === 'manual'
-                    ? this.getManualInputPicker()
+                    ? this.getManualInputPicker(category)
                     : this.getCustomInputPicker(),
               }}
             </StandardAndCustomQuantityInput>
           )}
           <QuantityInputModalFooter
-            onPress={() => confirmAction(currentAmount)}
+            onPress={() => {
+              confirmAction(currentAmount);
+              // this.resetInputs();
+            }}
             text={t(['modal:confirmPicker'], {
               value: `${currentAmount} ${unit}`,
             })}
