@@ -22,6 +22,7 @@ import { storeBasket } from '../../../../../asyncStorage/storageApi';
 import { resetQuantities } from '../../../../../model/configurationApi';
 import { getBasket } from '../../../../../reducers/selectors';
 import { SwipeToDelete } from '../../../../General Components/SwipeableContent/configured/SwipeToDelete';
+import {formatQuantity} from "../../../../../utils/declaration/declaration";
 
 type DutyRowProps = {
   category: Category,
@@ -64,7 +65,10 @@ class DutyRowInner extends React.Component<
           />
         </OverviewInfo>
         <QuantityIcon
-          quantity={Math.max(0, quantity - allowanceRaw).toFixed(2)}
+          quantity={formatQuantity(
+            category,
+            Math.max(0, quantity - allowanceRaw)
+          )}
           unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
             count: Math.max(0, quantity - allowanceRaw),
           })}

@@ -122,10 +122,16 @@ class GoodQuantityListModalInner extends React.Component<
     }
   }
 
+  setPickerVisibleFalse() {
+    this.setState({
+      pickerModalVisible: false,
+    });
+  }
+
   confirmPicker(amount: number) {
     const { onAddQuantity, modalCategory } = this.props;
 
-    this.togglePickerVisible();
+    this.setPickerVisibleFalse();
     if (modalCategory) {
       onAddQuantity(modalCategory, amount);
     }
