@@ -51,6 +51,7 @@ type GeneralTranslations = {
 
 type SnackBarTranslations = {
   limitExceeded: string,
+  limitExceededRightText: string,
   offline: string,
   paymentAborted: string,
   paymentFailed: string,
