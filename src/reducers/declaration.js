@@ -103,6 +103,12 @@ export const declaration = (
         modelApi.addAmount(amounts, currency, amount)
       );
     }
+    case 'DELETE_AMOUNT': {
+      return state.set(
+        'amounts',
+        modelApi.deleteAmount(state.get('amounts'), action.id)
+      );
+    }
     case 'ADD_LARGE_AMOUNT': {
       const currency: Currency = action.currency;
       const largeAmount: number = action.largeAmount;

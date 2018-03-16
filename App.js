@@ -30,7 +30,9 @@ import {
   analyticsCustom,
 } from './src/analytics/analyticsApi';
 import { initAmplitude } from './src/analytics/amplitude';
+import { appShouldUpdate } from './src/utils/checkversion/checkversion';
 import type { ConnectivityType } from './src/types/connectivity';
+import { UpdateTheApp } from './src/screens/UpdateTheApp/UpdateTheApp';
 
 const store = configureStore();
 
@@ -50,13 +52,14 @@ if (Platform.OS === 'android') {
 }
 
 type AppProps = {};
-type AppStateT = { isLoadingComplete: boolean };
+type AppStateT = { isLoadingComplete: boolean, appHaveNewVersion: boolean };
 
 export type ExpoAppState = 'active' | 'inactive' | 'background';
 
 export default class App extends React.Component<AppProps, AppStateT> {
   state = {
     isLoadingComplete: false,
+    appHaveNewVersion: false,
   };
 
   componentWillMount() {
@@ -207,6 +210,26 @@ export default class App extends React.Component<AppProps, AppStateT> {
             .then(rawdata => parseCurrencyXML(rawdata, store))
             .catch(() => parseCurrencyXML('invalid', store));
         }),
+      fetch('https://dazit1.ambrite.ch/getversion')
+        .then(response => response.json())
+        .then(jsonData => {
+          if (appShouldUpdate(jsonData.version)) {
+            this.setState({ appHaveNewVersion: true });
+          }
+        })
+        .catch(() => {
+          fetch('https://dazit2.ambrite.ch/getversion')
+            .then(response => response.json())
+            .then(jsonData => {
+              if (appShouldUpdate(jsonData.version)) {
+                this.setState({ appHaveNewVersion: true });
+              }
+            })
+            .catch(e => {
+              // TODO: Add amplitude event for analytics
+              console.log(e);
+            });
+        }),
     ]);
 
   render() {
@@ -217,6 +240,21 @@ export default class App extends React.Component<AppProps, AppStateT> {
           onError={this.handleLoadingError}
           onFinish={this.handleFinishLoading}
         />
+      );
+    }
+    if (this.state.appHaveNewVersion) {
+      return (
+        <View style={styles.container} store={store}>
+          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+          {Platform.OS === 'android' && (
+            <View style={styles.statusBarUnderlay} />
+          )}
+          <Provider store={store}>
+            <I18nextProvider i18n={i18nImplementation}>
+              <UpdateTheApp t={i18nImplementation.getFixedT()} />
+            </I18nextProvider>
+          </Provider>
+        </View>
       );
     }
     return (

@@ -97,8 +97,10 @@ export const fr: Locale = {
       "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300.00.",
     amountInputAddItem: 'Ajouter la valeur',
     amountInputAddItemLarge: 'Ajouter un bien',
-    amountInputEnterValue:
-      'Saisissez la valeur sans la TVA étrangère (valeur nette), y compris la valeur des cadeaux reçus, la nourriture, les produits du tabac et les boissons alcoolisées.',
+    amountInputEnterValueBeginning: 'Saisissez la valeur',
+    amountInputEnterValueBoldText: 'sans la TVA étrangère (valeur nette)',
+    amountInputEnterValueEnd:
+      ', y compris la valeur des cadeaux reçus, la nourriture, les produits du tabac et les boissons alcoolisées.',
     currentTotalValue: 'Valeur totale actuelle',
     lastExchangeRate:
       'Basé sur le dernier taux de change disponible, qui est mis à jour lors du paiement.',

@@ -102,8 +102,11 @@ export const de: Locale = {
       'Erfassen Sie hier nochmals jeden Gegenstand, der mehr als CHF 300.00 wert ist.',
     amountInputAddItem: 'Wert hinzufügen',
     amountInputAddItemLarge: 'Gegenstand hinzufügen',
-    amountInputEnterValue:
-      'Erfassen Sie den Wert ohne ausländische Mehrwertsteuer (Nettowert), inkl. Wert der erhaltenen Geschenke, Lebensmittel, Tabakfabrikate und alkoholische Getränke.',
+    amountInputEnterValueBeginning: 'Erfassen Sie den Wert',
+    amountInputEnterValueBoldText:
+      ' ohne ausländische Mehrwertsteuer (Nettowert)',
+    amountInputEnterValueEnd:
+      ' inkl. Wert der erhaltenen Geschenke, Lebensmittel, Tabakfabrikate und alkoholische Getränke.',
     currentTotalValue: 'Aktueller Gesamtwert:',
     lastExchangeRate:
       'Basierend auf dem letzten verfügbaren Wechsel-kurs, welcher beim Bezahlen aktualisiert wird.',
