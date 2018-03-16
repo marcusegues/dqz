@@ -29,6 +29,10 @@ const snackBarStyles = (bottomMost, borderCrossings) => ({
     fontFamily: type.medium,
     fontSize: size.medium,
   },
+  snackBarRightText: {
+    ...snackBarStyles.snackBarText,
+    color: '#95B2E4',
+  },
   rightTextContainer: {
     alignItems: 'flex-end',
     width: borderCrossings ? width : null,
@@ -61,7 +65,7 @@ export const SnackBar = ({
       {rightText ? (
         <Touchable onPress={onRightTextPress}>
           <View style={ownStyles.rightTextContainer}>
-            <Text style={[ownStyles.snackBarText]}>{rightText}</Text>
+            <Text style={ownStyles.snackBarRightText}>{rightText}</Text>
           </View>
         </Touchable>
       ) : null}
