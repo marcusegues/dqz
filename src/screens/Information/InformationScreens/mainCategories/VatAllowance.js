@@ -22,7 +22,7 @@ import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 import {
   vatAllowanceMoreTravelersImages,
   vatAllowanceOneTravelerImages,
-} from '../../types/vatAllowance';
+} from '../../types/vatAndDutyAllowance';
 import type { Language } from '../../../../i18n/types/locale';
 
 const diagram1 = require('../../../../../assets/images/info/vatAllowanceDiagram1.png');
