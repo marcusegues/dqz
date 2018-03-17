@@ -1,5 +1,7 @@
 // @flow
 import React from 'react';
+// $FlowFixMe
+import { Keyboard, LayoutAnimation } from 'react-native';
 import type { ComponentType } from 'react';
 import debounce from 'lodash/debounce';
 // $FlowFixMe
@@ -94,6 +96,7 @@ type QuantityInputState = {
   standardInput: StandardQuantityInputType,
   customInput: CustomQuantityInputType,
   numberInput: ManualQuantityInputType,
+  top: string,
 };
 
 type QuantityInputModalProps = {
@@ -105,6 +108,8 @@ type QuantityInputModalProps = {
 
 const initialState = {
   selected: 'standard',
+  top: '15%',
+
   standardInput: {
     multiplier: '1',
     amount: '1',
@@ -142,6 +147,26 @@ class QuantityInputModalInner extends React.Component<
   }
 
   state = initialState;
+
+  componentWillMount() {
+    // $FlowFixMe
+    this.keyboardDidShowListener = Keyboard.addListener(
+      'keyboardDidShow',
+      this.keyboardDidShow
+    );
+    // $FlowFixMe
+    this.keyboardDidHideListener = Keyboard.addListener(
+      'keyboardDidHide',
+      this.keyboardDidHide
+    );
+  }
+
+  componentWillUnmount() {
+    // $FlowFixMe
+    this.keyboardDidShowListener.remove();
+    // $FlowFixMe
+    this.keyboardDidHideListener.remove();
+  }
 
   onConfirmAction() {
     this.props.confirmAction(this.currentAmount());
@@ -242,6 +267,20 @@ class QuantityInputModalInner extends React.Component<
     return quantityInputTypeByCategory[this.props.category];
   }
 
+  keyboardDidShow = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    this.setState({
+      top: '15%',
+    });
+  };
+
+  keyboardDidHide = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    this.setState({
+      top: '25%',
+    });
+  };
+
   resetInputs() {
     this.setState(initialState);
   }
@@ -305,7 +344,13 @@ class QuantityInputModalInner extends React.Component<
         animationIn="slideInLeft"
         animationOut="slideOutLeft"
       >
-        <ModalCard style={{ width: '95%' }}>
+        <ModalCard
+          style={{
+            width: '95%',
+            position: 'absolute',
+            top: this.state.top,
+          }}
+        >
           {categoryQuantityInputInfo.quantityInputMethod === 'standardInput' ? (
             <StandardQuantityInput category={category}>
               {categoryQuantityInputInfo.standardInputMethod === 'manual'
