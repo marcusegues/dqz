@@ -338,6 +338,8 @@ class QuantityInputModalInner extends React.Component<
     });
 
     const categoryQuantityInputInfo = this.getCategoryQuantityInputInfo();
+    const manualInput =
+      categoryQuantityInputInfo.standardInputMethod === 'manual';
     return (
       <AppModal
         modalVisible={modalVisible}
@@ -347,8 +349,8 @@ class QuantityInputModalInner extends React.Component<
         <ModalCard
           style={{
             width: '95%',
-            position: 'absolute',
-            top: this.state.top,
+            top: manualInput ? this.state.top : 0,
+            position: manualInput ? 'absolute' : 'relative',
           }}
         >
           {categoryQuantityInputInfo.quantityInputMethod === 'standardInput' ? (
