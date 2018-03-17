@@ -123,8 +123,8 @@ export const GoodInputModal = ({
   <AppModal
     onRequestClose={onRequestClose}
     modalVisible={modalVisible}
-    animationIn="bounceInLeft"
-    animationOut="bounceOutLeft"
+    animationIn="slideInLeft"
+    animationOut="slideOutLeft"
   >
     <View style={ownStyles.modalContainer}>
       <View style={ownStyles.closeButtonContainer}>

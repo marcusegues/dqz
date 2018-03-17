@@ -76,8 +76,8 @@ class SavedBasketModalInner extends React.Component<
       <AppModal
         onRequestClose={setModalVisibleFalse}
         modalVisible={modalVisible}
-        animationIn="slideInUp"
-        animationOut="slideOutDown"
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
       >
         <ModalCard style={{ width: '95%' }}>
           <CloseIcon onPress={setModalVisibleFalse} />
