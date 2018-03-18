@@ -43,7 +43,7 @@ export const fr: Locale = {
     toPayment: 'Paiement',
     buttonContinue: 'Étape suivante',
     buttonBack: 'Retour',
-    note: 'Allusion:',
+    note: 'Remarque importante:',
     underConstruction: 'En cours',
   },
   snackBar: {
@@ -79,13 +79,13 @@ export const fr: Locale = {
       'Catégorie de marchandises:données manquantes',
   },
   quantityInput: {
-    quantityInput: 'Entrée de quantité',
+    quantityInput: 'Saisie de quantité',
     recordedOn: 'enregistré sur {{value}}',
     addQuantities: 'Ajouter des quantités',
-    enterQuantities: 'Entrez toutes les quantités de {{value}} ici.',
+    enterQuantities: 'Saisissez toutes les quantités de {{value}} ici.',
     enterQuantity: 'Entrer la quantité',
-    enterQuantitiesButter: 'Entrez toutes les quantités de {{value}} ici.',
-    enterQuantitiesAlcohol: 'Entrez toutes les quantités de  {{value}} ici.',
+    enterQuantitiesButter: 'Saisissez toutes les quantités de {{value}} ici.',
+    enterQuantitiesAlcohol: 'Saisissez toutes les quantités de {{value}} ici.',
     standardInputSubText: '⚡️',
   },
   amountInput: {
@@ -128,6 +128,7 @@ export const fr: Locale = {
       'Les quantités suivantes figurent actuellement dans certaines sous-catégories: {{value}}.',
     validateMainCategoryRemoveYes:
       "Oui, j'aimerais supprimer les quantités en question.",
+    itemsGreaterThan300CHF: 'Articles > 300 CHF',
   },
   modal: {
     confirmPicker: 'Reprendre {{value}}',
@@ -175,7 +176,7 @@ export const fr: Locale = {
     transactionId: 'ID de transaction (SIX): {{value}}',
 
     receiptValidFrom:
-      'La présente quittance est valable pour le passage frontalier à partir de:',
+      'La présente quittance est valable pour un passage de la frontière suisse à partir de:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} à {{endDate}} | {{endTime}}',
     receiptValidOn: 'Quittance valable le:',
@@ -763,7 +764,7 @@ export const fr: Locale = {
     importantSoonText3:
       'Vous ne pouvez utiliser QuickZoll que pour les marchandises que vous importez pour votre usage privé ou pour en faire cadeau.',
     importantSoonText4:
-      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7 % soit également appli-qué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé par du personnel de l'Administration fédé-rale des douanes (AFD).",
+      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7% soit également appli-qué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé par du personnel de l'Administration fédé-rale des douanes (AFD).",
     importantSoonText5:
       'Les redevances ne peuvent être payées que par carte de crédit (Visa, Mastercard). Les marchandises sont dédouanées une fois que les redevances ont été payées.',
     importantSoonText6:
@@ -876,7 +877,7 @@ export const fr: Locale = {
     vatRateInfo:
       'Veuillez noter que\n' +
       "• vous ne pouvez entrer en Suisse qu'une fois par jour civil avec des marchandises que vous avez dédouanées avec QuickZoll;\n" +
-      '• les marchandises déclarées sont dédouanées au taux uniforme de TVA de 7,7 %;\n' +
+      '• les marchandises déclarées sont dédouanées au taux unique de TVA de 7,7 %;\n' +
       "• les redevances payées avec l'application ne sont pas remboursées.\n" +
       'Vous trouverez de plus amples informations ici:',
     termsOfService: 'Termes et Conditions',
@@ -887,7 +888,7 @@ export const fr: Locale = {
   furtherInformationModal: {
     furtherInformation: "Plus d'informations:",
     acceptance:
-      "En utilisant l'application, vous acceptez que le taux de TVA est de 7,7%; est également appliqué aux biens effectivement soumis au taux d'imposition réduit (aliments, aliments pour animaux, médicaments et livres).",
+      "En utilisant l'application, vous acceptez que le taux de TVA de 7,7% est également appliqué aux biens soumis au taux d'imposition réduit (aliments, aliments pour animaux, médicaments et livres).",
   },
   updateTheApp: {
     title: 'Nouvelle version disponible!',
@@ -898,9 +899,9 @@ export const fr: Locale = {
   },
   units: {
     kilo: 'kg',
-    kilo_plural: 'kgs',
+    kilo_plural: 'kg',
     kiloOrLiter: 'kg/litre',
-    kiloOrLiter_plural: 'kgs/litres',
+    kiloOrLiter_plural: 'kg/litres',
     liter: 'litre',
     liter_plural: 'litres',
     unit: 'unité',

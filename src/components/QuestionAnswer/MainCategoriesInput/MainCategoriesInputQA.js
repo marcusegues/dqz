@@ -35,6 +35,7 @@ export const MainCategoriesInputQA = (props: CardProps) => {
     return (
       <MainCategoriesInputConfirmationCard
         mainCategories={mainCategories}
+        onConfirmationCardTitlePress={props.onConfirmationCardTitlePress}
         onToggleMainCategory={mainCategory => {
           const newMainCategories = handleToggleMainCategory(mainCategory);
           handleUpdate(newMainCategories);

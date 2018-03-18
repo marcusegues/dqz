@@ -61,6 +61,7 @@ type AmountInputConfirmationCardProps = {
   onDeleteAmount: string => void,
   large: boolean,
   onAnswer: DirectionType => void,
+  onConfirmationCardTitlePress: () => void,
 };
 
 type ReduxInject = {
@@ -74,6 +75,7 @@ const AmountInputConfirmationCardInner = ({
   t,
   large,
   onAnswer,
+  onConfirmationCardTitlePress,
   onDeleteAmount,
   currencies,
   dispatch,
@@ -111,6 +113,7 @@ const AmountInputConfirmationCardInner = ({
       onInfoIconPress={() =>
         dispatch({ type: 'NAVIGATE', screen: 'VatAllowance' })
       }
+      onConfirmationCardTitlePress={onConfirmationCardTitlePress}
     >
       {large ? (
         <Text />

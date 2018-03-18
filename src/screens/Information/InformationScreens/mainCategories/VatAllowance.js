@@ -22,10 +22,9 @@ import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 import {
   vatAllowanceMoreTravelersImages,
   vatAllowanceOneTravelerImages,
-} from '../../types/vatAllowance';
+  vatAllowanceOver300Diagrams,
+} from '../../types/vatAndDutyAllowance';
 import type { Language } from '../../../../i18n/types/locale';
-
-const diagram1 = require('../../../../../assets/images/info/vatAllowanceDiagram1.png');
 
 type VatAllowanceInnerProps = {
   t: TFunction,
@@ -39,17 +38,19 @@ const VatAllowanceInner = ({ t, navigation, i18n }: VatAllowanceInnerProps) => {
   const moreTravelersDiagram = vatAllowanceMoreTravelersImages[i18n.language];
   const moreTravelersDiagramDe = vatAllowanceMoreTravelersImages.de;
 
+  const vatAllowanceOver300Diagram = vatAllowanceOver300Diagrams[i18n.language];
+
   return (
     <SubCategoryContainer
       title={t('vatAllowanceMainText')}
       style={{ marginBottom: verticalScale(10) }}
     >
       <Image
-        source={diagram1}
+        source={vatAllowanceOver300Diagram}
         resizeMode="contain"
         style={{
           width: moderateScale(300),
-          height: verticalScale(200),
+          height: moderateScale(184),
           alignSelf: 'center',
         }}
       />
@@ -140,7 +141,7 @@ const VatAllowanceInner = ({ t, navigation, i18n }: VatAllowanceInnerProps) => {
         resizeMode="contain"
         style={{
           width: moderateScale(311),
-          height: verticalScale(425),
+          height: moderateScale(425),
           alignSelf: 'center',
         }}
       />
@@ -153,7 +154,7 @@ const VatAllowanceInner = ({ t, navigation, i18n }: VatAllowanceInnerProps) => {
         resizeMode="contain"
         style={{
           width: moderateScale(311),
-          height: verticalScale(608),
+          height: moderateScale(608),
           alignSelf: 'center',
         }}
       />

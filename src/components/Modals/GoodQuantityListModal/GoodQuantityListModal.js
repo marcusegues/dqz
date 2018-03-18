@@ -174,8 +174,8 @@ class GoodQuantityListModalInner extends React.Component<
     return (
       <AppModal
         modalVisible={modalVisible}
-        animationIn="slideInUp"
-        animationOut="slideOutDown"
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
       >
         <ModalCard style={ownStyles.pickerCard}>
           <View style={ownStyles.container}>

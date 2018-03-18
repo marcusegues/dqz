@@ -125,7 +125,7 @@ class SnackBarsContainerInner extends React.Component<
         visibility: snackBarVisibilities.limitExceeded,
         component: SnackBar,
         rightText: t('limitExceededRightText'),
-        onRightTextPress: this.linkToBorderCrossings,
+        onRightTextPress: () => this.linkToBorderCrossings(),
       },
       {
         key: 'offline',
