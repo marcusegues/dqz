@@ -80,7 +80,7 @@ export const fr: Locale = {
   },
   quantityInput: {
     quantityInput: 'Saisie de quantité',
-    recordedOn: 'enregistré sur',
+    recordedOn: 'enregistré sur {{value}}',
     addQuantities: 'Ajouter des quantités',
     enterQuantities: 'Saisissez toutes les quantités de {{value}} ici.',
     enterQuantity: 'Entrer la quantité',
