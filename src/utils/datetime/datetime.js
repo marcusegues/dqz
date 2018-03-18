@@ -120,6 +120,8 @@ export const dateTimeToLocaleString = (
       }
       break;
     default:
+      // January 25, 2016
+      localDate = `${month} ${day}, ${year}`;
       break;
   }
   return localDate;
