@@ -19,7 +19,6 @@ import type { Receipt } from '../../../types/receiptTypes';
 import { fetchReceipts } from '../../../asyncStorage/storageApi';
 import { calculateDuty } from '../../../model/dutyCalculations';
 import { calculateVat } from '../../../model/vatCalculations';
-import { getConvertedLocalTimeToSwiss } from '../../../model/utils';
 import { ScrollViewCard } from '../../General Components/ScrollViewCard';
 import { MainContentContainer } from '../../MainContentContainer/MainContentContainer';
 import { dateTimeToFormat } from '../../../utils/datetime/datetime';
