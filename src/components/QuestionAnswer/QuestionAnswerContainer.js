@@ -54,6 +54,7 @@ import {
   storePeople,
 } from '../../asyncStorage/storageApi';
 import { MainContentContainer } from '../MainContentContainer/MainContentContainer';
+import { setInitSeen, setQuestionSeen } from './QAControl/controlQuestionSeen';
 
 export type QuestionType =
   | 'peopleInput'
@@ -67,14 +68,18 @@ export type QuestionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
 
 export type QuestionFlag = 'complete' | 'incomplete';
 
+export type QuestionSeen = boolean;
+
 export type QAState = {
   questionStates: { [QuestionType]: QuestionState },
   questionFlag: { [QuestionType]: QuestionFlag },
+  questionSeen: { [QuestionType]: QuestionSeen },
 };
 
 export type QAStateEnriched = {
   questionStates: { [QuestionType]: QuestionState },
   questionFlag: { [QuestionType]: QuestionFlag },
+  questionSeen: { [QuestionType]: QuestionSeen },
   amounts: Amounts,
   basket: Basket,
   people: People,
@@ -137,6 +142,13 @@ class QuestionAnswerContainerInner extends React.Component<
         amounts: 'incomplete',
         largeAmounts: 'incomplete',
       },
+      questionSeen: {
+        peopleInput: false,
+        mainCategories: false,
+        quantityInput: false,
+        amounts: false,
+        largeAmounts: false,
+      },
     };
   }
 
@@ -150,7 +162,7 @@ class QuestionAnswerContainerInner extends React.Component<
   }
 
   enrichState(): QAStateEnriched {
-    const { questionStates, questionFlag } = this.state;
+    const { questionStates, questionFlag, questionSeen } = this.state;
     const {
       amounts,
       basket,
@@ -163,6 +175,7 @@ class QuestionAnswerContainerInner extends React.Component<
     return {
       questionStates,
       questionFlag,
+      questionSeen,
       amounts,
       basket,
       people,
@@ -177,13 +190,15 @@ class QuestionAnswerContainerInner extends React.Component<
     return {
       questionStates: enrichedState.questionStates,
       questionFlag: enrichedState.questionFlag,
+      questionSeen: enrichedState.questionSeen,
     };
   }
 
   initState() {
     const setStates: QAStateEnriched = setInitStates(this.enrichState());
     const setFlags: QAStateEnriched = setInitFlags(setStates);
-    this.setState(this.simplifyState(setFlags));
+    const setSeen: QAStateEnriched = setInitSeen(setFlags);
+    this.setState(this.simplifyState(setSeen));
   }
 
   updateFlagsOptimistically(
@@ -198,11 +213,13 @@ class QuestionAnswerContainerInner extends React.Component<
   }
 
   updateQA(justAnswered: QuestionType, direction: DirectionType) {
+    let enrichedState = this.enrichState();
+    enrichedState = setQuestionSeen(justAnswered, enrichedState);
     const updateStates: QAStateEnriched = setQuestionStates(
       justAnswered,
       direction,
       this.props.navigation,
-      this.enrichState()
+      enrichedState
     );
     const updateFlags: QAStateEnriched = setQuestionFlag(
       justAnswered,
