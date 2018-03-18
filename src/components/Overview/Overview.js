@@ -34,6 +34,7 @@ import type {
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { CurrencyObject } from '../../model/currencies';
 import { storeReceiptEntryTime } from '../../asyncStorage/storageApi';
+import { dateTimeToFormat } from '../../utils/datetime/datetime';
 
 type OverviewProps = {
   modalVisible?: boolean,
@@ -100,18 +101,13 @@ class OverviewInner extends React.Component<
 
   periodOfEntryTime(momentReceiptEntryTime) {
     const { i18n } = this.props;
-    if (i18n.language === 'fr') {
-      return `${momentReceiptEntryTime.toFormat(
-        "dd.MM.y HH'h'mm"
-      )} - ${momentReceiptEntryTime
-        .plus({ hours: 2 })
-        .toFormat("dd.MM.y HH'h'mm")}`;
-    }
-    return `${momentReceiptEntryTime.toFormat(
-      'dd.MM.y HH:mm'
-    )} - ${momentReceiptEntryTime
-      .plus({ hours: 2 })
-      .toFormat('dd.MM.y HH:mm')}`;
+    return `${dateTimeToFormat(momentReceiptEntryTime, {
+      locale: i18n.language,
+      format: 'datetime',
+    })} - ${dateTimeToFormat(momentReceiptEntryTime.plus({ hours: 2 }), {
+      locale: i18n.language,
+      format: 'datetime',
+    })}`;
   }
 
   render() {
@@ -129,7 +125,7 @@ class OverviewInner extends React.Component<
     const momentReceiptEntryTime: DateTime =
       receiptEntryTime !== ''
         ? DateTime.fromISO(receiptEntryTime)
-        : getConvertedLocalTimeToSwiss();
+        : DateTime.local();
     return (
       <ScrollViewCard>
         <CardHeader text={t('overViewTitle')} />
@@ -172,7 +168,7 @@ class OverviewInner extends React.Component<
           continueDisabled={paymentDisabled}
         />
         <TimePickerModal
-          currentEntryTime={momentReceiptEntryTime.toString()}
+          currentEntryTime={momentReceiptEntryTime}
           modalVisible={this.state.modalVisible}
           onHideModal={() => this.handleHideModal()}
           onSelectTime={entryTime => this.handleSetReceiptEntryTime(entryTime)}

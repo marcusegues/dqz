@@ -151,7 +151,7 @@ class ScreensViewInner extends React.Component<
           large={false}
         />
         <TimePickerModal
-          currentEntryTime={getConvertedLocalTimeToSwiss().toString()}
+          currentEntryTime={getConvertedLocalTimeToSwiss()}
           modalVisible={this.state.timePickerModalVisible}
           onHideModal={() => this.handleHideTimePickerModal()}
           onSelectTime={() => {}}

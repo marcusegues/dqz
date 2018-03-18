@@ -35,6 +35,10 @@ import { ValidUntilBlock } from './subcomponents/ValidUntilBlock';
 import { ReceiptInfoNote } from './subcomponents/ReceiptInfoNote';
 import { HeaderTitle } from '../Headers/subcomponents/HeaderTitle';
 import { flatLargeAmounts } from '../../model/utils';
+import {
+  dateTimeToFormat,
+  dateTimeToLocaleString,
+} from '../../utils/datetime/datetime';
 
 const ownStyles = {
   topSumText: {
@@ -130,13 +134,18 @@ class ReceiptAfterPaymentInner extends React.Component<
         <CardRowText
           key="receiptValidOnDate"
           text={`${t('receiptValidOnDate', {
-            date: receiptEntryTime.toLocaleString(DateTime.DATE_FULL),
-            startTime: receiptEntryTime.toFormat(
-              `HH${i18n.language === 'fr' ? "'h'" : ':'}mm`
-            ),
-            endTime: receiptEntryTimePlus.toFormat(
-              `HH${i18n.language === 'fr' ? "'h'" : ':'}mm`
-            ),
+            date: dateTimeToLocaleString(receiptEntryTime, {
+              locale: i18n.language,
+              format: 'datefull',
+            }),
+            startTime: dateTimeToFormat(receiptEntryTime, {
+              locale: i18n.language,
+              format: 'time',
+            }),
+            endTime: dateTimeToFormat(receiptEntryTimePlus, {
+              locale: i18n.language,
+              format: 'time',
+            }),
           })}`}
           style={ownStyles.cardRowText}
         />,
@@ -151,14 +160,22 @@ class ReceiptAfterPaymentInner extends React.Component<
       <CardRowText
         key="receiptValidFromDate"
         text={`${t('receiptValidFromDate', {
-          startDate: receiptEntryTime.toLocaleString(DateTime.DATE_FULL),
-          startTime: receiptEntryTime.toFormat(
-            `HH${i18n.language === 'fr' ? "'h'" : ':'}mm`
-          ),
-          endDate: receiptEntryTimePlus.toLocaleString(DateTime.DATE_FULL),
-          endTime: receiptEntryTimePlus.toFormat(
-            `HH${i18n.language === 'fr' ? "'h'" : ':'}mm`
-          ),
+          startDate: dateTimeToLocaleString(receiptEntryTime, {
+            locale: i18n.language,
+            format: 'datefull',
+          }),
+          startTime: dateTimeToFormat(receiptEntryTime, {
+            locale: i18n.language,
+            format: 'time',
+          }),
+          endDate: dateTimeToLocaleString(receiptEntryTimePlus, {
+            locale: i18n.language,
+            format: 'datefull',
+          }),
+          endTime: dateTimeToFormat(receiptEntryTimePlus, {
+            locale: i18n.language,
+            format: 'time',
+          }),
         })}`}
         style={ownStyles.cardRowText}
       />,
@@ -177,7 +194,7 @@ class ReceiptAfterPaymentInner extends React.Component<
   }
 
   render() {
-    const { t } = this.props;
+    const { t, i18n } = this.props;
 
     if (this.state.receipt && this.state.receipt.receiptId !== undefined) {
       const { basket, people, amounts, currencies } = this.state.receipt;
@@ -232,8 +249,14 @@ class ReceiptAfterPaymentInner extends React.Component<
             >
               <CardRowText
                 text={t('paidOn', {
-                  date: transactionDatetime.toFormat('dd.MM.y'),
-                  time: transactionDatetime.toFormat('HH:mm'),
+                  date: dateTimeToFormat(transactionDatetime, {
+                    locale: i18n.language,
+                    format: 'date',
+                  }),
+                  time: dateTimeToFormat(transactionDatetime, {
+                    locale: i18n.language,
+                    format: 'time',
+                  }),
                 })}
                 style={ownStyles.cardRowTextPaidOn}
               />
