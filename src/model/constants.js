@@ -47,6 +47,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
       ]),
       dutyAllowance: 1,
       adultsOnly: false,
+      rounding: 0.1,
     }),
   ],
   [
@@ -58,6 +59,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
       ]),
       dutyAllowance: 1,
       adultsOnly: false,
+      rounding: 0.1,
     }),
   ],
   [
@@ -69,6 +71,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
       ]),
       dutyAllowance: 5,
       adultsOnly: false,
+      rounding: 0.1,
     }),
   ],
   [
@@ -78,6 +81,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
       duty: Immutable.List(),
       dutyAllowance: Infinity,
       adultsOnly: false,
+      rounding: 0.1,
     }),
   ],
   [
@@ -89,6 +93,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
       ]),
       dutyAllowance: 5,
       adultsOnly: true,
+      rounding: 0.1,
     }),
   ],
   [
@@ -100,6 +105,7 @@ export const CategoriesRates: RatesType = Immutable.Map([
       ]),
       dutyAllowance: 1,
       adultsOnly: true,
+      rounding: 0.1,
     }),
   ],
   [
