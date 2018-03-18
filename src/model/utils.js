@@ -29,7 +29,9 @@ export const rounding = (x: number): number => {
 };
 
 export const quantityRounding = (x: number, category: Category): number => {
-  const factor = CategoriesRates.getIn([category, 'rounding'], 0);
+  const factor = Math.round(
+    CategoriesRates.getIn([category, 'quantityRoundingBase10'], 0)
+  );
   const pow = 10 ** factor;
   return Math.ceil(x / pow) * pow;
 };
