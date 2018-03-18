@@ -121,7 +121,7 @@ export const makeRatesRecord: RecordFactory<RatesContent> = Immutable.Record({
   dutyAllowance: Infinity,
   dutyAllowanceDependency: null,
   adultsOnly: false,
-  rounding: 1,
+  rounding: 0,
 });
 type Rates = RecordOf<RatesContent>;
 
