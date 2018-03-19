@@ -875,12 +875,14 @@ export const fr: Locale = {
   },
   legalNoticeModal: {
     importantNote: 'Remarque importante',
-    vatRateInfo:
-      'Veuillez noter que\n' +
-      "• vous ne pouvez entrer en Suisse qu'une fois par jour civil avec des marchandises que vous avez dédouanées avec QuickZoll;\n" +
-      '• les marchandises déclarées sont dédouanées au taux unique de TVA de 7,7 %;\n' +
-      "• les redevances payées avec l'application ne sont pas remboursées.\n" +
-      'Vous trouverez de plus amples informations ici:',
+    vatRateInfo: 'Veuillez noter que',
+    vatRateInfoText1:
+      "vous ne pouvez entrer en Suisse qu'une fois par jour civil avec des marchandises que vous avez dédouanées avec QuickZoll;",
+    vatRateInfoText2:
+      'les marchandises déclarées sont dédouanées au taux unique de TVA de 7,7 %;',
+    vatRateInfoText3:
+      "les redevances payées avec l'application ne sont pas remboursées.",
+    vatRateInfoText4: 'Vous trouverez de plus amples informations ici:',
     termsOfService: 'Termes et Conditions',
     acceptance: "J'accepte les termes et conditions que j'ai lus et compris.",
     confirm: 'Confirmer',

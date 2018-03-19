@@ -636,6 +636,10 @@ type OverviewTranslations = {
 type LegalNoticeModalTranslations = {
   importantNote: string,
   vatRateInfo: string,
+  vatRateInfoText1: string,
+  vatRateInfoText2: string,
+  vatRateInfoText3: string,
+  vatRateInfoText4: string,
   termsOfService: string,
   acceptance: string,
   confirm: string,

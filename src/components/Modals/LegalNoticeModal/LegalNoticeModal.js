@@ -21,6 +21,7 @@ import { scale, verticalScale } from '../../../styles/Scaling';
 import { ModalCloseText } from '../ModalCloseText';
 import { SquareCheckBox } from '../../CheckBox/SquareCheckBox';
 import type { TFunction } from '../../../types/generalTypes';
+import { BulletText } from '../../../screens/AppInfo/subComponents/BulletText';
 
 const ownStyles = {
   pickerCard: {
@@ -92,6 +93,25 @@ class LegalNoticeModalInner extends React.Component<
             style={ownStyles.vatRateInfo}
           />
 
+          <View style={{ paddingHorizontal: verticalScale(16) }}>
+            <BulletText
+              text={t('vatRateInfoText1')}
+              style={ownStyles.vatRateInfo}
+            />
+            <BulletText
+              text={t('vatRateInfoText2')}
+              style={ownStyles.vatRateInfo}
+            />
+            <BulletText
+              text={t('vatRateInfoText3')}
+              style={ownStyles.vatRateInfo}
+            />
+          </View>
+
+          <CardHeaderSubText
+            text={t('vatRateInfoText4')}
+            style={ownStyles.vatRateInfo}
+          />
           <Touchable
             onPress={() => {
               onPressLegal();
