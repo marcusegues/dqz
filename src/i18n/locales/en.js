@@ -71,7 +71,7 @@ export const en: Locale = {
   },
   peopleInput: {
     peopleInputQuestion:
-      'How many travelers should be considered for customs clearance?',
+      'How many travellers should be considered for customs clearance?',
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Which goods do you want to declare?',
@@ -159,7 +159,7 @@ export const en: Locale = {
   payment: {
     overViewTitle: 'Summary of your Declaration',
     dutyColumn: 'Customs Duty in CHF',
-    sumText: 'Sum (CHF)',
+    sumText: 'Total (CHF)',
     entryInfo:
       'You can only cross the border within the specified period with the goods registered here.',
   },
@@ -174,14 +174,14 @@ export const en: Locale = {
       '{{startDate}} | {{startTime}} to {{endDate}} | {{endTime}}',
     receiptValidOn: 'This receipt is valid for the border crossing on',
     receiptValidOnDate: '{{date}} from {{startTime}} to {{endTime}}',
-    sumText: 'Sum: CHF {{value}}',
+    sumText: 'Total: CHF {{value}}',
     vatColumn: 'VAT in CHF:',
     normalAmountsTitle: 'Total of all goods',
-    normalAmountsSubtitle: 'Sum of all receipts',
+    normalAmountsSubtitle: 'Total of all receipts',
     largeAmountsTitle: 'Single goods',
     largeAmountsSubtitle: 'Value over CHF 300',
     receiptStorageNotification:
-      'This receipt is stored for a year. As long as you can call the receipt at any time in the app.',
+      'This receipt is stored for a year. During this time, you can consult the receipt at any time in the app.',
     allReceiptsNavigationHeaderTitle: 'Swiss Customs Receipts',
     allReceiptsCurrentReceipt: 'Current receipt:',
     allReceiptsOlderReceipts: 'Older receipts:',
@@ -307,7 +307,7 @@ export const en: Locale = {
     vatAllowanceText39: '= 1 item (one sales unit)',
     vatAllowanceText40:
       '3.\tThe invoice for the purchase of a pair of glasses is as follows:',
-    vatAllowanceText41: '2 lenses\t\t2 units à CHF 200\t\tCHF 400',
+    vatAllowanceText41: '2 lenses\t\t2 units at CHF 200\t\tCHF 400',
     vatAllowanceText42: '1 frame\t\tCHF 300',
     vatAllowanceText43: 'Total\t\tCHF 700',
     vatAllowanceText44: '1 item (one assembled item)',
@@ -711,7 +711,7 @@ export const en: Locale = {
     publisher: 'Publisher',
     customsAdministrationAddressTitle: 'Federal Customs Administration',
     contact: 'Contact',
-    customsInfoCenter: 'Customs Information Center\n058 467 15 15',
+    customsInfoCenter: 'Customs Information Centre\n058 467 15 15',
     generalCustomsDirectorate:
       'General Directorate of Customs\nMonbijoustrasse 40\n' +
       '3003 Bern\n' +
@@ -866,11 +866,11 @@ export const en: Locale = {
   },
   units: {
     kilo: 'kg',
-    kilo_plural: 'kgs',
-    kiloOrLiter: 'kg/liter',
-    kiloOrLiter_plural: 'kgs/liters',
-    liter: 'liter',
-    liter_plural: 'liters',
+    kilo_plural: 'kg',
+    kiloOrLiter: 'kg/litres',
+    kiloOrLiter_plural: 'kg/litres',
+    liter: 'litre',
+    liter_plural: 'litres',
     unit: 'unit',
     unit_plural: 'units',
     gram: 'gram',
