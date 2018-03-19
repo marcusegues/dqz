@@ -1,4 +1,3 @@
-// @flow
 import type { Locale } from '../types/locale';
 
 export const de: Locale = {
