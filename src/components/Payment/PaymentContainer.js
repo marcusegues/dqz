@@ -183,8 +183,6 @@ class PaymentContainerInner extends React.Component<
     switch (state.url) {
       case `${baseUrl}${redirectsUrlKeys.success}`:
         analyticsCustom('Successful payment');
-        storeClearDeclaration();
-        resetDeclaration();
         stateChanged = true;
         paymentStatus = 'success';
         break;
@@ -219,6 +217,37 @@ class PaymentContainerInner extends React.Component<
                   paymentData.get('requestId')
                 )
                 .then(responseJson => {
+                  // Transaction.Status
+                  // Current status of the transaction. One of 'AUTHORIZED', 'CAPTURED' or 'PENDING' (PENDING is only used for paydirekt at the moment)
+                  // Possible values: AUTHORIZED, CAPTURED, PENDING.
+                  if (responseJson.Transaction.Status !== 'CAPTURED') {
+                    return this.saferpay
+                      .captureTransaction(
+                        paymentData.get('requestId'),
+                        responseJson.Transaction.Id
+                      )
+                      .then(captureResponseJson => {
+                        if (captureResponseJson.Status !== 'CAPTURED') {
+                          setPaymentData(
+                            paymentData.set('status', 'failed')
+                          ).then(() => {
+                            this.props.navigation.dispatch({
+                              type: 'NAVIGATE',
+                              screen: 'Payment',
+                            });
+                          });
+                          return false;
+                        }
+                        return responseJson;
+                      });
+                  }
+                  return responseJson;
+                })
+                .then(responseJson => {
+                  if (!responseJson) return false;
+                  storeClearDeclaration();
+                  resetDeclaration();
+
                   const paymentTransaction: PaymentTransaction = {
                     // $FlowFixMe
                     status: responseJson.Transaction.Status,
