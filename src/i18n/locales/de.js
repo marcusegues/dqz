@@ -774,7 +774,7 @@ export const de: Locale = {
     specialCasesText1:
       'Folgende Waren können Sie nicht mit QuickZoll verzollen. Sie müssen diese in jedem Fall bei einem durch das Personal der EZV besetzten Grenzübergang anmelden.',
     specialCasesText2:
-      'Waren, die Beschränkungen oder Verboten unterliegen und die zeugnis- oder bewilli-gungspflichtig sind (z.B. Waffen, lebende Tiere und Artenschutzwaren);',
+      'Waren, die Beschränkungen oder Verboten unterliegen und die zeugnis- oder bewilligungspflichtig sind (z.B. Waffen, lebende Tiere und Artenschutzwaren);',
     specialCasesText3: 'Weitere Informationen',
     specialCasesText4:
       'Waren für den privaten Gebrauch oder zum Verschenken mit einem Gesamtwert von CHF 20\'000.00 oder mehr;',
@@ -814,36 +814,29 @@ export const de: Locale = {
     privacyAndLiability: 'Datenschutz und Haftung',
     dataProtection: 'Datenschutz',
     dataProtectionText1:
-      'Gestützt auf Artikel 13 der schweizerischen Bundesverfassung und die datenschutzrechtlichen Bestimmungen des Bundes hat jede Person Anspruch auf Schutz ihrer Privatsphäre sowie auf Schutz vor Missbrauch ihrer persönlichen Daten. Die Bundesbehörden halten diese Bestimmungen ein. Persönliche Daten werden streng vertraulich behandelt und weder an Dritte verkauft noch weiter gegeben.',
-    dataProtectionText2:
-      'In enger Zusammenarbeit mit unseren Hosting-Providern bemühen wir uns, die Datenbanken so gut wie möglich vor fremden Zugriffen, Verlusten, Missbrauch oder vor Fälschung zu schützen.',
-    dataProtectionText3:
-      'Beim Zugriff auf unsere Webseiten werden folgende Daten in Logfiles gespeichert: IP-Adresse, Datum, Uhrzeit, Browser-Anfrage und allg. übertragene Informationen zum Betriebssystem resp. Browser.',
-    dataProtectionText4:
-      'Diese Nutzungsdaten bilden die Basis für statistische, anonyme Auswertungen, so dass Trends erkennbar sind, anhand derer die Bundesbehörden ihr Angebot entsprechend verbessern können. Gemäss Bundesgesetz betreffend die Überwachung des Post- und Fernmeldeverkehrs (BÜPF) besteht eine gesetzliche Aufbewahrungspflicht für Verbindungsdaten der letzten sechs Monate.',
-    dataProtectionText5:
-      'Bei der freiwilligen Kontaktaufnahme wird Ihre Email-Adresse in eine separate Datenbank aufgenommen, welche nicht mit den anonymen Logfiles verknüpft wird. Sie haben jederzeit die Möglichkeit, Ihre Registrierung wieder rückgängig zu machen.',
-
+      'Beim Zugriff auf QuickZoll werden keine Daten sowie keine Informationen zum Betriebssystem oder Browser erfasst. Im Rahmen des Zahlungsvorgangs werden durch SIX die für den Vorgang notwendigen Daten bearbeitet. Bei Fragen zum Zahlungsvorgang wenden Sie sich bitte direkt an SIX.',
     liability: 'Haftung',
     liabilityText1:
-      'Die Bundesbehörden behalten sich ausdrücklich vor, jederzeit Inhalte ohne Ankündigung ganz oder teilweise zu ändern, zu löschen oder zeitweise nicht zu veröffentlichen.',
+      'Die EZV behält sich ausdrücklich vor, jederzeit Inhalte dieser App ohne Ankündigung ganz oder teilweise zu ändern oder zu löschen.',
     liabilityText2:
-      'Haftungsansprüche gegen die Bundesbehörden wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nicht-nutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen.',
-
+      'Haftungsansprüche gegen die EZV wegen Schäden materieller oder immaterieller Art, welche durch die Nutzung dieser App, durch technische Störungen, durch Missbrauch von «QuickZoll» oder anderen Gründen entstanden sind, werden ausgeschlossen.',
+    culpability: 'Strafbarkeit',
+    culpabilityText1: 'Melden Sie die Waren vollständig und korrekt an. Verbotene und/oder bewilligungspflichtige Waren dürfen nicht angemeldet werden. Die Verzollung mit QuickZoll ist verbindlich (Art. 33 des Zollgesetzes, ZG; SR 631.0). Wer Waren nicht vollständig oder nicht korrekt anmeldet oder wer verbotene und/oder bewilligungspflichtige Waren anmeldet, macht sich strafbar (Art. 118 und 127 ZG).',
     referencesAndLinks: 'Verweise und Links',
     referencesAndLinksText1:
-      'Verweise und Links auf Webseiten Dritter liegen ausserhalb des Verantwortungsbereichs der Bundesbehörden. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin. Die Bundesbehörden erklären ausdrücklich, dass sie keinerlei Einfluss auf die Gestaltung, den Inhalt und die Angebote der verknüpften Seiten haben. Informationen und Dienstleistungen von verknüpften Webseiten liegen vollumfänglich in der Verantwortung des jeweiligen Dritten.',
+    'Verweise und Links auf Webseiten Dritter liegen ausserhalb des Verantwortungsbereichs der Bundesbehörden. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin. Die Bundesbehörden erklären ausdrücklich, dass sie keinerlei Einfluss auf die Gestaltung, den Inhalt und die Angebote der verknüpften Seiten haben. Informationen und Dienstleistungen von verknüpften Webseiten liegen vollumfänglich in der Verantwortung des jeweiligen Dritten.',
     referencesAndLinksText2:
       'Es wird jegliche Verantwortung für solche Webseiten abgelehnt.',
 
     copyright: 'Copyright',
     copyrightText1:
-      'Copyright, Bundesbehörden der Schweizerischen Eidgenossenschaft, 2007.',
+      'Copyright, Schweizerische Eidgenossenschaft, EZV, 2018.',
     copyrightText2:
       'Die auf den Websites der Bundesbehörden enthaltenen Informationen werden der Öffentlichkeit zugänglich gemacht. Durch das Herunterladen oder Kopieren von Inhalten, Bildern, Fotos oder anderen Dateien werden keinerlei Rechte bezüglich der Inhalte übertragen.',
     copyrightText3:
-      'Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf den Websites der Bundesbehörden gehören ausschliesslich diesen oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.',
-  },
+    'Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf den Websites der Bundesbehörden gehören ausschliesslich diesen oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.',
+
+},
   overview: {
     declared: 'Angemeldet',
     dutyFree: 'Zollfrei',

@@ -748,7 +748,7 @@ export const it: Locale = {
     toContactForm: '',
   },
   legalNoticeInformation: {
-    navigationHeaderTitle: 'Informazioni importanti sull’utilizzo dell’app',
+    navigationHeaderTitle: 'Informazioni importanti',
     conditions: 'Condizioni quadro',
     importantSoon: 'L’essenziale in breve',
     importantSoonText1:
@@ -829,23 +829,15 @@ export const it: Locale = {
     dataProtection: 'Protezione dei dati',
     dataProtectionText1:
       'Ai sensi dell’articolo 13 della Costituzione federale svizzera e delle disposizioni legali della Confederazione sulla protezione dei dati, ognuno ha diritto al rispetto della sua vita privata nonché d’essere protetto da un impiego abusivo dei suoi dati personali. Le autorità federali si attengono a queste disposizioni. I dati personali sono trattati in modo strettamente confidenziale e non vengono venduti né trasmessi a terzi.',
-
-    dataProtectionText2:
-      'In stretta collaborazione con il nostro fornitore di hosting ci impegniamo ad adottare tutte le misure necessarie per proteggere le nostre banche dati da accessi non autorizzati, perdite, abusi o falsificazioni.',
-    dataProtectionText3:
-      'Accedendo ai nostri siti vengono salvati in log file i seguenti dati: indirizzo IP, data, ora, richiesta del browser e le informazioni generali sul sistema operativo o sul browser che sono state trasmesse.',
-    dataProtectionText4:
-      'I dati di navigazione formano la base per le valutazioni statistiche anonime che permettono di identificare tendenze, grazie alle quali le autorità federali possono migliorare la loro offerta. Secondo la legge federale del 6 ottobre 2000 sulla sorveglianza della corrispondenza postale e del traffico delle telecomunicazioni (LSCPT; RS 780.1) esiste un obbligo di conservazione legale per i dati di collegamento degli ultimi sei mesi.',
-    dataProtectionText5:
-      'In caso di presa di contatto spontanea, l’indirizzo di posta elettronica viene salvato in una banca dati separata, non collegata con i log file anonimi. La propria registrazione può essere revocata in ogni momento. Le autorità federali si riservano espressamente il diritto di modificare o cancellare determinati contenuti, in parte o nella loro interezza, o di sospenderne temporaneamente la pubblicazione in qualsiasi momento e senza darne annuncio preventivo. Le autorità federali declinano ogni responsabilità per danni materiali o immateriali derivanti dall’accesso alle informazioni pubblicate, dal loro utilizzo o mancato utilizzo oppure riconducibili a un abuso del collegamento o a guasti tecnici.',
-
     liability: 'Responsabilità',
     liabilityText1:
       'Le autorità federali si riservano espressamente il diritto di modificare, cancellare o non pubblicare temporaneamente i contenuti in toto o in parte in qualsiasi momento senza preavviso.',
     liabilityText2:
       "Sono escluse rivendicazioni di responsabilità nei confronti delle autorità federali per danni di natura materiale o immateriale derivanti dall'accesso o dall'uso o non uso delle informazioni pubblicate, in caso di uso improprio del collegamento o di errori tecnici.",
+      culpability: 'Colpevolezza',
+      culpabilityText1: 'Registra la merce completamente e correttamente. Le merci vietate e/o le merci vietate soggette ad autorizzazione non possono essere registrate. Lo sdoganamento con QuickZoll è vincolante (articolo 33 del Customs Act, ZG; SR 631.0). Chiunque omette di registrare i beni in modo completo o errato, o che registra merci e/o merci vietate soggette ad autorizzazione, è passibile di azioni giudiziarie (articoli 118 e 127 ZG).',
 
-    referencesAndLinks: 'Riferimenti e link',
+      referencesAndLinks: 'Riferimenti e link',
     referencesAndLinksText1:
       'I riferimenti e i link che rimandano a siti web di terzi non rientrano negli ambiti di responsabilità delle autorità federali. L’utente si assume i rischi connessi all’accesso a questi siti e al loro utilizzo. Le autorità federali dichiarano espressamente di non avere alcuna influenza sull’impostazione, sui contenuti e sulle offerte dei siti web a cui rimanda. La responsabilità per le informazioni e i servizi offerti in tali siti web ricade esclusivamente sui relativi terzi.',
     referencesAndLinksText2:
@@ -853,7 +845,7 @@ export const it: Locale = {
 
     copyright: 'Copyright',
     copyrightText1:
-      'Copyright, autorità federali della Confederazione Svizzera, 2007.',
+      'Copyright, autorità federali della Confederazione Svizzera, 2018.',
     copyrightText2:
       'Le informazioni contenute nel sito web delle autorità federali sono rese accessibili al pubblico. Scaricando o copiando contenuti, immagini, fotografie o altri dati non vengono trasferiti in alcun modo i relativi diritti.',
     copyrightText3:
