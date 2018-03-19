@@ -85,8 +85,19 @@ export const fr: Locale = {
     enterQuantities: 'Saisissez toutes les quantités de {{value}} ici.',
     enterQuantity: 'Entrer la quantité',
     enterQuantitiesButter: 'Saisissez toutes les quantités de {{value}} ici.',
-    enterQuantitiesAlcohol: 'Saisissez toutes les quantités de {{value}} ici.',
-    standardInputSubText: '⚡️',
+      enterQuantitiesTobacco: 'Saisissez toutes les quantités des {{value}} ici.',
+      enterQuantitiesCigarettes: 'Saisissez toutes les quantités des {{value}} ici.',
+      enterQuantitiesOil: 'Saisissez toutes les quantités {{value}} ici.',
+    enterQuantitiesAlcohol: 'Saisissez toutes les quantités des {{value}} ici.',
+      enterQuantitiesMeat: 'Saisissez toutes les quantités de {{value}} ici.',
+      standardInputSubText: 'Saisissez toutes les quantités de {{category}} que vous emportez avec vous:',
+      meatInput: 'viande et préparations de viande',
+      butterInput: 'beurre et crème',
+      oilInput: 'd\'huile/graisse/margarine',
+      alcSoftInput: 'boissons alcoolisées jusqu\'à 18% vol.',
+      alcHardInput: 'boissons alcoolisées de plus de 18% vol.',
+      cigarettesInput: 'cigarettes et cigares',
+      tobaccoInput: 'autres tabacs manufacturés',
   },
   amountInput: {
     amountInput:
@@ -97,7 +108,7 @@ export const fr: Locale = {
       "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300.00.",
     amountInputAddItem: 'Ajouter la valeur',
     amountInputAddItemLarge: 'Ajouter un bien',
-    amountInputEnterValueBeginning: 'Saisissez la valeur',
+    amountInputEnterValueBeginning: 'Saisissez la valeur ',
     amountInputEnterValueBoldText: 'sans la TVA étrangère (valeur nette)',
     amountInputEnterValueEnd:
       ', y compris la valeur des cadeaux reçus, la nourriture, les produits du tabac et les boissons alcoolisées.',
@@ -180,7 +191,7 @@ export const fr: Locale = {
       'La présente quittance est valable pour un passage de la frontière suisse à partir de:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} à {{endDate}} | {{endTime}}',
-    receiptValidOn: 'La présente quittance est valable pour un passage de la frontière suisse à partir de:',
+    receiptValidOn: 'La présente quittance est valable pour un passage de la frontière suisse le:',
     receiptValidOnDate: '{{date}} de {{startTime}} à {{endTime}}',
 
     sumText: 'Total (en francs): {{value}}',

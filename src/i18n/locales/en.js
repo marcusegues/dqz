@@ -85,7 +85,10 @@ export const en: Locale = {
     enterQuantity: 'Enter quantity',
     enterQuantitiesButter: 'Enter the quantities of all {{value}} products here.',
       enterQuantitiesMeat: 'Enter the quantities of all {{value}} here.',
-    enterQuantitiesAlcohol: 'Enter the quantities of all {{value}} here.',
+      enterQuantitiesTobacco: 'Enter the quantities of all {{value}} here.',
+      enterQuantitiesCigarettes: 'Enter the quantities of all {{value}} here.',
+      enterQuantitiesOil: 'Enter the quantities of all {{value}} here.',
+      enterQuantitiesAlcohol: 'Enter the quantities of all {{value}} here.',
     standardInputSubText:
       'Record the amount of {{category}} you carry with you:',
       meatInput: 'meat and meat products',

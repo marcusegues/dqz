@@ -91,6 +91,9 @@ export const de: Locale = {
     enterQuantitiesAlcohol:
       'Erfassen Sie hier die Mengen aller {{value}}',
       enterQuantitiesMeat: 'Erfassen Sie hier die Mengen von {{value}}',
+      enterQuantitiesTobacco: 'Erfassen Sie hier die Mengen aller {{value}}',
+      enterQuantitiesCigarettes: 'Erfassen Sie hier die Mengen aller {{value}}',
+      enterQuantitiesOil: 'Erfassen Sie hier die Mengen aller {{value}}',
     standardInputSubText:
       'Erfassen Sie die Menge von {{category}}, die Sie mit sich führen:',
       meatInput: 'Fleisch sowie Fleischzubereitungen.',
