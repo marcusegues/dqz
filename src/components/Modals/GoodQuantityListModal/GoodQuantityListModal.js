@@ -111,14 +111,38 @@ class GoodQuantityListModalInner extends React.Component<
     switch (modalCategory) {
       case 'Butter': {
         return t('quantityInput:enterQuantitiesButter', {
-          value: t(`categories:${modalCategory}`),
+          value: t(`quantityInput:butterInput`),
         });
       }
-      case 'AlcSoft':
+      case 'AlcSoft': {
+          return t('quantityInput:enterQuantitiesAlcohol', {
+              value: t(`quantityInput:alcSoftInput`),
+          });
+      }
       case 'AlcHard': {
         return t('quantityInput:enterQuantitiesAlcohol', {
-          value: t(`categories:${modalCategory}`),
+          value: t(`quantityInput:alcHardInput`),
         });
+      }
+      case 'Cigarettes': {
+            return t('quantityInput:enterQuantities', {
+                value: t(`quantityInput:cigarettesInput`),
+            });
+      }
+      case 'Tobacco': {
+            return t('quantityInput:enterQuantities', {
+                value: t(`quantityInput:tobaccoInput`),
+            });
+      }
+      case 'Meat': {
+            return t('quantityInput:enterQuantitiesMeat', {
+                value: t(`quantityInput:meatInput`),
+            });
+      }
+      case 'Oils': {
+            return t('quantityInput:enterQuantities', {
+                value: t(`quantityInput:oilInput`),
+            });
       }
       default: {
         return t('quantityInput:enterQuantities', {
