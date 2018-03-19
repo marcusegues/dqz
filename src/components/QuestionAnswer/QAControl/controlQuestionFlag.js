@@ -1,9 +1,9 @@
 // @flow
 import Immutable from 'immutable';
 import type {
-    QAStateEnriched,
-    QuestionFlag, QuestionSeen,
-    QuestionType,
+  QAStateEnriched,
+  QuestionFlag,
+  QuestionType,
 } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
 import type { Basket } from '../../../model/types/basketPeopleAmountsTypes';
@@ -71,6 +71,3 @@ export const setQuestionFlag = (
     [justUpdated]: flagRules(justUpdated, qaState),
   },
 });
-
-
-

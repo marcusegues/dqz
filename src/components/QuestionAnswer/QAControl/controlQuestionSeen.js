@@ -1,4 +1,5 @@
-import type { QuestionSeen, QuestionType } from '../QuestionAnswerContainer';
+// @flow
+import type {QAStateEnriched, QuestionSeen, QuestionType} from '../QuestionAnswerContainer';
 
 export const setQuestionSeenInState = (
   qaState: QAStateEnriched,

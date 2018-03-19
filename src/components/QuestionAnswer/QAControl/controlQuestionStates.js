@@ -10,7 +10,6 @@ import { getTotalPeople } from '../../../model/configurationApi';
 import { hasLargeAmount } from '../../../model/utils';
 import type { Navigation } from '../../../types/generalTypes';
 import type { MainCategories } from '../../../types/reducers/declaration';
-import { setQuestionSeen } from './controlQuestionSeen';
 
 const singleOtherGoodsMainCategory = (
   mainCategories: MainCategories

@@ -59,7 +59,6 @@ import {
   setQuestionSeen,
   setQuestionSeenInState,
 } from './QAControl/controlQuestionSeen';
-import { mainCategories } from '../../types/reducers/declaration';
 
 export type QuestionType =
   | 'peopleInput'
