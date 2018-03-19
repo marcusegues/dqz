@@ -125,6 +125,7 @@ export const it: Locale = {
     validateMainCategoryRemoveYes:
       'Sì, desidero eliminare le rispettive quantità.',
     itemsGreaterThan300CHF: 'Articoli > 300 CHF',
+    toPayment: 'Pagare',
   },
   modal: {
     confirmPicker: 'Riprendere {{value}}',
