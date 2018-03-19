@@ -89,9 +89,17 @@ export const de: Locale = {
 
     enterQuantitiesButter: 'Erfassen Sie hier die Mengen von {{value}}',
     enterQuantitiesAlcohol:
-      'Erfassen Sie hier die Mengen aller alkoholischen Getränke',
+      'Erfassen Sie hier die Mengen aller {{value}}',
+      enterQuantitiesMeat: 'Erfassen Sie hier die Mengen von {{value}}',
     standardInputSubText:
       'Erfassen Sie die Menge von {{category}}, die Sie mit sich führen:',
+      meatInput: 'Fleisch sowie Fleischzubereitungen.',
+      butterInput: 'Butter und Rahm.',
+      oilInput: 'Öle, Fette, oder Margarine.',
+      alcSoftInput: 'alkoholischen Getränke bis 18% Vol.',
+      alcHardInput: 'alkoholischen Getränke von über 18% Vol.',
+      cigarettesInput: 'Zigaretten und Zigarren.',
+      tobaccoInput: 'anderen Tabakfabrikate.',
   },
   amountInput: {
     amountInput:
@@ -99,7 +107,7 @@ export const de: Locale = {
     amountInputLargeItem:
       'Erfassen Sie einzelne Gegenstände mit einem Wert von über {{value}} Franken.',
     amountInputLargeItemGreyBox:
-      'Erfassen Sie hier nochmals jeden Gegenstand, der mehr als CHF 300.00 wert ist.',
+      'Erfassen Sie hier nochmals jeden Gegenstand, der mehr als CHF 300 netto wert ist.',
     amountInputAddItem: 'Wert hinzufügen',
     amountInputAddItemLarge: 'Gegenstand hinzufügen',
     amountInputEnterValueBeginning: 'Erfassen Sie den Wert',
@@ -181,7 +189,7 @@ export const de: Locale = {
     receiptValidFrom: 'Diese Quittung ist gültig für den Grenzübertritt am:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} bis {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Diese Quittung ist gültig am:',
+    receiptValidOn: 'Diese Quittung ist gültig für den Grenzübertritt am:',
     receiptValidOnDate: '{{date}}, von {{startTime}} bis {{endTime}}',
     sumText: 'Summe: CHF {{value}}',
     vatColumn: 'Mehrwertsteuer in CHF:',
@@ -731,7 +739,7 @@ export const de: Locale = {
     importantSoonText3:
       'Sie dürfen QuickZoll nur für Waren benützen, die Sie zu Ihrem privaten Gebrauch oder zum Verschenken einführen.',
     importantSoonText4:
-      'Mit der Verwendung von QuickZoll akzeptieren Sie, dass der MWST Satz 7,7 % auch für Waren angewendet wird, die dem reduzierten Steuersatz (2,5 %) unterliegen (insbeson-dere Lebensmittel, Tierfutter, Medikamente und Bücher). Möchten Sie, dass der reduzier-te Steuersatz angewendet wird, müssen Sie die Waren bei einem durch das Personal der Eidgenössischen Zollverwaltung (EZV) besetzten Grenzübergang mündlich anmelden.',
+      'Mit der Verwendung von QuickZoll akzeptieren Sie, dass der MWST Satz 7,7% auch für Waren angewendet wird, die dem reduzierten Steuersatz (2,5%) unterliegen (insbeson-dere Lebensmittel, Tierfutter, Medikamente und Bücher). Möchten Sie, dass der reduzier-te Steuersatz angewendet wird, müssen Sie die Waren bei einem durch das Personal der Eidgenössischen Zollverwaltung (EZV) besetzten Grenzübergang mündlich anmelden.',
     importantSoonText5:
       'Die Bezahlung ist nur mit Kreditkarten (Visa, Mastercard) möglich. Nach der Bezahlung der Abgaben sind die Waren verzollt.',
 
@@ -860,7 +868,7 @@ export const de: Locale = {
   furtherInformationModal: {
     furtherInformation: 'Weitere Informationen:',
     acceptance:
-      'Mit der Verwendung der App akzeptieren Sie, dass der MWST Satz 7,7 % auch für Waren angewendet wird, die eigentlich dem reduzierten Steuersatz unterliegen (Lebensmittel, Tierfutter, Medikamente und Bücher).',
+      'Mit der Verwendung von QuickZoll akzeptieren Sie, dass der MWST Satz 7,7% auch für Waren angewendet wird, die dem reduzierten Steuersatz (2,5%) unterliegen (insbesondere Lebensmittel, Tierfutter, Medikamente und Bücher). Möchten Sie, dass der reduzierte Steuersatz angewendet wird, müssen Sie die Waren bei einem durch das Personal der Eidgenössischen Zollverwaltung (EZV) besetzten Grenzübergang mündlich anmelden.',
   },
   updateTheApp: {
     title: 'Neue Version verfügbar!',
