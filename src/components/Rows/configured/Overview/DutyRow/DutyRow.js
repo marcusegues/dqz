@@ -24,6 +24,8 @@ import { getBasket } from '../../../../../reducers/selectors';
 import { SwipeToDelete } from '../../../../General Components/SwipeableContent/configured/SwipeToDelete';
 import { displayedQuantityDecimalPlaces } from '../../../../../constants/declaration';
 import { rounding } from '../../../../../model/utils';
+import { quantityRounding } from '../../../../../model/utils';
+
 
 type DutyRowProps = {
   category: Category,
@@ -68,7 +70,7 @@ class DutyRowInner extends React.Component<
           />
         </OverviewInfo>
         <QuantityIcon
-          quantity={rounding(Math.max(0, quantity - allowanceRaw))}
+          quantity={Math.max(0.0,quantityRounding(quantity - allowanceRaw, category))}
           unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
             count: Math.max(0, quantity - allowanceRaw),
           })}
