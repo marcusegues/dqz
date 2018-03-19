@@ -13,7 +13,7 @@ import {
   sampleBasket7,
   sampleBasket8,
   sampleBasket9,
-    sampleBasketDutyRounding
+  sampleBasketDutyRounding,
 } from './fullBasketsAndAmounts';
 import {
   addAdult,
@@ -169,7 +169,11 @@ describe('Duty Calculations', () => {
     ).toMatchSnapshot();
   });
 
-    test('Tax Calculation Rounding Correcty, 2 People and Meat', () => {
-        expect(calculateDuty(sampleBasketDutyRounding, addAdult(initPeople,2)).get('totalDuty')).toBe(49.30);
-    });
+  test('Tax Calculation Rounding Correcty, 2 People and Meat', () => {
+    expect(
+      calculateDuty(sampleBasketDutyRounding, addAdult(initPeople)).get(
+        'totalDuty'
+      )
+    ).toBe(49.3);
+  });
 });
