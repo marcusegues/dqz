@@ -133,6 +133,7 @@ export const de: Locale = {
       'Im Moment enthalten gewisse Unterkategorien Mengen, nämlich: {{value}}',
     validateMainCategoryRemoveYes: 'Ja - ich möchte dies löschen',
     itemsGreaterThan300CHF: 'Gegenstände > 300 CHF',
+    toPayment: 'Zur Bezahlung',
   },
   modal: {
     confirmPicker: '{{value}} übernehmen',
@@ -842,12 +843,14 @@ export const de: Locale = {
   },
   legalNoticeModal: {
     importantNote: 'Wichtiger Hinweis',
-    vatRateInfo:
-      'Bitte beachten Sie, dass \n' +
-      '• Sie pro Kalendertag nur einmal mit Waren einreisen dürfen, die Sie mit QuickZoll verzollt haben;\n' +
-      '• Angemeldete Waren mit dem einheitlichen Mehrwertsteuersatz von 7,7 % verzollt werden;\n' +
-      '• Mit der App bezahlte Abgaben nicht zurückerstattet werden.\n' +
-      'Weitere Informationen finden Sie hier:',
+    vatRateInfo: 'Bitte beachten Sie, dass',
+    vatRateInfoText1:
+      'Sie pro Kalendertag nur einmal mit Waren einreisen dürfen, die Sie mit QuickZoll verzollt haben;',
+    vatRateInfoText2:
+      'Angemeldete Waren mit dem einheitlichen Mehrwertsteuersatz von 7,7 % verzollt werden;',
+    vatRateInfoText3:
+      'Mit der App bezahlte Abgaben nicht zurückerstattet werden.',
+    vatRateInfoText4: 'Weitere Informationen finden Sie hier:',
     termsOfService: 'Nutzungsbedingungen',
     acceptance:
       'Hiermit akzeptiere ich die Nutzungsbedingungen, die ich gelesen und verstanden habe.',
@@ -877,5 +880,11 @@ export const de: Locale = {
     unit_plural: 'Stück',
     gram: 'Gramm',
     gram_plural: 'Gramm',
+  },
+  acceptRateModal: {
+    modalTitle: 'Mehrwertsteuersatz 7.7%',
+    modalSubTitle:
+      'Hiermit bestätige ich, dass ich den einheitlichen Mehrwertsteuersatz von 7.7% bei der Verzollung von Waren akzeptiere.',
+    confirm: 'Bestätigen',
   },
 };

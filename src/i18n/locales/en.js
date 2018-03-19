@@ -126,6 +126,7 @@ export const en: Locale = {
       'Currently, some subcategories contain quantities: {{value}}',
     validateMainCategoryRemoveYes: 'Yes, remove resp. quantities',
     itemsGreaterThan300CHF: 'Items > CHF 300',
+    toPayment: 'To Payment',
   },
   modal: {
     confirmPicker: 'Confirm {{value}}',
@@ -839,12 +840,13 @@ export const en: Locale = {
   },
   legalNoticeModal: {
     importantNote: 'Important Note',
-    vatRateInfo:
-      'Please note that\n' +
-      '• you may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll;\n' +
-      '• declared goods are cleared using the single VAT rate of 7.7%;\n' +
-      '• duties paid with the app will not be refunded.\n' +
-      'Further information can be found here:',
+    vatRateInfo: 'Please note that',
+    vatRateInfoText1:
+      'you may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll;',
+    vatRateInfoText2:
+      'declared goods are cleared using the single VAT rate of 7.7%;',
+    vatRateInfoText3: 'duties paid with the app will not be refunded.',
+    vatRateInfoText4: 'Further information can be found here:',
     termsOfService: 'Terms of Service',
     acceptance:
       'I hereby accept the terms and conditions that I have read and understood.',
@@ -875,5 +877,10 @@ export const en: Locale = {
     unit_plural: 'units',
     gram: 'gram',
     gram_plural: 'grams',
+  },
+  acceptRateModal: {
+    modalTitle: '🔥',
+    modalSubTitle: '🔥',
+    confirm: 'Confirm',
   },
 };

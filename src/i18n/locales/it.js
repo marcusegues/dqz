@@ -125,6 +125,7 @@ export const it: Locale = {
     validateMainCategoryRemoveYes:
       'Sì, desidero eliminare le rispettive quantità.',
     itemsGreaterThan300CHF: 'Articoli > 300 CHF',
+    toPayment: 'Pagare',
   },
   modal: {
     confirmPicker: 'Riprendere {{value}}',
@@ -865,12 +866,13 @@ export const it: Locale = {
   },
   legalNoticeModal: {
     importantNote: 'Indicazione importante',
-    vatRateInfo:
-      'Si prega di tener conto che\n' +
-      '• al giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll;\n' +
-      '• le merci dichiarate vengono imposte all’aliquota IVA unica del 7,7 %;\n' +
-      '• i tributi pagati con l’app non vengono rimborsati.\n' +
-      'Ulteriori informazioni sono disponibili qui:',
+    vatRateInfo: 'Si prega di tener conto che',
+    vatRateInfoText1:
+      'giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll;',
+    vatRateInfoText2:
+      'le merci dichiarate vengono imposte all’aliquota IVA unica del 7,7 %;',
+    vatRateInfoText3: 'i tributi pagati con l’app non vengono rimborsati.',
+    vatRateInfoText4: 'Ulteriori informazioni sono disponibili qui:',
     termsOfService: 'Termini e condizioni',
     acceptance: 'Accetto i termini e le condizioni che ho letto e compreso.',
     confirm: 'Confermare',
@@ -899,5 +901,10 @@ export const it: Locale = {
     unit_plural: 'unità',
     gram: 'grammo',
     gram_plural: 'grammi',
+  },
+  acceptRateModal: {
+    modalTitle: '🔥',
+    modalSubTitle: '🔥',
+    confirm: '🔥',
   },
 };

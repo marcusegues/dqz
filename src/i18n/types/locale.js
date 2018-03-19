@@ -131,6 +131,7 @@ type QAFlowTranslations = {
   validateMainCategoryRemoveSubtitle: string,
   validateMainCategoryRemoveYes: string,
   itemsGreaterThan300CHF: string,
+  toPayment: string,
 };
 
 type ModalTranslations = {
@@ -635,6 +636,10 @@ type OverviewTranslations = {
 type LegalNoticeModalTranslations = {
   importantNote: string,
   vatRateInfo: string,
+  vatRateInfoText1: string,
+  vatRateInfoText2: string,
+  vatRateInfoText3: string,
+  vatRateInfoText4: string,
   termsOfService: string,
   acceptance: string,
   confirm: string,
@@ -658,6 +663,12 @@ type UnitsTranslations = {
   liter: string,
   unit: string,
   gram: string,
+};
+
+type AcceptRateModalTranslations = {
+  modalTitle: string,
+  modalSubTitle: string,
+  confirm: string,
 };
 
 /**
@@ -704,4 +715,5 @@ export type Locale = {
   units: UnitsTranslations,
   purchasesOnlineOffline: PurchasesOnlineOfflineTranslations,
   updateTheApp: UpdateTheAppTranslations,
+  acceptRateModal: AcceptRateModalTranslations,
 };
