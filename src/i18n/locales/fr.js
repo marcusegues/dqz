@@ -129,6 +129,7 @@ export const fr: Locale = {
     validateMainCategoryRemoveYes:
       "Oui, j'aimerais supprimer les quantités en question.",
     itemsGreaterThan300CHF: 'Articles > 300 CHF',
+    toPayment: 'Payer',
   },
   modal: {
     confirmPicker: 'Reprendre {{value}}',

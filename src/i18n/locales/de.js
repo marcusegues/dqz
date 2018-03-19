@@ -133,6 +133,7 @@ export const de: Locale = {
       'Im Moment enthalten gewisse Unterkategorien Mengen, nämlich: {{value}}',
     validateMainCategoryRemoveYes: 'Ja - ich möchte dies löschen',
     itemsGreaterThan300CHF: 'Gegenstände > 300 CHF',
+    toPayment: 'Zur Bezahlung',
   },
   modal: {
     confirmPicker: '{{value}} übernehmen',

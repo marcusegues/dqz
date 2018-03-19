@@ -126,6 +126,7 @@ export const en: Locale = {
       'Currently, some subcategories contain quantities: {{value}}',
     validateMainCategoryRemoveYes: 'Yes, remove resp. quantities',
     itemsGreaterThan300CHF: 'Items > CHF 300',
+    toPayment: 'To Payment',
   },
   modal: {
     confirmPicker: 'Confirm {{value}}',
