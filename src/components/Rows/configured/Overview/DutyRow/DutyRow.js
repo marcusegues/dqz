@@ -23,7 +23,6 @@ import { resetQuantities } from '../../../../../model/configurationApi';
 import { getBasket } from '../../../../../reducers/selectors';
 import { SwipeToDelete } from '../../../../General Components/SwipeableContent/configured/SwipeToDelete';
 import { displayedQuantityDecimalPlaces } from '../../../../../constants/declaration';
-import { rounding } from '../../../../../model/utils';
 import { quantityRounding } from '../../../../../model/utils';
 
 
