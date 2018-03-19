@@ -27,6 +27,7 @@ import {
   deserializeReceiptEntryTime,
   deserializeReceipts,
 } from './deserializers';
+import type { SettingsAcceptRate } from '../types/generalTypes';
 
 export const KeyNotSet = 'KeyNotSet';
 export type KeyNotSetType = 'KeyNotSet';

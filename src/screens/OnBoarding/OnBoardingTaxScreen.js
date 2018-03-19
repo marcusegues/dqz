@@ -78,7 +78,7 @@ class OnBoardingTaxScreenInner extends React.Component<
         />
         <SkipThisStep
           onPress={() => {
-            storeSettingsAcceptRate(true);
+            storeSettingsAcceptRate(false);
             navigation.dispatch({ type: 'NAVIGATE', screen: 'MainMenu' });
           }}
           text={t('skipThisStep')}

@@ -30,7 +30,7 @@ import {
 } from '../model/configurationApi';
 import type { Receipt } from '../types/receiptTypes';
 import type { KeyNotSetType } from './asyncStorage';
-import type { PaymentData } from '../types/generalTypes';
+import type { PaymentData, SettingsAcceptRate } from '../types/generalTypes';
 import { emptyReceiptEntryTime } from '../types/reducers/declaration';
 
 /**

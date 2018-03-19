@@ -660,6 +660,12 @@ type UnitsTranslations = {
   gram: string,
 };
 
+type AcceptRateModalTranslations = {
+  modalTitle: string,
+  modalSubTitle: string,
+  confirm: string,
+};
+
 /**
  * The Locale type defines all the namespaces that we use in the translation
  * The namespaces are formed by the individual strings, respectively.
@@ -704,4 +710,5 @@ export type Locale = {
   units: UnitsTranslations,
   purchasesOnlineOffline: PurchasesOnlineOfflineTranslations,
   updateTheApp: UpdateTheAppTranslations,
+  acceptRateModal: AcceptRateModalTranslations,
 };
