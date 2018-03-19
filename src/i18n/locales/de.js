@@ -878,4 +878,10 @@ export const de: Locale = {
     gram: 'Gramm',
     gram_plural: 'Gramm',
   },
+  acceptRateModal: {
+    modalTitle: 'Mehrwertsteuersatz 7.7%',
+    modalSubTitle:
+      'Hiermit bestätige ich, dass ich den einheitlichen Mehrwertsteuersatz von 7.7% bei der Verzollung von Waren akzeptiere.',
+    confirm: 'Bestätigen',
+  },
 };
