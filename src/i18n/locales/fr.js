@@ -179,7 +179,7 @@ export const fr: Locale = {
       'La présente quittance est valable pour un passage de la frontière suisse à partir de:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} à {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Quittance valable le:',
+    receiptValidOn: 'La présente quittance est valable pour un passage de la frontière suisse à partir de:',
     receiptValidOnDate: '{{date}} de {{startTime}} à {{endTime}}',
 
     sumText: 'Total (en francs): {{value}}',
@@ -888,7 +888,7 @@ export const fr: Locale = {
   furtherInformationModal: {
     furtherInformation: "Plus d'informations:",
     acceptance:
-      "En utilisant l'application, vous acceptez que le taux de TVA de 7,7% est également appliqué aux biens soumis au taux d'imposition réduit (aliments, aliments pour animaux, médicaments et livres).",
+      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7 % soit également appliqué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé.",
   },
   updateTheApp: {
     title: 'Nouvelle version disponible!',

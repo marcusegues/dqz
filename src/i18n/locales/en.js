@@ -81,15 +81,16 @@ export const en: Locale = {
     quantityInput: 'Enter quantity',
     recordedOn: 'recorded on {{value}}',
     addQuantities: 'Add quantities',
-    enterQuantities: 'Enter the quantities of all {{value}} here',
+    enterQuantities: 'Enter the quantities of all {{value}} here.',
     enterQuantity: 'Enter quantity',
-    enterQuantitiesButter: 'Enter the quantities of all {{value}} here',
-    enterQuantitiesAlcohol: 'Enter the quantities of all {{value}} here',
+    enterQuantitiesButter: 'Enter the quantities of all {{value}} products here.',
+      enterQuantitiesMeat: 'Enter the quantities of all {{value}} here.',
+    enterQuantitiesAlcohol: 'Enter the quantities of all {{value}} here.',
     standardInputSubText:
       'Record the amount of {{category}} you carry with you:',
       meatInput: 'meat and meat products',
       butterInput: 'butter and cream',
-      oilInput: 'oils/fats/margarine',
+      oilInput: 'oils, fats, or margarine',
       otherFoodInput: 'other food and non-alcoholic beverages',
       alcSoftInput: 'alcoholic beverages of up to 18% vol.',
       alcHardInput: 'alcoholic beverages of more than 18% vol.',
@@ -180,7 +181,7 @@ export const en: Locale = {
     receiptValidFrom: 'This receipt is valid for the border crossing from:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} to {{endDate}} | {{endTime}}',
-    receiptValidOn: 'This receipt is valid for the border crossing on',
+    receiptValidOn: 'This receipt is valid for the border crossing on:',
     receiptValidOnDate: '{{date}} from {{startTime}} to {{endTime}}',
     sumText: 'Total: CHF {{value}}',
     vatColumn: 'VAT in CHF:',
@@ -862,7 +863,7 @@ export const en: Locale = {
   furtherInformationModal: {
     furtherInformation: 'Further Information:',
     acceptance:
-      'By using the app, you accept that the VAT rate is 7.7%; is also applied to goods that are actually subject to the reduced tax rate (food, animal feed, medicines and books).',
+      'By using the QuickZoll app, you accept that the VAT rate of 7.7% is also applied to goods that are subject to the reduced tax rate (2.5%) (in particular food, animal feed, medicines and books). If you would like the reduced tax rate to be applied, you must declare the goods verbally at a manned border crossing.',
   },
   updateTheApp: {
     title: 'New version available!',
