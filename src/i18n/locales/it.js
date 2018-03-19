@@ -64,7 +64,7 @@ export const it: Locale = {
       'La lingua è stata definita sulla base delle impostazioni attuali del sistema.',
     currentLanguageMessage: 'La tua lingua attualmente \n selezionata è',
     selectLanguage: 'Selezionare un’altra lingua',
-    confirmationVat: ' Confermo di accettare l’aliquota IVA unica di',
+    confirmationVat: 'Confermo di accettare l’aliquota IVA unica di',
     confirmationVat2: 'all’atto dell’imposizione delle merci',
     vatInformation: 'Maggiori informazioni',
     skipThisStep: 'Salta questo passaggio',
@@ -91,7 +91,7 @@ export const it: Locale = {
     amountInputLargeItem:
       'Cattura i singoli oggetti con chi ha oltre {{value}} franchi.',
     amountInputLargeItemGreyBox:
-      'Ancora una volta, cattura ogni oggetto che vale più di CHF 300.00.',
+      'Ancora una volta, cattura ogni oggetto che vale più di CHF 300 (valore netto).',
     amountInputAddItem: 'Aggiungere valore',
     amountInputAddItemLarge: 'Aggiungere oggetto',
     amountInputEnterValueBeginning: 'Inserire il valore',
@@ -903,8 +903,8 @@ export const it: Locale = {
     gram_plural: 'grammi',
   },
   acceptRateModal: {
-    modalTitle: '🔥',
-    modalSubTitle: '🔥',
-    confirm: '🔥',
+    modalTitle: 'IVA di 7.7%',
+    modalSubTitle: 'Confermo di accettare l’aliquota IVA unica di 7.7% all’atto dell’imposizione delle merci.',
+    confirm: 'Riprendere',
   },
 };

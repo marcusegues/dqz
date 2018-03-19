@@ -102,7 +102,7 @@ export const en: Locale = {
     amountInputLargeItem:
       'Capture individual items worth more than {{value}} francs.',
     amountInputLargeItemGreyBox:
-      'Again, capture every item that is worth more than CHF 300.00.',
+      'Again, capture every item that is worth more than CHF 300 (net value).',
     amountInputAddItem: 'Add value',
     amountInputAddItemLarge: 'Add item',
     amountInputEnterValueBeginning: 'Enter the value, ',
@@ -888,8 +888,8 @@ export const en: Locale = {
     gram_plural: 'grams',
   },
   acceptRateModal: {
-    modalTitle: '🔥',
-    modalSubTitle: '🔥',
+    modalTitle: 'VAT rate 7.7%',
+    modalSubTitle: 'I hereby confirm that I accept the single VAT rate of 7.7% when declaring goods.',
     confirm: 'Confirm',
   },
 };

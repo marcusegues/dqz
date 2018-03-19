@@ -94,7 +94,7 @@ export const fr: Locale = {
     amountInputLargeItem:
       "Transportez-vous des biens individuels d'une valeur supérieure à {{value}} francs?",
     amountInputLargeItemGreyBox:
-      "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300.00.",
+      "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300 (valeur nette).",
     amountInputAddItem: 'Ajouter la valeur',
     amountInputAddItemLarge: 'Ajouter un bien',
     amountInputEnterValueBeginning: 'Saisissez la valeur',
@@ -913,8 +913,8 @@ export const fr: Locale = {
     gram_plural: 'grammes',
   },
   acceptRateModal: {
-    modalTitle: '🔥',
-    modalSubTitle: '🔥',
-    confirm: '🔥',
+    modalTitle: 'TVA de 7.7%',
+    modalSubTitle: 'Je confirme accepter le taux unique de TVA de 7.7% pour le dédouanement des marchandises.',
+    confirm: 'Reprendre',
   },
 };
