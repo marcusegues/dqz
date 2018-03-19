@@ -638,6 +638,7 @@ type LegalNoticeModalTranslations = {
   vatRateInfoText1: string,
   vatRateInfoText2: string,
   vatRateInfoText3: string,
+  vatRateInfoText4: string,
   termsOfService: string,
   acceptance: string,
   confirm: string,

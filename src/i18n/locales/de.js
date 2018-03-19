@@ -842,13 +842,14 @@ export const de: Locale = {
   },
   legalNoticeModal: {
     importantNote: 'Wichtiger Hinweis',
-    vatRateInfo:
-      'Bitte beachten Sie, dass',
-
-      'Weitere Informationen finden Sie hier:',
-    vatRateInfoText1: 'Sie pro Kalendertag nur einmal mit Waren einreisen dürfen, die Sie mit QuickZoll verzollt haben;',
-    vatRateInfoText2: 'Angemeldete Waren mit dem einheitlichen Mehrwertsteuersatz von 7,7 % verzollt werden;',
-    vatRateInfoText3: 'Mit der App bezahlte Abgaben nicht zurückerstattet werden.',
+    vatRateInfo: 'Bitte beachten Sie, dass',
+    vatRateInfoText1:
+      'Sie pro Kalendertag nur einmal mit Waren einreisen dürfen, die Sie mit QuickZoll verzollt haben;',
+    vatRateInfoText2:
+      'Angemeldete Waren mit dem einheitlichen Mehrwertsteuersatz von 7,7 % verzollt werden;',
+    vatRateInfoText3:
+      'Mit der App bezahlte Abgaben nicht zurückerstattet werden.',
+    vatRateInfoText4: 'Weitere Informationen finden Sie hier:',
     termsOfService: 'Nutzungsbedingungen',
     acceptance:
       'Hiermit akzeptiere ich die Nutzungsbedingungen, die ich gelesen und verstanden habe.',
