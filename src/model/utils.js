@@ -1,8 +1,8 @@
 // @flow
 import { DateTime } from 'luxon';
-import type { Amounts } from './types/basketPeopleAmountsTypes';
+import type { Amounts, Category } from './types/basketPeopleAmountsTypes';
 import type { Currency, CurrencyObject } from './currencies';
-import { INDIVIDUALALLOWANCE } from './constants';
+import { CategoriesRates, INDIVIDUALALLOWANCE } from './constants';
 
 export const rounding = (x: number): number => {
   // this rounding is not perfect, due to floating point
@@ -26,6 +26,14 @@ export const rounding = (x: number): number => {
   }
 
   return adjusted / 100;
+};
+
+export const quantityRounding = (x: number, category: Category): number => {
+  const factor = Math.round(
+    CategoriesRates.getIn([category, 'quantityRoundingBase10'], 0)
+  );
+  const pow = 10 ** factor;
+  return Math.ceil(x / pow) * pow;
 };
 
 export const formatDate = (d: Date): string => {
