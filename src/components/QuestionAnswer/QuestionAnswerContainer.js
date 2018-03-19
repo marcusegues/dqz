@@ -233,10 +233,7 @@ class QuestionAnswerContainerInner extends React.Component<
       this.props.navigation,
       enrichedState
     );
-    const updateFlags: QAStateEnriched = setQuestionFlag(
-      justAnswered,
-      updateStates
-    );
+    const updateFlags: QAStateEnriched = setInitFlags(updateStates);
     this.setState(this.simplifyState(updateFlags));
   }
 
