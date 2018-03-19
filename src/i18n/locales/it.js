@@ -901,4 +901,9 @@ export const it: Locale = {
     gram: 'grammo',
     gram_plural: 'grammi',
   },
+  acceptRateModal: {
+    modalTitle: '🔥',
+    modalSubTitle: '🔥',
+    confirm: '🔥',
+  },
 };
