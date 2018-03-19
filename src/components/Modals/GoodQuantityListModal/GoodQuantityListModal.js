@@ -105,7 +105,7 @@ class GoodQuantityListModalInner extends React.Component<
     switch (modalCategory) {
       case 'Butter': {
         return t('quantityInput:enterQuantitiesButter', {
-          value: t(`categories:${modalCategory}`),
+          value: t(`quantityInput:butterInput`),
         });
       }
       case 'AlcSoft':

@@ -87,6 +87,14 @@ export const en: Locale = {
     enterQuantitiesAlcohol: 'Enter the quantities of all {{value}} here',
     standardInputSubText:
       'Record the amount of {{category}} you carry with you:',
+      meatInput: 'meat and meat products',
+      butterInput: 'butter and cream',
+      oilInput: 'oils/fats/margarine',
+      otherFoodInput: 'other food and non-alcoholic beverages',
+      alcSoftInput: 'alcoholic beverages of up to 18% vol.',
+      alcHardInput: 'alcoholic beverages of more than 18% vol.',
+      cigarettesInput: 'cigarettes and cigars',
+      tobaccoInput: 'other tobacco products',
   },
   amountInput: {
     amountInput: 'Please enter here the value of all transported goods.',
