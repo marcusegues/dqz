@@ -89,7 +89,7 @@ export const fetchCurrencyObjectsAsyncStorage = async (
 
 export const fetchSettingsAcceptRateAsyncStorage = async (
   key: StoreType
-): Promise<boolean> => parser(key, false);
+): Promise<SettingsAcceptRate> => parser(key, false);
 
 export const fetchSettingsHasLanguageAsyncStorage = async (
   key: StoreType

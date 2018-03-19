@@ -72,7 +72,7 @@ export const storeCurrencyObject = (currencyObject: CurrencyObject) =>
  * @param flag
  * @returns {Promise<boolean>}
  */
-export const storeSettingsAcceptRate = (flag: boolean) =>
+export const storeSettingsAcceptRate = (flag: SettingsAcceptRate) =>
   storeItem('SettingsAcceptRate', flag);
 
 /**
@@ -168,7 +168,7 @@ export const fetchCurrencyObject = async (): Promise<CurrencyObject> =>
  * Fetches the accept-rate flag
  * @returns {Promise<CurrencyObject>}
  */
-export const fetchSettingsAcceptRate = async (): Promise<boolean> =>
+export const fetchSettingsAcceptRate = async (): Promise<SettingsAcceptRate> =>
   fetchSettingsAcceptRateAsyncStorage('SettingsAcceptRate');
 
 /**

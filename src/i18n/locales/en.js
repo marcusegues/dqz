@@ -876,4 +876,9 @@ export const en: Locale = {
     gram: 'gram',
     gram_plural: 'grams',
   },
+  acceptRateModal: {
+    modalTitle: '🔥',
+    modalSubTitle: '🔥',
+    confirm: 'Confirm',
+  },
 };

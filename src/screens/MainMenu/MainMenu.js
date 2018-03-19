@@ -15,12 +15,13 @@ import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/Saved
 import { AcceptRateModal } from '../../components/Modals/AcceptRateModal/AcceptRateModal';
 import type { NavigateFromSavedBasket } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import {
-    fetchAmounts,
-    fetchBasket,
-    fetchMainCategories,
-    fetchPeople,
-    fetchReceiptEntryTime,
-    fetchSettingsAcceptRate, storeSettingsAcceptRate,
+  fetchAmounts,
+  fetchBasket,
+  fetchMainCategories,
+  fetchPeople,
+  fetchReceiptEntryTime,
+  fetchSettingsAcceptRate,
+  storeSettingsAcceptRate,
 } from '../../asyncStorage/storageApi';
 import { isInitBasket } from '../../utils/declaration/declaration';
 import {
@@ -94,7 +95,6 @@ class MainMenuInner extends React.Component<
   }
 
   handleGoToDeclaration() {
-    debugger
     const {
       people,
       basket,
@@ -126,7 +126,6 @@ class MainMenuInner extends React.Component<
 
   render() {
     const { navigation, t } = this.props;
-
     return (
       <View style={mainMenuStyles.mainContainer}>
         <View style={mainMenuStyles.topContainer}>
@@ -211,19 +210,13 @@ class MainMenuInner extends React.Component<
           modalVisible={this.state.acceptRateModalVisible}
           setModalVisibleFalse={() => this.setAcceptRateModalVisibleFalse()}
           onAcceptRate={() => {
-            debugger
             storeSettingsAcceptRate(true).then(() => {
-              this.setState(
-                {
-                  acceptRateModalVisible: false,
-                },
-                () => {
-                  debugger;
-                  this.handleGoToDeclaration();
-                }
-              );
+              this.setState({
+                acceptRateModalVisible: false,
+              });
             });
           }}
+          onDismiss={() => this.handleGoToDeclaration()}
         />
       </View>
     );
