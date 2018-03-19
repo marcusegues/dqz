@@ -22,7 +22,8 @@ import { storeBasket } from '../../../../../asyncStorage/storageApi';
 import { resetQuantities } from '../../../../../model/configurationApi';
 import { getBasket } from '../../../../../reducers/selectors';
 import { SwipeToDelete } from '../../../../General Components/SwipeableContent/configured/SwipeToDelete';
-import {formatQuantity} from "../../../../../utils/declaration/declaration";
+import { displayedQuantityDecimalPlaces } from '../../../../../constants/declaration';
+import { rounding } from '../../../../../model/utils';
 
 type DutyRowProps = {
   category: Category,
@@ -54,7 +55,9 @@ class DutyRowInner extends React.Component<
       <View style={[rowStyles.rowContent]}>
         <OverviewInfo
           title={t(`categories:${category}`)}
-          subtitle={`${t('overview:declared')} ${quantity.toFixed(2)} ${unit}`}
+          subtitle={`${t('overview:declared')} ${quantity.toFixed(
+            displayedQuantityDecimalPlaces[category]
+          )} ${unit}`}
         >
           <AllowanceIcon
             text={t('overview:dutyFree')}
@@ -65,10 +68,7 @@ class DutyRowInner extends React.Component<
           />
         </OverviewInfo>
         <QuantityIcon
-          quantity={formatQuantity(
-            category,
-            Math.max(0, quantity - allowanceRaw)
-          )}
+          quantity={rounding(Math.max(0, quantity - allowanceRaw))}
           unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
             count: Math.max(0, quantity - allowanceRaw),
           })}
