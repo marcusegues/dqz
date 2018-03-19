@@ -88,15 +88,29 @@ export const setQuestionStates = (
     }
     case 'mainCategories': {
       peopleInputState = backNav(direction);
+      if (direction === 'back') {
+        mainCategoriesState = 'collapsed';
+        if (singleOtherGoodsMainCategory(mainCategories)) {
+          quantityInputState = 'hidden';
+          amountsState = questionSeen.amounts ? fwdNav(direction) : 'hidden';
+        }
+        largeAmountsState =
+          showLargeAmountsQuestion(qaState) && questionSeen.largeAmounts
+            ? 'collapsed'
+            : 'hidden';
+        break;
+      }
       if (direction === 'update') {
         mainCategoriesState = 'expanded';
         if (
+          mainCategories.size &&
           !singleOtherGoodsMainCategory(mainCategories) &&
           questionSeen.quantityInput
         ) {
           quantityInputState = 'collapsed';
         }
-        amountsState = questionSeen.amounts ? 'collapsed' : 'hidden';
+        amountsState =
+          mainCategories.size && questionSeen.amounts ? 'collapsed' : 'hidden';
         largeAmountsState =
           questionSeen.largeAmounts && showLargeAmountsQuestion(qaState)
             ? 'collapsed'
@@ -109,12 +123,11 @@ export const setQuestionStates = (
         quantityInputState = 'hidden';
         amountsState = fwdNav(direction);
         break;
-      }
-      if (mainCategories.size) {
-        quantityInputState = fwdNav(direction);
       } else {
-        amountsState = fwdNav(direction);
+        quantityInputState = fwdNav(direction);
+        amountsState = questionSeen.amounts ? 'collapsed' : 'hidden';
       }
+
       if (showLargeAmountsQuestion(qaState) && questionSeen.largeAmounts) {
         largeAmountsState = 'collapsed';
       }
@@ -122,9 +135,13 @@ export const setQuestionStates = (
     }
     case 'quantityInput': {
       peopleInputState = 'collapsed';
-      mainCategoriesState = backNav(direction);
       quantityInputState = 'collapsed';
-      amountsState = fwdNav(direction);
+      mainCategoriesState = backNav(direction);
+      if (direction === 'back') {
+        amountsState = questionSeen.amounts ? fwdNav(direction) : 'hidden';
+      } else {
+        amountsState = fwdNav(direction);
+      }
       if (showLargeAmountsQuestion(qaState) && questionSeen.largeAmounts) {
         largeAmountsState = 'collapsed';
       }

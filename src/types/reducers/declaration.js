@@ -17,7 +17,7 @@ import type {
   TobaccoProductsCategory,
   OtherGoodsCategory,
 } from '../../model/types/basketPeopleAmountsTypes';
-import { emptyBasket } from '../../model/configurationApi';
+import { emptyAmounts, emptyBasket } from '../../model/configurationApi';
 import { makePeopleRecord } from '../../model/types/basketPeopleAmountsTypes';
 
 import { makePaymentDataRecord } from '../generalTypes';
@@ -151,7 +151,7 @@ export const getInitialDeclarationState: RecordFactory<
   people: makePeopleRecord(),
   basket: emptyBasket,
   settings: makeSettingsRecord(),
-  amounts: Immutable.Map(),
+  amounts: emptyAmounts,
   paymentData: makePaymentDataRecord(),
   receiptEntryTime: emptyReceiptEntryTime,
 });

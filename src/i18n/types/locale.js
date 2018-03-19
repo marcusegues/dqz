@@ -128,6 +128,7 @@ type QAFlowTranslations = {
   validateGenericOk: string,
   validateMainCategoryRemoveTitle: string,
   validateMainCategoryRemoveSubtitle: string,
+  validateMainCategoryAndVatRemoveSubTitle: string,
   validateMainCategoryRemoveYes: string,
 };
 

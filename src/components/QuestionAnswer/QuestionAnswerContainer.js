@@ -46,7 +46,7 @@ import {
   analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
 import { hasLargeAmount } from '../../model/utils';
-import { getTotalPeople } from '../../model/configurationApi';
+import { getTotalPeople, resetAllAmounts } from '../../model/configurationApi';
 import {
   storeAmounts,
   storeBasket,
@@ -54,7 +54,12 @@ import {
   storePeople,
 } from '../../asyncStorage/storageApi';
 import { MainContentContainer } from '../MainContentContainer/MainContentContainer';
-import { setInitSeen, setQuestionSeen } from './QAControl/controlQuestionSeen';
+import {
+  setInitSeen,
+  setQuestionSeen,
+  setQuestionSeenInState,
+} from './QAControl/controlQuestionSeen';
+import { mainCategories } from '../../types/reducers/declaration';
 
 export type QuestionType =
   | 'peopleInput'
@@ -215,6 +220,13 @@ class QuestionAnswerContainerInner extends React.Component<
   updateQA(justAnswered: QuestionType, direction: DirectionType) {
     let enrichedState = this.enrichState();
     enrichedState = setQuestionSeen(justAnswered, enrichedState);
+    if (justAnswered === 'mainCategories' && !this.props.mainCategories.size) {
+      enrichedState = setQuestionSeenInState(enrichedState, {
+        quantityInput: false,
+        amounts: false,
+        largeAmounts: false,
+      });
+    }
     const updateStates: QAStateEnriched = setQuestionStates(
       justAnswered,
       direction,
@@ -315,6 +327,9 @@ class QuestionAnswerContainerInner extends React.Component<
                     setMainCategories(updatedCategories).then(() => {
                       analyticsMainCategoriesChanged(updatedCategories);
                       setBasket(updatedBasket);
+                      if (!updatedCategories.size) {
+                        setAmounts(resetAllAmounts());
+                      }
                       this.updateFlagsOptimistically(
                         'mainCategories',
                         Object.assign({}, qaStateEnriched, {
