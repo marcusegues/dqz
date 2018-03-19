@@ -281,7 +281,7 @@ export const de: Locale = {
     vatAllowanceText10:
       'Die Mehrwertsteuer berechnet sich vom Warenwert. Der Normalsatz beträgt 7,7 %. Für gewisse Waren gilt ein reduzierter Steuersatz von 2,5 % (z.B. für Lebensmittel, alkoholfreie Getränke, Bücher, Zeitschriften oder Medikamente). Bei der Verzollung mit der App QuickZoll gelangt immer der Normalsatz zur Anwendung.',
     vatAllowanceText11:
-      'Das Vorweisen einer Quittung oder eines anderen Wertnachweises (z. B. bei Internetkäufen) erleichtert die Zollveranlagung. Fehlen Wertangaben oder wird die Richtigkeit dieser Angaben bezweifelt, kann die Zollstelle den Warenwert schätzen.',
+      'Das Vorweisen einer Quittung oder eines anderen Wertnachweises (z.B. bei Internetkäufen) erleichtert die Zollveranlagung. Fehlen Wertangaben oder wird die Richtigkeit dieser Angaben bezweifelt, kann die Zollstelle den Warenwert schätzen.',
     vatAllowanceText12: 'Zollanmeldung',
     vatAllowanceText13:
       'Bei der Einreise müssen Sie alle mitgeführten Waren beim Zollpersonal mündlich anmelden.',
@@ -496,7 +496,7 @@ export const de: Locale = {
     souvenirsAndSpeciesProtectionMainText: 'Souvenirs und Artenschutz (CITES)',
     souvenirsAndSpeciesProtectionText1: 'Souvenirs',
     souvenirsAndSpeciesProtectionText2:
-      'Ein Gurt aus Elefantenleder, ein Traumfänger mit Vogelfedern oder Räucherstäbchen aus Sandelholz - das Angebot an Souvenirs ist vielfältig. Vielen Gegenständen sieht man nicht an, dass sie aus geschützten Tieren oder Pflanzen (z. B. Tropenholz) hergestellt worden sind. Doch vieles darf gar nicht in die Schweiz eingeführt werden.\n' +
+      'Ein Gurt aus Elefantenleder, ein Traumfänger mit Vogelfedern oder Räucherstäbchen aus Sandelholz - das Angebot an Souvenirs ist vielfältig. Vielen Gegenständen sieht man nicht an, dass sie aus geschützten Tieren oder Pflanzen (z.B. Tropenholz) hergestellt worden sind. Doch vieles darf gar nicht in die Schweiz eingeführt werden.\n' +
       'Es lohnt sich, schon vor den Ferien abzuklären, welche Souvenirs geeignet sind und welche Sie besser am Ferienort zurücklassen.',
     souvenirsAndSpeciesProtectionText3: 'Artenschutz Tiere',
     souvenirsAndSpeciesProtectionText4:
@@ -516,7 +516,7 @@ export const de: Locale = {
       'Die Benutzung der Autobahnen und Autostrassen mit Motorfahrzeugen und Anhängern bis je 3,5 Tonnen ist abgabepflichtig. Der Verkaufspreis der Vignette beträgt CHF 40.',
     highwayVignetteText2: 'Verkaufsstellen',
     highwayVignetteText3:
-      'In der Schweiz erhalten Sie die Vignette z. B. bei Poststellen oder Tankstellen.',
+      'In der Schweiz erhalten Sie die Vignette z.B. bei Poststellen oder Tankstellen.',
     highwayVignetteText4:
       'Bei den besetzten Grenzübergängen erhalten Sie die Vignette vom Zollpersonal. Sie können mit Kreditkarte oder bar (CHF, EUR, USD, GBP) bezahlen.',
     highwayVignetteText5:
@@ -540,7 +540,7 @@ export const de: Locale = {
       'Im Gegensatz zur Autobahnvignette für Personenwagen wird die Schwerverkehrsabgabe nicht nur auf den Autobahnen sondern auf dem gesamten Strassennetz fällig.',
     roadTaxText3: 'Für LKWs und deren Anhänger siehe:',
     roadTaxText4:
-      'Bitte beachten: PSVA-pflichtig ist das Fahrzeug auch, wenn es nur abgestellt ist und nicht bewegt wird (z. B. Wohnmobil auf Campingplatz).',
+      'Bitte beachten: PSVA-pflichtig ist das Fahrzeug auch, wenn es nur abgestellt ist und nicht bewegt wird (z.B. Wohnmobil auf Campingplatz).',
     roadTaxText5: 'Bezahlung und Tarife',
     roadTaxText6:
       'Berechnungsgrundlage bilden das Gesamtgewicht bzw. die Anhängelast des Zugfahrzeugs gemäss Fahrzeugausweis und die Abgabeperiode.',
@@ -666,12 +666,12 @@ export const de: Locale = {
     purchasesOnlineOfflineText1:
       'Sendungen aus dem Ausland sind grundsätzlich zoll- und mehrwertsteuerpflichtig. Nachfolgend zeigen wir Ihnen, wie Sie eine grobe Berechnung der Kosten vornehmen können und was bei der Einfuhr zu beachten ist.',
     purchasesOnlineOfflineText2:
-      'Bitte beachten Sie, dass eine definitive Berechnung nicht möglich ist, da uns die Kosten der Transporteure, z. B. der Post nicht im Voraus bekannt sind. Die Kosten werden in der Regel dem Empfänger zusammen mit den Zollabgaben und Steuern (z. B. Mehrwertsteuer) in Rechnung gestellt. Klären Sie diese beim entsprechenden Transportunternehmen ab.',
+      'Bitte beachten Sie, dass eine definitive Berechnung nicht möglich ist, da uns die Kosten der Transporteure, z.B. der Post nicht im Voraus bekannt sind. Die Kosten werden in der Regel dem Empfänger zusammen mit den Zollabgaben und Steuern (z.B. Mehrwertsteuer) in Rechnung gestellt. Klären Sie diese beim entsprechenden Transportunternehmen ab.',
     purchasesOnlineOfflineText3:
       'Geschenksendungen von Privatpersonen im Ausland an Privatpersonen in der Schweiz sind bis zu einem Warenwert von CHF 100 abgabenfrei, ausgenommen sind jedoch Tabakfabrikate und alkoholische Getränke. Der Absender muss zwingend aussen auf dem Paket oder Brief einen entsprechenden Vermerk anbringen.',
     purchasesOnlineOfflineText4: 'Berechnungsbeispiel – Steuerbarer Warenwert',
     purchasesOnlineOfflineText5:
-      'Über einen deutschen Onlineshop haben Sie einen Handstaubsauger bestellt. Der Kaufpreis beträgt € 150.00 (Nettobetrag ohne ausländische MWST). Für den Versand in die Schweiz müssen Sie dem Onlineshop zusätzlich € 12.50 bezahlen. Gesamthaft entrichten Sie dem Onlineshop € 162.50.',
+      'Über einen deutschen Onlineshop haben Sie einen Handstaubsauger bestellt. Der Kaufpreis beträgt € 150.00 (Nettobetrag ohne ausländische MWST). Für den Versand in die Schweiz müssen Sie dem Onlineshop zusätzlich €12.50 bezahlen. Gesamthaft entrichten Sie dem Onlineshop €162.50.',
     purchasesOnlineOfflineText6: 'Gesamtbetrag laut Rechnung Onlineshop',
     purchasesOnlineOfflineText7: 'Betrag in CHF: 198.25',
     purchasesOnlineOfflineText8:
@@ -739,20 +739,20 @@ export const de: Locale = {
     importantSoonText3:
       'Sie dürfen QuickZoll nur für Waren benützen, die Sie zu Ihrem privaten Gebrauch oder zum Verschenken einführen.',
     importantSoonText4:
-      'Mit der Verwendung von QuickZoll akzeptieren Sie, dass der MWST Satz 7,7% auch für Waren angewendet wird, die dem reduzierten Steuersatz (2,5%) unterliegen (insbeson-dere Lebensmittel, Tierfutter, Medikamente und Bücher). Möchten Sie, dass der reduzier-te Steuersatz angewendet wird, müssen Sie die Waren bei einem durch das Personal der Eidgenössischen Zollverwaltung (EZV) besetzten Grenzübergang mündlich anmelden.',
+      'Mit der Verwendung von QuickZoll akzeptieren Sie, dass der MWST Satz 7,7% auch für Waren angewendet wird, die dem reduzierten Steuersatz (2,5%) unterliegen (insbesondere Lebensmittel, Tierfutter, Medikamente und Bücher). Möchten Sie, dass der reduzierte Steuersatz angewendet wird, müssen Sie die Waren bei einem durch das Personal der Eidgenössischen Zollverwaltung (EZV) besetzten Grenzübergang mündlich anmelden.',
     importantSoonText5:
       'Die Bezahlung ist nur mit Kreditkarten (Visa, Mastercard) möglich. Nach der Bezahlung der Abgaben sind die Waren verzollt.',
 
     importantSoonText6:
       'Die Verzollung kann frühestens 48 Stunden vor dem Grenzübertritt und muss spätestens bei der Grenzübergangsstelle erfolgen.',
     importantSoonText7:
-      'Nach der Verzollung mit QuickZoll dürfen Sie über alle offiziellen Grenzübergänge einrei-sen, unabhängig davon, ob Personal der EZV anwesend ist oder nicht. In Flughäfen dür-fen Sie den grünen Durchgang benutzen.',
+      'Nach der Verzollung mit QuickZoll dürfen Sie über alle offiziellen Grenzübergänge einreisen, unabhängig davon, ob Personal der EZV anwesend ist oder nicht. In Flughäfen dürfen Sie den grünen Durchgang benutzen.',
     importantSoonText8:
       'Die Quittung ist dem Personal der EZV auf Verlangen vorzuweisen. Dieses fotografiert die Quittung bei Bedarf.',
     importantSoonText9:
       'Eine Registrierung ist nicht nötig. Es werden keine Daten gesammelt.',
     importantSoonBoldText1:
-      'Mit der App bezahlte Abgaben werden nicht zurückerstattet.',
+      'Mit der App bezahlte Abgaben werden nicht zurück erstattet.',
 
     howToDeclareYourGoods: 'So verzollen Sie ihre Waren:',
     howToDeclareYourGoodsText1:
@@ -760,28 +760,28 @@ export const de: Locale = {
     howToDeclareYourGoodsText2:
       'Geben Sie den Wert in der Fremdwährung gemäss Zahlungsbeleg ein. Der Wert wird mit dem Devisenkurs (Verkauf) des Vortages (letzter Arbeitstag) umgerechnet.',
     howToDeclareYourGoodsText3:
-      'Legen Sie ein Zeitfenster von zwei Stunden für Ihren Grenzübertritt fest. Die Quittung ist nur während dieses Zeitfensters gültig. Können Sie den gewählten Zeitraum nicht einhalten, müssen Sie sich bei einem durch das Personal der EZV besetzten Grenzüber-gang melden und erklären, warum Sie nicht innerhalb der Gültigkeitsfrist einreisen konn-ten. Ohne glaubhafte Begründung werden die Abgaben erneut erhoben.',
+      'Legen Sie ein Zeitfenster von zwei Stunden für Ihren Grenzübertritt fest. Die Quittung ist nur während dieses Zeitfensters gültig. Können Sie den gewählten Zeitraum nicht einhalten, müssen Sie sich bei einem durch das Personal der EZV besetzten Grenzübergang melden und erklären, warum Sie nicht innerhalb der Gültigkeitsfrist einreisen konnten. Ohne glaubhafte Begründung werden die Abgaben erneut erhoben.',
     howToDeclareYourGoodsText4:
       'Alle Personen, für welche die Quittung gilt, müssen gemeinsam einreisen.',
     howToDeclareYourGoodsText5:
       'Vor der Bezahlung können Sie Ihre Anmeldung jederzeit korrigieren. Nach der Bezahlung sind in QuickZoll keine Korrekturen mehr möglich. Nach dem Bezahlen zusätzlich gekauf-te ausländische Waren müssen Sie bei einem durch das Personal der EZV besetzten Grenzübergang anmelden.',
     howToDeclareYourGoodsText6:
-      'Für den erfolgreichen Abschluss des Zahlungsvorgangs ist eine Internetverbindung nötig. Ist die Verzollung mit QuickZoll nicht möglich (z. B. keine Internetverbindung oder Bezah-lung mit Kreditkarte nicht möglich) müssen Sie die Waren bei einem durch das Personal der EZV besetzten Grenzübergang oder via Anmeldebox anmelden.',
+      'Für den erfolgreichen Abschluss des Zahlungsvorgangs ist eine Internetverbindung nötig. Ist die Verzollung mit QuickZoll nicht möglich (z.B. keine Internetverbindung oder Bezahlung mit Kreditkarte nicht möglich) müssen Sie die Waren bei einem durch das Personal der EZV besetzten Grenzübergang oder via Anmeldebox anmelden.',
     howToDeclareYourGoodsText7:
-      'Stellen Sie sicher, dass Sie die Quittung bei Kontrollen anlässlich des Grenzübertritts auf Ihrem mobilen Endgerät anzeigen können. Bitte beachten Sie, dass während der Gültig-keitsfrist der Quittung ein Bild der Quittung, welches via WhatsApp, iMessage, SMS oder E-Mail an Drittpersonen weitergeleitet wird, nicht als Quittung akzeptiert wird. Die erhalte-ne Quittung müssen Sie mindestens ein Jahr aufbewahren.',
+      'Stellen Sie sicher, dass Sie die Quittung bei Kontrollen anlässlich des Grenzübertritts auf Ihrem mobilen Endgerät anzeigen können. Bitte beachten Sie, dass während der Gültigkeitsfrist der Quittung ein Bild der Quittung, welches via WhatsApp, iMessage, SMS oder E-Mail an Drittpersonen weitergeleitet wird, nicht als Quittung akzeptiert wird. Die erhaltene Quittung müssen Sie mindestens ein Jahr aufbewahren.',
 
     specialCases: 'Besondere Fälle',
     specialCasesText1:
       'Folgende Waren können Sie nicht mit QuickZoll verzollen. Sie müssen diese in jedem Fall bei einem durch das Personal der EZV besetzten Grenzübergang anmelden.',
     specialCasesText2:
-      'Waren, die Beschränkungen oder Verboten unterliegen und die zeugnis- oder bewilli-gungspflichtig sind (z. B. Waffen, lebende Tiere und Artenschutzwaren);',
+      'Waren, die Beschränkungen oder Verboten unterliegen und die zeugnis- oder bewilli-gungspflichtig sind (z.B. Waffen, lebende Tiere und Artenschutzwaren);',
     specialCasesText3: 'Weitere Informationen',
     specialCasesText4:
-      'Waren für den privaten Gebrauch oder zum Verschenken mit einem Gesamtwert von CHF 20 000.00 oder mehr;',
+      'Waren für den privaten Gebrauch oder zum Verschenken mit einem Gesamtwert von CHF 20\'000.00 oder mehr;',
     specialCasesText5:
       'Waren, die Sie zum reduzierten Mehrwertsteuersatz anmelden möchten;',
     specialCasesText6:
-      'Waren, die Sie nicht zu Ihrem privaten Gebrauch oder zum Verschenken einführen (z. B. Waren, die für den Handel bestimmt sind);',
+      'Waren, die Sie nicht zu Ihrem privaten Gebrauch oder zum Verschenken einführen (z.B. Waren, die für den Handel bestimmt sind);',
     specialCasesText7: 'Fahrzeuge, Reparaturen an Fahrzeugen und Treibstoffe;',
     specialCasesText8:
       'Übersiedlungs-, Ausstattungs- (Heirat) und Erbschaftsgut;',
@@ -874,7 +874,7 @@ export const de: Locale = {
     title: 'Neue Version verfügbar!',
     subtitle:
       'Bitte führen Sie eine Aktualisierung von QuickZoll durch. Die neue Version ist ab sofort im App Store erhältlich.',
-    buttonTextAndroid: 'Zum Play Market',
+    buttonTextAndroid: 'Zum Play Store',
     buttonTextIos: 'Zum App Store',
   },
   units: {

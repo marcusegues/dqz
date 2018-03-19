@@ -887,7 +887,7 @@ export const it: Locale = {
     title: 'Nuova versione disponibile!',
     subtitle:
       'Si prega di aggiornare QuickZoll. La nuova versione è ora disponibile su App Store.',
-    buttonTextAndroid: 'Al Play Market',
+    buttonTextAndroid: 'Al Play Store',
     buttonTextIos: "All'App Store",
   },
   units: {

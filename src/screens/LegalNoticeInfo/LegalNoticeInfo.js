@@ -218,17 +218,6 @@ class LegalNoticeInfoInner extends React.Component<
                 text={t('legalText2')}
                 style={{ marginBottom: verticalScale(10) }}
               />
-              <AppInfoSubText
-                text={t('legalText3')}
-                style={{ marginBottom: verticalScale(10) }}
-              />
-              <BulletText text={t('legalText4')} />
-              <BulletText text={t('legalText5')} />
-              <BulletText text={t('legalText6')} />
-              <AppInfoSubText
-                text={t('legalText7')}
-                style={{ marginTop: verticalScale(10) }}
-              />
             </View>
           ) : (
             <View style={styles.contentContainer}>

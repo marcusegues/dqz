@@ -822,7 +822,7 @@ export const fr: Locale = {
     legal: 'Informations juridiques',
     usage: 'Utilisation',
     legalText1:
-      "Le dédouanement effectué avec l'application lie la personne assujettie à l'obligation de déclarer (art. 33 de la loi sur les douanes; RS 631.0). Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
+      "Le dédouanement effectué avec l'application lie la personne assujettie à l'obligation de déclarer (art. 33 de la loi sur les douanes; RS 631.0). Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
     legalText2:
       'La personne qui présente la quittance lors du contrôle douanier est responsable du dédouanement correct des marchandises transportées. Elle assume également la responsabilité pénale en cas de découverte de marchandises non déclarées ou déclarées de façon inexacte.',
     legalText3: "Lorsque vous utilisez l'application, assurez-vous",
@@ -897,7 +897,7 @@ export const fr: Locale = {
     title: 'Nouvelle version disponible!',
     subtitle:
       "Veuillez mettre à jour QuickZoll. La nouvelle version est maintenant disponible dans l'App Store.",
-    buttonTextAndroid: 'Dans Play Market',
+    buttonTextAndroid: 'Dans Play Store',
     buttonTextIos: "Dans l'App Store",
   },
   units: {
