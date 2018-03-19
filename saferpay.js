@@ -36,6 +36,8 @@ export default class Saferpay {
       requestURLs: {
         paymentPageInitialize: '/Payment/v1/PaymentPage/Initialize',
         PaymentPageAssert: '/Payment/v1/PaymentPage/Assert',
+        TransactionCapture: '/Payment/v1/Transaction/Capture',
+        TransactionCancel: '/Payment/v1/Transaction/Cancel',
       },
       authorization:
         'Basic QVBJXzI1Mzk5Ml8xMjY4MTQxMzpoJHRhNHVxZWJBWnU0QWhlOQ==',
@@ -173,6 +175,82 @@ export default class Saferpay {
       .catch(error => {
         // TODO: add logger/amplitude
         console.log('Saferpay assertPayment error: ', error);
+        return Promise.reject(error);
+      });
+  }
+  // Capture/Finalize the Transaction
+  // https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Capture
+  captureTransaction(requestId: string, transactionId: string) {
+    const requestJson = {
+      RequestHeader: {
+        SpecVersion: this.saferpayConfig.specVersion,
+        CustomerId: this.saferpayConfig.customerId,
+        RequestId: requestId,
+        RetryIndicator: 0,
+      },
+      TransactionReference: {
+        TransactionId: transactionId,
+      },
+    };
+
+    return fetch(
+      this.saferpayConfig.baseURL +
+        this.saferpayConfig.requestURLs.TransactionCapture,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: this.saferpayConfig.authorization,
+        },
+        method: 'POST',
+        body: JSON.stringify(requestJson),
+      }
+    )
+      .then(response => {
+        // Error Handling docs https://saferpay.github.io/jsonapi/#errorhandling
+        if (response.status === 200) return response.json();
+        return response.json().then(res => Promise.reject(res.ErrorDetail));
+      })
+      .catch(error => {
+        // TODO: add logger/amplitude
+        console.log('Saferpay captureTransaction error: ', error);
+        return Promise.reject(error);
+      });
+  }
+  // Cancel/Abort the Transaction
+  // https://saferpay.github.io/jsonapi/index.html#Payment_v1_Transaction_Cancel
+  cancelTransaction(requestId: string, transactionId: string) {
+    const requestJson = {
+      RequestHeader: {
+        SpecVersion: this.saferpayConfig.specVersion,
+        CustomerId: this.saferpayConfig.customerId,
+        RequestId: requestId,
+        RetryIndicator: 0,
+      },
+      TransactionReference: {
+        TransactionId: transactionId,
+      },
+    };
+
+    return fetch(
+      this.saferpayConfig.baseURL +
+        this.saferpayConfig.requestURLs.TransactionCancel,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: this.saferpayConfig.authorization,
+        },
+        method: 'POST',
+        body: JSON.stringify(requestJson),
+      }
+    )
+      .then(response => {
+        // Error Handling docs https://saferpay.github.io/jsonapi/#errorhandling
+        if (response.status === 200) return response.json();
+        return response.json().then(res => Promise.reject(res.ErrorDetail));
+      })
+      .catch(error => {
+        // TODO: add logger/amplitude
+        console.log('Saferpay cancelTransaction error: ', error);
         return Promise.reject(error);
       });
   }
