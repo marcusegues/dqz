@@ -32,6 +32,7 @@ import { CategoryIcon } from '../../QuestionAnswer/Cards/ConfirmationCard/config
 import { RedPlusIcon } from './subcomponents/RedPlusIcon';
 import { getSource } from '../../QuestionAnswer/Cards/ConfirmationCard/configured/QuantityInput/subcomponents/GoodInputRow';
 import { ModalCard } from '../ModalCard';
+import { dateTimeToFormat } from '../../../utils/datetime/datetime';
 
 const ownStyles = {
   pickerCard: {
@@ -89,11 +90,16 @@ type GoodQuantityListModalState = {
 };
 
 class GoodQuantityListModalInner extends React.Component<
-  GoodQuantityListModalProps & { t: TFunction },
+  GoodQuantityListModalProps & { t: TFunction, i18n: { language: string } },
   GoodQuantityListModalState
 > {
-  constructor() {
-    super();
+  constructor(
+    props: GoodQuantityListModalProps & {
+      t: TFunction,
+      i18n: { language: string },
+    }
+  ) {
+    super(props);
     this.state = {
       pickerModalVisible: false,
     };
@@ -169,6 +175,7 @@ class GoodQuantityListModalInner extends React.Component<
 
   render() {
     const { pickerModalVisible } = this.state;
+    const { i18n } = this.props;
     const {
       onHide,
       onDeleteQuantity,
@@ -213,8 +220,12 @@ class GoodQuantityListModalInner extends React.Component<
                     borderTop={idx === 0}
                     key={v4()}
                     quantity={getQuantityNumber(q)}
-                    date={DateTime.fromISO(getQuantityDate(q)).toFormat(
-                      'dd.MM.y HH:mm'
+                    date={dateTimeToFormat(
+                      DateTime.fromISO(getQuantityDate(q)),
+                      {
+                        locale: i18n.language,
+                        format: 'datetime',
+                      }
                     )}
                     category={modalCategory}
                     onDelete={() => {

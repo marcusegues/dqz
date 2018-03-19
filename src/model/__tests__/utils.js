@@ -7,6 +7,7 @@ import {
   flatLargeAmounts,
   flatNormalAmounts,
   formatDate,
+  quantityRounding,
 } from '../utils';
 import { sampleAmounts1 } from './fullBasketsAndAmounts';
 
@@ -41,5 +42,18 @@ describe('Flat amounts does what it should', () => {
       return a;
     });
     expect(noIds).toMatchSnapshot();
+  });
+});
+
+describe('Quantity rounding', () => {
+  test('default category', () => {
+    expect(quantityRounding(123.321, 'Meds')).toBe(124);
+  });
+  test('invalid category', () => {
+    // $FlowFixMe
+    expect(quantityRounding(123.321, 'foo')).toBe(124);
+  });
+  test('Meat', () => {
+    expect(quantityRounding(123.321, 'Meat')).toBe(123.4);
   });
 });
