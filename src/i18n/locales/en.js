@@ -876,6 +876,11 @@ export const en: Locale = {
     buttonTextAndroid: 'To the Play Store',
     buttonTextIos: 'To the App Store',
   },
+  SuccessfulPayment: {
+    title:
+      'Many Thanks! We have received your payment and wish you a good onward journey!',
+    navigationHeaderTitle: 'Payment successful',
+  },
   units: {
     kilo: 'kg',
     kilo_plural: 'kg',
