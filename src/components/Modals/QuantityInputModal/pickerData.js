@@ -31,6 +31,8 @@ const cigarettesAmountsPicker: Array<PickerItem> = pickerItemGenerator([
   '50',
   '100',
   '200',
+    '250',
+    '500',
 ]);
 
 const standardAmountsPicker: Array<PickerItem> = pickerItemGenerator([
