@@ -236,9 +236,8 @@ class PaymentContainerInner extends React.Component<
                           setPaymentData(
                             paymentData.set('status', 'failed')
                           ).then(() => {
-                            this.props.navigation.dispatch({
-                              type: 'NAVIGATE',
-                              screen: 'Payment',
+                            this.setState({
+                              showLoading: false,
                             });
                           });
                           return false;
