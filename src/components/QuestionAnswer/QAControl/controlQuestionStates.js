@@ -17,7 +17,7 @@ const singleOtherGoodsMainCategory = (
   mainCategories: MainCategories
 ): boolean => mainCategories.size === 1 && mainCategories.has('OtherGoods');
 
-const showLargeAmountsQuestion = (qaState: QAStateEnriched) => {
+export const showLargeAmountsQuestion = (qaState: QAStateEnriched) => {
   const { people, amounts } = qaState;
   return (
     hasLargeAmount(amounts, qaState.currencies) && getTotalPeople(people) > 1

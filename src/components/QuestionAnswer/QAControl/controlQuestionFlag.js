@@ -7,6 +7,7 @@ import type {
 } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
 import type { Basket } from '../../../model/types/basketPeopleAmountsTypes';
+import { showLargeAmountsQuestion } from './controlQuestionStates';
 
 export const anyQuantitiesInBasket = (basket: Basket): boolean =>
   basket
@@ -39,7 +40,9 @@ export const flagRules = (
       return qaState.amounts.size ? 'complete' : 'incomplete';
     }
     case 'largeAmounts': {
-      return qaState.amounts.size ? 'complete' : 'incomplete';
+      return showLargeAmountsQuestion(qaState) && qaState.amounts.size
+        ? 'complete'
+        : 'incomplete';
     }
     default: {
       return 'incomplete';
