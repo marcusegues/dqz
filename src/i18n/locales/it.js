@@ -85,6 +85,17 @@ export const it: Locale = {
     enterQuantitiesButter: 'Inserisci le quantità di tutti {{value}} qui',
     enterQuantitiesAlcohol: 'Inserisci le quantità di tutti {{value}} qui',
     standardInputSubText: '⚡️',
+    enterQuantitiesCigarettes: '',
+    enterQuantitiesTobacco: '',
+    enterQuantitiesOil: '',
+    enterQuantitiesMeat: '',
+    meatInput: '',
+    butterInput: '',
+    oilInput: '',
+    alcSoftInput: '',
+    alcHardInput: '',
+    cigarettesInput: '',
+    tobaccoInput: '',
   },
   amountInput: {
     amountInput: 'Inserire qui il valore complessivo delle merci trasportate.',
@@ -169,8 +180,7 @@ export const it: Locale = {
     paidOn: 'Pagamento effettuato in data {{date}} alle ore {{time}} con:',
     transactionId: 'ID della transazione (SIX): {{value}}',
 
-    receiptValidFrom:
-      'Il giustificativo è valido per valico di frontiera da:',
+    receiptValidFrom: 'Il giustificativo è valido per valico di frontiera da:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} fino al {{endDate}} | {{endTime}}',
     receiptValidOn: 'Il giustificativo è valido per valico di frontiera da:',
@@ -829,15 +839,20 @@ export const it: Locale = {
     dataProtection: 'Protezione dei dati',
     dataProtectionText1:
       'Ai sensi dell’articolo 13 della Costituzione federale svizzera e delle disposizioni legali della Confederazione sulla protezione dei dati, ognuno ha diritto al rispetto della sua vita privata nonché d’essere protetto da un impiego abusivo dei suoi dati personali. Le autorità federali si attengono a queste disposizioni. I dati personali sono trattati in modo strettamente confidenziale e non vengono venduti né trasmessi a terzi.',
+    dataProtectionText2: '',
+    dataProtectionText3: '',
+    dataProtectionText4: '',
+    dataProtectionText5: '',
     liability: 'Responsabilità',
     liabilityText1:
       'Le autorità federali si riservano espressamente il diritto di modificare, cancellare o non pubblicare temporaneamente i contenuti in toto o in parte in qualsiasi momento senza preavviso.',
     liabilityText2:
       "Sono escluse rivendicazioni di responsabilità nei confronti delle autorità federali per danni di natura materiale o immateriale derivanti dall'accesso o dall'uso o non uso delle informazioni pubblicate, in caso di uso improprio del collegamento o di errori tecnici.",
-      culpability: 'Colpevolezza',
-      culpabilityText1: 'Registra la merce completamente e correttamente. Le merci vietate e/o le merci vietate soggette ad autorizzazione non possono essere registrate. Lo sdoganamento con QuickZoll è vincolante (articolo 33 del Customs Act, ZG; SR 631.0). Chiunque omette di registrare i beni in modo completo o errato, o che registra merci e/o merci vietate soggette ad autorizzazione, è passibile di azioni giudiziarie (articoli 118 e 127 ZG).',
+    culpability: 'Colpevolezza',
+    culpabilityText1:
+      'Registra la merce completamente e correttamente. Le merci vietate e/o le merci vietate soggette ad autorizzazione non possono essere registrate. Lo sdoganamento con QuickZoll è vincolante (articolo 33 del Customs Act, ZG; SR 631.0). Chiunque omette di registrare i beni in modo completo o errato, o che registra merci e/o merci vietate soggette ad autorizzazione, è passibile di azioni giudiziarie (articoli 118 e 127 ZG).',
 
-      referencesAndLinks: 'Riferimenti e link',
+    referencesAndLinks: 'Riferimenti e link',
     referencesAndLinksText1:
       'I riferimenti e i link che rimandano a siti web di terzi non rientrano negli ambiti di responsabilità delle autorità federali. L’utente si assume i rischi connessi all’accesso a questi siti e al loro utilizzo. Le autorità federali dichiarano espressamente di non avere alcuna influenza sull’impostazione, sui contenuti e sulle offerte dei siti web a cui rimanda. La responsabilità per le informazioni e i servizi offerti in tali siti web ricade esclusivamente sui relativi terzi.',
     referencesAndLinksText2:
@@ -896,7 +911,8 @@ export const it: Locale = {
   },
   acceptRateModal: {
     modalTitle: 'IVA di 7.7%',
-    modalSubTitle: 'Confermo di accettare l’aliquota IVA unica di 7.7% all’atto dell’imposizione delle merci.',
+    modalSubTitle:
+      'Confermo di accettare l’aliquota IVA unica di 7.7% all’atto dell’imposizione delle merci.',
     confirm: 'Riprendere',
   },
 };

@@ -83,22 +83,23 @@ export const en: Locale = {
     addQuantities: 'Add quantities',
     enterQuantities: 'Enter the quantities of all {{value}} here.',
     enterQuantity: 'Enter quantity',
-    enterQuantitiesButter: 'Enter the quantities of all {{value}} products here.',
-      enterQuantitiesMeat: 'Enter the quantities of all {{value}} here.',
-      enterQuantitiesTobacco: 'Enter the quantities of all {{value}} here.',
-      enterQuantitiesCigarettes: 'Enter the quantities of all {{value}} here.',
-      enterQuantitiesOil: 'Enter the quantities of all {{value}} here.',
-      enterQuantitiesAlcohol: 'Enter the quantities of all {{value}} here.',
+    enterQuantitiesButter:
+      'Enter the quantities of all {{value}} products here.',
+    enterQuantitiesMeat: 'Enter the quantities of all {{value}} here.',
+    enterQuantitiesTobacco: 'Enter the quantities of all {{value}} here.',
+    enterQuantitiesCigarettes: 'Enter the quantities of all {{value}} here.',
+    enterQuantitiesOil: 'Enter the quantities of all {{value}} here.',
+    enterQuantitiesAlcohol: 'Enter the quantities of all {{value}} here.',
     standardInputSubText:
       'Record the amount of {{category}} you carry with you:',
-      meatInput: 'meat and meat products',
-      butterInput: 'butter and cream',
-      oilInput: 'oils, fats, or margarine',
-      otherFoodInput: 'other food and non-alcoholic beverages',
-      alcSoftInput: 'alcoholic beverages of up to 18% vol.',
-      alcHardInput: 'alcoholic beverages of more than 18% vol.',
-      cigarettesInput: 'cigarettes and cigars',
-      tobaccoInput: 'other tobacco products',
+    meatInput: 'meat and meat products',
+    butterInput: 'butter and cream',
+    oilInput: 'oils, fats, or margarine',
+    otherFoodInput: 'other food and non-alcoholic beverages',
+    alcSoftInput: 'alcoholic beverages of up to 18% vol.',
+    alcHardInput: 'alcoholic beverages of more than 18% vol.',
+    cigarettesInput: 'cigarettes and cigars',
+    tobaccoInput: 'other tobacco products',
   },
   amountInput: {
     amountInput: 'Please enter here the value of all transported goods.',
@@ -817,14 +818,19 @@ export const en: Locale = {
     dataProtection: 'Data protection',
     dataProtectionText1:
       'Based on Article 13 of the Swiss Constitution and the federal data protection provisions, all persons are entitled to have their individual privacy preserved and to be protected against misuse of their personal data. The federal authorities comply with these provisions. Personal data is treated strictly confidentially and is neither disclosed nor sold to third parties.',
+    dataProtectionText2: '',
+    dataProtectionText3: '',
+    dataProtectionText4: '',
+    dataProtectionText5: '',
     liability: 'Liability',
     liabilityText1:
       'The Federal Authorities expressly reserve the right to change, delete or temporarily not publish contents in whole or in part at any time without notice.',
     liabilityText2:
       'Liability claims against the Federal authorities for damages of a material or immaterial nature which have arisen from the access or use or non-use of the published information, through misuse of the connection or due to technical faults are excluded.',
-      culpability: 'Culpability',
-      culpabilityText1: 'Register the goods completely and correctly. Prohibited goods and/or goods subject to authorization may not be registered. Customs clearance with QuickZoll is binding (Art. 33 of the Customs Act, ZG; SR 631.0). Anyone who fails to register goods completely or incorrectly, or who registers prohibited goods and/or goods subject to authorization, is liable to prosecution (Articles 118 and 127 ZG).',
-      referencesAndLinks: 'References and links',
+    culpability: 'Culpability',
+    culpabilityText1:
+      'Register the goods completely and correctly. Prohibited goods and/or goods subject to authorization may not be registered. Customs clearance with QuickZoll is binding (Art. 33 of the Customs Act, ZG; SR 631.0). Anyone who fails to register goods completely or incorrectly, or who registers prohibited goods and/or goods subject to authorization, is liable to prosecution (Articles 118 and 127 ZG).',
+    referencesAndLinks: 'References and links',
     referencesAndLinksText1:
       'References and links to third-party websites lie outside the scope of responsibility of the federal authorities. Users who access and/or use such websites do so at their own risk. The federal authorities explicitly declare that they have no influence whatsoever on the design, content or offers of linked sites. The relevant third party is entirely responsible for the information and services of third-party websites.',
     referencesAndLinksText2:
@@ -885,7 +891,8 @@ export const en: Locale = {
   },
   acceptRateModal: {
     modalTitle: 'VAT rate 7.7%',
-    modalSubTitle: 'I hereby confirm that I accept the single VAT rate of 7.7% when declaring goods.',
+    modalSubTitle:
+      'I hereby confirm that I accept the single VAT rate of 7.7% when declaring goods.',
     confirm: 'Confirm',
   },
 };

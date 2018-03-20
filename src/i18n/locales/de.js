@@ -1,3 +1,4 @@
+// @flow
 import type { Locale } from '../types/locale';
 
 export const de: Locale = {
@@ -87,21 +88,20 @@ export const de: Locale = {
     enterQuantity: 'Menge eingeben',
 
     enterQuantitiesButter: 'Erfassen Sie hier die Mengen von {{value}}',
-    enterQuantitiesAlcohol:
-      'Erfassen Sie hier die Mengen aller {{value}}',
-      enterQuantitiesMeat: 'Erfassen Sie hier die Mengen von {{value}}',
-      enterQuantitiesTobacco: 'Erfassen Sie hier die Mengen aller {{value}}',
-      enterQuantitiesCigarettes: 'Erfassen Sie hier die Mengen aller {{value}}',
-      enterQuantitiesOil: 'Erfassen Sie hier die Mengen aller {{value}}',
+    enterQuantitiesAlcohol: 'Erfassen Sie hier die Mengen aller {{value}}',
+    enterQuantitiesMeat: 'Erfassen Sie hier die Mengen von {{value}}',
+    enterQuantitiesTobacco: 'Erfassen Sie hier die Mengen aller {{value}}',
+    enterQuantitiesCigarettes: 'Erfassen Sie hier die Mengen aller {{value}}',
+    enterQuantitiesOil: 'Erfassen Sie hier die Mengen aller {{value}}',
     standardInputSubText:
       'Erfassen Sie die Menge von {{category}}, die Sie mit sich führen:',
-      meatInput: 'Fleisch sowie Fleischzubereitungen.',
-      butterInput: 'Butter und Rahm.',
-      oilInput: 'Öle, Fette, oder Margarine.',
-      alcSoftInput: 'alkoholischen Getränke bis 18% Vol.',
-      alcHardInput: 'alkoholischen Getränke von über 18% Vol.',
-      cigarettesInput: 'Zigaretten und Zigarren.',
-      tobaccoInput: 'anderen Tabakfabrikate.',
+    meatInput: 'Fleisch sowie Fleischzubereitungen.',
+    butterInput: 'Butter und Rahm.',
+    oilInput: 'Öle, Fette, oder Margarine.',
+    alcSoftInput: 'alkoholischen Getränke bis 18% Vol.',
+    alcHardInput: 'alkoholischen Getränke von über 18% Vol.',
+    cigarettesInput: 'Zigaretten und Zigarren.',
+    tobaccoInput: 'anderen Tabakfabrikate.',
   },
   amountInput: {
     amountInput:
@@ -779,7 +779,7 @@ export const de: Locale = {
       'Waren, die Beschränkungen oder Verboten unterliegen und die zeugnis- oder bewilligungspflichtig sind (z.B. Waffen, lebende Tiere und Artenschutzwaren);',
     specialCasesText3: 'Weitere Informationen',
     specialCasesText4:
-      'Waren für den privaten Gebrauch oder zum Verschenken mit einem Gesamtwert von CHF 20\'000.00 oder mehr;',
+      "Waren für den privaten Gebrauch oder zum Verschenken mit einem Gesamtwert von CHF 20'000.00 oder mehr;",
     specialCasesText5:
       'Waren, die Sie zum reduzierten Mehrwertsteuersatz anmelden möchten;',
     specialCasesText6:
@@ -817,28 +817,31 @@ export const de: Locale = {
     dataProtection: 'Datenschutz',
     dataProtectionText1:
       'Beim Zugriff auf QuickZoll werden keine Daten sowie keine Informationen zum Betriebssystem oder Browser erfasst. Im Rahmen des Zahlungsvorgangs werden durch SIX die für den Vorgang notwendigen Daten bearbeitet. Bei Fragen zum Zahlungsvorgang wenden Sie sich bitte direkt an SIX.',
+    dataProtectionText2: '',
+    dataProtectionText3: '',
+    dataProtectionText4: '',
+    dataProtectionText5: '',
     liability: 'Haftung',
     liabilityText1:
       'Die EZV behält sich ausdrücklich vor, jederzeit Inhalte dieser App ohne Ankündigung ganz oder teilweise zu ändern oder zu löschen.',
     liabilityText2:
       'Haftungsansprüche gegen die EZV wegen Schäden materieller oder immaterieller Art, welche durch die Nutzung dieser App, durch technische Störungen, durch Missbrauch von «QuickZoll» oder anderen Gründen entstanden sind, werden ausgeschlossen.',
     culpability: 'Strafbarkeit',
-    culpabilityText1: 'Melden Sie die Waren vollständig und korrekt an. Verbotene und/oder bewilligungspflichtige Waren dürfen nicht angemeldet werden. Die Verzollung mit QuickZoll ist verbindlich (Art. 33 des Zollgesetzes, ZG; SR 631.0). Wer Waren nicht vollständig oder nicht korrekt anmeldet oder wer verbotene und/oder bewilligungspflichtige Waren anmeldet, macht sich strafbar (Art. 118 und 127 ZG).',
+    culpabilityText1:
+      'Melden Sie die Waren vollständig und korrekt an. Verbotene und/oder bewilligungspflichtige Waren dürfen nicht angemeldet werden. Die Verzollung mit QuickZoll ist verbindlich (Art. 33 des Zollgesetzes, ZG; SR 631.0). Wer Waren nicht vollständig oder nicht korrekt anmeldet oder wer verbotene und/oder bewilligungspflichtige Waren anmeldet, macht sich strafbar (Art. 118 und 127 ZG).',
     referencesAndLinks: 'Verweise und Links',
     referencesAndLinksText1:
-    'Verweise und Links auf Webseiten Dritter liegen ausserhalb des Verantwortungsbereichs der Bundesbehörden. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin. Die Bundesbehörden erklären ausdrücklich, dass sie keinerlei Einfluss auf die Gestaltung, den Inhalt und die Angebote der verknüpften Seiten haben. Informationen und Dienstleistungen von verknüpften Webseiten liegen vollumfänglich in der Verantwortung des jeweiligen Dritten.',
+      'Verweise und Links auf Webseiten Dritter liegen ausserhalb des Verantwortungsbereichs der Bundesbehörden. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin. Die Bundesbehörden erklären ausdrücklich, dass sie keinerlei Einfluss auf die Gestaltung, den Inhalt und die Angebote der verknüpften Seiten haben. Informationen und Dienstleistungen von verknüpften Webseiten liegen vollumfänglich in der Verantwortung des jeweiligen Dritten.',
     referencesAndLinksText2:
       'Es wird jegliche Verantwortung für solche Webseiten abgelehnt.',
 
     copyright: 'Copyright',
-    copyrightText1:
-      'Copyright, Schweizerische Eidgenossenschaft, EZV, 2018.',
+    copyrightText1: 'Copyright, Schweizerische Eidgenossenschaft, EZV, 2018.',
     copyrightText2:
       'Die auf den Websites der Bundesbehörden enthaltenen Informationen werden der Öffentlichkeit zugänglich gemacht. Durch das Herunterladen oder Kopieren von Inhalten, Bildern, Fotos oder anderen Dateien werden keinerlei Rechte bezüglich der Inhalte übertragen.',
     copyrightText3:
-    'Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf den Websites der Bundesbehörden gehören ausschliesslich diesen oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.',
-
-},
+      'Die Urheber- und alle anderen Rechte an Inhalten, Bildern, Fotos oder anderen Dateien auf den Websites der Bundesbehörden gehören ausschliesslich diesen oder den speziell genannten Rechtsinhabern. Für die Reproduktion jeglicher Elemente ist die schriftliche Zustimmung der Urheberrechtsträger im Voraus einzuholen.',
+  },
   overview: {
     declared: 'Angemeldet',
     dutyFree: 'Zollfrei',
