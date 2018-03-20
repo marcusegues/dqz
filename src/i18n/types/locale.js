@@ -87,19 +87,19 @@ type QuantityInputTranslations = {
   enterQuantities: string,
   enterQuantity: string,
   enterQuantitiesButter: string,
-    enterQuantitiesCigarettes: string,
-    enterQuantitiesTobacco: string,
+  enterQuantitiesCigarettes: string,
+  enterQuantitiesTobacco: string,
   enterQuantitiesAlcohol: string,
-    enterQuantitiesOil: string,
-    enterQuantitiesMeat: string,
+  enterQuantitiesOil: string,
+  enterQuantitiesMeat: string,
   standardInputSubText: string,
-    meatInput: string,
-    butterInput: string,
-    oilInput: string,
-    alcSoftInput: string,
-    alcHardInput: string,
-    cigarettesInput: string,
-    tobaccoInput: string,
+  meatInput: string,
+  butterInput: string,
+  oilInput: string,
+  alcSoftInput: string,
+  alcHardInput: string,
+  cigarettesInput: string,
+  tobaccoInput: string,
 };
 
 type AmountInputTranslations = {
@@ -668,6 +668,11 @@ type UpdateTheAppTranslations = {
   buttonTextIos: string,
 };
 
+type SuccessfulPaymentTranslations = {
+  title: string,
+  navigationHeaderTitle: string,
+};
+
 type UnitsTranslations = {
   kilo: string,
   kiloOrLiter: string,
@@ -726,5 +731,6 @@ export type Locale = {
   units: UnitsTranslations,
   purchasesOnlineOffline: PurchasesOnlineOfflineTranslations,
   updateTheApp: UpdateTheAppTranslations,
+  SuccessfulPayment: SuccessfulPaymentTranslations,
   acceptRateModal: AcceptRateModalTranslations,
 };

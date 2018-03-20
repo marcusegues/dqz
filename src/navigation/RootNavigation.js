@@ -57,6 +57,7 @@ import { PurchasesOnlineOffline } from '../screens/Information/InformationScreen
 import { addListener } from './reactNavigation';
 import { CartIcon } from '../components/Headers/subcomponents/CartIcon';
 import { UpdateTheApp } from '../screens/UpdateTheApp/UpdateTheApp';
+import { SuccessfulPayment } from '../screens/SuccessfulPayment/SuccessfulPayment';
 
 export type NavigationObject = { navigation: Navigation };
 
@@ -510,6 +511,12 @@ export const stackNavigatorScreens = {
       headerLeft: (
         <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
+    }),
+  },
+  SuccessfulPayment: {
+    screen: SuccessfulPayment,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: <HomeIcon navigation={navigation} />,
     }),
   },
   UpdateTheApp: {
