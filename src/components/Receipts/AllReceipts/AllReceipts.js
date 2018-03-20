@@ -69,8 +69,7 @@ class AllReceiptsInner extends React.Component<
     const sortDateTimeAsc = (a, b) => {
       const aDT: DateTime = DateTime.fromISO(a.receiptEntryTime);
       const bDT: DateTime = DateTime.fromISO(b.receiptEntryTime);
-      // $FlowFixMe
-      return aDT > bDT ? 1 : -1;
+      return aDT.valueOf() > bDT.valueOf() ? 1 : -1;
     };
 
     return this.state.receipts.sort(sortDateTimeAsc).reduce(
