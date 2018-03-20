@@ -122,10 +122,16 @@ class OverviewInner extends React.Component<
       amounts,
       currencies,
     } = this.props;
-    const momentReceiptEntryTime: DateTime =
-      receiptEntryTime !== ''
-        ? DateTime.fromISO(receiptEntryTime)
-        : DateTime.local();
+
+    const localTime: DateTime = DateTime.local();
+    let momentReceiptEntryTime: DateTime = localTime;
+    if (receiptEntryTime !== '') {
+      momentReceiptEntryTime = DateTime.fromISO(receiptEntryTime);
+      if (localTime.valueOf() > momentReceiptEntryTime.valueOf()) {
+        momentReceiptEntryTime = localTime;
+      }
+    }
+
     return (
       <ScrollViewCard>
         <CardHeader text={t('overViewTitle')} />
