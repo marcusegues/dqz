@@ -137,6 +137,8 @@ export const en: Locale = {
       'Are you sure you want to remove this main category?',
     validateMainCategoryRemoveSubtitle:
       'Currently, some subcategories contain quantities: {{value}}',
+    validateMainCategoryAndVatRemoveSubTitle:
+      'Currently, some subcategories contain quantities: {{value}}. All added VAT amounts will be deleted as well.',
     validateMainCategoryRemoveYes: 'Yes, remove resp. quantities',
     itemsGreaterThan300CHF: 'Items > CHF 300',
   },

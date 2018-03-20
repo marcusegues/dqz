@@ -4,7 +4,7 @@ import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import { AnswerCard } from '../../AnswerCard';
 import { QuantityInputInfo } from '../../children/QuantityInputInfo';
-import type { QuestionFlag } from '../../../../QuestionAnswerContainer';
+import type { QuestionFlag } from '../../../../types/questionAnswerTypes';
 import { quantityInputImages } from '../../types/amountAndQuantityInput';
 import type { Language } from '../../../../../../i18n/types/locale';
 

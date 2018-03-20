@@ -10,4 +10,5 @@ export type StoreType =
   | 'Amounts'
   | 'PaymentData'
   | 'ReceiptEntryTime'
-  | 'Receipts';
+  | 'Receipts'
+  | 'QAState';

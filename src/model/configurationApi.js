@@ -24,6 +24,8 @@ import type { FlatAmount } from './utils';
 
 const emptyItem: CategoryBasketItem = makeCategoryBasketItemRecord();
 
+
+
 /**
  * Empty Basket
  * @type Basket
@@ -31,6 +33,8 @@ const emptyItem: CategoryBasketItem = makeCategoryBasketItemRecord();
 export const emptyBasket: Basket = Immutable.Map(
   categoriesArray.map(c => [c, emptyItem])
 );
+
+export const emptyAmounts = Immutable.Map();
 
 // QUANTITIES
 /**
@@ -193,6 +197,13 @@ export const resetAmounts = (amounts: Amounts, currency: Currency): Amounts =>
     [currency, 'amounts'],
     Immutable.List()
   );
+
+/**
+ * Returns empty Amounts
+ * @param amounts
+ * @returns Amounts type
+ */
+export const resetAllAmounts = (): Amounts => emptyAmounts;
 
 /**
  * Deletes amount with a given ID

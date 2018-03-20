@@ -2,11 +2,11 @@
 import Immutable from 'immutable';
 import type {
   QAStateEnriched,
-  QuestionFlag,
-  QuestionType,
-} from '../QuestionAnswerContainer';
+  } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
 import type { Basket } from '../../../model/types/basketPeopleAmountsTypes';
+import { showLargeAmountsQuestion } from './controlQuestionStates';
+import type {QuestionFlag, QuestionType} from "../types/questionAnswerTypes";
 
 export const anyQuantitiesInBasket = (basket: Basket): boolean =>
   basket
@@ -17,7 +17,7 @@ export const anyQuantitiesInBasket = (basket: Basket): boolean =>
           .size
     );
 
-const flagRules = (
+export const flagRules = (
   question: QuestionType,
   qaState: QAStateEnriched
 ): QuestionFlag => {
@@ -39,7 +39,9 @@ const flagRules = (
       return qaState.amounts.size ? 'complete' : 'incomplete';
     }
     case 'largeAmounts': {
-      return qaState.amounts.size ? 'complete' : 'incomplete';
+      return showLargeAmountsQuestion(qaState) && qaState.amounts.size
+        ? 'complete'
+        : 'incomplete';
     }
     default: {
       return 'incomplete';
