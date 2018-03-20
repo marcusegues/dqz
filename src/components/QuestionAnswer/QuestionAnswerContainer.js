@@ -72,8 +72,10 @@ export type QuestionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
 
 export type QuestionFlag = 'complete' | 'incomplete';
 
+export type QuestionStates = { [QuestionType]: QuestionState };
+
 export type QAState = {
-  questionStates: { [QuestionType]: QuestionState },
+  questionStates: QuestionStates,
   questionFlag: { [QuestionType]: QuestionFlag },
 };
 

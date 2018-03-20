@@ -1,10 +1,10 @@
 // @flow
 
 import type {
-  DirectionType,
-  QAStateEnriched,
-  QuestionState,
-  QuestionType,
+    DirectionType,
+    QAStateEnriched,
+    QuestionState, QuestionStates,
+    QuestionType,
 } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
 import { hasLargeAmount } from '../../../model/utils';
@@ -47,6 +47,22 @@ const fwdNav = (direction: DirectionType): QuestionState =>
 const backNav = (direction: DirectionType): QuestionState =>
   direction === 'back' ? 'expanded' : 'collapsed';
 
+const newQuestionStatesBasedOnRules = (qaState: QAStateEnriched): QuestionStates => ({
+  peopleInput:
+    flagRules('peopleInput', qaState) === 'complete' ? 'collapsed' : 'hidden',
+  mainCategories:
+    flagRules('mainCategories', qaState) === 'complete'
+      ? 'collapsed'
+      : 'hidden',
+  quantityInput:
+    flagRules('quantityInput', qaState) === 'complete' ? 'collapsed' : 'hidden',
+  amounts:
+    flagRules('amounts', qaState) === 'complete' ? 'collapsed' : 'hidden',
+  largeAmounts:
+    flagRules('largeAmounts', qaState) === 'complete' ? 'collapsed' : 'hidden',
+});
+
+
 export const setQuestionStates = (
   justAnswered: QuestionType,
   direction: DirectionType,
@@ -55,25 +71,7 @@ export const setQuestionStates = (
 ): QAStateEnriched => {
   const { settings } = qaState;
   const mainCategories = settings.get('mainCategories');
-  // do case analysis
-  const newQuestionStates = {
-    peopleInput:
-      flagRules('peopleInput', qaState) === 'complete' ? 'collapsed' : 'hidden',
-    mainCategories:
-      flagRules('mainCategories', qaState) === 'complete'
-        ? 'collapsed'
-        : 'hidden',
-    quantityInput:
-      flagRules('quantityInput', qaState) === 'complete'
-        ? 'collapsed'
-        : 'hidden',
-    amounts:
-      flagRules('amounts', qaState) === 'complete' ? 'collapsed' : 'hidden',
-    largeAmounts:
-      flagRules('largeAmounts', qaState) === 'complete'
-        ? 'collapsed'
-        : 'hidden',
-  };
+  const newQuestionStates = newQuestionStatesBasedOnRules(qaState);
 
   switch (direction) {
     case 'back': {
@@ -91,7 +89,6 @@ export const setQuestionStates = (
           break;
         }
         case 'amounts': {
-          amounts = qaState.amounts.size ? 'collapsed' : 'hidden';
           if (singleOtherGoodsMainCategory(mainCategories)) {
             newQuestionStates.mainCategories = 'expanded';
           } else {
@@ -177,22 +174,11 @@ export const collapseAllExistingExceptOne = (
   expand: QuestionType,
   qaState: QAStateEnriched
 ): QAStateEnriched => {
-  const { questionStates } = qaState;
 
-  const getQuestionState = (type: QuestionType) => {
-    if (questionStates[type] === 'hidden') {
-      return 'hidden';
-    }
-    return type === expand ? 'expanded' : 'collapsed';
-  };
+  const newQuestionStates = newQuestionStatesBasedOnRules(qaState);
+  newQuestionStates[expand] = 'expanded';
 
-  return setQuestionState(qaState, {
-    peopleInput: getQuestionState('peopleInput'),
-    mainCategories: getQuestionState('mainCategories'),
-    quantityInput: getQuestionState('quantityInput'),
-    amounts: getQuestionState('amounts'),
-    largeAmounts: getQuestionState('largeAmounts'),
-  });
+  return setQuestionState(qaState, newQuestionStates);
 };
 
 export const collapseQuestion = (
