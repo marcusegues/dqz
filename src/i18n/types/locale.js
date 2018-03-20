@@ -87,8 +87,20 @@ type QuantityInputTranslations = {
   enterQuantities: string,
   enterQuantity: string,
   enterQuantitiesButter: string,
+    enterQuantitiesCigarettes: string,
+    enterQuantitiesTobacco: string,
+  enterQuantitiesAlcohol: string,
+    enterQuantitiesOil: string,
+    enterQuantitiesMeat: string,
   enterQuantitiesAlcohol: string,
   standardInputSubText: string,
+    meatInput: string,
+    butterInput: string,
+    oilInput: string,
+    alcSoftInput: string,
+    alcHardInput string,
+    cigarettesInput: string,
+    tobaccoInput: string,
 };
 
 type AmountInputTranslations = {

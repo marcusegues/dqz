@@ -716,7 +716,7 @@ export const fr: Locale = {
 
   information: {
     informationTitle: 'Informations utiles',
-    informationSubCategoryTitle: 'Je transporte des animaux ou des plantes',
+    informationSubCategoryTitle: 'Je transporte des marchandises',
     customsProceduresMainText: 'Marche à suivre lors du passage à la douane',
     travelDocumentsMainText: 'Documents de voyage',
     declarationMainText: 'Je transporte des marchandises',

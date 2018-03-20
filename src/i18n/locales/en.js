@@ -696,8 +696,8 @@ export const en: Locale = {
 
   information: {
     informationTitle: 'Information',
-    informationSubCategoryTitle: 'I have animals or plants with me',
-    customsProceduresMainText: 'Proceeding at the customs',
+    informationSubCategoryTitle: 'I have goods with me',
+    customsProceduresMainText: 'Customs procedures',
     travelDocumentsMainText: 'Travel documents',
     declarationMainText: 'I have goods with me',
     animalsAndPlantsMainText: 'I have animals or plants with me',

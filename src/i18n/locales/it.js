@@ -49,7 +49,7 @@ export const it: Locale = {
   snackBar: {
     limitExceeded:
       "Il valore dei beni per l'app è stato superato. Si prega di segnalare le vostre merci per via orale al valico di frontiera.",
-    limitExceededRightText: 'Mostra i valichi di frontiera',
+    limitExceededRightText: 'Mostra i valichi di confine',
     offline:
       "Sei offline. Ad eccezione della funzione di pagamento, tuttavia, puoi utilizzare tutte le altre funzionalità dell'app.",
     paymentAborted: 'Paiement annulé',
@@ -693,7 +693,7 @@ export const it: Locale = {
 
   information: {
     informationTitle: 'Informazioni utili',
-    informationSubCategoryTitle: 'Ho animali o piante con me',
+    informationSubCategoryTitle: 'Trasporto merce',
     customsProceduresMainText: 'Procedura in dogana',
     travelDocumentsMainText: 'Documenti di viaggio',
     declarationMainText: 'Trasporto merce',
@@ -722,7 +722,7 @@ export const it: Locale = {
       'Merci soggette ad autorizzazione o limitazione',
     purchasesOnlineOfflineMainText:
       'Acquisti in Internet, invii postali e di corriere',
-    borderCrossingsMainText: 'valichi di frontiera',
+    borderCrossingsMainText: 'valichi di confine',
   },
   appInformation: {
     appInfoTitle: 'Informazioni sull’app ',
