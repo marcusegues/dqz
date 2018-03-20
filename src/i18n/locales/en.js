@@ -71,7 +71,7 @@ export const en: Locale = {
   },
   peopleInput: {
     peopleInputQuestion:
-      'How many travelers should be considered for customs clearance?',
+      'How many travellers should be considered for customs clearance?',
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Which goods do you want to declare?',
@@ -81,19 +81,32 @@ export const en: Locale = {
     quantityInput: 'Enter quantity',
     recordedOn: 'recorded on {{value}}',
     addQuantities: 'Add quantities',
-    enterQuantities: 'Enter the quantities of all {{value}} here',
+    enterQuantities: 'Enter the quantities of all {{value}} here.',
     enterQuantity: 'Enter quantity',
-    enterQuantitiesButter: 'Enter the quantities of all {{value}} here',
-    enterQuantitiesAlcohol: 'Enter the quantities of all {{value}} here',
+    enterQuantitiesButter:
+      'Enter the quantities of all {{value}} products here.',
+    enterQuantitiesMeat: 'Enter the quantities of all {{value}} here.',
+    enterQuantitiesTobacco: 'Enter the quantities of all {{value}} here.',
+    enterQuantitiesCigarettes: 'Enter the quantities of all {{value}} here.',
+    enterQuantitiesOil: 'Enter the quantities of all {{value}} here.',
+    enterQuantitiesAlcohol: 'Enter the quantities of all {{value}} here.',
     standardInputSubText:
       'Record the amount of {{category}} you carry with you:',
+    meatInput: 'meat and meat products',
+    butterInput: 'butter and cream',
+    oilInput: 'oils, fats, or margarine',
+    otherFoodInput: 'other food and non-alcoholic beverages',
+    alcSoftInput: 'alcoholic beverages of up to 18% vol.',
+    alcHardInput: 'alcoholic beverages of more than 18% vol.',
+    cigarettesInput: 'cigarettes and cigars',
+    tobaccoInput: 'other tobacco products',
   },
   amountInput: {
     amountInput: 'Please enter here the value of all transported goods.',
     amountInputLargeItem:
       'Capture individual items worth more than {{value}} francs.',
     amountInputLargeItemGreyBox:
-      'Again, capture every item that is worth more than CHF 300.00.',
+      'Again, capture every item that is worth more than CHF 300 (net value).',
     amountInputAddItem: 'Add value',
     amountInputAddItemLarge: 'Add item',
     amountInputEnterValueBeginning: 'Enter the value, ',
@@ -159,7 +172,7 @@ export const en: Locale = {
   payment: {
     overViewTitle: 'Summary of your Declaration',
     dutyColumn: 'Customs Duty in CHF',
-    sumText: 'Sum (CHF)',
+    sumText: 'Total (CHF)',
     entryInfo:
       'You can only cross the border within the specified period with the goods registered here.',
   },
@@ -172,16 +185,16 @@ export const en: Locale = {
     receiptValidFrom: 'This receipt is valid for the border crossing from:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} to {{endDate}} | {{endTime}}',
-    receiptValidOn: 'This receipt is valid for the border crossing on',
+    receiptValidOn: 'This receipt is valid for the border crossing on:',
     receiptValidOnDate: '{{date}} from {{startTime}} to {{endTime}}',
-    sumText: 'Sum: CHF {{value}}',
+    sumText: 'Total: CHF {{value}}',
     vatColumn: 'VAT in CHF:',
     normalAmountsTitle: 'Total of all goods',
-    normalAmountsSubtitle: 'Sum of all receipts',
+    normalAmountsSubtitle: 'Total of all receipts',
     largeAmountsTitle: 'Single goods',
     largeAmountsSubtitle: 'Value over CHF 300',
     receiptStorageNotification:
-      'This receipt is stored for a year. As long as you can call the receipt at any time in the app.',
+      'This receipt is stored for a year. During this time, you can consult the receipt at any time in the app.',
     allReceiptsNavigationHeaderTitle: 'Swiss Customs Receipts',
     allReceiptsCurrentReceipt: 'Current receipt:',
     allReceiptsOlderReceipts: 'Older receipts:',
@@ -307,7 +320,7 @@ export const en: Locale = {
     vatAllowanceText39: '= 1 item (one sales unit)',
     vatAllowanceText40:
       '3.\tThe invoice for the purchase of a pair of glasses is as follows:',
-    vatAllowanceText41: '2 lenses\t\t2 units à CHF 200\t\tCHF 400',
+    vatAllowanceText41: '2 lenses\t\t2 units at CHF 200\t\tCHF 400',
     vatAllowanceText42: '1 frame\t\tCHF 300',
     vatAllowanceText43: 'Total\t\tCHF 700',
     vatAllowanceText44: '1 item (one assembled item)',
@@ -683,8 +696,8 @@ export const en: Locale = {
 
   information: {
     informationTitle: 'Information',
-    informationSubCategoryTitle: 'I have animals or plants with me',
-    customsProceduresMainText: 'Proceeding at the customs',
+    informationSubCategoryTitle: 'I have goods with me',
+    customsProceduresMainText: 'Customs procedures',
     travelDocumentsMainText: 'Travel documents',
     declarationMainText: 'I have goods with me',
     animalsAndPlantsMainText: 'I have animals or plants with me',
@@ -711,7 +724,7 @@ export const en: Locale = {
     publisher: 'Publisher',
     customsAdministrationAddressTitle: 'Federal Customs Administration',
     contact: 'Contact',
-    customsInfoCenter: 'Customs Information Center\n058 467 15 15',
+    customsInfoCenter: 'Customs Information Centre\n058 467 15 15',
     generalCustomsDirectorate:
       'General Directorate of Customs\nMonbijoustrasse 40\n' +
       '3003 Bern\n' +
@@ -804,29 +817,27 @@ export const en: Locale = {
     dataProtection: 'Data protection',
     dataProtectionText1:
       'Based on Article 13 of the Swiss Constitution and the federal data protection provisions, all persons are entitled to have their individual privacy preserved and to be protected against misuse of their personal data. The federal authorities comply with these provisions. Personal data is treated strictly confidentially and is neither disclosed nor sold to third parties.',
-    dataProtectionText2:
-      'In close cooperation with our hosting providers, we strive to protect the databases insofar as possible from unauthorised access, loss, misuse or falsification.',
-    dataProtectionText3:
-      'When our web pages are accessed, the following data is stored in log files: IP address, date, time, browser query and general information transmitted about the operating system or browser.',
-    dataProtectionText4:
-      'This usage data forms the basis for anonymous statistical evaluations so that trends can be identified, thereby enabling the federal authorities to improve their offering accordingly. According to the Federal Act on the Surveillance of Postal and Telecommunications Traffic (SPTA), there is a statutory obligation to retain connection data for six months.',
-    dataProtectionText5:
-      'In the case of the voluntary establishment of contact, your email address is stored in a separate database that is not linked to the anonymous log files. You can cancel your registration at any time. The federal authorities expressly reserve the right to change some or all content at any time without prior notice, as well as to delete or occasionally not publish such content. The federal authorities accept no liability whatsoever for material or immaterial losses resulting from access to or use/non-use of the information published, from the misuse of links or from technical faults.',
-
+    dataProtectionText2: '',
+    dataProtectionText3: '',
+    dataProtectionText4: '',
+    dataProtectionText5: '',
     liability: 'Liability',
     liabilityText1:
       'The Federal Authorities expressly reserve the right to change, delete or temporarily not publish contents in whole or in part at any time without notice.',
     liabilityText2:
       'Liability claims against the Federal authorities for damages of a material or immaterial nature which have arisen from the access or use or non-use of the published information, through misuse of the connection or due to technical faults are excluded.',
+    culpability: 'Culpability',
+    culpabilityText1:
+      'Register the goods completely and correctly. Prohibited goods and/or goods subject to authorization may not be registered. Customs clearance with QuickZoll is binding (Art. 33 of the Customs Act, ZG; SR 631.0). Anyone who fails to register goods completely or incorrectly, or who registers prohibited goods and/or goods subject to authorization, is liable to prosecution (Articles 118 and 127 ZG).',
     referencesAndLinks: 'References and links',
     referencesAndLinksText1:
       'References and links to third-party websites lie outside the scope of responsibility of the federal authorities. Users who access and/or use such websites do so at their own risk. The federal authorities explicitly declare that they have no influence whatsoever on the design, content or offers of linked sites. The relevant third party is entirely responsible for the information and services of third-party websites.',
     referencesAndLinksText2:
-      'Any responsibility in respect of such websites is declined.',
+      'Any responsibility with respect of such websites is declined.',
 
     copyright: 'Copyright',
     copyrightText1:
-      'Copyright, federal authorities of the Swiss Confederation, 2007.',
+      'Copyright, federal authorities of the Swiss Confederation, 2018.',
     copyrightText2:
       'The information contained on the websites of the federal authorities is made publicly accessible. Downloading or copying content, illustrations, photos or any other data does not entail any transfer of rights concerning the content.',
     copyrightText3:
@@ -839,12 +850,13 @@ export const en: Locale = {
   },
   legalNoticeModal: {
     importantNote: 'Important Note',
-    vatRateInfo:
-      'Please note that\n' +
-      '• you may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll;\n' +
-      '• declared goods are cleared using the single VAT rate of 7.7%;\n' +
-      '• duties paid with the app will not be refunded.\n' +
-      'Further information can be found here:',
+    vatRateInfo: 'Please note that',
+    vatRateInfoText1:
+      'you may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll;',
+    vatRateInfoText2:
+      'declared goods are cleared using the single VAT rate of 7.7%;',
+    vatRateInfoText3: 'duties paid with the app will not be refunded.',
+    vatRateInfoText4: 'Further information can be found here:',
     termsOfService: 'Terms of Service',
     acceptance:
       'I hereby accept the terms and conditions that I have read and understood.',
@@ -854,7 +866,7 @@ export const en: Locale = {
   furtherInformationModal: {
     furtherInformation: 'Further Information:',
     acceptance:
-      'By using the app, you accept that the VAT rate is 7.7%; is also applied to goods that are actually subject to the reduced tax rate (food, animal feed, medicines and books).',
+      'By using the QuickZoll app, you accept that the VAT rate of 7.7% is also applied to goods that are subject to the reduced tax rate (2.5%) (in particular food, animal feed, medicines and books). If you would like the reduced tax rate to be applied, you must declare the goods verbally at a manned border crossing.',
   },
   updateTheApp: {
     title: 'New version available!',
@@ -866,19 +878,20 @@ export const en: Locale = {
   },
   units: {
     kilo: 'kg',
-    kilo_plural: 'kgs',
-    kiloOrLiter: 'kg/liter',
-    kiloOrLiter_plural: 'kgs/liters',
-    liter: 'liter',
-    liter_plural: 'liters',
+    kilo_plural: 'kg',
+    kiloOrLiter: 'kg/litres',
+    kiloOrLiter_plural: 'kg/litres',
+    liter: 'litre',
+    liter_plural: 'litres',
     unit: 'unit',
     unit_plural: 'units',
     gram: 'gram',
     gram_plural: 'grams',
   },
   acceptRateModal: {
-    modalTitle: '🔥',
-    modalSubTitle: '🔥',
+    modalTitle: 'VAT rate 7.7%',
+    modalSubTitle:
+      'I hereby confirm that I accept the single VAT rate of 7.7% when declaring goods.',
     confirm: 'Confirm',
   },
 };

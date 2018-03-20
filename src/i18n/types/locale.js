@@ -87,8 +87,19 @@ type QuantityInputTranslations = {
   enterQuantities: string,
   enterQuantity: string,
   enterQuantitiesButter: string,
+    enterQuantitiesCigarettes: string,
+    enterQuantitiesTobacco: string,
   enterQuantitiesAlcohol: string,
+    enterQuantitiesOil: string,
+    enterQuantitiesMeat: string,
   standardInputSubText: string,
+    meatInput: string,
+    butterInput: string,
+    oilInput: string,
+    alcSoftInput: string,
+    alcHardInput: string,
+    cigarettesInput: string,
+    tobaccoInput: string,
 };
 
 type AmountInputTranslations = {
@@ -635,6 +646,10 @@ type OverviewTranslations = {
 type LegalNoticeModalTranslations = {
   importantNote: string,
   vatRateInfo: string,
+  vatRateInfoText1: string,
+  vatRateInfoText2: string,
+  vatRateInfoText3: string,
+  vatRateInfoText4: string,
   termsOfService: string,
   acceptance: string,
   confirm: string,
