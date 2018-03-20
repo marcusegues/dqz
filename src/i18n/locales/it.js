@@ -162,6 +162,7 @@ export const it: Locale = {
       'Questa registrazione è valida per {{date}} da {{startTime}} a {{endTime}} in punto.',
     timePickerRegistrationValidUntilDifferentDay:
       'Questo accesso è valido per {{startDate}} da {{startTime}} a {{endDate}} al {{endTime}} in punto.',
+    timePickerRegistrationTimeInPast: '🔥',
     timePickerTakeOverThePeriod: 'Prendi il controllo del periodo',
     timePickerTimePrefix: 'ora',
     savedBasket: 'Carrello corrente',
