@@ -296,12 +296,18 @@ class PaymentContainerInner extends React.Component<
                     currencies,
                     paymentData: newPaymentData,
                   };
-                  return storeReceipt(receipt).then(() =>
+                  return storeReceipt(receipt).then(() => {
                     this.props.navigation.dispatch({
                       type: 'NAVIGATE',
-                      screen: 'ReceiptAfterPayment',
-                    })
-                  );
+                      screen: 'SuccessfulPayment',
+                    });
+                    setTimeout(() => {
+                      this.props.navigation.dispatch({
+                        type: 'NAVIGATE',
+                        screen: 'ReceiptAfterPayment',
+                      });
+                    }, 5000);
+                  });
                 })
                 .catch(error => console.log('Saferpay error:', error));
             }
