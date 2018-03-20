@@ -21,6 +21,7 @@ import { StandardInputPicker } from '../../Pickers/QuantityInputPickers/Standard
 import { CustomInputPicker } from '../../Pickers/QuantityInputPickers/CustomInputPicker';
 import { ManualInputPicker } from '../../Pickers/QuantityInputPickers/ManualInputPicker';
 import { displayedQuantityDecimalPlaces } from '../../../constants/declaration';
+import { parseInputToFloat } from '../../../utils/inputparser/inputParser';
 
 export type StandardQuantityInputType = {
   multiplier: string,
@@ -192,21 +193,26 @@ class QuantityInputModalInner extends React.Component<
 
   getManualInputPicker(category: Category) {
     const onChangeText = (text: string): void => {
-      if (displayedQuantityDecimalPlaces[category] === 0) {
-        if (/\D/.test(text)) {
-          return;
-        }
-      }
-      // convert comma to period
-      const textModified: string = text.replace(/,/g, '.');
-      // if more than one period, return
-      if (textModified.indexOf('.') !== textModified.lastIndexOf('.')) {
-        return;
-      }
-      // return on any input that is not numeric or a period
-      if (/[^0-9.]/.test(textModified)) {
-        return;
-      }
+      // if (displayedQuantityDecimalPlaces[category] === 0) {
+      //   if (/\D/.test(text)) {
+      //     return;
+      //   }
+      // }
+      // // convert comma to period
+      // const textModified: string = text.replace(/,/g, '.');
+      // // if more than one period, return
+      // if (textModified.indexOf('.') !== textModified.lastIndexOf('.')) {
+      //   return;
+      // }
+      // // return on any input that is not numeric or a period
+      // if (/[^0-9.]/.test(textModified)) {
+      //   return;
+      // }
+      const textModified = parseInputToFloat(
+        text,
+        6,
+        displayedQuantityDecimalPlaces[category]
+      );
 
       this.setState({
         numberInput: {
