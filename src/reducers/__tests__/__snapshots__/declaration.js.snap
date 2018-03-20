@@ -119,6 +119,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -241,6 +257,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -394,6 +426,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -551,6 +599,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -673,6 +737,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -790,6 +870,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -917,6 +1013,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -1029,6 +1141,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -1143,6 +1271,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -1255,6 +1399,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -1370,6 +1530,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -1482,6 +1658,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -1594,6 +1786,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -1706,6 +1914,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -1818,6 +2042,22 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;
 
@@ -1930,5 +2170,21 @@ Immutable.Record {
     },
   },
   "receiptEntryTime": "",
+  "qaState": Object {
+    "questionFlag": Object {
+      "amounts": "incomplete",
+      "largeAmounts": "incomplete",
+      "mainCategories": "incomplete",
+      "peopleInput": "complete",
+      "quantityInput": "incomplete",
+    },
+    "questionStates": Object {
+      "amounts": "hidden",
+      "largeAmounts": "hidden",
+      "mainCategories": "hidden",
+      "peopleInput": "expanded",
+      "quantityInput": "hidden",
+    },
+  },
 }
 `;

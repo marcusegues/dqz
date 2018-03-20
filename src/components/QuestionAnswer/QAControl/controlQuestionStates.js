@@ -42,12 +42,6 @@ export const setInitStates = (qaState: QAStateEnriched): QAStateEnriched => {
   });
 };
 
-const fwdNav = (direction: DirectionType): QuestionState =>
-  direction === 'forward' ? 'expanded' : 'collapsed';
-
-const backNav = (direction: DirectionType): QuestionState =>
-  direction === 'back' ? 'expanded' : 'collapsed';
-
 const newQuestionStatesBasedOnRules = (
   qaState: QAStateEnriched
 ): QuestionStates => ({
@@ -79,6 +73,7 @@ export const setQuestionStates = (
     case 'back': {
       switch (justAnswered) {
         case 'peopleInput': {
+          newQuestionStates.peopleInput = 'expanded';
           navigation.dispatch({ type: 'GO_BACK' });
           break;
         }
