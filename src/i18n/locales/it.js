@@ -133,6 +133,7 @@ export const it: Locale = {
       ' Confermare la cancellazione di questa categoria principale?',
     validateMainCategoryRemoveSubtitle:
       'Al momento determinate sottocategorie contengono delle quantità, ovvero: {{value}}',
+    validateMainCategoryAndVatRemoveSubTitle: '🔥',
     validateMainCategoryRemoveYes:
       'Sì, desidero eliminare le rispettive quantità.',
     itemsGreaterThan300CHF: 'Articoli > 300 CHF',

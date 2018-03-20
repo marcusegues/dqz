@@ -9,6 +9,7 @@ import type {
 import type { MainCategory, MainCategories } from '../reducers/declaration';
 import type { Currency } from '../../model/currencies';
 import type { PaymentData } from '../../types/generalTypes';
+import type { QAState } from '../../components/QuestionAnswer/QuestionAnswerContainer';
 
 export type DeclarationAction =
   | {
@@ -89,4 +90,5 @@ export type DeclarationAction =
       paymentData: PaymentData,
     }
   | { type: 'RESET_DECLARATION' }
-  | { type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime: string };
+  | { type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime: string }
+  | { type: 'SET_QA_STATE', qaState: QAState };

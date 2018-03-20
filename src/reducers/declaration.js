@@ -23,6 +23,7 @@ import * as modelApi from '../model/configurationApi';
 import type { Currency } from '../model/currencies';
 import type { PaymentData } from '../types/generalTypes';
 import { makePaymentDataRecord } from '../types/generalTypes';
+import type { QAState } from '../components/QuestionAnswer/QuestionAnswerContainer';
 
 export const declaration = (
   state: DeclarationState = getInitialDeclarationState(),
@@ -170,7 +171,8 @@ export const declaration = (
       return state.set('receiptEntryTime', receiptEntryTime);
     }
     case 'SET_QA_STATE': {
-      return state.set('qaState', action.qaState);
+      const qaState: QAState = action.qaState;
+      return state.set('qaState', qaState);
     }
     default: {
       return state;

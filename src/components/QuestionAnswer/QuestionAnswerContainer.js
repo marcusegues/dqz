@@ -48,8 +48,7 @@ import {
   analyticsPeopleChanged,
   analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
-import { hasLargeAmount } from '../../model/utils';
-import { getTotalPeople, resetAllAmounts } from '../../model/configurationApi';
+import { resetAllAmounts } from '../../model/configurationApi';
 import {
   storeAmounts,
   storeBasket,
@@ -164,21 +163,23 @@ class QuestionAnswerContainerInner extends React.Component<
       mainCategories,
       amounts,
       receiptEntryTime,
-      qaState,
     } = this.props;
-    console.log('mounting');
     if (
       isInitBasket(people, basket, mainCategories, amounts, receiptEntryTime)
     ) {
       this.initState();
     } else {
-      this.setState(qaState);
+      this.setReduxQAStateToComponentState();
     }
     analyticsPeopleChanged(this.props.people);
   }
 
   componentWillUnmount() {
     this.props.saveQAState(this.state);
+  }
+
+  setReduxQAStateToComponentState() {
+    this.setState(this.props.qaState);
   }
 
   enrichState(): QAStateEnriched {
@@ -252,7 +253,6 @@ class QuestionAnswerContainerInner extends React.Component<
       t,
       basket,
       people,
-      currencies,
       mainCategories,
       settings,
       setMainCategories,
