@@ -1,10 +1,11 @@
 // @flow
 
 import type {
-    DirectionType,
-    QAStateEnriched,
-    QuestionState, QuestionStates,
-    QuestionType,
+  DirectionType,
+  QAStateEnriched,
+  QuestionState,
+  QuestionStates,
+  QuestionType,
 } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
 import { hasLargeAmount } from '../../../model/utils';
@@ -47,7 +48,9 @@ const fwdNav = (direction: DirectionType): QuestionState =>
 const backNav = (direction: DirectionType): QuestionState =>
   direction === 'back' ? 'expanded' : 'collapsed';
 
-const newQuestionStatesBasedOnRules = (qaState: QAStateEnriched): QuestionStates => ({
+const newQuestionStatesBasedOnRules = (
+  qaState: QAStateEnriched
+): QuestionStates => ({
   peopleInput:
     flagRules('peopleInput', qaState) === 'complete' ? 'collapsed' : 'hidden',
   mainCategories:
@@ -61,7 +64,6 @@ const newQuestionStatesBasedOnRules = (qaState: QAStateEnriched): QuestionStates
   largeAmounts:
     flagRules('largeAmounts', qaState) === 'complete' ? 'collapsed' : 'hidden',
 });
-
 
 export const setQuestionStates = (
   justAnswered: QuestionType,
@@ -126,11 +128,13 @@ export const setQuestionStates = (
           if (showLargeAmountsQuestion(qaState)) {
             newQuestionStates.largeAmounts = 'expanded';
           } else {
+            newQuestionStates.amounts = 'expanded';
             navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
           }
           break;
         }
         case 'largeAmounts': {
+          newQuestionStates.largeAmounts = 'expanded';
           navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
           break;
         }
@@ -174,7 +178,6 @@ export const collapseAllExistingExceptOne = (
   expand: QuestionType,
   qaState: QAStateEnriched
 ): QAStateEnriched => {
-
   const newQuestionStates = newQuestionStatesBasedOnRules(qaState);
   newQuestionStates[expand] = 'expanded';
 
