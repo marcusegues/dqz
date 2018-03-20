@@ -144,6 +144,11 @@ export const setQuestionStates = (
           break;
         }
         case 'mainCategories': {
+          if (!mainCategories.size) {
+            quantityInputState = 'hidden';
+            amountsState = 'hidden';
+            largeAmountsState = 'hidden';
+          }
           break;
         }
         case 'quantityInput': {
@@ -196,7 +201,8 @@ export const collapseAllExistingExceptOne = (
 export const collapseQuestion = (
   question: QuestionType,
   qaState: QAStateEnriched
-): QAStateEnriched => setQuestionState(qaState, {
+): QAStateEnriched =>
+  setQuestionState(qaState, {
     ...qaState.questionStates,
     [question]: 'collapsed',
   });

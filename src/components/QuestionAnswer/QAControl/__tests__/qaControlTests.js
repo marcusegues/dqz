@@ -13,22 +13,14 @@ import {
 } from '../../../../model/configurationApi';
 import { makeSettingsRecord } from '../../../../types/reducers/declaration';
 import { currencyExample } from '../../../../model/currencies';
+import { initialQAState } from '../../QuestionAnswerContainer';
 
 const blankState = {
   basket: emptyBasket,
   people: initPeople,
   amounts: initAmounts,
   settings: makeSettingsRecord(),
-  questionStates: {
-    peopleInput: 'expanded',
-    mainCategories: 'hidden',
-    quantityInput: 'hidden',
-  },
-  questionFlag: {
-    peopleInput: 'complete',
-    mainCategories: 'incomplete',
-    quantityInput: 'incomplete',
-  },
+  ...initialQAState,
 };
 
 const stateWithMainCategories = {
@@ -177,8 +169,8 @@ describe('Test qa control flow', () => {
       mockNav,
       blankState
     ).questionStates;
-    expect(newState.peopleInput).toBe('collapsed');
-    expect(newState.mainCategories).toBe('collapsed');
+    expect(newState.peopleInput).toBe('expanded');
+    expect(newState.mainCategories).toBe('hidden');
     expect(newState.quantityInput).toBe('hidden');
     expect(spy).toBeCalled();
   });
