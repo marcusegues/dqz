@@ -911,6 +911,11 @@ export const fr: Locale = {
     buttonTextAndroid: 'Dans Play Store',
     buttonTextIos: "Dans l'App Store",
   },
+  SuccessfulPayment: {
+    title:
+      'Merci! Nous avons reçu votre paiement et vous souhaitons un bon voyage!',
+    navigationHeaderTitle: 'Paiement réussi',
+  },
   units: {
     kilo: 'kg',
     kilo_plural: 'kg',
