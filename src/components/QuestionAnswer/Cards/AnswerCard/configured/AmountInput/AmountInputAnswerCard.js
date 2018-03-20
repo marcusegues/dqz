@@ -6,7 +6,7 @@ import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import { AnswerCard } from '../../AnswerCard';
 import { AmountInputInfo } from '../../children/AmountInputInfo';
-import type { QuestionFlag } from '../../../../QuestionAnswerContainer';
+import type { QuestionFlag } from '../../../../types/questionAnswerTypes';
 import { amountInputImages } from '../../types/amountAndQuantityInput';
 import type { Language } from '../../../../../../i18n/types/locale';
 import type { TFunction } from '../../../../../../types/generalTypes';

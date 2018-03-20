@@ -19,7 +19,7 @@ import type {
 import type { CurrencyObject } from '../../model/currencies';
 import type { PaymentData } from '../../types/generalTypes';
 import type { ConnectivityType } from '../../types/connectivity';
-import type { QAState } from '../../components/QuestionAnswer/QuestionAnswerContainer';
+import type { QAState } from '../../components/QuestionAnswer/types/questionAnswerTypes';
 
 /**
  * Gets basket in application state

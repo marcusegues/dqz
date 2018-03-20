@@ -22,7 +22,7 @@ import { makePeopleRecord } from '../../model/types/basketPeopleAmountsTypes';
 
 import { makePaymentDataRecord } from '../generalTypes';
 import type { PaymentData } from '../generalTypes';
-import type { QAState } from '../../components/QuestionAnswer/QuestionAnswerContainer';
+import type { QAState } from '../../components/QuestionAnswer/types/questionAnswerTypes';
 import { initialQAState } from '../../components/QuestionAnswer/QuestionAnswerContainer';
 
 export type MeatCategories = ImmutableSetType<MeatCategory>;

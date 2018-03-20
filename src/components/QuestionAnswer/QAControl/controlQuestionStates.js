@@ -3,15 +3,13 @@
 import type {
   DirectionType,
   QAStateEnriched,
-  QuestionState,
-  QuestionStates,
-  QuestionType,
-} from '../QuestionAnswerContainer';
+  } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
 import { hasLargeAmount } from '../../../model/utils';
 import type { Navigation } from '../../../types/generalTypes';
 import type { MainCategories } from '../../../types/reducers/declaration';
 import { flagRules } from './controlQuestionFlag';
+import type {QuestionState, QuestionStates, QuestionType} from "../types/questionAnswerTypes";
 
 const singleOtherGoodsMainCategory = (
   mainCategories: MainCategories

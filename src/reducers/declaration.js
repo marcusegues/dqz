@@ -23,7 +23,7 @@ import * as modelApi from '../model/configurationApi';
 import type { Currency } from '../model/currencies';
 import type { PaymentData } from '../types/generalTypes';
 import { makePaymentDataRecord } from '../types/generalTypes';
-import type { QAState } from '../components/QuestionAnswer/QuestionAnswerContainer';
+import type { QAState } from '../components/QuestionAnswer/types/questionAnswerTypes';
 
 export const declaration = (
   state: DeclarationState = getInitialDeclarationState(),

@@ -29,7 +29,7 @@ import {
   deserializeReceipts,
 } from './deserializers';
 import { initialQAState } from '../components/QuestionAnswer/QuestionAnswerContainer';
-import type { QAState } from '../components/QuestionAnswer/QuestionAnswerContainer';
+import type { QAState } from '../components/QuestionAnswer/types/questionAnswerTypes';
 import type { SettingsAcceptRate } from '../types/generalTypes';
 
 export const KeyNotSet = 'KeyNotSet';

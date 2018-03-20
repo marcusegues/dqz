@@ -9,7 +9,7 @@ import type {
 import type { MainCategory, MainCategories } from '../reducers/declaration';
 import type { Currency } from '../../model/currencies';
 import type { PaymentData } from '../../types/generalTypes';
-import type { QAState } from '../../components/QuestionAnswer/QuestionAnswerContainer';
+import type { QAState } from '../../components/QuestionAnswer/types/questionAnswerTypes';
 
 export type DeclarationAction =
   | {

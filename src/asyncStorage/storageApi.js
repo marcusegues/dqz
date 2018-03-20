@@ -33,7 +33,7 @@ import type { Receipt } from '../types/receiptTypes';
 import type { KeyNotSetType } from './asyncStorage';
 import type { PaymentData, SettingsAcceptRate } from '../types/generalTypes';
 import { emptyReceiptEntryTime } from '../types/reducers/declaration';
-import type { QAState } from '../components/QuestionAnswer/QuestionAnswerContainer';
+import type { QAState } from '../components/QuestionAnswer/types/questionAnswerTypes';
 import { initialQAState } from '../components/QuestionAnswer/QuestionAnswerContainer';
 
 /**
