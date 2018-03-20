@@ -19,6 +19,7 @@ import {
   fetchBasket,
   fetchMainCategories,
   fetchPeople,
+  fetchQAState,
   fetchReceiptEntryTime,
   fetchSettingsAcceptRate,
   storeSettingsAcceptRate,
@@ -233,6 +234,12 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   initABP: () => {
+    fetchQAState().then(qaState => {
+      dispatch({
+        type: 'SET_QA_STATE',
+        qaState,
+      });
+    });
     fetchBasket().then(basket => {
       dispatch({
         type: 'SET_BASKET',
