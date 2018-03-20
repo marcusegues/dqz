@@ -22,6 +22,8 @@ import { makePeopleRecord } from '../../model/types/basketPeopleAmountsTypes';
 
 import { makePaymentDataRecord } from '../generalTypes';
 import type { PaymentData } from '../generalTypes';
+import type { QAState } from '../../components/QuestionAnswer/QuestionAnswerContainer';
+import { initialQAState } from '../../components/QuestionAnswer/QuestionAnswerContainer';
 
 export type MeatCategories = ImmutableSetType<MeatCategory>;
 export const meatCategories: MeatCategories = Immutable.Set(['Meat']);
@@ -143,6 +145,7 @@ type DeclarationStateObj = {
   amounts: Amounts,
   paymentData: PaymentData,
   receiptEntryTime: string,
+  qaState: QAState,
 };
 
 export const getInitialDeclarationState: RecordFactory<
@@ -154,6 +157,7 @@ export const getInitialDeclarationState: RecordFactory<
   amounts: emptyAmounts,
   paymentData: makePaymentDataRecord(),
   receiptEntryTime: emptyReceiptEntryTime,
+  qaState: initialQAState,
 });
 
 export type DeclarationState = RecordOf<DeclarationStateObj>;

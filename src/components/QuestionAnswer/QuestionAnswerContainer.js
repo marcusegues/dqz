@@ -52,6 +52,7 @@ import {
   storeBasket,
   storeMainCategories,
   storePeople,
+  storeQAState,
 } from '../../asyncStorage/storageApi';
 import { MainContentContainer } from '../MainContentContainer/MainContentContainer';
 import {
@@ -59,6 +60,7 @@ import {
   setQuestionSeen,
   setQuestionSeenInState,
 } from './QAControl/controlQuestionSeen';
+import { isInitBasket } from '../../utils/declaration/declaration';
 
 export type QuestionType =
   | 'peopleInput'
@@ -121,6 +123,30 @@ type QuestionAnswerContainerProps = {
   t: TFunction,
 };
 
+export const initialQAState = {
+  questionStates: {
+    peopleInput: 'expanded',
+    mainCategories: 'hidden',
+    quantityInput: 'hidden',
+    amounts: 'hidden',
+    largeAmounts: 'hidden',
+  },
+  questionFlag: {
+    peopleInput: 'complete',
+    mainCategories: 'incomplete',
+    quantityInput: 'incomplete',
+    amounts: 'incomplete',
+    largeAmounts: 'incomplete',
+  },
+  questionSeen: {
+    peopleInput: false,
+    mainCategories: false,
+    quantityInput: false,
+    amounts: false,
+    largeAmounts: false,
+  },
+};
+
 class QuestionAnswerContainerInner extends React.Component<
   QuestionAnswerContainerProps,
   QAState
@@ -131,29 +157,7 @@ class QuestionAnswerContainerInner extends React.Component<
 
   constructor(props) {
     super(props);
-    this.state = {
-      questionStates: {
-        peopleInput: 'expanded',
-        mainCategories: 'hidden',
-        quantityInput: 'hidden',
-        amounts: 'hidden',
-        largeAmounts: 'hidden',
-      },
-      questionFlag: {
-        peopleInput: 'complete',
-        mainCategories: 'incomplete',
-        quantityInput: 'incomplete',
-        amounts: 'incomplete',
-        largeAmounts: 'incomplete',
-      },
-      questionSeen: {
-        peopleInput: false,
-        mainCategories: false,
-        quantityInput: false,
-        amounts: false,
-        largeAmounts: false,
-      },
-    };
+    this.state = initialQAState;
   }
 
   componentWillMount() {
@@ -161,8 +165,27 @@ class QuestionAnswerContainerInner extends React.Component<
   }
 
   componentDidMount() {
-    this.initState();
+    const {
+      people,
+      basket,
+      mainCategories,
+      amounts,
+      receiptEntryTime,
+      qaState,
+    } = this.props;
+    console.log('mounting');
+    if (
+      isInitBasket(people, basket, mainCategories, amounts, receiptEntryTime)
+    ) {
+      this.initState();
+    } else {
+      this.setState(qaState);
+    }
     analyticsPeopleChanged(this.props.people);
+  }
+
+  componentWillUnmount() {
+    this.props.saveQAState(this.state);
   }
 
   enrichState(): QAStateEnriched {
@@ -250,7 +273,6 @@ class QuestionAnswerContainerInner extends React.Component<
       setBasket,
       setAmounts,
     } = this.props;
-
     const qaStateEnriched: QAStateEnriched = this.enrichState();
 
     const flatListData = [
@@ -504,9 +526,17 @@ const mapStateToProps = state => ({
   mainCategories: getMainCategories(state),
   currencies: getCurrencies(state),
   currencyDate: getFormattedCurrencyDate(state),
+  qaState: getQAState(state),
 });
 
 const mapDispatchToProps = dispatch => ({
+  saveQAState: (qaState: QAState) => {
+    storeQAState(qaState);
+    dispatch({
+      type: 'SET_QA_STATE',
+      qaState,
+    });
+  },
   setPeople: (people: People) => {
     storePeople(people);
     dispatch({

@@ -32,6 +32,8 @@ import type { Receipt } from '../types/receiptTypes';
 import type { KeyNotSetType } from './asyncStorage';
 import type { PaymentData } from '../types/generalTypes';
 import { emptyReceiptEntryTime } from '../types/reducers/declaration';
+import type { QAState } from '../components/QuestionAnswer/QuestionAnswerContainer';
+import { initialQAState } from '../components/QuestionAnswer/QuestionAnswerContainer';
 
 /**
  * Stores item (stringified) under key - do NOT use directly!
@@ -131,12 +133,20 @@ export const storePaymentData = (paymentData: PaymentData) =>
 export const storeReceiptEntryTime = (receiptEntryTime: string) =>
   storeItem('ReceiptEntryTime', receiptEntryTime);
 
+/**
+ * Stores qaState
+ * @param qaState
+ * @returns {Promise<boolean>}
+ */
+export const storeQAState = (qaState: QAState) => storeItem('QAState', qaState);
+
 export const storeClearDeclaration = () => {
   storeMainCategories(Immutable.Set());
   storeBasket(emptyBasket);
   storePeople(initPeople);
   storeAmounts(initAmounts);
   storeReceiptEntryTime(emptyReceiptEntryTime);
+  storeQAState(initialQAState);
 };
 
 /**

@@ -19,6 +19,7 @@ import type {
 import type { CurrencyObject } from '../../model/currencies';
 import type { PaymentData } from '../../types/generalTypes';
 import type { ConnectivityType } from '../../types/connectivity';
+import type { QAState } from '../../components/QuestionAnswer/QuestionAnswerContainer';
 
 /**
  * Gets basket in application state
@@ -59,6 +60,14 @@ export const getMainCategories = (state: AppState): MainCategories =>
  */
 export const getSettings = (state: AppState): Settings =>
   declarationApi.getSettings(state.declaration);
+
+/**
+ * Gets settings in application state
+ * @param state
+ * @returns {Settings}
+ */
+export const getQAState = (state: AppState): QAState =>
+  declarationApi.getQAState(state.declaration);
 
 /**
  * Gets currencies in application state

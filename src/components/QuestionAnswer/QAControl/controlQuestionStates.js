@@ -28,15 +28,24 @@ const setQuestionState = (
 ): QAStateEnriched => Object.assign({}, qaState, { questionStates });
 
 export const setInitStates = (qaState: QAStateEnriched): QAStateEnriched => {
-  const { settings } = qaState;
+  const { settings, questionSeen } = qaState;
   const main = settings.get('mainCategories');
+  debugger;
   return setQuestionState(qaState, {
     peopleInput: main.size ? 'collapsed' : 'expanded',
-    mainCategories: main.size ? 'collapsed' : 'hidden',
+    mainCategories:
+      questionSeen.mainCategories && main.size ? 'collapsed' : 'hidden',
     quantityInput:
-      main.size && !singleOtherGoodsMainCategory(main) ? 'collapsed' : 'hidden',
-    amounts: main.size ? 'collapsed' : 'hidden',
-    largeAmounts: showLargeAmountsQuestion(qaState) ? 'collapsed' : 'hidden',
+      questionSeen.quantityInput &&
+      main.size &&
+      !singleOtherGoodsMainCategory(main)
+        ? 'collapsed'
+        : 'hidden',
+    amounts: questionSeen.amounts && main.size ? 'collapsed' : 'hidden',
+    largeAmounts:
+      questionSeen.largeAmounts && showLargeAmountsQuestion(qaState)
+        ? 'collapsed'
+        : 'hidden',
   });
 };
 
@@ -156,10 +165,12 @@ export const setQuestionStates = (
         mainCategoriesState = 'collapsed';
         quantityInputState = backNav(direction);
       }
-      amountsState = 'collapsed';
+
       if (showLargeAmountsQuestion(qaState)) {
+        amountsState = 'collapsed';
         largeAmountsState = fwdNav(direction);
       } else {
+        amountsState = 'expanded';
         largeAmountsState = 'hidden';
         if (direction === 'forward') {
           navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
@@ -170,10 +181,12 @@ export const setQuestionStates = (
     case 'largeAmounts': {
       peopleInputState = 'collapsed';
       mainCategoriesState = 'collapsed';
-      if (singleOtherGoodsMainCategory(mainCategories)) {
-        quantityInputState = 'hidden';
+      if (!singleOtherGoodsMainCategory(mainCategories)) {
+        quantityInputState = 'collapsed';
       }
       amountsState = backNav(direction);
+
+      largeAmountsState = 'expanded';
       if (direction === 'forward') {
         navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
       }

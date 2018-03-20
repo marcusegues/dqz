@@ -169,6 +169,9 @@ export const declaration = (
       const receiptEntryTime: string = action.receiptEntryTime;
       return state.set('receiptEntryTime', receiptEntryTime);
     }
+    case 'SET_QA_STATE': {
+      return state.set('qaState', action.qaState);
+    }
     default: {
       return state;
     }
@@ -195,3 +198,6 @@ export const getPaymentData = (state: DeclarationState): PaymentData =>
 
 export const getReceiptEntryTime = (state: DeclarationState): string =>
   state.get('receiptEntryTime');
+
+export const getQAState = (state: DeclarationState): QAState =>
+  state.get('qaState');
