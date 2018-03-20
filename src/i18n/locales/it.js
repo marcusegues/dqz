@@ -821,7 +821,7 @@ export const it: Locale = {
       "(informazioni sulla restituzione dell'IVA e sugli acquisti esenti da imposta in Svizzera [Tax free] sono disponibili qui).",
 
     legal: 'Aspetti legali',
-    usage: 'Uso',
+    usage: 'Utilizzo',
     legalText1:
       'L’imposizione con l’app è vincolante (art. 33 della legge del 18 marzo 2005 sulle dogane, RS 631.0). L’omessa oppure errata dichiarazione di merci vietate, soggette all’obbligo di autorizzazione o soggette al pagamento di tributi è dunque punibile.',
     legalText2:

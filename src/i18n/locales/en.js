@@ -802,7 +802,7 @@ export const en: Locale = {
       '(information concerning the refund of Swiss VAT and tax-free shopping in Switzerland can be found here ).',
 
     legal: 'Legal aspects',
-    usage: 'Usage',
+    usage: 'Use',
     legalText1:
       'Customs clearance with the app is binding (Art. 33 of the Customs Act, SR 631.0). You commit a criminal offence if you do not declare or falsely declare prohibited or dutiable goods or ones that require authorisation.',
     legalText2:

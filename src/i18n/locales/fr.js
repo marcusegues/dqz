@@ -769,7 +769,7 @@ export const fr: Locale = {
     toContactForm: '',
   },
   legalNoticeInformation: {
-    navigationHeaderTitle: 'Infos importantes',
+    navigationHeaderTitle: 'Informations relatives à l’utilisation de QuickZoll',
     conditions: 'Conditions-cadres',
     importantSoon: "L'essentiel en bref",
     importantSoonText1:
@@ -779,7 +779,7 @@ export const fr: Locale = {
     importantSoonText3:
       'Vous ne pouvez utiliser QuickZoll que pour les marchandises que vous importez pour votre usage privé ou pour en faire cadeau.',
     importantSoonText4:
-      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7% soit également appli-qué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé par du personnel de l'Administration fédé-rale des douanes (AFD).",
+      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7% soit également appliqué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé par du personnel de l'Administration fédérale des douanes (AFD).",
     importantSoonText5:
       'Les redevances ne peuvent être payées que par carte de crédit (Visa, Mastercard). Les marchandises sont dédouanées une fois que les redevances ont été payées.',
     importantSoonText6:
@@ -787,7 +787,7 @@ export const fr: Locale = {
     importantSoonText7:
       "À l'issue du dédouanement avec QuickZoll, vous pouvez entrer en Suisse par tous les passages frontières officiels, indépendamment du fait qu'ils soient occupés ou non par du personnel de l'AFD. Dans les aéroports, vous pouvez emprunter la voie verte.",
     importantSoonText8:
-      "La quittance doit être présentée sur demande au personnel de l'AFD. Celui-ci la photo-graphie si nécessaire.",
+      "La quittance doit être présentée sur demande au personnel de l'AFD. Celui-ci la photographie si nécessaire.",
     importantSoonText9:
       "Il n'est pas nécessaire de s'enregistrer. Aucune donnée n'est collectée.",
     importantSoonBoldText1:
@@ -797,17 +797,17 @@ export const fr: Locale = {
     howToDeclareYourGoodsText1:
       "Déclarez toutes les marchandises que vous transportez (à l'exception des effets person-nels et des provisions de voyage). Les franchises quantitatives et les fran-chises-valeur auxquelles vous avez droit seront déduites automatiquement lors du dé-douanement.",
     howToDeclareYourGoodsText2:
-      'Saisissez la valeur en devise étrangère figurant sur le justificatif de paiement. Celle-ci se-ra convertie en francs selon le taux de change (vente) de la veille (dernier jour ouvrable).',
+      'Saisissez la valeur en devise étrangère figurant sur le justificatif de paiement. Celle-ci sera convertie en francs selon le taux de change (vente) de la veille (dernier jour ouvrable).',
     howToDeclareYourGoodsText3:
-      "Définissez un délai de deux heures pour vous permettre de franchir la frontière. La quit-tance établie n'est valable que pendant ce délai. Si vous ne pouvez pas respecter le délai choisi, vous devez vous rendre à un passage frontière occupé par du personnel de l'AFD et expliquer pourquoi vous n'avez pas pu entrer en Suisse dans le délai de validité de la quittance. En l'absence de justification crédible, les redevances seront perçues une nouvelle fois.",
+      "Définissez un délai de deux heures pour vous permettre de franchir la frontière. La quittance établie n'est valable que pendant ce délai. Si vous ne pouvez pas respecter le délai choisi, vous devez vous rendre à un passage frontière occupé par du personnel de l'AFD et expliquer pourquoi vous n'avez pas pu entrer en Suisse dans le délai de validité de la quittance. En l'absence de justification crédible, les redevances seront perçues une nouvelle fois.",
     howToDeclareYourGoodsText4:
       'Toutes les personnes pour lesquelles la quittance est valable doivent entrer ensemble en Suisse.',
     howToDeclareYourGoodsText5:
-      "Vous pouvez corriger votre déclaration à tout moment avant le paiement. Après le paie-ment, vous ne pouvez plus effectuer aucune correction dans QuickZoll. Vous devez dé-clarer à un passage frontière occupé par du personnel de l'AFD les marchandises étran-gères supplémentaires achetées après le paiement.",
+      "Vous pouvez corriger votre déclaration à tout moment avant le paiement. Après le paiement, vous ne pouvez plus effectuer aucune correction dans QuickZoll. Vous devez déclarer à un passage frontière occupé par du personnel de l'AFD les marchandises étran-gères supplémentaires achetées après le paiement.",
     howToDeclareYourGoodsText6:
       "Il est nécessaire d'être connecté à Internet pour mener à bien l'opération de paiement. S'il n'est pas possible d'effectuer le dédouanement à l'aide de QuickZoll (par ex. absence de connexion à Internet ou impossibilité de payer les redevances avec une carte de crédit), vous devez déclarer les marchandises auprès d'un passage frontière occupé par du personnel de l'AFD ou par l'intermédiaire d'une boîte à déclarations.",
     howToDeclareYourGoodsText7:
-      'Assurez-vous de pouvoir afficher la quittance sur votre terminal mobile en cas de con-trôle lors du franchissement de la frontière. Veuillez noter que pendant le délai de validité de la quittance, une image de celle-ci transmise à des tiers par WhatsApp, iMessage, SMS ou courriel ne sera pas acceptée comme quittance. Vous devez conserver pendant au moins un an la quittance reçue.',
+      'Assurez-vous de pouvoir afficher la quittance sur votre terminal mobile en cas de contrôle lors du franchissement de la frontière. Veuillez noter que pendant le délai de validité de la quittance, une image de celle-ci transmise à des tiers par WhatsApp, iMessage, SMS ou courriel ne sera pas acceptée comme quittance. Vous devez conserver pendant au moins un an la quittance reçue.',
 
     specialCases: 'Cas particuliers',
     specialCasesText1:
