@@ -19,6 +19,8 @@ import {
   getMainCategories,
   getCurrencies,
   getFormattedCurrencyDate,
+  getQAState,
+  getReceiptEntryTime,
 } from '../../reducers/selectors';
 import type {
   Amounts,
@@ -118,6 +120,8 @@ type QuestionAnswerContainerProps = {
   amounts: Amounts,
   people: People,
   mainCategories: MainCategories,
+  receiptEntryTime: string,
+  qaState: QAState,
   currencies: CurrencyObject,
   currencyDate: string,
   t: TFunction,
@@ -526,6 +530,7 @@ const mapStateToProps = state => ({
   mainCategories: getMainCategories(state),
   currencies: getCurrencies(state),
   currencyDate: getFormattedCurrencyDate(state),
+  receiptEntryTime: getReceiptEntryTime(state),
   qaState: getQAState(state),
 });
 

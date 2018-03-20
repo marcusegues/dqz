@@ -13,6 +13,7 @@ import type {
 import type { DirectionType } from '../../../../QuestionAnswerContainer';
 import type { TFunction } from '../../../../../../types/generalTypes';
 import type { MainCategory } from '../../../../../../types/reducers/declaration';
+import { anyQuantitiesInBasket } from '../../../../QAControl/controlQuestionFlag';
 
 type QuantityInputConfirmationCardProps = {
   onShowQuantityInputModal: (
@@ -40,6 +41,7 @@ const QuantityInputConfirmationCardInner = ({
     text={t('quantityInput')}
     onAnswer={() => onAnswer('forward')}
     onBack={() => onAnswer('back')}
+    confirmationDisabled={!anyQuantitiesInBasket(basket)}
     onInfoIconPress={() =>
       dispatch({ type: 'NAVIGATE', screen: 'DutyAllowance' })
     }

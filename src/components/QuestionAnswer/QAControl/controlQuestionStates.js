@@ -10,6 +10,7 @@ import { getTotalPeople } from '../../../model/configurationApi';
 import { hasLargeAmount } from '../../../model/utils';
 import type { Navigation } from '../../../types/generalTypes';
 import type { MainCategories } from '../../../types/reducers/declaration';
+import { anyQuantitiesInBasket } from './controlQuestionFlag';
 
 const singleOtherGoodsMainCategory = (
   mainCategories: MainCategories
@@ -30,7 +31,6 @@ const setQuestionState = (
 export const setInitStates = (qaState: QAStateEnriched): QAStateEnriched => {
   const { settings, questionSeen } = qaState;
   const main = settings.get('mainCategories');
-  debugger;
   return setQuestionState(qaState, {
     peopleInput: main.size ? 'collapsed' : 'expanded',
     mainCategories:
@@ -64,136 +64,112 @@ export const setQuestionStates = (
   const { settings, questionSeen } = qaState;
   const mainCategories = settings.get('mainCategories');
   // do case analysis
-  let peopleInputState: QuestionState = 'hidden';
-  let mainCategoriesState: QuestionState = 'hidden';
-  let quantityInputState: QuestionState = 'hidden';
-  let amountsState: QuestionState = 'hidden';
-  let largeAmountsState: QuestionState = 'hidden';
+  let peopleInputState: QuestionState = qaState.questionStates.peopleInput;
+  let mainCategoriesState: QuestionState =
+    qaState.questionStates.mainCategories;
+  let quantityInputState: QuestionState = qaState.questionStates.quantityInput;
+  let amountsState: QuestionState = qaState.questionStates.amounts;
+  let largeAmountsState: QuestionState = qaState.questionStates.largeAmounts;
 
-  switch (justAnswered) {
-    case 'peopleInput': {
-      if (direction === 'back') {
-        navigation.dispatch({ type: 'GO_BACK' });
-      }
-      peopleInputState = 'collapsed';
-      mainCategoriesState = fwdNav(direction);
-      if (
-        !singleOtherGoodsMainCategory(mainCategories) &&
-        mainCategories.size &&
-        questionSeen.mainCategories
-      ) {
-        quantityInputState = 'collapsed';
-      }
-
-      if (mainCategories.size && questionSeen.amounts) {
-        amountsState = 'collapsed';
-      }
-      if (showLargeAmountsQuestion(qaState) && questionSeen.largeAmounts) {
-        largeAmountsState = 'collapsed';
-      }
-
-      break;
-    }
-    case 'mainCategories': {
-      peopleInputState = backNav(direction);
-      if (direction === 'back') {
-        mainCategoriesState = 'collapsed';
-        if (singleOtherGoodsMainCategory(mainCategories)) {
-          quantityInputState = 'hidden';
-          amountsState = questionSeen.amounts ? fwdNav(direction) : 'hidden';
+  switch (direction) {
+    case 'back': {
+      switch (justAnswered) {
+        case 'peopleInput': {
+          navigation.dispatch({ type: 'GO_BACK' });
+          break;
         }
-        largeAmountsState =
-          showLargeAmountsQuestion(qaState) && questionSeen.largeAmounts
+        case 'mainCategories': {
+          peopleInputState = 'expanded';
+          mainCategoriesState = mainCategories.size ? 'collapsed' : 'hidden';
+          break;
+        }
+        case 'quantityInput': {
+          mainCategoriesState = 'expanded';
+          quantityInputState = anyQuantitiesInBasket(qaState.basket)
             ? 'collapsed'
             : 'hidden';
-        break;
+          break;
+        }
+        case 'amounts': {
+          amountsState = qaState.amounts.size ? 'collapsed' : 'hidden';
+          if (singleOtherGoodsMainCategory(mainCategories)) {
+            mainCategoriesState = 'expanded';
+          } else {
+            quantityInputState = 'expanded';
+          }
+          break;
+        }
+        case 'largeAmounts': {
+          largeAmountsState = 'collapsed';
+          amountsState = 'expanded';
+          break;
+        }
+        default:
       }
-      if (direction === 'update') {
-        mainCategoriesState = 'expanded';
-        if (
-          mainCategories.size &&
-          !singleOtherGoodsMainCategory(mainCategories) &&
-          questionSeen.quantityInput
-        ) {
+      break;
+    }
+    case 'forward': {
+      switch (justAnswered) {
+        case 'peopleInput': {
+          peopleInputState = 'collapsed';
+          mainCategoriesState = 'expanded';
+          break;
+        }
+        case 'mainCategories': {
+          mainCategoriesState = 'collapsed';
+          if (singleOtherGoodsMainCategory(mainCategories)) {
+            amountsState = 'expanded';
+          } else {
+            quantityInputState = 'expanded';
+          }
+          break;
+        }
+        case 'quantityInput': {
           quantityInputState = 'collapsed';
+          amountsState = 'expanded';
+          break;
         }
-        amountsState =
-          mainCategories.size && questionSeen.amounts ? 'collapsed' : 'hidden';
-        largeAmountsState =
-          questionSeen.largeAmounts && showLargeAmountsQuestion(qaState)
-            ? 'collapsed'
-            : 'hidden';
-        break;
-      } else {
-        mainCategoriesState = 'collapsed';
-      }
-      if (singleOtherGoodsMainCategory(mainCategories)) {
-        quantityInputState = 'hidden';
-        amountsState = fwdNav(direction);
-        break;
-      } else {
-        quantityInputState = fwdNav(direction);
-        amountsState = questionSeen.amounts ? 'collapsed' : 'hidden';
-      }
-
-      if (showLargeAmountsQuestion(qaState) && questionSeen.largeAmounts) {
-        largeAmountsState = 'collapsed';
-      }
-      break;
-    }
-    case 'quantityInput': {
-      peopleInputState = 'collapsed';
-      quantityInputState = 'collapsed';
-      mainCategoriesState = backNav(direction);
-      if (direction === 'back') {
-        amountsState = questionSeen.amounts ? fwdNav(direction) : 'hidden';
-      } else {
-        amountsState = fwdNav(direction);
-      }
-      if (showLargeAmountsQuestion(qaState) && questionSeen.largeAmounts) {
-        largeAmountsState = 'collapsed';
-      }
-      break;
-    }
-    case 'amounts': {
-      peopleInputState = 'collapsed';
-
-      if (singleOtherGoodsMainCategory(mainCategories)) {
-        mainCategoriesState = backNav(direction);
-        quantityInputState = 'hidden';
-      } else {
-        mainCategoriesState = 'collapsed';
-        quantityInputState = backNav(direction);
-      }
-
-      if (showLargeAmountsQuestion(qaState)) {
-        amountsState = 'collapsed';
-        largeAmountsState = fwdNav(direction);
-      } else {
-        amountsState = 'expanded';
-        largeAmountsState = 'hidden';
-        if (direction === 'forward') {
+        case 'amounts': {
+          if (showLargeAmountsQuestion(qaState)) {
+            amountsState = 'collapsed';
+            largeAmountsState = 'expanded';
+          } else {
+            navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
+          }
+          break;
+        }
+        case 'largeAmounts': {
           navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
+          break;
         }
+        default:
       }
       break;
     }
-    case 'largeAmounts': {
-      peopleInputState = 'collapsed';
-      mainCategoriesState = 'collapsed';
-      if (!singleOtherGoodsMainCategory(mainCategories)) {
-        quantityInputState = 'collapsed';
-      }
-      amountsState = backNav(direction);
-
-      largeAmountsState = 'expanded';
-      if (direction === 'forward') {
-        navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
+    case 'update': {
+      switch (justAnswered) {
+        case 'peopleInput': {
+          break;
+        }
+        case 'mainCategories': {
+          break;
+        }
+        case 'quantityInput': {
+          break;
+        }
+        case 'amounts': {
+          break;
+        }
+        case 'largeAmounts': {
+          break;
+        }
+        default:
       }
       break;
     }
     default:
   }
+
   return setQuestionState(qaState, {
     peopleInput: peopleInputState,
     mainCategories: mainCategoriesState,
