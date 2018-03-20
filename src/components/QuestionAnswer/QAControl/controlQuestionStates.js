@@ -10,7 +10,7 @@ import { getTotalPeople } from '../../../model/configurationApi';
 import { hasLargeAmount } from '../../../model/utils';
 import type { Navigation } from '../../../types/generalTypes';
 import type { MainCategories } from '../../../types/reducers/declaration';
-import { anyQuantitiesInBasket } from './controlQuestionFlag';
+import { anyQuantitiesInBasket, flagRules } from './controlQuestionFlag';
 
 const singleOtherGoodsMainCategory = (
   mainCategories: MainCategories
@@ -56,12 +56,24 @@ export const setQuestionStates = (
   const { settings } = qaState;
   const mainCategories = settings.get('mainCategories');
   // do case analysis
-  let peopleInputState: QuestionState = qaState.questionStates.peopleInput;
-  let mainCategoriesState: QuestionState =
-    qaState.questionStates.mainCategories;
-  let quantityInputState: QuestionState = qaState.questionStates.quantityInput;
-  let amountsState: QuestionState = qaState.questionStates.amounts;
-  let largeAmountsState: QuestionState = qaState.questionStates.largeAmounts;
+  const newQuestionStates = {
+    peopleInput:
+      flagRules('peopleInput', qaState) === 'complete' ? 'collapsed' : 'hidden',
+    mainCategories:
+      flagRules('mainCategories', qaState) === 'complete'
+        ? 'collapsed'
+        : 'hidden',
+    quantityInput:
+      flagRules('quantityInput', qaState) === 'complete'
+        ? 'collapsed'
+        : 'hidden',
+    amounts:
+      flagRules('amounts', qaState) === 'complete' ? 'collapsed' : 'hidden',
+    largeAmounts:
+      flagRules('largeAmounts', qaState) === 'complete'
+        ? 'collapsed'
+        : 'hidden',
+  };
 
   switch (direction) {
     case 'back': {
@@ -71,29 +83,24 @@ export const setQuestionStates = (
           break;
         }
         case 'mainCategories': {
-          peopleInputState = 'expanded';
-          mainCategoriesState = mainCategories.size ? 'collapsed' : 'hidden';
+          newQuestionStates.peopleInput = 'expanded';
           break;
         }
         case 'quantityInput': {
-          mainCategoriesState = 'expanded';
-          quantityInputState = anyQuantitiesInBasket(qaState.basket)
-            ? 'collapsed'
-            : 'hidden';
+          newQuestionStates.mainCategories = 'expanded';
           break;
         }
         case 'amounts': {
-          amountsState = qaState.amounts.size ? 'collapsed' : 'hidden';
+          amounts = qaState.amounts.size ? 'collapsed' : 'hidden';
           if (singleOtherGoodsMainCategory(mainCategories)) {
-            mainCategoriesState = 'expanded';
+            newQuestionStates.mainCategories = 'expanded';
           } else {
-            quantityInputState = 'expanded';
+            newQuestionStates.quantityInput = 'expanded';
           }
           break;
         }
         case 'largeAmounts': {
-          largeAmountsState = 'collapsed';
-          amountsState = 'expanded';
+          newQuestionStates.amounts = 'expanded';
           break;
         }
         default:
@@ -103,28 +110,24 @@ export const setQuestionStates = (
     case 'forward': {
       switch (justAnswered) {
         case 'peopleInput': {
-          peopleInputState = 'collapsed';
-          mainCategoriesState = 'expanded';
+          newQuestionStates.mainCategories = 'expanded';
           break;
         }
         case 'mainCategories': {
-          mainCategoriesState = 'collapsed';
           if (singleOtherGoodsMainCategory(mainCategories)) {
-            amountsState = 'expanded';
+            newQuestionStates.amounts = 'expanded';
           } else {
-            quantityInputState = 'expanded';
+            newQuestionStates.quantityInput = 'expanded';
           }
           break;
         }
         case 'quantityInput': {
-          quantityInputState = 'collapsed';
-          amountsState = 'expanded';
+          newQuestionStates.amounts = 'expanded';
           break;
         }
         case 'amounts': {
           if (showLargeAmountsQuestion(qaState)) {
-            amountsState = 'collapsed';
-            largeAmountsState = 'expanded';
+            newQuestionStates.largeAmounts = 'expanded';
           } else {
             navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
           }
@@ -141,23 +144,23 @@ export const setQuestionStates = (
     case 'update': {
       switch (justAnswered) {
         case 'peopleInput': {
+          newQuestionStates.peopleInput = 'expanded';
           break;
         }
         case 'mainCategories': {
-          if (!mainCategories.size) {
-            quantityInputState = 'hidden';
-            amountsState = 'hidden';
-            largeAmountsState = 'hidden';
-          }
+          newQuestionStates.mainCategories = 'expanded';
           break;
         }
         case 'quantityInput': {
+          newQuestionStates.quantityInput = 'expanded';
           break;
         }
         case 'amounts': {
+          newQuestionStates.amounts = 'expanded';
           break;
         }
         case 'largeAmounts': {
+          newQuestionStates.largeAmounts = 'expanded';
           break;
         }
         default:
@@ -167,13 +170,7 @@ export const setQuestionStates = (
     default:
   }
 
-  return setQuestionState(qaState, {
-    peopleInput: peopleInputState,
-    mainCategories: mainCategoriesState,
-    quantityInput: quantityInputState,
-    amounts: amountsState,
-    largeAmounts: largeAmountsState,
-  });
+  return setQuestionState(qaState, newQuestionStates);
 };
 
 export const collapseAllExistingExceptOne = (

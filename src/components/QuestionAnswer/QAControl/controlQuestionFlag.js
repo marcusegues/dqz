@@ -17,7 +17,7 @@ export const anyQuantitiesInBasket = (basket: Basket): boolean =>
           .size
     );
 
-const flagRules = (
+export const flagRules = (
   question: QuestionType,
   qaState: QAStateEnriched
 ): QuestionFlag => {
