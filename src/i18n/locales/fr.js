@@ -85,19 +85,21 @@ export const fr: Locale = {
     enterQuantities: 'Saisissez toutes les quantités de {{value}} ici.',
     enterQuantity: 'Entrer la quantité',
     enterQuantitiesButter: 'Saisissez toutes les quantités de {{value}} ici.',
-      enterQuantitiesTobacco: 'Saisissez toutes les quantités des {{value}} ici.',
-      enterQuantitiesCigarettes: 'Saisissez toutes les quantités des {{value}} ici.',
-      enterQuantitiesOil: 'Saisissez toutes les quantités {{value}} ici.',
+    enterQuantitiesTobacco: 'Saisissez toutes les quantités des {{value}} ici.',
+    enterQuantitiesCigarettes:
+      'Saisissez toutes les quantités des {{value}} ici.',
+    enterQuantitiesOil: 'Saisissez toutes les quantités {{value}} ici.',
     enterQuantitiesAlcohol: 'Saisissez toutes les quantités des {{value}} ici.',
-      enterQuantitiesMeat: 'Saisissez toutes les quantités de {{value}} ici.',
-      standardInputSubText: 'Saisissez toutes les quantités de {{category}} que vous emportez avec vous:',
-      meatInput: 'viande et préparations de viande',
-      butterInput: 'beurre et crème',
-      oilInput: 'd\'huile/graisse/margarine',
-      alcSoftInput: 'boissons alcoolisées jusqu\'à 18% vol.',
-      alcHardInput: 'boissons alcoolisées de plus de 18% vol.',
-      cigarettesInput: 'cigarettes et cigares',
-      tobaccoInput: 'autres tabacs manufacturés',
+    enterQuantitiesMeat: 'Saisissez toutes les quantités de {{value}} ici.',
+    standardInputSubText:
+      'Saisissez toutes les quantités de {{category}} que vous emportez avec vous:',
+    meatInput: 'viande et préparations de viande',
+    butterInput: 'beurre et crème',
+    oilInput: "d'huile/graisse/margarine",
+    alcSoftInput: "boissons alcoolisées jusqu'à 18% vol.",
+    alcHardInput: 'boissons alcoolisées de plus de 18% vol.',
+    cigarettesInput: 'cigarettes et cigares',
+    tobaccoInput: 'autres tabacs manufacturés',
   },
   amountInput: {
     amountInput:
@@ -191,7 +193,8 @@ export const fr: Locale = {
       'La présente quittance est valable pour un passage de la frontière suisse à partir de:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} à {{endDate}} | {{endTime}}',
-    receiptValidOn: 'La présente quittance est valable pour un passage de la frontière suisse le:',
+    receiptValidOn:
+      'La présente quittance est valable pour un passage de la frontière suisse le:',
     receiptValidOnDate: '{{date}} de {{startTime}} à {{endTime}}',
 
     sumText: 'Total (en francs): {{value}}',
@@ -850,15 +853,20 @@ export const fr: Locale = {
     dataProtection: 'Protection des données',
     dataProtectionText1:
       "L'art. 13 de la Constitution fédérale et les dispositions légales de la Confédération suisse sur la protection des données disposent que toute personne a droit à la protection de sa sphère privée ainsi qu'à la protection contre l'emploi abusif des données qui la concernent. Les autorités fédérales observent strictement ces dispositions. Les données personnelles sont traitées de façon parfaitement confidentielle et ne sont ni vendues, ni transmises à des tiers.",
+    dataProtectionText2: '',
+    dataProtectionText3: '',
+    dataProtectionText4: '',
+    dataProtectionText5: '',
     liability: 'Responsabilité',
     liabilityText1:
       'Les autorités fédérales se réservent expressément le droit de modifier, supprimer ou temporairement ne pas publier tout ou partie du contenu à tout moment sans préavis.',
     liabilityText2:
       "Les recours en responsabilité contre les autorités fédérales pour des dommages de nature matérielle ou immatérielle résultant de l'accès ou de l'utilisation ou de la non-utilisation des informations publiées, d'une mauvaise utilisation de la connexion ou de défauts techniques sont exclus.",
-      culpability: 'Culpabilité',
-      culpabilityText1: "Enregistrez les marchandises complètement et correctement. Les marchandises interdites et/ou les marchandises soumises à autorisation ne peuvent être enregistrées. Le dédouanement avec QuickZoll est obligatoire (article 33 de la loi douanière, ZG, RS 631.0). Toute personne qui omet d'enregistrer des marchandises de manière complète ou incorrecte, ou qui enregistre des marchandises interdites et/ou des marchandises soumises à autorisation, est passible de poursuites (articles 118 et 127 ZG).",
+    culpability: 'Culpabilité',
+    culpabilityText1:
+      "Enregistrez les marchandises complètement et correctement. Les marchandises interdites et/ou les marchandises soumises à autorisation ne peuvent être enregistrées. Le dédouanement avec QuickZoll est obligatoire (article 33 de la loi douanière, ZG, RS 631.0). Toute personne qui omet d'enregistrer des marchandises de manière complète ou incorrecte, ou qui enregistre des marchandises interdites et/ou des marchandises soumises à autorisation, est passible de poursuites (articles 118 et 127 ZG).",
 
-      referencesAndLinks: 'Renvois et liens',
+    referencesAndLinks: 'Renvois et liens',
     referencesAndLinksText1:
       "Les renvois et liens vers d'autres sites Internet ne sont pas de la responsabilité des autorités fédérales. L'accès à ces sites et leur utilisation se font aux risques des utilisateurs. Les autorités fédérales déclarent expressément qu'elles n'ont aucune influence sur la forme, le contenu et les offres des sites auxquels elles renvoient. Les informations et services offerts par ces sites sont entièrement de la responsabilité de leurs auteurs.",
     referencesAndLinksText2:
@@ -895,7 +903,7 @@ export const fr: Locale = {
   furtherInformationModal: {
     furtherInformation: "Plus d'informations:",
     acceptance:
-      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7 % soit également appliqué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé.",
+      'En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7 % soit également appliqué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé.',
   },
   updateTheApp: {
     title: 'Nouvelle version disponible!',
@@ -918,7 +926,8 @@ export const fr: Locale = {
   },
   acceptRateModal: {
     modalTitle: 'TVA de 7.7%',
-    modalSubTitle: 'Je confirme accepter le taux unique de TVA de 7.7% pour le dédouanement des marchandises.',
+    modalSubTitle:
+      'Je confirme accepter le taux unique de TVA de 7.7% pour le dédouanement des marchandises.',
     confirm: 'Reprendre',
   },
 };
