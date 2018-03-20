@@ -764,7 +764,7 @@ export const it: Locale = {
     importantSoonText1:
       "L'app può essere utilizzata offline ad eccezione del modulo di pagamento.",
     importantSoonText2:
-      ' Al giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll.',
+      'é consentito entrare in Svizzera una sola volta al giorno con merci imposte con QuickZoll.',
     importantSoonText3:
       'QuickZoll può essere utilizzata solo per merci importate per uso privato o come regali.',
     importantSoonText4:
