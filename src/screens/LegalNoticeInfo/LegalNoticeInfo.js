@@ -218,17 +218,6 @@ class LegalNoticeInfoInner extends React.Component<
                 text={t('legalText2')}
                 style={{ marginBottom: verticalScale(10) }}
               />
-              <AppInfoSubText
-                text={t('legalText3')}
-                style={{ marginBottom: verticalScale(10) }}
-              />
-              <BulletText text={t('legalText4')} />
-              <BulletText text={t('legalText5')} />
-              <BulletText text={t('legalText6')} />
-              <AppInfoSubText
-                text={t('legalText7')}
-                style={{ marginTop: verticalScale(10) }}
-              />
             </View>
           ) : (
             <View style={styles.contentContainer}>
@@ -244,20 +233,6 @@ class LegalNoticeInfoInner extends React.Component<
                 text={t('dataProtectionText1')}
                 style={{ marginBottom: verticalScale(10) }}
               />
-              <AppInfoSubText
-                text={t('dataProtectionText2')}
-                style={{ marginBottom: verticalScale(10) }}
-              />
-              <AppInfoSubText
-                text={t('dataProtectionText3')}
-                style={{ marginBottom: verticalScale(10) }}
-              />
-              <AppInfoSubText
-                text={t('dataProtectionText4')}
-                style={{ marginBottom: verticalScale(10) }}
-              />
-              <AppInfoSubText text={t('dataProtectionText5')} />
-
               <CardRowText
                 text={t('liability')}
                 style={styles.disclaimerTitle}
@@ -267,6 +242,14 @@ class LegalNoticeInfoInner extends React.Component<
                 style={{ marginBottom: verticalScale(10) }}
               />
               <AppInfoSubText text={t('liabilityText2')} />
+
+              <CardRowText
+                  text={t('culpability')}
+                  style={styles.disclaimerTitle}
+              />
+              <AppInfoSubText
+                  text={t('culpabilityText1')}
+              />
 
               <CardRowText
                 text={t('referencesAndLinks')}

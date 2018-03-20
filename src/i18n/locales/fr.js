@@ -105,7 +105,7 @@ export const fr: Locale = {
     amountInputLargeItem:
       "Transportez-vous des biens individuels d'une valeur supérieure à {{value}} francs?",
     amountInputLargeItemGreyBox:
-      "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300.00.",
+      "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300 (valeur nette).",
     amountInputAddItem: 'Ajouter la valeur',
     amountInputAddItemLarge: 'Ajouter un bien',
     amountInputEnterValueBeginning: 'Saisissez la valeur ',
@@ -833,7 +833,7 @@ export const fr: Locale = {
     legal: 'Informations juridiques',
     usage: 'Utilisation',
     legalText1:
-      "Le dédouanement effectué avec l'application lie la personne assujettie à l'obligation de déclarer (art. 33 de la loi sur les douanes; RS 631.0). Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
+      "Le dédouanement effectué avec l'application lie la personne assujettie à l'obligation de déclarer (art. 33 de la loi sur les douanes; RS 631.0). Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
     legalText2:
       'La personne qui présente la quittance lors du contrôle douanier est responsable du dédouanement correct des marchandises transportées. Elle assume également la responsabilité pénale en cas de découverte de marchandises non déclarées ou déclarées de façon inexacte.',
     legalText3: "Lorsque vous utilisez l'application, assurez-vous",
@@ -850,22 +850,15 @@ export const fr: Locale = {
     dataProtection: 'Protection des données',
     dataProtectionText1:
       "L'art. 13 de la Constitution fédérale et les dispositions légales de la Confédération suisse sur la protection des données disposent que toute personne a droit à la protection de sa sphère privée ainsi qu'à la protection contre l'emploi abusif des données qui la concernent. Les autorités fédérales observent strictement ces dispositions. Les données personnelles sont traitées de façon parfaitement confidentielle et ne sont ni vendues, ni transmises à des tiers.",
-    dataProtectionText2:
-      'Nous nous efforçons, en collaboration étroite avec nos hébergeurs, de protéger au mieux possible nos banques de données des intrusions externes, des pertes, du mauvais usage et de la falsification.',
-    dataProtectionText3:
-      'En étroite collaboration avec nos hébergeurs, nous nous efforçons, dans la mesure du possible, de protéger les bases de données contre tout accès non autorisé, perte, mauvaise utilisation ou contrefaçon.',
-    dataProtectionText4:
-      "En cas de prise de contact volontaire, votre adresse électronique est enregistrée dans une banque de données séparée, qui n'est pas reliée aux fichiers journaux anonymes. Vous avez à tout moment la possibilité d'annuler votre enregistrement.",
-    dataProtectionText5:
-      "Les autorités fédérales se réservent expressément le droit de modifier en partie ou en totalité le contenu du présent site, de le supprimer ou d'en suspendre temporairement la diffusion, et ce à tout moment et sans avertissement préalable. Les autorités fédérales ne sauraient être tenues pour responsables des dommages matériels ou immatériels qui pourraient être causés par l'accès aux informations diffusées ou par leur utilisation ou non-utilisation, par le mauvais usage de la connexion ou par des problèmes techniques.",
-
     liability: 'Responsabilité',
     liabilityText1:
       'Les autorités fédérales se réservent expressément le droit de modifier, supprimer ou temporairement ne pas publier tout ou partie du contenu à tout moment sans préavis.',
     liabilityText2:
       "Les recours en responsabilité contre les autorités fédérales pour des dommages de nature matérielle ou immatérielle résultant de l'accès ou de l'utilisation ou de la non-utilisation des informations publiées, d'une mauvaise utilisation de la connexion ou de défauts techniques sont exclus.",
+      culpability: 'Culpabilité',
+      culpabilityText1: "Enregistrez les marchandises complètement et correctement. Les marchandises interdites et/ou les marchandises soumises à autorisation ne peuvent être enregistrées. Le dédouanement avec QuickZoll est obligatoire (article 33 de la loi douanière, ZG, RS 631.0). Toute personne qui omet d'enregistrer des marchandises de manière complète ou incorrecte, ou qui enregistre des marchandises interdites et/ou des marchandises soumises à autorisation, est passible de poursuites (articles 118 et 127 ZG).",
 
-    referencesAndLinks: 'Renvois et liens',
+      referencesAndLinks: 'Renvois et liens',
     referencesAndLinksText1:
       "Les renvois et liens vers d'autres sites Internet ne sont pas de la responsabilité des autorités fédérales. L'accès à ces sites et leur utilisation se font aux risques des utilisateurs. Les autorités fédérales déclarent expressément qu'elles n'ont aucune influence sur la forme, le contenu et les offres des sites auxquels elles renvoient. Les informations et services offerts par ces sites sont entièrement de la responsabilité de leurs auteurs.",
     referencesAndLinksText2:
@@ -873,7 +866,7 @@ export const fr: Locale = {
 
     copyright: "Droits d'auteur",
     copyrightText1:
-      "Droits d'auteur: autorités de la Confédération suisse, 2007.",
+      "Droits d'auteur: autorités de la Confédération suisse, 2018.",
     copyrightText2:
       "Les informations que recèlent les sites Web des autorités fédérales sont mises à la disposition du public. Le téléchargement ou la copie de textes, d'illustrations, de photographies ou d'autres données n'entraîne aucun transfert de droits sur les contenus.",
     copyrightText3:
@@ -908,7 +901,7 @@ export const fr: Locale = {
     title: 'Nouvelle version disponible!',
     subtitle:
       "Veuillez mettre à jour QuickZoll. La nouvelle version est maintenant disponible dans l'App Store.",
-    buttonTextAndroid: 'Dans Play Market',
+    buttonTextAndroid: 'Dans Play Store',
     buttonTextIos: "Dans l'App Store",
   },
   units: {
@@ -924,8 +917,8 @@ export const fr: Locale = {
     gram_plural: 'grammes',
   },
   acceptRateModal: {
-    modalTitle: '🔥',
-    modalSubTitle: '🔥',
-    confirm: '🔥',
+    modalTitle: 'TVA de 7.7%',
+    modalSubTitle: 'Je confirme accepter le taux unique de TVA de 7.7% pour le dédouanement des marchandises.',
+    confirm: 'Reprendre',
   },
 };
