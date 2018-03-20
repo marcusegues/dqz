@@ -10,6 +10,9 @@ const ownStyles = {
     backgroundColor: LIGHT_GREY,
     paddingHorizontal: 16,
   },
+  container: {
+    width: '100%',
+  },
 };
 
 type AppInfoSubTextProps = {
@@ -23,7 +26,7 @@ export const AppInfoSubText = ({
   style,
   greyBox,
 }: AppInfoSubTextProps) => (
-  <View style={greyBox ? ownStyles.greyContainer : {}}>
+  <View style={greyBox ? ownStyles.greyContainer : ownStyles.container}>
     <Text
       style={{
         color: '#1A1A1A',

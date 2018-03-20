@@ -136,6 +136,7 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/images/info/vatAllowanceOver300Diagram_IT.png'),
         require('./assets/images/info/vatAllowanceOver300Diagram_EN.png'),
         require('./assets/images/info/vatAllowanceOver300Diagram_FR.png'),
+        require('./assets/images/info/vatAllowanceOver300Diagram_DE.png'),
 
         require('./assets/icons/mwst.png'),
         require('./assets/icons/iva.png'),

@@ -52,7 +52,7 @@ export const BulletText = ({
         color: MAIN_BLACK,
         fontFamily: type.light,
         lineHeight: moderateScale(18),
-        paddingLeft: scale(4),
+        paddingLeft: scale(8),
         ...style,
       }}
     >
