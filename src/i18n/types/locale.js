@@ -92,7 +92,6 @@ type QuantityInputTranslations = {
   enterQuantitiesAlcohol: string,
     enterQuantitiesOil: string,
     enterQuantitiesMeat: string,
-  enterQuantitiesAlcohol: string,
   standardInputSubText: string,
     meatInput: string,
     butterInput: string,
