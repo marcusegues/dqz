@@ -848,10 +848,9 @@ export const it: Locale = {
       'Le autorità federali si riservano espressamente il diritto di modificare, cancellare o non pubblicare temporaneamente i contenuti in toto o in parte in qualsiasi momento senza preavviso.',
     liabilityText2:
       "Sono escluse rivendicazioni di responsabilità nei confronti delle autorità federali per danni di natura materiale o immateriale derivanti dall'accesso o dall'uso o non uso delle informazioni pubblicate, in caso di uso improprio del collegamento o di errori tecnici.",
-    culpability: 'Colpevolezza',
+    culpability: 'Sanzioni penali',
     culpabilityText1:
-      'Registra la merce completamente e correttamente. Le merci vietate e/o le merci vietate soggette ad autorizzazione non possono essere registrate. Lo sdoganamento con QuickZoll è vincolante (articolo 33 del Customs Act, ZG; SR 631.0). Chiunque omette di registrare i beni in modo completo o errato, o che registra merci e/o merci vietate soggette ad autorizzazione, è passibile di azioni giudiziarie (articoli 118 e 127 ZG).',
-
+      'Annunci la merce in modo completo e correttamente. Le merci vietate e/o soggette ad autorizzazione non possono essere annunciate. Lo sdoganamento con QuickZoll è vincolante (articolo 33 della Legge doganale, LD, SR 631.0). Chiunque omette di registrare i beni in modo completo o errato, o di registrare beni proibiti e/o merci soggetti ad autorizzazione, è passibile di sanzioni penali (articoli 118 e 127 LD).',
     referencesAndLinks: 'Riferimenti e link',
     referencesAndLinksText1:
       'I riferimenti e i link che rimandano a siti web di terzi non rientrano negli ambiti di responsabilità delle autorità federali. L’utente si assume i rischi connessi all’accesso a questi siti e al loro utilizzo. Le autorità federali dichiarano espressamente di non avere alcuna influenza sull’impostazione, sui contenuti e sulle offerte dei siti web a cui rimanda. La responsabilità per le informazioni e i servizi offerti in tali siti web ricade esclusivamente sui relativi terzi.',

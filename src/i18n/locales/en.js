@@ -828,9 +828,9 @@ export const en: Locale = {
       'The Federal Authorities expressly reserve the right to change, delete or temporarily not publish contents in whole or in part at any time without notice.',
     liabilityText2:
       'Liability claims against the Federal authorities for damages of a material or immaterial nature which have arisen from the access or use or non-use of the published information, through misuse of the connection or due to technical faults are excluded.',
-    culpability: 'Culpability',
+    culpability: 'Penal sanctions',
     culpabilityText1:
-      'Register the goods completely and correctly. Prohibited goods and/or goods subject to authorization may not be registered. Customs clearance with QuickZoll is binding (Art. 33 of the Customs Act, ZG; SR 631.0). Anyone who fails to register goods completely or incorrectly, or who registers prohibited goods and/or goods subject to authorization, is liable to prosecution (Articles 118 and 127 ZG).',
+      'Declare the goods completely and correctly. Prohibited goods and/or subject to authorization cannot be declared with QuickZoll. Clearance with QuickZoll is binding (Article 33 of the Customs law, CL, SR 631.0). Anyone who fails to declare goods completely or incorrectly, or who declares prohibited goods and/or subject to authorization, is liable to penal sanctions (Articles 118 and 127 CD).',
     referencesAndLinks: 'References and links',
     referencesAndLinksText1:
       'References and links to third-party websites lie outside the scope of responsibility of the federal authorities. Users who access and/or use such websites do so at their own risk. The federal authorities explicitly declare that they have no influence whatsoever on the design, content or offers of linked sites. The relevant third party is entirely responsible for the information and services of third-party websites.',
