@@ -166,7 +166,7 @@ export const en: Locale = {
       'Please be sure to enter with this registration within two hours. This registration is valid on {{date}} from {{startTime}} to {{endTime}}.',
     timePickerRegistrationValidUntilDifferentDay:
       'Please be sure to enter with this registration within two hours. This registration is valid from {{startDate}} at {{startTime}} to {{endDate}} at {{endTime}}.',
-    timePickerRegistrationTimeInPast: '🔥',
+    timePickerRegistrationTimeInPast: 'The period you have chosen is not allowed. Please adjust your time of entry to continue.',
     timePickerTakeOverThePeriod: 'Take over the period',
     timePickerTimePrefix: '',
 
