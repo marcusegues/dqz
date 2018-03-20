@@ -25,7 +25,6 @@ import { SwipeToDelete } from '../../../../General Components/SwipeableContent/c
 import { displayedQuantityDecimalPlaces } from '../../../../../constants/declaration';
 import { quantityRounding } from '../../../../../model/utils';
 
-
 type DutyRowProps = {
   category: Category,
   quantity: number,
@@ -69,7 +68,10 @@ class DutyRowInner extends React.Component<
           />
         </OverviewInfo>
         <QuantityIcon
-          quantity={Math.max(0.0,quantityRounding(quantity - allowanceRaw, category))}
+          quantity={Math.max(
+            0.0,
+            quantityRounding(quantity - allowanceRaw, category)
+          ).toFixed(1)}
           unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
             count: Math.max(0, quantity - allowanceRaw),
           })}
