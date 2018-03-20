@@ -98,7 +98,7 @@ type QuantityInputTranslations = {
     butterInput: string,
     oilInput: string,
     alcSoftInput: string,
-    alcHardInput string,
+    alcHardInput: string,
     cigarettesInput: string,
     tobaccoInput: string,
 };
