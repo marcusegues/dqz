@@ -862,10 +862,9 @@ export const fr: Locale = {
       'Les autorités fédérales se réservent expressément le droit de modifier, supprimer ou temporairement ne pas publier tout ou partie du contenu à tout moment sans préavis.',
     liabilityText2:
       "Les recours en responsabilité contre les autorités fédérales pour des dommages de nature matérielle ou immatérielle résultant de l'accès ou de l'utilisation ou de la non-utilisation des informations publiées, d'une mauvaise utilisation de la connexion ou de défauts techniques sont exclus.",
-    culpability: 'Culpabilité',
+    culpability: 'Sanctions pénales',
     culpabilityText1:
-      "Enregistrez les marchandises complètement et correctement. Les marchandises interdites et/ou les marchandises soumises à autorisation ne peuvent être enregistrées. Le dédouanement avec QuickZoll est obligatoire (article 33 de la loi douanière, ZG, RS 631.0). Toute personne qui omet d'enregistrer des marchandises de manière complète ou incorrecte, ou qui enregistre des marchandises interdites et/ou des marchandises soumises à autorisation, est passible de poursuites (articles 118 et 127 ZG).",
-
+      "Annoncez les marchandises de manière complète et correcte. Les marchandises interdites et/ou soumises à autorisation ne peuvent pas être annoncées avec QuickZoll. Le dédouanement avec QuickZoll est contraignant (article 33 de la loi douanière, LD, SR 631.0). Toute personne qui omet d’annoncer des marchandises de manière complète ou incorrecte, ou qui annonce des marchandises interdites et/ou soumises à autorisation, est passible de sanctions pénales (articles 118 et 127 LD).",
     referencesAndLinks: 'Renvois et liens',
     referencesAndLinksText1:
       "Les renvois et liens vers d'autres sites Internet ne sont pas de la responsabilité des autorités fédérales. L'accès à ces sites et leur utilisation se font aux risques des utilisateurs. Les autorités fédérales déclarent expressément qu'elles n'ont aucune influence sur la forme, le contenu et les offres des sites auxquels elles renvoient. Les informations et services offerts par ces sites sont entièrement de la responsabilité de leurs auteurs.",
