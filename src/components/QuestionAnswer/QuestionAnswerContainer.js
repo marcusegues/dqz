@@ -1,77 +1,57 @@
+import type {ComponentType} from 'react';
 // @flow
 import React from 'react';
-import type { ComponentType } from 'react';
 // $FlowFixMe
-import { FlatList } from 'react-native';
-import { connect } from 'react-redux';
-import { translate } from 'react-i18next';
+import {FlatList} from 'react-native';
+import {connect} from 'react-redux';
+import {translate} from 'react-i18next';
 
-import { NavBar } from '../NavBar/NavBar';
-import { PeopleInputQA } from './PeopleInput/PeopleInputQA';
-import { MainCategoriesInputQA } from './MainCategoriesInput/MainCategoriesInputQA';
-import { QuantityInputQA } from './QuantityInput/QuantityInputQA';
+import {NavBar} from '../NavBar/NavBar';
+import {PeopleInputQA} from './PeopleInput/PeopleInputQA';
+import {MainCategoriesInputQA} from './MainCategoriesInput/MainCategoriesInputQA';
+import {QuantityInputQA} from './QuantityInput/QuantityInputQA';
 
 import {
-  getBasket,
-  getPeople,
-  getSettings,
-  getAmounts,
-  getMainCategories,
-  getCurrencies,
-  getFormattedCurrencyDate,
+    getAmounts,
+    getBasket,
+    getCurrencies,
+    getFormattedCurrencyDate,
+    getMainCategories,
+    getPeople,
+    getQAState,
+    getReceiptEntryTime,
+    getSettings,
 } from '../../reducers/selectors';
-import type {
-  Amounts,
-  Basket,
-  People,
-} from '../../model/types/basketPeopleAmountsTypes';
-import type {
-  MainCategories,
-  Settings,
-} from '../../types/reducers/declaration';
+import type {Amounts, Basket, People,} from '../../model/types/basketPeopleAmountsTypes';
+import type {MainCategories, Settings,} from '../../types/reducers/declaration';
 import {
-  collapseAllExistingExceptOne,
-  collapseQuestion,
-  setInitStates,
-  setQuestionStates,
+    collapseAllExistingExceptOne,
+    collapseQuestion,
+    setInitStates,
+    setQuestionStates,
 } from './QAControl/controlQuestionStates';
-import { setInitFlags, setQuestionFlag } from './QAControl/controlQuestionFlag';
-import { HeaderTitle } from '../Headers/subcomponents/HeaderTitle';
-import { onUpdateFactory } from './QAControl/validation';
-import { AmountInputQA } from './AmountInput/AmountInputQA';
-import type { CurrencyObject } from '../../model/currencies';
-import type { Navigation, TFunction } from '../../types/generalTypes';
+import {setInitFlags, setQuestionFlag} from './QAControl/controlQuestionFlag';
+import {HeaderTitle} from '../Headers/subcomponents/HeaderTitle';
+import {onUpdateFactory} from './QAControl/validation';
+import {AmountInputQA} from './AmountInput/AmountInputQA';
+import type {CurrencyObject} from '../../model/currencies';
+import type {Navigation, TFunction} from '../../types/generalTypes';
 import {
-  analyticsMainCategoriesChanged,
-  analyticsPeopleChanged,
-  analyticsScreenMounted,
+    analyticsMainCategoriesChanged,
+    analyticsPeopleChanged,
+    analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
-import { hasLargeAmount } from '../../model/utils';
-import { getTotalPeople } from '../../model/configurationApi';
+import {resetAllAmounts} from '../../model/configurationApi';
 import {
-  storeAmounts,
-  storeBasket,
-  storeMainCategories,
-  storePeople,
+    storeAmounts,
+    storeBasket,
+    storeMainCategories,
+    storePeople,
+    storeQAState,
 } from '../../asyncStorage/storageApi';
-import { MainContentContainer } from '../MainContentContainer/MainContentContainer';
-
-export type QuestionType =
-  | 'peopleInput'
-  | 'mainCategories'
-  | 'quantityInput'
-  | 'amounts'
-  | 'largeAmounts'
-  | 'none';
-
-export type QuestionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
-
-export type QuestionFlag = 'complete' | 'incomplete';
-
-export type QAState = {
-  questionStates: { [QuestionType]: QuestionState },
-  questionFlag: { [QuestionType]: QuestionFlag },
-};
+import {MainContentContainer} from '../MainContentContainer/MainContentContainer';
+import {isInitBasket} from '../../utils/declaration/declaration';
+import type {QAState, QuestionFlag, QuestionState, QuestionType} from "./types/questionAnswerTypes";
 
 export type QAStateEnriched = {
   questionStates: { [QuestionType]: QuestionState },
@@ -99,6 +79,7 @@ export type CardProps = {
 type QuestionAnswerContainerProps = {
   navigation: Navigation,
   // dispatch to props
+  saveQAState: (qaState: QAState) => void,
   setAmounts: (amounts: Amounts) => void,
   setPeople: (people: People) => void,
   setBasket: (basket: Basket) => void,
@@ -109,9 +90,28 @@ type QuestionAnswerContainerProps = {
   amounts: Amounts,
   people: People,
   mainCategories: MainCategories,
+  receiptEntryTime: string,
+  qaState: QAState,
   currencies: CurrencyObject,
   currencyDate: string,
   t: TFunction,
+};
+
+export const initialQAState = {
+  questionStates: {
+    peopleInput: 'expanded',
+    mainCategories: 'hidden',
+    quantityInput: 'hidden',
+    amounts: 'hidden',
+    largeAmounts: 'hidden',
+  },
+  questionFlag: {
+    peopleInput: 'complete',
+    mainCategories: 'incomplete',
+    quantityInput: 'incomplete',
+    amounts: 'incomplete',
+    largeAmounts: 'incomplete',
+  },
 };
 
 class QuestionAnswerContainerInner extends React.Component<
@@ -124,22 +124,7 @@ class QuestionAnswerContainerInner extends React.Component<
 
   constructor(props) {
     super(props);
-    this.state = {
-      questionStates: {
-        peopleInput: 'expanded',
-        mainCategories: 'hidden',
-        quantityInput: 'hidden',
-        amounts: 'hidden',
-        largeAmounts: 'hidden',
-      },
-      questionFlag: {
-        peopleInput: 'complete',
-        mainCategories: 'incomplete',
-        quantityInput: 'incomplete',
-        amounts: 'incomplete',
-        largeAmounts: 'incomplete',
-      },
-    };
+    this.state = initialQAState;
   }
 
   componentWillMount() {
@@ -147,8 +132,29 @@ class QuestionAnswerContainerInner extends React.Component<
   }
 
   componentDidMount() {
-    this.initState();
+    const {
+      people,
+      basket,
+      mainCategories,
+      amounts,
+      receiptEntryTime,
+    } = this.props;
+    if (
+      isInitBasket(people, basket, mainCategories, amounts, receiptEntryTime)
+    ) {
+      this.initState();
+    } else {
+      this.setReduxQAStateToComponentState();
+    }
     analyticsPeopleChanged(this.props.people);
+  }
+
+  componentWillUnmount() {
+    this.props.saveQAState(this.state);
+  }
+
+  setReduxQAStateToComponentState() {
+    this.setState(this.props.qaState);
   }
 
   enrichState(): QAStateEnriched {
@@ -206,10 +212,7 @@ class QuestionAnswerContainerInner extends React.Component<
       this.props.navigation,
       this.enrichState()
     );
-    const updateFlags: QAStateEnriched = setQuestionFlag(
-      justAnswered,
-      updateStates
-    );
+    const updateFlags: QAStateEnriched = setInitFlags(updateStates);
     this.setState(this.simplifyState(updateFlags));
   }
 
@@ -225,7 +228,6 @@ class QuestionAnswerContainerInner extends React.Component<
       t,
       basket,
       people,
-      currencies,
       mainCategories,
       settings,
       setMainCategories,
@@ -233,7 +235,6 @@ class QuestionAnswerContainerInner extends React.Component<
       setBasket,
       setAmounts,
     } = this.props;
-
     const qaStateEnriched: QAStateEnriched = this.enrichState();
 
     const flatListData = [
@@ -312,6 +313,9 @@ class QuestionAnswerContainerInner extends React.Component<
                     setMainCategories(updatedCategories).then(() => {
                       analyticsMainCategoriesChanged(updatedCategories);
                       setBasket(updatedBasket);
+                      if (!updatedCategories.size) {
+                        setAmounts(resetAllAmounts());
+                      }
                       this.updateFlagsOptimistically(
                         'mainCategories',
                         Object.assign({}, qaStateEnriched, {
@@ -411,13 +415,6 @@ class QuestionAnswerContainerInner extends React.Component<
                         amounts: updatedAmounts,
                       })
                     );
-                    const tempState = this.state;
-                    tempState.questionStates.largeAmounts =
-                      hasLargeAmount(newAmounts, currencies) &&
-                      getTotalPeople(people) > 1
-                        ? 'collapsed'
-                        : 'hidden';
-                    this.setState(tempState);
                   },
                   amounts: newAmounts,
                 },
@@ -499,9 +496,18 @@ const mapStateToProps = state => ({
   mainCategories: getMainCategories(state),
   currencies: getCurrencies(state),
   currencyDate: getFormattedCurrencyDate(state),
+  receiptEntryTime: getReceiptEntryTime(state),
+  qaState: getQAState(state),
 });
 
 const mapDispatchToProps = dispatch => ({
+  saveQAState: (qaState: QAState) => {
+    storeQAState(qaState);
+    dispatch({
+      type: 'SET_QA_STATE',
+      qaState,
+    });
+  },
   setPeople: (people: People) => {
     storePeople(people);
     dispatch({

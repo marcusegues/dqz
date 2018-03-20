@@ -133,6 +133,7 @@ export const it: Locale = {
       ' Confermare la cancellazione di questa categoria principale?',
     validateMainCategoryRemoveSubtitle:
       'Al momento determinate sottocategorie contengono delle quantità, ovvero: {{value}}',
+    validateMainCategoryAndVatRemoveSubTitle: '🔥',
     validateMainCategoryRemoveYes:
       'Sì, desidero eliminare le rispettive quantità.',
     itemsGreaterThan300CHF: 'Articoli > 300 CHF',
@@ -763,7 +764,7 @@ export const it: Locale = {
     importantSoonText1:
       "L'app può essere utilizzata offline ad eccezione del modulo di pagamento.",
     importantSoonText2:
-      ' Al giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll.',
+      'é consentito entrare in Svizzera una sola volta al giorno con merci imposte con QuickZoll.',
     importantSoonText3:
       'QuickZoll può essere utilizzata solo per merci importate per uso privato o come regali.',
     importantSoonText4:

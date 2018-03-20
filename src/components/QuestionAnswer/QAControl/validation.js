@@ -135,10 +135,15 @@ export const onUpdateFactory = (
               )})`
           )
           .join(', ');
+        const alertSubMessage = newCats.size
+          ? t('qaFlow:validateMainCategoryRemoveSubtitle', { value: problems })
+          : t('qaFlow:validateMainCategoryAndVatRemoveSubTitle', {
+              value: problems,
+            });
         const showAlert = () => {
           Alert.alert(
             t('qaFlow:validateMainCategoryRemoveTitle'),
-            t('qaFlow:validateMainCategoryRemoveSubtitle', { value: problems }),
+            alertSubMessage,
             [
               {
                 text: t('qaFlow:validateGenericNo'),
