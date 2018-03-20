@@ -2,7 +2,7 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
-import { View, Text } from 'react-native';
+import { View, Text, Platform } from 'react-native';
 import { translate } from 'react-i18next';
 
 import { scale, verticalScale, moderateScale } from '../../styles/Scaling';
@@ -10,14 +10,12 @@ import type { TFunction } from '../../types/generalTypes';
 
 const ownStyles = {
   locatorContainer: {
-    // flex: 1,
-    // flex: 0.07,
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'center',
     justifyContent: 'space-around',
-    marginTop: verticalScale(5),
+    marginTop: Platform.OS === 'ios' ? verticalScale(5) : verticalScale(10),
     marginBottom: verticalScale(10),
     paddingVertical: 10,
     paddingHorizontal: scale(15),
