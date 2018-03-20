@@ -6,7 +6,7 @@ import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
 import type { Navigation, TFunction } from '../../../../types/generalTypes';
-import { verticalScale } from '../../../../styles/Scaling';
+import { moderateScale, verticalScale } from '../../../../styles/Scaling';
 import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { BulletText } from '../../../AppInfo/subComponents/BulletText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
@@ -133,7 +133,7 @@ const CustomsProceduresInner = ({
     />
     <CardRowText
       text={t('customsProceduresText20')}
-      style={{ paddingTop: verticalScale(10) }}
+      style={{ paddingTop: moderateScale(10) }}
       greyBox
     />
     <AppInfoSubText
