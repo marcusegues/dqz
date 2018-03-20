@@ -163,6 +163,7 @@ type ModalTranslations = {
   timePickerSubTitle: string,
   timePickerRegistrationValidUntilSameDay: string,
   timePickerRegistrationValidUntilDifferentDay: string,
+  timePickerRegistrationTimeInPast: string,
   timePickerTakeOverThePeriod: string,
   closeModalText: string,
   timePickerTimePrefix: string,

@@ -169,7 +169,7 @@ export const fr: Locale = {
       'La quittance douane est valable le {{date}} de {{startTime}} à {{endTime}}.',
     timePickerRegistrationValidUntilDifferentDay:
       'La quittance douane est valable le {{startDate}} de {{startTime}} à {{endDate}} à {{endTime}}.',
-
+    timePickerRegistrationTimeInPast: 'La période que vous avez choisie n\'est pas autorisée. Veuillez vérifier votre entrée pour continuer.',
     timePickerTakeOverThePeriod: 'Reprendre la période selectionnée',
     timePickerTimePrefix: 'Heure',
 

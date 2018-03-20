@@ -169,7 +169,8 @@ export const de: Locale = {
       'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{date}} von {{startTime}} bis zum {{endTime}} Uhr gültig.',
     timePickerRegistrationValidUntilDifferentDay:
       'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{startDate}} von {{startTime}} bis {{endDate}} um {{endTime}} Uhr gültig.',
-
+    timePickerRegistrationTimeInPast:
+      'Der von ihnen gewählte Zeitraum ist nicht zulässig. Bitte überprüfen Sie Ihre Eingabe, um fortfahren zu können.',
     timePickerTakeOverThePeriod: 'Zeitraum übernehmen',
     timePickerTimePrefix: 'Uhr',
 
