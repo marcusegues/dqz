@@ -55,7 +55,6 @@ type TimePickerModalProps = {
   modalVisible: boolean,
   onHideModal: () => void,
   onSelectTime: (selectedFullDate: string) => void,
-  currentEntryTime: DateTime,
 };
 
 class TimePickerModalInner extends React.Component<
@@ -68,14 +67,26 @@ class TimePickerModalInner extends React.Component<
   };
 
   constructor(props) {
-    const { currentEntryTime } = props;
-    super();
-    this.state = {
-      date: currentEntryTime.toFormat('dd.MM.y'),
-      hours: currentEntryTime.toFormat('HH'),
-      minutes: currentEntryTime.toFormat('mm'),
-    };
+    super(props);
+    this.state = this.getCurrentDisplayedTimeObject();
   }
+
+  componentWillReceiveProps() {
+    this.setState(this.getCurrentDisplayedTimeObject());
+  }
+
+  getCurrentDisplayedTimeObject() {
+    const currentTime = DateTime.local();
+    const currentTimeObject = {
+      date: currentTime.toFormat('dd.MM.y'),
+      hours: currentTime.toFormat('HH'),
+      minutes: currentTime.toFormat('mm'),
+    };
+    this.currentTime = currentTimeObject;
+    return currentTimeObject;
+  }
+
+  currentTime: PickerState;
 
   render() {
     const { t, i18n, modalVisible, onHideModal, onSelectTime } = this.props;
@@ -85,7 +96,14 @@ class TimePickerModalInner extends React.Component<
       `${date} ${hours}:${minutes}`,
       'dd.MM.y HH:mm'
     );
+    const currentTime = DateTime.fromFormat(
+      `${this.currentTime.date} ${this.currentTime.hours}:${
+        this.currentTime.minutes
+      }`,
+      'dd.MM.y HH:mm'
+    );
     const entryTimePlus = entryTime.plus({ hours: 2 });
+
     return (
       <AppModal
         modalVisible={modalVisible}
@@ -217,6 +235,7 @@ class TimePickerModalInner extends React.Component<
 
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
+              confirmationDisabled={entryTime.valueOf() < currentTime.valueOf()}
               onPress={() => {
                 onSelectTime(
                   DateTime.fromFormat(
