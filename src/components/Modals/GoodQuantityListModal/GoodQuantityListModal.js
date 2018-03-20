@@ -125,12 +125,12 @@ class GoodQuantityListModalInner extends React.Component<
         });
       }
       case 'Cigarettes': {
-            return t('quantityInput:enterQuantities', {
+            return t('quantityInput:enterQuantitiesCigarettes', {
                 value: t(`quantityInput:cigarettesInput`),
             });
       }
       case 'Tobacco': {
-            return t('quantityInput:enterQuantities', {
+            return t('quantityInput:enterQuantitiesTobacco', {
                 value: t(`quantityInput:tobaccoInput`),
             });
       }
@@ -140,7 +140,7 @@ class GoodQuantityListModalInner extends React.Component<
             });
       }
       case 'Oils': {
-            return t('quantityInput:enterQuantities', {
+            return t('quantityInput:enterQuantitiesOil', {
                 value: t(`quantityInput:oilInput`),
             });
       }

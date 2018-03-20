@@ -91,6 +91,9 @@ export const de: Locale = {
     enterQuantitiesAlcohol:
       'Erfassen Sie hier die Mengen aller {{value}}',
       enterQuantitiesMeat: 'Erfassen Sie hier die Mengen von {{value}}',
+      enterQuantitiesTobacco: 'Erfassen Sie hier die Mengen aller {{value}}',
+      enterQuantitiesCigarettes: 'Erfassen Sie hier die Mengen aller {{value}}',
+      enterQuantitiesOil: 'Erfassen Sie hier die Mengen aller {{value}}',
     standardInputSubText:
       'Erfassen Sie die Menge von {{category}}, die Sie mit sich führen:',
       meatInput: 'Fleisch sowie Fleischzubereitungen.',
@@ -692,7 +695,7 @@ export const de: Locale = {
 
   information: {
     informationTitle: 'Wissenswertes',
-    informationSubCategoryTitle: 'Ich habe Tiere oder Pflanzen dabei',
+    informationSubCategoryTitle: 'Ich habe Waren dabei',
     customsProceduresMainText: 'Vorgehen am Zoll',
     travelDocumentsMainText: 'Reisedokumente',
     declarationMainText: 'Ich habe Waren dabei',
