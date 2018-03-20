@@ -2,6 +2,9 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
+import Touchable from 'react-native-platform-touchable';
+import { MaterialIcons } from '@expo/vector-icons';
+// $FlowFixMe
 import { View } from 'react-native';
 import { connect } from 'react-redux';
 import { Row } from '../../../../../../Rows/Row';
@@ -15,6 +18,8 @@ import { getCurrencies } from '../../../../../../../reducers/selectors';
 import { rowStyles } from '../../../../../../Rows/styles/rowStyles';
 import { CurrencyFlag } from '../../../../../../General Components/CurrencyFlag';
 import { SwipeToDelete } from '../../../../../../General Components/SwipeableContent/configured/SwipeToDelete';
+import { moderateScale } from '../../../../../../../styles/Scaling';
+import { GREY } from '../../../../../../../styles/colors';
 
 type AmountRowProps = {
   amount: number,
@@ -44,6 +49,9 @@ const AmountRowInner = ({
             />
           </View>
         </View>
+        <Touchable onPress={onDelete}>
+          <MaterialIcons name="cancel" size={moderateScale(28)} color={GREY} />
+        </Touchable>
       </View>
     </SwipeToDelete>
   </Row>

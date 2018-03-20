@@ -43,12 +43,13 @@ export const fr: Locale = {
     toPayment: 'Paiement',
     buttonContinue: 'Étape suivante',
     buttonBack: 'Retour',
-    note: 'Allusion:',
+    note: 'Remarque importante:',
     underConstruction: 'En cours',
   },
   snackBar: {
     limitExceeded:
       "Valeur des biens pour l'application dépassée. S'il vous plaît signaler vos marchandises oralement au poste-frontière.",
+    limitExceededRightText: 'Afficher les passages frontaliers',
     offline:
       "Vous êtes hors ligne. Sauf pour la fonction de paiement, cependant, vous pouvez utiliser toutes les autres fonctionnalités de l'application.",
     paymentAborted: 'Paiement annulé',
@@ -78,14 +79,27 @@ export const fr: Locale = {
       'Catégorie de marchandises:données manquantes',
   },
   quantityInput: {
-    quantityInput: 'Entrée de quantité',
-    recordedOn: 'enregistré sur',
+    quantityInput: 'Saisie de quantité',
+    recordedOn: 'enregistré sur {{value}}',
     addQuantities: 'Ajouter des quantités',
-    enterQuantities: 'Entrez toutes les quantités de {{value}} ici.',
+    enterQuantities: 'Saisissez toutes les quantités de {{value}} ici.',
     enterQuantity: 'Entrer la quantité',
-    enterQuantitiesButter: 'Entrez toutes les quantités de {{value}} ici.',
-    enterQuantitiesAlcohol: 'Entrez toutes les quantités de  {{value}} ici.',
-    standardInputSubText: '⚡️',
+    enterQuantitiesButter: 'Saisissez toutes les quantités de {{value}} ici.',
+    enterQuantitiesTobacco: 'Saisissez toutes les quantités des {{value}} ici.',
+    enterQuantitiesCigarettes:
+      'Saisissez toutes les quantités des {{value}} ici.',
+    enterQuantitiesOil: 'Saisissez toutes les quantités {{value}} ici.',
+    enterQuantitiesAlcohol: 'Saisissez toutes les quantités des {{value}} ici.',
+    enterQuantitiesMeat: 'Saisissez toutes les quantités de {{value}} ici.',
+    standardInputSubText:
+      'Saisissez toutes les quantités de {{category}} que vous emportez avec vous:',
+    meatInput: 'viande et préparations de viande',
+    butterInput: 'beurre et crème',
+    oilInput: "d'huile/graisse/margarine",
+    alcSoftInput: "boissons alcoolisées jusqu'à 18% vol.",
+    alcHardInput: 'boissons alcoolisées de plus de 18% vol.',
+    cigarettesInput: 'cigarettes et cigares',
+    tobaccoInput: 'autres tabacs manufacturés',
   },
   amountInput: {
     amountInput:
@@ -93,10 +107,10 @@ export const fr: Locale = {
     amountInputLargeItem:
       "Transportez-vous des biens individuels d'une valeur supérieure à {{value}} francs?",
     amountInputLargeItemGreyBox:
-      "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300.00.",
+      "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300 (valeur nette).",
     amountInputAddItem: 'Ajouter la valeur',
     amountInputAddItemLarge: 'Ajouter un bien',
-    amountInputEnterValueBeginning: 'Saisissez la valeur',
+    amountInputEnterValueBeginning: 'Saisissez la valeur ',
     amountInputEnterValueBoldText: 'sans la TVA étrangère (valeur nette)',
     amountInputEnterValueEnd:
       ', y compris la valeur des cadeaux reçus, la nourriture, les produits du tabac et les boissons alcoolisées.',
@@ -127,6 +141,7 @@ export const fr: Locale = {
       'Les quantités suivantes figurent actuellement dans certaines sous-catégories: {{value}}.',
     validateMainCategoryRemoveYes:
       "Oui, j'aimerais supprimer les quantités en question.",
+    itemsGreaterThan300CHF: 'Articles > 300 CHF',
   },
   modal: {
     confirmPicker: 'Reprendre {{value}}',
@@ -174,10 +189,11 @@ export const fr: Locale = {
     transactionId: 'ID de transaction (SIX): {{value}}',
 
     receiptValidFrom:
-      'La présente quittance est valable pour le passage frontalier à partir de:',
+      'La présente quittance est valable pour un passage de la frontière suisse à partir de:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} à {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Quittance valable le:',
+    receiptValidOn:
+      'La présente quittance est valable pour un passage de la frontière suisse le:',
     receiptValidOnDate: '{{date}} de {{startTime}} à {{endTime}}',
 
     sumText: 'Total (en francs): {{value}}',
@@ -702,7 +718,7 @@ export const fr: Locale = {
 
   information: {
     informationTitle: 'Informations utiles',
-    informationSubCategoryTitle: 'Je transporte des animaux ou des plantes',
+    informationSubCategoryTitle: 'Je transporte des marchandises',
     customsProceduresMainText: 'Marche à suivre lors du passage à la douane',
     travelDocumentsMainText: 'Documents de voyage',
     declarationMainText: 'Je transporte des marchandises',
@@ -762,7 +778,7 @@ export const fr: Locale = {
     importantSoonText3:
       'Vous ne pouvez utiliser QuickZoll que pour les marchandises que vous importez pour votre usage privé ou pour en faire cadeau.',
     importantSoonText4:
-      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7 % soit également appli-qué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé par du personnel de l'Administration fédé-rale des douanes (AFD).",
+      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7% soit également appli-qué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé par du personnel de l'Administration fédé-rale des douanes (AFD).",
     importantSoonText5:
       'Les redevances ne peuvent être payées que par carte de crédit (Visa, Mastercard). Les marchandises sont dédouanées une fois que les redevances ont été payées.',
     importantSoonText6:
@@ -819,7 +835,7 @@ export const fr: Locale = {
     legal: 'Informations juridiques',
     usage: 'Utilisation',
     legalText1:
-      "Le dédouanement effectué avec l'application lie la personne assujettie à l'obligation de déclarer (art. 33 de la loi sur les douanes; RS 631.0). Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
+      "Le dédouanement effectué avec l'application lie la personne assujettie à l'obligation de déclarer (art. 33 de la loi sur les douanes; RS 631.0). Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
     legalText2:
       'La personne qui présente la quittance lors du contrôle douanier est responsable du dédouanement correct des marchandises transportées. Elle assume également la responsabilité pénale en cas de découverte de marchandises non déclarées ou déclarées de façon inexacte.',
     legalText3: "Lorsque vous utilisez l'application, assurez-vous",
@@ -836,20 +852,18 @@ export const fr: Locale = {
     dataProtection: 'Protection des données',
     dataProtectionText1:
       "L'art. 13 de la Constitution fédérale et les dispositions légales de la Confédération suisse sur la protection des données disposent que toute personne a droit à la protection de sa sphère privée ainsi qu'à la protection contre l'emploi abusif des données qui la concernent. Les autorités fédérales observent strictement ces dispositions. Les données personnelles sont traitées de façon parfaitement confidentielle et ne sont ni vendues, ni transmises à des tiers.",
-    dataProtectionText2:
-      'Nous nous efforçons, en collaboration étroite avec nos hébergeurs, de protéger au mieux possible nos banques de données des intrusions externes, des pertes, du mauvais usage et de la falsification.',
-    dataProtectionText3:
-      'En étroite collaboration avec nos hébergeurs, nous nous efforçons, dans la mesure du possible, de protéger les bases de données contre tout accès non autorisé, perte, mauvaise utilisation ou contrefaçon.',
-    dataProtectionText4:
-      "En cas de prise de contact volontaire, votre adresse électronique est enregistrée dans une banque de données séparée, qui n'est pas reliée aux fichiers journaux anonymes. Vous avez à tout moment la possibilité d'annuler votre enregistrement.",
-    dataProtectionText5:
-      "Les autorités fédérales se réservent expressément le droit de modifier en partie ou en totalité le contenu du présent site, de le supprimer ou d'en suspendre temporairement la diffusion, et ce à tout moment et sans avertissement préalable. Les autorités fédérales ne sauraient être tenues pour responsables des dommages matériels ou immatériels qui pourraient être causés par l'accès aux informations diffusées ou par leur utilisation ou non-utilisation, par le mauvais usage de la connexion ou par des problèmes techniques.",
-
+    dataProtectionText2: '',
+    dataProtectionText3: '',
+    dataProtectionText4: '',
+    dataProtectionText5: '',
     liability: 'Responsabilité',
     liabilityText1:
       'Les autorités fédérales se réservent expressément le droit de modifier, supprimer ou temporairement ne pas publier tout ou partie du contenu à tout moment sans préavis.',
     liabilityText2:
       "Les recours en responsabilité contre les autorités fédérales pour des dommages de nature matérielle ou immatérielle résultant de l'accès ou de l'utilisation ou de la non-utilisation des informations publiées, d'une mauvaise utilisation de la connexion ou de défauts techniques sont exclus.",
+    culpability: 'Culpabilité',
+    culpabilityText1:
+      "Enregistrez les marchandises complètement et correctement. Les marchandises interdites et/ou les marchandises soumises à autorisation ne peuvent être enregistrées. Le dédouanement avec QuickZoll est obligatoire (article 33 de la loi douanière, ZG, RS 631.0). Toute personne qui omet d'enregistrer des marchandises de manière complète ou incorrecte, ou qui enregistre des marchandises interdites et/ou des marchandises soumises à autorisation, est passible de poursuites (articles 118 et 127 ZG).",
 
     referencesAndLinks: 'Renvois et liens',
     referencesAndLinksText1:
@@ -859,7 +873,7 @@ export const fr: Locale = {
 
     copyright: "Droits d'auteur",
     copyrightText1:
-      "Droits d'auteur: autorités de la Confédération suisse, 2007.",
+      "Droits d'auteur: autorités de la Confédération suisse, 2018.",
     copyrightText2:
       "Les informations que recèlent les sites Web des autorités fédérales sont mises à la disposition du public. Le téléchargement ou la copie de textes, d'illustrations, de photographies ou d'autres données n'entraîne aucun transfert de droits sur les contenus.",
     copyrightText3:
@@ -872,12 +886,14 @@ export const fr: Locale = {
   },
   legalNoticeModal: {
     importantNote: 'Remarque importante',
-    vatRateInfo:
-      'Veuillez noter que\n' +
-      "• vous ne pouvez entrer en Suisse qu'une fois par jour civil avec des marchandises que vous avez dédouanées avec QuickZoll;\n" +
-      '• les marchandises déclarées sont dédouanées au taux uniforme de TVA de 7,7 %;\n' +
-      "• les redevances payées avec l'application ne sont pas remboursées.\n" +
-      'Vous trouverez de plus amples informations ici:',
+    vatRateInfo: 'Veuillez noter que',
+    vatRateInfoText1:
+      "vous ne pouvez entrer en Suisse qu'une fois par jour civil avec des marchandises que vous avez dédouanées avec QuickZoll;",
+    vatRateInfoText2:
+      'les marchandises déclarées sont dédouanées au taux unique de TVA de 7,7 %;',
+    vatRateInfoText3:
+      "les redevances payées avec l'application ne sont pas remboursées.",
+    vatRateInfoText4: 'Vous trouverez de plus amples informations ici:',
     termsOfService: 'Termes et Conditions',
     acceptance: "J'accepte les termes et conditions que j'ai lus et compris.",
     confirm: 'Confirmer',
@@ -886,25 +902,31 @@ export const fr: Locale = {
   furtherInformationModal: {
     furtherInformation: "Plus d'informations:",
     acceptance:
-      "En utilisant l'application, vous acceptez que le taux de TVA est de 7,7%; est également appliqué aux biens effectivement soumis au taux d'imposition réduit (aliments, aliments pour animaux, médicaments et livres).",
+      'En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7 % soit également appliqué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé.',
   },
   updateTheApp: {
     title: 'Nouvelle version disponible!',
     subtitle:
       "Veuillez mettre à jour QuickZoll. La nouvelle version est maintenant disponible dans l'App Store.",
-    buttonTextAndroid: 'Dans Play Market',
+    buttonTextAndroid: 'Dans Play Store',
     buttonTextIos: "Dans l'App Store",
   },
   units: {
     kilo: 'kg',
-    kilo_plural: 'kgs',
+    kilo_plural: 'kg',
     kiloOrLiter: 'kg/litre',
-    kiloOrLiter_plural: 'kgs/litres',
+    kiloOrLiter_plural: 'kg/litres',
     liter: 'litre',
     liter_plural: 'litres',
     unit: 'unité',
     unit_plural: 'unités',
     gram: 'gramme',
     gram_plural: 'grammes',
+  },
+  acceptRateModal: {
+    modalTitle: 'TVA de 7.7%',
+    modalSubTitle:
+      'Je confirme accepter le taux unique de TVA de 7.7% pour le dédouanement des marchandises.',
+    confirm: 'Reprendre',
   },
 };

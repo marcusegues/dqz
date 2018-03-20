@@ -32,6 +32,7 @@ import { CategoryIcon } from '../../QuestionAnswer/Cards/ConfirmationCard/config
 import { RedPlusIcon } from './subcomponents/RedPlusIcon';
 import { getSource } from '../../QuestionAnswer/Cards/ConfirmationCard/configured/QuantityInput/subcomponents/GoodInputRow';
 import { ModalCard } from '../ModalCard';
+import { dateTimeToFormat } from '../../../utils/datetime/datetime';
 
 const ownStyles = {
   pickerCard: {
@@ -89,11 +90,16 @@ type GoodQuantityListModalState = {
 };
 
 class GoodQuantityListModalInner extends React.Component<
-  GoodQuantityListModalProps & { t: TFunction },
+  GoodQuantityListModalProps & { t: TFunction, i18n: { language: string } },
   GoodQuantityListModalState
 > {
-  constructor() {
-    super();
+  constructor(
+    props: GoodQuantityListModalProps & {
+      t: TFunction,
+      i18n: { language: string },
+    }
+  ) {
+    super(props);
     this.state = {
       pickerModalVisible: false,
     };
@@ -105,14 +111,38 @@ class GoodQuantityListModalInner extends React.Component<
     switch (modalCategory) {
       case 'Butter': {
         return t('quantityInput:enterQuantitiesButter', {
-          value: t(`categories:${modalCategory}`),
+          value: t(`quantityInput:butterInput`),
         });
       }
-      case 'AlcSoft':
+      case 'AlcSoft': {
+          return t('quantityInput:enterQuantitiesAlcohol', {
+              value: t(`quantityInput:alcSoftInput`),
+          });
+      }
       case 'AlcHard': {
         return t('quantityInput:enterQuantitiesAlcohol', {
-          value: t(`categories:${modalCategory}`),
+          value: t(`quantityInput:alcHardInput`),
         });
+      }
+      case 'Cigarettes': {
+            return t('quantityInput:enterQuantitiesCigarettes', {
+                value: t(`quantityInput:cigarettesInput`),
+            });
+      }
+      case 'Tobacco': {
+            return t('quantityInput:enterQuantitiesTobacco', {
+                value: t(`quantityInput:tobaccoInput`),
+            });
+      }
+      case 'Meat': {
+            return t('quantityInput:enterQuantitiesMeat', {
+                value: t(`quantityInput:meatInput`),
+            });
+      }
+      case 'Oils': {
+            return t('quantityInput:enterQuantitiesOil', {
+                value: t(`quantityInput:oilInput`),
+            });
       }
       default: {
         return t('quantityInput:enterQuantities', {
@@ -122,10 +152,16 @@ class GoodQuantityListModalInner extends React.Component<
     }
   }
 
+  setPickerVisibleFalse() {
+    this.setState({
+      pickerModalVisible: false,
+    });
+  }
+
   confirmPicker(amount: number) {
     const { onAddQuantity, modalCategory } = this.props;
 
-    this.togglePickerVisible();
+    this.setPickerVisibleFalse();
     if (modalCategory) {
       onAddQuantity(modalCategory, amount);
     }
@@ -139,6 +175,7 @@ class GoodQuantityListModalInner extends React.Component<
 
   render() {
     const { pickerModalVisible } = this.state;
+    const { i18n } = this.props;
     const {
       onHide,
       onDeleteQuantity,
@@ -161,8 +198,8 @@ class GoodQuantityListModalInner extends React.Component<
     return (
       <AppModal
         modalVisible={modalVisible}
-        animationIn="slideInUp"
-        animationOut="slideOutDown"
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
       >
         <ModalCard style={ownStyles.pickerCard}>
           <View style={ownStyles.container}>
@@ -183,8 +220,12 @@ class GoodQuantityListModalInner extends React.Component<
                     borderTop={idx === 0}
                     key={v4()}
                     quantity={getQuantityNumber(q)}
-                    date={DateTime.fromISO(getQuantityDate(q)).toFormat(
-                      'dd.MM.y HH:mm'
+                    date={dateTimeToFormat(
+                      DateTime.fromISO(getQuantityDate(q)),
+                      {
+                        locale: i18n.language,
+                        format: 'datetime',
+                      }
                     )}
                     category={modalCategory}
                     onDelete={() => {

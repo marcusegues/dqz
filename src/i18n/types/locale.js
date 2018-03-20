@@ -51,6 +51,7 @@ type GeneralTranslations = {
 
 type SnackBarTranslations = {
   limitExceeded: string,
+  limitExceededRightText: string,
   offline: string,
   paymentAborted: string,
   paymentFailed: string,
@@ -86,8 +87,19 @@ type QuantityInputTranslations = {
   enterQuantities: string,
   enterQuantity: string,
   enterQuantitiesButter: string,
+    enterQuantitiesCigarettes: string,
+    enterQuantitiesTobacco: string,
   enterQuantitiesAlcohol: string,
+    enterQuantitiesOil: string,
+    enterQuantitiesMeat: string,
   standardInputSubText: string,
+    meatInput: string,
+    butterInput: string,
+    oilInput: string,
+    alcSoftInput: string,
+    alcHardInput: string,
+    cigarettesInput: string,
+    tobaccoInput: string,
 };
 
 type AmountInputTranslations = {
@@ -130,6 +142,7 @@ type QAFlowTranslations = {
   validateMainCategoryRemoveSubtitle: string,
   validateMainCategoryAndVatRemoveSubTitle: string,
   validateMainCategoryRemoveYes: string,
+  itemsGreaterThan300CHF: string,
 };
 
 type ModalTranslations = {
@@ -634,6 +647,10 @@ type OverviewTranslations = {
 type LegalNoticeModalTranslations = {
   importantNote: string,
   vatRateInfo: string,
+  vatRateInfoText1: string,
+  vatRateInfoText2: string,
+  vatRateInfoText3: string,
+  vatRateInfoText4: string,
   termsOfService: string,
   acceptance: string,
   confirm: string,
@@ -657,6 +674,12 @@ type UnitsTranslations = {
   liter: string,
   unit: string,
   gram: string,
+};
+
+type AcceptRateModalTranslations = {
+  modalTitle: string,
+  modalSubTitle: string,
+  confirm: string,
 };
 
 /**
@@ -703,4 +726,5 @@ export type Locale = {
   units: UnitsTranslations,
   purchasesOnlineOffline: PurchasesOnlineOfflineTranslations,
   updateTheApp: UpdateTheAppTranslations,
+  acceptRateModal: AcceptRateModalTranslations,
 };

@@ -10,6 +10,16 @@ const moreTravelersEN = require('../../../../assets/images/info/vatAllowanceInfo
 const moreTravelersIT = require('../../../../assets/images/info/vatAllowanceInfographic2_IT.png');
 const moreTravelersFR = require('../../../../assets/images/info/vatAllowanceInfographic2_FR.png');
 
+const dutyAllowanceDiagramDE = require('../../../../assets/images/info/dutyAllowanceDiagram_DE.png');
+const dutyAllowanceDiagramFR = require('../../../../assets/images/info/dutyAllowanceDiagram_FR.png');
+const dutyAllowanceDiagramEN = require('../../../../assets/images/info/dutyAllowanceDiagram_EN.png');
+const dutyAllowanceDiagramIT = require('../../../../assets/images/info/dutyAllowanceDiagram_IT.png');
+
+const vatAllowanceOver300DiagramIT = require('../../../../assets/images/info/vatAllowanceOver300Diagram_IT.png');
+const vatAllowanceOver300DiagramEN = require('../../../../assets/images/info/vatAllowanceOver300Diagram_EN.png');
+const vatAllowanceOver300DiagramFR = require('../../../../assets/images/info/vatAllowanceOver300Diagram_FR.png');
+const vatAllowanceOver300DiagramDE = require('../../../../assets/images/info/vatAllowanceOver300Diagram_DE.png');
+
 type vatAllowanceImagesType = { [LanguageCategory]: string };
 
 export const vatAllowanceOneTravelerImages: vatAllowanceImagesType = {
@@ -24,4 +34,18 @@ export const vatAllowanceMoreTravelersImages: vatAllowanceImagesType = {
   it: moreTravelersIT,
   fr: moreTravelersFR,
   en: moreTravelersEN,
+};
+
+export const dutyAllowanceDiagrams: vatAllowanceImagesType = {
+  de: dutyAllowanceDiagramDE,
+  it: dutyAllowanceDiagramIT,
+  fr: dutyAllowanceDiagramFR,
+  en: dutyAllowanceDiagramEN,
+};
+
+export const vatAllowanceOver300Diagrams: vatAllowanceImagesType = {
+  de: vatAllowanceOver300DiagramDE,
+  it: vatAllowanceOver300DiagramIT,
+  fr: vatAllowanceOver300DiagramFR,
+  en: vatAllowanceOver300DiagramEN,
 };

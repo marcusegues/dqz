@@ -48,8 +48,8 @@ export const FurtherInformationModalInner = ({
 }: FurtherInformationModalProps & { t: TFunction }) => (
   <AppModal
     modalVisible={modalVisible}
-    animationIn="slideInUp"
-    animationOut="slideOutDown"
+    animationIn="slideInLeft"
+    animationOut="slideOutLeft"
   >
     <ModalCard style={ownStyles.pickerCard}>
       <CardHeader text={t('furtherInformationModal:furtherInformation')} />

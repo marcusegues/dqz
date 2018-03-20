@@ -192,3 +192,11 @@ export const collapseAllExistingExceptOne = (
     largeAmounts: getQuestionState('largeAmounts'),
   });
 };
+
+export const collapseQuestion = (
+  question: QuestionType,
+  qaState: QAStateEnriched
+): QAStateEnriched => setQuestionState(qaState, {
+    ...qaState.questionStates,
+    [question]: 'collapsed',
+  });

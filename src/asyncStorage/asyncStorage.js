@@ -30,6 +30,7 @@ import {
 } from './deserializers';
 import { initialQAState } from '../components/QuestionAnswer/QuestionAnswerContainer';
 import type { QAState } from '../components/QuestionAnswer/QuestionAnswerContainer';
+import type { SettingsAcceptRate } from '../types/generalTypes';
 
 export const KeyNotSet = 'KeyNotSet';
 export type KeyNotSetType = 'KeyNotSet';
@@ -91,7 +92,7 @@ export const fetchCurrencyObjectsAsyncStorage = async (
 
 export const fetchSettingsAcceptRateAsyncStorage = async (
   key: StoreType
-): Promise<boolean> => parser(key, false);
+): Promise<SettingsAcceptRate> => parser(key, false);
 
 export const fetchSettingsHasLanguageAsyncStorage = async (
   key: StoreType

@@ -14,7 +14,7 @@ import type {
 import type { DutyReport } from './types/calculationTypes';
 import { categoriesArray, CategoriesRates } from './constants';
 import { makeDutyReportRecord } from './types/calculationTypes';
-import { rounding } from './utils';
+import { quantityRounding, rounding } from './utils';
 import { getTotalQuantity } from './configurationApi';
 
 export const getAdultsOnly = (category: Category): boolean =>
@@ -64,7 +64,7 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
       const peopleCount: number = getPeopleCount(people, adultsOnly);
 
       const allowance = getAllowance(basket, c, people);
-      const quantity: number = quantityRaw - allowance;
+      const quantity: number = quantityRounding(quantityRaw - allowance, c);
 
       let allowanceRunningTotal: number = 0;
       const duty: ImmutableListType<DutyBracket> = CategoriesRates.getIn(

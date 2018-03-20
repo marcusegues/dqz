@@ -1,6 +1,8 @@
 // @flow
 
 // Level 1 Categories
+import type { LanguageCategory } from '../InformationScreens/subCategories/RoadTax';
+
 export type InfoCategory =
   | 'customsProcedures'
   | 'travelDocuments'
@@ -125,4 +127,13 @@ export type InformationImagesType = { [InfoCategoryExtended]: string };
 
 export type InformationNavigateToType = {
   [InfoCategoryExtended]: InfoSubCategories | string,
+};
+
+type borderCrossingsLinksType = { [LanguageCategory]: string };
+
+export const borderCrossingsLinks: borderCrossingsLinksType = {
+  de: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=1',
+  it: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=3',
+  fr: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=2',
+  en: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=4',
 };

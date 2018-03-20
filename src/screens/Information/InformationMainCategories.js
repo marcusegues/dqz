@@ -14,10 +14,9 @@ import {
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { analyticsScreenMounted } from '../../analytics/analyticsApi';
-import { infoCategories } from './types/information';
+import { borderCrossingsLinks, infoCategories } from './types/information';
 import type { InfoCategory } from './types/information';
 import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
-import type { LanguageCategory } from './InformationScreens/subCategories/RoadTax';
 import type { Language } from '../../i18n/types/locale';
 
 class InformationMainCategoriesInner extends React.Component<{
@@ -53,15 +52,6 @@ class InformationMainCategoriesInner extends React.Component<{
 
   linkTo = () => {
     const { i18n } = this.props;
-    type borderCrossingsLinksType = { [LanguageCategory]: string };
-
-    const borderCrossingsLinks: borderCrossingsLinksType = {
-      de: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=1',
-      it: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=3',
-      fr: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=2',
-      en: 'http://www.pwebapps.ezv.admin.ch/apps/dst/?lang=4',
-    };
-
     Linking.openURL(`${borderCrossingsLinks[i18n.language]}`);
   };
 

@@ -12,6 +12,7 @@ export const HeaderTitle = ({ text }: { text: string }) => (
       fontSize: moderateScale(size.large),
       color: MAIN_BLACK,
       fontFamily: type.medium,
+      textAlign: 'center',
     }}
   >
     {text}

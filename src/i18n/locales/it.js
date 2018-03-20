@@ -49,6 +49,7 @@ export const it: Locale = {
   snackBar: {
     limitExceeded:
       "Il valore dei beni per l'app è stato superato. Si prega di segnalare le vostre merci per via orale al valico di frontiera.",
+    limitExceededRightText: 'Mostra i valichi di confine',
     offline:
       "Sei offline. Ad eccezione della funzione di pagamento, tuttavia, puoi utilizzare tutte le altre funzionalità dell'app.",
     paymentAborted: 'Paiement annulé',
@@ -63,7 +64,7 @@ export const it: Locale = {
       'La lingua è stata definita sulla base delle impostazioni attuali del sistema.',
     currentLanguageMessage: 'La tua lingua attualmente \n selezionata è',
     selectLanguage: 'Selezionare un’altra lingua',
-    confirmationVat: ' Confermo di accettare l’aliquota IVA unica di',
+    confirmationVat: 'Confermo di accettare l’aliquota IVA unica di',
     confirmationVat2: 'all’atto dell’imposizione delle merci',
     vatInformation: 'Maggiori informazioni',
     skipThisStep: 'Salta questo passaggio',
@@ -84,13 +85,24 @@ export const it: Locale = {
     enterQuantitiesButter: 'Inserisci le quantità di tutti {{value}} qui',
     enterQuantitiesAlcohol: 'Inserisci le quantità di tutti {{value}} qui',
     standardInputSubText: '⚡️',
+    enterQuantitiesCigarettes: '',
+    enterQuantitiesTobacco: '',
+    enterQuantitiesOil: '',
+    enterQuantitiesMeat: '',
+    meatInput: '',
+    butterInput: '',
+    oilInput: '',
+    alcSoftInput: '',
+    alcHardInput: '',
+    cigarettesInput: '',
+    tobaccoInput: '',
   },
   amountInput: {
     amountInput: 'Inserire qui il valore complessivo delle merci trasportate.',
     amountInputLargeItem:
       'Cattura i singoli oggetti con chi ha oltre {{value}} franchi.',
     amountInputLargeItemGreyBox:
-      'Ancora una volta, cattura ogni oggetto che vale più di CHF 300.00.',
+      'Ancora una volta, cattura ogni oggetto che vale più di CHF 300 (valore netto).',
     amountInputAddItem: 'Aggiungere valore',
     amountInputAddItemLarge: 'Aggiungere oggetto',
     amountInputEnterValueBeginning: 'Inserire il valore',
@@ -123,6 +135,7 @@ export const it: Locale = {
       'Al momento determinate sottocategorie contengono delle quantità, ovvero: {{value}}',
     validateMainCategoryRemoveYes:
       'Sì, desidero eliminare le rispettive quantità.',
+    itemsGreaterThan300CHF: 'Articoli > 300 CHF',
   },
   modal: {
     confirmPicker: 'Riprendere {{value}}',
@@ -166,11 +179,10 @@ export const it: Locale = {
     paidOn: 'Pagamento effettuato in data {{date}} alle ore {{time}} con:',
     transactionId: 'ID della transazione (SIX): {{value}}',
 
-    receiptValidFrom:
-      'Il giustificativo è valido per il valico di frontiera da:',
+    receiptValidFrom: 'Il giustificativo è valido per valico di frontiera da:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} fino al {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Ricevuta valida il:',
+    receiptValidOn: 'Il giustificativo è valido per valico di frontiera da:',
     receiptValidOnDate: '{{date}} dalle ore {{startTime}} alle ore {{endTime}}',
 
     sumText: 'Totale (CHF): {{value}}',
@@ -690,7 +702,7 @@ export const it: Locale = {
 
   information: {
     informationTitle: 'Informazioni utili',
-    informationSubCategoryTitle: 'Ho animali o piante con me',
+    informationSubCategoryTitle: 'Trasporto merce',
     customsProceduresMainText: 'Procedura in dogana',
     travelDocumentsMainText: 'Documenti di viaggio',
     declarationMainText: 'Trasporto merce',
@@ -719,7 +731,7 @@ export const it: Locale = {
       'Merci soggette ad autorizzazione o limitazione',
     purchasesOnlineOfflineMainText:
       'Acquisti in Internet, invii postali e di corriere',
-    borderCrossingsMainText: 'valichi di frontiera',
+    borderCrossingsMainText: 'valichi di confine',
   },
   appInformation: {
     appInfoTitle: 'Informazioni sull’app ',
@@ -745,7 +757,7 @@ export const it: Locale = {
     toContactForm: '',
   },
   legalNoticeInformation: {
-    navigationHeaderTitle: 'Informazioni importanti sull’utilizzo dell’app',
+    navigationHeaderTitle: 'Informazioni importanti',
     conditions: 'Condizioni quadro',
     importantSoon: 'L’essenziale in breve',
     importantSoonText1:
@@ -826,21 +838,18 @@ export const it: Locale = {
     dataProtection: 'Protezione dei dati',
     dataProtectionText1:
       'Ai sensi dell’articolo 13 della Costituzione federale svizzera e delle disposizioni legali della Confederazione sulla protezione dei dati, ognuno ha diritto al rispetto della sua vita privata nonché d’essere protetto da un impiego abusivo dei suoi dati personali. Le autorità federali si attengono a queste disposizioni. I dati personali sono trattati in modo strettamente confidenziale e non vengono venduti né trasmessi a terzi.',
-
-    dataProtectionText2:
-      'In stretta collaborazione con il nostro fornitore di hosting ci impegniamo ad adottare tutte le misure necessarie per proteggere le nostre banche dati da accessi non autorizzati, perdite, abusi o falsificazioni.',
-    dataProtectionText3:
-      'Accedendo ai nostri siti vengono salvati in log file i seguenti dati: indirizzo IP, data, ora, richiesta del browser e le informazioni generali sul sistema operativo o sul browser che sono state trasmesse.',
-    dataProtectionText4:
-      'I dati di navigazione formano la base per le valutazioni statistiche anonime che permettono di identificare tendenze, grazie alle quali le autorità federali possono migliorare la loro offerta. Secondo la legge federale del 6 ottobre 2000 sulla sorveglianza della corrispondenza postale e del traffico delle telecomunicazioni (LSCPT; RS 780.1) esiste un obbligo di conservazione legale per i dati di collegamento degli ultimi sei mesi.',
-    dataProtectionText5:
-      'In caso di presa di contatto spontanea, l’indirizzo di posta elettronica viene salvato in una banca dati separata, non collegata con i log file anonimi. La propria registrazione può essere revocata in ogni momento. Le autorità federali si riservano espressamente il diritto di modificare o cancellare determinati contenuti, in parte o nella loro interezza, o di sospenderne temporaneamente la pubblicazione in qualsiasi momento e senza darne annuncio preventivo. Le autorità federali declinano ogni responsabilità per danni materiali o immateriali derivanti dall’accesso alle informazioni pubblicate, dal loro utilizzo o mancato utilizzo oppure riconducibili a un abuso del collegamento o a guasti tecnici.',
-
+    dataProtectionText2: '',
+    dataProtectionText3: '',
+    dataProtectionText4: '',
+    dataProtectionText5: '',
     liability: 'Responsabilità',
     liabilityText1:
       'Le autorità federali si riservano espressamente il diritto di modificare, cancellare o non pubblicare temporaneamente i contenuti in toto o in parte in qualsiasi momento senza preavviso.',
     liabilityText2:
       "Sono escluse rivendicazioni di responsabilità nei confronti delle autorità federali per danni di natura materiale o immateriale derivanti dall'accesso o dall'uso o non uso delle informazioni pubblicate, in caso di uso improprio del collegamento o di errori tecnici.",
+    culpability: 'Colpevolezza',
+    culpabilityText1:
+      'Registra la merce completamente e correttamente. Le merci vietate e/o le merci vietate soggette ad autorizzazione non possono essere registrate. Lo sdoganamento con QuickZoll è vincolante (articolo 33 del Customs Act, ZG; SR 631.0). Chiunque omette di registrare i beni in modo completo o errato, o che registra merci e/o merci vietate soggette ad autorizzazione, è passibile di azioni giudiziarie (articoli 118 e 127 ZG).',
 
     referencesAndLinks: 'Riferimenti e link',
     referencesAndLinksText1:
@@ -850,7 +859,7 @@ export const it: Locale = {
 
     copyright: 'Copyright',
     copyrightText1:
-      'Copyright, autorità federali della Confederazione Svizzera, 2007.',
+      'Copyright, autorità federali della Confederazione Svizzera, 2018.',
     copyrightText2:
       'Le informazioni contenute nel sito web delle autorità federali sono rese accessibili al pubblico. Scaricando o copiando contenuti, immagini, fotografie o altri dati non vengono trasferiti in alcun modo i relativi diritti.',
     copyrightText3:
@@ -863,12 +872,13 @@ export const it: Locale = {
   },
   legalNoticeModal: {
     importantNote: 'Indicazione importante',
-    vatRateInfo:
-      'Si prega di tener conto che\n' +
-      '• al giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll;\n' +
-      '• le merci dichiarate vengono imposte all’aliquota IVA unica del 7,7 %;\n' +
-      '• i tributi pagati con l’app non vengono rimborsati.\n' +
-      'Ulteriori informazioni sono disponibili qui:',
+    vatRateInfo: 'Si prega di tener conto che',
+    vatRateInfoText1:
+      'giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll;',
+    vatRateInfoText2:
+      'le merci dichiarate vengono imposte all’aliquota IVA unica del 7,7 %;',
+    vatRateInfoText3: 'i tributi pagati con l’app non vengono rimborsati.',
+    vatRateInfoText4: 'Ulteriori informazioni sono disponibili qui:',
     termsOfService: 'Termini e condizioni',
     acceptance: 'Accetto i termini e le condizioni che ho letto e compreso.',
     confirm: 'Confermare',
@@ -877,13 +887,13 @@ export const it: Locale = {
   furtherInformationModal: {
     furtherInformation: 'Ulteriori informazioni:',
     acceptance:
-      "Utilizzando l'app, accetti che l'aliquota IVA sia pari al 7,7%; si applica anche alle merci che sono effettivamente soggette all'aliquota ridotta (alimenti, mangimi, medicinali e libri).",
+      "L’utilizzo di QuickZoll comporta l’accettazione della condizione che l’aliquota IVA del 7,7 % viene applicata anche alle merci in realtà soggette all’aliquota ridotta del 2,5 % (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l’applicazione dell’aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato. Utilizzando l'app, accetti che l'aliquota IVA sia pari al 7,7%; si applica anche alle merci che sono effettivamente soggette all'aliquota ridotta (alimenti, mangimi, medicinali e libri).",
   },
   updateTheApp: {
     title: 'Nuova versione disponibile!',
     subtitle:
       'Si prega di aggiornare QuickZoll. La nuova versione è ora disponibile su App Store.',
-    buttonTextAndroid: 'Al Play Market',
+    buttonTextAndroid: 'Al Play Store',
     buttonTextIos: "All'App Store",
   },
   units: {
@@ -897,5 +907,11 @@ export const it: Locale = {
     unit_plural: 'unità',
     gram: 'grammo',
     gram_plural: 'grammi',
+  },
+  acceptRateModal: {
+    modalTitle: 'IVA di 7.7%',
+    modalSubTitle:
+      'Confermo di accettare l’aliquota IVA unica di 7.7% all’atto dell’imposizione delle merci.',
+    confirm: 'Riprendere',
   },
 };

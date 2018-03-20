@@ -23,6 +23,7 @@ type QuantityInputConfirmationCardProps = {
   basket: Basket,
   onAnswer: DirectionType => void,
   mainCategories: ImmutableSetType<MainCategory>,
+  onConfirmationCardTitlePress: () => void,
 };
 
 type ReduxInject = {
@@ -33,6 +34,7 @@ const QuantityInputConfirmationCardInner = ({
   onShowQuantityInputModal,
   basket,
   onAnswer,
+  onConfirmationCardTitlePress,
   mainCategories,
   t,
   dispatch,
@@ -40,6 +42,7 @@ const QuantityInputConfirmationCardInner = ({
   <ConfirmationCard
     text={t('quantityInput')}
     onAnswer={() => onAnswer('forward')}
+    onConfirmationCardTitlePress={onConfirmationCardTitlePress}
     onBack={() => onAnswer('back')}
     confirmationDisabled={!anyQuantitiesInBasket(basket)}
     onInfoIconPress={() =>
