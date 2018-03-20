@@ -828,8 +828,9 @@ export const de: Locale = {
       'Haftungsansprüche gegen die EZV wegen Schäden materieller oder immaterieller Art, welche durch die Nutzung dieser App, durch technische Störungen, durch Missbrauch von «QuickZoll» oder anderen Gründen entstanden sind, werden ausgeschlossen.',
     culpability: 'Strafbarkeit',
     culpabilityText1:
-      'Melden Sie die Waren vollständig und korrekt an. Verbotene und/oder bewilligungspflichtige Waren dürfen nicht angemeldet werden. Die Verzollung mit QuickZoll ist verbindlich (Art. 33 des Zollgesetzes, ZG; SR 631.0). Wer Waren nicht vollständig oder nicht korrekt anmeldet oder wer verbotene und/oder bewilligungspflichtige Waren anmeldet, macht sich strafbar (Art. 118 und 127 ZG).',
-    referencesAndLinks: 'Verweise und Links',
+    "Melden Sie die Waren vollständig und korrekt an. Verbotene und/oder bewilligungspflichtige Waren dürfen nicht via QuickZoll angemeldet werden. Die Verzollung mit QuickZoll ist verbindlich (Art. 33 des Zollgesetzes, ZG; SR 631.0). Wer Waren nicht vollständig oder nicht korrekt anmeldet, sowie wer verbotene und/oder bewilligungspflichtige Waren anmeldet, macht sich strafbar (Art. 118 und 127 ZG).",
+
+referencesAndLinks: 'Verweise und Links',
     referencesAndLinksText1:
       'Verweise und Links auf Webseiten Dritter liegen ausserhalb des Verantwortungsbereichs der Bundesbehörden. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin. Die Bundesbehörden erklären ausdrücklich, dass sie keinerlei Einfluss auf die Gestaltung, den Inhalt und die Angebote der verknüpften Seiten haben. Informationen und Dienstleistungen von verknüpften Webseiten liegen vollumfänglich in der Verantwortung des jeweiligen Dritten.',
     referencesAndLinksText2:
