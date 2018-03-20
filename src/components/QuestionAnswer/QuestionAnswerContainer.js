@@ -57,11 +57,6 @@ import {
   storeQAState,
 } from '../../asyncStorage/storageApi';
 import { MainContentContainer } from '../MainContentContainer/MainContentContainer';
-import {
-  setInitSeen,
-  setQuestionSeen,
-  setQuestionSeenInState,
-} from './QAControl/controlQuestionSeen';
 import { isInitBasket } from '../../utils/declaration/declaration';
 
 export type QuestionType =
@@ -76,18 +71,14 @@ export type QuestionState = 'expanded' | 'hidden' | 'collapsed' | 'warning';
 
 export type QuestionFlag = 'complete' | 'incomplete';
 
-export type QuestionSeen = boolean;
-
 export type QAState = {
   questionStates: { [QuestionType]: QuestionState },
   questionFlag: { [QuestionType]: QuestionFlag },
-  questionSeen: { [QuestionType]: QuestionSeen },
 };
 
 export type QAStateEnriched = {
   questionStates: { [QuestionType]: QuestionState },
   questionFlag: { [QuestionType]: QuestionFlag },
-  questionSeen: { [QuestionType]: QuestionSeen },
   amounts: Amounts,
   basket: Basket,
   people: People,
@@ -110,6 +101,7 @@ export type CardProps = {
 type QuestionAnswerContainerProps = {
   navigation: Navigation,
   // dispatch to props
+  saveQAState: (qaState: QAState) => void,
   setAmounts: (amounts: Amounts) => void,
   setPeople: (people: People) => void,
   setBasket: (basket: Basket) => void,
@@ -141,13 +133,6 @@ export const initialQAState = {
     quantityInput: 'incomplete',
     amounts: 'incomplete',
     largeAmounts: 'incomplete',
-  },
-  questionSeen: {
-    peopleInput: false,
-    mainCategories: false,
-    quantityInput: false,
-    amounts: false,
-    largeAmounts: false,
   },
 };
 
@@ -193,7 +178,7 @@ class QuestionAnswerContainerInner extends React.Component<
   }
 
   enrichState(): QAStateEnriched {
-    const { questionStates, questionFlag, questionSeen } = this.state;
+    const { questionStates, questionFlag } = this.state;
     const {
       amounts,
       basket,
@@ -206,7 +191,6 @@ class QuestionAnswerContainerInner extends React.Component<
     return {
       questionStates,
       questionFlag,
-      questionSeen,
       amounts,
       basket,
       people,
@@ -221,15 +205,13 @@ class QuestionAnswerContainerInner extends React.Component<
     return {
       questionStates: enrichedState.questionStates,
       questionFlag: enrichedState.questionFlag,
-      questionSeen: enrichedState.questionSeen,
     };
   }
 
   initState() {
     const setStates: QAStateEnriched = setInitStates(this.enrichState());
     const setFlags: QAStateEnriched = setInitFlags(setStates);
-    const setSeen: QAStateEnriched = setInitSeen(setFlags);
-    this.setState(this.simplifyState(setSeen));
+    this.setState(this.simplifyState(setFlags));
   }
 
   updateFlagsOptimistically(
@@ -244,20 +226,11 @@ class QuestionAnswerContainerInner extends React.Component<
   }
 
   updateQA(justAnswered: QuestionType, direction: DirectionType) {
-    let enrichedState = this.enrichState();
-    enrichedState = setQuestionSeen(justAnswered, enrichedState);
-    if (justAnswered === 'mainCategories' && !this.props.mainCategories.size) {
-      enrichedState = setQuestionSeenInState(enrichedState, {
-        quantityInput: false,
-        amounts: false,
-        largeAmounts: false,
-      });
-    }
     const updateStates: QAStateEnriched = setQuestionStates(
       justAnswered,
       direction,
       this.props.navigation,
-      enrichedState
+      this.enrichState()
     );
     const updateFlags: QAStateEnriched = setInitFlags(updateStates);
     this.setState(this.simplifyState(updateFlags));

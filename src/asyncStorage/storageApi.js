@@ -13,6 +13,7 @@ import {
   storeItemAsyncStorage,
   fetchReceiptsAsyncStorage,
   fetchReceiptEntryTimeAsyncStorage,
+  fetchQAStateAsyncStorage,
 } from './asyncStorage';
 import type { CurrencyObject } from '../model/currencies';
 import type { StoreType } from './storeTypes';
@@ -188,6 +189,9 @@ export const fetchSettingsAcceptRate = async (): Promise<boolean> =>
 export const fetchSettingsHasLanguage = async (): Promise<
   Language | KeyNotSetType
 > => fetchSettingsHasLanguageAsyncStorage('SettingsHasLanguage');
+
+export const fetchQAState = async (): Promise<QAState> =>
+  fetchQAStateAsyncStorage('QAState');
 
 export const fetchBasket = async (): Promise<Basket> =>
   fetchBasketAsyncStorage('Basket');

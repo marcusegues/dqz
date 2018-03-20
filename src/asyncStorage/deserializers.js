@@ -15,6 +15,8 @@ import type {
 export const deserializeReceiptEntryTime = (serialized: any): string =>
   serialized;
 
+export const deserializeQAState = (serialized: any): string => serialized;
+
 export const deserializePeople = (serialized: any): People =>
   makePeopleRecord(serialized);
 

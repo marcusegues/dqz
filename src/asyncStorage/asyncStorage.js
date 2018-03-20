@@ -24,9 +24,12 @@ import {
   deserializeBasket,
   deserializeMainCategories,
   deserializePeople,
+  deserializeQAState,
   deserializeReceiptEntryTime,
   deserializeReceipts,
 } from './deserializers';
+import { initialQAState } from '../components/QuestionAnswer/QuestionAnswerContainer';
+import type { QAState } from '../components/QuestionAnswer/QuestionAnswerContainer';
 
 export const KeyNotSet = 'KeyNotSet';
 export type KeyNotSetType = 'KeyNotSet';
@@ -93,6 +96,10 @@ export const fetchSettingsAcceptRateAsyncStorage = async (
 export const fetchSettingsHasLanguageAsyncStorage = async (
   key: StoreType
 ): Promise<Language | KeyNotSetType> => parser(key, KeyNotSet);
+
+export const fetchQAStateAsyncStorage = async (
+  key: StoreType
+): Promise<QAState> => parserGeneric(key, initialQAState, deserializeQAState);
 
 export const fetchBasketAsyncStorage = async (
   key: StoreType

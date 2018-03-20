@@ -14,11 +14,11 @@ import type { Navigation, TFunction } from '../../types/generalTypes';
 import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import type { NavigateFromSavedBasket } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import {
-  fetchAmounts,
-  fetchBasket,
-  fetchMainCategories,
-  fetchPeople,
-  fetchReceiptEntryTime,
+    fetchAmounts,
+    fetchBasket,
+    fetchMainCategories,
+    fetchPeople, fetchQAState,
+    fetchReceiptEntryTime,
 } from '../../asyncStorage/storageApi';
 import { isInitBasket } from '../../utils/declaration/declaration';
 import {
@@ -203,6 +203,12 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   initABP: () => {
+    fetchQAState().then(qaState => {
+      dispatch({
+        type: 'SET_QA_STATE',
+        qaState,
+      });
+    });
     fetchBasket().then(basket => {
       dispatch({
         type: 'SET_BASKET',

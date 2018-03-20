@@ -29,23 +29,15 @@ const setQuestionState = (
 ): QAStateEnriched => Object.assign({}, qaState, { questionStates });
 
 export const setInitStates = (qaState: QAStateEnriched): QAStateEnriched => {
-  const { settings, questionSeen } = qaState;
+  const { settings } = qaState;
   const main = settings.get('mainCategories');
   return setQuestionState(qaState, {
     peopleInput: main.size ? 'collapsed' : 'expanded',
-    mainCategories:
-      questionSeen.mainCategories && main.size ? 'collapsed' : 'hidden',
+    mainCategories: main.size ? 'collapsed' : 'hidden',
     quantityInput:
-      questionSeen.quantityInput &&
-      main.size &&
-      !singleOtherGoodsMainCategory(main)
-        ? 'collapsed'
-        : 'hidden',
-    amounts: questionSeen.amounts && main.size ? 'collapsed' : 'hidden',
-    largeAmounts:
-      questionSeen.largeAmounts && showLargeAmountsQuestion(qaState)
-        ? 'collapsed'
-        : 'hidden',
+      main.size && !singleOtherGoodsMainCategory(main) ? 'collapsed' : 'hidden',
+    amounts: main.size ? 'collapsed' : 'hidden',
+    largeAmounts: showLargeAmountsQuestion(qaState) ? 'collapsed' : 'hidden',
   });
 };
 
@@ -61,7 +53,7 @@ export const setQuestionStates = (
   navigation: Navigation,
   qaState: QAStateEnriched
 ): QAStateEnriched => {
-  const { settings, questionSeen } = qaState;
+  const { settings } = qaState;
   const mainCategories = settings.get('mainCategories');
   // do case analysis
   let peopleInputState: QuestionState = qaState.questionStates.peopleInput;
