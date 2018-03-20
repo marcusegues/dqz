@@ -85,7 +85,10 @@ export const en: Locale = {
     enterQuantity: 'Enter quantity',
     enterQuantitiesButter: 'Enter the quantities of all {{value}} products here.',
       enterQuantitiesMeat: 'Enter the quantities of all {{value}} here.',
-    enterQuantitiesAlcohol: 'Enter the quantities of all {{value}} here.',
+      enterQuantitiesTobacco: 'Enter the quantities of all {{value}} here.',
+      enterQuantitiesCigarettes: 'Enter the quantities of all {{value}} here.',
+      enterQuantitiesOil: 'Enter the quantities of all {{value}} here.',
+      enterQuantitiesAlcohol: 'Enter the quantities of all {{value}} here.',
     standardInputSubText:
       'Record the amount of {{category}} you carry with you:',
       meatInput: 'meat and meat products',
@@ -693,8 +696,8 @@ export const en: Locale = {
 
   information: {
     informationTitle: 'Information',
-    informationSubCategoryTitle: 'I have animals or plants with me',
-    customsProceduresMainText: 'Proceeding at the customs',
+    informationSubCategoryTitle: 'I have goods with me',
+    customsProceduresMainText: 'Customs procedures',
     travelDocumentsMainText: 'Travel documents',
     declarationMainText: 'I have goods with me',
     animalsAndPlantsMainText: 'I have animals or plants with me',
