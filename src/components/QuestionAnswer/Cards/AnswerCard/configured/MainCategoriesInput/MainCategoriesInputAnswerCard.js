@@ -3,7 +3,7 @@ import React from 'react';
 import { AnswerCard } from '../../AnswerCard';
 import { MainCategoriesInputInfo } from '../../children/MainCategoriesInputInfo';
 import type { MainCategories } from '../../../../../../types/reducers/declaration';
-import type { QuestionFlag } from '../../../../QuestionAnswerContainer';
+import type { QuestionFlag } from '../../../../types/questionAnswerTypes';
 
 const complete = require('../../../../../../../assets/images/complete.png');
 const incomplete = require('../../../../../../../assets/images/incomplete.png');
