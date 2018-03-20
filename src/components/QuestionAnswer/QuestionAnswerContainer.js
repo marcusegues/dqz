@@ -2,9 +2,10 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
-import { FlatList, View } from 'react-native';
+import { FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
+
 import { NavBar } from '../NavBar/NavBar';
 import { PeopleInputQA } from './PeopleInput/PeopleInputQA';
 import { MainCategoriesInputQA } from './MainCategoriesInput/MainCategoriesInputQA';
@@ -54,7 +55,6 @@ import {
   storePeople,
 } from '../../asyncStorage/storageApi';
 import { MainContentContainer } from '../MainContentContainer/MainContentContainer';
-import { RedButton } from '../Buttons/RedButton';
 
 export type QuestionType =
   | 'peopleInput'
@@ -219,20 +219,6 @@ class QuestionAnswerContainerInner extends React.Component<
     );
   }
 
-  allQuestionsAnswered() {
-    const { questionStates, questionFlag } = this.state;
-    return (
-      questionFlag.peopleInput === 'complete' &&
-      questionFlag.mainCategories === 'complete' &&
-      questionFlag.quantityInput === 'complete' &&
-      questionFlag.amounts === 'complete' &&
-      (((questionStates.largeAmounts === 'collapsed' ||
-        questionStates.largeAmounts === 'expanded') &&
-        questionFlag.largeAmounts === 'complete') ||
-        questionStates.largeAmounts === 'hidden')
-    );
-  }
-
   render() {
     const { questionStates, questionFlag } = this.state;
     const {
@@ -249,6 +235,7 @@ class QuestionAnswerContainerInner extends React.Component<
     } = this.props;
 
     const qaStateEnriched: QAStateEnriched = this.enrichState();
+
     const flatListData = [
       {
         key: 'peopleInput',
@@ -499,19 +486,6 @@ class QuestionAnswerContainerInner extends React.Component<
           data={flatListData}
           renderItem={({ item }) => item.component}
         />
-        {this.allQuestionsAnswered() ? (
-          <View style={{ marginBottom: 16 }}>
-            <RedButton
-              text="To Payment"
-              onPress={() =>
-                this.props.navigation.dispatch({
-                  type: 'NAVIGATE',
-                  screen: 'Payment',
-                })
-              }
-            />
-          </View>
-        ) : null}
       </MainContentContainer>
     );
   }

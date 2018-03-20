@@ -111,9 +111,9 @@ export const setQuestionStates = (
       if (showLargeAmountsQuestion(qaState)) {
         largeAmountsState = fwdNav(direction);
       } else {
-        // if (direction === 'forward') {
-        //   navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
-        // }
+        if (direction === 'forward') {
+          navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
+        }
         largeAmountsState = 'hidden';
       }
       break;
@@ -123,9 +123,9 @@ export const setQuestionStates = (
         quantityInputState = 'hidden';
       }
       amountsState = backNav(direction);
-      // if (direction === 'forward') {
-      //   navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
-      // }
+      if (direction === 'forward') {
+        navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
+      }
       break;
     }
     default:
@@ -164,8 +164,7 @@ export const collapseAllExistingExceptOne = (
 export const collapseQuestion = (
   question: QuestionType,
   qaState: QAStateEnriched
-): QAStateEnriched =>
-  setQuestionState(qaState, {
+): QAStateEnriched => setQuestionState(qaState, {
     ...qaState.questionStates,
     [question]: 'collapsed',
   });
