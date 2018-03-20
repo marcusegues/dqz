@@ -45,6 +45,8 @@ const ownStyles = {
   },
 };
 
+const FORTY_EIGHT_HOURS = 172800000;
+
 type PickerState = {
   date: string,
   hours: string,
@@ -235,7 +237,10 @@ class TimePickerModalInner extends React.Component<
 
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
-              confirmationDisabled={entryTime.valueOf() < currentTime.valueOf()}
+              confirmationDisabled={
+                entryTime.valueOf() < currentTime.valueOf() ||
+                entryTime.valueOf() - currentTime.valueOf() > FORTY_EIGHT_HOURS
+              }
               onPress={() => {
                 onSelectTime(
                   DateTime.fromFormat(
