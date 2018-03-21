@@ -17,7 +17,7 @@ import { CardRowText } from '../../../../subcomponents/CardRowText';
 import type { Category } from '../../../../../../../model/types/basketPeopleAmountsTypes';
 import { CategoriesInfo } from '../../../../../../../model/constants';
 import type { TFunction } from '../../../../../../../types/generalTypes';
-import {formatQuantity} from "../../../../../../../utils/declaration/declaration";
+import { formatQuantity } from '../../../../../../../utils/declaration/declaration';
 
 const ownStyles = {
   container: {
