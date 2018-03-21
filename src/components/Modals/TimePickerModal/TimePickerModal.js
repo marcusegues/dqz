@@ -22,16 +22,13 @@ import type { TFunction } from '../../../types/generalTypes';
 import { ModalCard } from '../ModalCard';
 import { PickerComponent } from '../../Pickers/PickerComponent';
 import { moderateScale, verticalScale } from '../../../styles/Scaling';
-import {
-  pickerHours,
-  pickerMinutes,
-  pickerDates,
-} from '../QuantityInputModal/pickerData';
+import { pickerHours, pickerMinutes } from '../QuantityInputModal/pickerData';
 import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
 import { ModalCloseText } from '../ModalCloseText';
 import { roundMinutes } from '../../../model/utils';
 import { dateTimeToFormat } from '../../../utils/datetime/datetime';
 import { MAIN_RED } from '../../../styles/colors';
+import { DatePicker } from './layouts/datePicker';
 
 const ownStyles = {
   container: {
@@ -208,26 +205,14 @@ class TimePickerModalInner extends React.Component<
             <View
               style={[pickerModalStyle.pickerContainer, ownStyles.container]}
             >
-              <PickerComponent
-                selectedValue={date}
+              <DatePicker
+                date={date}
                 onValueChange={itemValue =>
                   this.setState({
                     date: itemValue,
                   })
                 }
-                mode="dropdown"
-                prompt=""
-                itemStyle={{}}
-                style={{
-                  flex: Platform.OS === 'ios' ? 0.4 : 0.45,
-
-                  paddingVertical: 10,
-                }}
-              >
-                {pickerDates.map(i => (
-                  <Picker.Item key={i.id} label={i.label} value={i.value} />
-                ))}
-              </PickerComponent>
+              />
 
               <PickerComponent
                 selectedValue={hours}
