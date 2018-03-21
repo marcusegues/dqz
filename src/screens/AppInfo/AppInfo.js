@@ -145,7 +145,7 @@ class AppInfoInner extends React.Component<
                 text={t('toContactForm').toUpperCase()}
                 onPress={() =>
                   Linking.openURL(
-                    `https://www.webapps.ezv.admin.ch/apps/contactForm/?lang=${
+                    `https://www.webapps.ezv.admin.ch/apps/contactQuick/index.php?lang=${
                       i18n.language
                     }`
                   )
