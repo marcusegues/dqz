@@ -191,7 +191,9 @@ class LegalNoticeInfoInner extends React.Component<
                 text={t('specialCases')}
                 style={styles.disclaimerTitle}
               />
+
               <Text style={styles.mainText}>
+
                 <Trans i18nKey="specialCasesText1">
                   #<Text
                     style={{ textDecorationLine: 'underline' }}
