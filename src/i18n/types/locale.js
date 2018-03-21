@@ -568,8 +568,6 @@ type AppInformationTranslations = {
   generalCustomsDirectorate: string,
   designAndDevelopment: string,
   ambriteAddress: string,
-  disclaimerTitle: string,
-  disclaimerText: string,
   toContactForm: string,
 };
 

@@ -7,8 +7,8 @@ export const it: Locale = {
     Butter: 'Burro e panna',
     Oils: 'Oli, grassi e margarina',
     OtherFood: 'Altre derrate alimentari e bevande non alcoliche',
-    AlcSoft: 'Bevande alcoliche fino al 18% vol.',
-    AlcHard: 'Bevande alcoliche oltre il 18% vol.',
+    AlcSoft: 'Bevande alcoliche \nfino al 18% vol.',
+    AlcHard: 'Bevande alcoliche \noltre il 18% vol.',
     Cigarettes: 'Sigarette e sigari',
     Tobacco: 'Altri tabacchi manufatti',
     Meds: 'Medicamenti',
@@ -80,22 +80,22 @@ export const it: Locale = {
     quantityInput: 'Ingresso quantità',
     recordedOn: 'registrato su {{value}}',
     addQuantities: 'Aggiungi quantità',
-    enterQuantities: 'Inserisca qui la quantità totale di {{value}} qui',
+    enterQuantities: 'Inserisca qui la quantità totale di {{value}} qui.',
     enterQuantity: 'Inserisca la quantità',
-    enterQuantitiesButter: 'Inserisca qui la quantità totale di {{value}} qui',
-    enterQuantitiesAlcohol: 'Inserisca qui la quantità totale di {{value}} qui',
-    standardInputSubText: '⚡️',
-    enterQuantitiesCigarettes: '',
-    enterQuantitiesTobacco: '',
-    enterQuantitiesOil: '',
-    enterQuantitiesMeat: '',
-    meatInput: '',
+    enterQuantitiesButter: 'Inserisca qui la quantità totale di {{value}}.',
+    enterQuantitiesAlcohol: 'Inserisca qui la quantità totale di {{value}}',
+    standardInputSubText: 'Inserisca qui la quantità di {{value}} che porta con voi:',
+    enterQuantitiesCigarettes: 'Inserisca qui la quantità totale di {{value}}.',
+    enterQuantitiesTobacco: 'Inserisca qui la quantità totale di {{value}}.',
+    enterQuantitiesOil: 'Inserisca qui la quantità totale di {{value}}.',
+    enterQuantitiesMeat: 'Inserisca qui la quantità totale di {{value}}.',
+    meatInput: 'carne e preparazioni di carne',
     butterInput: 'burro e panna',
     oilInput: 'oli, grassi e margarina',
-    alcSoftInput: '',
-    alcHardInput: '',
-    cigarettesInput: '',
-    tobaccoInput: '',
+    alcSoftInput: 'bevande alcoliche fino al 18% vol.',
+    alcHardInput: 'bevande alcoliche oltre il 18% vol.',
+    cigarettesInput: 'sigarette e sigari',
+    tobaccoInput: 'altri tabacchi manufatti',
   },
   amountInput: {
     amountInput: 'Inserisca il valore complessivo delle merci trasportate.',
@@ -131,14 +131,14 @@ export const it: Locale = {
     validateGenericNo: 'No',
     validateGenericOk: 'Ok',
     validateMainCategoryRemoveTitle:
-      ' Confermare la cancellazione di questa categoria principale?',
+      'Confermare la cancellazione di questa categoria principale?',
     validateMainCategoryRemoveSubtitle:
       'Al momento determinate sottocategorie contengono delle quantità, ovvero: {{value}}',
-    validateMainCategoryAndVatRemoveSubTitle: '🔥',
-    validateVatRemoveSubTitle: '🔥',
+    validateMainCategoryAndVatRemoveSubTitle: 'Al momento ci sono già voci esistenti.',
+    validateVatRemoveSubTitle: 'Ci sono già voci per l\'IVA.',
     validateMainCategoryRemoveYes:
       'Sì, desidero eliminare le rispettive quantità.',
-    validateOtherGoodsRemoveYes: '🔥',
+    validateOtherGoodsRemoveYes: 'Sì, desidero eliminare le rispettive quantità.',
     itemsGreaterThan300CHF: 'Articoli > 300 CHF',
   },
   modal: {
@@ -189,7 +189,7 @@ export const it: Locale = {
     receiptValidFrom:
       'Il presente giustificativo è valido per il passagio del confine il:',
     receiptValidFromDate:
-      '{{startDate}} | {{startTime}} fino al {{endDate}} | {{endTime}}',
+      '{{startDate}} | {{startTime}} fino al \n {{endDate}} | {{endTime}}',
     receiptValidOn:
       'Il presente giustificativo è valido per il passagio del confine il:',
     receiptValidOnDate: '{{date}} dalle ore {{startTime}} alle ore {{endTime}}',
@@ -209,8 +209,6 @@ export const it: Locale = {
     allReceiptsDate: 'da {{value}}',
     entryTime: 'Periodo di entrata:',
     chooseOtherEntryTime: 'Regolare',
-    overviewRegistered: '⚠️',
-    overviewDutyFree: '⚠️',
     until: 'fino a',
     savedToCameraRoll: '🔥',
   },
@@ -752,19 +750,14 @@ export const it: Locale = {
       'Amministrazione federale delle dogane AFD',
     contact: 'Contatto',
     customsInfoCenter:
-      'Centrale d’informazione dell’AFD\n\nzollauskunft@ezv.admin.ch',
-    reachability: 'Reperibilità:',
+      'Centrale d’informazione dell’AFD',
     generalCustomsDirectorate:
-      'Amministrazione federale delle dogane AFD\nMonbijoustrasse 40\n' +
-      '3003 Bern\n' +
-      'http://www.ezv.admin.ch',
+      'Monbijoustrasse 40\n' +
+      '3003 Bern',
     designAndDevelopment: 'Design e sviluppo',
     ambriteAddress:
-      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch\nhttp://www.ambrite.ch',
-    disclaimerTitle: 'Clausola di non responsabilità (disclaimer)',
-    disclaimerText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    toContactForm: 'Formulario di contatto',
+      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch',
+     toContactForm: 'Formulario di contatto',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informazioni importanti',

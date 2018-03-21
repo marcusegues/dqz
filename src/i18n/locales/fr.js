@@ -139,12 +139,12 @@ export const fr: Locale = {
       'Êtes-vous sûr de vouloir supprimer cette catégorie principale?',
     validateMainCategoryRemoveSubtitle:
       'Les quantités suivantes figurent actuellement dans certaines sous-catégories: {{value}}.',
-    validateMainCategoryAndVatRemoveSubTitle: '🔥',
-    validateVatRemoveSubTitle: '🔥',
+    validateMainCategoryAndVatRemoveSubTitle: 'Pour le moment, il existe déjà des entrées.',
+    validateVatRemoveSubTitle: 'Il y a déjà des entrées pour la TVA.',
     validateMainCategoryRemoveYes:
       "Oui, j'aimerais supprimer les quantités en question.",
-    validateOtherGoodsRemoveYes: '🔥',
-    itemsGreaterThan300CHF: 'Articles > 300 CHF',
+    validateOtherGoodsRemoveYes: 'Oui, j\'aimerais supprimer les quantités en question.',
+    itemsGreaterThan300CHF: 'Marchandises > 300 CHF',
   },
   modal: {
     confirmPicker: 'Reprendre {{value}}',
@@ -763,14 +763,11 @@ export const fr: Locale = {
     contact: 'Contact',
     customsInfoCenter: 'Centrale de renseignement de la douane',
     generalCustomsDirectorate:
-      'Monbijoustrasse 40\n3003 Bern\nhttp://www.ezv.admin.ch',
+      'Monbijoustrasse 40\n3003 Bern',
     designAndDevelopment: 'Conception et développement',
     ambriteAddress:
-      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch\nhttp://www.ambrite.ch',
-    disclaimerTitle: 'Avis de non-responsabilité',
-    disclaimerText:
-      'Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten. Damit das Layout nun nicht nackt im Raume steht und sich klein und leer vorkommt, springe ich ein: der Blindtext. Genau zu diesem Zwecke erschaffen, immer im Schatten meines großen Bruders »Lorem Ipsum«, freue ich mich jedes Mal, wenn Sie ein paar Zeilen lesen. Denn esse est percipi - Sein ist wahrgenommen werden. Und weil Sie nun schon die Güte haben, mich ein paar weitere Sätze lang zu begleiten, möchte ich diese Gelegenheit nutzen, Ihnen nicht nur als Lückenfüller zu dienen, sondern auf etwas hinzuweisen, das es ebenso verdient wahrgenommen zu werden: Webstandards nämlich.',
-    toContactForm: '',
+      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch',
+    toContactForm: 'Formulaire de contact',
   },
   legalNoticeInformation: {
     navigationHeaderTitle:
