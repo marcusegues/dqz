@@ -39,6 +39,15 @@ const styles = {
     marginBottom: verticalScale(5),
     marginTop: verticalScale(20),
   },
+  mainText: {
+    color: '#1A1A1A',
+    fontWeight: '300',
+    fontFamily: 'roboto_light',
+    lineHeight: moderateScale(21),
+  },
+  boldMainText: {
+    fontFamily: 'roboto_bold',
+  },
 };
 
 type LegalNoticeInfoState = {
@@ -166,7 +175,13 @@ class LegalNoticeInfoInner extends React.Component<
               </TouchableOpacity>
 
               <BulletText text={t('howToDeclareYourGoodsText2')} />
-              <BulletText text={t('howToDeclareYourGoodsText3')} />
+              <BulletTextWithChildren>
+                <Text style={styles.mainText}>
+                  <Trans i18nKey="howToDeclareYourGoodsText3">
+                    #<Text style={styles.boldMainText}>#</Text>#
+                  </Trans>
+                </Text>
+              </BulletTextWithChildren>
               <BulletText text={t('howToDeclareYourGoodsText4')} />
               <BulletText text={t('howToDeclareYourGoodsText5')} />
               <BulletText text={t('howToDeclareYourGoodsText6')} />
@@ -176,14 +191,9 @@ class LegalNoticeInfoInner extends React.Component<
                 text={t('specialCases')}
                 style={styles.disclaimerTitle}
               />
-              <Text
-                style={{
-                  color: '#1A1A1A',
-                  fontWeight: '300',
-                  fontFamily: 'roboto_light',
-                  lineHeight: moderateScale(21),
-                }}
-              >
+
+              <Text style={styles.mainText}>
+
                 <Trans i18nKey="specialCasesText1">
                   #<Text
                     style={{ textDecorationLine: 'underline' }}

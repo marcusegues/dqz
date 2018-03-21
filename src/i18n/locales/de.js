@@ -765,11 +765,7 @@ export const de: Locale = {
     howToDeclareYourGoodsText2:
       'Geben Sie den Wert in der Fremdwährung gemäss Zahlungsbeleg ein. Der Wert wird mit dem Devisenkurs (Verkauf) des Vortages (letzter Arbeitstag) umgerechnet.',
     howToDeclareYourGoodsText3:
-      'Legen Sie ein Zeitfenster von zwei Stunden für Ihren Grenzübertritt fest.',
-    howToDeclareYourGoodsTextBold3:
-      'Die Quittung ist nur während dieses Zeitfensters gültig.',
-    howToDeclareYourGoodsText3a:
-      'Können Sie den gewählten Zeitraum nicht einhalten, müssen Sie sich bei einem durch das Personal der EZV besetzten Grenzübergang melden und erklären, warum Sie nicht innerhalb der Gültigkeitsfrist einreisen konnten. Ohne glaubhafte Begründung werden die Abgaben erneut erhoben.',
+      'Legen Sie ein Zeitfenster von zwei Stunden für Ihren Grenzübertritt fest. <1>Die Quittung ist nur während dieses Zeitfensters gültig.</1> Können Sie den gewählten Zeitraum nicht einhalten, müssen Sie sich bei einem durch das Personal der EZV besetzten Grenzübergang melden und erklären, warum Sie nicht innerhalb der Gültigkeitsfrist einreisen konnten. Ohne glaubhafte Begründung werden die Abgaben erneut erhoben.',
     howToDeclareYourGoodsText4:
       'Alle Personen, für welche die Quittung gilt, müssen gemeinsam einreisen.',
     howToDeclareYourGoodsText5:
