@@ -874,7 +874,7 @@ export const fr: Locale = {
     referencesAndLinksText1:
     "Les renvois et liens vers des sites web de tiers ne sont pas de la responsabilité des autorités fédérales. L'accès à ces sites et leur utilisation se font aux risques des utilisateurs. Les autorités fédérales déclarent expressément qu'elles n'ont aucune influence sur la forme, le contenu et les offres des sites auxquels elles renvoient. Les informations et services offerts par ces sites sont entièrement de la responsabilité de leurs auteurs.",
     referencesAndLinksText2:
-    "Les autorités fédérales rejettent toute responsabilité pour de tels sites web."
+    "Les autorités fédérales rejettent toute responsabilité pour de tels sites web.",
 
     copyright: "Droits d'auteur",
     copyrightText1:
