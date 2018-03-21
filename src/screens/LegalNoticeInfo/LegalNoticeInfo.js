@@ -244,12 +244,10 @@ class LegalNoticeInfoInner extends React.Component<
               <AppInfoSubText text={t('liabilityText2')} />
 
               <CardRowText
-                  text={t('culpability')}
-                  style={styles.disclaimerTitle}
+                text={t('culpability')}
+                style={styles.disclaimerTitle}
               />
-              <AppInfoSubText
-                  text={t('culpabilityText1')}
-              />
+              <AppInfoSubText text={t('culpabilityText1')} />
 
               <CardRowText
                 text={t('referencesAndLinks')}
