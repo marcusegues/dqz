@@ -139,7 +139,9 @@ export const en: Locale = {
       'Currently, some subcategories contain quantities: {{value}}',
     validateMainCategoryAndVatRemoveSubTitle:
       'Currently, some subcategories contain quantities: {{value}}. All added VAT amounts will be deleted as well.',
+    validateVatRemoveSubTitle: 'All added VAT amounts will be deleted',
     validateMainCategoryRemoveYes: 'Yes, remove resp. quantities',
+    validateOtherGoodsRemoveYes: 'Yes, remove resp. VAT amounts',
     itemsGreaterThan300CHF: 'Items > CHF 300',
   },
   modal: {

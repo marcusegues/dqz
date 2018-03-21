@@ -142,7 +142,9 @@ export const de: Locale = {
     validateMainCategoryRemoveSubtitle:
       'Im Moment enthalten gewisse Unterkategorien Mengen, nämlich: {{value}}',
     validateMainCategoryAndVatRemoveSubTitle: '🔥',
+    validateVatRemoveSubTitle: '🔥',
     validateMainCategoryRemoveYes: 'Ja - ich möchte dies löschen',
+    validateOtherGoodsRemoveYes: '🔥',
     itemsGreaterThan300CHF: 'Gegenstände > 300 CHF',
   },
   modal: {
