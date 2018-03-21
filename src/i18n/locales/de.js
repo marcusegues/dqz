@@ -798,7 +798,7 @@ export const de: Locale = {
     specialCasesText11:
       'Waren, die aus der Schweiz ausgeführt werden und für die Sie eine Ausfuhrbestätigung benötigen',
     specialCasesText12:
-      '(Informationen zur Rückerstattung der Schweizer Mehrwertsteuer und zum steuerfreien Einkauf in der Schweiz (Tax free) finden Sie hier).',
+      'Informationen zur Rückerstattung der Schweizer Mehrwertsteuer und zum steuerfreien Einkauf in der Schweiz (Tax free) finden Sie hier.',
 
     legal: 'Rechtliches',
     usage: 'Benutzung',
