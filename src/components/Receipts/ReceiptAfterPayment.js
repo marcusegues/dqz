@@ -3,6 +3,7 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 import { DateTime } from 'luxon';
+import { Permissions } from 'expo';
 // $FlowFixMe
 import { View, Text, CameraRoll } from 'react-native';
 // $FlowFixMe
@@ -190,7 +191,17 @@ class ReceiptAfterPaymentInner extends React.Component<
       quality: 1,
       result: 'file',
     });
-    await CameraRoll.saveToCameraRoll(snapshot, 'photo');
+    const { status } = await Permissions.getAsync(Permissions.CAMERA_ROLL);
+    if (status !== 'granted') {
+      Permissions.askAsync(Permissions.CAMERA_ROLL);
+    }
+    if (status === 'granted') {
+      alert('Granted permission to camera roll');
+    }
+    try {
+      await CameraRoll.saveToCameraRoll(snapshot, 'photo');
+      alert('HEY! Saved to camera roll!');
+    } catch (e) {}
   }
 
   render() {
@@ -216,12 +227,12 @@ class ReceiptAfterPaymentInner extends React.Component<
             flexDirection: 'column',
             alignItems: 'center',
           }}
+          ref={ref => {
+            this.image = ref;
+          }}
+          collapsable={false}
         >
-          <ScrollViewCard
-            ref={ref => {
-              this.image = ref;
-            }}
-          >
+          <ScrollViewCard>
             <RedLogo />
             <Row>
               <Text style={ownStyles.topSumText}>
