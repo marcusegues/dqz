@@ -1,9 +1,9 @@
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
-import { translate } from 'react-i18next';
+import { Trans, translate } from 'react-i18next';
 // $FlowFixMe
-import { Linking, TouchableOpacity, View } from 'react-native';
+import { Linking, TouchableOpacity, View, Text } from 'react-native';
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { ModalTab } from '../../components/Modals/QuantityInputModal/subComponents/ModalTab';
@@ -12,7 +12,7 @@ import { CardHeaderText } from '../../components/QuestionAnswer/Cards/subcompone
 import { CardRowText } from '../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { BulletText } from '../AppInfo/subComponents/BulletText';
 import { ScrollViewCard } from '../../components/General Components/ScrollViewCard';
-import { scale, verticalScale } from '../../styles/Scaling';
+import { moderateScale, scale, verticalScale } from '../../styles/Scaling';
 import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
 import { AppInfoSubText } from '../AppInfo/subComponents/AppInfoSubText';
 import { type } from '../../styles/fonts';
@@ -20,6 +20,7 @@ import { BulletTextWithChildren } from '../AppInfo/subComponents/BulletTextWithC
 import { AppInfoLink } from '../AppInfo/subComponents/AppInfoLink';
 import type { LanguageCategory } from '../Information/InformationScreens/subCategories/RoadTax';
 import type { Language } from '../../i18n/types/locale';
+import { borderCrossingsLinks } from '../Information/types/information';
 
 const styles = {
   topTouchableContainer: {
@@ -175,7 +176,25 @@ class LegalNoticeInfoInner extends React.Component<
                 text={t('specialCases')}
                 style={styles.disclaimerTitle}
               />
-              <AppInfoSubText text={t('specialCasesText1')} />
+              <Text
+                style={{
+                  color: '#1A1A1A',
+                  fontWeight: '300',
+                  fontFamily: 'roboto_light',
+                  lineHeight: moderateScale(21),
+                }}
+              >
+                <Trans i18nKey="specialCasesText1">
+                  #<Text
+                    style={{ textDecorationLine: 'underline' }}
+                    onPress={() =>
+                      Linking.openURL(`${borderCrossingsLinks[i18n.language]}`)
+                    }
+                  >
+                    #
+                  </Text>#
+                </Trans>
+              </Text>
               <BulletTextWithChildren>
                 <AppInfoSubText text={t('specialCasesText2')} />
                 <AppInfoLink
@@ -208,16 +227,6 @@ class LegalNoticeInfoInner extends React.Component<
                   }
                 />
               </BulletTextWithChildren>
-
-              <CardRowText text={t('legal')} style={styles.disclaimerTitle} />
-              <AppInfoSubText
-                text={t('legalText1')}
-                style={{ marginBottom: verticalScale(10) }}
-              />
-              <AppInfoSubText
-                text={t('legalText2')}
-                style={{ marginBottom: verticalScale(10) }}
-              />
             </View>
           ) : (
             <View style={styles.contentContainer}>

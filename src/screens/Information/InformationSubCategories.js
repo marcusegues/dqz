@@ -36,7 +36,7 @@ class InformationSubCategoriesInner extends React.Component<{
       <MainContentContainer>
         <ScrollViewCard>
           <View style={{ margin: moderateScale(16) }}>
-            <CardHeaderText text={t('informationSubCategoryTitle')} />
+            <CardHeaderText text={t(`${infoCategory}MainText`)} />
           </View>
           {(informationSubCategories[infoCategory] !== 'noSubCategories'
             ? informationSubCategories[infoCategory]
