@@ -35,7 +35,7 @@ export const it: Locale = {
     information: 'Informazioni sull’utilizzo dell’app',
     navbarFirst: 'Il mio viaggio',
     navbarSecond: 'Pagamento',
-    navbarThird: 'Giustificativi',
+    navbarThird: 'Giustificativo',
     customsDuty: 'Tributi doganali',
     customsVat: 'IVA',
     goodCategories: 'Categorie di merci',
@@ -43,7 +43,7 @@ export const it: Locale = {
     toPayment: 'Pagamento',
     buttonContinue: 'Avanti',
     buttonBack: 'Indietro',
-    note: 'Suggerimento:',
+    note: 'Osservazione importante:',
     underConstruction: 'In corso',
   },
   snackBar: {
@@ -62,7 +62,7 @@ export const it: Locale = {
     welcome: 'Benvenuti a',
     onBoardingMessage:
       'La lingua è stata definita sulla base delle impostazioni attuali del sistema.',
-    currentLanguageMessage: 'La tua lingua attualmente \n selezionata è',
+    currentLanguageMessage: 'La lingua attualmente \n selezionata è',
     selectLanguage: 'Selezionare un’altra lingua',
     confirmationVat: 'Confermo di accettare l’aliquota IVA unica di',
     confirmationVat2: 'all’atto dell’imposizione delle merci',
@@ -70,7 +70,7 @@ export const it: Locale = {
     skipThisStep: 'Salta questo passaggio',
   },
   peopleInput: {
-    peopleInputQuestion: 'L’imposizione concerne quanti viaggiatori?',
+    peopleInputQuestion: 'Quanti viaggiatori sottostanno all\'imposizione?',
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Quali merci si desidera dichiarare?',
@@ -80,35 +80,35 @@ export const it: Locale = {
     quantityInput: 'Ingresso quantità',
     recordedOn: 'registrato su {{value}}',
     addQuantities: 'Aggiungi quantità',
-    enterQuantities: 'Inserisci le quantità di tutti {{value}} qui',
-    enterQuantity: 'Inserisci la quantità',
-    enterQuantitiesButter: 'Inserisci le quantità di tutti {{value}} qui',
-    enterQuantitiesAlcohol: 'Inserisci le quantità di tutti {{value}} qui',
+    enterQuantities: 'Inserisca qui la quantità totale di {{value}} qui',
+    enterQuantity: 'Inserisca la quantità',
+    enterQuantitiesButter: 'Inserisca qui la quantità totale di {{value}} qui',
+    enterQuantitiesAlcohol: 'Inserisca qui la quantità totale di {{value}} qui',
     standardInputSubText: '⚡️',
     enterQuantitiesCigarettes: '',
     enterQuantitiesTobacco: '',
     enterQuantitiesOil: '',
     enterQuantitiesMeat: '',
     meatInput: '',
-    butterInput: '',
-    oilInput: '',
+    butterInput: 'burro e panna',
+    oilInput: 'oli, grassi e margarina',
     alcSoftInput: '',
     alcHardInput: '',
     cigarettesInput: '',
     tobaccoInput: '',
   },
   amountInput: {
-    amountInput: 'Inserire qui il valore complessivo delle merci trasportate.',
+    amountInput: 'Inserisca il valore complessivo delle merci trasportate.',
     amountInputLargeItem:
       'Cattura i singoli oggetti con chi ha oltre {{value}} franchi.',
     amountInputLargeItemGreyBox:
       'Ancora una volta, cattura ogni oggetto che vale più di CHF 300 (valore netto).',
     amountInputAddItem: 'Aggiungere valore',
     amountInputAddItemLarge: 'Aggiungere oggetto',
-    amountInputEnterValueBeginning: 'Inserire il valore',
+    amountInputEnterValueBeginning: 'Inserisca il valore ',
     amountInputEnterValueBoldText: 'senza IVA estera (valore netto)',
     amountInputEnterValueEnd:
-      ', senza IVA estera (valore netto), compreso il valore dei regali ricevuti, cibo, prodotti del tabacco e bevande alcoliche.',
+      ', compreso il valore dei regali ricevuti, cibo, prodotti del tabacco e bevande alcoliche.',
     currentTotalValue: 'Valore complessivo attuale:',
     lastExchangeRate:
       'Sulla base dell’ultimo corso del cambio disponibile, aggiornato al momento del pagamento.',
@@ -124,8 +124,8 @@ export const it: Locale = {
     minorInfo: 'sotto i 17 anni',
     minorCount: '{{value}} bambino (sotto i 17 anni)',
     minorCount_plural: '{{value}} bambini (sotto i 17 anni)',
-    validateNoPeopleTitle: 'Deve essere almeno una persona',
-    validateNoPeopleSubtitle: 'Garantire la legittimità.',
+    validateNoPeopleTitle: 'Deve essere annunciata almeno una persona per garantire la legittimità.',
+    validateNoPeopleSubtitle: '',
     validateGenericYes: 'Sì',
     validateGenericNo: 'No',
     validateGenericOk: 'Ok',
@@ -142,11 +142,11 @@ export const it: Locale = {
     confirmPicker: 'Riprendere {{value}}',
     standardCategoryPicker: 'Quantità standard',
     individualCategoryPicker: 'Quantità esatte',
-    currencyPickerTitle: 'Inserire un oggetto',
+    currencyPickerTitle: 'Inserisca il valore complessivo delle merci trasportate',
     currencyPickerLargeAmountTitle:
-      'Inserire un oggetto con valore superiore a {{value}} franchi.',
+      'Inserisca ogni singolo oggetto con valore superiore a {{value}} franchi.',
     currencyPickerSubTitle:
-      'Inserire il valore netto dell’oggetto nella valuta originale:',
+      'Inserisca il valore netto dell’oggetto nella valuta originale:',
     currencyPickerRate: 'Data del corso del cambio:',
     currencyPickerInvalidInput: 'Inserimento non valido o campo non compilato',
     currencyPickerNoOffsettingInput: 'Nessun importo corrispondente',
@@ -156,15 +156,15 @@ export const it: Locale = {
     savedBasketTotalCost: 'Importo complessivo: CHF {{value}}',
     savedBasketNewShoppingCart: 'Nuovo carrello',
     closeModalText: 'Chiudere',
-    timePickerTitle: 'Scelta del passaggio in frontiera:',
-    timePickerSubTitle: 'Quando desidera attraversare la frontiera?',
+    timePickerTitle: 'Scelga l\'orario del passaggio del confine:',
+    timePickerSubTitle: 'Quando desidera attraversare il confine?',
     timePickerRegistrationValidUntilSameDay:
-      'Questa registrazione è valida per {{date}} da {{startTime}} a {{endTime}} in punto.',
+      'Questo giustificativo è valido il {{date}} dalle {{startTime}} alle {{endTime}} in punto.',
     timePickerRegistrationValidUntilDifferentDay:
-      'Questo accesso è valido per {{startDate}} da {{startTime}} a {{endDate}} al {{endTime}} in punto.',
+      'Questo giustificativo è valido il {{startDate}} dalle {{startTime}} al {{endDate}} alle {{endTime}} in punto.',
     timePickerRegistrationTimeInPast:
       'Il periodo che hai scelto non è permesso. Si prega di controllare la voce per continuare.',
-    timePickerTakeOverThePeriod: 'Prendi il controllo del periodo',
+    timePickerTakeOverThePeriod: 'Riprendere il periodo selezionato',
     timePickerTimePrefix: 'ora',
     savedBasket: 'Carrello corrente',
   },
@@ -182,10 +182,10 @@ export const it: Locale = {
     paidOn: 'Pagamento effettuato in data {{date}} alle ore {{time}} con:',
     transactionId: 'ID della transazione (SIX): {{value}}',
 
-    receiptValidFrom: 'Il giustificativo è valido per valico di frontiera da:',
+    receiptValidFrom: 'Il presente giustificativo è valido per il passagio del confine il:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} fino al {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Il giustificativo è valido per valico di frontiera da:',
+    receiptValidOn: 'Il presente giustificativo è valido per il passagio del confine il:',
     receiptValidOnDate: '{{date}} dalle ore {{startTime}} alle ore {{endTime}}',
 
     sumText: 'Totale (CHF): {{value}}',
@@ -193,7 +193,7 @@ export const it: Locale = {
     normalAmountsTitle: 'Valore complessivo delle merci',
     normalAmountsSubtitle: 'Totale di tutte le ricevute d’acquisto',
     largeAmountsTitle: 'Oggetti individuali',
-    largeAmountsSubtitle: 'vale oltre CHF 300',
+    largeAmountsSubtitle: 'di un valore superiore à CHF 300',
     receiptStorageNotification:
       'Il presente giustificativo rimane memorizzato per un anno. Durante questo periodo, può essere visualizzato in qualsiasi momento nell’app.',
     allReceiptsNavigationHeaderTitle: 'Giustificativi della dogana svizzera',
@@ -738,7 +738,7 @@ export const it: Locale = {
   },
   appInformation: {
     appInfoTitle: 'Informazioni sull’app ',
-    leftTabText: 'Colofone',
+    leftTabText: 'Impressum',
     rightTabText: 'Sviluppo',
     publisher: 'Editore',
     customsAdministrationAddressTitle:
@@ -757,7 +757,7 @@ export const it: Locale = {
     disclaimerTitle: 'Clausola di non responsabilità (disclaimer)',
     disclaimerText:
       'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    toContactForm: 'al modulo di contatto',
+    toContactForm: 'Formulario di contatto',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informazioni importanti',
@@ -770,7 +770,7 @@ export const it: Locale = {
     importantSoonText3:
       'QuickZoll può essere utilizzata solo per merci importate per uso privato o come regali.',
     importantSoonText4:
-      "L'utilizzo di QuickZoll comporta l'accettazione della condizione che l'aliquota IVA del 7,7 % viene applicata anche alle merci in realtà soggette all'aliquota ridotta del 2,5 % (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l'applicazione dell'aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato dal personale dell'Amministrazione federale delle dogane (AFD).",
+      "L'utilizzo di QuickZoll comporta l'accettazione della condizione che l'aliquota IVA del 7,7 % viene applicata anche alle merci soggette all'aliquota ridotta del 2,5 % (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l'applicazione dell'aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato dal personale dell'Amministrazione federale delle dogane (AFD).",
     importantSoonText5:
       'Il pagamento è possibile solo con carta di credito (Visa, Mastercard). Dopo il pagamento dei tributi le merci sono imposte.',
     importantSoonText6:
@@ -876,9 +876,9 @@ export const it: Locale = {
   },
   legalNoticeModal: {
     importantNote: 'Indicazione importante',
-    vatRateInfo: 'Si prega di tener conto che',
+    vatRateInfo: 'Si prega di tener conto che:',
     vatRateInfoText1:
-      'giorno è consentito entrare in Svizzera una sola volta con merci imposte con QuickZoll;',
+      'è consentito entrare in Svizzera una sola volta al giorno con merci imposte con QuickZoll;',
     vatRateInfoText2:
       'le merci dichiarate vengono imposte all’aliquota IVA unica del 7,7 %;',
     vatRateInfoText3: 'i tributi pagati con l’app non vengono rimborsati.',
@@ -891,7 +891,7 @@ export const it: Locale = {
   furtherInformationModal: {
     furtherInformation: 'Ulteriori informazioni:',
     acceptance:
-      "L’utilizzo di QuickZoll comporta l’accettazione della condizione che l’aliquota IVA del 7,7 % viene applicata anche alle merci in realtà soggette all’aliquota ridotta del 2,5 % (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l’applicazione dell’aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato. Utilizzando l'app, accetti che l'aliquota IVA sia pari al 7,7%; si applica anche alle merci che sono effettivamente soggette all'aliquota ridotta (alimenti, mangimi, medicinali e libri).",
+      "L’utilizzo di QuickZoll comporta l’accettazione della condizione che l’aliquota IVA del 7,7% viene applicata anche alle merci soggette all’aliquota ridotta del 2,5 % (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l’applicazione dell’aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato.",
   },
   updateTheApp: {
     title: 'Nuova versione disponibile!',
@@ -907,9 +907,9 @@ export const it: Locale = {
   },
   units: {
     kilo: 'kg',
-    kilo_plural: 'kgs',
+    kilo_plural: 'kg',
     kiloOrLiter: 'kg/litro',
-    kiloOrLiter_plural: 'kgs/litri',
+    kiloOrLiter_plural: 'kg/litri',
     liter: 'litro',
     liter_plural: 'litri',
     unit: 'unità',
@@ -918,9 +918,9 @@ export const it: Locale = {
     gram_plural: 'grammi',
   },
   acceptRateModal: {
-    modalTitle: 'IVA di 7.7%',
+    modalTitle: 'IVA al 7.7%',
     modalSubTitle:
-      'Confermo di accettare l’aliquota IVA unica di 7.7% all’atto dell’imposizione delle merci.',
+      'Confermo di accettare l’aliquota IVA unica del 7.7% all’atto dell’imposizione delle merci.',
     confirm: 'Riprendere',
   },
 };
