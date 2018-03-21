@@ -162,6 +162,8 @@ export const it: Locale = {
       'Questa registrazione è valida per {{date}} da {{startTime}} a {{endTime}} in punto.',
     timePickerRegistrationValidUntilDifferentDay:
       'Questo accesso è valido per {{startDate}} da {{startTime}} a {{endDate}} al {{endTime}} in punto.',
+    timePickerRegistrationTimeInPast:
+      'Il periodo che hai scelto non è permesso. Si prega di controllare la voce per continuare.',
     timePickerTakeOverThePeriod: 'Prendi il controllo del periodo',
     timePickerTimePrefix: 'ora',
     savedBasket: 'Carrello corrente',
@@ -789,6 +791,8 @@ export const it: Locale = {
       'Inserire il valore nella valuta estera in base alla ricevuta. Il valore viene determinato applicando il corso del cambio (vendita) del giorno precedente (ultimo giorno lavorativo).',
     howToDeclareYourGoodsText3:
       "Stabilire un intervallo di tempo di due ore per il passaggio del confine. Il giustificativo è valido solo durante questo arco di tempo. Se non è possibile rispettarlo, occorre rivolgersi a un valico di confine in cui è presente il personale dell'AFD per spiegare il motivo per cui non è stato possibile varcare il confine nell'intervallo di tempo della validità. Senza motivazione credibile i tributi vengono riscossi una seconda volta.",
+    howToDeclareYourGoodsTextBold3: '',
+    howToDeclareYourGoodsText3a: '',
     howToDeclareYourGoodsText4:
       'Se il giustificativo vale per più persone, queste devono passare il confine congiuntamente.',
     howToDeclareYourGoodsText5:
@@ -820,7 +824,7 @@ export const it: Locale = {
       "(informazioni sulla restituzione dell'IVA e sugli acquisti esenti da imposta in Svizzera [Tax free] sono disponibili qui).",
 
     legal: 'Aspetti legali',
-    usage: 'Uso',
+    usage: 'Utilizzo',
     legalText1:
       'L’imposizione con l’app è vincolante (art. 33 della legge del 18 marzo 2005 sulle dogane, RS 631.0). L’omessa oppure errata dichiarazione di merci vietate, soggette all’obbligo di autorizzazione o soggette al pagamento di tributi è dunque punibile.',
     legalText2:
@@ -848,10 +852,9 @@ export const it: Locale = {
       'Le autorità federali si riservano espressamente il diritto di modificare, cancellare o non pubblicare temporaneamente i contenuti in toto o in parte in qualsiasi momento senza preavviso.',
     liabilityText2:
       "Sono escluse rivendicazioni di responsabilità nei confronti delle autorità federali per danni di natura materiale o immateriale derivanti dall'accesso o dall'uso o non uso delle informazioni pubblicate, in caso di uso improprio del collegamento o di errori tecnici.",
-    culpability: 'Colpevolezza',
+    culpability: 'Sanzioni penali',
     culpabilityText1:
-      'Registra la merce completamente e correttamente. Le merci vietate e/o le merci vietate soggette ad autorizzazione non possono essere registrate. Lo sdoganamento con QuickZoll è vincolante (articolo 33 del Customs Act, ZG; SR 631.0). Chiunque omette di registrare i beni in modo completo o errato, o che registra merci e/o merci vietate soggette ad autorizzazione, è passibile di azioni giudiziarie (articoli 118 e 127 ZG).',
-
+      'Annunci la merce in modo completo e correttamente. Le merci vietate e/o soggette ad autorizzazione non possono essere annunciate. Lo sdoganamento con QuickZoll è vincolante (articolo 33 della Legge doganale, LD, SR 631.0). Chiunque omette di registrare i beni in modo completo o errato, o di registrare beni proibiti e/o merci soggetti ad autorizzazione, è passibile di sanzioni penali (articoli 118 e 127 LD).',
     referencesAndLinks: 'Riferimenti e link',
     referencesAndLinksText1:
       'I riferimenti e i link che rimandano a siti web di terzi non rientrano negli ambiti di responsabilità delle autorità federali. L’utente si assume i rischi connessi all’accesso a questi siti e al loro utilizzo. Le autorità federali dichiarano espressamente di non avere alcuna influenza sull’impostazione, sui contenuti e sulle offerte dei siti web a cui rimanda. La responsabilità per le informazioni e i servizi offerti in tali siti web ricade esclusivamente sui relativi terzi.',

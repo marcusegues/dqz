@@ -166,6 +166,8 @@ export const en: Locale = {
       'Please be sure to enter with this registration within two hours. This registration is valid on {{date}} from {{startTime}} to {{endTime}}.',
     timePickerRegistrationValidUntilDifferentDay:
       'Please be sure to enter with this registration within two hours. This registration is valid from {{startDate}} at {{startTime}} to {{endDate}} at {{endTime}}.',
+    timePickerRegistrationTimeInPast:
+      'The period you have chosen is not allowed. Please adjust your time of entry to continue.',
     timePickerTakeOverThePeriod: 'Take over the period',
     timePickerTimePrefix: '',
 
@@ -768,6 +770,8 @@ export const en: Locale = {
       "Enter the value in the foreign currency according to the payment document. The value is converted using the preceding day's (last working day) exchange rate (forex sell rate).",
     howToDeclareYourGoodsText3:
       'Set a two-hour timeframe for your border crossing. The receipt is valid only during this timeframe. If you are unable to comply with the selected timeframe, you must report to a border crossing manned by FCA staff and explain why you were unable to enter during the validity period. Duties will be levied again without credible justification.',
+    howToDeclareYourGoodsTextBold3: '',
+    howToDeclareYourGoodsText3a: '',
     howToDeclareYourGoodsText4:
       'All persons to whom the receipt applies must enter together.',
     howToDeclareYourGoodsText5:
@@ -801,7 +805,7 @@ export const en: Locale = {
       '(information concerning the refund of Swiss VAT and tax-free shopping in Switzerland can be found here ).',
 
     legal: 'Legal aspects',
-    usage: 'Usage',
+    usage: 'Use',
     legalText1:
       'Customs clearance with the app is binding (Art. 33 of the Customs Act, SR 631.0). You commit a criminal offence if you do not declare or falsely declare prohibited or dutiable goods or ones that require authorisation.',
     legalText2:
@@ -828,9 +832,9 @@ export const en: Locale = {
       'The Federal Authorities expressly reserve the right to change, delete or temporarily not publish contents in whole or in part at any time without notice.',
     liabilityText2:
       'Liability claims against the Federal authorities for damages of a material or immaterial nature which have arisen from the access or use or non-use of the published information, through misuse of the connection or due to technical faults are excluded.',
-    culpability: 'Culpability',
+    culpability: 'Penal sanctions',
     culpabilityText1:
-      'Register the goods completely and correctly. Prohibited goods and/or goods subject to authorization may not be registered. Customs clearance with QuickZoll is binding (Art. 33 of the Customs Act, ZG; SR 631.0). Anyone who fails to register goods completely or incorrectly, or who registers prohibited goods and/or goods subject to authorization, is liable to prosecution (Articles 118 and 127 ZG).',
+      'Declare the goods completely and correctly. Prohibited goods and/or subject to authorization cannot be declared with QuickZoll. Clearance with QuickZoll is binding (Article 33 of the Customs law, CL, SR 631.0). Anyone who fails to declare goods completely or incorrectly, or who declares prohibited goods and/or subject to authorization, is liable to penal sanctions (Articles 118 and 127 CD).',
     referencesAndLinks: 'References and links',
     referencesAndLinksText1:
       'References and links to third-party websites lie outside the scope of responsibility of the federal authorities. Users who access and/or use such websites do so at their own risk. The federal authorities explicitly declare that they have no influence whatsoever on the design, content or offers of linked sites. The relevant third party is entirely responsible for the information and services of third-party websites.',

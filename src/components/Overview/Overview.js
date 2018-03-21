@@ -174,7 +174,6 @@ class OverviewInner extends React.Component<
           continueDisabled={paymentDisabled}
         />
         <TimePickerModal
-          currentEntryTime={momentReceiptEntryTime}
           modalVisible={this.state.modalVisible}
           onHideModal={() => this.handleHideModal()}
           onSelectTime={entryTime => this.handleSetReceiptEntryTime(entryTime)}
