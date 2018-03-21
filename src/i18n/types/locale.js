@@ -141,7 +141,9 @@ type QAFlowTranslations = {
   validateMainCategoryRemoveTitle: string,
   validateMainCategoryRemoveSubtitle: string,
   validateMainCategoryAndVatRemoveSubTitle: string,
+  validateVatRemoveSubTitle: string,
   validateMainCategoryRemoveYes: string,
+  validateOtherGoodsRemoveYes: string,
   itemsGreaterThan300CHF: string,
 };
 

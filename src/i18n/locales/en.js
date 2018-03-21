@@ -139,7 +139,9 @@ export const en: Locale = {
       'Currently, some subcategories contain quantities: {{value}}',
     validateMainCategoryAndVatRemoveSubTitle:
       'Currently, some subcategories contain quantities: {{value}}. All added VAT amounts will be deleted as well.',
+    validateVatRemoveSubTitle: 'All added VAT amounts will be deleted',
     validateMainCategoryRemoveYes: 'Yes, remove resp. quantities',
+    validateOtherGoodsRemoveYes: 'Yes, remove resp. VAT amounts',
     itemsGreaterThan300CHF: 'Items > CHF 300',
   },
   modal: {
@@ -821,34 +823,33 @@ export const en: Locale = {
     privacyAndLiability: 'Data protection and liability',
     dataProtection: 'Data protection',
     dataProtectionText1:
-    "When accessing QuickZoll, no data or information about the operating system or browser is collected. In the context of the payment process, SIX will process the data necessary for the procedure. If you have any questions about the payment process, please contact SIX directly.",
+      'When accessing QuickZoll, no data or information about the operating system or browser is collected. In the context of the payment process, SIX will process the data necessary for the procedure. If you have any questions about the payment process, please contact SIX directly.',
     dataProtectionText2: '',
     dataProtectionText3: '',
     dataProtectionText4: '',
     dataProtectionText5: '',
     liability: 'Liability',
     liabilityText1:
-    "The FCA expressly reserves the right to change or delete some or all of the content of this app at any time without prior notice.",
+      'The FCA expressly reserves the right to change or delete some or all of the content of this app at any time without prior notice.',
     liabilityText2:
-    "Liability claims against the FCA for material or immaterial damage caused by the use of this app due to technical malfunctions, misuse of QuickZoll or other reasons are excluded.",
-          culpability: 'Criminal liability',
+      'Liability claims against the FCA for material or immaterial damage caused by the use of this app due to technical malfunctions, misuse of QuickZoll or other reasons are excluded.',
+    culpability: 'Criminal liability',
     culpabilityText1:
-    "Declare the goods fully and correctly. Prohibited goods and/or goods which are subject to authorisation may not be declared. Customs clearance with QuickZoll is binding (Art. 33 of the Customs Act, CustA; SR 631.0). You commit a criminal offence if you do not fully declare or falsely declare goods or declare prohibited goods and/or goods which are subject to authorisation (Art. 118 and 127 of the CustA).",
-referencesAndLinks: 'References and links',
+      'Declare the goods fully and correctly. Prohibited goods and/or goods which are subject to authorisation may not be declared. Customs clearance with QuickZoll is binding (Art. 33 of the Customs Act, CustA; SR 631.0). You commit a criminal offence if you do not fully declare or falsely declare goods or declare prohibited goods and/or goods which are subject to authorisation (Art. 118 and 127 of the CustA).',
+    referencesAndLinks: 'References and links',
     referencesAndLinksText1:
-    "References and links to third-party websites lie outside the scope of responsibility of the federal authorities. Users who access and/or use such websites do so at their own risk. The federal authorities explicitly declare that they have no influence whatsoever on the design, content or offers of linked sites. The relevant third party is entirely responsible for the information and services of third-party websites.",
+      'References and links to third-party websites lie outside the scope of responsibility of the federal authorities. Users who access and/or use such websites do so at their own risk. The federal authorities explicitly declare that they have no influence whatsoever on the design, content or offers of linked sites. The relevant third party is entirely responsible for the information and services of third-party websites.',
 
     referencesAndLinksText2:
-    "Any responsibility in respect of such websites is declined.",
+      'Any responsibility in respect of such websites is declined.',
 
     copyright: 'Copyright',
-    copyrightText1:
-    "Copyright, Swiss Confederation, FCA, 2018.",
+    copyrightText1: 'Copyright, Swiss Confederation, FCA, 2018.',
     copyrightText2:
-    "The information contained on the websites of the federal authorities is made publicly accessible. Downloading or copying content, illustrations, photos or any other data does not entail any transfer of rights concerning the content.",
+      'The information contained on the websites of the federal authorities is made publicly accessible. Downloading or copying content, illustrations, photos or any other data does not entail any transfer of rights concerning the content.',
 
     copyrightText3:
-    "Copyright and all other rights to content, illustrations, photos or other data on the websites of the federal authorities belong exclusively to the federal authorities or to any specifically named right holders. The reproduction of any components requires the prior written consent of the copyright holder.",
+      'Copyright and all other rights to content, illustrations, photos or other data on the websites of the federal authorities belong exclusively to the federal authorities or to any specifically named right holders. The reproduction of any components requires the prior written consent of the copyright holder.',
   },
   overview: {
     declared: 'Declared:',
