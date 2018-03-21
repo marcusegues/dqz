@@ -769,9 +769,8 @@ export const en: Locale = {
     howToDeclareYourGoodsText2:
       "Enter the value in the foreign currency according to the payment document. The value is converted using the preceding day's (last working day) exchange rate (forex sell rate).",
     howToDeclareYourGoodsText3:
-      'Set a two-hour timeframe for your border crossing. The receipt is valid only during this timeframe. If you are unable to comply with the selected timeframe, you must report to a border crossing manned by FCA staff and explain why you were unable to enter during the validity period. Duties will be levied again without credible justification.',
+      'Set a two-hour timeframe for your border crossing. <1>The receipt is valid only during this timeframe.</1> If you are unable to comply with the selected timeframe, you must report to a border crossing manned by FCA staff and explain why you were unable to enter during the validity period. Duties will be levied again without credible justification.',
     howToDeclareYourGoodsTextBold3: '',
-    howToDeclareYourGoodsText3a: '',
     howToDeclareYourGoodsText4:
       'All persons to whom the receipt applies must enter together.',
     howToDeclareYourGoodsText5:

@@ -589,8 +589,6 @@ type LegalNoticeInformationTranslations = {
   howToDeclareYourGoodsText1: string,
   howToDeclareYourGoodsText2: string,
   howToDeclareYourGoodsText3: string,
-    howToDeclareYourGoodsTextBold3: string,
-    howToDeclareYourGoodsText3a: string,
   howToDeclareYourGoodsText4: string,
   howToDeclareYourGoodsText5: string,
   howToDeclareYourGoodsText6: string,
