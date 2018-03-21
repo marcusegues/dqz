@@ -235,16 +235,6 @@ class LegalNoticeInfoInner extends React.Component<
                   }
                 />
               </BulletTextWithChildren>
-
-              <CardRowText text={t('legal')} style={styles.disclaimerTitle} />
-              <AppInfoSubText
-                text={t('legalText1')}
-                style={{ marginBottom: verticalScale(10) }}
-              />
-              <AppInfoSubText
-                text={t('legalText2')}
-                style={{ marginBottom: verticalScale(10) }}
-              />
             </View>
           ) : (
             <View style={styles.contentContainer}>
