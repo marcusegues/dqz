@@ -9,6 +9,7 @@ import {
   Dimensions,
   SafeAreaView,
   Platform,
+  Linking,
   // $FlowFixMe
 } from 'react-native';
 import type { ComponentType } from 'react';
@@ -64,6 +65,14 @@ type UpdateTheAppInnerProps = {
   t: TFunction,
 };
 
+const handleClick = () => {
+  const link =
+    Platform.OS === 'ios'
+      ? 'https://www.apple.com/itunes/'
+      : 'https://play.google.com/apps/testing/com.ambrite.dazit';
+  Linking.openURL(link);
+};
+
 const UpdateTheAppInner = ({ t }: UpdateTheAppInnerProps) => {
   const ios = Platform.OS === 'ios';
   const buttonText = ios ? t('buttonTextIos') : t('buttonTextAndroid');
@@ -78,7 +87,7 @@ const UpdateTheAppInner = ({ t }: UpdateTheAppInnerProps) => {
       </View>
       <Image source={bottomIcon} resizeMode="contain" style={ownStyles.icon} />
       <View style={ownStyles.button}>
-        <RedButton text={buttonText} onPress={() => {}} />
+        <RedButton text={buttonText} onPress={handleClick} />
       </View>
     </SafeAreaView>
   );

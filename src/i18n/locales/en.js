@@ -785,7 +785,7 @@ export const en: Locale = {
 
     specialCases: 'Special cases',
     specialCasesText1:
-      'The following goods cannot be cleared using QuickZoll. You must declare the goods at a border crossing manned by FCA staff in any case.',
+      'The following goods cannot be cleared using QuickZoll. You must declare the goods at a <1>border crossing</1> manned by FCA staff in any case.',
     specialCasesText2:
       'Goods which are subject to restrictions or bans and which require a certificate or authorisation (e.g. weapons, live animals and products governed by species protection);',
     specialCasesText3: 'further information',
@@ -824,32 +824,34 @@ export const en: Locale = {
     privacyAndLiability: 'Data protection and liability',
     dataProtection: 'Data protection',
     dataProtectionText1:
-      'Based on Article 13 of the Swiss Constitution and the federal data protection provisions, all persons are entitled to have their individual privacy preserved and to be protected against misuse of their personal data. The federal authorities comply with these provisions. Personal data is treated strictly confidentially and is neither disclosed nor sold to third parties.',
+    "When accessing QuickZoll, no data or information about the operating system or browser is collected. In the context of the payment process, SIX will process the data necessary for the procedure. If you have any questions about the payment process, please contact SIX directly.",
     dataProtectionText2: '',
     dataProtectionText3: '',
     dataProtectionText4: '',
     dataProtectionText5: '',
     liability: 'Liability',
     liabilityText1:
-      'The Federal Authorities expressly reserve the right to change, delete or temporarily not publish contents in whole or in part at any time without notice.',
+    "The FCA expressly reserves the right to change or delete some or all of the content of this app at any time without prior notice.",
     liabilityText2:
-      'Liability claims against the Federal authorities for damages of a material or immaterial nature which have arisen from the access or use or non-use of the published information, through misuse of the connection or due to technical faults are excluded.',
-    culpability: 'Penal sanctions',
+    "Liability claims against the FCA for material or immaterial damage caused by the use of this app due to technical malfunctions, misuse of QuickZoll or other reasons are excluded.",
+          culpability: 'Criminal liability',
     culpabilityText1:
-      'Declare the goods completely and correctly. Prohibited goods and/or subject to authorization cannot be declared with QuickZoll. Clearance with QuickZoll is binding (Article 33 of the Customs law, CL, SR 631.0). Anyone who fails to declare goods completely or incorrectly, or who declares prohibited goods and/or subject to authorization, is liable to penal sanctions (Articles 118 and 127 CD).',
-    referencesAndLinks: 'References and links',
+    "Declare the goods fully and correctly. Prohibited goods and/or goods which are subject to authorisation may not be declared. Customs clearance with QuickZoll is binding (Art. 33 of the Customs Act, CustA; SR 631.0). You commit a criminal offence if you do not fully declare or falsely declare goods or declare prohibited goods and/or goods which are subject to authorisation (Art. 118 and 127 of the CustA).",
+referencesAndLinks: 'References and links',
     referencesAndLinksText1:
-      'References and links to third-party websites lie outside the scope of responsibility of the federal authorities. Users who access and/or use such websites do so at their own risk. The federal authorities explicitly declare that they have no influence whatsoever on the design, content or offers of linked sites. The relevant third party is entirely responsible for the information and services of third-party websites.',
+    "References and links to third-party websites lie outside the scope of responsibility of the federal authorities. Users who access and/or use such websites do so at their own risk. The federal authorities explicitly declare that they have no influence whatsoever on the design, content or offers of linked sites. The relevant third party is entirely responsible for the information and services of third-party websites.",
+
     referencesAndLinksText2:
-      'Any responsibility with respect of such websites is declined.',
+    "Any responsibility in respect of such websites is declined.",
 
     copyright: 'Copyright',
     copyrightText1:
-      'Copyright, federal authorities of the Swiss Confederation, 2018.',
+    "Copyright, Swiss Confederation, FCA, 2018.",
     copyrightText2:
-      'The information contained on the websites of the federal authorities is made publicly accessible. Downloading or copying content, illustrations, photos or any other data does not entail any transfer of rights concerning the content.',
+    "The information contained on the websites of the federal authorities is made publicly accessible. Downloading or copying content, illustrations, photos or any other data does not entail any transfer of rights concerning the content.",
+
     copyrightText3:
-      'Copyright and all other rights to content, illustrations, photos or other data on the websites of the federal authorities belong exclusively to the federal authorities or to any specifically named right holders. The reproduction of any components requires the prior written consent of the copyright holder.',
+    "Copyright and all other rights to content, illustrations, photos or other data on the websites of the federal authorities belong exclusively to the federal authorities or to any specifically named right holders. The reproduction of any components requires the prior written consent of the copyright holder.",
   },
   overview: {
     declared: 'Declared:',
