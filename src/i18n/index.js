@@ -22,7 +22,7 @@ const languageDetector = {
 export const i18nImplementation = i18n.use(languageDetector).init({
   fallbackLng: 'de',
 
-  debug: false,
+  debug: true,
   resources: {
     en,
     de,

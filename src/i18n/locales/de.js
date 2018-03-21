@@ -778,7 +778,7 @@ export const de: Locale = {
 
     specialCases: 'Besondere Fälle',
     specialCasesText1:
-      'Folgende Waren können Sie nicht mit QuickZoll verzollen. Sie müssen diese in jedem Fall bei einem durch das Personal der EZV besetzten Grenzübergang anmelden.',
+      'Folgende Waren können Sie nicht mit QuickZoll verzollen. Sie müssen diese in jedem Fall bei einem durch das Personal der EZV besetzten <1>Grenzübergang</1> anmelden.',
     specialCasesText2:
       'Waren, die Beschränkungen oder Verboten unterliegen und die zeugnis- oder bewilligungspflichtig sind (z.B. Waffen, lebende Tiere und Artenschutzwaren);',
     specialCasesText3: 'Weitere Informationen',
