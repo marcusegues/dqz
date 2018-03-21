@@ -797,7 +797,7 @@ export const fr: Locale = {
 
     howToDeclareYourGoods: 'Marche à suivre pour dédouaner vos marchandises:',
     howToDeclareYourGoodsText1:
-      "Déclarez toutes les marchandises que vous transportez (à l'exception des effets person-nels et des provisions de voyage). Les franchises quantitatives et les fran-chises-valeur auxquelles vous avez droit seront déduites automatiquement lors du dé-douanement.",
+      "Déclarez toutes les marchandises que vous transportez (à l'exception des effets personnels et des provisions de voyage). Les franchises quantitatives et les franchises-valeur auxquelles vous avez droit seront déduites automatiquement lors du dé-douanement.",
     howToDeclareYourGoodsText2:
       'Saisissez la valeur en devise étrangère figurant sur le justificatif de paiement. Celle-ci sera convertie en francs selon le taux de change (vente) de la veille (dernier jour ouvrable).',
     howToDeclareYourGoodsText3:
@@ -807,7 +807,7 @@ export const fr: Locale = {
     howToDeclareYourGoodsText4:
       'Toutes les personnes pour lesquelles la quittance est valable doivent entrer ensemble en Suisse.',
     howToDeclareYourGoodsText5:
-      "Vous pouvez corriger votre déclaration à tout moment avant le paiement. Après le paiement, vous ne pouvez plus effectuer aucune correction dans QuickZoll. Vous devez déclarer à un passage frontière occupé par du personnel de l'AFD les marchandises étran-gères supplémentaires achetées après le paiement.",
+      "Vous pouvez corriger votre déclaration à tout moment avant le paiement. Après le paiement, vous ne pouvez plus effectuer aucune correction dans QuickZoll. Vous devez déclarer à un passage frontière occupé par du personnel de l'AFD les marchandises étrangères supplémentaires achetées après le paiement.",
     howToDeclareYourGoodsText6:
       "Il est nécessaire d'être connecté à Internet pour mener à bien l'opération de paiement. S'il n'est pas possible d'effectuer le dédouanement à l'aide de QuickZoll (par ex. absence de connexion à Internet ou impossibilité de payer les redevances avec une carte de crédit), vous devez déclarer les marchandises auprès d'un passage frontière occupé par du personnel de l'AFD ou par l'intermédiaire d'une boîte à déclarations.",
     howToDeclareYourGoodsText7:
@@ -820,7 +820,7 @@ export const fr: Locale = {
       'les marchandises soumises à des restrictions ou des interdictions et les marchandises assujetties à un certificat ou un permis (par ex. armes, animaux vivants et marchandises soumises aux dispositions sur la conservation des espèces);',
     specialCasesText3: 'informations complémentaires',
     specialCasesText4:
-      "les marchandises d'une valeur totale supérieure ou égale à 20 000 francs qui sont desti-nées à l'usage privé ou à être offertes en cadeau;",
+      "les marchandises d'une valeur totale supérieure ou égale à 20'000 francs qui sont destinées à l'usage privé ou à être offertes en cadeau;",
     specialCasesText5:
       'les marchandises que vous souhaitez déclarer au taux de TVA réduit;',
     specialCasesText6:
