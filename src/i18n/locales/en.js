@@ -783,7 +783,7 @@ export const en: Locale = {
 
     specialCases: 'Special cases',
     specialCasesText1:
-      'The following goods cannot be cleared using QuickZoll. You must declare the goods at a border crossing manned by FCA staff in any case.',
+      'The following goods cannot be cleared using QuickZoll. You must declare the goods at a <1>border crossing</1> manned by FCA staff in any case.',
     specialCasesText2:
       'Goods which are subject to restrictions or bans and which require a certificate or authorisation (e.g. weapons, live animals and products governed by species protection);',
     specialCasesText3: 'further information',
