@@ -193,11 +193,17 @@ class ReceiptAfterPaymentInner extends React.Component<
     });
     const { status } = await Permissions.getAsync(Permissions.CAMERA_ROLL);
     if (status !== 'granted') {
-      Permissions.askAsync(Permissions.CAMERA_ROLL);
+      Permissions.askAsync(Permissions.CAMERA_ROLL).then(async ({ status }) => {
+        if (status === 'granted') {
+          this.saveToCameraRoll(snapshot);
+        }
+      });
+    } else {
+      this.saveToCameraRoll(snapshot);
     }
-    if (status === 'granted') {
-      alert('Granted permission to camera roll');
-    }
+  }
+
+  async saveToCameraRoll(snapshot) {
     try {
       await CameraRoll.saveToCameraRoll(snapshot, 'photo');
       alert('HEY! Saved to camera roll!');
