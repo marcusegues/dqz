@@ -52,11 +52,6 @@ const styles = {
   ambriteAddress: {
     marginTop: verticalScale(15),
   },
-  disclaimerTitle: {
-    color: MAIN_BLACK,
-    marginTop: verticalScale(25),
-    marginBottom: verticalScale(10),
-  },
 };
 
 type AppInfoState = {
@@ -150,7 +145,7 @@ class AppInfoInner extends React.Component<
                 text={t('toContactForm').toUpperCase()}
                 onPress={() =>
                   Linking.openURL(
-                    `https://www.webapps.ezv.admin.ch/apps/contactForm/?lang=${
+                    `https://www.webapps.ezv.admin.ch/apps/contactQuick/index.php?lang=${
                       i18n.language
                     }`
                   )
@@ -182,11 +177,6 @@ class AppInfoInner extends React.Component<
                   textDecorationLine: 'none',
                 }}
               />
-              <CardRowText
-                text={t('disclaimerTitle')}
-                style={styles.disclaimerTitle}
-              />
-              <AppInfoSubText text={t('disclaimerText')} />
             </View>
           )}
         </ScrollViewCard>

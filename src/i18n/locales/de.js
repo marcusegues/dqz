@@ -141,10 +141,10 @@ export const de: Locale = {
       'Sind Sie sicher, dass Sie diese Hauptkategorie entfernen möchten?',
     validateMainCategoryRemoveSubtitle:
       'Im Moment enthalten gewisse Unterkategorien Mengen, nämlich: {{value}}',
-    validateMainCategoryAndVatRemoveSubTitle: '🔥',
-    validateVatRemoveSubTitle: '🔥',
+    validateMainCategoryAndVatRemoveSubTitle: 'Im Moment gibt es schon vorhandene Einträge.',
+    validateVatRemoveSubTitle: 'Es bestehen schon Einträge für die MWST Abgaben.',
     validateMainCategoryRemoveYes: 'Ja - ich möchte dies löschen',
-    validateOtherGoodsRemoveYes: '🔥',
+    validateOtherGoodsRemoveYes: 'Ja - ich möchte dies löschen',
     itemsGreaterThan300CHF: 'Gegenstände > 300 CHF',
   },
   modal: {
@@ -724,13 +724,10 @@ export const de: Locale = {
     customsAdministrationAddressTitle: 'Eidgenössische Zollverwaltung EZV',
     contact: 'Kontakt',
     customsInfoCenter: 'Auskunftszentrale Zoll',
-    generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern\nhttp://www.ezv.admin.ch`,
+    generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern`,
     designAndDevelopment: 'Design & Entwicklung',
     ambriteAddress:
-      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch\nhttp://www.ambrite.ch',
-    disclaimerTitle: 'Disclaimer',
-    disclaimerText:
-      'Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten. Damit das Layout nun nicht nackt im Raume steht und sich klein und leer vorkommt, springe ich ein: der Blindtext. Genau zu diesem Zwecke erschaffen, immer im Schatten meines großen Bruders »Lorem Ipsum«, freue ich mich jedes Mal, wenn Sie ein paar Zeilen lesen. Denn esse est percipi - Sein ist wahrgenommen werden. Und weil Sie nun schon die Güte haben, mich ein paar weitere Sätze lang zu begleiten, möchte ich diese Gelegenheit nutzen, Ihnen nicht nur als Lückenfüller zu dienen, sondern auf etwas hinzuweisen, das es ebenso verdient wahrgenommen zu werden: Webstandards nämlich.',
+      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch',
     toContactForm: 'Zum Kontaktformular',
   },
   legalNoticeInformation: {
