@@ -1,12 +1,10 @@
 // @flow
 import Immutable from 'immutable';
-import type {
-  QAStateEnriched,
-  } from '../QuestionAnswerContainer';
+import type { QAStateEnriched } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
 import type { Basket } from '../../../model/types/basketPeopleAmountsTypes';
 import { showLargeAmountsQuestion } from './controlQuestionStates';
-import type {QuestionFlag, QuestionType} from "../types/questionAnswerTypes";
+import type { QuestionFlag, QuestionType } from '../types/questionAnswerTypes';
 
 export const anyQuantitiesInBasket = (basket: Basket): boolean =>
   basket

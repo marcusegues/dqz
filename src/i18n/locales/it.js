@@ -70,7 +70,7 @@ export const it: Locale = {
     skipThisStep: 'Salta questo passaggio',
   },
   peopleInput: {
-    peopleInputQuestion: 'Quanti viaggiatori sottostanno all\'imposizione?',
+    peopleInputQuestion: "Quanti viaggiatori sottostanno all'imposizione?",
   },
   mainCategoriesInput: {
     mainCategoriesQuestion: 'Quali merci si desidera dichiarare?',
@@ -124,7 +124,8 @@ export const it: Locale = {
     minorInfo: 'sotto i 17 anni',
     minorCount: '{{value}} bambino (sotto i 17 anni)',
     minorCount_plural: '{{value}} bambini (sotto i 17 anni)',
-    validateNoPeopleTitle: 'Deve essere annunciata almeno una persona per garantire la legittimità.',
+    validateNoPeopleTitle:
+      'Deve essere annunciata almeno una persona per garantire la legittimità.',
     validateNoPeopleSubtitle: '',
     validateGenericYes: 'Sì',
     validateGenericNo: 'No',
@@ -134,15 +135,18 @@ export const it: Locale = {
     validateMainCategoryRemoveSubtitle:
       'Al momento determinate sottocategorie contengono delle quantità, ovvero: {{value}}',
     validateMainCategoryAndVatRemoveSubTitle: '🔥',
+    validateVatRemoveSubTitle: '🔥',
     validateMainCategoryRemoveYes:
       'Sì, desidero eliminare le rispettive quantità.',
+    validateOtherGoodsRemoveYes: '🔥',
     itemsGreaterThan300CHF: 'Articoli > 300 CHF',
   },
   modal: {
     confirmPicker: 'Riprendere {{value}}',
     standardCategoryPicker: 'Quantità standard',
     individualCategoryPicker: 'Quantità esatte',
-    currencyPickerTitle: 'Inserisca il valore complessivo delle merci trasportate',
+    currencyPickerTitle:
+      'Inserisca il valore complessivo delle merci trasportate',
     currencyPickerLargeAmountTitle:
       'Inserisca ogni singolo oggetto con valore superiore a {{value}} franchi.',
     currencyPickerSubTitle:
@@ -156,7 +160,7 @@ export const it: Locale = {
     savedBasketTotalCost: 'Importo complessivo: CHF {{value}}',
     savedBasketNewShoppingCart: 'Nuovo carrello',
     closeModalText: 'Chiudere',
-    timePickerTitle: 'Scelga l\'orario del passaggio del confine:',
+    timePickerTitle: "Scelga l'orario del passaggio del confine:",
     timePickerSubTitle: 'Quando desidera attraversare il confine?',
     timePickerRegistrationValidUntilSameDay:
       'Questo giustificativo è valido il {{date}} dalle {{startTime}} alle {{endTime}} in punto.',
@@ -182,10 +186,12 @@ export const it: Locale = {
     paidOn: 'Pagamento effettuato in data {{date}} alle ore {{time}} con:',
     transactionId: 'ID della transazione (SIX): {{value}}',
 
-    receiptValidFrom: 'Il presente giustificativo è valido per il passagio del confine il:',
+    receiptValidFrom:
+      'Il presente giustificativo è valido per il passagio del confine il:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} fino al {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Il presente giustificativo è valido per il passagio del confine il:',
+    receiptValidOn:
+      'Il presente giustificativo è valido per il passagio del confine il:',
     receiptValidOnDate: '{{date}} dalle ore {{startTime}} alle ore {{endTime}}',
 
     sumText: 'Totale (CHF): {{value}}',
@@ -790,9 +796,7 @@ export const it: Locale = {
     howToDeclareYourGoodsText2:
       'Inserire il valore nella valuta estera in base alla ricevuta. Il valore viene determinato applicando il corso del cambio (vendita) del giorno precedente (ultimo giorno lavorativo).',
     howToDeclareYourGoodsText3:
-      "Stabilire un intervallo di tempo di due ore per il passaggio del confine. Il giustificativo è valido solo durante questo arco di tempo. Se non è possibile rispettarlo, occorre rivolgersi a un valico di confine in cui è presente il personale dell'AFD per spiegare il motivo per cui non è stato possibile varcare il confine nell'intervallo di tempo della validità. Senza motivazione credibile i tributi vengono riscossi una seconda volta.",
-    howToDeclareYourGoodsTextBold3: '',
-    howToDeclareYourGoodsText3a: '',
+      "Stabilire un intervallo di tempo di due ore per il passaggio del confine. <1>Il giustificativo è valido solo durante questo arco di tempo.</1> Se non è possibile rispettarlo, occorre rivolgersi a un valico di confine in cui è presente il personale dell'AFD per spiegare il motivo per cui non è stato possibile varcare il confine nell'intervallo di tempo della validità. Senza motivazione credibile i tributi vengono riscossi una seconda volta.",
     howToDeclareYourGoodsText4:
       'Se il giustificativo vale per più persone, queste devono passare il confine congiuntamente.',
     howToDeclareYourGoodsText5:
@@ -891,7 +895,7 @@ export const it: Locale = {
   furtherInformationModal: {
     furtherInformation: 'Ulteriori informazioni:',
     acceptance:
-      "L’utilizzo di QuickZoll comporta l’accettazione della condizione che l’aliquota IVA del 7,7% viene applicata anche alle merci soggette all’aliquota ridotta del 2,5 % (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l’applicazione dell’aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato.",
+      'L’utilizzo di QuickZoll comporta l’accettazione della condizione che l’aliquota IVA del 7,7% viene applicata anche alle merci soggette all’aliquota ridotta del 2,5 % (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l’applicazione dell’aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato.',
   },
   updateTheApp: {
     title: 'Nuova versione disponibile!',

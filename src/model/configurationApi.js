@@ -24,8 +24,6 @@ import type { FlatAmount } from './utils';
 
 const emptyItem: CategoryBasketItem = makeCategoryBasketItemRecord();
 
-
-
 /**
  * Empty Basket
  * @type Basket

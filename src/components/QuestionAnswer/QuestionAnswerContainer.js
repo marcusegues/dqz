@@ -1,57 +1,69 @@
-import type {ComponentType} from 'react';
+import type { ComponentType } from 'react';
 // @flow
 import React from 'react';
 // $FlowFixMe
-import {FlatList} from 'react-native';
-import {connect} from 'react-redux';
-import {translate} from 'react-i18next';
+import { FlatList } from 'react-native';
+import { connect } from 'react-redux';
+import { translate } from 'react-i18next';
 
-import {NavBar} from '../NavBar/NavBar';
-import {PeopleInputQA} from './PeopleInput/PeopleInputQA';
-import {MainCategoriesInputQA} from './MainCategoriesInput/MainCategoriesInputQA';
-import {QuantityInputQA} from './QuantityInput/QuantityInputQA';
+import { NavBar } from '../NavBar/NavBar';
+import { PeopleInputQA } from './PeopleInput/PeopleInputQA';
+import { MainCategoriesInputQA } from './MainCategoriesInput/MainCategoriesInputQA';
+import { QuantityInputQA } from './QuantityInput/QuantityInputQA';
 
 import {
-    getAmounts,
-    getBasket,
-    getCurrencies,
-    getFormattedCurrencyDate,
-    getMainCategories,
-    getPeople,
-    getQAState,
-    getReceiptEntryTime,
-    getSettings,
+  getAmounts,
+  getBasket,
+  getCurrencies,
+  getFormattedCurrencyDate,
+  getMainCategories,
+  getPeople,
+  getQAState,
+  getReceiptEntryTime,
+  getSettings,
 } from '../../reducers/selectors';
-import type {Amounts, Basket, People,} from '../../model/types/basketPeopleAmountsTypes';
-import type {MainCategories, Settings,} from '../../types/reducers/declaration';
+import type {
+  Amounts,
+  Basket,
+  People,
+} from '../../model/types/basketPeopleAmountsTypes';
+import type {
+  MainCategories,
+  Settings,
+} from '../../types/reducers/declaration';
 import {
-    collapseAllExistingExceptOne,
-    collapseQuestion,
-    setInitStates,
-    setQuestionStates,
+  collapseAllExistingExceptOne,
+  collapseQuestion,
+  setInitStates,
+  setQuestionStates,
 } from './QAControl/controlQuestionStates';
-import {setInitFlags, setQuestionFlag} from './QAControl/controlQuestionFlag';
-import {HeaderTitle} from '../Headers/subcomponents/HeaderTitle';
-import {onUpdateFactory} from './QAControl/validation';
-import {AmountInputQA} from './AmountInput/AmountInputQA';
-import type {CurrencyObject} from '../../model/currencies';
-import type {Navigation, TFunction} from '../../types/generalTypes';
+import { setInitFlags, setQuestionFlag } from './QAControl/controlQuestionFlag';
+import { HeaderTitle } from '../Headers/subcomponents/HeaderTitle';
+import { onUpdateFactory } from './QAControl/validation';
+import { AmountInputQA } from './AmountInput/AmountInputQA';
+import type { CurrencyObject } from '../../model/currencies';
+import type { Navigation, TFunction } from '../../types/generalTypes';
 import {
-    analyticsMainCategoriesChanged,
-    analyticsPeopleChanged,
-    analyticsScreenMounted,
+  analyticsMainCategoriesChanged,
+  analyticsPeopleChanged,
+  analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
-import {resetAllAmounts} from '../../model/configurationApi';
+import { resetAllAmounts } from '../../model/configurationApi';
 import {
-    storeAmounts,
-    storeBasket,
-    storeMainCategories,
-    storePeople,
-    storeQAState,
+  storeAmounts,
+  storeBasket,
+  storeMainCategories,
+  storePeople,
+  storeQAState,
 } from '../../asyncStorage/storageApi';
-import {MainContentContainer} from '../MainContentContainer/MainContentContainer';
-import {isInitBasket} from '../../utils/declaration/declaration';
-import type {QAState, QuestionFlag, QuestionState, QuestionType} from "./types/questionAnswerTypes";
+import { MainContentContainer } from '../MainContentContainer/MainContentContainer';
+import { isInitBasket } from '../../utils/declaration/declaration';
+import type {
+  QAState,
+  QuestionFlag,
+  QuestionState,
+  QuestionType,
+} from './types/questionAnswerTypes';
 
 export type QAStateEnriched = {
   questionStates: { [QuestionType]: QuestionState },

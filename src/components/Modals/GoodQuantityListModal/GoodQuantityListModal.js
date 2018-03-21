@@ -115,9 +115,9 @@ class GoodQuantityListModalInner extends React.Component<
         });
       }
       case 'AlcSoft': {
-          return t('quantityInput:enterQuantitiesAlcohol', {
-              value: t(`quantityInput:alcSoftInput`),
-          });
+        return t('quantityInput:enterQuantitiesAlcohol', {
+          value: t(`quantityInput:alcSoftInput`),
+        });
       }
       case 'AlcHard': {
         return t('quantityInput:enterQuantitiesAlcohol', {
@@ -125,24 +125,24 @@ class GoodQuantityListModalInner extends React.Component<
         });
       }
       case 'Cigarettes': {
-            return t('quantityInput:enterQuantitiesCigarettes', {
-                value: t(`quantityInput:cigarettesInput`),
-            });
+        return t('quantityInput:enterQuantitiesCigarettes', {
+          value: t(`quantityInput:cigarettesInput`),
+        });
       }
       case 'Tobacco': {
-            return t('quantityInput:enterQuantitiesTobacco', {
-                value: t(`quantityInput:tobaccoInput`),
-            });
+        return t('quantityInput:enterQuantitiesTobacco', {
+          value: t(`quantityInput:tobaccoInput`),
+        });
       }
       case 'Meat': {
-            return t('quantityInput:enterQuantitiesMeat', {
-                value: t(`quantityInput:meatInput`),
-            });
+        return t('quantityInput:enterQuantitiesMeat', {
+          value: t(`quantityInput:meatInput`),
+        });
       }
       case 'Oils': {
-            return t('quantityInput:enterQuantitiesOil', {
-                value: t(`quantityInput:oilInput`),
-            });
+        return t('quantityInput:enterQuantitiesOil', {
+          value: t(`quantityInput:oilInput`),
+        });
       }
       default: {
         return t('quantityInput:enterQuantities', {
