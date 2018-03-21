@@ -757,7 +757,7 @@ export const it: Locale = {
     disclaimerTitle: 'Clausola di non responsabilità (disclaimer)',
     disclaimerText:
       'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    toContactForm: '',
+    toContactForm: 'al modulo di contatto',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informazioni importanti',

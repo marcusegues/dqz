@@ -55,9 +55,10 @@ class DutyRowInner extends React.Component<
       <View style={[rowStyles.rowContent]}>
         <OverviewInfo
           title={t(`categories:${category}`)}
-          subtitle={`${t('overview:declared')} ${quantity.toFixed(
+          subtitle={`${t('overview:declared')}\n${quantity.toFixed(
             displayedQuantityDecimalPlaces[category]
           )} ${unit}`}
+          subTextStyle={{ marginTop: 8 }}
         >
           <AllowanceIcon
             text={t('overview:dutyFree')}
