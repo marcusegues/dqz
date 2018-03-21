@@ -273,12 +273,12 @@ export const maerkiExamples3: Amounts = initAmounts.withMutations(amounts => {
   return amounts;
 });
 
-export const sampleBasketDutyRounding: Basket = emptyBasket.withMutations(basket => {
+export const sampleBasketDutyRounding: Basket = emptyBasket.withMutations(
+  basket => {
     basket = addQuantity(basket, 'Meat', 2.241);
     basket = addQuantity(basket, 'Meat', 1.231);
     basket = addQuantity(basket, 'Meat', 1.342); // total: 4.814 49.30 für 2 people
 
     return basket;
-});
-
-
+  }
+);
