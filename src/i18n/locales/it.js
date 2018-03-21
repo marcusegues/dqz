@@ -751,19 +751,14 @@ export const it: Locale = {
       'Amministrazione federale delle dogane AFD',
     contact: 'Contatto',
     customsInfoCenter:
-      'Centrale d’informazione dell’AFD\n\nzollauskunft@ezv.admin.ch',
-    reachability: 'Reperibilità:',
+      'Centrale d’informazione dell’AFD',
     generalCustomsDirectorate:
-      'Amministrazione federale delle dogane AFD\nMonbijoustrasse 40\n' +
-      '3003 Bern\n' +
-      'http://www.ezv.admin.ch',
+      'Monbijoustrasse 40\n' +
+      '3003 Bern',
     designAndDevelopment: 'Design e sviluppo',
     ambriteAddress:
-      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch\nhttp://www.ambrite.ch',
-    disclaimerTitle: 'Clausola di non responsabilità (disclaimer)',
-    disclaimerText:
-      'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    toContactForm: 'Formulario di contatto',
+      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch',
+     toContactForm: 'Formulario di contatto',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informazioni importanti',

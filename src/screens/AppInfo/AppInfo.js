@@ -52,11 +52,6 @@ const styles = {
   ambriteAddress: {
     marginTop: verticalScale(15),
   },
-  disclaimerTitle: {
-    color: MAIN_BLACK,
-    marginTop: verticalScale(25),
-    marginBottom: verticalScale(10),
-  },
 };
 
 type AppInfoState = {
@@ -182,11 +177,6 @@ class AppInfoInner extends React.Component<
                   textDecorationLine: 'none',
                 }}
               />
-              <CardRowText
-                text={t('disclaimerTitle')}
-                style={styles.disclaimerTitle}
-              />
-              <AppInfoSubText text={t('disclaimerText')} />
             </View>
           )}
         </ScrollViewCard>
