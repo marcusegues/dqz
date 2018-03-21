@@ -459,7 +459,7 @@ export const it: Locale = {
   },
 
   plants: {
-    plantsMainText: 'Piante',
+    plantsMainText: 'Piante e prodotti vegetali',
     plantsText1:
       '1.\tPiante e prodotti vegetali vietati\n' +
       'Le piante qui di seguito possono essere vettori di organismi nocivi (fuoco batterico, cancro della corteccia del castagno, virosi ecc.), pertanto la loro importazione è vietata.',
