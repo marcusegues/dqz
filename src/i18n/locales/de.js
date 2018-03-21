@@ -141,7 +141,7 @@ export const de: Locale = {
       'Sind Sie sicher, dass Sie diese Hauptkategorie entfernen möchten?',
     validateMainCategoryRemoveSubtitle:
       'Im Moment enthalten gewisse Unterkategorien Mengen, nämlich: {{value}}',
-      validateMainCategoryAndVatRemoveSubTitle: '🔥',
+    validateMainCategoryAndVatRemoveSubTitle: '🔥',
     validateMainCategoryRemoveYes: 'Ja - ich möchte dies löschen',
     itemsGreaterThan300CHF: 'Gegenstände > 300 CHF',
   },
@@ -169,7 +169,7 @@ export const de: Locale = {
       'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{date}} von {{startTime}} bis zum {{endTime}} Uhr gültig.',
     timePickerRegistrationValidUntilDifferentDay:
       'Bitte achten Sie darauf, innerhalb von zwei Stunden mit dieser Anmeldung einzureisen. Diese Anmeldung ist am {{startDate}} von {{startTime}} bis {{endDate}} um {{endTime}} Uhr gültig.',
-
+    timePickerRegistrationTimeInPast: '',
     timePickerTakeOverThePeriod: 'Zeitraum übernehmen',
     timePickerTimePrefix: 'Uhr',
 
@@ -763,9 +763,9 @@ export const de: Locale = {
       'Geben Sie den Wert in der Fremdwährung gemäss Zahlungsbeleg ein. Der Wert wird mit dem Devisenkurs (Verkauf) des Vortages (letzter Arbeitstag) umgerechnet.',
     howToDeclareYourGoodsText3:
       'Legen Sie ein Zeitfenster von zwei Stunden für Ihren Grenzübertritt fest.',
-      howToDeclareYourGoodsTextBold3:
+    howToDeclareYourGoodsTextBold3:
       'Die Quittung ist nur während dieses Zeitfensters gültig.',
-      howToDeclareYourGoodsText3a:
+    howToDeclareYourGoodsText3a:
       'Können Sie den gewählten Zeitraum nicht einhalten, müssen Sie sich bei einem durch das Personal der EZV besetzten Grenzübergang melden und erklären, warum Sie nicht innerhalb der Gültigkeitsfrist einreisen konnten. Ohne glaubhafte Begründung werden die Abgaben erneut erhoben.',
     howToDeclareYourGoodsText4:
       'Alle Personen, für welche die Quittung gilt, müssen gemeinsam einreisen.',

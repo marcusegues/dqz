@@ -169,7 +169,8 @@ export const fr: Locale = {
       'La quittance douane est valable le {{date}} de {{startTime}} à {{endTime}}.',
     timePickerRegistrationValidUntilDifferentDay:
       'La quittance douane est valable le {{startDate}} de {{startTime}} à {{endDate}} à {{endTime}}.',
-    timePickerRegistrationTimeInPast: 'La période que vous avez choisie n\'est pas autorisée. Veuillez vérifier votre entrée pour continuer.',
+    timePickerRegistrationTimeInPast:
+      "La période que vous avez choisie n'est pas autorisée. Veuillez vérifier votre entrée pour continuer.",
     timePickerTakeOverThePeriod: 'Reprendre la période selectionnée',
     timePickerTimePrefix: 'Heure',
 
@@ -769,7 +770,8 @@ export const fr: Locale = {
     toContactForm: '',
   },
   legalNoticeInformation: {
-    navigationHeaderTitle: 'Informations relatives à l’utilisation de QuickZoll',
+    navigationHeaderTitle:
+      'Informations relatives à l’utilisation de QuickZoll',
     conditions: 'Conditions-cadres',
     importantSoon: "L'essentiel en bref",
     importantSoonText1:
@@ -800,6 +802,8 @@ export const fr: Locale = {
       'Saisissez la valeur en devise étrangère figurant sur le justificatif de paiement. Celle-ci sera convertie en francs selon le taux de change (vente) de la veille (dernier jour ouvrable).',
     howToDeclareYourGoodsText3:
       "Définissez un délai de deux heures pour vous permettre de franchir la frontière. La quittance établie n'est valable que pendant ce délai. Si vous ne pouvez pas respecter le délai choisi, vous devez vous rendre à un passage frontière occupé par du personnel de l'AFD et expliquer pourquoi vous n'avez pas pu entrer en Suisse dans le délai de validité de la quittance. En l'absence de justification crédible, les redevances seront perçues une nouvelle fois.",
+    howToDeclareYourGoodsTextBold3: '',
+    howToDeclareYourGoodsText3a: '',
     howToDeclareYourGoodsText4:
       'Toutes les personnes pour lesquelles la quittance est valable doivent entrer ensemble en Suisse.',
     howToDeclareYourGoodsText5:
@@ -864,7 +868,7 @@ export const fr: Locale = {
       "Les recours en responsabilité contre les autorités fédérales pour des dommages de nature matérielle ou immatérielle résultant de l'accès ou de l'utilisation ou de la non-utilisation des informations publiées, d'une mauvaise utilisation de la connexion ou de défauts techniques sont exclus.",
     culpability: 'Sanctions pénales',
     culpabilityText1:
-      "Annoncez les marchandises de manière complète et correcte. Les marchandises interdites et/ou soumises à autorisation ne peuvent pas être annoncées avec QuickZoll. Le dédouanement avec QuickZoll est contraignant (article 33 de la loi douanière, LD, SR 631.0). Toute personne qui omet d’annoncer des marchandises de manière complète ou incorrecte, ou qui annonce des marchandises interdites et/ou soumises à autorisation, est passible de sanctions pénales (articles 118 et 127 LD).",
+      'Annoncez les marchandises de manière complète et correcte. Les marchandises interdites et/ou soumises à autorisation ne peuvent pas être annoncées avec QuickZoll. Le dédouanement avec QuickZoll est contraignant (article 33 de la loi douanière, LD, SR 631.0). Toute personne qui omet d’annoncer des marchandises de manière complète ou incorrecte, ou qui annonce des marchandises interdites et/ou soumises à autorisation, est passible de sanctions pénales (articles 118 et 127 LD).',
     referencesAndLinks: 'Renvois et liens',
     referencesAndLinksText1:
       "Les renvois et liens vers d'autres sites Internet ne sont pas de la responsabilité des autorités fédérales. L'accès à ces sites et leur utilisation se font aux risques des utilisateurs. Les autorités fédérales déclarent expressément qu'elles n'ont aucune influence sur la forme, le contenu et les offres des sites auxquels elles renvoient. Les informations et services offerts par ces sites sont entièrement de la responsabilité de leurs auteurs.",

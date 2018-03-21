@@ -162,7 +162,8 @@ export const it: Locale = {
       'Questa registrazione è valida per {{date}} da {{startTime}} a {{endTime}} in punto.',
     timePickerRegistrationValidUntilDifferentDay:
       'Questo accesso è valido per {{startDate}} da {{startTime}} a {{endDate}} al {{endTime}} in punto.',
-    timePickerRegistrationTimeInPast: 'Il periodo che hai scelto non è permesso. Si prega di controllare la voce per continuare.',
+    timePickerRegistrationTimeInPast:
+      'Il periodo che hai scelto non è permesso. Si prega di controllare la voce per continuare.',
     timePickerTakeOverThePeriod: 'Prendi il controllo del periodo',
     timePickerTimePrefix: 'ora',
     savedBasket: 'Carrello corrente',
@@ -790,6 +791,8 @@ export const it: Locale = {
       'Inserire il valore nella valuta estera in base alla ricevuta. Il valore viene determinato applicando il corso del cambio (vendita) del giorno precedente (ultimo giorno lavorativo).',
     howToDeclareYourGoodsText3:
       "Stabilire un intervallo di tempo di due ore per il passaggio del confine. Il giustificativo è valido solo durante questo arco di tempo. Se non è possibile rispettarlo, occorre rivolgersi a un valico di confine in cui è presente il personale dell'AFD per spiegare il motivo per cui non è stato possibile varcare il confine nell'intervallo di tempo della validità. Senza motivazione credibile i tributi vengono riscossi una seconda volta.",
+    howToDeclareYourGoodsTextBold3: '',
+    howToDeclareYourGoodsText3a: '',
     howToDeclareYourGoodsText4:
       'Se il giustificativo vale per più persone, queste devono passare il confine congiuntamente.',
     howToDeclareYourGoodsText5:

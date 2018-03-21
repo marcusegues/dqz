@@ -165,12 +165,7 @@ class LegalNoticeInfoInner extends React.Component<
               </TouchableOpacity>
 
               <BulletText text={t('howToDeclareYourGoodsText2')} />
-              <BulletText text={t('howToDeclareYourGoodsText3')}
-              additionalText={t('howToDeclareYourGoodsTextBold3')}
-              additionalTextStyle={{ fontFamily: type.medium }}
-              additionalText={t('howToDeclareYourGoodsText3a')}
-              additionalTextStyle={{ fontFamily: type.normal }}
-              />
+              <BulletText text={t('howToDeclareYourGoodsText3')} />
               <BulletText text={t('howToDeclareYourGoodsText4')} />
               <BulletText text={t('howToDeclareYourGoodsText5')} />
               <BulletText text={t('howToDeclareYourGoodsText6')} />
@@ -249,12 +244,10 @@ class LegalNoticeInfoInner extends React.Component<
               <AppInfoSubText text={t('liabilityText2')} />
 
               <CardRowText
-                  text={t('culpability')}
-                  style={styles.disclaimerTitle}
+                text={t('culpability')}
+                style={styles.disclaimerTitle}
               />
-              <AppInfoSubText
-                  text={t('culpabilityText1')}
-              />
+              <AppInfoSubText text={t('culpabilityText1')} />
 
               <CardRowText
                 text={t('referencesAndLinks')}
