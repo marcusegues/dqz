@@ -815,7 +815,7 @@ export const fr: Locale = {
 
     specialCases: 'Cas particuliers',
     specialCasesText1:
-      "Les marchandises suivantes ne peuvent pas être dédouanées avec QuickZoll. Vous devez dans tous les cas les déclarer auprès d'un passage frontière occupé par du personnel de l'AFD:",
+      "Les marchandises suivantes ne peuvent pas être dédouanées avec QuickZoll. Vous devez dans tous les cas les déclarer auprès d'un <1>passage frontière</1> occupé par du personnel de l'AFD:",
     specialCasesText2:
       'les marchandises soumises à des restrictions ou des interdictions et les marchandises assujetties à un certificat ou un permis (par ex. armes, animaux vivants et marchandises soumises aux dispositions sur la conservation des espèces);',
     specialCasesText3: 'informations complémentaires',
