@@ -428,7 +428,7 @@ export const it: Locale = {
     personalEffectsText4:
       'le persone domiciliate in Svizzera hanno portato con sé all’atto dell’uscita;',
     personalEffectsText5:
-      'le persone domicialiate all’estero utilizzano durante il soggiorno in Svizzera e poi riesportano. Tra questi rientrano abiti, biancheria, articoli da toeletta, articoli sportivi, apparecchi fotografici, cineprese, videocamere, telefoni cellulari, computer portatili, strumenti musicali e altri oggetti personali d’uso corrente.',
+      'le persone domicialiate all’estero utilizzano durante il soggiorno in Svizzera e poi riesportano.\nTra questi rientrano abiti, biancheria, articoli da toeletta, articoli sportivi, apparecchi fotografici, cineprese, videocamere, telefoni cellulari, computer portatili, strumenti musicali e altri oggetti personali d’uso corrente.',
     personalEffectsText6: 'Provviste da viaggio',
     personalEffectsText7:
       'Come tali sono intese le derrate alimentari e le bevande analcoliche pronte per l’uso durante il viaggio.',
