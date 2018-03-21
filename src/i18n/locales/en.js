@@ -448,7 +448,7 @@ export const en: Locale = {
   },
 
   plants: {
-    plantsMainText: 'Plants',
+    plantsMainText: 'Plants and plant products',
     plantsText1:
       '1.\tProhibited plants and plant products\n' +
       'The importation of the following plants is prohibited because they could be carriers of harmful organisms (fireblight, chestnut blight, viral diseases, etc.):',
