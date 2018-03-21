@@ -43,7 +43,7 @@ export const it: Locale = {
     toPayment: 'Pagamento',
     buttonContinue: 'Avanti',
     buttonBack: 'Indietro',
-    note: 'Suggerimento:',
+    note: 'Osservazione importante:',
     underConstruction: 'In corso',
   },
   snackBar: {
@@ -182,10 +182,10 @@ export const it: Locale = {
     paidOn: 'Pagamento effettuato in data {{date}} alle ore {{time}} con:',
     transactionId: 'ID della transazione (SIX): {{value}}',
 
-    receiptValidFrom: 'Il giustificativo è valido per valico di frontiera da:',
+    receiptValidFrom: 'Il presente giustificativo è valido per il passagio del confine il:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} fino al {{endDate}} | {{endTime}}',
-    receiptValidOn: 'Il giustificativo è valido per valico di frontiera da:',
+    receiptValidOn: 'Il presente giustificativo è valido per il passagio del confine il:',
     receiptValidOnDate: '{{date}} dalle ore {{startTime}} alle ore {{endTime}}',
 
     sumText: 'Totale (CHF): {{value}}',
@@ -193,7 +193,7 @@ export const it: Locale = {
     normalAmountsTitle: 'Valore complessivo delle merci',
     normalAmountsSubtitle: 'Totale di tutte le ricevute d’acquisto',
     largeAmountsTitle: 'Oggetti individuali',
-    largeAmountsSubtitle: 'vale oltre CHF 300',
+    largeAmountsSubtitle: 'di un valore superiore à CHF 300',
     receiptStorageNotification:
       'Il presente giustificativo rimane memorizzato per un anno. Durante questo periodo, può essere visualizzato in qualsiasi momento nell’app.',
     allReceiptsNavigationHeaderTitle: 'Giustificativi della dogana svizzera',
@@ -738,7 +738,7 @@ export const it: Locale = {
   },
   appInformation: {
     appInfoTitle: 'Informazioni sull’app ',
-    leftTabText: 'Colofone',
+    leftTabText: 'Impressum',
     rightTabText: 'Sviluppo',
     publisher: 'Editore',
     customsAdministrationAddressTitle:
@@ -757,7 +757,7 @@ export const it: Locale = {
     disclaimerTitle: 'Clausola di non responsabilità (disclaimer)',
     disclaimerText:
       'Molto indietro, dietro la parola montagne, lontano dalle terre del vocabolario e delle consonanti vivono i testi ciechi.',
-    toContactForm: '',
+    toContactForm: 'Formulario di contatto',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informazioni importanti',
