@@ -3,14 +3,13 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 import { DateTime } from 'luxon';
-import { Permissions } from 'expo';
 // $FlowFixMe
-import { View, Text, CameraRoll } from 'react-native';
+import { View, Text, CameraRoll, Alert } from 'react-native';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 import { connect } from 'react-redux';
 // $FlowFixMe
-import { takeSnapshotAsync } from 'expo';
+import { takeSnapshotAsync, Permissions } from 'expo';
 import { translate } from 'react-i18next';
 import { moderateScale, verticalScale } from '../../styles/Scaling';
 import { CardRowText } from '../QuestionAnswer/Cards/subcomponents/CardRowText';
@@ -19,7 +18,10 @@ import type {
   PaymentData,
   TFunction,
 } from '../../types/generalTypes';
-import { analyticsScreenMounted } from '../../analytics/analyticsApi';
+import {
+  analyticsCustom,
+  analyticsScreenMounted,
+} from '../../analytics/analyticsApi';
 import { getPaymentData, getReceiptId } from '../../reducers/selectors';
 import { fetchReceiptByReceiptId } from '../../asyncStorage/storageApi';
 import type { Receipt } from '../../types/receiptTypes';
@@ -84,6 +86,16 @@ class ReceiptAfterPaymentInner extends React.Component<
       />
     ),
   });
+
+  static async saveToCameraRoll(snapshot) {
+    try {
+      await CameraRoll.saveToCameraRoll(snapshot, 'photo');
+      Alert.alert('HEY! Saved to camera roll!');
+    } catch (e) {
+      analyticsCustom('Failed to save receipt to camera roll');
+    }
+  }
+
   constructor(
     props: ReceiptAfterPaymentScreenProps & {
       t: TFunction,
@@ -193,21 +205,16 @@ class ReceiptAfterPaymentInner extends React.Component<
     });
     const { status } = await Permissions.getAsync(Permissions.CAMERA_ROLL);
     if (status !== 'granted') {
-      Permissions.askAsync(Permissions.CAMERA_ROLL).then(async ({ status }) => {
-        if (status === 'granted') {
-          this.saveToCameraRoll(snapshot);
+      Permissions.askAsync(Permissions.CAMERA_ROLL).then(
+        async permissionAnswer => {
+          if (permissionAnswer.status === 'granted') {
+            ReceiptAfterPaymentInner.saveToCameraRoll(snapshot);
+          }
         }
-      });
+      );
     } else {
-      this.saveToCameraRoll(snapshot);
+      ReceiptAfterPaymentInner.saveToCameraRoll(snapshot);
     }
-  }
-
-  async saveToCameraRoll(snapshot) {
-    try {
-      await CameraRoll.saveToCameraRoll(snapshot, 'photo');
-      alert('HEY! Saved to camera roll!');
-    } catch (e) {}
   }
 
   render() {
