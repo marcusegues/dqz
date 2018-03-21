@@ -29,6 +29,7 @@ import { roundMinutes } from '../../../model/utils';
 import { dateTimeToFormat } from '../../../utils/datetime/datetime';
 import { MAIN_RED } from '../../../styles/colors';
 import { DatePicker } from './layouts/datePicker';
+import { TimePicker } from './layouts/timePicker';
 
 const ownStyles = {
   container: {
@@ -214,48 +215,21 @@ class TimePickerModalInner extends React.Component<
                 }
               />
 
-              <PickerComponent
-                selectedValue={hours}
-                onValueChange={itemValue =>
+              <TimePicker
+                t={t}
+                hours={hours}
+                minutes={minutes}
+                onValueChangeHours={itemValue =>
                   this.setState({
                     hours: itemValue,
                   })
                 }
-                mode="dropdown"
-                prompt=""
-                style={{
-                  flex: Platform.OS === 'ios' ? 0.15 : 0.25,
-                  paddingVertical: 10,
-                }}
-              >
-                {pickerHours.map(i => (
-                  <Picker.Item key={i.id} label={i.label} value={i.value} />
-                ))}
-              </PickerComponent>
-
-              <PickerValueSeparator separator=":" />
-
-              <PickerComponent
-                selectedValue={roundMinutes(parseInt(minutes, 10))}
-                onValueChange={itemValue =>
+                onValueChangeMinutes={itemValue =>
                   this.setState({
                     minutes: itemValue,
                   })
                 }
-                mode="dropdown"
-                prompt=""
-                itemStyle={{}}
-                style={{
-                  flex: Platform.OS === 'ios' ? 0.15 : 0.25,
-                  paddingVertical: 10,
-                }}
-              >
-                {pickerMinutes.map(i => (
-                  <Picker.Item key={i.id} label={i.label} value={i.value} />
-                ))}
-              </PickerComponent>
-
-              <PickerValueSeparator separator={t('timePickerTimePrefix')} />
+              />
             </View>
           </TouchableWithoutFeedback>
 
