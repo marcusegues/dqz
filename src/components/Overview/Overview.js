@@ -171,7 +171,7 @@ class OverviewInner extends React.Component<
           onPressBack={() => navigation.dispatch({ type: 'GO_BACK' })}
           onPressContinue={() => onProceedToPayment && onProceedToPayment()}
           textContinue={t('general:toPayment')}
-          continueDisabled={paymentDisabled}
+          confirmationDisabled={paymentDisabled}
         />
         <TimePickerModal
           modalVisible={this.state.modalVisible}
