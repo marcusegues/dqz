@@ -87,15 +87,6 @@ class ReceiptAfterPaymentInner extends React.Component<
     ),
   });
 
-  static async saveToCameraRoll(snapshot) {
-    try {
-      await CameraRoll.saveToCameraRoll(snapshot, 'photo');
-      Alert.alert('HEY! Saved to camera roll!');
-    } catch (e) {
-      analyticsCustom('Failed to save receipt to camera roll');
-    }
-  }
-
   constructor(
     props: ReceiptAfterPaymentScreenProps & {
       t: TFunction,
@@ -195,6 +186,16 @@ class ReceiptAfterPaymentInner extends React.Component<
     ];
   }
 
+  async saveToCameraRoll(snapshot) {
+    const { t } = this.props;
+    try {
+      await CameraRoll.saveToCameraRoll(snapshot, 'photo');
+      Alert.alert(t('receipt:savedToCameraRoll'));
+    } catch (e) {
+      analyticsCustom('Failed to save receipt to camera roll');
+    }
+  }
+
   image: any;
 
   async capture() {
@@ -208,12 +209,12 @@ class ReceiptAfterPaymentInner extends React.Component<
       Permissions.askAsync(Permissions.CAMERA_ROLL).then(
         async permissionAnswer => {
           if (permissionAnswer.status === 'granted') {
-            ReceiptAfterPaymentInner.saveToCameraRoll(snapshot);
+            this.saveToCameraRoll(snapshot);
           }
         }
       );
     } else {
-      ReceiptAfterPaymentInner.saveToCameraRoll(snapshot);
+      this.saveToCameraRoll(snapshot);
     }
   }
 

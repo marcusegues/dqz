@@ -553,6 +553,7 @@ type ReceiptTranslations = {
   entryTime: string,
   chooseOtherEntryTime: string,
   until: string,
+  savedToCameraRoll: string,
 };
 
 type AppInformationTranslations = {
@@ -589,8 +590,8 @@ type LegalNoticeInformationTranslations = {
   howToDeclareYourGoodsText1: string,
   howToDeclareYourGoodsText2: string,
   howToDeclareYourGoodsText3: string,
-    howToDeclareYourGoodsTextBold3: string,
-    howToDeclareYourGoodsText3a: string,
+  howToDeclareYourGoodsTextBold3: string,
+  howToDeclareYourGoodsText3a: string,
   howToDeclareYourGoodsText4: string,
   howToDeclareYourGoodsText5: string,
   howToDeclareYourGoodsText6: string,

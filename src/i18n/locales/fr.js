@@ -214,6 +214,7 @@ export const fr: Locale = {
     entryTime: "Période d'entrée:",
     chooseOtherEntryTime: 'modifier',
     until: "jusqu'à",
+    savedToCameraRoll: '🔥',
   },
 
   customsProcedures: {
@@ -856,34 +857,33 @@ export const fr: Locale = {
     privacyAndLiability: 'Protection des données et responsabilité',
     dataProtection: 'Protection des données',
     dataProtectionText1:
-    "Lors de l'accès à QuickZoll, les données et les informations sur le système d'exploitation et le navigateur ne sont pas enregistrées. Les données nécessaires au processus de paiement sont traitées par SIX. Pour toute question relative au processus de paiement, veuillez vous adresser directement à SIX.",
+      "Lors de l'accès à QuickZoll, les données et les informations sur le système d'exploitation et le navigateur ne sont pas enregistrées. Les données nécessaires au processus de paiement sont traitées par SIX. Pour toute question relative au processus de paiement, veuillez vous adresser directement à SIX.",
     dataProtectionText2: '',
     dataProtectionText3: '',
     dataProtectionText4: '',
     dataProtectionText5: '',
     liability: 'Responsabilité',
     liabilityText1:
-    "L'AFD se réserve expressément le droit de modifier en partie ou en totalité le contenu de l'application ou de le supprimer, et ce à tout moment.",
-      liabilityText2:
+      "L'AFD se réserve expressément le droit de modifier en partie ou en totalité le contenu de l'application ou de le supprimer, et ce à tout moment.",
+    liabilityText2:
       "L'AFD ne saurait être tenue pour responsable des dommages matériels ou immatériels qui pourraient être causés par l'utilisation de l'application, par des problèmes techniques, par le mauvais usage de QuickZoll ou pour d'autres raisons.",
-      culpability: 'Punissabilité',
+    culpability: 'Punissabilité',
     culpabilityText1:
-    "Déclarez les marchandises de manière complète et correcte. Les marchandises interdites ou assujetties à un permis ne peuvent pas être déclarées. Le dédouanement avec QuickZoll est contraignant (art. 33 de la loi sur les douanes, LD; RS 631.0). Quiconque déclare des marchandises de manière incomplète ou incorrecte ou déclare des marchandises interdites ou assujetties à un permis est punissable (art. 118 et 127 LD).",
+      'Déclarez les marchandises de manière complète et correcte. Les marchandises interdites ou assujetties à un permis ne peuvent pas être déclarées. Le dédouanement avec QuickZoll est contraignant (art. 33 de la loi sur les douanes, LD; RS 631.0). Quiconque déclare des marchandises de manière incomplète ou incorrecte ou déclare des marchandises interdites ou assujetties à un permis est punissable (art. 118 et 127 LD).',
 
     referencesAndLinks: 'Renvois et liens',
     referencesAndLinksText1:
-    "Les renvois et liens vers des sites web de tiers ne sont pas de la responsabilité des autorités fédérales. L'accès à ces sites et leur utilisation se font aux risques des utilisateurs. Les autorités fédérales déclarent expressément qu'elles n'ont aucune influence sur la forme, le contenu et les offres des sites auxquels elles renvoient. Les informations et services offerts par ces sites sont entièrement de la responsabilité de leurs auteurs.",
+      "Les renvois et liens vers des sites web de tiers ne sont pas de la responsabilité des autorités fédérales. L'accès à ces sites et leur utilisation se font aux risques des utilisateurs. Les autorités fédérales déclarent expressément qu'elles n'ont aucune influence sur la forme, le contenu et les offres des sites auxquels elles renvoient. Les informations et services offerts par ces sites sont entièrement de la responsabilité de leurs auteurs.",
     referencesAndLinksText2:
-    "Les autorités fédérales rejettent toute responsabilité pour de tels sites web.",
+      'Les autorités fédérales rejettent toute responsabilité pour de tels sites web.',
 
     copyright: "Droits d'auteur",
-    copyrightText1:
-    "Droits d'auteur: Confédération Suisse, AFD, 2018.",
+    copyrightText1: "Droits d'auteur: Confédération Suisse, AFD, 2018.",
 
-      copyrightText2:
-     "Les informations que recèlent les sites web des autorités fédérales sont mises à la disposition du public. Le téléchargement ou la copie de textes, d'illustrations, de photographies ou d'autres données n'entraîne aucun transfert de droits sur les contenus.",
+    copyrightText2:
+      "Les informations que recèlent les sites web des autorités fédérales sont mises à la disposition du public. Le téléchargement ou la copie de textes, d'illustrations, de photographies ou d'autres données n'entraîne aucun transfert de droits sur les contenus.",
 
-      copyrightText3:
+    copyrightText3:
       "Les droits d'auteur et tous les autres droits liés aux textes, illustrations, photographies et autres données placés sur les sites web des autorités fédérales sont leur propriété exclusive ou celle des détenteurs expressément cités. Toute reproduction est subordonnée à l'autorisation écrite préalable des détenteurs des droits.",
   },
   overview: {

@@ -209,6 +209,7 @@ export const de: Locale = {
     entryTime: 'Zeitraum der Einreise:',
     chooseOtherEntryTime: 'Ändern',
     until: 'bis',
+      savedToCameraRoll: '🔥'
   },
 
   customsProcedures: {
