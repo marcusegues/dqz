@@ -464,7 +464,7 @@ export const fr: Locale = {
   },
 
   plants: {
-    plantsMainText: 'Plantes',
+    plantsMainText: 'Plantes et produits végétaux',
     plantsText1:
       '1.\tPlantes et produits végétaux interdits\n' +
       "L'importation des plantes suivantes est interdite, car elles peuvent être porteuses d'organismes nuisibles (feu bactérien, chancre de l'écorce du châtaignier, affections virales, etc.):",

@@ -447,7 +447,7 @@ export const de: Locale = {
   },
 
   plants: {
-    plantsMainText: 'Pflanzen',
+    plantsMainText: 'Pflanzen und Pflanzenteile',
     plantsText1:
       '1.\tVerbotene Pflanzen und Pflanzenerzeugnisse\n' +
       'Die Einfuhr von folgenden Pflanzen ist verboten, da sie Träger von Schadorganismen (Feuerbrand, Kastanienrindenkrebs, Virenerkrankungen, etc.) sein können:',
