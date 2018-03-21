@@ -4,11 +4,7 @@ import type { ComponentType } from 'react';
 import { DateTime } from 'luxon';
 // $FlowFixMe
 import {
-  TouchableWithoutFeedback,
   View,
-  Keyboard,
-  Picker,
-  Platform,
   // $FlowFixMe
 } from 'react-native';
 
@@ -20,16 +16,11 @@ import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader'
 import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
 import type { TFunction } from '../../../types/generalTypes';
 import { ModalCard } from '../ModalCard';
-import { PickerComponent } from '../../Pickers/PickerComponent';
 import { moderateScale, verticalScale } from '../../../styles/Scaling';
-import { pickerHours, pickerMinutes } from '../QuantityInputModal/pickerData';
-import { PickerValueSeparator } from '../CurrencyPickerModal/subComponents/PickerValueSeparator';
 import { ModalCloseText } from '../ModalCloseText';
-import { roundMinutes } from '../../../model/utils';
 import { dateTimeToFormat } from '../../../utils/datetime/datetime';
 import { MAIN_RED } from '../../../styles/colors';
-import { DatePicker } from './layouts/datePicker';
-import { TimePicker } from './layouts/timePicker';
+import { IosTimePickerLayout } from './layouts/iosTimePickerLayout';
 
 const ownStyles = {
   container: {
@@ -199,39 +190,29 @@ class TimePickerModalInner extends React.Component<
           <CardHeader text={t('timePickerTitle')} />
           <CardHeaderSubText text={t(['timePickerSubTitle'])} />
 
-          <TouchableWithoutFeedback
-            onPress={Keyboard.dismiss}
-            accessible={false}
-          >
-            <View
-              style={[pickerModalStyle.pickerContainer, ownStyles.container]}
-            >
-              <DatePicker
-                date={date}
-                onValueChange={itemValue =>
-                  this.setState({
-                    date: itemValue,
-                  })
-                }
-              />
-
-              <TimePicker
-                t={t}
-                hours={hours}
-                minutes={minutes}
-                onValueChangeHours={itemValue =>
-                  this.setState({
-                    hours: itemValue,
-                  })
-                }
-                onValueChangeMinutes={itemValue =>
-                  this.setState({
-                    minutes: itemValue,
-                  })
-                }
-              />
-            </View>
-          </TouchableWithoutFeedback>
+          <IosTimePickerLayout
+            date={date}
+            hours={hours}
+            minutes={minutes}
+            t={t}
+            pickerModalStyle={pickerModalStyle}
+            ownStyles={ownStyles}
+            onValueChangeDate={itemValue =>
+              this.setState({
+                date: itemValue,
+              })
+            }
+            onValueChangeHours={itemValue =>
+              this.setState({
+                hours: itemValue,
+              })
+            }
+            onValueChangeMinutes={itemValue =>
+              this.setState({
+                minutes: itemValue,
+              })
+            }
+          />
 
           {this.userMessage()}
 

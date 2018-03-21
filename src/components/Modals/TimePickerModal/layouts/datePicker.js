@@ -7,14 +7,14 @@ import { pickerDates } from '../../QuantityInputModal/pickerData';
 
 export const DatePicker = ({
   date,
-  onValueChange,
+  onValueChangeDate,
 }: {
   date: string,
-  onValueChange: (val: string) => void,
+  onValueChangeDate: (val: string) => void,
 }) => (
   <PickerComponent
     selectedValue={date}
-    onValueChange={onValueChange}
+    onValueChange={onValueChangeDate}
     mode="dropdown"
     prompt=""
     itemStyle={{}}
