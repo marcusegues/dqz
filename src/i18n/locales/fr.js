@@ -435,7 +435,7 @@ export const fr: Locale = {
     personalEffectsText4:
       'des voyageurs domiciliés en Suisse ont emportés lors de leur sortie du pays;',
     personalEffectsText5:
-      "des voyageurs domiciliés à l'étranger utilisent pendant leur séjour en Suisse avant de les réexporter. Font partie des effets personnels les vêtements, la lingerie, les articles de toilette, le matériel de sport, les appareils photographiques, les caméras cinématographiques et vidéo, les téléphones et ordinateurs portables, les instruments de musique et autres objets d'usage courant de nature personnelle.",
+      "des voyageurs domiciliés à l'étranger utilisent pendant leur séjour en Suisse avant de les réexporter.\nFont partie des effets personnels les vêtements, la lingerie, les articles de toilette, le matériel de sport, les appareils photographiques, les caméras cinématographiques et vidéo, les téléphones et ordinateurs portables, les instruments de musique et autres objets d'usage courant de nature personnelle.",
     personalEffectsText6: 'Provisions de voyage',
     personalEffectsText7:
       'Sont considérées comme des provisions de voyage les denrées alimentaires et boissons sans alcool, prêtes à la consommation, pour le jour du voyage.',

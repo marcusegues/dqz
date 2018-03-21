@@ -419,7 +419,7 @@ export const de: Locale = {
     personalEffectsText4:
       'in der Schweiz wohnhafte Reisende bei der Ausreise mitgenommen haben.',
     personalEffectsText5:
-      'im Ausland wohnhafte Reisende während des Aufenthaltes in der Schweiz benützen und wieder ausführen. Dazu gehören Kleider, Wäsche, Toilettenartikel, Sportgeräte, Foto-, Film- und Videokameras, Mobiltelefone, tragbare Computer, Musikinstrumente und sonstige Gebrauchsgegenstände persönlicher Natur.',
+      'im Ausland wohnhafte Reisende während des Aufenthaltes in der Schweiz benützen und wieder ausführen.\nDazu gehören Kleider, Wäsche, Toilettenartikel, Sportgeräte, Foto-, Film- und Videokameras, Mobiltelefone, tragbare Computer, Musikinstrumente und sonstige Gebrauchsgegenstände persönlicher Natur.',
     personalEffectsText6: 'Reiseproviant',
     personalEffectsText7:
       'Als Reiseproviant gelten genussfertige Nahrungsmittel und alkoholfreie Getränke für den Reisetag.',

@@ -417,7 +417,7 @@ export const en: Locale = {
     personalEffectsText4:
       'travellers living in Switzerland take along when going abroad;',
     personalEffectsText5:
-      'travellers who live abroad use during their stay in Switzerland and take back when they leave. Included are items of clothing, underwear, toiletries, sports gear, photo and film cameras, camcorders, mobile phones, portable computers, musical instruments and other personal consumer items.',
+      'travellers who live abroad use during their stay in Switzerland and take back when they leave.\nIncluded are items of clothing, underwear, toiletries, sports gear, photo and film cameras, camcorders, mobile phones, portable computers, musical instruments and other personal consumer items.',
     personalEffectsText6: 'Travel provisions',
     personalEffectsText7:
       'The term travel provisions refers to foodstuffs that are ready to eat and non-alcoholic beverages for the day of travelling.',
