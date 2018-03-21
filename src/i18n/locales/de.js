@@ -212,7 +212,7 @@ export const de: Locale = {
     entryTime: 'Zeitraum der Einreise:',
     chooseOtherEntryTime: 'Ändern',
     until: 'bis',
-      savedToCameraRoll: '🔥'
+      savedToCameraRoll: 'Die Quittung wurde erfolgreich zu Ihren Fotos hinzugefügt.'
   },
 
   customsProcedures: {
