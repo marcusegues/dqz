@@ -124,11 +124,26 @@ class AppInfoInner extends React.Component<
                 style={styles.customsAdministrationAddressTitle}
               />
               <AppInfoSubText text={t('generalCustomsDirectorate')} />
+              <AppInfoLink
+                text="http://www.ezv.admin.ch"
+                onPress={() => Linking.openURL(`http://www.ezv.admin.ch`)}
+                style={{
+                  color: '#757575',
+                  textDecorationLine: 'none',
+                }}
+              />
               <CardRowText text={t('contact')} style={styles.contactTitle} />
               <AppInfoSubText text={t('customsInfoCenter')} />
-              <AppInfoSubText
+              <AppInfoLink
                 text="http://www.zollauskunft.admin.ch"
-                style={{ marginBottom: verticalScale(16) }}
+                onPress={() =>
+                  Linking.openURL(`http://www.zollauskunft.admin.ch`)
+                }
+                style={{
+                  color: '#757575',
+                  textDecorationLine: 'none',
+                  marginBottom: verticalScale(16),
+                }}
               />
 
               <AppInfoLink
@@ -158,6 +173,14 @@ class AppInfoInner extends React.Component<
               <AppInfoSubText
                 text={t('ambriteAddress')}
                 style={styles.ambriteAddress}
+              />
+              <AppInfoLink
+                text="http://www.ambrite.ch"
+                onPress={() => Linking.openURL(`http://www.ambrite.ch`)}
+                style={{
+                  color: '#757575',
+                  textDecorationLine: 'none',
+                }}
               />
               <CardRowText
                 text={t('disclaimerTitle')}

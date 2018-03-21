@@ -139,7 +139,9 @@ export const en: Locale = {
       'Currently, some subcategories contain quantities: {{value}}',
     validateMainCategoryAndVatRemoveSubTitle:
       'Currently, some subcategories contain quantities: {{value}}. All added VAT amounts will be deleted as well.',
+    validateVatRemoveSubTitle: 'All added VAT amounts will be deleted',
     validateMainCategoryRemoveYes: 'Yes, remove resp. quantities',
+    validateOtherGoodsRemoveYes: 'Yes, remove resp. VAT amounts',
     itemsGreaterThan300CHF: 'Items > CHF 300',
   },
   modal: {
@@ -416,7 +418,7 @@ export const en: Locale = {
     personalEffectsText4:
       'travellers living in Switzerland take along when going abroad;',
     personalEffectsText5:
-      'travellers who live abroad use during their stay in Switzerland and take back when they leave. Included are items of clothing, underwear, toiletries, sports gear, photo and film cameras, camcorders, mobile phones, portable computers, musical instruments and other personal consumer items.',
+      'travellers who live abroad use during their stay in Switzerland and take back when they leave.\nIncluded are items of clothing, underwear, toiletries, sports gear, photo and film cameras, camcorders, mobile phones, portable computers, musical instruments and other personal consumer items.',
     personalEffectsText6: 'Travel provisions',
     personalEffectsText7:
       'The term travel provisions refers to foodstuffs that are ready to eat and non-alcoholic beverages for the day of travelling.',
@@ -447,7 +449,7 @@ export const en: Locale = {
   },
 
   plants: {
-    plantsMainText: 'Plants',
+    plantsMainText: 'Plants and plant products',
     plantsText1:
       '1.\tProhibited plants and plant products\n' +
       'The importation of the following plants is prohibited because they could be carriers of harmful organisms (fireblight, chestnut blight, viral diseases, etc.):',
@@ -770,9 +772,8 @@ export const en: Locale = {
     howToDeclareYourGoodsText2:
       "Enter the value in the foreign currency according to the payment document. The value is converted using the preceding day's (last working day) exchange rate (forex sell rate).",
     howToDeclareYourGoodsText3:
-      'Set a two-hour timeframe for your border crossing. The receipt is valid only during this timeframe. If you are unable to comply with the selected timeframe, you must report to a border crossing manned by FCA staff and explain why you were unable to enter during the validity period. Duties will be levied again without credible justification.',
+      'Set a two-hour timeframe for your border crossing. <1>The receipt is valid only during this timeframe.</1> If you are unable to comply with the selected timeframe, you must report to a border crossing manned by FCA staff and explain why you were unable to enter during the validity period. Duties will be levied again without credible justification.',
     howToDeclareYourGoodsTextBold3: '',
-    howToDeclareYourGoodsText3a: '',
     howToDeclareYourGoodsText4:
       'All persons to whom the receipt applies must enter together.',
     howToDeclareYourGoodsText5:

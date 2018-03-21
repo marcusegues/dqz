@@ -135,8 +135,10 @@ export const it: Locale = {
     validateMainCategoryRemoveSubtitle:
       'Al momento determinate sottocategorie contengono delle quantità, ovvero: {{value}}',
     validateMainCategoryAndVatRemoveSubTitle: '🔥',
+    validateVatRemoveSubTitle: '🔥',
     validateMainCategoryRemoveYes:
       'Sì, desidero eliminare le rispettive quantità.',
+    validateOtherGoodsRemoveYes: '🔥',
     itemsGreaterThan300CHF: 'Articoli > 300 CHF',
   },
   modal: {
@@ -427,7 +429,7 @@ export const it: Locale = {
     personalEffectsText4:
       'le persone domiciliate in Svizzera hanno portato con sé all’atto dell’uscita;',
     personalEffectsText5:
-      'le persone domicialiate all’estero utilizzano durante il soggiorno in Svizzera e poi riesportano. Tra questi rientrano abiti, biancheria, articoli da toeletta, articoli sportivi, apparecchi fotografici, cineprese, videocamere, telefoni cellulari, computer portatili, strumenti musicali e altri oggetti personali d’uso corrente.',
+      'le persone domicialiate all’estero utilizzano durante il soggiorno in Svizzera e poi riesportano.\nTra questi rientrano abiti, biancheria, articoli da toeletta, articoli sportivi, apparecchi fotografici, cineprese, videocamere, telefoni cellulari, computer portatili, strumenti musicali e altri oggetti personali d’uso corrente.',
     personalEffectsText6: 'Provviste da viaggio',
     personalEffectsText7:
       'Come tali sono intese le derrate alimentari e le bevande analcoliche pronte per l’uso durante il viaggio.',
@@ -458,7 +460,7 @@ export const it: Locale = {
   },
 
   plants: {
-    plantsMainText: 'Piante',
+    plantsMainText: 'Piante e prodotti vegetali',
     plantsText1:
       '1.\tPiante e prodotti vegetali vietati\n' +
       'Le piante qui di seguito possono essere vettori di organismi nocivi (fuoco batterico, cancro della corteccia del castagno, virosi ecc.), pertanto la loro importazione è vietata.',
@@ -795,9 +797,7 @@ export const it: Locale = {
     howToDeclareYourGoodsText2:
       'Inserire il valore nella valuta estera in base alla ricevuta. Il valore viene determinato applicando il corso del cambio (vendita) del giorno precedente (ultimo giorno lavorativo).',
     howToDeclareYourGoodsText3:
-      "Stabilire un intervallo di tempo di due ore per il passaggio del confine. Il giustificativo è valido solo durante questo arco di tempo. Se non è possibile rispettarlo, occorre rivolgersi a un valico di confine in cui è presente il personale dell'AFD per spiegare il motivo per cui non è stato possibile varcare il confine nell'intervallo di tempo della validità. Senza motivazione credibile i tributi vengono riscossi una seconda volta.",
-    howToDeclareYourGoodsTextBold3: '',
-    howToDeclareYourGoodsText3a: '',
+      "Stabilire un intervallo di tempo di due ore per il passaggio del confine. <1>Il giustificativo è valido solo durante questo arco di tempo.</1> Se non è possibile rispettarlo, occorre rivolgersi a un valico di confine in cui è presente il personale dell'AFD per spiegare il motivo per cui non è stato possibile varcare il confine nell'intervallo di tempo della validità. Senza motivazione credibile i tributi vengono riscossi una seconda volta.",
     howToDeclareYourGoodsText4:
       'Se il giustificativo vale per più persone, queste devono passare il confine congiuntamente.',
     howToDeclareYourGoodsText5:

@@ -140,8 +140,10 @@ export const fr: Locale = {
     validateMainCategoryRemoveSubtitle:
       'Les quantités suivantes figurent actuellement dans certaines sous-catégories: {{value}}.',
     validateMainCategoryAndVatRemoveSubTitle: '🔥',
+    validateVatRemoveSubTitle: '🔥',
     validateMainCategoryRemoveYes:
       "Oui, j'aimerais supprimer les quantités en question.",
+    validateOtherGoodsRemoveYes: '🔥',
     itemsGreaterThan300CHF: 'Articles > 300 CHF',
   },
   modal: {
@@ -434,7 +436,7 @@ export const fr: Locale = {
     personalEffectsText4:
       'des voyageurs domiciliés en Suisse ont emportés lors de leur sortie du pays;',
     personalEffectsText5:
-      "des voyageurs domiciliés à l'étranger utilisent pendant leur séjour en Suisse avant de les réexporter. Font partie des effets personnels les vêtements, la lingerie, les articles de toilette, le matériel de sport, les appareils photographiques, les caméras cinématographiques et vidéo, les téléphones et ordinateurs portables, les instruments de musique et autres objets d'usage courant de nature personnelle.",
+      "des voyageurs domiciliés à l'étranger utilisent pendant leur séjour en Suisse avant de les réexporter.\nFont partie des effets personnels les vêtements, la lingerie, les articles de toilette, le matériel de sport, les appareils photographiques, les caméras cinématographiques et vidéo, les téléphones et ordinateurs portables, les instruments de musique et autres objets d'usage courant de nature personnelle.",
     personalEffectsText6: 'Provisions de voyage',
     personalEffectsText7:
       'Sont considérées comme des provisions de voyage les denrées alimentaires et boissons sans alcool, prêtes à la consommation, pour le jour du voyage.',
@@ -465,7 +467,7 @@ export const fr: Locale = {
   },
 
   plants: {
-    plantsMainText: 'Plantes',
+    plantsMainText: 'Plantes et produits végétaux',
     plantsText1:
       '1.\tPlantes et produits végétaux interdits\n' +
       "L'importation des plantes suivantes est interdite, car elles peuvent être porteuses d'organismes nuisibles (feu bactérien, chancre de l'écorce du châtaignier, affections virales, etc.):",
@@ -802,9 +804,8 @@ export const fr: Locale = {
     howToDeclareYourGoodsText2:
       'Saisissez la valeur en devise étrangère figurant sur le justificatif de paiement. Celle-ci sera convertie en francs selon le taux de change (vente) de la veille (dernier jour ouvrable).',
     howToDeclareYourGoodsText3:
-      "Définissez un délai de deux heures pour vous permettre de franchir la frontière. La quittance établie n'est valable que pendant ce délai. Si vous ne pouvez pas respecter le délai choisi, vous devez vous rendre à un passage frontière occupé par du personnel de l'AFD et expliquer pourquoi vous n'avez pas pu entrer en Suisse dans le délai de validité de la quittance. En l'absence de justification crédible, les redevances seront perçues une nouvelle fois.",
+      "Définissez un délai de deux heures pour vous permettre de franchir la frontière. <1>La quittance établie n'est valable que pendant ce délai.</1> Si vous ne pouvez pas respecter le délai choisi, vous devez vous rendre à un passage frontière occupé par du personnel de l'AFD et expliquer pourquoi vous n'avez pas pu entrer en Suisse dans le délai de validité de la quittance. En l'absence de justification crédible, les redevances seront perçues une nouvelle fois.",
     howToDeclareYourGoodsTextBold3: '',
-    howToDeclareYourGoodsText3a: '',
     howToDeclareYourGoodsText4:
       'Toutes les personnes pour lesquelles la quittance est valable doivent entrer ensemble en Suisse.',
     howToDeclareYourGoodsText5:

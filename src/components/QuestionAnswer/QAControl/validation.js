@@ -102,7 +102,7 @@ export const onUpdateFactory = (
           unselectedCategories.add(c);
         }
       });
-      const affectedCategories: Set<{
+      const quantityAffectedCategories: Set<{
         category: Category,
         quantity: number,
       }> = new Set();
@@ -111,20 +111,21 @@ export const onUpdateFactory = (
           getSubCategories(main).map(c => {
             const quantity = getTotalQuantity(oldState.basket, c);
             if (quantity > 0) {
-              affectedCategories.add({ category: c, quantity });
+              quantityAffectedCategories.add({ category: c, quantity });
             }
             return true;
           });
         });
       }
-      if (affectedCategories.size) {
+
+      if (quantityAffectedCategories.size) {
         const input: MainCategories = trigger.mainCategories;
         const func: UpdateFunction<{
           mainCategories: MainCategories,
           basket: Basket,
         }> =
           trigger.onUpdate;
-        const problems = Array.from(affectedCategories)
+        const problems = Array.from(quantityAffectedCategories)
           .map(
             ac =>
               `${t(`categories:${ac.category}`)} (${t(
@@ -157,7 +158,9 @@ export const onUpdateFactory = (
                     mainCategories: input,
                     basket: resetQuantitiesMultipleCategories(
                       oldState.basket,
-                      Array.from(affectedCategories).map(ac => ac.category)
+                      Array.from(quantityAffectedCategories).map(
+                        ac => ac.category
+                      )
                     ),
                   });
                 },
@@ -166,7 +169,37 @@ export const onUpdateFactory = (
             { cancelable: true }
           );
         };
-
+        showAlert();
+      } else if (unselectedCategories.has('OtherGoods') && !newCats.size) {
+        const input: MainCategories = trigger.mainCategories;
+        const func: UpdateFunction<{
+          mainCategories: MainCategories,
+          basket: Basket,
+        }> =
+          trigger.onUpdate;
+        const showAlert = () => {
+          Alert.alert(
+            t('qaFlow:validateMainCategoryRemoveTitle'),
+            t('qaFlow:validateVatRemoveSubTitle'),
+            [
+              {
+                text: t('qaFlow:validateGenericNo'),
+                onPress: () => {},
+                style: 'cancel',
+              },
+              {
+                text: t('qaFlow:validateOtherGoodsRemoveYes'),
+                onPress: () => {
+                  func({
+                    mainCategories: input,
+                    basket: oldState.basket,
+                  });
+                },
+              },
+            ],
+            { cancelable: true }
+          );
+        };
         showAlert();
       } else {
         trigger.onUpdate({
