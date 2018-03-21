@@ -141,10 +141,10 @@ export const de: Locale = {
       'Sind Sie sicher, dass Sie diese Hauptkategorie entfernen möchten?',
     validateMainCategoryRemoveSubtitle:
       'Im Moment enthalten gewisse Unterkategorien Mengen, nämlich: {{value}}',
-    validateMainCategoryAndVatRemoveSubTitle: '🔥',
-    validateVatRemoveSubTitle: '🔥',
+    validateMainCategoryAndVatRemoveSubTitle: 'Im Moment gibt es schon vorhandene Einträge.',
+    validateVatRemoveSubTitle: 'Es bestehen schon Einträge für die MWST Abgaben.',
     validateMainCategoryRemoveYes: 'Ja - ich möchte dies löschen',
-    validateOtherGoodsRemoveYes: '🔥',
+    validateOtherGoodsRemoveYes: 'Ja - ich möchte dies löschen',
     itemsGreaterThan300CHF: 'Gegenstände > 300 CHF',
   },
   modal: {

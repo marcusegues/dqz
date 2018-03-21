@@ -139,12 +139,12 @@ export const fr: Locale = {
       'Êtes-vous sûr de vouloir supprimer cette catégorie principale?',
     validateMainCategoryRemoveSubtitle:
       'Les quantités suivantes figurent actuellement dans certaines sous-catégories: {{value}}.',
-    validateMainCategoryAndVatRemoveSubTitle: '🔥',
-    validateVatRemoveSubTitle: '🔥',
+    validateMainCategoryAndVatRemoveSubTitle: 'Pour le moment, il existe déjà des entrées.',
+    validateVatRemoveSubTitle: 'Il y a déjà des entrées pour la TVA.',
     validateMainCategoryRemoveYes:
       "Oui, j'aimerais supprimer les quantités en question.",
-    validateOtherGoodsRemoveYes: '🔥',
-    itemsGreaterThan300CHF: 'Articles > 300 CHF',
+    validateOtherGoodsRemoveYes: 'Oui, j\'aimerais supprimer les quantités en question.',
+    itemsGreaterThan300CHF: 'Marchandises > 300 CHF',
   },
   modal: {
     confirmPicker: 'Reprendre {{value}}',
