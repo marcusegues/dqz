@@ -35,7 +35,7 @@ type VatAllowanceInnerProps = {
   i18n: { language: Language },
 };
 
-const FormattedText = ({ text }) => (
+export const FormattedText = ({ text }: { text: string }) => (
   <Text
     style={{
       color: '#1A1A1A',
