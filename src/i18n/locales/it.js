@@ -210,6 +210,7 @@ export const it: Locale = {
     entryTime: 'Periodo di entrata:',
     chooseOtherEntryTime: 'Regolare',
     until: 'fino a',
+    savedToCameraRoll: 'Ricevuta salvata correttamente nelle tue foto.',
   },
 
   customsProcedures: {

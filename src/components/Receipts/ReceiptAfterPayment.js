@@ -4,12 +4,12 @@ import React from 'react';
 import type { ComponentType } from 'react';
 import { DateTime } from 'luxon';
 // $FlowFixMe
-import { View, Text, CameraRoll } from 'react-native';
+import { View, Text, CameraRoll, Alert } from 'react-native';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 import { connect } from 'react-redux';
 // $FlowFixMe
-import { takeSnapshotAsync } from 'expo';
+import { takeSnapshotAsync, Permissions } from 'expo';
 import { translate } from 'react-i18next';
 import { moderateScale, verticalScale } from '../../styles/Scaling';
 import { CardRowText } from '../QuestionAnswer/Cards/subcomponents/CardRowText';
@@ -18,7 +18,10 @@ import type {
   PaymentData,
   TFunction,
 } from '../../types/generalTypes';
-import { analyticsScreenMounted } from '../../analytics/analyticsApi';
+import {
+  analyticsCustom,
+  analyticsScreenMounted,
+} from '../../analytics/analyticsApi';
 import { getPaymentData, getReceiptId } from '../../reducers/selectors';
 import { fetchReceiptByReceiptId } from '../../asyncStorage/storageApi';
 import type { Receipt } from '../../types/receiptTypes';
@@ -83,6 +86,7 @@ class ReceiptAfterPaymentInner extends React.Component<
       />
     ),
   });
+
   constructor(
     props: ReceiptAfterPaymentScreenProps & {
       t: TFunction,
@@ -182,6 +186,16 @@ class ReceiptAfterPaymentInner extends React.Component<
     ];
   }
 
+  async saveToCameraRoll(snapshot) {
+    const { t } = this.props;
+    try {
+      await CameraRoll.saveToCameraRoll(snapshot, 'photo');
+      Alert.alert(t('receipt:savedToCameraRoll'));
+    } catch (e) {
+      analyticsCustom('Failed to save receipt to camera roll');
+    }
+  }
+
   image: any;
 
   async capture() {
@@ -190,7 +204,18 @@ class ReceiptAfterPaymentInner extends React.Component<
       quality: 1,
       result: 'file',
     });
-    await CameraRoll.saveToCameraRoll(snapshot, 'photo');
+    const { status } = await Permissions.getAsync(Permissions.CAMERA_ROLL);
+    if (status !== 'granted') {
+      Permissions.askAsync(Permissions.CAMERA_ROLL).then(
+        async permissionAnswer => {
+          if (permissionAnswer.status === 'granted') {
+            this.saveToCameraRoll(snapshot);
+          }
+        }
+      );
+    } else {
+      this.saveToCameraRoll(snapshot);
+    }
   }
 
   render() {
@@ -216,12 +241,12 @@ class ReceiptAfterPaymentInner extends React.Component<
             flexDirection: 'column',
             alignItems: 'center',
           }}
+          ref={ref => {
+            this.image = ref;
+          }}
+          collapsable={false}
         >
-          <ScrollViewCard
-            ref={ref => {
-              this.image = ref;
-            }}
-          >
+          <ScrollViewCard>
             <RedLogo />
             <Row>
               <Text style={ownStyles.topSumText}>

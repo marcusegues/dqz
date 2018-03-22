@@ -555,6 +555,7 @@ type ReceiptTranslations = {
   entryTime: string,
   chooseOtherEntryTime: string,
   until: string,
+  savedToCameraRoll: string,
 };
 
 type AppInformationTranslations = {

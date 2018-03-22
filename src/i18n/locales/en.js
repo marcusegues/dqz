@@ -209,6 +209,7 @@ export const en: Locale = {
     entryTime: 'Time of entry:',
     chooseOtherEntryTime: 'To change',
     until: 'until',
+    savedToCameraRoll: 'Receipt successfully saved to your photos.',
   },
 
   customsProcedures: {

@@ -216,6 +216,7 @@ export const fr: Locale = {
     entryTime: "Période d'entrée:",
     chooseOtherEntryTime: 'modifier',
     until: "jusqu'à",
+    savedToCameraRoll: 'Quittance enregistré à vos photos avec succès.',
   },
 
   customsProcedures: {
