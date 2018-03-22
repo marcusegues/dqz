@@ -903,7 +903,7 @@ export const it: Locale = {
   },
   SuccessfulPayment: {
     title:
-      'Grazie! Abbiamo ricevuto il pagamento e ti auguriamo un buon viaggio!',
+      'Grazie! Abbiamo ricevuto il pagamento e vi auguriamo un buon viaggio!',
     navigationHeaderTitle: 'Pagamento riuscito',
   },
   units: {
