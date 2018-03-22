@@ -11,7 +11,6 @@ import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { BulletText } from '../../../AppInfo/subComponents/BulletText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
-import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
 import type { Language } from '../../../../i18n/types/locale';
 import { borderCrossingsLinks } from '../../types/information';
 

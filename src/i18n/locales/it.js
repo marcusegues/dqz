@@ -753,7 +753,7 @@ export const it: Locale = {
       'Amministrazione federale delle dogane AFD',
     contact: 'Contatto',
     customsInfoCenter: 'Centrale d’informazione dell’AFD',
-    generalCustomsDirectorate: 'Monbijoustrasse 40\n' + '3003 Bern',
+    generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern`,
     designAndDevelopment: 'Design e sviluppo',
     ambriteAddress:
       'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch',
