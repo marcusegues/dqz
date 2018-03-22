@@ -197,7 +197,7 @@ export const de: Locale = {
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} bis {{endDate}} | {{endTime}}',
     receiptValidOn: 'Diese Quittung ist gültig für den Grenzübertritt am:',
-    receiptValidOnDate: '{{date}}, von {{startTime}} bis {{endTime}}',
+    receiptValidOnDate: '{{date}} von {{startTime}} bis {{endTime}}',
     sumText: 'Summe: CHF {{value}}',
     vatColumn: 'Mehrwertsteuer in CHF:',
     normalAmountsTitle: 'Gesamtwert der Waren',
@@ -299,7 +299,7 @@ export const de: Locale = {
     vatAllowanceText15:
       'Bitte beachten Sie: Werden die so genannten Freimengen von alkoholischen Getränken, Tabakfabrikaten und gewissen Lebensmitteln überschritten, müssen Sie in jedem Fall Zoll bezahlen.',
     vatAllowanceText16:
-      'Bitte beachten Sie zudem, dass bestimmte Waren (z.B. Fälschungen, Waffen sowie gewisse Pflanzen, Tiere, Tierprodukte und Waren, die dem Artenschutz unterliegen) zur Einfuhr verboten sein können oder gewissen Beschränkungen unterliegen. Mehr Informationen',
+      'Bitte beachten Sie zudem, dass bestimmte Waren (z.B. Fälschungen, Waffen sowie gewisse Pflanzen, Tiere, Tierprodukte und Waren, die dem Artenschutz unterliegen) zur Einfuhr verboten sein können oder gewissen Beschränkungen unterliegen.',
     vatAllowanceText17: 'Anwendung der Wertfreigrenze für Einzelpersonen',
     vatAllowanceText18: 'Anwendung der Wertfreigrenze bei mehreren Personen',
     vatAllowanceText19:
