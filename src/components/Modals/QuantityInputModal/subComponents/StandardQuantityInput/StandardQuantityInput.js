@@ -21,7 +21,11 @@ const StandardQuantityInputInner = ({
   category,
   children,
   t,
-}: StandardQuantityInputProps & { t: TFunction }) => (
+  i18n,
+}: StandardQuantityInputProps & {
+  t: TFunction,
+  i18n: { language: string },
+}) => (
   <View>
     <View
       style={{
@@ -33,7 +37,10 @@ const StandardQuantityInputInner = ({
     </View>
     <CardHeaderSubText
       text={t('quantityInput:standardInputSubText', {
-        category: t(`mainCategories:${category}`).toLocaleLowerCase(),
+        category:
+          i18n.language === 'de'
+            ? t(`mainCategories:${category}`)
+            : t(`mainCategories:${category}`).toLocaleLowerCase(),
       })}
     />
     {children}
