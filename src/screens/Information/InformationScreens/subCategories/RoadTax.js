@@ -17,6 +17,7 @@ import { RoadTaxRow } from '../../subComponents/RoadTaxRow';
 import { AmountIcon } from '../../../../components/General Components/GreyBox/configured/AmountIcon';
 import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
 import type { Language } from '../../../../i18n/types/locale';
+import { FormattedText } from '../mainCategories/VatAllowance';
 
 const bus = require('../../../../../assets/images/info/bus.png');
 const camper = require('../../../../../assets/images/info/camper.png');
@@ -133,8 +134,7 @@ const RoadTaxInner = ({ t, i18n }: RoadTaxInnerProps) => (
       imageStyle={ownStyles.busImage}
       amount={11}
     >
-      <AppInfoSubText text={t('till')} style={{ marginHorizontal: scale(5) }} />
-      <AmountIcon amount={25} currency="CHF" />
+      <FormattedText text={`${t('till')} `} />
     </RoadTaxRow>
     <RoadTaxRow
       source={camper}
