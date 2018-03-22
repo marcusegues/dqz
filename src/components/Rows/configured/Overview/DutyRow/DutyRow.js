@@ -72,7 +72,9 @@ class DutyRowInner extends React.Component<
           quantity={Math.max(
             0.0,
             quantityRounding(quantity - allowanceRaw, category)
-          ).toFixed(1)}
+          ).toFixed(
+            category === 'Cigarettes' || category === 'Tobacco' ? 0 : 1
+          )}
           unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
             count: Math.max(0, quantity - allowanceRaw),
           })}

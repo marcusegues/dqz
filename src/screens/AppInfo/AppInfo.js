@@ -124,7 +124,7 @@ class AppInfoInner extends React.Component<
                 onPress={() => Linking.openURL(`http://www.ezv.admin.ch`)}
                 style={{
                   color: '#757575',
-                  textDecorationLine: 'none',
+                  textDecorationLine: 'underline',
                 }}
               />
               <CardRowText text={t('contact')} style={styles.contactTitle} />
@@ -136,7 +136,7 @@ class AppInfoInner extends React.Component<
                 }
                 style={{
                   color: '#757575',
-                  textDecorationLine: 'none',
+                  textDecorationLine: 'underline',
                   marginBottom: verticalScale(16),
                 }}
               />
@@ -174,7 +174,7 @@ class AppInfoInner extends React.Component<
                 onPress={() => Linking.openURL(`http://www.ambrite.ch`)}
                 style={{
                   color: '#757575',
-                  textDecorationLine: 'none',
+                  textDecorationLine: 'underline',
                 }}
               />
             </View>
