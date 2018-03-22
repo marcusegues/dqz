@@ -261,7 +261,7 @@ const VatAllowanceInner = ({ t, navigation, i18n }: VatAllowanceInnerProps) => {
       </Row>
       <CardRowText
         text={t('vatAllowanceText31')}
-        style={{ marginVertical: moderateScale(16) }}
+        style={{ marginLeft: 10, marginVertical: moderateScale(16) }}
       />
       <AppInfoSubText
         text={t('vatAllowanceText32')}
