@@ -85,7 +85,7 @@ export const it: Locale = {
     enterQuantitiesButter: 'Inserisca qui la quantità totale di {{value}}.',
     enterQuantitiesAlcohol: 'Inserisca qui la quantità totale di {{value}}',
     standardInputSubText:
-      'Inserisca qui la quantità di {{value}} che porta con voi:',
+      'Inserisca qui la quantità di {{category}} che porta con voi:',
     enterQuantitiesCigarettes: 'Inserisca qui la quantità totale di {{value}}.',
     enterQuantitiesTobacco: 'Inserisca qui la quantità totale di {{value}}.',
     enterQuantitiesOil: 'Inserisca qui la quantità totale di {{value}}.',
