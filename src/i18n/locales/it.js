@@ -85,7 +85,7 @@ export const it: Locale = {
     enterQuantitiesButter: 'Inserisca qui la quantità totale di {{value}}.',
     enterQuantitiesAlcohol: 'Inserisca qui la quantità totale di {{value}}',
     standardInputSubText:
-      'Inserisca qui la quantità di {{value}} che porta con voi:',
+      'Inserisca qui la quantità di {{category}} che porta con voi:',
     enterQuantitiesCigarettes: 'Inserisca qui la quantità totale di {{value}}.',
     enterQuantitiesTobacco: 'Inserisca qui la quantità totale di {{value}}.',
     enterQuantitiesOil: 'Inserisca qui la quantità totale di {{value}}.',
@@ -805,7 +805,7 @@ export const it: Locale = {
 
     specialCases: 'Casi particolari',
     specialCasesText1:
-      "Le seguenti merci non possono essere imposte con QuickZoll e devono obbligatoriamente essere dichiarate presso un <1>valico di confine</1> occupato dal personale dell'AFD.",
+      "Le seguenti merci non possono essere imposte con QuickZoll e devono obbligatoriamente essere dichiarate presso un <1>valico di confine occupato</1> dal personale dell'AFD.",
     specialCasesText2:
       "Merci soggette a limitazioni o divieti e che soggiacciono all'obbligo di certificato o di autorizzazione (p. es. armi, animali vivi e merci protette);",
     specialCasesText3: 'ulteriori informazioni',
