@@ -241,7 +241,7 @@ export const fr: Locale = {
     customsProceduresText10:
       'Déclaration en douane verbale ou utilisation de la voie rouge des aéroports',
     customsProceduresText11:
-      'Si le passage frontière est occupé par du personnel de la douane suisse, vous devez déclarer verbalement et spontanément toutes les marchandises. Des informations relatives aux principaux passages frontières sont disponibles dans la rubrique «Passages frontières».',
+      'Si le passage frontière est occupé par du personnel de la douane suisse, vous devez déclarer verbalement et spontanément toutes les marchandises. Des informations relatives aux principaux passages frontières sont disponibles dans la rubrique <1>Passages frontières</1>.',
     customsProceduresText12:
       "Établissement de la déclaration en douane au moyen de l'application QuickZoll",
     customsProceduresText13:

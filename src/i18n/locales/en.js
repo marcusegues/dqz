@@ -232,7 +232,7 @@ export const en: Locale = {
     customsProceduresText10:
       'Verbal customs declaration or use of the red channel in airports',
     customsProceduresText11:
-      'If the border crossing is manned by Swiss Customs staff, all goods must be declared verbally without you being solicited to do so. Information on the main border crossings can be found in the border crossings section.',
+      'If the border crossing is manned by Swiss Customs staff, all goods must be declared verbally without you being solicited to do so. Information on the main border crossings can be found in the <1>border crossings section</1>.',
     customsProceduresText12: 'Customs declaration with the app QuickZoll',
     customsProceduresText13:
       "You can also declare your goods with the FCA's app QuickZoll. The goods must be cleared through customs with the app before crossing the border or when doing so. In other words, duties must be paid. If you paid the duties with the app, you may also use border crossings where no Customs staff are present and the green channel in airports.",
