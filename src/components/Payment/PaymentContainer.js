@@ -310,7 +310,7 @@ class PaymentContainerInner extends React.Component<
                         type: 'NAVIGATE',
                         screen: 'ReceiptAfterPayment',
                       });
-                    }, 5000);
+                    }, 3000);
                   });
                 })
                 .catch(error => console.log('Saferpay error:', error));
