@@ -251,7 +251,7 @@ export const fr: Locale = {
     customsProceduresText16:
       'Déclaration en douane écrite (boîte à déclarations)',
     customsProceduresText17:
-      "Des boîtes à déclarations vous permettant de déclarer vos marchandises par écrit sont encore disponibles à certains passages frontières. Vous trouverez des informations à ce sujet à l'adresse suivante: www.ezv.admin.ch/boîte à déclarations",
+      "Des boîtes à déclarations vous permettant de déclarer vos marchandises par écrit sont encore disponibles à certains passages frontières. Vous trouverez des informations à ce sujet à l'adresse suivante:",
     customsProceduresText18:
       "Cette forme de déclaration en douane n'est admise que pour les marchandises qui ne sont pas destinées au commerce. Les marchandises ne doivent être soumises à aucune restriction ni interdiction et ne doivent être assujetties à aucun certificat ni permis.",
     customsProceduresText19:
