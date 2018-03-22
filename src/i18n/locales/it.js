@@ -84,7 +84,8 @@ export const it: Locale = {
     enterQuantity: 'Inserisca la quantità',
     enterQuantitiesButter: 'Inserisca qui la quantità totale di {{value}}.',
     enterQuantitiesAlcohol: 'Inserisca qui la quantità totale di {{value}}',
-    standardInputSubText: 'Inserisca qui la quantità di {{value}} che porta con voi:',
+    standardInputSubText:
+      'Inserisca qui la quantità di {{value}} che porta con voi:',
     enterQuantitiesCigarettes: 'Inserisca qui la quantità totale di {{value}}.',
     enterQuantitiesTobacco: 'Inserisca qui la quantità totale di {{value}}.',
     enterQuantitiesOil: 'Inserisca qui la quantità totale di {{value}}.',
@@ -134,11 +135,13 @@ export const it: Locale = {
       'Confermare la cancellazione di questa categoria principale?',
     validateMainCategoryRemoveSubtitle:
       'Al momento determinate sottocategorie contengono delle quantità, ovvero: {{value}}',
-    validateMainCategoryAndVatRemoveSubTitle: 'Al momento ci sono già voci esistenti.',
-    validateVatRemoveSubTitle: 'Ci sono già voci per l\'IVA.',
+    validateMainCategoryAndVatRemoveSubTitle:
+      'Al momento ci sono già voci esistenti.',
+    validateVatRemoveSubTitle: "Ci sono già voci per l'IVA.",
     validateMainCategoryRemoveYes:
       'Sì, desidero eliminare le rispettive quantità.',
-    validateOtherGoodsRemoveYes: 'Sì, desidero eliminare le rispettive quantità.',
+    validateOtherGoodsRemoveYes:
+      'Sì, desidero eliminare le rispettive quantità.',
     itemsGreaterThan300CHF: 'Articoli > 300 CHF',
   },
   modal: {
@@ -319,9 +322,12 @@ export const it: Locale = {
     vatAllowanceText26: 'Esempi',
     vatAllowanceText27:
       '1.\tLa fattura d’acquisto per un computer è la seguente:',
-    vatAllowanceText28: '1 PC desktop\t\tCHF\t\t700',
-    vatAllowanceText29: '1 schiermo\t\tCHF\t\t200 ',
-    vatAllowanceText30: '1 tastiera\t\tCHF\t\t20',
+    vatAllowanceText28a: '1 PC desktop',
+    vatAllowanceText28b: 'CHF 700',
+    vatAllowanceText29a: '1 schiermo',
+    vatAllowanceText29b: 'CHF 200',
+    vatAllowanceText30a: '1 tastiera',
+    vatAllowanceText30b: 'CHF 20',
     vatAllowanceText31: 'Totale\tCHF 920',
     vatAllowanceText32: '= 3 oggetti (tre unità di vendita)',
     vatAllowanceText33:
@@ -749,15 +755,12 @@ export const it: Locale = {
     customsAdministrationAddressTitle:
       'Amministrazione federale delle dogane AFD',
     contact: 'Contatto',
-    customsInfoCenter:
-      'Centrale d’informazione dell’AFD',
-    generalCustomsDirectorate:
-      'Monbijoustrasse 40\n' +
-      '3003 Bern',
+    customsInfoCenter: 'Centrale d’informazione dell’AFD',
+    generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern`,
     designAndDevelopment: 'Design e sviluppo',
     ambriteAddress:
       'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch',
-     toContactForm: 'Formulario di contatto',
+    toContactForm: 'Formulario di contatto',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informazioni importanti',

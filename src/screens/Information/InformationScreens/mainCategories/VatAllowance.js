@@ -6,6 +6,7 @@ import {
   Linking,
   TouchableOpacity,
   Text,
+  View,
   // $FlowFixMe
 } from 'react-native';
 import type { ComponentType } from 'react';
@@ -26,12 +27,26 @@ import type { Language } from '../../../../i18n/types/locale';
 import { Row } from '../../../../components/Rows/Row';
 import { type } from '../../../../styles/fonts';
 import { borderCrossingsLinks } from '../../types/information';
+import { rowStyles } from '../../../../components/Rows/styles/rowStyles';
 
 type VatAllowanceInnerProps = {
   t: TFunction,
   navigation: Navigation,
   i18n: { language: Language },
 };
+
+const FormattedText = ({ text }) => (
+  <Text
+    style={{
+      color: '#1A1A1A',
+      fontWeight: '300',
+      fontFamily: 'roboto_light',
+      lineHeight: moderateScale(21),
+    }}
+  >
+    {text}
+  </Text>
+);
 
 const VatAllowanceInner = ({ t, navigation, i18n }: VatAllowanceInnerProps) => {
   const oneTravelerDiagram = vatAllowanceOneTravelerImages[i18n.language];
@@ -212,22 +227,37 @@ const VatAllowanceInner = ({ t, navigation, i18n }: VatAllowanceInnerProps) => {
         style={{ marginBottom: moderateScale(16) }}
       />
       <Row borderTop width="100%">
-        <AppInfoSubText
-          text={t('vatAllowanceText28')}
-          style={{ marginVertical: moderateScale(16) }}
-        />
+        <View
+          style={[
+            rowStyles.rowContent,
+            { justifyContent: 'space-between', width: '100%' },
+          ]}
+        >
+          <FormattedText text={t('vatAllowanceText28a')} />
+          <FormattedText text={t('vatAllowanceText28b')} />
+        </View>
       </Row>
       <Row width="100%">
-        <AppInfoSubText
-          text={t('vatAllowanceText29')}
-          style={{ marginVertical: moderateScale(16) }}
-        />
+        <View
+          style={[
+            rowStyles.rowContent,
+            { justifyContent: 'space-between', width: '100%' },
+          ]}
+        >
+          <FormattedText text={t('vatAllowanceText29a')} />
+          <FormattedText text={t('vatAllowanceText29b')} />
+        </View>
       </Row>
       <Row borderBottom width="100%">
-        <AppInfoSubText
-          text={t('vatAllowanceText30')}
-          style={{ marginVertical: moderateScale(16) }}
-        />
+        <View
+          style={[
+            rowStyles.rowContent,
+            { justifyContent: 'space-between', width: '100%' },
+          ]}
+        >
+          <FormattedText text={t('vatAllowanceText30a')} />
+          <FormattedText text={t('vatAllowanceText30b')} />
+        </View>
       </Row>
       <CardRowText
         text={t('vatAllowanceText31')}
@@ -247,12 +277,14 @@ const VatAllowanceInner = ({ t, navigation, i18n }: VatAllowanceInnerProps) => {
           style={{ marginVertical: moderateScale(16) }}
         />
       </Row>
-      <BulletText text={t('vatAllowanceText35')} />
-      <BulletText text={t('vatAllowanceText36')} />
-      <BulletText
-        text={t('vatAllowanceText37')}
-        style={{ marginBottom: moderateScale(16) }}
-      />
+      <View style={{ marginLeft: 10 }}>
+        <BulletText text={t('vatAllowanceText35')} />
+        <BulletText text={t('vatAllowanceText36')} />
+        <BulletText
+          text={t('vatAllowanceText37')}
+          style={{ marginBottom: moderateScale(16) }}
+        />
+      </View>
 
       <Row borderTop borderBottom={false} width="100%">
         <CardRowText
