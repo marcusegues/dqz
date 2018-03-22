@@ -92,7 +92,7 @@ ShallowWrapper {
             style={
               Object {
                 "color": "#757575",
-                "textDecorationLine": "none",
+                "textDecorationLine": "underline",
               }
             }
             text="http://www.ezv.admin.ch"
@@ -119,7 +119,7 @@ ShallowWrapper {
               Object {
                 "color": "#757575",
                 "marginBottom": 31.388235294117646,
-                "textDecorationLine": "none",
+                "textDecorationLine": "underline",
               }
             }
             text="http://www.zollauskunft.admin.ch"
@@ -212,7 +212,7 @@ ShallowWrapper {
               style={
                 Object {
                   "color": "#757575",
-                  "textDecorationLine": "none",
+                  "textDecorationLine": "underline",
                 }
               }
               text="http://www.ezv.admin.ch"
@@ -239,7 +239,7 @@ ShallowWrapper {
                 Object {
                   "color": "#757575",
                   "marginBottom": 31.388235294117646,
-                  "textDecorationLine": "none",
+                  "textDecorationLine": "underline",
                 }
               }
               text="http://www.zollauskunft.admin.ch"
@@ -359,7 +359,7 @@ ShallowWrapper {
                 style={
                   Object {
                     "color": "#757575",
-                    "textDecorationLine": "none",
+                    "textDecorationLine": "underline",
                   }
                 }
                 text="http://www.ezv.admin.ch"
@@ -386,7 +386,7 @@ ShallowWrapper {
                   Object {
                     "color": "#757575",
                     "marginBottom": 31.388235294117646,
-                    "textDecorationLine": "none",
+                    "textDecorationLine": "underline",
                   }
                 }
                 text="http://www.zollauskunft.admin.ch"
@@ -489,7 +489,7 @@ ShallowWrapper {
                 "onPress": [Function],
                 "style": Object {
                   "color": "#757575",
-                  "textDecorationLine": "none",
+                  "textDecorationLine": "underline",
                 },
                 "text": "http://www.ezv.admin.ch",
               },
@@ -536,7 +536,7 @@ ShallowWrapper {
                 "style": Object {
                   "color": "#757575",
                   "marginBottom": 31.388235294117646,
-                  "textDecorationLine": "none",
+                  "textDecorationLine": "underline",
                 },
                 "text": "http://www.zollauskunft.admin.ch",
               },
@@ -643,7 +643,7 @@ ShallowWrapper {
               style={
                 Object {
                   "color": "#757575",
-                  "textDecorationLine": "none",
+                  "textDecorationLine": "underline",
                 }
               }
               text="http://www.ezv.admin.ch"
@@ -670,7 +670,7 @@ ShallowWrapper {
                 Object {
                   "color": "#757575",
                   "marginBottom": 31.388235294117646,
-                  "textDecorationLine": "none",
+                  "textDecorationLine": "underline",
                 }
               }
               text="http://www.zollauskunft.admin.ch"
@@ -763,7 +763,7 @@ ShallowWrapper {
                 style={
                   Object {
                     "color": "#757575",
-                    "textDecorationLine": "none",
+                    "textDecorationLine": "underline",
                   }
                 }
                 text="http://www.ezv.admin.ch"
@@ -790,7 +790,7 @@ ShallowWrapper {
                   Object {
                     "color": "#757575",
                     "marginBottom": 31.388235294117646,
-                    "textDecorationLine": "none",
+                    "textDecorationLine": "underline",
                   }
                 }
                 text="http://www.zollauskunft.admin.ch"
@@ -910,7 +910,7 @@ ShallowWrapper {
                   style={
                     Object {
                       "color": "#757575",
-                      "textDecorationLine": "none",
+                      "textDecorationLine": "underline",
                     }
                   }
                   text="http://www.ezv.admin.ch"
@@ -937,7 +937,7 @@ ShallowWrapper {
                     Object {
                       "color": "#757575",
                       "marginBottom": 31.388235294117646,
-                      "textDecorationLine": "none",
+                      "textDecorationLine": "underline",
                     }
                   }
                   text="http://www.zollauskunft.admin.ch"
@@ -1040,7 +1040,7 @@ ShallowWrapper {
                   "onPress": [Function],
                   "style": Object {
                     "color": "#757575",
-                    "textDecorationLine": "none",
+                    "textDecorationLine": "underline",
                   },
                   "text": "http://www.ezv.admin.ch",
                 },
@@ -1087,7 +1087,7 @@ ShallowWrapper {
                   "style": Object {
                     "color": "#757575",
                     "marginBottom": 31.388235294117646,
-                    "textDecorationLine": "none",
+                    "textDecorationLine": "underline",
                   },
                   "text": "http://www.zollauskunft.admin.ch",
                 },
