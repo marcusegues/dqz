@@ -5,6 +5,7 @@ import { getTotalPeople } from '../../../model/configurationApi';
 import type { Basket } from '../../../model/types/basketPeopleAmountsTypes';
 import { showLargeAmountsQuestion } from './controlQuestionStates';
 import type { QuestionFlag, QuestionType } from '../types/questionAnswerTypes';
+import { flatNormalAmounts } from '../../../model/utils';
 
 export const anyQuantitiesInBasket = (basket: Basket): boolean =>
   basket
@@ -19,6 +20,7 @@ export const flagRules = (
   question: QuestionType,
   qaState: QAStateEnriched
 ): QuestionFlag => {
+  // debugger;
   const { settings } = qaState;
   const main = settings.get('mainCategories');
   switch (question) {
@@ -34,10 +36,13 @@ export const flagRules = (
         : 'incomplete';
     }
     case 'amounts': {
-      return qaState.amounts.size ? 'complete' : 'incomplete';
+      return flatNormalAmounts(qaState.amounts).length !== 0
+        ? 'complete'
+        : 'incomplete';
     }
     case 'largeAmounts': {
-      return showLargeAmountsQuestion(qaState) && qaState.amounts.size
+      return showLargeAmountsQuestion(qaState) &&
+        flatNormalAmounts(qaState.amounts).length !== 0
         ? 'complete'
         : 'incomplete';
     }
