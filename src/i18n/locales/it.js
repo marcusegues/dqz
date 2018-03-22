@@ -242,9 +242,9 @@ export const it: Locale = {
       'Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
     customsProceduresText13: 'Dichiarazione doganale con l’app QuickZoll',
     customsProceduresText14:
-      'Le merci possono essere dichiarate anche con l’app QuickZoll dell’AFD. Le merci devono essere imposte con l’app prima del passaggio del confine oppure al valico di confine. Ciò significa che i tributi devono essere pagati. Se il pagamento avviene mediante app è consentito utilizzare anche i valichi di confine in cui il personale doganale non è presente [OPPURE: valichi di confine dove è possibile effettuare la dichiarazione scritta], e negli aeroporti il passaggio verde.',
+      'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.',
     customsProceduresText15:
-      'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.\nAltre merci devono essere dichiarate verbalmente presso un valico di confine in cui è presente il personale doganale svizzero.',
+      'Altre merci devono essere dichiarate verbalmente presso un valico di confine in cui è presente il personale doganale svizzero.',
     customsProceduresText16:
       'Dichiarazione doganale scritta (cassetta delle dichiarazioni)',
     customsProceduresText17:
