@@ -139,11 +139,13 @@ export const fr: Locale = {
       'Êtes-vous sûr de vouloir supprimer cette catégorie principale?',
     validateMainCategoryRemoveSubtitle:
       'Les quantités suivantes figurent actuellement dans certaines sous-catégories: {{value}}.',
-    validateMainCategoryAndVatRemoveSubTitle: 'Pour le moment, il existe déjà des entrées.',
+    validateMainCategoryAndVatRemoveSubTitle:
+      'Pour le moment, il existe déjà des entrées.',
     validateVatRemoveSubTitle: 'Il y a déjà des entrées pour la TVA.',
     validateMainCategoryRemoveYes:
       "Oui, j'aimerais supprimer les quantités en question.",
-    validateOtherGoodsRemoveYes: 'Oui, j\'aimerais supprimer les quantités en question.',
+    validateOtherGoodsRemoveYes:
+      "Oui, j'aimerais supprimer les quantités en question.",
     itemsGreaterThan300CHF: 'Marchandises > 300 CHF',
   },
   modal: {
@@ -322,9 +324,12 @@ export const fr: Locale = {
     vatAllowanceText26: 'Exemples:',
     vatAllowanceText27:
       "1.\tUne facture est établie comme suit pour l'achat d'un ordinateur:",
-    vatAllowanceText28: '1 ordinateur de bureau\t\tfr. 700',
-    vatAllowanceText29: '1 écran\t\t\t\t\tfr. 200',
-    vatAllowanceText30: '1 clavier\t\t\t\t\tfr. 20',
+    vatAllowanceText28a: '1 ordinateur de bureau PC',
+    vatAllowanceText28b: 'CHF 700',
+    vatAllowanceText29a: '1 écran',
+    vatAllowanceText29b: 'CHF 200',
+    vatAllowanceText30a: '1 clavier',
+    vatAllowanceText30b: 'CHF 20',
     vatAllowanceText31: 'Total\tfr. 920',
     vatAllowanceText32: '= 3 biens (trois unités de vente)',
     vatAllowanceText33:
@@ -762,8 +767,7 @@ export const fr: Locale = {
       'Administration fédérale des douanes AFD',
     contact: 'Contact',
     customsInfoCenter: 'Centrale de renseignement de la douane',
-    generalCustomsDirectorate:
-      'Monbijoustrasse 40\n3003 Bern',
+    generalCustomsDirectorate: 'Monbijoustrasse 40\n3003 Bern',
     designAndDevelopment: 'Conception et développement',
     ambriteAddress:
       'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch',
