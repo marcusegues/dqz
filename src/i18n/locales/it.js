@@ -243,11 +243,12 @@ export const it: Locale = {
     customsProceduresText13: 'Dichiarazione doganale con l’app QuickZoll',
     customsProceduresText14:
       'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.',
-    customsProceduresText15: 'Altre merci devono essere dichiarate verbalmente presso un valico di confine in cui è presente il personale doganale svizzero.',
+    customsProceduresText15:
+      'Altre merci devono essere dichiarate verbalmente presso un valico di confine in cui è presente il personale doganale svizzero.',
     customsProceduresText16:
       'Dichiarazione doganale scritta (cassetta delle dichiarazioni)',
     customsProceduresText17:
-      'In alcuni valichi di confine sono anche a disposizione le cosiddette cassette delle dichiarazioni, dove è possibile dichiarare le proprie merci in forma scritta. Informazioni a riguardo sono disponibili su:',
+      'In alcuni valichi di confine sono anche a disposizione le cosiddette cassette delle dichiarazioni, dove è possibile dichiarare le proprie merci in forma scritta. Informazioni a riguardo sono disponibili su: <1>www.ezv.admin.ch</1> delle dichiarazioni',
     customsProceduresText18:
       'Questa forma di dichiarazione doganale è autorizzata solo per merci non destinate al commercio, non soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.',
     customsProceduresText19:
