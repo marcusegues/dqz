@@ -48,7 +48,7 @@ export type PaymentTransaction = {
   ipLocation: string,
 };
 
-export type SettingsAcceptRate = boolean;
+export type SettingsAcceptRate = 'accepted' | 'notAccepted' | 'skipped';
 
 /**
  * Type for payment status. Status key getting from returnURL.

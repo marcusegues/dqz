@@ -117,7 +117,7 @@ class MainMenuInner extends React.Component<
 
   checkSettingsAcceptRate() {
     fetchSettingsAcceptRate().then(accepted => {
-      if (accepted) {
+      if (accepted === 'accepted') {
         this.handleGoToDeclaration();
       } else {
         this.setState({ acceptRateModalVisible: true });
@@ -211,7 +211,7 @@ class MainMenuInner extends React.Component<
           modalVisible={this.state.acceptRateModalVisible}
           setModalVisibleFalse={() => this.setAcceptRateModalVisibleFalse()}
           onAcceptRate={() => {
-            storeSettingsAcceptRate(true).then(() => {
+            storeSettingsAcceptRate('accepted').then(() => {
               this.setState({
                 acceptRateModalVisible: false,
               });

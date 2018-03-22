@@ -20,7 +20,6 @@ export const flagRules = (
   question: QuestionType,
   qaState: QAStateEnriched
 ): QuestionFlag => {
-  // debugger;
   const { settings } = qaState;
   const main = settings.get('mainCategories');
   switch (question) {

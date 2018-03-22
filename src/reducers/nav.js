@@ -18,8 +18,14 @@ Navigation state has structure
 }
 */
 
+const initialPath = 'OnBoarding';
+const actionForInitialPathAndParams = RootStackNavigator.router.getActionForPathAndParams(
+  initialPath
+);
+actionForInitialPathAndParams.key = initialPath;
+
 export const initialNavState = RootStackNavigator.router.getStateForAction(
-  RootStackNavigator.router.getActionForPathAndParams('OnBoarding')
+  actionForInitialPathAndParams
 );
 
 export const nav = (state = initialNavState, action) => {
