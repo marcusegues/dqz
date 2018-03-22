@@ -291,7 +291,7 @@ export const en: Locale = {
     vatAllowanceText15:
       'Please note: If the so-called duty-free allowances for alcoholic beverages, tobacco products and certain foodstuffs are exceeded, you must pay customs duty in any case.',
     vatAllowanceText16:
-      'Please also note that certain goods (e.g. counterfeits, weapons and certain plants, animals, animal products and goods subject to species protection) may also be subject to import bans or to specific restrictions. More information.',
+      'Please also note that certain goods (e.g. counterfeits, weapons and certain plants, animals, animal products and goods subject to species protection) may also be subject to import bans or to specific restrictions.',
     vatAllowanceText17: 'Application of the tax-free limit for individuals',
     vatAllowanceText18:
       'Application of the tax-free limit for more than one person',
