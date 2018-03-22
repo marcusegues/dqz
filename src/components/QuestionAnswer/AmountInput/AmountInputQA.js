@@ -21,6 +21,7 @@ import {
   analyticsQACardOpenend,
 } from '../../../analytics/analyticsApi';
 import type { FlatAmount } from '../../../model/utils';
+import { flatLargeAmounts } from '../../../model/utils';
 
 export type AmountInputState = {
   modalVisible: boolean,
@@ -87,6 +88,7 @@ export class AmountInputQA extends React.Component<
     return (
       <AmountInputAnswerCard
         large={large}
+        largeAmountsPresent={flatLargeAmounts(qaState.amounts).length !== 0}
         onAnswerCardPress={onAnswerCardPress}
         flag={questionFlag}
         vat={calculateVat(amounts, people, currencies).get('totalVat')}

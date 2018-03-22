@@ -20,6 +20,7 @@ type AmountInputAnswerCardProps = {
   flag: QuestionFlag,
   vat: number,
   large: boolean,
+  largeAmountsPresent: boolean,
 };
 
 const AmountInputAnswerCardInner = ({
@@ -29,6 +30,7 @@ const AmountInputAnswerCardInner = ({
   i18n,
   large,
   t,
+  largeAmountsPresent,
 }: AmountInputAnswerCardProps & { t: TFunction } & {
   i18n: { language: Language },
 }) => {
@@ -36,7 +38,11 @@ const AmountInputAnswerCardInner = ({
   cardText = (
     <View style={{ flexDirection: 'column' }}>
       <Text>{t('itemsGreaterThan300CHF')}</Text>
-      <Text>{large ? t('validateGenericYes') : t('validateGenericNo')}</Text>
+      <Text>
+        {large && largeAmountsPresent
+          ? t('validateGenericYes')
+          : t('validateGenericNo')}
+      </Text>
     </View>
   );
   return (
