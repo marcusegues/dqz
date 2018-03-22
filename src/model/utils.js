@@ -86,6 +86,9 @@ export const flatNormalAmounts = (amounts: Amounts): Array<FlatAmount> =>
 export const flatLargeAmounts = (amounts: Amounts): Array<FlatAmount> =>
   flatAllAmounts(amounts).filter(a => a.large);
 
+// below method should be renamed
+// sounds like "are there any large amounts" but actually is "should we ask the user if he has large amounts
+// based on his vat allowance versus what he has declared"
 export const hasLargeAmount = (
   amounts: Amounts,
   currencyObject: CurrencyObject

@@ -32,12 +32,14 @@ const StandardQuantityInputInner = ({
       <CardHeaderText text={t('quantityInput:enterQuantity')} />
     </View>
     <CardHeaderSubText
-      text={t('quantityInput:standardInputSubText', { category })}
+      text={t('quantityInput:standardInputSubText', {
+        category: t(`mainCategories:${category}`),
+      })}
     />
     {children}
   </View>
 );
 
-export const StandardQuantityInput = (translate(['quantityInput'])(
-  StandardQuantityInputInner
-): ComponentType<StandardQuantityInputProps>);
+export const StandardQuantityInput = (translate([
+  'quantityInput, mainCategories',
+])(StandardQuantityInputInner): ComponentType<StandardQuantityInputProps>);
