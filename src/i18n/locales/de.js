@@ -132,7 +132,7 @@ export const de: Locale = {
     minorInfo: 'unter 17 Jahre',
     minorCount: '{{value}} Kind (unter 17 Jahre)',
     minorCount_plural: '{{value}} Kinder (unter 17 Jahre)',
-    validateNoPeopleTitle: 'Muss mindestens eine Person sein',
+    validateNoPeopleTitle: 'Sie müssen mindestens eine Person angeben.',
     validateNoPeopleSubtitle: 'Bitte Rechtmässigkeit sicherstellen.',
     validateGenericYes: 'Ja',
     validateGenericNo: 'Nein',
@@ -285,7 +285,7 @@ export const de: Locale = {
     vatAllowanceText8: 'Weitere Beispiele zur Anwendung der Wertfreigrenze',
     vatAllowanceText9: 'Mehrwertsteuer',
     vatAllowanceText10:
-      'Die Mehrwertsteuer berechnet sich vom Warenwert. Der Normalsatz beträgt 7,7 %. Für gewisse Waren gilt ein reduzierter Steuersatz von 2,5 % (z.B. für Lebensmittel, alkoholfreie Getränke, Bücher, Zeitschriften oder Medikamente). Bei der Verzollung mit der App QuickZoll gelangt immer der Normalsatz zur Anwendung.',
+      'Die Mehrwertsteuer berechnet sich vom Warenwert. Der Normalsatz beträgt 7.7%. Für gewisse Waren gilt ein reduzierter Steuersatz von 2.5% (z.B. für Lebensmittel, alkoholfreie Getränke, Bücher, Zeitschriften oder Medikamente). Bei der Verzollung mit der App QuickZoll gelangt immer der Normalsatz zur Anwendung.',
     vatAllowanceText11:
       'Das Vorweisen einer Quittung oder eines anderen Wertnachweises (z.B. bei Internetkäufen) erleichtert die Zollveranlagung. Fehlen Wertangaben oder wird die Richtigkeit dieser Angaben bezweifelt, kann die Zollstelle den Warenwert schätzen.',
     vatAllowanceText12: 'Zollanmeldung',
@@ -324,7 +324,7 @@ export const de: Locale = {
     vatAllowanceText32: '= 3 Gegenstände (drei Verkaufseinheiten)',
     vatAllowanceText33:
       '2. Beim Einkauf eines Computers lautet die Rechnung wie folgt:',
-    vatAllowanceText34: '1 Computer\t\t\t\t\t\tCHF\t\t920',
+    vatAllowanceText34: '1 Computer:\t\t\t\t\t\tCHF\t\t920',
     vatAllowanceText35: 'Desktop PC',
     vatAllowanceText36: 'Bildschirm',
     vatAllowanceText37: 'Tastatur',
@@ -513,7 +513,7 @@ export const de: Locale = {
     souvenirsAndSpeciesProtectionText7:
       'Die Einfuhr geschützter Pflanzen oder deren Erzeugnisse ist entweder ganz verboten oder bewilligungspflichtig (z.B. Orchideen, Kakteen, gewisse Hölzer und Medizinalpflanzen).',
     souvenirsAndSpeciesProtectionText8:
-      'Auskünfte und Bewilligungen erteilt das Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV: www.blv.admin.ch',
+      'Auskünfte und Bewilligungen erteilt das Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV:',
   },
 
   highwayVignette: {
@@ -742,7 +742,7 @@ export const de: Locale = {
     importantSoonText3:
       'Sie dürfen QuickZoll nur für Waren benützen, die Sie zu Ihrem privaten Gebrauch oder zum Verschenken einführen.',
     importantSoonText4:
-      'Mit der Verwendung von QuickZoll akzeptieren Sie, dass der MWST Satz 7,7% auch für Waren angewendet wird, die dem reduzierten Steuersatz (2,5%) unterliegen (insbesondere Lebensmittel, Tierfutter, Medikamente und Bücher). Möchten Sie, dass der reduzierte Steuersatz angewendet wird, müssen Sie die Waren bei einem durch das Personal der Eidgenössischen Zollverwaltung (EZV) besetzten Grenzübergang mündlich anmelden.',
+      'Mit der Verwendung von QuickZoll akzeptieren Sie, dass der MWST Satz 7.7% auch für Waren angewendet wird, die dem reduzierten Steuersatz (2.5%) unterliegen (insbesondere Lebensmittel, Tierfutter, Medikamente und Bücher). Möchten Sie, dass der reduzierte Steuersatz angewendet wird, müssen Sie die Waren bei einem durch das Personal der Eidgenössischen Zollverwaltung (EZV) besetzten Grenzübergang mündlich anmelden.',
     importantSoonText5:
       'Die Bezahlung ist nur mit Kreditkarten (Visa, Mastercard) möglich. Nach der Bezahlung der Abgaben sind die Waren verzollt.',
 
@@ -854,7 +854,7 @@ export const de: Locale = {
     vatRateInfoText1:
       'Sie pro Kalendertag nur einmal mit Waren einreisen dürfen, die Sie mit QuickZoll verzollt haben;',
     vatRateInfoText2:
-      'Angemeldete Waren mit dem einheitlichen Mehrwertsteuersatz von 7,7 % verzollt werden;',
+      'Angemeldete Waren mit dem einheitlichen Mehrwertsteuersatz von 7.7% verzollt werden;',
     vatRateInfoText3:
       'Mit der App bezahlte Abgaben nicht zurückerstattet werden.',
     vatRateInfoText4: 'Weitere Informationen finden Sie hier:',
@@ -867,7 +867,7 @@ export const de: Locale = {
   furtherInformationModal: {
     furtherInformation: 'Weitere Informationen:',
     acceptance:
-      'Mit der Verwendung von QuickZoll akzeptieren Sie, dass der MWST Satz 7,7% auch für Waren angewendet wird, die dem reduzierten Steuersatz (2,5%) unterliegen (insbesondere Lebensmittel, Tierfutter, Medikamente und Bücher). Möchten Sie, dass der reduzierte Steuersatz angewendet wird, müssen Sie die Waren bei einem durch das Personal der Eidgenössischen Zollverwaltung (EZV) besetzten Grenzübergang mündlich anmelden.',
+      'Mit der Verwendung von QuickZoll akzeptieren Sie, dass der MWST Satz 7.7% auch für Waren angewendet wird, die dem reduzierten Steuersatz (2.5%) unterliegen (insbesondere Lebensmittel, Tierfutter, Medikamente und Bücher). Möchten Sie, dass der reduzierte Steuersatz angewendet wird, müssen Sie die Waren bei einem durch das Personal der Eidgenössischen Zollverwaltung (EZV) besetzten Grenzübergang mündlich anmelden.',
   },
   updateTheApp: {
     title: 'Neue Version verfügbar!',

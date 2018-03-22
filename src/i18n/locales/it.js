@@ -285,7 +285,7 @@ export const it: Locale = {
       'Ulteriori esempi di applicazione del limite di franchigia secondo il valore.',
     vatAllowanceText9: 'IVA',
     vatAllowanceText10:
-      'L’IVA viene calcolata in base al valore della merce. L’aliquota normale è pari al 7,7 per cento. A determinate merci si applica l’aliquota ridotta del 2,5 per cento (p. es. derrate alimentari, bevande analcoliche, libri, riviste o medicamenti). L’imposizione con l’app QuickZoll prevede sempre l’applicazione dell’aliquota normale.',
+      'L’IVA viene calcolata in base al valore della merce. L’aliquota normale è pari al 7.7%. A determinate merci si applica l’aliquota ridotta del 2.5% (p. es. derrate alimentari, bevande analcoliche, libri, riviste o medicamenti). L’imposizione con l’app QuickZoll prevede sempre l’applicazione dell’aliquota normale.',
     vatAllowanceText11:
       'La presentazione di una fattura o di un altro giustificativo del valore (p. es. per acquisti in Internet) agevola la procedura d’imposizione doganale. Se mancano indicazioni relative al valore o vi sono dubbi sulla correttezza di questi dati, l’ufficio doganale può procedere alla stima del valore.',
     vatAllowanceText12: 'Dichiarazione doganale',
@@ -326,7 +326,7 @@ export const it: Locale = {
     vatAllowanceText32: '= 3 oggetti (tre unità di vendita)',
     vatAllowanceText33:
       '2.\tLa fattura d’acquisto per un computer è la seguente:',
-    vatAllowanceText34: '1 Computer',
+    vatAllowanceText34: '1 Computer:',
     vatAllowanceText35: 'PC desktop',
     vatAllowanceText36: 'schiermo',
     vatAllowanceText37: 'tastiera',
@@ -519,7 +519,7 @@ export const it: Locale = {
     souvenirsAndSpeciesProtectionText7:
       'L’importazione di piante protette o di loro prodotti è vietata o soggetta ad autorizzazione (p. es. orchidee, cactus, determinati legni e piante medicinali).',
     souvenirsAndSpeciesProtectionText8:
-      'Informazioni e autorizzazioni sono rilasciate dall’USAV: www.blv.admin.ch',
+      'Informazioni e autorizzazioni sono rilasciate dall’USAV:',
   },
 
   highwayVignette: {
@@ -770,7 +770,7 @@ export const it: Locale = {
     importantSoonText3:
       'QuickZoll può essere utilizzata solo per merci importate per uso privato o come regali.',
     importantSoonText4:
-      "L'utilizzo di QuickZoll comporta l'accettazione della condizione che l'aliquota IVA del 7,7 % viene applicata anche alle merci soggette all'aliquota ridotta del 2,5 % (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l'applicazione dell'aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato dal personale dell'Amministrazione federale delle dogane (AFD).",
+      "L'utilizzo di QuickZoll comporta l'accettazione della condizione che l'aliquota IVA del 7.7% viene applicata anche alle merci soggette all'aliquota ridotta del 2.5% (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l'applicazione dell'aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato dal personale dell'Amministrazione federale delle dogane (AFD).",
     importantSoonText5:
       'Il pagamento è possibile solo con carta di credito (Visa, Mastercard). Dopo il pagamento dei tributi le merci sono imposte.',
     importantSoonText6:
@@ -878,7 +878,7 @@ export const it: Locale = {
     vatRateInfoText1:
       'è consentito entrare in Svizzera una sola volta al giorno con merci imposte con QuickZoll;',
     vatRateInfoText2:
-      'le merci dichiarate vengono imposte all’aliquota IVA unica del 7,7 %;',
+      'le merci dichiarate vengono imposte all’aliquota IVA unica del 7.7%;',
     vatRateInfoText3: 'i tributi pagati con l’app non vengono rimborsati.',
     vatRateInfoText4: 'Ulteriori informazioni sono disponibili qui:',
     termsOfService: 'Termini e condizioni',
@@ -889,7 +889,7 @@ export const it: Locale = {
   furtherInformationModal: {
     furtherInformation: 'Ulteriori informazioni:',
     acceptance:
-      'L’utilizzo di QuickZoll comporta l’accettazione della condizione che l’aliquota IVA del 7,7% viene applicata anche alle merci soggette all’aliquota ridotta del 2,5 % (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l’applicazione dell’aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato.',
+      'L’utilizzo di QuickZoll comporta l’accettazione della condizione che l’aliquota IVA del 7.7% viene applicata anche alle merci soggette all’aliquota ridotta del 2.5% (in particolare derrate alimentari, alimenti per animali, medicamenti e libri). Se si desidera l’applicazione dell’aliquota ridotta, le merci devono essere dichiarate verbalmente presso un valico di confine occupato.',
   },
   updateTheApp: {
     title: 'Nuova versione disponibile!',

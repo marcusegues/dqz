@@ -319,7 +319,7 @@ export const en: Locale = {
     vatAllowanceText32: '= 3 items (three sales units)',
     vatAllowanceText33:
       '2.\tThe invoice for the purchase of a computer is as follows:',
-    vatAllowanceText34: '1 computer',
+    vatAllowanceText34: '1 computer:',
     vatAllowanceText35: 'desktop PC',
     vatAllowanceText36: 'screen',
     vatAllowanceText37: 'keyboard',
@@ -510,7 +510,7 @@ export const en: Locale = {
     souvenirsAndSpeciesProtectionText7:
       'The importation of protected plants or products thereof is either completely prohibited or is subject to authorisation (e.g. orchids, cacti, certain types of wood and medicinal plants).',
     souvenirsAndSpeciesProtectionText8:
-      'Information and authorisations are provided by the Federal Food Safety and Veterinary Office FSVO: www.blv.admin.ch',
+      'Information and authorisations are provided by the Federal Food Safety and Veterinary Office FSVO:',
   },
 
   highwayVignette: {
