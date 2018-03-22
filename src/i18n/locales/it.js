@@ -292,7 +292,7 @@ export const it: Locale = {
     vatAllowanceText13:
       'All’entrata in Svizzera tutte le merci trasportate devono essere dichiarate verbalmente al personale doganale.',
     vatAllowanceText14:
-      'Le merci possono essere dichiarate anche con l’app QuickZoll o in forma scritta mediante la cassetta delle dichiarazioni presso i valichi di confine non occupati da personale doganale. Per informazioni a riguardo cliccare qui.',
+      'Le merci possono essere dichiarate anche con l’app QuickZoll o in forma scritta mediante la cassetta delle dichiarazioni presso i valichi di confine non occupati da personale doganale. Per informazioni a riguardo cliccare <1>qui</1>.',
     vatAllowanceText15:
       'Attenzione: Se la quantità ammessa in franchigia di bevande alcoliche, tabacchi manufatti e alcune derrate alimentari è superata, il dazio deve essere versato in ogni caso.',
     vatAllowanceText16:

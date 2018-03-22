@@ -287,7 +287,7 @@ export const en: Locale = {
     vatAllowanceText13:
       'Upon entry into Switzerland, you must verbally declare all the goods you have to Customs staff.',
     vatAllowanceText14:
-      'You can also declare the goods using the app QuickZoll or in writing via the declaration box in the case of unmanned border crossings. You can find information about this here.',
+      'You can also declare the goods using the app QuickZoll or in writing via the declaration box in the case of unmanned border crossings. You can find information about this <1>here</1>.',
     vatAllowanceText15:
       'Please note: If the so-called duty-free allowances for alcoholic beverages, tobacco products and certain foodstuffs are exceeded, you must pay customs duty in any case.',
     vatAllowanceText16:
@@ -732,9 +732,7 @@ export const en: Locale = {
     customsAdministrationAddressTitle: 'Federal Customs Administration',
     contact: 'Contact',
     customsInfoCenter: 'Customs Information Centre',
-    generalCustomsDirectorate:
-      'Monbijoustrasse 40\n' +
-      '3003 Bern',
+    generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern`,
     designAndDevelopment: 'Design & Development',
     ambriteAddress:
       'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch',
