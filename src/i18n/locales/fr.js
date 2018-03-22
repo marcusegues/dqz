@@ -289,7 +289,7 @@ export const fr: Locale = {
     vatAllowanceText8: "Autres exemples d'octroi de la franchise-valeur",
     vatAllowanceText9: 'TVA',
     vatAllowanceText10:
-      "La TVA est calculée sur la base de la valeur des marchandises. Le taux normal est de 7,7 %. Un taux réduit d'impôt de 2,5 % est appliqué à certaines marchandises (par ex. denrées alimentaires, boissons sans alcool, livres, revues ou médicaments). Le taux normal s'applique toujours en cas de dédouanement avec l'application QuickZoll.",
+      "La TVA est calculée sur la base de la valeur des marchandises. Le taux normal est de 7.7%. Un taux réduit d'impôt de 2.5% est appliqué à certaines marchandises (par ex. denrées alimentaires, boissons sans alcool, livres, revues ou médicaments). Le taux normal s'applique toujours en cas de dédouanement avec l'application QuickZoll.",
     vatAllowanceText11:
       "La présentation d'une quittance ou d'un autre justificatif de valeur (par ex. pour les marchandises acquises sur Internet) facilite le dédouanement. Si les indications de valeur font défaut ou si leur exactitude suscite des doutes, le bureau de douane peut estimer la valeur des marchandises.",
     vatAllowanceText12: 'Déclaration en douane',
@@ -329,7 +329,7 @@ export const fr: Locale = {
     vatAllowanceText32: '= 3 biens (trois unités de vente)',
     vatAllowanceText33:
       "2.\tUne facture est établie comme suit pour l'achat d'un ordinateur:",
-    vatAllowanceText34: '1 ordinateur',
+    vatAllowanceText34: '1 ordinateur:',
     vatAllowanceText35: 'ordinateur de bureau',
     vatAllowanceText36: 'écran',
     vatAllowanceText37: 'clavier',
@@ -526,7 +526,7 @@ export const fr: Locale = {
     souvenirsAndSpeciesProtectionText7:
       "L'importation de plantes protégées ou de produits fabriqués à partir de celles-ci est soit totalement interdite, soit soumise à autorisation (par ex. orchidées, cactées, certains bois et plantes médicinales).",
     souvenirsAndSpeciesProtectionText8:
-      "Pour obtenir les renseignements et les autorisations nécessaires, veuillez vous adresser à l'OSAV: www.blv.admin.ch. ",
+      "Pour obtenir les renseignements et les autorisations nécessaires, veuillez vous adresser à l'OSAV:",
   },
 
   highwayVignette: {
@@ -781,7 +781,7 @@ export const fr: Locale = {
     importantSoonText3:
       'Vous ne pouvez utiliser QuickZoll que pour les marchandises que vous importez pour votre usage privé ou pour en faire cadeau.',
     importantSoonText4:
-      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7% soit également appliqué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé par du personnel de l'Administration fédérale des douanes (AFD).",
+      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7.7% soit également appliqué aux marchandises qui sont soumises au taux réduit (2.5%), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé par du personnel de l'Administration fédérale des douanes (AFD).",
     importantSoonText5:
       'Les redevances ne peuvent être payées que par carte de crédit (Visa, Mastercard). Les marchandises sont dédouanées une fois que les redevances ont été payées.',
     importantSoonText6:
@@ -895,7 +895,7 @@ export const fr: Locale = {
     vatRateInfoText1:
       "vous ne pouvez entrer en Suisse qu'une fois par jour civil avec des marchandises que vous avez dédouanées avec QuickZoll;",
     vatRateInfoText2:
-      'les marchandises déclarées sont dédouanées au taux unique de TVA de 7,7 %;',
+      'les marchandises déclarées sont dédouanées au taux unique de TVA de 7.7%;',
     vatRateInfoText3:
       "les redevances payées avec l'application ne sont pas remboursées.",
     vatRateInfoText4: 'Vous trouverez de plus amples informations ici:',
@@ -907,7 +907,7 @@ export const fr: Locale = {
   furtherInformationModal: {
     furtherInformation: "Plus d'informations:",
     acceptance:
-      'En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7 % soit également appliqué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé.',
+      'En utilisant QuickZoll, vous acceptez que le taux de TVA de 7.7% soit également appliqué aux marchandises qui sont soumises au taux réduit (2.5%), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé.',
   },
   updateTheApp: {
     title: 'Nouvelle version disponible!',
