@@ -299,7 +299,7 @@ export const it: Locale = {
     vatAllowanceText15:
       'Attenzione: Se la quantità ammessa in franchigia di bevande alcoliche, tabacchi manufatti e alcune derrate alimentari è superata, il dazio deve essere versato in ogni caso.',
     vatAllowanceText16:
-      'Attenzione: Determinate merci (p. es. contraffazioni, armi, nonché alcune piante, animali, prodotti animali e merci che soggiacciono alla protezione delle specie) sottostanno al divieto di importazione o a certe limitazioni. Per maggiori informazioni cliccare qui.',
+      'Attenzione: Determinate merci (p. es. contraffazioni, armi, nonché alcune piante, animali, prodotti animali e merci che soggiacciono alla protezione delle specie) sottostanno al divieto di importazione o a certe limitazioni.',
     vatAllowanceText17:
       'Applicazione del limite di franchigia secondo il valore per persone che viaggiano individualmente',
     vatAllowanceText18:
@@ -872,7 +872,7 @@ export const it: Locale = {
   },
   overview: {
     declared: 'Dichiarato',
-    dutyFree: 'duty-free',
+    dutyFree: 'Esenti da dazio',
     details: 'Dettagli',
   },
   legalNoticeModal: {
