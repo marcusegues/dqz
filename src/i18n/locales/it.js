@@ -234,7 +234,7 @@ export const it: Locale = {
     customsProceduresText10:
       'Dichiarazione doganale verbale o scelta del passaggio rosso all’aeroporto',
     customsProceduresText11:
-      'Se al valico di confine è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente.',
+      'Se al <1>valico di confine</1> è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente.',
     customsProceduresText12:
       'Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
     customsProceduresText13: 'Dichiarazione doganale con l’app QuickZoll',

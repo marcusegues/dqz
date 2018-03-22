@@ -1,9 +1,9 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Linking, TouchableOpacity } from 'react-native';
+import { Linking, TouchableOpacity, Text } from 'react-native';
 import type { ComponentType } from 'react';
-import { translate } from 'react-i18next';
+import { translate, Trans } from 'react-i18next';
 // $FlowFixMe
 import type { Navigation, TFunction } from '../../../../types/generalTypes';
 import { moderateScale, verticalScale } from '../../../../styles/Scaling';
@@ -13,6 +13,7 @@ import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomp
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
 import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
 import type { Language } from '../../../../i18n/types/locale';
+import { borderCrossingsLinks } from '../../types/information';
 
 type CustomsProceduresInnerProps = {
   t: TFunction,
@@ -94,7 +95,25 @@ const CustomsProceduresInner = ({
       text={t('customsProceduresText10')}
       style={{ marginTop: verticalScale(20) }}
     />
-    <AppInfoSubText text={t('customsProceduresText11')} />
+    <Text
+      style={{
+        color: '#1A1A1A',
+        fontWeight: '300',
+        fontFamily: 'roboto_light',
+        lineHeight: moderateScale(21),
+      }}
+    >
+      <Trans i18nKey="customsProceduresText11">
+        #<Text
+          style={{ textDecorationLine: 'underline' }}
+          onPress={() =>
+            Linking.openURL(`${borderCrossingsLinks[i18n.language]}`)
+          }
+        >
+          #
+        </Text>#
+      </Trans>
+    </Text>
     <CardRowText
       text={t('customsProceduresText12')}
       style={{ marginTop: verticalScale(20) }}
