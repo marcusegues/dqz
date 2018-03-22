@@ -320,10 +320,13 @@ export const de: Locale = {
     vatAllowanceText26: 'Beispiele:',
     vatAllowanceText27:
       '1. Beim Einkauf eines Computers lautet die Rechnung wie folgt:',
-    vatAllowanceText28: '1 Desktop PC\t\t\t\t\t\tCHF\t\t700',
-    vatAllowanceText29: '1 Bildschirm\t\t\t\t\t\tCHF\t\t200 ',
-    vatAllowanceText30: '1 Tastatur\t\t\t\t\t\tCHF\t\t  20',
-    vatAllowanceText31: 'Total\t\t\t\t\t\t\tCHF\t\t920',
+    vatAllowanceText28a: '1 desktop PC',
+    vatAllowanceText28b: 'CHF 700',
+    vatAllowanceText29a: '1 Bildschirm',
+    vatAllowanceText29b: 'CHF 200',
+    vatAllowanceText30a: '1 Tastatur',
+    vatAllowanceText30b: 'CHF 20',
+    vatAllowanceText31: 'Total\tCHF 920',
     vatAllowanceText32: '= 3 Gegenstände (drei Verkaufseinheiten)',
     vatAllowanceText33:
       '2. Beim Einkauf eines Computers lautet die Rechnung wie folgt:',

@@ -322,9 +322,12 @@ export const it: Locale = {
     vatAllowanceText26: 'Esempi',
     vatAllowanceText27:
       '1.\tLa fattura d’acquisto per un computer è la seguente:',
-    vatAllowanceText28: '1 PC desktop\t\tCHF\t\t700',
-    vatAllowanceText29: '1 schiermo\t\tCHF\t\t200 ',
-    vatAllowanceText30: '1 tastiera\t\tCHF\t\t20',
+    vatAllowanceText28a: '1 PC desktop',
+    vatAllowanceText28b: 'CHF 700',
+    vatAllowanceText29a: '1 schiermo',
+    vatAllowanceText29b: 'CHF 200',
+    vatAllowanceText30a: '1 tastiera',
+    vatAllowanceText30b: 'CHF 20',
     vatAllowanceText31: 'Totale\tCHF 920',
     vatAllowanceText32: '= 3 oggetti (tre unità di vendita)',
     vatAllowanceText33:
