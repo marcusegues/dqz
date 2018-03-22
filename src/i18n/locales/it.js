@@ -211,7 +211,7 @@ export const it: Locale = {
     allReceiptsSumInFranks: 'CHF {{value}}',
     allReceiptsDate: 'da {{value}}',
     entryTime: 'Periodo di entrata:',
-    chooseOtherEntryTime: 'Regolare',
+    chooseOtherEntryTime: 'Modificare',
     until: 'fino a',
     savedToCameraRoll: 'Ricevuta salvata correttamente nelle tue foto.',
   },
@@ -881,7 +881,7 @@ export const it: Locale = {
     vatRateInfoText1:
       'è consentito entrare in Svizzera una sola volta al giorno con merci imposte con QuickZoll;',
     vatRateInfoText2:
-      'le merci dichiarate vengono imposte all’aliquota IVA unica del 7.7%;',
+      'le merci dichiarate vengono imposte all’aliquota IVA del 7.7%;',
     vatRateInfoText3: 'i tributi pagati con l’app non vengono rimborsati.',
     vatRateInfoText4: 'Ulteriori informazioni sono disponibili qui:',
     termsOfService: 'Termini e condizioni',
