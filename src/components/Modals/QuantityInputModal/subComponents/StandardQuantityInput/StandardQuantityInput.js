@@ -33,7 +33,7 @@ const StandardQuantityInputInner = ({
     </View>
     <CardHeaderSubText
       text={t('quantityInput:standardInputSubText', {
-        category: t(`mainCategories:${category}`),
+        category: t(`mainCategories:${category}`).toLocaleLowerCase(),
       })}
     />
     {children}
