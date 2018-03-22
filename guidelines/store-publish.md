@@ -3,7 +3,7 @@
 Full documentation - https://docs.expo.io/versions/latest/guides/building-standalone-apps.html
 #### 1. Install exp
 ```javascript
-npm install -g exp
+npm install -g exp   
 ```
 
 #### 2. Update package.json
