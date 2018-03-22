@@ -57,6 +57,7 @@ const ownStyles = {
   cardRowText: {
     color: '#fff',
     fontFamily: 'roboto_regular',
+    textAlign: 'center',
   },
   cardRowTextPaidOn: {
     marginVertical: verticalScale(15),
