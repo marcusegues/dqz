@@ -286,7 +286,7 @@ export const stackNavigatorScreens = {
           onPress={() =>
             navigation.dispatch({
               type: 'NAVIGATE',
-              screen: 'InformationMainCategories',
+              screen: 'DutyAllowance',
             })
           }
         />
