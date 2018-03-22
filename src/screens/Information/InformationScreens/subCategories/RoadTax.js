@@ -7,16 +7,16 @@ import { translate } from 'react-i18next';
 // $FlowFixMe
 import type { TFunction } from '../../../../types/generalTypes';
 import { SubCategoryContainer } from '../../subComponents/SubCategoryContainer';
-import { scale, verticalScale } from '../../../../styles/Scaling';
+import { verticalScale } from '../../../../styles/Scaling';
 import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { BulletText } from '../../../AppInfo/subComponents/BulletText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { CardHeaderText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardHeaderText';
 import { RightAlignedHeader } from '../../../../components/Overview/subcomponents/RightAlignedHeader';
 import { RoadTaxRow } from '../../subComponents/RoadTaxRow';
-import { AmountIcon } from '../../../../components/General Components/GreyBox/configured/AmountIcon';
 import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
 import type { Language } from '../../../../i18n/types/locale';
+import { FormattedText } from '../mainCategories/VatAllowance';
 
 const bus = require('../../../../../assets/images/info/bus.png');
 const camper = require('../../../../../assets/images/info/camper.png');
@@ -133,8 +133,7 @@ const RoadTaxInner = ({ t, i18n }: RoadTaxInnerProps) => (
       imageStyle={ownStyles.busImage}
       amount={11}
     >
-      <AppInfoSubText text={t('till')} style={{ marginHorizontal: scale(5) }} />
-      <AmountIcon amount={25} currency="CHF" />
+      <FormattedText text={`${t('till')} `} />
     </RoadTaxRow>
     <RoadTaxRow
       source={camper}
