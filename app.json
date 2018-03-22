@@ -21,13 +21,13 @@
       "assetExts": ["ttf"]
     },
     "ios": {
-      "bundleIdentifier": "com.ambrite.dazit",
+      "bundleIdentifier": "ch.ezv.dazit.quickzoll",
       "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
-      "package": "com.ambrite.dazit",
-      "versionCode": 6
+      "package": "ch.ezv.dazit.quickzoll",
+      "versionCode": 1
     }
   }
 }
