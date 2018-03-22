@@ -139,11 +139,13 @@ export const fr: Locale = {
       'Êtes-vous sûr de vouloir supprimer cette catégorie principale?',
     validateMainCategoryRemoveSubtitle:
       'Les quantités suivantes figurent actuellement dans certaines sous-catégories: {{value}}.',
-    validateMainCategoryAndVatRemoveSubTitle: 'Pour le moment, il existe déjà des entrées.',
+    validateMainCategoryAndVatRemoveSubTitle:
+      'Pour le moment, il existe déjà des entrées.',
     validateVatRemoveSubTitle: 'Il y a déjà des entrées pour la TVA.',
     validateMainCategoryRemoveYes:
       "Oui, j'aimerais supprimer les quantités en question.",
-    validateOtherGoodsRemoveYes: 'Oui, j\'aimerais supprimer les quantités en question.',
+    validateOtherGoodsRemoveYes:
+      "Oui, j'aimerais supprimer les quantités en question.",
     itemsGreaterThan300CHF: 'Marchandises > 300 CHF',
   },
   modal: {
@@ -251,7 +253,7 @@ export const fr: Locale = {
     customsProceduresText16:
       'Déclaration en douane écrite (boîte à déclarations)',
     customsProceduresText17:
-      "Des boîtes à déclarations vous permettant de déclarer vos marchandises par écrit sont encore disponibles à certains passages frontières. Vous trouverez des informations à ce sujet à l'adresse suivante: www.ezv.admin.ch/boîte à déclarations",
+      "Des boîtes à déclarations vous permettant de déclarer vos marchandises par écrit sont encore disponibles à certains passages frontières. Vous trouverez des informations à ce sujet à l'adresse suivante: <1>www.ezv.admin.ch</1> à déclarations",
     customsProceduresText18:
       "Cette forme de déclaration en douane n'est admise que pour les marchandises qui ne sont pas destinées au commerce. Les marchandises ne doivent être soumises à aucune restriction ni interdiction et ne doivent être assujetties à aucun certificat ni permis.",
     customsProceduresText19:
@@ -762,8 +764,7 @@ export const fr: Locale = {
       'Administration fédérale des douanes AFD',
     contact: 'Contact',
     customsInfoCenter: 'Centrale de renseignement de la douane',
-    generalCustomsDirectorate:
-      'Monbijoustrasse 40\n3003 Bern',
+    generalCustomsDirectorate: 'Monbijoustrasse 40\n3003 Bern',
     designAndDevelopment: 'Conception et développement',
     ambriteAddress:
       'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch',

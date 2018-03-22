@@ -141,8 +141,10 @@ export const de: Locale = {
       'Sind Sie sicher, dass Sie diese Hauptkategorie entfernen möchten?',
     validateMainCategoryRemoveSubtitle:
       'Im Moment enthalten gewisse Unterkategorien Mengen, nämlich: {{value}}',
-    validateMainCategoryAndVatRemoveSubTitle: 'Im Moment gibt es schon vorhandene Einträge.',
-    validateVatRemoveSubTitle: 'Es bestehen schon Einträge für die MWST Abgaben.',
+    validateMainCategoryAndVatRemoveSubTitle:
+      'Im Moment gibt es schon vorhandene Einträge.',
+    validateVatRemoveSubTitle:
+      'Es bestehen schon Einträge für die MWST Abgaben.',
     validateMainCategoryRemoveYes: 'Ja - ich möchte dies löschen',
     validateOtherGoodsRemoveYes: 'Ja - ich möchte dies löschen',
     itemsGreaterThan300CHF: 'Gegenstände > 300 CHF',
@@ -212,7 +214,8 @@ export const de: Locale = {
     entryTime: 'Zeitraum der Einreise:',
     chooseOtherEntryTime: 'Ändern',
     until: 'bis',
-      savedToCameraRoll: 'Die Quittung wurde erfolgreich zu Ihren Fotos hinzugefügt.'
+    savedToCameraRoll:
+      'Die Quittung wurde erfolgreich zu Ihren Fotos hinzugefügt.',
   },
 
   customsProcedures: {
@@ -245,7 +248,7 @@ export const de: Locale = {
       'Andere Waren müssen bei einem durch Personal des Schweizer Zolls besetzten Grenzübergang angemeldet werden.',
     customsProceduresText16: 'Anmeldebox',
     customsProceduresText17:
-      'An gewissen Grenzübergängen stehen Ihnen noch sogenannte Anmeldeboxen zur Verfügung, bei denen Sie Ihre Waren schriftlich anmelden können. Informationen dazu finden Sie unter',
+      'An gewissen Grenzübergängen stehen Ihnen noch sogenannte Anmeldeboxen zur Verfügung, bei denen Sie Ihre Waren schriftlich anmelden können. Informationen dazu finden Sie unter <1>www.ezv.admin.ch</1>',
     customsProceduresText18:
       'Diese Form der Zollanmeldung ist nur für Waren zulässig, die nicht für den Handel bestimmt sind. Sie dürfen keinen Beschränkungen oder Verboten unterliegen und weder zeugnis- noch bewilligungspflichtig sein.',
     customsProceduresText19:

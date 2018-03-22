@@ -242,7 +242,7 @@ export const en: Locale = {
       'Other goods must be declared at a border crossing manned by Swiss Customs staff.',
     customsProceduresText16: 'Written customs declaration (declaration box)',
     customsProceduresText17:
-      'At certain border crossings, so-called declaration boxes are still available for you to declare your goods in writing. Information on these can be found at www.ezv.admin.ch/Anmeldebox.',
+      'At certain border crossings, so-called declaration boxes are still available for you to declare your goods in writing. Information on these can be found at <1>www.ezv.admin.ch</1>.',
     customsProceduresText18:
       'This form of customs declaration is permitted only for goods not intended for trade. They must not be subject to any restrictions or bans and must not require a certificate or authorisation.',
     customsProceduresText19:

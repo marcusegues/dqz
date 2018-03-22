@@ -131,17 +131,29 @@ const CustomsProceduresInner = ({
       text={t('customsProceduresText16')}
       style={{ marginTop: verticalScale(20) }}
     />
-    <AppInfoSubText text={t('customsProceduresText17')} />
-    <AppInfoLink
-      text={`www.ezv.admin.ch/${t('customsProceduresExtLink1')}`}
-      onPress={() =>
-        Linking.openURL(
-          `https://www.ezv.admin.ch/ezv/${
-            i18n.language
-          }/home/zollanmeldung/anmeldung-private/schriftliche-selbstanmeldung-mit-den-anmeldeboxen.html`
-        )
-      }
-    />
+    <Text
+      style={{
+        color: '#1A1A1A',
+        fontWeight: '300',
+        fontFamily: 'roboto_light',
+        lineHeight: moderateScale(21),
+      }}
+    >
+      <Trans i18nKey="customsProceduresText17">
+        #<Text
+          style={{ textDecorationLine: 'underline' }}
+          onPress={() =>
+            Linking.openURL(
+              `https://www.ezv.admin.ch/ezv/${
+                i18n.language
+              }/home/zollanmeldung/anmeldung-private/schriftliche-selbstanmeldung-mit-den-anmeldeboxen.html`
+            )
+          }
+        >
+          #
+        </Text>#
+      </Trans>
+    </Text>
     <AppInfoSubText
       text={t('customsProceduresText18')}
       style={{ marginVertical: verticalScale(10) }}
