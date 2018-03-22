@@ -46,8 +46,7 @@ export const setInitStates = (qaState: QAStateEnriched): QAStateEnriched => {
 
 const newQuestionStatesBasedOnRules = (
   qaState: QAStateEnriched
-): QuestionStates => {
-  return {
+): QuestionStates => ({
     peopleInput:
       flagRules('peopleInput', qaState) === 'complete' ? 'collapsed' : 'hidden',
     mainCategories:
@@ -64,8 +63,7 @@ const newQuestionStatesBasedOnRules = (
       flagRules('largeAmounts', qaState) === 'complete'
         ? 'collapsed'
         : 'hidden',
-  };
-};
+  });
 
 export const setQuestionStates = (
   justAnswered: QuestionType,
