@@ -69,7 +69,7 @@ const handleClick = () => {
   const link =
     Platform.OS === 'ios'
       ? 'https://www.apple.com/itunes/'
-      : 'https://play.google.com/apps/testing/com.ambrite.dazit';
+      : 'https://play.google.com/store/apps/details?id=ch.ezv.dazit.quickzoll';
   Linking.openURL(link);
 };
 

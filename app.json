@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "dazit",
-    "description": "Customs App",
+    "name": "QuickZoll",
+    "description": "QuickZoll App",
     "slug": "dazit",
     "privacy": "unlisted",
     "sdkVersion": "25.0.0",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
         "icon": "./assets/icons/store-icon-1024.png",
@@ -22,12 +22,12 @@
     },
     "ios": {
       "bundleIdentifier": "ch.ezv.dazit.quickzoll",
-      "buildNumber": "1.0.0",
+      "buildNumber": "1.0.1",
       "supportsTablet": true
     },
     "android": {
       "package": "ch.ezv.dazit.quickzoll",
-      "versionCode": 1
+      "versionCode": 2
     }
   }
 }
