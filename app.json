@@ -27,7 +27,7 @@
     },
     "android": {
       "package": "ch.ezv.dazit.quickzoll",
-      "versionCode": 3
+      "versionCode": 4
     }
   }
 }
