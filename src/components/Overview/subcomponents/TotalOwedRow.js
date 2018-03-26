@@ -5,7 +5,7 @@ import { translate } from 'react-i18next';
 // $FlowFixMe
 import { View } from 'react-native';
 
-import { CardRowText } from '../../QuestionAnswer/cards/subcomponents/CardRowText';
+import { CardRowText } from '../../QuestionAnswer/Cards/subcomponents/CardRowText';
 import { verticalScale } from '../../../styles/Scaling';
 import type { TFunction } from '../../../types/generalTypes';
 
@@ -21,8 +21,7 @@ import { calculateDuty } from '../../../model/dutyCalculations';
 const ownStyles = {
   cardRowTextSum: {
     alignSelf: 'flex-end',
-    marginTop: verticalScale(15),
-    marginBottom: verticalScale(35),
+    marginBottom: verticalScale(40),
   },
 };
 

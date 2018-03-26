@@ -14,13 +14,14 @@ import { translate } from 'react-i18next';
 import { AppModal } from '../AppModal';
 import { RedButton } from '../../Buttons/RedButton';
 import { pickerModalStyle } from '../styles/PickerModal';
-import { CardHeader } from '../../QuestionAnswer/cards/subcomponents/CardHeader';
-import { CardHeaderSubText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
-import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
+import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader';
+import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
+import { ModalCard } from '../ModalCard';
 import { scale, verticalScale } from '../../../styles/Scaling';
 import { ModalCloseText } from '../ModalCloseText';
 import { SquareCheckBox } from '../../CheckBox/SquareCheckBox';
 import type { TFunction } from '../../../types/generalTypes';
+import { BulletText } from '../../../screens/AppInfo/subComponents/BulletText';
 
 const ownStyles = {
   pickerCard: {
@@ -38,13 +39,13 @@ const ownStyles = {
   },
   acceptanceContainer: {
     marginHorizontal: scale(16),
+    flex: 0,
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
   },
   acceptanceText: {
     color: '#4a4a4a',
-    paddingRight: scale(16),
   },
 };
 
@@ -81,10 +82,10 @@ class LegalNoticeModalInner extends React.Component<
     return (
       <AppModal
         modalVisible={modalVisible}
-        animationIn="slideInUp"
-        animationOut="slideOutDown"
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
       >
-        <PickerCard style={ownStyles.pickerCard}>
+        <ModalCard style={ownStyles.pickerCard}>
           <CardHeader text={t('importantNote')} />
 
           <CardHeaderSubText
@@ -92,6 +93,25 @@ class LegalNoticeModalInner extends React.Component<
             style={ownStyles.vatRateInfo}
           />
 
+          <View style={{ paddingHorizontal: verticalScale(16) }}>
+            <BulletText
+              text={t('vatRateInfoText1')}
+              style={ownStyles.vatRateInfo}
+            />
+            <BulletText
+              text={t('vatRateInfoText2')}
+              style={ownStyles.vatRateInfo}
+            />
+            <BulletText
+              text={t('vatRateInfoText3')}
+              style={ownStyles.vatRateInfo}
+            />
+          </View>
+
+          <CardHeaderSubText
+            text={t('vatRateInfoText4')}
+            style={ownStyles.vatRateInfo}
+          />
           <Touchable
             onPress={() => {
               onPressLegal();
@@ -108,10 +128,12 @@ class LegalNoticeModalInner extends React.Component<
               checked={checked}
               onPress={() => this.setState({ checked: !checked })}
             />
-            <CardHeaderSubText
-              style={ownStyles.acceptanceText}
-              text={t('acceptance')}
-            />
+            <View style={{ flex: 1 }}>
+              <CardHeaderSubText
+                style={ownStyles.acceptanceText}
+                text={t('acceptance')}
+              />
+            </View>
           </View>
 
           <View style={pickerModalStyle.redButtonWrapper}>
@@ -124,7 +146,7 @@ class LegalNoticeModalInner extends React.Component<
               text={t('confirm').toUpperCase()}
             />
           </View>
-        </PickerCard>
+        </ModalCard>
         <ModalCloseText onModalHide={toggleModalVisible} text={t('abort')} />
       </AppModal>
     );

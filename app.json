@@ -1,32 +1,34 @@
 {
   "expo": {
-    "name": "dazit",
-    "description": "Customs App",
+    "name": "QuickZoll",
+    "description": "QuickZoll App",
     "slug": "dazit",
     "privacy": "unlisted",
-    "sdkVersion": "23.0.0",
-    "version": "0.5.1",
+    "sdkVersion": "25.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
-    "icon": "./assets/icons/store-icon-1024.png",
+        "icon": "./assets/icons/store-icon-1024.png",
     "notification": {
       "icon": "./assets/icons/notification-icon.png",
       "color": "#000000"
     },
     "loading": {
-      "icon": "./assets/images/kreuz.png"
+      "icon": "./assets/images/quickZollLogo.png",
+      "backgroundColor": "#e6e6e6"
     },
     "packagerOpts": {
       "assetExts": ["ttf"]
     },
     "ios": {
-      "bundleIdentifier": "com.ambrite.dazit",
-      "buildNumber": "0.5.1",
+      "bundleIdentifier": "ch.ezv.dazit.quickzoll",
+      "buildNumber": "1.0.2",
       "supportsTablet": true
     },
     "android": {
-      "package": "com.ambrite.dazit",
-      "versionCode": 4
+      "package": "ch.ezv.dazit.quickzoll",
+      "versionCode": 3,
+      "permissions": []
     }
   }
 }

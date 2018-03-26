@@ -18,14 +18,19 @@ import {
   initAmounts,
   initPeople,
 } from '../model/configurationApi';
-import type { MainCategories } from '../types/reducers/appReducer';
+import type { MainCategories } from '../types/reducers/declaration';
 import {
   deserializeAmounts,
   deserializeBasket,
   deserializeMainCategories,
   deserializePeople,
+  deserializeQAState,
+  deserializeReceiptEntryTime,
   deserializeReceipts,
 } from './deserializers';
+import { initialQAState } from '../components/QuestionAnswer/QuestionAnswerContainer';
+import type { QAState } from '../components/QuestionAnswer/types/questionAnswerTypes';
+import type { SettingsAcceptRate } from '../types/generalTypes';
 
 export const KeyNotSet = 'KeyNotSet';
 export type KeyNotSetType = 'KeyNotSet';
@@ -87,11 +92,15 @@ export const fetchCurrencyObjectsAsyncStorage = async (
 
 export const fetchSettingsAcceptRateAsyncStorage = async (
   key: StoreType
-): Promise<boolean> => parser(key, false);
+): Promise<SettingsAcceptRate> => parser(key, false);
 
 export const fetchSettingsHasLanguageAsyncStorage = async (
   key: StoreType
 ): Promise<Language | KeyNotSetType> => parser(key, KeyNotSet);
+
+export const fetchQAStateAsyncStorage = async (
+  key: StoreType
+): Promise<QAState> => parserGeneric(key, initialQAState, deserializeQAState);
 
 export const fetchBasketAsyncStorage = async (
   key: StoreType
@@ -109,3 +118,7 @@ export const fetchMainCategoriesAsyncStorage = async (
   key: StoreType
 ): Promise<MainCategories> =>
   parserGeneric(key, Immutable.Set(), deserializeMainCategories);
+
+export const fetchReceiptEntryTimeAsyncStorage = async (
+  key: StoreType
+): Promise<string> => parserGeneric(key, '', deserializeReceiptEntryTime);

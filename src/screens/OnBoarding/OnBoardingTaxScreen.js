@@ -12,6 +12,7 @@ import { MAIN_RED } from '../../styles/colors';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { storeSettingsAcceptRate } from '../../asyncStorage/storageApi';
 import { FurtherInformationModal } from '../../components/Modals/FurtherInformationModal/FurtherInformationModal';
+import { SkipThisStep } from './subcomponents/SkipThisStep';
 
 const ownStyles = {
   container: {
@@ -71,16 +72,27 @@ class OnBoardingTaxScreenInner extends React.Component<
         </TouchableOpacity>
         <DoneButton
           onPress={() => {
-            storeSettingsAcceptRate(true);
-            navigation.navigate('MainMenu');
+            storeSettingsAcceptRate('accepted');
+            navigation.dispatch({ type: 'NAVIGATE', screen: 'MainMenu' });
           }}
         />
+        <SkipThisStep
+          onPress={() => {
+            storeSettingsAcceptRate('skipped');
+            navigation.dispatch({ type: 'NAVIGATE', screen: 'MainMenu' });
+          }}
+          text={t('skipThisStep')}
+        />
+
         <FurtherInformationModal
           modalVisible={showModal}
           navigation={navigation}
           onPressLegal={() => {
             this.setState({ showModal: false });
-            navigation.navigate('LegalNoticeInfo');
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'LegalNoticeInfo',
+            });
           }}
           toggleModalVisible={() => {
             this.setState({ showModal: false });

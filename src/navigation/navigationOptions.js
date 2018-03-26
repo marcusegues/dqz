@@ -9,7 +9,9 @@ export const defaultNavigationOptions = ({
 }: {
   navigation: Navigation,
 }) => ({
-  headerLeft: <BackArrow onPress={() => navigation.goBack()} />,
+  headerLeft: (
+    <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
+  ),
   headerStyle: {
     backgroundColor: MAIN_BACKGROUND_COLOR,
     borderBottomWidth: 5,
@@ -17,4 +19,5 @@ export const defaultNavigationOptions = ({
     paddingRight: 16,
     paddingLeft: 16,
   },
+  gesturesEnabled: false,
 });

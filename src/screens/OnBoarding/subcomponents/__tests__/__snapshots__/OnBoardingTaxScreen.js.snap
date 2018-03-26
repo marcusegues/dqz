@@ -7,7 +7,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <OnBoardingTaxScreenInner
     navigation={
       Object {
-        "navigate": [Function],
+        "dispatch": [Function],
       }
     }
     t={[Function]}
@@ -77,10 +77,14 @@ ShallowWrapper {
           onPress={[Function]}
         />,
         <Unknown
+          onPress={[Function]}
+          text=""
+        />,
+        <Unknown
           modalVisible={false}
           navigation={
             Object {
-              "navigate": [Function],
+              "dispatch": [Function],
             }
           }
           onConfirm={[Function]}
@@ -230,9 +234,21 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
+          "onPress": [Function],
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
           "modalVisible": false,
           "navigation": Object {
-            "navigate": [Function],
+            "dispatch": [Function],
           },
           "onConfirm": [Function],
           "onPressLegal": [Function],
@@ -304,10 +320,14 @@ ShallowWrapper {
             onPress={[Function]}
           />,
           <Unknown
+            onPress={[Function]}
+            text=""
+          />,
+          <Unknown
             modalVisible={false}
             navigation={
               Object {
-                "navigate": [Function],
+                "dispatch": [Function],
               }
             }
             onConfirm={[Function]}
@@ -457,9 +477,21 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
+            "onPress": [Function],
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
             "modalVisible": false,
             "navigation": Object {
-              "navigate": [Function],
+              "dispatch": [Function],
             },
             "onConfirm": [Function],
             "onPressLegal": [Function],

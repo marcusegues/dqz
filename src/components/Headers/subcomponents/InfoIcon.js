@@ -10,7 +10,10 @@ import type { Navigation } from '../../../types/generalTypes';
 export const InfoIcon = ({ navigation }: { navigation: Navigation }) => (
   <Touchable
     onPress={() => {
-      navigation.navigate('AppInfo');
+      navigation.dispatch({
+        type: 'NAVIGATE',
+        screen: 'AppInfo',
+      });
     }}
   >
     <MaterialCommunityIcons

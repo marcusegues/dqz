@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { CardRowSubText } from '../../QuestionAnswer/cards/subcomponents/CardRowSubText';
+import { CardRowSubText } from '../../QuestionAnswer/Cards/subcomponents/CardRowSubText';
 
 export const RightAlignedHeader = ({ text }) => (
   <View style={{ alignSelf: 'flex-end', marginRight: 16, marginBottom: 2 }}>

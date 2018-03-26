@@ -3,7 +3,7 @@
 Full documentation - https://docs.expo.io/versions/latest/guides/building-standalone-apps.html
 #### 1. Install exp
 ```javascript
-npm install -g exp
+npm install -g exp   
 ```
 
 #### 2. Update package.json
@@ -11,7 +11,7 @@ npm install -g exp
 Increase version number.
 ```javascript
 {
-    "version": "0.2.1",
+    "version": "0.6.3",
 }
 ```
 
@@ -19,15 +19,15 @@ Increase version number.
 Important fields - must be changed *manually* upon release:
 ```javascript
 {
-    "sdkVersion": "23.0.0",
-    "version": "0.2.1",
+    "sdkVersion": "25.0.0",
+    "version": "0.6.3",
     
     "ios": {
-      "buildNumber": "0.2.1",
+      "buildNumber": "0.6.3",
     },
     
     "android": {
-      "versionCode": 1
+      "versionCode": 6
     }
 }
 ```
@@ -45,11 +45,11 @@ This is necessary because during the build process your app will be republished 
 
 Build for Google Store(*We have backup with keystore*)
 ```javascript
-exp build:android --release-channel build-0.2.1
+exp build:android --release-channel build-0.6.3
 ```
 Build for Apple Store
 ```javascript
-exp build:ios --release-channel build-0.2.1
+exp build:ios --release-channel build-0.6.3
 ```
 IMPORTANT! **exp build** command include **exp publish** command and if **--release-channel** is ***empty*** exp will update **default** release channel.   
 *WARNING: Channel features are in beta.*

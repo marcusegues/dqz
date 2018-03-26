@@ -11,24 +11,16 @@ import {
   initAmounts,
   initPeople,
 } from '../../../../model/configurationApi';
-import { makeSettingsRecord } from '../../../../types/reducers/appReducer';
+import { makeSettingsRecord } from '../../../../types/reducers/declaration';
 import { currencyExample } from '../../../../model/currencies';
+import { initialQAState } from '../../QuestionAnswerContainer';
 
 const blankState = {
   basket: emptyBasket,
   people: initPeople,
   amounts: initAmounts,
   settings: makeSettingsRecord(),
-  questionStates: {
-    peopleInput: 'expanded',
-    mainCategories: 'hidden',
-    quantityInput: 'hidden',
-  },
-  questionFlag: {
-    peopleInput: 'complete',
-    mainCategories: 'incomplete',
-    quantityInput: 'incomplete',
-  },
+  ...initialQAState,
 };
 
 const stateWithMainCategories = {
@@ -170,15 +162,15 @@ describe('Test qa control flow', () => {
 
   test('after people input BACK on blank state', () => {
     const spy = jest.fn();
-    const mockNav = { goBack: spy };
+    const mockNav = { dispatch: spy };
     const newState = setQuestionStates(
       'peopleInput',
       'back',
       mockNav,
       blankState
     ).questionStates;
-    expect(newState.peopleInput).toBe('collapsed');
-    expect(newState.mainCategories).toBe('collapsed');
+    expect(newState.peopleInput).toBe('expanded');
+    expect(newState.mainCategories).toBe('hidden');
     expect(newState.quantityInput).toBe('hidden');
     expect(spy).toBeCalled();
   });
@@ -192,21 +184,21 @@ describe('Test qa control flow', () => {
     ).questionStates;
     expect(newState.peopleInput).toBe('collapsed');
     expect(newState.mainCategories).toBe('expanded');
-    expect(newState.quantityInput).toBe('collapsed');
+    expect(newState.quantityInput).toBe('hidden');
   });
 
   test('after people input with main categories BACK already present', () => {
     const spy = jest.fn();
-    const mockNav = { goBack: spy };
+    const mockNav = { dispatch: spy };
     const newState = setQuestionStates(
       'peopleInput',
       'back',
       mockNav,
       stateWithMainCategories
     ).questionStates;
-    expect(newState.peopleInput).toBe('collapsed');
+    expect(newState.peopleInput).toBe('expanded');
     expect(newState.mainCategories).toBe('collapsed');
-    expect(newState.quantityInput).toBe('collapsed');
+    expect(newState.quantityInput).toBe('hidden');
     expect(spy).toBeCalled();
   });
 
@@ -219,7 +211,7 @@ describe('Test qa control flow', () => {
     ).questionStates;
     expect(newState.peopleInput).toBe('expanded');
     expect(newState.mainCategories).toBe('collapsed');
-    expect(newState.quantityInput).toBe('collapsed');
+    expect(newState.quantityInput).toBe('hidden');
   });
 
   test('after main categories (multiple main categories) FORWARD', () => {
@@ -232,7 +224,7 @@ describe('Test qa control flow', () => {
     expect(newState.peopleInput).toBe('collapsed');
     expect(newState.mainCategories).toBe('collapsed');
     expect(newState.quantityInput).toBe('expanded');
-    expect(newState.amounts).toBe('collapsed');
+    expect(newState.amounts).toBe('hidden');
   });
 
   test('after main categories (single OtherGoods main category) FORWARD', () => {
@@ -257,8 +249,8 @@ describe('Test qa control flow', () => {
     ).questionStates;
     expect(newState.peopleInput).toBe('collapsed');
     expect(newState.mainCategories).toBe('expanded');
-    expect(newState.quantityInput).toBe('collapsed');
-    expect(newState.amounts).toBe('collapsed');
+    expect(newState.quantityInput).toBe('hidden');
+    expect(newState.amounts).toBe('hidden');
   });
 
   test('after amounts input (single OtherGoods main category) BACK', () => {
@@ -271,19 +263,7 @@ describe('Test qa control flow', () => {
     expect(newState.peopleInput).toBe('collapsed');
     expect(newState.mainCategories).toBe('expanded');
     expect(newState.quantityInput).toBe('hidden');
-    expect(newState.amounts).toBe('collapsed');
-  });
-
-  test('after quantity input FORWARD', () => {
-    const newState = setQuestionStates(
-      'quantityInput',
-      'forward',
-      {},
-      stateWithMainCategories
-    ).questionStates;
-    expect(newState.peopleInput).toBe('collapsed');
-    expect(newState.mainCategories).toBe('collapsed');
-    expect(newState.quantityInput).toBe('collapsed');
+    expect(newState.amounts).toBe('hidden');
   });
 
   test('after quantity input BACK', () => {
@@ -295,7 +275,7 @@ describe('Test qa control flow', () => {
     ).questionStates;
     expect(newState.peopleInput).toBe('collapsed');
     expect(newState.mainCategories).toBe('expanded');
-    expect(newState.quantityInput).toBe('collapsed');
+    expect(newState.quantityInput).toBe('hidden');
   });
 
   test('after large amounts input (single OtherGoods main category) BACK', () => {
@@ -329,7 +309,7 @@ describe('Test qa control flow', () => {
     ).questionStates;
     expect(newState.peopleInput).toBe('expanded');
     expect(newState.mainCategories).toBe('collapsed');
-    expect(newState.quantityInput).toBe('collapsed');
+    expect(newState.quantityInput).toBe('hidden');
   });
 
   test('collapsing all but main categories', () => {
@@ -339,7 +319,7 @@ describe('Test qa control flow', () => {
     ).questionStates;
     expect(newState.peopleInput).toBe('collapsed');
     expect(newState.mainCategories).toBe('expanded');
-    expect(newState.quantityInput).toBe('collapsed');
+    expect(newState.quantityInput).toBe('hidden');
   });
 
   test('collapsing all but quantity input', () => {

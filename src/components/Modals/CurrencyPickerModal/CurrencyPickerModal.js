@@ -15,10 +15,10 @@ import { translate } from 'react-i18next';
 import { AppModal } from '../AppModal';
 import { RedButton } from '../../Buttons/RedButton';
 import { pickerModalStyle } from '../styles/PickerModal';
-import { PickerCard } from './subComponents/PickerCard';
-import { PickerComponent } from './subComponents/PickerComponent';
-import { CardHeader } from '../../QuestionAnswer/cards/subcomponents/CardHeader';
-import { CardHeaderSubText } from '../../QuestionAnswer/cards/subcomponents/CardHeaderSubText';
+import { ModalCard } from '../ModalCard';
+import { PickerComponent } from '../../Pickers/PickerComponent';
+import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader';
+import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/CardHeaderSubText';
 import { currencyPicker } from './currencyPickerData';
 import { currencyPickerModal } from '../styles/CurrencyPickerModal';
 import { INDIVIDUALALLOWANCE } from '../../../model/constants';
@@ -28,10 +28,12 @@ import type { TFunction } from '../../../types/generalTypes';
 import type { Amounts } from '../../../model/types/basketPeopleAmountsTypes';
 import { hasOffsettingAmount } from '../../../model/utils';
 import { ModalCloseText } from '../ModalCloseText';
+import { parseInputToFloat } from '../../../utils/inputparser/inputParser';
 
 type PickerState = {
   currency: Currency,
   amount: number,
+  inputAmountValue: string,
 };
 
 type CurrencyPickerModalProps = {
@@ -54,6 +56,7 @@ class CurrencyPickerModalInner extends React.Component<
     this.state = {
       amount: 0,
       currency: 'EUR',
+      inputAmountValue: '',
     };
   }
 
@@ -61,7 +64,7 @@ class CurrencyPickerModalInner extends React.Component<
     const { currency, amount } = this.state;
     const { onAddAmount, onHide } = this.props;
     onAddAmount(currency, amount);
-    this.setState({ amount: 0 });
+    this.setState({ amount: 0, inputAmountValue: '' });
     onHide();
   }
 
@@ -91,9 +94,8 @@ class CurrencyPickerModalInner extends React.Component<
       redButtonText = t(['currencyPickerTooSmallLargeAmount']);
     }
 
+    // eslint-disable-next-line no-empty
     if (large && !hasOffsettingAmount(amounts, amount, currency)) {
-      disabledRedButton = true;
-      redButtonText = t(['currencyPickerNoOffsettingInput']);
     }
 
     const subButtonText: string = `CHF ${
@@ -114,7 +116,7 @@ class CurrencyPickerModalInner extends React.Component<
         animationIn="slideInLeft"
         animationOut="slideOutLeft"
       >
-        <PickerCard style={{ width: '100%' }}>
+        <ModalCard style={{ width: '100%' }}>
           <CardHeader text={title} />
           <CardHeaderSubText text={t(['currencyPickerSubTitle'])} />
 
@@ -127,6 +129,7 @@ class CurrencyPickerModalInner extends React.Component<
                 selectedValue={currency}
                 onValueChange={itemValue =>
                   this.setState({
+                    // $FlowFixMe
                     currency: itemValue,
                   })
                 }
@@ -153,7 +156,14 @@ class CurrencyPickerModalInner extends React.Component<
               <TextInput
                 keyboardType="numeric"
                 style={currencyPickerModal.textInput}
-                onChangeText={value => this.setState({ amount: +value })}
+                onChangeText={value => {
+                  const parsedValue = parseInputToFloat(value);
+                  this.setState({
+                    amount: +parsedValue,
+                    inputAmountValue: parsedValue,
+                  });
+                }}
+                value={this.state.inputAmountValue}
                 maxLenght="8"
                 underlineColorAndroid="transparent"
                 blurOnSubmit
@@ -179,7 +189,7 @@ class CurrencyPickerModalInner extends React.Component<
             }}
             text={subButtonText}
           />
-        </PickerCard>
+        </ModalCard>
         <ModalCloseText
           onModalHide={toggleModalVisible}
           text={t('closeModalText')}

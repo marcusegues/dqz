@@ -33,6 +33,12 @@ import {
 import { categoriesArray } from '../constants';
 import { currenciesArray } from '../currencies';
 
+jest.mock('luxon', () => ({
+  DateTime: {
+    local: () => 'FakeDate',
+  },
+}));
+
 const basket1: Basket = emptyBasket;
 
 const quantityBasket1: Basket = addQuantity(basket1, 'Butter', 1234);
@@ -44,7 +50,6 @@ const quantityBasket3: Basket = basket1;
 
 const amounts1: Amounts = addAmount(initAmounts, 'EUR', 12.34);
 const amounts2: Amounts = addAmount(amounts1, 'EUR', 34.56);
-
 const largeAmounts1: Amounts = addLargeAmount(amounts1, 'EUR', 1234);
 const largeAmounts2: Amounts = addLargeAmount(largeAmounts1, 'EUR', 1234);
 

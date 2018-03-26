@@ -4,18 +4,25 @@ import React from 'react';
 import type { ComponentType } from 'react';
 import { DateTime } from 'luxon';
 // $FlowFixMe
-import { View, Text, CameraRoll } from 'react-native';
+import { View, Text, CameraRoll, Alert } from 'react-native';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 import { connect } from 'react-redux';
 // $FlowFixMe
-import { takeSnapshotAsync } from 'expo';
+import { takeSnapshotAsync, Permissions } from 'expo';
 import { translate } from 'react-i18next';
 import { moderateScale, verticalScale } from '../../styles/Scaling';
-import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
-import type { PaymentData, TFunction } from '../../types/generalTypes';
-import { analyticsScreenMounted } from '../../analytics/analyticsApi';
-import { getPaymentData, getReceiptId } from '../../reducers';
+import { CardRowText } from '../QuestionAnswer/Cards/subcomponents/CardRowText';
+import type {
+  Navigation,
+  PaymentData,
+  TFunction,
+} from '../../types/generalTypes';
+import {
+  analyticsCustom,
+  analyticsScreenMounted,
+} from '../../analytics/analyticsApi';
+import { getPaymentData, getReceiptId } from '../../reducers/selectors';
 import { fetchReceiptByReceiptId } from '../../asyncStorage/storageApi';
 import type { Receipt } from '../../types/receiptTypes';
 import { calculateVat } from '../../model/vatCalculations';
@@ -29,6 +36,12 @@ import { ReceiptSubText } from './subcomponents/ReceiptSubText';
 import { RedLogo } from './subcomponents/RedLogo';
 import { ValidUntilBlock } from './subcomponents/ValidUntilBlock';
 import { ReceiptInfoNote } from './subcomponents/ReceiptInfoNote';
+import { HeaderTitle } from '../Headers/subcomponents/HeaderTitle';
+import { flatLargeAmounts } from '../../model/utils';
+import {
+  dateTimeToFormat,
+  dateTimeToLocaleString,
+} from '../../utils/datetime/datetime';
 
 const ownStyles = {
   topSumText: {
@@ -44,6 +57,7 @@ const ownStyles = {
   cardRowText: {
     color: '#fff',
     fontFamily: 'roboto_regular',
+    textAlign: 'center',
   },
   cardRowTextPaidOn: {
     marginVertical: verticalScale(15),
@@ -56,15 +70,30 @@ type ReceiptAfterPaymentScreenState = {
 
 type ReceiptAfterPaymentScreenProps = {
   t: TFunction,
+  i18n: { language: string },
   paymentData: PaymentData,
   receiptId: string,
+  navigation: Navigation,
 };
 
 class ReceiptAfterPaymentInner extends React.Component<
   ReceiptAfterPaymentScreenProps,
   ReceiptAfterPaymentScreenState
 > {
-  constructor(props: ReceiptAfterPaymentScreenProps & { t: TFunction }) {
+  static navigationOptions = ({ screenProps }) => ({
+    headerTitle: (
+      <HeaderTitle
+        text={screenProps.t('receipt:allReceiptsNavigationHeaderTitle')}
+      />
+    ),
+  });
+
+  constructor(
+    props: ReceiptAfterPaymentScreenProps & {
+      t: TFunction,
+      i18n: { language: string },
+    }
+  ) {
     super(props);
     this.state = {
       // $FlowFixMe
@@ -78,12 +107,93 @@ class ReceiptAfterPaymentInner extends React.Component<
 
   componentDidMount() {
     const { receiptId } = this.props;
+    this.props.navigation.dispatch({
+      type: 'SET_PARAMS',
+      params: { onPress: () => this.capture() },
+    });
     if (receiptId !== '') {
       fetchReceiptByReceiptId(receiptId).then(receipt => {
         this.setState({ receipt });
       });
     } else {
       console.log('empty receiptId');
+    }
+  }
+
+  getValidUntilBlockText() {
+    const { t, i18n, paymentData } = this.props;
+    const receiptEntryTime = DateTime.fromISO(
+      this.state.receipt.receiptEntryTime,
+      {
+        locale: i18n.language,
+      }
+    );
+    const receiptEntryTimePlus = receiptEntryTime.plus({ hours: 2 });
+    if (receiptEntryTime.day === receiptEntryTimePlus.day) {
+      return [
+        <CardRowText
+          key="receiptValidOn"
+          text={t('receiptValidOn')}
+          style={ownStyles.cardRowText}
+        />,
+        <CardRowText
+          key="receiptValidOnDate"
+          text={`${t('receiptValidOnDate', {
+            date: dateTimeToLocaleString(receiptEntryTime, {
+              locale: i18n.language,
+              format: 'datefull',
+            }),
+            startTime: dateTimeToFormat(receiptEntryTime, {
+              locale: i18n.language,
+              format: 'time',
+            }),
+            endTime: dateTimeToFormat(receiptEntryTimePlus, {
+              locale: i18n.language,
+              format: 'time',
+            }),
+          })}`}
+          style={ownStyles.cardRowText}
+        />,
+      ];
+    }
+    return [
+      <CardRowText
+        key="receiptValidFrom"
+        text={t('receiptValidFrom')}
+        style={ownStyles.cardRowText}
+      />,
+      <CardRowText
+        key="receiptValidFromDate"
+        text={`${t('receiptValidFromDate', {
+          startDate: dateTimeToLocaleString(receiptEntryTime, {
+            locale: i18n.language,
+            format: 'datefull',
+          }),
+          startTime: dateTimeToFormat(receiptEntryTime, {
+            locale: i18n.language,
+            format: 'time',
+          }),
+          endDate: dateTimeToLocaleString(receiptEntryTimePlus, {
+            locale: i18n.language,
+            format: 'datefull',
+          }),
+          endTime: dateTimeToFormat(receiptEntryTimePlus, {
+            locale: i18n.language,
+            format: 'time',
+          }),
+        })}`}
+        style={ownStyles.cardRowText}
+      />,
+    ];
+  }
+
+  async saveToCameraRoll(snapshot) {
+    const { t } = this.props;
+    try {
+      await CameraRoll.saveToCameraRoll(snapshot, 'photo');
+      Alert.alert(t('receipt:savedToCameraRoll'));
+    } catch (e) {
+      analyticsCustom('Failed to save receipt to camera roll');
     }
   }
 
@@ -95,11 +205,22 @@ class ReceiptAfterPaymentInner extends React.Component<
       quality: 1,
       result: 'file',
     });
-    await CameraRoll.saveToCameraRoll(snapshot, 'photo');
+    const { status } = await Permissions.getAsync(Permissions.CAMERA_ROLL);
+    if (status !== 'granted') {
+      Permissions.askAsync(Permissions.CAMERA_ROLL).then(
+        async permissionAnswer => {
+          if (permissionAnswer.status === 'granted') {
+            this.saveToCameraRoll(snapshot);
+          }
+        }
+      );
+    } else {
+      this.saveToCameraRoll(snapshot);
+    }
   }
 
   render() {
-    const { t, paymentData } = this.props;
+    const { t, i18n } = this.props;
 
     if (this.state.receipt && this.state.receipt.receiptId !== undefined) {
       const { basket, people, amounts, currencies } = this.state.receipt;
@@ -110,11 +231,7 @@ class ReceiptAfterPaymentInner extends React.Component<
       const transactionDatetime = DateTime.fromISO(
         this.state.receipt.paymentData.transaction.date
       );
-      // TODO: @Christian need to set locale from APP
-      const receiptEntryTimePlus = DateTime.fromISO(
-        this.state.receipt.receiptEntryTime,
-        { zone: 'Europe/Zurich', locale: 'de' }
-      ).plus({ hours: 2 });
+
       return (
         <View
           style={{
@@ -125,20 +242,14 @@ class ReceiptAfterPaymentInner extends React.Component<
             flexDirection: 'column',
             alignItems: 'center',
           }}
+          ref={ref => {
+            this.image = ref;
+          }}
+          collapsable={false}
         >
-          <ScrollViewCard
-            ref={ref => {
-              this.image = ref;
-            }}
-          >
-            <Touchable
-              onPress={() => {
-                this.capture();
-              }}
-            >
-              <RedLogo />
-            </Touchable>
-            <Row width="90%">
+          <ScrollViewCard>
+            <RedLogo />
+            <Row>
               <Text style={ownStyles.topSumText}>
                 CHF {(fullVat + fullDuty).toFixed(2)}
               </Text>
@@ -147,6 +258,13 @@ class ReceiptAfterPaymentInner extends React.Component<
                   duty: fullDuty.toFixed(2),
                   vat: fullVat.toFixed(2),
                 })}
+              />
+              <ReceiptSubText
+                text={t('travellers', {
+                  adults: people.adults,
+                  minors: people.minors,
+                })}
+                style={{ paddingBottom: verticalScale(16) }}
               />
             </Row>
 
@@ -157,8 +275,14 @@ class ReceiptAfterPaymentInner extends React.Component<
             >
               <CardRowText
                 text={t('paidOn', {
-                  date: transactionDatetime.toFormat('dd.MM.y'),
-                  time: transactionDatetime.toFormat('HH:mm'),
+                  date: dateTimeToFormat(transactionDatetime, {
+                    locale: i18n.language,
+                    format: 'date',
+                  }),
+                  time: dateTimeToFormat(transactionDatetime, {
+                    locale: i18n.language,
+                    format: 'time',
+                  }),
                 })}
                 style={ownStyles.cardRowTextPaidOn}
               />
@@ -173,39 +297,26 @@ class ReceiptAfterPaymentInner extends React.Component<
                   value: this.state.receipt.paymentData.transaction.id,
                 })}
               />
-              <ValidUntilBlock>
-                <CardRowText
-                  text={t('receiptValidUntilText')}
-                  style={ownStyles.cardRowText}
-                />
-                <CardRowText
-                  text={t('receiptValidUntilTime', {
-                    date: receiptEntryTimePlus.toLocaleString(
-                      DateTime.DATE_FULL
-                    ),
-                    time: receiptEntryTimePlus.toFormat('HH:mm'),
-                  })}
-                  style={ownStyles.cardRowText}
-                />
-              </ValidUntilBlock>
+              <ValidUntilBlock>{this.getValidUntilBlockText()}</ValidUntilBlock>
             </Row>
 
-            <DutyList basket={basket} people={people} />
+            <DutyList basket={basket} people={people} swipeable={false} />
             <VatList
               large={false}
               people={people}
               amounts={amounts}
               currencies={currencies}
             />
-            <VatList
-              large
-              borderTop={false}
-              people={people}
-              amounts={amounts}
-              currencies={currencies}
-              headerRight={false}
-            />
-
+            {flatLargeAmounts(amounts).length ? (
+              <VatList
+                large
+                borderTop={false}
+                people={people}
+                amounts={amounts}
+                currencies={currencies}
+                headerRight={false}
+              />
+            ) : null}
             <TotalOwedRow
               basket={basket}
               people={people}

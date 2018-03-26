@@ -20,6 +20,7 @@ import {
   sampleAmounts2,
   sampleAmounts3,
   sampleAmounts4,
+  sampleAmounts5,
 } from './fullBasketsAndAmounts';
 import { addAdult, addMinor, initPeople } from '../configurationApi';
 import { INDIVIDUALALLOWANCE } from '../constants';
@@ -58,6 +59,12 @@ describe('VAT Calculations', () => {
     expect(
       calculateVat(sampleAmounts4, initPeople, currencyExample).get('totalVat')
     ).toBeCloseTo(51.15);
+  });
+
+  test('it offsets large amounts correctly', () => {
+    expect(
+      calculateVat(sampleAmounts5, twoAdults, currencyExample).get('totalVat')
+    ).toBeCloseTo(453.45);
   });
 
   test('it works with EZV examples', () => {

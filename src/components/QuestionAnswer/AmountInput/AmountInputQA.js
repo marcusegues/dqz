@@ -11,16 +11,17 @@ import {
   getAmount,
 } from '../../../model/configurationApi';
 import { calculateVat } from '../../../model/vatCalculations';
-import { AmountInputAnswerCard } from '../cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
+import { AmountInputAnswerCard } from '../Cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
 import { CurrencyPickerModal } from '../../Modals/CurrencyPickerModal/CurrencyPickerModal';
 import type { Currency } from '../../../model/currencies';
-import { AmountInputConfirmationCard } from '../cards/ConfirmationCard/configured/AmountInput/AmountInputConfirmationCard';
+import { AmountInputConfirmationCard } from '../Cards/ConfirmationCard/configured/AmountInput/AmountInputConfirmationCard';
 import {
   analyticsAmountAdded,
   analyticsAmountDeleted,
   analyticsQACardOpenend,
 } from '../../../analytics/analyticsApi';
 import type { FlatAmount } from '../../../model/utils';
+import { flatLargeAmounts } from '../../../model/utils';
 
 export type AmountInputState = {
   modalVisible: boolean,
@@ -40,7 +41,12 @@ export class AmountInputQA extends React.Component<
   }
 
   getQuestionComponent() {
-    const { onAnswer, qaState, large } = this.props;
+    const {
+      onAnswer,
+      qaState,
+      large,
+      onConfirmationCardTitlePress,
+    } = this.props;
     if (large) {
       analyticsQACardOpenend('AmountInput (large items)');
     } else {
@@ -54,6 +60,7 @@ export class AmountInputQA extends React.Component<
           large={large}
           onShowAmountInputModal={() => this.handleShowModal()}
           onAnswer={onAnswer}
+          onConfirmationCardTitlePress={onConfirmationCardTitlePress}
           amounts={amounts}
           onDeleteAmount={(id: string) => {
             this.handleDeleteAmount(id);
@@ -81,6 +88,7 @@ export class AmountInputQA extends React.Component<
     return (
       <AmountInputAnswerCard
         large={large}
+        largeAmountsPresent={flatLargeAmounts(qaState.amounts).length !== 0}
         onAnswerCardPress={onAnswerCardPress}
         flag={questionFlag}
         vat={calculateVat(amounts, people, currencies).get('totalVat')}

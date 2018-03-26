@@ -2,13 +2,13 @@
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
-import { MainCategoriesInputConfirmationCard } from '../cards/ConfirmationCard/configured/MainCategoriesInput/MainCategoriesInputConfirmationCard';
-import { MainCategoriesInputAnswerCard } from '../cards/AnswerCard/configured/MainCategoriesInput/MainCategoriesInputAnswerCard';
+import { MainCategoriesInputConfirmationCard } from '../Cards/ConfirmationCard/configured/MainCategoriesInput/MainCategoriesInputConfirmationCard';
+import { MainCategoriesInputAnswerCard } from '../Cards/AnswerCard/configured/MainCategoriesInput/MainCategoriesInputAnswerCard';
 import type { CardProps } from '../QuestionAnswerContainer';
 import type {
   MainCategories,
   MainCategory,
-} from '../../../types/reducers/appReducer';
+} from '../../../types/reducers/declaration';
 import { analyticsQACardOpenend } from '../../../analytics/analyticsApi';
 
 export const MainCategoriesInputQA = (props: CardProps) => {
@@ -35,6 +35,7 @@ export const MainCategoriesInputQA = (props: CardProps) => {
     return (
       <MainCategoriesInputConfirmationCard
         mainCategories={mainCategories}
+        onConfirmationCardTitlePress={props.onConfirmationCardTitlePress}
         onToggleMainCategory={mainCategory => {
           const newMainCategories = handleToggleMainCategory(mainCategory);
           handleUpdate(newMainCategories);

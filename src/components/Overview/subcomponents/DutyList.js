@@ -6,27 +6,26 @@ import { translate } from 'react-i18next';
 import { View, FlatList } from 'react-native';
 import { DutyRow } from '../../Rows/configured/Overview/DutyRow/DutyRow';
 import { getTotalQuantity } from '../../../model/configurationApi';
-import { getMainCategory } from '../../../types/reducers/appReducer';
+import { getMainCategory } from '../../../types/reducers/declaration';
 import { RightAlignedHeader } from './RightAlignedHeader';
 import type {
   Basket,
   People,
 } from '../../../model/types/basketPeopleAmountsTypes';
 import type { TFunction } from '../../../types/generalTypes';
-import {
-  calculateDuty,
-  getAllowanceRaw,
-} from '../../../model/dutyCalculations';
+import { calculateDuty, getAllowance } from '../../../model/dutyCalculations';
 
 type DutyListProps = {
   basket: Basket,
   people: People,
+  swipeable?: boolean,
 };
 
 const DutyListInner = ({
   basket,
   people,
   t,
+  swipeable,
 }: DutyListProps & {
   t: TFunction,
 }) => {
@@ -43,9 +42,10 @@ const DutyListInner = ({
           key={category}
           mainCategory={getMainCategory(category)}
           category={category}
-          allowanceRaw={getAllowanceRaw(category, people)}
+          allowanceRaw={getAllowance(basket, category, people)}
           quantity={getTotalQuantity(basket, category)}
           duty={dutyOfCategory}
+          swipeable={swipeable}
         />
       ),
     }));
@@ -68,6 +68,6 @@ const DutyListInner = ({
   );
 };
 
-export const DutyList = (translate(['payment'])(
-  DutyListInner
-): ComponentType<{}>);
+export const DutyList = (translate(['payment'])(DutyListInner): ComponentType<
+  DutyListProps
+>);

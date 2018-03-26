@@ -3,19 +3,23 @@
 import type {
   DirectionType,
   QAStateEnriched,
-  QuestionState,
-  QuestionType,
 } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
 import { hasLargeAmount } from '../../../model/utils';
 import type { Navigation } from '../../../types/generalTypes';
-import type { MainCategories } from '../../../types/reducers/appReducer';
+import type { MainCategories } from '../../../types/reducers/declaration';
+import { flagRules } from './controlQuestionFlag';
+import type {
+  QuestionState,
+  QuestionStates,
+  QuestionType,
+} from '../types/questionAnswerTypes';
 
 const singleOtherGoodsMainCategory = (
   mainCategories: MainCategories
 ): boolean => mainCategories.size === 1 && mainCategories.has('OtherGoods');
 
-const showLargeAmountsQuestion = (qaState: QAStateEnriched) => {
+export const showLargeAmountsQuestion = (qaState: QAStateEnriched) => {
   const { people, amounts } = qaState;
   return (
     hasLargeAmount(amounts, qaState.currencies) && getTotalPeople(people) > 1
@@ -40,11 +44,26 @@ export const setInitStates = (qaState: QAStateEnriched): QAStateEnriched => {
   });
 };
 
-const fwdNav = (direction: DirectionType): QuestionState =>
-  direction === 'forward' ? 'expanded' : 'collapsed';
-
-const backNav = (direction: DirectionType): QuestionState =>
-  direction === 'back' ? 'expanded' : 'collapsed';
+const newQuestionStatesBasedOnRules = (
+  qaState: QAStateEnriched
+): QuestionStates => ({
+    peopleInput:
+      flagRules('peopleInput', qaState) === 'complete' ? 'collapsed' : 'hidden',
+    mainCategories:
+      flagRules('mainCategories', qaState) === 'complete'
+        ? 'collapsed'
+        : 'hidden',
+    quantityInput:
+      flagRules('quantityInput', qaState) === 'complete'
+        ? 'collapsed'
+        : 'hidden',
+    amounts:
+      flagRules('amounts', qaState) === 'complete' ? 'collapsed' : 'hidden',
+    largeAmounts:
+      flagRules('largeAmounts', qaState) === 'complete'
+        ? 'collapsed'
+        : 'hidden',
+  });
 
 export const setQuestionStates = (
   justAnswered: QuestionType,
@@ -54,109 +73,123 @@ export const setQuestionStates = (
 ): QAStateEnriched => {
   const { settings } = qaState;
   const mainCategories = settings.get('mainCategories');
-  // do case analysis
-  let peopleInputState: QuestionState = 'collapsed';
-  let mainCategoriesState: QuestionState = 'collapsed';
-  let quantityInputState: QuestionState = 'collapsed';
-  let amountsState: QuestionState = 'collapsed';
-  let largeAmountsState: QuestionState = showLargeAmountsQuestion(qaState)
-    ? 'collapsed'
-    : 'hidden';
-  switch (justAnswered) {
-    case 'peopleInput': {
-      if (direction === 'back') {
-        navigation.goBack();
-      }
-      if (singleOtherGoodsMainCategory(mainCategories)) {
-        quantityInputState = 'hidden';
-      }
-      mainCategoriesState = fwdNav(direction);
-      if (!mainCategories.size) {
-        quantityInputState = 'hidden';
-      }
-      break;
-    }
-    case 'mainCategories': {
-      if (direction === 'update') {
-        mainCategoriesState = 'expanded';
-        if (singleOtherGoodsMainCategory(mainCategories)) {
-          quantityInputState = 'hidden';
-        }
-        break;
-      }
-      peopleInputState = backNav(direction);
-      if (singleOtherGoodsMainCategory(mainCategories)) {
-        quantityInputState = 'hidden';
-        amountsState = fwdNav(direction);
-        break;
-      }
-      if (mainCategories.size) {
-        quantityInputState = fwdNav(direction);
-      }
-      break;
-    }
-    case 'quantityInput': {
-      mainCategoriesState = backNav(direction);
-      amountsState = fwdNav(direction);
-      break;
-    }
-    case 'amounts': {
-      if (singleOtherGoodsMainCategory(mainCategories)) {
-        mainCategoriesState = backNav(direction);
-        quantityInputState = 'hidden';
-      } else {
-        quantityInputState = backNav(direction);
-      }
+  const newQuestionStates = newQuestionStatesBasedOnRules(qaState);
 
-      if (showLargeAmountsQuestion(qaState)) {
-        largeAmountsState = fwdNav(direction);
-      } else {
-        if (direction === 'forward') {
-          navigation.navigate('Payment');
+  switch (direction) {
+    case 'back': {
+      switch (justAnswered) {
+        case 'peopleInput': {
+          newQuestionStates.peopleInput = 'expanded';
+          navigation.dispatch({ type: 'GO_BACK' });
+          break;
         }
-        largeAmountsState = 'hidden';
+        case 'mainCategories': {
+          newQuestionStates.peopleInput = 'expanded';
+          break;
+        }
+        case 'quantityInput': {
+          newQuestionStates.mainCategories = 'expanded';
+          break;
+        }
+        case 'amounts': {
+          if (singleOtherGoodsMainCategory(mainCategories)) {
+            newQuestionStates.mainCategories = 'expanded';
+          } else {
+            newQuestionStates.quantityInput = 'expanded';
+          }
+          break;
+        }
+        case 'largeAmounts': {
+          newQuestionStates.amounts = 'expanded';
+          break;
+        }
+        default:
       }
       break;
     }
-    case 'largeAmounts': {
-      if (singleOtherGoodsMainCategory(mainCategories)) {
-        quantityInputState = 'hidden';
+    case 'forward': {
+      switch (justAnswered) {
+        case 'peopleInput': {
+          newQuestionStates.mainCategories = 'expanded';
+          break;
+        }
+        case 'mainCategories': {
+          if (singleOtherGoodsMainCategory(mainCategories)) {
+            newQuestionStates.amounts = 'expanded';
+          } else {
+            newQuestionStates.quantityInput = 'expanded';
+          }
+          break;
+        }
+        case 'quantityInput': {
+          newQuestionStates.amounts = 'expanded';
+          break;
+        }
+        case 'amounts': {
+          if (showLargeAmountsQuestion(qaState)) {
+            newQuestionStates.largeAmounts = 'expanded';
+          } else {
+            newQuestionStates.amounts = 'expanded';
+            navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
+          }
+          break;
+        }
+        case 'largeAmounts': {
+          newQuestionStates.largeAmounts = 'expanded';
+          navigation.dispatch({ type: 'NAVIGATE', screen: 'Payment' });
+          break;
+        }
+        default:
       }
-      amountsState = backNav(direction);
-      if (direction === 'forward') {
-        navigation.navigate('Payment');
+      break;
+    }
+    case 'update': {
+      switch (justAnswered) {
+        case 'peopleInput': {
+          newQuestionStates.peopleInput = 'expanded';
+          break;
+        }
+        case 'mainCategories': {
+          newQuestionStates.mainCategories = 'expanded';
+          break;
+        }
+        case 'quantityInput': {
+          newQuestionStates.quantityInput = 'expanded';
+          break;
+        }
+        case 'amounts': {
+          newQuestionStates.amounts = 'expanded';
+          break;
+        }
+        case 'largeAmounts': {
+          newQuestionStates.largeAmounts = 'expanded';
+          break;
+        }
+        default:
       }
       break;
     }
     default:
   }
-  return setQuestionState(qaState, {
-    peopleInput: peopleInputState,
-    mainCategories: mainCategoriesState,
-    quantityInput: quantityInputState,
-    amounts: amountsState,
-    largeAmounts: largeAmountsState,
-  });
+
+  return setQuestionState(qaState, newQuestionStates);
 };
 
 export const collapseAllExistingExceptOne = (
   expand: QuestionType,
   qaState: QAStateEnriched
 ): QAStateEnriched => {
-  const { questionStates } = qaState;
+  const newQuestionStates = newQuestionStatesBasedOnRules(qaState);
+  newQuestionStates[expand] = 'expanded';
 
-  const getQuestionState = (type: QuestionType) => {
-    if (questionStates[type] === 'hidden') {
-      return 'hidden';
-    }
-    return type === expand ? 'expanded' : 'collapsed';
-  };
-
-  return setQuestionState(qaState, {
-    peopleInput: getQuestionState('peopleInput'),
-    mainCategories: getQuestionState('mainCategories'),
-    quantityInput: getQuestionState('quantityInput'),
-    amounts: getQuestionState('amounts'),
-    largeAmounts: getQuestionState('largeAmounts'),
-  });
+  return setQuestionState(qaState, newQuestionStates);
 };
+
+export const collapseQuestion = (
+  question: QuestionType,
+  qaState: QAStateEnriched
+): QAStateEnriched =>
+  setQuestionState(qaState, {
+    ...qaState.questionStates,
+    [question]: 'collapsed',
+  });

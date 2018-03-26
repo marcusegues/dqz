@@ -85,6 +85,12 @@ export const sampleAmounts4: Amounts = initAmounts.withMutations(amounts => {
   return amounts;
 });
 
+export const sampleAmounts5: Amounts = initAmounts.withMutations(amounts => {
+  amounts = addAmount(amounts, 'EUR', 1000);
+  amounts = addLargeAmount(amounts, 'EUR', 5000);
+  return amounts;
+});
+
 export const sampleBasket5: Basket = addQuantity(
   emptyBasket,
   'Cigarettes',
@@ -266,3 +272,13 @@ export const maerkiExamples3: Amounts = initAmounts.withMutations(amounts => {
   amounts = addLargeAmount(amounts, 'USD', 911.23);
   return amounts;
 });
+
+export const sampleBasketDutyRounding: Basket = emptyBasket.withMutations(
+  basket => {
+    basket = addQuantity(basket, 'Meat', 2.241);
+    basket = addQuantity(basket, 'Meat', 1.231);
+    basket = addQuantity(basket, 'Meat', 1.342); // total: 4.814 49.30 für 2 people
+
+    return basket;
+  }
+);

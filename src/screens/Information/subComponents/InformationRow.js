@@ -3,8 +3,7 @@ import React from 'react';
 // $FlowFixMe
 import { TouchableWithoutFeedback, View } from 'react-native';
 import { Row } from '../../../components/Rows/Row';
-import { CardRowText } from '../../../components/QuestionAnswer/cards/subcomponents/CardRowText';
-import { CardRowSubText } from '../../../components/QuestionAnswer/cards/subcomponents/CardRowSubText';
+import { CardRowText } from '../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { InformationRowIcon } from './InformationRowIcon';
 import { RightChevronIcon } from '../../../components/General Components/RightChevronIcon';
 
@@ -16,7 +15,7 @@ const ownStyles = {
   textContainer: {
     flexDirection: 'column',
     flex: 1,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     paddingLeft: 16,
     paddingRight: 1,
   },
@@ -24,27 +23,33 @@ const ownStyles = {
 
 type InformationRowProps = {
   mainText: string,
-  subText: string,
   source: string,
   rowOnPress: () => void,
+  borderTop?: boolean,
+  borderBottom?: boolean,
 };
 
 export const InformationRow = ({
   mainText,
-  subText,
   source,
   rowOnPress,
+  borderTop = false,
+  borderBottom = false,
 }: InformationRowProps) => (
-  <Row>
+  <Row borderTop={borderTop} borderBottom={borderBottom}>
     <TouchableWithoutFeedback onPress={rowOnPress}>
       <View style={ownStyles.container}>
         <InformationRowIcon source={source} />
         <View style={ownStyles.textContainer}>
-          <CardRowText text={mainText} style={{ paddingBottom: 3 }} />
-          <CardRowSubText text={subText} />
+          <CardRowText text={mainText} style={{}} />
         </View>
         <RightChevronIcon />
       </View>
     </TouchableWithoutFeedback>
   </Row>
 );
+
+InformationRow.defaultProps = {
+  borderTop: false,
+  borderBottom: false,
+};

@@ -4,7 +4,7 @@ import { Alert } from 'react-native';
 
 import type { QAStateEnriched } from '../QuestionAnswerContainer';
 import {
-  getAdultPeople,
+  getTotalPeople,
   getTotalQuantity,
   resetQuantitiesMultipleCategories,
 } from '../../../model/configurationApi';
@@ -18,8 +18,8 @@ import { CategoriesInfo } from '../../../model/constants';
 import type {
   MainCategories,
   MainCategory,
-} from '../../../types/reducers/appReducer';
-import { getSubCategories } from '../../../types/reducers/appReducer';
+} from '../../../types/reducers/declaration';
+import { getSubCategories } from '../../../types/reducers/declaration';
 import type { TFunction } from '../../../types/generalTypes';
 
 type UpdateFunction<T> = (input: T) => void;
@@ -71,22 +71,16 @@ export const onUpdateFactory = (
 ): void => {
   switch (trigger.questionType) {
     case 'peopleInput': {
-      if (!getAdultPeople(trigger.people) && getAdultPeople(oldState.people)) {
-        const input: People = trigger.people;
-        const func: UpdateFunction<People> = trigger.onUpdate;
+      if (!getTotalPeople(trigger.people) && getTotalPeople(oldState.people)) {
         const showAlert = () => {
           Alert.alert(
-            t('qaFlow:validateNoAdultsTitle'),
-            t('qaFlow:validateNoAdultsSubtitle'),
+            t('qaFlow:validateNoPeopleTitle'),
+            t('qaFlow:validateNoPeopleSubtitle'),
             [
               {
-                text: t('qaFlow:validateGenericNo'),
+                text: t('qaFlow:validateGenericOk'),
                 onPress: () => {},
-                style: 'cancel',
-              },
-              {
-                text: t('qaFlow:validateGenericYes'),
-                onPress: () => func(input),
+                style: 'default',
               },
             ],
             { cancelable: true }
@@ -108,7 +102,7 @@ export const onUpdateFactory = (
           unselectedCategories.add(c);
         }
       });
-      const affectedCategories: Set<{
+      const quantityAffectedCategories: Set<{
         category: Category,
         quantity: number,
       }> = new Set();
@@ -117,31 +111,40 @@ export const onUpdateFactory = (
           getSubCategories(main).map(c => {
             const quantity = getTotalQuantity(oldState.basket, c);
             if (quantity > 0) {
-              affectedCategories.add({ category: c, quantity });
+              quantityAffectedCategories.add({ category: c, quantity });
             }
             return true;
           });
         });
       }
-      if (affectedCategories.size) {
+
+      if (quantityAffectedCategories.size) {
         const input: MainCategories = trigger.mainCategories;
         const func: UpdateFunction<{
           mainCategories: MainCategories,
           basket: Basket,
         }> =
           trigger.onUpdate;
-        const problems = Array.from(affectedCategories)
+        const problems = Array.from(quantityAffectedCategories)
           .map(
             ac =>
-              `${ac.category} (${t(
+              `${t(`categories:${ac.category}`)} (${t(
                 `categories:${ac.quantity}`
-              )} ${CategoriesInfo.getIn([ac.category, 'unit'], '')})`
+              )} ${t(
+                `units:${CategoriesInfo.getIn([ac.category, 'unit'], '')}`,
+                { count: ac.quantity }
+              )})`
           )
           .join(', ');
+        const alertSubMessage = newCats.size
+          ? t('qaFlow:validateMainCategoryRemoveSubtitle', { value: problems })
+          : t('qaFlow:validateMainCategoryAndVatRemoveSubTitle', {
+              value: problems,
+            });
         const showAlert = () => {
           Alert.alert(
             t('qaFlow:validateMainCategoryRemoveTitle'),
-            t('qaFlow:validateMainCategoryRemoveSubtitle', { value: problems }),
+            alertSubMessage,
             [
               {
                 text: t('qaFlow:validateGenericNo'),
@@ -155,7 +158,9 @@ export const onUpdateFactory = (
                     mainCategories: input,
                     basket: resetQuantitiesMultipleCategories(
                       oldState.basket,
-                      Array.from(affectedCategories).map(ac => ac.category)
+                      Array.from(quantityAffectedCategories).map(
+                        ac => ac.category
+                      )
                     ),
                   });
                 },
@@ -164,7 +169,37 @@ export const onUpdateFactory = (
             { cancelable: true }
           );
         };
-
+        showAlert();
+      } else if (unselectedCategories.has('OtherGoods') && !newCats.size) {
+        const input: MainCategories = trigger.mainCategories;
+        const func: UpdateFunction<{
+          mainCategories: MainCategories,
+          basket: Basket,
+        }> =
+          trigger.onUpdate;
+        const showAlert = () => {
+          Alert.alert(
+            t('qaFlow:validateMainCategoryRemoveTitle'),
+            t('qaFlow:validateVatRemoveSubTitle'),
+            [
+              {
+                text: t('qaFlow:validateGenericNo'),
+                onPress: () => {},
+                style: 'cancel',
+              },
+              {
+                text: t('qaFlow:validateOtherGoodsRemoveYes'),
+                onPress: () => {
+                  func({
+                    mainCategories: input,
+                    basket: oldState.basket,
+                  });
+                },
+              },
+            ],
+            { cancelable: true }
+          );
+        };
         showAlert();
       } else {
         trigger.onUpdate({

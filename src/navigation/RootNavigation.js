@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { StackNavigator } from 'react-navigation';
+import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 // $FlowFixMe
-import { View, NetInfo } from 'react-native';
+import { View } from 'react-native';
 import { i18nImplementation } from '../i18n';
 import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
 import { ScreensView } from '../screens/ScreensView/ScreensView';
@@ -30,13 +30,34 @@ import { AppInfo } from '../screens/AppInfo/AppInfo';
 import { LegalNoticeInfo } from '../screens/LegalNoticeInfo/LegalNoticeInfo';
 import { HomeIcon } from '../components/Headers/subcomponents/HomeIcon';
 import { DownloadIcon } from '../components/Headers/subcomponents/DownloadIcon';
-import { Information } from '../screens/Information/Information';
-import { SearchIcon } from '../components/Headers/subcomponents/SearchIcon';
+import { InformationMainCategories } from '../screens/Information/InformationMainCategories';
+import { InformationSubCategories } from '../screens/Information/InformationSubCategories';
+import { CustomsProcedures } from '../screens/Information/InformationScreens/mainCategories/CustomsProcedures';
+import { TravelDocuments } from '../screens/Information/InformationScreens/mainCategories/TravelDocuments';
 import type { Navigation } from '../types/generalTypes';
 import { BackArrow } from '../components/Headers/subcomponents/BackArrow';
 import { UsefulInfoScreenTemplate } from '../screens/Information/subComponents/UsefulInfoScreenTemplate';
 import { SnackBarsContainer } from '../components/SnackBars/SnackBarsContainer';
-import type { ConnectivityType } from '../types/connectivity';
+import { VatAllowance } from '../screens/Information/InformationScreens/mainCategories/VatAllowance';
+import { DutyAllowance } from '../screens/Information/InformationScreens/mainCategories/DutyAllowance';
+import { PersonalEffects } from '../screens/Information/InformationScreens/mainCategories/PersonalEffects';
+import { ForeignVat } from '../screens/Information/InformationScreens/mainCategories/ForeignVat';
+import { EntryByTrain } from '../screens/Information/InformationScreens/mainCategories/EntryByTrain';
+import { Animals } from '../screens/Information/InformationScreens/subCategories/Animals';
+import { Plants } from '../screens/Information/InformationScreens/subCategories/Plants';
+import { SouvenirsAndSpeciesProtection } from '../screens/Information/InformationScreens/subCategories/SouvenirsAndSpeciesProtection';
+import { HighwayVignette } from '../screens/Information/InformationScreens/subCategories/HighwayVignette';
+import { RoadTax } from '../screens/Information/InformationScreens/subCategories/RoadTax';
+import { FuelAndRepairs } from '../screens/Information/InformationScreens/subCategories/FuelAndRepairs';
+import { Forgery } from '../screens/Information/InformationScreens/subCategories/Forgery';
+import { Cash } from '../screens/Information/InformationScreens/subCategories/Cash';
+import { Food } from '../screens/Information/InformationScreens/subCategories/Food';
+import { AuthorisationRequirements } from '../screens/Information/InformationScreens/subCategories/AuthorisationRequirements';
+import { PurchasesOnlineOffline } from '../screens/Information/InformationScreens/mainCategories/PurchasesOnlineOffline';
+import { addListener } from './reactNavigation';
+import { CartIcon } from '../components/Headers/subcomponents/CartIcon';
+import { UpdateTheApp } from '../screens/UpdateTheApp/UpdateTheApp';
+import { SuccessfulPayment } from '../screens/SuccessfulPayment/SuccessfulPayment';
 
 export type NavigationObject = { navigation: Navigation };
 
@@ -117,21 +138,336 @@ export const stackNavigatorScreens = {
   UnderConstruction: {
     screen: UnderConstruction,
   },
-  Information: {
-    screen: Information,
+  InformationMainCategories: {
+    screen: InformationMainCategories,
     navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
       headerLeft: <HomeIcon navigation={navigation} />,
-      headerRight: <SearchIcon navigation={navigation} />,
+    }),
+  },
+  InformationSubCategories: {
+    screen: InformationSubCategories,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationMainCategories',
+            })
+          }
+        />
+      ),
+    }),
+  },
+  CustomsProcedures: {
+    screen: CustomsProcedures,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationMainCategories',
+            })
+          }
+        />
+      ),
+    }),
+  },
+  VatAllowance: {
+    screen: VatAllowance,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'declaration' },
+            })
+          }
+        />
+      ),
+    }),
+  },
+  DutyAllowance: {
+    screen: DutyAllowance,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'declaration' },
+            })
+          }
+        />
+      ),
+    }),
+  },
+  PersonalEffects: {
+    screen: PersonalEffects,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'declaration' },
+            })
+          }
+        />
+      ),
+    }),
+  },
+  ForeignVat: {
+    screen: ForeignVat,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'declaration' },
+            })
+          }
+        />
+      ),
+    }),
+  },
+  TravelDocuments: {
+    screen: TravelDocuments,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationMainCategories',
+            })
+          }
+        />
+      ),
+    }),
+  },
+  EntryByTrain: {
+    screen: EntryByTrain,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationMainCategories',
+            })
+          }
+        />
+      ),
+    }),
+  },
+  PurchasesOnlineOffline: {
+    screen: PurchasesOnlineOffline,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'DutyAllowance',
+            })
+          }
+        />
+      ),
+    }),
+  },
+  Animals: {
+    screen: Animals,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'animalsAndPlants' },
+            })
+          }
+        />
+      ),
+    }),
+  },
+  Plants: {
+    screen: Plants,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'animalsAndPlants' },
+            })
+          }
+        />
+      ),
+    }),
+  },
+  SouvenirsAndSpeciesProtection: {
+    screen: SouvenirsAndSpeciesProtection,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'animalsAndPlants' },
+            })
+          }
+        />
+      ),
+    }),
+  },
+  HighwayVignette: {
+    screen: HighwayVignette,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'vehicles' },
+            })
+          }
+        />
+      ),
+    }),
+  },
+  RoadTax: {
+    screen: RoadTax,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'vehicles' },
+            })
+          }
+        />
+      ),
+    }),
+  },
+  FuelAndRepairs: {
+    screen: FuelAndRepairs,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'vehicles' },
+            })
+          }
+        />
+      ),
+    }),
+  },
+  Forgery: {
+    screen: Forgery,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'prohibitionsAndRestrictions' },
+            })
+          }
+        />
+      ),
+    }),
+  },
+  Cash: {
+    screen: Cash,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'prohibitionsAndRestrictions' },
+            })
+          }
+        />
+      ),
+    }),
+  },
+  Food: {
+    screen: Food,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'prohibitionsAndRestrictions' },
+            })
+          }
+        />
+      ),
+    }),
+  },
+  AuthorisationRequirements: {
+    screen: AuthorisationRequirements,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerRight: <CartIcon navigation={navigation} />,
+      headerLeft: (
+        <BackArrow
+          onPress={() =>
+            navigation.dispatch({
+              type: 'NAVIGATE',
+              screen: 'InformationSubCategories',
+              params: { infoCategory: 'prohibitionsAndRestrictions' },
+            })
+          }
+        />
+      ),
     }),
   },
   UsefulInfoScreenTemplate: {
     screen: UsefulInfoScreenTemplate,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
       headerTitle: <HeaderTitle text="Wissenswertes" />,
     }),
@@ -139,7 +475,6 @@ export const stackNavigatorScreens = {
   ReceiptAfterPayment: {
     screen: ReceiptAfterPayment,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerTitle: <HeaderTitle text="Quittung Schweizer Zoll" />,
       headerLeft: <HomeIcon navigation={navigation} />,
       headerRight: <DownloadIcon navigation={navigation} />,
     }),
@@ -154,10 +489,7 @@ export const stackNavigatorScreens = {
       navigation: Navigation,
     }) => ({
       headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
       headerStyle: {
         ...navigationOptions.headerStyle,
@@ -169,10 +501,7 @@ export const stackNavigatorScreens = {
     screen: AppInfo,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -180,11 +509,20 @@ export const stackNavigatorScreens = {
     screen: LegalNoticeInfo,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerLeft: (
-        <BackArrow
-          navigation={navigation}
-          onPress={() => navigation.goBack()}
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
+    }),
+  },
+  SuccessfulPayment: {
+    screen: SuccessfulPayment,
+    navigationOptions: ({ navigation }: NavigationObject) => ({
+      headerLeft: <HomeIcon navigation={navigation} />,
+    }),
+  },
+  UpdateTheApp: {
+    screen: UpdateTheApp,
+    navigationOptions: () => ({
+      header: null,
     }),
   },
 };
@@ -192,29 +530,20 @@ export const stackNavigatorScreens = {
 export const stackNavigatorConfig = {
   navigationOptions: defaultNavigationOptions,
   cardStyle: { backgroundColor: MAIN_BACKGROUND_COLOR },
-  initialRouteName: 'OnBoarding',
 };
 
-const RootStackNavigator = StackNavigator(
+export const RootStackNavigator = StackNavigator(
   stackNavigatorScreens,
   stackNavigatorConfig
 );
 
 type ReduxInject = {
-  setConnectivity: (connectionInfo: ConnectivityType) => void,
+  dispatch: Function,
+  nav: Object,
 };
 
+// eslint-disable-next-line react/prefer-stateless-function
 class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
-  componentDidMount() {
-    NetInfo.addEventListener('connectionChange', connectionInfo =>
-      this.handleConnectivityChange(connectionInfo)
-    );
-  }
-
-  handleConnectivityChange(connectionInfo: ConnectivityType) {
-    this.props.setConnectivity(connectionInfo);
-  }
-
   render() {
     return (
       <View
@@ -226,6 +555,11 @@ class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
         }}
       >
         <RootStackNavigator
+          navigation={addNavigationHelpers({
+            dispatch: this.props.dispatch,
+            state: this.props.nav,
+            addListener,
+          })}
           screenProps={{
             t: i18nImplementation.getFixedT(),
             language: i18nImplementation.language,
@@ -238,12 +572,15 @@ class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  setConnectivity: (connectionInfo: ConnectivityType) =>
-    dispatch({ type: 'SET_CONNECTIVITY', connectionInfo }),
+const mapStateToProps = state => ({
+  nav: state.nav,
 });
 
-const ReloadAppOnLanguageChange = (connect(null, mapDispatchToProps)(
+const mapDispatchToProps = dispatch => ({
+  dispatch,
+});
+
+const ReloadAppOnLanguageChange = (connect(mapStateToProps, mapDispatchToProps)(
   translate(null, {
     bindI18n: 'languageChanged',
     bindStore: false,

@@ -1,8 +1,8 @@
 // @flow
 import { DateTime } from 'luxon';
-import type { Amounts } from './types/basketPeopleAmountsTypes';
+import type { Amounts, Category } from './types/basketPeopleAmountsTypes';
 import type { Currency, CurrencyObject } from './currencies';
-import { INDIVIDUALALLOWANCE } from './constants';
+import { CategoriesRates, INDIVIDUALALLOWANCE } from './constants';
 
 export const rounding = (x: number): number => {
   // this rounding is not perfect, due to floating point
@@ -28,6 +28,14 @@ export const rounding = (x: number): number => {
   return adjusted / 100;
 };
 
+export const quantityRounding = (x: number, category: Category): number => {
+  const factor = Math.round(
+    CategoriesRates.getIn([category, 'quantityRoundingBase10'], 0)
+  );
+  const pow = 10 ** factor;
+  return Math.ceil(x / pow) * pow;
+};
+
 export const formatDate = (d: Date): string => {
   const mm = d.getMonth() + 1;
   const dd = d.getDate();
@@ -44,10 +52,7 @@ export const formatDate = (d: Date): string => {
 
 // Convert localTime to Swiss returns DateTime object.
 // Used for receipt datePicker.
-export const getConvertedLocalTimeToSwiss = () =>
-  DateTime.local().setZone('Europe/Zurich', {
-    keepLocalTime: true,
-  });
+export const getConvertedLocalTimeToSwiss = (): DateTime => DateTime.local();
 
 export const roundMinutes = (minutes: number): string =>
   `${5 * Math.floor(minutes / 5)}`;
@@ -81,6 +86,9 @@ export const flatNormalAmounts = (amounts: Amounts): Array<FlatAmount> =>
 export const flatLargeAmounts = (amounts: Amounts): Array<FlatAmount> =>
   flatAllAmounts(amounts).filter(a => a.large);
 
+// below method should be renamed
+// sounds like "are there any large amounts" but actually is "should we ask the user if he has large amounts
+// based on his vat allowance versus what he has declared"
 export const hasLargeAmount = (
   amounts: Amounts,
   currencyObject: CurrencyObject

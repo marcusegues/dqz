@@ -6,7 +6,7 @@ import { DateTime } from 'luxon';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { CardHeader } from '../QuestionAnswer/cards/subcomponents/CardHeader';
+import { CardHeader } from '../QuestionAnswer/Cards/subcomponents/CardHeader';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { PeriodOfEntryRow } from './subcomponents/PeriodOfEntryRow';
 import { DutyList } from './subcomponents/DutyList';
@@ -19,10 +19,13 @@ import {
   getCurrencies,
   getPeople,
   getReceiptEntryTime,
-} from '../../reducers';
+} from '../../reducers/selectors';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
 import { InfoNote } from './subcomponents/InfoNote';
-import { getConvertedLocalTimeToSwiss } from '../../model/utils';
+import {
+  flatLargeAmounts,
+  getConvertedLocalTimeToSwiss,
+} from '../../model/utils';
 import { BackAndContinueButtons } from '../Buttons/BackAndContinueButtons';
 import type {
   Amounts,
@@ -30,6 +33,8 @@ import type {
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { CurrencyObject } from '../../model/currencies';
+import { storeReceiptEntryTime } from '../../asyncStorage/storageApi';
+import { dateTimeToFormat } from '../../utils/datetime/datetime';
 
 type OverviewProps = {
   modalVisible?: boolean,
@@ -52,7 +57,10 @@ type OverviewState = {
 };
 
 class OverviewInner extends React.Component<
-  OverviewProps & { t: TFunction } & ReduxInjectedProps,
+  OverviewProps & {
+    t: TFunction,
+    i18n: { language: string },
+  } & ReduxInjectedProps,
   OverviewState
 > {
   static defaultProps = {
@@ -61,7 +69,10 @@ class OverviewInner extends React.Component<
     paymentDisabled: true,
   };
 
-  constructor(props: OverviewProps & ReduxInjectedProps & { t: TFunction }) {
+  constructor(
+    props: OverviewProps &
+      ReduxInjectedProps & { t: TFunction, i18n: { language: string } }
+  ) {
     super(props);
     this.state = {
       modalVisible: props.modalVisible || false,
@@ -88,6 +99,17 @@ class OverviewInner extends React.Component<
     this.props.setReceiptEntryTime(entryTime);
   }
 
+  periodOfEntryTime(momentReceiptEntryTime) {
+    const { i18n } = this.props;
+    return `${dateTimeToFormat(momentReceiptEntryTime, {
+      locale: i18n.language,
+      format: 'datetime',
+    })} - ${dateTimeToFormat(momentReceiptEntryTime.plus({ hours: 2 }), {
+      locale: i18n.language,
+      format: 'datetime',
+    })}`;
+  }
+
   render() {
     const {
       t,
@@ -100,12 +122,16 @@ class OverviewInner extends React.Component<
       amounts,
       currencies,
     } = this.props;
-    const momentReceiptEntryTime =
-      receiptEntryTime !== ''
-        ? DateTime.fromISO(receiptEntryTime, {
-            zone: 'Europe/Zurich',
-          })
-        : getConvertedLocalTimeToSwiss();
+
+    const localTime: DateTime = DateTime.local();
+    let momentReceiptEntryTime: DateTime = localTime;
+    if (receiptEntryTime !== '') {
+      momentReceiptEntryTime = DateTime.fromISO(receiptEntryTime);
+      if (localTime.valueOf() > momentReceiptEntryTime.valueOf()) {
+        momentReceiptEntryTime = localTime;
+      }
+    }
+
     return (
       <ScrollViewCard>
         <CardHeader text={t('overViewTitle')} />
@@ -115,15 +141,19 @@ class OverviewInner extends React.Component<
           people={people}
           amounts={amounts}
           currencies={currencies}
+          swipeable
         />
-        <VatList
-          large
-          borderTop={false}
-          people={people}
-          amounts={amounts}
-          currencies={currencies}
-          headerRight={false}
-        />
+        {flatLargeAmounts(amounts).length ? (
+          <VatList
+            large
+            borderTop={false}
+            people={people}
+            amounts={amounts}
+            currencies={currencies}
+            headerRight={false}
+            swipeable
+          />
+        ) : null}
         <TotalOwedRow
           basket={basket}
           people={people}
@@ -133,22 +163,17 @@ class OverviewInner extends React.Component<
         <PeriodOfEntryRow
           title={t('receipt:entryTime')}
           subtitle={t('receipt:chooseOtherEntryTime')}
-          time={`${momentReceiptEntryTime.toFormat(
-            'dd.MM.y HH:mm'
-          )} - ${momentReceiptEntryTime
-            .plus({ hours: 2 })
-            .toFormat('dd.MM.y HH:mm')}`}
+          time={this.periodOfEntryTime(momentReceiptEntryTime)}
           onPress={() => this.handleShowModal()}
         />
         <InfoNote />
         <BackAndContinueButtons
-          onPressBack={() => navigation.goBack()}
+          onPressBack={() => navigation.dispatch({ type: 'GO_BACK' })}
           onPressContinue={() => onProceedToPayment && onProceedToPayment()}
           textContinue={t('general:toPayment')}
-          continueDisabled={paymentDisabled}
+          confirmationDisabled={paymentDisabled}
         />
         <TimePickerModal
-          currentEntryTime={momentReceiptEntryTime.toString()}
           modalVisible={this.state.modalVisible}
           onHideModal={() => this.handleHideModal()}
           onSelectTime={entryTime => this.handleSetReceiptEntryTime(entryTime)}
@@ -167,8 +192,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  setReceiptEntryTime: (receiptEntryTime: string) =>
-    dispatch({ type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime }),
+  setReceiptEntryTime: (receiptEntryTime: string) => {
+    storeReceiptEntryTime(receiptEntryTime);
+    dispatch({ type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime });
+  },
 });
 
 export const Overview = (connect(mapStateToProps, mapDispatchToProps)(

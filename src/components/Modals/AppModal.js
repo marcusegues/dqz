@@ -10,6 +10,7 @@ type AppModalProps = {
   children: Children,
   animationIn: string,
   animationOut: string,
+  onDismiss?: () => any,
 };
 
 export const AppModal = ({
@@ -17,6 +18,7 @@ export const AppModal = ({
   children,
   animationIn,
   animationOut,
+  onDismiss,
 }: AppModalProps) => (
   <Modal
     style={{}}
@@ -26,11 +28,16 @@ export const AppModal = ({
     backdropOpacity={0.8}
     animationIn={animationIn}
     animationOut={animationOut}
-    animationInTiming={1000}
-    animationOutTiming={1000}
-    backdropTransitionInTiming={1000}
-    backdropTransitionOutTiming={1000}
+    animationInTiming={400}
+    animationOutTiming={400}
+    backdropTransitionInTiming={400}
+    backdropTransitionOutTiming={400}
+    onDismiss={onDismiss}
   >
     {children}
   </Modal>
 );
+
+AppModal.defaultProps = {
+  onDismiss: () => {},
+};

@@ -4,11 +4,13 @@ import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { NavBar } from '../../components/NavBar/NavBar';
-import { GoodInputModal } from '../../components/Modals/GoodInputModal/GoodInputModal';
-import { PickerModal } from '../../components/Modals/PickerModal/PickerModal';
+import { QuantityInputModal } from '../../components/Modals/QuantityInputModal/QuantityInputModal';
 import { CurrencyPickerModal } from '../../components/Modals/CurrencyPickerModal/CurrencyPickerModal';
 import { TimePickerModal } from '../../components/Modals/TimePickerModal/TimePickerModal';
-import { getCurrencies, getFormattedCurrencyDate } from '../../reducers';
+import {
+  getCurrencies,
+  getFormattedCurrencyDate,
+} from '../../reducers/selectors';
 import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import type { Navigation } from '../../types/generalTypes';
 import type { CurrencyObject } from '../../model/currencies';
@@ -47,6 +49,11 @@ class ScreensViewInner extends React.Component<
     };
   }
 
+  setSavedBasketModalVisibleFalse() {
+    this.setState({
+      savedBasketModalVisible: false,
+    });
+  }
   toggleModalVisible() {
     this.setState({
       modalVisible: !this.state.modalVisible,
@@ -62,11 +69,7 @@ class ScreensViewInner extends React.Component<
       currencyPickerModalVisible: !this.state.currencyPickerModalVisible,
     });
   }
-  toggleSavedBasketModalVisible() {
-    this.setState({
-      savedBasketModalVisible: !this.state.savedBasketModalVisible,
-    });
-  }
+
   handleHideTimePickerModal() {
     this.setState({
       timePickerModalVisible: false,
@@ -87,7 +90,6 @@ class ScreensViewInner extends React.Component<
             { key: `OnBoarding` },
             { key: `MainMenu` },
             { key: `QuestionAnswer` },
-            { key: `GoodQuantityListModal` },
             { key: `BasketInput` },
             { key: `pickerModal` },
             { key: `currencyPickerModal` },
@@ -105,10 +107,7 @@ class ScreensViewInner extends React.Component<
                 fontFamily: 'roboto_bold',
               }}
               onPress={() => {
-                if (item.key === `GoodQuantityListModal`) {
-                  this.setState({ modalVisible: true });
-                  return;
-                } else if (item.key === `pickerModal`) {
+                if (item.key === `pickerModal`) {
                   this.setState({ pickerModalVisible: true });
                   return;
                 } else if (item.key === `currencyPickerModal`) {
@@ -124,7 +123,10 @@ class ScreensViewInner extends React.Component<
                   this.setState({ legalNoticeModalVisible: true });
                   return;
                 }
-                this.props.navigation.navigate(item.key);
+                this.props.navigation.dispatch({
+                  type: 'NAVIGATE',
+                  screen: item.key,
+                });
               }}
             >
               {item.key}
@@ -132,12 +134,7 @@ class ScreensViewInner extends React.Component<
           )}
         />
 
-        <GoodInputModal
-          onRequestClose={() => {}}
-          modalVisible={this.state.modalVisible}
-          toggleModalVisible={() => this.toggleModalVisible()}
-        />
-        <PickerModal
+        <QuantityInputModal
           modalVisible={this.state.pickerModalVisible}
           toggleModalVisible={() => this.togglePickerVisible()}
           confirmAction={() => {}}
@@ -154,14 +151,15 @@ class ScreensViewInner extends React.Component<
           large={false}
         />
         <TimePickerModal
-          currentEntryTime={getConvertedLocalTimeToSwiss().toString()}
+          currentEntryTime={getConvertedLocalTimeToSwiss()}
           modalVisible={this.state.timePickerModalVisible}
           onHideModal={() => this.handleHideTimePickerModal()}
           onSelectTime={() => {}}
         />
         <SavedBasketModal
           modalVisible={this.state.savedBasketModalVisible}
-          toggleModalVisible={() => this.toggleSavedBasketModalVisible()}
+          setModalVisibleFalse={() => this.setSavedBasketModalVisibleFalse()}
+          navigation={this.props.navigation}
         />
         <LegalNoticeModal
           modalVisible={this.state.legalNoticeModalVisible}

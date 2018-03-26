@@ -3,7 +3,7 @@ import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
 import type { Children } from '../../../types/generalTypes';
-import { CardHeader } from '../../../components/QuestionAnswer/cards/subcomponents/CardHeader';
+import { CardHeader } from '../../../components/QuestionAnswer/Cards/subcomponents/CardHeader';
 import { ScrollViewCard } from '../../../components/General Components/ScrollViewCard';
 
 const ownStyles = {

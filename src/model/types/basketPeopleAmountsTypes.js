@@ -7,6 +7,7 @@ import type {
 } from 'immutable';
 import Immutable from 'immutable';
 import type { Currency } from '../currencies';
+import type { CategoryUnit } from './categoryUnit';
 
 /**
  * Declare the Main Categories
@@ -38,17 +39,22 @@ export type Category =
 // CATEGORY INFO
 type CategoryInfoContent = {
   name: string,
-  unit: string,
+  unit: CategoryUnit,
   icon: string,
 };
 export const makeCategoryInfoRecord: RecordFactory<
   CategoryInfoContent
 > = Immutable.Record({
   name: 'category',
-  unit: 'kg',
+  unit: 'kilo',
   icon: 'icon',
 });
 type CategoryInfo = RecordOf<CategoryInfoContent>;
+
+export type Quantity = {
+  number: number,
+  date: string,
+};
 
 /**
  * todo jsdoc
@@ -57,7 +63,7 @@ export type CategoryInfoType = ImmutableMapType<Category, CategoryInfo>;
 
 // CATEGORY VOLUME
 type CategoryVolumeContent = {
-  quantities: ImmutableListType<number>,
+  quantities: ImmutableListType<Quantity>,
 };
 export const makeCategoryVolumeRecord: RecordFactory<
   CategoryVolumeContent
@@ -106,13 +112,16 @@ type RatesContent = {
   dutyAllowance: number,
   dutyAllowanceDependency: ?Category,
   adultsOnly: boolean,
+  quantityRoundingBase10: number,
 };
+
 export const makeRatesRecord: RecordFactory<RatesContent> = Immutable.Record({
   vat: 0,
   duty: Immutable.List.of(makeDutyBracketRecord()),
   dutyAllowance: Infinity,
   dutyAllowanceDependency: null,
   adultsOnly: false,
+  quantityRoundingBase10: 0,
 });
 type Rates = RecordOf<RatesContent>;
 

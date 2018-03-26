@@ -4,12 +4,13 @@ import { translate } from 'react-i18next';
 import type { ComponentType } from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
-import { CardHeaderText } from '../../../QuestionAnswer/cards/subcomponents/CardHeaderText';
+import { CardHeaderText } from '../../../QuestionAnswer/Cards/subcomponents/CardHeaderText';
 import { QuantityIcon } from '../../../General Components/GreyBox/configured/QuantityIcon';
 import { verticalScale } from '../../../../styles/Scaling';
 import { CategoriesInfo } from '../../../../model/constants';
 import type { Category } from '../../../../model/types/basketPeopleAmountsTypes';
 import type { TFunction } from '../../../../types/generalTypes';
+import { formatQuantity } from '../../../../utils/declaration/declaration';
 
 type QuantityInfoProps = {
   category: Category,
@@ -32,13 +33,17 @@ const QuantityInfoInner = ({
     <CardHeaderText text={t(`categories:${category}`)} />
     <View style={{ marginTop: 10 }}>
       <QuantityIcon
-        quantity={totalQuantity.toFixed(2)}
-        unit={CategoriesInfo.getIn([category, 'unit'], '')}
+        quantity={formatQuantity(category, totalQuantity)}
+        unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
+          count: totalQuantity,
+        })}
       />
     </View>
   </View>
 );
 
-export const QuantityInfo = (translate(['mainCategories', 'categories'])(
-  QuantityInfoInner
-): ComponentType<QuantityInfoProps>);
+export const QuantityInfo = (translate([
+  'mainCategories',
+  'categories',
+  'units',
+])(QuantityInfoInner): ComponentType<QuantityInfoProps>);

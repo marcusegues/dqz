@@ -2,8 +2,8 @@
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
-import { PeopleInputAnswerCard } from '../cards/AnswerCard/configured/PeopleInput/PeopleInputAnswerCard';
-import { PeopleInputConfirmationCard } from '../cards/ConfirmationCard/configured/PeopleInput/PeopleInputConfirmationCard';
+import { PeopleInputAnswerCard } from '../Cards/AnswerCard/configured/PeopleInput/PeopleInputAnswerCard';
+import { PeopleInputConfirmationCard } from '../Cards/ConfirmationCard/configured/PeopleInput/PeopleInputConfirmationCard';
 import {
   addAdult,
   addMinor,
@@ -16,12 +16,13 @@ import { analyticsQACardOpenend } from '../../../analytics/analyticsApi';
 export const PeopleInputQA = (props: CardProps) => {
   const getQuestionComponent = () => {
     analyticsQACardOpenend('PeopleInput');
-    const { onAnswer, onUpdate, qaState } = props;
+    const { onAnswer, onUpdate, qaState, onConfirmationCardTitlePress } = props;
     const { people } = qaState;
     return (
       <PeopleInputConfirmationCard
         people={people}
         onAnswer={onAnswer}
+        onConfirmationCardTitlePress={onConfirmationCardTitlePress}
         onAddAdult={() => onUpdate(addAdult(people))}
         onSubtractAdult={() => onUpdate(subtractAdult(people))}
         onAddMinor={() => onUpdate(addMinor(people))}

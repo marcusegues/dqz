@@ -2,7 +2,7 @@
 import React from 'react';
 // $FlowFixMe
 import { View, StyleSheet } from 'react-native';
-import { CardRowText } from '../QuestionAnswer/cards/subcomponents/CardRowText';
+import { CardRowText } from '../QuestionAnswer/Cards/subcomponents/CardRowText';
 import { scale } from '../../styles/Scaling';
 import type { Currency } from '../../model/currencies';
 import { CurrencyFlag } from './CurrencyFlag';
@@ -28,6 +28,6 @@ export const CurrencyFlagAndAmount = ({
     <View style={{ marginRight: scale(5) }}>
       <CurrencyFlag currency={currency} />
     </View>
-    <CardRowText text={`${currency} ${amount}`} />
+    <CardRowText text={`${currency} ${amount.toFixed(2)}`} />
   </View>
 );

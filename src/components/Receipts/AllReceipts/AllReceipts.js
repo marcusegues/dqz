@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import { translate } from 'react-i18next';
 import type { Navigation, TFunction } from '../../../types/generalTypes';
 import { analyticsScreenMounted } from '../../../analytics/analyticsApi';
-import { CardHeader } from '../../QuestionAnswer/cards/subcomponents/CardHeader';
+import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader';
 import { AllReceiptsRow } from './subcomponents/AllReceiptsRow';
 import { HeaderTitle } from '../../Headers/subcomponents/HeaderTitle';
 import { verticalScale } from '../../../styles/Scaling';
@@ -19,8 +19,9 @@ import type { Receipt } from '../../../types/receiptTypes';
 import { fetchReceipts } from '../../../asyncStorage/storageApi';
 import { calculateDuty } from '../../../model/dutyCalculations';
 import { calculateVat } from '../../../model/vatCalculations';
-import { getConvertedLocalTimeToSwiss } from '../../../model/utils';
 import { ScrollViewCard } from '../../General Components/ScrollViewCard';
+import { MainContentContainer } from '../../MainContentContainer/MainContentContainer';
+import { dateTimeToFormat } from '../../../utils/datetime/datetime';
 
 type AllReceiptsState = {
   receipts: List<Receipt>,
@@ -28,6 +29,7 @@ type AllReceiptsState = {
 
 type AllReceiptsProps = {
   t: TFunction,
+  i18n: { language: string },
   navigation: Navigation,
   setReceiptId: (receiptId: string) => void,
 };
@@ -62,16 +64,16 @@ class AllReceiptsInner extends React.Component<
   }
 
   prepareReceiptsObject() {
-    const { t, navigation, setReceiptId } = this.props;
+    const { t, i18n, navigation, setReceiptId } = this.props;
 
-    const sortDateTimeAsc = (a, b) =>
-      DateTime.fromISO(a.receiptEntryTime) >
-      DateTime.fromISO(b.receiptEntryTime)
-        ? 1
-        : -1;
+    const sortDateTimeAsc = (a, b) => {
+      const aDT: DateTime = DateTime.fromISO(a.receiptEntryTime);
+      const bDT: DateTime = DateTime.fromISO(b.receiptEntryTime);
+      return aDT.valueOf() > bDT.valueOf() ? 1 : -1;
+    };
 
     return this.state.receipts.sort(sortDateTimeAsc).reduce(
-      (receipts, receipt) => {
+      (receipts, receipt, idx) => {
         const { basket } = receipt;
         const vatReport = calculateVat(
           receipt.amounts,
@@ -82,10 +84,9 @@ class AllReceiptsInner extends React.Component<
         const fullVat = vatReport.get('totalVat');
         const fullDuty = dutyReport.get('totalDuty');
         const receiptEntryTimePlus = DateTime.fromISO(
-          receipt.receiptEntryTime,
-          { zone: 'Europe/Zurich' }
+          receipt.receiptEntryTime
         ).plus({ hours: 2 });
-        const localSwissTime = getConvertedLocalTimeToSwiss();
+        const localTime = DateTime.local();
 
         const receiptView = (
           <AllReceiptsRow
@@ -98,15 +99,23 @@ class AllReceiptsInner extends React.Component<
               vat: fullVat.toFixed(2),
             })}
             date={t('allReceiptsDate', {
-              value: receiptEntryTimePlus.toFormat('dd.MM.y HH:mm:ss'),
+              value: dateTimeToFormat(receiptEntryTimePlus, {
+                locale: i18n.language,
+                format: 'datetime',
+              }),
             })}
             rowOnPress={() => {
               setReceiptId(receipt.receiptId);
-              navigation.navigate('ReceiptAfterPayment');
+              navigation.dispatch({
+                type: 'NAVIGATE',
+                screen: 'ReceiptAfterPayment',
+              });
             }}
+            borderTop={idx === 0}
           />
         );
-        if (receiptEntryTimePlus > localSwissTime) {
+        // $FlowFixMe
+        if (receiptEntryTimePlus > localTime) {
           // $FlowFixMe
           receipts.actualReceipts.push(receiptView);
         } else {
@@ -129,14 +138,16 @@ class AllReceiptsInner extends React.Component<
     } = this.prepareReceiptsObject();
 
     return (
-      <ScrollViewCard>
-        <CardHeader text={t('allReceiptsCurrentReceipt')} />
-        {sortedReceipts.actualReceipts}
-        <View style={{ marginTop: verticalScale(30) }}>
-          <CardHeader text={t('allReceiptsOlderReceipts')} />
-        </View>
-        {sortedReceipts.oldReceipts}
-      </ScrollViewCard>
+      <MainContentContainer>
+        <ScrollViewCard>
+          <CardHeader text={t('allReceiptsCurrentReceipt')} />
+          {sortedReceipts.actualReceipts}
+          <View style={{ marginTop: verticalScale(30) }}>
+            <CardHeader text={t('allReceiptsOlderReceipts')} />
+          </View>
+          {sortedReceipts.oldReceipts}
+        </ScrollViewCard>
+      </MainContentContainer>
     );
   }
 }

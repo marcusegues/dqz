@@ -2,6 +2,7 @@
 import {
   calculateDuty,
   getAdultsOnly,
+  getAllowance,
   getAllowanceRaw,
   getPeopleCount,
 } from '../dutyCalculations';
@@ -12,10 +13,13 @@ import {
   sampleBasket7,
   sampleBasket8,
   sampleBasket9,
+  sampleBasketDutyRounding,
 } from './fullBasketsAndAmounts';
 import {
   addAdult,
   addMinor,
+  addQuantity,
+  emptyBasket,
   initPeople,
   setAdultPeople,
   setPeople,
@@ -96,6 +100,23 @@ describe('Duty calculation helpers', () => {
     expect(getAllowanceRaw('Fertilizer', oneAdultOneMinor)).toBe(Infinity);
     expect(getAllowanceRaw('Other', oneAdultOneMinor)).toBe(Infinity);
   });
+
+  test('getAllowance (using dependencies) - tobacco depends on cigarettes', () => {
+    expect(getAllowance(emptyBasket, 'Meat', initPeople)).toBe(1);
+    expect(getAllowance(emptyBasket, 'Cigarettes', initPeople)).toBe(250);
+    expect(getAllowance(emptyBasket, 'Tobacco', initPeople)).toBe(250);
+
+    const basketWithTobacco = addQuantity(emptyBasket, 'Tobacco', 100);
+    expect(getAllowance(basketWithTobacco, 'Meat', initPeople)).toBe(1);
+    expect(getAllowance(basketWithTobacco, 'Cigarettes', initPeople)).toBe(250);
+    expect(getAllowance(basketWithTobacco, 'Tobacco', initPeople)).toBe(250);
+
+    const basketWithCigs = addQuantity(emptyBasket, 'Cigarettes', 100);
+    expect(getAllowance(basketWithCigs, 'Meat', initPeople)).toBe(1);
+    expect(getAllowance(basketWithCigs, 'Cigarettes', initPeople)).toBe(250);
+    // and here's the key:
+    expect(getAllowance(basketWithCigs, 'Tobacco', initPeople)).toBe(150);
+  });
 });
 
 describe('Duty Calculations', () => {
@@ -146,5 +167,13 @@ describe('Duty Calculations', () => {
     expect(
       calculateDuty(sampleBasket1, setAdultPeople(initPeople, 20))
     ).toMatchSnapshot();
+  });
+
+  test('Tax Calculation Rounding Correcty, 2 People and Meat', () => {
+    expect(
+      calculateDuty(sampleBasketDutyRounding, addAdult(initPeople)).get(
+        'totalDuty'
+      )
+    ).toBe(49.3);
   });
 });

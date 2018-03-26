@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { DateTime } from 'luxon';
 // $FlowFixMe
 import { ScrollView, View } from 'react-native';
 import { translate } from 'react-i18next';
@@ -9,6 +10,8 @@ import { AppModal } from '../AppModal';
 import { QuantityInfo } from './subcomponents/QuantityInfo';
 import {
   getQuantities,
+  getQuantityDate,
+  getQuantityNumber,
   getTotalQuantity,
 } from '../../../model/configurationApi';
 import type { QuantityInputState } from '../../QuestionAnswer/QuantityInput/QuantityInputQA';
@@ -20,15 +23,16 @@ import type {
 import { QuantityRow } from './subcomponents/QuantityRow';
 import { moderateScale, scale, verticalScale } from '../../../styles/Scaling';
 import { BackArrow } from '../../Headers/subcomponents/BackArrow';
-import { PickerModal } from '../PickerModal/PickerModal';
+import { QuantityInputModal } from '../QuantityInputModal/QuantityInputModal';
 import { RedButton } from '../../Buttons/RedButton';
 import type { TFunction } from '../../../types/generalTypes';
 
 import { GoodQuantityGreyField } from './subcomponents/GoodQuantityGreyField';
-import { CategoryIcon } from '../../QuestionAnswer/cards/ConfirmationCard/configured/QuantityInput/subcomponents/subcomponents/CategoryIcon';
+import { CategoryIcon } from '../../QuestionAnswer/Cards/ConfirmationCard/configured/QuantityInput/subcomponents/subcomponents/CategoryIcon';
 import { RedPlusIcon } from './subcomponents/RedPlusIcon';
-import { getSource } from '../../QuestionAnswer/cards/ConfirmationCard/configured/QuantityInput/subcomponents/GoodInputRow';
-import { PickerCard } from '../CurrencyPickerModal/subComponents/PickerCard';
+import { getSource } from '../../QuestionAnswer/Cards/ConfirmationCard/configured/QuantityInput/subcomponents/GoodInputRow';
+import { ModalCard } from '../ModalCard';
+import { dateTimeToFormat } from '../../../utils/datetime/datetime';
 
 const ownStyles = {
   pickerCard: {
@@ -86,14 +90,81 @@ type GoodQuantityListModalState = {
 };
 
 class GoodQuantityListModalInner extends React.Component<
-  GoodQuantityListModalProps & { t: TFunction },
+  GoodQuantityListModalProps & { t: TFunction, i18n: { language: string } },
   GoodQuantityListModalState
 > {
-  constructor() {
-    super();
+  constructor(
+    props: GoodQuantityListModalProps & {
+      t: TFunction,
+      i18n: { language: string },
+    }
+  ) {
+    super(props);
     this.state = {
       pickerModalVisible: false,
     };
+  }
+
+  getGreyFieldTopText(modalCategory) {
+    const { t } = this.props;
+
+    switch (modalCategory) {
+      case 'Butter': {
+        return t('quantityInput:enterQuantitiesButter', {
+          value: t(`quantityInput:butterInput`),
+        });
+      }
+      case 'AlcSoft': {
+        return t('quantityInput:enterQuantitiesAlcohol', {
+          value: t(`quantityInput:alcSoftInput`),
+        });
+      }
+      case 'AlcHard': {
+        return t('quantityInput:enterQuantitiesAlcohol', {
+          value: t(`quantityInput:alcHardInput`),
+        });
+      }
+      case 'Cigarettes': {
+        return t('quantityInput:enterQuantitiesCigarettes', {
+          value: t(`quantityInput:cigarettesInput`),
+        });
+      }
+      case 'Tobacco': {
+        return t('quantityInput:enterQuantitiesTobacco', {
+          value: t(`quantityInput:tobaccoInput`),
+        });
+      }
+      case 'Meat': {
+        return t('quantityInput:enterQuantitiesMeat', {
+          value: t(`quantityInput:meatInput`),
+        });
+      }
+      case 'Oils': {
+        return t('quantityInput:enterQuantitiesOil', {
+          value: t(`quantityInput:oilInput`),
+        });
+      }
+      default: {
+        return t('quantityInput:enterQuantities', {
+          value: t(`categories:${modalCategory}`),
+        });
+      }
+    }
+  }
+
+  setPickerVisibleFalse() {
+    this.setState({
+      pickerModalVisible: false,
+    });
+  }
+
+  confirmPicker(amount: number) {
+    const { onAddQuantity, modalCategory } = this.props;
+
+    this.setPickerVisibleFalse();
+    if (modalCategory) {
+      onAddQuantity(modalCategory, amount);
+    }
   }
 
   togglePickerVisible() {
@@ -102,17 +173,9 @@ class GoodQuantityListModalInner extends React.Component<
     });
   }
 
-  confirmPicker(amount: number) {
-    const { onAddQuantity, modalCategory } = this.props;
-
-    this.togglePickerVisible();
-    if (modalCategory) {
-      onAddQuantity(modalCategory, amount);
-    }
-  }
-
   render() {
     const { pickerModalVisible } = this.state;
+    const { i18n } = this.props;
     const {
       onHide,
       onDeleteQuantity,
@@ -135,10 +198,10 @@ class GoodQuantityListModalInner extends React.Component<
     return (
       <AppModal
         modalVisible={modalVisible}
-        animationIn="slideInUp"
-        animationOut="slideOutDown"
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
       >
-        <PickerCard style={ownStyles.pickerCard}>
+        <ModalCard style={ownStyles.pickerCard}>
           <View style={ownStyles.container}>
             <View style={ownStyles.backArrowContainer}>
               <BackArrow onPress={onHide} />
@@ -156,7 +219,14 @@ class GoodQuantityListModalInner extends React.Component<
                   <QuantityRow
                     borderTop={idx === 0}
                     key={v4()}
-                    quantity={q}
+                    quantity={getQuantityNumber(q)}
+                    date={dateTimeToFormat(
+                      DateTime.fromISO(getQuantityDate(q)),
+                      {
+                        locale: i18n.language,
+                        format: 'datetime',
+                      }
+                    )}
                     category={modalCategory}
                     onDelete={() => {
                       if (modalCategory) {
@@ -170,9 +240,7 @@ class GoodQuantityListModalInner extends React.Component<
 
             {quantities.size === 0 ? (
               <GoodQuantityGreyField
-                topText={t('quantityInput:enterQuantities', {
-                  value: t(`categories:${modalCategory}`),
-                })}
+                topText={this.getGreyFieldTopText(modalCategory)}
                 plusIconText={t('quantityInput:addQuantities')}
                 onPress={() => this.togglePickerVisible()}
               />
@@ -190,14 +258,16 @@ class GoodQuantityListModalInner extends React.Component<
               confirmationDisabled={quantities.size === 0}
             />
           </View>
-        </PickerCard>
-        <PickerModal
+        </ModalCard>
+        <QuantityInputModal
           modalVisible={pickerModalVisible}
           toggleModalVisible={() => this.togglePickerVisible()}
           confirmAction={amount => this.confirmPicker(amount)}
           category={modalCategory}
           onlyStandardInput={
-            modalCategory === 'Tobacco' || modalCategory === 'Meat'
+            modalCategory === 'Tobacco' ||
+            modalCategory === 'Meat' ||
+            modalCategory === 'Butter'
           }
         />
       </AppModal>

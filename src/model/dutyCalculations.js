@@ -14,7 +14,7 @@ import type {
 import type { DutyReport } from './types/calculationTypes';
 import { categoriesArray, CategoriesRates } from './constants';
 import { makeDutyReportRecord } from './types/calculationTypes';
-import { rounding } from './utils';
+import { quantityRounding, rounding } from './utils';
 import { getTotalQuantity } from './configurationApi';
 
 export const getAdultsOnly = (category: Category): boolean =>
@@ -35,6 +35,23 @@ export const getAllowanceRaw = (category: Category, people: People): number => {
   return allowanceRaw;
 };
 
+export const getAllowance = (
+  basket: Basket,
+  category: Category,
+  people: People
+): number => {
+  const dutyDependency: ?Category = CategoriesRates.getIn(
+    [category, 'dutyAllowanceDependency'],
+    null
+  );
+  let allowance = getAllowanceRaw(category, people);
+  if (dutyDependency) {
+    allowance -= getTotalQuantity(basket, dutyDependency);
+    allowance = Math.max(0, allowance);
+  }
+  return allowance;
+};
+
 export const calculateDuty = (basket: Basket, people: People): DutyReport => {
   let total = 0;
   const reportByCategory: ImmutableMapType<
@@ -45,17 +62,9 @@ export const calculateDuty = (basket: Basket, people: People): DutyReport => {
       const quantityRaw: number = getTotalQuantity(basket, c);
       const adultsOnly: boolean = getAdultsOnly(c);
       const peopleCount: number = getPeopleCount(people, adultsOnly);
-      const dutyDependency: ?Category = CategoriesRates.getIn(
-        [c, 'dutyAllowanceDependency'],
-        null
-      );
-      let allowance = getAllowanceRaw(c, people);
-      if (dutyDependency) {
-        allowance -= getTotalQuantity(basket, dutyDependency);
-        allowance = Math.max(0, allowance);
-      }
 
-      const quantity: number = quantityRaw - allowance;
+      const allowance = getAllowance(basket, c, people);
+      const quantity: number = quantityRounding(quantityRaw - allowance, c);
 
       let allowanceRunningTotal: number = 0;
       const duty: ImmutableListType<DutyBracket> = CategoriesRates.getIn(

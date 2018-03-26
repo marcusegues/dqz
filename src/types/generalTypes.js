@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import Immutable from 'immutable';
-import type { RecordFactory } from 'immutable';
+import type { RecordFactory, RecordOf } from 'immutable';
 /**
  * Type for the the translation function as used in
  */
@@ -12,15 +12,18 @@ export type TFunction = (field: string | Array<string>, params?: {}) => string;
  */
 export type Navigation = {
   goBack: (?string) => void,
-  navigate: (route: string) => void,
+  navigate: (route: string, params?: {}) => void,
   state: Object,
+  setParams: Object => void,
+  getParam: (param: string, fallback: string) => any,
+  dispatch: Function,
 };
 
 /**
  * very generic type for children passed to a component
  * For more information, please consult: https://flow.org/en/docs/react/children/
  */
-export type Children = React.ChildrenArray<React.Element<any>>;
+export type Children = React.ChildrenArray<?React.Element<any>>;
 /**
  * Saferpay status of the transaction capture (PENDING is only used for paydirekt at the moment).
  * Possible values: PENDING, CAPTURED.
@@ -45,16 +48,23 @@ export type PaymentTransaction = {
   ipLocation: string,
 };
 
+export type SettingsAcceptRate = 'accepted' | 'notAccepted' | 'skipped';
+
 /**
  * Type for payment status. Status key getting from returnURL.
  */
-type PaymentStatus = 'not_started' | 'cancel' | 'fail' | 'succes';
+export type PaymentStatus =
+  | 'notStarted'
+  | 'started'
+  | 'aborted'
+  | 'failed'
+  | 'success';
 
 /**
  * Type for active saferpay payment. Response from PaymentPage Initialize.
  * https://saferpay.github.io/jsonapi/index.html#Payment_v1_PaymentPage_Initialize
  */
-export type PaymentData = {
+type PaymentDataType = {
   specVersion: string,
   requestId: string,
   token: string,
@@ -70,14 +80,14 @@ export type PaymentData = {
  * transaction: {status: string, id: string, date: string, amountValue: string, currencyCode: string, cardNumber: string, cardHolderName: string}}>}
  */
 export const makePaymentDataRecord: RecordFactory<
-  PaymentData
+  PaymentDataType
 > = Immutable.Record({
   specVersion: '',
   requestId: '',
   token: '',
   tokenExpiration: '',
   redirectUrl: '',
-  status: 'not_started',
+  status: 'notStarted',
   transaction: {
     status: '',
     id: '',
@@ -92,3 +102,5 @@ export const makePaymentDataRecord: RecordFactory<
     ipLocation: '',
   },
 });
+
+export type PaymentData = RecordOf<PaymentDataType>;

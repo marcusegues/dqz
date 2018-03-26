@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { View } from 'react-native';
+import { View, AsyncStorage } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import { LanguageButton } from './subcomponents/LanguageButton';
@@ -47,13 +47,8 @@ class OnBoardingInner extends React.Component<
   }
 
   componentWillMount() {
-    fetchSettingsAcceptRate().then(accepted => {
-      if (accepted) {
-        this.setNextScreen('MainMenu');
-      } else {
-        this.setNextScreen('OnBoardingTaxScreen');
-      }
-    });
+    AsyncStorage.clear();
+    this.checkSettingsAcceptRate();
 
     fetchSettingsHasLanguage().then(language => {
       if (language !== KeyNotSet) {
@@ -62,8 +57,22 @@ class OnBoardingInner extends React.Component<
     });
   }
 
+  componentWillReceiveProps() {
+    this.checkSettingsAcceptRate();
+  }
+
   setNextScreen(nextScreen: NextScreenType) {
     this.setState({ nextScreen });
+  }
+
+  checkSettingsAcceptRate() {
+    fetchSettingsAcceptRate().then(accepted => {
+      if (accepted === 'accepted' || accepted === 'skipped') {
+        this.setNextScreen('MainMenu');
+      } else if (accepted === 'notAccepted') {
+        this.setNextScreen('OnBoardingTaxScreen');
+      }
+    });
   }
 
   changeLanguage(language: Language) {
@@ -74,8 +83,9 @@ class OnBoardingInner extends React.Component<
   render() {
     const { t, i18n, navigation } = this.props;
     const { systemLanguage, nextScreen, settingsHasLanguage } = this.state;
+
     return (
-      <OnBoardingContainer welcomeText={!settingsHasLanguage}>
+      <OnBoardingContainer>
         <OnBoardingParagraph
           text={
             settingsHasLanguage
@@ -112,7 +122,7 @@ class OnBoardingInner extends React.Component<
         <DoneButton
           onPress={() => {
             storeSettingsHasLanguage(i18n.language);
-            navigation.navigate(nextScreen);
+            navigation.dispatch({ type: 'NAVIGATE', screen: nextScreen });
           }}
         />
       </OnBoardingContainer>

@@ -1,11 +1,15 @@
 // @flow
-
-type InformationData = {
-  id: number,
-  source: string,
-  dataMainText: string,
-  dataSubText: string,
-};
+import {
+  animalsAndPlantsSubCategories,
+  declarationSubCategories,
+  prohibitionsAndRestrictionsSubCategories,
+  vehiclesSubCategories,
+} from './types/information';
+import type {
+  InformationImagesType,
+  InformationNavigateToType,
+  InformationSubCategoriesType,
+} from './types/information';
 
 const Sign = require('../../../assets/icons/info/Sign.png');
 const ID = require('../../../assets/icons/info/ID.png');
@@ -13,49 +17,83 @@ const Basket = require('../../../assets/icons/info/Basket.png');
 const Pets = require('../../../assets/icons/info/Pets.png');
 const Car = require('../../../assets/icons/info/Car.png');
 const Railway = require('../../../assets/icons/info/Railway.png');
-const Syringe = require('../../../assets/icons/info/Syringe.png');
+const Restricted = require('../../../assets/icons/info/Restricted.png');
+const BelowCHF300 = require('../../../assets/icons/info/BelowCHF300.png');
+const AlcoCigarettesMeat = require('../../../assets/icons/info/AlcoCigarettesMeat.png');
+const Suitcase = require('../../../assets/icons/info/Suitcase.png');
+const CreditCard = require('../../../assets/icons/info/CreditCard.png');
+const Animals = require('../../../assets/icons/info/Animals.png');
+const Plants = require('../../../assets/icons/info/Plants.png');
+const Souvenirs = require('../../../assets/icons/info/Souvenirs.png');
+const MotorwayTaxSticker = require('../../../assets/icons/info/MotorwayTaxSticker.png');
+const HeavyVehicles = require('../../../assets/icons/info/HeavyVehicles.png');
+const Fuel = require('../../../assets/icons/info/Fuel.png');
+const Watches = require('../../../assets/icons/info/Watches.png');
+const Cash = require('../../../assets/icons/info/Cash.png');
+const Food = require('../../../assets/icons/info/Food.png');
+const AuthorisationRequirements = require('../../../assets/icons/info/AuthorisationRequirements.png');
+const InternetShoppingAndMail = require('../../../assets/icons/info/InternetShoppingAndMail.png');
+const Turnpike = require('../../../assets/icons/info/Turnpike.png');
 
-export const informationData: Array<InformationData> = [
-  {
-    id: 1,
-    source: Sign,
-    dataMainText: 'proceedinAtTheCustoms',
-    dataSubText: 'proceedinAtTheCustomsSubText',
-  },
-  {
-    id: 2,
-    source: ID,
-    dataMainText: 'travelDocuments',
-    dataSubText: 'travelDocumentsSubText',
-  },
-  {
-    id: 3,
-    source: Basket,
-    dataMainText: 'haveGoodsWithMe',
-    dataSubText: 'haveGoodsWithMeSubText',
-  },
-  {
-    id: 4,
-    source: Pets,
-    dataMainText: 'haveAnimalsOrPlantsWithMe',
-    dataSubText: 'haveAnimalsOrPlantsWithMeSubText',
-  },
-  {
-    id: 5,
-    source: Car,
-    dataMainText: 'travelingWithVehicle',
-    dataSubText: 'travelingWithVehicleSubText',
-  },
-  {
-    id: 6,
-    source: Railway,
-    dataMainText: 'entryByTrain',
-    dataSubText: 'entryByTrainSubText',
-  },
-  {
-    id: 7,
-    source: Syringe,
-    dataMainText: 'prohibitions',
-    dataSubText: 'prohibitionsSubText',
-  },
-];
+export const informationImages: InformationImagesType = {
+  customsProcedures: Sign,
+  travelDocuments: ID,
+  declaration: Basket,
+  animalsAndPlants: Pets,
+  vehicles: Car,
+  entryByTrain: Railway,
+  prohibitionsAndRestrictions: Restricted,
+  vatAllowance: BelowCHF300,
+  dutyAllowance: AlcoCigarettesMeat,
+  personalEffects: Suitcase,
+  foreignVat: CreditCard,
+  animals: Animals,
+  plants: Plants,
+  souvenirsAndSpeciesProtection: Souvenirs,
+  highwayVignette: MotorwayTaxSticker,
+  roadTax: HeavyVehicles,
+  fuelAndRepairs: Fuel,
+  forgery: Watches,
+  cash: Cash,
+  food: Food,
+  authorisationRequirements: AuthorisationRequirements,
+  purchasesOnlineOffline: InternetShoppingAndMail,
+  borderCrossings: Turnpike,
+};
+
+export const informationSubCategories: InformationSubCategoriesType = {
+  customsProcedures: 'noSubCategories',
+  travelDocuments: 'noSubCategories',
+  declaration: declarationSubCategories,
+  animalsAndPlants: animalsAndPlantsSubCategories,
+  vehicles: vehiclesSubCategories,
+  entryByTrain: 'noSubCategories',
+  prohibitionsAndRestrictions: prohibitionsAndRestrictionsSubCategories,
+  purchasesOnlineOffline: 'noSubCategories',
+  borderCrossings: 'noSubCategories',
+};
+
+export const informationNavigateTo: InformationNavigateToType = {
+  customsProcedures: 'CustomsProcedures',
+  travelDocuments: 'TravelDocuments',
+  declaration: declarationSubCategories,
+  animalsAndPlants: animalsAndPlantsSubCategories,
+  vehicles: vehiclesSubCategories,
+  entryByTrain: 'EntryByTrain',
+  prohibitionsAndRestrictions: prohibitionsAndRestrictionsSubCategories,
+  vatAllowance: 'VatAllowance',
+  dutyAllowance: 'DutyAllowance',
+  personalEffects: 'PersonalEffects',
+  foreignVat: 'ForeignVat',
+  animals: 'Animals',
+  plants: 'Plants',
+  souvenirsAndSpeciesProtection: 'SouvenirsAndSpeciesProtection',
+  highwayVignette: 'HighwayVignette',
+  roadTax: 'RoadTax',
+  fuelAndRepairs: 'FuelAndRepairs',
+  forgery: 'Forgery',
+  cash: 'Cash',
+  food: 'Food',
+  authorisationRequirements: 'AuthorisationRequirements',
+  purchasesOnlineOffline: 'PurchasesOnlineOffline',
+};

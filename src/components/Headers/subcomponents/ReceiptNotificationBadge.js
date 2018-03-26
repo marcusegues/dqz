@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { MaterialIcons } from '@expo/vector-icons';
 import { moderateScale } from '../../../styles/Scaling';
 import { receiptNotificationBadgeStyle } from '../styles/ReceiptNotificationBadge';
-import { getTotalFees } from '../../../reducers';
+import { getTotalFees } from '../../../reducers/selectors';
 import { MAIN_RED } from '../../../styles/colors';
 import type { Navigation } from '../../../types/generalTypes';
 
@@ -21,32 +21,34 @@ type ReceiptNotificationBadgeProps = {
 const ReceiptNotificationBadgeInner = ({
   fees,
   navigation,
-}: ReceiptNotificationBadgeProps) => (
-  <Touchable
-    onPress={() => {
-      if (fees) {
-        navigation.navigate('Payment');
-      }
-    }}
-  >
-    <View
-      style={[
-        receiptNotificationBadgeStyle.container,
-        { backgroundColor: fees ? MAIN_RED : 'lightgray' },
-      ]}
+}: ReceiptNotificationBadgeProps) =>
+  fees ? (
+    <Touchable
+      onPress={() => {
+        navigation.dispatch({
+          type: 'NAVIGATE',
+          screen: 'Payment',
+        });
+      }}
     >
-      <MaterialIcons
-        name="shopping-cart"
-        size={moderateScale(17)}
-        color="white"
-        style={receiptNotificationBadgeStyle.receiptIcon}
-      />
-      <Text style={receiptNotificationBadgeStyle.amountText}>
-        CHF {fees.toFixed(2)}
-      </Text>
-    </View>
-  </Touchable>
-);
+      <View
+        style={[
+          receiptNotificationBadgeStyle.container,
+          { backgroundColor: fees ? MAIN_RED : 'lightgray' },
+        ]}
+      >
+        <MaterialIcons
+          name="shopping-cart"
+          size={moderateScale(17)}
+          color="white"
+          style={receiptNotificationBadgeStyle.receiptIcon}
+        />
+        <Text style={receiptNotificationBadgeStyle.amountText}>
+          CHF {fees.toFixed(2)}
+        </Text>
+      </View>
+    </Touchable>
+  ) : null;
 
 const mapStateToProps = state => ({
   fees: getTotalFees(state),

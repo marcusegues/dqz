@@ -47,7 +47,8 @@ const ownStyles = disabled => ({
 
 type RedButtonProps = {
   text: string,
-  onPress: () => void,
+  // eslint-disable-next-line react/no-unused-prop-types
+  onPress: () => any,
   confirmationDisabled?: boolean,
   buttonStyle?: {},
 };
@@ -60,7 +61,7 @@ export const RedButton = ({
 }: RedButtonProps) => (
   <View style={ownStyles(confirmationDisabled).bottomButtonContainer}>
     <Touchable
-      onPress={() => onPress()}
+      onPress={onPress}
       style={[ownStyles(confirmationDisabled).touchable, { ...buttonStyle }]}
       disabled={confirmationDisabled}
     >

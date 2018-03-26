@@ -1,7 +1,7 @@
 // @flow
 // $FlowFixMe
 import { Platform, StyleSheet } from 'react-native';
-import { moderateScale } from '../../../styles/Scaling';
+import { moderateScale, verticalScale } from '../../../styles/Scaling';
 
 export const mainMenuStyles: any = StyleSheet.create({
   mainContainer: {
@@ -19,19 +19,28 @@ export const mainMenuStyles: any = StyleSheet.create({
       },
     }),
 
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
   },
   backgroundImage: {
-    width: moderateScale(208),
-    height: moderateScale(133),
+    width: moderateScale(377),
+    height: moderateScale(96),
     resizeMode: 'cover',
   },
   logoAndTitleContainer: {
     ...StyleSheet.absoluteFillObject,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: 'transparent',
+
+    ...Platform.select({
+      ios: {
+        marginTop: verticalScale(35),
+      },
+      android: {
+        marginTop: verticalScale(10),
+      },
+    }),
   },
   greyLogo: {
     height: moderateScale(40),
@@ -42,7 +51,7 @@ export const mainMenuStyles: any = StyleSheet.create({
         flex: 0.58,
       },
       android: {
-        flex: 2,
+        flex: 1.7,
       },
     }),
     flexDirection: 'column',
