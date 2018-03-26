@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { View, AsyncStorage } from 'react-native';
+import { View } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import { LanguageButton } from './subcomponents/LanguageButton';
@@ -47,7 +47,6 @@ class OnBoardingInner extends React.Component<
   }
 
   componentWillMount() {
-    AsyncStorage.clear();
     this.checkSettingsAcceptRate();
 
     fetchSettingsHasLanguage().then(language => {
