@@ -47,6 +47,7 @@ import {
 import {
   MIN_DECLARED_CHF,
   MAX_DECLARED_CHF,
+  MAX_PAYMENT_CHF,
 } from '../../constants/declaration';
 import type { CurrencyObject } from '../../model/currencies';
 import {
@@ -326,6 +327,7 @@ class PaymentContainerInner extends React.Component<
     return (
       fees < MIN_DECLARED_CHF ||
       totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF ||
+      fees > MAX_PAYMENT_CHF ||
       (connectivity.type === 'none' || connectivity.type === 'unknown') ||
       paymentData.status === 'aborted' ||
       paymentData.status === 'failed'
