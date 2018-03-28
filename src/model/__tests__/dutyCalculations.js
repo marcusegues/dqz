@@ -26,6 +26,7 @@ import {
   setPeople,
   subtractAdult,
 } from '../configurationApi';
+import { getTotalDuty } from '../../reducers/selectors';
 
 describe('Duty calculation helpers', () => {
   test('getAdultsOnly obtains correct adultsOnly property for each category', () => {
@@ -178,5 +179,13 @@ describe('Duty Calculations', () => {
     expect(
       calculateDuty(roundingBasket2, addAdult(initPeople)).get('totalDuty')
     ).toBe(3.4);
+  });
+
+  test('roundingbaskets also works with getTotalDuty (on reducer)', () => {
+    const mockState = {
+      declaration: { basket: roundingBasket1, people: addAdult(initPeople) },
+    };
+    // $FlowFixMe
+    expect(getTotalDuty(mockState)).toBe(1.7);
   });
 });
