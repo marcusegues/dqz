@@ -7,6 +7,8 @@ import {
   getPeopleCount,
 } from '../dutyCalculations';
 import {
+  roundingBasket1,
+  roundingBasket2,
   sampleBasket1,
   sampleBasket5,
   sampleBasket6,
@@ -166,5 +168,15 @@ describe('Duty Calculations', () => {
     expect(
       calculateDuty(sampleBasket1, setAdultPeople(initPeople, 20))
     ).toMatchSnapshot();
+  });
+
+  test('rounding baskets', () => {
+    expect(
+      calculateDuty(roundingBasket1, addAdult(initPeople)).get('totalDuty')
+    ).toBe(1.7);
+
+    expect(
+      calculateDuty(roundingBasket2, addAdult(initPeople)).get('totalDuty')
+    ).toBe(3.4);
   });
 });
