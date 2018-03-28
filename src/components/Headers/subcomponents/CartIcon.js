@@ -1,16 +1,17 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
+import { Image } from 'react-native';
+// $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
-import { MaterialIcons } from '@expo/vector-icons';
 import { moderateScale } from '../../../styles/Scaling';
 import type { Navigation } from '../../../types/generalTypes';
-import { receiptNotificationBadgeStyle } from '../styles/ReceiptNotificationBadge';
-import { MAIN_RED } from '../../../styles/colors';
 
 type CartIconProps = {
   navigation: Navigation,
 };
+
+const cartIcon = require('../../../../assets/icons/shoppingCartWithArrow.png');
 
 export const CartIcon = ({ navigation }: CartIconProps) => (
   <Touchable
@@ -18,11 +19,10 @@ export const CartIcon = ({ navigation }: CartIconProps) => (
       navigation.dispatch({ type: 'NAVIGATE', screen: 'QuestionAnswer' })
     }
   >
-    <MaterialIcons
-      name="shopping-cart"
-      size={moderateScale(30)}
-      color={MAIN_RED}
-      style={receiptNotificationBadgeStyle.receiptIcon}
+    <Image
+      source={cartIcon}
+      resizeMode="contain"
+      style={{ height: moderateScale(24), width: moderateScale(39) }}
     />
   </Touchable>
 );

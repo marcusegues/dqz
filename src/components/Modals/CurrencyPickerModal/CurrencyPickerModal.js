@@ -28,10 +28,12 @@ import type { TFunction } from '../../../types/generalTypes';
 import type { Amounts } from '../../../model/types/basketPeopleAmountsTypes';
 import { hasOffsettingAmount } from '../../../model/utils';
 import { ModalCloseText } from '../ModalCloseText';
+import { parseInputToFloat } from '../../../utils/inputparser/inputParser';
 
 type PickerState = {
   currency: Currency,
   amount: number,
+  inputAmountValue: string,
 };
 
 type CurrencyPickerModalProps = {
@@ -54,6 +56,7 @@ class CurrencyPickerModalInner extends React.Component<
     this.state = {
       amount: 0,
       currency: 'EUR',
+      inputAmountValue: '',
     };
   }
 
@@ -61,7 +64,7 @@ class CurrencyPickerModalInner extends React.Component<
     const { currency, amount } = this.state;
     const { onAddAmount, onHide } = this.props;
     onAddAmount(currency, amount);
-    this.setState({ amount: 0 });
+    this.setState({ amount: 0, inputAmountValue: '' });
     onHide();
   }
 
@@ -153,7 +156,14 @@ class CurrencyPickerModalInner extends React.Component<
               <TextInput
                 keyboardType="numeric"
                 style={currencyPickerModal.textInput}
-                onChangeText={value => this.setState({ amount: +value })}
+                onChangeText={value => {
+                  const parsedValue = parseInputToFloat(value);
+                  this.setState({
+                    amount: +parsedValue,
+                    inputAmountValue: parsedValue,
+                  });
+                }}
+                value={this.state.inputAmountValue}
                 maxLenght="8"
                 underlineColorAndroid="transparent"
                 blurOnSubmit

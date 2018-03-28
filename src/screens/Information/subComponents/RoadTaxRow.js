@@ -58,8 +58,8 @@ export const RoadTaxRow = ({
     <View style={ownStyles().innerContainer}>
       <Image source={source} resizeMode="contain" style={imageStyle} />
       <View style={ownStyles(pendant).amountInputContainer}>
-        <AmountIcon amount={amount} currency="CHF" />
         {children}
+        <AmountIcon amount={amount} currency="CHF" />
       </View>
     </View>
   </Row>

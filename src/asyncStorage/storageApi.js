@@ -13,6 +13,7 @@ import {
   storeItemAsyncStorage,
   fetchReceiptsAsyncStorage,
   fetchReceiptEntryTimeAsyncStorage,
+  fetchQAStateAsyncStorage,
 } from './asyncStorage';
 import type { CurrencyObject } from '../model/currencies';
 import type { StoreType } from './storeTypes';
@@ -30,8 +31,10 @@ import {
 } from '../model/configurationApi';
 import type { Receipt } from '../types/receiptTypes';
 import type { KeyNotSetType } from './asyncStorage';
-import type { PaymentData } from '../types/generalTypes';
+import type { PaymentData, SettingsAcceptRate } from '../types/generalTypes';
 import { emptyReceiptEntryTime } from '../types/reducers/declaration';
+import type { QAState } from '../components/QuestionAnswer/types/questionAnswerTypes';
+import { initialQAState } from '../components/QuestionAnswer/QuestionAnswerContainer';
 
 /**
  * Stores item (stringified) under key - do NOT use directly!
@@ -72,7 +75,7 @@ export const storeCurrencyObject = (currencyObject: CurrencyObject) =>
  * @param flag
  * @returns {Promise<boolean>}
  */
-export const storeSettingsAcceptRate = (flag: boolean) =>
+export const storeSettingsAcceptRate = (flag: SettingsAcceptRate) =>
   storeItem('SettingsAcceptRate', flag);
 
 /**
@@ -131,12 +134,20 @@ export const storePaymentData = (paymentData: PaymentData) =>
 export const storeReceiptEntryTime = (receiptEntryTime: string) =>
   storeItem('ReceiptEntryTime', receiptEntryTime);
 
+/**
+ * Stores qaState
+ * @param qaState
+ * @returns {Promise<boolean>}
+ */
+export const storeQAState = (qaState: QAState) => storeItem('QAState', qaState);
+
 export const storeClearDeclaration = () => {
   storeMainCategories(Immutable.Set());
   storeBasket(emptyBasket);
   storePeople(initPeople);
   storeAmounts(initAmounts);
   storeReceiptEntryTime(emptyReceiptEntryTime);
+  storeQAState(initialQAState);
 };
 
 /**
@@ -168,7 +179,7 @@ export const fetchCurrencyObject = async (): Promise<CurrencyObject> =>
  * Fetches the accept-rate flag
  * @returns {Promise<CurrencyObject>}
  */
-export const fetchSettingsAcceptRate = async (): Promise<boolean> =>
+export const fetchSettingsAcceptRate = async (): Promise<SettingsAcceptRate> =>
   fetchSettingsAcceptRateAsyncStorage('SettingsAcceptRate');
 
 /**
@@ -178,6 +189,9 @@ export const fetchSettingsAcceptRate = async (): Promise<boolean> =>
 export const fetchSettingsHasLanguage = async (): Promise<
   Language | KeyNotSetType
 > => fetchSettingsHasLanguageAsyncStorage('SettingsHasLanguage');
+
+export const fetchQAState = async (): Promise<QAState> =>
+  fetchQAStateAsyncStorage('QAState');
 
 export const fetchBasket = async (): Promise<Basket> =>
   fetchBasketAsyncStorage('Basket');

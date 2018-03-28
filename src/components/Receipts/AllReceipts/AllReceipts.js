@@ -19,9 +19,9 @@ import type { Receipt } from '../../../types/receiptTypes';
 import { fetchReceipts } from '../../../asyncStorage/storageApi';
 import { calculateDuty } from '../../../model/dutyCalculations';
 import { calculateVat } from '../../../model/vatCalculations';
-import { getConvertedLocalTimeToSwiss } from '../../../model/utils';
 import { ScrollViewCard } from '../../General Components/ScrollViewCard';
 import { MainContentContainer } from '../../MainContentContainer/MainContentContainer';
+import { dateTimeToFormat } from '../../../utils/datetime/datetime';
 
 type AllReceiptsState = {
   receipts: List<Receipt>,
@@ -69,8 +69,7 @@ class AllReceiptsInner extends React.Component<
     const sortDateTimeAsc = (a, b) => {
       const aDT: DateTime = DateTime.fromISO(a.receiptEntryTime);
       const bDT: DateTime = DateTime.fromISO(b.receiptEntryTime);
-      // $FlowFixMe
-      return aDT > bDT ? 1 : -1;
+      return aDT.valueOf() > bDT.valueOf() ? 1 : -1;
     };
 
     return this.state.receipts.sort(sortDateTimeAsc).reduce(
@@ -87,7 +86,7 @@ class AllReceiptsInner extends React.Component<
         const receiptEntryTimePlus = DateTime.fromISO(
           receipt.receiptEntryTime
         ).plus({ hours: 2 });
-        const localSwissTime = getConvertedLocalTimeToSwiss();
+        const localTime = DateTime.local();
 
         const receiptView = (
           <AllReceiptsRow
@@ -100,10 +99,10 @@ class AllReceiptsInner extends React.Component<
               vat: fullVat.toFixed(2),
             })}
             date={t('allReceiptsDate', {
-              value:
-                i18n.language === 'fr'
-                  ? receiptEntryTimePlus.toFormat("dd.MM.y HH'h'mm")
-                  : receiptEntryTimePlus.toFormat('dd.MM.y HH:mm'),
+              value: dateTimeToFormat(receiptEntryTimePlus, {
+                locale: i18n.language,
+                format: 'datetime',
+              }),
             })}
             rowOnPress={() => {
               setReceiptId(receipt.receiptId);
@@ -116,7 +115,7 @@ class AllReceiptsInner extends React.Component<
           />
         );
         // $FlowFixMe
-        if (receiptEntryTimePlus > localSwissTime) {
+        if (receiptEntryTimePlus > localTime) {
           // $FlowFixMe
           receipts.actualReceipts.push(receiptView);
         } else {

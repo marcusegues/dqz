@@ -28,7 +28,7 @@ type BackAndContinueButtonsProps = {
   textBack?: string,
   textContinue?: string,
   backDisabled?: boolean,
-  continueDisabled?: boolean,
+  confirmationDisabled?: boolean,
 };
 
 const BackAndContinueButtonsInner = ({
@@ -37,7 +37,7 @@ const BackAndContinueButtonsInner = ({
   textBack,
   textContinue,
   backDisabled = false,
-  continueDisabled = false,
+  confirmationDisabled = false,
   t,
 }: BackAndContinueButtonsProps & { t: TFunction }) => (
   <View style={ownStyles.redButtonContainerWrapper}>
@@ -53,7 +53,7 @@ const BackAndContinueButtonsInner = ({
       <RedButton
         onPress={() => onPressContinue()}
         text={textContinue || t('buttonContinue')}
-        confirmationDisabled={continueDisabled}
+        confirmationDisabled={confirmationDisabled}
       />
     </View>
   </View>

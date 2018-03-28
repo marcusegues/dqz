@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 // $FlowFixMe
 import { Text, View } from 'react-native';
 import { translate } from 'react-i18next';
+import { MaterialIcons } from '@expo/vector-icons';
 import { AmountInput } from './AmountInput';
 import type { Amounts } from '../../../../../../model/types/basketPeopleAmountsTypes';
 import { INDIVIDUALALLOWANCE } from '../../../../../../model/constants';
@@ -13,7 +14,11 @@ import type { TFunction } from '../../../../../../types/generalTypes';
 import { ConfirmationCard } from '../../ConfirmationCard';
 import type { DirectionType } from '../../../../QuestionAnswerContainer';
 import { CardRowText } from '../../../subcomponents/CardRowText';
-import { scale, verticalScale } from '../../../../../../styles/Scaling';
+import {
+  moderateScale,
+  scale,
+  verticalScale,
+} from '../../../../../../styles/Scaling';
 import { AmountIcon } from '../../../../../General Components/GreyBox/configured/AmountIcon';
 import {
   totalLargeAmounts,
@@ -21,6 +26,7 @@ import {
 } from '../../../../../../model/utils';
 import type { CurrencyObject } from '../../../../../../model/currencies';
 import { getCurrencies } from '../../../../../../reducers/selectors';
+import { MAIN_RED } from '../../../../../../styles/colors';
 
 const ownStyles = {
   currentTotalValueContainer: {
@@ -30,6 +36,7 @@ const ownStyles = {
     flexDirection: 'row',
     alignSelf: 'flex-start',
     justifyContent: 'center',
+    alignItems: 'center',
     marginTop: verticalScale(5),
   },
   currentTotalValueText: {
@@ -54,6 +61,7 @@ type AmountInputConfirmationCardProps = {
   onDeleteAmount: string => void,
   large: boolean,
   onAnswer: DirectionType => void,
+  onConfirmationCardTitlePress: () => void,
 };
 
 type ReduxInject = {
@@ -67,6 +75,7 @@ const AmountInputConfirmationCardInner = ({
   t,
   large,
   onAnswer,
+  onConfirmationCardTitlePress,
   onDeleteAmount,
   currencies,
   dispatch,
@@ -82,6 +91,20 @@ const AmountInputConfirmationCardInner = ({
     ? totalLargeAmounts(amounts, currencies)
     : totalNormalAmounts(amounts, currencies);
 
+  let exclamationMark = null;
+  const above20000 = totalAmount > 20000;
+  if (above20000) {
+    exclamationMark = (
+      <View style={{ marginLeft: 5 }}>
+        <MaterialIcons
+          name="error-outline"
+          size={moderateScale(16)}
+          color={MAIN_RED}
+        />
+      </View>
+    );
+  }
+
   return (
     <ConfirmationCard
       text={title}
@@ -90,6 +113,7 @@ const AmountInputConfirmationCardInner = ({
       onInfoIconPress={() =>
         dispatch({ type: 'NAVIGATE', screen: 'VatAllowance' })
       }
+      onConfirmationCardTitlePress={onConfirmationCardTitlePress}
     >
       {large ? (
         <Text />
@@ -101,6 +125,7 @@ const AmountInputConfirmationCardInner = ({
               style={ownStyles.currentTotalValueText}
             />
             <AmountIcon amount={totalAmount} currency="CHF" />
+            {exclamationMark}
           </View>
 
           <CardHeaderSubText

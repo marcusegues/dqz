@@ -22,6 +22,7 @@ type VatListProps = {
   headerRight?: boolean,
   borderTop?: boolean,
   borderBottom?: boolean,
+  swipeable?: boolean,
 };
 
 const VatListInner = ({
@@ -33,6 +34,7 @@ const VatListInner = ({
   headerRight = true,
   borderTop = true,
   borderBottom = true,
+  swipeable = false,
 }: VatListProps & { t: TFunction }) => {
   const vatReport = calculateVat(amounts, people, currencies);
   return (
@@ -48,6 +50,7 @@ const VatListInner = ({
           vat={vatReport.get('totalVat')}
           borderTop={borderTop}
           borderBottom={borderBottom}
+          swipeable={swipeable}
         />
       </View>
     </View>

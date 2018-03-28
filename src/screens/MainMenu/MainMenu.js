@@ -12,13 +12,17 @@ import { moderateScale } from '../../styles/Scaling';
 import { AppLogo } from '../../components/AppLogo/AppLogo';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
+import { AcceptRateModal } from '../../components/Modals/AcceptRateModal/AcceptRateModal';
 import type { NavigateFromSavedBasket } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import {
   fetchAmounts,
   fetchBasket,
   fetchMainCategories,
   fetchPeople,
+  fetchQAState,
   fetchReceiptEntryTime,
+  fetchSettingsAcceptRate,
+  storeSettingsAcceptRate,
 } from '../../asyncStorage/storageApi';
 import { isInitBasket } from '../../utils/declaration/declaration';
 import {
@@ -39,7 +43,8 @@ const switzerland = require('../../../assets/images/swissCountry.png');
 const customs = require('../../../assets/images/customs.png');
 
 type MainMenuState = {
-  modalVisible: boolean,
+  savedBasketModalVisible: boolean,
+  acceptRateModalVisible: boolean,
 };
 
 type MainMenuProps = {
@@ -62,7 +67,8 @@ class MainMenuInner extends React.Component<
   constructor(props) {
     super(props);
     this.state = {
-      modalVisible: false,
+      savedBasketModalVisible: false,
+      acceptRateModalVisible: false,
     };
   }
 
@@ -71,11 +77,11 @@ class MainMenuInner extends React.Component<
   }
 
   setSavedBasketModalVisibleTrue() {
-    this.setState({ modalVisible: true });
+    this.setState({ savedBasketModalVisible: true });
   }
 
   setSavedBasketModalVisibleFalse(navigateTo: NavigateFromSavedBasket) {
-    this.setState({ modalVisible: false }, () => {
+    this.setState({ savedBasketModalVisible: false }, () => {
       if (navigateTo !== 'doNotNavigate') {
         this.props.navigation.dispatch({
           type: 'NAVIGATE',
@@ -83,6 +89,10 @@ class MainMenuInner extends React.Component<
         });
       }
     });
+  }
+
+  setAcceptRateModalVisibleFalse() {
+    this.setState({ acceptRateModalVisible: false });
   }
 
   handleGoToDeclaration() {
@@ -93,7 +103,6 @@ class MainMenuInner extends React.Component<
       amounts,
       receiptEntryTime,
     } = this.props;
-
     if (
       isInitBasket(people, basket, mainCategories, amounts, receiptEntryTime)
     ) {
@@ -106,9 +115,18 @@ class MainMenuInner extends React.Component<
     }
   }
 
+  checkSettingsAcceptRate() {
+    fetchSettingsAcceptRate().then(accepted => {
+      if (accepted === 'accepted') {
+        this.handleGoToDeclaration();
+      } else {
+        this.setState({ acceptRateModalVisible: true });
+      }
+    });
+  }
+
   render() {
     const { navigation, t } = this.props;
-
     return (
       <View style={mainMenuStyles.mainContainer}>
         <View style={mainMenuStyles.topContainer}>
@@ -119,7 +137,7 @@ class MainMenuInner extends React.Component<
         </View>
         <SafeAreaView style={mainMenuStyles.bottomContainer}>
           <MenuTile
-            onPress={() => this.handleGoToDeclaration()}
+            onPress={() => this.checkSettingsAcceptRate()}
             text={t('declareGoods')}
           >
             <MaterialIcons
@@ -184,10 +202,22 @@ class MainMenuInner extends React.Component<
           </MenuTile>
         </SafeAreaView>
         <SavedBasketModal
-          modalVisible={this.state.modalVisible}
+          modalVisible={this.state.savedBasketModalVisible}
           setModalVisibleFalse={(navigateTo: NavigateFromSavedBasket) =>
             this.setSavedBasketModalVisibleFalse(navigateTo)
           }
+        />
+        <AcceptRateModal
+          modalVisible={this.state.acceptRateModalVisible}
+          setModalVisibleFalse={() => this.setAcceptRateModalVisibleFalse()}
+          onAcceptRate={() => {
+            storeSettingsAcceptRate('accepted').then(() => {
+              this.setState({
+                acceptRateModalVisible: false,
+              });
+            });
+          }}
+          onDismiss={() => this.handleGoToDeclaration()}
         />
       </View>
     );
@@ -204,6 +234,12 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   initABP: () => {
+    fetchQAState().then(qaState => {
+      dispatch({
+        type: 'SET_QA_STATE',
+        qaState,
+      });
+    });
     fetchBasket().then(basket => {
       dispatch({
         type: 'SET_BASKET',

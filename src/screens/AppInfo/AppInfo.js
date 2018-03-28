@@ -52,11 +52,6 @@ const styles = {
   ambriteAddress: {
     marginTop: verticalScale(15),
   },
-  disclaimerTitle: {
-    color: MAIN_BLACK,
-    marginTop: verticalScale(25),
-    marginBottom: verticalScale(10),
-  },
 };
 
 type AppInfoState = {
@@ -124,18 +119,33 @@ class AppInfoInner extends React.Component<
                 style={styles.customsAdministrationAddressTitle}
               />
               <AppInfoSubText text={t('generalCustomsDirectorate')} />
+              <AppInfoLink
+                text="http://www.ezv.admin.ch"
+                onPress={() => Linking.openURL(`http://www.ezv.admin.ch`)}
+                style={{
+                  color: '#757575',
+                  textDecorationLine: 'underline',
+                }}
+              />
               <CardRowText text={t('contact')} style={styles.contactTitle} />
               <AppInfoSubText text={t('customsInfoCenter')} />
-              <AppInfoSubText
+              <AppInfoLink
                 text="http://www.zollauskunft.admin.ch"
-                style={{ marginBottom: verticalScale(16) }}
+                onPress={() =>
+                  Linking.openURL(`http://www.zollauskunft.admin.ch`)
+                }
+                style={{
+                  color: '#757575',
+                  textDecorationLine: 'underline',
+                  marginBottom: verticalScale(16),
+                }}
               />
 
               <AppInfoLink
                 text={t('toContactForm').toUpperCase()}
                 onPress={() =>
                   Linking.openURL(
-                    `https://www.webapps.ezv.admin.ch/apps/contactForm/?lang=${
+                    `https://www.webapps.ezv.admin.ch/apps/contactQuick/index.php?lang=${
                       i18n.language
                     }`
                   )
@@ -159,11 +169,14 @@ class AppInfoInner extends React.Component<
                 text={t('ambriteAddress')}
                 style={styles.ambriteAddress}
               />
-              <CardRowText
-                text={t('disclaimerTitle')}
-                style={styles.disclaimerTitle}
+              <AppInfoLink
+                text="http://www.ambrite.ch"
+                onPress={() => Linking.openURL(`http://www.ambrite.ch`)}
+                style={{
+                  color: '#757575',
+                  textDecorationLine: 'underline',
+                }}
               />
-              <AppInfoSubText text={t('disclaimerText')} />
             </View>
           )}
         </ScrollViewCard>

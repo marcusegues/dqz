@@ -10,6 +10,7 @@ import { verticalScale } from '../../../../styles/Scaling';
 import { CategoriesInfo } from '../../../../model/constants';
 import type { Category } from '../../../../model/types/basketPeopleAmountsTypes';
 import type { TFunction } from '../../../../types/generalTypes';
+import { formatQuantity } from '../../../../utils/declaration/declaration';
 
 type QuantityInfoProps = {
   category: Category,
@@ -32,7 +33,7 @@ const QuantityInfoInner = ({
     <CardHeaderText text={t(`categories:${category}`)} />
     <View style={{ marginTop: 10 }}>
       <QuantityIcon
-        quantity={totalQuantity.toFixed(2)}
+        quantity={formatQuantity(category, totalQuantity)}
         unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
           count: totalQuantity,
         })}

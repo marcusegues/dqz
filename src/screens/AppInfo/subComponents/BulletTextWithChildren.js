@@ -30,9 +30,9 @@ export const BulletTextWithChildren = ({
       source={square}
       resizeMode="center"
       style={{
-        marginTop: verticalScale(8),
-        height: moderateScale(8),
-        width: moderateScale(8),
+        marginTop: moderateScale(8),
+        height: moderateScale(6),
+        width: moderateScale(6),
         marginRight: scale(4),
       }}
     />

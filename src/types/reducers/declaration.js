@@ -17,11 +17,13 @@ import type {
   TobaccoProductsCategory,
   OtherGoodsCategory,
 } from '../../model/types/basketPeopleAmountsTypes';
-import { emptyBasket } from '../../model/configurationApi';
+import { emptyAmounts, emptyBasket } from '../../model/configurationApi';
 import { makePeopleRecord } from '../../model/types/basketPeopleAmountsTypes';
 
 import { makePaymentDataRecord } from '../generalTypes';
 import type { PaymentData } from '../generalTypes';
+import type { QAState } from '../../components/QuestionAnswer/types/questionAnswerTypes';
+import { initialQAState } from '../../components/QuestionAnswer/QuestionAnswerContainer';
 
 export type MeatCategories = ImmutableSetType<MeatCategory>;
 export const meatCategories: MeatCategories = Immutable.Set(['Meat']);
@@ -143,6 +145,7 @@ type DeclarationStateObj = {
   amounts: Amounts,
   paymentData: PaymentData,
   receiptEntryTime: string,
+  qaState: QAState,
 };
 
 export const getInitialDeclarationState: RecordFactory<
@@ -151,9 +154,10 @@ export const getInitialDeclarationState: RecordFactory<
   people: makePeopleRecord(),
   basket: emptyBasket,
   settings: makeSettingsRecord(),
-  amounts: Immutable.Map(),
+  amounts: emptyAmounts,
   paymentData: makePaymentDataRecord(),
   receiptEntryTime: emptyReceiptEntryTime,
+  qaState: initialQAState,
 });
 
 export type DeclarationState = RecordOf<DeclarationStateObj>;

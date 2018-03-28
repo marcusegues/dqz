@@ -1,12 +1,11 @@
 // @flow
 import Immutable from 'immutable';
-import type {
-  QAStateEnriched,
-  QuestionFlag,
-  QuestionType,
-} from '../QuestionAnswerContainer';
+import type { QAStateEnriched } from '../QuestionAnswerContainer';
 import { getTotalPeople } from '../../../model/configurationApi';
 import type { Basket } from '../../../model/types/basketPeopleAmountsTypes';
+import { showLargeAmountsQuestion } from './controlQuestionStates';
+import type { QuestionFlag, QuestionType } from '../types/questionAnswerTypes';
+import { flatNormalAmounts } from '../../../model/utils';
 
 export const anyQuantitiesInBasket = (basket: Basket): boolean =>
   basket
@@ -17,7 +16,7 @@ export const anyQuantitiesInBasket = (basket: Basket): boolean =>
           .size
     );
 
-const flagRules = (
+export const flagRules = (
   question: QuestionType,
   qaState: QAStateEnriched
 ): QuestionFlag => {
@@ -36,10 +35,15 @@ const flagRules = (
         : 'incomplete';
     }
     case 'amounts': {
-      return qaState.amounts.size ? 'complete' : 'incomplete';
+      return flatNormalAmounts(qaState.amounts).length !== 0
+        ? 'complete'
+        : 'incomplete';
     }
     case 'largeAmounts': {
-      return qaState.amounts.size ? 'complete' : 'incomplete';
+      return showLargeAmountsQuestion(qaState) &&
+        flatNormalAmounts(qaState.amounts).length !== 0
+        ? 'complete'
+        : 'incomplete';
     }
     default: {
       return 'incomplete';

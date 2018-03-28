@@ -34,6 +34,7 @@ import type {
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { CurrencyObject } from '../../model/currencies';
 import { storeReceiptEntryTime } from '../../asyncStorage/storageApi';
+import { dateTimeToFormat } from '../../utils/datetime/datetime';
 
 type OverviewProps = {
   modalVisible?: boolean,
@@ -100,18 +101,13 @@ class OverviewInner extends React.Component<
 
   periodOfEntryTime(momentReceiptEntryTime) {
     const { i18n } = this.props;
-    if (i18n.language === 'fr') {
-      return `${momentReceiptEntryTime.toFormat(
-        "dd.MM.y HH'h'mm"
-      )} - ${momentReceiptEntryTime
-        .plus({ hours: 2 })
-        .toFormat("dd.MM.y HH'h'mm")}`;
-    }
-    return `${momentReceiptEntryTime.toFormat(
-      'dd.MM.y HH:mm'
-    )} - ${momentReceiptEntryTime
-      .plus({ hours: 2 })
-      .toFormat('dd.MM.y HH:mm')}`;
+    return `${dateTimeToFormat(momentReceiptEntryTime, {
+      locale: i18n.language,
+      format: 'datetime',
+    })} - ${dateTimeToFormat(momentReceiptEntryTime.plus({ hours: 2 }), {
+      locale: i18n.language,
+      format: 'datetime',
+    })}`;
   }
 
   render() {
@@ -126,10 +122,16 @@ class OverviewInner extends React.Component<
       amounts,
       currencies,
     } = this.props;
-    const momentReceiptEntryTime: DateTime =
-      receiptEntryTime !== ''
-        ? DateTime.fromISO(receiptEntryTime)
-        : getConvertedLocalTimeToSwiss();
+
+    const localTime: DateTime = DateTime.local();
+    let momentReceiptEntryTime: DateTime = localTime;
+    if (receiptEntryTime !== '') {
+      momentReceiptEntryTime = DateTime.fromISO(receiptEntryTime);
+      if (localTime.valueOf() > momentReceiptEntryTime.valueOf()) {
+        momentReceiptEntryTime = localTime;
+      }
+    }
+
     return (
       <ScrollViewCard>
         <CardHeader text={t('overViewTitle')} />
@@ -139,6 +141,7 @@ class OverviewInner extends React.Component<
           people={people}
           amounts={amounts}
           currencies={currencies}
+          swipeable
         />
         {flatLargeAmounts(amounts).length ? (
           <VatList
@@ -148,6 +151,7 @@ class OverviewInner extends React.Component<
             amounts={amounts}
             currencies={currencies}
             headerRight={false}
+            swipeable
           />
         ) : null}
         <TotalOwedRow
@@ -167,10 +171,9 @@ class OverviewInner extends React.Component<
           onPressBack={() => navigation.dispatch({ type: 'GO_BACK' })}
           onPressContinue={() => onProceedToPayment && onProceedToPayment()}
           textContinue={t('general:toPayment')}
-          continueDisabled={paymentDisabled}
+          confirmationDisabled={paymentDisabled}
         />
         <TimePickerModal
-          currentEntryTime={momentReceiptEntryTime.toString()}
           modalVisible={this.state.modalVisible}
           onHideModal={() => this.handleHideModal()}
           onSelectTime={entryTime => this.handleSetReceiptEntryTime(entryTime)}

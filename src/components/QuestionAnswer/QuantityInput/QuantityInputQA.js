@@ -47,11 +47,12 @@ export class QuantityInputQA extends React.Component<
   getQuestionComponent() {
     analyticsQACardOpenend('QuantityInput');
     const { modalVisible, modalCategory, modalMainCategory } = this.state;
-    const { onAnswer, qaState } = this.props;
+    const { onAnswer, qaState, onConfirmationCardTitlePress } = this.props;
     const { basket, settings } = qaState;
     return (
       <View>
         <QuantityInputConfirmationCard
+          onConfirmationCardTitlePress={onConfirmationCardTitlePress}
           onShowQuantityInputModal={(
             modalCategoryShow: Category,
             modalMainCategoryShow: MainCategory

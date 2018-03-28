@@ -4,6 +4,7 @@ exports[`Currency Picker renders according to snapshot 1`] = `
 <Modal
   animationType="none"
   hardwareAccelerated={false}
+  onDismiss={[Function]}
   onModalHide={[Function]}
   onRequestClose={[Function]}
   swipeThreshold={100}
@@ -42,6 +43,7 @@ exports[`Currency Picker renders according to snapshot 1`] = `
   />
   <View
     collapsable={undefined}
+    onDismiss={[Function]}
     onModalHide={[Function]}
     onRequestClose={[Function]}
     pointerEvents="box-none"
@@ -574,6 +576,7 @@ exports[`Currency Picker renders according to snapshot 1`] = `
             }
           }
           underlineColorAndroid="transparent"
+          value=""
         />
       </View>
       <View

@@ -43,12 +43,13 @@ export const fr: Locale = {
     toPayment: 'Paiement',
     buttonContinue: 'Étape suivante',
     buttonBack: 'Retour',
-    note: 'Allusion:',
+    note: 'Remarque importante:',
     underConstruction: 'En cours',
   },
   snackBar: {
     limitExceeded:
       "Valeur des biens pour l'application dépassée. S'il vous plaît signaler vos marchandises oralement au poste-frontière.",
+    limitExceededRightText: 'Afficher les passages frontaliers',
     offline:
       "Vous êtes hors ligne. Sauf pour la fonction de paiement, cependant, vous pouvez utiliser toutes les autres fonctionnalités de l'application.",
     paymentAborted: 'Paiement annulé',
@@ -78,14 +79,27 @@ export const fr: Locale = {
       'Catégorie de marchandises:données manquantes',
   },
   quantityInput: {
-    quantityInput: 'Entrée de quantité',
-    recordedOn: 'enregistré sur',
+    quantityInput: 'Saisie de quantité',
+    recordedOn: 'enregistré sur {{value}}',
     addQuantities: 'Ajouter des quantités',
-    enterQuantities: 'Entrez toutes les quantités de {{value}} ici.',
+    enterQuantities: 'Saisissez toutes les quantités de {{value}} ici.',
     enterQuantity: 'Entrer la quantité',
-    enterQuantitiesButter: 'Entrez toutes les quantités de {{value}} ici.',
-    enterQuantitiesAlcohol: 'Entrez toutes les quantités de  {{value}} ici.',
-    standardInputSubText: '⚡️',
+    enterQuantitiesButter: 'Saisissez toutes les quantités de {{value}} ici.',
+    enterQuantitiesTobacco: 'Saisissez toutes les quantités des {{value}} ici.',
+    enterQuantitiesCigarettes:
+      'Saisissez toutes les quantités des {{value}} ici.',
+    enterQuantitiesOil: 'Saisissez toutes les quantités {{value}} ici.',
+    enterQuantitiesAlcohol: 'Saisissez toutes les quantités des {{value}} ici.',
+    enterQuantitiesMeat: 'Saisissez toutes les quantités de {{value}} ici.',
+    standardInputSubText:
+      'Saisissez toutes les quantités de {{category}} que vous emportez avec vous:',
+    meatInput: 'viande et préparations de viande',
+    butterInput: 'beurre et crème',
+    oilInput: "d'huile/graisse/margarine",
+    alcSoftInput: "boissons alcoolisées jusqu'à 18% vol.",
+    alcHardInput: 'boissons alcoolisées de plus de 18% vol.',
+    cigarettesInput: 'cigarettes et cigares',
+    tobaccoInput: 'autres tabacs manufacturés',
   },
   amountInput: {
     amountInput:
@@ -93,11 +107,13 @@ export const fr: Locale = {
     amountInputLargeItem:
       "Transportez-vous des biens individuels d'une valeur supérieure à {{value}} francs?",
     amountInputLargeItemGreyBox:
-      "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300.00.",
+      "Encore une fois, capturez chaque objet d'une valeur supérieure à CHF 300 (valeur nette).",
     amountInputAddItem: 'Ajouter la valeur',
     amountInputAddItemLarge: 'Ajouter un bien',
-    amountInputEnterValue:
-      'Saisissez la valeur sans la TVA étrangère (valeur nette), y compris la valeur des cadeaux reçus, la nourriture, les produits du tabac et les boissons alcoolisées.',
+    amountInputEnterValueBeginning: 'Saisissez la valeur ',
+    amountInputEnterValueBoldText: 'sans la TVA étrangère (valeur nette)',
+    amountInputEnterValueEnd:
+      ', y compris la valeur des cadeaux reçus, la nourriture, les produits du tabac et les boissons alcoolisées.',
     currentTotalValue: 'Valeur totale actuelle',
     lastExchangeRate:
       'Basé sur le dernier taux de change disponible, qui est mis à jour lors du paiement.',
@@ -123,8 +139,14 @@ export const fr: Locale = {
       'Êtes-vous sûr de vouloir supprimer cette catégorie principale?',
     validateMainCategoryRemoveSubtitle:
       'Les quantités suivantes figurent actuellement dans certaines sous-catégories: {{value}}.',
+    validateMainCategoryAndVatRemoveSubTitle:
+      'Pour le moment, il existe déjà des entrées.',
+    validateVatRemoveSubTitle: 'Il y a déjà des entrées pour la TVA.',
     validateMainCategoryRemoveYes:
       "Oui, j'aimerais supprimer les quantités en question.",
+    validateOtherGoodsRemoveYes:
+      "Oui, j'aimerais supprimer les quantités en question.",
+    itemsGreaterThan300CHF: 'Marchandises > 300 CHF',
   },
   modal: {
     confirmPicker: 'Reprendre {{value}}',
@@ -151,7 +173,8 @@ export const fr: Locale = {
       'La quittance douane est valable le {{date}} de {{startTime}} à {{endTime}}.',
     timePickerRegistrationValidUntilDifferentDay:
       'La quittance douane est valable le {{startDate}} de {{startTime}} à {{endDate}} à {{endTime}}.',
-
+    timePickerRegistrationTimeInPast:
+      "La période que vous avez choisie n'est pas autorisée. Veuillez vérifier votre entrée pour continuer.",
     timePickerTakeOverThePeriod: 'Reprendre la période selectionnée',
     timePickerTimePrefix: 'Heure',
 
@@ -167,16 +190,16 @@ export const fr: Locale = {
   receipt: {
     dutyAndVat: 'Droits de douane: {{duty}} |  TVA: {{vat}}',
     travellers:
-      'Voyageurs: {{adults}} Adultes, {{minors}} Enfants/Adolescents (inférieur à 17 ans)',
+      'Voyageurs: {{adults}} Adultes, {{minors}} Enfants (moins de 17 ans)',
     paidOn: 'Payé le {{date}} à {{time}} h avec:',
     transactionId: 'ID de transaction (SIX): {{value}}',
 
     receiptValidFrom:
-      'La présente quittance est valable pour le passage frontalier à partir de:',
+      'La présente quittance est valable pour un passage de la frontière suisse à partir de:',
     receiptValidFromDate:
       '{{startDate}} | {{startTime}} à {{endDate}} | {{endTime}}',
     receiptValidOn:
-      'La présente quittance est valable pour le passage frontalier sur',
+      'La présente quittance est valable pour un passage de la frontière suisse le:',
     receiptValidOnDate: '{{date}} de {{startTime}} à {{endTime}}',
 
     sumText: 'Total (en francs): {{value}}',
@@ -195,6 +218,7 @@ export const fr: Locale = {
     entryTime: "Période d'entrée:",
     chooseOtherEntryTime: 'modifier',
     until: "jusqu'à",
+    savedToCameraRoll: 'Quittance enregistré à vos photos avec succès.',
   },
 
   customsProcedures: {
@@ -217,7 +241,7 @@ export const fr: Locale = {
     customsProceduresText10:
       'Déclaration en douane verbale ou utilisation de la voie rouge des aéroports',
     customsProceduresText11:
-      'Si le passage frontière est occupé par du personnel de la douane suisse, vous devez déclarer verbalement et spontanément toutes les marchandises. Des informations relatives aux principaux passages frontières sont disponibles dans la rubrique «Passages frontières».',
+      'Si le passage frontière est occupé par du personnel de la douane suisse, vous devez déclarer verbalement et spontanément toutes les marchandises. Des informations relatives aux principaux passages frontières sont disponibles dans la rubrique <1>Passages frontières</1>.',
     customsProceduresText12:
       "Établissement de la déclaration en douane au moyen de l'application QuickZoll",
     customsProceduresText13:
@@ -229,7 +253,7 @@ export const fr: Locale = {
     customsProceduresText16:
       'Déclaration en douane écrite (boîte à déclarations)',
     customsProceduresText17:
-      "Des boîtes à déclarations vous permettant de déclarer vos marchandises par écrit sont encore disponibles à certains passages frontières. Vous trouverez des informations à ce sujet à l'adresse suivante: www.ezv.admin.ch/boîte à déclarations",
+      "Des boîtes à déclarations vous permettant de déclarer vos marchandises par écrit sont encore disponibles à certains passages frontières. Vous trouverez des informations à ce sujet à l'adresse suivante: <1>www.ezv.admin.ch</1> à déclarations",
     customsProceduresText18:
       "Cette forme de déclaration en douane n'est admise que pour les marchandises qui ne sont pas destinées au commerce. Les marchandises ne doivent être soumises à aucune restriction ni interdiction et ne doivent être assujetties à aucun certificat ni permis.",
     customsProceduresText19:
@@ -267,14 +291,14 @@ export const fr: Locale = {
     vatAllowanceText8: "Autres exemples d'octroi de la franchise-valeur",
     vatAllowanceText9: 'TVA',
     vatAllowanceText10:
-      "La TVA est calculée sur la base de la valeur des marchandises. Le taux normal est de 7,7 %. Un taux réduit d'impôt de 2,5 % est appliqué à certaines marchandises (par ex. denrées alimentaires, boissons sans alcool, livres, revues ou médicaments). Le taux normal s'applique toujours en cas de dédouanement avec l'application QuickZoll.",
+      "La TVA est calculée sur la base de la valeur des marchandises. Le taux normal est de 7.7%. Un taux réduit d'impôt de 2.5% est appliqué à certaines marchandises (par ex. denrées alimentaires, boissons sans alcool, livres, revues ou médicaments). Le taux normal s'applique toujours en cas de dédouanement avec l'application QuickZoll.",
     vatAllowanceText11:
       "La présentation d'une quittance ou d'un autre justificatif de valeur (par ex. pour les marchandises acquises sur Internet) facilite le dédouanement. Si les indications de valeur font défaut ou si leur exactitude suscite des doutes, le bureau de douane peut estimer la valeur des marchandises.",
     vatAllowanceText12: 'Déclaration en douane',
     vatAllowanceText13:
       "Lors de l'entrée en Suisse, vous devez déclarer verbalement au personnel douanier toutes les marchandises que vous transportez.",
     vatAllowanceText14:
-      "Vous pouvez également déclarer les marchandises au moyen de l'application QuickZoll ou par écrit, par l'intermédiaire des boîtes à déclarations, aux passages frontières non occupés par du personnel douanier. Vous trouverez ici des informations à ce sujet. Veuillez noter qu'en cas de dépassement des franchises quantitatives pour les boissons alcooliques, les tabacs manufacturés et certaines denrées alimentaires, vous devrez payer des droits de douane dans tous les cas. Informations complémentaires",
+      "Vous pouvez également déclarer les marchandises au moyen de l'application QuickZoll ou par écrit, par l'intermédiaire des boîtes à déclarations, aux passages frontières non occupés par du personnel douanier. Vous trouverez ici des informations à ce sujet. Veuillez noter qu'en cas de dépassement des franchises quantitatives pour les boissons alcooliques, les tabacs manufacturés et certaines denrées alimentaires, vous devrez payer des droits de douane dans tous les cas. <1>Informations complémentaires</1>",
     vatAllowanceText15:
       "Nous attirons en outre votre attention sur le fait que certaines marchandises (par ex. contrefaçons, armes, plantes, animaux, produits animaux, marchandises soumises aux dispositions sur la conservation des espèces) peuvent être interdites à l'importation ou soumises à des restrictions.",
     vatAllowanceText16: '',
@@ -300,14 +324,17 @@ export const fr: Locale = {
     vatAllowanceText26: 'Exemples:',
     vatAllowanceText27:
       "1.\tUne facture est établie comme suit pour l'achat d'un ordinateur:",
-    vatAllowanceText28: '1 ordinateur de bureau\t\tfr. 700',
-    vatAllowanceText29: '1 écran\t\t\t\t\tfr. 200',
-    vatAllowanceText30: '1 clavier\t\t\t\t\tfr. 20',
+    vatAllowanceText28a: '1 ordinateur de bureau PC',
+    vatAllowanceText28b: 'CHF 700',
+    vatAllowanceText29a: '1 écran',
+    vatAllowanceText29b: 'CHF 200',
+    vatAllowanceText30a: '1 clavier',
+    vatAllowanceText30b: 'CHF 20',
     vatAllowanceText31: 'Total\tfr. 920',
     vatAllowanceText32: '= 3 biens (trois unités de vente)',
     vatAllowanceText33:
       "2.\tUne facture est établie comme suit pour l'achat d'un ordinateur:",
-    vatAllowanceText34: '1 ordinateur',
+    vatAllowanceText34: '1 ordinateur:',
     vatAllowanceText35: 'ordinateur de bureau',
     vatAllowanceText36: 'écran',
     vatAllowanceText37: 'clavier',
@@ -414,7 +441,7 @@ export const fr: Locale = {
     personalEffectsText4:
       'des voyageurs domiciliés en Suisse ont emportés lors de leur sortie du pays;',
     personalEffectsText5:
-      "des voyageurs domiciliés à l'étranger utilisent pendant leur séjour en Suisse avant de les réexporter. Font partie des effets personnels les vêtements, la lingerie, les articles de toilette, le matériel de sport, les appareils photographiques, les caméras cinématographiques et vidéo, les téléphones et ordinateurs portables, les instruments de musique et autres objets d'usage courant de nature personnelle.",
+      "des voyageurs domiciliés à l'étranger utilisent pendant leur séjour en Suisse avant de les réexporter.\nFont partie des effets personnels les vêtements, la lingerie, les articles de toilette, le matériel de sport, les appareils photographiques, les caméras cinématographiques et vidéo, les téléphones et ordinateurs portables, les instruments de musique et autres objets d'usage courant de nature personnelle.",
     personalEffectsText6: 'Provisions de voyage',
     personalEffectsText7:
       'Sont considérées comme des provisions de voyage les denrées alimentaires et boissons sans alcool, prêtes à la consommation, pour le jour du voyage.',
@@ -445,7 +472,7 @@ export const fr: Locale = {
   },
 
   plants: {
-    plantsMainText: 'Plantes',
+    plantsMainText: 'Plantes et produits végétaux',
     plantsText1:
       '1.\tPlantes et produits végétaux interdits\n' +
       "L'importation des plantes suivantes est interdite, car elles peuvent être porteuses d'organismes nuisibles (feu bactérien, chancre de l'écorce du châtaignier, affections virales, etc.):",
@@ -504,7 +531,7 @@ export const fr: Locale = {
     souvenirsAndSpeciesProtectionText7:
       "L'importation de plantes protégées ou de produits fabriqués à partir de celles-ci est soit totalement interdite, soit soumise à autorisation (par ex. orchidées, cactées, certains bois et plantes médicinales).",
     souvenirsAndSpeciesProtectionText8:
-      "Pour obtenir les renseignements et les autorisations nécessaires, veuillez vous adresser à l'OSAV: www.blv.admin.ch. ",
+      "Pour obtenir les renseignements et les autorisations nécessaires, veuillez vous adresser à l'OSAV:",
   },
 
   highwayVignette: {
@@ -701,7 +728,7 @@ export const fr: Locale = {
 
   information: {
     informationTitle: 'Informations utiles',
-    informationSubCategoryTitle: 'Je transporte des animaux ou des plantes',
+    informationSubCategoryTitle: 'Je transporte des marchandises',
     customsProceduresMainText: 'Marche à suivre lors du passage à la douane',
     travelDocumentsMainText: 'Documents de voyage',
     declarationMainText: 'Je transporte des marchandises',
@@ -740,18 +767,15 @@ export const fr: Locale = {
       'Administration fédérale des douanes AFD',
     contact: 'Contact',
     customsInfoCenter: 'Centrale de renseignement de la douane',
-    generalCustomsDirectorate:
-      'Monbijoustrasse 40\n3003 Bern\nhttp://www.ezv.admin.ch',
+    generalCustomsDirectorate: 'Monbijoustrasse 40\n3003 Bern',
     designAndDevelopment: 'Conception et développement',
     ambriteAddress:
-      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch\nhttp://www.ambrite.ch',
-    disclaimerTitle: 'Avis de non-responsabilité',
-    disclaimerText:
-      'Überall dieselbe alte Leier. Das Layout ist fertig, der Text lässt auf sich warten. Damit das Layout nun nicht nackt im Raume steht und sich klein und leer vorkommt, springe ich ein: der Blindtext. Genau zu diesem Zwecke erschaffen, immer im Schatten meines großen Bruders »Lorem Ipsum«, freue ich mich jedes Mal, wenn Sie ein paar Zeilen lesen. Denn esse est percipi - Sein ist wahrgenommen werden. Und weil Sie nun schon die Güte haben, mich ein paar weitere Sätze lang zu begleiten, möchte ich diese Gelegenheit nutzen, Ihnen nicht nur als Lückenfüller zu dienen, sondern auf etwas hinzuweisen, das es ebenso verdient wahrgenommen zu werden: Webstandards nämlich.',
-    toContactForm: '',
+      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch',
+    toContactForm: 'Formulaire de contact',
   },
   legalNoticeInformation: {
-    navigationHeaderTitle: 'Infos importantes',
+    navigationHeaderTitle:
+      'Informations relatives à l’utilisation de QuickZoll',
     conditions: 'Conditions-cadres',
     importantSoon: "L'essentiel en bref",
     importantSoonText1:
@@ -761,7 +785,7 @@ export const fr: Locale = {
     importantSoonText3:
       'Vous ne pouvez utiliser QuickZoll que pour les marchandises que vous importez pour votre usage privé ou pour en faire cadeau.',
     importantSoonText4:
-      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7,7 % soit également appli-qué aux marchandises qui sont soumises au taux réduit (2,5 %), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé par du personnel de l'Administration fédé-rale des douanes (AFD).",
+      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7.7% soit également appliqué aux marchandises qui sont soumises au taux réduit (2.5%), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé par du personnel de l'Administration fédérale des douanes (AFD).",
     importantSoonText5:
       'Les redevances ne peuvent être payées que par carte de crédit (Visa, Mastercard). Les marchandises sont dédouanées une fois que les redevances ont été payées.',
     importantSoonText6:
@@ -769,7 +793,7 @@ export const fr: Locale = {
     importantSoonText7:
       "À l'issue du dédouanement avec QuickZoll, vous pouvez entrer en Suisse par tous les passages frontières officiels, indépendamment du fait qu'ils soient occupés ou non par du personnel de l'AFD. Dans les aéroports, vous pouvez emprunter la voie verte.",
     importantSoonText8:
-      "La quittance doit être présentée sur demande au personnel de l'AFD. Celui-ci la photo-graphie si nécessaire.",
+      "La quittance doit être présentée sur demande au personnel de l'AFD. Celui-ci la photographie si nécessaire.",
     importantSoonText9:
       "Il n'est pas nécessaire de s'enregistrer. Aucune donnée n'est collectée.",
     importantSoonBoldText1:
@@ -777,28 +801,29 @@ export const fr: Locale = {
 
     howToDeclareYourGoods: 'Marche à suivre pour dédouaner vos marchandises:',
     howToDeclareYourGoodsText1:
-      "Déclarez toutes les marchandises que vous transportez (à l'exception des effets person-nels et des provisions de voyage). Les franchises quantitatives et les fran-chises-valeur auxquelles vous avez droit seront déduites automatiquement lors du dé-douanement.",
+      "Déclarez toutes les marchandises que vous transportez (à l'exception des effets personnels et des provisions de voyage). Les franchises quantitatives et les franchises-valeur auxquelles vous avez droit seront déduites automatiquement lors du dé-douanement.",
     howToDeclareYourGoodsText2:
-      'Saisissez la valeur en devise étrangère figurant sur le justificatif de paiement. Celle-ci se-ra convertie en francs selon le taux de change (vente) de la veille (dernier jour ouvrable).',
+      'Saisissez la valeur en devise étrangère figurant sur le justificatif de paiement. Celle-ci sera convertie en francs selon le taux de change (vente) de la veille (dernier jour ouvrable).',
     howToDeclareYourGoodsText3:
-      "Définissez un délai de deux heures pour vous permettre de franchir la frontière. La quit-tance établie n'est valable que pendant ce délai. Si vous ne pouvez pas respecter le délai choisi, vous devez vous rendre à un passage frontière occupé par du personnel de l'AFD et expliquer pourquoi vous n'avez pas pu entrer en Suisse dans le délai de validité de la quittance. En l'absence de justification crédible, les redevances seront perçues une nouvelle fois.",
+      "Définissez un délai de deux heures pour vous permettre de franchir la frontière. <1>La quittance établie n'est valable que pendant ce délai.</1> Si vous ne pouvez pas respecter le délai choisi, vous devez vous rendre à un passage frontière occupé par du personnel de l'AFD et expliquer pourquoi vous n'avez pas pu entrer en Suisse dans le délai de validité de la quittance. En l'absence de justification crédible, les redevances seront perçues une nouvelle fois.",
+    howToDeclareYourGoodsTextBold3: '',
     howToDeclareYourGoodsText4:
       'Toutes les personnes pour lesquelles la quittance est valable doivent entrer ensemble en Suisse.',
     howToDeclareYourGoodsText5:
-      "Vous pouvez corriger votre déclaration à tout moment avant le paiement. Après le paie-ment, vous ne pouvez plus effectuer aucune correction dans QuickZoll. Vous devez dé-clarer à un passage frontière occupé par du personnel de l'AFD les marchandises étran-gères supplémentaires achetées après le paiement.",
+      "Vous pouvez corriger votre déclaration à tout moment avant le paiement. Après le paiement, vous ne pouvez plus effectuer aucune correction dans QuickZoll. Vous devez déclarer à un passage frontière occupé par du personnel de l'AFD les marchandises étrangères supplémentaires achetées après le paiement.",
     howToDeclareYourGoodsText6:
       "Il est nécessaire d'être connecté à Internet pour mener à bien l'opération de paiement. S'il n'est pas possible d'effectuer le dédouanement à l'aide de QuickZoll (par ex. absence de connexion à Internet ou impossibilité de payer les redevances avec une carte de crédit), vous devez déclarer les marchandises auprès d'un passage frontière occupé par du personnel de l'AFD ou par l'intermédiaire d'une boîte à déclarations.",
     howToDeclareYourGoodsText7:
-      'Assurez-vous de pouvoir afficher la quittance sur votre terminal mobile en cas de con-trôle lors du franchissement de la frontière. Veuillez noter que pendant le délai de validité de la quittance, une image de celle-ci transmise à des tiers par WhatsApp, iMessage, SMS ou courriel ne sera pas acceptée comme quittance. Vous devez conserver pendant au moins un an la quittance reçue.',
+      'Assurez-vous de pouvoir afficher la quittance sur votre terminal mobile en cas de contrôle lors du franchissement de la frontière. Veuillez noter que pendant le délai de validité de la quittance, une image de celle-ci transmise à des tiers par WhatsApp, iMessage, SMS ou courriel ne sera pas acceptée comme quittance. Vous devez conserver pendant au moins un an la quittance reçue.',
 
     specialCases: 'Cas particuliers',
     specialCasesText1:
-      "Les marchandises suivantes ne peuvent pas être dédouanées avec QuickZoll. Vous devez dans tous les cas les déclarer auprès d'un passage frontière occupé par du personnel de l'AFD:",
+      "Les marchandises suivantes ne peuvent pas être dédouanées avec QuickZoll. Vous devez dans tous les cas les déclarer auprès d'un <1>passage frontière occupé</1> par du personnel de l'AFD:",
     specialCasesText2:
       'les marchandises soumises à des restrictions ou des interdictions et les marchandises assujetties à un certificat ou un permis (par ex. armes, animaux vivants et marchandises soumises aux dispositions sur la conservation des espèces);',
     specialCasesText3: 'informations complémentaires',
     specialCasesText4:
-      "les marchandises d'une valeur totale supérieure ou égale à 20 000 francs qui sont desti-nées à l'usage privé ou à être offertes en cadeau;",
+      "les marchandises d'une valeur totale supérieure ou égale à 20'000 francs qui sont destinées à l'usage privé ou à être offertes en cadeau;",
     specialCasesText5:
       'les marchandises que vous souhaitez déclarer au taux de TVA réduit;',
     specialCasesText6:
@@ -818,7 +843,7 @@ export const fr: Locale = {
     legal: 'Informations juridiques',
     usage: 'Utilisation',
     legalText1:
-      "Le dédouanement effectué avec l'application lie la personne assujettie à l'obligation de déclarer (art. 33 de la loi sur les douanes; RS 631.0). Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
+      "Le dédouanement effectué avec l'application lie la personne assujettie à l'obligation de déclarer (art. 33 de la loi sur les douanes; RS 631.0). Vous êtes donc punissable si vous omettez de déclarer ou déclarez de façon inexacte des marchandises prohibées, soumises à un permis ou soumises à des redevances.",
     legalText2:
       'La personne qui présente la quittance lors du contrôle douanier est responsable du dédouanement correct des marchandises transportées. Elle assume également la responsabilité pénale en cas de découverte de marchandises non déclarées ou déclarées de façon inexacte.',
     legalText3: "Lorsque vous utilisez l'application, assurez-vous",
@@ -834,35 +859,34 @@ export const fr: Locale = {
     privacyAndLiability: 'Protection des données et responsabilité',
     dataProtection: 'Protection des données',
     dataProtectionText1:
-      "L'art. 13 de la Constitution fédérale et les dispositions légales de la Confédération suisse sur la protection des données disposent que toute personne a droit à la protection de sa sphère privée ainsi qu'à la protection contre l'emploi abusif des données qui la concernent. Les autorités fédérales observent strictement ces dispositions. Les données personnelles sont traitées de façon parfaitement confidentielle et ne sont ni vendues, ni transmises à des tiers.",
-    dataProtectionText2:
-      'Nous nous efforçons, en collaboration étroite avec nos hébergeurs, de protéger au mieux possible nos banques de données des intrusions externes, des pertes, du mauvais usage et de la falsification.',
-    dataProtectionText3:
-      'En étroite collaboration avec nos hébergeurs, nous nous efforçons, dans la mesure du possible, de protéger les bases de données contre tout accès non autorisé, perte, mauvaise utilisation ou contrefaçon.',
-    dataProtectionText4:
-      "En cas de prise de contact volontaire, votre adresse électronique est enregistrée dans une banque de données séparée, qui n'est pas reliée aux fichiers journaux anonymes. Vous avez à tout moment la possibilité d'annuler votre enregistrement.",
-    dataProtectionText5:
-      "Les autorités fédérales se réservent expressément le droit de modifier en partie ou en totalité le contenu du présent site, de le supprimer ou d'en suspendre temporairement la diffusion, et ce à tout moment et sans avertissement préalable. Les autorités fédérales ne sauraient être tenues pour responsables des dommages matériels ou immatériels qui pourraient être causés par l'accès aux informations diffusées ou par leur utilisation ou non-utilisation, par le mauvais usage de la connexion ou par des problèmes techniques.",
-
+      "Lors de l'accès à QuickZoll, les données et les informations sur le système d'exploitation et le navigateur ne sont pas enregistrées. Les données nécessaires au processus de paiement sont traitées par SIX. Pour toute question relative au processus de paiement, veuillez vous adresser directement à SIX.",
+    dataProtectionText2: '',
+    dataProtectionText3: '',
+    dataProtectionText4: '',
+    dataProtectionText5: '',
     liability: 'Responsabilité',
     liabilityText1:
-      'Les autorités fédérales se réservent expressément le droit de modifier, supprimer ou temporairement ne pas publier tout ou partie du contenu à tout moment sans préavis.',
+      "L'AFD se réserve expressément le droit de modifier en partie ou en totalité le contenu de l'application ou de le supprimer, et ce à tout moment.",
     liabilityText2:
-      "Les recours en responsabilité contre les autorités fédérales pour des dommages de nature matérielle ou immatérielle résultant de l'accès ou de l'utilisation ou de la non-utilisation des informations publiées, d'une mauvaise utilisation de la connexion ou de défauts techniques sont exclus.",
+      "L'AFD ne saurait être tenue pour responsable des dommages matériels ou immatériels qui pourraient être causés par l'utilisation de l'application, par des problèmes techniques, par le mauvais usage de QuickZoll ou pour d'autres raisons.",
+    culpability: 'Punissabilité',
+    culpabilityText1:
+      'Déclarez les marchandises de manière complète et correcte. Les marchandises interdites ou assujetties à un permis ne peuvent pas être déclarées. Le dédouanement avec QuickZoll est contraignant (art. 33 de la loi sur les douanes, LD; RS 631.0). Quiconque déclare des marchandises de manière incomplète ou incorrecte ou déclare des marchandises interdites ou assujetties à un permis est punissable (art. 118 et 127 LD).',
 
     referencesAndLinks: 'Renvois et liens',
     referencesAndLinksText1:
-      "Les renvois et liens vers d'autres sites Internet ne sont pas de la responsabilité des autorités fédérales. L'accès à ces sites et leur utilisation se font aux risques des utilisateurs. Les autorités fédérales déclarent expressément qu'elles n'ont aucune influence sur la forme, le contenu et les offres des sites auxquels elles renvoient. Les informations et services offerts par ces sites sont entièrement de la responsabilité de leurs auteurs.",
+      "Les renvois et liens vers des sites web de tiers ne sont pas de la responsabilité des autorités fédérales. L'accès à ces sites et leur utilisation se font aux risques des utilisateurs. Les autorités fédérales déclarent expressément qu'elles n'ont aucune influence sur la forme, le contenu et les offres des sites auxquels elles renvoient. Les informations et services offerts par ces sites sont entièrement de la responsabilité de leurs auteurs.",
     referencesAndLinksText2:
-      'Les autorités fédérales rejettent toute responsabilité pour de tels sites Internet.',
+      'Les autorités fédérales rejettent toute responsabilité pour de tels sites web.',
 
     copyright: "Droits d'auteur",
-    copyrightText1:
-      "Droits d'auteur: autorités de la Confédération suisse, 2007.",
+    copyrightText1: "Droits d'auteur: Confédération Suisse, AFD, 2018.",
+
     copyrightText2:
-      "Les informations que recèlent les sites Web des autorités fédérales sont mises à la disposition du public. Le téléchargement ou la copie de textes, d'illustrations, de photographies ou d'autres données n'entraîne aucun transfert de droits sur les contenus.",
+      "Les informations que recèlent les sites web des autorités fédérales sont mises à la disposition du public. Le téléchargement ou la copie de textes, d'illustrations, de photographies ou d'autres données n'entraîne aucun transfert de droits sur les contenus.",
+
     copyrightText3:
-      "Les droits d'auteur et tous les autres droits liés aux textes, illustrations, photographies et autres données placés sur les sites Web des autorités fédérales sont leur propriété exclusive ou celle des détenteurs expressément cités. Toute reproduction est subordonnée à l'autorisation écrite préalable du détenteur des droits.",
+      "Les droits d'auteur et tous les autres droits liés aux textes, illustrations, photographies et autres données placés sur les sites web des autorités fédérales sont leur propriété exclusive ou celle des détenteurs expressément cités. Toute reproduction est subordonnée à l'autorisation écrite préalable des détenteurs des droits.",
   },
   overview: {
     declared: 'saisi',
@@ -871,12 +895,14 @@ export const fr: Locale = {
   },
   legalNoticeModal: {
     importantNote: 'Remarque importante',
-    vatRateInfo:
-      'Veuillez noter que\n' +
-      "• vous ne pouvez entrer en Suisse qu'une fois par jour civil avec des marchandises que vous avez dédouanées avec QuickZoll;\n" +
-      '• les marchandises déclarées sont dédouanées au taux uniforme de TVA de 7,7 %;\n' +
-      "• les redevances payées avec l'application ne sont pas remboursées.\n" +
-      'Vous trouverez de plus amples informations ici:',
+    vatRateInfo: 'Veuillez noter que',
+    vatRateInfoText1:
+      "vous ne pouvez entrer en Suisse qu'une fois par jour civil avec des marchandises que vous avez dédouanées avec QuickZoll;",
+    vatRateInfoText2:
+      'les marchandises déclarées sont dédouanées au taux unique de TVA de 7.7%;',
+    vatRateInfoText3:
+      "les redevances payées avec l'application ne sont pas remboursées.",
+    vatRateInfoText4: 'Vous trouverez de plus amples informations ici:',
     termsOfService: 'Termes et Conditions',
     acceptance: "J'accepte les termes et conditions que j'ai lus et compris.",
     confirm: 'Confirmer',
@@ -885,25 +911,36 @@ export const fr: Locale = {
   furtherInformationModal: {
     furtherInformation: "Plus d'informations:",
     acceptance:
-      "En utilisant l'application, vous acceptez que le taux de TVA est de 7,7%; est également appliqué aux biens effectivement soumis au taux d'imposition réduit (aliments, aliments pour animaux, médicaments et livres).",
+      'En utilisant QuickZoll, vous acceptez que le taux de TVA de 7.7% soit également appliqué aux marchandises qui sont soumises au taux réduit (2.5%), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé.',
   },
   updateTheApp: {
     title: 'Nouvelle version disponible!',
     subtitle:
       "Veuillez mettre à jour QuickZoll. La nouvelle version est maintenant disponible dans l'App Store.",
-    buttonTextAndroid: 'Dans Play Market',
+    buttonTextAndroid: 'Dans Play Store',
     buttonTextIos: "Dans l'App Store",
+  },
+  SuccessfulPayment: {
+    title:
+      'Merci! Nous avons reçu votre paiement et vous souhaitons un bon voyage!',
+    navigationHeaderTitle: 'Paiement réussi',
   },
   units: {
     kilo: 'kg',
-    kilo_plural: 'kgs',
+    kilo_plural: 'kg',
     kiloOrLiter: 'kg/litre',
-    kiloOrLiter_plural: 'kgs/litres',
+    kiloOrLiter_plural: 'kg/litres',
     liter: 'litre',
     liter_plural: 'litres',
     unit: 'unité',
     unit_plural: 'unités',
     gram: 'gramme',
     gram_plural: 'grammes',
+  },
+  acceptRateModal: {
+    modalTitle: 'TVA de 7.7%',
+    modalSubTitle:
+      'Je confirme accepter le taux unique de TVA de 7.7% pour le dédouanement des marchandises.',
+    confirm: 'Reprendre',
   },
 };

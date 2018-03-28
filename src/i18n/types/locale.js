@@ -51,6 +51,7 @@ type GeneralTranslations = {
 
 type SnackBarTranslations = {
   limitExceeded: string,
+  limitExceededRightText: string,
   offline: string,
   paymentAborted: string,
   paymentFailed: string,
@@ -86,15 +87,28 @@ type QuantityInputTranslations = {
   enterQuantities: string,
   enterQuantity: string,
   enterQuantitiesButter: string,
+  enterQuantitiesCigarettes: string,
+  enterQuantitiesTobacco: string,
   enterQuantitiesAlcohol: string,
+  enterQuantitiesOil: string,
+  enterQuantitiesMeat: string,
   standardInputSubText: string,
+  meatInput: string,
+  butterInput: string,
+  oilInput: string,
+  alcSoftInput: string,
+  alcHardInput: string,
+  cigarettesInput: string,
+  tobaccoInput: string,
 };
 
 type AmountInputTranslations = {
   amountInput: string,
   amountInputLargeItem: string,
   amountInputAddItem: string,
-  amountInputEnterValue: string,
+  amountInputEnterValueBeginning: string,
+  amountInputEnterValueBoldText: string,
+  amountInputEnterValueEnd: string,
   amountInputLargeItemGreyBox: string,
   amountInputAddItemLarge: string,
   currentTotalValue: string,
@@ -126,7 +140,11 @@ type QAFlowTranslations = {
   validateGenericOk: string,
   validateMainCategoryRemoveTitle: string,
   validateMainCategoryRemoveSubtitle: string,
+  validateMainCategoryAndVatRemoveSubTitle: string,
+  validateVatRemoveSubTitle: string,
   validateMainCategoryRemoveYes: string,
+  validateOtherGoodsRemoveYes: string,
+  itemsGreaterThan300CHF: string,
 };
 
 type ModalTranslations = {
@@ -147,6 +165,7 @@ type ModalTranslations = {
   timePickerSubTitle: string,
   timePickerRegistrationValidUntilSameDay: string,
   timePickerRegistrationValidUntilDifferentDay: string,
+  timePickerRegistrationTimeInPast: string,
   timePickerTakeOverThePeriod: string,
   closeModalText: string,
   timePickerTimePrefix: string,
@@ -214,9 +233,12 @@ type VatAllowanceTranslations = {
   vatAllowanceText25: string,
   vatAllowanceText26: string,
   vatAllowanceText27: string,
-  vatAllowanceText28: string,
-  vatAllowanceText29: string,
-  vatAllowanceText30: string,
+  vatAllowanceText28a: string,
+  vatAllowanceText28b: string,
+  vatAllowanceText29a: string,
+  vatAllowanceText29b: string,
+  vatAllowanceText30a: string,
+  vatAllowanceText30b: string,
   vatAllowanceText31: string,
   vatAllowanceText32: string,
   vatAllowanceText33: string,
@@ -536,6 +558,7 @@ type ReceiptTranslations = {
   entryTime: string,
   chooseOtherEntryTime: string,
   until: string,
+  savedToCameraRoll: string,
 };
 
 type AppInformationTranslations = {
@@ -548,8 +571,6 @@ type AppInformationTranslations = {
   generalCustomsDirectorate: string,
   designAndDevelopment: string,
   ambriteAddress: string,
-  disclaimerTitle: string,
-  disclaimerText: string,
   toContactForm: string,
 };
 
@@ -631,6 +652,10 @@ type OverviewTranslations = {
 type LegalNoticeModalTranslations = {
   importantNote: string,
   vatRateInfo: string,
+  vatRateInfoText1: string,
+  vatRateInfoText2: string,
+  vatRateInfoText3: string,
+  vatRateInfoText4: string,
   termsOfService: string,
   acceptance: string,
   confirm: string,
@@ -648,12 +673,23 @@ type UpdateTheAppTranslations = {
   buttonTextIos: string,
 };
 
+type SuccessfulPaymentTranslations = {
+  title: string,
+  navigationHeaderTitle: string,
+};
+
 type UnitsTranslations = {
   kilo: string,
   kiloOrLiter: string,
   liter: string,
   unit: string,
   gram: string,
+};
+
+type AcceptRateModalTranslations = {
+  modalTitle: string,
+  modalSubTitle: string,
+  confirm: string,
 };
 
 /**
@@ -700,4 +736,6 @@ export type Locale = {
   units: UnitsTranslations,
   purchasesOnlineOffline: PurchasesOnlineOfflineTranslations,
   updateTheApp: UpdateTheAppTranslations,
+  SuccessfulPayment: SuccessfulPaymentTranslations,
+  acceptRateModal: AcceptRateModalTranslations,
 };

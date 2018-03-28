@@ -15,6 +15,7 @@ import {
   sampleBasket7,
   sampleBasket8,
   sampleBasket9,
+  sampleBasketDutyRounding,
 } from './fullBasketsAndAmounts';
 import {
   addAdult,
@@ -187,5 +188,13 @@ describe('Duty Calculations', () => {
     };
     // $FlowFixMe
     expect(getTotalDuty(mockState)).toBe(1.7);
+  });
+
+  test('Tax Calculation Rounding Correcty, 2 People and Meat', () => {
+    expect(
+      calculateDuty(sampleBasketDutyRounding, addAdult(initPeople)).get(
+        'totalDuty'
+      )
+    ).toBe(49.3);
   });
 });

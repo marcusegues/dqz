@@ -6,7 +6,7 @@ import type { ComponentType } from 'react';
 // $FlowFixMe
 import { connect } from 'react-redux';
 // $FlowFixMe
-import { View } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 import { Overview } from '../Overview/Overview';
 import Saferpay from '../../../saferpay';
 import { NavBar } from '../NavBar/NavBar';
@@ -56,6 +56,8 @@ import {
 import { LegalNoticeModal } from '../Modals/LegalNoticeModal/LegalNoticeModal';
 import { MainContentContainer } from '../MainContentContainer/MainContentContainer';
 import type { ConnectivityType } from '../../types/connectivity';
+import { AppLogo } from '../AppLogo/AppLogo';
+import { MAIN_RED } from '../../styles/colors';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -68,6 +70,7 @@ type PaymentContainerState = {
   isLoadingRedirectData: boolean,
   redirectDataLoaded: boolean,
   showModal: boolean,
+  showLoading: boolean,
 };
 
 type PaymentContainerProps = {
@@ -101,6 +104,7 @@ class PaymentContainerInner extends React.Component<
       isLoadingRedirectData: false,
       redirectDataLoaded: false,
       showModal: false,
+      showLoading: false,
     };
   }
 
@@ -137,7 +141,7 @@ class PaymentContainerInner extends React.Component<
             'CHF',
             uuidv1(),
             'Order',
-            `0.5.0-${uuidv1()}` // TODO: remove and put some logic into OrderNR
+            `1.0.0-${uuidv1()}` // TODO: remove and put some logic into OrderNR
           )
           .then(responseJson => {
             setPaymentData(
@@ -183,8 +187,6 @@ class PaymentContainerInner extends React.Component<
     switch (state.url) {
       case `${baseUrl}${redirectsUrlKeys.success}`:
         analyticsCustom('Successful payment');
-        storeClearDeclaration();
-        resetDeclaration();
         stateChanged = true;
         paymentStatus = 'success';
         break;
@@ -207,6 +209,7 @@ class PaymentContainerInner extends React.Component<
       this.setState(
         {
           redirectDataLoaded: false,
+          showLoading: paymentStatus === 'success',
         },
         () => {
           setPaymentData(paymentData.set('status', paymentStatus)).then(() => {
@@ -219,6 +222,36 @@ class PaymentContainerInner extends React.Component<
                   paymentData.get('requestId')
                 )
                 .then(responseJson => {
+                  // Transaction.Status
+                  // Current status of the transaction. One of 'AUTHORIZED', 'CAPTURED' or 'PENDING' (PENDING is only used for paydirekt at the moment)
+                  // Possible values: AUTHORIZED, CAPTURED, PENDING.
+                  if (responseJson.Transaction.Status !== 'CAPTURED') {
+                    return this.saferpay
+                      .captureTransaction(
+                        paymentData.get('requestId'),
+                        responseJson.Transaction.Id
+                      )
+                      .then(captureResponseJson => {
+                        if (captureResponseJson.Status !== 'CAPTURED') {
+                          setPaymentData(
+                            paymentData.set('status', 'failed')
+                          ).then(() => {
+                            this.setState({
+                              showLoading: false,
+                            });
+                          });
+                          return false;
+                        }
+                        return responseJson;
+                      });
+                  }
+                  return responseJson;
+                })
+                .then(responseJson => {
+                  if (!responseJson) return false;
+                  storeClearDeclaration();
+                  resetDeclaration();
+
                   const paymentTransaction: PaymentTransaction = {
                     // $FlowFixMe
                     status: responseJson.Transaction.Status,
@@ -267,12 +300,18 @@ class PaymentContainerInner extends React.Component<
                     currencies,
                     paymentData: newPaymentData,
                   };
-                  return storeReceipt(receipt).then(() =>
+                  return storeReceipt(receipt).then(() => {
                     this.props.navigation.dispatch({
                       type: 'NAVIGATE',
-                      screen: 'ReceiptAfterPayment',
-                    })
-                  );
+                      screen: 'SuccessfulPayment',
+                    });
+                    setTimeout(() => {
+                      this.props.navigation.dispatch({
+                        type: 'NAVIGATE',
+                        screen: 'ReceiptAfterPayment',
+                      });
+                    }, 3000);
+                  });
                 })
                 .catch(error => console.log('Saferpay error:', error));
             }
@@ -304,7 +343,24 @@ class PaymentContainerInner extends React.Component<
           paymentDisabled={this.isPaymentDisabled()}
           navigation={navigation}
         />
-
+        {this.state.showLoading ? (
+          <View
+            style={{
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+              backgroundColor: '#e6e6e6',
+              width: '100%',
+            }}
+          >
+            <AppLogo />
+            <ActivityIndicator
+              size="large"
+              color={MAIN_RED}
+              style={{ paddingTop: 30 }}
+            />
+          </View>
+        ) : null}
         {this.state.redirectDataLoaded ? (
           <View style={{ position: 'absolute', top: 0, bottom: 0 }}>
             <PaymentWebView

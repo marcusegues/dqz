@@ -9,6 +9,7 @@ import {
   Dimensions,
   SafeAreaView,
   Platform,
+  Linking,
   // $FlowFixMe
 } from 'react-native';
 import type { ComponentType } from 'react';
@@ -64,6 +65,14 @@ type UpdateTheAppInnerProps = {
   t: TFunction,
 };
 
+const handleClick = () => {
+  const link =
+    Platform.OS === 'ios'
+      ? 'https://itunes.apple.com/us/app/quickzoll/id1362688968'
+      : 'https://play.google.com/store/apps/details?id=ch.ezv.dazit.quickzoll';
+  Linking.openURL(link);
+};
+
 const UpdateTheAppInner = ({ t }: UpdateTheAppInnerProps) => {
   const ios = Platform.OS === 'ios';
   const buttonText = ios ? t('buttonTextIos') : t('buttonTextAndroid');
@@ -78,7 +87,7 @@ const UpdateTheAppInner = ({ t }: UpdateTheAppInnerProps) => {
       </View>
       <Image source={bottomIcon} resizeMode="contain" style={ownStyles.icon} />
       <View style={ownStyles.button}>
-        <RedButton text={buttonText} onPress={() => {}} />
+        <RedButton text={buttonText} onPress={handleClick} />
       </View>
     </SafeAreaView>
   );

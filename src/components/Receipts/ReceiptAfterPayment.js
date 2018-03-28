@@ -4,12 +4,12 @@ import React from 'react';
 import type { ComponentType } from 'react';
 import { DateTime } from 'luxon';
 // $FlowFixMe
-import { View, Text, CameraRoll } from 'react-native';
+import { View, Text, CameraRoll, Alert } from 'react-native';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 import { connect } from 'react-redux';
 // $FlowFixMe
-import { takeSnapshotAsync } from 'expo';
+import { takeSnapshotAsync, Permissions } from 'expo';
 import { translate } from 'react-i18next';
 import { moderateScale, verticalScale } from '../../styles/Scaling';
 import { CardRowText } from '../QuestionAnswer/Cards/subcomponents/CardRowText';
@@ -18,7 +18,10 @@ import type {
   PaymentData,
   TFunction,
 } from '../../types/generalTypes';
-import { analyticsScreenMounted } from '../../analytics/analyticsApi';
+import {
+  analyticsCustom,
+  analyticsScreenMounted,
+} from '../../analytics/analyticsApi';
 import { getPaymentData, getReceiptId } from '../../reducers/selectors';
 import { fetchReceiptByReceiptId } from '../../asyncStorage/storageApi';
 import type { Receipt } from '../../types/receiptTypes';
@@ -34,6 +37,11 @@ import { RedLogo } from './subcomponents/RedLogo';
 import { ValidUntilBlock } from './subcomponents/ValidUntilBlock';
 import { ReceiptInfoNote } from './subcomponents/ReceiptInfoNote';
 import { HeaderTitle } from '../Headers/subcomponents/HeaderTitle';
+import { flatLargeAmounts } from '../../model/utils';
+import {
+  dateTimeToFormat,
+  dateTimeToLocaleString,
+} from '../../utils/datetime/datetime';
 
 const ownStyles = {
   topSumText: {
@@ -49,6 +57,7 @@ const ownStyles = {
   cardRowText: {
     color: '#fff',
     fontFamily: 'roboto_regular',
+    textAlign: 'center',
   },
   cardRowTextPaidOn: {
     marginVertical: verticalScale(15),
@@ -69,7 +78,7 @@ type ReceiptAfterPaymentScreenProps = {
 
 class ReceiptAfterPaymentInner extends React.Component<
   ReceiptAfterPaymentScreenProps,
-  ReceiptAfterPaymentScreenState,
+  ReceiptAfterPaymentScreenState
 > {
   static navigationOptions = ({ screenProps }) => ({
     headerTitle: (
@@ -78,11 +87,12 @@ class ReceiptAfterPaymentInner extends React.Component<
       />
     ),
   });
+
   constructor(
     props: ReceiptAfterPaymentScreenProps & {
       t: TFunction,
       i18n: { language: string },
-    },
+    }
   ) {
     super(props);
     this.state = {
@@ -116,7 +126,7 @@ class ReceiptAfterPaymentInner extends React.Component<
       this.state.receipt.receiptEntryTime,
       {
         locale: i18n.language,
-      },
+      }
     );
     const receiptEntryTimePlus = receiptEntryTime.plus({ hours: 2 });
     if (receiptEntryTime.day === receiptEntryTimePlus.day) {
@@ -129,13 +139,18 @@ class ReceiptAfterPaymentInner extends React.Component<
         <CardRowText
           key="receiptValidOnDate"
           text={`${t('receiptValidOnDate', {
-            date: receiptEntryTime.toLocaleString(DateTime.DATE_FULL),
-            startTime: receiptEntryTime.toFormat(
-              `HH${i18n.language === 'fr' ? "'h'" : ':'}mm`,
-            ),
-            endTime: receiptEntryTimePlus.toFormat(
-              `HH${i18n.language === 'fr' ? "'h'" : ':'}mm`,
-            ),
+            date: dateTimeToLocaleString(receiptEntryTime, {
+              locale: i18n.language,
+              format: 'datefull',
+            }),
+            startTime: dateTimeToFormat(receiptEntryTime, {
+              locale: i18n.language,
+              format: 'time',
+            }),
+            endTime: dateTimeToFormat(receiptEntryTimePlus, {
+              locale: i18n.language,
+              format: 'time',
+            }),
           })}`}
           style={ownStyles.cardRowText}
         />,
@@ -150,18 +165,36 @@ class ReceiptAfterPaymentInner extends React.Component<
       <CardRowText
         key="receiptValidFromDate"
         text={`${t('receiptValidFromDate', {
-          startDate: receiptEntryTime.toLocaleString(DateTime.DATE_FULL),
-          startTime: receiptEntryTime.toFormat(
-            `HH${i18n.language === 'fr' ? "'h'" : ':'}mm`,
-          ),
-          endDate: receiptEntryTimePlus.toLocaleString(DateTime.DATE_FULL),
-          endTime: receiptEntryTimePlus.toFormat(
-            `HH${i18n.language === 'fr' ? "'h'" : ':'}mm`,
-          ),
+          startDate: dateTimeToLocaleString(receiptEntryTime, {
+            locale: i18n.language,
+            format: 'datefull',
+          }),
+          startTime: dateTimeToFormat(receiptEntryTime, {
+            locale: i18n.language,
+            format: 'time',
+          }),
+          endDate: dateTimeToLocaleString(receiptEntryTimePlus, {
+            locale: i18n.language,
+            format: 'datefull',
+          }),
+          endTime: dateTimeToFormat(receiptEntryTimePlus, {
+            locale: i18n.language,
+            format: 'time',
+          }),
         })}`}
         style={ownStyles.cardRowText}
       />,
     ];
+  }
+
+  async saveToCameraRoll(snapshot) {
+    const { t } = this.props;
+    try {
+      await CameraRoll.saveToCameraRoll(snapshot, 'photo');
+      Alert.alert(t('receipt:savedToCameraRoll'));
+    } catch (e) {
+      analyticsCustom('Failed to save receipt to camera roll');
+    }
   }
 
   image: any;
@@ -172,11 +205,22 @@ class ReceiptAfterPaymentInner extends React.Component<
       quality: 1,
       result: 'file',
     });
-    await CameraRoll.saveToCameraRoll(snapshot, 'photo');
+    const { status } = await Permissions.getAsync(Permissions.CAMERA_ROLL);
+    if (status !== 'granted') {
+      Permissions.askAsync(Permissions.CAMERA_ROLL).then(
+        async permissionAnswer => {
+          if (permissionAnswer.status === 'granted') {
+            this.saveToCameraRoll(snapshot);
+          }
+        }
+      );
+    } else {
+      this.saveToCameraRoll(snapshot);
+    }
   }
 
   render() {
-    const { t } = this.props;
+    const { t, i18n } = this.props;
 
     if (this.state.receipt && this.state.receipt.receiptId !== undefined) {
       const { basket, people, amounts, currencies } = this.state.receipt;
@@ -185,7 +229,7 @@ class ReceiptAfterPaymentInner extends React.Component<
       const fullVat = vatReport.get('totalVat');
       const fullDuty = dutyReport.get('totalDuty');
       const transactionDatetime = DateTime.fromISO(
-        this.state.receipt.paymentData.transaction.date,
+        this.state.receipt.paymentData.transaction.date
       );
 
       return (
@@ -198,14 +242,14 @@ class ReceiptAfterPaymentInner extends React.Component<
             flexDirection: 'column',
             alignItems: 'center',
           }}
+          ref={ref => {
+            this.image = ref;
+          }}
+          collapsable={false}
         >
-          <ScrollViewCard
-            ref={ref => {
-              this.image = ref;
-            }}
-          >
+          <ScrollViewCard>
             <RedLogo />
-            <Row width="90%">
+            <Row>
               <Text style={ownStyles.topSumText}>
                 CHF {(fullVat + fullDuty).toFixed(2)}
               </Text>
@@ -220,6 +264,7 @@ class ReceiptAfterPaymentInner extends React.Component<
                   adults: people.adults,
                   minors: people.minors,
                 })}
+                style={{ paddingBottom: verticalScale(16) }}
               />
             </Row>
 
@@ -230,8 +275,14 @@ class ReceiptAfterPaymentInner extends React.Component<
             >
               <CardRowText
                 text={t('paidOn', {
-                  date: transactionDatetime.toFormat('dd.MM.y'),
-                  time: transactionDatetime.toFormat('HH:mm'),
+                  date: dateTimeToFormat(transactionDatetime, {
+                    locale: i18n.language,
+                    format: 'date',
+                  }),
+                  time: dateTimeToFormat(transactionDatetime, {
+                    locale: i18n.language,
+                    format: 'time',
+                  }),
                 })}
                 style={ownStyles.cardRowTextPaidOn}
               />
@@ -256,15 +307,16 @@ class ReceiptAfterPaymentInner extends React.Component<
               amounts={amounts}
               currencies={currencies}
             />
-            <VatList
-              large
-              borderTop={false}
-              people={people}
-              amounts={amounts}
-              currencies={currencies}
-              headerRight={false}
-            />
-
+            {flatLargeAmounts(amounts).length ? (
+              <VatList
+                large
+                borderTop={false}
+                people={people}
+                amounts={amounts}
+                currencies={currencies}
+                headerRight={false}
+              />
+            ) : null}
             <TotalOwedRow
               basket={basket}
               people={people}
@@ -292,6 +344,6 @@ const mapStateToProps = state => ({
 
 export const ReceiptAfterPayment = (connect(mapStateToProps)(
   translate(['receipt', 'payment', 'mainCategories', 'categories'])(
-    ReceiptAfterPaymentInner,
-  ),
+    ReceiptAfterPaymentInner
+  )
 ): ComponentType<{}>);

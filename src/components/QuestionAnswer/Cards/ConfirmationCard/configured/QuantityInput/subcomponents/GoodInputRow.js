@@ -17,6 +17,7 @@ import { CardRowText } from '../../../../subcomponents/CardRowText';
 import type { Category } from '../../../../../../../model/types/basketPeopleAmountsTypes';
 import { CategoriesInfo } from '../../../../../../../model/constants';
 import type { TFunction } from '../../../../../../../types/generalTypes';
+import { formatQuantity } from '../../../../../../../utils/declaration/declaration';
 
 const ownStyles = {
   container: {
@@ -118,7 +119,7 @@ const GoodInputRowInner = ({
         <CardRowText text={t(`categories:${category}`)} />
         <View style={{ marginTop: 10 }}>
           <QuantityIcon
-            quantity={totalQuantity.toFixed(3)}
+            quantity={formatQuantity(category, totalQuantity)}
             unit={t(`units:${CategoriesInfo.getIn([category, 'unit'], '')}`, {
               count: totalQuantity,
             })}

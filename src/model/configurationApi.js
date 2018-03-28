@@ -32,6 +32,8 @@ export const emptyBasket: Basket = Immutable.Map(
   categoriesArray.map(c => [c, emptyItem])
 );
 
+export const emptyAmounts = Immutable.Map();
+
 // QUANTITIES
 /**
  * Adds a quantity in a basket for a given category
@@ -193,6 +195,13 @@ export const resetAmounts = (amounts: Amounts, currency: Currency): Amounts =>
     [currency, 'amounts'],
     Immutable.List()
   );
+
+/**
+ * Returns empty Amounts
+ * @param amounts
+ * @returns Amounts type
+ */
+export const resetAllAmounts = (): Amounts => emptyAmounts;
 
 /**
  * Deletes amount with a given ID

@@ -72,13 +72,13 @@ class OnBoardingTaxScreenInner extends React.Component<
         </TouchableOpacity>
         <DoneButton
           onPress={() => {
-            storeSettingsAcceptRate(true);
+            storeSettingsAcceptRate('accepted');
             navigation.dispatch({ type: 'NAVIGATE', screen: 'MainMenu' });
           }}
         />
         <SkipThisStep
           onPress={() => {
-            storeSettingsAcceptRate(true);
+            storeSettingsAcceptRate('skipped');
             navigation.dispatch({ type: 'NAVIGATE', screen: 'MainMenu' });
           }}
           text={t('skipThisStep')}
