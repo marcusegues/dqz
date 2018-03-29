@@ -183,6 +183,30 @@ describe('Duty Calculations', () => {
         'totalDuty'
       )
     ).toBe(3.4);
+
+    expect(
+      calculateDuty(basketFactoryMeat(2.7), addAdult(initPeople)).get(
+        'totalDuty'
+      )
+    ).toBe(11.9);
+
+    expect(
+      calculateDuty(basketFactoryMeat(3.2), setAdultPeople(initPeople, 3)).get(
+        'totalDuty'
+      )
+    ).toBe(3.4);
+
+    expect(
+      calculateDuty(basketFactoryMeat(3.7), setAdultPeople(initPeople, 3)).get(
+        'totalDuty'
+      )
+    ).toBe(11.9);
+
+    expect(
+      calculateDuty(basketFactoryMeat(9.9), setAdultPeople(initPeople, 9)).get(
+        'totalDuty'
+      )
+    ).toBe(15.3);
   });
 
   test('roundingbaskets also works with getTotalDuty (on reducer)', () => {
