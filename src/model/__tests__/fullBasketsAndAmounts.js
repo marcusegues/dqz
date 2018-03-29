@@ -6,10 +6,20 @@ import {
   addQuantity,
   initAmounts,
 } from '../configurationApi';
-import type { Amounts, Basket } from '../types/basketPeopleAmountsTypes';
+import type {
+  Amounts,
+  Basket,
+  Category,
+} from '../types/basketPeopleAmountsTypes';
 
 // this is solely to trick jest.
 test('', () => expect(true).toBeTruthy());
+
+export const basketFactory = (category: Category) => (
+  quantity: number
+): Basket => addQuantity(emptyBasket, category, quantity);
+
+export const basketFactoryMeat = basketFactory('Meat');
 
 export const sampleBasket1: Basket = emptyBasket.withMutations(basket => {
   basket = addQuantity(basket, 'Butter', 23);
@@ -118,16 +128,6 @@ export const sampleBasket8: Basket = emptyBasket.withMutations(basket => {
 export const sampleBasket9: Basket = emptyBasket.withMutations(basket => {
   basket = addQuantity(basket, 'Tobacco', 300);
   basket = addQuantity(basket, 'Cigarettes', 300);
-  return basket;
-});
-
-export const roundingBasket1: Basket = emptyBasket.withMutations(basket => {
-  basket = addQuantity(basket, 'Meat', 2.1);
-  return basket;
-});
-
-export const roundingBasket2: Basket = emptyBasket.withMutations(basket => {
-  basket = addQuantity(basket, 'Meat', 2.2);
   return basket;
 });
 

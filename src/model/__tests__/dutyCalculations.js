@@ -7,8 +7,7 @@ import {
   getPeopleCount,
 } from '../dutyCalculations';
 import {
-  roundingBasket1,
-  roundingBasket2,
+  basketFactoryMeat,
   sampleBasket1,
   sampleBasket5,
   sampleBasket6,
@@ -174,17 +173,24 @@ describe('Duty Calculations', () => {
 
   test('rounding baskets', () => {
     expect(
-      calculateDuty(roundingBasket1, addAdult(initPeople)).get('totalDuty')
+      calculateDuty(basketFactoryMeat(2.1), addAdult(initPeople)).get(
+        'totalDuty'
+      )
     ).toBe(1.7);
 
     expect(
-      calculateDuty(roundingBasket2, addAdult(initPeople)).get('totalDuty')
+      calculateDuty(basketFactoryMeat(2.2), addAdult(initPeople)).get(
+        'totalDuty'
+      )
     ).toBe(3.4);
   });
 
   test('roundingbaskets also works with getTotalDuty (on reducer)', () => {
     const mockState = {
-      declaration: { basket: roundingBasket1, people: addAdult(initPeople) },
+      declaration: {
+        basket: basketFactoryMeat(2.1),
+        people: addAdult(initPeople),
+      },
     };
     // $FlowFixMe
     expect(getTotalDuty(mockState)).toBe(1.7);
