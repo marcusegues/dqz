@@ -50,7 +50,7 @@ const AmountInputAnswerCardInner = ({
     </View>
   );
   return (
-    <View style={{ marginBottom: 4 }}>
+    <View>
       <GreyBar />
       <AnswerCard
         onAnswerCardPress={onAnswerCardPress}
