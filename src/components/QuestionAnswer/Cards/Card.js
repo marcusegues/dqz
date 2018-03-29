@@ -15,6 +15,7 @@ export const Card = ({ children }: { children: Children }) => (
         flexDirection: 'column',
         justifyContent: 'space-between',
         alignItems: 'center',
+        // marginBottom: 4,
         backgroundColor: '#fff',
         borderRadius: 2,
         borderColor: '#ddd',
