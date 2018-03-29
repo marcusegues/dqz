@@ -47,23 +47,19 @@ export const setInitStates = (qaState: QAStateEnriched): QAStateEnriched => {
 const newQuestionStatesBasedOnRules = (
   qaState: QAStateEnriched
 ): QuestionStates => ({
-    peopleInput:
-      flagRules('peopleInput', qaState) === 'complete' ? 'collapsed' : 'hidden',
-    mainCategories:
-      flagRules('mainCategories', qaState) === 'complete'
-        ? 'collapsed'
-        : 'hidden',
-    quantityInput:
-      flagRules('quantityInput', qaState) === 'complete'
-        ? 'collapsed'
-        : 'hidden',
-    amounts:
-      flagRules('amounts', qaState) === 'complete' ? 'collapsed' : 'hidden',
-    largeAmounts:
-      flagRules('largeAmounts', qaState) === 'complete'
-        ? 'collapsed'
-        : 'hidden',
-  });
+  peopleInput:
+    flagRules('peopleInput', qaState) === 'complete' ? 'collapsed' : 'hidden',
+  mainCategories:
+    flagRules('mainCategories', qaState) === 'complete'
+      ? 'collapsed'
+      : 'hidden',
+  quantityInput:
+    flagRules('quantityInput', qaState) === 'complete' ? 'collapsed' : 'hidden',
+  amounts:
+    flagRules('amounts', qaState) === 'complete' ? 'collapsed' : 'hidden',
+  largeAmounts:
+    flagRules('largeAmounts', qaState) === 'complete' ? 'collapsed' : 'hidden',
+});
 
 export const setQuestionStates = (
   justAnswered: QuestionType,

@@ -1,27 +1,18 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import Touchable from 'react-native-platform-touchable';
-// $FlowFixMe
-import { Image, View, StyleSheet } from 'react-native';
+import { Image, View, StyleSheet, TouchableOpacity } from 'react-native';
 import type { Children } from '../../../../types/generalTypes';
-import { verticalScale } from '../../../../styles/Scaling';
+import { globalStyles } from '../../../../styles/globalStyles';
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
-    paddingVertical: 5,
     backgroundColor: '#fff',
-    borderWidth: 1,
     borderColor: '#ccc',
     borderRadius: 2,
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOffset: { height: 2, width: 0 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
   },
 });
 
@@ -38,15 +29,13 @@ export const AnswerCard = ({
   children,
   onAnswerCardPress,
 }: AnswerCardProps) => (
-  <Touchable
+  <TouchableOpacity
     style={{
       width: '100%',
-      // marginTop: 4,
-      marginBottom: verticalScale(4),
     }}
     onPress={onAnswerCardPress}
   >
-    <View style={styles.container}>
+    <View style={[styles.container, globalStyles.boxShadow]}>
       <Image
         source={mainIcon}
         style={{
@@ -63,5 +52,5 @@ export const AnswerCard = ({
         }}
       />
     </View>
-  </Touchable>
+  </TouchableOpacity>
 );
