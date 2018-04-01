@@ -40,9 +40,7 @@ import {
   analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
 
-import {
-  getConvertedLocalTimeToSwiss,
-} from '../../model/utils';
+import { getConvertedLocalTimeToSwiss } from '../../model/utils';
 import type { CurrencyObject } from '../../model/currencies';
 import {
   storeClearDeclaration,

@@ -11,13 +11,15 @@ import {
 } from '../../../constants/declaration';
 import { totalAllAmounts } from '../../../model/utils';
 
-const hasConnection = (connectivity: ConnectivityType): boolean =>
+export const hasConnection = (connectivity: ConnectivityType): boolean =>
   !(connectivity.type === 'none' || connectivity.type === 'unknown');
 
-const hasPaymentNotAbortedOrFailed = (paymentData: PaymentData): boolean =>
+export const hasPaymentNotAbortedOrFailed = (
+  paymentData: PaymentData
+): boolean =>
   !(paymentData.status === 'aborted' || paymentData.status === 'failed');
 
-const hasValidSize = (
+export const hasValidSize = (
   fees: number,
   currencies: CurrencyObject,
   amounts: Amounts
