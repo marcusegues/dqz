@@ -331,13 +331,15 @@ class PaymentContainerInner extends React.Component<
         <NavBar step={2} />
         <Overview
           onProceedToPayment={() => this.proceedToPayment()}
-          paymentDisabled={isPaymentEnabled(
-            connectivity,
-            paymentData,
-            fees,
-            currencies,
-            amounts
-          )}
+          paymentDisabled={
+            !isPaymentEnabled(
+              connectivity,
+              paymentData,
+              fees,
+              currencies,
+              amounts
+            )
+          }
           navigation={navigation}
         />
         {this.state.showLoading ? (
