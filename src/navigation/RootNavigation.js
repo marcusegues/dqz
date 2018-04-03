@@ -7,7 +7,7 @@ import { translate } from 'react-i18next';
 // $FlowFixMe
 import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 // $FlowFixMe
-import { View } from 'react-native';
+import { View, BackHandler } from 'react-native';
 import { i18nImplementation } from '../i18n';
 import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
 import { ScreensView } from '../screens/ScreensView/ScreensView';
@@ -544,6 +544,31 @@ type ReduxInject = {
 
 // eslint-disable-next-line react/prefer-stateless-function
 class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
+  componentDidMount() {
+    BackHandler.addEventListener(
+      'hardwareBackPress',
+      this.onBackPress.bind(this)
+    );
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener(
+      'hardwareBackPress',
+      this.onBackPress.bind(this)
+    );
+  }
+
+  onBackPress() {
+    const { dispatch, nav } = this.props;
+    const activeRoute = nav.routes[nav.index];
+    // backClick on OnBoarding screen - app should close
+    if (activeRoute.routeName === 'OnBoarding') {
+      return false;
+    }
+    dispatch({ type: 'GO_BACK' });
+    return true;
+  }
+
   render() {
     return (
       <View
