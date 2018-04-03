@@ -155,7 +155,6 @@ class VatAllowanceInner extends React.Component<
 
             <TouchableOpacity
               onPress={() => this.scrollToInfo(this.state.measurements.y)}
-              // onPress={() => this.scrollToInfo(this.state.measurements.y)}
             >
               <AppInfoSubText
                 text={t('vatAllowanceText8')}
