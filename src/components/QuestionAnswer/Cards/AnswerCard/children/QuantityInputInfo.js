@@ -5,6 +5,7 @@ import { translate } from 'react-i18next';
 import { View, Text } from 'react-native';
 import type { ComponentType } from 'react';
 import type { TFunction } from '../../../../../types/generalTypes';
+import { globalStyles } from '../../../../../styles/globalStyles';
 
 type QuantityInputInfoProps = {
   duty: number,
@@ -15,8 +16,10 @@ const QuantityInputInfoInner = ({
   t,
 }: QuantityInputInfoProps & { t: TFunction }) => (
   <View>
-    <Text>{`${t(`customsDuty`)}:`}</Text>
-    <Text>{`CHF ${duty.toFixed(2)}`}</Text>
+    <Text style={globalStyles.collapsedCardText}>{`${t(`customsDuty`)}:`}</Text>
+    <Text style={globalStyles.collapsedCardText}>{`CHF ${duty.toFixed(
+      2
+    )}`}</Text>
   </View>
 );
 
