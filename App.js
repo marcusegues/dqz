@@ -52,9 +52,7 @@ if (Platform.OS === 'android') {
   SafeAreaView.setStatusBarHeight(0);
 }
 
-if (Platform.OS === 'ios') {
-  Text.defaultProps.allowFontScaling = false;
-}
+Text.defaultProps.allowFontScaling = false;
 
 type AppProps = {};
 type AppStateT = { isLoadingComplete: boolean, appHaveNewVersion: boolean };
