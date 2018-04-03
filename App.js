@@ -11,6 +11,7 @@ import {
   View,
   AppState,
   NetInfo,
+  Text,
   // $FlowFixMe
 } from 'react-native';
 // $FlowFixMe
@@ -49,6 +50,10 @@ const styles = StyleSheet.create({
 
 if (Platform.OS === 'android') {
   SafeAreaView.setStatusBarHeight(0);
+}
+
+if (Platform.OS === 'ios') {
+  Text.defaultProps.allowFontScaling = false;
 }
 
 type AppProps = {};
