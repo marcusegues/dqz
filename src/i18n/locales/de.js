@@ -321,12 +321,12 @@ export const de: Locale = {
     vatAllowanceText27:
       '1. Beim Einkauf eines Computers lautet die Rechnung wie folgt:',
     vatAllowanceText28a: '1 desktop PC',
-    vatAllowanceText28b: 'CHF 700',
+    vatAllowanceText28b: 'CHF\t\t700',
     vatAllowanceText29a: '1 Bildschirm',
-    vatAllowanceText29b: 'CHF 200',
+    vatAllowanceText29b: 'CHF\t\t200',
     vatAllowanceText30a: '1 Tastatur',
-    vatAllowanceText30b: 'CHF 20',
-    vatAllowanceText31: 'Total\tCHF 920',
+    vatAllowanceText30b: 'CHF\t\t  20',
+    vatAllowanceText31: 'Total\t\t\t\t\t\t   CHF\t   920',
     vatAllowanceText32: '= 3 Gegenstände (drei Verkaufseinheiten)',
     vatAllowanceText33:
       '2. Beim Einkauf eines Computers lautet die Rechnung wie folgt:',
@@ -338,7 +338,7 @@ export const de: Locale = {
     vatAllowanceText39: '= 1 Gegenstand (eine Verkaufseinheit)',
     vatAllowanceText40:
       '3. Beim Einkauf einer Brille lautet die Rechnung wie folgt:',
-    vatAllowanceText41: '2 Gläser\t\t\t2 Stk. à CHF 200\t\tCHF 400',
+    vatAllowanceText41: '2 Gläser\t\t2 Stk. à CHF 200\t\tCHF\t\t400',
     vatAllowanceText42: '1 Gestell\t\t\t\t\t\t\tCHF\t\t300',
     vatAllowanceText43: 'Total\t\t\t\t\t\t\tCHF\t\t700',
     vatAllowanceText44: '1 Gegenstand',
