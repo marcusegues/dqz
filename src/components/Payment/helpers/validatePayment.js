@@ -24,11 +24,9 @@ export const hasValidSize = (
   currencies: CurrencyObject,
   amounts: Amounts
 ): boolean =>
-  !(
-    fees < MIN_DECLARED_CHF ||
-    totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF ||
-    fees > MAX_PAYMENT_CHF
-  );
+  fees > MIN_DECLARED_CHF &&
+  totalAllAmounts(amounts, currencies) < MAX_DECLARED_CHF &&
+  fees < MAX_PAYMENT_CHF;
 
 export const isPaymentEnabled = (
   connectivity: ConnectivityType,

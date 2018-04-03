@@ -10,6 +10,10 @@ import {
 import type { PaymentData } from '../../../types/generalTypes';
 import { makePaymentDataRecord } from '../../../types/generalTypes';
 import * as utils from '../../../model/utils';
+import {
+  MAX_DECLARED_CHF,
+  MAX_PAYMENT_CHF,
+} from '../../../constants/declaration';
 
 describe('Helper functions', () => {
   const noneConn: ConnectivityType = {
@@ -59,7 +63,7 @@ describe('Helper functions', () => {
     // $FlowFixMe
     expect(hasValidSize(0, null, null)).toBeFalsy();
     // $FlowFixMe
-    expect(hasValidSize(20001, null, null)).toBeFalsy();
+    expect(hasValidSize(MAX_PAYMENT_CHF + 1, null, null)).toBeFalsy();
   });
 
   test('has valid amounts', () => {
@@ -72,7 +76,7 @@ describe('Helper functions', () => {
 
   test('amounts are not too large', () => {
     // $FlowFixMe
-    utils.totalAllAmounts = jest.fn(() => 20001);
+    utils.totalAllAmounts = jest.fn(() => MAX_DECLARED_CHF + 1);
 
     // $FlowFixMe
     expect(hasValidSize(123, null, null)).toBeFalsy();
@@ -107,7 +111,7 @@ describe('Helper functions', () => {
 
   test('isPaymentEnabled NOT if size is bad', () => {
     // $FlowFixMe
-    utils.totalAllAmounts = jest.fn(() => 54321);
+    utils.totalAllAmounts = jest.fn(() => MAX_DECLARED_CHF + 1);
     expect(
       // $FlowFixMe
       isPaymentEnabled(wifiConn, startedPayment, 123, null, null)
