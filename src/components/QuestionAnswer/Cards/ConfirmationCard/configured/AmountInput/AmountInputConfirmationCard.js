@@ -20,6 +20,7 @@ import {
   verticalScale,
 } from '../../../../../../styles/Scaling';
 import { AmountIcon } from '../../../../../General Components/GreyBox/configured/AmountIcon';
+import { GreyBar } from '../../../../../General Components/GreyBar';
 import {
   totalLargeAmounts,
   totalNormalAmounts,
@@ -106,44 +107,47 @@ const AmountInputConfirmationCardInner = ({
   }
 
   return (
-    <ConfirmationCard
-      text={title}
-      onAnswer={() => onAnswer('forward')}
-      onBack={() => onAnswer('back')}
-      onInfoIconPress={() =>
-        dispatch({ type: 'NAVIGATE', screen: 'VatAllowance' })
-      }
-      onConfirmationCardTitlePress={onConfirmationCardTitlePress}
-    >
-      {large ? (
-        <Text />
-      ) : (
-        <View style={ownStyles.currentTotalValueContainer}>
-          <View style={ownStyles.currentTotalValue}>
-            <CardRowText
-              text={t('currentTotalValue')}
-              style={ownStyles.currentTotalValueText}
-            />
-            <AmountIcon amount={totalAmount} currency="CHF" />
-            {exclamationMark}
-          </View>
+    <View>
+      <GreyBar />
+      <ConfirmationCard
+        text={title}
+        onAnswer={() => onAnswer('forward')}
+        onBack={() => onAnswer('back')}
+        onInfoIconPress={() =>
+          dispatch({ type: 'NAVIGATE', screen: 'VatAllowance' })
+        }
+        onConfirmationCardTitlePress={onConfirmationCardTitlePress}
+      >
+        {large ? (
+          <Text />
+        ) : (
+          <View style={ownStyles.currentTotalValueContainer}>
+            <View style={ownStyles.currentTotalValue}>
+              <CardRowText
+                text={t('currentTotalValue')}
+                style={ownStyles.currentTotalValueText}
+              />
+              <AmountIcon amount={totalAmount} currency="CHF" />
+              {exclamationMark}
+            </View>
 
-          <CardHeaderSubText
-            text={large ? t('amountInputLargeItem') : ''}
-            style={ownStyles.amountInputLargeItem}
+            <CardHeaderSubText
+              text={large ? t('amountInputLargeItem') : ''}
+              style={ownStyles.amountInputLargeItem}
+            />
+          </View>
+        )}
+
+        <View style={ownStyles.amountInputContainer}>
+          <AmountInput
+            onShowAmountInputModal={onShowAmountInputModal}
+            amounts={amounts}
+            large={large}
+            onDeleteAmount={onDeleteAmount}
           />
         </View>
-      )}
-
-      <View style={ownStyles.amountInputContainer}>
-        <AmountInput
-          onShowAmountInputModal={onShowAmountInputModal}
-          amounts={amounts}
-          large={large}
-          onDeleteAmount={onDeleteAmount}
-        />
-      </View>
-    </ConfirmationCard>
+      </ConfirmationCard>
+    </View>
   );
 };
 
