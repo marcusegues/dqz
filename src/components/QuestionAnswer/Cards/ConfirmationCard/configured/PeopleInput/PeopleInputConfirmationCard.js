@@ -1,5 +1,7 @@
 // @flow
 import React from 'react';
+// $FlowFixMe
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
@@ -36,31 +38,33 @@ const PeopleInputConfirmationCardInner = ({
   t,
   dispatch,
 }: PeopleInputConfirmationCardProps & ReduxInject & { t: TFunction }) => (
-  <ConfirmationCard
-    text={t('peopleInputQuestion')}
-    onAnswer={() => onAnswer('forward')}
-    onBack={() => onAnswer('back')}
-    confirmationDisabled={!getTotalPeople(people)}
-    onConfirmationCardTitlePress={onConfirmationCardTitlePress}
-    onInfoIconPress={() =>
-      dispatch({
-        type: 'NAVIGATE',
-        screen: 'InformationSubCategories',
-        params: { infoCategory: 'declaration' },
-      })
-    }
-  >
-    <AdultInputRow
-      people={people}
-      onAddAdult={onAddAdult}
-      onSubtractAdult={onSubtractAdult}
-    />
-    <MinorInputRow
-      people={people}
-      onAddMinor={onAddMinor}
-      onSubtractMinor={onSubtractMinor}
-    />
-  </ConfirmationCard>
+  <View style={{ marginBottom: 4 }}>
+    <ConfirmationCard
+      text={t('peopleInputQuestion')}
+      onAnswer={() => onAnswer('forward')}
+      onBack={() => onAnswer('back')}
+      confirmationDisabled={!getTotalPeople(people)}
+      onConfirmationCardTitlePress={onConfirmationCardTitlePress}
+      onInfoIconPress={() =>
+        dispatch({
+          type: 'NAVIGATE',
+          screen: 'InformationSubCategories',
+          params: { infoCategory: 'declaration' },
+        })
+      }
+    >
+      <AdultInputRow
+        people={people}
+        onAddAdult={onAddAdult}
+        onSubtractAdult={onSubtractAdult}
+      />
+      <MinorInputRow
+        people={people}
+        onAddMinor={onAddMinor}
+        onSubtractMinor={onSubtractMinor}
+      />
+    </ConfirmationCard>
+  </View>
 );
 
 const mapDispatchToProps = dispatch => ({

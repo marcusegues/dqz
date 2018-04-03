@@ -9,6 +9,8 @@ export const LIGHT_GREY: string = '#E0E0E1';
 export const DARK_GREY: string = '#898989';
 export const BASE_GREY: string = '#757575';
 export const SNACKBAR_GREY: string = '#454545';
+export const GREY_BAR: string = '#818181';
+export const CARD_GREY: string = '#4A4A4A';
 
 export const WHITE: string = '#fff';
 export const BLACK: string = '#000';

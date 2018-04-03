@@ -40,14 +40,7 @@ import {
   analyticsScreenMounted,
 } from '../../analytics/analyticsApi';
 
-import {
-  totalAllAmounts,
-  getConvertedLocalTimeToSwiss,
-} from '../../model/utils';
-import {
-  MIN_DECLARED_CHF,
-  MAX_DECLARED_CHF,
-} from '../../constants/declaration';
+import { getConvertedLocalTimeToSwiss } from '../../model/utils';
 import type { CurrencyObject } from '../../model/currencies';
 import {
   storeClearDeclaration,
@@ -58,6 +51,7 @@ import { MainContentContainer } from '../MainContentContainer/MainContentContain
 import type { ConnectivityType } from '../../types/connectivity';
 import { AppLogo } from '../AppLogo/AppLogo';
 import { MAIN_RED } from '../../styles/colors';
+import { isPaymentEnabled } from './helpers/validatePayment';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -321,26 +315,31 @@ class PaymentContainerInner extends React.Component<
     }
   }
 
-  isPaymentDisabled() {
-    const { fees, connectivity, amounts, currencies, paymentData } = this.props;
-    return (
-      fees < MIN_DECLARED_CHF ||
-      totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF ||
-      (connectivity.type === 'none' || connectivity.type === 'unknown') ||
-      paymentData.status === 'aborted' ||
-      paymentData.status === 'failed'
-    );
-  }
-
   render() {
     const { showModal } = this.state;
-    const { navigation, paymentData } = this.props;
+    const {
+      navigation,
+      paymentData,
+      connectivity,
+      fees,
+      currencies,
+      amounts,
+    } = this.props;
+
     return (
       <MainContentContainer>
         <NavBar step={2} />
         <Overview
           onProceedToPayment={() => this.proceedToPayment()}
-          paymentDisabled={this.isPaymentDisabled()}
+          paymentDisabled={
+            !isPaymentEnabled(
+              connectivity,
+              paymentData,
+              fees,
+              currencies,
+              amounts
+            )
+          }
           navigation={navigation}
         />
         {this.state.showLoading ? (
