@@ -8,7 +8,9 @@ export type ConnectionType =
   | 'bluetooth'
   | 'ethernet'
   | 'wimax';
+
 export type EffectiveConnectionType = '2g' | '3g' | '4g' | 'unknown';
+
 export type ConnectivityType = {
   type: ConnectionType,
   effectiveType: EffectiveConnectionType,
