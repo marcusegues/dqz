@@ -7,7 +7,6 @@ import { Image, Linking, View } from 'react-native';
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { TFunction } from '../../types/generalTypes';
 import { ModalTab } from '../../components/Modals/QuantityInputModal/subComponents/ModalTab';
-import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { CardHeaderText } from '../../components/QuestionAnswer/Cards/subcomponents/CardHeaderText';
 import { CardRowText } from '../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { ScrollViewCard } from '../../components/General Components/ScrollViewCard';
@@ -73,10 +72,6 @@ class AppInfoInner extends React.Component<
   state = {
     selected: 'imprint' || 'development',
   };
-
-  componentWillMount() {
-    analyticsScreenMounted('AboutApplication');
-  }
 
   render() {
     const { t, i18n } = this.props;

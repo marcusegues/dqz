@@ -18,10 +18,6 @@ import type {
   PaymentData,
   TFunction,
 } from '../../types/generalTypes';
-import {
-  analyticsCustom,
-  analyticsScreenMounted,
-} from '../../analytics/analyticsApi';
 import { getPaymentData, getReceiptId } from '../../reducers/selectors';
 import { fetchReceiptByReceiptId } from '../../asyncStorage/storageApi';
 import type { Receipt } from '../../types/receiptTypes';
@@ -99,10 +95,6 @@ class ReceiptAfterPaymentInner extends React.Component<
       // $FlowFixMe
       receipt: {},
     };
-  }
-
-  componentWillMount() {
-    analyticsScreenMounted('ReceiptAfterPayment');
   }
 
   componentDidMount() {
@@ -192,9 +184,7 @@ class ReceiptAfterPaymentInner extends React.Component<
     try {
       await CameraRoll.saveToCameraRoll(snapshot, 'photo');
       Alert.alert(t('receipt:savedToCameraRoll'));
-    } catch (e) {
-      analyticsCustom('Failed to save receipt to camera roll');
-    }
+    } catch (e) {}
   }
 
   image: any;

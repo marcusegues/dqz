@@ -19,11 +19,6 @@ import {
   getQuantityNumber,
 } from '../../../model/configurationApi';
 import { calculateDuty } from '../../../model/dutyCalculations';
-import {
-  analyticsQACardOpenend,
-  analyticsQuantityAdded,
-  analyticsQuantityDeleted,
-} from '../../../analytics/analyticsApi';
 import { GreyBar } from '../../General Components/GreyBar';
 
 export type QuantityInputState = {
@@ -46,7 +41,6 @@ export class QuantityInputQA extends React.Component<
   }
 
   getQuestionComponent() {
-    analyticsQACardOpenend('QuantityInput');
     const { modalVisible, modalCategory, modalMainCategory } = this.state;
     const { onAnswer, qaState, onConfirmationCardTitlePress } = this.props;
     const { basket, settings } = qaState;
@@ -96,7 +90,6 @@ export class QuantityInputQA extends React.Component<
     const { basket } = this.props.qaState;
 
     const updatedBasket = addQuantity(basket, category, quantity);
-    analyticsQuantityAdded(category, quantity);
     this.handleUpdate(updatedBasket);
   }
 
@@ -107,7 +100,6 @@ export class QuantityInputQA extends React.Component<
       date: '',
     });
     const updatedBasket = deleteQuantity(basket, category, index);
-    analyticsQuantityDeleted(category, getQuantityNumber(quantity));
     this.handleUpdate(updatedBasket);
   }
 

@@ -34,11 +34,6 @@ import type {
   Basket,
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
-import {
-  analyticsCustom,
-  analyticsInitPayment,
-  analyticsScreenMounted,
-} from '../../analytics/analyticsApi';
 
 import { getConvertedLocalTimeToSwiss } from '../../model/utils';
 import type { CurrencyObject } from '../../model/currencies';
@@ -102,10 +97,6 @@ class PaymentContainerInner extends React.Component<
     };
   }
 
-  componentWillMount() {
-    analyticsScreenMounted('PaymentContainer');
-  }
-
   componentDidMount() {
     this.saferpay = new Saferpay(baseUrl, redirectsUrlKeys);
   }
@@ -126,7 +117,6 @@ class PaymentContainerInner extends React.Component<
       setPaymentData,
       paymentData,
     } = this.props;
-    analyticsInitPayment(amounts, basket, duty, vat);
     if (fees > 0) {
       this.setState({ isLoadingRedirectData: true }, () => {
         this.saferpay
@@ -180,17 +170,14 @@ class PaymentContainerInner extends React.Component<
     let paymentStatus: PaymentStatus = paymentData.status;
     switch (state.url) {
       case `${baseUrl}${redirectsUrlKeys.success}`:
-        analyticsCustom('Successful payment');
         stateChanged = true;
         paymentStatus = 'success';
         break;
       case `${baseUrl}${redirectsUrlKeys.fail}`:
-        analyticsCustom('Failed payment');
         stateChanged = true;
         paymentStatus = 'failed';
         break;
       case `${baseUrl}${redirectsUrlKeys.abort}`:
-        analyticsCustom('Aborted payment');
         stateChanged = true;
         paymentStatus = 'aborted';
         break;
