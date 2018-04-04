@@ -10,6 +10,7 @@ import {
 } from '../../../../../model/configurationApi';
 import type { People } from '../../../../../model/types/basketPeopleAmountsTypes';
 import type { TFunction } from '../../../../../types/generalTypes';
+import { globalStyles } from '../../../../../styles/globalStyles';
 
 type PeopleInfoProps = {
   people: People,
@@ -21,10 +22,14 @@ const PeopleInfoInner = ({ people, t }: PeopleInfoProps & { t: TFunction }) => {
   return (
     <View>
       {adults ? (
-        <Text>{t('adultCount', { value: adults, count: adults })}</Text>
+        <Text style={globalStyles.collapsedCardText}>
+          {t('adultCount', { value: adults, count: adults })}
+        </Text>
       ) : null}
       {minors ? (
-        <Text>{t('minorCount', { value: minors, count: minors })}</Text>
+        <Text style={globalStyles.collapsedCardText}>
+          {t('minorCount', { value: minors, count: minors })}
+        </Text>
       ) : null}
     </View>
   );
