@@ -28,7 +28,7 @@
     "android": {
       "package": "ch.ezv.dazit.quickzoll",
       "versionCode": 4,
-      "permissions": []
+      "permissions": ["WRITE_EXTERNAL_STORAGE"]
     }
   }
 }
