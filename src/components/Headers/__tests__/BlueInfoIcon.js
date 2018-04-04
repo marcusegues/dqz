@@ -10,7 +10,9 @@ test('BlueInfoIcon component renders correctly', () => {
 
 test('onPress', () => {
   let i = 0;
-  const onPress = () => (i += 1);
+  const onPress = () => {
+    i += 1;
+  };
   const wrapperPress = shallow(<BlueInfoIcon onPress={onPress} />);
 
   expect(wrapperPress.prop('onPress')).toBe(onPress); // uses the right handler
