@@ -13,7 +13,6 @@ import {
 } from './InformationData';
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { Navigation, TFunction } from '../../types/generalTypes';
-import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { borderCrossingsLinks, infoCategories } from './types/information';
 import type { InfoCategory } from './types/information';
 import { MainContentContainer } from '../../components/MainContentContainer/MainContentContainer';
@@ -29,10 +28,6 @@ class InformationMainCategoriesInner extends React.Component<{
       <HeaderTitle text={screenProps.t('information:informationTitle')} />
     ),
   });
-
-  componentWillMount() {
-    analyticsScreenMounted('Information');
-  }
 
   navigateTo(cat: InfoCategory) {
     const { dispatch } = this.props.navigation;

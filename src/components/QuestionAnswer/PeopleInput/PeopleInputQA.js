@@ -11,11 +11,9 @@ import {
   subtractMinor,
 } from '../../../model/configurationApi';
 import type { CardProps } from '../QuestionAnswerContainer';
-import { analyticsQACardOpenend } from '../../../analytics/analyticsApi';
 
 export const PeopleInputQA = (props: CardProps) => {
   const getQuestionComponent = () => {
-    analyticsQACardOpenend('PeopleInput');
     const { onAnswer, onUpdate, qaState, onConfirmationCardTitlePress } = props;
     const { people } = qaState;
     return (
