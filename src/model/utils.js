@@ -33,7 +33,8 @@ export const quantityRounding = (x: number, category: Category): number => {
     CategoriesRates.getIn([category, 'quantityRoundingBase10'], 0)
   );
   const pow = 10 ** factor;
-  return Math.ceil(x / pow) * pow;
+  const cleanX = Math.round(x * 10 ** 9) / 10 ** 9;
+  return Math.ceil(cleanX / pow) * pow;
 };
 
 export const formatDate = (d: Date): string => {
