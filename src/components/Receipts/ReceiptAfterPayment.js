@@ -184,7 +184,9 @@ class ReceiptAfterPaymentInner extends React.Component<
     try {
       await CameraRoll.saveToCameraRoll(snapshot, 'photo');
       Alert.alert(t('receipt:savedToCameraRoll'));
-    } catch (e) {}
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   image: any;

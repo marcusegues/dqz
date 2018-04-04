@@ -15,8 +15,6 @@ import {
   getBasket,
   getTotalFees,
   getAmounts,
-  getTotalDuty,
-  getTotalVat,
   getPaymentData,
   getPeople,
   getCurrencies,
@@ -71,8 +69,6 @@ type ReduxInject = {
   amounts: Amounts,
   currencies: CurrencyObject,
   basket: Basket,
-  duty: number,
-  vat: number,
   paymentData: PaymentData,
   people: People,
   resetDeclaration: () => void,
@@ -108,15 +104,7 @@ class PaymentContainerInner extends React.Component<
   }
 
   initializePayment() {
-    const {
-      fees,
-      duty,
-      vat,
-      amounts,
-      basket,
-      setPaymentData,
-      paymentData,
-    } = this.props;
+    const { fees, setPaymentData, paymentData } = this.props;
     if (fees > 0) {
       this.setState({ isLoadingRedirectData: true }, () => {
         this.saferpay
@@ -401,8 +389,6 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => ({
   fees: getTotalFees(state),
-  duty: getTotalDuty(state),
-  vat: getTotalVat(state),
   amounts: getAmounts(state),
   basket: getBasket(state),
   people: getPeople(state),

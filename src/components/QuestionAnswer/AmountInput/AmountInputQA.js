@@ -8,14 +8,12 @@ import {
   addAmount,
   addLargeAmount,
   deleteAmount,
-  getAmount,
 } from '../../../model/configurationApi';
 import { calculateVat } from '../../../model/vatCalculations';
 import { AmountInputAnswerCard } from '../Cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
 import { CurrencyPickerModal } from '../../Modals/CurrencyPickerModal/CurrencyPickerModal';
 import type { Currency } from '../../../model/currencies';
 import { AmountInputConfirmationCard } from '../Cards/ConfirmationCard/configured/AmountInput/AmountInputConfirmationCard';
-import type { FlatAmount } from '../../../model/utils';
 import { flatLargeAmounts } from '../../../model/utils';
 
 export type AmountInputState = {
@@ -99,7 +97,6 @@ export class AmountInputQA extends React.Component<
 
   handleDeleteAmount(id: string) {
     const { amounts } = this.props.qaState;
-    const amount: FlatAmount = getAmount(amounts, id);
     const updatedAmounts = deleteAmount(amounts, id);
     this.handleUpdate(updatedAmounts);
   }
