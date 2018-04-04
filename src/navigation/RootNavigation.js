@@ -561,7 +561,6 @@ class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
   onBackPress() {
     const { dispatch, nav } = this.props;
     const activeRoute = nav.routes[nav.index];
-    // backClick on OnBoarding screen - app should close
     if (activeRoute.routeName === 'OnBoarding') {
       return false;
     }
