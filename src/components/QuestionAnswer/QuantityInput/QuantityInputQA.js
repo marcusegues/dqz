@@ -24,6 +24,7 @@ import {
   analyticsQuantityAdded,
   analyticsQuantityDeleted,
 } from '../../../analytics/analyticsApi';
+import { GreyBar } from '../../General Components/GreyBar';
 
 export type QuantityInputState = {
   modalVisible: boolean,
@@ -51,6 +52,7 @@ export class QuantityInputQA extends React.Component<
     const { basket, settings } = qaState;
     return (
       <View>
+        <GreyBar />
         <QuantityInputConfirmationCard
           onConfirmationCardTitlePress={onConfirmationCardTitlePress}
           onShowQuantityInputModal={(
