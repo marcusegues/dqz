@@ -10,6 +10,8 @@ import type { QuestionFlag } from '../../../../types/questionAnswerTypes';
 import { amountInputImages } from '../../types/amountAndQuantityInput';
 import type { Language } from '../../../../../../i18n/types/locale';
 import type { TFunction } from '../../../../../../types/generalTypes';
+import { GreyBar } from '../../../../../General Components/GreyBar';
+import { globalStyles } from '../../../../../../styles/globalStyles';
 
 const complete = require('../../../../../../../assets/images/complete.png');
 const incomplete = require('../../../../../../../assets/images/incomplete.png');
@@ -37,8 +39,10 @@ const AmountInputAnswerCardInner = ({
   let cardText = '';
   cardText = (
     <View style={{ flexDirection: 'column' }}>
-      <Text>{t('itemsGreaterThan300CHF')}</Text>
-      <Text>
+      <Text style={globalStyles.collapsedCardText}>
+        {t('itemsGreaterThan300CHF')}
+      </Text>
+      <Text style={globalStyles.collapsedCardText}>
         {large && largeAmountsPresent
           ? t('validateGenericYes')
           : t('validateGenericNo')}
@@ -46,13 +50,16 @@ const AmountInputAnswerCardInner = ({
     </View>
   );
   return (
-    <AnswerCard
-      onAnswerCardPress={onAnswerCardPress}
-      mainIcon={amountInputImages[i18n.language] || vatIcon}
-      flag={flag === 'complete' ? complete : incomplete}
-    >
-      {large ? cardText : <AmountInputInfo vat={vat} />}
-    </AnswerCard>
+    <View>
+      <GreyBar />
+      <AnswerCard
+        onAnswerCardPress={onAnswerCardPress}
+        mainIcon={amountInputImages[i18n.language] || vatIcon}
+        flag={flag === 'complete' ? complete : incomplete}
+      >
+        {large ? cardText : <AmountInputInfo vat={vat} />}
+      </AnswerCard>
+    </View>
   );
 };
 

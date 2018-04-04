@@ -5,6 +5,12 @@ describe('checkVersion tests', () => {
     expect(parseInputToFloat('0.0.1')).toBe('0.0');
     expect(parseInputToFloat('.')).toBe('0');
     expect(parseInputToFloat('999.99.99')).toBe('999.99');
+    expect(parseInputToFloat('99+9.+99.99')).toBe('999.99');
+    expect(parseInputToFloat('99+9.+99.99')).toBe('999.99');
+    expect(parseInputToFloat('99+9.+99.99')).toBe('999.99');
+    expect(parseInputToFloat('99+9')).toBe('999');
+    expect(parseInputToFloat('99+9/.123+4')).toBe('999.12');
+    expect(parseInputToFloat('99+9/.123+4', 6, 4)).toBe('999.1234');
     expect(parseInputToFloat('-999.99')).toBe('999.99');
     expect(parseInputToFloat('-999.99.99')).toBe('999.99');
     expect(parseInputToFloat('-asd999.q99.c99')).toBe('999.99');
