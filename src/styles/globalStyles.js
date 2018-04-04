@@ -4,7 +4,7 @@
 import { StyleSheet } from 'react-native';
 import { BLACK } from './colors';
 
-type GlobalStyles = { boxShadow: {}, collapsedCardText: {} };
+type GlobalStyles = { boxShadow: {} };
 
 export const globalStyles: GlobalStyles = StyleSheet.create({
   boxShadow: {
