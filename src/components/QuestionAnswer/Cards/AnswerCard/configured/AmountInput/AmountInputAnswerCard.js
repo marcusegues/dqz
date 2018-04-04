@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import { AnswerCard } from '../../AnswerCard';
@@ -11,7 +11,7 @@ import { amountInputImages } from '../../types/amountAndQuantityInput';
 import type { Language } from '../../../../../../i18n/types/locale';
 import type { TFunction } from '../../../../../../types/generalTypes';
 import { GreyBar } from '../../../../../General Components/GreyBar';
-import { globalStyles } from '../../../../../../styles/globalStyles';
+import { CollapsedCardText } from '../../../subcomponents/CollapsedCardText';
 
 const complete = require('../../../../../../../assets/images/complete.png');
 const incomplete = require('../../../../../../../assets/images/incomplete.png');
@@ -39,14 +39,14 @@ const AmountInputAnswerCardInner = ({
   let cardText = '';
   cardText = (
     <View style={{ flexDirection: 'column' }}>
-      <Text style={globalStyles.collapsedCardText}>
-        {t('itemsGreaterThan300CHF')}
-      </Text>
-      <Text style={globalStyles.collapsedCardText}>
-        {large && largeAmountsPresent
-          ? t('validateGenericYes')
-          : t('validateGenericNo')}
-      </Text>
+      <CollapsedCardText text={t('itemsGreaterThan300CHF')} />
+      <CollapsedCardText
+        text={
+          large && largeAmountsPresent
+            ? t('validateGenericYes')
+            : t('validateGenericNo')
+        }
+      />
     </View>
   );
   return (
