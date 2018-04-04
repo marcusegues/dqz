@@ -8,7 +8,6 @@ import {
   Text,
   View,
   ScrollView,
-  SafeAreaView,
   // $FlowFixMe
 } from 'react-native';
 import type { ComponentType } from 'react';
@@ -104,7 +103,7 @@ class VatAllowanceInner extends React.Component<
     const vatAllowanceOver300DiagramDe = vatAllowanceOver300Diagrams.de;
 
     return (
-      <SafeAreaView style={ownStyles.container}>
+      <View style={ownStyles.container}>
         <ScrollView
           ref={c => {
             this.myRef = c;
@@ -394,7 +393,7 @@ class VatAllowanceInner extends React.Component<
             />
           </View>
         </ScrollView>
-      </SafeAreaView>
+      </View>
     );
   }
 }
