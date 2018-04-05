@@ -6,8 +6,8 @@ import { shallow } from 'enzyme';
 import Touchable from 'react-native-platform-touchable';
 import { DownloadIcon } from '../subcomponents/DownloadIcon';
 
-describe('Cart Icon TestSuite', () => {
-  test('CartIcon component renders correctly', () => {
+describe('Download Icon TestSuite', () => {
+  test('DownloadIcon component renders correctly', () => {
     const clickFn = jest.fn();
     // $FlowFixMe
     const tree = renderer
@@ -16,10 +16,13 @@ describe('Cart Icon TestSuite', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
   test('we can click it', () => {
     const clickFn = jest.fn();
-    // $FlowFixMe
-    const component = shallow(<DownloadIcon navigation={{ state: clickFn }} />);
+    const component = shallow(
+      // $FlowFixMe
+      <DownloadIcon navigation={{ state: { params: { onPress: clickFn } } }} />
+    );
     component.find(Touchable).simulate('press');
     expect(clickFn).toBeCalled();
   });
