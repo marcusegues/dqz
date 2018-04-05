@@ -5,7 +5,7 @@
     "slug": "dazit",
     "privacy": "unlisted",
     "sdkVersion": "25.0.0",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
         "icon": "./assets/icons/store-icon-1024.png",
@@ -22,12 +22,12 @@
     },
     "ios": {
       "bundleIdentifier": "ch.ezv.dazit.quickzoll",
-      "buildNumber": "1.0.3",
+      "buildNumber": "1.0.4",
       "supportsTablet": true
     },
     "android": {
       "package": "ch.ezv.dazit.quickzoll",
-      "versionCode": 5,
+      "versionCode": 6,
       "permissions": ["WRITE_EXTERNAL_STORAGE"]
     }
   }
