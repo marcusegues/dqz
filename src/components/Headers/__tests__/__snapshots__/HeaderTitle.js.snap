@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderTitle renders according to snapshot 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#1A1A1A",
+      "fontFamily": "roboto_medium",
+      "fontSize": 25.142857142857142,
+      "textAlign": "center",
+    }
+  }
+>
+  QuickZoll
+</Text>
+`;
