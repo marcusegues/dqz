@@ -19,7 +19,7 @@ const ownStyles = {
   infoIcon: {
     position: 'absolute',
     top: verticalScale(16),
-    right: scale(16),
+    right: scale(11),
   },
   bottomSectionWrapper: {
     alignItems: 'center',

@@ -68,7 +68,7 @@ type UpdateTheAppInnerProps = {
 const handleClick = () => {
   const link =
     Platform.OS === 'ios'
-      ? 'https://www.apple.com/itunes/'
+      ? 'https://itunes.apple.com/us/app/quickzoll/id1362688968'
       : 'https://play.google.com/store/apps/details?id=ch.ezv.dazit.quickzoll';
   Linking.openURL(link);
 };

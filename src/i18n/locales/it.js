@@ -721,7 +721,7 @@ export const it: Locale = {
     travelDocumentsMainText: 'Documenti di viaggio',
     declarationMainText: 'Trasporto merce',
     animalsAndPlantsMainText: 'Trasporto animali o piante',
-    vehiclesMainText: 'Viaggo in macchina',
+    vehiclesMainText: 'Viaggio in macchina',
     entryByTrainMainText: 'Entrata in Svizzera con il treno',
     prohibitionsAndRestrictionsMainText: 'Divieti e limitazioni',
     vatAllowanceMainText:

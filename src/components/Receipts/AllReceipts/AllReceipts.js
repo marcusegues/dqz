@@ -10,7 +10,6 @@ import { connect } from 'react-redux';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 import type { Navigation, TFunction } from '../../../types/generalTypes';
-import { analyticsScreenMounted } from '../../../analytics/analyticsApi';
 import { CardHeader } from '../../QuestionAnswer/Cards/subcomponents/CardHeader';
 import { AllReceiptsRow } from './subcomponents/AllReceiptsRow';
 import { HeaderTitle } from '../../Headers/subcomponents/HeaderTitle';
@@ -51,10 +50,6 @@ class AllReceiptsInner extends React.Component<
     this.state = {
       receipts: Immutable.List(),
     };
-  }
-
-  componentWillMount() {
-    analyticsScreenMounted('AllReceipts');
   }
 
   componentDidMount() {

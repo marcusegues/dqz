@@ -11,6 +11,7 @@ import {
   View,
   AppState,
   NetInfo,
+  Text,
   // $FlowFixMe
 } from 'react-native';
 // $FlowFixMe
@@ -25,11 +26,6 @@ import { i18nImplementation } from './src/i18n';
 import { RootNavigator } from './src/navigation/RootNavigation';
 import { configureStore } from './src/configureStore';
 import { parseCurrencyXML } from './src/model/currencies';
-import {
-  analyticsAppStateChanged,
-  analyticsCustom,
-} from './src/analytics/analyticsApi';
-import { initAmplitude } from './src/analytics/amplitude';
 import { appShouldUpdate } from './src/utils/checkversion/checkversion';
 import type { ConnectivityType } from './src/types/connectivity';
 import { UpdateTheApp } from './src/screens/UpdateTheApp/UpdateTheApp';
@@ -51,6 +47,8 @@ if (Platform.OS === 'android') {
   SafeAreaView.setStatusBarHeight(0);
 }
 
+Text.defaultProps.allowFontScaling = false;
+
 type AppProps = {};
 type AppStateT = { isLoadingComplete: boolean, appHaveNewVersion: boolean };
 
@@ -62,10 +60,6 @@ export default class App extends React.Component<AppProps, AppStateT> {
     appHaveNewVersion: false,
   };
 
-  componentWillMount() {
-    analyticsCustom('DAZIT started');
-  }
-
   componentDidMount() {
     AppState.addEventListener('change', next =>
       this.handleAppStateChange(next)
@@ -73,16 +67,14 @@ export default class App extends React.Component<AppProps, AppStateT> {
     NetInfo.addEventListener('connectionChange', connectionInfo =>
       this.handleConnectivityChange(connectionInfo)
     );
-    initAmplitude();
   }
 
   handleConnectivityChange(connectionInfo: ConnectivityType) {
     store.dispatch({ type: 'SET_CONNECTIVITY', connectionInfo });
   }
 
-  // eslint-disable-next-line class-methods-use-this
+  // eslint-disable-next-line class-methods-use-this, no-unused-vars
   handleAppStateChange(nextAppState: ExpoAppState) {
-    analyticsAppStateChanged(nextAppState);
     // will add async storage here
   }
 
@@ -234,7 +226,6 @@ export default class App extends React.Component<AppProps, AppStateT> {
               }
             })
             .catch(e => {
-              // TODO: Add amplitude event for analytics
               console.log(e);
             });
         }),

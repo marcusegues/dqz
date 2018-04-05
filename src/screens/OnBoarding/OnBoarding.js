@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { View, AsyncStorage } from 'react-native';
+import { View } from 'react-native';
 import type { ComponentType } from 'react';
 import { translate } from 'react-i18next';
 import { LanguageButton } from './subcomponents/LanguageButton';
@@ -12,7 +12,6 @@ import { DoneButton } from './subcomponents/DoneButton';
 import { languages } from '../../i18n';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import type { Language } from '../../i18n/types/locale';
-import { analyticsLanguageChanged } from '../../analytics/analyticsApi';
 import {
   fetchSettingsAcceptRate,
   fetchSettingsHasLanguage,
@@ -47,7 +46,6 @@ class OnBoardingInner extends React.Component<
   }
 
   componentWillMount() {
-    AsyncStorage.clear();
     this.checkSettingsAcceptRate();
 
     fetchSettingsHasLanguage().then(language => {
@@ -77,7 +75,6 @@ class OnBoardingInner extends React.Component<
 
   changeLanguage(language: Language) {
     this.props.i18n.changeLanguage(language);
-    analyticsLanguageChanged(language);
   }
 
   render() {
