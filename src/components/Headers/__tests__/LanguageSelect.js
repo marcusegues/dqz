@@ -4,23 +4,29 @@ import React from 'react';
 import { shallow } from 'enzyme';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
-import { InfoIcon } from '../subcomponents/InfoIcon';
+import { LanguageSelect } from '../subcomponents/LanguageSelect';
 
-describe('InfoIcon Icon TestSuite', () => {
-  test('InfoIcon component renders correctly', () => {
+describe('LanguageSelect Icon TestSuite', () => {
+  test('LanguageSelect component renders correctly', () => {
     // $FlowFixMe
-    const tree = renderer.create(<InfoIcon navigation={undefined} />).toJSON();
+    const tree = renderer
+      // $FlowFixMe
+      .create(<LanguageSelect navigation={undefined} language="de" />)
+      .toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('we can click it', () => {
     const clickFn = jest.fn();
     // $FlowFixMe
-    const component = shallow(<InfoIcon navigation={{ dispatch: clickFn }} />);
+    const component = shallow(
+      // $FlowFixMe
+      <LanguageSelect navigation={{ dispatch: clickFn }} language="de" />
+    );
     component.find(Touchable).simulate('press');
     expect(clickFn).toBeCalled();
     expect(clickFn).toBeCalledWith({
       type: 'NAVIGATE',
-      screen: 'AppInfo',
+      screen: 'OnBoarding',
     });
   });
 });
