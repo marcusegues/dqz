@@ -4,33 +4,29 @@ import React from 'react';
 import { shallow } from 'enzyme';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
-import { LanguageSelect } from '../subcomponents/LanguageSelect';
+import { OptionsButton } from '../subcomponents/OptionsButton';
 
-describe('LanguageSelect Icon TestSuite', () => {
-  let component;
-  let clickFn;
-
-  beforeEach(() => {
-    clickFn = jest.fn();
-    component = shallow(
-      // $FlowFixMe
-      <LanguageSelect navigation={{ dispatch: clickFn }} language="de" />
-    );
-  });
-  test('LanguageSelect component renders correctly', () => {
+describe('OptionsButton Icon TestSuite', () => {
+  test('OptionsButton component renders correctly', () => {
     // $FlowFixMe
     const tree = renderer
       // $FlowFixMe
-      .create(<LanguageSelect navigation={undefined} language="de" />)
+      .create(<OptionsButton navigation={undefined} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('we can click it', () => {
+    const clickFn = jest.fn();
+    // $FlowFixMe
+    const component = shallow(
+      // $FlowFixMe
+      <OptionsButton navigation={{ dispatch: clickFn }} />
+    );
     component.find(Touchable).simulate('press');
     expect(clickFn).toBeCalled();
     expect(clickFn).toBeCalledWith({
       type: 'NAVIGATE',
-      screen: 'OnBoarding',
+      screen: 'UnderConstruction',
     });
   });
 });

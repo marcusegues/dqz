@@ -8,11 +8,10 @@ import { DownloadIcon } from '../subcomponents/DownloadIcon';
 
 describe('Download Icon TestSuite', () => {
   test('DownloadIcon component renders correctly', () => {
-    const clickFn = jest.fn();
     // $FlowFixMe
     const tree = renderer
       // $FlowFixMe
-      .create(<DownloadIcon navigation={{ state: clickFn }} />)
+      .create(<DownloadIcon navigation={{ state: {} }} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
