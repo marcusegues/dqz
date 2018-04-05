@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GreyBar renders according to snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "flex-end",
+      "backgroundColor": "#818181",
+      "height": 4,
+      "right": 24,
+      "width": 8,
+    }
+  }
+/>
+`;
