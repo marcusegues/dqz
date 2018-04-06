@@ -49,8 +49,13 @@ class OnBoardingInner extends React.Component<
     this.checkSettingsAcceptRate();
 
     fetchSettingsHasLanguage().then(language => {
+      const { navigation } = this.props;
+      const { nextScreen } = this.state;
       if (language !== KeyNotSet) {
-        this.setState({ settingsHasLanguage: true });
+        this.setState({ settingsHasLanguage: true }, () => {
+          this.changeLanguage(language);
+          navigation.dispatch({ type: 'NAVIGATE', screen: nextScreen });
+        });
       }
     });
   }
@@ -80,7 +85,6 @@ class OnBoardingInner extends React.Component<
   render() {
     const { t, i18n, navigation } = this.props;
     const { systemLanguage, nextScreen, settingsHasLanguage } = this.state;
-
     return (
       <OnBoardingContainer>
         <OnBoardingParagraph
