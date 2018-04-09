@@ -53,6 +53,7 @@ class OnBoardingInner extends React.Component<
       const { nextScreen } = this.state;
       if (language !== KeyNotSet) {
         this.setState({ settingsHasLanguage: true }, () => {
+          // $FlowFixMe
           this.changeLanguage(language);
           navigation.dispatch({ type: 'NAVIGATE', screen: nextScreen });
         });
