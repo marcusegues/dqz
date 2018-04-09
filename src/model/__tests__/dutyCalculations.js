@@ -7,6 +7,7 @@ import {
   getPeopleCount,
 } from '../dutyCalculations';
 import {
+  basketFactoryMeat,
   sampleBasket1,
   sampleBasket5,
   sampleBasket6,
@@ -25,6 +26,8 @@ import {
   setPeople,
   subtractAdult,
 } from '../configurationApi';
+import { getTotalDuty } from '../../reducers/selectors';
+import type { People } from '../types/basketPeopleAmountsTypes';
 
 describe('Duty calculation helpers', () => {
   test('getAdultsOnly obtains correct adultsOnly property for each category', () => {
@@ -167,6 +170,41 @@ describe('Duty Calculations', () => {
     expect(
       calculateDuty(sampleBasket1, setAdultPeople(initPeople, 20))
     ).toMatchSnapshot();
+  });
+
+  test('rounding baskets meat', () => {
+    type Param = {
+      quantity: number,
+      people: People,
+      result: number,
+    };
+    const testingParams: Array<Param> = [
+      { quantity: 2.1, people: addAdult(initPeople), result: 1.7 },
+      { quantity: 2.2, people: addAdult(initPeople), result: 3.4 },
+      { quantity: 2.7, people: addAdult(initPeople), result: 11.9 },
+      { quantity: 3.2, people: setAdultPeople(initPeople, 3), result: 3.4 },
+      { quantity: 3.7, people: setAdultPeople(initPeople, 3), result: 11.9 },
+      { quantity: 9.9, people: setAdultPeople(initPeople, 9), result: 15.3 },
+    ];
+
+    testingParams.forEach((param: Param) => {
+      expect(
+        calculateDuty(basketFactoryMeat(param.quantity), param.people).get(
+          'totalDuty'
+        )
+      ).toBe(param.result);
+    });
+  });
+
+  test('roundingbaskets also works with getTotalDuty (on reducer)', () => {
+    const mockState = {
+      declaration: {
+        basket: basketFactoryMeat(2.1),
+        people: addAdult(initPeople),
+      },
+    };
+    // $FlowFixMe
+    expect(getTotalDuty(mockState)).toBe(1.7);
   });
 
   test('Tax Calculation Rounding Correcty, 2 People and Meat', () => {

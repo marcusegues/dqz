@@ -12,7 +12,6 @@ import { DoneButton } from './subcomponents/DoneButton';
 import { languages } from '../../i18n';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import type { Language } from '../../i18n/types/locale';
-import { analyticsLanguageChanged } from '../../analytics/analyticsApi';
 import {
   fetchSettingsAcceptRate,
   fetchSettingsHasLanguage,
@@ -76,7 +75,6 @@ class OnBoardingInner extends React.Component<
 
   changeLanguage(language: Language) {
     this.props.i18n.changeLanguage(language);
-    analyticsLanguageChanged(language);
   }
 
   render() {
