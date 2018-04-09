@@ -7,15 +7,21 @@ import { CARD_GREY } from '../../../../styles/colors';
 
 type CollapsedCardTextProps = {
   text: string,
+  style?: {},
 };
 
-export const CollapsedCardText = ({ text }: CollapsedCardTextProps) => (
+export const CollapsedCardText = ({ text, style }: CollapsedCardTextProps) => (
   <Text
     style={{
       fontSize: size.small,
       color: CARD_GREY,
+      ...style,
     }}
   >
     {text}
   </Text>
 );
+
+CollapsedCardText.defaultProps = {
+  style: {},
+};
