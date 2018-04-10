@@ -48,7 +48,7 @@ export const mainMenuStyles: any = StyleSheet.create({
   bottomContainer: {
     ...Platform.select({
       ios: {
-        flex: 0.58,
+        flex: Platform.isPad ? 1 : 0.58,
       },
       android: {
         flex: 1.7,
@@ -57,6 +57,6 @@ export const mainMenuStyles: any = StyleSheet.create({
     flexDirection: 'column',
     flexWrap: 'wrap',
     justifyContent: 'flex-end',
-    alignContent: 'space-between',
+    alignContent: Platform.isPad ? 'space-around' : 'space-between',
   },
 });
