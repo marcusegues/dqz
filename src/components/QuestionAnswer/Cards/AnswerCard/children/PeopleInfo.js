@@ -2,7 +2,7 @@
 import React from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { translate } from 'react-i18next';
 import {
   getAdultPeople,
@@ -10,7 +10,7 @@ import {
 } from '../../../../../model/configurationApi';
 import type { People } from '../../../../../model/types/basketPeopleAmountsTypes';
 import type { TFunction } from '../../../../../types/generalTypes';
-import { globalStyles } from '../../../../../styles/globalStyles';
+import { CollapsedCardText } from '../../subcomponents/CollapsedCardText';
 
 type PeopleInfoProps = {
   people: People,
@@ -22,14 +22,14 @@ const PeopleInfoInner = ({ people, t }: PeopleInfoProps & { t: TFunction }) => {
   return (
     <View>
       {adults ? (
-        <Text style={globalStyles.collapsedCardText}>
-          {t('adultCount', { value: adults, count: adults })}
-        </Text>
+        <CollapsedCardText
+          text={t('adultCount', { value: adults, count: adults })}
+        />
       ) : null}
       {minors ? (
-        <Text style={globalStyles.collapsedCardText}>
-          {t('minorCount', { value: minors, count: minors })}
-        </Text>
+        <CollapsedCardText
+          text={t('minorCount', { value: minors, count: minors })}
+        />
       ) : null}
     </View>
   );
