@@ -9,7 +9,6 @@ import type {
   MainCategories,
   MainCategory,
 } from '../../../types/reducers/declaration';
-import { analyticsQACardOpenend } from '../../../analytics/analyticsApi';
 
 export const MainCategoriesInputQA = (props: CardProps) => {
   const handleUpdate = mainCategories => {
@@ -28,7 +27,6 @@ export const MainCategoriesInputQA = (props: CardProps) => {
   };
 
   const getQuestionComponent = () => {
-    analyticsQACardOpenend('MainCategoriesInput');
     const mainCategories: MainCategories = props.qaState.settings.get(
       'mainCategories'
     );

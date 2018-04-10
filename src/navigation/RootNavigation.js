@@ -7,7 +7,7 @@ import { translate } from 'react-i18next';
 // $FlowFixMe
 import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 // $FlowFixMe
-import { View } from 'react-native';
+import { View, BackHandler } from 'react-native';
 import { i18nImplementation } from '../i18n';
 import { OnBoarding } from '../screens/OnBoarding/OnBoarding';
 import { ScreensView } from '../screens/ScreensView/ScreensView';
@@ -58,6 +58,7 @@ import { addListener } from './reactNavigation';
 import { CartIcon } from '../components/Headers/subcomponents/CartIcon';
 import { UpdateTheApp } from '../screens/UpdateTheApp/UpdateTheApp';
 import { SuccessfulPayment } from '../screens/SuccessfulPayment/SuccessfulPayment';
+import { BackToMainInformation } from './Subcomponents/BackToMainInformation';
 
 export type NavigationObject = { navigation: Navigation };
 
@@ -149,32 +150,14 @@ export const stackNavigatorScreens = {
     screen: InformationSubCategories,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
-      headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationMainCategories',
-            })
-          }
-        />
-      ),
+      headerLeft: <BackToMainInformation navigation={navigation} />,
     }),
   },
   CustomsProcedures: {
     screen: CustomsProcedures,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
-      headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationMainCategories',
-            })
-          }
-        />
-      ),
+      headerLeft: <BackToMainInformation navigation={navigation} />,
     }),
   },
   VatAllowance: {
@@ -249,48 +232,21 @@ export const stackNavigatorScreens = {
     screen: TravelDocuments,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
-      headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationMainCategories',
-            })
-          }
-        />
-      ),
+      headerLeft: <BackToMainInformation navigation={navigation} />,
     }),
   },
   EntryByTrain: {
     screen: EntryByTrain,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
-      headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationMainCategories',
-            })
-          }
-        />
-      ),
+      headerLeft: <BackToMainInformation navigation={navigation} />,
     }),
   },
   PurchasesOnlineOffline: {
     screen: PurchasesOnlineOffline,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
-      headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'DutyAllowance',
-            })
-          }
-        />
-      ),
+      headerLeft: <BackToMainInformation navigation={navigation} />,
     }),
   },
   Animals: {
@@ -544,6 +500,30 @@ type ReduxInject = {
 
 // eslint-disable-next-line react/prefer-stateless-function
 class WrappedRootStackNavigator extends React.Component<ReduxInject, {}> {
+  componentDidMount() {
+    BackHandler.addEventListener(
+      'hardwareBackPress',
+      this.onBackPress.bind(this)
+    );
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener(
+      'hardwareBackPress',
+      this.onBackPress.bind(this)
+    );
+  }
+
+  onBackPress() {
+    const { dispatch, nav } = this.props;
+    const activeRoute = nav.routes[nav.index];
+    if (activeRoute.routeName === 'OnBoarding') {
+      return false;
+    }
+    dispatch({ type: 'GO_BACK' });
+    return true;
+  }
+
   render() {
     return (
       <View

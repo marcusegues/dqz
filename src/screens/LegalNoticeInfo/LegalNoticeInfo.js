@@ -7,7 +7,6 @@ import { Linking, TouchableOpacity, View, Text } from 'react-native';
 import { HeaderTitle } from '../../components/Headers/subcomponents/HeaderTitle';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { ModalTab } from '../../components/Modals/QuantityInputModal/subComponents/ModalTab';
-import { analyticsScreenMounted } from '../../analytics/analyticsApi';
 import { CardHeaderText } from '../../components/QuestionAnswer/Cards/subcomponents/CardHeaderText';
 import { CardRowText } from '../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import { BulletText } from '../AppInfo/subComponents/BulletText';
@@ -93,10 +92,6 @@ class LegalNoticeInfoInner extends React.Component<
   state = {
     selected: 'usage' || 'legal',
   };
-
-  componentWillMount() {
-    analyticsScreenMounted('LegalNoticeInfo');
-  }
 
   render() {
     const { t, navigation, i18n } = this.props;

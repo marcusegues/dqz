@@ -43,11 +43,6 @@ import { onUpdateFactory } from './QAControl/validation';
 import { AmountInputQA } from './AmountInput/AmountInputQA';
 import type { CurrencyObject } from '../../model/currencies';
 import type { Navigation, TFunction } from '../../types/generalTypes';
-import {
-  analyticsMainCategoriesChanged,
-  analyticsPeopleChanged,
-  analyticsScreenMounted,
-} from '../../analytics/analyticsApi';
 import { resetAllAmounts } from '../../model/configurationApi';
 import {
   storeAmounts,
@@ -139,10 +134,6 @@ class QuestionAnswerContainerInner extends React.Component<
     this.state = initialQAState;
   }
 
-  componentWillMount() {
-    analyticsScreenMounted('QuestionAnswerContainer');
-  }
-
   componentDidMount() {
     const {
       people,
@@ -158,7 +149,6 @@ class QuestionAnswerContainerInner extends React.Component<
     } else {
       this.setReduxQAStateToComponentState();
     }
-    analyticsPeopleChanged(this.props.people);
   }
 
   componentWillUnmount() {
@@ -272,7 +262,6 @@ class QuestionAnswerContainerInner extends React.Component<
                 {
                   questionType: 'peopleInput',
                   onUpdate: updatedPeople => {
-                    analyticsPeopleChanged(updatedPeople);
                     setPeople(updatedPeople);
                     this.updateFlagsOptimistically(
                       'peopleInput',
@@ -323,7 +312,6 @@ class QuestionAnswerContainerInner extends React.Component<
                     basket: updatedBasket,
                   }) => {
                     setMainCategories(updatedCategories).then(() => {
-                      analyticsMainCategoriesChanged(updatedCategories);
                       setBasket(updatedBasket);
                       if (!updatedCategories.size) {
                         setAmounts(resetAllAmounts());
@@ -376,7 +364,6 @@ class QuestionAnswerContainerInner extends React.Component<
                   questionType: 'quantityInput',
                   onUpdate: updatedBasket => {
                     setBasket(updatedBasket);
-                    // analytics are in the component (add/delete)
                     this.updateFlagsOptimistically(
                       'quantityInput',
                       Object.assign({}, qaStateEnriched, {

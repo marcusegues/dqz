@@ -7,11 +7,11 @@ export const parseInputToFloat = (
   const splitInputs = input.replace(',', '.').split('.');
   if (splitInputs[1] === '' && splitInputs[0] === '') return '0';
   if (splitInputs[1] === undefined || fractionalLen === 0) {
-    return `${splitInputs[0].replace(/[^\d+]/gi, '').substr(0, decimalLen)}`;
+    return `${splitInputs[0].replace(/[^\d]/gi, '').substr(0, decimalLen)}`;
   }
   return `${splitInputs[0]
-    .replace(/[^\d+]/gi, '')
+    .replace(/[^\d]/gi, '')
     .substr(0, decimalLen)}.${splitInputs[1]
-    .replace(/[^\d+]/gi, '')
+    .replace(/[^\d]/gi, '')
     .substr(0, fractionalLen)}`;
 };
