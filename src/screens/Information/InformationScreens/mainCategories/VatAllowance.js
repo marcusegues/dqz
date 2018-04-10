@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { Component } from 'react';
 // $FlowFixMe
 import {
   Image,
@@ -19,17 +19,18 @@ import { AppInfoSubText } from '../../../AppInfo/subComponents/AppInfoSubText';
 import { BulletText } from '../../../AppInfo/subComponents/BulletText';
 import { CardRowText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardRowText';
 import {
+  vatAllowanceCurrencies,
   vatAllowanceMoreTravelersImages,
   vatAllowanceOneTravelerImages,
   vatAllowanceOver300Diagrams,
 } from '../../types/vatAndDutyAllowance';
 import type { Language } from '../../../../i18n/types/locale';
-import { Row } from '../../../../components/Rows/Row';
 import { type } from '../../../../styles/fonts';
 import { borderCrossingsLinks } from '../../types/information';
-import { rowStyles } from '../../../../components/Rows/styles/rowStyles';
 import { CardHeaderText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardHeaderText';
 import { globalStyles } from '../../../../styles/globalStyles';
+import { VatAllowanceRow } from '../../subComponents/VatAllowanceRow';
+import { FormattedText } from '../../subComponents/FormattedText';
 
 const ownStyles = {
   container: {
@@ -56,21 +57,28 @@ type VatAllowanceInnerProps = {
   navigation: Navigation,
   i18n: { language: Language },
 };
+//
+// export const FormattedText = ({
+//   text,
+//   style,
+// }: {
+//   text: string,
+//   style?: {},
+// }) => (
+//   <Text
+//     style={{
+//       color: '#1A1A1A',
+//       fontWeight: '300',
+//       fontFamily: 'roboto_light',
+//       lineHeight: moderateScale(21),
+//       ...style,
+//     }}
+//   >
+//     {text}
+//   </Text>
+// );
 
-export const FormattedText = ({ text }: { text: string }) => (
-  <Text
-    style={{
-      color: '#1A1A1A',
-      fontWeight: '300',
-      fontFamily: 'roboto_light',
-      lineHeight: moderateScale(21),
-    }}
-  >
-    {text}
-  </Text>
-);
-
-class VatAllowanceInner extends React.Component<
+class VatAllowanceInner extends Component<
   VatAllowanceInnerProps,
   VatAllowanceState
 > {
@@ -101,6 +109,8 @@ class VatAllowanceInner extends React.Component<
     const vatAllowanceOver300Diagram =
       vatAllowanceOver300Diagrams[i18n.language];
     const vatAllowanceOver300DiagramDe = vatAllowanceOver300Diagrams.de;
+
+    const currencyName = vatAllowanceCurrencies[i18n.language];
 
     return (
       <View style={ownStyles.container}>
@@ -292,46 +302,29 @@ class VatAllowanceInner extends React.Component<
               text={t('vatAllowanceText27')}
               style={{ marginBottom: moderateScale(16) }}
             />
-            <Row borderTop width="100%">
-              <View
-                style={[
-                  rowStyles.rowContent,
-                  { justifyContent: 'space-between', width: '100%' },
-                ]}
-              >
-                <FormattedText text={t('vatAllowanceText28a')} />
-                <FormattedText text={t('vatAllowanceText28b')} />
-              </View>
-            </Row>
-            <Row width="100%">
-              <View
-                style={[
-                  rowStyles.rowContent,
-                  { justifyContent: 'space-between', width: '100%' },
-                ]}
-              >
-                <FormattedText text={t('vatAllowanceText29a')} />
-                <FormattedText text={t('vatAllowanceText29b')} />
-              </View>
-            </Row>
-            <Row borderBottom width="100%">
-              <View
-                style={[
-                  rowStyles.rowContent,
-                  { justifyContent: 'space-between', width: '100%' },
-                ]}
-              >
-                <FormattedText text={t('vatAllowanceText30a')} />
-                <FormattedText text={t('vatAllowanceText30b')} />
-              </View>
-            </Row>
-            <CardRowText
+
+            <VatAllowanceRow
+              text={t('vatAllowanceText28')}
+              currency={currencyName}
+              value="700"
+              borderTop
+            />
+            <VatAllowanceRow
+              text={t('vatAllowanceText29')}
+              currency={currencyName}
+              value="200"
+            />
+            <VatAllowanceRow
+              text={t('vatAllowanceText30')}
+              currency={currencyName}
+              value="20"
+            />
+            <VatAllowanceRow
               text={t('vatAllowanceText31')}
-              style={{
-                marginLeft: 10,
-                marginRight: 10,
-                marginVertical: moderateScale(16),
-              }}
+              currency={currencyName}
+              value="920"
+              borderBottom={false}
+              bold
             />
             <AppInfoSubText
               text={t('vatAllowanceText32')}
@@ -341,12 +334,15 @@ class VatAllowanceInner extends React.Component<
               text={t('vatAllowanceText33')}
               style={{ marginBottom: moderateScale(16) }}
             />
-            <Row borderTop borderBottom={false} width="100%">
-              <AppInfoSubText
-                text={t('vatAllowanceText34')}
-                style={{ marginVertical: moderateScale(16) }}
-              />
-            </Row>
+
+            <VatAllowanceRow
+              text={t('vatAllowanceText34')}
+              currency={currencyName}
+              value="920"
+              borderTop
+              borderBottom={false}
+            />
+
             <View style={{ marginLeft: 10 }}>
               <BulletText text={t('vatAllowanceText35')} />
               <BulletText text={t('vatAllowanceText36')} />
@@ -356,12 +352,14 @@ class VatAllowanceInner extends React.Component<
               />
             </View>
 
-            <Row borderTop borderBottom={false} width="100%">
-              <CardRowText
-                text={t('vatAllowanceText38')}
-                style={{ marginVertical: moderateScale(16) }}
-              />
-            </Row>
+            <VatAllowanceRow
+              text={t('vatAllowanceText31')}
+              currency={currencyName}
+              value="920"
+              bold
+              borderTop
+              borderBottom={false}
+            />
             <AppInfoSubText
               text={t('vatAllowanceText39')}
               style={{ marginBottom: moderateScale(48) }}
@@ -370,22 +368,30 @@ class VatAllowanceInner extends React.Component<
               text={t('vatAllowanceText40')}
               style={{ marginBottom: moderateScale(16) }}
             />
+            <VatAllowanceRow
+              text={t('vatAllowanceText41')}
+              currency={currencyName}
+              value="400"
+              borderTop
+            >
+              <FormattedText
+                text={t('vatAllowanceText41a')}
+                style={{ marginRight: 30 }}
+              />
+            </VatAllowanceRow>
 
-            <Row borderTop width="100%">
-              <AppInfoSubText
-                text={t('vatAllowanceText41')}
-                style={{ marginVertical: moderateScale(16) }}
-              />
-            </Row>
-            <Row width="100%">
-              <AppInfoSubText
-                text={t('vatAllowanceText42')}
-                style={{ marginVertical: moderateScale(16) }}
-              />
-            </Row>
-            <CardRowText
-              text={t('vatAllowanceText43')}
-              style={{ marginVertical: moderateScale(16) }}
+            <VatAllowanceRow
+              text={t('vatAllowanceText42')}
+              currency={currencyName}
+              value="300"
+            />
+
+            <VatAllowanceRow
+              text={t('vatAllowanceText31')}
+              currency={currencyName}
+              value="700"
+              bold
+              borderBottom={false}
             />
             <AppInfoSubText
               text={t('vatAllowanceText44')}
