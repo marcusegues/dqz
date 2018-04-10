@@ -62,9 +62,5 @@ export const nav = (state = initialNavState, action) => {
       return state;
     }
   }
-  const nextState = RootStackNavigator.router.getStateForAction(
-    navigationAction,
-    state
-  );
-  return nextState;
+  return RootStackNavigator.router.getStateForAction(navigationAction, state);
 };
