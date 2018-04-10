@@ -770,7 +770,7 @@ export const fr: Locale = {
     generalCustomsDirectorate: 'Monbijoustrasse 40\n3003 Bern',
     designAndDevelopment: 'Conception et développement',
     ambriteAddress:
-      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch',
+      'Überlandstrasse 111\n8600 Dübendorf\nSwitzerland\n\ninfo@ambrite.ch',
     toContactForm: 'Formulaire de contact',
   },
   legalNoticeInformation: {
