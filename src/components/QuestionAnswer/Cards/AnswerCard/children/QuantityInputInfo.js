@@ -2,10 +2,10 @@
 import React from 'react';
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import type { ComponentType } from 'react';
 import type { TFunction } from '../../../../../types/generalTypes';
-import { globalStyles } from '../../../../../styles/globalStyles';
+import { CollapsedCardText } from '../../subcomponents/CollapsedCardText';
 
 type QuantityInputInfoProps = {
   duty: number,
@@ -16,10 +16,8 @@ const QuantityInputInfoInner = ({
   t,
 }: QuantityInputInfoProps & { t: TFunction }) => (
   <View>
-    <Text style={globalStyles.collapsedCardText}>{`${t(`customsDuty`)}:`}</Text>
-    <Text style={globalStyles.collapsedCardText}>{`CHF ${duty.toFixed(
-      2
-    )}`}</Text>
+    <CollapsedCardText text={`${t(`customsDuty`)}:`} />
+    <CollapsedCardText text={`CHF ${duty.toFixed(2)}`} />
   </View>
 );
 

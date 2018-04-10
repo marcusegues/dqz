@@ -6,7 +6,7 @@ import { View, Text } from 'react-native';
 import { translate } from 'react-i18next';
 import type { MainCategories } from '../../../../../types/reducers/declaration';
 import type { TFunction } from '../../../../../types/generalTypes';
-import { globalStyles } from '../../../../../styles/globalStyles';
+import { CollapsedCardText } from '../../subcomponents/CollapsedCardText';
 
 type MainCategoriesInputInfoProps = {
   mainCategories: MainCategories,
@@ -24,12 +24,12 @@ class MainCategoriesInputInfoInner extends React.Component<
     }
     return (
       <View>
-        <Text style={globalStyles.collapsedCardText}>{`${t(
-          `general:goodCategories`
-        )}:`}</Text>
-        <Text style={globalStyles.collapsedCardText}>
-          {mainCategories.map(key => t(`mainCategories:${key}`)).join(', ')}
-        </Text>
+        <CollapsedCardText text={`${t(`general:goodCategories`)}:`} />
+        <CollapsedCardText
+          text={mainCategories
+            .map(key => t(`mainCategories:${key}`))
+            .join(', ')}
+        />
       </View>
     );
   }
