@@ -46,12 +46,6 @@ export const nav = (state = initialNavState, action) => {
       });
       break;
     }
-    case 'Navigation/BACK': {
-      navigationAction = NavigationActions.back({
-        key: action.key || null,
-      });
-      break;
-    }
     case 'GO_BACK': {
       navigationAction = NavigationActions.back({
         key: action.key || null,
