@@ -58,6 +58,7 @@ import { addListener } from './reactNavigation';
 import { CartIcon } from '../components/Headers/subcomponents/CartIcon';
 import { UpdateTheApp } from '../screens/UpdateTheApp/UpdateTheApp';
 import { SuccessfulPayment } from '../screens/SuccessfulPayment/SuccessfulPayment';
+import { BackToMainInformation } from './Subcomponents/BackToMainInformation';
 
 export type NavigationObject = { navigation: Navigation };
 
@@ -149,32 +150,14 @@ export const stackNavigatorScreens = {
     screen: InformationSubCategories,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
-      headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationMainCategories',
-            })
-          }
-        />
-      ),
+      headerLeft: <BackToMainInformation navigation={navigation} />,
     }),
   },
   CustomsProcedures: {
     screen: CustomsProcedures,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
-      headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationMainCategories',
-            })
-          }
-        />
-      ),
+      headerLeft: <BackToMainInformation navigation={navigation} />,
     }),
   },
   VatAllowance: {
@@ -249,48 +232,21 @@ export const stackNavigatorScreens = {
     screen: TravelDocuments,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
-      headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationMainCategories',
-            })
-          }
-        />
-      ),
+      headerLeft: <BackToMainInformation navigation={navigation} />,
     }),
   },
   EntryByTrain: {
     screen: EntryByTrain,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
-      headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationMainCategories',
-            })
-          }
-        />
-      ),
+      headerLeft: <BackToMainInformation navigation={navigation} />,
     }),
   },
   PurchasesOnlineOffline: {
     screen: PurchasesOnlineOffline,
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
-      headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'DutyAllowance',
-            })
-          }
-        />
-      ),
+      headerLeft: <BackToMainInformation navigation={navigation} />,
     }),
   },
   Animals: {
