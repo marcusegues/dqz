@@ -57,26 +57,6 @@ type VatAllowanceInnerProps = {
   navigation: Navigation,
   i18n: { language: Language },
 };
-//
-// export const FormattedText = ({
-//   text,
-//   style,
-// }: {
-//   text: string,
-//   style?: {},
-// }) => (
-//   <Text
-//     style={{
-//       color: '#1A1A1A',
-//       fontWeight: '300',
-//       fontFamily: 'roboto_light',
-//       lineHeight: moderateScale(21),
-//       ...style,
-//     }}
-//   >
-//     {text}
-//   </Text>
-// );
 
 class VatAllowanceInner extends Component<
   VatAllowanceInnerProps,

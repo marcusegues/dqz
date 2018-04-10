@@ -323,7 +323,7 @@ export const fr: Locale = {
       'marchandises montées ou assemblées = un bien (même si les différents composants sont indiqués séparément sur la facture).',
     vatAllowanceText26: 'Exemples:',
     vatAllowanceText27:
-      "1.\tUne facture est établie comme suit pour l'achat d'un ordinateur:",
+      "1. Une facture est établie comme suit pour l'achat d'un ordinateur:",
     vatAllowanceText28: '1 ordinateur de bureau PC',
     vatAllowanceText29: '1 écran',
     vatAllowanceText30: '1 clavier',
