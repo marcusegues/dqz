@@ -9,7 +9,7 @@ import { it } from './locales/it';
 import type { Language } from './types/locale';
 
 export const languages: Array<Language> = ['de', 'fr', 'it', 'en'];
-const defaultLanguage = 'de';
+const defaultLanguage: Language = 'de';
 
 const languageDetector = {
   type: 'languageDetector',
