@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormattedText FormattedText component renders correctly if bold prop is passed 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#1A1A1A",
+      "fontFamily": "roboto_bold",
+      "lineHeight": 33,
+    }
+  }
+>
+  FormattedText test
+</Text>
+`;
+
+exports[`FormattedText FormattedText component renders correctly if color prop is set 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "blue",
+      "fontFamily": "roboto_light",
+      "lineHeight": 33,
+    }
+  }
+>
+  MockCollapsedCardText
+</Text>
+`;
+
+exports[`FormattedText FormattedText renders according to snapshot 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "color": "#1A1A1A",
+      "fontFamily": "roboto_light",
+      "lineHeight": 33,
+    }
+  }
+>
+  MockCollapsedCardText
+</Text>
+`;
+
+exports[`FormattedText renders as expected 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FormattedText
+    bold={true}
+    style={
+      Object {
+        "fontSize": 20,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "accessible": true,
+      "allowFontScaling": true,
+      "children": undefined,
+      "ellipsizeMode": "tail",
+      "style": Object {
+        "color": "#1A1A1A",
+        "fontFamily": "roboto_bold",
+        "fontSize": 20,
+        "lineHeight": 33,
+      },
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "accessible": true,
+        "allowFontScaling": true,
+        "children": undefined,
+        "ellipsizeMode": "tail",
+        "style": Object {
+          "color": "#1A1A1A",
+          "fontFamily": "roboto_bold",
+          "fontSize": 20,
+          "lineHeight": 33,
+        },
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`FormattedText renders as expected 2`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FormattedText
+    bold={false}
+    style={
+      Object {
+        "fontSize": 20,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "accessible": true,
+      "allowFontScaling": true,
+      "children": undefined,
+      "ellipsizeMode": "tail",
+      "style": Object {
+        "color": "#1A1A1A",
+        "fontFamily": "roboto_light",
+        "fontSize": 20,
+        "lineHeight": 33,
+      },
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "accessible": true,
+        "allowFontScaling": true,
+        "children": undefined,
+        "ellipsizeMode": "tail",
+        "style": Object {
+          "color": "#1A1A1A",
+          "fontFamily": "roboto_light",
+          "fontSize": 20,
+          "lineHeight": 33,
+        },
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
