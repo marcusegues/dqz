@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable no-console */
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
