@@ -7,15 +7,13 @@ import { FormattedText } from '../FormattedText';
 describe('FormattedText', () => {
   test('FormattedText renders according to snapshot', () => {
     const component = renderer
-      .create(<FormattedText text="MockCollapsedCardText" />)
+      .create(<FormattedText text="FormattedText" />)
       .toJSON();
     expect(component).toMatchSnapshot();
   });
   test('FormattedText component renders correctly if color prop is set', () => {
     const tree = renderer
-      .create(
-        <FormattedText text="MockCollapsedCardText" style={{ color: 'blue' }} />
-      )
+      .create(<FormattedText text="FormattedText" style={{ color: 'blue' }} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -28,7 +26,7 @@ describe('FormattedText', () => {
   test('renders as expected', () => {
     const wrapper = shallow(<FormattedText style={{ fontSize: 20 }} bold />);
     expect(wrapper).toMatchSnapshot();
-    wrapper.setProps({ bold: false });
+    wrapper.setProps({ bold: false, style: {} });
     expect(wrapper).toMatchSnapshot();
   });
 });

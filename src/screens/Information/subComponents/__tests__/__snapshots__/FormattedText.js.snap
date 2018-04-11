@@ -30,7 +30,7 @@ exports[`FormattedText FormattedText component renders correctly if color prop i
     }
   }
 >
-  MockCollapsedCardText
+  FormattedText
 </Text>
 `;
 
@@ -47,7 +47,7 @@ exports[`FormattedText FormattedText renders according to snapshot 1`] = `
     }
   }
 >
-  MockCollapsedCardText
+  FormattedText
 </Text>
 `;
 
@@ -128,11 +128,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <FormattedText
     bold={false}
-    style={
-      Object {
-        "fontSize": 20,
-      }
-    }
+    style={Object {}}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -153,7 +149,6 @@ ShallowWrapper {
       "style": Object {
         "color": "#1A1A1A",
         "fontFamily": "roboto_light",
-        "fontSize": 20,
         "lineHeight": 33,
       },
     },
@@ -174,7 +169,6 @@ ShallowWrapper {
         "style": Object {
           "color": "#1A1A1A",
           "fontFamily": "roboto_light",
-          "fontSize": 20,
           "lineHeight": 33,
         },
       },
