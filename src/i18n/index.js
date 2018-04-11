@@ -9,12 +9,15 @@ import { it } from './locales/it';
 import type { Language } from './types/locale';
 
 export const languages: Array<Language> = ['de', 'fr', 'it', 'en'];
+const defaultLanguage = 'de';
 
 const languageDetector = {
   type: 'languageDetector',
   async: true, // flags below detection to be async
   detect: callback =>
-    Expo.Util.getCurrentLocaleAsync().then(lng => callback(lng.substr(0, 2))),
+    Expo.Util.getCurrentLocaleAsync().then(lng =>
+      callback(languages.indexOf(lng) > -1 ? lng.substr(0, 2) : defaultLanguage)
+    ),
   init: () => {},
   cacheUserLanguage: () => {},
 };
