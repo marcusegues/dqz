@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable no-console */
 import React from 'react';
 // $FlowFixMe
 import { View } from 'react-native';
@@ -15,6 +16,7 @@ import type { Language } from '../../i18n/types/locale';
 import {
   fetchSettingsAcceptRate,
   fetchSettingsHasLanguage,
+  storeSettingsAcceptRate,
   storeSettingsHasLanguage,
 } from '../../asyncStorage/storageApi';
 import { KeyNotSet } from '../../asyncStorage/asyncStorage';
@@ -49,8 +51,12 @@ class OnBoardingInner extends React.Component<
     this.checkSettingsAcceptRate();
 
     fetchSettingsHasLanguage().then(language => {
+      const { navigation } = this.props;
+      const { nextScreen } = this.state;
       if (language !== KeyNotSet) {
-        this.setState({ settingsHasLanguage: true });
+        this.setState({ settingsHasLanguage: true }, () => {
+          navigation.dispatch({ type: 'NAVIGATE', screen: nextScreen });
+        });
       }
     });
   }
@@ -72,15 +78,16 @@ class OnBoardingInner extends React.Component<
       }
     });
   }
-
   changeLanguage(language: Language) {
+    storeSettingsAcceptRate('notAccepted').catch(() =>
+      console.log('Something went wrong')
+    );
     this.props.i18n.changeLanguage(language);
   }
 
   render() {
     const { t, i18n, navigation } = this.props;
     const { systemLanguage, nextScreen, settingsHasLanguage } = this.state;
-
     return (
       <OnBoardingContainer>
         <OnBoardingParagraph
