@@ -15,6 +15,7 @@ import type { Language } from '../../i18n/types/locale';
 import {
   fetchSettingsAcceptRate,
   fetchSettingsHasLanguage,
+  storeSettingsAcceptRate,
   storeSettingsHasLanguage,
 } from '../../asyncStorage/storageApi';
 import { KeyNotSet } from '../../asyncStorage/asyncStorage';
@@ -53,8 +54,6 @@ class OnBoardingInner extends React.Component<
       const { nextScreen } = this.state;
       if (language !== KeyNotSet) {
         this.setState({ settingsHasLanguage: true }, () => {
-          // $FlowFixMe
-          this.changeLanguage(language);
           navigation.dispatch({ type: 'NAVIGATE', screen: nextScreen });
         });
       }
@@ -78,8 +77,10 @@ class OnBoardingInner extends React.Component<
       }
     });
   }
-
   changeLanguage(language: Language) {
+    storeSettingsAcceptRate('notAccepted').catch(() =>
+      console.log('Something went wrong')
+    );
     this.props.i18n.changeLanguage(language);
   }
 
