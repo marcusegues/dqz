@@ -248,7 +248,7 @@ class VatAllowanceInner extends Component<
             <AppInfoSubText
               text={t('vatAllowanceText20')}
               greyBox
-              style={{ paddingVertical: moderateScale(10) }}
+              style={{ marginVertical: moderateScale(10) }}
             />
             <AppInfoSubText
               text={t('vatAllowanceText21')}
