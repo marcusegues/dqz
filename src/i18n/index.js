@@ -11,10 +11,10 @@ import type { Language } from './types/locale';
 export const languages: Array<Language> = ['de', 'fr', 'it', 'en'];
 const defaultLanguage: Language = 'de';
 
-const languageDetector = {
+export const languageDetector = {
   type: 'languageDetector',
   async: true, // flags below detection to be async
-  detect: callback =>
+  detect: (callback: (str: string) => Language) =>
     Expo.Util.getCurrentLocaleAsync().then(lng =>
       callback(languages.indexOf(lng) > -1 ? lng.substr(0, 2) : defaultLanguage)
     ),
