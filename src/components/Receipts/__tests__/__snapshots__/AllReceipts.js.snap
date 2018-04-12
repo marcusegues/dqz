@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AllReceipts renders according to snapshot 1`] = `
+exports[`AllReceipts Renders empty AllReceipts component to snapshot 1`] = `
 <View
   style={
     Object {
