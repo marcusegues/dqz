@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { TouchableWithoutFeedback, View } from 'react-native';
+import { View } from 'react-native';
 import type { ComponentType } from 'react';
 import type { List } from 'immutable';
 import Immutable from 'immutable';
@@ -21,11 +21,6 @@ import { calculateVat } from '../../../model/vatCalculations';
 import { ScrollViewCard } from '../../General Components/ScrollViewCard';
 import { MainContentContainer } from '../../MainContentContainer/MainContentContainer';
 import { dateTimeToFormat } from '../../../utils/datetime/datetime';
-import { rowStyles } from '../../Rows/styles/rowStyles';
-import { Row } from '../../Rows/Row';
-import { CardRowText } from '../../QuestionAnswer/Cards/subcomponents/CardRowText';
-import { CardRowSubText } from '../../QuestionAnswer/Cards/subcomponents/CardRowSubText';
-import { RightChevronIcon } from '../../General Components/RightChevronIcon';
 
 type AllReceiptsState = {
   receipts: List<Receipt>,

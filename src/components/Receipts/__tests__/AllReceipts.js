@@ -3,8 +3,6 @@ import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
 import Immutable from 'immutable';
 import { AllReceipts } from '../AllReceipts/AllReceipts';
-import { fetchReceipts } from '../../../asyncStorage/storageApi';
-import { deserializeReceipts } from '../../../asyncStorage/deserializers';
 
 const middlewares = []; // you can mock any middlewares here if necessary
 const mockStore = configureStore(middlewares);
