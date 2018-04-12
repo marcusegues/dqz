@@ -3,7 +3,6 @@ import { fr } from '../locales/fr';
 import { it } from '../locales/it';
 import { en } from '../locales/en';
 import { de } from '../locales/de';
-import { languageDetector } from '../index';
 
 const init = lng =>
   i18n.init({
@@ -48,20 +47,5 @@ describe('Translation works', () => {
   test('fallback', () => {
     init('xy');
     expect(i18n.t('onBoarding:welcome')).toBe('Willkommen zu');
-  });
-});
-
-jest.mock('expo', () => ({
-  Util: {
-    getCurrentLocaleAsync: () => new Promise(resolve => resolve('en')),
-  },
-}));
-
-describe('Language is correctly detected', () => {
-  test('Using a valid language', async () => {
-    const cb = jest.fn();
-    const det = languageDetector.detect;
-    await det(cb);
-    expect(cb).toBeCalledWith('en');
   });
 });
