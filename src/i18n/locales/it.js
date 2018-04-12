@@ -721,7 +721,7 @@ export const it: Locale = {
     travelDocumentsMainText: 'Documenti di viaggio',
     declarationMainText: 'Trasporto merce',
     animalsAndPlantsMainText: 'Trasporto animali o piante',
-    vehiclesMainText: 'Viaggo in macchina',
+    vehiclesMainText: 'Viaggio in macchina',
     entryByTrainMainText: 'Entrata in Svizzera con il treno',
     prohibitionsAndRestrictionsMainText: 'Divieti e limitazioni',
     vatAllowanceMainText:
@@ -759,7 +759,7 @@ export const it: Locale = {
     generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern`,
     designAndDevelopment: 'Design e sviluppo',
     ambriteAddress:
-      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch',
+      'Überlandstrasse 111\n8600 Dübendorf\nSwitzerland\n\ninfo@ambrite.ch',
     toContactForm: 'Formulario di contatto',
   },
   legalNoticeInformation: {

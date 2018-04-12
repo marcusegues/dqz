@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrencyFlag TestSuite CurrencyFlag component renders correctly with default fontSize 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "fontSize": 30,
+    }
+  }
+>
+  🇪🇺
+</Text>
+`;
+
+exports[`CurrencyFlag TestSuite CurrencyFlag component renders correctly with preset fontSize 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "fontSize": 14,
+    }
+  }
+>
+  🇪🇺
+</Text>
+`;

@@ -15,8 +15,6 @@ import {
   getBasket,
   getTotalFees,
   getAmounts,
-  getTotalDuty,
-  getTotalVat,
   getPaymentData,
   getPeople,
   getCurrencies,
@@ -34,11 +32,6 @@ import type {
   Basket,
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
-import {
-  analyticsCustom,
-  analyticsInitPayment,
-  analyticsScreenMounted,
-} from '../../analytics/analyticsApi';
 
 import { getConvertedLocalTimeToSwiss } from '../../model/utils';
 import type { CurrencyObject } from '../../model/currencies';
@@ -76,8 +69,6 @@ type ReduxInject = {
   amounts: Amounts,
   currencies: CurrencyObject,
   basket: Basket,
-  duty: number,
-  vat: number,
   paymentData: PaymentData,
   people: People,
   resetDeclaration: () => void,
@@ -102,10 +93,6 @@ class PaymentContainerInner extends React.Component<
     };
   }
 
-  componentWillMount() {
-    analyticsScreenMounted('PaymentContainer');
-  }
-
   componentDidMount() {
     this.saferpay = new Saferpay(baseUrl, redirectsUrlKeys);
   }
@@ -117,16 +104,7 @@ class PaymentContainerInner extends React.Component<
   }
 
   initializePayment() {
-    const {
-      fees,
-      duty,
-      vat,
-      amounts,
-      basket,
-      setPaymentData,
-      paymentData,
-    } = this.props;
-    analyticsInitPayment(amounts, basket, duty, vat);
+    const { fees, setPaymentData, paymentData } = this.props;
     if (fees > 0) {
       this.setState({ isLoadingRedirectData: true }, () => {
         this.saferpay
@@ -180,17 +158,14 @@ class PaymentContainerInner extends React.Component<
     let paymentStatus: PaymentStatus = paymentData.status;
     switch (state.url) {
       case `${baseUrl}${redirectsUrlKeys.success}`:
-        analyticsCustom('Successful payment');
         stateChanged = true;
         paymentStatus = 'success';
         break;
       case `${baseUrl}${redirectsUrlKeys.fail}`:
-        analyticsCustom('Failed payment');
         stateChanged = true;
         paymentStatus = 'failed';
         break;
       case `${baseUrl}${redirectsUrlKeys.abort}`:
-        analyticsCustom('Aborted payment');
         stateChanged = true;
         paymentStatus = 'aborted';
         break;
@@ -414,8 +389,6 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => ({
   fees: getTotalFees(state),
-  duty: getTotalDuty(state),
-  vat: getTotalVat(state),
   amounts: getAmounts(state),
   basket: getBasket(state),
   people: getPeople(state),

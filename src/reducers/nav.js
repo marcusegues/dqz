@@ -46,6 +46,12 @@ export const nav = (state = initialNavState, action) => {
       });
       break;
     }
+    case 'Navigation/BACK': {
+      navigationAction = NavigationActions.back({
+        key: action.key || null,
+      });
+      break;
+    }
     case 'GO_BACK': {
       navigationAction = NavigationActions.back({
         key: action.key || null,
@@ -56,9 +62,5 @@ export const nav = (state = initialNavState, action) => {
       return state;
     }
   }
-  const nextState = RootStackNavigator.router.getStateForAction(
-    navigationAction,
-    state
-  );
-  return nextState;
+  return RootStackNavigator.router.getStateForAction(navigationAction, state);
 };

@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrencyFlagAndAmount TestSuite CurrencyFlagAndAmount component renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "flexDirection": "row",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginRight": 10.714285714285714,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 30,
+        }
+      }
+    >
+      🇪🇺
+    </Text>
+  </View>
+  <View
+    style={Object {}}
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#24253D",
+          "fontFamily": "roboto_medium",
+          "fontSize": 22,
+        }
+      }
+    >
+      EUR 22.00
+    </Text>
+  </View>
+</View>
+`;

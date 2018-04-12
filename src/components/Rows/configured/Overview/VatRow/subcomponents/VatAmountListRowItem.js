@@ -12,7 +12,6 @@ import { getCurrencies } from '../../../../../../reducers/selectors';
 import type { CurrencyObject } from '../../../../../../model/currencies';
 import { CurrencyFlagAndAmount } from '../../../../../General Components/CurrencyFlagAndAmount';
 import { SwipeToDelete } from '../../../../../General Components/SwipeableContent/configured/SwipeToDelete';
-import { analyticsAmountDeleted } from '../../../../../../analytics/analyticsApi';
 
 type VatAmountListRowItemProps = {
   flatAmount: FlatAmount,
@@ -50,11 +49,6 @@ const VatAmountListRowItemInner = ({
   );
 
   const handleDeleteAmount = () => {
-    analyticsAmountDeleted(
-      flatAmount.currency,
-      flatAmount.amount,
-      flatAmount.large
-    );
     onDelete();
   };
 
