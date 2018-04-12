@@ -14,7 +14,7 @@ const defaultLanguage: Language = 'de';
 export const languageDetector = {
   type: 'languageDetector',
   async: true, // flags below detection to be async
-  detect: (callback: (str: string) => any) =>
+  detect: (callback: (str: string) => any): any =>
     Expo.Util.getCurrentLocaleAsync().then(language => {
       const lng = language.substr(0, 2);
       return callback(
