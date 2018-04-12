@@ -16,7 +16,7 @@ import { RightAlignedHeader } from '../../../../components/Overview/subcomponent
 import { RoadTaxRow } from '../../subComponents/RoadTaxRow';
 import { AppInfoLink } from '../../../AppInfo/subComponents/AppInfoLink';
 import type { Language } from '../../../../i18n/types/locale';
-import { FormattedText } from '../mainCategories/VatAllowance';
+import { FormattedText } from '../../subComponents/FormattedText';
 
 const bus = require('../../../../../assets/images/info/bus.png');
 const camper = require('../../../../../assets/images/info/camper.png');
