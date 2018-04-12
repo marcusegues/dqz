@@ -14,10 +14,13 @@ const defaultLanguage: Language = 'de';
 export const languageDetector = {
   type: 'languageDetector',
   async: true, // flags below detection to be async
-  detect: (callback: (str: string) => Language) =>
-    Expo.Util.getCurrentLocaleAsync().then(lng =>
-      callback(languages.indexOf(lng) > -1 ? lng.substr(0, 2) : defaultLanguage)
-    ),
+  detect: (callback: (str: string) => any) =>
+    Expo.Util.getCurrentLocaleAsync().then(language => {
+      const lng = language.substr(0, 2);
+      return callback(
+        languages.indexOf(lng) > -1 ? lng.substr(0, 2) : defaultLanguage
+      );
+    }),
   init: () => {},
   cacheUserLanguage: () => {},
 };

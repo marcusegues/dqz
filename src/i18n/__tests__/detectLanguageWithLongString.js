@@ -2,16 +2,15 @@ import { languageDetector } from '../index';
 
 jest.mock('expo', () => ({
   Util: {
-    getCurrentLocaleAsync: () =>
-      new Promise(resolve => resolve('friFraFroFrum')),
+    getCurrentLocaleAsync: () => new Promise(resolve => resolve('foo')),
   },
 }));
 
 describe('Language is correctly detected', () => {
-  test('Using a longer string with correct beginning (like en-us)', async () => {
+  test('Using an invalid language and then go for fallback', async () => {
     const cb = jest.fn();
     const det = languageDetector.detect;
     await det(cb);
-    expect(cb).toBeCalledWith('fr');
+    expect(cb).toBeCalledWith('de');
   });
 });
