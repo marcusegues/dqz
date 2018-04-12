@@ -17,9 +17,7 @@ export const languageDetector = {
   detect: (callback: (str: string) => any): any =>
     Expo.Util.getCurrentLocaleAsync().then(language => {
       const lng = language.substr(0, 2);
-      return callback(
-        languages.indexOf(lng) > -1 ? lng.substr(0, 2) : defaultLanguage
-      );
+      return callback(languages.indexOf(lng) > -1 ? lng : defaultLanguage);
     }),
   init: () => {},
   cacheUserLanguage: () => {},
