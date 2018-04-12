@@ -23,4 +23,12 @@ describe('HomeIcon Icon TestSuite', () => {
       screen: 'MainMenu',
     });
   });
+  test('renders as expected', () => {
+    const clickFn = jest.fn();
+    const wrapper = shallow(
+      // $FlowFixMe
+      <HomeIcon navigation={clickFn} />
+    );
+    expect(wrapper.dive()).toMatchSnapshot();
+  });
 });
