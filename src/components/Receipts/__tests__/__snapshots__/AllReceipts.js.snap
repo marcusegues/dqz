@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllReceipts renders according to snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "flexDirection": "column",
+      "height": "100%",
+      "marginHorizontal": 16,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "flex": 1,
+        "width": "100%",
+      }
+    }
+  >
+    <RCTScrollView
+      contentContainerStyle={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "#E0E0E1",
+            "borderRadius": 3,
+            "width": "100%",
+          },
+          Object {
+            "elevation": 2,
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 1,
+              "width": 1,
+            },
+            "shadowOpacity": 0.25,
+            "shadowRadius": 2,
+          },
+        ]
+      }
+    >
+      <View>
+        <View
+          style={
+            Object {
+              "alignSelf": "flex-start",
+              "marginBottom": 31.388235294117646,
+              "marginHorizontal": 31.388235294117646,
+              "marginTop": 31.388235294117646,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#141414",
+                "fontFamily": "roboto_regular",
+                "fontSize": 24,
+                "lineHeight": 62.77647058823529,
+              }
+            }
+          >
+            
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "marginTop": 58.85294117647059,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignSelf": "flex-start",
+                "marginBottom": 31.388235294117646,
+                "marginHorizontal": 31.388235294117646,
+                "marginTop": 31.388235294117646,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#141414",
+                  "fontFamily": "roboto_regular",
+                  "fontSize": 24,
+                  "lineHeight": 62.77647058823529,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
