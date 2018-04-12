@@ -29,6 +29,8 @@ import { parseCurrencyXML } from './src/model/currencies';
 import { appShouldUpdate } from './src/utils/checkversion/checkversion';
 import type { ConnectivityType } from './src/types/connectivity';
 import { UpdateTheApp } from './src/screens/UpdateTheApp/UpdateTheApp';
+import { fetchSettingsHasLanguage } from './src/asyncStorage/storageApi';
+import { KeyNotSet } from './src/asyncStorage/asyncStorage';
 
 const store = configureStore();
 
@@ -229,6 +231,11 @@ export default class App extends React.Component<AppProps, AppStateT> {
               console.log(e);
             });
         }),
+      fetchSettingsHasLanguage().then(language => {
+        if (language !== KeyNotSet) {
+          i18nImplementation.changeLanguage(language);
+        }
+      }),
     ]);
 
   render() {
