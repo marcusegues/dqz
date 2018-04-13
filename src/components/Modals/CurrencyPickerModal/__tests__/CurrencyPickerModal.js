@@ -8,7 +8,9 @@ jest.mock('react-i18next', () => ({
 
 describe('Currency Picker', () => {
   test('renders according to snapshot', () => {
-    const component = renderer.create(<CurrencyPickerModal />).toJSON();
+    const component = renderer
+      .create(<CurrencyPickerModal />)
+      .toJSON();
     expect(component).toMatchSnapshot();
   });
 });
