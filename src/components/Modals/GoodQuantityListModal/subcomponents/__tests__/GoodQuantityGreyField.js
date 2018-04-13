@@ -8,15 +8,6 @@ import sinon from 'sinon';
 import { GoodQuantityGreyField } from '../GoodQuantityGreyField';
 import { RedPlusIcon } from '../RedPlusIcon';
 
-const wrapper = shallow(
-  <GoodQuantityGreyField
-    topText="topText"
-    plusIconText="plusIconText"
-    onPress={() => {}}
-  />
-);
-// console.log(wrapper.debug());
-
 jest.mock('react-i18next', () => ({
   translate: () => Component => props => <Component t={() => ''} {...props} />,
 }));
@@ -36,33 +27,34 @@ describe('InfoIcon Icon TestSuite', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-  test('we can click it', () => {
-    const component = shallow(
-      <GoodQuantityGreyField
-        topText="topText"
-        plusIconText="plusIconText"
-        onPress={() => {}}
-      />
-    );
-    // console.log(component.debug());
+  // test('we can click it', () => {
+  //   const component = shallow(
+  //     <GoodQuantityGreyField
+  //       topText="topText"
+  //       plusIconText="plusIconText"
+  //       onPress={() => {}}
+  //     />
+  //   );
+  // console.log(component.debug());
 
-    // component
-    //   .find(RedPlusIcon)
-    //   .find(TouchableOpacity)
-    //   .forEach(child => {
-    //     // component.find(TouchableOpacity).forEach(child => {
-    //     child.simulate('press');
-    //   });
-    // expect(clickFn).toHaveBeenCalled();
-    // component.find(TouchableOpacity).simulate('press');
-    // expect(clickFn).toBeCalled();
-    // expect(clickFn).toBeCalledWith({
-    //   type: "NAVIGATE",
-    //   screen: "AppInfo"
-    // });
-  });
-  it('simulates click events', () => {
+  // component
+  //   .find(RedPlusIcon)
+  //   .find(TouchableOpacity)
+  //   .forEach(child => {
+  //     // component.find(TouchableOpacity).forEach(child => {
+  //     child.simulate('press');
+  //   });
+  // expect(clickFn).toHaveBeenCalled();
+  // component.find(TouchableOpacity).simulate('press');
+  // expect(clickFn).toBeCalled();
+  // expect(clickFn).toBeCalledWith({
+  //   type: "NAVIGATE",
+  //   screen: "AppInfo"
+  // });
+  // });
+  test('simulates click events', () => {
     const onButtonClick = sinon.spy();
+    const mockFunc = jest.fn();
     const wrapper = shallow(
       <GoodQuantityGreyField
         topText="topText"
@@ -70,9 +62,9 @@ describe('InfoIcon Icon TestSuite', () => {
         onPress={onButtonClick}
       />
     );
-    // const wrapper = shallow(<Foo onButtonClick={onButtonClick} />);
-    wrapper.find(TouchableOpacity).simulate('click');
-    // expect(onButtonClick).toBeCalled();
-    // expect(onButtonClick.calledOnce).to.equal(true);
+    wrapper.find(RedPlusIcon).forEach(child => {
+      child.simulate('press');
+    });
+    // expect(mockFunc).toHaveBeenCalled();
   });
 });
