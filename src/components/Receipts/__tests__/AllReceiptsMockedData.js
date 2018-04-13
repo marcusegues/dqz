@@ -434,7 +434,7 @@ fetchReceipts.mockImplementation(
               adults: 1,
               minors: 0,
             },
-            receiptEntryTime: '2018-04-13T13:03:00.000+03:00',
+            receiptEntryTime: '2018-04-11T13:03:00.000+03:00',
             receiptId: '70f9c6d0-3e30-11e8-8d55-e733ef170bd1',
           },
         ])

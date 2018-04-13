@@ -71,6 +71,40 @@ exports[`AllReceipts with mocked data Renders empty AllReceipts component to sna
           </Text>
         </View>
         <View
+          style={
+            Object {
+              "marginTop": 58.85294117647059,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignSelf": "flex-start",
+                "marginBottom": 31.388235294117646,
+                "marginHorizontal": 31.388235294117646,
+                "marginTop": 31.388235294117646,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#141414",
+                  "fontFamily": "roboto_regular",
+                  "fontSize": 24,
+                  "lineHeight": 62.77647058823529,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+        </View>
+        <View
           onLayout={[Function]}
           style={
             Array [
@@ -79,7 +113,7 @@ exports[`AllReceipts with mocked data Renders empty AllReceipts component to sna
                 "alignSelf": "center",
                 "borderBottomWidth": 1,
                 "borderColor": "#E0E0E1",
-                "borderTopWidth": 0,
+                "borderTopWidth": 1,
                 "flexDirection": "column",
                 "justifyContent": "space-around",
                 "width": "95%",
@@ -196,40 +230,6 @@ exports[`AllReceipts with mocked data Renders empty AllReceipts component to sna
           </View>
         </View>
         <View
-          style={
-            Object {
-              "marginTop": 58.85294117647059,
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "alignSelf": "flex-start",
-                "marginBottom": 31.388235294117646,
-                "marginHorizontal": 31.388235294117646,
-                "marginTop": 31.388235294117646,
-              }
-            }
-          >
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-              style={
-                Object {
-                  "color": "#141414",
-                  "fontFamily": "roboto_regular",
-                  "fontSize": 24,
-                  "lineHeight": 62.77647058823529,
-                }
-              }
-            >
-              
-            </Text>
-          </View>
-        </View>
-        <View
           onLayout={[Function]}
           style={
             Array [
@@ -238,7 +238,7 @@ exports[`AllReceipts with mocked data Renders empty AllReceipts component to sna
                 "alignSelf": "center",
                 "borderBottomWidth": 1,
                 "borderColor": "#E0E0E1",
-                "borderTopWidth": 1,
+                "borderTopWidth": 0,
                 "flexDirection": "column",
                 "justifyContent": "space-around",
                 "width": "95%",
