@@ -4,7 +4,7 @@ import { LegalNoticeInfo } from '../LegalNoticeInfo';
 
 jest.mock('react-i18next', () => ({
   translate: () => Component => props => <Component t={() => ''} {...props} />,
-  Trans: () => Component => props => <Component t={() => ''} {...props} />,
+  Trans: 'Trans',
 }));
 
 describe('LegalNoticeInfo snapshot test', () => {

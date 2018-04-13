@@ -934,7 +934,26 @@ exports[`LegalNoticeInfo snapshot test Renders empty AllReceipts component to sn
                     "lineHeight": 33,
                   }
                 }
-              />
+              >
+                <Trans
+                  i18nKey="howToDeclareYourGoodsText3"
+                >
+                  #
+                  <Text
+                    accessible={true}
+                    allowFontScaling={true}
+                    ellipsizeMode="tail"
+                    style={
+                      Object {
+                        "fontFamily": "roboto_bold",
+                      }
+                    }
+                  >
+                    #
+                  </Text>
+                  #
+                </Trans>
+              </Text>
             </View>
           </View>
           <View
@@ -1197,7 +1216,27 @@ exports[`LegalNoticeInfo snapshot test Renders empty AllReceipts component to sn
                 "lineHeight": 33,
               }
             }
-          />
+          >
+            <Trans
+              i18nKey="specialCasesText1"
+            >
+              #
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                onPress={[Function]}
+                style={
+                  Object {
+                    "textDecorationLine": "underline",
+                  }
+                }
+              >
+                #
+              </Text>
+              #
+            </Trans>
+          </Text>
           <View
             style={
               Object {
