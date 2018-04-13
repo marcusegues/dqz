@@ -559,7 +559,7 @@ exports[`Currency Picker renders according to snapshot 1`] = `
           allowFontScaling={true}
           blurOnSubmit={true}
           keyboardType="numeric"
-          maxLenght={14}
+          maxLenght="8"
           onChangeText={[Function]}
           style={
             Object {

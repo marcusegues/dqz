@@ -29,7 +29,6 @@ import type { Amounts } from '../../../model/types/basketPeopleAmountsTypes';
 import { hasOffsettingAmount } from '../../../model/utils';
 import { ModalCloseText } from '../ModalCloseText';
 import { parseInputToFloat } from '../../../utils/inputparser/inputParser';
-import { MAX_DIGITS_AMOUNT } from '../../../constants/declaration';
 
 type PickerState = {
   currency: Currency,
@@ -158,18 +157,14 @@ class CurrencyPickerModalInner extends React.Component<
                 keyboardType="numeric"
                 style={currencyPickerModal.textInput}
                 onChangeText={value => {
-                  const parsedValue = parseInputToFloat(
-                    value,
-                    MAX_DIGITS_AMOUNT - 2,
-                    2
-                  );
+                  const parsedValue = parseInputToFloat(value);
                   this.setState({
                     amount: +parsedValue,
                     inputAmountValue: parsedValue,
                   });
                 }}
                 value={this.state.inputAmountValue}
-                maxLenght={MAX_DIGITS_AMOUNT}
+                maxLenght="8"
                 underlineColorAndroid="transparent"
                 blurOnSubmit
               />
