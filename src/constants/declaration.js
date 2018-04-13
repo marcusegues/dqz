@@ -6,8 +6,6 @@ export const MIN_DECLARED_CHF = 0.05;
 export const MAX_DECLARED_CHF = 20000;
 export const MAX_PAYMENT_CHF = 20000;
 
-export const MAX_DIGITS_AMOUNT = 14;
-
 type DecimalPlaces = 0 | 1 | 2 | 3;
 
 type DisplayedQuantityDecimalPlacesType = { [Category]: DecimalPlaces };
