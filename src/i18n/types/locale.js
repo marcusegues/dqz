@@ -158,6 +158,9 @@ type ModalTranslations = {
   currencyPickerInvalidInput: string,
   currencyPickerNoOffsettingInput: string,
   currencyPickerTooSmallLargeAmount: string,
+
+  currencyPickerMaximumInputLength: string,
+
   savedBasketDoYoWantToContinue: string,
   savedBasketTotalCost: string,
   savedBasketNewShoppingCart: string,
