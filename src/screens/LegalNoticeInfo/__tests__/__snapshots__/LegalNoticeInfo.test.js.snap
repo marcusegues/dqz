@@ -1,0 +1,1765 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LegalNoticeInfo snapshot test Renders empty AllReceipts component to snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "flexDirection": "column",
+      "height": "100%",
+      "marginHorizontal": 16,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "flex": 1,
+        "width": "100%",
+      }
+    }
+  >
+    <RCTScrollView
+      contentContainerStyle={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+            "borderColor": "#E0E0E1",
+            "borderRadius": 3,
+            "width": "100%",
+          },
+          Object {
+            "elevation": 2,
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 1,
+              "width": 1,
+            },
+            "shadowOpacity": 0.25,
+            "shadowRadius": 2,
+          },
+        ]
+      }
+    >
+      <View>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              collapsable={undefined}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#fff",
+                  "borderTopColor": "#DC0018",
+                  "borderTopWidth": 3,
+                  "opacity": 1,
+                  "paddingVertical": 15,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#000",
+                    "fontFamily": "roboto_regular",
+                    "fontSize": 22,
+                  }
+                }
+              >
+                
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 1,
+              }
+            }
+          >
+            <View
+              accessibilityComponentType={undefined}
+              accessibilityLabel={undefined}
+              accessibilityTraits={undefined}
+              accessible={true}
+              collapsable={undefined}
+              hasTVPreferredFocus={undefined}
+              hitSlop={undefined}
+              isTVSelectable={true}
+              nativeID={undefined}
+              onLayout={undefined}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "center",
+                  "backgroundColor": "#9B9B9B",
+                  "borderTopColor": "#9B9B9B",
+                  "borderTopWidth": 3,
+                  "opacity": 1,
+                  "paddingVertical": 15,
+                }
+              }
+              testID={undefined}
+              tvParallaxProperties={undefined}
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#fff",
+                    "fontFamily": "roboto_regular",
+                    "fontSize": 22,
+                  }
+                }
+              >
+                
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "marginBottom": 31.388235294117646,
+              "paddingHorizontal": 34.285714285714285,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "marginBottom": 35.311764705882354,
+                "marginTop": 19.61764705882353,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#141414",
+                  "fontFamily": "roboto_regular",
+                  "fontSize": 24,
+                  "lineHeight": 62.77647058823529,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+          <View
+            style={Object {}}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_medium",
+                  "fontSize": 22,
+                  "marginBottom": 9.808823529411764,
+                  "marginTop": 39.23529411764706,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "fontFamily": "roboto_medium",
+                  }
+                }
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={Object {}}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_medium",
+                  "fontSize": 22,
+                  "marginBottom": 9.808823529411764,
+                  "marginTop": 39.23529411764706,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+          <View
+            accessibilityComponentType={undefined}
+            accessibilityLabel={undefined}
+            accessibilityTraits={undefined}
+            accessible={true}
+            collapsable={undefined}
+            hasTVPreferredFocus={undefined}
+            hitSlop={undefined}
+            isTVSelectable={true}
+            nativeID={undefined}
+            onLayout={undefined}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+              }
+            }
+            testID={undefined}
+            tvParallaxProperties={undefined}
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "justifyContent": "flex-start",
+                  "marginBottom": 9.808823529411764,
+                  "marginRight": 21.428571428571427,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "alignSelf": "flex-start",
+                    "height": 31.428571428571427,
+                    "justifyContent": "center",
+                  }
+                }
+              >
+                <Image
+                  resizeMode="center"
+                  source={1}
+                  style={
+                    Object {
+                      "height": 9.428571428571429,
+                      "width": 9.428571428571429,
+                    }
+                  }
+                />
+              </View>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#1A1A1A",
+                    "fontFamily": "roboto_light",
+                    "lineHeight": 28.285714285714285,
+                    "paddingLeft": 17.142857142857142,
+                    "textDecorationLine": "underline",
+                    "textDecorationStyle": "solid",
+                  }
+                }
+              >
+                
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={Object {}}
+                >
+                   
+                  
+                </Text>
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "flex-start",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <Image
+              resizeMode="center"
+              source={1}
+              style={
+                Object {
+                  "height": 9.428571428571429,
+                  "marginRight": 8.571428571428571,
+                  "marginTop": 12.571428571428571,
+                  "width": 9.428571428571429,
+                }
+              }
+            />
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                }
+              }
+            >
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#1A1A1A",
+                    "fontFamily": "roboto_light",
+                    "fontWeight": "300",
+                    "lineHeight": 33,
+                  }
+                }
+              />
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={Object {}}
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_medium",
+                  "fontSize": 22,
+                  "marginBottom": 9.808823529411764,
+                  "marginTop": 39.23529411764706,
+                }
+              }
+            >
+              
+            </Text>
+          </View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#1A1A1A",
+                "fontFamily": "roboto_light",
+                "fontWeight": "300",
+                "lineHeight": 33,
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "alignItems": "flex-start",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <Image
+              resizeMode="center"
+              source={1}
+              style={
+                Object {
+                  "height": 9.428571428571429,
+                  "marginRight": 8.571428571428571,
+                  "marginTop": 12.571428571428571,
+                  "width": 9.428571428571429,
+                }
+              }
+            />
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#1A1A1A",
+                      "fontFamily": "roboto_light",
+                      "fontWeight": "300",
+                      "lineHeight": 33,
+                    }
+                  }
+                >
+                  
+                </Text>
+              </View>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1A1A1A",
+                      "fontFamily": "roboto_light",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "paddingVertical": 3.9235294117647057,
+                      "textDecorationLine": "underline",
+                      "textDecorationStyle": "solid",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "alignSelf": "flex-start",
+                  "height": 31.428571428571427,
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <Image
+                resizeMode="center"
+                source={1}
+                style={
+                  Object {
+                    "height": 9.428571428571429,
+                    "width": 9.428571428571429,
+                  }
+                }
+              />
+            </View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "fontFamily": "roboto_light",
+                  "lineHeight": 28.285714285714285,
+                  "paddingLeft": 17.142857142857142,
+                }
+              }
+            >
+              
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={Object {}}
+              >
+                 
+                
+              </Text>
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "flex-start",
+                "flexDirection": "row",
+                "justifyContent": "flex-start",
+                "marginBottom": 9.808823529411764,
+                "marginRight": 21.428571428571427,
+              }
+            }
+          >
+            <Image
+              resizeMode="center"
+              source={1}
+              style={
+                Object {
+                  "height": 9.428571428571429,
+                  "marginRight": 8.571428571428571,
+                  "marginTop": 12.571428571428571,
+                  "width": 9.428571428571429,
+                }
+              }
+            />
+            <View
+              style={
+                Object {
+                  "alignItems": "flex-start",
+                  "flexDirection": "column",
+                  "justifyContent": "flex-start",
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "width": "100%",
+                  }
+                }
+              >
+                <Text
+                  accessible={true}
+                  allowFontScaling={true}
+                  ellipsizeMode="tail"
+                  style={
+                    Object {
+                      "color": "#1A1A1A",
+                      "fontFamily": "roboto_light",
+                      "fontWeight": "300",
+                      "lineHeight": 33,
+                    }
+                  }
+                >
+                  
+                </Text>
+              </View>
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                onPress={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "color": "#1A1A1A",
+                      "fontFamily": "roboto_light",
+                      "fontSize": 14,
+                      "fontWeight": "300",
+                      "paddingVertical": 3.9235294117647057,
+                      "textDecorationLine": "underline",
+                      "textDecorationStyle": "solid",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
