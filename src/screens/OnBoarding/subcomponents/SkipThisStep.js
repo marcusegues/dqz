@@ -4,7 +4,7 @@ import { translate } from 'react-i18next';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
 import type { ComponentType } from 'react';
-import { RedText } from './RedText';
+import { RedText } from '../../../components/General Components/RedText';
 
 type SkipThisStepProps = {
   onPress: () => void,

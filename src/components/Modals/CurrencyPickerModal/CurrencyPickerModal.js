@@ -32,7 +32,7 @@ import { parseInputToFloat } from '../../../utils/inputparser/inputParser';
 import { MAX_DIGITS_AMOUNT } from '../../../constants/declaration';
 import { size } from '../../../styles/fonts';
 import { moderateScale } from '../../../styles/Scaling';
-import { RedText } from '../../../screens/OnBoarding/subcomponents/RedText';
+import { RedText } from '../../General Components/RedText';
 
 type PickerState = {
   currency: Currency,

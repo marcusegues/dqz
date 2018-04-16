@@ -2,9 +2,9 @@
 import React from 'react';
 // $FlowFixMe
 import { Text } from 'react-native';
-import { moderateScale } from '../../../styles/Scaling';
-import { MAIN_RED } from '../../../styles/colors';
-import { size, type } from '../../../styles/fonts';
+import { moderateScale } from '../../styles/Scaling';
+import { MAIN_RED } from '../../styles/colors';
+import { size, type } from '../../styles/fonts';
 
 const ownStyles = {
   text: {
