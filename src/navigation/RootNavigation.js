@@ -332,9 +332,7 @@ export const stackNavigatorScreens = {
       navigationOptions: any,
       navigation: Navigation,
     }) => ({
-      headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
-      ),
+      headerLeft: <HomeIcon navigation={navigation} />,
       headerStyle: {
         ...navigationOptions.headerStyle,
         paddingRight: 0,
@@ -352,9 +350,7 @@ export const stackNavigatorScreens = {
   LegalNoticeInfo: {
     screen: LegalNoticeInfo,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
-      ),
+      headerLeft: <HomeIcon navigation={navigation} />,
     }),
   },
   SuccessfulPayment: {
