@@ -165,15 +165,7 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationSubCategories',
-              params: { infoCategory: 'declaration' },
-            })
-          }
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -182,15 +174,7 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationSubCategories',
-              params: { infoCategory: 'declaration' },
-            })
-          }
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -199,15 +183,7 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationSubCategories',
-              params: { infoCategory: 'declaration' },
-            })
-          }
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -216,15 +192,7 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationSubCategories',
-              params: { infoCategory: 'declaration' },
-            })
-          }
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -254,15 +222,7 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationSubCategories',
-              params: { infoCategory: 'animalsAndPlants' },
-            })
-          }
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -271,15 +231,7 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationSubCategories',
-              params: { infoCategory: 'animalsAndPlants' },
-            })
-          }
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -288,15 +240,7 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationSubCategories',
-              params: { infoCategory: 'animalsAndPlants' },
-            })
-          }
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -305,15 +249,7 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationSubCategories',
-              params: { infoCategory: 'vehicles' },
-            })
-          }
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -322,15 +258,7 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationSubCategories',
-              params: { infoCategory: 'vehicles' },
-            })
-          }
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -339,15 +267,7 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationSubCategories',
-              params: { infoCategory: 'vehicles' },
-            })
-          }
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -356,15 +276,7 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationSubCategories',
-              params: { infoCategory: 'prohibitionsAndRestrictions' },
-            })
-          }
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -373,15 +285,7 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationSubCategories',
-              params: { infoCategory: 'prohibitionsAndRestrictions' },
-            })
-          }
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -390,15 +294,7 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationSubCategories',
-              params: { infoCategory: 'prohibitionsAndRestrictions' },
-            })
-          }
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -407,15 +303,7 @@ export const stackNavigatorScreens = {
     navigationOptions: ({ navigation }: NavigationObject) => ({
       headerRight: <CartIcon navigation={navigation} />,
       headerLeft: (
-        <BackArrow
-          onPress={() =>
-            navigation.dispatch({
-              type: 'NAVIGATE',
-              screen: 'InformationSubCategories',
-              params: { infoCategory: 'prohibitionsAndRestrictions' },
-            })
-          }
-        />
+        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
       ),
     }),
   },
@@ -444,9 +332,7 @@ export const stackNavigatorScreens = {
       navigationOptions: any,
       navigation: Navigation,
     }) => ({
-      headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
-      ),
+      headerLeft: <HomeIcon navigation={navigation} />,
       headerStyle: {
         ...navigationOptions.headerStyle,
         paddingRight: 0,
@@ -464,9 +350,7 @@ export const stackNavigatorScreens = {
   LegalNoticeInfo: {
     screen: LegalNoticeInfo,
     navigationOptions: ({ navigation }: NavigationObject) => ({
-      headerLeft: (
-        <BackArrow onPress={() => navigation.dispatch({ type: 'GO_BACK' })} />
-      ),
+      headerLeft: <HomeIcon navigation={navigation} />,
     }),
   },
   SuccessfulPayment: {
