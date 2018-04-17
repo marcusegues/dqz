@@ -1,6 +1,6 @@
 // @flow
-/* global fetch */
-import type { Currency } from './src/model/currencies';
+import fetch from 'node-fetch';
+import type { Currency } from '../../model/currencies';
 
 type RedirectsUrlKeys = {
   success: string,
@@ -9,6 +9,14 @@ type RedirectsUrlKeys = {
 };
 
 declare var __DEV__: boolean;
+
+function logger(...args) {
+  if (__DEV__) {
+    console.log(args);
+  } else {
+    console.log('Something went wrong');
+  }
+}
 
 export default class Saferpay {
   baseUrl: string;
@@ -128,11 +136,11 @@ export default class Saferpay {
       .then(response => {
         // Error Handling docs https://saferpay.github.io/jsonapi/#errorhandling
         if (response.status === 200) return response.json();
-        return response.json().then(res => Promise.reject(res.ErrorDetail));
+        return response.json().then(res => Promise.reject(res));
       })
       .catch(error => {
         // TODO: add logger/amplitude
-        console.log('Saferpay initializePayment error: ', error);
+        logger('Saferpay initializePayment error: ', error);
         return Promise.reject(error);
       });
   }
@@ -170,11 +178,11 @@ export default class Saferpay {
       .then(response => {
         // Error Handling docs https://saferpay.github.io/jsonapi/#errorhandling
         if (response.status === 200) return response.json();
-        return response.json().then(res => Promise.reject(res.ErrorDetail));
+        return response.json().then(res => Promise.reject(res));
       })
       .catch(error => {
         // TODO: add logger/amplitude
-        console.log('Saferpay assertPayment error: ', error);
+        logger('Saferpay assertPayment error: ', error);
         return Promise.reject(error);
       });
   }
@@ -212,7 +220,7 @@ export default class Saferpay {
       })
       .catch(error => {
         // TODO: add logger/amplitude
-        console.log('Saferpay captureTransaction error: ', error);
+        logger('Saferpay captureTransaction error: ', error);
         return Promise.reject(error);
       });
   }
@@ -250,7 +258,7 @@ export default class Saferpay {
       })
       .catch(error => {
         // TODO: add logger/amplitude
-        console.log('Saferpay cancelTransaction error: ', error);
+        logger('Saferpay cancelTransaction error: ', error);
         return Promise.reject(error);
       });
   }

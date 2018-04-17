@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 // $FlowFixMe
 import { View, ActivityIndicator } from 'react-native';
 import { Overview } from '../Overview/Overview';
-import Saferpay from '../../../saferpay';
+import Saferpay from '../../utils/saferpay/saferpay';
 import { NavBar } from '../NavBar/NavBar';
 import { PaymentWebView } from './PaymentWebView';
 import {
