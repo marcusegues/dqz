@@ -96,7 +96,6 @@ export const pickerHours: Array<PickerItem> = pickerItemGenerator([
   '08',
   '09',
   '10',
-  '10',
   '11',
   '12',
   '13',
