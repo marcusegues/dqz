@@ -19,8 +19,6 @@ describe('test the data', () => {
   });
 });
 
-jest.spyOn(Date, 'now').mockImplementation(() => 15000000000000);
-
 describe('picker generator', () => {
   const expected = JSON.stringify(pickerItemGenerator(['a', 'b', 'c']));
   const returned = JSON.stringify([
@@ -63,5 +61,6 @@ describe('rangeItemsPicker', () => {
 });
 
 describe('pickerHours', () => {
-  expect(pickerDates).toMatchSnapshot();
+  expect(pickerDates.length).toBe(3);
+  expect(pickerDates.map(p => p.id).toString()).toBe([0, 1, 2].toString());
 });
