@@ -50,11 +50,23 @@ describe('rangeItemsPicker', () => {
     ]);
     expect(expected).toBe(returned);
   });
+
   test('does the right thing with larger steps', () => {
     const expected = JSON.stringify(rangeItemsPicker(0, 3, 2));
     const returned = JSON.stringify([
       { id: 0, label: '0', value: '0' },
       { id: 1, label: '2', value: '2' },
+    ]);
+    expect(expected).toBe(returned);
+  });
+
+  test('does the right thing with even larger steps', () => {
+    const expected = JSON.stringify(rangeItemsPicker(0, 100, 27));
+    const returned = JSON.stringify([
+      { id: 0, label: '0', value: '0' },
+      { id: 1, label: '27', value: '27' },
+      { id: 2, label: '54', value: '54' },
+      { id: 3, label: '81', value: '81' },
     ]);
     expect(expected).toBe(returned);
   });
