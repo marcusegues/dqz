@@ -1,16 +1,26 @@
 import React from 'react';
-// import { shallow } from 'enzyme';
-// import { AllReceipts } from '../AllReceipts';
+import renderer from 'react-test-renderer';
+import configureStore from 'redux-mock-store';
+import Immutable from 'immutable';
+import { AllReceipts } from '../AllReceipts/AllReceipts';
+
+const middlewares = []; // you can mock any middlewares here if necessary
+const mockStore = configureStore(middlewares);
+
+const initialState = {
+  receipts: Immutable.List(),
+};
 
 jest.mock('react-i18next', () => ({
   translate: () => Component => props => <Component t={() => ''} {...props} />,
 }));
 
 describe('AllReceipts', () => {
-  test('renders according to snapshot', () => {
-    // TODO: Christian, please check this.
-    // const component = shallow(<AllReceipts />).dive();
-    // expect(component).toMatchSnapshot();
-    expect(1 + 1).toBe(2);
+  test('Renders empty AllReceipts component to snapshot', async () => {
+    const tree = await renderer.create(
+      <AllReceipts store={mockStore(initialState)} i18n={{ language: 'de' }} />
+    );
+    const json = await tree.toJSON();
+    expect(json).toMatchSnapshot();
   });
 });
