@@ -1,25 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `
-Array [
-  Object {
-    "id": 0,
-    "label": "16.04.2018",
-    "value": "16.04.2018",
-  },
-  Object {
-    "id": 1,
-    "label": "17.04.2018",
-    "value": "17.04.2018",
-  },
-  Object {
-    "id": 2,
-    "label": "18.04.2018",
-    "value": "18.04.2018",
-  },
-]
-`;
-
 exports[`AmountsPicker does the right thing 1`] = `
 Array [
   Object {
