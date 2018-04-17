@@ -1,4 +1,5 @@
 // @flow
+/* eslint-disable no-console */
 import fetch from 'node-fetch';
 import type { Currency } from '../../model/currencies';
 

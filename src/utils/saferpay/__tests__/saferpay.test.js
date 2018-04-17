@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import uuidv1 from 'uuid/v1';
 import Saferpay from '../saferpay';
 import { version } from '../../../../package.json';
