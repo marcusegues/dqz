@@ -1,18 +1,19 @@
 // @flow
 // $FlowFixMe
-import { Platform, StyleSheet } from 'react-native';
-import { moderateScale, verticalScale } from '../../../styles/Scaling';
+import { Platform, StyleSheet, Dimensions } from 'react-native';
+import { moderateScale } from '../../../styles/Scaling';
+
+const { width } = Dimensions.get('window');
 
 export const mainMenuStyles: any = StyleSheet.create({
   mainContainer: {
     flex: 1,
     flexDirection: 'column',
-    marginHorizontal: 16,
   },
   topContainer: {
     ...Platform.select({
       ios: {
-        flex: 0.42,
+        flex: Platform.isPad ? 0.7 : 0.42,
       },
       android: {
         flex: 1,
@@ -23,24 +24,21 @@ export const mainMenuStyles: any = StyleSheet.create({
     alignItems: 'center',
   },
   backgroundImage: {
-    width: moderateScale(377),
-    height: moderateScale(96),
-    resizeMode: 'cover',
+    width,
+    ...Platform.select({
+      ios: {
+        height: Platform.isPad ? '100%' : moderateScale(227),
+      },
+      android: {
+        height: moderateScale(227),
+      },
+    }),
   },
   logoAndTitleContainer: {
     ...StyleSheet.absoluteFillObject,
     justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: 'transparent',
-
-    ...Platform.select({
-      ios: {
-        marginTop: verticalScale(35),
-      },
-      android: {
-        marginTop: verticalScale(10),
-      },
-    }),
   },
   greyLogo: {
     height: moderateScale(40),
@@ -48,15 +46,16 @@ export const mainMenuStyles: any = StyleSheet.create({
   bottomContainer: {
     ...Platform.select({
       ios: {
-        flex: Platform.isPad ? 1 : 0.58,
+        flex: Platform.isPad ? 0.8 : 0.58,
       },
       android: {
-        flex: 1.7,
+        flex: 1.4,
       },
     }),
+    marginHorizontal: moderateScale(16),
     flexDirection: 'column',
     flexWrap: 'wrap',
     justifyContent: 'flex-end',
-    alignContent: Platform.isPad ? 'space-around' : 'space-between',
+    alignContent: 'space-between',
   },
 });
