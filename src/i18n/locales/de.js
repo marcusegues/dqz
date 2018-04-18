@@ -159,7 +159,7 @@ export const de: Locale = {
     currencyPickerSubTitle:
       'Erfassen Sie den Nettowert der Waren in der Original-Währung:',
     currencyPickerRate: 'Kurs vom',
-    currencyPickerInvalidInput: 'Ungültige/leere Eingabe',
+    pickerInvalidInput: 'Ungültige/leere Eingabe',
     currencyPickerNoOffsettingInput: 'Kein entsprechender Betrag',
     currencyPickerTooSmallLargeAmount: 'Betrag zu gering',
     savedBasketDoYoWantToContinue:

@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Keyboard, LayoutAnimation } from 'react-native';
+import { Keyboard, LayoutAnimation, View } from 'react-native';
 import type { ComponentType } from 'react';
 import debounce from 'lodash/debounce';
 // $FlowFixMe
@@ -15,13 +15,16 @@ import { ModalCloseText } from '../ModalCloseText';
 import { StandardAndCustomQuantityInput } from './subComponents/StandardAndCustomQuantityInput/StandardAndCustomQuantityInput';
 
 import { StandardQuantityInput } from './subComponents/StandardQuantityInput/StandardQuantityInput';
-import { QuantityInputModalFooter } from './subComponents/QuantityInputModalFooter';
+// import { QuantityInputModalFooter } from './subComponents/QuantityInputModalFooter'; // TODO: remove after review
 import { CategoriesInfo } from '../../../model/constants';
 import { StandardInputPicker } from '../../Pickers/QuantityInputPickers/StandardInputPicker';
 import { CustomInputPicker } from '../../Pickers/QuantityInputPickers/CustomInputPicker';
 import { ManualInputPicker } from '../../Pickers/QuantityInputPickers/ManualInputPicker';
 import { displayedQuantityDecimalPlaces } from '../../../constants/declaration';
 import { parseInputToFloat } from '../../../utils/inputparser/inputParser';
+import { pickerModalStyle } from '../styles/PickerModal';
+import { RedButton } from '../../Buttons/RedButton';
+import { checkValidAmount } from '../../../model/utils';
 
 export type StandardQuantityInputType = {
   multiplier: string,
@@ -346,6 +349,15 @@ class QuantityInputModalInner extends React.Component<
     const categoryQuantityInputInfo = this.getCategoryQuantityInputInfo();
     const manualInput =
       categoryQuantityInputInfo.standardInputMethod === 'manual';
+
+    const disabledRedButton: boolean = checkValidAmount(currentAmount);
+
+    const redButtonText: string = disabledRedButton
+      ? t(['modal:pickerInvalidInput'])
+      : t(['modal:confirmPicker'], {
+          value: `${currentAmount} ${unit}`,
+        });
+
     return (
       <AppModal
         modalVisible={modalVisible}
@@ -384,12 +396,13 @@ class QuantityInputModalInner extends React.Component<
               }}
             </StandardAndCustomQuantityInput>
           )}
-          <QuantityInputModalFooter
-            onPress={this.debouncedOnConfirmationAction}
-            text={t(['modal:confirmPicker'], {
-              value: `${currentAmount} ${unit}`,
-            })}
-          />
+          <View style={pickerModalStyle.redButtonWrapper}>
+            <RedButton
+              onPress={this.debouncedOnConfirmationAction}
+              text={redButtonText}
+              confirmationDisabled={disabledRedButton}
+            />
+          </View>
         </ModalCard>
         <ModalCloseText
           onModalHide={toggleModalVisible}

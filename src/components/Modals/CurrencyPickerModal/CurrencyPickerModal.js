@@ -26,7 +26,7 @@ import { currenciesArray } from '../../../model/currencies';
 import type { Currency, CurrencyObject } from '../../../model/currencies';
 import type { TFunction } from '../../../types/generalTypes';
 import type { Amounts } from '../../../model/types/basketPeopleAmountsTypes';
-import { hasOffsettingAmount } from '../../../model/utils';
+import { hasOffsettingAmount, checkValidAmount } from '../../../model/utils';
 import { ModalCloseText } from '../ModalCloseText';
 import { parseInputToFloat } from '../../../utils/inputparser/inputParser';
 import { MAX_DIGITS_AMOUNT } from '../../../constants/declaration';
@@ -81,13 +81,13 @@ class CurrencyPickerModalInner extends React.Component<
     } = this.props;
     const { amount, currency } = this.state;
 
-    let disabledRedButton: boolean = typeof amount !== 'number' || amount <= 0;
+    let disabledRedButton: boolean = checkValidAmount(amount);
 
     let redButtonText: string = t(['confirmPicker'], {
       value: `${currency} ${amount.toFixed(2)}`,
     });
     if (disabledRedButton) {
-      redButtonText = t(['currencyPickerInvalidInput']);
+      redButtonText = t(['modal:pickerInvalidInput']);
     }
 
     if (large && currencyObject[currency] * amount < INDIVIDUALALLOWANCE) {

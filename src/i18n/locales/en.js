@@ -153,7 +153,7 @@ export const en: Locale = {
     currencyPickerSubTitle:
       'Record the net value of the item in its original currency:',
     currencyPickerRate: 'Rate of',
-    currencyPickerInvalidInput: 'Invalid/empty input',
+    pickerInvalidInput: 'Invalid/empty input',
     currencyPickerNoOffsettingInput: 'No offsetting amount',
     currencyPickerTooSmallLargeAmount: 'Amount too small',
     savedBasketDoYoWantToContinue:

@@ -159,7 +159,7 @@ export const fr: Locale = {
     currencyPickerSubTitle:
       'Veuillez saisir ici la valeur hors taxes de toutes les marchandises transportées dans leur devise d’origine.',
     currencyPickerRate: 'Taux de change du:',
-    currencyPickerInvalidInput: 'Saisie invalide/vide',
+    pickerInvalidInput: 'Saisie invalide/vide',
     currencyPickerNoOffsettingInput: "Aucun montant adéquat n'est disponible.",
     currencyPickerTooSmallLargeAmount: 'Quantité trop faible',
     savedBasketDoYoWantToContinue:
