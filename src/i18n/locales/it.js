@@ -65,7 +65,8 @@ export const it: Locale = {
     currentLanguageMessage: 'La lingua attualmente \n selezionata è',
     selectLanguage: 'Selezionare un’altra lingua',
     confirmationVat: 'Confermo di accettare l’aliquota IVA unica di',
-    confirmationVat2: 'all’atto dell’imposizione delle merci',
+    confirmationVat2:
+      'all’atto dell’imposizione delle merci. Mezzi di pagamento consentiti: ', // NEEDS CONFIRMATION
     vatInformation: 'Maggiori informazioni',
     skipThisStep: 'Salta questo passaggio',
   },
