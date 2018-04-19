@@ -20,7 +20,7 @@ type RedTextProps = {
 };
 
 export const RedText = ({ text, style }: RedTextProps) => (
-  <Text style={[ownStyles.text, { ...style }]}>{text.toUpperCase()}</Text>
+  <Text style={[ownStyles.text, { ...style }]}>{text}</Text>
 );
 
 RedText.defaultProps = {

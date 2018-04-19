@@ -125,7 +125,7 @@ class CurrencyPickerModalInner extends React.Component<
           }}
         >
           <RedText
-            text={t(['currencyPickerMaximumInputLength'])}
+            text={t(['currencyPickerMaximumInputLength']).toUpperCase()}
             style={{
               fontSize: moderateScale(size.small),
               textAlign: 'center',
