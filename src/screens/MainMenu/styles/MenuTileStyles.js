@@ -13,7 +13,7 @@ export const menuTileStyle: any = StyleSheet.create({
         height: moderateScale(135),
       },
       android: {
-        height: scale(130),
+        height: moderateScale(120, 0.9),
       },
     }),
     width: width / 2 - moderateScale(24),

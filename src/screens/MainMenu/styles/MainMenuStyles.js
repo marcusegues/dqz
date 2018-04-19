@@ -30,7 +30,7 @@ export const mainMenuStyles: any = StyleSheet.create({
         height: Platform.isPad ? '100%' : moderateScale(227),
       },
       android: {
-        height: moderateScale(227),
+        height: moderateScale(210, 0.9),
       },
     }),
   },
@@ -49,7 +49,7 @@ export const mainMenuStyles: any = StyleSheet.create({
         flex: Platform.isPad ? 0.8 : 0.58,
       },
       android: {
-        flex: 1.4,
+        flex: 1.3,
       },
     }),
     marginHorizontal: moderateScale(16),
