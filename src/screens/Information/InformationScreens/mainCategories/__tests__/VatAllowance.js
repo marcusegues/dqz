@@ -3,21 +3,25 @@ import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import { VatAllowance } from '../VatAllowance';
 //
-// jest.mock('react-i18next', () => ({
-//   translate: () => Component => props => <Component t={() => ''} {...props} />,
-// }));
+jest.mock('react-i18next', () => ({
+  translate: () => Component => props => <Component t={() => ''} {...props} />,
+}));
 
 describe('VatAllowance', () => {
-  // test('renders according to snapshot', () => {
-  //   const component = renderer.create(<VatAllowance navigation={} />).toJSON();
-  //   expect(component).toMatchSnapshot();
-  // });
-  test('renders as expected', () => {
+  test('VatAllowance renders as expected', () => {
     const clickFn = jest.fn();
     const wrapper = shallow(
-      // $FlowFixMe
-      <VatAllowance navigation={clickFn} />
+      <VatAllowance
+        navigation={{ dispatch: clickFn }}
+        i18n={{ language: 'de' }}
+      />
     );
-    expect(wrapper.dive()).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
+  // test('VatAllowance component renders correctly', () => {
+  //   const tree = renderer
+  //     .create(<VatAllowance i18n={{ language: 'de' }} navigation={undefined} />)
+  //     .toJSON();
+  //   expect(tree).toMatchSnapshot();
+  // });
 });
