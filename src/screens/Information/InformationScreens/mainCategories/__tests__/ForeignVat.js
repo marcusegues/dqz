@@ -25,6 +25,15 @@ describe('ForeignVat', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
+  test('ForeignVat renders as expected with language with dive()', () => {
+    const wrapper = shallow(
+      <ForeignVat
+        navigation={{ dispatch: clickFn }}
+        i18n={{ language: 'de', t: 'test' }}
+      />
+    );
+    expect(wrapper.dive()).toMatchSnapshot();
+  });
   // test('ForeignVat renders as expected and you can click the button', () => {
   //   const wrapper = shallow(
   //     <ForeignVat

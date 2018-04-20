@@ -18,10 +18,4 @@ describe('VatAllowance', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
-  // test('VatAllowance component renders correctly', () => {
-  //   const tree = renderer
-  //     .create(<VatAllowance i18n={{ language: 'de' }} navigation={undefined} />)
-  //     .toJSON();
-  //   expect(tree).toMatchSnapshot();
-  // });
 });
