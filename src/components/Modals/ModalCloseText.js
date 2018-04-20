@@ -23,16 +23,24 @@ const ownStyles = {
 type ModalCloseTextProps = {
   text: string,
   onModalHide: () => void,
+  style?: {},
 };
 
-const ModalCloseTextInner = ({ onModalHide, text }: ModalCloseTextProps) => (
+const ModalCloseTextInner = ({
+  onModalHide,
+  text,
+  style,
+}: ModalCloseTextProps) => (
   <TouchableWithoutFeedback onPress={onModalHide}>
-    <View style={ownStyles.container}>
+    <View style={[ownStyles.container, { ...style }]}>
       <Text style={ownStyles.text}>{text.toUpperCase()}</Text>
     </View>
   </TouchableWithoutFeedback>
 );
 
+ModalCloseTextInner.defaultProps = {
+  style: {},
+};
 export const ModalCloseText = (translate(['modal'])(
   ModalCloseTextInner
 ): ComponentType<ModalCloseTextProps>);
