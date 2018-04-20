@@ -156,6 +156,9 @@ export const en: Locale = {
     currencyPickerInvalidInput: 'Invalid/empty input',
     currencyPickerNoOffsettingInput: 'No offsetting amount',
     currencyPickerTooSmallLargeAmount: 'Amount too small',
+    currencyPickerMaximumInputLength:
+      'You have reached the maximum input length. Please split the items or convert to CHF', // NEEDS CONFIRMATION
+
     savedBasketDoYoWantToContinue:
       'Do you want to continue with an existing basket or start a new one?',
     savedBasketTotalCost: 'Total cost: CHF {{value}}',
