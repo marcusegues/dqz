@@ -30,6 +30,9 @@ import { hasOffsettingAmount } from '../../../model/utils';
 import { ModalCloseText } from '../ModalCloseText';
 import { parseInputToFloat } from '../../../utils/inputparser/inputParser';
 import { MAX_DIGITS_AMOUNT } from '../../../constants/declaration';
+import { size } from '../../../styles/fonts';
+import { moderateScale } from '../../../styles/Scaling';
+import { RedText } from '../../General Components/RedText';
 
 type PickerState = {
   currency: Currency,
@@ -109,6 +112,29 @@ class CurrencyPickerModalInner extends React.Component<
         value: INDIVIDUALALLOWANCE,
       });
     }
+
+    let over20kWarning = null;
+    const amountLength = amount.toString().length;
+    if (amountLength >= MAX_DIGITS_AMOUNT - 2) {
+      over20kWarning = (
+        <View
+          style={{
+            marginHorizontal: 16,
+            justifyContent: 'center',
+            alignSelf: 'center',
+          }}
+        >
+          <RedText
+            text={t(['currencyPickerMaximumInputLength']).toUpperCase()}
+            style={{
+              fontSize: moderateScale(size.small),
+              textAlign: 'center',
+            }}
+          />
+        </View>
+      );
+    }
+
     return (
       <AppModal
         modalVisible={modalVisible}
@@ -176,6 +202,8 @@ class CurrencyPickerModalInner extends React.Component<
             </View>
           </TouchableWithoutFeedback>
 
+          {over20kWarning}
+
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
               confirmationDisabled={disabledRedButton}
@@ -198,6 +226,7 @@ class CurrencyPickerModalInner extends React.Component<
         <ModalCloseText
           onModalHide={toggleModalVisible}
           text={t('closeModalText')}
+          style={{ bottom: 0 }}
         />
       </AppModal>
     );
