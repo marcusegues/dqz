@@ -9,7 +9,6 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { MenuTile } from './Subcomponents/MenuTile';
 import { mainMenuStyles } from './styles/MainMenuStyles';
 import { moderateScale } from '../../styles/Scaling';
-import { AppLogo } from '../../components/AppLogo/AppLogo';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { SavedBasketModal } from '../../components/Modals/SavedBasketModal/SavedBasketModal';
 import { AcceptRateModal } from '../../components/Modals/AcceptRateModal/AcceptRateModal';
@@ -39,7 +38,7 @@ import type {
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { MainCategories } from '../../types/reducers/declaration';
 
-const switzerland = require('../../../assets/images/swissCountry.png');
+const logo = require('../../../assets/images/mainMenuLogo.png');
 const customs = require('../../../assets/images/customs.png');
 
 type MainMenuState = {
@@ -130,10 +129,7 @@ class MainMenuInner extends React.Component<
     return (
       <View style={mainMenuStyles.mainContainer}>
         <View style={mainMenuStyles.topContainer}>
-          <Image source={switzerland} style={mainMenuStyles.backgroundImage} />
-          <View style={mainMenuStyles.logoAndTitleContainer}>
-            <AppLogo withShadow />
-          </View>
+          <Image source={logo} style={mainMenuStyles.backgroundImage} />
         </View>
         <SafeAreaView style={mainMenuStyles.bottomContainer}>
           <MenuTile
