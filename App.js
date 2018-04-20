@@ -96,7 +96,7 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/images/logo.png'),
         require('./assets/images/quickZollLogo.png'),
         require('./assets/images/quickZollLogoWithShadow.png'),
-        require('./assets/images/swissCountry.png'),
+        require('./assets/images/mainMenuLogo.png'),
         require('./assets/images/complete.png'),
         require('./assets/images/incomplete.png'),
         require('./assets/images/grey_logo.png'),
