@@ -160,6 +160,9 @@ export const it: Locale = {
     currencyPickerTooSmallLargeAmount: 'Betrag zu gering',
     savedBasketDoYoWantToContinue:
       'Continuare con il carrello attuale o ricominciare con uno vuoto?',
+    currencyPickerMaximumInputLength:
+      'Hai raggiunto la lunghezza massima di input. Si prega di dividere gli articoli o convertire in CHF', // NEEDS CONFIRMATION
+
     savedBasketTotalCost: 'Importo complessivo: CHF {{value}}',
     savedBasketNewShoppingCart: 'Nuovo carrello',
     closeModalText: 'Chiudere',

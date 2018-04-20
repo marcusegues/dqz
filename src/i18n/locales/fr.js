@@ -162,6 +162,9 @@ export const fr: Locale = {
     pickerInvalidInput: 'Saisie invalide/vide',
     currencyPickerNoOffsettingInput: "Aucun montant adéquat n'est disponible.",
     currencyPickerTooSmallLargeAmount: 'Quantité trop faible',
+    currencyPickerMaximumInputLength:
+      "Vous avez atteint la longueur maximale d'entrée. S'il vous plaît diviser les articles ou convertir en CHF", // NEEDS CONFIRMATION
+
     savedBasketDoYoWantToContinue:
       'Souhaitez-vous continuer avec le panier actuel ou recommencer avec un panier vide?',
     savedBasketTotalCost: 'Coût total: {{value}} francs',
