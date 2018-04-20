@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ForeignVat ForeignVat renders as expected 1`] = `
+exports[`TravelDocuments TravelDocuments renders as expected 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -46,7 +46,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`ForeignVat ForeignVat renders as expected with language 1`] = `
+exports[`TravelDocuments TravelDocuments renders as expected with language 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -54,7 +54,6 @@ ShallowWrapper {
     i18n={
       Object {
         "language": "de",
-        "t": "test",
       }
     }
     navigation={
@@ -77,7 +76,6 @@ ShallowWrapper {
     "props": Object {
       "i18n": Object {
         "language": "de",
-        "t": "test",
       },
       "navigation": Object {
         "dispatch": [Function],
@@ -96,7 +94,6 @@ ShallowWrapper {
       "props": Object {
         "i18n": Object {
           "language": "de",
-          "t": "test",
         },
         "navigation": Object {
           "dispatch": [Function],
@@ -118,11 +115,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`ForeignVat ForeignVat renders as expected with language with dive() 1`] = `
+exports[`TravelDocuments TravelDocuments renders as expected with language with dive() 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ForeignVatInner
+  Symbol(enzyme.__unrendered__): <TravelDocumentsInner
     i18n={
       Object {
         "language": "de",
@@ -151,53 +148,23 @@ ShallowWrapper {
       "children": Array [
         <AppInfoSubText
           greyBox={false}
-          style={
-            Object {
-              "marginTop": 19.61764705882353,
-            }
-          }
+          style={Object {}}
           text=""
+        />,
+        <AppInfoLink
+          onPress={[Function]}
+          style={Object {}}
+          text="www.sem.admin.ch"
         />,
         <AppInfoSubText
           greyBox={false}
-          style={
-            Object {
-              "marginTop": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 19.61764705882353,
-            }
-          }
+          style={Object {}}
           text=""
         />,
         <AppInfoLink
           onPress={[Function]}
           style={Object {}}
           text="www.wcoomd.org"
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 19.61764705882353,
-            }
-          }
-          text=""
         />,
       ],
       "title": "",
@@ -210,9 +177,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "greyBox": false,
-          "style": Object {
-            "marginTop": 19.61764705882353,
-          },
+          "style": Object {},
           "text": "",
         },
         "ref": null,
@@ -224,11 +189,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 19.61764705882353,
-          },
-          "text": "",
+          "onPress": [Function],
+          "style": Object {},
+          "text": "www.sem.admin.ch",
         },
         "ref": null,
         "rendered": null,
@@ -240,24 +203,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "greyBox": false,
-          "style": Object {
-            "marginTop": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 19.61764705882353,
-          },
+          "style": Object {},
           "text": "",
         },
         "ref": null,
@@ -277,21 +223,6 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
     ],
     "type": [Function],
   },
@@ -304,53 +235,23 @@ ShallowWrapper {
         "children": Array [
           <AppInfoSubText
             greyBox={false}
-            style={
-              Object {
-                "marginTop": 19.61764705882353,
-              }
-            }
+            style={Object {}}
             text=""
+          />,
+          <AppInfoLink
+            onPress={[Function]}
+            style={Object {}}
+            text="www.sem.admin.ch"
           />,
           <AppInfoSubText
             greyBox={false}
-            style={
-              Object {
-                "marginTop": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 19.61764705882353,
-              }
-            }
+            style={Object {}}
             text=""
           />,
           <AppInfoLink
             onPress={[Function]}
             style={Object {}}
             text="www.wcoomd.org"
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 19.61764705882353,
-              }
-            }
-            text=""
           />,
         ],
         "title": "",
@@ -363,9 +264,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "greyBox": false,
-            "style": Object {
-              "marginTop": 19.61764705882353,
-            },
+            "style": Object {},
             "text": "",
           },
           "ref": null,
@@ -377,11 +276,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 19.61764705882353,
-            },
-            "text": "",
+            "onPress": [Function],
+            "style": Object {},
+            "text": "www.sem.admin.ch",
           },
           "ref": null,
           "rendered": null,
@@ -393,24 +290,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "greyBox": false,
-            "style": Object {
-              "marginTop": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 19.61764705882353,
-            },
+            "style": Object {},
             "text": "",
           },
           "ref": null,
@@ -425,21 +305,6 @@ ShallowWrapper {
             "onPress": [Function],
             "style": Object {},
             "text": "www.wcoomd.org",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 19.61764705882353,
-            },
-            "text": "",
           },
           "ref": null,
           "rendered": null,

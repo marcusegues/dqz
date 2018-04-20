@@ -225,12 +225,15 @@ exports[`AcceptRateModal renders according to snapshot 1`] = `
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
       style={
-        Object {
-          "alignSelf": "center",
-          "bottom": 50.285714285714285,
-          "padding": 23.57142857142857,
-          "position": "absolute",
-        }
+        Array [
+          Object {
+            "alignSelf": "center",
+            "bottom": 50.285714285714285,
+            "padding": 23.57142857142857,
+            "position": "absolute",
+          },
+          Object {},
+        ]
       }
       testID={undefined}
     >

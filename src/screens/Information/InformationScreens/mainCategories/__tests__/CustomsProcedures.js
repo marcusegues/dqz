@@ -1,7 +1,8 @@
 import React from 'react';
+// $FlowFixMe
+import { TouchableOpacity } from 'react-native';
 import { shallow } from 'enzyme';
 import { CustomsProcedures } from '../CustomsProcedures';
-import { TouchableOpacity } from 'react-native';
 
 jest.mock('react-i18next', () => ({
   translate: () => Component => props => <Component t={() => ''} {...props} />,
