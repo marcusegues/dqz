@@ -180,7 +180,10 @@ class VatAllowanceInner extends Component<
                 #<Text
                   style={{ textDecorationLine: 'underline' }}
                   onPress={() =>
-                    Linking.openURL(`${borderCrossingsLinks[i18n.language]}`)
+                    navigation.dispatch({
+                      type: 'NAVIGATE',
+                      screen: 'CustomsProcedures',
+                    })
                   }
                 >
                   #
