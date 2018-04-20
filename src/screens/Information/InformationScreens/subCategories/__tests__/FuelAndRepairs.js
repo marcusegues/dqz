@@ -2,7 +2,7 @@ import React from 'react';
 // $FlowFixMe
 import { TouchableOpacity } from 'react-native';
 import { shallow } from 'enzyme';
-import { DutyAllowance } from '../DutyAllowance';
+import { FuelAndRepairs } from '../FuelAndRepairs';
 
 jest.mock('react-i18next', () => ({
   translate: () => Component => props => <Component t={() => ''} {...props} />,
@@ -10,23 +10,23 @@ jest.mock('react-i18next', () => ({
 
 const clickFn = jest.fn();
 
-describe('DutyAllowance', () => {
-  test('DutyAllowance renders as expected', () => {
-    const wrapper = shallow(<DutyAllowance />);
+describe('FuelAndRepairs', () => {
+  test('FuelAndRepairs renders as expected', () => {
+    const wrapper = shallow(<FuelAndRepairs />);
     expect(wrapper).toMatchSnapshot();
   });
-  test('DutyAllowance renders as expected with language', () => {
+  test('FuelAndRepairs renders as expected with language', () => {
     const wrapper = shallow(
-      <DutyAllowance
+      <FuelAndRepairs
         navigation={{ dispatch: clickFn }}
         i18n={{ language: 'de' }}
       />
     );
     expect(wrapper).toMatchSnapshot();
   });
-  test('DutyAllowance renders as expected with language with dive()', () => {
+  test('FuelAndRepairs renders as expected with language with dive()', () => {
     const wrapper = shallow(
-      <DutyAllowance
+      <FuelAndRepairs
         navigation={{ dispatch: clickFn }}
         i18n={{ language: 'de', t: 'test' }}
       />
@@ -35,7 +35,7 @@ describe('DutyAllowance', () => {
   });
   test('You can click it', () => {
     const wrapper = shallow(
-      <DutyAllowance
+      <FuelAndRepairs
         navigation={{ dispatch: clickFn }}
         i18n={{ language: 'de', t: 'test' }}
       />
@@ -45,6 +45,6 @@ describe('DutyAllowance', () => {
       child.simulate('press');
     });
     expect(wrapper.dive()).toMatchSnapshot();
-    expect(clickFn.mock.calls.length).toBe(3);
+    expect(clickFn.mock.calls.length).toBe(1);
   });
 });

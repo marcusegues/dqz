@@ -2,7 +2,7 @@ import React from 'react';
 // $FlowFixMe
 import { TouchableOpacity } from 'react-native';
 import { shallow } from 'enzyme';
-import { DutyAllowance } from '../DutyAllowance';
+import { Animals } from '../Animals';
 
 jest.mock('react-i18next', () => ({
   translate: () => Component => props => <Component t={() => ''} {...props} />,
@@ -10,32 +10,29 @@ jest.mock('react-i18next', () => ({
 
 const clickFn = jest.fn();
 
-describe('DutyAllowance', () => {
-  test('DutyAllowance renders as expected', () => {
-    const wrapper = shallow(<DutyAllowance />);
+describe('Animals', () => {
+  test('Animals renders as expected', () => {
+    const wrapper = shallow(<Animals />);
     expect(wrapper).toMatchSnapshot();
   });
-  test('DutyAllowance renders as expected with language', () => {
+  test('Animals renders as expected with language', () => {
     const wrapper = shallow(
-      <DutyAllowance
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de' }}
-      />
+      <Animals navigation={{ dispatch: clickFn }} i18n={{ language: 'de' }} />
     );
     expect(wrapper).toMatchSnapshot();
   });
-  test('DutyAllowance renders as expected with language with dive()', () => {
+  test('Animals renders as expected with language with dive()', () => {
     const wrapper = shallow(
-      <DutyAllowance
+      <Animals
         navigation={{ dispatch: clickFn }}
         i18n={{ language: 'de', t: 'test' }}
       />
     );
     expect(wrapper.dive()).toMatchSnapshot();
   });
-  test('You can click it', () => {
+  test('Animals renders as expected with language with dive()', () => {
     const wrapper = shallow(
-      <DutyAllowance
+      <Animals
         navigation={{ dispatch: clickFn }}
         i18n={{ language: 'de', t: 'test' }}
       />
@@ -45,6 +42,6 @@ describe('DutyAllowance', () => {
       child.simulate('press');
     });
     expect(wrapper.dive()).toMatchSnapshot();
-    expect(clickFn.mock.calls.length).toBe(3);
+    expect(clickFn.mock.calls.length).toBe(1);
   });
 });

@@ -2,7 +2,7 @@ import React from 'react';
 // $FlowFixMe
 import { TouchableOpacity } from 'react-native';
 import { shallow } from 'enzyme';
-import { DutyAllowance } from '../DutyAllowance';
+import { Food } from '../Food';
 
 jest.mock('react-i18next', () => ({
   translate: () => Component => props => <Component t={() => ''} {...props} />,
@@ -10,32 +10,29 @@ jest.mock('react-i18next', () => ({
 
 const clickFn = jest.fn();
 
-describe('DutyAllowance', () => {
-  test('DutyAllowance renders as expected', () => {
-    const wrapper = shallow(<DutyAllowance />);
+describe('Food', () => {
+  test('Food renders as expected', () => {
+    const wrapper = shallow(<Food />);
     expect(wrapper).toMatchSnapshot();
   });
-  test('DutyAllowance renders as expected with language', () => {
+  test('Food renders as expected with language', () => {
     const wrapper = shallow(
-      <DutyAllowance
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de' }}
-      />
+      <Food navigation={{ dispatch: clickFn }} i18n={{ language: 'de' }} />
     );
     expect(wrapper).toMatchSnapshot();
   });
-  test('DutyAllowance renders as expected with language with dive()', () => {
+  test('Food renders as expected with language with dive()', () => {
     const wrapper = shallow(
-      <DutyAllowance
+      <Food
         navigation={{ dispatch: clickFn }}
         i18n={{ language: 'de', t: 'test' }}
       />
     );
     expect(wrapper.dive()).toMatchSnapshot();
   });
-  test('You can click it', () => {
+  test('Food renders as expected with language with dive()', () => {
     const wrapper = shallow(
-      <DutyAllowance
+      <Food
         navigation={{ dispatch: clickFn }}
         i18n={{ language: 'de', t: 'test' }}
       />
@@ -45,6 +42,6 @@ describe('DutyAllowance', () => {
       child.simulate('press');
     });
     expect(wrapper.dive()).toMatchSnapshot();
-    expect(clickFn.mock.calls.length).toBe(3);
+    expect(clickFn.mock.calls.length).toBe(2);
   });
 });

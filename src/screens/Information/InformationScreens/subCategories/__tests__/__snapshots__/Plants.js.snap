@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DutyAllowance DutyAllowance renders as expected 1`] = `
+exports[`Plants Plants renders as expected 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -46,7 +46,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`DutyAllowance DutyAllowance renders as expected with language 1`] = `
+exports[`Plants Plants renders as expected with language 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -115,11 +115,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`DutyAllowance DutyAllowance renders as expected with language with dive() 1`] = `
+exports[`Plants Plants renders as expected with language with dive() 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <DutyAllowanceInner
+  Symbol(enzyme.__unrendered__): <PlantsInner
     i18n={
       Object {
         "language": "de",
@@ -146,16 +146,14 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": Array [
-        <Image
-          resizeMode="contain"
-          source={1}
+        <AppInfoSubText
+          greyBox={false}
           style={
             Object {
-              "alignSelf": "center",
-              "height": 298.57142857142856,
-              "width": 471.42857142857144,
+              "marginTop": 19.61764705882353,
             }
           }
+          text=""
         />,
         <AppInfoSubText
           greyBox={false}
@@ -166,96 +164,269 @@ ShallowWrapper {
           }
           text=""
         />,
-        <TouchableOpacity
-          activeOpacity={0.2}
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <AppInfoSubText
+          greyBox={false}
+          style={
+            Object {
+              "marginTop": 19.61764705882353,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <AppInfoSubText
+          greyBox={false}
+          style={
+            Object {
+              "marginVertical": 19.61764705882353,
+            }
+          }
+          text=""
+        />,
+        <AppInfoSubText
+          greyBox={false}
+          style={
+            Object {
+              "marginBottom": 19.61764705882353,
+            }
+          }
+          text=""
+        />,
+        <AppInfoSubText
+          greyBox={false}
+          style={Object {}}
+          text=""
+        />,
+        <AppInfoSubText
+          greyBox={false}
+          style={Object {}}
+          text=""
+        />,
+        <AppInfoLink
           onPress={[Function]}
-        >
-          <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 19.61764705882353,
-                "textDecorationLine": "underline",
-                "textDecorationStyle": "solid",
-              }
-            }
-            text=""
-          />
-        </TouchableOpacity>,
-        <AppInfoSubText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <CardRowText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 39.23529411764706,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
           style={
             Object {
               "marginBottom": 19.61764705882353,
             }
           }
-          text=""
+          text="www.blw.admin.ch"
         />,
         <AppInfoSubText
-          greyBox={false}
+          greyBox={true}
           style={
             Object {
-              "marginBottom": 19.61764705882353,
+              "paddingVertical": 19.61764705882353,
             }
           }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
           text=""
         />,
         <AppInfoSubText
@@ -265,261 +436,6 @@ ShallowWrapper {
               "marginTop": 19.61764705882353,
             }
           }
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <CardRowText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 39.23529411764706,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <CardRowText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 39.23529411764706,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <CardRowText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 39.23529411764706,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <CardRowText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 39.23529411764706,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 39.23529411764706,
-            }
-          }
-          text=""
-        />,
-        <CardRowText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={
-            Object {
-              "marginBottom": 39.23529411764706,
-            }
-          }
-          text=""
-        />,
-        <TouchableOpacity
-          activeOpacity={0.2}
-          onPress={[Function]}
-        >
-          <CardRowText
-            greyBox={false}
-            style={
-              Object {
-                "textDecorationLine": "underline",
-                "textDecorationStyle": "solid",
-              }
-            }
-            text=""
-          />
-        </TouchableOpacity>,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
           text=""
         />,
         <TouchableOpacity
@@ -545,15 +461,13 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
-          "resizeMode": "contain",
-          "source": 1,
+          "greyBox": false,
           "style": Object {
-            "alignSelf": "center",
-            "height": 298.57142857142856,
-            "width": 471.42857142857144,
+            "marginTop": 19.61764705882353,
           },
+          "text": "",
         },
         "ref": null,
         "rendered": null,
@@ -577,151 +491,420 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
-          "activeOpacity": 0.2,
-          "children": <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 19.61764705882353,
-                "textDecorationLine": "underline",
-                "textDecorationStyle": "solid",
-              }
-            }
-            text=""
-          />,
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "greyBox": false,
+          "style": Object {
+            "marginTop": 19.61764705882353,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "greyBox": false,
+          "style": Object {
+            "marginVertical": 19.61764705882353,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "greyBox": false,
+          "style": Object {
+            "marginBottom": 19.61764705882353,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "greyBox": false,
+          "style": Object {},
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "greyBox": false,
+          "style": Object {},
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
           "onPress": [Function],
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 19.61764705882353,
-              "textDecorationLine": "underline",
-              "textDecorationStyle": "solid",
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 39.23529411764706,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
           "style": Object {
             "marginBottom": 19.61764705882353,
           },
-          "text": "",
+          "text": "www.blw.admin.ch",
         },
         "ref": null,
         "rendered": null,
@@ -732,37 +915,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "greyBox": false,
+          "greyBox": true,
           "style": Object {
-            "marginBottom": 19.61764705882353,
+            "paddingVertical": 19.61764705882353,
           },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
           "text": "",
         },
         "ref": null,
@@ -778,517 +934,6 @@ ShallowWrapper {
           "style": Object {
             "marginTop": 19.61764705882353,
           },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 39.23529411764706,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 39.23529411764706,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 39.23529411764706,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 39.23529411764706,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 39.23529411764706,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginBottom": 39.23529411764706,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "activeOpacity": 0.2,
-          "children": <CardRowText
-            greyBox={false}
-            style={
-              Object {
-                "textDecorationLine": "underline",
-                "textDecorationStyle": "solid",
-              }
-            }
-            text=""
-          />,
-          "onPress": [Function],
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "textDecorationLine": "underline",
-              "textDecorationStyle": "solid",
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
           "text": "",
         },
         "ref": null,
@@ -1342,16 +987,14 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": Array [
-          <Image
-            resizeMode="contain"
-            source={1}
+          <AppInfoSubText
+            greyBox={false}
             style={
               Object {
-                "alignSelf": "center",
-                "height": 298.57142857142856,
-                "width": 471.42857142857144,
+                "marginTop": 19.61764705882353,
               }
             }
+            text=""
           />,
           <AppInfoSubText
             greyBox={false}
@@ -1362,96 +1005,269 @@ ShallowWrapper {
             }
             text=""
           />,
-          <TouchableOpacity
-            activeOpacity={0.2}
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <AppInfoSubText
+            greyBox={false}
+            style={
+              Object {
+                "marginTop": 19.61764705882353,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <AppInfoSubText
+            greyBox={false}
+            style={
+              Object {
+                "marginVertical": 19.61764705882353,
+              }
+            }
+            text=""
+          />,
+          <AppInfoSubText
+            greyBox={false}
+            style={
+              Object {
+                "marginBottom": 19.61764705882353,
+              }
+            }
+            text=""
+          />,
+          <AppInfoSubText
+            greyBox={false}
+            style={Object {}}
+            text=""
+          />,
+          <AppInfoSubText
+            greyBox={false}
+            style={Object {}}
+            text=""
+          />,
+          <AppInfoLink
             onPress={[Function]}
-          >
-            <AppInfoSubText
-              greyBox={false}
-              style={
-                Object {
-                  "marginTop": 19.61764705882353,
-                  "textDecorationLine": "underline",
-                  "textDecorationStyle": "solid",
-                }
-              }
-              text=""
-            />
-          </TouchableOpacity>,
-          <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <CardRowText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 39.23529411764706,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
             style={
               Object {
                 "marginBottom": 19.61764705882353,
               }
             }
-            text=""
+            text="www.blw.admin.ch"
           />,
           <AppInfoSubText
-            greyBox={false}
+            greyBox={true}
             style={
               Object {
-                "marginBottom": 19.61764705882353,
+                "paddingVertical": 19.61764705882353,
               }
             }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
             text=""
           />,
           <AppInfoSubText
@@ -1461,261 +1277,6 @@ ShallowWrapper {
                 "marginTop": 19.61764705882353,
               }
             }
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <CardRowText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 39.23529411764706,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <CardRowText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 39.23529411764706,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <CardRowText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 39.23529411764706,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <CardRowText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 39.23529411764706,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 39.23529411764706,
-              }
-            }
-            text=""
-          />,
-          <CardRowText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginBottom": 39.23529411764706,
-              }
-            }
-            text=""
-          />,
-          <TouchableOpacity
-            activeOpacity={0.2}
-            onPress={[Function]}
-          >
-            <CardRowText
-              greyBox={false}
-              style={
-                Object {
-                  "textDecorationLine": "underline",
-                  "textDecorationStyle": "solid",
-                }
-              }
-              text=""
-            />
-          </TouchableOpacity>,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
             text=""
           />,
           <TouchableOpacity
@@ -1741,15 +1302,13 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "resizeMode": "contain",
-            "source": 1,
+            "greyBox": false,
             "style": Object {
-              "alignSelf": "center",
-              "height": 298.57142857142856,
-              "width": 471.42857142857144,
+              "marginTop": 19.61764705882353,
             },
+            "text": "",
           },
           "ref": null,
           "rendered": null,
@@ -1773,151 +1332,420 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "activeOpacity": 0.2,
-            "children": <AppInfoSubText
-              greyBox={false}
-              style={
-                Object {
-                  "marginTop": 19.61764705882353,
-                  "textDecorationLine": "underline",
-                  "textDecorationStyle": "solid",
-                }
-              }
-              text=""
-            />,
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "greyBox": false,
+            "style": Object {
+              "marginTop": 19.61764705882353,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "greyBox": false,
+            "style": Object {
+              "marginVertical": 19.61764705882353,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "greyBox": false,
+            "style": Object {
+              "marginBottom": 19.61764705882353,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "greyBox": false,
+            "style": Object {},
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "greyBox": false,
+            "style": Object {},
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
             "onPress": [Function],
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "greyBox": false,
-              "style": Object {
-                "marginTop": 19.61764705882353,
-                "textDecorationLine": "underline",
-                "textDecorationStyle": "solid",
-              },
-              "text": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 39.23529411764706,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
             "style": Object {
               "marginBottom": 19.61764705882353,
             },
-            "text": "",
+            "text": "www.blw.admin.ch",
           },
           "ref": null,
           "rendered": null,
@@ -1928,37 +1756,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "greyBox": false,
+            "greyBox": true,
             "style": Object {
-              "marginBottom": 19.61764705882353,
+              "paddingVertical": 19.61764705882353,
             },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
             "text": "",
           },
           "ref": null,
@@ -1974,517 +1775,6 @@ ShallowWrapper {
             "style": Object {
               "marginTop": 19.61764705882353,
             },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 39.23529411764706,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 39.23529411764706,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 39.23529411764706,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 39.23529411764706,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 39.23529411764706,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginBottom": 39.23529411764706,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "activeOpacity": 0.2,
-            "children": <CardRowText
-              greyBox={false}
-              style={
-                Object {
-                  "textDecorationLine": "underline",
-                  "textDecorationStyle": "solid",
-                }
-              }
-              text=""
-            />,
-            "onPress": [Function],
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "greyBox": false,
-              "style": Object {
-                "textDecorationLine": "underline",
-                "textDecorationStyle": "solid",
-              },
-              "text": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
             "text": "",
           },
           "ref": null,
@@ -2542,11 +1832,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`DutyAllowance You can click it 1`] = `
+exports[`Plants You can click it 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <DutyAllowanceInner
+  Symbol(enzyme.__unrendered__): <PlantsInner
     i18n={
       Object {
         "language": "de",
@@ -2573,16 +1863,14 @@ ShallowWrapper {
     "nodeType": "function",
     "props": Object {
       "children": Array [
-        <Image
-          resizeMode="contain"
-          source={1}
+        <AppInfoSubText
+          greyBox={false}
           style={
             Object {
-              "alignSelf": "center",
-              "height": 298.57142857142856,
-              "width": 471.42857142857144,
+              "marginTop": 19.61764705882353,
             }
           }
+          text=""
         />,
         <AppInfoSubText
           greyBox={false}
@@ -2593,96 +1881,269 @@ ShallowWrapper {
           }
           text=""
         />,
-        <TouchableOpacity
-          activeOpacity={0.2}
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <AppInfoSubText
+          greyBox={false}
+          style={
+            Object {
+              "marginTop": 19.61764705882353,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <BulletText
+          additionalText=""
+          additionalTextStyle={Object {}}
+          style={
+            Object {
+              "marginLeft": 21.428571428571427,
+            }
+          }
+          text=""
+        />,
+        <AppInfoSubText
+          greyBox={false}
+          style={
+            Object {
+              "marginVertical": 19.61764705882353,
+            }
+          }
+          text=""
+        />,
+        <AppInfoSubText
+          greyBox={false}
+          style={
+            Object {
+              "marginBottom": 19.61764705882353,
+            }
+          }
+          text=""
+        />,
+        <AppInfoSubText
+          greyBox={false}
+          style={Object {}}
+          text=""
+        />,
+        <AppInfoSubText
+          greyBox={false}
+          style={Object {}}
+          text=""
+        />,
+        <AppInfoLink
           onPress={[Function]}
-        >
-          <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 19.61764705882353,
-                "textDecorationLine": "underline",
-                "textDecorationStyle": "solid",
-              }
-            }
-            text=""
-          />
-        </TouchableOpacity>,
-        <AppInfoSubText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <CardRowText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 39.23529411764706,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
           style={
             Object {
               "marginBottom": 19.61764705882353,
             }
           }
-          text=""
+          text="www.blw.admin.ch"
         />,
         <AppInfoSubText
-          greyBox={false}
+          greyBox={true}
           style={
             Object {
-              "marginBottom": 19.61764705882353,
+              "paddingVertical": 19.61764705882353,
             }
           }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
           text=""
         />,
         <AppInfoSubText
@@ -2692,261 +2153,6 @@ ShallowWrapper {
               "marginTop": 19.61764705882353,
             }
           }
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <CardRowText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 39.23529411764706,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <CardRowText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 39.23529411764706,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <CardRowText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 39.23529411764706,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <CardRowText
-          greyBox={false}
-          style={
-            Object {
-              "marginTop": 39.23529411764706,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 19.61764705882353,
-            }
-          }
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={Object {}}
-          text=""
-        />,
-        <BulletText
-          additionalText=""
-          additionalTextStyle={Object {}}
-          style={
-            Object {
-              "marginBottom": 39.23529411764706,
-            }
-          }
-          text=""
-        />,
-        <CardRowText
-          greyBox={false}
-          style={Object {}}
-          text=""
-        />,
-        <AppInfoSubText
-          greyBox={false}
-          style={
-            Object {
-              "marginBottom": 39.23529411764706,
-            }
-          }
-          text=""
-        />,
-        <TouchableOpacity
-          activeOpacity={0.2}
-          onPress={[Function]}
-        >
-          <CardRowText
-            greyBox={false}
-            style={
-              Object {
-                "textDecorationLine": "underline",
-                "textDecorationStyle": "solid",
-              }
-            }
-            text=""
-          />
-        </TouchableOpacity>,
-        <AppInfoSubText
-          greyBox={false}
-          style={Object {}}
           text=""
         />,
         <TouchableOpacity
@@ -2972,15 +2178,13 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
-          "resizeMode": "contain",
-          "source": 1,
+          "greyBox": false,
           "style": Object {
-            "alignSelf": "center",
-            "height": 298.57142857142856,
-            "width": 471.42857142857144,
+            "marginTop": 19.61764705882353,
           },
+          "text": "",
         },
         "ref": null,
         "rendered": null,
@@ -3004,151 +2208,420 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
+        "nodeType": "function",
         "props": Object {
-          "activeOpacity": 0.2,
-          "children": <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 19.61764705882353,
-                "textDecorationLine": "underline",
-                "textDecorationStyle": "solid",
-              }
-            }
-            text=""
-          />,
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "greyBox": false,
+          "style": Object {
+            "marginTop": 19.61764705882353,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "additionalText": "",
+          "additionalTextStyle": Object {},
+          "style": Object {
+            "marginLeft": 21.428571428571427,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "greyBox": false,
+          "style": Object {
+            "marginVertical": 19.61764705882353,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "greyBox": false,
+          "style": Object {
+            "marginBottom": 19.61764705882353,
+          },
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "greyBox": false,
+          "style": Object {},
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "greyBox": false,
+          "style": Object {},
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
           "onPress": [Function],
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 19.61764705882353,
-              "textDecorationLine": "underline",
-              "textDecorationStyle": "solid",
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 39.23529411764706,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
           "style": Object {
             "marginBottom": 19.61764705882353,
           },
-          "text": "",
+          "text": "www.blw.admin.ch",
         },
         "ref": null,
         "rendered": null,
@@ -3159,37 +2632,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "greyBox": false,
+          "greyBox": true,
           "style": Object {
-            "marginBottom": 19.61764705882353,
+            "paddingVertical": 19.61764705882353,
           },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
           "text": "",
         },
         "ref": null,
@@ -3205,517 +2651,6 @@ ShallowWrapper {
           "style": Object {
             "marginTop": 19.61764705882353,
           },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 39.23529411764706,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 39.23529411764706,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 39.23529411764706,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginTop": 39.23529411764706,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 19.61764705882353,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "additionalText": "",
-          "additionalTextStyle": Object {},
-          "style": Object {
-            "marginBottom": 39.23529411764706,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {
-            "marginBottom": 39.23529411764706,
-          },
-          "text": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "activeOpacity": 0.2,
-          "children": <CardRowText
-            greyBox={false}
-            style={
-              Object {
-                "textDecorationLine": "underline",
-                "textDecorationStyle": "solid",
-              }
-            }
-            text=""
-          />,
-          "onPress": [Function],
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "textDecorationLine": "underline",
-              "textDecorationStyle": "solid",
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "greyBox": false,
-          "style": Object {},
           "text": "",
         },
         "ref": null,
@@ -3769,16 +2704,14 @@ ShallowWrapper {
       "nodeType": "function",
       "props": Object {
         "children": Array [
-          <Image
-            resizeMode="contain"
-            source={1}
+          <AppInfoSubText
+            greyBox={false}
             style={
               Object {
-                "alignSelf": "center",
-                "height": 298.57142857142856,
-                "width": 471.42857142857144,
+                "marginTop": 19.61764705882353,
               }
             }
+            text=""
           />,
           <AppInfoSubText
             greyBox={false}
@@ -3789,96 +2722,269 @@ ShallowWrapper {
             }
             text=""
           />,
-          <TouchableOpacity
-            activeOpacity={0.2}
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <AppInfoSubText
+            greyBox={false}
+            style={
+              Object {
+                "marginTop": 19.61764705882353,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <BulletText
+            additionalText=""
+            additionalTextStyle={Object {}}
+            style={
+              Object {
+                "marginLeft": 21.428571428571427,
+              }
+            }
+            text=""
+          />,
+          <AppInfoSubText
+            greyBox={false}
+            style={
+              Object {
+                "marginVertical": 19.61764705882353,
+              }
+            }
+            text=""
+          />,
+          <AppInfoSubText
+            greyBox={false}
+            style={
+              Object {
+                "marginBottom": 19.61764705882353,
+              }
+            }
+            text=""
+          />,
+          <AppInfoSubText
+            greyBox={false}
+            style={Object {}}
+            text=""
+          />,
+          <AppInfoSubText
+            greyBox={false}
+            style={Object {}}
+            text=""
+          />,
+          <AppInfoLink
             onPress={[Function]}
-          >
-            <AppInfoSubText
-              greyBox={false}
-              style={
-                Object {
-                  "marginTop": 19.61764705882353,
-                  "textDecorationLine": "underline",
-                  "textDecorationStyle": "solid",
-                }
-              }
-              text=""
-            />
-          </TouchableOpacity>,
-          <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <CardRowText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 39.23529411764706,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
             style={
               Object {
                 "marginBottom": 19.61764705882353,
               }
             }
-            text=""
+            text="www.blw.admin.ch"
           />,
           <AppInfoSubText
-            greyBox={false}
+            greyBox={true}
             style={
               Object {
-                "marginBottom": 19.61764705882353,
+                "paddingVertical": 19.61764705882353,
               }
             }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
             text=""
           />,
           <AppInfoSubText
@@ -3888,261 +2994,6 @@ ShallowWrapper {
                 "marginTop": 19.61764705882353,
               }
             }
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <CardRowText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 39.23529411764706,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <CardRowText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 39.23529411764706,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <CardRowText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 39.23529411764706,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <CardRowText
-            greyBox={false}
-            style={
-              Object {
-                "marginTop": 39.23529411764706,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 19.61764705882353,
-              }
-            }
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={Object {}}
-            text=""
-          />,
-          <BulletText
-            additionalText=""
-            additionalTextStyle={Object {}}
-            style={
-              Object {
-                "marginBottom": 39.23529411764706,
-              }
-            }
-            text=""
-          />,
-          <CardRowText
-            greyBox={false}
-            style={Object {}}
-            text=""
-          />,
-          <AppInfoSubText
-            greyBox={false}
-            style={
-              Object {
-                "marginBottom": 39.23529411764706,
-              }
-            }
-            text=""
-          />,
-          <TouchableOpacity
-            activeOpacity={0.2}
-            onPress={[Function]}
-          >
-            <CardRowText
-              greyBox={false}
-              style={
-                Object {
-                  "textDecorationLine": "underline",
-                  "textDecorationStyle": "solid",
-                }
-              }
-              text=""
-            />
-          </TouchableOpacity>,
-          <AppInfoSubText
-            greyBox={false}
-            style={Object {}}
             text=""
           />,
           <TouchableOpacity
@@ -4168,15 +3019,13 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "resizeMode": "contain",
-            "source": 1,
+            "greyBox": false,
             "style": Object {
-              "alignSelf": "center",
-              "height": 298.57142857142856,
-              "width": 471.42857142857144,
+              "marginTop": 19.61764705882353,
             },
+            "text": "",
           },
           "ref": null,
           "rendered": null,
@@ -4200,151 +3049,420 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
+          "nodeType": "function",
           "props": Object {
-            "activeOpacity": 0.2,
-            "children": <AppInfoSubText
-              greyBox={false}
-              style={
-                Object {
-                  "marginTop": 19.61764705882353,
-                  "textDecorationLine": "underline",
-                  "textDecorationStyle": "solid",
-                }
-              }
-              text=""
-            />,
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "greyBox": false,
+            "style": Object {
+              "marginTop": 19.61764705882353,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "additionalText": "",
+            "additionalTextStyle": Object {},
+            "style": Object {
+              "marginLeft": 21.428571428571427,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "greyBox": false,
+            "style": Object {
+              "marginVertical": 19.61764705882353,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "greyBox": false,
+            "style": Object {
+              "marginBottom": 19.61764705882353,
+            },
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "greyBox": false,
+            "style": Object {},
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "greyBox": false,
+            "style": Object {},
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
             "onPress": [Function],
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "greyBox": false,
-              "style": Object {
-                "marginTop": 19.61764705882353,
-                "textDecorationLine": "underline",
-                "textDecorationStyle": "solid",
-              },
-              "text": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 39.23529411764706,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
             "style": Object {
               "marginBottom": 19.61764705882353,
             },
-            "text": "",
+            "text": "www.blw.admin.ch",
           },
           "ref": null,
           "rendered": null,
@@ -4355,37 +3473,10 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "greyBox": false,
+            "greyBox": true,
             "style": Object {
-              "marginBottom": 19.61764705882353,
+              "paddingVertical": 19.61764705882353,
             },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
             "text": "",
           },
           "ref": null,
@@ -4401,517 +3492,6 @@ ShallowWrapper {
             "style": Object {
               "marginTop": 19.61764705882353,
             },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 39.23529411764706,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 39.23529411764706,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 39.23529411764706,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginTop": 39.23529411764706,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 19.61764705882353,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "additionalText": "",
-            "additionalTextStyle": Object {},
-            "style": Object {
-              "marginBottom": 39.23529411764706,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {
-              "marginBottom": 39.23529411764706,
-            },
-            "text": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "class",
-          "props": Object {
-            "activeOpacity": 0.2,
-            "children": <CardRowText
-              greyBox={false}
-              style={
-                Object {
-                  "textDecorationLine": "underline",
-                  "textDecorationStyle": "solid",
-                }
-              }
-              text=""
-            />,
-            "onPress": [Function],
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "greyBox": false,
-              "style": Object {
-                "textDecorationLine": "underline",
-                "textDecorationStyle": "solid",
-              },
-              "text": "",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "greyBox": false,
-            "style": Object {},
             "text": "",
           },
           "ref": null,
