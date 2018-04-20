@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 // $FlowFixMe
 import {
   Image,
-  Linking,
   TouchableOpacity,
   Text,
   View,
@@ -26,7 +25,6 @@ import {
 } from '../../types/vatAndDutyAllowance';
 import type { Language } from '../../../../i18n/types/locale';
 import { type } from '../../../../styles/fonts';
-import { borderCrossingsLinks } from '../../types/information';
 import { CardHeaderText } from '../../../../components/QuestionAnswer/Cards/subcomponents/CardHeaderText';
 import { globalStyles } from '../../../../styles/globalStyles';
 import { VatAllowanceRow } from '../../subComponents/VatAllowanceRow';
