@@ -65,7 +65,8 @@ export const it: Locale = {
     currentLanguageMessage: 'La lingua attualmente \n selezionata è',
     selectLanguage: 'Selezionare un’altra lingua',
     confirmationVat: 'Confermo di accettare l’aliquota IVA unica di',
-    confirmationVat2: 'all’atto dell’imposizione delle merci',
+    confirmationVat2:
+      'all’atto dell’imposizione delle merci. Mezzi di pagamento consentiti: ', // NEEDS CONFIRMATION
     vatInformation: 'Maggiori informazioni',
     skipThisStep: 'Salta questo passaggio',
   },
@@ -155,7 +156,7 @@ export const it: Locale = {
     currencyPickerSubTitle:
       'Inserisca il valore netto dell’oggetto nella valuta originale:',
     currencyPickerRate: 'Data del corso del cambio:',
-    currencyPickerInvalidInput: 'Inserimento non valido o campo non compilato',
+    pickerInvalidInput: 'Inserimento non valido o campo non compilato',
     currencyPickerNoOffsettingInput: 'Nessun importo corrispondente',
     currencyPickerTooSmallLargeAmount: 'Betrag zu gering',
     savedBasketDoYoWantToContinue:
