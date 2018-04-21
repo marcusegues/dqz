@@ -15,7 +15,6 @@ import { ModalCloseText } from '../ModalCloseText';
 import { StandardAndCustomQuantityInput } from './subComponents/StandardAndCustomQuantityInput/StandardAndCustomQuantityInput';
 
 import { StandardQuantityInput } from './subComponents/StandardQuantityInput/StandardQuantityInput';
-// import { QuantityInputModalFooter } from './subComponents/QuantityInputModalFooter'; // TODO: remove after review
 import { CategoriesInfo } from '../../../model/constants';
 import { StandardInputPicker } from '../../Pickers/QuantityInputPickers/StandardInputPicker';
 import { CustomInputPicker } from '../../Pickers/QuantityInputPickers/CustomInputPicker';
