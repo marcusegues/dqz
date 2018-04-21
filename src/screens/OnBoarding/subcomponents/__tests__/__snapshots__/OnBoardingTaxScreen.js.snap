@@ -54,6 +54,16 @@ ShallowWrapper {
             text=""
           />
         </View>,
+        <Image
+          resizeMode="contain"
+          source={1}
+          style={
+            Object {
+              "height": 41,
+              "width": 224,
+            }
+          }
+        />,
         <TouchableOpacity
           activeOpacity={0.2}
           onPress={[Function]}
@@ -64,9 +74,9 @@ ShallowWrapper {
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#DC0018",
+                "color": "#757575",
                 "fontFamily": "roboto_medium",
-                "fontSize": 22,
+                "fontSize": 14,
               }
             }
           >
@@ -179,6 +189,22 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "resizeMode": "contain",
+          "source": 1,
+          "style": Object {
+            "height": 41,
+            "width": 224,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
           "activeOpacity": 0.2,
           "children": <Text
             accessible={true}
@@ -186,9 +212,9 @@ ShallowWrapper {
             ellipsizeMode="tail"
             style={
               Object {
-                "color": "#DC0018",
+                "color": "#757575",
                 "fontFamily": "roboto_medium",
-                "fontSize": 22,
+                "fontSize": 14,
               }
             }
           >
@@ -207,9 +233,9 @@ ShallowWrapper {
             "children": "",
             "ellipsizeMode": "tail",
             "style": Object {
-              "color": "#DC0018",
+              "color": "#757575",
               "fontFamily": "roboto_medium",
-              "fontSize": 22,
+              "fontSize": 14,
             },
           },
           "ref": null,
@@ -297,6 +323,16 @@ ShallowWrapper {
               text=""
             />
           </View>,
+          <Image
+            resizeMode="contain"
+            source={1}
+            style={
+              Object {
+                "height": 41,
+                "width": 224,
+              }
+            }
+          />,
           <TouchableOpacity
             activeOpacity={0.2}
             onPress={[Function]}
@@ -307,9 +343,9 @@ ShallowWrapper {
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#DC0018",
+                  "color": "#757575",
                   "fontFamily": "roboto_medium",
-                  "fontSize": 22,
+                  "fontSize": 14,
                 }
               }
             >
@@ -422,6 +458,22 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "resizeMode": "contain",
+            "source": 1,
+            "style": Object {
+              "height": 41,
+              "width": 224,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
             "activeOpacity": 0.2,
             "children": <Text
               accessible={true}
@@ -429,9 +481,9 @@ ShallowWrapper {
               ellipsizeMode="tail"
               style={
                 Object {
-                  "color": "#DC0018",
+                  "color": "#757575",
                   "fontFamily": "roboto_medium",
-                  "fontSize": 22,
+                  "fontSize": 14,
                 }
               }
             >
@@ -450,9 +502,9 @@ ShallowWrapper {
               "children": "",
               "ellipsizeMode": "tail",
               "style": Object {
-                "color": "#DC0018",
+                "color": "#757575",
                 "fontFamily": "roboto_medium",
-                "fontSize": 22,
+                "fontSize": 14,
               },
             },
             "ref": null,

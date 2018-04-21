@@ -65,7 +65,8 @@ export const fr: Locale = {
     currentLanguageMessage: 'Votre langue actuellement sélectionnée est',
     selectLanguage: 'Sélectionnez une autre langue',
     confirmationVat: 'Je confirme accepter le taux unique de TVA de',
-    confirmationVat2: 'pour le dédouanement des marchandises.',
+    confirmationVat2:
+      'pour le dédouanement des marchandises. Moyens de paiement autorisés:', // NEEDS CONFIRMATION
     vatInformation: 'Informations complémentaires',
     skipThisStep: 'Passer cette étape',
   },
