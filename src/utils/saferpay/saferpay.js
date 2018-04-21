@@ -140,7 +140,6 @@ export default class Saferpay {
         return response.json().then(res => Promise.reject(res));
       })
       .catch(error => {
-        // TODO: add logger/amplitude
         logger('Saferpay initializePayment error: ', error);
         return Promise.reject(error);
       });
@@ -182,7 +181,6 @@ export default class Saferpay {
         return response.json().then(res => Promise.reject(res));
       })
       .catch(error => {
-        // TODO: add logger/amplitude
         logger('Saferpay assertPayment error: ', error);
         return Promise.reject(error);
       });
@@ -220,7 +218,6 @@ export default class Saferpay {
         return response.json().then(res => Promise.reject(res.ErrorDetail));
       })
       .catch(error => {
-        // TODO: add logger/amplitude
         logger('Saferpay captureTransaction error: ', error);
         return Promise.reject(error);
       });
@@ -258,7 +255,6 @@ export default class Saferpay {
         return response.json().then(res => Promise.reject(res.ErrorDetail));
       })
       .catch(error => {
-        // TODO: add logger/amplitude
         logger('Saferpay cancelTransaction error: ', error);
         return Promise.reject(error);
       });
