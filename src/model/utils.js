@@ -136,3 +136,6 @@ export const totalLargeAmounts = (
   const flat = flatLargeAmounts(amounts);
   return flat.reduce((a, v) => a + v.amount * currencyObject[v.currency], 0);
 };
+
+export const checkValidAmount = (amount: number): boolean =>
+  typeof amount !== 'number' || amount <= 0;

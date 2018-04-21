@@ -155,7 +155,7 @@ type ModalTranslations = {
   currencyPickerLargeAmountTitle: string,
   currencyPickerSubTitle: string,
   currencyPickerRate: string,
-  currencyPickerInvalidInput: string,
+  pickerInvalidInput: string,
   currencyPickerNoOffsettingInput: string,
   currencyPickerTooSmallLargeAmount: string,
 
