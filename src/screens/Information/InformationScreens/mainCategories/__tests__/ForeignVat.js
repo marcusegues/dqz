@@ -1,6 +1,4 @@
 import React from 'react';
-// $FlowFixMe
-import { Linking, TouchableOpacity } from 'react-native';
 import { shallow } from 'enzyme';
 import { ForeignVat } from '../ForeignVat';
 import { AppInfoLink } from '../../../../AppInfo/subComponents/AppInfoLink';
@@ -34,20 +32,14 @@ describe('ForeignVat', () => {
     );
     expect(wrapper.dive()).toMatchSnapshot();
   });
-  // test('ForeignVat renders as expected and you can click the button', () => {
-  //   const wrapper = shallow(
-  //     <ForeignVat
-  //       navigation={{ dispatch: clickFn }}
-  //       i18n={{ language: 'de', t: 'test' }}
-  //     />
-  //   );
-  //   const render = wrapper.dive();
-  //   render
-  //     .find(<AppInfoLink title="test" onPress={clickFn} />)
-  //     .forEach(child => {
-  //       child.simulate('press');
-  //     });
-  //   expect(clickFn.mock.calls.length).toBe(1);
-  //   expect(render).toMatchSnapshot();
-  // });
+  test('`text` prop renders correctly', () => {
+    const wrapper = shallow(
+      <ForeignVat
+        navigation={{ dispatch: clickFn }}
+        i18n={{ language: 'de', t: 'test' }}
+      />
+    ).dive();
+    const component = wrapper.find(AppInfoLink);
+    expect(component.props('text').text).toEqual('www.wcoomd.org');
+  });
 });

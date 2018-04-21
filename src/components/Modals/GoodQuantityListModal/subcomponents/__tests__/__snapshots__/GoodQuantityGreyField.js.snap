@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GoodQuantityGreyField GoodQuantityGreyField with topText and plusIconText props renders correctly 1`] = `
+exports[`GoodQuantityGreyField GoodQuantityGreyField renders correctly 1`] = `
 <View
   style={
     Object {
@@ -88,4 +88,317 @@ exports[`GoodQuantityGreyField GoodQuantityGreyField with topText and plusIconTe
     </Text>
   </View>
 </View>
+`;
+
+exports[`GoodQuantityGreyField simulates click events in GoodQuantityGreyField 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GoodQuantityGreyFieldInner
+    onPress={[Function]}
+    plusIconText="plusIconText"
+    t={[Function]}
+    topText="topText"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <CardHeaderSubText
+          style={
+            Object {
+              "alignSelf": "flex-start",
+              "paddingBottom": 68.66176470588235,
+              "paddingTop": 31.388235294117646,
+            }
+          }
+          text="topText"
+        />,
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+            }
+          }
+        >
+          <RedPlusIcon
+            onPress={[Function]}
+          />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "color": "#DC0018",
+                "fontFamily": "roboto_medium",
+                "fontSize": 22,
+                "marginBottom": 58.85294117647059,
+                "marginTop": 19.61764705882353,
+              }
+            }
+          >
+            PLUSICONTEXT
+          </Text>
+        </View>,
+      ],
+      "style": Object {
+        "alignItems": "center",
+        "backgroundColor": "#F5F5F5",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "space-between",
+        "marginBottom": 0,
+        "width": "90%",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "style": Object {
+            "alignSelf": "flex-start",
+            "paddingBottom": 68.66176470588235,
+            "paddingTop": 31.388235294117646,
+          },
+          "text": "topText",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <RedPlusIcon
+              onPress={[Function]}
+            />,
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#DC0018",
+                  "fontFamily": "roboto_medium",
+                  "fontSize": 22,
+                  "marginBottom": 58.85294117647059,
+                  "marginTop": 19.61764705882353,
+                }
+              }
+            >
+              PLUSICONTEXT
+            </Text>,
+          ],
+          "style": Object {
+            "alignItems": "center",
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "onPress": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "accessible": true,
+              "allowFontScaling": true,
+              "children": "PLUSICONTEXT",
+              "ellipsizeMode": "tail",
+              "style": Object {
+                "color": "#DC0018",
+                "fontFamily": "roboto_medium",
+                "fontSize": 22,
+                "marginBottom": 58.85294117647059,
+                "marginTop": 19.61764705882353,
+              },
+            },
+            "ref": null,
+            "rendered": "PLUSICONTEXT",
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <CardHeaderSubText
+            style={
+              Object {
+                "alignSelf": "flex-start",
+                "paddingBottom": 68.66176470588235,
+                "paddingTop": 31.388235294117646,
+              }
+            }
+            text="topText"
+          />,
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+              }
+            }
+          >
+            <RedPlusIcon
+              onPress={[Function]}
+            />
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#DC0018",
+                  "fontFamily": "roboto_medium",
+                  "fontSize": 22,
+                  "marginBottom": 58.85294117647059,
+                  "marginTop": 19.61764705882353,
+                }
+              }
+            >
+              PLUSICONTEXT
+            </Text>
+          </View>,
+        ],
+        "style": Object {
+          "alignItems": "center",
+          "backgroundColor": "#F5F5F5",
+          "flex": 1,
+          "flexDirection": "column",
+          "justifyContent": "space-between",
+          "marginBottom": 0,
+          "width": "90%",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "style": Object {
+              "alignSelf": "flex-start",
+              "paddingBottom": 68.66176470588235,
+              "paddingTop": 31.388235294117646,
+            },
+            "text": "topText",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <RedPlusIcon
+                onPress={[Function]}
+              />,
+              <Text
+                accessible={true}
+                allowFontScaling={true}
+                ellipsizeMode="tail"
+                style={
+                  Object {
+                    "color": "#DC0018",
+                    "fontFamily": "roboto_medium",
+                    "fontSize": 22,
+                    "marginBottom": 58.85294117647059,
+                    "marginTop": 19.61764705882353,
+                  }
+                }
+              >
+                PLUSICONTEXT
+              </Text>,
+            ],
+            "style": Object {
+              "alignItems": "center",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "onPress": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "accessible": true,
+                "allowFontScaling": true,
+                "children": "PLUSICONTEXT",
+                "ellipsizeMode": "tail",
+                "style": Object {
+                  "color": "#DC0018",
+                  "fontFamily": "roboto_medium",
+                  "fontSize": 22,
+                  "marginBottom": 58.85294117647059,
+                  "marginTop": 19.61764705882353,
+                },
+              },
+              "ref": null,
+              "rendered": "PLUSICONTEXT",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
 `;

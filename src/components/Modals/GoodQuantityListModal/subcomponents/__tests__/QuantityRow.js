@@ -2,8 +2,6 @@
 import React from 'react';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
-// $FlowFixMe
-import { View } from 'react-native';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import { QuantityRow } from '../QuantityRow';
@@ -36,23 +34,11 @@ describe('QuantityRow', () => {
         quantity={6}
         onDelete={mockFunc}
         date="23.02.2018"
+        i18n={{ language: 'de', t: 'test' }}
       />
     );
-    component.find(Touchable).simulate('press');
-    // expect(mockFunc).toBeCalled();
+    const render = component.dive();
+    render.find(Touchable).simulate('press');
     expect(mockFunc.mock.calls.length).toBe(1);
   });
-
-  // test('simulates click events', () => {
-  //   const component = shallow(
-  //     <GoodQuantityGreyField
-  //       topText="topText"
-  //       plusIconText="plusIconText"
-  //       onPress={mockFunc}
-  //     />
-  //   );
-  //   component.find(RedPlusIcon).simulate('press');
-  //   // component.find(TouchableOpacity).simulate('press');
-  //   expect(mockFunc.mock.calls.length).toBe(1);
-  // });
 });

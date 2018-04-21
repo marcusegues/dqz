@@ -1,7 +1,6 @@
 import React from 'react';
 // $FlowFixMe
 import { TouchableOpacity } from 'react-native';
-import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import { VatAllowance } from '../VatAllowance';
 //
@@ -45,7 +44,6 @@ describe('VatAllowance', () => {
     render.find(TouchableOpacity).forEach(child => {
       child.simulate('press');
     });
-    console.log(wrapper.props());
     expect(wrapper.dive()).toMatchSnapshot();
     expect(clickFn.mock.calls.length).toBe(1);
   });

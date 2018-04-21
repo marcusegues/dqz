@@ -1,16 +1,16 @@
 // @flow
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { QuantityInfo } from '../QuantityInfo';
+import { AllowanceIcon } from '../AllowanceIcon';
 
 jest.mock('react-i18next', () => ({
   translate: () => Component => props => <Component t={() => ''} {...props} />,
 }));
 
-describe('QuantityInfo', () => {
-  test('QuantityInfo with `category` and `totalQuantity` renders correctly', () => {
+describe('AllowanceIcon', () => {
+  test('AllowanceIcon renders correctly', () => {
     const tree = renderer
-      .create(<QuantityInfo category="Meat" totalQuantity={4} />)
+      .create(<AllowanceIcon quantity={4} unit="kg" text="test" />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

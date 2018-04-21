@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllowanceIcon AllowanceIcon renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#EBF8DD",
+      "marginTop": 5,
+      "paddingHorizontal": 6,
+      "paddingVertical": 2,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#1A1A1A",
+        "fontFamily": "roboto_light",
+        "fontSize": 18.857142857142858,
+      }
+    }
+  >
+    test 4 kg
+  </Text>
+</View>
+`;

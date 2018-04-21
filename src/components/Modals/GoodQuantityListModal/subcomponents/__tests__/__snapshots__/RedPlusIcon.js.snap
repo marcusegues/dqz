@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BlueInfoIcon BlueInfoIcon component renders correctly 1`] = `
+exports[`RedPlusIcon RedPlusIcon component renders correctly 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}

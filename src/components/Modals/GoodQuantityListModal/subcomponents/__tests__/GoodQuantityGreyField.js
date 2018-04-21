@@ -1,9 +1,7 @@
 // @flow
 import React from 'react';
-// $FlowFixMe
-import { TouchableOpacity } from 'react-native';
 import renderer from 'react-test-renderer';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { GoodQuantityGreyField } from '../GoodQuantityGreyField';
 import { RedPlusIcon } from '../RedPlusIcon';
 
@@ -14,7 +12,7 @@ jest.mock('react-i18next', () => ({
 const mockFunc = jest.fn();
 
 describe('GoodQuantityGreyField', () => {
-  test('GoodQuantityGreyField with topText and plusIconText props renders correctly', () => {
+  test('GoodQuantityGreyField renders correctly', () => {
     const tree = renderer
       .create(
         <GoodQuantityGreyField
@@ -27,28 +25,19 @@ describe('GoodQuantityGreyField', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  test('simulates click events', () => {
-    const component = shallow(
+  test('simulates click events in GoodQuantityGreyField', () => {
+    const wrapper = shallow(
       <GoodQuantityGreyField
         topText="topText"
         plusIconText="plusIconText"
         onPress={mockFunc}
       />
     );
-    component.simulate('press');
+    const render = wrapper.dive();
+    render.find(RedPlusIcon).forEach(child => {
+      child.simulate('press');
+    });
+    expect(wrapper.dive()).toMatchSnapshot();
     expect(mockFunc.mock.calls.length).toBe(1);
   });
-
-  // test('simulates click events', () => {
-  //   const component = shallow(
-  //     <GoodQuantityGreyField
-  //       topText="topText"
-  //       plusIconText="plusIconText"
-  //       onPress={mockFunc}
-  //     />
-  //   );
-  //   component.find(RedPlusIcon).simulate('press');
-  //   // component.find(TouchableOpacity).simulate('press');
-  //   expect(mockFunc.mock.calls.length).toBe(1);
-  // });
 });
