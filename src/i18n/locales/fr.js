@@ -65,7 +65,8 @@ export const fr: Locale = {
     currentLanguageMessage: 'Votre langue actuellement sélectionnée est',
     selectLanguage: 'Sélectionnez une autre langue',
     confirmationVat: 'Je confirme accepter le taux unique de TVA de',
-    confirmationVat2: 'pour le dédouanement des marchandises.',
+    confirmationVat2:
+      'pour le dédouanement des marchandises. Moyens de paiement autorisés:', // NEEDS CONFIRMATION
     vatInformation: 'Informations complémentaires',
     skipThisStep: 'Passer cette étape',
   },
@@ -159,7 +160,7 @@ export const fr: Locale = {
     currencyPickerSubTitle:
       'Veuillez saisir ici la valeur hors taxes de toutes les marchandises transportées dans leur devise d’origine.',
     currencyPickerRate: 'Taux de change du:',
-    currencyPickerInvalidInput: 'Saisie invalide/vide',
+    pickerInvalidInput: 'Saisie invalide/vide',
     currencyPickerNoOffsettingInput: "Aucun montant adéquat n'est disponible.",
     currencyPickerTooSmallLargeAmount: 'Quantité trop faible',
     currencyPickerMaximumInputLength:
