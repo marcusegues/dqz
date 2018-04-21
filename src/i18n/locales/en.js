@@ -65,7 +65,7 @@ export const en: Locale = {
     currentLanguageMessage: 'Your currently selected language is',
     selectLanguage: 'Select another language',
     confirmationVat: 'I hereby confirm that I accept the single VAT rate of',
-    confirmationVat2: 'when declaring goods.',
+    confirmationVat2: 'when declaring goods. Permitted methods of payment:', // NEEDS CONFIRMATION
     vatInformation: 'Further information',
     skipThisStep: ' Skip this step',
   },
@@ -153,9 +153,12 @@ export const en: Locale = {
     currencyPickerSubTitle:
       'Record the net value of the item in its original currency:',
     currencyPickerRate: 'Rate of',
-    currencyPickerInvalidInput: 'Invalid/empty input',
+    pickerInvalidInput: 'Invalid/empty input',
     currencyPickerNoOffsettingInput: 'No offsetting amount',
     currencyPickerTooSmallLargeAmount: 'Amount too small',
+    currencyPickerMaximumInputLength:
+      'You have reached the maximum input length. Please split the items or convert to CHF', // NEEDS CONFIRMATION
+
     savedBasketDoYoWantToContinue:
       'Do you want to continue with an existing basket or start a new one?',
     savedBasketTotalCost: 'Total cost: CHF {{value}}',
@@ -311,28 +314,24 @@ export const en: Locale = {
       'mounted or assembled goods = one item (even if the individual components are shown separately on the invoice)',
     vatAllowanceText26: 'Examples:',
     vatAllowanceText27:
-      '1.\tThe invoice for the purchase of a computer is as follows:',
-    vatAllowanceText28a: '1 desktop PC',
-    vatAllowanceText28b: 'CHF 700',
-    vatAllowanceText29a: '1 screen',
-    vatAllowanceText29b: 'CHF 200',
-    vatAllowanceText30a: '1 keyboard',
-    vatAllowanceText30b: 'CHF 20',
-    vatAllowanceText31: 'Total\tCHF 920',
+      '1. The invoice for the purchase of a computer is as follows:',
+    vatAllowanceText28: '1 desktop PC',
+    vatAllowanceText29: '1 screen',
+    vatAllowanceText30: '1 keyboard',
+    vatAllowanceText31: 'Total',
     vatAllowanceText32: '= 3 items (three sales units)',
     vatAllowanceText33:
-      '2.\tThe invoice for the purchase of a computer is as follows:',
+      '2. The invoice for the purchase of a computer is as follows:',
     vatAllowanceText34: '1 computer:',
     vatAllowanceText35: 'desktop PC',
     vatAllowanceText36: 'screen',
     vatAllowanceText37: 'keyboard',
-    vatAllowanceText38: 'Total\tCHF 920',
     vatAllowanceText39: '= 1 item (one sales unit)',
     vatAllowanceText40:
-      '3.\tThe invoice for the purchase of a pair of glasses is as follows:',
-    vatAllowanceText41: '2 lenses\t\t2 units at CHF 200\t\tCHF 400',
-    vatAllowanceText42: '1 frame\t\tCHF 300',
-    vatAllowanceText43: 'Total\t\tCHF 700',
+      '3. The invoice for the purchase of a pair of glasses is as follows:',
+    vatAllowanceText41: '2 lenses',
+    vatAllowanceText41a: '2 units at CHF 200',
+    vatAllowanceText42: '1 frame CHF 300',
     vatAllowanceText44: '1 item (one assembled item)',
   },
 
@@ -738,7 +737,7 @@ export const en: Locale = {
     generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern`,
     designAndDevelopment: 'Design & Development',
     ambriteAddress:
-      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch',
+      'Überlandstrasse 111\n8600 Dübendorf\nSwitzerland\n\ninfo@ambrite.ch',
     toContactForm: 'To contact form',
   },
   legalNoticeInformation: {

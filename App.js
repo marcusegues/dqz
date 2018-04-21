@@ -29,6 +29,8 @@ import { parseCurrencyXML } from './src/model/currencies';
 import { appShouldUpdate } from './src/utils/checkversion/checkversion';
 import type { ConnectivityType } from './src/types/connectivity';
 import { UpdateTheApp } from './src/screens/UpdateTheApp/UpdateTheApp';
+import { fetchSettingsHasLanguage } from './src/asyncStorage/storageApi';
+import { KeyNotSet } from './src/asyncStorage/asyncStorage';
 
 const store = configureStore();
 
@@ -94,7 +96,7 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/images/logo.png'),
         require('./assets/images/quickZollLogo.png'),
         require('./assets/images/quickZollLogoWithShadow.png'),
-        require('./assets/images/swissCountry.png'),
+        require('./assets/images/mainMenuLogo.png'),
         require('./assets/images/complete.png'),
         require('./assets/images/incomplete.png'),
         require('./assets/images/grey_logo.png'),
@@ -102,6 +104,7 @@ export default class App extends React.Component<AppProps, AppStateT> {
         require('./assets/images/logo_with_text.png'),
         require('./assets/images/ambrite_logo.png'),
         require('./assets/images/infoImage.png'),
+        require('./assets/images/visaAndMaestroLogo.png'),
         require('./assets/images/customs.png'),
         require('./assets/images/successfulPayment.png'),
         require('./assets/images/redSquare.png'),
@@ -229,6 +232,11 @@ export default class App extends React.Component<AppProps, AppStateT> {
               console.log(e);
             });
         }),
+      fetchSettingsHasLanguage().then(language => {
+        if (language !== KeyNotSet) {
+          i18nImplementation.changeLanguage(language);
+        }
+      }),
     ]);
 
   render() {

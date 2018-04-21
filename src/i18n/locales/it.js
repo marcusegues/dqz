@@ -65,7 +65,8 @@ export const it: Locale = {
     currentLanguageMessage: 'La lingua attualmente \n selezionata è',
     selectLanguage: 'Selezionare un’altra lingua',
     confirmationVat: 'Confermo di accettare l’aliquota IVA unica di',
-    confirmationVat2: 'all’atto dell’imposizione delle merci',
+    confirmationVat2:
+      'all’atto dell’imposizione delle merci. Mezzi di pagamento consentiti: ', // NEEDS CONFIRMATION
     vatInformation: 'Maggiori informazioni',
     skipThisStep: 'Salta questo passaggio',
   },
@@ -155,11 +156,14 @@ export const it: Locale = {
     currencyPickerSubTitle:
       'Inserisca il valore netto dell’oggetto nella valuta originale:',
     currencyPickerRate: 'Data del corso del cambio:',
-    currencyPickerInvalidInput: 'Inserimento non valido o campo non compilato',
+    pickerInvalidInput: 'Inserimento non valido o campo non compilato',
     currencyPickerNoOffsettingInput: 'Nessun importo corrispondente',
     currencyPickerTooSmallLargeAmount: 'Betrag zu gering',
     savedBasketDoYoWantToContinue:
       'Continuare con il carrello attuale o ricominciare con uno vuoto?',
+    currencyPickerMaximumInputLength:
+      'Hai raggiunto la lunghezza massima di input. Si prega di dividere gli articoli o convertire in CHF', // NEEDS CONFIRMATION
+
     savedBasketTotalCost: 'Importo complessivo: CHF {{value}}',
     savedBasketNewShoppingCart: 'Nuovo carrello',
     closeModalText: 'Chiudere',
@@ -237,10 +241,10 @@ export const it: Locale = {
     customsProceduresText10:
       'Dichiarazione doganale verbale o scelta del passaggio rosso all’aeroporto',
     customsProceduresText11:
-      'Se al <1>valico di confine</1> è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente.',
-    customsProceduresText12:
-      'Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
-    customsProceduresText13: 'Dichiarazione doganale con l’app QuickZoll',
+      'Se al <1>valico di confine</1> è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente.  Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
+    customsProceduresText12: 'Dichiarazione doganale con l’app QuickZoll',
+    customsProceduresText13:
+      'Potete dichiarare la vostra merce con l’app QuickZoll dell’AFD. Le merci devono essere sdoganate con l’app prima di attraversare la frontiera o al valico di frontiera. Ciò significa che le tasse devono essere pagate. Se ha pagato i dazi con l’app, può utilizzare il passaggio verde anche ai valichi di frontiera dove non è presente personale doganale e negli aeroporti.',
     customsProceduresText14:
       'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.',
     customsProceduresText15:
@@ -321,28 +325,24 @@ export const it: Locale = {
       'merci montate o scomponibili = un oggetto (anche se i singoli componenti sono indicati separatamente sulla fattura)',
     vatAllowanceText26: 'Esempi',
     vatAllowanceText27:
-      '1.\tLa fattura d’acquisto per un computer è la seguente:',
-    vatAllowanceText28a: '1 PC desktop',
-    vatAllowanceText28b: 'CHF 700',
-    vatAllowanceText29a: '1 schiermo',
-    vatAllowanceText29b: 'CHF 200',
-    vatAllowanceText30a: '1 tastiera',
-    vatAllowanceText30b: 'CHF 20',
-    vatAllowanceText31: 'Totale\tCHF 920',
+      '1. La fattura d’acquisto per un computer è la seguente:',
+    vatAllowanceText28: '1 PC desktop',
+    vatAllowanceText29: '1 schiermo',
+    vatAllowanceText30: '1 tastiera',
+    vatAllowanceText31: 'Totale',
     vatAllowanceText32: '= 3 oggetti (tre unità di vendita)',
     vatAllowanceText33:
-      '2.\tLa fattura d’acquisto per un computer è la seguente:',
+      '2. La fattura d’acquisto per un computer è la seguente:',
     vatAllowanceText34: '1 Computer:',
     vatAllowanceText35: 'PC desktop',
     vatAllowanceText36: 'schiermo',
     vatAllowanceText37: 'tastiera',
-    vatAllowanceText38: 'Totale\tCHF 920',
     vatAllowanceText39: '= 1 oggetto (un’unità di vendita)',
     vatAllowanceText40:
-      '3.\tLa fattura d’acquisto per un paio di occhiali è la seguente:',
-    vatAllowanceText41: '2 lenti\t\t2 unità a CHF 200\t\tCHF 400',
-    vatAllowanceText42: '1 montatura\t\tCHF 300',
-    vatAllowanceText43: 'Totale\t\tCHF 700',
+      '3. La fattura d’acquisto per un paio di occhiali è la seguente:',
+    vatAllowanceText41: '2 lenti',
+    vatAllowanceText41a: '2 unità a CHF 200',
+    vatAllowanceText42: '1 montatura',
     vatAllowanceText44: '= 1 oggetto (un oggetto scomponibile)',
   },
 
@@ -759,7 +759,7 @@ export const it: Locale = {
     generalCustomsDirectorate: `Monbijoustrasse 40\n3003 Bern`,
     designAndDevelopment: 'Design e sviluppo',
     ambriteAddress:
-      'St. Gallerstrasse 49\n9100 Herisau\nSwitzerland\n\ninfo@ambrite.ch',
+      'Überlandstrasse 111\n8600 Dübendorf\nSwitzerland\n\ninfo@ambrite.ch',
     toContactForm: 'Formulario di contatto',
   },
   legalNoticeInformation: {

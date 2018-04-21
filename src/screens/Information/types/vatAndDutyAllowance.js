@@ -20,6 +20,9 @@ const vatAllowanceOver300DiagramEN = require('../../../../assets/images/info/vat
 const vatAllowanceOver300DiagramFR = require('../../../../assets/images/info/vatAllowanceOver300Diagram_FR.png');
 const vatAllowanceOver300DiagramDE = require('../../../../assets/images/info/vatAllowanceOver300Diagram_DE.png');
 
+const vatAllowanceCurrencyCHF = 'CHF';
+const vatAllowanceCurrencyFR = 'fr.';
+
 type vatAllowanceImagesType = { [LanguageCategory]: string };
 
 export const vatAllowanceOneTravelerImages: vatAllowanceImagesType = {
@@ -48,4 +51,11 @@ export const vatAllowanceOver300Diagrams: vatAllowanceImagesType = {
   it: vatAllowanceOver300DiagramIT,
   fr: vatAllowanceOver300DiagramFR,
   en: vatAllowanceOver300DiagramEN,
+};
+
+export const vatAllowanceCurrencies: vatAllowanceImagesType = {
+  de: vatAllowanceCurrencyCHF,
+  it: vatAllowanceCurrencyCHF,
+  en: vatAllowanceCurrencyCHF,
+  fr: vatAllowanceCurrencyFR,
 };

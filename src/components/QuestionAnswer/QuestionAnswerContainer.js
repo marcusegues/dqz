@@ -215,7 +215,9 @@ class QuestionAnswerContainerInner extends React.Component<
       this.enrichState()
     );
     const updateFlags: QAStateEnriched = setInitFlags(updateStates);
-    this.setState(this.simplifyState(updateFlags));
+    this.setState(this.simplifyState(updateFlags), () =>
+      this.props.saveQAState(this.state)
+    );
   }
 
   collapseQuestion(question: QuestionType, qaStateEnriched: QAStateEnriched) {

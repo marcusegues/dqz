@@ -1,19 +1,28 @@
 // @flow
 // $FlowFixMe
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet, Dimensions } from 'react-native';
 import { scale, verticalScale, moderateScale } from '../../../styles/Scaling';
 import { WHITE } from '../../../styles/colors';
 
+const { width } = Dimensions.get('window');
+
 export const menuTileStyle: any = StyleSheet.create({
   container: {
-    width: scale(152),
-    height: scale(135),
+    ...Platform.select({
+      ios: {
+        height: moderateScale(135),
+      },
+      android: {
+        height: moderateScale(120, 0.9),
+      },
+    }),
+    width: width / 2 - moderateScale(24),
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: WHITE,
     borderRadius: 4,
-    marginBottom: 16,
+    marginBottom: moderateScale(16),
   },
   contentContainer: {
     justifyContent: 'center',

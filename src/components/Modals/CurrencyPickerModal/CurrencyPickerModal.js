@@ -26,9 +26,13 @@ import { currenciesArray } from '../../../model/currencies';
 import type { Currency, CurrencyObject } from '../../../model/currencies';
 import type { TFunction } from '../../../types/generalTypes';
 import type { Amounts } from '../../../model/types/basketPeopleAmountsTypes';
-import { hasOffsettingAmount } from '../../../model/utils';
+import { hasOffsettingAmount, checkValidAmount } from '../../../model/utils';
 import { ModalCloseText } from '../ModalCloseText';
 import { parseInputToFloat } from '../../../utils/inputparser/inputParser';
+import { MAX_DIGITS_AMOUNT } from '../../../constants/declaration';
+import { size } from '../../../styles/fonts';
+import { moderateScale } from '../../../styles/Scaling';
+import { RedText } from '../../General Components/RedText';
 
 type PickerState = {
   currency: Currency,
@@ -80,13 +84,13 @@ class CurrencyPickerModalInner extends React.Component<
     } = this.props;
     const { amount, currency } = this.state;
 
-    let disabledRedButton: boolean = typeof amount !== 'number' || amount <= 0;
+    let disabledRedButton: boolean = checkValidAmount(amount);
 
     let redButtonText: string = t(['confirmPicker'], {
       value: `${currency} ${amount.toFixed(2)}`,
     });
     if (disabledRedButton) {
-      redButtonText = t(['currencyPickerInvalidInput']);
+      redButtonText = t(['modal:pickerInvalidInput']);
     }
 
     if (large && currencyObject[currency] * amount < INDIVIDUALALLOWANCE) {
@@ -108,6 +112,29 @@ class CurrencyPickerModalInner extends React.Component<
         value: INDIVIDUALALLOWANCE,
       });
     }
+
+    let over20kWarning = null;
+    const amountLength = amount.toString().length;
+    if (amountLength >= MAX_DIGITS_AMOUNT - 2) {
+      over20kWarning = (
+        <View
+          style={{
+            marginHorizontal: 16,
+            justifyContent: 'center',
+            alignSelf: 'center',
+          }}
+        >
+          <RedText
+            text={t(['currencyPickerMaximumInputLength']).toUpperCase()}
+            style={{
+              fontSize: moderateScale(size.small),
+              textAlign: 'center',
+            }}
+          />
+        </View>
+      );
+    }
+
     return (
       <AppModal
         modalVisible={modalVisible}
@@ -157,19 +184,25 @@ class CurrencyPickerModalInner extends React.Component<
                 keyboardType="numeric"
                 style={currencyPickerModal.textInput}
                 onChangeText={value => {
-                  const parsedValue = parseInputToFloat(value);
+                  const parsedValue = parseInputToFloat(
+                    value,
+                    MAX_DIGITS_AMOUNT - 2,
+                    2
+                  );
                   this.setState({
                     amount: +parsedValue,
                     inputAmountValue: parsedValue,
                   });
                 }}
                 value={this.state.inputAmountValue}
-                maxLenght="8"
+                maxLenght={MAX_DIGITS_AMOUNT}
                 underlineColorAndroid="transparent"
                 blurOnSubmit
               />
             </View>
           </TouchableWithoutFeedback>
+
+          {over20kWarning}
 
           <View style={pickerModalStyle.redButtonWrapper}>
             <RedButton
@@ -193,6 +226,7 @@ class CurrencyPickerModalInner extends React.Component<
         <ModalCloseText
           onModalHide={toggleModalVisible}
           text={t('closeModalText')}
+          style={{ bottom: 0 }}
         />
       </AppModal>
     );
