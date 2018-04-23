@@ -65,7 +65,8 @@ export const it: Locale = {
     currentLanguageMessage: 'La lingua attualmente \n selezionata è',
     selectLanguage: 'Selezionare un’altra lingua',
     confirmationVat: 'Confermo di accettare l’aliquota IVA unica di',
-    confirmationVat2: 'all’atto dell’imposizione delle merci',
+    confirmationVat2:
+      'all’atto dell’imposizione delle merci. Mezzi di pagamento consentiti: ', // NEEDS CONFIRMATION
     vatInformation: 'Maggiori informazioni',
     skipThisStep: 'Salta questo passaggio',
   },
@@ -155,7 +156,7 @@ export const it: Locale = {
     currencyPickerSubTitle:
       'Inserisca il valore netto dell’oggetto nella valuta originale:',
     currencyPickerRate: 'Data del corso del cambio:',
-    currencyPickerInvalidInput: 'Inserimento non valido o campo non compilato',
+    pickerInvalidInput: 'Inserimento non valido o campo non compilato',
     currencyPickerNoOffsettingInput: 'Nessun importo corrispondente',
     currencyPickerTooSmallLargeAmount: 'Betrag zu gering',
     savedBasketDoYoWantToContinue:
@@ -240,10 +241,10 @@ export const it: Locale = {
     customsProceduresText10:
       'Dichiarazione doganale verbale o scelta del passaggio rosso all’aeroporto',
     customsProceduresText11:
-      'Se al <1>valico di confine</1> è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente.',
-    customsProceduresText12:
-      'Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
-    customsProceduresText13: 'Dichiarazione doganale con l’app QuickZoll',
+      'Se al <1>valico di confine</1> è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente.  Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
+    customsProceduresText12: 'Dichiarazione doganale con l’app QuickZoll',
+    customsProceduresText13:
+      'Potete dichiarare la vostra merce con l’app QuickZoll dell’AFD. Le merci devono essere sdoganate con l’app prima di attraversare la frontiera o al valico di frontiera. Ciò significa che le tasse devono essere pagate. Se ha pagato i dazi con l’app, può utilizzare il passaggio verde anche ai valichi di frontiera dove non è presente personale doganale e negli aeroporti.',
     customsProceduresText14:
       'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.',
     customsProceduresText15:

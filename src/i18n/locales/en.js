@@ -65,7 +65,7 @@ export const en: Locale = {
     currentLanguageMessage: 'Your currently selected language is',
     selectLanguage: 'Select another language',
     confirmationVat: 'I hereby confirm that I accept the single VAT rate of',
-    confirmationVat2: 'when declaring goods.',
+    confirmationVat2: 'when declaring goods. Permitted methods of payment:', // NEEDS CONFIRMATION
     vatInformation: 'Further information',
     skipThisStep: ' Skip this step',
   },
@@ -153,7 +153,7 @@ export const en: Locale = {
     currencyPickerSubTitle:
       'Record the net value of the item in its original currency:',
     currencyPickerRate: 'Rate of',
-    currencyPickerInvalidInput: 'Invalid/empty input',
+    pickerInvalidInput: 'Invalid/empty input',
     currencyPickerNoOffsettingInput: 'No offsetting amount',
     currencyPickerTooSmallLargeAmount: 'Amount too small',
     currencyPickerMaximumInputLength:

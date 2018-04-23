@@ -66,7 +66,8 @@ export const de: Locale = {
     selectLanguage: 'Wählen Sie eine andere Sprache',
     confirmationVat:
       'Hiermit bestätige ich, dass ich den einheitlichen Mehrwertsteuersatz von ',
-    confirmationVat2: 'bei der Verzollung von Waren akzeptiere.',
+    confirmationVat2:
+      'bei der Verzollung von Waren akzeptiere. Erlaubte Zahlungsmittel:',
     vatInformation: 'Weitere Informationen',
     skipThisStep: 'Diesen Schritt überspringen',
   },
@@ -159,7 +160,7 @@ export const de: Locale = {
     currencyPickerSubTitle:
       'Erfassen Sie den Nettowert der Waren in der Original-Währung:',
     currencyPickerRate: 'Kurs vom',
-    currencyPickerInvalidInput: 'Ungültige/leere Eingabe',
+    pickerInvalidInput: 'Ungültige/leere Eingabe',
     currencyPickerNoOffsettingInput: 'Kein entsprechender Betrag',
     currencyPickerTooSmallLargeAmount: 'Betrag zu gering',
 

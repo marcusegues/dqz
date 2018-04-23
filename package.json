@@ -1,6 +1,6 @@
 {
   "name": "dazit",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "QuickZoll App",
   "author": "ambrite ag 2018",
   "license": "private",
@@ -39,6 +39,7 @@
     "luxon": "^0.5.6",
     "moment": "^2.20.1",
     "native-base": "^2.3.3",
+    "node-fetch": "^2.1.2",
     "react": "16.2.0",
     "react-dom": "^16.2.0",
     "react-i18next": "^7.1.1",
