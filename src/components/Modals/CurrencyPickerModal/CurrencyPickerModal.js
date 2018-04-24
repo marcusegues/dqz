@@ -8,6 +8,7 @@ import {
   View,
   Keyboard,
   Picker,
+  Platform,
   // $FlowFixMe
 } from 'react-native';
 
@@ -164,8 +165,7 @@ class CurrencyPickerModalInner extends React.Component<
                 itemStyle={{
                   fontFamily: type.medium,
                 }}
-                // style={{ flex: 1 }}
-                style={{ flex: 0.8 }}
+                style={{ flex: Platform.OS === 'ios' ? 0.8 : 0.9 }}
               >
                 {Object.keys(currencyPicker)
                   .filter(c => currenciesArray.indexOf(c) > -1)
