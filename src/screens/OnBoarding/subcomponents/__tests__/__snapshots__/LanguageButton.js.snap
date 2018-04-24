@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LanguageButton renders according to snapshot 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignContent": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderBottomColor": "#fff",
+      "borderBottomWidth": 5,
+      "borderRadius": 4,
+      "elevation": 3,
+      "justifyContent": "center",
+      "marginHorizontal": 10,
+      "opacity": 1,
+      "paddingHorizontal": 96.42857142857143,
+      "paddingVertical": 29.426470588235293,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 1.5,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontFamily": "roboto_regular",
+        "fontSize": 69.14285714285714,
+        "textAlign": "center",
+      }
+    }
+  >
+    DE
+  </Text>
+</View>
+`;
+
+exports[`LanguageButton renders according to snapshot 2`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignContent": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderBottomColor": "#DC0018",
+      "borderBottomWidth": 5,
+      "borderRadius": 4,
+      "elevation": 3,
+      "justifyContent": "center",
+      "marginHorizontal": 10,
+      "opacity": 1,
+      "paddingHorizontal": 96.42857142857143,
+      "paddingVertical": 29.426470588235293,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 1.5,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontFamily": "roboto_medium",
+        "fontSize": 69.14285714285714,
+        "textAlign": "center",
+      }
+    }
+  >
+    DE
+  </Text>
+</View>
+`;
