@@ -1,0 +1,1925 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppInfo renders according to snapshot and check ModalTab onPress prop 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AppInfoInner
+    t={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": <ScrollViewCard>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <ModalTab
+            activeTab={true}
+            onPress={[Function]}
+            text=""
+          />
+          <ModalTab
+            activeTab={false}
+            onPress={[Function]}
+            text=""
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "marginBottom": 31.388235294117646,
+              "paddingHorizontal": 34.285714285714285,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "marginBottom": 35.311764705882354,
+                "marginTop": 19.61764705882353,
+              }
+            }
+          >
+            <CardHeaderText
+              text=""
+            />
+          </View>
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 60,
+                "width": 240,
+              }
+            }
+          />
+          <CardRowText
+            greyBox={false}
+            style={
+              Object {
+                "color": "#1A1A1A",
+                "marginTop": 49.04411764705882,
+              }
+            }
+            text=""
+          />
+          <AppInfoSubText
+            greyBox={false}
+            style={Object {}}
+            text=""
+          />
+          <AppInfoLink
+            onPress={[Function]}
+            style={
+              Object {
+                "color": "#757575",
+                "textDecorationLine": "underline",
+              }
+            }
+            text="http://www.ezv.admin.ch"
+          />
+          <CardRowText
+            greyBox={false}
+            style={
+              Object {
+                "color": "#1A1A1A",
+                "marginBottom": 31.388235294117646,
+                "marginTop": 47.08235294117647,
+              }
+            }
+            text=""
+          />
+          <AppInfoSubText
+            greyBox={false}
+            style={Object {}}
+            text=""
+          />
+          <AppInfoLink
+            onPress={[Function]}
+            style={
+              Object {
+                "color": "#757575",
+                "marginBottom": 31.388235294117646,
+                "textDecorationLine": "underline",
+              }
+            }
+            text="http://www.zollauskunft.admin.ch"
+          />
+          <AppInfoLink
+            onPress={[Function]}
+            style={
+              Object {
+                "color": "#757575",
+                "fontFamily": "roboto_medium",
+                "textDecorationLine": "none",
+              }
+            }
+            text=""
+          />
+        </View>
+      </ScrollViewCard>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <ModalTab
+              activeTab={true}
+              onPress={[Function]}
+              text=""
+            />
+            <ModalTab
+              activeTab={false}
+              onPress={[Function]}
+              text=""
+            />
+          </View>,
+          <View
+            style={
+              Object {
+                "marginBottom": 31.388235294117646,
+                "paddingHorizontal": 34.285714285714285,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "marginBottom": 35.311764705882354,
+                  "marginTop": 19.61764705882353,
+                }
+              }
+            >
+              <CardHeaderText
+                text=""
+              />
+            </View>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 60,
+                  "width": 240,
+                }
+              }
+            />
+            <CardRowText
+              greyBox={false}
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "marginTop": 49.04411764705882,
+                }
+              }
+              text=""
+            />
+            <AppInfoSubText
+              greyBox={false}
+              style={Object {}}
+              text=""
+            />
+            <AppInfoLink
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#757575",
+                  "textDecorationLine": "underline",
+                }
+              }
+              text="http://www.ezv.admin.ch"
+            />
+            <CardRowText
+              greyBox={false}
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "marginBottom": 31.388235294117646,
+                  "marginTop": 47.08235294117647,
+                }
+              }
+              text=""
+            />
+            <AppInfoSubText
+              greyBox={false}
+              style={Object {}}
+              text=""
+            />
+            <AppInfoLink
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#757575",
+                  "marginBottom": 31.388235294117646,
+                  "textDecorationLine": "underline",
+                }
+              }
+              text="http://www.zollauskunft.admin.ch"
+            />
+            <AppInfoLink
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#757575",
+                  "fontFamily": "roboto_medium",
+                  "textDecorationLine": "none",
+                }
+              }
+              text=""
+            />
+          </View>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <ModalTab
+                activeTab={true}
+                onPress={[Function]}
+                text=""
+              />,
+              <ModalTab
+                activeTab={false}
+                onPress={[Function]}
+                text=""
+              />,
+            ],
+            "style": Object {
+              "flexDirection": "row",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeTab": true,
+                "onPress": [Function],
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeTab": false,
+                "onPress": [Function],
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <View
+                style={
+                  Object {
+                    "marginBottom": 35.311764705882354,
+                    "marginTop": 19.61764705882353,
+                  }
+                }
+              >
+                <CardHeaderText
+                  text=""
+                />
+              </View>,
+              <Image
+                source={1}
+                style={
+                  Object {
+                    "height": 60,
+                    "width": 240,
+                  }
+                }
+              />,
+              <CardRowText
+                greyBox={false}
+                style={
+                  Object {
+                    "color": "#1A1A1A",
+                    "marginTop": 49.04411764705882,
+                  }
+                }
+                text=""
+              />,
+              <AppInfoSubText
+                greyBox={false}
+                style={Object {}}
+                text=""
+              />,
+              <AppInfoLink
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#757575",
+                    "textDecorationLine": "underline",
+                  }
+                }
+                text="http://www.ezv.admin.ch"
+              />,
+              <CardRowText
+                greyBox={false}
+                style={
+                  Object {
+                    "color": "#1A1A1A",
+                    "marginBottom": 31.388235294117646,
+                    "marginTop": 47.08235294117647,
+                  }
+                }
+                text=""
+              />,
+              <AppInfoSubText
+                greyBox={false}
+                style={Object {}}
+                text=""
+              />,
+              <AppInfoLink
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#757575",
+                    "marginBottom": 31.388235294117646,
+                    "textDecorationLine": "underline",
+                  }
+                }
+                text="http://www.zollauskunft.admin.ch"
+              />,
+              <AppInfoLink
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#757575",
+                    "fontFamily": "roboto_medium",
+                    "textDecorationLine": "none",
+                  }
+                }
+                text=""
+              />,
+            ],
+            "style": Object {
+              "marginBottom": 31.388235294117646,
+              "paddingHorizontal": 34.285714285714285,
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <CardHeaderText
+                  text=""
+                />,
+                "style": Object {
+                  "marginBottom": 35.311764705882354,
+                  "marginTop": 19.61764705882353,
+                },
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "source": 1,
+                "style": Object {
+                  "height": 60,
+                  "width": 240,
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "greyBox": false,
+                "style": Object {
+                  "color": "#1A1A1A",
+                  "marginTop": 49.04411764705882,
+                },
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "greyBox": false,
+                "style": Object {},
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "onPress": [Function],
+                "style": Object {
+                  "color": "#757575",
+                  "textDecorationLine": "underline",
+                },
+                "text": "http://www.ezv.admin.ch",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "greyBox": false,
+                "style": Object {
+                  "color": "#1A1A1A",
+                  "marginBottom": 31.388235294117646,
+                  "marginTop": 47.08235294117647,
+                },
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "greyBox": false,
+                "style": Object {},
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "onPress": [Function],
+                "style": Object {
+                  "color": "#757575",
+                  "marginBottom": 31.388235294117646,
+                  "textDecorationLine": "underline",
+                },
+                "text": "http://www.zollauskunft.admin.ch",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "onPress": [Function],
+                "style": Object {
+                  "color": "#757575",
+                  "fontFamily": "roboto_medium",
+                  "textDecorationLine": "none",
+                },
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": <ScrollViewCard>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <ModalTab
+              activeTab={true}
+              onPress={[Function]}
+              text=""
+            />
+            <ModalTab
+              activeTab={false}
+              onPress={[Function]}
+              text=""
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "marginBottom": 31.388235294117646,
+                "paddingHorizontal": 34.285714285714285,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "marginBottom": 35.311764705882354,
+                  "marginTop": 19.61764705882353,
+                }
+              }
+            >
+              <CardHeaderText
+                text=""
+              />
+            </View>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 60,
+                  "width": 240,
+                }
+              }
+            />
+            <CardRowText
+              greyBox={false}
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "marginTop": 49.04411764705882,
+                }
+              }
+              text=""
+            />
+            <AppInfoSubText
+              greyBox={false}
+              style={Object {}}
+              text=""
+            />
+            <AppInfoLink
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#757575",
+                  "textDecorationLine": "underline",
+                }
+              }
+              text="http://www.ezv.admin.ch"
+            />
+            <CardRowText
+              greyBox={false}
+              style={
+                Object {
+                  "color": "#1A1A1A",
+                  "marginBottom": 31.388235294117646,
+                  "marginTop": 47.08235294117647,
+                }
+              }
+              text=""
+            />
+            <AppInfoSubText
+              greyBox={false}
+              style={Object {}}
+              text=""
+            />
+            <AppInfoLink
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#757575",
+                  "marginBottom": 31.388235294117646,
+                  "textDecorationLine": "underline",
+                }
+              }
+              text="http://www.zollauskunft.admin.ch"
+            />
+            <AppInfoLink
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#757575",
+                  "fontFamily": "roboto_medium",
+                  "textDecorationLine": "none",
+                }
+              }
+              text=""
+            />
+          </View>
+        </ScrollViewCard>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <ModalTab
+                activeTab={true}
+                onPress={[Function]}
+                text=""
+              />
+              <ModalTab
+                activeTab={false}
+                onPress={[Function]}
+                text=""
+              />
+            </View>,
+            <View
+              style={
+                Object {
+                  "marginBottom": 31.388235294117646,
+                  "paddingHorizontal": 34.285714285714285,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "marginBottom": 35.311764705882354,
+                    "marginTop": 19.61764705882353,
+                  }
+                }
+              >
+                <CardHeaderText
+                  text=""
+                />
+              </View>
+              <Image
+                source={1}
+                style={
+                  Object {
+                    "height": 60,
+                    "width": 240,
+                  }
+                }
+              />
+              <CardRowText
+                greyBox={false}
+                style={
+                  Object {
+                    "color": "#1A1A1A",
+                    "marginTop": 49.04411764705882,
+                  }
+                }
+                text=""
+              />
+              <AppInfoSubText
+                greyBox={false}
+                style={Object {}}
+                text=""
+              />
+              <AppInfoLink
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#757575",
+                    "textDecorationLine": "underline",
+                  }
+                }
+                text="http://www.ezv.admin.ch"
+              />
+              <CardRowText
+                greyBox={false}
+                style={
+                  Object {
+                    "color": "#1A1A1A",
+                    "marginBottom": 31.388235294117646,
+                    "marginTop": 47.08235294117647,
+                  }
+                }
+                text=""
+              />
+              <AppInfoSubText
+                greyBox={false}
+                style={Object {}}
+                text=""
+              />
+              <AppInfoLink
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#757575",
+                    "marginBottom": 31.388235294117646,
+                    "textDecorationLine": "underline",
+                  }
+                }
+                text="http://www.zollauskunft.admin.ch"
+              />
+              <AppInfoLink
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#757575",
+                    "fontFamily": "roboto_medium",
+                    "textDecorationLine": "none",
+                  }
+                }
+                text=""
+              />
+            </View>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <ModalTab
+                  activeTab={true}
+                  onPress={[Function]}
+                  text=""
+                />,
+                <ModalTab
+                  activeTab={false}
+                  onPress={[Function]}
+                  text=""
+                />,
+              ],
+              "style": Object {
+                "flexDirection": "row",
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeTab": true,
+                  "onPress": [Function],
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeTab": false,
+                  "onPress": [Function],
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <View
+                  style={
+                    Object {
+                      "marginBottom": 35.311764705882354,
+                      "marginTop": 19.61764705882353,
+                    }
+                  }
+                >
+                  <CardHeaderText
+                    text=""
+                  />
+                </View>,
+                <Image
+                  source={1}
+                  style={
+                    Object {
+                      "height": 60,
+                      "width": 240,
+                    }
+                  }
+                />,
+                <CardRowText
+                  greyBox={false}
+                  style={
+                    Object {
+                      "color": "#1A1A1A",
+                      "marginTop": 49.04411764705882,
+                    }
+                  }
+                  text=""
+                />,
+                <AppInfoSubText
+                  greyBox={false}
+                  style={Object {}}
+                  text=""
+                />,
+                <AppInfoLink
+                  onPress={[Function]}
+                  style={
+                    Object {
+                      "color": "#757575",
+                      "textDecorationLine": "underline",
+                    }
+                  }
+                  text="http://www.ezv.admin.ch"
+                />,
+                <CardRowText
+                  greyBox={false}
+                  style={
+                    Object {
+                      "color": "#1A1A1A",
+                      "marginBottom": 31.388235294117646,
+                      "marginTop": 47.08235294117647,
+                    }
+                  }
+                  text=""
+                />,
+                <AppInfoSubText
+                  greyBox={false}
+                  style={Object {}}
+                  text=""
+                />,
+                <AppInfoLink
+                  onPress={[Function]}
+                  style={
+                    Object {
+                      "color": "#757575",
+                      "marginBottom": 31.388235294117646,
+                      "textDecorationLine": "underline",
+                    }
+                  }
+                  text="http://www.zollauskunft.admin.ch"
+                />,
+                <AppInfoLink
+                  onPress={[Function]}
+                  style={
+                    Object {
+                      "color": "#757575",
+                      "fontFamily": "roboto_medium",
+                      "textDecorationLine": "none",
+                    }
+                  }
+                  text=""
+                />,
+              ],
+              "style": Object {
+                "marginBottom": 31.388235294117646,
+                "paddingHorizontal": 34.285714285714285,
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <CardHeaderText
+                    text=""
+                  />,
+                  "style": Object {
+                    "marginBottom": 35.311764705882354,
+                    "marginTop": 19.61764705882353,
+                  },
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "text": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "source": 1,
+                  "style": Object {
+                    "height": 60,
+                    "width": 240,
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "greyBox": false,
+                  "style": Object {
+                    "color": "#1A1A1A",
+                    "marginTop": 49.04411764705882,
+                  },
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "greyBox": false,
+                  "style": Object {},
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "onPress": [Function],
+                  "style": Object {
+                    "color": "#757575",
+                    "textDecorationLine": "underline",
+                  },
+                  "text": "http://www.ezv.admin.ch",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "greyBox": false,
+                  "style": Object {
+                    "color": "#1A1A1A",
+                    "marginBottom": 31.388235294117646,
+                    "marginTop": 47.08235294117647,
+                  },
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "greyBox": false,
+                  "style": Object {},
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "onPress": [Function],
+                  "style": Object {
+                    "color": "#757575",
+                    "marginBottom": 31.388235294117646,
+                    "textDecorationLine": "underline",
+                  },
+                  "text": "http://www.zollauskunft.admin.ch",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "onPress": [Function],
+                  "style": Object {
+                    "color": "#757575",
+                    "fontFamily": "roboto_medium",
+                    "textDecorationLine": "none",
+                  },
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`AppInfo renders designAndDevelopment modal part 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AppInfoInner
+    t={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "children": <ScrollViewCard>
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        >
+          <ModalTab
+            activeTab={false}
+            onPress={[Function]}
+            text=""
+          />
+          <ModalTab
+            activeTab={true}
+            onPress={[Function]}
+            text=""
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "marginBottom": 31.388235294117646,
+              "paddingHorizontal": 34.285714285714285,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "marginBottom": 35.311764705882354,
+                "marginTop": 19.61764705882353,
+              }
+            }
+          >
+            <CardHeaderText
+              text=""
+            />
+          </View>
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 80,
+                "resizeMode": "contain",
+                "width": 154,
+              }
+            }
+          />
+          <AppInfoSubText
+            greyBox={false}
+            style={
+              Object {
+                "marginTop": 29.426470588235293,
+              }
+            }
+            text=""
+          />
+          <AppInfoLink
+            onPress={[Function]}
+            style={
+              Object {
+                "color": "#757575",
+                "textDecorationLine": "underline",
+              }
+            }
+            text="http://www.ambrite.ch"
+          />
+          <AppInfoSubText
+            greyBox={false}
+            style={
+              Object {
+                "marginTop": 29.426470588235293,
+              }
+            }
+            text="v0.0.1"
+          />
+        </View>
+      </ScrollViewCard>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <ModalTab
+              activeTab={false}
+              onPress={[Function]}
+              text=""
+            />
+            <ModalTab
+              activeTab={true}
+              onPress={[Function]}
+              text=""
+            />
+          </View>,
+          <View
+            style={
+              Object {
+                "marginBottom": 31.388235294117646,
+                "paddingHorizontal": 34.285714285714285,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "marginBottom": 35.311764705882354,
+                  "marginTop": 19.61764705882353,
+                }
+              }
+            >
+              <CardHeaderText
+                text=""
+              />
+            </View>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 80,
+                  "resizeMode": "contain",
+                  "width": 154,
+                }
+              }
+            />
+            <AppInfoSubText
+              greyBox={false}
+              style={
+                Object {
+                  "marginTop": 29.426470588235293,
+                }
+              }
+              text=""
+            />
+            <AppInfoLink
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#757575",
+                  "textDecorationLine": "underline",
+                }
+              }
+              text="http://www.ambrite.ch"
+            />
+            <AppInfoSubText
+              greyBox={false}
+              style={
+                Object {
+                  "marginTop": 29.426470588235293,
+                }
+              }
+              text="v0.0.1"
+            />
+          </View>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <ModalTab
+                activeTab={false}
+                onPress={[Function]}
+                text=""
+              />,
+              <ModalTab
+                activeTab={true}
+                onPress={[Function]}
+                text=""
+              />,
+            ],
+            "style": Object {
+              "flexDirection": "row",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeTab": false,
+                "onPress": [Function],
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeTab": true,
+                "onPress": [Function],
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <View
+                style={
+                  Object {
+                    "marginBottom": 35.311764705882354,
+                    "marginTop": 19.61764705882353,
+                  }
+                }
+              >
+                <CardHeaderText
+                  text=""
+                />
+              </View>,
+              <Image
+                source={1}
+                style={
+                  Object {
+                    "height": 80,
+                    "resizeMode": "contain",
+                    "width": 154,
+                  }
+                }
+              />,
+              <AppInfoSubText
+                greyBox={false}
+                style={
+                  Object {
+                    "marginTop": 29.426470588235293,
+                  }
+                }
+                text=""
+              />,
+              <AppInfoLink
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#757575",
+                    "textDecorationLine": "underline",
+                  }
+                }
+                text="http://www.ambrite.ch"
+              />,
+              <AppInfoSubText
+                greyBox={false}
+                style={
+                  Object {
+                    "marginTop": 29.426470588235293,
+                  }
+                }
+                text="v0.0.1"
+              />,
+            ],
+            "style": Object {
+              "marginBottom": 31.388235294117646,
+              "paddingHorizontal": 34.285714285714285,
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <CardHeaderText
+                  text=""
+                />,
+                "style": Object {
+                  "marginBottom": 35.311764705882354,
+                  "marginTop": 19.61764705882353,
+                },
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "source": 1,
+                "style": Object {
+                  "height": 80,
+                  "resizeMode": "contain",
+                  "width": 154,
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "greyBox": false,
+                "style": Object {
+                  "marginTop": 29.426470588235293,
+                },
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "onPress": [Function],
+                "style": Object {
+                  "color": "#757575",
+                  "textDecorationLine": "underline",
+                },
+                "text": "http://www.ambrite.ch",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "greyBox": false,
+                "style": Object {
+                  "marginTop": 29.426470588235293,
+                },
+                "text": "v0.0.1",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": <ScrollViewCard>
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+              }
+            }
+          >
+            <ModalTab
+              activeTab={false}
+              onPress={[Function]}
+              text=""
+            />
+            <ModalTab
+              activeTab={true}
+              onPress={[Function]}
+              text=""
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "marginBottom": 31.388235294117646,
+                "paddingHorizontal": 34.285714285714285,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "marginBottom": 35.311764705882354,
+                  "marginTop": 19.61764705882353,
+                }
+              }
+            >
+              <CardHeaderText
+                text=""
+              />
+            </View>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 80,
+                  "resizeMode": "contain",
+                  "width": 154,
+                }
+              }
+            />
+            <AppInfoSubText
+              greyBox={false}
+              style={
+                Object {
+                  "marginTop": 29.426470588235293,
+                }
+              }
+              text=""
+            />
+            <AppInfoLink
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#757575",
+                  "textDecorationLine": "underline",
+                }
+              }
+              text="http://www.ambrite.ch"
+            />
+            <AppInfoSubText
+              greyBox={false}
+              style={
+                Object {
+                  "marginTop": 29.426470588235293,
+                }
+              }
+              text="v0.0.1"
+            />
+          </View>
+        </ScrollViewCard>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <ModalTab
+                activeTab={false}
+                onPress={[Function]}
+                text=""
+              />
+              <ModalTab
+                activeTab={true}
+                onPress={[Function]}
+                text=""
+              />
+            </View>,
+            <View
+              style={
+                Object {
+                  "marginBottom": 31.388235294117646,
+                  "paddingHorizontal": 34.285714285714285,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "marginBottom": 35.311764705882354,
+                    "marginTop": 19.61764705882353,
+                  }
+                }
+              >
+                <CardHeaderText
+                  text=""
+                />
+              </View>
+              <Image
+                source={1}
+                style={
+                  Object {
+                    "height": 80,
+                    "resizeMode": "contain",
+                    "width": 154,
+                  }
+                }
+              />
+              <AppInfoSubText
+                greyBox={false}
+                style={
+                  Object {
+                    "marginTop": 29.426470588235293,
+                  }
+                }
+                text=""
+              />
+              <AppInfoLink
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#757575",
+                    "textDecorationLine": "underline",
+                  }
+                }
+                text="http://www.ambrite.ch"
+              />
+              <AppInfoSubText
+                greyBox={false}
+                style={
+                  Object {
+                    "marginTop": 29.426470588235293,
+                  }
+                }
+                text="v0.0.1"
+              />
+            </View>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <ModalTab
+                  activeTab={false}
+                  onPress={[Function]}
+                  text=""
+                />,
+                <ModalTab
+                  activeTab={true}
+                  onPress={[Function]}
+                  text=""
+                />,
+              ],
+              "style": Object {
+                "flexDirection": "row",
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeTab": false,
+                  "onPress": [Function],
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeTab": true,
+                  "onPress": [Function],
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <View
+                  style={
+                    Object {
+                      "marginBottom": 35.311764705882354,
+                      "marginTop": 19.61764705882353,
+                    }
+                  }
+                >
+                  <CardHeaderText
+                    text=""
+                  />
+                </View>,
+                <Image
+                  source={1}
+                  style={
+                    Object {
+                      "height": 80,
+                      "resizeMode": "contain",
+                      "width": 154,
+                    }
+                  }
+                />,
+                <AppInfoSubText
+                  greyBox={false}
+                  style={
+                    Object {
+                      "marginTop": 29.426470588235293,
+                    }
+                  }
+                  text=""
+                />,
+                <AppInfoLink
+                  onPress={[Function]}
+                  style={
+                    Object {
+                      "color": "#757575",
+                      "textDecorationLine": "underline",
+                    }
+                  }
+                  text="http://www.ambrite.ch"
+                />,
+                <AppInfoSubText
+                  greyBox={false}
+                  style={
+                    Object {
+                      "marginTop": 29.426470588235293,
+                    }
+                  }
+                  text="v0.0.1"
+                />,
+              ],
+              "style": Object {
+                "marginBottom": 31.388235294117646,
+                "paddingHorizontal": 34.285714285714285,
+              },
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <CardHeaderText
+                    text=""
+                  />,
+                  "style": Object {
+                    "marginBottom": 35.311764705882354,
+                    "marginTop": 19.61764705882353,
+                  },
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "text": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "source": 1,
+                  "style": Object {
+                    "height": 80,
+                    "resizeMode": "contain",
+                    "width": 154,
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "greyBox": false,
+                  "style": Object {
+                    "marginTop": 29.426470588235293,
+                  },
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "onPress": [Function],
+                  "style": Object {
+                    "color": "#757575",
+                    "textDecorationLine": "underline",
+                  },
+                  "text": "http://www.ambrite.ch",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "greyBox": false,
+                  "style": Object {
+                    "marginTop": 29.426470588235293,
+                  },
+                  "text": "v0.0.1",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
