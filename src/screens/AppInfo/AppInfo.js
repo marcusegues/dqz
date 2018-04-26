@@ -17,6 +17,7 @@ import { AppInfoLink } from './subComponents/AppInfoLink';
 import type { Language } from '../../i18n/types/locale';
 import { type } from '../../styles/fonts';
 import { MAIN_BLACK } from '../../styles/colors';
+import { version } from '../../../package.json';
 
 const styles = {
   topTouchableContainer: {
@@ -171,6 +172,10 @@ class AppInfoInner extends React.Component<
                   color: '#757575',
                   textDecorationLine: 'underline',
                 }}
+              />
+              <AppInfoSubText
+                text={`v${version}`}
+                style={styles.ambriteAddress}
               />
             </View>
           )}
