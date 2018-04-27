@@ -1,165 +1,252 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SwipeToDelete renders according to snapshot 1`] = `
-<View
-  leftActionActivationDistance={125}
-  leftActionReleaseAnimationConfig={null}
-  leftActionReleaseAnimationFn={null}
-  leftButtonWidth={75}
-  leftButtonsActivationDistance={75}
-  leftButtonsCloseReleaseAnimationConfig={null}
-  leftButtonsCloseReleaseAnimationFn={null}
-  leftButtonsOpenReleaseAnimationConfig={null}
-  leftButtonsOpenReleaseAnimationFn={null}
-  onLayout={[Function]}
-  onLeftActionActivate={[Function]}
-  onLeftActionComplete={[Function]}
-  onLeftActionDeactivate={[Function]}
-  onLeftActionRelease={[Function]}
-  onLeftButtonsActivate={[Function]}
-  onLeftButtonsCloseComplete={[Function]}
-  onLeftButtonsCloseRelease={[Function]}
-  onLeftButtonsDeactivate={[Function]}
-  onLeftButtonsOpenComplete={[Function]}
-  onLeftButtonsOpenRelease={[Function]}
-  onMoveShouldSetResponder={[Function]}
-  onMoveShouldSetResponderCapture={[Function]}
-  onPanAnimatedValueRef={[Function]}
-  onRef={[Function]}
-  onResponderEnd={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderReject={[Function]}
-  onResponderRelease={[Function]}
-  onResponderStart={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onRightActionActivate={[Function]}
-  onRightActionComplete={[Function]}
-  onRightActionDeactivate={[Function]}
-  onRightActionRelease={[Function]}
-  onRightButtonsActivate={[Function]}
-  onRightButtonsCloseComplete={[Function]}
-  onRightButtonsCloseRelease={[Function]}
-  onRightButtonsDeactivate={[Function]}
-  onRightButtonsOpenComplete={[Function]}
-  onRightButtonsOpenRelease={[Function]}
-  onStartShouldSetResponder={[Function]}
-  onStartShouldSetResponderCapture={[Function]}
-  onSwipeComplete={[Function]}
-  onSwipeMove={[Function]}
-  onSwipeRelease={[Function]}
-  onSwipeStart={[Function]}
-  rightActionActivationDistance={125}
-  rightActionReleaseAnimationConfig={null}
-  rightActionReleaseAnimationFn={null}
-  rightButtonWidth={90}
-  rightButtonsActivationDistance={75}
-  rightButtonsCloseReleaseAnimationConfig={null}
-  rightButtonsCloseReleaseAnimationFn={null}
-  rightButtonsOpenReleaseAnimationConfig={null}
-  rightButtonsOpenReleaseAnimationFn={null}
-  style={
-    Array [
-      Object {
-        "flexDirection": "row",
-      },
-      Object {
+exports[`SwipeToDelete simulates click events in GoodQuantityGreyField 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SwipeableContent
+    rightButtonWidth={90}
+    rightSwipeButtons={
+      Array [
+        <TouchableHighlight
+          activeOpacity={0.85}
+          delayPressOut={100}
+          onPress={undefined}
+          style={
+            Object {
+              "backgroundColor": "rgb(217,10,35)",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+          underlayColor="black"
+        >
+          <Icon
+            allowFontScaling={false}
+            name="md-trash"
+            size={30}
+            style={
+              Object {
+                "color": "white",
+                "paddingLeft": 35,
+              }
+            }
+          />
+        </TouchableHighlight>,
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": undefined,
+      "leftActionActivationDistance": 125,
+      "leftActionReleaseAnimationConfig": null,
+      "leftActionReleaseAnimationFn": null,
+      "leftButtonWidth": 75,
+      "leftButtons": null,
+      "leftButtonsActivationDistance": 75,
+      "leftButtonsCloseReleaseAnimationConfig": null,
+      "leftButtonsCloseReleaseAnimationFn": null,
+      "leftButtonsOpenReleaseAnimationConfig": null,
+      "leftButtonsOpenReleaseAnimationFn": null,
+      "leftContent": null,
+      "onLeftActionActivate": [Function],
+      "onLeftActionComplete": [Function],
+      "onLeftActionDeactivate": [Function],
+      "onLeftActionRelease": [Function],
+      "onLeftButtonsActivate": [Function],
+      "onLeftButtonsCloseComplete": [Function],
+      "onLeftButtonsCloseRelease": [Function],
+      "onLeftButtonsDeactivate": [Function],
+      "onLeftButtonsOpenComplete": [Function],
+      "onLeftButtonsOpenRelease": [Function],
+      "onPanAnimatedValueRef": [Function],
+      "onRef": [Function],
+      "onRightActionActivate": [Function],
+      "onRightActionComplete": [Function],
+      "onRightActionDeactivate": [Function],
+      "onRightActionRelease": [Function],
+      "onRightButtonsActivate": [Function],
+      "onRightButtonsCloseComplete": [Function],
+      "onRightButtonsCloseRelease": [Function],
+      "onRightButtonsDeactivate": [Function],
+      "onRightButtonsOpenComplete": [Function],
+      "onRightButtonsOpenRelease": [Function],
+      "onSwipeComplete": [Function],
+      "onSwipeMove": [Function],
+      "onSwipeRelease": [Function],
+      "onSwipeStart": [Function],
+      "rightActionActivationDistance": 125,
+      "rightActionReleaseAnimationConfig": null,
+      "rightActionReleaseAnimationFn": null,
+      "rightButtonWidth": 90,
+      "rightButtons": Array [
+        <TouchableHighlight
+          activeOpacity={0.85}
+          delayPressOut={100}
+          onPress={undefined}
+          style={
+            Object {
+              "backgroundColor": "rgb(217,10,35)",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+          underlayColor="black"
+        >
+          <Icon
+            allowFontScaling={false}
+            name="md-trash"
+            size={30}
+            style={
+              Object {
+                "color": "white",
+                "paddingLeft": 35,
+              }
+            }
+          />
+        </TouchableHighlight>,
+      ],
+      "rightButtonsActivationDistance": 75,
+      "rightButtonsCloseReleaseAnimationConfig": null,
+      "rightButtonsCloseReleaseAnimationFn": null,
+      "rightButtonsOpenReleaseAnimationConfig": null,
+      "rightButtonsOpenReleaseAnimationFn": null,
+      "rightContent": null,
+      "style": Object {
         "overflow": "hidden",
       },
-    ]
-  }
-  swipeReleaseAnimationConfig={
-    Object {
-      "duration": 250,
-      "easing": [Function],
-      "toValue": Object {
-        "x": 0,
-        "y": 0,
+      "swipeReleaseAnimationConfig": Object {
+        "duration": 250,
+        "easing": [Function],
+        "toValue": Object {
+          "x": 0,
+          "y": 0,
+        },
       },
-    }
-  }
-  swipeReleaseAnimationFn={[Function]}
-  swipeStartMinDistance={15}
->
-  <View
-    collapsable={undefined}
-    style={
-      Object {
-        "flex": 1,
-        "transform": Array [
-          Object {
-            "translateX": 0.5,
-          },
+      "swipeReleaseAnimationFn": [Function],
+      "swipeStartMinDistance": 15,
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": undefined,
+        "leftActionActivationDistance": 125,
+        "leftActionReleaseAnimationConfig": null,
+        "leftActionReleaseAnimationFn": null,
+        "leftButtonWidth": 75,
+        "leftButtons": null,
+        "leftButtonsActivationDistance": 75,
+        "leftButtonsCloseReleaseAnimationConfig": null,
+        "leftButtonsCloseReleaseAnimationFn": null,
+        "leftButtonsOpenReleaseAnimationConfig": null,
+        "leftButtonsOpenReleaseAnimationFn": null,
+        "leftContent": null,
+        "onLeftActionActivate": [Function],
+        "onLeftActionComplete": [Function],
+        "onLeftActionDeactivate": [Function],
+        "onLeftActionRelease": [Function],
+        "onLeftButtonsActivate": [Function],
+        "onLeftButtonsCloseComplete": [Function],
+        "onLeftButtonsCloseRelease": [Function],
+        "onLeftButtonsDeactivate": [Function],
+        "onLeftButtonsOpenComplete": [Function],
+        "onLeftButtonsOpenRelease": [Function],
+        "onPanAnimatedValueRef": [Function],
+        "onRef": [Function],
+        "onRightActionActivate": [Function],
+        "onRightActionComplete": [Function],
+        "onRightActionDeactivate": [Function],
+        "onRightActionRelease": [Function],
+        "onRightButtonsActivate": [Function],
+        "onRightButtonsCloseComplete": [Function],
+        "onRightButtonsCloseRelease": [Function],
+        "onRightButtonsDeactivate": [Function],
+        "onRightButtonsOpenComplete": [Function],
+        "onRightButtonsOpenRelease": [Function],
+        "onSwipeComplete": [Function],
+        "onSwipeMove": [Function],
+        "onSwipeRelease": [Function],
+        "onSwipeStart": [Function],
+        "rightActionActivationDistance": 125,
+        "rightActionReleaseAnimationConfig": null,
+        "rightActionReleaseAnimationFn": null,
+        "rightButtonWidth": 90,
+        "rightButtons": Array [
+          <TouchableHighlight
+            activeOpacity={0.85}
+            delayPressOut={100}
+            onPress={undefined}
+            style={
+              Object {
+                "backgroundColor": "rgb(217,10,35)",
+                "flex": 1,
+                "justifyContent": "center",
+              }
+            }
+            underlayColor="black"
+          >
+            <Icon
+              allowFontScaling={false}
+              name="md-trash"
+              size={30}
+              style={
+                Object {
+                  "color": "white",
+                  "paddingLeft": 35,
+                }
+              }
+            />
+          </TouchableHighlight>,
         ],
-      }
-    }
-  />
-  <View
-    collapsable={undefined}
-    style={
-      Object {
-        "marginRight": -0,
-        "transform": Array [
-          Object {
-            "translateX": 0.5,
+        "rightButtonsActivationDistance": 75,
+        "rightButtonsCloseReleaseAnimationConfig": null,
+        "rightButtonsCloseReleaseAnimationFn": null,
+        "rightButtonsOpenReleaseAnimationConfig": null,
+        "rightButtonsOpenReleaseAnimationFn": null,
+        "rightContent": null,
+        "style": Object {
+          "overflow": "hidden",
+        },
+        "swipeReleaseAnimationConfig": Object {
+          "duration": 250,
+          "easing": [Function],
+          "toValue": Object {
+            "x": 0,
+            "y": 0,
           },
-        ],
-        "width": 0,
-      }
-    }
-  >
-    <View
-      collapsable={undefined}
-      style={
-        Object {
-          "bottom": 0,
-          "left": 0,
-          "position": "absolute",
-          "right": 0,
-          "top": 0,
-          "transform": Array [
-            Object {
-              "translateX": 0,
-            },
-          ],
-          "width": 0,
-        }
-      }
-    >
-      <View
-        accessibilityComponentType={undefined}
-        accessibilityLabel={undefined}
-        accessibilityTraits={undefined}
-        accessible={true}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
-        isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        style={
-          Object {
-            "backgroundColor": "rgb(217,10,35)",
-            "flex": 1,
-            "justifyContent": "center",
-          }
-        }
-        testID={undefined}
-        tvParallaxProperties={undefined}
-      >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-        />
-      </View>
-    </View>
-  </View>
-</View>
+        },
+        "swipeReleaseAnimationFn": [Function],
+        "swipeStartMinDistance": 15,
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
 `;
