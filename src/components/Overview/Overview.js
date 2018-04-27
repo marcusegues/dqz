@@ -83,7 +83,7 @@ class OverviewInner extends React.Component<
   }
 
   componentDidMount() {
-    this.setInterval();
+    this.setUpdateInterval();
     this.updateTimes();
   }
 
@@ -91,7 +91,7 @@ class OverviewInner extends React.Component<
     clearInterval(this.state.updateInterval);
   }
 
-  setInterval() {
+  setUpdateInterval() {
     const updateInterval = setInterval(() => this.updateTimes(), 1000);
     this.setState({ updateInterval });
   }
