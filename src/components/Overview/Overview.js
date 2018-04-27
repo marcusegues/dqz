@@ -24,10 +24,7 @@ import {
 } from '../../reducers/selectors';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
 import { InfoNote } from './subcomponents/InfoNote';
-import {
-  flatLargeAmounts,
-  getConvertedLocalTimeToSwiss,
-} from '../../model/utils';
+import { flatLargeAmounts } from '../../model/utils';
 import { BackAndContinueButtons } from '../Buttons/BackAndContinueButtons';
 import type {
   Amounts,
@@ -101,12 +98,18 @@ class OverviewInner extends React.Component<
     const { setReceiptEntryTime, receiptEntryTime } = this.props;
     const localTime: DateTime = DateTime.local();
 
+    if (receiptEntryTime === '') {
+      setReceiptEntryTime(localTime.toString());
+      return;
+    }
+
+    const prev = DateTime.fromISO(receiptEntryTime);
     if (
-      (receiptEntryTime === '' ||
-        localTime.valueOf() > DateTime.fromISO(receiptEntryTime).valueOf()) &&
+      localTime.valueOf() > prev.valueOf() &&
+      localTime.minute > prev.minute &&
       !modalVisible
     ) {
-      setReceiptEntryTime(getConvertedLocalTimeToSwiss().toString());
+      setReceiptEntryTime(localTime.toString());
     }
   }
 
