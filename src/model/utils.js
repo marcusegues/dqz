@@ -57,10 +57,7 @@ export const getConvertedLocalTimeToSwiss = (): DateTime => DateTime.local();
 
 export const roundMinutesToString = (minutes: number): string => {
   const rounded = Math.max(0, 5 * Math.floor(minutes / 5));
-  if (rounded < 10) {
-    return `0${rounded}`;
-  }
-  return `${rounded}`;
+  return (rounded < 10 ? '0' : '') + rounded;
 };
 
 export const formatFullDate = (d: string, hours: string, minutes: string) =>
