@@ -6,6 +6,8 @@ import { DateTime } from 'luxon';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
+import { View } from 'react-native';
+// $FlowFixMe
 import { CardHeader } from '../QuestionAnswer/Cards/subcomponents/CardHeader';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { PeriodOfEntryRow } from './subcomponents/PeriodOfEntryRow';
@@ -38,7 +40,7 @@ import { dateTimeToFormat } from '../../utils/datetime/datetime';
 
 type OverviewProps = {
   modalVisible?: boolean,
-  onProceedToPayment?: () => void,
+  onProceedToPayment: () => void,
   paymentDisabled?: boolean,
   navigation: Navigation,
 };
@@ -65,7 +67,6 @@ class OverviewInner extends React.Component<
 > {
   static defaultProps = {
     modalVisible: false,
-    onProceedToPayment: () => {},
     paymentDisabled: true,
   };
 
@@ -80,9 +81,19 @@ class OverviewInner extends React.Component<
   }
 
   componentDidMount() {
-    const { receiptEntryTime } = this.props;
-    if (receiptEntryTime === '')
-      this.props.setReceiptEntryTime(getConvertedLocalTimeToSwiss().toString());
+    this.updateTimes();
+  }
+
+  updateTimes() {
+    const { setReceiptEntryTime, receiptEntryTime } = this.props;
+    const localTime: DateTime = DateTime.local();
+
+    if (
+      receiptEntryTime === '' ||
+      localTime.valueOf() > DateTime.fromISO(receiptEntryTime).valueOf()
+    ) {
+      setReceiptEntryTime(getConvertedLocalTimeToSwiss().toString());
+    }
   }
 
   handleShowModal() {
@@ -123,14 +134,10 @@ class OverviewInner extends React.Component<
       currencies,
     } = this.props;
 
-    const localTime: DateTime = DateTime.local();
-    let momentReceiptEntryTime: DateTime = localTime;
-    if (receiptEntryTime !== '') {
-      momentReceiptEntryTime = DateTime.fromISO(receiptEntryTime);
-      if (localTime.valueOf() > momentReceiptEntryTime.valueOf()) {
-        momentReceiptEntryTime = localTime;
-      }
+    if (receiptEntryTime === '') {
+      return <View>Loading...</View>;
     }
+    const momentReceiptEntryTime: DateTime = DateTime.fromISO(receiptEntryTime);
 
     return (
       <ScrollViewCard>
@@ -169,7 +176,7 @@ class OverviewInner extends React.Component<
         <InfoNote />
         <BackAndContinueButtons
           onPressBack={() => navigation.dispatch({ type: 'GO_BACK' })}
-          onPressContinue={() => onProceedToPayment && onProceedToPayment()}
+          onPressContinue={() => onProceedToPayment()}
           textContinue={t('general:toPayment')}
           confirmationDisabled={paymentDisabled}
         />
