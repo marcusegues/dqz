@@ -6,7 +6,7 @@ import { DateTime } from 'luxon';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
 // $FlowFixMe
 import { CardHeader } from '../QuestionAnswer/Cards/subcomponents/CardHeader';
 import type { Navigation, TFunction } from '../../types/generalTypes';
@@ -56,6 +56,7 @@ type ReduxInjectedProps = {
 
 type OverviewState = {
   modalVisible: boolean,
+  updateInterval: number,
 };
 
 class OverviewInner extends React.Component<
@@ -77,20 +78,33 @@ class OverviewInner extends React.Component<
     super(props);
     this.state = {
       modalVisible: props.modalVisible || false,
+      updateInterval: -1,
     };
   }
 
   componentDidMount() {
+    this.setInterval();
     this.updateTimes();
   }
 
+  componentWillUnmount() {
+    clearInterval(this.state.updateInterval);
+  }
+
+  setInterval() {
+    const updateInterval = setInterval(() => this.updateTimes(), 1000);
+    this.setState({ updateInterval });
+  }
+
   updateTimes() {
+    const { modalVisible } = this.state;
     const { setReceiptEntryTime, receiptEntryTime } = this.props;
     const localTime: DateTime = DateTime.local();
 
     if (
-      receiptEntryTime === '' ||
-      localTime.valueOf() > DateTime.fromISO(receiptEntryTime).valueOf()
+      (receiptEntryTime === '' ||
+        localTime.valueOf() > DateTime.fromISO(receiptEntryTime).valueOf()) &&
+      !modalVisible
     ) {
       setReceiptEntryTime(getConvertedLocalTimeToSwiss().toString());
     }
@@ -135,7 +149,11 @@ class OverviewInner extends React.Component<
     } = this.props;
 
     if (receiptEntryTime === '') {
-      return <View>Loading...</View>;
+      return (
+        <View>
+          <Text>Loading...</Text>
+        </View>
+      );
     }
     const momentReceiptEntryTime: DateTime = DateTime.fromISO(receiptEntryTime);
 
