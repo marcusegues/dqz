@@ -160,7 +160,7 @@ exports[`Currency Picker renders according to snapshot 1`] = `
                 "flex": 0.25,
               },
               Object {
-                "flex": 0.6,
+                "flex": 0.8,
               },
             ]
           }
