@@ -8,6 +8,7 @@ import {
   View,
   Keyboard,
   Picker,
+  Platform,
   // $FlowFixMe
 } from 'react-native';
 
@@ -30,7 +31,7 @@ import { hasOffsettingAmount, checkValidAmount } from '../../../model/utils';
 import { ModalCloseText } from '../ModalCloseText';
 import { parseInputToFloat } from '../../../utils/inputparser/inputParser';
 import { MAX_DIGITS_AMOUNT } from '../../../constants/declaration';
-import { size } from '../../../styles/fonts';
+import { size, type } from '../../../styles/fonts';
 import { moderateScale } from '../../../styles/Scaling';
 import { RedText } from '../../General Components/RedText';
 
@@ -162,9 +163,9 @@ class CurrencyPickerModalInner extends React.Component<
                 }
                 prompt=""
                 itemStyle={{
-                  fontFamily: 'roboto_medium',
+                  fontFamily: type.medium,
                 }}
-                style={{ flex: 0.6 }}
+                style={{ flex: Platform.OS === 'ios' ? 0.8 : 0.9 }}
               >
                 {Object.keys(currencyPicker)
                   .filter(c => currenciesArray.indexOf(c) > -1)

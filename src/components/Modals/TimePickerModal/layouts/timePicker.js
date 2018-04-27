@@ -31,7 +31,7 @@ export const TimePicker = ({
       mode="dropdown"
       prompt=""
       style={{
-        flex: Platform.OS === 'ios' ? 0.15 : 0.25,
+        flex: Platform.OS === 'ios' ? 0.15 : 0.3,
         paddingVertical: 10,
       }}
     >
@@ -49,7 +49,7 @@ export const TimePicker = ({
       prompt=""
       itemStyle={{}}
       style={{
-        flex: Platform.OS === 'ios' ? 0.15 : 0.25,
+        flex: Platform.OS === 'ios' ? 0.15 : 0.3,
         paddingVertical: 10,
       }}
     >

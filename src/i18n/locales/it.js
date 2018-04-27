@@ -162,7 +162,7 @@ export const it: Locale = {
     savedBasketDoYoWantToContinue:
       'Continuare con il carrello attuale o ricominciare con uno vuoto?',
     currencyPickerMaximumInputLength:
-      'Hai raggiunto la lunghezza massima di input. Si prega di dividere gli articoli o convertire in CHF', // NEEDS CONFIRMATION
+      'Ha raggiunto la lunghezza massima del campo. Può separare gli articoli o convertire la valuta in CHF.',
 
     savedBasketTotalCost: 'Importo complessivo: CHF {{value}}',
     savedBasketNewShoppingCart: 'Nuovo carrello',
