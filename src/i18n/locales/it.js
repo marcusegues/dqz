@@ -74,11 +74,11 @@ export const it: Locale = {
     peopleInputQuestion: "Quanti viaggiatori sottostanno all'imposizione?",
   },
   mainCategoriesInput: {
-    mainCategoriesQuestion: 'Quali merci si desidera dichiarare?',
+    mainCategoriesQuestion: 'Quali merci desidera dichiarare?',
     mainCategoriesNotYetAnswered: 'Categoria merceologica: dati mancanti',
   },
   quantityInput: {
-    quantityInput: 'Ingresso quantità',
+    quantityInput: 'Inserisca la quantità',
     recordedOn: 'registrato su {{value}}',
     addQuantities: 'Aggiungi quantità',
     enterQuantities: 'Inserisca qui la quantità totale di {{value}} qui.',
@@ -102,9 +102,9 @@ export const it: Locale = {
   amountInput: {
     amountInput: 'Inserisca il valore complessivo delle merci trasportate.',
     amountInputLargeItem:
-      'Cattura i singoli oggetti con chi ha oltre {{value}} franchi.',
+      'Inserisca ogni singolo oggetto con un valore superiore a 300 franchi.',
     amountInputLargeItemGreyBox:
-      'Ancora una volta, cattura ogni oggetto che vale più di CHF 300 (valore netto).',
+      'Ancora una volta, inserisca ogni singolo oggetto con un valore superiore a 300 franchi (valore netto).',
     amountInputAddItem: 'Aggiungere valore',
     amountInputAddItemLarge: 'Aggiungere oggetto',
     amountInputEnterValueBeginning: 'Inserisca il valore ',
@@ -162,7 +162,7 @@ export const it: Locale = {
     savedBasketDoYoWantToContinue:
       'Continuare con il carrello attuale o ricominciare con uno vuoto?',
     currencyPickerMaximumInputLength:
-      'Hai raggiunto la lunghezza massima di input. Si prega di dividere gli articoli o convertire in CHF', // NEEDS CONFIRMATION
+      'Ha raggiunto la lunghezza massima del campo. Può separare gli articoli o convertire la valuta in CHF.',
 
     savedBasketTotalCost: 'Importo complessivo: CHF {{value}}',
     savedBasketNewShoppingCart: 'Nuovo carrello',
@@ -886,7 +886,7 @@ export const it: Locale = {
     vatRateInfoText4: 'Ulteriori informazioni sono disponibili qui:',
     termsOfService: 'Termini e condizioni',
     acceptance: 'Accetto i termini e le condizioni che ho letto e compreso.',
-    confirm: 'Confermare',
+    confirm: 'Chiudere',
     abort: 'Abortire',
   },
   furtherInformationModal: {

@@ -165,7 +165,7 @@ export const de: Locale = {
     currencyPickerTooSmallLargeAmount: 'Betrag zu gering',
 
     currencyPickerMaximumInputLength:
-      'Sie haben die maximale Eingangslänge erreicht. Bitte teilen Sie die Artikel oder konvertieren Sie in CHF', // NEEDS CONFIRMATION
+      'Sie haben die maximale Eingabelänge erreicht. Bitte teilen Sie die Artikel oder konvertieren Sie in CHF', // NEEDS CONFIRMATION
 
     savedBasketDoYoWantToContinue:
       'Möchten Sie mit dem bereits bestehenden Warenkorb fortfahren oder mit einem leeren Warenkorb neu starten?',
