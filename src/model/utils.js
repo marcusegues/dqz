@@ -55,8 +55,8 @@ export const formatDate = (d: Date): string => {
 // Used for receipt datePicker.
 export const getConvertedLocalTimeToSwiss = (): DateTime => DateTime.local();
 
-export const roundMinutes = (minutes: number): string => {
-  const rounded = 5 * Math.floor(minutes / 5);
+export const roundMinutesToString = (minutes: number): string => {
+  const rounded = Math.max(0, 5 * Math.floor(minutes / 5));
   if (rounded < 10) {
     return `0${rounded}`;
   }

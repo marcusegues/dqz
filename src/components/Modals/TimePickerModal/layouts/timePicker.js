@@ -7,7 +7,7 @@ import {
   pickerHours,
   pickerMinutes,
 } from '../../QuantityInputModal/pickerData';
-import { roundMinutes } from '../../../../model/utils';
+import { roundMinutesToString } from '../../../../model/utils';
 import { PickerValueSeparator } from '../../CurrencyPickerModal/subComponents/PickerValueSeparator';
 import type { TFunction } from '../../../../types/generalTypes';
 
@@ -43,7 +43,7 @@ export const TimePicker = ({
     <PickerValueSeparator separator=":" />
 
     <PickerComponent
-      selectedValue={roundMinutes(parseInt(minutes, 10))}
+      selectedValue={roundMinutesToString(parseInt(minutes, 10))}
       onValueChange={onValueChangeMinutes}
       mode="dropdown"
       prompt=""
