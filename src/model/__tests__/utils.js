@@ -8,6 +8,7 @@ import {
   flatNormalAmounts,
   formatDate,
   quantityRounding,
+  roundMinutesToString,
 } from '../utils';
 import { sampleAmounts1 } from './fullBasketsAndAmounts';
 
@@ -55,5 +56,23 @@ describe('Quantity rounding', () => {
   });
   test('Meat', () => {
     expect(quantityRounding(123.321, 'Meat')).toBe(123.4);
+  });
+});
+
+describe('Round minutes to string', () => {
+  test('works under various scenarios', () => {
+    const scenarios = [
+      [0, '00'],
+      [2, '00'],
+      [5, '05'],
+      [7, '05'],
+      [10, '10'],
+      [12, '10'],
+      [17, '15'],
+      [-0, '00'],
+      [-5, '00'],
+      [-32, '00'],
+    ];
+    scenarios.forEach(s => expect(roundMinutesToString(s[0])).toBe(s[1]));
   });
 });

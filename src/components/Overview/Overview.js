@@ -6,6 +6,8 @@ import { DateTime } from 'luxon';
 // $FlowFixMe
 import { translate } from 'react-i18next';
 // $FlowFixMe
+import { Text, View } from 'react-native';
+// $FlowFixMe
 import { CardHeader } from '../QuestionAnswer/Cards/subcomponents/CardHeader';
 import type { Navigation, TFunction } from '../../types/generalTypes';
 import { PeriodOfEntryRow } from './subcomponents/PeriodOfEntryRow';
@@ -22,10 +24,7 @@ import {
 } from '../../reducers/selectors';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
 import { InfoNote } from './subcomponents/InfoNote';
-import {
-  flatLargeAmounts,
-  getConvertedLocalTimeToSwiss,
-} from '../../model/utils';
+import { flatLargeAmounts } from '../../model/utils';
 import { BackAndContinueButtons } from '../Buttons/BackAndContinueButtons';
 import type {
   Amounts,
@@ -38,7 +37,7 @@ import { dateTimeToFormat } from '../../utils/datetime/datetime';
 
 type OverviewProps = {
   modalVisible?: boolean,
-  onProceedToPayment?: () => void,
+  onProceedToPayment: () => void,
   paymentDisabled?: boolean,
   navigation: Navigation,
 };
@@ -54,6 +53,7 @@ type ReduxInjectedProps = {
 
 type OverviewState = {
   modalVisible: boolean,
+  updateInterval: number,
 };
 
 class OverviewInner extends React.Component<
@@ -65,7 +65,6 @@ class OverviewInner extends React.Component<
 > {
   static defaultProps = {
     modalVisible: false,
-    onProceedToPayment: () => {},
     paymentDisabled: true,
   };
 
@@ -76,13 +75,42 @@ class OverviewInner extends React.Component<
     super(props);
     this.state = {
       modalVisible: props.modalVisible || false,
+      updateInterval: -1,
     };
   }
 
   componentDidMount() {
-    const { receiptEntryTime } = this.props;
-    if (receiptEntryTime === '')
-      this.props.setReceiptEntryTime(getConvertedLocalTimeToSwiss().toString());
+    this.setUpdateInterval();
+    this.updateTimes();
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.updateInterval);
+  }
+
+  setUpdateInterval() {
+    const updateInterval = setInterval(() => this.updateTimes(), 1000);
+    this.setState({ updateInterval });
+  }
+
+  updateTimes() {
+    const { modalVisible } = this.state;
+    const { setReceiptEntryTime, receiptEntryTime } = this.props;
+    const localTime: DateTime = DateTime.local();
+
+    if (receiptEntryTime === '') {
+      setReceiptEntryTime(localTime.toString());
+      return;
+    }
+
+    const prev = DateTime.fromISO(receiptEntryTime);
+    if (
+      localTime.valueOf() > prev.valueOf() &&
+      localTime.minute > prev.minute &&
+      !modalVisible
+    ) {
+      setReceiptEntryTime(localTime.toString());
+    }
   }
 
   handleShowModal() {
@@ -123,14 +151,14 @@ class OverviewInner extends React.Component<
       currencies,
     } = this.props;
 
-    const localTime: DateTime = DateTime.local();
-    let momentReceiptEntryTime: DateTime = localTime;
-    if (receiptEntryTime !== '') {
-      momentReceiptEntryTime = DateTime.fromISO(receiptEntryTime);
-      if (localTime.valueOf() > momentReceiptEntryTime.valueOf()) {
-        momentReceiptEntryTime = localTime;
-      }
+    if (receiptEntryTime === '') {
+      return (
+        <View>
+          <Text>Loading...</Text>
+        </View>
+      );
     }
+    const momentReceiptEntryTime: DateTime = DateTime.fromISO(receiptEntryTime);
 
     return (
       <ScrollViewCard>
@@ -169,7 +197,7 @@ class OverviewInner extends React.Component<
         <InfoNote />
         <BackAndContinueButtons
           onPressBack={() => navigation.dispatch({ type: 'GO_BACK' })}
-          onPressContinue={() => onProceedToPayment && onProceedToPayment()}
+          onPressContinue={() => onProceedToPayment()}
           textContinue={t('general:toPayment')}
           confirmationDisabled={paymentDisabled}
         />
