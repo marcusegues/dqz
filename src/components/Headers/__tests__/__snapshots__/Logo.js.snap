@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BackArrow renders according to snapshot 1`] = `
+exports[`Logo Logo renders according to snapshot 1`] = `
 <Image
   resizeMode="contain"
   source={1}

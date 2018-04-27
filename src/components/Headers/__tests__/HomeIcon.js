@@ -9,7 +9,7 @@ import { HomeIcon } from '../subcomponents/HomeIcon';
 describe('HomeIcon Icon TestSuite', () => {
   test('HomeIcon component renders correctly', () => {
     // $FlowFixMe
-    const tree = renderer.create(<HomeIcon navigation={undefined} />).toJSON();
+    const tree = renderer.create(<HomeIcon />).toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('we can click it', () => {
@@ -22,13 +22,5 @@ describe('HomeIcon Icon TestSuite', () => {
       type: 'NAVIGATE',
       screen: 'MainMenu',
     });
-  });
-  test('renders as expected', () => {
-    const clickFn = jest.fn();
-    const wrapper = shallow(
-      // $FlowFixMe
-      <HomeIcon navigation={clickFn} />
-    );
-    expect(wrapper.dive()).toMatchSnapshot();
   });
 });

@@ -7,7 +7,7 @@ import { BackArrow } from '../subcomponents/BackArrow';
 describe('BackArrow', () => {
   test('renders according to snapshot', () => {
     const component = renderer
-      .create(<BackArrow onPress={jest.fn()} />)
+      .create(<BackArrow />)
       .toJSON();
     expect(component).toMatchSnapshot();
   });

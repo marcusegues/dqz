@@ -7,7 +7,7 @@ import { moderateScale } from '../../../styles/Scaling';
 
 describe('BlueInfoIcon', () => {
   test('BlueInfoIcon component renders correctly', () => {
-    const tree = renderer.create(<BlueInfoIcon onPress={() => {}} />).toJSON();
+    const tree = renderer.create(<BlueInfoIcon />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 

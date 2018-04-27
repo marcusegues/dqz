@@ -4,11 +4,15 @@ import React from 'react';
 import { shallow } from 'enzyme';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
+import { MaterialIcons } from '@expo/vector-icons';
 import { DownloadIcon } from '../subcomponents/DownloadIcon';
+import { MAIN_RED } from '../../../styles/colors';
+import { moderateScale } from '../../../styles/Scaling';
+
+const clickFn = jest.fn();
 
 describe('Download Icon TestSuite', () => {
   test('DownloadIcon component renders correctly', () => {
-    // $FlowFixMe
     const tree = renderer
       // $FlowFixMe
       .create(<DownloadIcon navigation={{ state: {} }} />)
@@ -17,12 +21,35 @@ describe('Download Icon TestSuite', () => {
   });
 
   test('we can click it', () => {
-    const clickFn = jest.fn();
     const component = shallow(
       // $FlowFixMe
       <DownloadIcon navigation={{ state: { params: { onPress: clickFn } } }} />
     );
     component.find(Touchable).simulate('press');
     expect(clickFn).toBeCalled();
+    expect(component.dive()).toMatchSnapshot();
+  });
+  test('it contains icon', () => {
+    const component = shallow(
+      // $FlowFixMe
+      <DownloadIcon navigation={{ state: { params: { onPress: clickFn } } }} />
+    );
+    expect(component.find(MaterialIcons)).toHaveLength(1);
+    expect(component.contains('MaterialIcons'));
+  });
+  test('should  contain icn using containsMatchingElement ', () => {
+    const component = shallow(
+      // $FlowFixMe
+      <DownloadIcon navigation={{ state: { params: { onPress: clickFn } } }} />
+    );
+    expect(
+      component.containsMatchingElement(
+        <MaterialIcons
+          name="get-app"
+          size={moderateScale(28)}
+          color={MAIN_RED}
+        />
+      )
+    ).toBeTruthy();
   });
 });

@@ -29,3 +29,16 @@ exports[`CurrencyFlag TestSuite CurrencyFlag component renders correctly with pr
   🇪🇺
 </Text>
 `;
+
+exports[`CurrencyFlag TestSuite CurrencyFlag component renders correctly with preset fontSize 2`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "fontSize": 14,
+    }
+  }
+/>
+`;

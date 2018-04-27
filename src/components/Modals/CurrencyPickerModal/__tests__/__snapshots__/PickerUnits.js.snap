@@ -1,5 +1,127 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`PickerUnits has \`kg\` as a text 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <PickerUnits
+    unit="kg"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#898989",
+            "fontFamily": "roboto_regular",
+            "fontSize": 22,
+          }
+        }
+      >
+        kg
+      </Text>,
+      "style": Object {
+        "alignItems": "center",
+        "alignSelf": "center",
+        "flex": 0.2,
+        "justifyContent": "center",
+      },
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "accessible": true,
+        "allowFontScaling": true,
+        "children": "kg",
+        "ellipsizeMode": "tail",
+        "style": Object {
+          "color": "#898989",
+          "fontFamily": "roboto_regular",
+          "fontSize": 22,
+        },
+      },
+      "ref": null,
+      "rendered": "kg",
+      "type": [Function],
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#898989",
+              "fontFamily": "roboto_regular",
+              "fontSize": 22,
+            }
+          }
+        >
+          kg
+        </Text>,
+        "style": Object {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "flex": 0.2,
+          "justifyContent": "center",
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "accessible": true,
+          "allowFontScaling": true,
+          "children": "kg",
+          "ellipsizeMode": "tail",
+          "style": Object {
+            "color": "#898989",
+            "fontFamily": "roboto_regular",
+            "fontSize": 22,
+          },
+        },
+        "ref": null,
+        "rendered": "kg",
+        "type": [Function],
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
 exports[`PickerUnits renders according to snapshot 1`] = `
 <View
   style={

@@ -6,18 +6,17 @@ import { shallow } from 'enzyme';
 import Touchable from 'react-native-platform-touchable';
 import { OptionsButton } from '../subcomponents/OptionsButton';
 
+const clickFn = jest.fn();
+
 describe('OptionsButton Icon TestSuite', () => {
   test('OptionsButton component renders correctly', () => {
-    // $FlowFixMe
     const tree = renderer
       // $FlowFixMe
-      .create(<OptionsButton navigation={undefined} />)
+      .create(<OptionsButton navigation={{ dispatch: clickFn }} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
   test('we can click it', () => {
-    const clickFn = jest.fn();
-    // $FlowFixMe
     const component = shallow(
       // $FlowFixMe
       <OptionsButton navigation={{ dispatch: clickFn }} />

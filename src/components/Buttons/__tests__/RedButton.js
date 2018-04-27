@@ -1,6 +1,5 @@
 import renderer from 'react-test-renderer';
 import React from 'react';
-// $FlowFixMe
 import { Text } from 'react-native';
 import { shallow } from 'enzyme';
 import Touchable from 'react-native-platform-touchable';

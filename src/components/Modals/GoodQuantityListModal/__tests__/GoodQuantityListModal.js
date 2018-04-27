@@ -12,15 +12,10 @@ const clickFn = jest.fn();
 describe('GoodQuantityListModal', () => {
   test('renders according to snapshot', () => {
     const component = renderer
-      .create(<GoodQuantityListModal onPress={() => {}} />)
+      .create(<GoodQuantityListModal onPress={clickFn} />)
       .toJSON();
     expect(component).toMatchSnapshot();
   });
-  test('LegalNoticeModal renders according to snapshot', () => {
-    const component = renderer.create(<GoodQuantityListModal />).toJSON();
-    expect(component).toMatchSnapshot();
-  });
-
   test('shallow rendering with `modalVisible=true`', () => {
     const wrapper = shallow(
       <GoodQuantityListModal
@@ -28,8 +23,8 @@ describe('GoodQuantityListModal', () => {
         i18n={{ language: 'de', t: 'test' }}
       />
     );
-    const visibleModal = wrapper.setProps({ modalVisible: true });
-    expect(visibleModal.length).toEqual(1);
-    expect(wrapper.props('modalVisible')).toBeTruthy();
+    wrapper.setProps({ modalVisible: true });
+    expect('modalVisible' in wrapper.props()).toEqual(true);
+    expect(wrapper).toMatchSnapshot();
   });
 });
