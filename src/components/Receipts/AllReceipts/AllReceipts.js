@@ -67,6 +67,38 @@ class AllReceiptsInner extends React.Component<
       return aDT.valueOf() > bDT.valueOf() ? 1 : -1;
     };
 
+    // TODO: with TZ refactoring move this to utils.js
+    const getDateText = (receiptEntryTime, receiptEntryTimePlus) => {
+      const startDate = dateTimeToFormat(receiptEntryTime, {
+        locale: i18n.language,
+        format: 'date',
+      });
+      const startTime = dateTimeToFormat(receiptEntryTime, {
+        locale: i18n.language,
+        format: 'time',
+      });
+      const endDate = dateTimeToFormat(receiptEntryTimePlus, {
+        locale: i18n.language,
+        format: 'date',
+      });
+      const endTime = dateTimeToFormat(receiptEntryTimePlus, {
+        locale: i18n.language,
+        format: 'time',
+      });
+      return receiptEntryTime.day === receiptEntryTimePlus.day
+        ? t('receiptValidOnDate', {
+            date: startDate,
+            startTime,
+            endTime,
+          })
+        : t('receiptValidFromDate', {
+            startDate,
+            startTime,
+            endDate,
+            endTime,
+          });
+    };
+
     return this.state.receipts.sort(sortDateTimeAsc).reduce(
       (receipts, receipt, idx) => {
         const { basket } = receipt;
@@ -78,11 +110,9 @@ class AllReceiptsInner extends React.Component<
         const dutyReport = calculateDuty(basket, receipt.people);
         const fullVat = vatReport.get('totalVat');
         const fullDuty = dutyReport.get('totalDuty');
-        const receiptEntryTimePlus = DateTime.fromISO(
-          receipt.receiptEntryTime
-        ).plus({ hours: 2 });
+        const receiptEntryTime = DateTime.fromISO(receipt.receiptEntryTime);
+        const receiptEntryTimePlus = receiptEntryTime.plus({ hours: 2 });
         const localTime = DateTime.local();
-
         const receiptView = (
           <AllReceiptsRow
             key={`receipt-row-${receipt.receiptId}`}
@@ -93,12 +123,7 @@ class AllReceiptsInner extends React.Component<
               duty: fullDuty.toFixed(2),
               vat: fullVat.toFixed(2),
             })}
-            date={t('allReceiptsDate', {
-              value: dateTimeToFormat(receiptEntryTimePlus, {
-                locale: i18n.language,
-                format: 'datetime',
-              }),
-            })}
+            date={getDateText(receiptEntryTime, receiptEntryTimePlus)}
             rowOnPress={() => {
               setReceiptId(receipt.receiptId);
               navigation.dispatch({
@@ -109,12 +134,9 @@ class AllReceiptsInner extends React.Component<
             borderTop={idx === 0}
           />
         );
-        // $FlowFixMe
-        if (receiptEntryTimePlus > localTime) {
-          // $FlowFixMe
+        if (receiptEntryTimePlus.valueOf() > localTime.valueOf()) {
           receipts.actualReceipts.push(receiptView);
         } else {
-          // $FlowFixMe
           receipts.oldReceipts.push(receiptView);
         }
         return receipts;
