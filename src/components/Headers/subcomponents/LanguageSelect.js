@@ -24,7 +24,7 @@ export const LanguageSelect = ({
         screen: 'OnBoarding',
       })
     }
-    style={{ padding: 10 }}
+    style={{ padding: 5 }}
   >
     <Text
       style={{
