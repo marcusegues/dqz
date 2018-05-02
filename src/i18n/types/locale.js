@@ -571,6 +571,7 @@ type AppInformationTranslations = {
   designAndDevelopment: string,
   ambriteAddress: string,
   toContactForm: string,
+  faq: string,
 };
 
 type LegalNoticeInformationTranslations = {

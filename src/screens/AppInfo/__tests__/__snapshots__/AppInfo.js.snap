@@ -125,6 +125,21 @@ ShallowWrapper {
               Object {
                 "color": "#757575",
                 "fontFamily": "roboto_medium",
+                "paddingRight": 15,
+                "paddingVertical": 10,
+                "textDecorationLine": "none",
+              }
+            }
+            text=""
+          />
+          <AppInfoLink
+            onPress={[Function]}
+            style={
+              Object {
+                "color": "#757575",
+                "fontFamily": "roboto_medium",
+                "paddingRight": 15,
+                "paddingVertical": 10,
                 "textDecorationLine": "none",
               }
             }
@@ -245,6 +260,21 @@ ShallowWrapper {
                 Object {
                   "color": "#757575",
                   "fontFamily": "roboto_medium",
+                  "paddingRight": 15,
+                  "paddingVertical": 10,
+                  "textDecorationLine": "none",
+                }
+              }
+              text=""
+            />
+            <AppInfoLink
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#757575",
+                  "fontFamily": "roboto_medium",
+                  "paddingRight": 15,
+                  "paddingVertical": 10,
                   "textDecorationLine": "none",
                 }
               }
@@ -392,6 +422,21 @@ ShallowWrapper {
                   Object {
                     "color": "#757575",
                     "fontFamily": "roboto_medium",
+                    "paddingRight": 15,
+                    "paddingVertical": 10,
+                    "textDecorationLine": "none",
+                  }
+                }
+                text=""
+              />,
+              <AppInfoLink
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#757575",
+                    "fontFamily": "roboto_medium",
+                    "paddingRight": 15,
+                    "paddingVertical": 10,
                     "textDecorationLine": "none",
                   }
                 }
@@ -548,6 +593,27 @@ ShallowWrapper {
                 "style": Object {
                   "color": "#757575",
                   "fontFamily": "roboto_medium",
+                  "paddingRight": 15,
+                  "paddingVertical": 10,
+                  "textDecorationLine": "none",
+                },
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "onPress": [Function],
+                "style": Object {
+                  "color": "#757575",
+                  "fontFamily": "roboto_medium",
+                  "paddingRight": 15,
+                  "paddingVertical": 10,
                   "textDecorationLine": "none",
                 },
                 "text": "",
@@ -676,6 +742,21 @@ ShallowWrapper {
                 Object {
                   "color": "#757575",
                   "fontFamily": "roboto_medium",
+                  "paddingRight": 15,
+                  "paddingVertical": 10,
+                  "textDecorationLine": "none",
+                }
+              }
+              text=""
+            />
+            <AppInfoLink
+              onPress={[Function]}
+              style={
+                Object {
+                  "color": "#757575",
+                  "fontFamily": "roboto_medium",
+                  "paddingRight": 15,
+                  "paddingVertical": 10,
                   "textDecorationLine": "none",
                 }
               }
@@ -796,6 +877,21 @@ ShallowWrapper {
                   Object {
                     "color": "#757575",
                     "fontFamily": "roboto_medium",
+                    "paddingRight": 15,
+                    "paddingVertical": 10,
+                    "textDecorationLine": "none",
+                  }
+                }
+                text=""
+              />
+              <AppInfoLink
+                onPress={[Function]}
+                style={
+                  Object {
+                    "color": "#757575",
+                    "fontFamily": "roboto_medium",
+                    "paddingRight": 15,
+                    "paddingVertical": 10,
                     "textDecorationLine": "none",
                   }
                 }
@@ -943,6 +1039,21 @@ ShallowWrapper {
                     Object {
                       "color": "#757575",
                       "fontFamily": "roboto_medium",
+                      "paddingRight": 15,
+                      "paddingVertical": 10,
+                      "textDecorationLine": "none",
+                    }
+                  }
+                  text=""
+                />,
+                <AppInfoLink
+                  onPress={[Function]}
+                  style={
+                    Object {
+                      "color": "#757575",
+                      "fontFamily": "roboto_medium",
+                      "paddingRight": 15,
+                      "paddingVertical": 10,
                       "textDecorationLine": "none",
                     }
                   }
@@ -1099,6 +1210,27 @@ ShallowWrapper {
                   "style": Object {
                     "color": "#757575",
                     "fontFamily": "roboto_medium",
+                    "paddingRight": 15,
+                    "paddingVertical": 10,
+                    "textDecorationLine": "none",
+                  },
+                  "text": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "onPress": [Function],
+                  "style": Object {
+                    "color": "#757575",
+                    "fontFamily": "roboto_medium",
+                    "paddingRight": 15,
+                    "paddingVertical": 10,
                     "textDecorationLine": "none",
                   },
                   "text": "",

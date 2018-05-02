@@ -16,7 +16,7 @@ import { AppInfoSubText } from './subComponents/AppInfoSubText';
 import { AppInfoLink } from './subComponents/AppInfoLink';
 import type { Language } from '../../i18n/types/locale';
 import { type } from '../../styles/fonts';
-import { MAIN_BLACK } from '../../styles/colors';
+import { BASE_GREY, MAIN_BLACK } from '../../styles/colors';
 import { version } from '../../../package.json';
 
 const styles = {
@@ -51,6 +51,13 @@ const styles = {
   },
   ambriteAddress: {
     marginTop: verticalScale(15),
+  },
+  links: {
+    color: BASE_GREY,
+    fontFamily: type.medium,
+    textDecorationLine: 'none',
+    paddingVertical: 10,
+    paddingRight: 15,
   },
 };
 
@@ -136,7 +143,11 @@ class AppInfoInner extends React.Component<
                   marginBottom: verticalScale(16),
                 }}
               />
-
+              <AppInfoLink
+                text={t('faq').toUpperCase()}
+                onPress={() => {}}
+                style={styles.links}
+              />
               <AppInfoLink
                 text={t('toContactForm').toUpperCase()}
                 onPress={() =>
@@ -146,11 +157,7 @@ class AppInfoInner extends React.Component<
                     }`
                   )
                 }
-                style={{
-                  color: '#757575',
-                  fontFamily: type.medium,
-                  textDecorationLine: 'none',
-                }}
+                style={styles.links}
               />
             </View>
           ) : (
