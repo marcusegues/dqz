@@ -11,33 +11,17 @@ jest.mock('react-i18next', () => ({
 const clickFn = jest.fn();
 
 describe('DutyAllowance', () => {
-  test('DutyAllowance renders as expected', () => {
-    const wrapper = shallow(<DutyAllowance />);
-    expect(wrapper).toMatchSnapshot();
-  });
   test('DutyAllowance renders as expected with language', () => {
     const wrapper = shallow(
-      <DutyAllowance
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de' }}
-      />
+      <DutyAllowance navigation={{ dispatch: clickFn }} />
     );
     expect(wrapper).toMatchSnapshot();
-  });
-  test('DutyAllowance renders as expected with language with dive()', () => {
-    const wrapper = shallow(
-      <DutyAllowance
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de', t: 'test' }}
-      />
-    );
-    expect(wrapper.dive()).toMatchSnapshot();
   });
   test('You can click it', () => {
     const wrapper = shallow(
       <DutyAllowance
         navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de', t: 'test' }}
+        i18n={{ language: 'de' }}
       />
     );
     const render = wrapper.dive();

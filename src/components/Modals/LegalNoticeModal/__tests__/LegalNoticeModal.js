@@ -20,59 +20,38 @@ describe('LegalNoticeModal', () => {
   });
 
   test('shallow rendering with `modalVisible=true`', () => {
-    const wrapper = shallow(
-      <LegalNoticeModal modalVisible i18n={{ language: 'de', t: 'test' }} />
-    );
+    const wrapper = shallow(<LegalNoticeModal modalVisible />);
     expect(wrapper.dive()).toMatchSnapshot();
   });
 
-  test('you can click on `Touchable', () => {
-    const wrapper = shallow(
-      <LegalNoticeModal
-        modalVisible
-        onPressLegal={clickFn}
-        i18n={{ language: 'de', t: 'test' }}
-      />
-    );
-    const render = wrapper.dive();
-    render.find(Touchable).forEach(child => {
-      child.simulate('press');
-    });
-    expect(wrapper.dive()).toMatchSnapshot();
-    expect(clickFn.mock.calls.length).toBe(1);
-  });
-
-  test('`checked` should be falsy', () => {
-    const wrapper = shallow(
-      <LegalNoticeModal
-        modalVisible
-        onPressLegal={clickFn}
-        i18n={{ language: 'de', t: 'test' }}
-      />
-    ).dive();
-    expect(wrapper.state('checked')).toBeFalsy();
-
-    wrapper.find(SquareCheckBox).forEach(child => {
-      child.simulate('press');
-    });
-    expect(wrapper.dive()).toMatchSnapshot();
-    expect(clickFn.mock.calls.length).toBe(1);
-    expect(wrapper.state('checked')).toBeTruthy();
-  });
-  test('you can click on `RedButton', () => {
+  test('you can click on "Touchable" and on "RedButton"', () => {
     const wrapper = shallow(
       <LegalNoticeModal
         modalVisible
         onPressLegal={clickFn}
         onConfirm={clickFn}
-        i18n={{ language: 'de', t: 'test' }}
       />
     );
     const render = wrapper.dive();
-    render.find(RedButton).forEach(child => {
-      child.simulate('press');
-    });
+    render.find(Touchable).simulate('press');
+    render.find(RedButton).simulate('press');
     expect(wrapper.dive()).toMatchSnapshot();
     expect(clickFn.mock.calls.length).toBe(2);
+  });
+
+  test('"checked" should be falsy', () => {
+    const wrapper = shallow(
+      <LegalNoticeModal
+        modalVisible
+        onPressLegal={clickFn}
+        onConfirm={clickFn}
+      />
+    ).dive();
+    expect(wrapper.state('checked')).toBeFalsy();
+
+    wrapper.find(SquareCheckBox).simulate('press');
+    expect(wrapper.dive()).toMatchSnapshot();
+    expect(clickFn.mock.calls.length).toBe(2);
+    expect(wrapper.state('checked')).toBeTruthy();
   });
 });

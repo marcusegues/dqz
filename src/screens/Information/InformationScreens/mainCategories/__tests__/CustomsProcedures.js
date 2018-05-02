@@ -14,31 +14,15 @@ describe('CustomsProcedures', () => {
     const wrapper = shallow(<CustomsProcedures />);
     expect(wrapper).toMatchSnapshot();
   });
-  test('CustomsProcedures renders as expected', () => {
-    const wrapper = shallow(
-      <CustomsProcedures
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de' }}
-      />
-    );
-    // console.log(wrapper.props());
-    expect(wrapper).toMatchSnapshot();
-  });
   test('CustomsProcedures renders as expected with language and with dive()', () => {
     const wrapper = shallow(
-      <CustomsProcedures
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de', t: 'test' }}
-      />
+      <CustomsProcedures navigation={{ dispatch: clickFn }} />
     );
     expect(wrapper.dive()).toMatchSnapshot();
   });
-  test('CustomsProcedures renders as expected with language with dive()', () => {
+  test('You can click it', () => {
     const wrapper = shallow(
-      <CustomsProcedures
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de', t: 'test' }}
-      />
+      <CustomsProcedures navigation={{ dispatch: clickFn }} />
     );
     const render = wrapper.dive();
     render.find(TouchableOpacity).forEach(child => {

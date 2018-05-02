@@ -10,7 +10,7 @@ const mockPress = jest.fn();
 
 describe('RedPlusIcon', () => {
   test('RedPlusIcon component renders correctly', () => {
-    const tree = renderer.create(<RedPlusIcon onPress={mockPress} />).toJSON();
+    const tree = renderer.create(<RedPlusIcon />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
@@ -28,9 +28,9 @@ describe('RedPlusIcon', () => {
 
   test('RedPlusIcon with setting props', () => {
     const wrap = shallow(<RedPlusIcon onPress={mockPress} />);
-    wrap.setProps({ onPress: 'TestPress' });
+    wrap.setProps({ onPress: mockPress });
     expect('onPress' in wrap.props()).toEqual(true);
-    expect(wrap.props(mockPress).onPress).toEqual('TestPress');
+    expect(wrap.props(mockPress).onPress).toEqual(mockPress);
   });
 
   test('RedPlusIcon should contain icon', () => {
@@ -44,10 +44,5 @@ describe('RedPlusIcon', () => {
         />
       )
     ).toBeTruthy();
-  });
-  test('RedPlusIcon should handle button presses', () => {
-    const button = shallow(<RedPlusIcon onPress={mockPress} />);
-    button.simulate('press');
-    expect(mockPress.mock.calls.length).toBe(1);
   });
 });

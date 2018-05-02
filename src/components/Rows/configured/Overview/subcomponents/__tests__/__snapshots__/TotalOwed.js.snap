@@ -30,3 +30,105 @@ exports[`TotalOwed TotalOwed renders correctly 1`] = `
   </View>
 </View>
 `;
+
+exports[`TotalOwed shallow renders correctly and text matches 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+        "width": 70,
+      }
+    }
+  >
+    <CardRowText
+      greyBox={false}
+      style={Object {}}
+      text="test result"
+    />
+  </View>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <CardRowText
+        greyBox={false}
+        style={Object {}}
+        text="test result"
+      />,
+      "style": Object {
+        "flexDirection": "row",
+        "justifyContent": "flex-end",
+        "width": 70,
+      },
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "greyBox": false,
+        "style": Object {},
+        "text": "test result",
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+    "type": "View",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <CardRowText
+          greyBox={false}
+          style={Object {}}
+          text="test result"
+        />,
+        "style": Object {
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+          "width": 70,
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "greyBox": false,
+          "style": Object {},
+          "text": "test result",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      "type": "View",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

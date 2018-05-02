@@ -11,8 +11,4 @@ describe('PeopleInfo', () => {
     const wrapper = shallow(<PeopleInfo />);
     expect(wrapper).toMatchSnapshot();
   });
-  test('PeopleInfo renders as expected with language', () => {
-    const wrapper = shallow(<PeopleInfo i18n={{ language: 'de' }} />);
-    expect(wrapper).toMatchSnapshot();
-  });
 });

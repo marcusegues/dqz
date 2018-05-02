@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PickerValueSeparator has \`kg\` as a text 1`] = `
+exports[`PickerValueSeparator has \`,\` as a separator 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],

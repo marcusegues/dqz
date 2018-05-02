@@ -9,18 +9,6 @@ jest.mock('react-i18next', () => ({
 describe('AuthorisationRequirements', () => {
   test('AuthorisationRequirements renders as expected', () => {
     const wrapper = shallow(<AuthorisationRequirements />);
-    expect(wrapper).toMatchSnapshot();
-  });
-  test('AuthorisationRequirements renders as expected with language', () => {
-    const wrapper = shallow(
-      <AuthorisationRequirements i18n={{ language: 'de' }} />
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
-  test('AuthorisationRequirements renders as expected with language with dive()', () => {
-    const wrapper = shallow(
-      <AuthorisationRequirements i18n={{ language: 'de', t: 'test' }} />
-    );
     expect(wrapper.dive()).toMatchSnapshot();
   });
 });

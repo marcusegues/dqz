@@ -18,10 +18,7 @@ describe('GoodQuantityListModal', () => {
   });
   test('shallow rendering with `modalVisible=true`', () => {
     const wrapper = shallow(
-      <GoodQuantityListModal
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de', t: 'test' }}
-      />
+      <GoodQuantityListModal i18n={{ language: 'de', t: 'test' }} />
     );
     wrapper.setProps({ modalVisible: true });
     expect('modalVisible' in wrapper.props()).toEqual(true);

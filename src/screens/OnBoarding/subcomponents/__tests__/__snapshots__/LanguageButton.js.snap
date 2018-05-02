@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LanguageButton renders according to snapshot 1`] = `
+exports[`LanguageButton "de" language and "size=small" renders according to snapshot 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -29,8 +29,8 @@ exports[`LanguageButton renders according to snapshot 1`] = `
       "justifyContent": "center",
       "marginHorizontal": 10,
       "opacity": 1,
-      "paddingHorizontal": 96.42857142857143,
-      "paddingVertical": 29.426470588235293,
+      "paddingHorizontal": 55.714285714285715,
+      "paddingVertical": 21.57941176470588,
       "shadowColor": "#000",
       "shadowOffset": Object {
         "height": 1,
@@ -50,7 +50,7 @@ exports[`LanguageButton renders according to snapshot 1`] = `
     style={
       Object {
         "fontFamily": "roboto_regular",
-        "fontSize": 69.14285714285714,
+        "fontSize": 28.285714285714285,
         "textAlign": "center",
       }
     }
@@ -60,7 +60,187 @@ exports[`LanguageButton renders according to snapshot 1`] = `
 </View>
 `;
 
-exports[`LanguageButton renders according to snapshot 2`] = `
+exports[`LanguageButton "en" language and "size=small" renders according to snapshot 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignContent": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderBottomColor": "#fff",
+      "borderBottomWidth": 5,
+      "borderRadius": 4,
+      "elevation": 3,
+      "justifyContent": "center",
+      "marginHorizontal": 10,
+      "opacity": 1,
+      "paddingHorizontal": 55.714285714285715,
+      "paddingVertical": 21.57941176470588,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 1.5,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontFamily": "roboto_regular",
+        "fontSize": 28.285714285714285,
+        "textAlign": "center",
+      }
+    }
+  >
+    EN
+  </Text>
+</View>
+`;
+
+exports[`LanguageButton "fr" language and "size=small" renders according to snapshot 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignContent": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderBottomColor": "#fff",
+      "borderBottomWidth": 5,
+      "borderRadius": 4,
+      "elevation": 3,
+      "justifyContent": "center",
+      "marginHorizontal": 10,
+      "opacity": 1,
+      "paddingHorizontal": 55.714285714285715,
+      "paddingVertical": 21.57941176470588,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 1.5,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontFamily": "roboto_regular",
+        "fontSize": 28.285714285714285,
+        "textAlign": "center",
+      }
+    }
+  >
+    FR
+  </Text>
+</View>
+`;
+
+exports[`LanguageButton "it" language and "size=small" renders according to snapshot 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignContent": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderBottomColor": "#fff",
+      "borderBottomWidth": 5,
+      "borderRadius": 4,
+      "elevation": 3,
+      "justifyContent": "center",
+      "marginHorizontal": 10,
+      "opacity": 1,
+      "paddingHorizontal": 55.714285714285715,
+      "paddingVertical": 21.57941176470588,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 1.5,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontFamily": "roboto_regular",
+        "fontSize": 28.285714285714285,
+        "textAlign": "center",
+      }
+    }
+  >
+    IT
+  </Text>
+</View>
+`;
+
+exports[`LanguageButton selected button with "de" language 1`] = `
 <View
   accessibilityComponentType={undefined}
   accessibilityLabel={undefined}
@@ -116,6 +296,186 @@ exports[`LanguageButton renders according to snapshot 2`] = `
     }
   >
     DE
+  </Text>
+</View>
+`;
+
+exports[`LanguageButton selected button with "en" language 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignContent": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderBottomColor": "#DC0018",
+      "borderBottomWidth": 5,
+      "borderRadius": 4,
+      "elevation": 3,
+      "justifyContent": "center",
+      "marginHorizontal": 10,
+      "opacity": 1,
+      "paddingHorizontal": 96.42857142857143,
+      "paddingVertical": 29.426470588235293,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 1.5,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontFamily": "roboto_medium",
+        "fontSize": 69.14285714285714,
+        "textAlign": "center",
+      }
+    }
+  >
+    EN
+  </Text>
+</View>
+`;
+
+exports[`LanguageButton selected button with "fr" language 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignContent": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderBottomColor": "#DC0018",
+      "borderBottomWidth": 5,
+      "borderRadius": 4,
+      "elevation": 3,
+      "justifyContent": "center",
+      "marginHorizontal": 10,
+      "opacity": 1,
+      "paddingHorizontal": 96.42857142857143,
+      "paddingVertical": 29.426470588235293,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 1.5,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontFamily": "roboto_medium",
+        "fontSize": 69.14285714285714,
+        "textAlign": "center",
+      }
+    }
+  >
+    FR
+  </Text>
+</View>
+`;
+
+exports[`LanguageButton selected button with "it" language 1`] = `
+<View
+  accessibilityComponentType={undefined}
+  accessibilityLabel={undefined}
+  accessibilityTraits={undefined}
+  accessible={true}
+  collapsable={undefined}
+  hasTVPreferredFocus={undefined}
+  hitSlop={undefined}
+  isTVSelectable={true}
+  nativeID={undefined}
+  onLayout={undefined}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignContent": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderBottomColor": "#DC0018",
+      "borderBottomWidth": 5,
+      "borderRadius": 4,
+      "elevation": 3,
+      "justifyContent": "center",
+      "marginHorizontal": 10,
+      "opacity": 1,
+      "paddingHorizontal": 96.42857142857143,
+      "paddingVertical": 29.426470588235293,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 1,
+        "width": 0,
+      },
+      "shadowOpacity": 0.25,
+      "shadowRadius": 1.5,
+    }
+  }
+  testID={undefined}
+  tvParallaxProperties={undefined}
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontFamily": "roboto_medium",
+        "fontSize": 69.14285714285714,
+        "textAlign": "center",
+      }
+    }
+  >
+    IT
   </Text>
 </View>
 `;

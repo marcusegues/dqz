@@ -10,37 +10,17 @@ jest.mock('react-i18next', () => ({
 
 const clickFn = jest.fn();
 
+const wrapper = shallow(
+  <Animals navigation={{ dispatch: clickFn }} i18n={{ language: 'de' }} />
+);
+
 describe('Animals', () => {
   test('Animals renders as expected', () => {
-    const wrapper = shallow(<Animals />);
-    expect(wrapper).toMatchSnapshot();
-  });
-  test('Animals renders as expected with language', () => {
-    const wrapper = shallow(
-      <Animals navigation={{ dispatch: clickFn }} i18n={{ language: 'de' }} />
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
-  test('Animals renders as expected with language with dive()', () => {
-    const wrapper = shallow(
-      <Animals
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de', t: 'test' }}
-      />
-    );
     expect(wrapper.dive()).toMatchSnapshot();
   });
-  test('Animals renders as expected with language with dive()', () => {
-    const wrapper = shallow(
-      <Animals
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de', t: 'test' }}
-      />
-    );
+  test('you can click it', () => {
     const render = wrapper.dive();
-    render.find(TouchableOpacity).forEach(child => {
-      child.simulate('press');
-    });
+    render.find(TouchableOpacity).simulate('press');
     expect(wrapper.dive()).toMatchSnapshot();
     expect(clickFn.mock.calls.length).toBe(1);
   });

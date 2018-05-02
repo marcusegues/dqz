@@ -13,38 +13,24 @@ const clickFn = jest.fn();
 describe('FuelAndRepairs', () => {
   test('FuelAndRepairs renders as expected', () => {
     const wrapper = shallow(<FuelAndRepairs />);
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.dive()).toMatchSnapshot();
   });
-  test('FuelAndRepairs renders as expected with language', () => {
+  test('FuelAndRepairs renders as expected with navigation', () => {
     const wrapper = shallow(
-      <FuelAndRepairs
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de' }}
-      />
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
-  test('FuelAndRepairs renders as expected with language with dive()', () => {
-    const wrapper = shallow(
-      <FuelAndRepairs
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de', t: 'test' }}
-      />
+      <FuelAndRepairs navigation={{ dispatch: clickFn }} />
     );
     expect(wrapper.dive()).toMatchSnapshot();
   });
-  test('You can click it', () => {
+  test('it navigates to "VatAllowance" on button click', () => {
     const wrapper = shallow(
-      <FuelAndRepairs
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de', t: 'test' }}
-      />
+      <FuelAndRepairs navigation={{ dispatch: clickFn }} />
     );
     const render = wrapper.dive();
-    render.find(TouchableOpacity).forEach(child => {
-      child.simulate('press');
+    render.find(TouchableOpacity).simulate('press');
+    expect(clickFn).toBeCalled();
+    expect(clickFn).toBeCalledWith({
+      type: 'NAVIGATE',
+      screen: 'VatAllowance',
     });
-    expect(wrapper.dive()).toMatchSnapshot();
-    expect(clickFn.mock.calls.length).toBe(1);
   });
 });

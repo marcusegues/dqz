@@ -7,39 +7,16 @@ jest.mock('react-i18next', () => ({
   translate: () => Component => props => <Component t={() => ''} {...props} />,
 }));
 
-const clickFn = jest.fn();
+const wrapper = shallow(<ForeignVat />);
 
 describe('ForeignVat', () => {
   test('ForeignVat renders as expected', () => {
-    const wrapper = shallow(<ForeignVat />);
-    expect(wrapper).toMatchSnapshot();
-  });
-  test('ForeignVat renders as expected with language', () => {
-    const wrapper = shallow(
-      <ForeignVat
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de', t: 'test' }}
-      />
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
-  test('ForeignVat renders as expected with language with dive()', () => {
-    const wrapper = shallow(
-      <ForeignVat
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de', t: 'test' }}
-      />
-    );
     expect(wrapper.dive()).toMatchSnapshot();
   });
-  test('`text` prop renders correctly', () => {
-    const wrapper = shallow(
-      <ForeignVat
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de', t: 'test' }}
-      />
-    ).dive();
-    const component = wrapper.find(AppInfoLink);
+
+  test('"text" prop renders correctly', () => {
+    const render = wrapper.dive();
+    const component = render.find(AppInfoLink);
     expect(component.props('text').text).toEqual('www.wcoomd.org');
   });
 });

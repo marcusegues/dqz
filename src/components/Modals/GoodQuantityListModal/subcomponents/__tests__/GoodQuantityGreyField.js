@@ -34,10 +34,22 @@ describe('GoodQuantityGreyField', () => {
       />
     );
     const render = wrapper.dive();
-    render.find(RedPlusIcon).forEach(child => {
-      child.simulate('press');
-    });
+    render
+      .find(RedPlusIcon)
+      .at(0)
+      .simulate('press');
     expect(wrapper.dive()).toMatchSnapshot();
     expect(mockFunc.mock.calls.length).toBe(1);
+  });
+  test('props `topText` and `plusIconText` should equal to "topText" and "plusIconText" ', () => {
+    const wrapper = shallow(
+      <GoodQuantityGreyField
+        topText="topText"
+        plusIconText="plusIconText"
+        onPress={mockFunc}
+      />
+    );
+    expect(wrapper.props().topText).toEqual('topText');
+    expect(wrapper.props().plusIconText).toEqual('plusIconText');
   });
 });

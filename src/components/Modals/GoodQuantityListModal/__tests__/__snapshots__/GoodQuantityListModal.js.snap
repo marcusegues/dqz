@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`GoodQuantityListModal renders according to snapshot 1`] = `null`;
+
 exports[`GoodQuantityListModal shallow rendering with \`modalVisible=true\` 1`] = `
 ShallowWrapper {
   "length": 1,
@@ -12,11 +14,6 @@ ShallowWrapper {
       }
     }
     modalVisible={true}
-    navigation={
-      Object {
-        "dispatch": [Function],
-      }
-    }
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -35,9 +32,6 @@ ShallowWrapper {
         "t": "test",
       },
       "modalVisible": true,
-      "navigation": Object {
-        "dispatch": [Function],
-      },
       "t": [Function],
     },
     "ref": null,
@@ -55,9 +49,6 @@ ShallowWrapper {
           "t": "test",
         },
         "modalVisible": true,
-        "navigation": Object {
-          "dispatch": [Function],
-        },
         "t": [Function],
       },
       "ref": null,

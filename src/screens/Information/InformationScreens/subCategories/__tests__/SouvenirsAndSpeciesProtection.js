@@ -11,16 +11,4 @@ describe('SouvenirsAndSpeciesProtection', () => {
     const wrapper = shallow(<SouvenirsAndSpeciesProtection />);
     expect(wrapper).toMatchSnapshot();
   });
-  test('SouvenirsAndSpeciesProtection renders as expected with language', () => {
-    const wrapper = shallow(
-      <SouvenirsAndSpeciesProtection i18n={{ language: 'de' }} />
-    );
-    expect(wrapper).toMatchSnapshot();
-  });
-  test('SouvenirsAndSpeciesProtection renders as expected with language with dive()', () => {
-    const wrapper = shallow(
-      <SouvenirsAndSpeciesProtection i18n={{ language: 'de', t: 'test' }} />
-    );
-    expect(wrapper.dive()).toMatchSnapshot();
-  });
 });

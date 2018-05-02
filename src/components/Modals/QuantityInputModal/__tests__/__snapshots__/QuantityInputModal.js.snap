@@ -1,16 +1,64 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`QuantityInputModal renders Modal 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "customInputType": "manual",
+      "quantityInputMethod": "standardInput",
+      "quantityInputType": "standardAndCustomInput",
+      "standardInputType": "picker",
+      "t": [Function],
+    },
+    "ref": null,
+    "rendered": null,
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "customInputType": "manual",
+        "quantityInputMethod": "standardInput",
+        "quantityInputType": "standardAndCustomInput",
+        "standardInputType": "picker",
+        "t": [Function],
+      },
+      "ref": null,
+      "rendered": null,
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
 exports[`QuantityInputModal shallow rendering of \`customInput\` 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
-    i18n={
-      Object {
-        "language": "de",
-        "t": "test",
-      }
-    }
     modalVisible={true}
     quantityInputMethod="customInput"
   />,
@@ -27,10 +75,6 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "customInputType": "manual",
-      "i18n": Object {
-        "language": "de",
-        "t": "test",
-      },
       "modalVisible": true,
       "quantityInputMethod": "customInput",
       "quantityInputType": "standardAndCustomInput",
@@ -48,10 +92,6 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "customInputType": "manual",
-        "i18n": Object {
-          "language": "de",
-          "t": "test",
-        },
         "modalVisible": true,
         "quantityInputMethod": "customInput",
         "quantityInputType": "standardAndCustomInput",
@@ -78,12 +118,6 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
-    i18n={
-      Object {
-        "language": "de",
-        "t": "test",
-      }
-    }
     modalVisible={true}
     quantityInputMethod="standardInput"
   />,
@@ -100,10 +134,6 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "customInputType": "manual",
-      "i18n": Object {
-        "language": "de",
-        "t": "test",
-      },
       "modalVisible": true,
       "quantityInputMethod": "standardInput",
       "quantityInputType": "standardAndCustomInput",
@@ -121,10 +151,6 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "customInputType": "manual",
-        "i18n": Object {
-          "language": "de",
-          "t": "test",
-        },
         "modalVisible": true,
         "quantityInputMethod": "standardInput",
         "quantityInputType": "standardAndCustomInput",

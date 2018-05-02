@@ -10,25 +10,15 @@ const clickFn = jest.fn();
 
 describe('EntryByTrain', () => {
   test('EntryByTrain renders as expected', () => {
-    const wrapper = shallow(<EntryByTrain />);
-    expect(wrapper).toMatchSnapshot();
-  });
-  test('EntryByTrain renders as expected with language', () => {
     const wrapper = shallow(
-      <EntryByTrain
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de' }}
-      />
+      <EntryByTrain navigation={{ dispatch: clickFn }} />
     );
     expect(wrapper).toMatchSnapshot();
   });
-  test('EntryByTrain renders as expected with language with dive()', () => {
+  test('EntryByTrain renders with dive() as expected', () => {
     const wrapper = shallow(
-      <EntryByTrain
-        navigation={{ dispatch: clickFn }}
-        i18n={{ language: 'de', t: 'test' }}
-      />
-    );
-    expect(wrapper.dive()).toMatchSnapshot();
+      <EntryByTrain navigation={{ dispatch: clickFn }} />
+    ).dive();
+    expect(wrapper).toMatchSnapshot();
   });
 });

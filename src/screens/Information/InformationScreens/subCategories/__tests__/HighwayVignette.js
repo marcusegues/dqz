@@ -11,14 +11,4 @@ describe('HighwayVignette', () => {
     const wrapper = shallow(<HighwayVignette />);
     expect(wrapper).toMatchSnapshot();
   });
-  test('HighwayVignette renders as expected with language', () => {
-    const wrapper = shallow(<HighwayVignette i18n={{ language: 'de' }} />);
-    expect(wrapper).toMatchSnapshot();
-  });
-  test('HighwayVignette renders as expected with language with dive()', () => {
-    const wrapper = shallow(
-      <HighwayVignette i18n={{ language: 'de', t: 'test' }} />
-    );
-    expect(wrapper.dive()).toMatchSnapshot();
-  });
 });

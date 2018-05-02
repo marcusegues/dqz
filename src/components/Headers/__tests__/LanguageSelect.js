@@ -2,7 +2,7 @@
 import renderer from 'react-test-renderer';
 import React from 'react';
 // $FlowFixMe
-import { Text, TouchableOpacity } from 'react-native';
+import { Text } from 'react-native';
 import { shallow } from 'enzyme';
 // $FlowFixMe
 import Touchable from 'react-native-platform-touchable';
