@@ -5,6 +5,11 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <AppInfoInner
+    i18n={
+      Object {
+        "language": "de",
+      }
+    }
     t={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -1263,6 +1268,11 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <AppInfoInner
+    i18n={
+      Object {
+        "language": "de",
+      }
+    }
     t={[Function]}
   />,
   Symbol(enzyme.__renderer__): Object {

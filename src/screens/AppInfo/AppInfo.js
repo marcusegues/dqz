@@ -87,6 +87,9 @@ class AppInfoInner extends React.Component<
     const imprint = selected === 'imprint';
     const development = selected === 'development';
 
+    const { language } = i18n;
+    const languageToUppercase = language.toUpperCase();
+
     return (
       <MainContentContainer>
         <ScrollViewCard>
@@ -145,7 +148,11 @@ class AppInfoInner extends React.Component<
               />
               <AppInfoLink
                 text={t('faq').toUpperCase()}
-                onPress={() => {}}
+                onPress={() =>
+                  Linking.openURL(
+                    `https://www.ezv.admin.ch/dam/ezv/${language}/dokumente/stab/DaziT/quickzoll-faq.pdf.download.pdf/QuickZoll_FAQ%20V1.00_${languageToUppercase}.pdf`
+                  )
+                }
                 style={styles.links}
               />
               <AppInfoLink

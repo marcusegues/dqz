@@ -739,7 +739,7 @@ export const en: Locale = {
     ambriteAddress:
       'Überlandstrasse 111\n8600 Dübendorf\nSwitzerland\n\ninfo@ambrite.ch',
     toContactForm: 'To contact form',
-    faq: 'Faq',
+    faq: 'Frequently asked questions (FAQ) (PDF, 23 kB, 22.03.2018)',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Information about using the app',
