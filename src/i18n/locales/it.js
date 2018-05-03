@@ -761,6 +761,7 @@ export const it: Locale = {
     ambriteAddress:
       'Überlandstrasse 111\n8600 Dübendorf\nSwitzerland\n\ninfo@ambrite.ch',
     toContactForm: 'Formulario di contatto',
+    faq: 'Risposte a domande frequenti (FAQ) (PDF, 83 kB, 22.03.2018)',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informazioni importanti',
