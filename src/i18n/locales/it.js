@@ -156,9 +156,9 @@ export const it: Locale = {
     currencyPickerSubTitle:
       'Inserisca il valore netto dell’oggetto nella valuta originale:',
     currencyPickerRate: 'Data del corso del cambio:',
-    pickerInvalidInput: 'Inserimento non valido o campo non compilato',
+    pickerInvalidInput: 'Inserimento non valido',
     currencyPickerNoOffsettingInput: 'Nessun importo corrispondente',
-    currencyPickerTooSmallLargeAmount: 'Betrag zu gering',
+    currencyPickerTooSmallLargeAmount: 'Inserimento non valido',
     savedBasketDoYoWantToContinue:
       'Continuare con il carrello attuale o ricominciare con uno vuoto?',
     currencyPickerMaximumInputLength:
