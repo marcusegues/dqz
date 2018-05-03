@@ -184,7 +184,7 @@ export const it: Locale = {
     dutyColumn: 'Tributi doganali in CHF',
     sumText: 'Totale (CHF)',
     entryInfo:
-      'Puoi attraversare il confine solo entro il periodo specificato con i beni registrati qui.',
+      'Può attraversare il confine solo entro il periodo specificato con i beni registrati qui.',
   },
   receipt: {
     dutyAndVat: 'Tributi doganali: {{duty}} | IVA: {{vat}}',
