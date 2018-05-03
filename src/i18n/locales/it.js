@@ -126,9 +126,8 @@ export const it: Locale = {
     minorInfo: 'sotto i 17 anni',
     minorCount: '{{value}} bambino (sotto i 17 anni)',
     minorCount_plural: '{{value}} bambini (sotto i 17 anni)',
-    validateNoPeopleTitle:
-      'Deve essere annunciata almeno una persona per garantire la legittimità.',
-    validateNoPeopleSubtitle: '',
+    validateNoPeopleTitle: 'Deve essere annunciata almeno una persona.',
+    validateNoPeopleSubtitle: '(per garantire la legittimità)',
     validateGenericYes: 'Sì',
     validateGenericNo: 'No',
     validateGenericOk: 'Ok',
