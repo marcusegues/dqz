@@ -104,7 +104,7 @@ export const it: Locale = {
     amountInputLargeItem:
       'Inserisca ogni singolo oggetto con un valore superiore a 300 franchi.',
     amountInputLargeItemGreyBox:
-      'Ancora una volta, inserisca ogni singolo oggetto con un valore superiore a 300 franchi (valore netto).',
+      'Inserisca ogni singolo oggetto con un valore superiore a 300 franchi (valore netto).',
     amountInputAddItem: 'Aggiungere valore',
     amountInputAddItemLarge: 'Aggiungere oggetto',
     amountInputEnterValueBeginning: 'Inserisca il valore ',
@@ -156,9 +156,9 @@ export const it: Locale = {
     currencyPickerSubTitle:
       'Inserisca il valore netto dell’oggetto nella valuta originale:',
     currencyPickerRate: 'Data del corso del cambio:',
-    pickerInvalidInput: 'Inserimento non valido o campo non compilato',
+    pickerInvalidInput: 'Inserimento non valido',
     currencyPickerNoOffsettingInput: 'Nessun importo corrispondente',
-    currencyPickerTooSmallLargeAmount: 'Betrag zu gering',
+    currencyPickerTooSmallLargeAmount: 'Inserimento non valido',
     savedBasketDoYoWantToContinue:
       'Continuare con il carrello attuale o ricominciare con uno vuoto?',
     currencyPickerMaximumInputLength:
