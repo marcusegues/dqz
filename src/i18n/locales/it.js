@@ -884,6 +884,8 @@ export const it: Locale = {
       'le merci dichiarate vengono imposte all’aliquota IVA del 7.7%;',
     vatRateInfoText3: 'i tributi pagati con l’app non vengono rimborsati.',
     vatRateInfoText4: 'Ulteriori informazioni sono disponibili qui:',
+    vatRateInfoText5:
+      'lo sdoganamento con QuickZoll è vincolante (Art. 33 LD; SR 631.0)',
     termsOfService: 'Termini e condizioni',
     acceptance: 'Accetto i termini e le condizioni che ho letto e compreso.',
     confirm: 'Chiudere',
