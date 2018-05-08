@@ -113,7 +113,7 @@ class PaymentContainerInner extends React.Component<
             'CHF',
             uuidv1(),
             'Order',
-            `1.0.0-${uuidv1()}` // TODO: remove and put some logic into OrderNR
+            `1.0.7-${uuidv1()}` // TODO: remove and put some logic into OrderNR
           )
           .then(responseJson => {
             setPaymentData(
