@@ -866,6 +866,8 @@ export const de: Locale = {
     vatRateInfoText3:
       'Mit der App bezahlte Abgaben nicht zurückerstattet werden.',
     vatRateInfoText4: 'Weitere Informationen finden Sie hier:',
+    vatRateInfoText5:
+      'die Verzollung mit QuickZoll ist verbindlich (Art. 33 ZG; SR 631.0)',
     termsOfService: 'Nutzungsbedingungen',
     acceptance:
       'Hiermit akzeptiere ich die Nutzungsbedingungen, die ich gelesen und verstanden habe.',

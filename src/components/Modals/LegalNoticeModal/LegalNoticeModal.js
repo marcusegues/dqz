@@ -106,6 +106,10 @@ class LegalNoticeModalInner extends React.Component<
               text={t('vatRateInfoText3')}
               style={ownStyles.vatRateInfo}
             />
+            <BulletText
+              text={t('vatRateInfoText5')}
+              style={ownStyles.vatRateInfo}
+            />
           </View>
 
           <CardHeaderSubText
