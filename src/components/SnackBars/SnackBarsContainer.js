@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-prop-types */
 // @flow
 import React from 'react';
 import type { ComponentType } from 'react';
@@ -9,6 +10,7 @@ import {
   getAmounts,
   getConnectivity,
   getCurrencies,
+  getTotalFees,
 } from '../../reducers/selectors';
 import type { Amounts } from '../../model/types/basketPeopleAmountsTypes';
 import { updateSnackBarVisibilities } from './SnackBarsControl/controlSnackBarStates';
@@ -40,21 +42,17 @@ export type SnackBarStateEnriched = {
   currencies: CurrencyObject,
   connectivity: ConnectivityType,
   nav: NavState,
+  fees: number,
   paymentStatus: PaymentStatus,
 };
 
 type ReduxInject = {
-  // eslint-disable-next-line react/no-unused-prop-types
   amounts: Amounts,
-  // eslint-disable-next-line react/no-unused-prop-types
+  fees: number,
   currencies: CurrencyObject,
-  // eslint-disable-next-line react/no-unused-prop-types
   connectivity: ConnectivityType,
-  // eslint-disable-next-line react/no-unused-prop-types
   nav: NavState,
-  // eslint-disable-next-line react/no-unused-prop-types
   paymentData: PaymentData,
-  // eslint-disable-next-line react/no-unused-prop-types
   resetPaymentData: () => void,
 };
 
@@ -84,13 +82,14 @@ class SnackBarsContainerInner extends React.Component<
 
   enrichState(props: ReduxInject): SnackBarStateEnriched {
     const { snackBarVisibilities } = this.state;
-    const { amounts, currencies, connectivity, nav, paymentData } = props;
+    const { amounts, currencies, connectivity, nav, paymentData, fees } = props;
     return {
       snackBarVisibilities,
       amounts,
       currencies,
       connectivity,
       nav,
+      fees,
       paymentStatus: paymentData.status,
     };
   }
@@ -189,6 +188,7 @@ const mapStateToProps = (state: AppState) => ({
   amounts: getAmounts(state),
   currencies: getCurrencies(state),
   connectivity: getConnectivity(state),
+  fees: getTotalFees(state),
 });
 
 const mapDispatchToProps = dispatch => ({
