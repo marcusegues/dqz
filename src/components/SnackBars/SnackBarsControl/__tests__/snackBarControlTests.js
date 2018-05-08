@@ -1,7 +1,10 @@
 import { currencyExample } from '../../../../model/currencies';
 import { addAmount, initAmounts } from '../../../../model/configurationApi';
 import { updateSnackBarVisibilities } from '../controlSnackBarStates';
-import { MAX_DECLARED_CHF } from '../../../../constants/declaration';
+import {
+  MAX_DECLARED_CHF,
+  MAX_PAYMENT_CHF,
+} from '../../../../constants/declaration';
 import { initConnectivity } from '../../../../types/connectivity';
 
 const MainMenuNav = {
@@ -181,6 +184,28 @@ describe('Test snack bar control flow', () => {
         'CHF',
         MAX_DECLARED_CHF + 1
       ),
+    };
+
+    expect(
+      updateSnackBarVisibilities(newState).snackBarVisibilities.limitExceeded
+    ).toBe('visible');
+  });
+
+  test('adding fees NOT exceeding the limit shows limitExceeded', () => {
+    const newState = {
+      ...initStateEnrichedPayment,
+      fees: MAX_PAYMENT_CHF - 1,
+    };
+
+    expect(
+      updateSnackBarVisibilities(newState).snackBarVisibilities.limitExceeded
+    ).toBe('hidden');
+  });
+
+  test('adding fees exceeding the limit shows limitExceeded', () => {
+    const newState = {
+      ...initStateEnrichedPayment,
+      fees: MAX_PAYMENT_CHF + 1,
     };
 
     expect(

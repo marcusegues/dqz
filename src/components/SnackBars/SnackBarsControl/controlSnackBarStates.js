@@ -1,8 +1,7 @@
 // @flow
 import type { SnackBarStateEnriched } from '../SnackBarsContainer';
-import { totalAllAmounts } from '../../../model/utils';
-import { MAX_DECLARED_CHF } from '../../../constants/declaration';
 import type { NavState } from '../../../types/reducers/nav';
+import { exceedsSize } from '../../../utils/payments/validatePayment';
 
 export type SnackBarType =
   | 'limitExceeded'
@@ -36,13 +35,15 @@ export const updateSnackBarVisibilities = (
     amounts,
     connectivity,
     paymentStatus,
+    fees,
   } = snackBarState;
+
   return {
     ...snackBarState,
     snackBarVisibilities: {
       limitExceeded:
         isRouteAllowedForSnackBar('limitExceeded', nav) &&
-        totalAllAmounts(amounts, currencies) > MAX_DECLARED_CHF
+        exceedsSize(fees, currencies, amounts)
           ? 'visible'
           : 'hidden',
       offline:

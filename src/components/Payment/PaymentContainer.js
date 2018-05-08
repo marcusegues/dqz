@@ -44,7 +44,7 @@ import { MainContentContainer } from '../MainContentContainer/MainContentContain
 import type { ConnectivityType } from '../../types/connectivity';
 import { AppLogo } from '../AppLogo/AppLogo';
 import { MAIN_RED } from '../../styles/colors';
-import { isPaymentEnabled } from './helpers/validatePayment';
+import { isPaymentEnabled } from '../../utils/payments/validatePayment';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
