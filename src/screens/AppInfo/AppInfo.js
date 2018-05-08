@@ -150,11 +150,7 @@ class AppInfoInner extends React.Component<
                 text={t('faq').toUpperCase()}
                 onPress={() =>
                   Linking.openURL(
-                    `https://www.ezv.admin.ch/dam/ezv/${
-                      language
-                    }/dokumente/stab/DaziT/quickzoll-faq.pdf.download.pdf/QuickZoll_FAQ%20V1.00_${
-                      languageToUppercase
-                    }.pdf`
+                    `https://www.ezv.admin.ch/dam/ezv/${language}/dokumente/stab/DaziT/quickzoll-faq.pdf.download.pdf/QuickZoll_FAQ%20V1.00_${languageToUppercase}.pdf`
                   )
                 }
                 style={styles.links}
