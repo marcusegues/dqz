@@ -104,7 +104,7 @@ export const it: Locale = {
     amountInputLargeItem:
       'Inserisca ogni singolo oggetto con un valore superiore a 300 franchi.',
     amountInputLargeItemGreyBox:
-      'Ancora una volta, inserisca ogni singolo oggetto con un valore superiore a 300 franchi (valore netto).',
+      'Inserisca ogni singolo oggetto con un valore superiore a 300 franchi (valore netto).',
     amountInputAddItem: 'Aggiungere valore',
     amountInputAddItemLarge: 'Aggiungere oggetto',
     amountInputEnterValueBeginning: 'Inserisca il valore ',
@@ -126,9 +126,8 @@ export const it: Locale = {
     minorInfo: 'sotto i 17 anni',
     minorCount: '{{value}} bambino (sotto i 17 anni)',
     minorCount_plural: '{{value}} bambini (sotto i 17 anni)',
-    validateNoPeopleTitle:
-      'Deve essere annunciata almeno una persona per garantire la legittimità.',
-    validateNoPeopleSubtitle: '',
+    validateNoPeopleTitle: 'Deve essere annunciata almeno una persona.',
+    validateNoPeopleSubtitle: '(per garantire la legittimità)',
     validateGenericYes: 'Sì',
     validateGenericNo: 'No',
     validateGenericOk: 'Ok',
@@ -156,9 +155,9 @@ export const it: Locale = {
     currencyPickerSubTitle:
       'Inserisca il valore netto dell’oggetto nella valuta originale:',
     currencyPickerRate: 'Data del corso del cambio:',
-    pickerInvalidInput: 'Inserimento non valido o campo non compilato',
+    pickerInvalidInput: 'Inserimento non valido',
     currencyPickerNoOffsettingInput: 'Nessun importo corrispondente',
-    currencyPickerTooSmallLargeAmount: 'Betrag zu gering',
+    currencyPickerTooSmallLargeAmount: 'Inserimento non valido',
     savedBasketDoYoWantToContinue:
       'Continuare con il carrello attuale o ricominciare con uno vuoto?',
     currencyPickerMaximumInputLength:
@@ -184,7 +183,7 @@ export const it: Locale = {
     dutyColumn: 'Tributi doganali in CHF',
     sumText: 'Totale (CHF)',
     entryInfo:
-      'Puoi attraversare il confine solo entro il periodo specificato con i beni registrati qui.',
+      'Può attraversare il confine solo entro il periodo specificato con i beni registrati qui.',
   },
   receipt: {
     dutyAndVat: 'Tributi doganali: {{duty}} | IVA: {{vat}}',
@@ -761,6 +760,7 @@ export const it: Locale = {
     ambriteAddress:
       'Überlandstrasse 111\n8600 Dübendorf\nSwitzerland\n\ninfo@ambrite.ch',
     toContactForm: 'Formulario di contatto',
+    faq: 'Risposte a domande frequenti (FAQ) (PDF, 83 kB, 22.03.2018)',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informazioni importanti',
@@ -884,6 +884,8 @@ export const it: Locale = {
       'le merci dichiarate vengono imposte all’aliquota IVA del 7.7%;',
     vatRateInfoText3: 'i tributi pagati con l’app non vengono rimborsati.',
     vatRateInfoText4: 'Ulteriori informazioni sono disponibili qui:',
+    vatRateInfoText5:
+      'lo sdoganamento con QuickZoll è vincolante (Art. 33 LD; SR 631.0)',
     termsOfService: 'Termini e condizioni',
     acceptance: 'Accetto i termini e le condizioni che ho letto e compreso.',
     confirm: 'Chiudere',

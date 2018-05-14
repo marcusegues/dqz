@@ -739,6 +739,7 @@ export const en: Locale = {
     ambriteAddress:
       'Überlandstrasse 111\n8600 Dübendorf\nSwitzerland\n\ninfo@ambrite.ch',
     toContactForm: 'To contact form',
+    faq: 'Frequently asked questions (FAQ) (PDF, 23 kB, 22.03.2018)',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Information about using the app',
@@ -862,6 +863,8 @@ export const en: Locale = {
       'declared goods are cleared using the single VAT rate of 7.7%;',
     vatRateInfoText3: 'duties paid with the app will not be refunded.',
     vatRateInfoText4: 'Further information can be found here:',
+    vatRateInfoText5:
+      'customs clearance with QuickZoll is binding (Art. 33 CA; SR 631.0)',
     termsOfService: 'Terms of Service',
     acceptance:
       'I hereby accept the terms and conditions that I have read and understood.',

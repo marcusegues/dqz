@@ -6,7 +6,7 @@ import {
   hasPaymentNotAbortedOrFailed,
   hasValidSize,
   isPaymentEnabled,
-} from '../helpers/validatePayment';
+} from '../validatePayment';
 import type { PaymentData } from '../../../types/generalTypes';
 import { makePaymentDataRecord } from '../../../types/generalTypes';
 import * as utils from '../../../model/utils';
