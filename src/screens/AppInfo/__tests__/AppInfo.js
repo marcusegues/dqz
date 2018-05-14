@@ -11,7 +11,7 @@ jest.mock('../../../../package.json');
 
 describe('AppInfo', () => {
   test('renders according to snapshot and check ModalTab onPress prop', () => {
-    const component = shallow(<AppInfo />).dive();
+    const component = shallow(<AppInfo i18n={{ language: 'de' }} />).dive();
     expect(component).toMatchSnapshot();
     component.find('ModalTab').forEach(child => {
       expect(child.props()).toHaveProperty('onPress');
@@ -19,7 +19,7 @@ describe('AppInfo', () => {
   });
   test('renders designAndDevelopment modal part', () => {
     packageJson.version = '0.0.1';
-    const wrapper = shallow(<AppInfo />);
+    const wrapper = shallow(<AppInfo i18n={{ language: 'de' }} />);
     const render = wrapper.dive();
     expect(render.find('ModalTab')).toHaveLength(2);
     render

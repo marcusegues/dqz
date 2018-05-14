@@ -771,6 +771,7 @@ export const fr: Locale = {
     ambriteAddress:
       'Überlandstrasse 111\n8600 Dübendorf\nSwitzerland\n\ninfo@ambrite.ch',
     toContactForm: 'Formulaire de contact',
+    faq: 'Foire aux questions (PDF, 86 kB, 22.03.2018)',
   },
   legalNoticeInformation: {
     navigationHeaderTitle:
@@ -902,6 +903,8 @@ export const fr: Locale = {
     vatRateInfoText3:
       "les redevances payées avec l'application ne sont pas remboursées.",
     vatRateInfoText4: 'Vous trouverez de plus amples informations ici:',
+    vatRateInfoText5:
+      'le dédouanement avec QuickZoll est contraignant (Art. 33 LD; SR 631.0)',
     termsOfService: 'Termes et Conditions',
     acceptance: "J'accepte les termes et conditions que j'ai lus et compris.",
     confirm: 'Confirmer',

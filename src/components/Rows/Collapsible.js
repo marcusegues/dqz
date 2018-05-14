@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 // $FlowFixMe
-import { Animated } from 'react-native';
+import { Animated, Easing } from 'react-native';
 import type { Children } from '../../types/generalTypes';
 import { ROW_BORDER_WIDTH, rowStyles } from './styles/rowStyles';
 
@@ -60,10 +60,10 @@ class Collapsible extends React.Component<RowProps, CollapsibleState> {
       expanded: !this.state.expanded,
     });
     this.state.animation.setValue(initialHeight);
-    Animated.spring(this.state.animation, {
+    Animated.timing(this.state.animation, {
       toValue: finalHeight,
-      speed: 20,
-      bounciness: 2,
+      duration: 300,
+      easing: Easing.cubic,
     }).start();
   }
 

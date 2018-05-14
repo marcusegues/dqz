@@ -737,6 +737,7 @@ export const de: Locale = {
     ambriteAddress:
       'Überlandstrasse 111\n8600 Dübendorf\nSwitzerland\n\ninfo@ambrite.ch',
     toContactForm: 'Zum Kontaktformular',
+    faq: 'Antworten zu häufigen Fragen (FAQ) (PDF, 22 kB, 22.03.2018)',
   },
   legalNoticeInformation: {
     navigationHeaderTitle: 'Informationen zum Gebrauch der App',
@@ -865,6 +866,8 @@ export const de: Locale = {
     vatRateInfoText3:
       'Mit der App bezahlte Abgaben nicht zurückerstattet werden.',
     vatRateInfoText4: 'Weitere Informationen finden Sie hier:',
+    vatRateInfoText5:
+      'die Verzollung mit QuickZoll ist verbindlich (Art. 33 ZG; SR 631.0)',
     termsOfService: 'Nutzungsbedingungen',
     acceptance:
       'Hiermit akzeptiere ich die Nutzungsbedingungen, die ich gelesen und verstanden habe.',
