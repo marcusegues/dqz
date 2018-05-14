@@ -21,6 +21,7 @@ exports[`LanguageSelect Icon TestSuite LanguageSelect component renders correctl
   style={
     Object {
       "opacity": 1,
+      "padding": 5,
     }
   }
   testID={undefined}
