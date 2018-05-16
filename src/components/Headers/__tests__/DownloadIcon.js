@@ -30,18 +30,12 @@ describe('Download Icon TestSuite', () => {
     expect(component.dive()).toMatchSnapshot();
   });
   test('it contains icon', () => {
+    expect.assertions(2);
     const component = shallow(
       // $FlowFixMe
       <DownloadIcon navigation={{ state: { params: { onPress: clickFn } } }} />
     );
     expect(component.find(MaterialIcons)).toHaveLength(1);
-    expect(component.contains('MaterialIcons'));
-  });
-  test('should  contain icn using containsMatchingElement ', () => {
-    const component = shallow(
-      // $FlowFixMe
-      <DownloadIcon navigation={{ state: { params: { onPress: clickFn } } }} />
-    );
     expect(
       component.containsMatchingElement(
         <MaterialIcons
