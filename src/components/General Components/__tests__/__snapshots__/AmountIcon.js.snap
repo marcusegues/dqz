@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AmountIcon TestSuite AmountIcon component renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#E0E0E1",
+      "borderRadius": 3,
+      "paddingHorizontal": 8,
+      "paddingVertical": 2,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={undefined}
+  >
+    EUR 22.00
+  </Text>
+</View>
+`;

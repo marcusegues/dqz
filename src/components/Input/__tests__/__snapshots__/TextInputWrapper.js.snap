@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInputWrapper component renders correctly 1`] = `
+<TextInput
+  allowFontScaling={true}
+  blurOnSubmit={true}
+  keyboardType="numeric"
+  maxLength={8}
+  onChangeText={[Function]}
+  style={
+    Array [
+      Object {
+        "borderBottomColor": "#9B9B9B",
+        "borderBottomWidth": 1,
+        "borderColor": "#A0A0A0",
+        "color": "#1a1a1a",
+        "fontFamily": "roboto_regular",
+        "fontSize": 37.714285714285715,
+        "height": 40,
+        "textAlign": "center",
+        "width": 100,
+      },
+      Object {
+        "alignSelf": "center",
+      },
+    ]
+  }
+  underlineColorAndroid="transparent"
+  value="44"
+/>
+`;

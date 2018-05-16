@@ -135,6 +135,8 @@ class QuantityInputModalInner extends React.Component<
     quantityInputType: 'standardAndCustomInput',
     customInputType: 'manual',
     standardInputType: 'picker',
+
+    quantityInputMethod: 'standardInput',
   };
 
   constructor(props) {

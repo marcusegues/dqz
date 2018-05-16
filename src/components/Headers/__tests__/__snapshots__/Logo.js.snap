@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo Logo renders according to snapshot 1`] = `
+<Image
+  resizeMode="contain"
+  source={1}
+  style={
+    Object {
+      "height": 30,
+      "width": 30,
+    }
+  }
+/>
+`;

@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailsIcon DetailsIcon renders correctly with expanded=false 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "marginTop": 5,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginLeft": -5,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={false}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "color": "#757575",
+            "fontSize": 31.428571428571427,
+          },
+          undefined,
+          Object {
+            "fontFamily": "entypo",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#757575",
+        "fontFamily": "roboto_bold",
+        "fontSize": 18.857142857142858,
+      }
+    }
+  >
+    
+  </Text>
+</View>
+`;
+
+exports[`DetailsIcon DetailsIcon renders correctly with expanded=true 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "marginTop": 5,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginLeft": -5,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    />
+  </View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#757575",
+        "fontFamily": "roboto_bold",
+        "fontSize": 18.857142857142858,
+      }
+    }
+  >
+    
+  </Text>
+</View>
+`;
