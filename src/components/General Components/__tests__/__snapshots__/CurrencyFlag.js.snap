@@ -40,5 +40,7 @@ exports[`CurrencyFlag TestSuite CurrencyFlag component renders correctly with pr
       "fontSize": 14,
     }
   }
-/>
+>
+  🇺🇸
+</Text>
 `;
