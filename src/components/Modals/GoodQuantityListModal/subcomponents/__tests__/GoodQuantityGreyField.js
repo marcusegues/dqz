@@ -18,7 +18,7 @@ describe('GoodQuantityGreyField', () => {
         <GoodQuantityGreyField
           topText="topText"
           plusIconText="plusIconText"
-          onPress={mockFunc}
+          onPress={() => {}}
         />
       )
       .toJSON();
@@ -26,6 +26,7 @@ describe('GoodQuantityGreyField', () => {
   });
 
   test('simulates click events in GoodQuantityGreyField', () => {
+    expect.assertions(4);
     const wrapper = shallow(
       <GoodQuantityGreyField
         topText="topText"
@@ -38,18 +39,9 @@ describe('GoodQuantityGreyField', () => {
       .find(RedPlusIcon)
       .at(0)
       .simulate('press');
-    expect(wrapper.dive()).toMatchSnapshot();
-    expect(mockFunc.mock.calls.length).toBe(1);
-  });
-  test('props `topText` and `plusIconText` should equal to "topText" and "plusIconText" ', () => {
-    const wrapper = shallow(
-      <GoodQuantityGreyField
-        topText="topText"
-        plusIconText="plusIconText"
-        onPress={mockFunc}
-      />
-    );
     expect(wrapper.props().topText).toEqual('topText');
     expect(wrapper.props().plusIconText).toEqual('plusIconText');
+    expect(wrapper.dive()).toMatchSnapshot();
+    expect(mockFunc.mock.calls.length).toBe(1);
   });
 });
