@@ -11,7 +11,7 @@ describe('Cart Icon TestSuite', () => {
   test('CartIcon component renders correctly', () => {
     const tree = renderer
       // $FlowFixMe
-      .create(<CartIcon navigation={{ dispatch: clickFn }} />)
+      .create(<CartIcon />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
