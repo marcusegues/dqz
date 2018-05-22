@@ -1,7 +1,7 @@
 import { parseInputToFloat } from '../inputParser';
 
-describe('checkVersion tests', () => {
-  test('init values for checkVersion', () => {
+describe('parseInputToFloat tests', () => {
+  test('init values for parseInputToFloat', () => {
     expect(parseInputToFloat('0.0.1')).toBe('0.0');
     expect(parseInputToFloat('.')).toBe('0');
     expect(parseInputToFloat('999.99.99')).toBe('999.99');
