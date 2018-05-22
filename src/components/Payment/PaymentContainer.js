@@ -45,6 +45,7 @@ import type { ConnectivityType } from '../../types/connectivity';
 import { AppLogo } from '../AppLogo/AppLogo';
 import { MAIN_RED } from '../../styles/colors';
 import { isPaymentEnabled } from '../../utils/payments/validatePayment';
+import { version } from '../../../package.json';
 
 const baseUrl = 'http://ambrite.ch';
 const redirectsUrlKeys = {
@@ -113,7 +114,7 @@ class PaymentContainerInner extends React.Component<
             'CHF',
             uuidv1(),
             'Order',
-            `1.0.7-${uuidv1()}` // TODO: remove and put some logic into OrderNR
+            `${version}-${uuidv1()}` // TODO: remove and put some logic into OrderNR
           )
           .then(responseJson => {
             setPaymentData(
