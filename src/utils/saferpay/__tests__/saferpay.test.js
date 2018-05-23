@@ -83,4 +83,13 @@ describe('Tests for Saferpay module', () => {
       ErrorMessage: 'Transaction not started',
     });
   });
+  test('checkLanguage', () => {
+    expect(Saferpay.checkLanguage('en')).toBe('en');
+    expect(Saferpay.checkLanguage('de')).toBe('de');
+    expect(Saferpay.checkLanguage('it')).toBe('it');
+    expect(Saferpay.checkLanguage('fr')).toBe('fr');
+    expect(Saferpay.checkLanguage('ua')).toBe('de');
+    expect(Saferpay.checkLanguage('ru')).toBe('ru');
+    expect(Saferpay.checkLanguage('eng')).toBe('de');
+  });
 });

@@ -9,6 +9,36 @@ type RedirectsUrlKeys = {
   abort: string,
 };
 
+const saferpayLanguageCodes: Array<string> = [
+  'de', // - German
+  'en', // - English
+  'fr', // - French
+  'da', // - Danish
+  'cs', // - Czech
+  'es', // - Spanish
+  'et', // - Estonian
+  'hr', // - Croatian
+  'it', // - Italian
+  'hu', // - Hungarian
+  'lv', // - Latvian
+  'lt', // - Lithuanian
+  'nl', // - Dutch
+  'nn', // - Norwegian
+  'pl', // - Polish
+  'pt', // - Portuguese
+  'ru', // - Russian
+  'ro', // - Romanian
+  'sk', // - Slovak
+  'sl', // - Slovenian
+  'fi', // - Finnish
+  'sv', // - Swedish
+  'tr', // - Turkish
+  'el', // - Greek
+  'ja', // - Japanese
+  'zh', // - Chinese
+];
+const defaultSaferpayLanguage: string = 'de';
+
 declare var __DEV__: boolean;
 
 function logger(...args) {
@@ -66,6 +96,13 @@ export default class Saferpay {
     this.saferpayConfig = Object.assign(this.saferpayConfig, saferpayConfig);
   }
 
+  static checkLanguage(language: string): string {
+    if (saferpayLanguageCodes.indexOf(language) === -1) {
+      return defaultSaferpayLanguage;
+    }
+    return language;
+  }
+
   // OrderId
   // recommended, string
   // Unambiguous order identifier defined by the merchant/ shop. This identifier might be used as reference later on.
@@ -93,7 +130,7 @@ export default class Saferpay {
     requestId: string,
     description: string,
     orderId: string,
-    languageCode: string = 'de-CH'
+    languageCode: string = defaultSaferpayLanguage
   ) {
     const requestJson = {
       RequestHeader: {
@@ -113,7 +150,7 @@ export default class Saferpay {
       },
       Payer: {
         // IpAddress: '192.168.178.1', // user ip
-        LanguageCode: languageCode,
+        LanguageCode: Saferpay.checkLanguage(languageCode),
       },
       ReturnUrls: {
         Success: this.baseUrl + this.redirectsUrlKeys.success,

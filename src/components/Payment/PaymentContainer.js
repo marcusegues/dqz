@@ -63,6 +63,7 @@ type PaymentContainerState = {
 
 type PaymentContainerProps = {
   navigation: Navigation,
+  screenProps: Object,
 };
 
 type ReduxInject = {
@@ -105,7 +106,7 @@ class PaymentContainerInner extends React.Component<
   }
 
   initializePayment() {
-    const { fees, setPaymentData, paymentData } = this.props;
+    const { fees, setPaymentData, paymentData, screenProps } = this.props;
     if (fees > 0) {
       this.setState({ isLoadingRedirectData: true }, () => {
         this.saferpay
@@ -114,7 +115,8 @@ class PaymentContainerInner extends React.Component<
             'CHF',
             uuidv1(),
             'Order',
-            `${version}-${uuidv1()}` // TODO: remove and put some logic into OrderNR
+            `${version}-${uuidv1()}`, // TODO: remove and put some logic into OrderNR
+            Saferpay.checkLanguage(screenProps.language)
           )
           .then(responseJson => {
             setPaymentData(
