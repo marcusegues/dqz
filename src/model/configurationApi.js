@@ -75,6 +75,27 @@ export const deleteQuantity = (
   basket.updateIn([category, 'volume', 'quantities'], q => q.delete(index));
 
 /**
+ * Update a quantity in a basket for a given category at index
+ * Note: if index > size of quantities list, quantities won't change.
+ * This exception should be handled elsewhere.
+ * @param basket
+ * @param category
+ * @param index
+ * @param quantity
+ * @returns Basket
+ */
+export const updateQuantity = (
+  basket: Basket,
+  category: Category,
+  index: number,
+  quantity: number
+): Basket =>
+  basket.updateIn([category, 'volume', 'quantities', index], q => {
+    q.number = quantity;
+    return q;
+  });
+
+/**
  * Reset all quantites in a basket for a given category.
  * @param basket
  * @param category
