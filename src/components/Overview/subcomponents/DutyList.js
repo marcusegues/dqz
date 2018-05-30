@@ -19,6 +19,8 @@ type DutyListProps = {
   basket: Basket,
   people: People,
   swipeable?: boolean,
+  editable?: boolean,
+  onPressEdit: Function,
 };
 
 const DutyListInner = ({
@@ -26,6 +28,8 @@ const DutyListInner = ({
   people,
   t,
   swipeable,
+  editable,
+  onPressEdit,
 }: DutyListProps & {
   t: TFunction,
 }) => {
@@ -46,6 +50,8 @@ const DutyListInner = ({
           quantity={getTotalQuantity(basket, category)}
           duty={dutyOfCategory}
           swipeable={swipeable}
+          editable={editable}
+          onPressEdit={() => onPressEdit(category, getMainCategory(category))}
         />
       ),
     }));

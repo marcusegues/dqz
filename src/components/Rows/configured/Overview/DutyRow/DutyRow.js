@@ -32,6 +32,8 @@ type DutyRowProps = {
   borderTop?: boolean,
   allowanceRaw: number,
   swipeable?: boolean,
+  editable?: boolean,
+  onPressEdit?: Function,
 };
 
 type ReduxInject = {
@@ -44,6 +46,7 @@ class DutyRowInner extends React.Component<
   static defaultProps = {
     borderTop: false,
     swipeable: true,
+    editable: false,
   };
 
   rowInnerContent() {
@@ -85,11 +88,18 @@ class DutyRowInner extends React.Component<
   }
 
   rowContent() {
-    const { category, basketResetCategoryQuantities } = this.props;
+    const {
+      category,
+      basketResetCategoryQuantities,
+      onPressEdit,
+      editable,
+    } = this.props;
     if (this.props.swipeable) {
       return (
         <SwipeToDelete
           onPressDelete={() => basketResetCategoryQuantities(category)}
+          onPressEdit={onPressEdit}
+          editable={editable}
         >
           {this.rowInnerContent()}
         </SwipeToDelete>

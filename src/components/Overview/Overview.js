@@ -22,6 +22,7 @@ import {
   getPeople,
   getReceiptEntryTime,
 } from '../../reducers/selectors';
+// import { addQuantity, deleteQuantity } from '../../../model/configurationApi';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
 import { InfoNote } from './subcomponents/InfoNote';
 import { flatLargeAmounts } from '../../model/utils';
@@ -29,11 +30,14 @@ import { BackAndContinueButtons } from '../Buttons/BackAndContinueButtons';
 import type {
   Amounts,
   Basket,
+  Category,
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { CurrencyObject } from '../../model/currencies';
 import { storeReceiptEntryTime } from '../../asyncStorage/storageApi';
 import { dateTimeToFormat } from '../../utils/datetime/datetime';
+import { GoodQuantityListModal } from '../Modals/GoodQuantityListModal/GoodQuantityListModal';
+import type { MainCategory } from '../../types/reducers/declaration';
 
 type OverviewProps = {
   modalVisible?: boolean,
@@ -53,7 +57,10 @@ type ReduxInjectedProps = {
 
 type OverviewState = {
   modalVisible: boolean,
+  quantityListModalVisible: boolean,
   updateInterval: number,
+  modalCategory?: Category,
+  modalMainCategory?: MainCategory,
 };
 
 class OverviewInner extends React.Component<
@@ -74,8 +81,11 @@ class OverviewInner extends React.Component<
   ) {
     super(props);
     this.state = {
+      quantityListModalVisible: false,
       modalVisible: props.modalVisible || false,
       updateInterval: -1,
+      modalCategory: undefined,
+      modalMainCategory: undefined,
     };
   }
 
@@ -87,6 +97,20 @@ class OverviewInner extends React.Component<
   componentWillUnmount() {
     clearInterval(this.state.updateInterval);
   }
+
+  onPressEdit = (category, mainCategory) => {
+    console.log(
+      `onPressEdit --> category = ${category} mainCategory = ${mainCategory}`
+    );
+    this.setState({
+      quantityListModalVisible: true,
+      modalCategory: category,
+      modalMainCategory: mainCategory,
+    });
+    // this.handleShowModal();
+  };
+
+  // const categotyReceived = getCategory(category);
 
   setUpdateInterval() {
     const updateInterval = setInterval(() => this.updateTimes(), 1000);
@@ -113,13 +137,17 @@ class OverviewInner extends React.Component<
     }
   }
 
-  handleShowModal() {
-    this.setState({ modalVisible: true });
-  }
+  // handleShowModal = () => {
+  //   console.log('handleShowModal');
+  //   this.setState({ quantityListModalVisible: true });
+  //
+  //   // this.setState({ modalVisible: true });
+  // };
 
   handleHideModal() {
     this.setState({
       modalVisible: false,
+      quantityListModalVisible: false,
     });
   }
 
@@ -137,6 +165,17 @@ class OverviewInner extends React.Component<
       format: 'datetime',
     })}`;
   }
+  //
+  // handleAddQuantity(category: Category, quantity: number) {
+  //   const { basket } = this.props.qaState;
+  //
+  //   const updatedBasket = addQuantity(basket, category, quantity);
+  //   this.handleUpdate(updatedBasket);
+  // }
+  //
+  // handleUpdate(basket: Basket) {
+  //   return this.props.onUpdate(basket);
+  // }
 
   render() {
     const {
@@ -163,7 +202,13 @@ class OverviewInner extends React.Component<
     return (
       <ScrollViewCard>
         <CardHeader text={t('overViewTitle')} />
-        <DutyList basket={basket} people={people} />
+        <DutyList
+          basket={basket}
+          people={people}
+          editable
+          onPressEdit={this.onPressEdit}
+          // onPressEdit={() => this.handleShowModal()}
+        />
         <VatList
           large={false}
           people={people}
@@ -192,7 +237,8 @@ class OverviewInner extends React.Component<
           title={t('receipt:entryTime')}
           subtitle={t('receipt:chooseOtherEntryTime')}
           time={this.periodOfEntryTime(momentReceiptEntryTime)}
-          onPress={() => this.handleShowModal()}
+          onPress={() => {}}
+          // onPress={() => this.handleShowModal()}
         />
         <InfoNote />
         <BackAndContinueButtons
@@ -205,6 +251,21 @@ class OverviewInner extends React.Component<
           modalVisible={this.state.modalVisible}
           onHideModal={() => this.handleHideModal()}
           onSelectTime={entryTime => this.handleSetReceiptEntryTime(entryTime)}
+        />
+        <GoodQuantityListModal
+          onHide={() => this.handleHideModal()}
+          modalVisible={this.state.quantityListModalVisible}
+          modalCategory={this.state.modalCategory}
+          modalMainCategory={this.state.modalMainCategory}
+          basket={basket}
+          onAddQuantity={() => {}}
+          // onAddQuantity={(category: Category, quantity: number) => {
+          //   this.handleAddQuantity(category, quantity);
+          // }}
+          onDeleteQuantity={() => {}}
+          // onDeleteQuantity={(category: Category, index: number) => {
+          //   this.handleDeleteQuantity(category, index);
+          // }}
         />
       </ScrollViewCard>
     );

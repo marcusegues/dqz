@@ -11,6 +11,7 @@ export const BASE_GREY: string = '#757575';
 export const SNACKBAR_GREY: string = '#454545';
 export const GREY_BAR: string = '#818181';
 export const CARD_GREY: string = '#4A4A4A';
+export const EDIT_BASKET_GREY: string = '#AAAAAA';
 
 export const WHITE: string = '#fff';
 export const BLACK: string = '#000';
