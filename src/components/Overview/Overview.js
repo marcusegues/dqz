@@ -22,7 +22,7 @@ import {
   getPeople,
   getReceiptEntryTime,
 } from '../../reducers/selectors';
-// import { addQuantity, deleteQuantity } from '../../../model/configurationApi';
+import { addQuantity, deleteQuantity } from '../../model/configurationApi';
 import { TotalOwedRow } from './subcomponents/TotalOwedRow';
 import { InfoNote } from './subcomponents/InfoNote';
 import { flatLargeAmounts } from '../../model/utils';
@@ -38,12 +38,17 @@ import { storeReceiptEntryTime } from '../../asyncStorage/storageApi';
 import { dateTimeToFormat } from '../../utils/datetime/datetime';
 import { GoodQuantityListModal } from '../Modals/GoodQuantityListModal/GoodQuantityListModal';
 import type { MainCategory } from '../../types/reducers/declaration';
+import type { CardProps } from '../QuestionAnswer/QuestionAnswerContainer';
+import { QAStateEnriched } from '../QuestionAnswer/QuestionAnswerContainer';
 
-type OverviewProps = {
+type OverviewProps = (
+  props: CardProps
+) => {
   modalVisible?: boolean,
   onProceedToPayment: () => void,
   paymentDisabled?: boolean,
   navigation: Navigation,
+  qaState: QAStateEnriched,
 };
 
 type ReduxInjectedProps = {
@@ -165,19 +170,31 @@ class OverviewInner extends React.Component<
       format: 'datetime',
     })}`;
   }
-  //
-  // handleAddQuantity(category: Category, quantity: number) {
-  //   const { basket } = this.props.qaState;
-  //
-  //   const updatedBasket = addQuantity(basket, category, quantity);
-  //   this.handleUpdate(updatedBasket);
-  // }
-  //
-  // handleUpdate(basket: Basket) {
-  //   return this.props.onUpdate(basket);
-  // }
+
+  handleDeleteQuantity(category: Category, index: number) {
+    const { basket } = this.props.qaState;
+
+    console.log(`basket = ${basket} `);
+    console.log(`category = ${category} && index = ${index}`);
+    const updatedBasket = deleteQuantity(basket, category, index);
+    this.handleUpdate(updatedBasket);
+  }
+
+  handleAddQuantity(category: Category, quantity: number) {
+    const { basket } = this.props.qaState;
+    // const { basket } = this.props.qaState;
+
+    const updatedBasket = addQuantity(basket, category, quantity);
+    this.handleUpdate(updatedBasket);
+  }
+
+  handleUpdate(basket: Basket) {
+    return this.props.onUpdate(basket);
+  }
 
   render() {
+    // console.log(this.props.basket);
+
     const {
       t,
       receiptEntryTime,
@@ -262,10 +279,10 @@ class OverviewInner extends React.Component<
           // onAddQuantity={(category: Category, quantity: number) => {
           //   this.handleAddQuantity(category, quantity);
           // }}
-          onDeleteQuantity={() => {}}
-          // onDeleteQuantity={(category: Category, index: number) => {
-          //   this.handleDeleteQuantity(category, index);
-          // }}
+          // onDeleteQuantity={() => {}}
+          onDeleteQuantity={(category: Category, index: number) => {
+            this.handleDeleteQuantity(category, index);
+          }}
         />
       </ScrollViewCard>
     );
