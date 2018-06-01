@@ -345,7 +345,7 @@ export const updateAmount = (
     amountElement.amount = amount;
     return amounts.setIn([element.currency, amountsKey], amts);
   }
-  // if is changed currency we need to delete and add new amount
+  // if currency is changed - we need to delete and add new amount
   const newAmts = deleteAmount(amounts, id);
   return amountsKey === 'amounts'
     ? addAmount(newAmts, currency, amount)

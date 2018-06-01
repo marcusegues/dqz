@@ -5,7 +5,7 @@ Immutable.Map {
   "EUR": Immutable.Record {
     "amounts": Immutable.List [
       Object {
-        "amount": 12.34,
+        "amount": 99.22,
         "id": "0",
       },
       Object {
@@ -37,7 +37,7 @@ Immutable.Map {
   "EUR": Immutable.Record {
     "amounts": Immutable.List [
       Object {
-        "amount": 12.34,
+        "amount": 99.22,
         "id": "0",
       },
     ],
@@ -51,7 +51,7 @@ Immutable.Map {
   "EUR": Immutable.Record {
     "amounts": Immutable.List [
       Object {
-        "amount": 12.34,
+        "amount": 99.22,
         "id": "0",
       },
       Object {
