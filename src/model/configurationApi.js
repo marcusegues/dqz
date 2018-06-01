@@ -317,6 +317,42 @@ export const getLargeAmounts = (
   amounts.getIn([currency, 'largeAmounts'], Immutable.List());
 
 /**
+ * Updates amount with a given ID
+ * @param amounts
+ * @param id
+ * @param currency
+ * @param amount
+ * @returns {Amounts}
+ */
+export const updateAmount = (
+  amounts: Amounts,
+  id: string,
+  currency: Currency,
+  amount: number
+): Amounts => {
+  const flat = flatAllAmounts(amounts);
+  const element: ?FlatAmount = flat.find(a => a.id === id);
+  if (!element) {
+    return amounts;
+  }
+  const amountsKey = element.large ? 'largeAmounts' : 'amounts';
+  if (currency === element.currency) {
+    const amts = amounts.getIn(
+      [element.currency, amountsKey],
+      Immutable.List()
+    );
+    const amountElement = amts.find(v => v.id === id);
+    amountElement.amount = amount;
+    return amounts.setIn([element.currency, amountsKey], amts);
+  }
+  // if is changed currency we need to delete and add new amount
+  const newAmts = deleteAmount(amounts, id);
+  return amountsKey === 'amounts'
+    ? addAmount(newAmts, currency, amount)
+    : addLargeAmount(newAmts, currency, amount);
+};
+
+/**
  * Returns an init people configuration (1 adult, no minor)
  */
 export const initPeople: People = makePeopleRecord({
