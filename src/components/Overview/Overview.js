@@ -29,17 +29,25 @@ import { BackAndContinueButtons } from '../Buttons/BackAndContinueButtons';
 import type {
   Amounts,
   Basket,
+  Category,
   People,
 } from '../../model/types/basketPeopleAmountsTypes';
 import type { CurrencyObject } from '../../model/currencies';
-import { storeReceiptEntryTime } from '../../asyncStorage/storageApi';
+import {
+  storeBasket,
+  storeReceiptEntryTime,
+} from '../../asyncStorage/storageApi';
 import { dateTimeToFormat } from '../../utils/datetime/datetime';
+import { GoodQuantityListModal } from '../Modals/GoodQuantityListModal/GoodQuantityListModal';
+import type { MainCategory } from '../../types/reducers/declaration';
+import { addQuantity, deleteQuantity } from '../../model/configurationApi';
 
 type OverviewProps = {
   modalVisible?: boolean,
   onProceedToPayment: () => void,
   paymentDisabled?: boolean,
   navigation: Navigation,
+  quantityModalVisible?: boolean,
 };
 
 type ReduxInjectedProps = {
@@ -49,11 +57,15 @@ type ReduxInjectedProps = {
   currencies: CurrencyObject,
   setReceiptEntryTime: (receiptEntryTime: string) => void,
   receiptEntryTime: string,
+  setBasket: (basket: Basket) => void,
 };
 
 type OverviewState = {
   modalVisible: boolean,
   updateInterval: number,
+  quantityModalVisible: boolean,
+  modalCategory?: Category,
+  modalMainCategory?: MainCategory,
 };
 
 class OverviewInner extends React.Component<
@@ -66,6 +78,7 @@ class OverviewInner extends React.Component<
   static defaultProps = {
     modalVisible: false,
     paymentDisabled: true,
+    quantityModalVisible: false,
   };
 
   constructor(
@@ -75,6 +88,7 @@ class OverviewInner extends React.Component<
     super(props);
     this.state = {
       modalVisible: props.modalVisible || false,
+      quantityModalVisible: props.quantityModalVisible || false,
       updateInterval: -1,
     };
   }
@@ -123,6 +137,43 @@ class OverviewInner extends React.Component<
     });
   }
 
+  handleShowQuantityModal = (
+    modalCategory: Category,
+    modalMainCategory: MainCategory
+  ) => {
+    this.setState({
+      quantityModalVisible: true,
+      modalCategory,
+      modalMainCategory,
+    });
+  };
+
+  handleHideQuantityModal() {
+    this.setState({
+      quantityModalVisible: false,
+      modalCategory: undefined,
+      modalMainCategory: undefined,
+    });
+  }
+
+  handleAddQuantity(category: Category, quantity: number) {
+    const { basket } = this.props;
+
+    const updatedBasket = addQuantity(basket, category, quantity);
+    this.handleUpdate(updatedBasket);
+  }
+
+  handleDeleteQuantity(category: Category, index: number) {
+    const { basket } = this.props;
+    const updatedBasket = deleteQuantity(basket, category, index);
+    this.handleUpdate(updatedBasket);
+  }
+
+  handleUpdate(basket: Basket) {
+    const { setBasket } = this.props;
+    return setBasket(basket);
+  }
+
   handleSetReceiptEntryTime(entryTime: string) {
     this.props.setReceiptEntryTime(entryTime);
   }
@@ -163,7 +214,12 @@ class OverviewInner extends React.Component<
     return (
       <ScrollViewCard>
         <CardHeader text={t('overViewTitle')} />
-        <DutyList basket={basket} people={people} />
+        <DutyList
+          basket={basket}
+          people={people}
+          editable
+          onPressEdit={this.handleShowQuantityModal}
+        />
         <VatList
           large={false}
           people={people}
@@ -206,6 +262,19 @@ class OverviewInner extends React.Component<
           onHideModal={() => this.handleHideModal()}
           onSelectTime={entryTime => this.handleSetReceiptEntryTime(entryTime)}
         />
+        <GoodQuantityListModal
+          onHide={() => this.handleHideQuantityModal()}
+          modalVisible={this.state.quantityModalVisible}
+          modalCategory={this.state.modalCategory}
+          modalMainCategory={this.state.modalMainCategory}
+          basket={basket}
+          onAddQuantity={(category: Category, quantity: number) => {
+            this.handleAddQuantity(category, quantity);
+          }}
+          onDeleteQuantity={(category: Category, index: number) => {
+            this.handleDeleteQuantity(category, index);
+          }}
+        />
       </ScrollViewCard>
     );
   }
@@ -223,6 +292,13 @@ const mapDispatchToProps = dispatch => ({
   setReceiptEntryTime: (receiptEntryTime: string) => {
     storeReceiptEntryTime(receiptEntryTime);
     dispatch({ type: 'SET_RECEIPT_ENTRY_TIME', receiptEntryTime });
+  },
+  setBasket: basket => {
+    storeBasket(basket);
+    dispatch({
+      type: 'SET_BASKET',
+      basket,
+    });
   },
 });
 
