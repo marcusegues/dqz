@@ -20,7 +20,7 @@ type DutyListProps = {
   people: People,
   swipeable?: boolean,
   editable?: boolean,
-  onPressEdit: Function,
+  onPressEdit?: Function,
 };
 
 const DutyListInner = ({
@@ -51,7 +51,9 @@ const DutyListInner = ({
           duty={dutyOfCategory}
           swipeable={swipeable}
           editable={editable}
-          onPressEdit={() => onPressEdit(category, getMainCategory(category))}
+          onPressEdit={() =>
+            onPressEdit ? onPressEdit(category, getMainCategory(category)) : {}
+          }
         />
       ),
     }));
