@@ -260,9 +260,11 @@ exports[`QuantityRow QuantityRow with topText and plusIconText props renders cor
           onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "backgroundColor": "rgb(217,10,35)",
+              "alignItems": "flex-start",
+              "backgroundColor": "#DC0018",
               "flex": 1,
               "justifyContent": "center",
+              "paddingLeft": 30,
             }
           }
           testID={undefined}
