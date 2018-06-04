@@ -8,6 +8,7 @@ import {
   addAmount,
   addLargeAmount,
   deleteAmount,
+  updateAmount,
 } from '../../../model/configurationApi';
 import { calculateVat } from '../../../model/vatCalculations';
 import { AmountInputAnswerCard } from '../Cards/AnswerCard/configured/AmountInput/AmountInputAnswerCard';
@@ -98,6 +99,12 @@ export class AmountInputQA extends React.Component<
   handleDeleteAmount(id: string) {
     const { amounts } = this.props.qaState;
     const updatedAmounts = deleteAmount(amounts, id);
+    this.handleUpdate(updatedAmounts);
+  }
+
+  handleUpdateAmount(id: string, currency: Currency, amount: number) {
+    const { amounts } = this.props.qaState;
+    const updatedAmounts = updateAmount(amounts, id, currency, amount);
     this.handleUpdate(updatedAmounts);
   }
 

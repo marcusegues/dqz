@@ -29,6 +29,8 @@ import {
   resetQuantities,
   resetQuantitiesMultipleCategories,
   deleteAmount,
+  updateQuantity,
+  updateAmount,
 } from '../configurationApi';
 import { categoriesArray } from '../constants';
 import { currenciesArray } from '../currencies';
@@ -47,14 +49,27 @@ const quantityBasket2: Basket = addQuantities(basket1, [
   { category: 'Butter', quantity: 321 },
 ]);
 const quantityBasket3: Basket = basket1;
+const quantityBasket4: Basket = addQuantities(basket1, [
+  { category: 'Meat', quantity: 333 },
+  { category: 'Butter', quantity: 444 },
+]);
 
 const amounts1: Amounts = addAmount(initAmounts, 'EUR', 12.34);
 const amounts2: Amounts = addAmount(amounts1, 'EUR', 34.56);
+const amounts3: Amounts = addAmount(amounts2, 'USD', 77.11);
+
 const largeAmounts1: Amounts = addLargeAmount(amounts1, 'EUR', 1234);
 const largeAmounts2: Amounts = addLargeAmount(largeAmounts1, 'EUR', 1234);
 
 const largeAmounts3: Amounts = addLargeAmount(initAmounts, 'EUR', 1234);
 const largeAmounts4: Amounts = addLargeAmount(largeAmounts3, 'EUR', 1234);
+
+const amountsAndLargeAmounts1: Amounts = addLargeAmount(amounts3, 'EUR', 444);
+const amountsAndLargeAmounts2: Amounts = addLargeAmount(
+  amountsAndLargeAmounts1,
+  'EUR',
+  333
+);
 
 const twoAdultsNoMinor = addAdult(initPeople);
 const noAdultsNoMinor = subtractAdult(initPeople);
@@ -99,12 +114,20 @@ describe('The basket / quantites: ', () => {
       expect(getTotalQuantity(quantityBasket3, c)).toBe(0)
     );
   });
-  test('can add multiple quantites in one category', () => {
+  test('can add multiple quantities in one category', () => {
     const b1 = addQuantity(emptyBasket, 'Meat', 123);
     const b2 = addQuantity(b1, 'Meat', 123);
     const b3 = addQuantity(b2, 'Meat', 123);
     expect(getTotalQuantity(b3, 'Meat')).toBe(369);
     expect(getQuantities(b3, 'Meat').size).toBe(3);
+  });
+
+  test('can update quantities in one category', () => {
+    const b2 = addQuantity(quantityBasket4, 'Meat', 123);
+    const b3 = addQuantity(b2, 'Meat', 444);
+    const resultBasket = updateQuantity(b3, 'Meat', 1, 777);
+    expect(getTotalQuantity(resultBasket, 'Meat')).toBe(1554);
+    expect(getQuantities(resultBasket, 'Meat').size).toBe(3);
   });
 
   test('can delete quantites in a category', () => {
@@ -169,6 +192,37 @@ describe('The Amounts: ', () => {
         .toString()
     ).toBe(Immutable.List([12.34, 34.56]).toString());
   });
+
+  test('update amounts', () => {
+    const testAmount1 = 99.22;
+    const testAmount2 = 11.11;
+    const amounts = getAmounts(amountsAndLargeAmounts2, 'EUR');
+    // $FlowFixMe
+    const amountId1 = amounts.get(0).id;
+    // $FlowFixMe
+    const amountId2 = amounts.get(1).id;
+    const amountsResult1 = updateAmount(
+      amountsAndLargeAmounts2,
+      amountId1,
+      'EUR',
+      testAmount1
+    );
+    const amountsResult2 = updateAmount(
+      amountsAndLargeAmounts2,
+      amountId2,
+      'USD',
+      testAmount2
+    );
+    // $FlowFixMe
+    expect(getAmounts(amountsResult1, 'EUR').get(0).amount).toBe(testAmount1);
+    expect(getAmounts(amountsResult1, 'EUR').size).toBe(2);
+    expect(getAmounts(amountsResult1, 'USD').size).toBe(1);
+    // $FlowFixMe
+    expect(getAmounts(amountsResult2, 'USD').get(1).amount).toBe(testAmount2);
+    expect(getAmounts(amountsResult2, 'EUR').size).toBe(1);
+    expect(getAmounts(amountsResult2, 'USD').size).toBe(2);
+  });
+
   test('leaves other amounts untouched: ', () => {
     expect(getAmounts(amounts1, 'USD')).toBe(Immutable.List());
   });
@@ -212,6 +266,41 @@ describe('The large amounts: ', () => {
         .toString()
     ).toBe(Immutable.List([1234, 1234]).toString());
   });
+
+  test('update large amounts', () => {
+    const testLargeAmount1 = 353.36;
+    const testLargeAmount2 = 965.58;
+    const largeAmounts = getLargeAmounts(amountsAndLargeAmounts2, 'EUR');
+    // $FlowFixMe
+    const amountId1 = largeAmounts.get(0).id;
+    // $FlowFixMe
+    const amountId2 = largeAmounts.get(1).id;
+    const largeAmountsResult1 = updateAmount(
+      amountsAndLargeAmounts2,
+      amountId1,
+      'EUR',
+      testLargeAmount1
+    );
+    const largeAmountsResult2 = updateAmount(
+      amountsAndLargeAmounts2,
+      amountId2,
+      'USD',
+      testLargeAmount2
+    );
+    // $FlowFixMe
+    expect(getLargeAmounts(largeAmountsResult1, 'EUR').get(0).amount).toBe(
+      testLargeAmount1
+    );
+    expect(getLargeAmounts(largeAmountsResult1, 'EUR').size).toBe(2);
+    expect(getLargeAmounts(largeAmountsResult1, 'USD').size).toBe(0);
+    // $FlowFixMe
+    expect(getLargeAmounts(largeAmountsResult2, 'USD').get(0).amount).toBe(
+      testLargeAmount2
+    );
+    expect(getLargeAmounts(largeAmountsResult2, 'EUR').size).toBe(1);
+    expect(getLargeAmounts(largeAmountsResult2, 'USD').size).toBe(1);
+  });
+
   test('leaves other large amounts untouched: ', () => {
     expect(getLargeAmounts(amounts1, 'USD')).toBe(Immutable.List());
   });

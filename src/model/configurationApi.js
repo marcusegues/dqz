@@ -75,6 +75,27 @@ export const deleteQuantity = (
   basket.updateIn([category, 'volume', 'quantities'], q => q.delete(index));
 
 /**
+ * Update a quantity in a basket for a given category at index
+ * Note: if index > size of quantities list, quantities won't change.
+ * This exception should be handled elsewhere.
+ * @param basket
+ * @param category
+ * @param index
+ * @param quantity
+ * @returns Basket
+ */
+export const updateQuantity = (
+  basket: Basket,
+  category: Category,
+  index: number,
+  quantity: number
+): Basket =>
+  basket.updateIn([category, 'volume', 'quantities', index], q => {
+    q.number = quantity;
+    return q;
+  });
+
+/**
  * Reset all quantites in a basket for a given category.
  * @param basket
  * @param category
@@ -294,6 +315,42 @@ export const getLargeAmounts = (
   currency: Currency
 ): ImmutableListType<AmountWithId> =>
   amounts.getIn([currency, 'largeAmounts'], Immutable.List());
+
+/**
+ * Updates amount with a given ID
+ * @param amounts
+ * @param id
+ * @param currency
+ * @param amount
+ * @returns {Amounts}
+ */
+export const updateAmount = (
+  amounts: Amounts,
+  id: string,
+  currency: Currency,
+  amount: number
+): Amounts => {
+  const flat = flatAllAmounts(amounts);
+  const element: ?FlatAmount = flat.find(a => a.id === id);
+  if (!element) {
+    return amounts;
+  }
+  const amountsKey = element.large ? 'largeAmounts' : 'amounts';
+  if (currency === element.currency) {
+    const amts = amounts.getIn(
+      [element.currency, amountsKey],
+      Immutable.List()
+    );
+    const amountElement = amts.find(v => v.id === id);
+    amountElement.amount = amount;
+    return amounts.setIn([element.currency, amountsKey], amts);
+  }
+  // if currency is changed - we need to delete and add new amount
+  const newAmts = deleteAmount(amounts, id);
+  return amountsKey === 'amounts'
+    ? addAmount(newAmts, currency, amount)
+    : addLargeAmount(newAmts, currency, amount);
+};
 
 /**
  * Returns an init people configuration (1 adult, no minor)

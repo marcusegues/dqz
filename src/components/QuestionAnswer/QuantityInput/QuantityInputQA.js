@@ -11,7 +11,11 @@ import type {
 } from '../../../model/types/basketPeopleAmountsTypes';
 import type { CardProps } from '../QuestionAnswerContainer';
 import { QuantityInputAnswerCard } from '../Cards/AnswerCard/configured/QuantityInput/QuantityInputAnswerCard';
-import { addQuantity, deleteQuantity } from '../../../model/configurationApi';
+import {
+  addQuantity,
+  deleteQuantity,
+  updateQuantity,
+} from '../../../model/configurationApi';
 import { calculateDuty } from '../../../model/dutyCalculations';
 import { GreyBar } from '../../General Components/GreyBar';
 
@@ -82,7 +86,6 @@ export class QuantityInputQA extends React.Component<
 
   handleAddQuantity(category: Category, quantity: number) {
     const { basket } = this.props.qaState;
-
     const updatedBasket = addQuantity(basket, category, quantity);
     this.handleUpdate(updatedBasket);
   }
@@ -90,6 +93,12 @@ export class QuantityInputQA extends React.Component<
   handleDeleteQuantity(category: Category, index: number) {
     const { basket } = this.props.qaState;
     const updatedBasket = deleteQuantity(basket, category, index);
+    this.handleUpdate(updatedBasket);
+  }
+
+  handleUpdateQuantity(category: Category, index: number, quantity: number) {
+    const { basket } = this.props.qaState;
+    const updatedBasket = updateQuantity(basket, category, index, quantity);
     this.handleUpdate(updatedBasket);
   }
 
