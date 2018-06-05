@@ -234,7 +234,7 @@ class GoodQuantityListModalInner extends React.Component<
                         onDeleteQuantity(modalCategory, idx);
                       }
                     }}
-                    onPressEdit={() => {}}
+                    onPressEdit={() => this.togglePickerVisible()}
                   />
                 ))}
               </ScrollView>
