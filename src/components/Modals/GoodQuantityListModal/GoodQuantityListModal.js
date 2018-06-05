@@ -218,6 +218,7 @@ class GoodQuantityListModalInner extends React.Component<
                 {quantities.map((q, idx) => (
                   <QuantityRow
                     borderTop={idx === 0}
+                    editable
                     key={v4()}
                     quantity={getQuantityNumber(q)}
                     date={dateTimeToFormat(
@@ -233,6 +234,7 @@ class GoodQuantityListModalInner extends React.Component<
                         onDeleteQuantity(modalCategory, idx);
                       }
                     }}
+                    onPressEdit={() => {}}
                   />
                 ))}
               </ScrollView>
