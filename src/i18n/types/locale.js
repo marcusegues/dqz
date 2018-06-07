@@ -693,6 +693,10 @@ type AcceptRateModalTranslations = {
   confirm: string,
 };
 
+type NetValueInfoModalTranslations = {
+  mainText: string,
+};
+
 /**
  * The Locale type defines all the namespaces that we use in the translation
  * The namespaces are formed by the individual strings, respectively.
@@ -739,4 +743,5 @@ export type Locale = {
   updateTheApp: UpdateTheAppTranslations,
   SuccessfulPayment: SuccessfulPaymentTranslations,
   acceptRateModal: AcceptRateModalTranslations,
+  netValueInfoModal: NetValueInfoModalTranslations,
 };

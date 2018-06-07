@@ -945,4 +945,8 @@ export const fr: Locale = {
       'Je confirme accepter le taux unique de TVA de 7.7% pour le dédouanement des marchandises.',
     confirm: 'Reprendre',
   },
+  netValueInfoModal: {
+    mainText:
+      "Si la valeur (TVA comprise) est indiquée, la valeur nette est calculée comme suit: valeur brute/(100+taux d'imposition)*100 = valeur nette. Exemple: 1000 euros, y compris 20 % de TVA: 1000 euros/120*100 = 833,33 euros.",
+  },
 };

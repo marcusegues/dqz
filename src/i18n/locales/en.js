@@ -907,4 +907,8 @@ export const en: Locale = {
       'I hereby confirm that I accept the single VAT rate of 7.7% when declaring goods.',
     confirm: 'Confirm',
   },
+  netValueInfoModal: {
+    mainText:
+      'If the value is specified including VAT, the net value is calculated as follows: gross value/(100+tax rate)*100 = net value. Example with EUR 1,000 incl. 20% VAT: EUR 1,000/120*100 = EUR 833.33.',
+  },
 };
