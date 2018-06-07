@@ -138,7 +138,11 @@ class ScreensViewInner extends React.Component<
           modalVisible={this.state.pickerModalVisible}
           toggleModalVisible={() => this.togglePickerVisible()}
           confirmAction={() => {}}
+          confirmEditAction={() => {}}
           category="Meat"
+          editModal={false}
+          categoryElementIdx={0}
+          editPickerNumber={0}
         />
         <CurrencyPickerModal
           modalVisible={this.state.currencyPickerModalVisible}

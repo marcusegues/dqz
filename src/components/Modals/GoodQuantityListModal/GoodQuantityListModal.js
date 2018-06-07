@@ -176,7 +176,6 @@ class GoodQuantityListModalInner extends React.Component<
     const quantity = modalCategory
       ? getQuantity(basket, modalCategory, idx)
       : { number: 0 };
-    console.log(quantity);
     this.setState({
       editPickerIdx: idx,
       editPickerNumber: quantity.number,
