@@ -1,0 +1,457 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NetValueModal NetValueModal renders according to snapshot 1`] = `
+<Modal
+  animationType="none"
+  hardwareAccelerated={false}
+  onDismiss={[Function]}
+  onModalHide={[Function]}
+  onRequestClose={[Function]}
+  swipeThreshold={100}
+  transparent={true}
+  visible={false}
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hitSlop={undefined}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "black",
+        "bottom": 0,
+        "height": 1334,
+        "left": 0,
+        "opacity": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+        "width": 750,
+      }
+    }
+    testID={undefined}
+  />
+  <View
+    collapsable={undefined}
+    onDismiss={[Function]}
+    onModalHide={[Function]}
+    onRequestClose={[Function]}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "center",
+        "margin": 37.5,
+        "transform": Array [
+          Object {
+            "translateY": 0,
+          },
+        ],
+      }
+    }
+    swipeThreshold={100}
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "backgroundColor": "#FFF",
+            "borderRadius": 3,
+            "flexDirection": "column",
+            "justifyContent": "flex-start",
+            "paddingBottom": 16,
+            "width": "85%",
+          },
+          Object {
+            "elevation": 2,
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 1,
+              "width": 1,
+            },
+            "shadowOpacity": 0.25,
+            "shadowRadius": 2,
+          },
+          Object {
+            "width": "100%",
+          },
+        ]
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#757575",
+            "fontFamily": "roboto_regular",
+            "fontSize": 14,
+            "lineHeight": 20,
+            "marginTop": 16,
+            "paddingHorizontal": 31.388235294117646,
+          }
+        }
+      >
+        
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#757575",
+            "fontFamily": "roboto_regular",
+            "fontSize": 14,
+            "lineHeight": 20,
+            "marginTop": 16,
+            "paddingHorizontal": 31.388235294117646,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hitSlop={undefined}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "bottom": 50.285714285714285,
+            "padding": 23.57142857142857,
+            "position": "absolute",
+          },
+          Object {},
+        ]
+      }
+      testID={undefined}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#fff",
+            "fontFamily": "roboto_regular",
+            "fontSize": 22,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
+</Modal>
+`;
+
+exports[`NetValueModal shallow rendering with \`modalVisible=true\` 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NetValueModalInner
+    modalVisible={[Function]}
+    t={[Function]}
+    toggleModalVisible={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "function",
+    "props": Object {
+      "animationIn": "slideInLeft",
+      "animationOut": "slideOutLeft",
+      "children": Array [
+        <ModalCard
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        >
+          <CardHeaderSubText
+            style={
+              Object {
+                "color": "#757575",
+                "lineHeight": 20,
+                "marginTop": 16,
+              }
+            }
+            text=""
+          />
+          <CardHeaderSubText
+            style={
+              Object {
+                "color": "#757575",
+                "lineHeight": 20,
+                "marginTop": 16,
+              }
+            }
+            text=""
+          />
+        </ModalCard>,
+        <Unknown
+          onModalHide={[Function]}
+          text=""
+        />,
+      ],
+      "modalVisible": [Function],
+      "onDismiss": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <CardHeaderSubText
+              style={
+                Object {
+                  "color": "#757575",
+                  "lineHeight": 20,
+                  "marginTop": 16,
+                }
+              }
+              text=""
+            />,
+            <CardHeaderSubText
+              style={
+                Object {
+                  "color": "#757575",
+                  "lineHeight": 20,
+                  "marginTop": 16,
+                }
+              }
+              text=""
+            />,
+          ],
+          "style": Object {
+            "width": "100%",
+          },
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "style": Object {
+                "color": "#757575",
+                "lineHeight": 20,
+                "marginTop": 16,
+              },
+              "text": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "style": Object {
+                "color": "#757575",
+                "lineHeight": 20,
+                "marginTop": 16,
+              },
+              "text": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "onModalHide": [Function],
+          "text": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "animationIn": "slideInLeft",
+        "animationOut": "slideOutLeft",
+        "children": Array [
+          <ModalCard
+            style={
+              Object {
+                "width": "100%",
+              }
+            }
+          >
+            <CardHeaderSubText
+              style={
+                Object {
+                  "color": "#757575",
+                  "lineHeight": 20,
+                  "marginTop": 16,
+                }
+              }
+              text=""
+            />
+            <CardHeaderSubText
+              style={
+                Object {
+                  "color": "#757575",
+                  "lineHeight": 20,
+                  "marginTop": 16,
+                }
+              }
+              text=""
+            />
+          </ModalCard>,
+          <Unknown
+            onModalHide={[Function]}
+            text=""
+          />,
+        ],
+        "modalVisible": [Function],
+        "onDismiss": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "children": Array [
+              <CardHeaderSubText
+                style={
+                  Object {
+                    "color": "#757575",
+                    "lineHeight": 20,
+                    "marginTop": 16,
+                  }
+                }
+                text=""
+              />,
+              <CardHeaderSubText
+                style={
+                  Object {
+                    "color": "#757575",
+                    "lineHeight": 20,
+                    "marginTop": 16,
+                  }
+                }
+                text=""
+              />,
+            ],
+            "style": Object {
+              "width": "100%",
+            },
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "style": Object {
+                  "color": "#757575",
+                  "lineHeight": 20,
+                  "marginTop": 16,
+                },
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "style": Object {
+                  "color": "#757575",
+                  "lineHeight": 20,
+                  "marginTop": 16,
+                },
+                "text": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "onModalHide": [Function],
+            "text": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

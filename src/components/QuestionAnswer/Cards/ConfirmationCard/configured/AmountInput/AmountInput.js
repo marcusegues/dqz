@@ -21,7 +21,7 @@ import {
 } from '../../../../../../styles/Scaling';
 import { RedPlusIcon } from '../../../../../Modals/GoodQuantityListModal/subcomponents/RedPlusIcon';
 import { type } from '../../../../../../styles/fonts';
-import { NetValueInfoModal } from '../../../../../Modals/NetValueInfoModal/NetValueInfoModal';
+import { NetValueModal } from '../../../../../Modals/NetValueModal/NetValueModal';
 
 const ownStyles = {
   mainContainer: {
@@ -197,7 +197,7 @@ class AmountInputInner extends Component<
             <Text />
           )}
         </ScrollView>
-        <NetValueInfoModal
+        <NetValueModal
           modalVisible={this.state.modalVisible}
           toggleModalVisible={this.toggleModalVisible}
         />

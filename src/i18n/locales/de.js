@@ -911,6 +911,7 @@ export const de: Locale = {
   },
   netValueInfoModal: {
     mainText:
-      'Ist der Wert inklusive MWST angegeben, berechnet sich der Nettowert wie folgt: Bruttowert/(100+Steuersatz)*100 = Nettowert. Beispiel mit 1000 Euro inkl. 20 % MWST: 1000 Euro/120*100 = 833.33 Euro.',
+      'Ist der Wert inklusive MWST angegeben, berechnet sich der Nettowert wie folgt: Bruttowert/(100+Steuersatz)*100 = Nettowert. Beispiel mit 1000 Euro inkl. 20 % MWST:',
+    calculations: '1000 Euro/120*100 = 833.33 Euro.',
   },
 };

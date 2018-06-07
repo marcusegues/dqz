@@ -909,6 +909,7 @@ export const en: Locale = {
   },
   netValueInfoModal: {
     mainText:
-      'If the value is specified including VAT, the net value is calculated as follows: gross value/(100+tax rate)*100 = net value. Example with EUR 1,000 incl. 20% VAT: EUR 1,000/120*100 = EUR 833.33.',
+      'If the value is specified including VAT, the net value is calculated as follows: gross value/(100+tax rate)*100 = net value. Example with EUR 1,000 incl. 20% VAT:',
+    calculations: 'EUR 1,000/120*100 = EUR 833.33.',
   },
 };

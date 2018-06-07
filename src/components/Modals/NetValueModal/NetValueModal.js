@@ -14,22 +14,23 @@ const ownStyles = {
   pickerCard: {
     width: '100%',
   },
+
   text: {
     color: BASE_GREY,
     lineHeight: 20,
     marginTop: 16,
   },
 };
-type NetValueInfoModalInnerProps = {
+type NetValueModalInnerInnerProps = {
   modalVisible: boolean,
   toggleModalVisible: () => void,
 };
 
-export const NetValueInfoModalInner = ({
+export const NetValueModalInner = ({
   t,
   modalVisible,
   toggleModalVisible,
-}: NetValueInfoModalInnerProps & { t: TFunction }) => (
+}: NetValueModalInnerInnerProps & { t: TFunction }) => (
   <AppModal
     modalVisible={modalVisible}
     animationIn="slideInLeft"
@@ -40,6 +41,10 @@ export const NetValueInfoModalInner = ({
         text={t('netValueInfoModal:mainText')}
         style={ownStyles.text}
       />
+      <CardHeaderSubText
+        text={t('netValueInfoModal:calculations')}
+        style={ownStyles.text}
+      />
     </ModalCard>
     <ModalCloseText
       onModalHide={toggleModalVisible}
@@ -48,6 +53,6 @@ export const NetValueInfoModalInner = ({
   </AppModal>
 );
 
-export const NetValueInfoModal = (translate(['modal', 'netValueInfoModal'])(
-  NetValueInfoModalInner
-): ComponentType<NetValueInfoModalInnerProps>);
+export const NetValueModal = (translate(['modal', 'netValueInfoModal'])(
+  NetValueModalInner
+): ComponentType<NetValueModalInnerInnerProps>);

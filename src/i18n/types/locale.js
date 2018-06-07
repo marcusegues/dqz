@@ -695,6 +695,7 @@ type AcceptRateModalTranslations = {
 
 type NetValueInfoModalTranslations = {
   mainText: string,
+  calculations: string,
 };
 
 /**

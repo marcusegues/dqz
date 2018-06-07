@@ -947,6 +947,8 @@ export const fr: Locale = {
   },
   netValueInfoModal: {
     mainText:
-      "Si la valeur (TVA comprise) est indiquée, la valeur nette est calculée comme suit: valeur brute/(100+taux d'imposition)*100 = valeur nette. Exemple: 1000 euros, y compris 20 % de TVA: 1000 euros/120*100 = 833,33 euros.",
+      "Si la valeur (TVA comprise) est indiquée, la valeur nette est calculée comme suit: valeur brute/(100+taux d'imposition)*100 = valeur nette. Exemple:",
+    calculations:
+      '1000 euros, y compris 20 % de TVA: 1000 euros/120*100 = 833,33 euros.',
   },
 };

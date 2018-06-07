@@ -928,6 +928,7 @@ export const it: Locale = {
   },
   netValueInfoModal: {
     mainText:
-      'Se il valore indicato è comprensivo di IVA, il valore netto si calcola nel modo seguente: valore lordo/(100+aliquota d’imposta)*100 = valore netto. Esempio con 1000 euro incluso il 20 % di IVA: 1000 euro/120*100 = 833.33 euro.',
+      'Se il valore indicato è comprensivo di IVA, il valore netto si calcola nel modo seguente: valore lordo/(100+aliquota d’imposta)*100 = valore netto. Esempio con 1000 euro incluso il 20 % di IVA:',
+    calculations: '1000 euro/120*100 = 833.33 euro.',
   },
 };
