@@ -8,7 +8,8 @@ import { CardHeaderSubText } from '../../QuestionAnswer/Cards/subcomponents/Card
 import { ModalCard } from '../ModalCard';
 import { ModalCloseText } from '../ModalCloseText';
 import type { TFunction } from '../../../types/generalTypes';
-import { BASE_GREY } from '../../../styles/colors';
+import { BASE_GREY, CARD_GREY } from '../../../styles/colors';
+import { type } from '../../../styles/fonts';
 
 const ownStyles = {
   pickerCard: {
@@ -19,6 +20,11 @@ const ownStyles = {
     color: BASE_GREY,
     lineHeight: 20,
     marginTop: 16,
+  },
+  calculationsText: {
+    marginTop: 10,
+    color: CARD_GREY,
+    fontFamily: type.medium,
   },
 };
 type NetValueModalInnerInnerProps = {
@@ -43,7 +49,7 @@ export const NetValueModalInner = ({
       />
       <CardHeaderSubText
         text={t('netValueInfoModal:calculations')}
-        style={ownStyles.text}
+        style={ownStyles.calculationsText}
       />
     </ModalCard>
     <ModalCloseText
