@@ -909,4 +909,9 @@ export const de: Locale = {
       'Hiermit bestätige ich, dass ich den einheitlichen Mehrwertsteuersatz von 7.7% bei der Verzollung von Waren akzeptiere.',
     confirm: 'Bestätigen',
   },
+  netValueInfoModal: {
+    mainText:
+      'Ist der Wert inklusive MWST angegeben, berechnet sich der Nettowert wie folgt: Bruttowert/(100+Steuersatz)*100 = Nettowert. Beispiel mit 1000 Euro inkl. 20 % MWST:',
+    calculations: '1000 Euro/120*100 = 833.33 Euro.',
+  },
 };

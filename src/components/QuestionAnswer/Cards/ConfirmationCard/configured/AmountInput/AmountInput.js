@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { Component } from 'react';
 import type { ComponentType } from 'react';
 // $FlowFixMe
 import { View, ScrollView, Text } from 'react-native';
@@ -21,11 +21,13 @@ import {
 } from '../../../../../../styles/Scaling';
 import { RedPlusIcon } from '../../../../../Modals/GoodQuantityListModal/subcomponents/RedPlusIcon';
 import { type } from '../../../../../../styles/fonts';
+import { NetValueModal } from '../../../../../Modals/NetValueModal/NetValueModal';
 
 const ownStyles = {
   mainContainer: {
     flexDirection: 'row',
     alignSelf: 'flex-start',
+    backgroundColor: 'red',
   },
   subcomponentsContainer: {
     width: '100%',
@@ -92,8 +94,12 @@ const ownStyles = {
   },
   enterValueBoldText: {
     fontFamily: type.medium,
-    lineHeight: verticalScale(18),
+    lineHeight: 22,
   },
+};
+
+type AmountInputState = {
+  modalVisible: boolean,
 };
 
 type AmountInputProps = {
@@ -103,75 +109,102 @@ type AmountInputProps = {
   large: boolean,
 };
 
-const AmountInputInner = ({
-  onShowAmountInputModal,
-  amounts,
-  onDeleteAmount,
-  large,
-  t,
-}: AmountInputProps & { t: TFunction }) => {
-  const relevantAmounts = large
-    ? flatLargeAmounts(amounts)
-    : flatNormalAmounts(amounts);
+class AmountInputInner extends Component<
+  AmountInputProps & { t: TFunction },
+  AmountInputState
+> {
+  state = {
+    modalVisible: false,
+  };
 
-  const enterValueText = (
-    <Text>
-      <Text style={ownStyles.enterValueText}>
-        {t('amountInputEnterValueBeginning')}
+  handleShowModal = () => {
+    this.setState({ modalVisible: true });
+  };
+
+  toggleModalVisible = () => {
+    this.setState({ modalVisible: !this.state.modalVisible });
+  };
+
+  render() {
+    const {
+      onShowAmountInputModal,
+      amounts,
+      onDeleteAmount,
+      large,
+      t,
+    } = this.props;
+
+    const relevantAmounts = large
+      ? flatLargeAmounts(amounts)
+      : flatNormalAmounts(amounts);
+
+    const enterValueText = (
+      <Text>
+        <Text style={ownStyles.enterValueText}>
+          {t('amountInputEnterValueBeginning')}
+        </Text>
+        <Text
+          onPress={this.handleShowModal}
+          style={ownStyles.enterValueBoldText}
+        >
+          {t('amountInputEnterValueBoldText')}
+        </Text>
+        <Text style={ownStyles.enterValueText}>
+          {t('amountInputEnterValueEnd')}
+        </Text>
       </Text>
-      <Text style={ownStyles.enterValueBoldText}>
-        {t('amountInputEnterValueBoldText')}
-      </Text>
-      <Text style={ownStyles.enterValueText}>
-        {t('amountInputEnterValueEnd')}
-      </Text>
-    </Text>
-  );
-  return (
-    <View style={ownStyles.mainContainer}>
-      <ScrollView contentContainerStyle={ownStyles.scrollView}>
-        {relevantAmounts.length ? (
-          <CardHeaderSubText
-            text={large ? '' : t('lastExchangeRate')}
-            style={ownStyles.lastExchangeRate}
-          />
-        ) : (
-          <View style={ownStyles.addButtonContainer}>
+    );
+
+    return (
+      <View style={ownStyles.mainContainer}>
+        <ScrollView contentContainerStyle={ownStyles.scrollView}>
+          {relevantAmounts.length ? (
             <CardHeaderSubText
-              text={large ? t('amountInputLargeItemGreyBox') : enterValueText}
-              style={ownStyles.enterValueContainer}
+              text={large ? '' : t('lastExchangeRate')}
+              style={ownStyles.lastExchangeRate}
             />
-            <RedPlusIcon onPress={() => onShowAmountInputModal()} />
-            <Text style={ownStyles.addButtonText}>
-              {large
-                ? t('amountInputAddItemLarge').toUpperCase()
-                : t('amountInputAddItem').toUpperCase()}
-            </Text>
+          ) : (
+            <View style={ownStyles.addButtonContainer}>
+              <CardHeaderSubText
+                text={large ? t('amountInputLargeItemGreyBox') : enterValueText}
+                style={ownStyles.enterValueContainer}
+              />
+              <RedPlusIcon onPress={() => onShowAmountInputModal()} />
+              <Text style={ownStyles.addButtonText}>
+                {large
+                  ? t('amountInputAddItemLarge').toUpperCase()
+                  : t('amountInputAddItem').toUpperCase()}
+              </Text>
+            </View>
+          )}
+          <View style={ownStyles.addedItemContainer}>
+            {relevantAmounts.map((a, idx) => (
+              <AmountRow
+                borderTop={idx === 0}
+                key={a.id}
+                amount={a.amount}
+                currency={a.currency}
+                id={a.id}
+                onDelete={() => onDeleteAmount(a.id)}
+              />
+            ))}
           </View>
-        )}
-        <View style={ownStyles.addedItemContainer}>
-          {relevantAmounts.map((a, idx) => (
-            <AmountRow
-              borderTop={idx === 0}
-              key={a.id}
-              amount={a.amount}
-              currency={a.currency}
-              id={a.id}
-              onDelete={() => onDeleteAmount(a.id)}
-            />
-          ))}
-        </View>
-        {relevantAmounts.length ? (
-          <View style={ownStyles.redPlusIconContainer}>
-            <RedPlusIcon onPress={() => onShowAmountInputModal()} />
-          </View>
-        ) : (
-          <Text />
-        )}
-      </ScrollView>
-    </View>
-  );
-};
+          {relevantAmounts.length ? (
+            <View style={ownStyles.redPlusIconContainer}>
+              <RedPlusIcon onPress={() => onShowAmountInputModal()} />
+            </View>
+          ) : (
+            <Text />
+          )}
+        </ScrollView>
+        <NetValueModal
+          modalVisible={this.state.modalVisible}
+          toggleModalVisible={this.toggleModalVisible}
+        />
+      </View>
+    );
+  }
+}
 
 export const AmountInput = (translate(['amountInput'])(
   AmountInputInner
