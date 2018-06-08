@@ -93,7 +93,7 @@ const AmountInputConfirmationCardInner = ({
     : totalNormalAmounts(amounts, currencies);
 
   let exclamationMark = null;
-  const above20000 = totalAmount > 20000;
+  const above20000 = totalAmount >= 20001;
   if (above20000) {
     exclamationMark = (
       <View style={{ marginLeft: 5 }}>
