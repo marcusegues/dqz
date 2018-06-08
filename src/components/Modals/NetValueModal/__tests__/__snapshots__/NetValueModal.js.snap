@@ -112,11 +112,10 @@ exports[`NetValueModal NetValueModal renders according to snapshot 1`] = `
         ellipsizeMode="tail"
         style={
           Object {
-            "color": "#757575",
-            "fontFamily": "roboto_regular",
+            "color": "#4A4A4A",
+            "fontFamily": "roboto_medium",
             "fontSize": 14,
-            "lineHeight": 20,
-            "marginTop": 16,
+            "marginTop": 10,
             "paddingHorizontal": 31.388235294117646,
           }
         }
@@ -214,9 +213,9 @@ ShallowWrapper {
           <CardHeaderSubText
             style={
               Object {
-                "color": "#757575",
-                "lineHeight": 20,
-                "marginTop": 16,
+                "color": "#4A4A4A",
+                "fontFamily": "roboto_medium",
+                "marginTop": 10,
               }
             }
             text=""
@@ -251,9 +250,9 @@ ShallowWrapper {
             <CardHeaderSubText
               style={
                 Object {
-                  "color": "#757575",
-                  "lineHeight": 20,
-                  "marginTop": 16,
+                  "color": "#4A4A4A",
+                  "fontFamily": "roboto_medium",
+                  "marginTop": 10,
                 }
               }
               text=""
@@ -287,9 +286,9 @@ ShallowWrapper {
             "nodeType": "function",
             "props": Object {
               "style": Object {
-                "color": "#757575",
-                "lineHeight": 20,
-                "marginTop": 16,
+                "color": "#4A4A4A",
+                "fontFamily": "roboto_medium",
+                "marginTop": 10,
               },
               "text": "",
             },
@@ -344,9 +343,9 @@ ShallowWrapper {
             <CardHeaderSubText
               style={
                 Object {
-                  "color": "#757575",
-                  "lineHeight": 20,
-                  "marginTop": 16,
+                  "color": "#4A4A4A",
+                  "fontFamily": "roboto_medium",
+                  "marginTop": 10,
                 }
               }
               text=""
@@ -381,9 +380,9 @@ ShallowWrapper {
               <CardHeaderSubText
                 style={
                   Object {
-                    "color": "#757575",
-                    "lineHeight": 20,
-                    "marginTop": 16,
+                    "color": "#4A4A4A",
+                    "fontFamily": "roboto_medium",
+                    "marginTop": 10,
                   }
                 }
                 text=""
@@ -417,9 +416,9 @@ ShallowWrapper {
               "nodeType": "function",
               "props": Object {
                 "style": Object {
-                  "color": "#757575",
-                  "lineHeight": 20,
-                  "marginTop": 16,
+                  "color": "#4A4A4A",
+                  "fontFamily": "roboto_medium",
+                  "marginTop": 10,
                 },
                 "text": "",
               },
