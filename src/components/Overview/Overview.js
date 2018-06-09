@@ -40,7 +40,11 @@ import {
 import { dateTimeToFormat } from '../../utils/datetime/datetime';
 import { GoodQuantityListModal } from '../Modals/GoodQuantityListModal/GoodQuantityListModal';
 import type { MainCategory } from '../../types/reducers/declaration';
-import { addQuantity, deleteQuantity } from '../../model/configurationApi';
+import {
+  addQuantity,
+  deleteQuantity,
+  updateQuantity,
+} from '../../model/configurationApi';
 
 type OverviewProps = {
   modalVisible?: boolean,
@@ -163,6 +167,12 @@ class OverviewInner extends React.Component<
     this.handleUpdate(updatedBasket);
   }
 
+  handleUpdateQuantity(category: Category, index: number, quantity: number) {
+    const { basket } = this.props;
+    const updatedBasket = updateQuantity(basket, category, index, quantity);
+    this.handleUpdate(updatedBasket);
+  }
+
   handleDeleteQuantity(category: Category, index: number) {
     const { basket } = this.props;
     const updatedBasket = deleteQuantity(basket, category, index);
@@ -270,6 +280,13 @@ class OverviewInner extends React.Component<
           basket={basket}
           onAddQuantity={(category: Category, quantity: number) => {
             this.handleAddQuantity(category, quantity);
+          }}
+          onUpdateQuantity={(
+            category: Category,
+            index: number,
+            quantity: number
+          ) => {
+            this.handleUpdateQuantity(category, index, quantity);
           }}
           onDeleteQuantity={(category: Category, index: number) => {
             this.handleDeleteQuantity(category, index);

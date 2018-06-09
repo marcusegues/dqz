@@ -25,6 +25,8 @@ type QuantityRowInnerProps = {
   onDelete: () => void,
   category: Category,
   borderTop?: boolean,
+  editable?: boolean,
+  onPressEdit?: Function,
 };
 
 const QuantityRowInner = ({
@@ -33,10 +35,16 @@ const QuantityRowInner = ({
   date,
   onDelete,
   category,
+  editable,
+  onPressEdit,
   borderTop = false,
 }: QuantityRowInnerProps & { t: TFunction }) => (
   <Row borderTop={borderTop}>
-    <SwipeToDelete onPressDelete={onDelete}>
+    <SwipeToDelete
+      onPressDelete={onDelete}
+      onPressEdit={onPressEdit}
+      editable={editable}
+    >
       <TouchableWithoutFeedback>
         <View style={rowStyles.rowContent}>
           <View style={{ flex: 1 }}>

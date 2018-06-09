@@ -64,6 +64,13 @@ export class QuantityInputQA extends React.Component<
           onAddQuantity={(category: Category, quantity: number) => {
             this.handleAddQuantity(category, quantity);
           }}
+          onUpdateQuantity={(
+            category: Category,
+            index: number,
+            quantity: number
+          ) => {
+            this.handleUpdateQuantity(category, index, quantity);
+          }}
           onDeleteQuantity={(category: Category, index: number) => {
             this.handleDeleteQuantity(category, index);
           }}

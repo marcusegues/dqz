@@ -13,6 +13,7 @@ import {
   getQuantityDate,
   getQuantityNumber,
   getTotalQuantity,
+  getQuantity,
 } from '../../../model/configurationApi';
 import type { QuantityInputState } from '../../QuestionAnswer/QuantityInput/QuantityInputQA';
 import type {
@@ -82,11 +83,19 @@ export type GoodQuantityListModalProps = {
   onHide: () => void,
   onAddQuantity: (category: Category, quantityChange: number) => void,
   onDeleteQuantity: (category: Category, index: number) => void,
+  onUpdateQuantity: (
+    category: Category,
+    index: number,
+    quantityChange: number
+  ) => void,
   basket: Basket,
 } & QuantityInputState;
 
 type GoodQuantityListModalState = {
   pickerModalVisible: boolean,
+  editPickerModal: boolean,
+  editPickerIdx: number,
+  editPickerNumber: number,
 };
 
 class GoodQuantityListModalInner extends React.Component<
@@ -102,6 +111,9 @@ class GoodQuantityListModalInner extends React.Component<
     super(props);
     this.state = {
       pickerModalVisible: false,
+      editPickerModal: false,
+      editPickerIdx: 0,
+      editPickerNumber: 0,
     };
   }
 
@@ -158,12 +170,43 @@ class GoodQuantityListModalInner extends React.Component<
     });
   }
 
+  setEditPickerVisibleTrue(idx: number = 0) {
+    const { basket, modalCategory } = this.props;
+
+    const quantity = modalCategory
+      ? getQuantity(basket, modalCategory, idx)
+      : { number: 0 };
+    this.setState({
+      editPickerIdx: idx,
+      editPickerNumber: quantity.number,
+      editPickerModal: true,
+      pickerModalVisible: true,
+    });
+  }
+
+  setEditPickerVisibleFalse() {
+    this.setState({
+      editPickerIdx: 0,
+      editPickerNumber: 0,
+      editPickerModal: false,
+      pickerModalVisible: false,
+    });
+  }
+
   confirmPicker(amount: number) {
     const { onAddQuantity, modalCategory } = this.props;
 
     this.setPickerVisibleFalse();
     if (modalCategory) {
       onAddQuantity(modalCategory, amount);
+    }
+  }
+
+  confirmEditPicker(index: number, amount: number) {
+    const { onUpdateQuantity, modalCategory } = this.props;
+    this.setEditPickerVisibleFalse();
+    if (modalCategory) {
+      onUpdateQuantity(modalCategory, index, amount);
     }
   }
 
@@ -174,7 +217,12 @@ class GoodQuantityListModalInner extends React.Component<
   }
 
   render() {
-    const { pickerModalVisible } = this.state;
+    const {
+      pickerModalVisible,
+      editPickerModal,
+      editPickerIdx,
+      editPickerNumber,
+    } = this.state;
     const { i18n } = this.props;
     const {
       onHide,
@@ -218,6 +266,7 @@ class GoodQuantityListModalInner extends React.Component<
                 {quantities.map((q, idx) => (
                   <QuantityRow
                     borderTop={idx === 0}
+                    editable
                     key={v4()}
                     quantity={getQuantityNumber(q)}
                     date={dateTimeToFormat(
@@ -233,6 +282,7 @@ class GoodQuantityListModalInner extends React.Component<
                         onDeleteQuantity(modalCategory, idx);
                       }
                     }}
+                    onPressEdit={() => this.setEditPickerVisibleTrue(idx)}
                   />
                 ))}
               </ScrollView>
@@ -261,14 +311,15 @@ class GoodQuantityListModalInner extends React.Component<
         </ModalCard>
         <QuantityInputModal
           modalVisible={pickerModalVisible}
-          toggleModalVisible={() => this.togglePickerVisible()}
+          toggleModalVisible={() => this.setEditPickerVisibleFalse()}
           confirmAction={amount => this.confirmPicker(amount)}
           category={modalCategory}
-          onlyStandardInput={
-            modalCategory === 'Tobacco' ||
-            modalCategory === 'Meat' ||
-            modalCategory === 'Butter'
+          confirmEditAction={(index, amount) =>
+            this.confirmEditPicker(index, amount)
           }
+          editModal={editPickerModal}
+          categoryElementIdx={editPickerIdx}
+          editPickerNumber={editPickerNumber}
         />
       </AppModal>
     );

@@ -107,6 +107,10 @@ type QuantityInputModalProps = {
   category: Category,
   toggleModalVisible: () => void,
   modalVisible: boolean,
+  confirmEditAction: (number, number) => void,
+  editModal: boolean,
+  categoryElementIdx: number,
+  editPickerNumber: number,
 };
 
 const initialState = {
@@ -166,6 +170,18 @@ class QuantityInputModalInner extends React.Component<
     );
   }
 
+  componentWillReceiveProps(props) {
+    const { editModal, editPickerNumber } = props;
+    if (editModal) {
+      this.setState({
+        numberInput: {
+          wholePart: editPickerNumber.toString(),
+          decimalPart: '',
+        },
+      });
+    }
+  }
+
   componentWillUnmount() {
     // $FlowFixMe
     this.keyboardDidShowListener.remove();
@@ -173,8 +189,27 @@ class QuantityInputModalInner extends React.Component<
     this.keyboardDidHideListener.remove();
   }
 
+  onModalHide() {
+    const { toggleModalVisible, editModal } = this.props;
+    if (editModal) {
+      this.resetInputs();
+    }
+    toggleModalVisible();
+  }
+
   onConfirmAction() {
-    this.props.confirmAction(this.currentAmount());
+    const {
+      confirmAction,
+      confirmEditAction,
+      editModal,
+      categoryElementIdx,
+    } = this.props;
+    const amount = this.currentAmount();
+    if (editModal) {
+      confirmEditAction(categoryElementIdx, amount);
+    } else {
+      confirmAction(amount);
+    }
     this.resetInputs();
   }
 
@@ -274,6 +309,13 @@ class QuantityInputModalInner extends React.Component<
   }
 
   getCategoryQuantityInputInfo() {
+    if (this.props.editModal) {
+      return {
+        quantityInputMethod: 'standardInput',
+        standardInputMethod: 'manual',
+        customInputMethod: 'none',
+      };
+    }
     return quantityInputTypeByCategory[this.props.category];
   }
 
@@ -339,7 +381,7 @@ class QuantityInputModalInner extends React.Component<
 
   render() {
     const { selected } = this.state;
-    const { t, category, toggleModalVisible, modalVisible } = this.props;
+    const { t, category, modalVisible } = this.props;
 
     const currentAmount = this.currentAmount();
 
@@ -406,7 +448,7 @@ class QuantityInputModalInner extends React.Component<
           </View>
         </ModalCard>
         <ModalCloseText
-          onModalHide={toggleModalVisible}
+          onModalHide={() => this.onModalHide()}
           text={t('closeModalText')}
         />
       </AppModal>
