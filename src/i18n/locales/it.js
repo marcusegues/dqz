@@ -243,7 +243,7 @@ export const it: Locale = {
       'Se al <1>valico di confine</1> è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente.  Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
     customsProceduresText12: 'Dichiarazione doganale con l’app QuickZoll',
     customsProceduresText13:
-      'Potete dichiarare la vostra merce con l’app QuickZoll dell’AFD. Le merci devono essere sdoganate con l’app prima di attraversare la frontiera o al valico di frontiera. Ciò significa che le tasse devono essere pagate. Se ha pagato i dazi con l’app, può utilizzare il passaggio verde anche ai valichi di frontiera dove non è presente personale doganale e negli aeroporti.',
+      'Le merci possono essere dichiarate anche con l’app QuickZoll dell’Amministrazione federale delle dogane (AFD) e devono essere imposte con l’app prima del passaggio del confine oppure al valico di confine. Ciò significa che i tributi devono essere pagati. Se il pagamento avviene mediante app, possono essere utilizzati tutti i valichi di confine, indipendentemente dal fatto se è presente personale dell’AFD o meno. Ciò vale anche per i valichi di confine che, secondo la segnaletica, permettono l’entrata con merce che rientra nelle quantità ammesse in franchigia e nei limiti di franchigia secondo il valore. Presso gli uffici doganali con passaggio verde può essere utilizzato quest’ultimo. ',
     customsProceduresText14:
       'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.',
     customsProceduresText15:

@@ -246,7 +246,7 @@ export const de: Locale = {
       'Wenn der Grenzübergang durch Personal des Schweizer Zolls besetzt ist, melden Sie alle Waren mündlich und unaufgefordert an. Informationen zu den wichtigsten Grenzübergängen finden Sie unter der Rubrik <1>Grenzübergänge</1>.',
     customsProceduresText12: 'Zollanmeldung mit der App QuickZoll',
     customsProceduresText13:
-      'Sie können Ihre Waren mit der App QuickZoll der EZV anmelden. Die Waren müssen vor dem Grenzübertritt oder beim Grenzübergang mit der App verzollt werden. D.h. die Abgaben müssen bezahlt sein. Haben Sie die Abgaben mit der App bezahlt, dürfen Sie auch Grenzübergänge, bei denen kein Personal des Zolls anwesend ist, und in Flughäfen den grünen Durchgang benutzen.',
+      'Sie können Ihre Waren auch mit der App QuickZoll der Eidgenössischen Zollverwaltung (EZV) anmelden. Die Waren müssen vor dem Grenzübertritt oder beim Grenzübergang mit der App verzollt werden. D.h. die Abgaben müssen bezahlt sein. Haben Sie die Abgaben mit der App bezahlt, dürfen Sie über alle Grenzübergänge einreisen, unabhängig davon, ob Personal des Zolls anwesend ist oder nicht. Dies gilt auch für Grenzübergänge bei denen die Einreise gemäss Signalisation nur mit Waren innerhalb der Freimengen und der Wertfreigrenze erlaubt ist. Bei Zollstellen mit grünen Durchgängen dürfen Sie diese benutzen.',
     customsProceduresText14:
       'Diese Form der Zollanmeldung ist nur für Waren zulässig, die für Ihren privaten Gebrauch oder zum Verschenken bestimmt sind. Sie dürfen keinen Beschränkungen oder Verboten unterliegen und nicht zeugnis- oder bewilligungspflichtig sein. ',
     customsProceduresText15:

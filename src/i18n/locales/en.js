@@ -238,7 +238,7 @@ export const en: Locale = {
       'If the border crossing is manned by Swiss Customs staff, all goods must be declared verbally without you being solicited to do so. Information on the main border crossings can be found in the <1>border crossings section</1>.',
     customsProceduresText12: 'Customs declaration with the app QuickZoll',
     customsProceduresText13:
-      "You can also declare your goods with the FCA's app QuickZoll. The goods must be cleared through customs with the app before crossing the border or when doing so. In other words, duties must be paid. If you paid the duties with the app, you may also use border crossings where no Customs staff are present and the green channel in airports.",
+      "You can also declare your goods with the Federal Customs Administration's (FCA) app QuickZoll. The goods must be cleared through customs with the app before crossing the border or when doing so. In other words, duties must be paid. If you paid the duties with the app, you may enter Switzerland using any border crossing, regardless of whether or not FCA staff are present. This also applies to border crossings where the signals indicate that entry is allowed only with goods within the duty-free allowances and limits. In the case of customs offices with green channels, you may use these.",
     customsProceduresText14:
       'This form of customs declaration is permitted only for goods intended for your personal use or as gifts. They must not be subject to any restrictions or bans and must not require a certificate or authorisation.',
     customsProceduresText15:
