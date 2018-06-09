@@ -742,43 +742,43 @@ export const en: Locale = {
     faq: 'Frequently asked questions (FAQ) (PDF, 23 kB, 22.03.2018)',
   },
   legalNoticeInformation: {
-    navigationHeaderTitle: 'Information about using the app',
-    conditions: 'Framework Conditions',
+    navigationHeaderTitle: 'Information on using the app',
+    conditions: 'Terms of use',
     importantSoon: 'Brief summary',
-    importantSoonText1: 'The app can be used entirely offline until payment.',
+    importantSoonText1: 'The QuickZoll app can be used entirely offline until payment.',
     importantSoonText2:
       'You may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll.',
     importantSoonText3:
-      'You may use QuickZoll only for goods that you import for your personal use or as gifts.',
+      'You may use QuickZoll only for goods that you import for your personal use or as gifts (up to a maximum of CHF 20,000.00).',
     importantSoonText4:
-      'By using QuickZoll, you accept that the VAT rate of 7.7% is applied including for goods that are subject to the reduced tax rate (2.5%, in particular food, animal feed, medications and books). If you would like the reduced tax rate to be applied, you must declare the goods verbally at a border crossing manned by Federal Customs Administration (FCA) staff.',
+      'By using QuickZoll, you accept that the VAT rate of 7.7% is also applied to goods that are subject to the reduced tax rate (2.5%), in particular food, animal feed, medicines and books). If you would like the reduced tax rate to be applied, you must declare the goods at a border crossing manned by Federal Customs Administration (FCA) staff.',
     importantSoonText5:
-      'Payment is only possible using a credit card (Visa, MasterCard). The goods are cleared through customs after payment of the duties.',
+      'Payment is only possible using a credit card (Visa, MasterCard). The goods are cleared through customs after payment of the duties and you will receive a receipt in the app. Duties paid with QuickZoll will not be refunded.',
     importantSoonText6:
-      'Customs clearance is only possible 48 hours before crossing the border at the earliest and must take place at the latest at the border crossing point.',
+      'Customs clearance with QuickZoll is only possible 48 hours before crossing the border at the earliest and must take place at the latest at the border crossing point or before passing through the green exit.',
     importantSoonText7:
       'After customs clearance with QuickZoll, you may enter Switzerland using any official border crossing, regardless of whether or not FCA staff are present. In airports, you may use the green channel at airports.',
     importantSoonText8:
-      'The receipt must be presented to FCA staff upon request. The staff take a photo of the receipt if necessary.',
-    importantSoonText9: 'No registration is required. No data is collected.',
+      'The receipt must be presented to FCA staff upon request. The staff will take a photo of the receipt if necessary.',
+    importantSoonText9: 'No registration is required. All connection costs incurred (e.g. data and roaming costs) as well as all other costs (in particular credit card fees) are entirely at your own expense.',
     importantSoonBoldText1: 'Duties paid with the app will not be refunded.',
 
-    howToDeclareYourGoods: 'How to clear your goods through customs:',
+    howToDeclareYourGoods: 'How to clear your goods through customs',
     howToDeclareYourGoodsText1:
       'Declare all transported goods (except personal effects and travelling provisions). The applicable duty-free allowances and the tax-free limit are automatically deducted during customs clearance.',
     howToDeclareYourGoodsText2:
-      "Enter the value in the foreign currency according to the payment document. The value is converted using the preceding day's (last working day) exchange rate (forex sell rate).",
+      "Enter the value in the foreign currency. The value is automatically converted using the preceding day's (last working day) exchange rate (forex sell rate). The value after deduction of foreign value added tax is decisive, provided this is indicated on the receipt/invoice. If the value is specified including VAT, the net value is calculated as follows: gross value/(100+tax rate)*100 = net value. Example with EUR 1.000 incl. 20% VAT: EUR 1,000/120*100 = EUR 833.33.",
     howToDeclareYourGoodsText3:
-      'Set a two-hour timeframe for your border crossing. <1>The receipt is valid only during this timeframe.</1> If you are unable to comply with the selected timeframe, you must report to a border crossing manned by FCA staff and explain why you were unable to enter during the validity period. Duties will be levied again without credible justification.',
+      'Set a two-hour timeframe for your border crossing. The timeframe cannot be changed after the receipt has been issued. <1>The receipt is valid only during this timeframe.</1> If you are unable to comply with the selected timeframe, you must report to a border crossing manned by FCA staff and during entry into Switzerland explain why you were unable to enter during the validity period. Duties will be levied again without credible justification.',
     howToDeclareYourGoodsTextBold3: '',
     howToDeclareYourGoodsText4:
       'All persons to whom the receipt applies must enter together.',
     howToDeclareYourGoodsText5:
-      'You can correct your declaration at any time before paying. No further corrections are possible in QuickZoll after paying. After paying for additional foreign goods purchased, you must declare them at a border crossing manned by FCA staff.',
+      'You can correct your declaration at any time before paying. No further corrections are possible in QuickZoll after paying. After paying for additional foreign goods purchased, you must declare them upon entry into Switzerland at a border crossing manned by FCA staff.',
     howToDeclareYourGoodsText6:
-      'To successfully complete the payment process, an internet connection is required. If customs clearance with QuickZoll is not possible (e.g. no internet connection or payment by credit card is not possible), you must declare the goods at a border crossing manned by FCA staff or via a declaration box.',
+      'An internet connection is required for the payment process. If customs clearance with QuickZoll is not possible (e.g. no internet connection or payment by credit card is not possible), you must declare the goods at a border crossing manned by FCA staff or via a declaration box.',
     howToDeclareYourGoodsText7:
-      'Please make sure that you can display the receipt on your mobile device during controls when crossing the border. Please note that, during the validity period of the receipt, a picture of the receipt that is forwarded to third parties via WhatsApp, iMessage, SMS or email will not be accepted as a receipt. The receipt must be retained for at least one year.',
+      'For customs controls when crossing the border, you must be able to display a valid receipt on your mobile device for the goods you are importing. Please note that, during the validity period of the receipt, a picture of the receipt that is forwarded to third parties via WhatsApp, iMessage, SMS or email will not be accepted as a receipt. The receipt must be retained for at least one year.',
 
     specialCases: 'Special cases',
     specialCasesText1:
@@ -787,7 +787,7 @@ export const en: Locale = {
       'Goods which are subject to restrictions or bans and which require a certificate or authorisation (e.g. weapons, live animals and products governed by species protection);',
     specialCasesText3: 'further information',
     specialCasesText4:
-      'Goods for private use or as gifts worth a total of CHF 20,000.00 or more;',
+      'Goods for private use or as gifts worth more than CHF 20,000.00;',
     specialCasesText5:
       'Goods that you wish to declare at the reduced VAT rate;',
     specialCasesText6:
@@ -799,9 +799,9 @@ export const en: Locale = {
       'Goods that are only temporarily imported into Switzerland;',
     specialCasesText10: 'Goods intended for transit through Switzerland.',
     specialCasesText11:
-      'Goods that are being exported from Switzerland and for which you require export confirmation',
+      'Goods for which you require export confirmation',
     specialCasesText12:
-      '(information concerning the refund of Swiss VAT and tax-free shopping in Switzerland can be found here ).',
+      '(information concerning the refund of Swiss VAT and tax-free shopping in Switzerland can be found here).',
 
     legal: 'Legal aspects',
     usage: 'Use',
@@ -833,7 +833,7 @@ export const en: Locale = {
       'Liability claims against the FCA for material or immaterial damage caused by the use of this app due to technical malfunctions, misuse of QuickZoll or other reasons are excluded.',
     culpability: 'Criminal liability',
     culpabilityText1:
-      'Declare the goods fully and correctly. Prohibited goods and/or goods which are subject to authorisation may not be declared. Customs clearance with QuickZoll is binding (Art. 33 of the Customs Act, CustA; SR 631.0). You commit a criminal offence if you do not fully declare or falsely declare goods or declare prohibited goods and/or goods which are subject to authorisation (Art. 118 and 127 of the CustA).',
+      'The person who presents the receipt for customs control is responsible for the correct clearance of the goods transported. That person also incurs criminal law liability in the event of undeclared or falsely declared goods being found.',
     referencesAndLinks: 'References and links',
     referencesAndLinksText1:
       'References and links to third-party websites lie outside the scope of responsibility of the federal authorities. Users who access and/or use such websites do so at their own risk. The federal authorities explicitly declare that they have no influence whatsoever on the design, content or offers of linked sites. The relevant third party is entirely responsible for the information and services of third-party websites.',
