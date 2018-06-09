@@ -799,7 +799,7 @@ export const fr: Locale = {
     importantSoonBoldText1:
       "Les redevances payées avec l'application ne sont pas remboursées.",
 
-    howToDeclareYourGoods: 'Marche à suivre pour dédouaner vos marchandises:',
+    howToDeclareYourGoods: 'Marche à suivre pour dédouaner vos marchandises',
     howToDeclareYourGoodsText1:
       "Déclarez toutes les marchandises que vous transportez (à l'exception des effets personnels et des provisions de voyage). Les franchises quantitatives et les franchises-valeur auxquelles vous avez droit seront déduites automatiquement lors du dé-douanement.",
     howToDeclareYourGoodsText2:

@@ -765,7 +765,7 @@ export const de: Locale = {
     importantSoonBoldText1:
       'Mit der App bezahlte Abgaben werden nicht zurück erstattet.',
 
-    howToDeclareYourGoods: 'So verzollen Sie Ihre Waren:',
+    howToDeclareYourGoods: 'So verzollen Sie Ihre Waren',
     howToDeclareYourGoodsText1:
       'Melden Sie sämtliche mitgeführten Waren (ausgenommen persönliche Gebrauchsgegenstände und Reiseproviant) an. Die zustehenden Freimengen und die Wertfreigrenze werden während der Verzollung automatisch abgezogen.',
     howToDeclareYourGoodsText2:
