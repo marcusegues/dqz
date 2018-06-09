@@ -551,7 +551,7 @@ export const it: Locale = {
 
   roadTax: {
     roadTaxMainText:
-      'Tassa sul traffico stradale per veicoli di peso superiore alle 3,5 t (TFTP)',
+      "Tassa sul traffico pesante per veicoli di peso superiore alle 3,5 t (TFTP)",
     roadTaxText1:
       'In Svizzera gli autoveicoli e i rimorchi con un peso totale eccedente le 3,5 tonnellate sono soggetti a una tassa sul traffico pesante. Per i pullman, i camper pesanti, le automobili pesanti e per i loro rimorchi eccedenti le 3,5 tonnellate, la tassa è forfetaria e riscossa al giorno.',
     roadTaxText2:

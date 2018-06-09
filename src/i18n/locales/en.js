@@ -539,7 +539,7 @@ export const en: Locale = {
 
   roadTax: {
     roadTaxMainText:
-      'Road traffic fees over 3.5T (lump-sum heavy vehicle charge, or PSVA)',
+      'Lump-sum heavy vehicle charge for vehicles over 3.5 tonnes (PSVA)',
     roadTaxText1:
       'In Switzerland, a heavy vehicle charge is levied for vehicles and trailers with a total weight of over 3.5 tonnes. The charge is levied as a daily lump sum for buses, heavy motorhomes, heavy passenger vehicles and their trailers over 3.5 tonnes.',
     roadTaxText2:

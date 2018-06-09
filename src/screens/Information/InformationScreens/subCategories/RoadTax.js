@@ -131,7 +131,7 @@ const RoadTaxInner = ({ t, i18n }: RoadTaxInnerProps) => (
       source={bus}
       title={t('roadTaxCategory1')}
       imageStyle={ownStyles.busImage}
-      amount={11}
+      amount={25}
     >
       <FormattedText text={`${t('till')} `} />
     </RoadTaxRow>

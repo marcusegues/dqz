@@ -557,7 +557,7 @@ export const fr: Locale = {
 
   roadTax: {
     roadTaxMainText:
-      'Redevance sur le trafic routier applicable aux véhicules de plus de 3,5 tonnes (RPLF)',
+      'Redevance sur le trafic des poids lourds applicable aux véhicules de plus de 3,5 tonnes (RPLF)',
     roadTaxText1:
       "En Suisse, les véhicules et les remorques affichant un poids total supérieur à 3,5 tonnes sont soumis à une redevance sur le trafic des poids lourds. Pour les bus, les voitures d'habitation lourdes, les voitures de tourisme lourdes et leurs remorques d'un poids de plus de 3,5 tonnes, la redevance est perçue de façon forfaitaire en fonction du nombre de jours passés en Suisse.",
     roadTaxText2:

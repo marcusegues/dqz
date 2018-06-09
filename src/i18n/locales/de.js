@@ -546,7 +546,7 @@ export const de: Locale = {
   },
 
   roadTax: {
-    roadTaxMainText: 'Strassenverkehrsabgabe über 3,5 T (PSVA)',
+    roadTaxMainText: 'Pauschale Schwerverkehrsabgabe für Fahrzeuge über 3,5 Tonnen (PSVA)',
     roadTaxText1:
       'In der Schweiz wird für Fahrzeuge und Anhänger mit einem Gesamtgewicht von über 3,5 Tonnen eine Schwerverkehrsabgabe erhoben. Für Busse, schwere Wohnmobile, schwere Personenwagen und deren Anhänger über 3,5 Tonnen wird die Abgabe pauschal pro Tag erhoben.',
     roadTaxText2:
