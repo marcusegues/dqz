@@ -744,24 +744,24 @@ export const de: Locale = {
     conditions: 'Nutzungsbedingungen',
     importantSoon: 'Wichtiges in Kürze',
     importantSoonText1:
-      'Die App ist bis zur Bezahlung vollumfänglich offline benutzbar',
+      'Die App QuickZoll ist bis zum Zahlungsvorgang vollumfänglich offline benutzbar',
     importantSoonText2:
       'Sie dürfen pro Kalendertag nur einmal mit Waren einreisen, die Sie mit QuickZoll verzollt haben. ',
     importantSoonText3:
-      'Sie dürfen QuickZoll nur für Waren benützen, die Sie zu Ihrem privaten Gebrauch oder zum Verschenken einführen.',
+      'Sie dürfen QuickZoll nur für Waren benützen, die Sie zu Ihrem privaten Gebrauch oder zum Verschenken einführen (bis max. CHF 20000.00).',
     importantSoonText4:
       'Mit der Verwendung von QuickZoll akzeptieren Sie, dass der MWST Satz 7.7% auch für Waren angewendet wird, die dem reduzierten Steuersatz (2.5%) unterliegen (insbesondere Lebensmittel, Tierfutter, Medikamente und Bücher). Möchten Sie, dass der reduzierte Steuersatz angewendet wird, müssen Sie die Waren bei einem durch das Personal der Eidgenössischen Zollverwaltung (EZV) besetzten Grenzübergang mündlich anmelden.',
     importantSoonText5:
-      'Die Bezahlung ist nur mit Kreditkarten (Visa, Mastercard) möglich. Nach der Bezahlung der Abgaben sind die Waren verzollt.',
+      'Die Bezahlung ist nur mit Kreditkarten (Visa, Mastercard) möglich. Nach der Bezahlung der Abgaben sind die Waren verzollt und Sie erhalten in der App eine Quittung. Mit QuickZoll bezahlte Abgaben werden nicht zurückerstattet.',
 
     importantSoonText6:
-      'Die Verzollung kann frühestens 48 Stunden vor dem Grenzübertritt und muss spätestens bei der Grenzübergangsstelle erfolgen.',
+      'Die Verzollung mit QuickZoll kann frühestens 48 Stunden vor dem Grenzübertritt und muss spätestens bei der Grenzübergangsstelle bzw. vor dem Passieren des grünen Durchgangs erfolgen.',
     importantSoonText7:
       'Nach der Verzollung mit QuickZoll dürfen Sie über alle offiziellen Grenzübergänge einreisen, unabhängig davon, ob Personal der EZV anwesend ist oder nicht. In Flughäfen dürfen Sie den grünen Durchgang benutzen.',
     importantSoonText8:
       'Die Quittung ist dem Personal der EZV auf Verlangen vorzuweisen. Dieses fotografiert die Quittung bei Bedarf.',
     importantSoonText9:
-      'Eine Registrierung ist nicht nötig. Es werden keine Daten gesammelt.',
+      'Eine Registrierung ist nicht nötig. Sämtliche anfallenden Verbindungskosten (z.B. Daten- und Roamingkosten) sowie sämtliche weiteren Kosten (insbesondere Kredikartengebühren) gehen vollumfänglich zu Ihren Lasten.',
     importantSoonBoldText1:
       'Mit der App bezahlte Abgaben werden nicht zurück erstattet.',
 
@@ -769,17 +769,17 @@ export const de: Locale = {
     howToDeclareYourGoodsText1:
       'Melden Sie sämtliche mitgeführten Waren (ausgenommen persönliche Gebrauchsgegenstände und Reiseproviant) an. Die zustehenden Freimengen und die Wertfreigrenze werden während der Verzollung automatisch abgezogen.',
     howToDeclareYourGoodsText2:
-      'Geben Sie den Wert in der Fremdwährung gemäss Zahlungsbeleg ein. Der Wert wird mit dem Devisenkurs (Verkauf) des Vortages (letzter Arbeitstag) umgerechnet.',
+      'Geben Sie den Wert in der Fremdwährung gemäss Zahlungsbeleg ein. Der Wert wird mit dem Devisenkurs (Verkauf) des Vortages (letzter Arbeitstag) automatisch umgerechnet. Massgebend ist der Wert nach Abzug der ausländischen Mehrwertsteuer, sofern diese auf der Quittung/Rechnung ausgewiesen ist. Ist der Wert inklusive MWST angegeben, berechnet sich der Nettowert wie folgt: Bruttowert/(100+Steuersatz)*100 = Nettowert. Beispiel mit 1000 Euro inkl. 20 % MWST: 1000 Euro/120*100 = 833.33 Euro.',
     howToDeclareYourGoodsText3:
-      'Legen Sie ein Zeitfenster von zwei Stunden für Ihren Grenzübertritt fest. <1>Die Quittung ist nur während dieses Zeitfensters gültig.</1> Können Sie den gewählten Zeitraum nicht einhalten, müssen Sie sich bei einem durch das Personal der EZV besetzten Grenzübergang melden und erklären, warum Sie nicht innerhalb der Gültigkeitsfrist einreisen konnten. Ohne glaubhafte Begründung werden die Abgaben erneut erhoben.',
+      'Legen Sie ein Zeitfenster von zwei Stunden für Ihren Grenzübertritt fest. Das Zeitfenster kann nach erfolgter Ausstellung der Quittung nicht mehr geändert werden. <1>Die Quittung ist nur während dieses Zeitfensters gültig.</1> Können Sie den gewählten Zeitraum nicht einhalten, müssen Sie sich anlässlich der Einreise bei einem durch das Personal der EZV besetzten Grenzübergang melden und erklären, warum Sie nicht innerhalb der Gültigkeitsfrist einreisen konnten. Ohne glaubhafte Begründung werden die Abgaben erneut erhoben.',
     howToDeclareYourGoodsText4:
       'Alle Personen, für welche die Quittung gilt, müssen gemeinsam einreisen.',
     howToDeclareYourGoodsText5:
-      'Vor der Bezahlung können Sie Ihre Anmeldung jederzeit korrigieren. Nach der Bezahlung sind in QuickZoll keine Korrekturen mehr möglich. Nach dem Bezahlen zusätzlich gekaufte ausländische Waren müssen Sie bei einem durch das Personal der EZV besetzten Grenzübergang anmelden.',
+      'Vor der Bezahlung können Sie Ihre Anmeldung jederzeit korrigieren. Nach der Bezahlung sind in QuickZoll keine Korrekturen mehr möglich. Nach dem Bezahlen zusätzlich gekaufte ausländische Waren müssen Sie anlässlich der Einreise bei einem durch das Personal der EZV besetzten Grenzübergang anmelden.',
     howToDeclareYourGoodsText6:
-      'Für den erfolgreichen Abschluss des Zahlungsvorgangs ist eine Internetverbindung nötig. Ist die Verzollung mit QuickZoll nicht möglich (z.B. keine Internetverbindung oder Bezahlung mit Kreditkarte nicht möglich) müssen Sie die Waren bei einem durch das Personal der EZV besetzten Grenzübergang oder via Anmeldebox anmelden.',
+      'Für den Zahlungsvorgang ist eine Internetverbindung nötig. Ist die Verzollung mit QuickZoll nicht möglich (z.B. keine Internetverbindung oder Bezahlung mit Kreditkarte nicht möglich) müssen Sie die Waren bei einem durch das Personal der EZV besetzten Grenzübergang oder via Anmeldebox anmelden.',
     howToDeclareYourGoodsText7:
-      'Stellen Sie sicher, dass Sie die Quittung bei Kontrollen anlässlich des Grenzübertritts auf Ihrem mobilen Endgerät anzeigen können. Bitte beachten Sie, dass während der Gültigkeitsfrist der Quittung ein Bild der Quittung, welches via WhatsApp, iMessage, SMS oder E-Mail an Drittpersonen weitergeleitet wird, nicht als Quittung akzeptiert wird. Die erhaltene Quittung müssen Sie mindestens ein Jahr aufbewahren.',
+      'Bei Zollkontrollen anlässlich des Grenzübertritts müssen Sie für die Waren, die Sie einführen, eine gültige Quittung auf Ihrem mobilen Endgerät anzeigen können. Bitte beachten Sie, dass während der Gültigkeitsfrist der Quittung ein Bild der Quittung, welches via WhatsApp, iMessage, SMS oder E-Mail an Drittpersonen weitergeleitet wird, nicht als Quittung akzeptiert wird. Die erhaltene Quittung müssen Sie mindestens ein Jahr aufbewahren.',
 
     specialCases: 'Besondere Fälle',
     specialCasesText1:
@@ -788,7 +788,7 @@ export const de: Locale = {
       'Waren, die Beschränkungen oder Verboten unterliegen und die zeugnis- oder bewilligungspflichtig sind (z.B. Waffen, lebende Tiere und Artenschutzwaren);',
     specialCasesText3: 'Weitere Informationen',
     specialCasesText4:
-      "Waren für den privaten Gebrauch oder zum Verschenken mit einem Gesamtwert von CHF 20'000.00 oder mehr;",
+      "Waren für den privaten Gebrauch oder zum Verschenken mit einem Gesamtwert von mehr als CHF 20'000.00;",
     specialCasesText5:
       'Waren, die Sie zum reduzierten Mehrwertsteuersatz anmelden möchten;',
     specialCasesText6:
@@ -801,7 +801,7 @@ export const de: Locale = {
     specialCasesText10:
       'Waren, die für den Transit durch die Schweiz bestimmt sind;',
     specialCasesText11:
-      'Waren, die aus der Schweiz ausgeführt werden und für die Sie eine Ausfuhrbestätigung benötigen',
+      'Waren, für die Sie eine Ausfuhrbestätigung benötigen',
     specialCasesText12:
       'Informationen zur Rückerstattung der Schweizer Mehrwertsteuer und zum steuerfreien Einkauf in der Schweiz (Tax free) finden Sie hier.',
 
@@ -837,7 +837,7 @@ export const de: Locale = {
       'Haftungsansprüche gegen die EZV wegen Schäden materieller oder immaterieller Art, welche durch die Nutzung dieser App, durch technische Störungen, durch Missbrauch von «QuickZoll» oder anderen Gründen entstanden sind, werden ausgeschlossen.',
     culpability: 'Strafbarkeit',
     culpabilityText1:
-      'Melden Sie die Waren vollständig und korrekt an. Verbotene und/oder bewilligungspflichtige Waren dürfen nicht angemeldet werden. Die Verzollung mit QuickZoll ist verbindlich (Art. 33 des Zollgesetzes, ZG; SR 631.0). Wer Waren nicht vollständig oder nicht korrekt anmeldet oder wer verbotene und/oder bewilligungspflichtige Waren anmeldet, macht sich strafbar (Art. 118 und 127 ZG).',
+      'Diejenige Person, die die Quittung bei der Zollkontrolle vorweist, ist für die korrekte Verzollung der mitgeführten Waren verantwortlich. Sie übernimmt auch die strafrechtliche Verantwortung, wenn nicht oder falsch angemeldete Ware entdeckt werden.',
     referencesAndLinks: 'Verweise und Links',
     referencesAndLinksText1:
       'Verweise und Links auf Webseiten Dritter liegen ausserhalb des Verantwortungsbereichs der Bundesbehörden. Der Zugriff und die Nutzung solcher Webseiten erfolgen auf eigene Gefahr des Nutzers oder der Nutzerin. Die Bundesbehörden erklären ausdrücklich, dass sie keinerlei Einfluss auf die Gestaltung, den Inhalt und die Angebote der verknüpften Seiten haben. Informationen und Dienstleistungen von verknüpften Webseiten liegen vollumfänglich in der Verantwortung des jeweiligen Dritten.',
