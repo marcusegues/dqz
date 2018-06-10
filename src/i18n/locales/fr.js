@@ -789,7 +789,7 @@ export const fr: Locale = {
     importantSoonText5:
       "Les redevances ne peuvent être payées que par carte de crédit (Visa, Mastercard). Les marchandises sont dédouanées une fois que les redevances ont été payées. Une quittance vous est alors transmise dans l'application. Les redevances payées avec QuickZoll ne sont pas remboursées.",
     importantSoonText6:
-      "Le dédouanement peut être effectué avec QuickZoll au plus tôt 48 heures avant le franchissement de la frontière et doit avoir lieu au plus tard au point de passage frontalier ou avant le franchissement de la voie verte.",
+      'Le dédouanement peut être effectué avec QuickZoll au plus tôt 48 heures avant le franchissement de la frontière et doit avoir lieu au plus tard au point de passage frontalier ou avant le franchissement de la voie verte.',
     importantSoonText7:
       "À l'issue du dédouanement avec QuickZoll, vous pouvez entrer en Suisse par tous les passages frontières officiels, indépendamment du fait qu'ils soient occupés ou non par du personnel de l'AFD. Dans les aéroports, vous pouvez emprunter la voie verte.",
     importantSoonText8:
@@ -814,7 +814,7 @@ export const fr: Locale = {
     howToDeclareYourGoodsText6:
       "Il est nécessaire d'être connecté à Internet en vue du processus de paiement. S'il n'est pas possible d'effectuer le dédouanement à l'aide de QuickZoll (par ex. absence de connexion à Internet ou impossibilité de payer les redevances avec une carte de crédit), vous devez déclarer les marchandises auprès d'un passage frontière occupé par du personnel de l'AFD ou par l'intermédiaire d'une boîte à déclarations.",
     howToDeclareYourGoodsText7:
-      "En cas de contrôle douanier lors du franchissement de la frontière, vous devez pouvoir afficher une quittance valable sur votre terminal mobile pour les marchandises que vous importez. Veuillez noter que pendant le délai de validité de la quittance, une image de celle-ci transmise à des tiers par WhatsApp, iMessage, SMS ou courriel ne sera pas acceptée comme quittance. Vous devez conserver pendant au moins un an la quittance reçue.",
+      'En cas de contrôle douanier lors du franchissement de la frontière, vous devez pouvoir afficher une quittance valable sur votre terminal mobile pour les marchandises que vous importez. Veuillez noter que pendant le délai de validité de la quittance, une image de celle-ci transmise à des tiers par WhatsApp, iMessage, SMS ou courriel ne sera pas acceptée comme quittance. Vous devez conserver pendant au moins un an la quittance reçue.',
 
     specialCases: 'Cas particuliers',
     specialCasesText1:
@@ -871,7 +871,7 @@ export const fr: Locale = {
       "L'AFD ne saurait être tenue pour responsable des dommages matériels ou immatériels qui pourraient être causés par l'utilisation de l'application, par des problèmes techniques, par le mauvais usage de QuickZoll ou pour d'autres raisons.",
     culpability: 'Punissabilité',
     culpabilityText1:
-      "La personne qui présente la quittance lors du contrôle douanier est responsable du dédouanement correct des marchandises transportées. Elle assume également la responsabilité pénale en cas de découverte de marchandises non déclarées ou déclarées de façon inexacte.",
+      'La personne qui présente la quittance lors du contrôle douanier est responsable du dédouanement correct des marchandises transportées. Elle assume également la responsabilité pénale en cas de découverte de marchandises non déclarées ou déclarées de façon inexacte.',
     referencesAndLinks: 'Renvois et liens',
     referencesAndLinksText1:
       "Les renvois et liens vers des sites web de tiers ne sont pas de la responsabilité des autorités fédérales. L'accès à ces sites et leur utilisation se font aux risques des utilisateurs. Les autorités fédérales déclarent expressément qu'elles n'ont aucune influence sur la forme, le contenu et les offres des sites auxquels elles renvoient. Les informations et services offerts par ces sites sont entièrement de la responsabilité de leurs auteurs.",

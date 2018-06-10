@@ -243,7 +243,7 @@ export const it: Locale = {
       'Se al <1>valico di confine</1> è presente il personale doganale svizzero, le merci vanno dichiarate spontaneamente e verbalmente.  Le informazioni sui valichi di confine più importanti sono disponibili alla rubrica «Valichi di confine».',
     customsProceduresText12: 'Dichiarazione doganale con l’app QuickZoll',
     customsProceduresText13:
-      "Le merci possono essere dichiarate anche con l’app QuickZoll dell’Amministrazione federale delle dogane (AFD) e devono essere imposte con l’app prima del passaggio del confine oppure al valico di confine. Ciò significa che i tributi devono essere pagati. Se il pagamento avviene mediante app, possono essere utilizzati tutti i valichi di confine, indipendentemente dal fatto se è presente personale dell’AFD o meno. Ciò vale anche per i valichi di confine che, secondo la segnaletica, permettono l’entrata con merce che rientra nelle quantità ammesse in franchigia e nei limiti di franchigia secondo il valore. Presso gli uffici doganali con passaggio verde può essere utilizzato quest’ultimo. ",
+      'Le merci possono essere dichiarate anche con l’app QuickZoll dell’Amministrazione federale delle dogane (AFD) e devono essere imposte con l’app prima del passaggio del confine oppure al valico di confine. Ciò significa che i tributi devono essere pagati. Se il pagamento avviene mediante app, possono essere utilizzati tutti i valichi di confine, indipendentemente dal fatto se è presente personale dell’AFD o meno. Ciò vale anche per i valichi di confine che, secondo la segnaletica, permettono l’entrata con merce che rientra nelle quantità ammesse in franchigia e nei limiti di franchigia secondo il valore. Presso gli uffici doganali con passaggio verde può essere utilizzato quest’ultimo.',
     customsProceduresText14:
       'Questa forma di dichiarazione doganale è autorizzata solo per merci destinate all’uso personale o da regalare. Non devono essere soggette a limitazioni o divieti né all’obbligo di certificazione o di autorizzazione.',
     customsProceduresText15:
@@ -551,7 +551,7 @@ export const it: Locale = {
 
   roadTax: {
     roadTaxMainText:
-      "Tassa sul traffico pesante per veicoli di peso superiore alle 3,5 t (TFTP)",
+      'Tassa sul traffico pesante per veicoli di peso superiore alle 3,5 t (TFTP)',
     roadTaxText1:
       'In Svizzera gli autoveicoli e i rimorchi con un peso totale eccedente le 3,5 tonnellate sono soggetti a una tassa sul traffico pesante. Per i pullman, i camper pesanti, le automobili pesanti e per i loro rimorchi eccedenti le 3,5 tonnellate, la tassa è forfetaria e riscossa al giorno.',
     roadTaxText2:
@@ -767,7 +767,7 @@ export const it: Locale = {
     conditions: 'Condizioni d’uso',
     importantSoon: 'L’essenziale in breve',
     importantSoonText1:
-      "L’app QuickZoll può essere utilizzata offline fino all’operazione di pagamento.",
+      'L’app QuickZoll può essere utilizzata offline fino all’operazione di pagamento.',
     importantSoonText2:
       'é consentito entrare in Svizzera una sola volta al giorno con merci imposte con QuickZoll.',
     importantSoonText3:
@@ -801,7 +801,7 @@ export const it: Locale = {
     howToDeclareYourGoodsText6:
       "Per eseguire l’operazione di pagamento è necessaria una connessione a Internet. Se l'imposizione con QuickZoll non è possibile (p. es. connessione Internet mancante o pagamento con carta di credito non possibile), la merce va dichiarata presso un valico di confine occupato dal personale dell'AFD oppure mediante cassetta delle dichiarazioni.",
     howToDeclareYourGoodsText7:
-      "In caso di controllo presso il valico di confine, per le merci importate deve essere presentato un giustificativo valido sul dispositivo mobile. Durante il termine di validità non si accetta come giustificativo un’immagine dello stesso inoltrata a terzi tramite WhatsApp, iMessage, SMS o e-mail. Il giustificativo ricevuto va conservato almeno per un anno.",
+      'In caso di controllo presso il valico di confine, per le merci importate deve essere presentato un giustificativo valido sul dispositivo mobile. Durante il termine di validità non si accetta come giustificativo un’immagine dello stesso inoltrata a terzi tramite WhatsApp, iMessage, SMS o e-mail. Il giustificativo ricevuto va conservato almeno per un anno.',
 
     specialCases: 'Casi particolari',
     specialCasesText1:
@@ -810,7 +810,7 @@ export const it: Locale = {
       "Merci soggette a limitazioni o divieti e che soggiacciono all'obbligo di certificato o di autorizzazione (p. es. armi, animali vivi e merci protette);",
     specialCasesText3: 'ulteriori informazioni',
     specialCasesText4:
-      "Merci destinate all’uso privato o da regalare aventi un valore complessivo superiore a  20 000 franchi.",
+      'Merci destinate all’uso privato o da regalare aventi un valore complessivo superiore a  20 000 franchi.',
     specialCasesText5: "Merci da dichiarare all'aliquota ridotta.",
     specialCasesText6:
       'Merci non importate per uso privato o come regali (p. es. merci destinate al commercio).',

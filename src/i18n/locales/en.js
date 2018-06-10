@@ -745,7 +745,8 @@ export const en: Locale = {
     navigationHeaderTitle: 'Information on using the app',
     conditions: 'Terms of use',
     importantSoon: 'Brief summary',
-    importantSoonText1: 'The QuickZoll app can be used entirely offline until payment.',
+    importantSoonText1:
+      'The QuickZoll app can be used entirely offline until payment.',
     importantSoonText2:
       'You may enter Switzerland once per calendar day with goods which you have cleared using QuickZoll.',
     importantSoonText3:
@@ -760,7 +761,8 @@ export const en: Locale = {
       'After customs clearance with QuickZoll, you may enter Switzerland using any official border crossing, regardless of whether or not FCA staff are present. In airports, you may use the green channel at airports.',
     importantSoonText8:
       'The receipt must be presented to FCA staff upon request. The staff will take a photo of the receipt if necessary.',
-    importantSoonText9: 'No registration is required. All connection costs incurred (e.g. data and roaming costs) as well as all other costs (in particular credit card fees) are entirely at your own expense.',
+    importantSoonText9:
+      'No registration is required. All connection costs incurred (e.g. data and roaming costs) as well as all other costs (in particular credit card fees) are entirely at your own expense.',
     importantSoonBoldText1: 'Duties paid with the app will not be refunded.',
 
     howToDeclareYourGoods: 'How to clear your goods through customs',
@@ -798,8 +800,7 @@ export const en: Locale = {
     specialCasesText9:
       'Goods that are only temporarily imported into Switzerland;',
     specialCasesText10: 'Goods intended for transit through Switzerland.',
-    specialCasesText11:
-      'Goods for which you require export confirmation',
+    specialCasesText11: 'Goods for which you require export confirmation',
     specialCasesText12:
       '(information concerning the refund of Swiss VAT and tax-free shopping in Switzerland can be found here).',
 
