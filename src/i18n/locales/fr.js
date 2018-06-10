@@ -248,7 +248,7 @@ export const fr: Locale = {
     customsProceduresText12:
       "Établissement de la déclaration en douane au moyen de l'application QuickZoll",
     customsProceduresText13:
-      "Vous pouvez également déclarer vos marchandises au moyen de l'application QuickZoll de l'Administration fédérale des douanes (AFD). Les marchandises doivent être dédouanées avec l'application et les redevances payées avant le franchissement de la frontière ou au passage frontière. Si vous avez payé les redevances avec l'application, vous pouvez aussi emprunter des passages frontières non occupés par du personnel de la douane ou des passages frontières auprès desquels il est possible d'effectuer une déclaration écrite ou la voie verte des aéroports.",
+      "Vous pouvez également déclarer vos marchandises au moyen de l'application QuickZoll de l'Administration fédérale des douanes (AFD). Les marchandises doivent être dédouanées avec l'application et les redevances payées avant le franchissement de la frontière ou au passage frontière. Si vous avez payé les redevances avec l'application, vous pouvez entrer en Suisse par tous les passages frontières, indépendamment du fait qu'ils soient occupés ou non par du personnel de l'AFD. Le même principe est valable pour les passages frontières par lesquels l'entrée en Suisse n'est autorisée, conformément aux panneaux de signalisation, qu'avec des marchandises pouvant être importées dans le cadre des franchises quantitatives et de la franchise-valeur. Vous pouvez emprunter la voie verte qui est disponible auprès de certains bureaux de douane.",
     customsProceduresText14:
       "Cette forme de déclaration en douane n'est admise que pour les marchandises destinées à votre usage privé ou à être offertes en cadeau. Les marchandises ne doivent être soumises à aucune restriction ni interdiction et ne doivent être assujetties à aucun certificat ni permis.",
     customsProceduresText15:
@@ -557,7 +557,7 @@ export const fr: Locale = {
 
   roadTax: {
     roadTaxMainText:
-      'Redevance sur le trafic routier applicable aux véhicules de plus de 3,5 tonnes (RPLF)',
+      'Redevance sur le trafic des poids lourds applicable aux véhicules de plus de 3,5 tonnes (RPLF)',
     roadTaxText1:
       "En Suisse, les véhicules et les remorques affichant un poids total supérieur à 3,5 tonnes sont soumis à une redevance sur le trafic des poids lourds. Pour les bus, les voitures d'habitation lourdes, les voitures de tourisme lourdes et leurs remorques d'un poids de plus de 3,5 tonnes, la redevance est perçue de façon forfaitaire en fonction du nombre de jours passés en Suisse.",
     roadTaxText2:
@@ -775,46 +775,46 @@ export const fr: Locale = {
   },
   legalNoticeInformation: {
     navigationHeaderTitle:
-      'Informations relatives à l’utilisation de QuickZoll',
-    conditions: 'Conditions-cadres',
+      "Informations relatives à l’utilisation de l'application",
+    conditions: "Conditions d'utilisation",
     importantSoon: "L'essentiel en bref",
     importantSoonText1:
-      "L'App peut être utilisée en mode offline à l'exception du module de paiement.",
+      "L'application QuickZoll peut être utilisée en mode hors ligne à l'exception du module de paiement.",
     importantSoonText2:
       "Vous ne pouvez entrer en Suisse qu'une fois par jour civil avec des marchandises que vous avez dédouanées avec QuickZoll.",
     importantSoonText3:
-      'Vous ne pouvez utiliser QuickZoll que pour les marchandises que vous importez pour votre usage privé ou pour en faire cadeau.',
+      "Vous ne pouvez utiliser QuickZoll que pour les marchandises (d'une valeur maximale de 20 000 francs) que vous importez pour votre usage privé ou pour en faire cadeau.",
     importantSoonText4:
-      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7.7% soit également appliqué aux marchandises qui sont soumises au taux réduit (2.5%), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer verbalement les marchandises à un passage frontière occupé par du personnel de l'Administration fédérale des douanes (AFD).",
+      "En utilisant QuickZoll, vous acceptez que le taux de TVA de 7.7% soit également appliqué aux marchandises qui sont soumises au taux réduit (2.5%), telles que par exemple les denrées alimentaires, les aliments pour animaux, les médicaments et les livres. Si vous souhaitez que le taux réduit soit appliqué, vous devez déclarer les marchandises à un passage frontière occupé par du personnel de l'Administration fédérale des douanes (AFD).",
     importantSoonText5:
-      'Les redevances ne peuvent être payées que par carte de crédit (Visa, Mastercard). Les marchandises sont dédouanées une fois que les redevances ont été payées.',
+      "Les redevances ne peuvent être payées que par carte de crédit (Visa, Mastercard). Les marchandises sont dédouanées une fois que les redevances ont été payées. Une quittance vous est alors transmise dans l'application. Les redevances payées avec QuickZoll ne sont pas remboursées.",
     importantSoonText6:
-      'Le dédouanement peut être effectué au plus tôt 48 heures avant le franchissement de la frontière et doit avoir lieu au plus tard au point de passage frontalier.',
+      'Le dédouanement peut être effectué avec QuickZoll au plus tôt 48 heures avant le franchissement de la frontière et doit avoir lieu au plus tard au point de passage frontalier ou avant le franchissement de la voie verte.',
     importantSoonText7:
       "À l'issue du dédouanement avec QuickZoll, vous pouvez entrer en Suisse par tous les passages frontières officiels, indépendamment du fait qu'ils soient occupés ou non par du personnel de l'AFD. Dans les aéroports, vous pouvez emprunter la voie verte.",
     importantSoonText8:
       "La quittance doit être présentée sur demande au personnel de l'AFD. Celui-ci la photographie si nécessaire.",
     importantSoonText9:
-      "Il n'est pas nécessaire de s'enregistrer. Aucune donnée n'est collectée.",
+      "Il n'est pas nécessaire de s'enregistrer. Tous les frais de connexion (par ex. frais de données et frais d'itinérance) et les autres frais (en particulier les frais de carte de crédit) sont entièrement à votre charge.",
     importantSoonBoldText1:
       "Les redevances payées avec l'application ne sont pas remboursées.",
 
-    howToDeclareYourGoods: 'Marche à suivre pour dédouaner vos marchandises:',
+    howToDeclareYourGoods: 'Marche à suivre pour dédouaner vos marchandises',
     howToDeclareYourGoodsText1:
       "Déclarez toutes les marchandises que vous transportez (à l'exception des effets personnels et des provisions de voyage). Les franchises quantitatives et les franchises-valeur auxquelles vous avez droit seront déduites automatiquement lors du dé-douanement.",
     howToDeclareYourGoodsText2:
-      'Saisissez la valeur en devise étrangère figurant sur le justificatif de paiement. Celle-ci sera convertie en francs selon le taux de change (vente) de la veille (dernier jour ouvrable).',
+      "Saisissez la valeur en devise étrangère. Celle-ci sera convertie automatiquement en francs selon le taux de change (vente) de la veille (dernier jour ouvrable). La valeur après déduction de la TVA étrangère est déterminante, pour autant que cette dernière soit indiquée sur la quittance ou la facture. Si la valeur (TVA comprise) est indiquée, la valeur nette est calculée comme suit: valeur brute/(100+taux d'imposition)*100 = valeur nette. Exemple: 1000 euros, y compris 20 % de TVA: 1000 euros/120*100 = 833,33 euros.",
     howToDeclareYourGoodsText3:
-      "Définissez un délai de deux heures pour vous permettre de franchir la frontière. <1>La quittance établie n'est valable que pendant ce délai.</1> Si vous ne pouvez pas respecter le délai choisi, vous devez vous rendre à un passage frontière occupé par du personnel de l'AFD et expliquer pourquoi vous n'avez pas pu entrer en Suisse dans le délai de validité de la quittance. En l'absence de justification crédible, les redevances seront perçues une nouvelle fois.",
+      "Définissez un délai de deux heures pour vous permettre de franchir la frontière. Le délai ne peut plus être modifié une fois que la quittance a été établie. <1>La quittance établie n'est valable que pendant ce délai.</1> Si vous ne pouvez pas respecter le délai choisi, vous devez vous rendre à un passage frontière occupé par du personnel de l'AFD lorsque vous entrez en Suisse et expliquer pourquoi vous n'avez pas pu y entrer dans le délai de validité de la quittance. En l'absence de justification crédible, les redevances seront perçues une nouvelle fois.",
     howToDeclareYourGoodsTextBold3: '',
     howToDeclareYourGoodsText4:
       'Toutes les personnes pour lesquelles la quittance est valable doivent entrer ensemble en Suisse.',
     howToDeclareYourGoodsText5:
-      "Vous pouvez corriger votre déclaration à tout moment avant le paiement. Après le paiement, vous ne pouvez plus effectuer aucune correction dans QuickZoll. Vous devez déclarer à un passage frontière occupé par du personnel de l'AFD les marchandises étrangères supplémentaires achetées après le paiement.",
+      "Vous pouvez corriger votre déclaration à tout moment avant le paiement. Après le paiement, vous ne pouvez plus effectuer aucune correction dans QuickZoll. Lorsque vous entrez en Suisse, vous devez déclarer à un passage frontière occupé par du personnel de l'AFD les marchandises étrangères supplémentaires achetées après le paiement.",
     howToDeclareYourGoodsText6:
-      "Il est nécessaire d'être connecté à Internet pour mener à bien l'opération de paiement. S'il n'est pas possible d'effectuer le dédouanement à l'aide de QuickZoll (par ex. absence de connexion à Internet ou impossibilité de payer les redevances avec une carte de crédit), vous devez déclarer les marchandises auprès d'un passage frontière occupé par du personnel de l'AFD ou par l'intermédiaire d'une boîte à déclarations.",
+      "Il est nécessaire d'être connecté à Internet en vue du processus de paiement. S'il n'est pas possible d'effectuer le dédouanement à l'aide de QuickZoll (par ex. absence de connexion à Internet ou impossibilité de payer les redevances avec une carte de crédit), vous devez déclarer les marchandises auprès d'un passage frontière occupé par du personnel de l'AFD ou par l'intermédiaire d'une boîte à déclarations.",
     howToDeclareYourGoodsText7:
-      'Assurez-vous de pouvoir afficher la quittance sur votre terminal mobile en cas de contrôle lors du franchissement de la frontière. Veuillez noter que pendant le délai de validité de la quittance, une image de celle-ci transmise à des tiers par WhatsApp, iMessage, SMS ou courriel ne sera pas acceptée comme quittance. Vous devez conserver pendant au moins un an la quittance reçue.',
+      'En cas de contrôle douanier lors du franchissement de la frontière, vous devez pouvoir afficher une quittance valable sur votre terminal mobile pour les marchandises que vous importez. Veuillez noter que pendant le délai de validité de la quittance, une image de celle-ci transmise à des tiers par WhatsApp, iMessage, SMS ou courriel ne sera pas acceptée comme quittance. Vous devez conserver pendant au moins un an la quittance reçue.',
 
     specialCases: 'Cas particuliers',
     specialCasesText1:
@@ -823,7 +823,7 @@ export const fr: Locale = {
       'les marchandises soumises à des restrictions ou des interdictions et les marchandises assujetties à un certificat ou un permis (par ex. armes, animaux vivants et marchandises soumises aux dispositions sur la conservation des espèces);',
     specialCasesText3: 'informations complémentaires',
     specialCasesText4:
-      "les marchandises d'une valeur totale supérieure ou égale à 20'000 francs qui sont destinées à l'usage privé ou à être offertes en cadeau;",
+      "les marchandises d'une valeur totale supérieure à 20'000 francs qui sont destinées à l'usage privé ou à être offertes en cadeau;",
     specialCasesText5:
       'les marchandises que vous souhaitez déclarer au taux de TVA réduit;',
     specialCasesText6:
@@ -836,9 +836,9 @@ export const fr: Locale = {
       'les marchandises qui ne sont importées que temporairement en Suisse;',
     specialCasesText10: 'les marchandises destinées à transiter par la Suisse;',
     specialCasesText11:
-      "les marchandises qui sont exportées de Suisse et pour lesquelles vous avez besoin d'une attestation d'exportation",
+      "les marchandises pour lesquelles vous avez besoin d'une attestation d'exportation",
     specialCasesText12:
-      '(vous trouverez ici des informations relatives au remboursement de la TVA suisse et aux achats effectués en Suisse en franchise de redevances).',
+      '(vous trouverez ici des informations relatives au remboursement de la TVA suisse et aux achats effectués en Suisse en franchise de redevances [tax free]).',
 
     legal: 'Informations juridiques',
     usage: 'Utilisation',
@@ -871,8 +871,7 @@ export const fr: Locale = {
       "L'AFD ne saurait être tenue pour responsable des dommages matériels ou immatériels qui pourraient être causés par l'utilisation de l'application, par des problèmes techniques, par le mauvais usage de QuickZoll ou pour d'autres raisons.",
     culpability: 'Punissabilité',
     culpabilityText1:
-      'Déclarez les marchandises de manière complète et correcte. Les marchandises interdites ou assujetties à un permis ne peuvent pas être déclarées. Le dédouanement avec QuickZoll est contraignant (art. 33 de la loi sur les douanes, LD; RS 631.0). Quiconque déclare des marchandises de manière incomplète ou incorrecte ou déclare des marchandises interdites ou assujetties à un permis est punissable (art. 118 et 127 LD).',
-
+      'La personne qui présente la quittance lors du contrôle douanier est responsable du dédouanement correct des marchandises transportées. Elle assume également la responsabilité pénale en cas de découverte de marchandises non déclarées ou déclarées de façon inexacte.',
     referencesAndLinks: 'Renvois et liens',
     referencesAndLinksText1:
       "Les renvois et liens vers des sites web de tiers ne sont pas de la responsabilité des autorités fédérales. L'accès à ces sites et leur utilisation se font aux risques des utilisateurs. Les autorités fédérales déclarent expressément qu'elles n'ont aucune influence sur la forme, le contenu et les offres des sites auxquels elles renvoient. Les informations et services offerts par ces sites sont entièrement de la responsabilité de leurs auteurs.",
