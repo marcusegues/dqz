@@ -148,7 +148,7 @@ ShallowWrapper {
           />
         </View>,
         <RoadTaxRow
-          amount={11}
+          amount={25}
           borderBottom={true}
           borderTop={true}
           imageStyle={
@@ -506,7 +506,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "amount": 11,
+          "amount": 25,
           "borderBottom": true,
           "borderTop": true,
           "children": <FormattedText
@@ -819,7 +819,7 @@ ShallowWrapper {
             />
           </View>,
           <RoadTaxRow
-            amount={11}
+            amount={25}
             borderBottom={true}
             borderTop={true}
             imageStyle={
@@ -1177,7 +1177,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "amount": 11,
+            "amount": 25,
             "borderBottom": true,
             "borderTop": true,
             "children": <FormattedText
