@@ -63,13 +63,13 @@ jobs:
       - attach_workspace:
           at: ~/project
 
-      - run:
-          name: Install documentation.js
-          command: sudo npm install -g documentation
+      #- run:
+      #    name: Install documentation.js
+      #    command: sudo npm install -g documentation
 
-      - run:
-          name: DocJS
-          command: npm run doc:html
+      #- run:
+      #    name: DocJS
+      #    command: npm run doc:html
 
       - store_artifacts:
           path: ~/project/docs
